@@ -1,0 +1,15 @@
+{
+	"name": "monorepo",
+    "dockerComposeFile": [
+		"../docker-compose.yml",
+		"docker-compose.yml"
+	],
+	"service": "monorepo",
+	"settings": {},
+	"extensions": [
+		"dbaeumer.vscode-eslint"
+	],
+	"workspaceFolder": "/usr/src/app",
+	"postCreateCommand": "yarn install",
+	"remoteUser": "node"
+}
