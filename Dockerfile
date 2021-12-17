@@ -1,7 +1,7 @@
 
 FROM node:16.13.1-buster as base
 
-# RUN yarn install 
+RUN npm install -g pnpm
 
 # EXPOSE 8000
 
@@ -11,6 +11,7 @@ WORKDIR /usr/src/app
 
 FROM base as development
 
+RUN pnpm --global install typescript @microsoft/rush aws-cdk
 
 # Standard
 
