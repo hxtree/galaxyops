@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 
 FROM base as development
 
-RUN pnpm --global install typescript @microsoft/rush aws-cdk
+RUN pnpm --global install typescript @microsoft/rush @rushstack/heft aws-cdk 
 
 # Standard
 
