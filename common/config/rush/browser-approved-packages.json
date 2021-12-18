@@ -3,7 +3,27 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@rushstack/eslint-config",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@rushstack/heft",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@rushstack/heft-jest-plugin",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@rushstack/heft-node-rig",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "jest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "typescript",
       "allowedCategories": [ "production" ]
     }
   ]

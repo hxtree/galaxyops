@@ -2,6 +2,15 @@
 Playground
 
 ```
+rush update --recheck
+```
+
+
+# How to add a new package
+```
+rush add -p @rushstack/heft-jest-plugin --dev
+rush add -p @rushstack/heft --dev
+rush add -p @types/node --dev
 rush update
 ```
 
@@ -18,6 +27,7 @@ rushx test
 * Picked PNPM over Yarn and NPM. Yarn workspaces are not supported in Rush. NPM is infamous.
 * Picked AWS exclusively for cloud provider vs cloud agnostic. Project assumes it will fail before AWS. 
 * Picked Rush Heft to build Typescript projects because it was accompanied Rush.
+* Picked heft node rig as many projects will have same configuraiton
 
 Thinking about:
 https://nestjs.com/

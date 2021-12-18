@@ -5,7 +5,6 @@
   "pnpmOptions": {
     "pnpmStore": "local",
     "strictPeerDependencies": true,
-    "resolutionStrategy": "fast",
     "preventManualShrinkwrapChanges": true,
     "useWorkspaces": true
   },
@@ -53,6 +52,11 @@
     {
       "packageName": "helloworld",
       "projectFolder": "apps/helloworld",
+      "reviewCategory": "production"
+    },
+    {
+      "packageName": "base-node-rig",
+      "projectFolder": "rigs/base-node-rig",
       "reviewCategory": "production"
     }
   ]
