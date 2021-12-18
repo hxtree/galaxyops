@@ -1,0 +1,12 @@
+{
+  "name": "helloworld",
+  "version": "0.1.0",
+  "description": "Hello, World",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.4.5"
+  }
+}
