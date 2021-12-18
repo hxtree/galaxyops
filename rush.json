@@ -8,7 +8,7 @@
     "resolutionStrategy": "fast",
     "preventManualShrinkwrapChanges": true,
     "useWorkspaces": true
-  },  
+  },
   "nodeSupportedVersionRange": ">=16.13.1",
   "suppressNodeLtsWarning": false,
   "ensureConsistentVersions": true,
@@ -17,11 +17,13 @@
   "allowMostlyStandardPackageNames": false,
   "approvedPackagesPolicy": {
     "reviewCategories": [
-      "production", 
-      "tools",      
-      "prototypes" 
+      "production",
+      "tools",
+      "prototypes"
     ],
-     "ignoredNpmScopes": ["@types"]
+    "ignoredNpmScopes": [
+      "@types"
+    ]
   },
   "gitPolicy": {
     "allowedEmailRegExps": [
@@ -29,31 +31,24 @@
     ],
     "sampleEmail": "mrexample@gmail.com",
     "versionBumpCommitMessage": "Bump versions [skip ci]",
-"changeLogUpdateCommitMessage": "Update changelogs [skip ci]"
+    "changeLogUpdateCommitMessage": "Update changelogs [skip ci]"
   },
-
   "repository": {
     "url": "https://github.com/hxtree/monorepo",
-
     "defaultBranch": "master",
-"defaultRemote": "origin"
+    "defaultRemote": "origin"
   },
   "eventHooks": {
     "preRushInstall": [
-       "common/scripts/pre-rush-install.js"
+      "common/scripts/pre-rush-install.js"
     ],
-
     "postRushInstall": [],
     "preRushBuild": [],
     "postRushBuild": []
   },
-
-  "variants": [
-
-  ],
-
+  "variants": [],
   "telemetryEnabled": false,
- "hotfixChangeEnabled": false,
+  "hotfixChangeEnabled": false,
   "projects": [
     {
       "packageName": "helloworld",
