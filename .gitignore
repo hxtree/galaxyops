@@ -1,5 +1,9 @@
+.aws/**
+!.aws/*.dist
+
 node_modules/*
 
 .pnpm-store/
 common/temp/
 **/.rush/temp/
+

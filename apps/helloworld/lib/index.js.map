@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":";AAAA,IAAI,OAAO,GAAW,eAAe,CAAC;AACtC,OAAO,CAAC,GAAG,CAAC,OAAO,CAAC,CAAC","sourcesContent":["let message: string = 'Hello, World!';\nconsole.log(message);"]}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":";;AAAA,kBAAe,EAAE,CAAC","sourcesContent":["export default {};\n"]}

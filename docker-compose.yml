@@ -8,3 +8,4 @@ services:
             target: development
         volumes:
             - .:/usr/src/app
+            - .aws:/home/node/.aws

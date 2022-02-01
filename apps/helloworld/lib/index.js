@@ -1,4 +1,4 @@
 "use strict";
-let message = 'Hello, World!';
-console.log(message);
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {};
 //# sourceMappingURL=index.js.map

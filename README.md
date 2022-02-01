@@ -22,6 +22,11 @@ cd apps/helloworld
 rushx test
 ```
 
+# Setting up Deployment
+```
+aws configure
+```
+
 # Architectural Assumptions
 
 * Picked monorepo as apps will be primarly Truescript serverless microservices.
@@ -33,8 +38,11 @@ rushx test
 
 Thinking about:
 https://nestjs.com/
-
+https://seed.run/docs/adding-a-cdk-app.html
+https://github.com/serverless-stack/serverless-stack
+https://docs.serverless-stack.com/live-lambda-development
 
 Additional Docs:
 https://docs.aws.amazon.com/cdk/v2/guide/cli.html
 https://rushjs.io/
+https://docs.aws.amazon.com/cdk/v2/guide/cli.html
