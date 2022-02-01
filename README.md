@@ -8,9 +8,11 @@ rush update --recheck
 
 # How to add a new package
 ```
+rush add -p typescript --dev
 rush add -p @rushstack/heft-jest-plugin --dev
 rush add -p @rushstack/heft --dev
 rush add -p @types/node --dev
+rush add -p aws-cdk
 rush update
 ```
 
@@ -31,3 +33,8 @@ rushx test
 
 Thinking about:
 https://nestjs.com/
+
+
+Additional Docs:
+https://docs.aws.amazon.com/cdk/v2/guide/cli.html
+https://rushjs.io/
