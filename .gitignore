@@ -1,3 +1,6 @@
+# Docker
+docker-compose.override.yml.dist
+
 # AWS CLI
 .aws/**
 !.aws/*.dist
