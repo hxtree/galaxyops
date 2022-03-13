@@ -51,5 +51,11 @@ App specific
 
 ## Considering
 
+Documentation standard:
+https://github.com/microsoft/tsdoc
+
+Documentation generation:
+https://github.com/TypeStrong/typedoc
+
 Contracts for interdependent apps, possibly https://nestjs.com/ .
 Some form of application app templating package.
