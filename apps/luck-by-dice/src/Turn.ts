@@ -24,6 +24,11 @@ export class Turn implements ITurn
     private _luck: ILuck;
     private _extraBonus: number; //surplusBonus;
 
+    /**
+     * Constructor
+     * @param notation 
+     * @param luck 
+     */
     public constructor(
         notation: string | undefined,
         luck: number | undefined
@@ -68,6 +73,10 @@ export class Turn implements ITurn
         this._cup = cup;
     }
 
+    /**
+     * Get min potential of turn
+     * @returns 
+     */
     public minPotential(): number
     {
         let total = 0;
@@ -77,6 +86,10 @@ export class Turn implements ITurn
         return total;
     }
 
+    /**
+     * Get maximum potential of turn
+     * @returns 
+     */
     public maxPotential(): number
     {
         let total = 0;
@@ -100,6 +113,10 @@ export class Turn implements ITurn
         return this._extraBonus;
     }
 
+    /**
+     * Roll cup of dice 
+     * @returns 
+     */
     public roll(): number
     {
         const value = this._cup.roll();

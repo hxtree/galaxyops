@@ -24,7 +24,11 @@
       "./node_modules/@types"
     ]
   },
-  "sourceMap": false,
+  "typedocOptions": {
+    "entryPoints": ["src/index.ts"],
+    "out": "docs"
+  },
+  "sourceMap": true,
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx"

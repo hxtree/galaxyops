@@ -28,6 +28,7 @@ App specific
 * `rush add -p @package/a` add a package to a repo
 * `rush add -p @rushstack/heft --make-consistent` make package version consistant across monorepo
 * `rushx test`      test a package within directory
+* `typedoc --tsconfig tsconfig.json` generate type docs
 
 ## Third Party Documentation
 
@@ -53,6 +54,7 @@ App specific
 
 ## Considering
 
+Add commands to rush
 Codacy.
 
 Documentation standard:

@@ -31,6 +31,10 @@
       "allowedCategories": [ "heft" ]
     },
     {
+      "name": "@microsoft/tsdoc",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "@org-heft/heft-jest-plugin",
       "allowedCategories": [ "heft" ]
     },
@@ -51,6 +55,14 @@
       "allowedCategories": [ "heft" ]
     },
     {
+      "name": "@typescript-eslint/eslint-plugin",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "allowedCategories": [ "apps" ]
+    },
+    {
       "name": "aws-cdk",
       "allowedCategories": [ "apps" ]
     },
@@ -64,7 +76,7 @@
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": [ "apps", "heft" ]
     },
     {
       "name": "eslint-plugin-disable",
@@ -77,6 +89,10 @@
     {
       "name": "eslint-plugin-playwright",
       "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "eslint-plugin-tsdoc",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "jest",
@@ -128,6 +144,10 @@
     },
     {
       "name": "ts-node",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "typedoc",
       "allowedCategories": [ "apps" ]
     },
     {

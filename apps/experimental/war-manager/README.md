@@ -1,4 +1,6 @@
-# war-manager
+# @org-apps/war-manager
+
+WIP Placeholder
 
 Wait, Action, Recovery Manager
 
