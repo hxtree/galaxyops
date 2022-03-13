@@ -1,7 +1,16 @@
+# AWS CLI
 .aws/**
 !.aws/*.dist
 
+# AWS CDK
+**/cdk.out/*
+
+# Packages
 node_modules/*
+**/node_modules/*
+
+# Logs
+*.log
 
 .pnpm-store/
 common/temp/
