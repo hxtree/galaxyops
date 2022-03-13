@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>LuckByDice</h1>
+<h2>Rolling <span id="notationDisplay">10d12</span>...</h2>
+<div>
+    <form>
+        <label for="notation"l>Notation</label>
+        <input id="notation" type="text" name="notation" value="10d10"/>
+        <label for="luck"l>Luck</label>
+        <input id="luck" type="number" name="luck" value="0" min="0" max="2500"/>
+        <label for="iterations"l>Iterations</label>
+        <input id="iterations" type="number" name="iterations" value="30" min="1" max="10000"/>
+        <label for="interval"l>Interval</label>
+        <input id="interval" type="number" name="interval" value="5" min="5" max="10000"/>
+    </form>
+    <canvas id="turncanvas"></canvas>
+</div>
+
+<script>
+    var notation = "1d20";
+    var luck = 0;
+    var iterations = 2000;
+    var interval = 5000;
+
+    var turnId = 1;
+    var chartLive = document.getElementById("turncanvas");
+    var turnChart = new Chart(chartLive, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [
+                {
+                    data: [],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(102, 162, 41)',
+                    borderColor: 'rgb(102, 162, 41)',
+                    label: 'Total',
+                },
+                {
+                    data: [],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(21, 110, 182)',
+                    borderColor: 'rgb(21, 110, 182)',
+                    label: 'Min',
+                },
+                {
+                    data: [],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(224, 74, 6)',
+                    borderColor: 'rgb(224, 74, 6)',
+                    label: 'Max',
+                },
+                {
+                    data: [],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(253, 199, 67)',
+                    borderColor: 'rgb(253, 199, 67)',
+                    label: 'Luck',
+                },
+                {
+                    data: [],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(231, 208, 176)',
+                    borderColor: 'rgb(231, 208, 176)',
+                    label: 'Bonus',
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: "Chart.js - Dynamically Update Chart Via Ajax Requests",
+            },
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+
+    var getData = function() {
+        interval = $('#interval').val();
+        notation = $('#notation').val();
+        luck = $('#luck').val();
+        iterations = $('#iterations').val();
+
+        $.ajax({
+            type: 'POST',
+            data: {
+                "notation": notation,
+                "luck": luck,
+                "iterations": iterations
+            },
+            dataType: 'json',
+            url: 'index.php',
+            success: function(turn) {
+                for(let i = 0; i < turn.data.length; i++){
+                    turnChart.data.labels.push(turnId);
+                    turnChart.data.datasets[0].data.push(turn.data[i].total);
+                    turnChart.data.datasets[1].data.push(turn.data[i].min);
+                    turnChart.data.datasets[2].data.push(turn.data[i].max);
+                    turnChart.data.datasets[3].data.push(turn.data[i].luck);
+                    turnChart.data.datasets[4].data.push(turn.data[i].bonus);
+                    luck = turn.data[i].luck;
+
+                    turnId++;
+                }
+
+                $('#luck').val(luck);
+                $('#notationDisplay').text(notation);
+
+                turnChart.update();
+            }
+        });
+    };
+
+    setInterval(getData, interval);
+</script>
+</body>
+</html>

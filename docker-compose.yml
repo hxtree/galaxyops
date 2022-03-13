@@ -1,11 +1,12 @@
 version: '3.8'
 services:
-    monorepo:
-        container_name: monorepo
+    cdk-monorepo:
         build:
             context: .
             dockerfile: Dockerfile
             target: development
+        container_name: cdk-monorepo
+        tty: true
+        stdin_open: true
         volumes:
             - .:/usr/src/app
-            - .aws:/home/node/.aws

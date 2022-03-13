@@ -1,15 +1,15 @@
 {
-	"name": "monorepo",
-    "dockerComposeFile": [
+	"name": "cdk-monorepo",
+        "dockerComposeFile": [
 		"../docker-compose.yml",
 		"docker-compose.yml"
 	],
-	"service": "monorepo",
+	"service": "cdk-monorepo",
 	"settings": {},
 	"extensions": [
 		"dbaeumer.vscode-eslint"
 	],
 	"workspaceFolder": "/usr/src/app",
-	"postCreateCommand": "yarn install",
-	"remoteUser": "node"
+	"postCreateCommand": "",
+	"remoteUser": "ubuntu"
 }

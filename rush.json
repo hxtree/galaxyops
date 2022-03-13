@@ -1,63 +1,41 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
-  "rushVersion": "5.58.0",
-  "pnpmVersion": "6.7.1",
-  "pnpmOptions": {
-    "pnpmStore": "local",
-    "strictPeerDependencies": true,
-    "preventManualShrinkwrapChanges": true,
-    "useWorkspaces": true
-  },
-  "nodeSupportedVersionRange": ">=16.13.1",
-  "suppressNodeLtsWarning": false,
-  "ensureConsistentVersions": true,
-  "projectFolderMinDepth": 2,
-  "projectFolderMaxDepth": 2,
-  "allowMostlyStandardPackageNames": false,
-  "approvedPackagesPolicy": {
-    "reviewCategories": [
-      "production",
-      "tools",
-      "prototypes"
-    ],
-    "ignoredNpmScopes": [
-      "@types"
-    ]
-  },
-  "gitPolicy": {
-    "allowedEmailRegExps": [
-      "[^@]+@gmail\\.com"
-    ],
-    "sampleEmail": "mrexample@gmail.com",
-    "versionBumpCommitMessage": "Bump versions [skip ci]",
-    "changeLogUpdateCommitMessage": "Update changelogs [skip ci]"
-  },
-  "repository": {
-    "url": "https://github.com/hxtree/monorepo",
-    "defaultBranch": "master",
-    "defaultRemote": "origin"
-  },
-  "eventHooks": {
-    "preRushInstall": [
-      "common/scripts/pre-rush-install.js"
-    ],
-    "postRushInstall": [],
-    "preRushBuild": [],
-    "postRushBuild": []
-  },
-  "variants": [],
-  "telemetryEnabled": false,
-  "hotfixChangeEnabled": false,
-  "projects": [
-    {
-      "packageName": "helloworld",
-      "projectFolder": "apps/helloworld",
-      "reviewCategory": "production"
+    "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+    "rushVersion": "5.59.2",
+    "pnpmVersion": "6.23.5",
+    "pnpmOptions": {
+        "strictPeerDependencies": false,
+        "preventManualShrinkwrapChanges": true,
+        "useWorkspaces": true
     },
-    {
-      "packageName": "base-node-rig",
-      "projectFolder": "rigs/base-node-rig",
-      "reviewCategory": "production"
-    }
-  ]
+    "nodeSupportedVersionRange": ">=14.17.0",
+    "ensureConsistentVersions": true,
+    "projectFolderMinDepth": 2,
+    "projectFolderMaxDepth": 3,
+    "approvedPackagesPolicy": {
+        "reviewCategories": [
+            "apps",
+            "libraries",
+            "heft"        ],
+        "ignoredNpmScopes": ["@types"]
+    },
+
+    "repository": {
+        "url": "https://github.com/oucsoft/cdk-monorepo",
+        "defaultBranch": "main",
+        "defaultRemote": "origin"
+    },
+    "eventHooks": {
+        "preRushInstall": ["common/scripts/pre-rush-install/pre-rush-install.sh"],
+        "postRushInstall": [],
+        "preRushBuild": [],
+        "postRushBuild": []
+    },
+    "projects": [
+        {
+            "packageName": "@org-apps/luck-by-dice",
+            "projectFolder": "apps/luck-by-dice",
+            "reviewCategory": "apps",
+            "cyclicDependencyProjects": []
+        }
+    ]
 }

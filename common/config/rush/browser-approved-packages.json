@@ -3,36 +3,136 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@anatine/esbuild-decorators",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "@aws-cdk/lambda",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "@jest/core",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "@jest/reporters",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "@jest/transform",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "@jest/types",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "@microsoft/api-extractor",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "@org-heft/heft-jest-plugin",
+      "allowedCategories": [ "heft" ]
+    },
+    {
       "name": "@rushstack/eslint-config",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "heft" ]
     },
     {
       "name": "@rushstack/heft",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "heft" ]
     },
     {
-      "name": "@rushstack/heft-jest-plugin",
-      "allowedCategories": [ "production" ]
+      "name": "@rushstack/heft-config-file",
+      "allowedCategories": [ "heft" ]
     },
     {
-      "name": "@rushstack/heft-node-rig",
-      "allowedCategories": [ "production" ]
+      "name": "@rushstack/node-core-library",
+      "allowedCategories": [ "heft" ]
     },
     {
       "name": "aws-cdk",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "aws-cdk-lib",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "constructs",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "eslint-plugin-disable",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "eslint-plugin-jest",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "eslint-plugin-playwright",
+      "allowedCategories": [ "heft" ]
     },
     {
       "name": "jest",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "jest-config",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "jest-environment-node",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "jest-extended",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "jest-mock-extended",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "jest-resolve",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "jest-snapshot",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "jest-watch-select-projects",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "lodash",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "prettier",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "reflect-metadata",
+      "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "ts-jest",
+      "allowedCategories": [ "apps" ]
+    },
+    {
+      "name": "ts-node",
+      "allowedCategories": [ "apps" ]
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "apps", "heft" ]
     }
   ]
 }

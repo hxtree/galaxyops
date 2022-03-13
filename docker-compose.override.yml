@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  cdk-monorepo:
+    build:
+      context: .
+      args:
+          USER: ubuntu
+          UID: 1000
+    environment:
+      - STAGE=luna
+      - AWS_CONFIGURE_SSO_DEFAULT_SSO_START_URL=https://ouxsoft.awsapps.com/start
+      - AWS_CONFIGURE_SSO_DEFAULT_SSO_REGION=us-east-2
+      - AWS_SDK_LOAD_CONFIG=1
+    volumes:
+      - .aws:/home/ubuntu/.aws
