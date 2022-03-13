@@ -3,6 +3,7 @@
 Work in progress.
 
 A monorepo for deploying AWS apps.
+
 ## Useful commands
 
 Global
@@ -38,18 +39,21 @@ App specific
 
 ## Architectural Assumptions
 
-* Selected AWS exclusively for cloud provider vs cloud agnostic. Project assumes it will fail before AWS and vendor allows leveraging undifferentiated servers.
+* Selected AWS exclusively for cloud provider vs cloud agnostic. Project assumes it will fail before AWS and vendor allows leveraging numerous undifferentiated services.
 * Selected monorepo instead of polyrepo as apps will be mostly serverless microservices.
-* Selected Microsoft backed Rush for monorepo management over Nx, Lerna, etc.  
-* Selected Microsoft Rushstack for high level project layout.
-* Selected Microsoft backed Typescript for javascript based microservices.
-* Selected PNPM over Yarn and NPM. Yarn workspaces are not supported in Rush. Micosoft purchased NPM, but it remains infamous.
-* Selected Rush Heft to build Typescript projects because it was accompanied Rush.
-* Selected heft node rig as many projects will have same configuraiton
-* Selected AWS CDK instead of [Serverless Framework](https://github.com/serverless-stack/serverless-stack). SST is an unecessary and incomplete abstraction layer. SST live lambda development starts an endpoint utilizing their website. Question reliance on paid service and SST kickback.
-* Selected AWS SSO for authentication over hard coded credentials.
+* Selected Microsoft backed Rush over Nx, Lerna, etc. for monorepo management.  
+* Selected Javascript as base language for microservices due to its performance and omnipresence.
+* Selected Microsoft backed Typescript compiling Javascript due to typehinting, maintenance, and readability.  
+* Selected Microsoft Rushstack for monorepo project structure.
+* Selected PNPM for Javascript package manager over Yarn and NPM. Yarn workspaces are not supported in Rush. Micosoft purchased NPM, but it remains infamous. PNPM uses symlinks.
+* Selected Rush Heft to build Typescript projects because it accompanies Rush.
+* Selected Heft Node Rig as many projects will have same configuration.
+* Selected AWS CDK instead of [Serverless Framework](https://github.com/serverless-stack/serverless-stack). When it comes down to it, SST is an unecessary and incomplete abstraction layer. SST live lambda development works using serverless website. Question need for coupling reliance. And SST future plans and kickback.
+* Selected AWS SSO for authentication over hard coded credentials for easy of maintenance and security.
 
 ## Considering
+
+Codacy.
 
 Documentation standard:
 https://github.com/microsoft/tsdoc
