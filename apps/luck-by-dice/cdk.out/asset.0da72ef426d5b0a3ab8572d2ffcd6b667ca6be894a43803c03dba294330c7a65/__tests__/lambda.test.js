@@ -1,9 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-test('Lambda returns success', async () => {
-    const event = {};
-    // const result = await LambdaHandler(event);
-    // expect(result.statusCode).toBe(200);
-    expect(1).toBe(1);
-});
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGFtYmRhLnRlc3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvX190ZXN0c19fL2xhbWJkYS50ZXN0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBRUEsSUFBSSxDQUFDLHdCQUF3QixFQUFFLEtBQUssSUFBSSxFQUFFO0lBQ3RDLE1BQU0sS0FBSyxHQUFHLEVBQTBCLENBQUM7SUFDekMsNkNBQTZDO0lBQzdDLHVDQUF1QztJQUN2QyxNQUFNLENBQUMsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQyxDQUFDO0FBQ3RCLENBQUMsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtBUElHYXRld2F5UHJveHlFdmVudH0gZnJvbSAnYXdzLWxhbWJkYSc7XG5cbnRlc3QoJ0xhbWJkYSByZXR1cm5zIHN1Y2Nlc3MnLCBhc3luYyAoKSA9PiB7XG4gICAgY29uc3QgZXZlbnQgPSB7fSBhcyBBUElHYXRld2F5UHJveHlFdmVudDtcbiAgICAvLyBjb25zdCByZXN1bHQgPSBhd2FpdCBMYW1iZGFIYW5kbGVyKGV2ZW50KTtcbiAgICAvLyBleHBlY3QocmVzdWx0LnN0YXR1c0NvZGUpLnRvQmUoMjAwKTtcbiAgICBleHBlY3QoMSkudG9CZSgxKTtcbn0pO1xuIl19
