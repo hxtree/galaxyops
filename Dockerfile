@@ -25,9 +25,11 @@ RUN apt-get update && \
     # install AWS CDK globally
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
     npm install --global aws-cdk && \
-    # TODO should typescript go here? as we're using rush
+    # install typescript globally (perhaps this should be moved for rush's package)
     npm install --global typescript && \
-    # install AWS Organization Formation
+    # install typescript globally (perhaps this could be moved to local)
+    npm install --global typedocs && \
+        # install AWS Organization Formation
     # https://github.com/org-formation/org-formation-cli
     npm install --global aws-organization-formation && \
     # install AWS Command Line Interface

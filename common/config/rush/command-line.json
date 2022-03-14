@@ -5,12 +5,24 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/command-line.schema.json",
 
-  /**
-   * Custom "commands" introduce new verbs for the command-line.  To see the help for these
-   * example commands, try "rush --help", "rush my-bulk-command --help", or
-   * "rush my-global-command --help".
-   */
   "commands": [
+    {
+      "name": "docs",
+      "commandKind": "bulk",
+      "summary": "Generates documents for each repo source.",
+      "description": "Generates documents for each apps source using source code.",
+      "enableParallelism": true,
+      "ignoreMissingScript": false,
+      "ignoreDependencyOrder": false,
+      "allowWarningsInSuccessfulBuild": true
+    },
+    {
+      "name": "sso",
+      "commandKind": "global",
+      "summary": "Authenticate using AWS SSO.",
+      "shellCommand": "common/scripts/aws-sso/sso.sh",
+      "safeForSimultaneousRushProcesses": true
+    }
     // {
     //   /**
     //    * (Required) Determines the type of custom command.

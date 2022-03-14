@@ -10,7 +10,12 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk", 
-    "lint": "eslint -f unix \"src/**/*.{ts,tsx}\""
+    "lint": "eslint -f unix \"src/**/*.{ts,tsx}\"",
+    "docs": "typedoc --entryPointStrategy expand ./src",
+    "deploy": "cdk deploy",
+    "diff": "cdk diff",
+    "synth": "cdk synth",
+    "bootsrap": "cdk bootstrap"
   },
   "devDependencies": {
     "aws-cdk": "2.15.0",
