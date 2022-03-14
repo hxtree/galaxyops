@@ -131,7 +131,7 @@ export class Collection implements ICollection {
                 throw new RangeError('A bonus cannot only be applied to a rolled dice.');
             }
 
-            const bonus = dice[index].max - dice[index].value!;
+            const bonus = dice[index].max - (dice[index].value ?? 0);
 
             dice[index].bonus = bonus;
 
@@ -185,7 +185,10 @@ export class Collection implements ICollection {
     }
 
     public get outcomePercent(): number {
-        return (this.value! - this.count()) / (this.maxOutcome - this.count());
+        if(this.value === undefined){
+            throw new Error('Dice must be rolled before an outcome percent can be computed')
+        }
+        return (this.value - this.count()) / (this.maxOutcome - this.count());
     }
 
     public count(): number {
@@ -200,7 +203,7 @@ export class Collection implements ICollection {
         return this.total;
     }
 
-    private _shuffle(array: Array<Dice>) {
+    private _shuffle(array: Array<Dice>): Array<Dice>{
         let currentIndex = array.length,
             randomIndex;
         while (currentIndex !== 0) {

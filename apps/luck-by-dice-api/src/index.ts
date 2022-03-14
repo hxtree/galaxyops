@@ -8,8 +8,9 @@ import {Turn} from './Turn';
 
 export type ProxyHandler = Handler<APIGatewayProxyEventV2, APIGatewayProxyResultV2>
 
-export const handler : ProxyHandler = async (event, context) => {
+export const handler: ProxyHandler = async (event, context?) => {
   console.log("request:", JSON.stringify(event, undefined, 2));
+  console.log("context:", JSON.stringify(context, undefined, 2));
   if(event.queryStringParameters === null){
         return {
             statusCode: 200,

@@ -14,6 +14,19 @@ import {
 } from './NotationCodec';
 
 export interface ITurn {
+     get notation(): string;
+     set notation(value: string);
+     get luck(): ILuck;
+     set luck(luck: ILuck);
+     get cup(): ICup;
+     set cup(cup: ICup);
+     minPotential(): number;
+     maxPotential(): number;
+     get total(): number;
+     get extraBonus(): number;
+     roll(): number;
+
+
 
 }
 
@@ -26,8 +39,8 @@ export class Turn implements ITurn
 
     /**
      * Constructor
-     * @param notation 
-     * @param luck 
+     * @param notation - dice notation to be used for turn 
+     * @param luck - inital value of luck
      */
     public constructor(
         notation: string | undefined,

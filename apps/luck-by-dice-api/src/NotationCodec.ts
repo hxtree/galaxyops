@@ -41,7 +41,7 @@ export class NotationCodec {
 
     /**
      * Encode from a cup to a string
-     * @param cup
+     * @param cup - the cup to encode
      * @returns
      */
     public encodeCup(cup: ICup): string {
@@ -63,7 +63,7 @@ export class NotationCodec {
 
     /**
      * Encode from a collection to a string
-     * @param collection
+     * @param collection - the collection to encode
      * @returns
      */
     public encodeCollection(collection: ICollection): string {
@@ -109,9 +109,9 @@ export class NotationCodec {
 
     /**
      * Decodes a dice cup notation
-     * @param notation 1d6+2*8,1d10,2d%
+     * @param notation - 1d6+2*8,1d10,2d%
      */
-    public decodeCup(notation: string) : ICup {
+    public decodeCup(notation: string): ICup {
         const expressionParts = notation.toLowerCase().split(this._separator);
         const cup = new Cup();
 
@@ -124,7 +124,7 @@ export class NotationCodec {
 
     /**
      * Decodes a dice collection notation
-     * @param notation 1d6+2*8
+     * @param notation - 1d6+2*8
      * @returns ICollection
      */
     public decodeCollection(notation: string): ICollection {
@@ -170,7 +170,7 @@ export class NotationCodec {
 
     /**
      * Determine whether string is empty or not
-     * @param string
+     * @param string - the string to check
      * @returns
      */
     private _isEmpty(string: string): boolean {

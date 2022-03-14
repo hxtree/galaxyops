@@ -32,8 +32,8 @@
     },
     "projects": [
         {
-            "packageName": "@org-apps/luck-by-dice",
-            "projectFolder": "apps/luck-by-dice",
+            "packageName": "@org-apps/luck-by-dice-api",
+            "projectFolder": "apps/luck-by-dice-api",
             "reviewCategory": "apps",
             "cyclicDependencyProjects": []
         }

@@ -18,7 +18,9 @@ RUN apt-get update && \
     # https://linuxize.com/post/how-to-install-node-js-on-ubuntu-20-04/    
     curl --silent --location https://deb.nodesource.com/setup_14.x | bash - && \
     apt-get update && \
-    apt-get install -y nodejs npm && \
+    apt-get install -y \
+    nodejs \
+    npm && \
     # install Microsoft Rush globally
     # https://rushjs.io/
     npm install --global @microsoft/rush && \
@@ -29,7 +31,7 @@ RUN apt-get update && \
     npm install --global typescript && \
     # install typescript globally (perhaps this could be moved to local)
     npm install --global typedocs && \
-        # install AWS Organization Formation
+    # install AWS Organization Formation
     # https://github.com/org-formation/org-formation-cli
     npm install --global aws-organization-formation && \
     # install AWS Command Line Interface
@@ -77,13 +79,6 @@ RUN python3 -m pip install --user pipx && \
     python3 -m pipx install aws-sso-credential-process && \
     python3 -m pipx install aws-export-credentials && \
     # install CloudFormations linter
-    python3 -m pipx install cfn-lint && \
-    # add AWS SSO cmd
-    echo 'sso(){' >> /home/$USER/.bashrc && \
-    echo ' unset AWS_PROFILE' >> /home/$USER/.bashrc && \
-    echo ' export AWS_PROFILE=$1' >> /home/$USER/.bashrc && \
-    echo ' aws sts get-caller-identity &> /dev/null || aws sso login || (unset AWS_PROFILE && aws-configure-sso-profile --profile $1)' >> /home/$USER/.bashrc && \
-    echo ' eval $(aws-export-credentials --env-export)' >> /home/$USER/.bashrc && \
-    echo '}' >> /home/$USER/.bashrc
-
+    python3 -m pipx install cfn-lint
+    
 SHELL ["/bin/bash", "-c"]

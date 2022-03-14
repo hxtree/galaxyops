@@ -11,6 +11,7 @@ A monorepo for deploying AWS apps.
 * `rush bootstrap`     bootstrap deploy for the first time
 * `rush build`         build projects
 * `rushx test`         test a package within directory
+* `rushx lint`         eslint static code analysis
 * `rush docs`          generate documents from code
 * `rush synth`         show synthesized CloudFormation template
 * `rush diff`          compare deployed stack with current state
@@ -27,6 +28,7 @@ Commands yet to be refined:
 * `npm run test`    perform the jest unit tests
 * `cdk deploy --hotswap` speed up dev deployment
 * `cdk watch`       hotsawp on changes
+* `cdk doctor`     Checks your CDK project for potential problems
 
 ## Third Party Documentation
 
@@ -53,6 +55,6 @@ Commands yet to be refined:
 
 ## Considering
 
-Code coverage and static analysis using codacy.
-Contracts for interdependent apps, possibly https://nestjs.com/ .
-Some form of application app templating package.
+* Code coverage and static analysis using codacy.
+* Contracts for interdependent apps, possibly https://nestjs.com/ .
+* Some form of application app templating package. cdk init,

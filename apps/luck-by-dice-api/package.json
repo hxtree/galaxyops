@@ -1,5 +1,5 @@
 {
-  "name": "@org-apps/luck-by-dice",
+  "name": "@org-apps/luck-by-dice-api",
   "module": "commonjs",
   "version": "0.1.0",
   "bin": {
@@ -10,7 +10,7 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk", 
-    "lint": "eslint -f unix \"src/**/*.{ts,tsx}\"",
+    "lint": "eslint --config .eslintrc.js -f unix \"src/**/*.{ts,tsx}\"",
     "docs": "typedoc --entryPointStrategy expand ./src",
     "deploy": "cdk deploy",
     "diff": "cdk diff",
