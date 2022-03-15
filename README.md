@@ -1,5 +1,7 @@
 # cdk-monorepo (WIP)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8be079c5252e4f61a15c67a9c549f1d8)](https://app.codacy.com/gh/hxtree/monorepo?utm_source=github.com&utm_medium=referral&utm_content=hxtree/monorepo&utm_campaign=Badge_Grade_Settings)
+
 A monorepo for deploying AWS apps.
 
 ## Useful commands
