@@ -8,7 +8,6 @@ A monorepo for deploying AWS apps.
 
 * `rush` use to run a command in bulk or globally. 
 * `rushx` use to run a command relative to the app / current working directory.
-
 * `rush sso`           Authenticate to AWS SSO and set profile
 * `rush bootstrap`     bootstrap deploy for the first time
 * `rush build`         build projects
@@ -48,7 +47,7 @@ Commands yet to be refined:
 * **Monorepo**: Selected monorepo instead of polyrepo as apps will be mostly serverless microservices.
 * **Monorepo Manager**: Selected Microsoft backed Rush over Nx, Lerna, etc. for monorepo management.  
 * **Typescript**: Selected Javascript as base language for microservices due to its performance and omnipresence. Microsoft backed Typescript compiling is used for Javascript due to typehinting, maintenance, and readability.  
-* **Repo Structure**: Selected Microsoft Rushstack for monorepo project structure.
+* **Repo Structure**: Project folder structure mimics Microsoft Rushstack.
 * **Package Manager**: Selected PNPM for Javascript package manager over Yarn and NPM. Yarn workspaces are not supported in Rush. Micosoft purchased NPM, but it remains infamous. PNPM uses symlinks.
 * **Heft**: Selected Rush Heft to build Typescript projects because it accompanies Rush. Selected Heft Node Rig as many projects will have same configuration.
 * **AWS CDK**: Selected AWS CDK instead of [Serverless Framework](https://github.com/serverless-stack/serverless-stack). When it comes down to it, SST is an unecessary and incomplete abstraction layer. SST live lambda development works using serverless website. Question need for coupling reliance. And SST future plans and kickback.
@@ -57,6 +56,5 @@ Commands yet to be refined:
 
 ## Considering
 
-* Code coverage and static analysis using codacy.
 * Contracts for interdependent apps, possibly https://nestjs.com/ .
-* Some form of application app templating package. cdk init,
+* Codegen: yeoman-generator, plopjs, hygen, etc.
