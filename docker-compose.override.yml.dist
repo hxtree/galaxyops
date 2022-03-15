@@ -4,12 +4,8 @@ services:
       build:
         context: .
         args:
-            USER: ubuntu
+            USER: node
             UID: 1000
     environment:
-      - AWS_CONFIGURE_SSO_DEFAULT_SSO_START_URL=https://ouxsoft.awsapps.com/start
-      - AWS_CONFIGURE_SSO_DEFAULT_SSO_REGION=us-east-2
       - AWS_SDK_LOAD_CONFIG=1
       - STAGE=default
-    volumes:
-      - .aws:/home/ubuntu/.aws

@@ -2,7 +2,7 @@
 ################################################################################
 #                                     Base                                     #
 ################################################################################
-FROM ubuntu:focal AS base
+FROM node:14.18.3-buster as base
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
@@ -13,13 +13,9 @@ RUN apt-get update && \
     build-essential \
     curl \
     zip \
-    unzip && \
-    # install node:14.18.2
-    # https://linuxize.com/post/how-to-install-node-js-on-ubuntu-20-04/    
-    curl --silent --location https://deb.nodesource.com/setup_14.x | bash - && \
-    apt-get update && \
-    apt-get install -y \
-    nodejs \
+    unzip \
+    less \
+    jq \
     npm && \
     # install Microsoft Rush globally
     # https://rushjs.io/
@@ -49,11 +45,11 @@ WORKDIR /usr/src/app
 ################################################################################
 FROM base AS development
 ARG UID=1000
-ARG USER=ubuntu
+ARG USER=node
 
 RUN apt-get install -y sudo && \
     # create $USER, add to sudo group, remove need to use password
-    useradd -rm -s /bin/bash -g root -G sudo -u $UID $USER && \
+    usermod -aG sudo $USER && \
     passwd -d $USER && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
     chown -R $USER /usr/src/app && \
@@ -63,22 +59,8 @@ RUN apt-get install -y sudo && \
     mkdir -p /home/$USER/.rush && \
     chown -R $USER /home/$USER/.rush && \
     mkdir -p /usr/src/app/common/temp && \
-    chown -R $USER /usr/src/app/common/temp && \
-    # install requirements for pipx
-    apt-get install -y software-properties-common && \
-    add-apt-repository ppa:deadsnakes/nightly && \
-    apt-get update && \
-    apt-get install -y python3.8 python3-pip python3.8-venv vim git
+    chown -R $USER /usr/src/app/common/temp 
 
-# $USER based installations
 USER $USER
 
-RUN python3 -m pip install --user pipx && \
-    python3 -m pipx ensurepath && \
-    # install AWS SSO
-    python3 -m pipx install aws-sso-credential-process && \
-    python3 -m pipx install aws-export-credentials && \
-    # install CloudFormations linter
-    python3 -m pipx install cfn-lint
-    
 SHELL ["/bin/bash", "-c"]

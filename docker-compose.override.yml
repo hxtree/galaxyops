@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  cdk-monorepo:
+    environment:
+      - AWS_SDK_LOAD_CONFIG=1
+      - STAGE=default
+    volumes:
+     - .aws:/home/ubuntu/.aws

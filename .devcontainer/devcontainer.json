@@ -11,5 +11,5 @@
 	],
 	"workspaceFolder": "/usr/src/app",
 	"postCreateCommand": "",
-	"remoteUser": "ubuntu"
+	"remoteUser": "node"
 }

@@ -5,7 +5,7 @@ importers:
   .:
     specifiers: {}
 
-  ../../apps/luck-by-dice:
+  ../../apps/luck-by-dice-api:
     specifiers:
       '@microsoft/tsdoc': ~0.13.2
       '@types/aws-lambda': ~8.10.93

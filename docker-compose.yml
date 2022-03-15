@@ -10,3 +10,4 @@ services:
         stdin_open: true
         volumes:
             - .:/usr/src/app
+            - .aws:/home/node/.aws
