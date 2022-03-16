@@ -1,5 +1,6 @@
 # cdk-monorepo (WIP)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/monorepo/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hxtree/monorepo&amp;utm_campaign=Badge_Grade)
+[![Known Vulnerabilities](https://snyk.io/test/github/hxtree/monorepo/badge.svg)]
 
 
 A monorepo for deploying AWS apps.
