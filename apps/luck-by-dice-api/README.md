@@ -6,5 +6,5 @@ A microservice api for simulating luck based dice rolls from dice notaiton.
 
 ## Stacks
 
-* APIGateWay
+* APIGateway
 * Lambda
