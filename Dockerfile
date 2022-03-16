@@ -2,7 +2,7 @@
 ################################################################################
 #                                     Base                                     #
 ################################################################################
-FROM node:14.18.3-buster as base
+FROM node:fermium-buster as base
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
