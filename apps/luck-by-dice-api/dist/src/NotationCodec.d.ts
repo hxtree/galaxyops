@@ -20,13 +20,13 @@ export declare class NotationCodec {
     get cup(): string;
     /**
      * Encode from a cup to a string
-     * @param cup
+     * @param cup - the cup to encode
      * @returns
      */
     encodeCup(cup: ICup): string;
     /**
      * Encode from a collection to a string
-     * @param collection
+     * @param collection - the collection to encode
      * @returns
      */
     encodeCollection(collection: ICollection): string;
@@ -36,19 +36,19 @@ export declare class NotationCodec {
     encodeDice(dice: IDice): string;
     /**
      * Decodes a dice cup notation
-     * @param notation 1d6+2*8,1d10,2d%
+     * @param notation - 1d6+2*8,1d10,2d%
      */
     decodeCup(notation: string): ICup;
     /**
      * Decodes a dice collection notation
-     * @param notation 1d6+2*8
+     * @param notation - 1d6+2*8
      * @returns ICollection
      */
     decodeCollection(notation: string): ICollection;
     decodeDice(notation: string): IDice;
     /**
      * Determine whether string is empty or not
-     * @param string
+     * @param string - the string to check
      * @returns
      */
     private _isEmpty;

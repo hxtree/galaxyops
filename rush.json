@@ -36,6 +36,12 @@
             "projectFolder": "apps/luck-by-dice-api",
             "reviewCategory": "apps",
             "cyclicDependencyProjects": []
+        },
+        {
+            "packageName": "@org-apps/luck-by-dice-client",
+            "projectFolder": "apps/luck-by-dice-client",
+            "reviewCategory": "apps",
+            "cyclicDependencyProjects": []
         }
     ]
 }

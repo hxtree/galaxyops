@@ -3,6 +3,7 @@ import {
   APIGatewayProxyResultV2,
   Handler,
 } from 'aws-lambda';
+import { Cup } from './Cup';
 
 import {Turn} from './Turn';
 
@@ -34,11 +35,13 @@ export const handler: ProxyHandler = async (event, context?) => {
         },
         body: JSON.stringify({
             message: 'Success',
-            roll: turn.roll(),
-            notation: turn.notation,
-            luck: turn.luck,
-            cup: turn.cup,
-            // input: event.queryStringParameters
+            data: {
+                total: turn.roll(),
+                luck: turn.luck.value,
+                min: turn.minPotential(),
+                max: turn.maxPotential(),
+                bonus: turn.extraBonus
+            }
         })
     };
 };

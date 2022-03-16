@@ -5,17 +5,17 @@ A monorepo for deploying AWS apps.
 
 ## Useful commands
 
-* `rush` use to run a command in bulk or globally. 
-* `rushx` use to run a command relative to the app / current working directory.
+Use `rush` to run a command in bulk or globally. Use `rushx` to run a command relative to the current working directory's app.
+
 * `rush sso`           Authenticate to AWS SSO and set profile
-* `rush bootstrap`     bootstrap deploy for the first time
-* `rush build`         build projects
+* `rushx bootstrap`     bootstrap deploy for the first time
+* `rushx build`         build projects
 * `rushx test`         test a package within directory
 * `rushx lint`         eslint static code analysis
-* `rush docs`          generate documents from code
-* `rush synth`         show synthesized CloudFormation template
-* `rush diff`          compare deployed stack with current state
-* `rush deploy`        deploy apps using AWS CDK
+* `rushx docs`          generate documents from code
+* `rushx synth`         show synthesized CloudFormation template
+* `rushx diff`          compare deployed stack with current state
+* `rushx deploy`        deploy apps using AWS CDK
 * `rush purge`         purge packages
 * `rush update`        update workspace files
 * `rush update --full` full update of workspace files
@@ -23,9 +23,7 @@ A monorepo for deploying AWS apps.
 * `rush add -p @rushstack/heft --make-consistent` make package version consistant across monorepo
 
 Commands yet to be refined:
-* `npm run build`   compile typescript to js
 * `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
 * `cdk deploy --hotswap` speed up dev deployment
 * `cdk watch`       hotsawp on changes
 * `cdk doctor`     Checks your CDK project for potential problems
