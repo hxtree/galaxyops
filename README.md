@@ -22,7 +22,7 @@ Use `rush` to run a command in bulk or globally. Use `rushx` to run a command re
 * `rush add -p @package/a` add a new package to app
 * `rush add -p @rushstack/heft --make-consistent` make package version consistant across monorepo
 
-Commands yet to be refined:
+(Commands yet to be refined:)
 * `npm run watch`   watch for changes and compile
 * `cdk deploy --hotswap` speed up dev deployment
 * `cdk watch`       hotsawp on changes
@@ -31,10 +31,10 @@ Commands yet to be refined:
 ## Third Party Documentation
 
 * https://docs.aws.amazon.com/cdk/v2/guide/cli.html
+* https://www.typescriptlang.org/docs/
+* https://jestjs.io/ 
 * https://rushjs.io/
 * https://github.com/microsoft/rushstack
-* https://jestjs.io/ 
-* https://www.typescriptlang.org/docs/
 * https://github.com/microsoft/tsdoc
 * https://github.com/TypeStrong/typedoc
 
@@ -50,6 +50,7 @@ Commands yet to be refined:
 * **AWS CDK**: Selected AWS CDK instead of [Serverless Framework](https://github.com/serverless-stack/serverless-stack). When it comes down to it, SST is an unecessary and incomplete abstraction layer. SST live lambda development works using serverless website. Question need for coupling reliance. And SST future plans and kickback.
 * **AWS SSO**: Selected AWS SSO for authentication over hard coded credentials for easy of maintenance and security.
 * **Documentation**: Selected tsdoc as a standard for writing documentation and typedoc to compile documentation as code.
+* **Deployments**: `rush deploy` copies files from projects to a deployment folder including applicable dependencies. This is intentially not used. Instead apps deploy themselves using CDK stacks via `rushx deploy`.
 
 ## Considering
 

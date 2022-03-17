@@ -14,8 +14,8 @@
     {
       "name": "sso",
       "commandKind": "global",
-      "summary": "Authenticate using AWS SSO.",
-      "shellCommand": "common/scripts/aws-sso/sso.sh",
+      "summary": "AWS SSO Authentication",
+      "shellCommand": "common/scripts/aws-sso/aws-sso-login.sh",
       "safeForSimultaneousRushProcesses": true
     }
   ],

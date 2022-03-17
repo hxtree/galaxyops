@@ -2,7 +2,9 @@
 import * as cdk from 'aws-cdk-lib';
 
 // instruct CDK deploy to build stack using App
-import {LuckByDiceStack} from '../stacks/LuckByDiceStack';
+import {LuckByDiceApiStack} from '../stacks/LuckByDiceApiStack';
 
 const app = new cdk.App();
-new LuckByDiceStack(app, 'LuckByDiceStack');
+
+// stack name in CloudFormation
+new LuckByDiceApiStack(app, 'LuckByDiceApiStack');

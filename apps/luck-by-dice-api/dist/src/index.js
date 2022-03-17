@@ -1,40 +1,14 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.handler = void 0;
-const Turn_1 = require("./Turn");
-const handler = async (event, context) => {
-    console.log("request:", JSON.stringify(event, undefined, 2));
-    console.log("context:", JSON.stringify(context, undefined, 2));
-    if (event.queryStringParameters === null) {
-        return {
-            statusCode: 200,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                message: 'notation and luck required'
-            })
-        };
-    }
-    const notation = event.queryStringParameters?.notation ?? 'd6';
-    const luck = Number(event.queryStringParameters?.luck) ?? 0;
-    const turn = new Turn_1.Turn(notation, luck);
-    return {
-        statusCode: 200,
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            message: 'Success',
-            data: {
-                total: turn.roll(),
-                luck: turn.luck.value,
-                min: turn.minPotential(),
-                max: turn.maxPotential(),
-                bonus: turn.extraBonus
-            }
-        })
-    };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-exports.handler = handler;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBT0EsaUNBQTRCO0FBSXJCLE1BQU0sT0FBTyxHQUFpQixLQUFLLEVBQUUsS0FBSyxFQUFFLE9BQVEsRUFBRSxFQUFFO0lBQzdELE9BQU8sQ0FBQyxHQUFHLENBQUMsVUFBVSxFQUFFLElBQUksQ0FBQyxTQUFTLENBQUMsS0FBSyxFQUFFLFNBQVMsRUFBRSxDQUFDLENBQUMsQ0FBQyxDQUFDO0lBQzdELE9BQU8sQ0FBQyxHQUFHLENBQUMsVUFBVSxFQUFFLElBQUksQ0FBQyxTQUFTLENBQUMsT0FBTyxFQUFFLFNBQVMsRUFBRSxDQUFDLENBQUMsQ0FBQyxDQUFDO0lBQy9ELElBQUcsS0FBSyxDQUFDLHFCQUFxQixLQUFLLElBQUksRUFBQztRQUNsQyxPQUFPO1lBQ0gsVUFBVSxFQUFFLEdBQUc7WUFDZixPQUFPLEVBQUU7Z0JBQ0wsY0FBYyxFQUFFLGtCQUFrQjthQUNyQztZQUNELElBQUksRUFBRSxJQUFJLENBQUMsU0FBUyxDQUFDO2dCQUNqQixPQUFPLEVBQUUsNEJBQTRCO2FBQ3hDLENBQUM7U0FDTCxDQUFDO0tBQ0w7SUFFRCxNQUFNLFFBQVEsR0FBRyxLQUFLLENBQUMscUJBQXFCLEVBQUUsUUFBUSxJQUFJLElBQUksQ0FBQztJQUMvRCxNQUFNLElBQUksR0FBRyxNQUFNLENBQUMsS0FBSyxDQUFDLHFCQUFxQixFQUFFLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUM1RCxNQUFNLElBQUksR0FBRyxJQUFJLFdBQUksQ0FBQyxRQUFRLEVBQUUsSUFBSSxDQUFDLENBQUM7SUFFdEMsT0FBTztRQUNILFVBQVUsRUFBRSxHQUFHO1FBQ2YsT0FBTyxFQUFFO1lBQ0wsY0FBYyxFQUFFLGtCQUFrQjtTQUNyQztRQUNELElBQUksRUFBRSxJQUFJLENBQUMsU0FBUyxDQUFDO1lBQ2pCLE9BQU8sRUFBRSxTQUFTO1lBQ2xCLElBQUksRUFBRTtnQkFDRixLQUFLLEVBQUUsSUFBSSxDQUFDLElBQUksRUFBRTtnQkFDbEIsSUFBSSxFQUFFLElBQUksQ0FBQyxJQUFJLENBQUMsS0FBSztnQkFDckIsR0FBRyxFQUFFLElBQUksQ0FBQyxZQUFZLEVBQUU7Z0JBQ3hCLEdBQUcsRUFBRSxJQUFJLENBQUMsWUFBWSxFQUFFO2dCQUN4QixLQUFLLEVBQUUsSUFBSSxDQUFDLFVBQVU7YUFDekI7U0FDSixDQUFDO0tBQ0wsQ0FBQztBQUNOLENBQUMsQ0FBQztBQW5DVyxRQUFBLE9BQU8sV0FtQ2xCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtcbiAgQVBJR2F0ZXdheVByb3h5RXZlbnRWMixcbiAgQVBJR2F0ZXdheVByb3h5UmVzdWx0VjIsXG4gIEhhbmRsZXIsXG59IGZyb20gJ2F3cy1sYW1iZGEnO1xuaW1wb3J0IHsgQ3VwIH0gZnJvbSAnLi9DdXAnO1xuXG5pbXBvcnQge1R1cm59IGZyb20gJy4vVHVybic7XG5cbmV4cG9ydCB0eXBlIFByb3h5SGFuZGxlciA9IEhhbmRsZXI8QVBJR2F0ZXdheVByb3h5RXZlbnRWMiwgQVBJR2F0ZXdheVByb3h5UmVzdWx0VjI+XG5cbmV4cG9ydCBjb25zdCBoYW5kbGVyOiBQcm94eUhhbmRsZXIgPSBhc3luYyAoZXZlbnQsIGNvbnRleHQ/KSA9PiB7XG4gIGNvbnNvbGUubG9nKFwicmVxdWVzdDpcIiwgSlNPTi5zdHJpbmdpZnkoZXZlbnQsIHVuZGVmaW5lZCwgMikpO1xuICBjb25zb2xlLmxvZyhcImNvbnRleHQ6XCIsIEpTT04uc3RyaW5naWZ5KGNvbnRleHQsIHVuZGVmaW5lZCwgMikpO1xuICBpZihldmVudC5xdWVyeVN0cmluZ1BhcmFtZXRlcnMgPT09IG51bGwpe1xuICAgICAgICByZXR1cm4ge1xuICAgICAgICAgICAgc3RhdHVzQ29kZTogMjAwLFxuICAgICAgICAgICAgaGVhZGVyczoge1xuICAgICAgICAgICAgICAgICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbidcbiAgICAgICAgICAgIH0sXG4gICAgICAgICAgICBib2R5OiBKU09OLnN0cmluZ2lmeSh7XG4gICAgICAgICAgICAgICAgbWVzc2FnZTogJ25vdGF0aW9uIGFuZCBsdWNrIHJlcXVpcmVkJ1xuICAgICAgICAgICAgfSlcbiAgICAgICAgfTtcbiAgICB9XG5cbiAgICBjb25zdCBub3RhdGlvbiA9IGV2ZW50LnF1ZXJ5U3RyaW5nUGFyYW1ldGVycz8ubm90YXRpb24gPz8gJ2Q2JztcbiAgICBjb25zdCBsdWNrID0gTnVtYmVyKGV2ZW50LnF1ZXJ5U3RyaW5nUGFyYW1ldGVycz8ubHVjaykgPz8gMDtcbiAgICBjb25zdCB0dXJuID0gbmV3IFR1cm4obm90YXRpb24sIGx1Y2spO1xuICAgIFxuICAgIHJldHVybiB7XG4gICAgICAgIHN0YXR1c0NvZGU6IDIwMCxcbiAgICAgICAgaGVhZGVyczoge1xuICAgICAgICAgICAgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJ1xuICAgICAgICB9LFxuICAgICAgICBib2R5OiBKU09OLnN0cmluZ2lmeSh7XG4gICAgICAgICAgICBtZXNzYWdlOiAnU3VjY2VzcycsXG4gICAgICAgICAgICBkYXRhOiB7XG4gICAgICAgICAgICAgICAgdG90YWw6IHR1cm4ucm9sbCgpLFxuICAgICAgICAgICAgICAgIGx1Y2s6IHR1cm4ubHVjay52YWx1ZSxcbiAgICAgICAgICAgICAgICBtaW46IHR1cm4ubWluUG90ZW50aWFsKCksXG4gICAgICAgICAgICAgICAgbWF4OiB0dXJuLm1heFBvdGVudGlhbCgpLFxuICAgICAgICAgICAgICAgIGJvbnVzOiB0dXJuLmV4dHJhQm9udXNcbiAgICAgICAgICAgIH1cbiAgICAgICAgfSlcbiAgICB9O1xufTsiXX0=
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./Handler"), exports);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0FBQUEsNENBQTBCIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnLi9IYW5kbGVyJzsiXX0=

@@ -2,7 +2,7 @@
 import * as cdk from 'aws-cdk-lib';
 
 // instruct CDK deploy to build stack using App
-import {MainStack} from '../stacks/MainStack';
+import {LuckByDiceClientStack} from '../stacks/LuckByDiceClientStack';
 
 const app = new cdk.App();
-new MainStack(app, 'MainStack');
+new LuckByDiceClientStack(app, 'LuckByDiceClientStack');

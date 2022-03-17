@@ -1,7 +1,7 @@
 {
   "name": "@org-apps/luck-by-dice-api",
   "module": "commonjs",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "bin": {
     "app": "/dist/bin/app.ts"
   },

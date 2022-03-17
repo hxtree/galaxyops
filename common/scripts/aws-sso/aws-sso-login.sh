@@ -11,10 +11,7 @@
 #
 # ./scripts/aws-sso-login.sh <PROFILE NAME>
 
-echo $@
-
 set -e
-AWS_PAGER=''
 
 main() {
   local profile="${2}" # assumes profiles setup in ~/.aws/config
@@ -33,9 +30,6 @@ main() {
 
   local cli_cache_dir cli_cache_file cache_file_contents
   cli_cache_dir="${HOME}/.aws/cli/cache"
-
-  # Clears existing CLI cache (note, not sso cache) files
-  #find "${cli_cache_dir}" -type f -name "*.json" -delete
 
   # Loads SSO token from SSO cache, retrieves creds and caches at ~/.aws/cli/cache
   echo "Retrieving & caching creds for: ${profile}..."
