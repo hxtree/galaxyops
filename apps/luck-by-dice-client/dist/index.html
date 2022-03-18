@@ -107,17 +107,15 @@
             dataType: 'json',
             url: $('#url').val(),
             success: function(turn) {
-                for(let i = 1; i =1; i++){
-                    turnChart.data.labels.push(turnId);
-                    turnChart.data.datasets[0].data.push(turn.data.total);
-                    turnChart.data.datasets[1].data.push(turn.data.min);
-                    turnChart.data.datasets[2].data.push(turn.data.max);
-                    turnChart.data.datasets[3].data.push(turn.data.luck);
-                    turnChart.data.datasets[4].data.push(turn.data.bonus);
-                    luck = turn.data[i].luck;
+                turnChart.data.labels.push(turnId);
+                turnChart.data.datasets[0].data.push(turn.data.total);
+                turnChart.data.datasets[1].data.push(turn.data.min);
+                turnChart.data.datasets[2].data.push(turn.data.max);
+                turnChart.data.datasets[3].data.push(turn.data.luck);
+                turnChart.data.datasets[4].data.push(turn.data.bonus);
+                luck = turn.data[i].luck;
 
-                    turnId++;
-                }
+                turnId++;
 
                 $('#luck').val(luck);
                 $('#notationDisplay').text(notation);

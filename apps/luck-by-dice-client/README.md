@@ -4,6 +4,8 @@
 
 A client for testing @org-apps/luck-by-dice-api.
 
+![Screenshot](docs/assets/screenshot.png)
+
 ## Stacks
 
 * CloudFront Distribution
