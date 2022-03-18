@@ -28,7 +28,7 @@ export const handler: ProxyHandler = async (event, context) => {
     const notation = event.queryStringParameters?.notation ?? 'd6';
     const luck = Number(event.queryStringParameters?.luck) ?? 0;
     const turn = new Turn(notation, luck);
-    
+
     return {
         statusCode: 200,
         headers: {

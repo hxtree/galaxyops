@@ -7,7 +7,12 @@
 	"service": "cdk-monorepo",
 	"settings": {},
 	"extensions": [
-		"dbaeumer.vscode-eslint"
+		"dbaeumer.vscode-eslint",
+		"folke.vscode-monorepo-workspace",
+		"foxundermoon.shell-format",
+		"GitHub.copilot",
+		"vivaxy.vscode-conventional-commits",
+		"yzhang.markdown-all-in-one"
 	],
 	"workspaceFolder": "/usr/src/app",
 	"postCreateCommand": "",
