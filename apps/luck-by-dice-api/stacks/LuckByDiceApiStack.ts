@@ -1,5 +1,5 @@
 import * as cdk from 'aws-cdk-lib';
-import * as apigw from 'aws-cdk-lib/aws-apigateway';
+import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 
 export class LuckByDiceApiStack extends cdk.Stack {
@@ -14,12 +14,22 @@ export class LuckByDiceApiStack extends cdk.Stack {
     });
 
     // API Gateway resource
-    new apigw.LambdaRestApi(this, 'Endpoint', {
+    new apigateway.LambdaRestApi(this, 'Endpoint', {
       handler: awsLambdaResource,
       defaultCorsPreflightOptions: {
-        allowOrigins: [ '*' ],
-        allowMethods: [ 'GET' ]
-      },
+        allowHeaders: [
+          'Content-Type',
+          'X-Amz-Date',
+          'Authorization',
+          'X-Api-Key',
+        ],
+        allowOrigins: apigateway.Cors.ALL_ORIGINS,
+        allowCredentials: true,
+        allowMethods: [  'GET', 'POST' ]
+      }
     });
+
+
+
   }
 }
