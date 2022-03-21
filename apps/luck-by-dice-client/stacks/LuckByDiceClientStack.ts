@@ -17,6 +17,7 @@ export class LuckByDiceClientStack extends cdk.Stack {
     bucket.grantRead(originAccessIdentity);
 
     // cloudfront distribution
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const distribution = new Distribution(this, 'Distribution', {
       defaultRootObject: 'index.html',
       defaultBehavior: {
@@ -26,7 +27,27 @@ export class LuckByDiceClientStack extends cdk.Stack {
       },
     });
 
+    import * as s3 from '@aws-cdk/aws-s3';
+
+const recordName = 'monitor';
+const domainName = 'ouxsoft.com';
+
+const bucketWebsite = new s3.Bucket(this, 'BucketWebsite', {
+  bucketName: [recordName, domainName].join('.'), // www.example.com
+  publicReadAccess: true,
+  websiteIndexDocument: 'index.html',
+});
+
+const zone = route53.HostedZone.fromLookup(this, 'Zone', {domainName}); // example.com
+
+new route53.ARecord(this, 'AliasRecord', {
+  zone,
+  recordName, // www
+  target: route53.RecordTarget.fromAlias(new targets.BucketWebsiteTarget(bucketWebsite)),
+});
+
     // bucket resource
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const awsBucketResource = new BucketDeployment(this, 'BucketDeployment', {
       destinationBucket: bucket,
       sources: [Source.asset('dist')]
