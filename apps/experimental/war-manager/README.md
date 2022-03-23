@@ -1,19 +1,27 @@
 # @org-apps/action-manager
 
 # Action
-Every action takes time. Each stage may be a different method depending on the action.
+Every action can be represented by the time it takes to peform various stages of the action.
+Although it's possble the time to perform an action is null, most user based action will take time to perform.
+
+Each stage may be a different method depending on the action.
 The duration and effects change character to character.
 
 ## Stages:
+*  All stages may be interupted by external forces.
+*  Not all actions feature all stages.
+*  The individual stages may have varying required durations; some durations may be null. But the total time for an action may not be null.
+
+Actions can be broken down into four distincts stages, idle, prepare, act, and recovery.
+
 ### Idle
 Generally a neutral position that is achived via recovery and allows for one to enter prepare.
 ### Prepare
 The time spent before an action can be taken. Being in the act of preparing may change one's defense, etc.
 ### Act
-The Time spent to take an action.
+The Time spent to take an action. 
 ### Recovery
-The time spent to recover from an action. Recovery stage may vary depending on actions. Some actions may have
-a immoblized recovery stage. Others may simply prevent move reuse. Recoveries may stack. They may have physiclogical symptoms.
+The recovery stage represents the time spent to recover from an action. Recovery stage may vary greatly depending on the nature of the actions. Some actions may cause immoblization, etc. during the recovery stage. Others may simply prevent reuse for a duration. Recoveries may stack and these stacks may have have physiclogical symptoms, such as afflictions, but often are not visible.
 
 # InstanceID
 
