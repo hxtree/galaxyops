@@ -13,7 +13,8 @@
     "projectFolderMaxDepth": 3,
     "approvedPackagesPolicy": {
         "reviewCategories": [
-            "apps",
+            "apis",
+            "clients",
             "libraries",
             "heft"        ],
         "ignoredNpmScopes": ["@types"]
@@ -32,15 +33,15 @@
     },
     "projects": [
         {
-            "packageName": "@org-apps/luck-by-dice-api",
-            "projectFolder": "apps/luck-by-dice-api",
-            "reviewCategory": "apps",
+            "packageName": "@org-apis/luck-by-dice",
+            "projectFolder": "apis/luck-by-dice",
+            "reviewCategory": "apis",
             "cyclicDependencyProjects": []
         },
         {
-            "packageName": "@org-apps/luck-by-dice-client",
-            "projectFolder": "apps/luck-by-dice-client",
-            "reviewCategory": "apps",
+            "packageName": "@org-clients/luck-by-dice-monitor",
+            "projectFolder": "clients/luck-by-dice-monitor",
+            "reviewCategory": "clients",
             "cyclicDependencyProjects": []
         }
     ]

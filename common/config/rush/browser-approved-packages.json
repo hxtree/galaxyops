@@ -32,7 +32,7 @@
     },
     {
       "name": "@microsoft/tsdoc",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "@org-heft/heft-jest-plugin",
@@ -56,27 +56,27 @@
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "aws-cdk",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "aws-cdk-lib",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "constructs",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "apps", "heft" ]
+      "allowedCategories": [ "apis", "apps", "clients", "heft" ]
     },
     {
       "name": "eslint-plugin-disable",
@@ -92,11 +92,11 @@
     },
     {
       "name": "eslint-plugin-tsdoc",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "jest",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "jest-config",
@@ -140,19 +140,19 @@
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "ts-node",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "typedoc",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "apps", "heft" ]
+      "allowedCategories": [ "apis", "apps", "clients", "heft" ]
     }
   ]
 }

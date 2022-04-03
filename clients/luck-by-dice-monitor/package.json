@@ -1,5 +1,5 @@
 {
-  "name": "@org-apps/luck-by-dice-client",
+  "name": "@org-clients/luck-by-dice-monitor",
   "module": "commonjs",
   "version": "0.1.0",
   "bin": {

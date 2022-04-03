@@ -1,5 +1,5 @@
 {
-  "name": "@org-apps/luck-by-dice-api",
+  "name": "@org-apis/luck-by-dice",
   "module": "commonjs",
   "version": "0.1.2",
   "bin": {

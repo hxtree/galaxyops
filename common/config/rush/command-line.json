@@ -17,7 +17,15 @@
       "summary": "AWS SSO Authentication",
       "shellCommand": "common/scripts/aws-sso/aws-sso-login.sh",
       "safeForSimultaneousRushProcesses": true
+    },
+    {
+      "name": "help",
+      "commandKind": "global",
+      "summary": "A list of common commands",
+      "shellCommand": "common/scripts/help.sh",
+      "safeForSimultaneousRushProcesses": true
     }
+
   ],
   "parameters": [
     {

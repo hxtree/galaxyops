@@ -5,7 +5,7 @@ importers:
   .:
     specifiers: {}
 
-  ../../apps/luck-by-dice-api:
+  ../../apis/luck-by-dice:
     specifiers:
       '@microsoft/tsdoc': ~0.13.2
       '@types/aws-lambda': ~8.10.93
@@ -42,7 +42,7 @@ importers:
       typedoc: 0.22.13_typescript@4.5.5
       typescript: 4.5.5
 
-  ../../apps/luck-by-dice-client:
+  ../../clients/luck-by-dice-monitor:
     specifiers:
       '@microsoft/tsdoc': ~0.13.2
       '@types/aws-lambda': ~8.10.93

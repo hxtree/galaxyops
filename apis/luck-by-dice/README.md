@@ -1,4 +1,4 @@
-# @org-apps/luck-by-dice-api
+# @org-apis/luck-by-dice
 
 ![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 

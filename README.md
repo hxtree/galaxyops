@@ -1,44 +1,14 @@
-# cdk-monorepo (WIP)
+# Monorepo
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/monorepo/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hxtree/monorepo&amp;utm_campaign=Badge_Grade)
 
 A monorepo for deploying AWS apps.
 
-## Useful commands
+## Need Help?
+`rush help`
 
-Use `rush` to run a command in bulk or globally. Use `rushx` to run a command relative to the current working directory's app.
+## Architecture Guidelines
 
-* `rush sso`           Authenticate to AWS SSO and set profile
-* `rushx bootstrap`     bootstrap deploy for the first time
-* `rushx build`         build projects
-* `rushx test`         test a package within directory
-* `rushx lint`         eslint static code analysis
-* `rushx docs`          generate documents from code
-* `rushx synth`         show synthesized CloudFormation template
-* `rushx diff`          compare deployed stack with current state
-* `rushx deploy`        deploy apps using AWS CDK
-* `rush purge`         purge packages
-* `rush update`        update workspace files
-* `rush update --full` full update of workspace files
-* `rush add -p @package/a` add a new package to app
-* `rush add -p @rushstack/heft --make-consistent` make package version consistant across monorepo
-
-(Commands yet to be refined:)
-* `npm run watch`   watch for changes and compile
-* `cdk deploy --hotswap` speed up dev deployment
-* `cdk watch`       hotsawp on changes
-* `cdk doctor`     Checks your CDK project for potential problems
-
-## Third Party Documentation
-
-* https://docs.aws.amazon.com/cdk/v2/guide/cli.html
-* https://www.typescriptlang.org/docs/
-* https://jestjs.io/ 
-* https://rushjs.io/
-* https://github.com/microsoft/rushstack
-* https://github.com/microsoft/tsdoc
-* https://github.com/TypeStrong/typedoc
-
-## Architectural Assumptions
+The guide below describes guidelines applicable to repository.
 
 * **Infrastructure as a Service**: AWS was selected a provider. Project assumes it will fail before AWS and vendor buyin allows leveraging numerous undifferentiated services which outweighs being cloud agnostic for this project.
 * **Monorepo**: Selected monorepo instead of polyrepo as apps will be mostly serverless microservices.
@@ -52,7 +22,17 @@ Use `rush` to run a command in bulk or globally. Use `rushx` to run a command re
 * **Documentation**: Selected tsdoc as a standard for writing documentation and typedoc to compile documentation as code.
 * **Deployments**: `rush deploy` copies files from projects to a deployment folder including applicable dependencies. This is intentially not used. Instead apps deploy themselves using CDK stacks via `rushx deploy`.
 
-## Considering
+### Considering
 
 * Contracts for interdependent apps, possibly https://nestjs.com/ .
 * Codegen: yeoman-generator, plopjs, hygen, etc.
+
+## Third Party Documentation
+
+* https://docs.aws.amazon.com/cdk/v2/guide/cli.html
+* https://www.typescriptlang.org/docs/
+* https://jestjs.io/ 
+* https://rushjs.io/
+* https://github.com/microsoft/rushstack
+* https://github.com/microsoft/tsdoc
+* https://github.com/TypeStrong/typedoc
