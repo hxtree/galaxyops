@@ -15,7 +15,7 @@ Get started building, testing, and deploying apps.
 
 For information on builtin commands, use `rush help`.
 
-Development on [Game mobile](clients/game-mobile/README.md) client requires additional tools.
+Development of `@org-client/game-mobile` client requires [additional tools](clients/game-mobile/README.md).
 
 ## Documentation
 
