@@ -11,12 +11,10 @@ Get started building, testing, and deploying apps.
     git clone git@github.com:hxtree/monorepo.git
     ```
 
-2. Install [Docker](https://docs.docker.com/get-docker/), [VSCode](https://code.visualstudio.com/), and the [Remote - Containers] https://code.visualstudio.com/docs/remote/containers-tutorial extension.
+2. Install [Docker](https://docs.docker.com/get-docker/), [VSCode](https://code.visualstudio.com/), and the [Remote - Containers](https://code.visualstudio.com/docs/remote/containers-tutorial) extension.
 3. Open repo Project Folder using VSCode and build and connect to remote container.
 
-That's it you're all set!
-
-Display information about builtin commands using VSCode terminal and help command. 
+For help from within VSCode terminal while connected to remote container, display information about builtin commands.
 
 ```bash
 rush help
@@ -30,4 +28,3 @@ Additional tools are necessary to develop [Game mobile](clients/game-mobile/READ
 * [Coding Standards](docs/CODING-STANDARDS.md)
 * [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 * [Third Party Docs](docs/third-party-docs.md)
-* 
