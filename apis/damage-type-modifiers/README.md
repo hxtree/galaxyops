@@ -1,4 +1,4 @@
-# @org-apps/damage-type-modifier
+# @org-apis/damage-type-modifier
 
 ## Damage Type
 All damage can be categorized as one more damage type. 

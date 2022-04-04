@@ -1,4 +1,4 @@
-# @org-apps/action-manager
+# @org-apis/action-manager
 
 # Action
 Every action can be represented by the time it takes to peform various stages of the action.
