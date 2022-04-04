@@ -1,4 +1,4 @@
-# @org-api
+# @org-apis
 
 Contains various organization api services for other systems to call.
 
