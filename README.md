@@ -24,7 +24,7 @@ Additional tools are necessary to develop [Game mobile](clients/game-mobile/READ
 
 ## Documentation
 
-* [Architecture Guidelines](docsachiteture-guidlines.md)
-* [Coding Standards](docs/CODING-STANDARDS.md)
+* [Architecture Guidelines](docs/architecture-guidelines.md)
+* [Coding Standards](docs/CODING_STANDARDS.md)
 * [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 * [Third Party Docs](docs/third-party-docs.md)
