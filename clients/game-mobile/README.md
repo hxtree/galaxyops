@@ -7,4 +7,4 @@ This is an mobile client. It aims to be cross platform mobile support. Android w
 ## Getting started
 
 * Install [Unity](https://unity.com/download) and [Unity Android SDK](https://developer.android.com/games/develop/build-in-unity).
-* Open project folder using Unity.
+* Open project folder using Unity directly. VSCode remote containers is not needed for developing on this app.
