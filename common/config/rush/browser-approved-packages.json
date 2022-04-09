@@ -79,12 +79,36 @@
       "allowedCategories": [ "apis", "apps", "clients", "heft" ]
     },
     {
+      "name": "eslint-config-airbnb",
+      "allowedCategories": [ "apis", "clients" ]
+    },
+    {
+      "name": "eslint-config-airbnb-base",
+      "allowedCategories": [ "apis", "clients" ]
+    },
+    {
+      "name": "eslint-config-airbnb-typescript",
+      "allowedCategories": [ "apis", "clients" ]
+    },
+    {
+      "name": "eslint-config-prettier",
+      "allowedCategories": [ "apis", "clients" ]
+    },
+    {
       "name": "eslint-plugin-disable",
       "allowedCategories": [ "heft" ]
     },
     {
+      "name": "eslint-plugin-import",
+      "allowedCategories": [ "apis", "clients" ]
+    },
+    {
       "name": "eslint-plugin-jest",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": [ "apis", "heft" ]
+    },
+    {
+      "name": "eslint-plugin-jsx-a11y",
+      "allowedCategories": [ "clients" ]
     },
     {
       "name": "eslint-plugin-playwright",
@@ -132,7 +156,11 @@
     },
     {
       "name": "prettier",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": [ "clients", "heft" ]
+    },
+    {
+      "name": "prettier-package-json",
+      "allowedCategories": [ "clients" ]
     },
     {
       "name": "reflect-metadata",

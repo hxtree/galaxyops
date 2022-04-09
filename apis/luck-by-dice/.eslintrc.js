@@ -3,25 +3,31 @@ const thisDir = path.resolve(__dirname);
 
 module.exports = {
   root: true,
-  parser: "@typescript-eslint/parser",
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  parserOptions: {
-    project: path.join(thisDir, 'tsconfig.json'),
-    tsconfigRootDir: thisDir
-  },
   plugins: [
     "@typescript-eslint",
     "@typescript-eslint/eslint-plugin",
     "eslint-plugin-tsdoc"
   ],
+  extends: [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jest/recommended",
+    "prettier",
+  ],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    project: path.join(thisDir, 'tsconfig.json'),
+    tsconfigRootDir: thisDir
+  },
   parserOptions: {
     tsconfigRootDir: __dirname,
     ecmaVersion: 2020,
-    sourceType: "module"
+    sourceType: "module",
+    project: './tsconfig.json'
   },
   rules: {
     "@typescript-eslint/no-inferrable-types":"off",

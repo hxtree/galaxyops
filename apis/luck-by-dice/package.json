@@ -18,17 +18,22 @@
     "bootsrap": "cdk bootstrap"
   },
   "devDependencies": {
-    "aws-cdk": "2.15.0",
     "@types/jest": "27.4.0",
     "@types/node": "~14",
+    "@typescript-eslint/eslint-plugin": "5.15.0",
+    "@typescript-eslint/parser": "5.15.0",
+    "aws-cdk": "2.15.0",
+    "eslint": "8.11.0",
+    "eslint-config-airbnb-base": "~15.0.0",
+    "eslint-config-airbnb-typescript": "8",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-jest": "25.3.3",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
     "ts-node": "10.4.0",
-    "typescript": "~4.5.4",
-    "@typescript-eslint/eslint-plugin": "~2.6.1",
-    "@typescript-eslint/parser": "~2.6.1",
-    "eslint": "~6.6.0",
-    "typedoc": "~0.22.13"
+    "typedoc": "~0.22.13",
+    "typescript": "4.6.2"
   },  
   "dependencies": {
     "aws-cdk-lib": "2.15.0",
