@@ -1,3 +1,3 @@
 # @org-clients
 
-Clients are things that call services.
+Clients are applications that call services.
