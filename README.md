@@ -1,6 +1,10 @@
 # Monorepo
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/monorepo/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hxtree/monorepo&amp;utm_campaign=Badge_Grade)
 
+A online mobile RPG game engine and infrastructure as code under development. Built using Unreal 5, AWS CDKv2, Typescript.
+
+![Base Game Client](/docs/assets/images/base-game-client.png)
+
 ## Getting Started
 
 Get started building, testing, and deploying apps.
@@ -15,7 +19,7 @@ Get started building, testing, and deploying apps.
 
 For information on builtin commands, use `rush help`.
 
-Development of `@org-clients/game-mobile` client requires [additional tools](clients/game-mobile/README.md).
+Development of `@org-clients/base-game-engine` client requires [additional tools](clients/base-game-engine/README.md).
 
 ## Documentation
 

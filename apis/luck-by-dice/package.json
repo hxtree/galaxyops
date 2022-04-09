@@ -35,7 +35,8 @@
     "constructs": "^10.0.0",
     "@types/aws-lambda": "~8.10.93",
     "@microsoft/tsdoc": "~0.13.2",
-    "eslint-plugin-tsdoc": "~0.2.14"
+    "eslint-plugin-tsdoc": "~0.2.14",
+    "eslint-config-airbnb": "~19.0.4"
   },
   "files": [
     "dist/"

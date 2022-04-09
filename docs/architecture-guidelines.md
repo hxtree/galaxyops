@@ -59,11 +59,21 @@ There is a healthy marketplace for mobile games to making frontend mobile accord
 Healthy enough where using a frontend mobile client makes sense. 
 Mobile clients now feature adaquate hardware unlike in 2005.
 
-## Unity for Mobile Client
+## 3D
+The original tech demo engine was built as an isometric game engine.
+However creating a isometric spritemap for each object becomes time consuming and difficult to manage changes.
+It is easier to generate frames using 3D.
+Performance of 3D on mobile has drastically improved in the last 20 years.
+
+## Unreal for Mobile Client
 Although the server side uses JS based microsevices, etc. there isn't much of a marketplace for a JS game client.
-It's best to use established tools designed for game design to focus on indiferented code.
-ThreeJS is neat library for generating 3D graphics.
-However, Unity seems like it would reduce barrier to marketplace entry.
+ThreeJS is neat library for generating 3D graphics but it is not a game engine.
+It is best to use established tools designed for game design as to focus on what matters.
+The primary choices known are Unreal and Unity and both would seeminglly help reduce barrier to marketplace entry.
+If the mobile games was 2D, Unity would be a primary choice.
+Unreal comes with partically everything needed for a 3D game.
+Building a for Andriod is much easier using Unity but Unreal can do it too.
+As to increase velocity but avoiding the need to write indifferent 3D code, Unreal was selected.
 
 ## Considering
 * Contracts for interdependent apps, possibly https://nestjs.com/ .
