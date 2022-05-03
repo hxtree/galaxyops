@@ -104,7 +104,7 @@
     },
     {
       "name": "eslint-plugin-jest",
-      "allowedCategories": [ "apis", "heft" ]
+      "allowedCategories": [ "apis", "clients", "heft" ]
     },
     {
       "name": "eslint-plugin-jsx-a11y",

@@ -39,8 +39,8 @@
           "description": "Developer sandbox access"
         },
         {
-          "name": "DeveloperSandbox2",
-          "description": "Developer sandbox 2 access"
+          "name": "ManagementAccount",
+          "description": "Management Account access"
         }
       ],
       "defaultValue": "DeveloperSandbox",
