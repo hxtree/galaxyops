@@ -7,7 +7,6 @@ docker-compose.override.yml
 
 # AWS CDK
 **/cdk.out/*
-infra/org-formation/organization.yml
 
 # Packages
 node_modules/*
