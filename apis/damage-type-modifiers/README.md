@@ -1,4 +1,5 @@
 # @org-apis/damage-type-modifier
+![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 
 ## Damage Type
 All damage can be categorized as one more damage type. 
@@ -23,10 +24,9 @@ Physical is the default DTM.
 A character may be impacted affected more or less due to the type of damage.
 
 DTM can be 
-* NEGTIVE (damage resistance), 
-* POSTIVE (damage weakness), and 
-* NULL (standard damage) values.
-
+* Resistance < 0 NEGTIVE (damage resistance), 
+* Neutral = 0 (standard damage) values.
+* Weakness > 0 POSTIVE (damage weakness), and 
 
 Formula:
 ```
@@ -36,3 +36,22 @@ Damage Done = Damage + Damage * (DTM *.01 + 1)
 
 A User's understand of DTM can be the difference between success and failure.
 
+
+100
+
+roll;
+
+1000
+
+getCharacterStats
+
+
+
+Roll(100) Fire Damaage 
+
+
+Resistance (100)
+Weakness
+
+
+The type of damage being done. The entities damage type modified. 

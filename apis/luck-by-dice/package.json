@@ -13,6 +13,7 @@
     "lint": "eslint --config .eslintrc.js -f unix \"src/**/*.{ts,tsx}\"",
     "docs": "typedoc --entryPointStrategy expand ./src",
     "deploy": "tsc && cdk deploy",
+    "destroy": "cdk destroy",
     "diff": "cdk diff",
     "synth": "cdk synth",
     "bootsrap": "cdk bootstrap"
