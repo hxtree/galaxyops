@@ -1,4 +1,5 @@
 # @org-apis/action-manager
+![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 
 # Action
 Every action can be represented by the time it takes to peform various stages of the action.
