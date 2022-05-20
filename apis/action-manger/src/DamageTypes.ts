@@ -11,6 +11,7 @@ export enum Type {
     Light // this is the damage type modifier for light.
 }
 
+// EffectFactors?
 // absorbtion necessates group processing of damage type to area of impact
 export enum Effect {
     Resistance, // decreases damage taken by the damage type.

@@ -2,6 +2,9 @@
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 
 # Action
+Actions are decoupled from the actor and target. Each action SHOULD scale in computation based on actors and target stats. Two vastly different skilled actors performing the same action will foresably yield vastly different effects.
+
+## Duration
 Every action can be represented by the time it takes to peform various stages of the action.
 Although it's possble the time to perform an action is null, most user based action will take time to perform.
 
@@ -34,6 +37,10 @@ Client
 
 instance_id | object_id | state | duration | 
 
+
+SQS
+
+action_id : Action | actors {Things} | targets {Things}
 
 
 state manifest
@@ -77,6 +84,44 @@ What's happening on each client
     engine is ran on server and simulated for user input on client.
     NPC actions decided by server, including team NPC -- ones not selected for play.
 
+## Damage Type
+All damage can be categorized as one more damage type. 
+
+Damage types allow for exploitation and weaknesses in characters. Realizing damage types allows a player to exploit weakness of their opponent. 
+
+Physical is the default DTM.
+
+## Damage Type Modifier (DTM)
+
+A character may be impacted affected more or less due to the type of damage.
+
+Formula:
+```
+Damage Done = Damage + Damage * (DTM *.01 + 1)
+```
+*Note that the DTM used is the defender’s corresponding value of the DT from the attack.
+
+A User's understand of DTM can be the difference between success and failure.
+
+
+100
+
+roll;
+
+1000
+
+getCharacterStats
+
+
+
+Roll(100) Fire Damaage 
+
+
+Resistance (100)
+Weakness
+
+
+The type of damage being done. The entities damage type modified. 
 
 References:
 
