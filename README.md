@@ -1,10 +1,10 @@
-# Monorepo
+# Keeper's Cradel
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/monorepo/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hxtree/monorepo&amp;utm_campaign=Badge_Grade)
 ![GitHub issues by-label](https://img.shields.io/github/issues/hxtree/monorepo/help%20wanted.svg) 
 
 
-A online mobile RPG game engine and infrastructure as code under development. Built using Unreal 5, AWS CDKv2, Typescript.
+A online mobile RPG game engine and infrastructure as code monorepo under development. Built using Unreal 5, AWS CDKv2, Typescript.
 
 ![Base Game Client](/docs/assets/images/base-game-client.png)
 

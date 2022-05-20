@@ -1,6 +1,27 @@
 export class Thing {
+    /**
+     * The player instance that the thing is associated with
+     */
+    protected _instanceId: string;
+
+    /** 
+     * The areaId the thing exists in within the instance
+     */
+    protected _areaId: string;
+
+    /**
+     * The id of the thing
+     */
     protected _id: string;
+
+    /**
+     * The name of the thing
+     */
     protected _name: string;
+
+    /**
+     * The weight of the thing
+     */
     protected _weight: number;    
 
     public get id(): string {
@@ -10,7 +31,7 @@ export class Thing {
     public set id(id: string) {
         this._id = id;
     }
-    
+
     public get name(): string {
         return this._name;
     }

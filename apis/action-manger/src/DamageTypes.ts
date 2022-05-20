@@ -1,3 +1,5 @@
+import { Operator } from "./Operator";
+
 export enum Type {
     Electric, // this is the damage type modifier for lightning. 
     Air, // this is the damage type modifier for wind.
@@ -20,13 +22,6 @@ export enum Effect {
     Immunity, // completely blocks damage taken by the damage type.
     Absorption, // reduces damage type area of effect to nearby targets.
     Healing, // reverses damage taken into healing by the damage type.
-}
-
-export enum Operator {
-    '*', // multiply
-    '-', // subtract
-    '+', // add
-    '/' // divide
 }
 
 export type Modifier = Number;

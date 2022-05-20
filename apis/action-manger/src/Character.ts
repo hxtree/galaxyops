@@ -2,7 +2,14 @@ import { Thing } from "./Thing";
 import { Gauge } from "./Gauge";
 import { Action } from "./actions/Action";
 
+
+// there could be a million of the same character in  the database, one for each player instance of the game.
+// how to segrate them?
+// how to keep track of them?
+
 export class Character extends Thing { 
+
+    private characterId: string;
     
     private age: Number;
     
