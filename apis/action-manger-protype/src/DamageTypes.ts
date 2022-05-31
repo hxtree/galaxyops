@@ -1,17 +1,5 @@
 import { Operator } from "./Operator";
-
-export enum Type {
-    Electric, // this is the damage type modifier for lightning. 
-    Air, // this is the damage type modifier for wind.
-    Earth, // this is the damage type modifier for earth.
-    Fire, // this is the damage type modifier for fire.
-    Water, // this is the damage type modifier for water.
-    Nature, // this is the damage type modifier for nature. 
-    Physical, // this is the damage type modifier for physical.
-    Psychic, // this is the damage type modifier for psychic.
-    Darkness, // this is the damage type modifier for darkness.
-    Light // this is the damage type modifier for light.
-}
+import { Element } from "./Element";
 
 // EffectFactors?
 // absorbtion necessates group processing of damage type to area of impact
@@ -26,12 +14,12 @@ export enum Effect {
 
 export type Modifier = Number;
 
-export type DTM = [Type, Effect, Operator, Modifier];
+export type DTM = [Element, Effect, Operator, Modifier];
 export type DTMs = Array<DTM>;
 
 
 export type Amount = Number;
-export type Damage = [Amount, Type];
+export type Damage = [Amount, Element];
 export type Damages = Array<Damage>;
 
 export type DamageTotal = Number;

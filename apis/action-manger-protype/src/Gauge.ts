@@ -1,3 +1,7 @@
+/**
+ * Gauge
+ * A gauge is a value that can go up and down but never go below zero.
+ */
 export class Gauge {
     private _min: number;
     private _current: number;

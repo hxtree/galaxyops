@@ -1,6 +1,6 @@
 export class Thing {
     /**
-     * The player instance that the thing is associated with
+     * The player instance id that the thing is associated with
      */
     protected _instanceId: string;
 

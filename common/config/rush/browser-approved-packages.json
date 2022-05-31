@@ -7,6 +7,26 @@
       "allowedCategories": [ "heft" ]
     },
     {
+      "name": "@aws-cdk/assert",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@aws-cdk/aws-appsync",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@aws-cdk/aws-dynamodb",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@aws-cdk/aws-lambda",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@aws-cdk/core",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@aws-cdk/lambda",
       "allowedCategories": [ "apps" ]
     },
@@ -165,6 +185,10 @@
     {
       "name": "reflect-metadata",
       "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "source-map-support",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "ts-jest",

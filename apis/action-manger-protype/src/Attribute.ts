@@ -10,4 +10,5 @@ export enum Attribute {
     Accuracy,
     Evasion,
     Luck,
+    Trait
 }

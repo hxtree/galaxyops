@@ -33,6 +33,12 @@
     },
     "projects": [
         {
+            "packageName": "@org-apis/action-manager",
+            "projectFolder": "apis/action-manager",
+            "reviewCategory": "apis",
+            "cyclicDependencyProjects": []
+        },
+        {
             "packageName": "@org-apis/luck-by-dice",
             "projectFolder": "apis/luck-by-dice",
             "reviewCategory": "apis",
