@@ -1,5 +1,5 @@
 import {Action} from "./Action";
-import {Thing} from "../Thing";
+import {Thing} from "../character/Thing";
 import {Effect} from "../Effects";
 import {Attribute} from "../Attribute";
 
@@ -33,7 +33,8 @@ class HealAction extends Action {
     execute(actors: Array<Thing>, targets: Array<Thing>) {
         let effects: Array<Effect> = [];
         for (let target of targets) {
-            effects.push(new Effect(target.id, Attribute.Life, 10));
+            let amount = Math.floor(Math.random() * 10); 
+            effects.push(new Effect(target.id, Attribute.Life, amount));
         }
         return effects;
     }
