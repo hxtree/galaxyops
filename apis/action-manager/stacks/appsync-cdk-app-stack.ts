@@ -39,7 +39,7 @@ export class AppsyncCdkAppStack extends cdk.Stack {
     const notesLambda = new lambda.Function(this, 'AppSyncNotesHandler', {
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: 'main.handler',
-      code: lambda.Code.fromAsset('lambda-fns'),
+      code: lambda.Code.fromAsset('dist/src'),
       memorySize: 1024
     });
     
