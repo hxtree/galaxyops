@@ -20,3 +20,6 @@ export class Trait {
 }
 
 export type Traits = Array<Trait>;
+
+
+// const trait = new Trait(Attribute.Life,Element.Fire,Operator["/"],50);

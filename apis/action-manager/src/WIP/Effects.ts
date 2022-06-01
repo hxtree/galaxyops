@@ -15,3 +15,8 @@ export class Effect {
 }
 
 export type Effects = Array<Effect>;
+
+
+// const effect1 = new Effect("thing1",Attribute.Xp,1.01);
+// const effect2 = new Effect("thing2",Attribute.Life,-50);
+// const effect2 = new Effect("thing2",Attribute.Strength,-5);
