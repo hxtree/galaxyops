@@ -54,4 +54,13 @@ export class Gauge {
     public set current(current: number) {
         this._current = current;
     }
+
+    
+    public toJSON(): any {
+        return {
+            min: this._min,
+            max: this._max,
+            current: this._current,
+        };
+    }
 }

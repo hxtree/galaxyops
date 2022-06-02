@@ -2,6 +2,7 @@ import { Thing } from "./Thing";
 import { Gauge } from "../Gauge";
 import { Action } from "../actions/Action";
 import { Trait } from "../Trait";
+import { Disiplines } from "./Discipline/Discipline";
 
 
 // there could be a million of the same character in  the database, one for each player instance of the game.
@@ -14,18 +15,17 @@ export abstract class Character extends Thing {
     
     private _age: number;
     
-    private _experience: number;
     
     private life: Gauge;
     private spirit: Gauge;
     private drive: Gauge;
 
-    private classes: Array<string>;
+    private displines: Disiplines;
     private inventory: Array<Thing>;
     private actions: Array<Action>;
         
-    private speed: number;
-
+    private _speed: number;
+    
     private power: number;
 
     /** 
@@ -60,35 +60,20 @@ export abstract class Character extends Thing {
     
     private traits: Array<Trait>;
 
+    public get speed(): number {
+        return this._speed;
+    }
+
+    public set speed(speed: number) {
+        this._speed = speed;
+    }
+
+
     public get age(): number {
         return this._age;
     }
 
     public set age(age: number) {
         this._age = age;
-    }
-
-    public get experience(): number {
-        return this._experience;
-    }
-
-    public set experience(experience: number) {
-        this._experience = experience;
-    }
-
-    public get level(): number {
-        return Math.floor(Math.sqrt(this._experience / 100));
-    }
-
-    public get nextLevel(): number {
-        return (this._experience - (this.level * (this.level - 1) / 2) * 100);
-    }
-
-    public get experienceToNextLevel(): number {
-        return this.nextLevel - this.experience;
-    }
-
-    public get experienceToNextLevelPercentage(): number {
-        return this.experienceToNextLevel / this.nextLevel;
     }
 }

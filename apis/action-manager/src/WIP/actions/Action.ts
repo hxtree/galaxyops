@@ -1,5 +1,6 @@
 import { Gauge } from '../Gauge';
 import { Thing } from '../character/Thing';
+import { Character } from '../character/Character';
 import { Attribute } from '../Attribute';
 import { Effects } from '../Effects';
 
@@ -24,8 +25,13 @@ export abstract class Action {
     protected abstract _name: string;
     protected abstract _description: string;
     
-    protected _actors: Array<Thing>;    
-    protected _targets: Array<Thing>;
+    protected _actors: Array<Character>;    
+    protected _targets: Array<Character>;
+
+    constructor(actors: Array<Character>, targets: Array<Character>) {
+        this._actors = actors;
+        this._targets = targets;
+    }
 
     abstract execute(actors: Array<Thing>, targets: Array<Thing>): Effects;
 
@@ -53,7 +59,7 @@ export abstract class Action {
     /**
      * the amount of time before an action can be executed again
      */
-     abstract get recoveryTime() : number;
+    abstract get recoveryTime() : number;
 
      /**
      * the amount of time before the action can be executed again

@@ -8,25 +8,41 @@ class HealAction extends Action {
     protected _id: 0;
     protected _name: "Heal";
     protected _description: "Heal a target";
-    
+      
     /* {@inheritDoc} */
     public get waitTime() : number {
-        return 1; // date time now + x ?
+        let avgSpeed = 0;
+        this._targets.forEach(target => { 
+            avgSpeed += target.speed;
+        });
+        return Date.now() + (avgSpeed * this._targets.length);
     }
 
     /* {@inheritDoc} */
     public get executionTime() : number {
-        return 2;
+        let avgSpeed = 0;
+        this._targets.forEach(target => { 
+            avgSpeed += target.speed;
+        });
+        return Date.now() + (avgSpeed * this._targets.length);
     }
 
     /* {@inheritDoc} */
     public get recoveryTime() : number {
-        return 3;
+        let avgSpeed = 0;
+        this._targets.forEach(target => { 
+            avgSpeed += target.speed;
+        });
+        return Date.now() + (avgSpeed * this._targets.length);
     }
 
     /* {@inheritDoc} */
     public get cooldownTime() : number {
-        return 10;
+        let avgSpeed = 0;
+        this._targets.forEach(target => { 
+            avgSpeed += target.speed;
+        });
+        return Date.now() + (avgSpeed * this._targets.length);
     }
 
     /* {@inheritDoc} */
