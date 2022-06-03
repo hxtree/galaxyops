@@ -1,8 +1,8 @@
 import { Thing } from "./Thing";
 import { Gauge } from "../Gauge";
-import { Action } from "../actions/Action";
+import { Action } from "./Action";
 import { Trait } from "../Trait";
-import { Disiplines } from "./Discipline/Discipline";
+import { Disiplines } from "./Discipline";
 
 
 // there could be a million of the same character in  the database, one for each player instance of the game.
@@ -27,6 +27,16 @@ export abstract class Character extends Thing {
     private _speed: number;
     
     private power: number;
+
+    private _gearSlots = {
+        head: null,
+        neck: null,
+        chest: null,
+        hands: null,
+        waist: null,
+        legs: null,
+        feet: null,
+    }
 
     /** 
      * The quality of having experience, knowledge, and good judgment.

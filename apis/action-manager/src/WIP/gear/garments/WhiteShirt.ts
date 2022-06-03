@@ -1,0 +1,1 @@
+// White shirt – a plain white shirt
