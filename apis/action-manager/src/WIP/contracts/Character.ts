@@ -3,7 +3,7 @@ import { Gauge } from "../Gauge";
 import { Action } from "./Action";
 import { Trait } from "../Trait";
 import { Disiplines } from "./Discipline";
-
+import { Equipment } from "./Equipment";
 
 // there could be a million of the same character in  the database, one for each player instance of the game.
 // how to segrate them?
@@ -15,27 +15,40 @@ export abstract class Character extends Thing {
     
     private _age: number;
     
-    
     private life: Gauge;
     private spirit: Gauge;
     private drive: Gauge;
 
-    private displines: Disiplines;
-    private inventory: Array<Thing>;
-    private actions: Array<Action>;
+    private _displines: Disiplines;
+    private _inventory: Array<Thing>;
+    private _actions: Array<Action>;
         
     private _speed: number;
     
     private power: number;
 
-    private _gearSlots = {
-        head: null,
-        neck: null,
-        chest: null,
-        hands: null,
-        waist: null,
-        legs: null,
-        feet: null,
+    private _equipment: Array<Equipment>;
+
+    private _equipmentSlots = ['head','neck', 'chest', 'hands', 'waist', 'legs', 'feet'];
+
+    public addEquipment(equipment: Equipment){
+        this._equipment.push(equipment);
+    }
+
+    public removeEquipment(equipment: Equipment){
+        this._equipment.splice(this._equipment.indexOf(equipment), 1);
+    }
+
+    public get equipment(): Array<Equipment> {
+        return this._equipment;
+    }
+
+    public get discipline(): Disiplines {
+        return this._displines;
+    }
+
+    public set discipline(discipline: Disiplines) {
+        this._displines = discipline;
     }
 
     /** 
@@ -70,20 +83,19 @@ export abstract class Character extends Thing {
     
     private traits: Array<Trait>;
 
-    public get speed(): number {
-        return this._speed;
-    }
-
-    public set speed(speed: number) {
-        this._speed = speed;
-    }
-
-
     public get age(): number {
         return this._age;
     }
 
     public set age(age: number) {
         this._age = age;
+    }
+
+    public get speed(): number {
+        return this._speed;
+    }
+
+    public set speed(speed: number) {
+        this._speed = speed;
     }
 }
