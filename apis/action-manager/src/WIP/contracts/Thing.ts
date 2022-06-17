@@ -19,6 +19,9 @@ export class Thing {
      */
     protected _name: string;
 
+    // how long has the thing been in existance
+    protected _age: number;    
+
     /**
      * The weight of the thing
      */
@@ -47,4 +50,13 @@ export class Thing {
     public set weight(weight: number) {
         this._weight = weight;
     }
+
+    public get age(): number {
+        return this._age;
+    }
+
+    public set age(age: number) {
+        this._age = age;
+    }
+   
 }

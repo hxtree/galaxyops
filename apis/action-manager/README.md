@@ -1,12 +1,19 @@
 # @org-apis/action-manager
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 
+The action manager is responsible for processing character actions and saving effects to target data structure
+
+
+Todo:
+* There should be a sanity check in regards to geo location of chaters
+* Should saving effects fan out, SNS? Or be a CQS change state but not return value :?
+
+
 ## Stacks
 
 * AppSync
 * DynamoDB
 * Lambda
-
 
 ## Action
 Actions are decoupled from the actor and target. Each action SHOULD scale in computation based on actors and target stats. Two vastly different skilled actors performing the same action will foresably yield vastly different effects.
@@ -63,8 +70,8 @@ What's happening on each client
             [
                 character-id: 10,
                 name: slash,
-                data: {
-                                        
+                targets: {
+                    character-id: 22
                 }
             ],
             [

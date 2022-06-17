@@ -1,6 +1,6 @@
 import { Gauge } from '../Gauge';
-import { Thing } from '../character/Thing';
-import { Character } from '../character/Character';
+import { Thing } from './Thing';
+import { Character } from './Character';
 import { Attribute } from '../Attribute';
 import { Effects } from '../Effects';
 
@@ -17,7 +17,6 @@ type Trait = Factor;
 // Party Action: 
 // Gear actions: are related to the use of gear
 // Natural Actions: actions that do not need to be called to be used
-
 
 export abstract class Action {
     

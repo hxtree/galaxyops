@@ -203,6 +203,10 @@
       "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
+      "name": "typeorm",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "typescript",
       "allowedCategories": [ "apis", "apps", "clients", "heft" ]
     }

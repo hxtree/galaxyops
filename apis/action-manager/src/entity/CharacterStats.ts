@@ -1,87 +1,76 @@
-import { Thing } from "./Thing";
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+
 import { Gauge } from "../Gauge";
-import { Action } from "./Action";
-import { Trait } from "../Trait";
-import { Disiplines } from "./Discipline";
-import { Equipment } from "./Equipment";
 
-/**
- * A character is a instance of a player or non-player
- */
-export abstract class Character extends Thing { 
-
-    // a character's unique identifier
-    private characterId: string;
+@Entity()
+export class CharacterStats {
     
-    // how long has the character been in existance
-    private _age: number;
-    
-    private life: Gauge;
-    private spirit: Gauge;
-    private drive: Gauge;
+    @PrimaryGeneratedColumn()
+    private id: number;
 
-    private _displines: Disiplines;
-    private _inventory: Array<Thing>;
-    private _actions: Array<Action>;
+    @Column({ unique: true })
+    private _characterId: number;
+
+    // A measurement of ones ability to hold spirit to physical plain
+    @Column()
+    private _life: Gauge;
+
+    // A measurement of ones spiritual ability
+    @Column()
+    private _spirit: Gauge;
+
+    // A gauge of  ability to do special skills
+    @Column()
+    private _drive: Gauge;
 
     // The ability to apply force to ones movements
+    @Column()
     private _power: number;
 
     // The ability to move quickly
+    @Column()
     private _speed: number;   
 
     // The quality of having experience, knowledge, and good judgment.
+    @Column()
     private _wisdom: number;
 
     // The ability to think and reason logically.
+    @Column()
     private _intelligence: number;
  
     // The ability to protect and defend oneself.
+    @Column()
     private _defense: number;
  
     // The ability to hit and injure others.
+    @Column()
     private _accuracy: number;
  
     // The ability to avoid and evade attacks.
+    @Column()
     private _evasion: number;
  
     // The ability to have a favorable outcome.
+    @Column()
     private luck: number;
      
-    private traits: Array<Trait>;
-
-    private _equipment: Array<Equipment>;
-
-    private _equipmentSlots = ['head','neck', 'chest', 'hands', 'waist', 'legs', 'feet'];
-
-    public get equipment(): Array<Equipment> {
-        return this._equipment;
+    public get life(): Gauge {
+        return this._life;
     }
 
-    public get discipline(): Disiplines {
-        return this._displines;
+    public set life(life: Gauge) {
+        this._life = life;
     }
 
-    public set discipline(discipline: Disiplines) {
-        this._displines = discipline;
+    public get spirit(): Gauge {
+        return this._spirit;
     }
 
-    public addEquipment(equipment: Equipment){
-        this._equipment.push(equipment);
+    public set spirit(spirit: Gauge) {
+        this._spirit = spirit;
     }
-
-    public removeEquipment(equipment: Equipment){
-        this._equipment.splice(this._equipment.indexOf(equipment), 1);
-    }
-
-    public get age(): number {
-        return this._age;
-    }
-
-    public set age(age: number) {
-        this._age = age;
-    }
-   
+    
     public get power(): number {
         return this._power;
     }

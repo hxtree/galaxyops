@@ -1,4 +1,4 @@
-import { Effects } from "./../../Effects";
+import { Effects } from "../Effects";
 
 export abstract class Disipline {
     protected abstract name: string;
@@ -38,5 +38,3 @@ export abstract class Disipline {
     // should be able to improve stats
     abstract get effects(): Effects;
 }
-
-export type Disiplines = Array<Disipline>;
