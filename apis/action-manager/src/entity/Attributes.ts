@@ -1,13 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne } from "typeorm";
 
-import { Gauge } from "../Gauge";
+import { Character } from "./Character";
+import { Gauge } from "../WIP/Gauge";
+
+// https://en.wikipedia.org/wiki/Attribute_(role-playing_games)
 
 @Entity()
-export class CharacterStats {
+export class Attributes {
     
     @PrimaryGeneratedColumn()
     private id: number;
 
+    @OneToOne(() => Character)
+    @JoinColumn()
     @Column({ unique: true })
     private _characterId: number;
 

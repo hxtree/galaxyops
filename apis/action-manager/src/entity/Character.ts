@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn} from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, OneToOne, OneToMany, JoinColumn} from 'typeorm';
    
 import { Thing } from "../WIP/contracts/Thing";
 import { Gauge } from "../WIP/Gauge";
@@ -6,8 +6,8 @@ import { Action } from "../WIP/contracts/Action";
 import { Trait } from "../WIP/Trait";
 import { Disipline } from "../WIP/contracts/Discipline";
 import { Equipment } from "../WIP/contracts/Equipment";
-import { CharacterStats } from "./CharacterStats";
-
+import { Attributes } from "./Attributes";
+import { Inventory } from './Inventory';
 /**
  * A character is a instance of a player or non-player
  */
@@ -15,15 +15,17 @@ import { CharacterStats } from "./CharacterStats";
  @Entity()
  export abstract class Character extends Thing { 
 
-    // a character's unique identifier
     @PrimaryGeneratedColumn()
-    private characterId: string;
-
+    private id: string;
     
-    private _inventory: Array<Thing>;
-    private _actions: Array<Action>;
+    @OneToOne(() => Attributes)
+    @JoinColumn()
+    public attributes: Attributes;
 
-    public stats: CharacterStats;
+    @OneToMany(() => Inventory, (inventory) => inventory.character)
+    private _inventory: Inventory[]
+
+    private _actions: Array<Action>;
 
     public displines: Array<Disipline>;
 
