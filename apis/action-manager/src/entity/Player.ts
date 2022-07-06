@@ -1,10 +1,17 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, UpdateDateColumn, CreateDateColumn} from "typeorm";
    
 @Entity()
 export class Player {
 
     @PrimaryGeneratedColumn()
-    private _playerId;
+    id: number;
 
+    @Column()
+    userId: number;
 
+    @UpdateDateColumn()
+    updatedAt: Date;
+
+    @CreateDateColumn()
+    createdAt: Date;
 }

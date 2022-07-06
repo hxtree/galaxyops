@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, OneToOne, OneToMany, JoinColumn} from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, OneToOne, OneToMany, JoinColumn, CreateDateColumn, UpdateDateColumn, Column} from 'typeorm';
    
 import { Action } from "../WIP/contracts/Action";
 import { Trait } from "./Trait";
@@ -13,11 +13,14 @@ import { Attributes } from "./Attributes";
  export abstract class Character { 
 
     @PrimaryGeneratedColumn()
-    private id: string;
+    id: string;
     
+    @OneToMany(() => Trait, (trait) => trait.character)
+    traits: Array<Trait>;
+
     @OneToOne(() => Attributes)
     @JoinColumn()
-    public attributes: Attributes;
+    attributes: Attributes;
 
     @OneToMany(() => Equipment, (equipment) => equipment.character)
     private _equipment: Equipment[]
@@ -25,14 +28,17 @@ import { Attributes } from "./Attributes";
     @OneToMany(() => Discipline, (discipline) => discipline.character)
     public _disciplines: Array<Discipline>;
 
-    @OneToMany(() => Trait, (trait) => trait.character)
-    public traits: Array<Trait>;
 
     private _actions: Array<Action>;
 
-
     private _equipmentSlots = ['head','neck', 'chest', 'hands', 'waist', 'legs', 'feet'];
-   
+
+    @UpdateDateColumn()
+    updatedAt: Date;
+
+    @CreateDateColumn()
+    createdAt: Date;
+
     public get equipment(): Array<Equipment> {
         return this._equipment;
     }

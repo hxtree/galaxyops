@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { Character } from "./Character";
 import { Gauge } from "../WIP/Gauge";
 
@@ -15,126 +15,60 @@ import { Gauge } from "../WIP/Gauge";
 export class Attributes {
     
     @PrimaryGeneratedColumn()
-    private id: number;
+    id: number;
 
     @OneToOne(() => Character)
     @JoinColumn()
     @Column({ unique: true })
-    private _characterId: number;
+    characterId: number;
 
     // A measurement of ones ability to hold spirit to physical plain
     @Column()
-    private _life: Gauge;
+    life: Gauge;
 
     // A measurement of ones spiritual ability
     @Column()
-    private _spirit: Gauge;
+    spirit: Gauge;
 
     // A gauge of  ability to do special skills
     @Column()
-    private _drive: Gauge;
+    drive: Gauge;
 
     // The ability to apply force to ones movements
     @Column()
-    private _power: number;
+    power: number;
 
     // The ability to move quickly
     @Column()
-    private _speed: number;   
+    speed: number;   
 
     // The quality of having experience, knowledge, and good judgment.
     @Column()
-    private _wisdom: number;
+    wisdom: number;
 
     // The ability to think and reason logically.
     @Column()
-    private _intelligence: number;
+    intelligence: number;
  
     // The ability to protect and defend oneself.
     @Column()
-    private _defense: number;
+    defense: number;
  
     // The ability to hit and injure others.
     @Column()
-    private _accuracy: number;
+    accuracy: number;
  
     // The ability to avoid and evade attacks.
     @Column()
-    private _evasion: number;
+    evasion: number;
  
     // The ability to have a favorable outcome.
     @Column()
-    private luck: number;
-     
-    public get life(): Gauge {
-        return this._life;
-    }
+    luck: number;
 
-    public set life(life: Gauge) {
-        this._life = life;
-    }
+    @UpdateDateColumn()
+    updatedAt: Date;
 
-    public get spirit(): Gauge {
-        return this._spirit;
-    }
-
-    public set spirit(spirit: Gauge) {
-        this._spirit = spirit;
-    }
-    
-    public get power(): number {
-        return this._power;
-    }
-
-    public set power(power: number) {
-        this._power = power;
-    }
-
-    public get speed(): number {
-        return this._speed;
-    }
-
-    public set speed(speed: number) {
-        this._speed = speed;
-    }
-
-    public get wisdom(): number {
-        return this._wisdom;
-    }
-
-    public set wisdom(wisdom: number) {
-        this._wisdom = wisdom;
-    }
-   
-    public get intelligence(): number {
-        return this._intelligence;
-    }
-
-    public set intelligence(intelligence: number) {
-        this._intelligence = intelligence;
-    }
-    
-     public get defense(): number {
-        return this._defense;
-    }
-
-    public set defense(defense: number) {
-        this._defense = defense;
-    }
-
-    public get accuracy(): number {
-        return this._accuracy;
-    }
-
-    public set accuracy(accuracy: number) {
-        this._accuracy = accuracy;
-    }
-   
-    public get evasion(): number {
-        return this._evasion;
-    }
-
-    public set evasion(evasion: number) {
-        this._evasion = evasion;
-    }
+    @CreateDateColumn()
+    createdAt: Date;
 }

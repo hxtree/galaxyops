@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne, UpdateDateColumn, CreateDateColumn } from "typeorm";
 
 // an item is an object within the game world that can be collected by a player or non-player character. 
 // an item is not an instance of a individual item.
@@ -19,5 +19,9 @@ export class Item {
     @Column()
     private description: string;
 
+    @UpdateDateColumn()
+    updatedAt: Date;
 
+    @CreateDateColumn()
+    createdAt: Date;
 }

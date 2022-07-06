@@ -6,17 +6,17 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 export class User {
 
     @PrimaryGeneratedColumn()
-    private _userId: number;
+    id: number;
 
     @Column()
-    private _username: string;
+    username: string;
 
     @CreateDateColumn()
-    private LastLogonDate: Date;
+    lastLogonDate: Date;
 
-    @CreateDateColumn()
-    private createdAt: Date;
-        
     @UpdateDateColumn()
-    private updatedAt: Date;
+    updatedAt: Date;
+
+    @CreateDateColumn()
+    createdAt: Date;
 }

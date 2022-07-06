@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, ManyToOne, Column} from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, ManyToOne, Column, CreateDateColumn, UpdateDateColumn} from 'typeorm';
    
 import { Character } from "./Character";
 
@@ -20,8 +20,11 @@ import { Character } from "./Character";
     @Column()
     private _experience: number;
 
-    @Column()
-    private _lastUpdated: Date;
+    @UpdateDateColumn()
+    updatedAt: Date;
+
+    @CreateDateColumn()
+    createdAt: Date;
 
     public get character(): Character {
         return this.character;
@@ -61,14 +64,6 @@ import { Character } from "./Character";
 
     public get experienceToNextLevelPercentage(): number {
         return this.experienceToNextLevel / this.nextLevel;
-    }
-
-    public get lastUpdated(): Date {
-        return this.lastUpdated;
-    }
-
-    public set lastUpdated(lastUpdated: Date) {
-        this.lastUpdated = lastUpdated;
     }
 
     // todo load from Class

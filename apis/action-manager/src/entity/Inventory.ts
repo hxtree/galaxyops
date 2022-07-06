@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn} from "typeorm";
    
+// 
 @Entity()
 export class Inventory {
 
@@ -9,7 +10,7 @@ export class Inventory {
     @Column()
     private _playerId: number;
 
-    // where is the item, inventory, chest, bank, etc.
+    // where is the item, bank, chest, etc.
     @Column()
     private _placeId: number;
 
@@ -19,9 +20,9 @@ export class Inventory {
     @Column()
     private _quntity: number;
 
-    @CreateDateColumn()
-    private createdAt: Date;
-        
     @UpdateDateColumn()
-    private updatedAt: Date;
+    updatedAt: Date;
+
+    @CreateDateColumn()
+    createdAt: Date;
 }

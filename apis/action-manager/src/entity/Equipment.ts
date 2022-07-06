@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, ManyToOne, OneToMany, Column} from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, ManyToOne, OneToMany, Column, CreateDateColumn, UpdateDateColumn} from 'typeorm';
 import { Item } from './Item';
 import { Character } from './Character';
 
@@ -6,17 +6,20 @@ import { Character } from './Character';
 export abstract class Equipment {
 
     @PrimaryGeneratedColumn()
-    protected id: string;
+    id: string;
     
     @ManyToOne(() => Character, (character) => character.equipment)
     character: Character;
 
     @Column()
-    protected item: Item
+    item: Item
 
     @Column()
-    protected _gearSlot: string;
+    gearSlot: string;
 
-    @Column()
-    protected lastUpdated: Date;
+    @UpdateDateColumn()
+    updatedAt: Date;
+
+    @CreateDateColumn()
+    createdAt: Date;
 }
