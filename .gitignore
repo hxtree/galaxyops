@@ -19,3 +19,5 @@ node_modules/*
 common/temp/
 **/.rush/temp/
 
+**/docs/.nojekyll
+**/docs/*.html
