@@ -1,19 +1,16 @@
 import {Entity, PrimaryGeneratedColumn, OneToOne, OneToMany, JoinColumn} from 'typeorm';
    
-import { Thing } from "../WIP/contracts/Thing";
-import { Gauge } from "../WIP/Gauge";
 import { Action } from "../WIP/contracts/Action";
-import { Trait } from "../WIP/Trait";
-import { Disipline } from "../WIP/contracts/Discipline";
-import { Equipment } from "../WIP/contracts/Equipment";
+import { Trait } from "./Trait";
+import { Discipline } from "./Discipline";
+import { Equipment } from "./Equipment";
 import { Attributes } from "./Attributes";
-import { Inventory } from './Inventory';
+
 /**
  * A character is a instance of a player or non-player
  */
-
  @Entity()
- export abstract class Character extends Thing { 
+ export abstract class Character { 
 
     @PrimaryGeneratedColumn()
     private id: string;
@@ -22,16 +19,17 @@ import { Inventory } from './Inventory';
     @JoinColumn()
     public attributes: Attributes;
 
-    @OneToMany(() => Inventory, (inventory) => inventory.character)
-    private _inventory: Inventory[]
+    @OneToMany(() => Equipment, (equipment) => equipment.character)
+    private _equipment: Equipment[]
+
+    @OneToMany(() => Discipline, (discipline) => discipline.character)
+    public _disciplines: Array<Discipline>;
+
+    @OneToMany(() => Trait, (trait) => trait.character)
+    public traits: Array<Trait>;
 
     private _actions: Array<Action>;
 
-    public displines: Array<Disipline>;
-
-    private traits: Array<Trait>;
-
-    private _equipment: Array<Equipment>;
 
     private _equipmentSlots = ['head','neck', 'chest', 'hands', 'waist', 'legs', 'feet'];
    

@@ -1,8 +1,9 @@
-import {Entity, PrimaryGeneratedColumn, OneToOne, OneToMany, JoinColumn, Column} from 'typeorm';
-import {Item } from './Item';
+import {Entity, PrimaryGeneratedColumn, ManyToOne, OneToMany, Column} from 'typeorm';
+import { Item } from './Item';
+import { Character } from './Character';
 
 @Entity()
-export abstract class Equipment extends {
+export abstract class Equipment {
 
     @PrimaryGeneratedColumn()
     protected id: string;
@@ -10,10 +11,12 @@ export abstract class Equipment extends {
     @ManyToOne(() => Character, (character) => character.equipment)
     character: Character;
 
-    @OneToMany(() => Item, (item) => item.equipment) // note: we will create author property in the Photo class below
-    item: Item
+    @Column()
+    protected item: Item
 
     @Column()
     protected _gearSlot: string;
 
+    @Column()
+    protected lastUpdated: Date;
 }
