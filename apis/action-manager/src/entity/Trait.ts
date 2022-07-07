@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { Character } from "./Character";
-import { Modifier } from "../model/tag/Modifier";
+import { ModifierTag } from "../tag/ModifierTag";
 
 export enum Operator {
     ADD = "ADD",
@@ -29,6 +29,7 @@ export enum Effect {
  * IMMUNE BLADE NULL NULL
  * IMMUNE POSION NULL NULL
  * RESISTANT SPEED_DECREASE DIVIDE 0.5
+ * HEAL LIFE_INCREASE MULTIPLY 1.25
 */
 @Entity()
 export class Trait {
@@ -47,9 +48,9 @@ export class Trait {
 
     @Column({
         type: "enum",
-        enum: Modifier
+        enum: ModifierTag
     })
-    modifier: Modifier;
+    modifier: ModifierTag;
 
     @Column({
         type: "enum",
@@ -66,13 +67,24 @@ export class Trait {
     @CreateDateColumn()
     createdAt: Date;
 
+    public toJSON(): any {
+        return {
+            id: this.id,
+            character: this.character,
+            modifier: this.modifier,
+            operator: this.operator,
+            value: this.value,
+            updateAt: this.updatedAt,
+            createdAt: this.createdAt
+        };
+    }
+
     /**
-     * Describe the trait
      * "Resistant to fire (-70%)"
      * "Weak to cold (x2.5)"
      * "Immune to frost"
      */
-    public describe() : string {
+     public toString(): string {
         let description = '';
         let modifier = this.modifier.toString().toLowerCase();
 

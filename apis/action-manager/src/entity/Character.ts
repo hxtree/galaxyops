@@ -1,6 +1,6 @@
 import {Entity, PrimaryGeneratedColumn, OneToOne, OneToMany, JoinColumn, CreateDateColumn, UpdateDateColumn, Column} from 'typeorm';
    
-import { Action } from "../actions/BaseAction";
+import { BaseAction } from "../actions/BaseAction";
 import { Trait } from "./Trait";
 import { Experience } from "./Experience";
 import { Equipment } from "./Equipment";
@@ -28,7 +28,7 @@ import { Attributes } from "./Attributes";
     @OneToMany(() => Equipment, (equipment) => equipment.character)
     equipment: Equipment[]
 
-    private _actions: Array<Action>;
+    private _actions: Array<BaseAction>;
 
     private _equipmentSlots = ['head','neck', 'chest', 'hands', 'waist', 'legs', 'feet'];
 

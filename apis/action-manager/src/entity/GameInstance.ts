@@ -4,7 +4,7 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
  * A instance is a record of a game engine instance
  */
 @Entity()
-export class Instance {
+export class GameInstance {
 
     @PrimaryGeneratedColumn("uuid")
     id: string;
