@@ -14,8 +14,8 @@ import { Gauge } from "../WIP/Gauge";
 @Entity()
 export class Attributes {
     
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
 
     @OneToOne(() => Character)
     @JoinColumn()

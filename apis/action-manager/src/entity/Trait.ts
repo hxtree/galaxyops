@@ -33,8 +33,8 @@ export enum Effect {
 @Entity()
 export class Trait {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
 
     @ManyToOne(() => Character, (character) => character.traits)
     character: Character;

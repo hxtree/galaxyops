@@ -4,8 +4,8 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 @Entity()
 export class Inventory {
 
-    @PrimaryGeneratedColumn()
-    private _inventoryId: number;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
 
     @Column()
     private _playerId: number;

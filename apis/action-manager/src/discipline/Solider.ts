@@ -1,10 +1,10 @@
-import { Discipline } from '../contracts/Discipline';
-import { Effects } from '../Effects';
+import { BaseDiscipline, DisciplineCategory } from './BaseDiscipline';
 
-class Solider extends Discipline {
+class Solider extends BaseDiscipline {
 
     protected _name: string = 'Solider';
     protected _description: string = 'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.';
+    protected _category = DisciplineCategory.ARCHETYPE;
 
     // get effects(): Array<Effect> {
     //     let effects = [];

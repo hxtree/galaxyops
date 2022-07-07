@@ -5,7 +5,7 @@ import { Character } from './Character';
 @Entity()
 export abstract class Equipment {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: string;
     
     @ManyToOne(() => Character, (character) => character.equipment)

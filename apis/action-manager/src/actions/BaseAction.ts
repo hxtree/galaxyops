@@ -1,28 +1,31 @@
-import { Gauge } from '../Gauge';
-import { Thing } from './Thing';
-import { Character } from './Character';
-import { Attribute } from '../Attribute';
-import { Effects } from '../Effects';
+import { Gauge } from '../WIP/Gauge';
+import { Thing } from '../WIP/contracts/Thing';
+import { Character } from '../entity/Character';
+import { Attribute } from '../WIP/Attribute';
+import { Effects } from '../WIP/Effects';
 
 type Factor = [Attribute, number, string, string];
 type Trait = Factor;
 
-// Movement Actions
-// Menu Actions
-// Combo Actions
-// nteration Actions
-// Weapon Actions
-// Class Actions
-// Drive Actions
-// Party Action: 
-// Gear actions: are related to the use of gear
-// Natural Actions: actions that do not need to be called to be used
+export enum ActionCategory {
+    MOVEMENT = 'Movement', // changes position
+    MENU = 'Menu', // activated via menu
+    COMBO = 'Combo', // activated via combo
+    INTERACTION = 'Interaction',
+    WEAPON = 'Weapon',
+    CLASS = 'Class',
+    DRIVE = 'Drive',
+    PARTY = 'Party',
+    GEAR = 'Gear', // are related to the use of gear
+    NATURAL = 'Natural', //  actions that do not need to be called to be used
+}
 
-export abstract class Action {
+export abstract class BaseAction {
     
     protected abstract _id: number;
     protected abstract _name: string;
     protected abstract _description: string;
+    protected abstract _category: ActionCategory;
     
     protected _actors: Array<Character>;    
     protected _targets: Array<Character>;

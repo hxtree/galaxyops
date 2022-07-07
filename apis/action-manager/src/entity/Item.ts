@@ -7,8 +7,8 @@ import { Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne, UpdateDat
 @Entity()
 export class Item { 
 
-    @PrimaryGeneratedColumn()
-    private id: string;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
 
     @Column()
     protected _category: string;

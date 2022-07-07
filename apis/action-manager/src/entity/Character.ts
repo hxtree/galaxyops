@@ -1,8 +1,8 @@
 import {Entity, PrimaryGeneratedColumn, OneToOne, OneToMany, JoinColumn, CreateDateColumn, UpdateDateColumn, Column} from 'typeorm';
    
-import { Action } from "../WIP/contracts/Action";
+import { Action } from "../actions/BaseAction";
 import { Trait } from "./Trait";
-import { Discipline } from "./Discipline";
+import { Experience } from "./Experience";
 import { Equipment } from "./Equipment";
 import { Attributes } from "./Attributes";
 
@@ -12,7 +12,7 @@ import { Attributes } from "./Attributes";
  @Entity()
  export abstract class Character { 
 
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: string;
     
     @OneToMany(() => Trait, (trait) => trait.character)
@@ -22,12 +22,11 @@ import { Attributes } from "./Attributes";
     @JoinColumn()
     attributes: Attributes;
 
+    @OneToMany(() => Experience, (experience) => experience.character)
+    experiences: Array<Experience>;
+
     @OneToMany(() => Equipment, (equipment) => equipment.character)
-    private _equipment: Equipment[]
-
-    @OneToMany(() => Discipline, (discipline) => discipline.character)
-    public _disciplines: Array<Discipline>;
-
+    equipment: Equipment[]
 
     private _actions: Array<Action>;
 
@@ -39,16 +38,11 @@ import { Attributes } from "./Attributes";
     @CreateDateColumn()
     createdAt: Date;
 
-    public get equipment(): Array<Equipment> {
-        return this._equipment;
-    }
-
     public addEquipment(equipment: Equipment){
-        this._equipment.push(equipment);
+        this.equipment.push(equipment);
     }
 
     public removeEquipment(equipment: Equipment){
-        this._equipment.splice(this._equipment.indexOf(equipment), 1);
+        this.equipment.splice(this.equipment.indexOf(equipment), 1);
     }
-
 }

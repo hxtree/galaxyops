@@ -1,10 +1,10 @@
-import { Discipline } from '../contracts/Discipline';
-import { Effects } from '../Effects';
+import { BaseDiscipline, DisciplineCategory } from './BaseDiscipline';
 
-class Gaurd extends Discipline {
+class Gaurd extends BaseDiscipline {
 
     protected _name: string = 'Gaurd';
     protected _description: string = 'Specialize in protection.';
+    protected _category = DisciplineCategory.ARCHETYPE;
 
     // get effects(): Array<Effect> {
     //     let effects = [];

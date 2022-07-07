@@ -1,13 +1,14 @@
-import {Action} from "./Action";
+import { BaseAction, ActionCategory } from "./BaseAction";
 import {Thing} from "../character/Thing";
-import {Effect} from "../Effects";
-import {Attribute} from "../Attribute";
+import {Effect} from "../WIP/Effects";
+import {Attribute} from "../WIP/Attribute";
 
-class HealAction extends Action {
+class HealAction extends BaseAction {
 
     protected _id: 0;
     protected _name: "Heal";
     protected _description: "Heal a target";
+    protected _category: ActionCategory.MENU;
       
     /* {@inheritDoc} */
     public get waitTime() : number {
