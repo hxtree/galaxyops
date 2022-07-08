@@ -3,6 +3,47 @@ export enum DisciplineCategory {
     ARCHETYPE = 'Archetype'
 }
 
+export enum Discipline {
+    // penny 
+    NINJA = 'Ninja',
+    AMBER_ASSASSIN = 'Amber Assassin',
+    ELITE_ASSASIN = 'Elite Assasin',
+    THIEF = 'Thief',
+    // loomee
+    CHEERLEADER = 'Cheerleader',
+    MADIEN = 'Madien',
+    KEEPER = 'Keeper',
+    // gaali
+    BARD = 'Bard',
+    DUELIST = 'Duelist',
+    KNIGHT = 'Knight',
+    RUNE_KING = 'Rune King',
+    // gunter
+    GAURD = 'Gaurd',
+    BODY_BUILDER = 'Body Builder',
+    COMMANDER = 'Commander',
+    // traez
+    ENGINEER = 'Engineer',
+    LIGHTENING_WARRIOR = 'Lightening Warrior',
+    REBEL = 'Rebel',
+    // meeku
+    SOLIDER = 'Solider',
+    XSOLIDER = 'XSolider',
+    BERSERKER = 'Berserker',
+    ONI = 'Oni',
+    // malace
+    GYMNAST = 'Gymnast',
+    POSSESSED = 'Possessed',
+    SCOUT = 'Scout',
+    OUROBOROS = 'Ouroboros',
+    // faye
+    WIZARD = 'Wizard',
+    HISTORIAN = 'Historian',
+    MAGI = 'Magi',
+    // other
+    WARRIOR = 'Warrior',
+}
+
 export abstract class BaseDiscipline {
 
     protected abstract _name: string;

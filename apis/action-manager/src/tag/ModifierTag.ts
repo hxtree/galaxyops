@@ -1,3 +1,5 @@
+import { WeaponCategory } from "./../gear/weapons/BaseWeapon";
+
 /**
  * ElementModifierTags are a type of tag used to determine weakness and resistance
  * For example, if a weapon deals fire damage but the target is immune to fire, the weapon will deal no damage.
@@ -45,35 +47,6 @@ export enum StatisticModifierTag {
     LUCK_INCREASE = "Luck Increase",
 }
 
-/**
- * Weapon is a tag applied to a weapon class and is used to determine the damage type of the weapon.
- * It is used to determine equability, weakness and resistance.
- * For example, a character may be immune to unarmed attacks therefore boxing gloves would deal no damage.
- */
- export enum WeaponModifierTag {
-    ARROW = 'Arrow',
-    BOW = 'Bow',
-    BLADE = 'Blade',
-    BLUNT = 'Blunt',
-    CLAW = 'Claw',
-    CROSSBOW = 'Crossbow',
-    DAGGER = 'Dagger',
-    DART = 'Dart',
-    FLAIL = 'Flail',
-    HAMMER = 'Hammer',
-    HAND_AXE = 'Hand Axe',
-    HAND_SWORD = 'Hand Sword',
-    HATCHET = 'Hatchet',
-    MACE = 'Mace',
-    POLEARM = 'Polearm',
-    SHIELD = 'Shield',
-    STAFF = 'Staff',
-    SWORD = 'Sword',
-    TOME = 'Tome',
-    WAND = 'Wand',
-    UNARMED = 'Unarmed',
-    UNKNOWN = 'Unknown'
-}
 
 /**
  * ModifierTag is a type of tag used to determine weakness and resistance
@@ -81,7 +54,8 @@ export enum StatisticModifierTag {
  */
 export const ModifierTag = {
     ...ElementModifierTag, 
-    ...WeaponModifierTag
+    ...WeaponCategory
 };
+
 export type ModifierTag = typeof ModifierTag;
 

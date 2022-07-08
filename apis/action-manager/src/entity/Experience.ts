@@ -1,30 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, ManyToOne, Column, OneToMany, CreateDateColumn, UpdateDateColumn} from 'typeorm';
 import { Character } from "./Character";
-
-export enum Discipline {
-    AMBER_ASSASSIN = 'Amber Assassin',
-    ELITE_ASSASIN = 'Elite Assasin',
-    BARD = 'Bard',
-    BODY_BUILDER = 'Body Builder',
-    COMMANDER = 'Commander',
-    DUELIST = 'Duelist',
-    ENGINEER = 'Engineer',
-    GAURD = 'Gaurd',
-    GYMNAST = 'Gymnast',
-    HISTORIAN = 'Historian',
-    KNIGHT = 'Knight',
-    LIGHTENING_WARRIOR = 'Lightening Warrior',
-    NINJA = 'Ninja',
-    POSSESSED = 'Possessed',
-    REBEL = 'Rebel',
-    RUNE_KING = 'Rune King',
-    SCOUT = 'Scout',
-    SOLIDER = 'Solider',
-    THIEF = 'Thief',
-    WARRIOR = 'Warrior',
-    WIZARD = 'Wizard',
-    XSOLIDER = 'XSolider'
-}
+import { Discipline } from "./../discipline/BaseDiscipline";
 
 /**
  * Experience records a character experience for a specific discipline.
