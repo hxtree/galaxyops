@@ -1,4 +1,4 @@
-import { BaseCharacter } from './BaseCharacter';
+import { BaseCharacter } from '../BaseCharacter';
 
 // Tokens are coin shaped objects that a Player recieves that represent characters currently in party. 
 // These coins have six sides with an engraving of the character they represent. 
@@ -23,6 +23,6 @@ export enum Token {
     BLACK = 'Black',
 }
 
-export abstract class PlayerCharacter extends BaseCharacter {
+export abstract class BasePlayerCharacter extends BaseCharacter {
     protected _token: Token;
 }

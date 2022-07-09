@@ -3,6 +3,12 @@ export enum DisciplineCategory {
     ARCHETYPE = 'Archetype'
 }
 
+// Combat Classes
+// Specialty Classes
+// Drive Classes
+// Omega Classes
+//  | Spirit Class | Drive Class | Omega Class
+
 export enum Discipline {
     // penny 
     NINJA = 'Ninja',

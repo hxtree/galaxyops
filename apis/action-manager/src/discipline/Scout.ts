@@ -16,4 +16,7 @@ class Scout extends BaseDiscipline {
     //     }
     //     return Effects;
     // }
+
+//     Scout – Scouts specialize moving ahead of the party to gathering information and reconnaissance it.
+// Actions: Scout, Scan, Search
 }

@@ -17,4 +17,7 @@ class Commander extends BaseDiscipline {
 
     //     return Effects;
     // }
+
+//     Commander – Commanders specialize in giving orders to others
+// Actions: Order, Formations, Boast
 }

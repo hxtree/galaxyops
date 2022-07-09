@@ -21,4 +21,7 @@ class Solider extends BaseDiscipline {
 
     //     return Effects;
     // }
+
+//     Solider - Solider is a class based upon strict maneuvers. Solider is a classed formed for followers of the United Forces. This class can be taken up by: Gunter, Meeku and Malace.
+// Ranks: Cleave
 }

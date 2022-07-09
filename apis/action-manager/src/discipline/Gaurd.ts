@@ -16,4 +16,7 @@ class Gaurd extends BaseDiscipline {
 
     //     return Effects;
     // }
+
+//     Guard – Guards specialize in protection.
+// Actions: Guard, Protect, 
 }

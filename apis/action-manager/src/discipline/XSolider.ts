@@ -17,4 +17,7 @@ class XSolider extends BaseDiscipline {
     //     }
     //     return Effects;
     // }
+
+    // X-Solider – X-Soldiers are soldiers that have gone against their teachings to gain new more powerful actions.
+    // Actions: Liberate, Disobey, Cleave lv2
 }

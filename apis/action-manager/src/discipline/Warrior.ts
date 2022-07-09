@@ -16,4 +16,7 @@ class Warrior extends BaseDiscipline {
 
     //     return Effects;
     // }
+
+//     Warrior – Warriors specialize in combat on the battlefield.
+// Actions: Focus, Parry, 
 }
