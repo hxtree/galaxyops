@@ -1,3 +1,5 @@
+// damage is calculated on the server side, because client side there are cheaters.
+
 // Input
 // We want to cut down on the number of requests back and forth.
 
