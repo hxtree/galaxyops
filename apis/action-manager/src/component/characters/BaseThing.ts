@@ -1,4 +1,4 @@
-export class Thing {
+export class BaseThing {
     /**
      * The player instance id that the thing is associated with
      */
@@ -13,6 +13,10 @@ export class Thing {
      * The id of the thing
      */
     protected _id: string;
+
+    protected _position_x: number;
+    protected _position_y: number;
+    protected _position_z: number;
 
     /**
      * The name of the thing
