@@ -1,4 +1,4 @@
-# @org-tests/tests-e2e
+# @org-tests/e2e
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 
 End-to-end tests built using `microsoft/playwright`. 
