@@ -1,4 +1,3 @@
-import { Gauge } from '../WIP/Gauge';
 import { Thing } from '../WIP/contracts/Thing';
 import { Character } from '../entity/Character';
 import { Attribute } from '../WIP/Attribute';

@@ -4,5 +4,8 @@ Entity: An entity represents a general-purpose object. In a game engine context,
 
 Entities: a unique integer
 
+Entities are only collection of data.
+No logic, just data. Any entities functions are helper functions to access data.
+
 
 https://imgbb.com/JK5jr5F
