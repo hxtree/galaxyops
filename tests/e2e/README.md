@@ -34,4 +34,6 @@ End-to-end tests built using `microsoft/playwright`.
 
 # Architectural Assumptions:
 
-Playwright was selected for end to end tests due to its support for Webkit. Cypress was no selected due to it's lack of Safari/Webkit support. Selenium was not selected as to adhere to a ubiquitous language, Typescript.
+* Playwright was selected for end to end tests due to its support for Webkit. 
+* Cypress was not selected due to Cypress lack of Safari/Webkit support. 
+* Selenium was not selected as to adhere to a ubiquitous language, Typescript.
