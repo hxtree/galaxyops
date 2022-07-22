@@ -20,7 +20,7 @@ export class Entity {
     public get components(): IComponent[] {
         return this._components
     }
-
+ 
     // returns a reference to a specific component by provided type
     public getComponent<C extends IComponent>(constructor: targetTypeConstructor<C>): C {
 

@@ -1,0 +1,5 @@
+class EntityManager {
+
+    public entities = [];
+        
+}
