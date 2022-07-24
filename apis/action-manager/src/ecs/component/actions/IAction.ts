@@ -1,459 +1,164 @@
-// Is this more of a system then a component?
-export enum ActionCategory {
-    MOVEMENT = 'Movement', // changes position
-    MENU = 'Menu', // activated via menu
-    COMBO = 'Combo', // activated via combo
-    INTERACTION = 'Interaction',
-    WEAPON = 'Weapon',
-    CLASS = 'Class',
-    DRIVE = 'Drive',
-    PARTY = 'Party',
-    GEAR = 'Gear', // are related to the use of gear
-    NATURAL = 'Natural', //  actions that do not need to be called to be used
-}
+import { EffectTag } from "./EffectTag";
+import { StatusEffect } from "./StatusEffect";
+import { Attribute } from "../Attribute";
 
-/**
- * EffectTag are used to determine weakness and resistance
- * A collection of modifiers types that are permittable to assign to a action, trait, or effect.
- * For example, if a weapon deals fire damage but the target is immune to fire, the weapon will deal no damage.
- */
-export enum EffectTag {
-    // Element
-    ELECTRIC = "Electric", // this is the damage type modifier for lightning. 
-    AIR = "Air", // this is the damage type modifier for wind.
-    EARTH = "Earth", // this is the damage type modifier for earth.
-    FIRE = "Fire", // this is the damage type modifier for fire.
-    WATER = "Water", // this is the damage type modifier for water.
-    NATURE = "Nature", // this is the damage type modifier for nature. 
-    PHYSICAL = "Physical", // this is the damage type modifier for physical.
-    PSYCHIC = "Psychic", // this is the damage type modifier for psychic.
-    DARKNESS = "Darkness", // this is the damage type modifier for darkness.
-    LIGHT = "Light", // this is the damage type modifier for light.
-
-    // flying
-    AERIAL = 'Aerial', // happening in the sky, effective against flying
-    GROUNDLEVEL = 'Ground-Level', // happens on the ground, ineffective against flying 
-
-    // Weapon
-    ARROW = 'Arrow',
-    BOW = 'Bow',
-    BLADE = 'Blade',
-    BLUNT = 'Blunt',
-    CLAW = 'Claw',
-    CROSSBOW = 'Crossbow',
-    DAGGER = 'Dagger',
-    DART = 'Dart',
-    FLAIL = 'Flail',
-    HAMMER = 'Hammer',
-    HAND_AXE = 'Hand Axe',
-    HAND_SWORD = 'Hand Sword',
-    HATCHET = 'Hatchet',
-    KNIFE = 'Knife',
-    MACE = 'Mace',
-    POLEARM = 'Polearm',
-    SHIELD = 'Shield',
-    STAFF = 'Staff',
-    SWORD = 'Sword',
-    SHEILD_SWORD = 'Shield Sword',
-    TOME = 'Tome',
-    WAND = 'Wand',
-    UNARMED = 'Unarmed',
-    UNKNOWN = 'Unknown'
-}
+// Some tags can be automatically added, like LIFE_DECREASE IF attack decreases life.
 
 
-/**
- * Stat Modifer categorize the impact on target and during action processing
- */
-export enum StatModifier {
-    LIFE_DECREASE = "Life Decrease",
-    LIFE_INCREASE = "Life Increase",
-    SPIRIT_DECREASE = "Spirit Decrease",
-    SPIRIT_INCREASE = "Spirit Increase",
-    DRIVE_DECREASE = "Drive Decrease",
-    DRIVE_INCREASE = "Drive Increase",
-    POWER_DECREASE = "Power Decrease",
-    POWER_INCREASE = "Power Increase",
-    SPEED_DECREASE = "Speed Decrease",
-    SPEED_INCREASE = "Speed Increase",
-    WISDOM_DECREASE = "Wisdom Decrease",
-    WISDOM_INCREASE = "Wisdom Increase",
-    INTELLIGENCE_DECREASE = "Intelligence Decrease",
-    INTELLIGENCE_INCREASE = "Intelligence Increase",
-    DEFENSE_DECREASE = "Defense Decrease",
-    DEFENSE_INCREASE = "Defense Increase",
-    ACCURACY_DECREASE = "Accuracy Decrease",
-    ACCURACY_INCREASE = "Accuracy Increase",
-    EVASION_DECREASE = "Evasion Decrease",
-    EVASION_INCREASE = "Evasion Increase",
-    LUCK_DECREASE = "Luck Decrease",
-    LUCK_INCREASE = "Luck Increase",
-
-}
-
-/**
- * Status effects are abnormal states that may have positive or negative effects
- * they can be gained from actions or items and can be healed by resting, certain
- * abilities, or after some time.
- */
-export enum StatusEffect {
-    BERSERK = "Berserk", // character can only attack. Power increased by Drive.
-    LIFELESS = "Lifeless", // Afflicted when Life is less than 0
-    KNOCKED_OUT = "Knocked Out", // character is unable to move. Set when Stamina is less than 0.
-    CONFUSED = "Confused",
-    DRUNK = "Drunk", //  character accuracy decreases.
-    DOOMED = "Doomed", // heal before timer runs out or character KOs
-    MORTALLY_WOUNDED = "Mortally Wounded",
-    FROZEN = "Frozen",
-    COLD = "Cold", //  Speed reduced
-    BURNED = "Burned", 
-    BOUND = "Bound", // Cannot do anything but Break Free or use Tool  (interaction)
-    SLEEPY = "Sleepy",
-    STUNNED = "Stunned",
-    DOWN = "Down", // character is disabled and has fallen down
-    DISARMED = "Disarmed", // character must get weapon and arm self again in order to attack.
-    BLITZ = "Blitz", // Strength and are speed modified for only duration of battle (-5x through +5x) 
-    EXILED = "Exiled", // Kick out of battle cannot return until battle is over 
-    INFECTION = "Infection", // Damage is received each turn until infliction is healed. 
-    METAMORPHIC = "Metamorphic", // You are inflicted with random status affect each turn. 
-    OMNI = "Omni", // character enters a berserk like mode and attacks uncontrollable.
-    FEAR = "Fear", // character cannot move.
-    IGNORANT = "Ignorant", // character unable to use Learn
-    ZIPPED = "Zipped", // character cannot use Gear.
-    SILENCE = "Silence", // character cannot use Spells.
-    FATHOM = "Fathom", // character cannot use Drive.
-    DROWNED = "Drowned",
-    BARRIER = "Barrier", // damage taken decreases
-} 
-
-export interface IEffectStat {
-    modify: StatModifier, 
-    amount: string,
-    tags?: Array<EffectTag>
-}
-
-export interface IEffectStatusEffect {
-    add?: StatusEffect, 
-    remove?: StatusEffect, 
-    chance: number,
+export interface IActionEffect {
+    add?: Attribute | StatusEffect,
+    remove?: Attribute | StatusEffect,
+    quanity?: string,
+    chance?: number,
     tags?: Array<EffectTag>
 }
 
 /**
  * Actions are decoupled from the actor and target. 
- */
+ * Actions are moves that can be used by a character. 
+ * They are motor programs that a character learns. 
+ * Actions progression is often determined by determined by class.
+*/
 export interface IAction {
     name: string;
     description: string;
-    effect: Array<IEffectStat | IEffectStatusEffect>;
+    effect: Array<IActionEffect>;
 }
 
 
 
-// Combat Log
-// 0 – 3		Normal Spell		
-// 3 – 6		Mega Spell
-// 6 – 9		Giga Spell
-// 9 – 12		Tera Spell
-// 12 – 15	Omega Spell
-// This is just the name used for the attack depending on skill level
+// Stamina Boost Enabled Action - by holding down the button used to make that move you can place more stamina into the move making it a more powerful action. For every 6 seconds you will gain a plus 1.
+// Fixed Action A action that must be canceled or will not stop being used
 
-export class Gravity implements IAction {
-    name: "Gravity";
-    description: "Coalesce gravity around target. Causes flying targets to hit ground";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.PHYSICAL, EffectTag.AERIAL]
-        }
-    ];
-}
+// Movement Actions – actions that are directly related to movement
+// Climb – 
+// Trek – Used to determine how steep an angled tile you can stand on. If your character fails to trek the tile then they will fall from it and will be to step onto it.
+// Duck – (Hold Square + Backwards?) used to evaded attacks works best if preformed during attack.
+// Jump – (Square) Jumping uses stamina and can be used to move to otherwise unreachable places. The more stamina
+// Basic – (Square) jump.
+// High – (Stamina Boost + Square) jump straight up in the air using a stamina boost.
+// Long – (Directional Pad + Press Square) jump a long way.
+// Running – (Running + Square) 
+// Swim
+// Dive
+// Run – (Hard press Direction Pad with Stamina) – Move quickly using stamina.
+// Walk – (Light press Direction Pad) Move slowly.
+// Fly – magic person
+// Menu Actions – actions that can only be used through the menu screen
+// Appraise – Tell how much an items worth.
+// Boast – increase party’s moral
+// Combined – make two or more items one.
+// Bluff – Tell a lie without being caught
+// Sense Bluff – This represented by a little icon on the screen that will tell if someone is trying to bluff you (if you beat their bluff check). 
+// Throw - Toss an item from stock to injure enemy.
+// Combo Actions
+// Combo actions are actions that can only be used by pressing a combination of buttons and then the combination activation button (Square by default) to activate the action
+// Blitz – 
+// Set Combo – Set a action to be activated from a button combination for quick action selection.
+// Interaction Actions
+// Interaction Actions are a type of Command Menu actions, which essentially means that they take up a slot on the players Command Menu. Interaction Actions take up the Interaction Slot on the Commnd Menu. What distinguishes Interaction Actions from the rest is that all interaction actions relate to interacting with other objects.
+// Counter – make a maneuver in reaction to an enemy’s.
+// Disobey – do not follow orders given.
+// Parry – use your weapon to block / deflect the enemies attack. 
+// Standard Object – Take no action points
+// Pick Up / Take
+// Open
+// Open Lock
+// Pull – (Example “Pull Lever”)
 
-export class Shock implements IAction {
-    name: "Shock";
-    description: "Electrocutes target";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.ELECTRIC]
-        },
-        {
-            add: StatusEffect.STUNNED,
-            chance: 0.2,
-            tags: [EffectTag.ELECTRIC]
-        }
-    ];
-}
-
-
-export class Quake implements IAction {
-    name: "Quake";
-    description: "Shakes earth surrounding target";
-    targets: 1; // AOE?
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.EARTH]
-        },
-        {
-            add: StatusEffect.DOWN,
-            chance: 0.2,
-            tags: [EffectTag.EARTH, EffectTag.GROUNDLEVEL]
-        }
-    ];
-}
-
-export class Landslide implements IAction {
-    name: "Landslide";
-    description: "Creates a landslide";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.EARTH]
-        },
-        {
-            add: StatusEffect.DOWN,
-            chance: 0.2,
-            tags: [EffectTag.EARTH]
-        },
-        {
-            add: StatusEffect.EXILED,
-            chance: 0.3,
-            tags: [EffectTag.EARTH]
-        }        
-    ];
-}
-
-
-export class Blizzard implements IAction {
-    name: "Blizzard";
-    description: "Creates a Blizzard";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.WATER, EffectTag.AIR]
-        },
-        {
-            add: StatusEffect.COLD,
-            chance: 0.2,
-            tags: [EffectTag.WATER, EffectTag.AIR]
-        },
-        {
-            add: StatusEffect.EXILED,
-            chance: 0.3,
-            tags: [EffectTag.WATER, EffectTag.AIR]
-        }        
-    ];
-}
-
-export class Inferno implements IAction {
-    name: "Inferno";
-    description: "Creates a Inferno";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.FIRE]
-        },
-        {
-            add: StatusEffect.BURNED,
-            chance: 0.2,
-            tags: [EffectTag.FIRE]
-        }
-    ];
-}
-
-
-export class Twister implements IAction {
-    name: "Twister";
-    description: "Creates a Twister";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.AIR]
-        },
-        {
-            add: StatusEffect.BURNED,
-            chance: 0.2,
-            tags: [EffectTag.AIR, EffectTag.AERIAL]
-        }
-    ];
-}
-
-export class Gust implements IAction {
-    name: "Gust";
-    description: "Creates a Gust";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.AIR]
-        },
-        {
-            add: StatusEffect.EXILED,
-            chance: 0.2,
-            tags: [EffectTag.AIR, EffectTag.AERIAL]
-        }
-    ];
-}
-
-export class Gale implements IAction {
-    name: "Gale";
-    description: "Creates Gale";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.AIR]
-        },
-        {
-            add: StatusEffect.EXILED,
-            chance: 0.2,
-            tags: [EffectTag.AIR, EffectTag.AERIAL]
-        }
-    ];
-}
-
-
-export class Cyclone implements IAction {
-    name: "Cyclone";
-    description: "Creates Cyclone";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.AIR]
-        },
-        {
-            add: StatusEffect.EXILED,
-            chance: 0.2,
-            tags: [EffectTag.AIR, EffectTag.AERIAL]
-        }
-    ];
-}
-
-
-export class Tsunami implements IAction {
-    name: "Tsunami";
-    description: "Creates Tsunami";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.WATER]
-        },
-        {
-            add: StatusEffect.EXILED,
-            chance: 0.2,
-            tags: [EffectTag.WATER, EffectTag.GROUNDLEVEL]
-        }
-    ];
-}
-
-
-export class Aqua implements IAction {
-    name: "Aqua";
-    description: "Creates Aqua";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_DECREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.WATER]
-        },
-        {
-            add: StatusEffect.EXILED,
-            chance: 0.2,
-            tags: [EffectTag.WATER, EffectTag.GROUNDLEVEL]
-        }
-    ];
-}
-
-
-export class Heal implements IAction {
-    name: "Heal";
-    description: "Heal target";
-    targets: 1;
-    effect: [
-        {
-            modify: StatModifier.LIFE_INCREASE, 
-            amount: "1d6+2",
-            tags: [EffectTag.WATER]
-        }
-    ];
-}
-
-export class Revive implements IAction {
-    name: "Revive";
-    description: "Restore life to target";
-    targets: 1;
-    effect: [
-        {
-            remove: StatusEffect.LIFELESS, 
-            chance: 0.9,
-            tags: []
-        }
-    ];
-}
-
-export class Cure implements IAction {
-    name: "Cure";
-    description: "Cures StatusEffects";
-    targets: 1;
-    effect: [
-        {
-            remove: StatusEffect.COLD, 
-            chance: 1,
-        },
-        {
-            remove: StatusEffect.DOOMED, 
-            chance: 1,
-        },
-        {
-            remove: StatusEffect.INFECTION, 
-            chance: 1,
-        },
-        {
-            remove: StatusEffect.SILENCE, 
-            chance: 1,
-        }
-    ];
-}
-
-
-export class Barrier implements IAction {
-    name: "Barrier";
-    description: "Barrier StatusEffects";
-    targets: 1;
-    effect: [
-        {
-            add: StatusEffect.BARRIER, 
-            chance: 1,
-            tags: [EffectTag.AIR]
-        },
-    ];
-}
-
+// Moveable Object
+// Grab
+// Push
+// Pull
+// Lift
+// Throw
+// Impending Object
+// Catch – Catch an item or weapon that has been thrown in your path of travel.
 // Reflect
-// Boom
-// Meteor
-// Telepathy
-// Flare
-// Darkness
-// Light
+// Parry
+// Weapon Actions (Slot 1) 
+// Weapon Actions are actions directly related to simple use of the players equipped weapon. Weapons Actions are a type of Command Menu Action which means they can be used in game. They are always located in the first slot of the Basic Command Menu Actions.
+// Class Tech
+// Weapon Tech 
+// Slash – (stamina)
+// Throw
+// Ward – (spirit) a action that keeps enemies away
+// Guard – (stamina) protect from oncoming attacks.
+// Charge – Hold attack button down. This uses up Stamina and raise Power of attack.
+// Charge – Hold attack button down. This uses up Spirit and raise Power of attack.
+// Class Actions (Slot 2)
+// Learn
+
+// Summons
+// Summons can be called to the battlefield in many different ways and once their can be used in different ways to benefit your party. Just because a summon is present does not mean that it will do as it is told or that your party can control it. Most Summons can only be used with the Command action or through the Interaction Command. Summons have different levels and stats just like characters and the more you use them the more powerful they become.
+// Call 
+// Vachel – A silver bull that Meeku used to care for as a child.
+// Summoner: Meeku
+// Attacks – Must use Command to attack.
+// Charge
+// Can be used with Overdrive combinations
+// *Can be upgraded with CART to accommodate large Party.
+// Felix - a white lop-eared dwarf rabbit that Loomee adopts as a pet.
+// Summoner: Loomee  
+// A giant half Luna moth and lyrebird that Faye can summon at will.
+// Summoner: Faye
+// Passant – beast with one front leg raised facing towards viewers left
+// Rampant – heraldry rearing on hind legs
+
+// Issuant
+
+// 	Guardant
+// Spells 
+// Blizzard
+// Inferno
+// Twister Gust – Gale - Cyclone
+// Landslide
+// Tsunami
+// Aqua omni
+// Actions
+// Barrier
+
+// Darkness – decrease the area that your opponent can see.
+// Disguise^ – [stamina] Changes appearance and disables command menu until canceled.
+// Focus – raise attack and attack percent for following move.
+// Grapple – Lowers character and opponents life.
+// Hide^ – [stamina] enemy cannot see you
+// Mimic – use the same move that was used on you on the enemy.
+// Mock – [stamina] make a mocking action to cause Berserk on the opponent.
+// Pickpocket – [stamina] steal from enemy
+// Protect – [stamina] guard party members behind you.
+// Sacrifice – 
+// Scan – read enemies stats.
+// Scout – [stamina] move ahead of party.
+// Seal – hold an enemy off.
+// Search – scan nearby area for goods.
+// Steal - [stamina] Take item from opponent
+// Support
+// Drive Actions (Slot 3)
+// Berserk - Become completely focused on winning.
+// Toxic Thrust - 
+// Aerial assault – Traez jumps into air and throws boomerang (jump attack) 
+// Party Actions (Slot 4)
+// Party – choose to interact with party
+// Command – tell other party members what actions to use.
+// Formations – get part to move to certain areas.
+// Gear Actions (Slot 5)
+// Gear actions are quite simply actions that are related to the use of Gear.
+// Item - use an item from stock.
+// Item – Use one item from stock
+// Item (x2) – Use two Items from stock
+// Item (x3) – Use three Items from stock
+// Tool – (Slot 4)
+// Grappling Hook – Enables party to move to higher grounds.
+// Trap – (Slot 4) set a trap that will go off when the tile is stood on.
+// Set
+// Poison
+// Explosive
+// Time Bomb
+// Caltrops – spiked things you throw on the floor
+// Disabled – disable a set trap.
+// Natural Actions 
+// Natural Actions are actions that do not need to be called to be used.
+// Intimidate – Causes fear in enemy
+// Escape Artist – Bonus when running away from enemy
+// Concentration – stay focused
