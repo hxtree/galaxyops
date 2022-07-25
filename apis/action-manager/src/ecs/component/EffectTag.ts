@@ -19,6 +19,9 @@
     AERIAL = 'Aerial', // happening in the sky, effective against flying
     GROUNDLEVEL = 'Ground-Level', // happens on the ground, ineffective against flying 
 
+    // 
+    POISON = 'Poison', 
+
     // Weapon
     ARROW = 'Arrow',
     BOW = 'Bow',

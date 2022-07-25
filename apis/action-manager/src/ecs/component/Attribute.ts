@@ -1,5 +1,5 @@
-
 export enum Attribute {
+    EXPERIENCE = 'Experience',
     LIFE = "Life",
     SPIRIT = "Spirit",
     DRIVE = 'Drive',
