@@ -1,24 +1,47 @@
 /**
- * Tokens are coin shaped objects that a Player recieves that represent characters currently in party. 
+ * Tokens are coin shaped objects that a Player recieves 
+ * that represent characters currently in party. 
  * These coins have six sides with an engraving of the character they represent. 
- * Different types of tokens represents a Players ability to control that character. 
- * How a player arranges tokens is how your party will be arranged and visa versa.
+ * How a player arranges tokens reflects how party will be arranged and visa versa.
+ * Different types of tokens represents a player's ability to control that character. 
  */
 export enum Token {
-    // A gold token represences a character that is able to be controlled and can be ordered.
+    /**
+     * A Gold token means:
+     * player can controller character.
+     * player can order character.
+     * player can adjust character's action.
+     */
     GOLD = "Gold",
     
-    // A siler token  means that the character will not be able to be controlled but can be ordered. 
-    // The player is not able to adjust the gear of these players but they can adjust their actions.
+    /**
+     * A Silver token means:
+     * player cannot controller character. 
+     * player can order the character to perform tasks. 
+     * player cannot adjust character's gear.
+     * player can adjust character's action.
+     */ 
     SILVER = 'Silver',
 
-    // A copper means that the character will not be able to be controlled or ordered.
-    // In addition the player is not able to adjust the gear of these players or their actions.
+    /**
+     * A Copper token means:
+     * player cannot controller character. 
+     * player cannot order the character to perform tasks. 
+     * player cannot adjust character's gear.
+     * player cannot adjust character's action.
+     */ 
     COPPER = 'Copper',
 
-    // A gray token means that the player has a gold token for a character but they are not in the party currently
+    /**
+     * A Gray token means:
+     * player has a gold token for a character.
+     * character is current not in party.
+     */ 
     GRAY = 'Gray',
 
-    // A black token is used to represent a dead party member
-    BLACK = 'Black',
+    /**
+     * A Black token means:
+     * character is dead.
+     */
+     BLACK = 'Black',
 }
