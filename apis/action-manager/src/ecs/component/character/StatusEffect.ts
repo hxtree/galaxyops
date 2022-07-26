@@ -37,3 +37,5 @@
     BARRIER = "Barrier", // damage taken decreases
     REFLECT = "Reflect", // damage is reflected back 
 }
+
+export type StatusEffects = Array<StatusEffect>;

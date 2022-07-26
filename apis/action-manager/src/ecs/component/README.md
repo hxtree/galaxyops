@@ -13,3 +13,6 @@ Components: structs of plain old data. Compents have no functions. Base class wi
 
 
 Archetype: A chosen set of components that an entity of a certain type will have.
+
+Data Oriented Design 
+https://stackoverflow.com/questions/53977182/interfaces-in-data-oriented-design/54483503#54483503

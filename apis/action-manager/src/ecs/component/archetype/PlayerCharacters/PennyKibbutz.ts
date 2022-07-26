@@ -1,6 +1,6 @@
-import { PlayerCharacter } from './PlayerCharacter';
+import { IPlayerCharacter } from "./../ICharacter";
 
-class PennyKibbutz extends PlayerCharacter {
-    protected _name: string = 'Penny Kibbutz';
-    protected _description: string = '';
+class PennyKibbutz extends IPlayerCharacter {
+    name: string = 'Penny Kibbutz';
+    description: string = '';
 }
