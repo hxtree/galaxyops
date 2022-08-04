@@ -1,1 +1,0 @@
-// Brown Vest – a protective vest made out of cow hide 5 defense.
