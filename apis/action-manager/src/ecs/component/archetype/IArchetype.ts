@@ -1,7 +1,8 @@
-import { StatusEffects } from "../StatusEffect";
-import { Drive, Life, Spirit, Stats } from "../Attribute";
-import { Traits } from "../Trait";
-import { Token } from "./Token";
+import { StatusEffects } from "../character/StatusEffect";
+import { Drive, Life, Spirit, Stats } from "../character/Attribute";
+import { Traits } from "../character/Trait";
+import { Token } from "../character/Token";
+import { Items } from "../character/Item";
 
 /**
  * A character that can be played
@@ -32,4 +33,6 @@ export interface INonPlayerCharacter {
     stats: Stats;
     traits: Traits;
     statusEffects: StatusEffects;
+    loot: Items;
 }
+

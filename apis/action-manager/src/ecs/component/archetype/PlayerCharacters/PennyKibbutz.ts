@@ -1,4 +1,4 @@
-import { IPlayerCharacter } from "./../ICharacter";
+import { IPlayerCharacter } from "../IArchetype";
 
 class PennyKibbutz extends IPlayerCharacter {
     name: string = 'Penny Kibbutz';

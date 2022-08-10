@@ -1,6 +1,6 @@
-import { StatusEffects } from "../../actions/StatusEffect";
-import { Life, Spirit, Drive, Stats } from "../../Attribute";
-import { Token } from "../Token";
+import { StatusEffects } from "../../StatusEffect";
+import { Life, Spirit, Drive, Stats } from "../../character/Attribute";
+import { Token } from "../../character/Token";
 import { Traits } from "../../Trait";
 import { IPlayerCharacter } from "../IArchetype";
 
