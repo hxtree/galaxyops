@@ -1,9 +1,13 @@
 # Docker
 docker-compose.override.yml
 
+# ssh
+.devcontainer/.ssh/**
+!.devcontainer/.ssh/*.dist
+
 # AWS CLI
-.aws/**
-!.aws/*.dist
+.devcontainer/.aws/**
+!.devcontainer/.aws/*.dist
 
 # AWS CDK
 **/cdk.out/*

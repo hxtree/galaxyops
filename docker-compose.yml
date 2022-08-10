@@ -10,5 +10,5 @@ services:
         stdin_open: true
         volumes:
             - .:/usr/src/app
-            - .aws:/home/node/.aws
-            - .devcontainer/.bash_profile:/home/node/.bash_profile
+            - .devcontainer/.aws:/home/node/.aws
+            - .devcontainer/.ssh:/home/node/.ssh
