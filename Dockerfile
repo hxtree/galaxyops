@@ -38,6 +38,9 @@ RUN apt-get update && \
     ./aws/install -i /usr/local/aws-cli -b /usr/local/bin && \
     mkdir /usr/src/app
     # git config --global core.editor "code --wait"
+    # sudo apt update && sudo apt install vim
+
+
 
 WORKDIR /usr/src/app
 

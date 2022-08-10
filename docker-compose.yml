@@ -11,4 +11,8 @@ services:
         volumes:
             - .:/usr/src/app
             - .devcontainer/.aws:/home/node/.aws
-            - .devcontainer/.ssh:/home/node/.ssh
+            - github-ssh-key:/home/node/github-ssh-key
+            # - .devcontainer/.ssh/config:/home/node/.ssh/config
+
+volumes:
+   github-ssh-key:
