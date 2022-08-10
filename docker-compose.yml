@@ -11,3 +11,4 @@ services:
         volumes:
             - .:/usr/src/app
             - .aws:/home/node/.aws
+            - .devcontainer/.bash_profile:/home/node/.bash_profile
