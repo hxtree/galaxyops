@@ -40,6 +40,7 @@ RUN apt-get update && \
     # install Commitizen
     # https://github.com/commitizen/cz-cli
     # npm install -g commitizen
+    # git config --global core.editor "code --wait"
 
 WORKDIR /usr/src/app
 
