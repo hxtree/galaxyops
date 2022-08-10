@@ -12,7 +12,6 @@ services:
             - .:/usr/src/app
             - .devcontainer/.aws:/home/node/.aws
             - github-ssh-key:/home/node/github-ssh-key
-            # - .devcontainer/.ssh/config:/home/node/.ssh/config
 
 volumes:
    github-ssh-key:

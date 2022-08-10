@@ -64,6 +64,9 @@ RUN apt-get install -y sudo \
 
     # git config --global core.editor "code --wait"
 
+COPY .devcontainer/.ssh/config /home/$USER/.ssh/config
+RUN chown -R $USER /home/$USER/.ssh
+
 USER $USER
 
 SHELL ["/bin/bash", "-c"]
