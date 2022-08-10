@@ -26,6 +26,7 @@ Development of `@org-clients/base-game-engine` client requires [additional tools
 
 ## Documentation
 
+* [Git Setup](docs/git-setup.md)
 * [Architecture Guidelines](docs/architecture-guidelines.md)
 * [Coding Standards](docs/CODING_STANDARDS.md)
 * [Code of Conduct](docs/CODE_OF_CONDUCT.md)
