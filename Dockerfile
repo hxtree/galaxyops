@@ -37,10 +37,6 @@ RUN apt-get update && \
     chmod +x ./aws/install && \
     ./aws/install -i /usr/local/aws-cli -b /usr/local/bin && \
     mkdir /usr/src/app
-    # git config --global core.editor "code --wait"
-    # sudo apt update && sudo apt install vim
-
-
 
 WORKDIR /usr/src/app
 
@@ -51,7 +47,8 @@ FROM base AS development
 ARG UID=1000
 ARG USER=node
 
-RUN apt-get install -y sudo && \
+RUN apt-get install -y sudo \
+    vim && \
     # create $USER, add to sudo group, remove need to use password
     usermod -aG sudo $USER && \
     passwd -d $USER && \
@@ -64,6 +61,8 @@ RUN apt-get install -y sudo && \
     chown -R $USER /home/$USER/.rush && \
     mkdir -p /usr/src/app/common/temp && \
     chown -R $USER /usr/src/app/common/temp 
+
+    # git config --global core.editor "code --wait"
 
 USER $USER
 
