@@ -37,9 +37,6 @@ RUN apt-get update && \
     chmod +x ./aws/install && \
     ./aws/install -i /usr/local/aws-cli -b /usr/local/bin && \
     mkdir /usr/src/app
-    # install Commitizen
-    # https://github.com/commitizen/cz-cli
-    # npm install -g commitizen
     # git config --global core.editor "code --wait"
 
 WORKDIR /usr/src/app
