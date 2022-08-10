@@ -1,6 +1,6 @@
 # AWS Org Formation
 
-The AWS Organization is initalized, managed, and sync using [AWS Organization Formation](https://github.com/org-formation/org-formation-cli).
+The AWS Organization is initalized, managed, and synced using [AWS Organization Formation](https://github.com/org-formation/org-formation-cli).
 
 
 ## Getting Started
