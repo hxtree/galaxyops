@@ -1,6 +1,6 @@
-import { IPlayerCharacter } from "../IArchetype";
+import { IPlayerCharacter } from '../IArchetype';
 
-class PennyKibbutz extends IPlayerCharacter {
-    name: string = 'Penny Kibbutz';
-    description: string = '';
+class PennyKibbutz implements IPlayerCharacter {
+    name: 'Penny Kibbutz';
+    description: '';
 }

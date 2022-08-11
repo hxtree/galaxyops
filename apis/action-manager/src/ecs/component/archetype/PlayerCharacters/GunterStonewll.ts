@@ -1,6 +1,6 @@
-import { PlayerCharacter } from './PlayerCharacter';
+import { IPlayerCharacter } from '../IArchetype';
 
-class GunterStonewell extends PlayerCharacter {
-    protected _name: string = 'Gunter Stonewell';
-    protected _description: string = '';
+class GunterStonewell implements IPlayerCharacter {
+    name: 'Gunter Stonewell';
+    description: 'A solider for life';
 }

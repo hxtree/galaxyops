@@ -1,11 +1,10 @@
-import { PlayerCharacter } from './PlayerCharacter';
+import { IPlayerCharacter } from '../IArchetype';
 
-class LoomeeAngora extends PlayerCharacter {
-    protected _name: string = 'Loomee Angora';
-    protected _description: string = 'A girl created when the Song Maiden left her post to become human.';
-    protected _symbolizes: string = 'The Keeper of Heart';
-    protected _affiliation: Array<string> = [
+class LoomeeAngora implements IPlayerCharacter {
+    name: 'Loomee Angora';
+    description: string = 'A girl created when the Song Maiden left her post to become human.';
+    symbolizes: string = 'The Keeper of Heart';
+    affiliation: Array<string> = [
         'The Keeper'
     ];
 }
-

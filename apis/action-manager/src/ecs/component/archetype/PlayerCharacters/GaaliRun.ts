@@ -1,6 +1,6 @@
-import { PlayerCharacter } from './PlayerCharacter';
+import { IPlayerCharacter } from '../IArchetype';
 
-class GaaliRuin extends PlayerCharacter {
-    protected _name: string = 'Gaali Ruin';
-    protected _description: string = 'A prince with little interest in becoming king. Instead, he lives for testing his sword in raw danger.';
+class GaaliRuin implements IPlayerCharacter {
+    name: 'Gaali Ruin';
+    description: 'A prince with little interest in becoming king. Instead, he lives for testing his sword in raw danger.';
 }

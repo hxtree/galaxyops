@@ -1,6 +1,6 @@
-import { NonPlayerCharacter } from './NonPlayerCharacter';
+import { INonPlayerCharacter } from '../IArchetype';
 
-class Janus implements NonPlayerCharacter {
+class Janus implements INonPlayerCharacter {
     name: string = 'Janus';
     description: string = 'The Keeper of Time';
 }

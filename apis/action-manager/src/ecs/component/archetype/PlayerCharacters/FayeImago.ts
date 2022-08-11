@@ -1,6 +1,6 @@
-import { PlayerCharacter } from './PlayerCharacter';
+import { IPlayerCharacter } from '../IArchetype';
 
-class FayeImago extends PlayerCharacter {
-    protected _name: string = 'FayeImago';
-    protected _description: string = '';
+class FayeImago implements IPlayerCharacter {
+    name: 'FayeImago';
+    description: 'A young girl who weilds magic and studies history';
 }

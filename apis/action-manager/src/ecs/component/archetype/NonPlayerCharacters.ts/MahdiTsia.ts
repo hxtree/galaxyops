@@ -1,6 +1,6 @@
-import { PlayerCharacter } from './PlayerCharacter';
+import { INonPlayerCharacter } from '../IArchetype';
 
-class MahdiTsia extends PlayerCharacter {
-    protected _name: string = 'Mahdi Tsia';
-    protected _description: string = '';
+class MahdiTsia implements INonPlayerCharacter {
+    name: 'Mahdi Tsia';
+    description: 'Malace\'s brother';
 }

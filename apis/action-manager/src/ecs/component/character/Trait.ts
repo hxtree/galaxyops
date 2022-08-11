@@ -1,5 +1,5 @@
-import { StatusEffect } from "./actions/StatusEffect";
-import { EffectTag } from "./EffectTag";
+import { StatusEffect } from "./StatusEffect";
+import { EffectTag } from "./character/EffectTag";
 
 export enum Effect {
     WEAK = 'Weak', // Weakness, increases damage taken by the damage type.
@@ -15,8 +15,6 @@ export enum Operator {
     SUBTRACT = "SUBTRACT",
     DIVIDE = "DIVIDE"
 }
-
-
 
 /**
  * e.g.

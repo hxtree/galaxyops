@@ -1,6 +1,6 @@
-import { BasePlayerCharacter } from './BasePlayerCharacter';
+import { IPlayerCharacter } from '../IArchetype';
 
-class ArinothDiyath extends BasePlayerCharacter {
-    name: string = 'Arinoth Diyath';
-    description: string = '';
+class ArinothDiyath implements IPlayerCharacter {
+    name: 'Arinoth Diyath';
+    description: '';
 }

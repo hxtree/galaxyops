@@ -1,6 +1,6 @@
-import { PlayerCharacter } from './PlayerCharacter';
+import { INonPlayerCharacter } from '../IArchetype';
 
-class VallonOni extends PlayerCharacter {
-    protected _name: string = 'Vallon Oni';
-    protected _description: string = '';
+class VallonOni implements INonPlayerCharacter {
+    name: 'Vallon Oni';
+    description: '';
 }

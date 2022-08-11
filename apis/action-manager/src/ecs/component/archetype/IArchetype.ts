@@ -11,14 +11,14 @@ import { Items } from "../character/Item";
 export interface IPlayerCharacter {
     name: string;
     description: string;
-    experience: number;
-    life: Life;
-    drive: Drive;
-    spirit: Spirit;
-    stats: Stats;
-    traits: Traits;
-    statusEffects: StatusEffects;
-    token: Token;
+    experience?: number;
+    life?: Life;
+    drive?: Drive;
+    spirit?: Spirit;
+    stats?: Stats;
+    traits?: Traits;
+    statusEffects?: StatusEffects;
+    token?: Token;
 }
 
 /**
@@ -27,12 +27,12 @@ export interface IPlayerCharacter {
 export interface INonPlayerCharacter {
     name: string;
     description: string;
-    life: Life;
-    drive: Drive;
-    spirit: Spirit;
-    stats: Stats;
-    traits: Traits;
-    statusEffects: StatusEffects;
-    loot: Items;
+    life?: Life;
+    drive?: Drive;
+    spirit?: Spirit;
+    stats?: Stats;
+    traits?: Traits;
+    statusEffects?: StatusEffects;
+    loot?: Items;
 }
 

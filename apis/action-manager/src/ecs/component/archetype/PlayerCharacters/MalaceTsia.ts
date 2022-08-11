@@ -1,6 +1,7 @@
-import { PlayerCharacter } from './PlayerCharacter';
+import { IPlayerCharacter } from '../IArchetype';
 
-class MalaceTsia extends PlayerCharacter {
-    protected _name: string = 'Malace Tsia';
-    protected _description: string = '';
+class MalaceTsia implements IPlayerCharacter {
+    name: 'Malace Tsia';
+    description: '';
+    history: 'was used as a scarifice for his people to hold demons by sewing them to his skin';
 }
