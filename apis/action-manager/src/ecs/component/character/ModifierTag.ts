@@ -22,7 +22,7 @@ import { WeaponCategory } from "../component/gear/weapons/BaseWeapon";
  * chabges that could be the result of a trait, action, or effect and are used for computation purposes.
  * Sometimes statistic modification is the sole purpose of an attack.
  */
-export enum StatisticModifierTag {
+export enum TargetModifier {
     LIFE_DECREASE = "Life Decrease",
     LIFE_INCREASE = "Life Increase",
     SPIRIT_DECREASE = "Spirit Decrease",
