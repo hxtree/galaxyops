@@ -12,6 +12,15 @@
       "runtimeExecutable": "rushx",
       "runtimeArgs": ["test"],
       "console": "integratedTerminal"
+    },
+    {
+      "name": "NPM Test For Currentfile",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${fileDirname}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["test", "-t", "${fileBasenameNoExtension}.test.ts"],
+      "console": "integratedTerminal"
     }
   ]
 }
