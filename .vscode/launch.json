@@ -14,7 +14,7 @@
       "console": "integratedTerminal"
     },
     {
-      "name": "NPM Test For Currentfile",
+      "name": "NPM Test File",
       "type": "node",
       "request": "launch",
       "cwd": "${fileDirname}",
