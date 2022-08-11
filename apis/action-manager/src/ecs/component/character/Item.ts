@@ -1,11 +1,11 @@
-export interface IItem {
+export interface Item {
     name: string;
     description: string;
 }
 
-export type Items = Array<IItem>;
+export type Items = Array<Item>;
 
-export class Compass implements IItem {
+export class Compass implements Item {
     name: 'Compass';
     description: 'Shows direction';
 }

@@ -3,6 +3,8 @@
  * Status effects are abnormal states that may have positive or negative effects
  * they can be gained from actions or items and can be healed by resting, certain
  * abilities, or after some time.
+ * 
+ * Status Effects are visible to the player
  */
  export enum StatusEffect {
     // afflictions

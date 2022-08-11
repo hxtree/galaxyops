@@ -1,2 +1,0 @@
-// Broad Swords – broad swords are swords with a wide blade that are heavy, require two hands to wield, and difficult to maneuver yet have a strong attack. Even though they take up two hands to use they work as a natural shield (Guard).
-// Gear Slots – Right Hand AND Left Hand
