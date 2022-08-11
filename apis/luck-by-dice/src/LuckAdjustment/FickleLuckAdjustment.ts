@@ -1,19 +1,20 @@
-import { AbstractLuckAdjustment } from './AbstractLuckAdjustment';
+import {AbstractLuckAdjustment} from './AbstractLuckAdjustment';
 
-export class FickleLuckAdjustment extends AbstractLuckAdjustment
-{
-    public adjustment(rollPercent: number = 0.5): number
-    {
-        if (rollPercent <=.1) {
-            return -2;
-        } else if (rollPercent <=.2) {
-            return -1;
-        } else if (rollPercent >=.8) {
-            return 1;
-        } else if (rollPercent >=.9) {
-            return 2;
-        }
-
-        return 0;
+export class FickleLuckAdjustment extends AbstractLuckAdjustment {
+  public adjustment(rollPercent: number = 0.5): number {
+    if (rollPercent <= 0.1) {
+      return -2;
     }
+    if (rollPercent <= 0.2) {
+      return -1;
+    }
+    if (rollPercent >= 0.8) {
+      return 1;
+    }
+    if (rollPercent >= 0.9) {
+      return 2;
+    }
+
+    return 0;
+  }
 }

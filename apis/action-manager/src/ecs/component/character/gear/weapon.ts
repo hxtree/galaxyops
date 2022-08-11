@@ -41,7 +41,7 @@ export interface Weapon {
     // the immediately evident appearance of the weapon
     description?: string;
     // the history of the weapon, can be revealed by a special ability.
-    history?: string | null;    
+    history?: string | null;
 }
 
 /**
@@ -82,15 +82,15 @@ class Striker implements Weapon {
 /**
  * Shieldsword
  * They can also be used as a shield (Guard).
- * 
+ *
  * Gear Slots – Right Hand AND Left Hand
  */
  class EnergyBreaker implements Weapon {
     name: 'Energy Breaker';
     category: WeaponCategory.SHIELD_SWORD;
     description: string = 'An extremely large and heavy weapon that absorbs and releases energy.';
-    
-    // SPEED_DECREASE 1d5 
+
+    // SPEED_DECREASE 1d5
     // FIRE 2d5
 }
 
@@ -102,22 +102,22 @@ class StoneBreaker implements Weapon {
 
     // Increases wait time
     // Increases recovery time
-    // Increases damage 
+    // Increases damage
     // Increases experience earned.
 }
 
 class TheManSlayer implements Weapon {
     name: 'The Man Slayer';
-    category: WeaponCategory.SHIELD_SWORD;    
+    category: WeaponCategory.SHIELD_SWORD;
     description: 'A giant ancient hellish looking blade. Its handle bares a dogtooth design.';
     history: 'It was reportedly used by Galax to bring peace.';
 }
 
-/** 
+/**
  * Broadsword
  * Broad swords are swords with a wide blade that are heavy
- * They require two hands to wield, and difficult to maneuver yet have a strong attack. 
- * 
+ * They require two hands to wield, and difficult to maneuver yet have a strong attack.
+ *
  * Gear Slots – Right Hand AND Left Hand
  */
 class HerosBlade implements Weapon {
