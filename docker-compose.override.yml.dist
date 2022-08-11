@@ -4,7 +4,9 @@ services:
       build:
         context: .
         args:
+            # container and devcontainer defauly user
             USER: node
+            # UID should match host automatically, if not adjust
             UID: 1000
     environment:
       - AWS_SDK_LOAD_CONFIG=1
