@@ -16,7 +16,6 @@ export interface INotationCodec {
 export declare class NotationCodec {
     private _separator;
     private _cup;
-    constructor();
     get cup(): string;
     /**
      * Encode from a cup to a string

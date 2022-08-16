@@ -1,0 +1,52 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EffectTag = void 0;
+/**
+ * Tag  are used in determining effectiveness of an effect with regards to weaknesses and resistances
+ * can be to assign to a action, trait, or effect.
+ */
+var EffectTag;
+(function (EffectTag) {
+    // Element
+    EffectTag["ELECTRIC"] = "Electric";
+    EffectTag["AIR"] = "Air";
+    EffectTag["EARTH"] = "Earth";
+    EffectTag["FIRE"] = "Fire";
+    EffectTag["WATER"] = "Water";
+    EffectTag["NATURE"] = "Nature";
+    EffectTag["PHYSICAL"] = "Physical";
+    EffectTag["PSYCHIC"] = "Psychic";
+    EffectTag["DARKNESS"] = "Darkness";
+    EffectTag["LIGHT"] = "Light";
+    // flying
+    EffectTag["AERIAL"] = "Aerial";
+    EffectTag["GROUNDLEVEL"] = "Ground-Level";
+    //
+    EffectTag["POISON"] = "Poison";
+    // Weapon
+    EffectTag["ARROW"] = "Arrow";
+    EffectTag["BOW"] = "Bow";
+    EffectTag["BLADE"] = "Blade";
+    EffectTag["BLUNT"] = "Blunt";
+    EffectTag["CLAW"] = "Claw";
+    EffectTag["CROSSBOW"] = "Crossbow";
+    EffectTag["DAGGER"] = "Dagger";
+    EffectTag["DART"] = "Dart";
+    EffectTag["FLAIL"] = "Flail";
+    EffectTag["HAMMER"] = "Hammer";
+    EffectTag["HAND_AXE"] = "Hand Axe";
+    EffectTag["HAND_SWORD"] = "Hand Sword";
+    EffectTag["HATCHET"] = "Hatchet";
+    EffectTag["KNIFE"] = "Knife";
+    EffectTag["MACE"] = "Mace";
+    EffectTag["POLEARM"] = "Polearm";
+    EffectTag["SHIELD"] = "Shield";
+    EffectTag["STAFF"] = "Staff";
+    EffectTag["SWORD"] = "Sword";
+    EffectTag["SHEILD_SWORD"] = "Shield Sword";
+    EffectTag["TOME"] = "Tome";
+    EffectTag["WAND"] = "Wand";
+    EffectTag["UNARMED"] = "Unarmed";
+    EffectTag["UNKNOWN"] = "Unknown";
+})(EffectTag = exports.EffectTag || (exports.EffectTag = {}));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWZmZWN0VGFnLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vc3JjL2Vjcy9jb21wb25lbnQvY2hhcmFjdGVyL0VmZmVjdFRhZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQTs7O0dBR0c7QUFDSCxJQUFZLFNBNkNYO0FBN0NELFdBQVksU0FBUztJQUNuQixVQUFVO0lBQ1Ysa0NBQXFCLENBQUE7SUFDckIsd0JBQVcsQ0FBQTtJQUNYLDRCQUFlLENBQUE7SUFDZiwwQkFBYSxDQUFBO0lBQ2IsNEJBQWUsQ0FBQTtJQUNmLDhCQUFpQixDQUFBO0lBQ2pCLGtDQUFxQixDQUFBO0lBQ3JCLGdDQUFtQixDQUFBO0lBQ25CLGtDQUFxQixDQUFBO0lBQ3JCLDRCQUFlLENBQUE7SUFFZixTQUFTO0lBQ1QsOEJBQWlCLENBQUE7SUFDakIseUNBQTRCLENBQUE7SUFFNUIsRUFBRTtJQUNGLDhCQUFpQixDQUFBO0lBRWpCLFNBQVM7SUFDVCw0QkFBZSxDQUFBO0lBQ2Ysd0JBQVcsQ0FBQTtJQUNYLDRCQUFlLENBQUE7SUFDZiw0QkFBZSxDQUFBO0lBQ2YsMEJBQWEsQ0FBQTtJQUNiLGtDQUFxQixDQUFBO0lBQ3JCLDhCQUFpQixDQUFBO0lBQ2pCLDBCQUFhLENBQUE7SUFDYiw0QkFBZSxDQUFBO0lBQ2YsOEJBQWlCLENBQUE7SUFDakIsa0NBQXFCLENBQUE7SUFDckIsc0NBQXlCLENBQUE7SUFDekIsZ0NBQW1CLENBQUE7SUFDbkIsNEJBQWUsQ0FBQTtJQUNmLDBCQUFhLENBQUE7SUFDYixnQ0FBbUIsQ0FBQTtJQUNuQiw4QkFBaUIsQ0FBQTtJQUNqQiw0QkFBZSxDQUFBO0lBQ2YsNEJBQWUsQ0FBQTtJQUNmLDBDQUE2QixDQUFBO0lBQzdCLDBCQUFhLENBQUE7SUFDYiwwQkFBYSxDQUFBO0lBQ2IsZ0NBQW1CLENBQUE7SUFDbkIsZ0NBQW1CLENBQUE7QUFDckIsQ0FBQyxFQTdDVyxTQUFTLEdBQVQsaUJBQVMsS0FBVCxpQkFBUyxRQTZDcEIiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIFRhZyAgYXJlIHVzZWQgaW4gZGV0ZXJtaW5pbmcgZWZmZWN0aXZlbmVzcyBvZiBhbiBlZmZlY3Qgd2l0aCByZWdhcmRzIHRvIHdlYWtuZXNzZXMgYW5kIHJlc2lzdGFuY2VzXG4gKiBjYW4gYmUgdG8gYXNzaWduIHRvIGEgYWN0aW9uLCB0cmFpdCwgb3IgZWZmZWN0LlxuICovXG5leHBvcnQgZW51bSBFZmZlY3RUYWcge1xuICAvLyBFbGVtZW50XG4gIEVMRUNUUklDID0gJ0VsZWN0cmljJywgLy8gdGhpcyBpcyB0aGUgZGFtYWdlIHR5cGUgbW9kaWZpZXIgZm9yIGxpZ2h0bmluZy5cbiAgQUlSID0gJ0FpcicsIC8vIHRoaXMgaXMgdGhlIGRhbWFnZSB0eXBlIG1vZGlmaWVyIGZvciB3aW5kLlxuICBFQVJUSCA9ICdFYXJ0aCcsIC8vIHRoaXMgaXMgdGhlIGRhbWFnZSB0eXBlIG1vZGlmaWVyIGZvciBlYXJ0aC5cbiAgRklSRSA9ICdGaXJlJywgLy8gdGhpcyBpcyB0aGUgZGFtYWdlIHR5cGUgbW9kaWZpZXIgZm9yIGZpcmUuXG4gIFdBVEVSID0gJ1dhdGVyJywgLy8gdGhpcyBpcyB0aGUgZGFtYWdlIHR5cGUgbW9kaWZpZXIgZm9yIHdhdGVyLlxuICBOQVRVUkUgPSAnTmF0dXJlJywgLy8gdGhpcyBpcyB0aGUgZGFtYWdlIHR5cGUgbW9kaWZpZXIgZm9yIG5hdHVyZS5cbiAgUEhZU0lDQUwgPSAnUGh5c2ljYWwnLCAvLyB0aGlzIGlzIHRoZSBkYW1hZ2UgdHlwZSBtb2RpZmllciBmb3IgcGh5c2ljYWwuXG4gIFBTWUNISUMgPSAnUHN5Y2hpYycsIC8vIHRoaXMgaXMgdGhlIGRhbWFnZSB0eXBlIG1vZGlmaWVyIGZvciBwc3ljaGljLlxuICBEQVJLTkVTUyA9ICdEYXJrbmVzcycsIC8vIHRoaXMgaXMgdGhlIGRhbWFnZSB0eXBlIG1vZGlmaWVyIGZvciBkYXJrbmVzcy5cbiAgTElHSFQgPSAnTGlnaHQnLCAvLyB0aGlzIGlzIHRoZSBkYW1hZ2UgdHlwZSBtb2RpZmllciBmb3IgbGlnaHQuXG5cbiAgLy8gZmx5aW5nXG4gIEFFUklBTCA9ICdBZXJpYWwnLCAvLyBoYXBwZW5pbmcgaW4gdGhlIHNreSwgZWZmZWN0aXZlIGFnYWluc3QgZmx5aW5nXG4gIEdST1VORExFVkVMID0gJ0dyb3VuZC1MZXZlbCcsIC8vIGhhcHBlbnMgb24gdGhlIGdyb3VuZCwgaW5lZmZlY3RpdmUgYWdhaW5zdCBmbHlpbmdcblxuICAvL1xuICBQT0lTT04gPSAnUG9pc29uJyxcblxuICAvLyBXZWFwb25cbiAgQVJST1cgPSAnQXJyb3cnLFxuICBCT1cgPSAnQm93JyxcbiAgQkxBREUgPSAnQmxhZGUnLFxuICBCTFVOVCA9ICdCbHVudCcsXG4gIENMQVcgPSAnQ2xhdycsXG4gIENST1NTQk9XID0gJ0Nyb3NzYm93JyxcbiAgREFHR0VSID0gJ0RhZ2dlcicsXG4gIERBUlQgPSAnRGFydCcsXG4gIEZMQUlMID0gJ0ZsYWlsJyxcbiAgSEFNTUVSID0gJ0hhbW1lcicsXG4gIEhBTkRfQVhFID0gJ0hhbmQgQXhlJyxcbiAgSEFORF9TV09SRCA9ICdIYW5kIFN3b3JkJyxcbiAgSEFUQ0hFVCA9ICdIYXRjaGV0JyxcbiAgS05JRkUgPSAnS25pZmUnLFxuICBNQUNFID0gJ01hY2UnLFxuICBQT0xFQVJNID0gJ1BvbGVhcm0nLFxuICBTSElFTEQgPSAnU2hpZWxkJyxcbiAgU1RBRkYgPSAnU3RhZmYnLFxuICBTV09SRCA9ICdTd29yZCcsXG4gIFNIRUlMRF9TV09SRCA9ICdTaGllbGQgU3dvcmQnLFxuICBUT01FID0gJ1RvbWUnLFxuICBXQU5EID0gJ1dhbmQnLFxuICBVTkFSTUVEID0gJ1VuYXJtZWQnLFxuICBVTktOT1dOID0gJ1Vua25vd24nLFxufVxuIl19

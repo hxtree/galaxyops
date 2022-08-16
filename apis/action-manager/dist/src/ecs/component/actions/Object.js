@@ -1,0 +1,18 @@
+"use strict";
+// Moveable Object
+// Grab
+// Push
+// Pull
+// Lift
+// Throw
+// Impending Object
+// Catch – Catch an item or weapon that has been thrown in your path of travel.
+// Reflect
+// Throw
+// Ward – (spirit) a action that keeps enemies away
+// Guard – (stamina) protect from oncoming attacks.
+// Charge – Hold attack button down. This uses up Stamina and raise Power of attack.
+// Charge – Hold attack button down. This uses up Spirit and raise Power of attack.
+// Class Actions (Slot 2)
+// Learn
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiT2JqZWN0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vc3JjL2Vjcy9jb21wb25lbnQvYWN0aW9ucy9PYmplY3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLGtCQUFrQjtBQUNsQixPQUFPO0FBQ1AsT0FBTztBQUNQLE9BQU87QUFDUCxPQUFPO0FBQ1AsUUFBUTtBQUNSLG1CQUFtQjtBQUNuQiwrRUFBK0U7QUFDL0UsVUFBVTtBQUNWLFFBQVE7QUFDUixtREFBbUQ7QUFDbkQsbURBQW1EO0FBQ25ELG9GQUFvRjtBQUNwRixtRkFBbUY7QUFDbkYseUJBQXlCO0FBQ3pCLFFBQVEiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBNb3ZlYWJsZSBPYmplY3Rcbi8vIEdyYWJcbi8vIFB1c2hcbi8vIFB1bGxcbi8vIExpZnRcbi8vIFRocm93XG4vLyBJbXBlbmRpbmcgT2JqZWN0XG4vLyBDYXRjaCDigJMgQ2F0Y2ggYW4gaXRlbSBvciB3ZWFwb24gdGhhdCBoYXMgYmVlbiB0aHJvd24gaW4geW91ciBwYXRoIG9mIHRyYXZlbC5cbi8vIFJlZmxlY3Rcbi8vIFRocm93XG4vLyBXYXJkIOKAkyAoc3Bpcml0KSBhIGFjdGlvbiB0aGF0IGtlZXBzIGVuZW1pZXMgYXdheVxuLy8gR3VhcmQg4oCTIChzdGFtaW5hKSBwcm90ZWN0IGZyb20gb25jb21pbmcgYXR0YWNrcy5cbi8vIENoYXJnZSDigJMgSG9sZCBhdHRhY2sgYnV0dG9uIGRvd24uIFRoaXMgdXNlcyB1cCBTdGFtaW5hIGFuZCByYWlzZSBQb3dlciBvZiBhdHRhY2suXG4vLyBDaGFyZ2Ug4oCTIEhvbGQgYXR0YWNrIGJ1dHRvbiBkb3duLiBUaGlzIHVzZXMgdXAgU3Bpcml0IGFuZCByYWlzZSBQb3dlciBvZiBhdHRhY2suXG4vLyBDbGFzcyBBY3Rpb25zIChTbG90IDIpXG4vLyBMZWFyblxuIl19

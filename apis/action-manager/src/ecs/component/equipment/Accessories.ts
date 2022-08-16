@@ -25,6 +25,13 @@ export class RedScarf {
   gearSlots: [GearSlot.NECK];
 }
 
+export class CowhideVest {
+  name: 'Cowhide Vest';
+  effects: '+5 defense';
+  description: 'A brown protective vest made out of cow hide.';
+  gearSlots: [GearSlot.TORSO];
+}
+
 export class FuneralJar {
   name: 'Funeral Jar';
   description: 'a jar meant to contain the ashes of the dead';

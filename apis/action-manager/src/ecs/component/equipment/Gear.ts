@@ -29,4 +29,5 @@ export enum GearSlot {
   'WAIST' = 'WAIST',
   'LEGS' = 'Legs',
   'FEET' = 'Feet',
+  'OUTFIT' = 'Outfit',
 }

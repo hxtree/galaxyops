@@ -1,0 +1,16 @@
+"use strict";
+// Movement Actions – actions that are directly related to movement
+// Climb –
+// Trek – Used to determine how steep an angled tile you can stand on. If your character fails to trek the tile then they will fall from it and will be to step onto it.
+// Duck – (Hold Square + Backwards?) used to evaded attacks works best if preformed during attack.
+// Jump – (Square) Jumping uses stamina and can be used to move to otherwise unreachable places. The more stamina
+// Basic – (Square) jump.
+// High – (Stamina Boost + Square) jump straight up in the air using a stamina boost.
+// Long – (Directional Pad + Press Square) jump a long way.
+// Running – (Running + Square)
+// Swim
+// Dive
+// Run – (Hard press Direction Pad with Stamina) – Move quickly using stamina.
+// Walk – (Light press Direction Pad) Move slowly.
+// Fly – magic person
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTW92ZW1lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9zcmMvZWNzL2NvbXBvbmVudC9hY3Rpb25zL01vdmVtZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxtRUFBbUU7QUFDbkUsVUFBVTtBQUNWLHdLQUF3SztBQUN4SyxrR0FBa0c7QUFDbEcsaUhBQWlIO0FBQ2pILHlCQUF5QjtBQUN6QixxRkFBcUY7QUFDckYsMkRBQTJEO0FBQzNELCtCQUErQjtBQUMvQixPQUFPO0FBQ1AsT0FBTztBQUNQLDhFQUE4RTtBQUM5RSxrREFBa0Q7QUFDbEQscUJBQXFCIiwic291cmNlc0NvbnRlbnQiOlsiLy8gTW92ZW1lbnQgQWN0aW9ucyDigJMgYWN0aW9ucyB0aGF0IGFyZSBkaXJlY3RseSByZWxhdGVkIHRvIG1vdmVtZW50XG4vLyBDbGltYiDigJNcbi8vIFRyZWsg4oCTIFVzZWQgdG8gZGV0ZXJtaW5lIGhvdyBzdGVlcCBhbiBhbmdsZWQgdGlsZSB5b3UgY2FuIHN0YW5kIG9uLiBJZiB5b3VyIGNoYXJhY3RlciBmYWlscyB0byB0cmVrIHRoZSB0aWxlIHRoZW4gdGhleSB3aWxsIGZhbGwgZnJvbSBpdCBhbmQgd2lsbCBiZSB0byBzdGVwIG9udG8gaXQuXG4vLyBEdWNrIOKAkyAoSG9sZCBTcXVhcmUgKyBCYWNrd2FyZHM/KSB1c2VkIHRvIGV2YWRlZCBhdHRhY2tzIHdvcmtzIGJlc3QgaWYgcHJlZm9ybWVkIGR1cmluZyBhdHRhY2suXG4vLyBKdW1wIOKAkyAoU3F1YXJlKSBKdW1waW5nIHVzZXMgc3RhbWluYSBhbmQgY2FuIGJlIHVzZWQgdG8gbW92ZSB0byBvdGhlcndpc2UgdW5yZWFjaGFibGUgcGxhY2VzLiBUaGUgbW9yZSBzdGFtaW5hXG4vLyBCYXNpYyDigJMgKFNxdWFyZSkganVtcC5cbi8vIEhpZ2gg4oCTIChTdGFtaW5hIEJvb3N0ICsgU3F1YXJlKSBqdW1wIHN0cmFpZ2h0IHVwIGluIHRoZSBhaXIgdXNpbmcgYSBzdGFtaW5hIGJvb3N0LlxuLy8gTG9uZyDigJMgKERpcmVjdGlvbmFsIFBhZCArIFByZXNzIFNxdWFyZSkganVtcCBhIGxvbmcgd2F5LlxuLy8gUnVubmluZyDigJMgKFJ1bm5pbmcgKyBTcXVhcmUpXG4vLyBTd2ltXG4vLyBEaXZlXG4vLyBSdW4g4oCTIChIYXJkIHByZXNzIERpcmVjdGlvbiBQYWQgd2l0aCBTdGFtaW5hKSDigJMgTW92ZSBxdWlja2x5IHVzaW5nIHN0YW1pbmEuXG4vLyBXYWxrIOKAkyAoTGlnaHQgcHJlc3MgRGlyZWN0aW9uIFBhZCkgTW92ZSBzbG93bHkuXG4vLyBGbHkg4oCTIG1hZ2ljIHBlcnNvblxuIl19
