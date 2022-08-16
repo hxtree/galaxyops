@@ -8,4 +8,5 @@ export type Items = Array<Item>;
 export class Compass implements Item {
   name: 'Compass';
   description: 'Shows direction';
+  // enables player map
 }

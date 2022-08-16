@@ -1,12 +1,16 @@
-export enum GearSlot {
-  'RIGHT_WRIST' = 'Right Wrist',
-  'LEFT_WRIST' = 'Left Wrist',
-  'NECK' = 'Neck',
-  'BELT' = 'Belt',
-  'BACK' = 'Back',
-  'RIGHT_HAND' = 'Right Hand',
-  'LEFT_HAND' = 'Left Hand',
+import {GearSlot} from './Gear';
+
+export interface Accessory {
+  name: string;
+  description: string;
+  purpose: string;
+  gearSlots: Array<GearSlot>;
 }
+
+/**
+ * Accessories
+ * Seondary items that are equippable
+ */
 
 export class GoldBracelets {
   name: 'Gold Bracelets';
@@ -24,7 +28,7 @@ export class RedScarf {
 export class FuneralJar {
   name: 'Funeral Jar';
   description: 'a jar meant to contain the ashes of the dead';
-  gearSlots: [GearSlot.BELT];
+  gearSlots: [GearSlot.WAIST];
 }
 
 export class SwordSheath {

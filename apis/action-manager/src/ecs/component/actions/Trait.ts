@@ -2,7 +2,6 @@
 // import { Operator } from "./Operator";
 // import { Element } from "./Element";
 
-
 // export class Trait {
 //     private _attribute: Attribute;
 //     private _element: Element;
@@ -16,15 +15,12 @@
 //         this._element = element;
 //         this._operator = operator;
 //         this._value = value;
-//     }   
+//     }
 // }
 
 // export type Traits = Array<Trait>;
 
-
 // // const trait = new Trait(Attribute.Life,Element.Fire,Operator["/"],50);
-
-
 
 // export class Trait {
 //     { tags: [EffectTag.ELECTRIC], remove: StatEffect.LIFE, quanity: "1d6+2", },
