@@ -1,6 +1,6 @@
-import { INonPlayerCharacter } from '../IArchetype';
+import {INonPlayerCharacter} from '../IArchetype';
 
-class MahdiTsia implements INonPlayerCharacter {
-    name: 'Mahdi Tsia';
-    description: 'Malace\'s brother';
+export class MahdiTsia implements INonPlayerCharacter {
+  name: 'Mahdi Tsia';
+  description: "Malace's brother";
 }
