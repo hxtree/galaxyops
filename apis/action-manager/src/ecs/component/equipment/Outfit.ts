@@ -14,3 +14,9 @@ class MeekuOniCausal {
   description: 'White t-Shirt and denim jeans';
   gearSlots: [GearSlot.OUTFIT];
 }
+
+class MalaceTsiaUniform {
+  name: "Officer's Uniform";
+  description: 'Black Embellished Tarry Coat';
+  gearSlots: [GearSlot.OUTFIT];
+}
