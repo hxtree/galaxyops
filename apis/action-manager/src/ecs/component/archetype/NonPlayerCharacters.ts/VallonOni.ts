@@ -1,6 +1,6 @@
-import { INonPlayerCharacter } from '../IArchetype';
+import {INonPlayerCharacter} from '../IArchetype';
 
-class VallonOni implements INonPlayerCharacter {
-    name: 'Vallon Oni';
-    description: '';
+export class VallonOni implements INonPlayerCharacter {
+  name: 'Vallon Oni';
+  description: '';
 }

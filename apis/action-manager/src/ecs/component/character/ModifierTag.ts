@@ -1,4 +1,4 @@
-import {WeaponCategory} from './Weapon';
+import {WeaponCategory} from './../equipment/Weapon';
 
 /**
  * ElementModifierTags are a type of tag used to determine weakness and resistance

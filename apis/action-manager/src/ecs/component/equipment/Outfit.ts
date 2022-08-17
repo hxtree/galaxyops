@@ -1,7 +1,12 @@
 import {GearSlot} from './Gear';
+import {
+  MeekuOni,
+  MalaceTsia,
+  PlayerCharacter,
+} from '../archetype/PlayerCharacter';
 
 /**
- * Outfits
+ * Outfit
  *
  * A collection of garments that comprise a single a set of clothing that can be warn at once.
  * For simplicity the entire collection of clothing is consider a outfit.
@@ -9,14 +14,23 @@ import {GearSlot} from './Gear';
  * Characters cannot change out bottom and tops individuallly.
  */
 
-class MeekuOniCausal {
+export interface Outfit {
+  name: string;
+  description: string;
+  gearSlots: Array<GearSlot>;
+  character: PlayerCharacter;
+}
+
+export class MeekuOniCausal {
   name: 'Casual';
   description: 'White t-Shirt and denim jeans';
   gearSlots: [GearSlot.OUTFIT];
+  character: MeekuOni;
 }
 
-class MalaceTsiaUniform {
+export class MalaceTsiaUniform {
   name: "Officer's Uniform";
   description: 'Black Embellished Tarry Coat';
   gearSlots: [GearSlot.OUTFIT];
+  character: MalaceTsia;
 }

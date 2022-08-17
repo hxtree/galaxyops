@@ -1,6 +1,6 @@
-import { INonPlayerCharacter } from '../IArchetype';
+import {INonPlayerCharacter} from '../IArchetype';
 
-class Janus implements INonPlayerCharacter {
-    name: string = 'Janus';
-    description: string = 'The Keeper of Time';
+export class Janus implements INonPlayerCharacter {
+  name: string = 'Janus';
+  description: string = 'The Keeper of Time';
 }
