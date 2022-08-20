@@ -152,7 +152,7 @@ export class Cyclone implements Spell {
 
 export class Tsunami implements Spell {
   name: 'Tsunami';
-  description: 'Creates Tsunami';
+  description: 'A water-based attack that creates Tsunami';
   targets: 1;
   effect: [
     {remove: Attribute.LIFE; quanity: '1d6+2'; tags: [EffectTag.WATER]},
@@ -278,6 +278,42 @@ export class Darkness implements Spell {
       remove: StatusEffect.LIFELESS;
       quanity: '1d6+4';
       tags: [EffectTag.DARKNESS];
+    },
+  ];
+}
+
+export class Stop implements Spell {
+  name: 'Stop';
+  description: 'Freezes a chracter in time';
+  targets: 1;
+  effect: [
+    {
+      add: StatusEffect.STOP;
+      tags: [EffectTag.TIME];
+    },
+  ];
+}
+
+export class Slow implements Spell {
+  name: 'Slow';
+  description: 'Slow down an opponent';
+  targets: 1;
+  effect: [
+    {
+      add: StatusEffect.SLOW;
+      tags: [EffectTag.TIME];
+    },
+  ];
+}
+
+export class Haste implements Spell {
+  name: 'Haste';
+  description: 'Speed up a character';
+  targets: 1; // self
+  effect: [
+    {
+      add: StatusEffect.HASTE;
+      tags: [EffectTag.TIME];
     },
   ];
 }
