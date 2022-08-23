@@ -24,34 +24,10 @@ export interface Action {
   effect: Array<ActionEffect>;
 }
 
-// Stamina Boost Enabled Action - by holding down the button used to make that move you can place more stamina into the move making it a more powerful action. For every 6 seconds you will gain a plus 1.
-// Fixed Action A action that must be canceled or will not stop being used
-
-// Combo Actions
-// Combo actions are actions that can only be used by pressing a combination of buttons and then the combination activation button (Square by default) to activate the action
-// Blitz –
-// Set Combo – Set a action to be activated from a button combination for quick action selection.
-// Interaction Actions
-// Interaction Actions are a type of Command Menu actions, which essentially means that they take up a slot on the players Command Menu. Interaction Actions take up the Interaction Slot on the Commnd Menu. What distinguishes Interaction Actions from the rest is that all interaction actions relate to interacting with other objects.
-// Counter – make a maneuver in reaction to an enemy’s.
-// Disobey – do not follow orders given.
-// Parry – use your weapon to block / deflect the enemies attack.
-// Standard Object – Take no action points
-// Pick Up / Take
-// Open
-// Open Lock
-// Pull – (Example “Pull Lever”)
-
 // Issuant
 
 // 	Guardant
-// Spells
-// Blizzard
-// Inferno
-// Twister Gust – Gale - Cyclone
-// Landslide
-// Tsunami
-// Aqua omni
+// omni
 // Actions
 // Barrier
 

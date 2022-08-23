@@ -3,15 +3,20 @@ import {Attribute} from '../character/Attribute';
 import {EffectTag} from '../character/EffectTag';
 import {StatusEffect} from '../character/StatusEffect';
 
-export interface Spell extends Action {}
+/**
+ * Spells feature a prefix that differs based on skill level.
+ * This indicates to astute players the magic rankings of their adversary
+ *
+ * | min | max | rank   | example        |
+ * | --  | --  | --     | --             |
+ * |  0  |   3 | Normal | Fireball       |
+ * |  3  |   6 | Mega   | Mega Fireball  |
+ * |  6  |   9 | Giga   | Giga Fireball  |
+ * |  9  |  12 | Tera   | Tera Fireball  |
+ * | 12  |  15 | Omega  | Omega Fireball |
+ */
 
-// If spell
-// 0 – 3		Normal Spell
-// 3 – 6		Mega Spell
-// 6 – 9		Giga Spell
-// 9 – 12		Tera Spell
-// 12 – 15	Omega Spell
-// This is just the name used for the attack depending on skill level
+export interface Spell extends Action {}
 
 export class Gravity implements Spell {
   name: 'Gravity';
@@ -81,6 +86,16 @@ export class Blizzard implements Spell {
       chance: 0.3;
       tags: [EffectTag.WATER, EffectTag.AIR];
     },
+  ];
+}
+
+export class Fireball implements Spell {
+  name: 'Fireball';
+  description: 'Shoot a fireball at target';
+  targets: 1;
+  effect: [
+    {remove: Attribute.LIFE; quanity: '1d6+2'; tags: [EffectTag.FIRE]},
+    {add: StatusEffect.BURNED; chance: 0.2; tags: [EffectTag.FIRE]},
   ];
 }
 
