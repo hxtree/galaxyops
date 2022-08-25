@@ -11,13 +11,13 @@ import {Action} from './Action';
  */
 export interface WeaponAction extends Action {}
 
-class Parry implements WeaponAction {
+export class Parry implements WeaponAction {
   name: 'Parry';
   description: 'Ward off incoming attack with a countermove.';
   effect: [];
 }
 
-class Slash implements WeaponAction {
+export class Slash implements WeaponAction {
   name: 'Slash';
   description: 'Attack with a blade.';
   effect: [
@@ -29,7 +29,7 @@ class Slash implements WeaponAction {
   ];
 }
 
-class Strike implements WeaponAction {
+export class Strike implements WeaponAction {
   name: 'Strike';
   description: 'Attack with a sudden effect with a blade.';
   effect: [
@@ -41,7 +41,7 @@ class Strike implements WeaponAction {
   ];
 }
 
-class Stab implements WeaponAction {
+export class Stab implements WeaponAction {
   name: 'Stab';
   description: 'Attach with a forward striking motion with a blade.';
   effect: [
@@ -53,7 +53,7 @@ class Stab implements WeaponAction {
   ];
 }
 
-class Chop implements WeaponAction {
+export class Chop implements WeaponAction {
   name: 'Chop';
   description: 'Attack with a downward motion with a blade.';
   effect: [
@@ -65,7 +65,7 @@ class Chop implements WeaponAction {
   ];
 }
 
-class Cleave implements WeaponAction {
+export class Cleave implements WeaponAction {
   name: 'Cleave';
   description: 'A slash technique.';
   effect: [
@@ -79,7 +79,7 @@ class Cleave implements WeaponAction {
 // "15","Cleave lv2",,"13",,"13"
 
 // Weapon Actions (Slot 1)
-// Class Tech
+// export class Tech
 // Weapon Tech
 // Slash – (stamina)
 
@@ -152,9 +152,6 @@ class Cleave implements WeaponAction {
 
 // "43","Ward","Keep enemies from getting close. (Good for when party is powering up)","42",,"42"
 // "44","Seal","Keep enemies from getting close. (Good for when party is powering up)","43",,"43"
-
-// "72","Prepare Food","
-// Prepare food","71",,"71"
 
 // "12","Boast/Rally/Inspire","Increase allies determination","10",,"10"
 

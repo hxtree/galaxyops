@@ -4,6 +4,7 @@ import {EffectTag} from '../character/EffectTag';
 import {StatusEffect} from '../character/StatusEffect';
 
 /**
+ * Spells are actions that are casted by magic users.
  * Spells feature a prefix that differs based on skill level.
  * This indicates to astute players the magic rankings of their adversary
  *
@@ -286,7 +287,7 @@ export class Light implements Spell {
 
 export class Darkness implements Spell {
   name: 'Darkness';
-  description: 'Cast darkness on target';
+  description: 'Decrease the area that your opponent can see';
   targets: 1;
   effect: [
     {

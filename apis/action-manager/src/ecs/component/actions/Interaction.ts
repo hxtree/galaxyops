@@ -1,3 +1,6 @@
+/**
+ * Interactions are actions that can only be used when a compatable object is present
+ */
 export interface Interaction {
   name: string;
 }
