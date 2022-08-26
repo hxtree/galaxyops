@@ -12,6 +12,7 @@ import {
   LoomeeAngora,
   MalaceTsia,
   MeekuOni,
+  PennyKibbutz,
   PlayerCharacter,
   TraezUthsha,
 } from '../archetype/PlayerCharacter';
@@ -20,6 +21,7 @@ export interface Summon {
   name: string;
   description: string;
   summoner: PlayerCharacter;
+  commands?: Array<string>; // must be invoked by summoner through Command
 }
 
 export class Vachel implements Summon {
@@ -27,10 +29,12 @@ export class Vachel implements Summon {
   description: 'A silver bull';
   backstory: 'A bull that Meeku raised as a child';
   summoner: MeekuOni;
-  // Attacks – Must use Command to attack.
-  // Charge
-  // Can be used with Overdrive combinations
-  // *Can be upgraded with CART to accommodate large Party.
+  commands: [
+    'Charge',
+    'Graze', // eat grass
+    'Pull Cart', // *Can be upgraded with CART to accommodate large Party.
+    // Can be used with Overdrive combinations
+  ];
 }
 
 export class Felix implements Summon {
@@ -40,18 +44,17 @@ export class Felix implements Summon {
   summoner: LoomeeAngora;
 }
 
-export class Passant implements Summon {
-  name: 'Passant';
-  description: 'Beast with one front leg raided facing towards viewers left';
-  backstory: 'A pet that Loomee adopts';
-  summoner: FayeImago;
-}
-
-export class Rampant implements Summon {
-  name: 'Rampant';
-  description: 'Heraldry rearing on hind legs';
-  backstory: '';
-  summoner: FayeImago;
+export class HeraldicLion implements Summon {
+  name: 'Heraldic Lion';
+  description: 'A regal lion with an impecable stance';
+  summoner: PennyKibbutz;
+  commands: [
+    // https://familyhistoryfoundation.com/2020/07/17/heraldic-lion-positions/
+    'Passant Stance', // claw
+    'Rampant Stance', // multiple hasty attacks that reduce defense
+    'Issuant Stance', // focus
+    'Guardant Stance', // guard
+  ];
 }
 
 export class Lyre implements Summon {

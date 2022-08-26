@@ -83,20 +83,12 @@ export class Cleave implements WeaponAction {
 // Weapon Tech
 // Slash – (stamina)
 
-// "55","Gluttonous Desire","Comsumer food items twice as fast.","54",,"54"
-// "56","Blood Lust","Speed in battle increased.","55",,"55"
-// "57","Greedy Intent","Gain 5% more experience than party.","56",,"56"
-// "58","Sloth Composure","Blows taken when not doing action are halved","57",,"57"
-// "59","Envious of Combat","Gain more rage from watching combat.","58",,"58"
 // "60","Restoring Aura","Allies withing 5 foot radius slowly gain life. 1/2 of Spirit per/sec","59",,"59"
 // "61","Resurrect","Cures Lifeless","60",,"60"
 // "62","Cure",,"61",,"61"
 // "63","Heal","Restore life to one target","62",,"62"
 // "64","Heal All","Restore life to all nearby targets","63",,"63"
-// "65","Cheer","Targets Spirit increases by 10% for a duration","64",,"64"
-// "66","Support",,"65",,"65"
-// "67","Hope","The most powerful status bonus","66",,"66"
-// "68","Inspire","Increases target Drive gauge","67",,"67"
+
 // "69","Strike",,"68",,"68"
 
 // "73","Bake","Create Consumables from Recipes","72",,"72"
