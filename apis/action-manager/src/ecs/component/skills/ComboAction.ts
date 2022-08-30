@@ -10,3 +10,15 @@
 // Blitz –
 
 // Set Combo – Set a action to be activated from a button combination for quick action selection.
+
+export interface ComboAction {
+  name: string;
+  description: string;
+  prerequisite: string; // todo figure our programmatic solution
+}
+
+export class Blitz implements ComboAction {
+  name: 'Blitz';
+  description: '';
+  prerequisite: '';
+}

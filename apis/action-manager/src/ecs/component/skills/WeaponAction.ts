@@ -1,23 +1,32 @@
 import {Attribute} from '../character/Attribute';
-import {EffectTag} from '../character/EffectTag';
-import {Action} from './Action';
+import {EffectTag} from '../effect/EffectTag';
+import {ActionCategory} from './Action';
+import {EffectTable} from '../effect/EffectTable';
+import {MenuSlot} from '../character/MenuSlot';
 
 /**
  * Weapon Actions
- * Weapon actions are removed or added based on the equipped item and characters ability to use weapon.
+ *
+ * Weapon actions are granted based on the equipped item and characters ability to use weapon.
  * Weapon actions directly related to simple use of the players equipped weapon.
  * Weapon actions are a type of Command Menu Action which means they can be used in game.
  * They are always located in the first slot of the Basic Command Menu Actions.
  */
-export interface WeaponAction extends Action {}
+export abstract class WeaponAction {
+  abstract name: string;
+  abstract description: string;
+  abstract effect: EffectTable;
+  menuSlot: MenuSlot.First;
+  category: ActionCategory.WEAPON;
+}
 
-export class Parry implements WeaponAction {
+export class Parry extends WeaponAction {
   name: 'Parry';
   description: 'Ward off incoming attack with a countermove.';
   effect: [];
 }
 
-export class Slash implements WeaponAction {
+export class Slash extends WeaponAction {
   name: 'Slash';
   description: 'Attack with a blade.';
   effect: [
@@ -29,7 +38,7 @@ export class Slash implements WeaponAction {
   ];
 }
 
-export class Strike implements WeaponAction {
+export class Strike extends WeaponAction {
   name: 'Strike';
   description: 'Attack with a sudden effect with a blade.';
   effect: [
@@ -41,7 +50,7 @@ export class Strike implements WeaponAction {
   ];
 }
 
-export class Stab implements WeaponAction {
+export class Stab extends WeaponAction {
   name: 'Stab';
   description: 'Attach with a forward striking motion with a blade.';
   effect: [
@@ -53,7 +62,7 @@ export class Stab implements WeaponAction {
   ];
 }
 
-export class Chop implements WeaponAction {
+export class Chop extends WeaponAction {
   name: 'Chop';
   description: 'Attack with a downward motion with a blade.';
   effect: [
@@ -65,7 +74,7 @@ export class Chop implements WeaponAction {
   ];
 }
 
-export class Cleave implements WeaponAction {
+export class Cleave extends WeaponAction {
   name: 'Cleave';
   description: 'A slash technique.';
   effect: [
@@ -78,7 +87,6 @@ export class Cleave implements WeaponAction {
 }
 // "15","Cleave lv2",,"13",,"13"
 
-// Weapon Actions (Slot 1)
 // export class Tech
 // Weapon Tech
 // Slash – (stamina)
@@ -97,9 +105,6 @@ export class Cleave implements WeaponAction {
 // "76","Darkness"," Decrease the area that your opponent can see.","75",,"75"
 // "77","Fighter","Double Strike","76",,"76"
 // "78","Block","Block enemies with wielding item. Preventing Crital Attacks from doing additional damage","77",,"77"
-// "79","Cleave",,"78",,"78"
-// "80","Oni"," Become engulfed in a blood thirsty rage that multiplies your power but drains spirit. If character stays in Oni too long they will go Berserk.","79",,"79"
-// "81","True Oni","Become engulfed in a more powerful blood thirsty rage that multiplies your power but drains spirit. If character stays in Oni too long they will go Berserk. Player must have very little life left and max Drive in order to perform.","80",,"80"
 
 // "49","Cheer","Targets Spirit increases by 10% for a duration.","48",,"48"
 // "50","Support","The most powerful status bonus","49",,"49"
@@ -135,16 +140,3 @@ export class Cleave implements WeaponAction {
 // "35",,,"32",,"32"
 
 // "39","Doom","Inflicts Doomed","36",,"36"
-
-// "42","Craft","Combined multiple items into one.","39",,"39"
-// "45","Reflect","Send enemies moves back at them.","44",,"44"
-// "46","Lullaby","Send enemies moves back at them.","45",,"45"
-// "47","Light","Keep enemies from moving for a duration of time.– chance Puts enemy to sleep. Stops rage","46",,"46"
-// "48","Protection"," Create a barrier around a ally","47",,"47"
-
-// "43","Ward","Keep enemies from getting close. (Good for when party is powering up)","42",,"42"
-// "44","Seal","Keep enemies from getting close. (Good for when party is powering up)","43",,"43"
-
-// "12","Boast/Rally/Inspire","Increase allies determination","10",,"10"
-
-// "1","Command","telling a part member what to do.","40",,"40"
