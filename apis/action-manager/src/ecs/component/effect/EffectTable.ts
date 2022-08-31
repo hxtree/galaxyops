@@ -10,4 +10,8 @@ export interface EffectRecord {
   tags?: Array<EffectTag>;
 }
 
+/**
+ * EffectTable
+ * A representation of the effect of an action
+ */
 export type EffectTable = Array<EffectRecord>;

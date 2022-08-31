@@ -1,3 +1,5 @@
+import {Slash, Stab, Strike, WeaponAction} from '../skills/WeaponAction';
+
 /**
  * Weapon is a tag applied to a weapon class and is used to determine the damage type of the weapon.
  * It is used to determine equability, weakness and resistance.
@@ -39,12 +41,30 @@ export enum WeaponCategory {
 export interface Weapon {
   // the name of the weapon, used to identify the weapon.
   name: string;
+
   // the category of the weapon, used to determine equability, weakness and resistance.
   category: WeaponCategory;
+
   // the immediately evident appearance of the weapon
   description?: string;
+
   // the history of the weapon, can be revealed by a special ability.
   history?: string | null;
+
+  // used to determine damage per swing / etc
+  power: number;
+
+  // used to determine rate of use/fire
+  speed: number;
+
+  // dps could be calculated but would require character
+  // but pendents don't do damage
+
+  // the range of the attack
+  // todo UOM? feet, yards, meters?
+  area: number;
+
+  actions: Array<WeaponAction>; // could also be Ward, Protect, etc. for Pendents :?
 }
 
 /**
@@ -56,24 +76,40 @@ export interface Weapon {
 class AsminsAze implements Weapon {
   name: "Asmin's Axe";
   category: WeaponCategory.TWO_HANDED_AXE;
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Slash];
 }
 
 class GreatWail implements Weapon {
   name: 'Great Wail';
   category: WeaponCategory.TWO_HANDED_AXE;
   description: 'A large axe that can break through bone and makes a loud sound when swung';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Slash];
 }
 
 class Justice implements Weapon {
   name: 'Justice';
   category: WeaponCategory.TWO_HANDED_AXE;
   history: "Gunter's trademark axe";
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Slash];
 }
 
 class Keystone implements Weapon {
   name: 'Keystone';
   category: WeaponCategory.TWO_HANDED_AXE;
   description: 'A giant axe made of from a giant keystone with an iron bar stuck through it.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Slash];
 }
 
 /**
@@ -87,11 +123,20 @@ class Keystone implements Weapon {
 class Assaulter implements Weapon {
   name: 'Assaulter';
   category: WeaponCategory.BOOMERANG;
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Strike];
 }
+
 class Striker implements Weapon {
   name: 'Striker';
   category: WeaponCategory.BOOMERANG;
   description: ' An extremely fast and deadly boomerang.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Strike];
 }
 
 /**
@@ -105,7 +150,10 @@ class EnergyBreaker implements Weapon {
   category: WeaponCategory.SHIELD_SWORD;
   description: string =
     'An extremely large and heavy weapon that absorbs and releases energy.';
-
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Strike];
   // SPEED_DECREASE 1d5
   // FIRE 2d5
 }
@@ -115,7 +163,10 @@ class StoneBreaker implements Weapon {
   category: WeaponCategory.SHIELD_SWORD;
   description: 'An extremely large and heavy weapon with a special guilloche handle for grip.';
   history: 'It was reportedly used by Galax to bring peace.';
-
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Strike];
   // Increases wait time
   // Increases recovery time
   // Increases damage
@@ -127,6 +178,10 @@ class TheManSlayer implements Weapon {
   category: WeaponCategory.SHIELD_SWORD;
   description: 'A giant ancient hellish looking blade. Its handle bares a dogtooth design.';
   history: 'It was reportedly used by Galax to bring peace.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Strike];
 }
 
 /**
@@ -140,12 +195,20 @@ class HerosBlade implements Weapon {
   name: "Hero's Blade";
   category: WeaponCategory.BROAD_SWORD;
   description: 'A mystical blade that is destine to fall into the hands of the next true hero.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Strike];
 }
 
 class SwordOfLawzon implements Weapon {
   name: 'Sword of Lawzon';
   category: WeaponCategory.BROAD_SWORD;
   description: 'A dirty simple solid blade forged of harden steel.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Strike];
 }
 
 /**
@@ -157,6 +220,10 @@ class TinyTimer implements Weapon {
   name: 'Tiny Timer';
   category: WeaponCategory.STAFF;
   description: 'A basic staff given to Magi in training';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Strike];
 }
 
 class Caduceus implements Weapon {
@@ -164,6 +231,10 @@ class Caduceus implements Weapon {
   category: WeaponCategory.STAFF;
   description: 'A staff with two serpents wrapped around it base and two wings that expand from its top.';
   history: 'An ancient wand said to be carried by the messenger of God.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Strike];
 }
 
 class Antediluvian implements Weapon {
@@ -171,6 +242,10 @@ class Antediluvian implements Weapon {
   category: WeaponCategory.STAFF;
   description: 'An acient wooden staff';
   history: 'An ancient weapon used to slay devils of the old world';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Strike];
 }
 
 /**
@@ -184,24 +259,40 @@ class EternalFold implements Weapon {
   name: 'Eternal Fold';
   category: WeaponCategory.RAPIER;
   history: 'A sword that has been folded by generations of blacksmiths to create a flawless steel sword';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Stab];
 }
 
 class GoldRush implements Weapon {
   name: 'Gold Rush';
   category: WeaponCategory.RAPIER;
   description: 'A golden color sword that looks more fitting on a wall then a battlefield.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Stab];
 }
 
 class KingsBlade implements Weapon {
   name: 'Kings Blade';
   category: WeaponCategory.RAPIER;
   description: 'Whomever posses this blade is King of Rudner.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Stab];
 }
 
 class RustyRapier implements Weapon {
   name: 'Rusty Rapier';
   category: WeaponCategory.RAPIER;
   description: 'A rusty sword. Chance of poisoning target.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [Stab];
 }
 
 /**
@@ -216,16 +307,28 @@ class MysteriousPendant implements Weapon {
   name: 'Mysterious Pendant';
   category: WeaponCategory.PENDANT;
   // Grants Ward
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [];
 }
 
 class PeaceKeeper implements Weapon {
   name: 'PeaceKeeper';
   category: WeaponCategory.PENDANT;
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [];
 }
 
 class TroubleMaker implements Weapon {
   name: 'Trouble Maker';
   category: WeaponCategory.PENDANT;
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [];
 }
 
 /**
@@ -237,6 +340,10 @@ class StandardIssue implements Weapon {
   name: 'Standard Issue';
   category: WeaponCategory.DUAL_KYOKETSU_SHOGE;
   description: 'The common Dual Kyoketsu Shoge given to fascist.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [];
 }
 
 /**
@@ -254,22 +361,38 @@ class Greed implements Weapon {
   description =
     'A intricate, powerful weapon that is capable of stealing the life from its target.';
   history = 'This weapon belonged to Wisp';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [];
 }
 
 class Liberty implements Weapon {
   name: 'Liberty';
   category: WeaponCategory.KNIFE;
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [];
 }
 
 class Monarch implements Weapon {
   name: 'Monarch';
   category: WeaponCategory.KNIFE;
   description: 'A brilliantly designed insect looking blade with a sharp and deadly tip that is dripping with poison.';
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [];
 }
 
 class Regret implements Weapon {
   name: 'Regret';
   category: WeaponCategory.KNIFE;
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [];
 }
 
 class Viceroy implements Weapon {
@@ -279,6 +402,10 @@ class Viceroy implements Weapon {
   // The viceroy looks almost identical to the monarch';
   // Chance of causing Fear on contact when used with Monarch
   // Chance of poisoning enemy on contact
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [];
 }
 
 class Violated implements Weapon {
@@ -287,6 +414,10 @@ class Violated implements Weapon {
   // Weapon Absorbs the previous monsters type and uses it for the next attack.
   // This weapon must be used to slay the most poisonous monster
   // to get a poisonous tipped dagger and slay another monster
+  power: 100;
+  speed: 30;
+  area: 1;
+  actions: [];
 }
 
 /**
