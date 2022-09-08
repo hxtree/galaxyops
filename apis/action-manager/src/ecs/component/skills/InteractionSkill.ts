@@ -1,42 +1,56 @@
 /**
- * Interactions are actions that can only be used when a compatable object is present
+ * InteractionSkills are actions that can only be used when a compatable object is present
  */
-export interface Interaction {
-  name: string;
+
+import {BaseSkill} from './BaseSkill';
+
+export enum InteractionSkillList {
+  'Grab',
+  'Push',
+  'Pull',
+  'Lift',
+  'Throw',
 }
+
+export interface InteractionSkill extends BaseSkill {}
 
 export enum ObjectCategory {
   MOVEABLE = 'Moveable',
   IMPENDING = 'Impending',
 }
 
-export class Grab implements Interaction {
+export class Grab implements InteractionSkill {
   name: 'Grab';
+  description: 'Grab object';
   target: ObjectCategory.MOVEABLE;
 }
 
-export class Push implements Interaction {
+export class Push implements InteractionSkill {
   name: 'Push';
+  description: 'Push object';
   target: ObjectCategory.MOVEABLE;
 }
 
-export class Pull implements Interaction {
+export class Pull implements InteractionSkill {
   name: 'Pull';
+  description: 'Pull object';
   target: ObjectCategory.MOVEABLE;
 }
 
-export class Lift implements Interaction {
+export class Lift implements InteractionSkill {
   name: 'Lift';
+  description: 'Lift object';
   target: ObjectCategory.MOVEABLE;
 }
 
-export class Throw implements Interaction {
+export class Throw implements InteractionSkill {
   name: 'Throw';
+  description: 'Thow object';
   target: ObjectCategory.MOVEABLE;
 }
 
-// Interaction Actions
-// Interaction Actions are a type of Command Menu actions, which essentially means that they take up a slot on the players Command Menu. Interaction Actions take up the Interaction Slot on the Commnd Menu. What distinguishes Interaction Actions from the rest is that all interaction actions relate to interacting with other objects.
+// InteractionSkill Actions
+// InteractionSkill Actions are a type of Command Menu actions, which essentially means that they take up a slot on the players Command Menu. InteractionSkill Actions take up the InteractionSkill Slot on the Commnd Menu. What distinguishes InteractionSkill Actions from the rest is that all interaction actions relate to interacting with other objects.
 // Counter – make a maneuver in reaction to an enemy’s.
 // Disobey – do not follow orders given.
 // Parry – use your weapon to block / deflect the enemies attack.

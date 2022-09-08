@@ -1,7 +1,7 @@
 import {Attribute} from '../character/Attribute';
 import {EffectTag} from '../effect/EffectTag';
-import {ActionCategory} from './Action';
-import {EffectTable} from '../effect/EffectTable';
+import {BaseSkill, SkillCategory} from './BaseSkill';
+import {EffectTable, Modifier} from '../effect/EffectTable';
 import {MenuSlot} from '../character/MenuSlot';
 
 /**
@@ -12,75 +12,89 @@ import {MenuSlot} from '../character/MenuSlot';
  * Weapon actions are a type of Command Menu Action which means they can be used in game.
  * They are always located in the first slot of the Basic Command Menu Actions.
  */
-export abstract class WeaponAction {
+export abstract class WeaponSkill implements BaseSkill {
   abstract name: string;
   abstract description: string;
   abstract effect: EffectTable;
   menuSlot: MenuSlot.First;
-  category: ActionCategory.WEAPON;
+  category: SkillCategory.WEAPON;
 }
 
-export class Parry extends WeaponAction {
+export enum WeaponSkillList {
+  'Parry',
+  'Slash',
+  'Strike',
+  'Stab',
+  'Chop',
+  'Cleave',
+}
+
+export class Parry extends WeaponSkill {
   name: 'Parry';
   description: 'Ward off incoming attack with a countermove.';
   effect: [];
 }
 
-export class Slash extends WeaponAction {
+export class Slash extends WeaponSkill {
   name: 'Slash';
   description: 'Attack with a blade.';
   effect: [
     {
-      remove: Attribute.LIFE;
-      quanity: '1d6+2';
+      name: Attribute.LIFE;
+      modifier: Modifier.REMOVE;
+      quantity: '1d6+2';
       tags: [EffectTag.PHYSICAL];
     },
   ];
 }
 
-export class Strike extends WeaponAction {
+export class Strike extends WeaponSkill {
   name: 'Strike';
   description: 'Attack with a sudden effect with a blade.';
   effect: [
     {
-      remove: Attribute.LIFE;
-      quanity: '1d6+2';
+      name: Attribute.LIFE;
+      modifier: Modifier.REMOVE;
+      quantity: '1d6+2';
       tags: [EffectTag.PHYSICAL];
     },
   ];
 }
 
-export class Stab extends WeaponAction {
+export class Stab extends WeaponSkill {
   name: 'Stab';
   description: 'Attach with a forward striking motion with a blade.';
   effect: [
     {
-      remove: Attribute.LIFE;
-      quanity: '1d6+2';
+      name: Attribute.LIFE;
+      modifier: Modifier.REMOVE;
+      quantity: '1d6+2';
       tags: [EffectTag.PHYSICAL];
     },
   ];
 }
 
-export class Chop extends WeaponAction {
+export class Chop extends WeaponSkill {
   name: 'Chop';
   description: 'Attack with a downward motion with a blade.';
   effect: [
     {
-      remove: Attribute.LIFE;
-      quanity: '1d6+2';
+      name: Attribute.LIFE;
+      modifier: Modifier.REMOVE;
+      quantity: '1d6+2';
       tags: [EffectTag.PHYSICAL];
     },
   ];
 }
 
-export class Cleave extends WeaponAction {
+export class Cleave extends WeaponSkill {
   name: 'Cleave';
   description: 'A slash technique.';
   effect: [
     {
-      remove: Attribute.LIFE;
-      quanity: '1d6+2';
+      name: Attribute.LIFE;
+      modifier: Modifier.REMOVE;
+      quantity: '1d6+2';
       tags: [EffectTag.PHYSICAL];
     },
   ];

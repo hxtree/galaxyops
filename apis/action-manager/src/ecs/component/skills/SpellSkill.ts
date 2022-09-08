@@ -1,7 +1,7 @@
-import {ActionCategory} from './Action';
+import {BaseSkill, SkillCategory} from './BaseSkill';
 import {Attribute} from '../character/Attribute';
-import {EffectTag} from '../character/EffectTag';
-import {StatusEffect} from '../character/StatusEffect';
+import {EffectTag} from '../effect/EffectTag';
+import {StatusEffect} from '../effect/StatusEffect';
 import {MenuSlot} from '../character/MenuSlot';
 
 /**
@@ -18,14 +18,23 @@ import {MenuSlot} from '../character/MenuSlot';
  * | 12  |  15 | Omega  | Omega Fireball |
  */
 
-export abstract class SpellAction {
+export enum SpellSkillList {
+  'Gravity',
+  'Shock',
+  'Quake',
+  'Landslide',
+  'Blizzard',
+  // todo add all
+}
+
+export abstract class SpellSkill implements BaseSkill {
   abstract name: string;
   abstract description: string;
   menuSlot: MenuSlot.First;
-  category: ActionCategory.CLASS;
+  category: SkillCategory.CLASS;
 }
 
-export class Gravity extends SpellAction {
+export class Gravity extends SpellSkill {
   name: 'Gravity';
   description: 'Coalesce gravity around target. Causes flying targets to hit ground';
   targets: 1;
@@ -38,7 +47,7 @@ export class Gravity extends SpellAction {
   ];
 }
 
-export class Shock extends SpellAction {
+export class Shock extends SpellSkill {
   name: 'Shock';
   description: 'Electrocutes target';
   targets: 1;
@@ -48,7 +57,7 @@ export class Shock extends SpellAction {
   ];
 }
 
-export class Quake extends SpellAction {
+export class Quake extends SpellSkill {
   name: 'Quake';
   description: 'Shakes earth surrounding target';
   targets: 1; // AOE?
@@ -62,7 +71,7 @@ export class Quake extends SpellAction {
   ];
 }
 
-export class Landslide extends SpellAction {
+export class Landslide extends SpellSkill {
   name: 'Landslide';
   description: 'Creates a landslide';
   targets: 1;
@@ -73,7 +82,7 @@ export class Landslide extends SpellAction {
   ];
 }
 
-export class Blizzard extends SpellAction {
+export class Blizzard extends SpellSkill {
   name: 'Blizzard';
   description: 'Creates a Blizzard';
   targets: 1;
@@ -96,7 +105,7 @@ export class Blizzard extends SpellAction {
   ];
 }
 
-export class Fireball extends SpellAction {
+export class Fireball extends SpellSkill {
   name: 'Fireball';
   description: 'Shoot a fireball at target';
   targets: 1;
@@ -106,7 +115,7 @@ export class Fireball extends SpellAction {
   ];
 }
 
-export class Inferno extends SpellAction {
+export class Inferno extends SpellSkill {
   name: 'Inferno';
   description: 'Creates a Inferno';
   targets: 1;
@@ -116,7 +125,7 @@ export class Inferno extends SpellAction {
   ];
 }
 
-export class Twister extends SpellAction {
+export class Twister extends SpellSkill {
   name: 'Twister';
   description: 'Creates a Twister';
   targets: 1;
@@ -130,7 +139,7 @@ export class Twister extends SpellAction {
   ];
 }
 
-export class Gust extends SpellAction {
+export class Gust extends SpellSkill {
   name: 'Gust';
   description: 'Creates a Gust';
   targets: 1;
@@ -144,7 +153,7 @@ export class Gust extends SpellAction {
   ];
 }
 
-export class Gale extends SpellAction {
+export class Gale extends SpellSkill {
   name: 'Gale';
   description: 'Creates Gale';
   targets: 1;
@@ -158,7 +167,7 @@ export class Gale extends SpellAction {
   ];
 }
 
-export class Cyclone extends SpellAction {
+export class Cyclone extends SpellSkill {
   name: 'Cyclone';
   description: 'Creates Cyclone';
   targets: 1;
@@ -172,7 +181,7 @@ export class Cyclone extends SpellAction {
   ];
 }
 
-export class Tsunami extends SpellAction {
+export class Tsunami extends SpellSkill {
   name: 'Tsunami';
   description: 'A water-based attack that creates Tsunami';
   targets: 1;
@@ -186,7 +195,7 @@ export class Tsunami extends SpellAction {
   ];
 }
 
-export class Aqua extends SpellAction {
+export class Aqua extends SpellSkill {
   name: 'Aqua';
   description: 'Creates Aqua';
   targets: 1;
@@ -200,21 +209,21 @@ export class Aqua extends SpellAction {
   ];
 }
 
-export class Heal extends SpellAction {
+export class Heal extends SpellSkill {
   name: 'Heal';
   description: 'Heal target';
   targets: 1;
   effect: [{add: Attribute.LIFE; quanity: '1d6+2'; tags: [EffectTag.WATER]}];
 }
 
-export class Revive extends SpellAction {
+export class Revive extends SpellSkill {
   name: 'Revive';
   description: 'Restore life to target';
   targets: 1;
   effect: [{remove: StatusEffect.LIFELESS; chance: 0.9; tags: []}];
 }
 
-export class Cure extends SpellAction {
+export class Cure extends SpellSkill {
   name: 'Cure';
   description: 'Cures StatusEffects';
   targets: 1;
@@ -226,14 +235,14 @@ export class Cure extends SpellAction {
   ];
 }
 
-export class Barrier extends SpellAction {
+export class Barrier extends SpellSkill {
   name: 'Barrier';
   description: 'Barrier StatusEffects';
   targets: 1;
   effect: [{add: StatusEffect.BARRIER; chance: 1; tags: [EffectTag.AIR]}];
 }
 
-export class Boom extends SpellAction {
+export class Boom extends SpellSkill {
   name: 'Boom';
   description: 'Cast Boom on target';
   targets: 1;
@@ -242,14 +251,14 @@ export class Boom extends SpellAction {
   ];
 }
 
-export class Reflect extends SpellAction {
+export class Reflect extends SpellSkill {
   name: 'Reflect';
   description: 'Cast Reflect on target';
   targets: 1;
   effect: [{add: StatusEffect.REFLECT; chance: 1}];
 }
 
-export class Flare extends SpellAction {
+export class Flare extends SpellSkill {
   name: 'Flare';
   description: 'Cast Flare on target';
   targets: 1;
@@ -259,7 +268,7 @@ export class Flare extends SpellAction {
   ];
 }
 
-export class Meteor extends SpellAction {
+export class Meteor extends SpellSkill {
   name: 'Meteor';
   description: 'Cast Meteor on target';
   targets: 1;
@@ -269,7 +278,7 @@ export class Meteor extends SpellAction {
   ];
 }
 
-export class Telepathy extends SpellAction {
+export class Telepathy extends SpellSkill {
   name: 'Telepathy';
   description: 'Cast Telepathy on target';
   targets: 1;
@@ -282,7 +291,7 @@ export class Telepathy extends SpellAction {
   ];
 }
 
-export class Light extends SpellAction {
+export class Light extends SpellSkill {
   name: 'Light';
   description: 'Cast light on target';
   targets: 1;
@@ -291,7 +300,7 @@ export class Light extends SpellAction {
   ];
 }
 
-export class Darkness extends SpellAction {
+export class Darkness extends SpellSkill {
   name: 'Darkness';
   description: 'Decrease the area that your opponent can see';
   targets: 1;
@@ -304,7 +313,7 @@ export class Darkness extends SpellAction {
   ];
 }
 
-export class Stop extends SpellAction {
+export class Stop extends SpellSkill {
   name: 'Stop';
   description: 'Freezes a chracter in time';
   targets: 1;
@@ -316,7 +325,7 @@ export class Stop extends SpellAction {
   ];
 }
 
-export class Slow extends SpellAction {
+export class Slow extends SpellSkill {
   name: 'Slow';
   description: 'Slow down an opponent';
   targets: 1;
@@ -328,7 +337,7 @@ export class Slow extends SpellAction {
   ];
 }
 
-export class Haste extends SpellAction {
+export class Haste extends SpellSkill {
   name: 'Haste';
   description: 'Speed up a character';
   targets: 1; // self

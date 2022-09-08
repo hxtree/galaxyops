@@ -1,41 +1,72 @@
+import {Character} from '../../../entity/Character';
+import {MeekuOni} from '../archetype/PlayerCharacter';
+import {Attribute} from '../character/Attribute';
+import {EffectTable} from '../effect/EffectTable';
+import {EffectTag} from '../effect/EffectTag';
 import {GearSlot} from './Gear';
 
 export interface Accessory {
   name: string;
   description: string;
   purpose: string;
+  character: Character;
   gearSlots: Array<GearSlot>;
+  effects?: EffectTable;
+  removable: boolean; // whether player can remove via menus
 }
 
 /**
  * Accessories
  * Seondary items that are equippable
  */
-
 export class GoldBracelets {
   name: 'Gold Bracelets';
   description: 'Weighted gold bracelets that occupy both wrists meant';
-  purpose: 'To keep Meeku’s power at bay (increase experience earned)';
+  purpose: 'Suppress hidden power';
+  character: [MeekuOni];
   gearSlots: [GearSlot.RIGHT_WRIST, GearSlot.LEFT_WRIST];
+  effects: [
+    {
+      add: Attribute.EXPERIENCE;
+      quanity: '1.5%';
+      tags: [EffectTag.PHYSICAL];
+    },
+    {
+      remove: Attribute.POWER;
+      quanity: '1000%';
+      tags: [EffectTag.PHYSICAL];
+    },
+  ];
+  removable: false;
 }
 
 export class RedScarf {
   name: 'Red Scarf';
+  character: [MeekuOni];
   description: 'a red scarf knitted by Meeku’s mother to keep him warm.';
   gearSlots: [GearSlot.NECK];
+  removable: false;
 }
 
 export class CowhideVest {
   name: 'Cowhide Vest';
-  effects: '+5 defense';
+  character: [MeekuOni];
+  effects: [
+    {
+      add: Attribute.DEFENSE;
+      quanity: '+5';
+      tags: [EffectTag.PHYSICAL];
+    },
+  ];
   description: 'A brown protective vest made out of cow hide.';
   gearSlots: [GearSlot.TORSO];
 }
 
 export class FuneralJar {
   name: 'Funeral Jar';
-  description: 'a jar meant to contain the ashes of the dead';
+  description: 'a jar holding the ashes of the dead';
   gearSlots: [GearSlot.WAIST];
+  removable: false;
 }
 
 export class SwordSheath {
@@ -47,7 +78,13 @@ export class SwordSheath {
 export class MagenticGloves {
   name: 'Magnetic Gloves';
   description: 'Helps catch metal objects (Traez’s boomerang).';
-  effects: '+20 to catch action.';
+  effects: [
+    {
+      add: Attribute.DEFENSE; // how to represent +20 to catch action?
+      quanity: '+20';
+      tags: [];
+    },
+  ];
   gearSlots: [GearSlot.RIGHT_HAND, GearSlot.LEFT_HAND];
 }
 

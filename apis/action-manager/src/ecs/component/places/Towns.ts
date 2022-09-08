@@ -5,6 +5,7 @@ export interface Place {
 
 export class Hostia implements Place {
   name: 'Hostia';
+  description: '';
   facts: [
     "This is the town where both Malace and Madhi's originate",
     'The people of this town generally wear ninja masks',

@@ -1,19 +1,19 @@
 /**
- * Movement Actions
+ * MovementSkill
  * actions that are directly related to movement
  */
 
-export interface Movement {
-  name: string;
-}
+import {BaseSkill} from './BaseSkill';
 
-export class Walk implements Movement {
+export interface MovementSkill extends BaseSkill {}
+
+export class Walk implements MovementSkill {
   name: 'Walk';
   description: 'Move slowly forward or backward side to side';
   // (Light press Direction Pad) Move slowly.
 }
 
-export class Run implements Movement {
+export class Run implements MovementSkill {
   name: 'Run';
   description: 'Move quickly using stamina';
   // consumes stanmina
@@ -21,18 +21,18 @@ export class Run implements Movement {
   // (Hard press Direction Pad with Stamina)
 }
 
-export class Swim implements Movement {
+export class Swim implements MovementSkill {
   name: 'Swim';
   description: 'Move in deep water';
   // consumes stanmina
 }
 
-export class BackFlip implements Movement {
+export class BackFlip implements MovementSkill {
   name: 'Back Flip';
   description: 'Quickly move backwards';
 }
 
-export class DoubleBackFlip implements Movement {
+export class DoubleBackFlip implements MovementSkill {
   name: 'DoubleBackFlip';
   description: 'Quickly move backwards twice';
 }

@@ -4,18 +4,26 @@ import {
   PlayerCharacter,
   TraezUthsha,
 } from '../archetype/PlayerCharacter';
-import {ActionCategory} from './Action';
+import {BaseSkill, SkillCategory} from './BaseSkill';
 import {MenuSlot} from '../character/MenuSlot';
+
+export enum DriveSkillList {
+  'Berserk',
+  'Toxic Thrust',
+  'Aerial Assualt',
+  'Oni',
+  'True Oni',
+}
 
 /**
  * Drive Actions are special actions that consume drive gauge
  */
-export abstract class DriveAction {
+export abstract class DriveAction implements BaseSkill {
   abstract name: string;
   abstract description: string;
   abstract character: PlayerCharacter;
   menuSlot: MenuSlot.Third;
-  category: ActionCategory.DRIVE;
+  category: SkillCategory.DRIVE;
 }
 
 export class Berserk extends DriveAction {
@@ -31,7 +39,7 @@ export class ToxicThrust extends DriveAction {
 }
 
 export class AerialAssault extends DriveAction {
-  name: 'Aerial assault';
+  name: 'Aerial Assault';
   description: 'Jump into air and throws boomerang (jump attack)';
   character: TraezUthsha;
 }

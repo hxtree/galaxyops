@@ -1,4 +1,4 @@
-import {Slash, Stab, Strike, WeaponAction} from '../skills/WeaponAction';
+import {Slash, Stab, Strike, WeaponSkill} from '../skills/WeaponSkill';
 
 /**
  * Weapon is a tag applied to a weapon class and is used to determine the damage type of the weapon.
@@ -38,33 +38,33 @@ export enum WeaponCategory {
   DUAL_KYOKETSU_SHOGE = 'Dual Kyoketsu Shoge',
 }
 
-export interface Weapon {
+export abstract class Weapon {
   // the name of the weapon, used to identify the weapon.
-  name: string;
+  abstract name: string;
 
   // the category of the weapon, used to determine equability, weakness and resistance.
-  category: WeaponCategory;
+  abstract category: WeaponCategory;
 
   // the immediately evident appearance of the weapon
-  description?: string;
+  abstract description?: string;
 
   // the history of the weapon, can be revealed by a special ability.
-  history?: string | null;
+  abstract history?: string | null;
 
   // used to determine damage per swing / etc
-  power: number;
+  abstract power: number;
 
   // used to determine rate of use/fire
-  speed: number;
+  abstract speed: number;
 
   // dps could be calculated but would require character
   // but pendents don't do damage
 
   // the range of the attack
   // todo UOM? feet, yards, meters?
-  area: number;
+  abstract area: number;
 
-  actions: Array<WeaponAction>; // could also be Ward, Protect, etc. for Pendents :?
+  abstract actions: Array<WeaponSkill>; // could also be Ward, Protect, etc. for Pendents :?
 }
 
 /**

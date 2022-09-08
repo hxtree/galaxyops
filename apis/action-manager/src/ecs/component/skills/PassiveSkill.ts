@@ -1,10 +1,16 @@
+import {BaseSkill} from './BaseSkill';
+
+export enum PassiveSkillList {
+  'Dual Weld',
+  'Escape Artist',
+  // todo add all
+}
+
 /**
  * PassiveSkill are abilities that are not actions
  * They are kind of like natural actions as they do not need to be called to be used.
  */
-export interface PassiveSkill {
-  name: string;
-}
+export interface PassiveSkill extends BaseSkill {}
 
 export class DualWeld implements PassiveSkill {
   name: 'Dual Weld';
@@ -13,7 +19,7 @@ export class DualWeld implements PassiveSkill {
 }
 
 export class EscapeArtist implements PassiveSkill {
-  name: 'EscapeArtist';
+  name: 'Escape Artist';
   description: 'Makes it easier to run away from aggresive targets';
 }
 
@@ -33,7 +39,7 @@ export class Bluff implements PassiveSkill {
 }
 
 export class SenseBluff implements PassiveSkill {
-  name: 'SenseBluff';
+  name: 'Sense Bluff';
   description: 'A little icon on the screen will tell if someone is trying to bluff party (if character beats bluff check).';
 }
 

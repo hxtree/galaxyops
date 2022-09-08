@@ -30,8 +30,7 @@ export enum StatusEffect {
   FATHOM = 'Fathom', // cannot use Drive.
   DROWNED = 'Drowned',
   FEAR = 'Fear', // cannot move.
-
-  STOP = 'Stop', // stopped in time.
+  STOP = 'Stop', // frozen in time.
   SLOW = 'Slow', // speed reduced.
 
   // buffs

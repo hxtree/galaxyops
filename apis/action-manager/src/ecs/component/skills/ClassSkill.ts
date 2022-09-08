@@ -1,5 +1,6 @@
 import {EffectTable} from '../effect/EffectTable';
 import {MenuSlot} from '../character/MenuSlot';
+import {BaseSkill} from './BaseSkill';
 
 // fuel?
 // Whether when performing move if character can hold action to put more effort into action
@@ -9,49 +10,58 @@ export enum Focusable {
   FALSE = 'False',
 }
 
+export enum ClassSkillList {
+  'Barrier',
+  'Boast',
+  'Disguise',
+  'Focus',
+  'Grapple',
+  'Hide',
+}
+
 /**
  * Class Actions are motor programs that a character learns to preform.
  * Class Actions progression are often determined by determined by class.
  */
-export abstract class ClassAction {
+export abstract class ClassSkill implements BaseSkill {
   abstract name: string;
   abstract description: string;
   abstract effect: EffectTable;
   menuSlot: MenuSlot.First;
 }
 
-export class Barrier extends ClassAction {
+export class Barrier extends ClassSkill {
   name: 'Barrier';
   description: '';
   effect: [];
 }
 
-export class Boast extends ClassAction {
+export class Boast extends ClassSkill {
   name: 'Boast';
   description: 'increase party’s moral';
   effect: [];
 }
 
-export class Disguise extends ClassAction {
+export class Disguise extends ClassSkill {
   name: 'Disguise';
   description: 'Changes appearance and disables command menu until canceled.';
   effect: [];
   // stamina
 }
 
-export class Focus extends ClassAction {
+export class Focus extends ClassSkill {
   name: 'Focus';
   description: 'raise attack and attack percent for following move.';
   effect: [];
 }
 
-export class Grapple extends ClassAction {
+export class Grapple extends ClassSkill {
   name: 'Grapple';
   description: 'Lowers character and opponents life.';
   effect: [];
 }
 
-export class Hide extends ClassAction {
+export class Hide extends ClassSkill {
   name: 'Hide';
   description: 'Enemy cannot see you';
   effect: [];
