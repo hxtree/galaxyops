@@ -6,9 +6,27 @@ import {InteractionSkillList} from './InteractionSkill';
 import {ItemSkillList} from './ItemSkill';
 import {PassiveSkillList} from './PassiveSkill';
 import {SpellSkillList} from './SpellSkill';
+import {SummonSkillList} from './SummonSkill';
 import {TeamworkSkillList} from './TeamworkSkill';
+import {ToolSkillList} from './ToolSkill';
 import {TrapSkillList} from './TrapSkill';
 import {WeaponSkillList} from './WeaponSkill';
+
+const MasterSkillList = {
+  ...WeaponSkillList,
+  ...TrapSkillList,
+  ...ClassSkillList,
+  ...DriveSkillList,
+  ...ComboSkillList,
+  ...SpellSkillList,
+  ...TeamworkSkillList,
+  ...PassiveSkillList,
+  ...ItemSkillList,
+  ...InteractionSkillList,
+  ...ToolSkillList,
+  ...SummonSkillList,
+};
+export type MasterSkillListType = typeof MasterSkillList;
 
 // Is this more of a system than a component?
 export enum SkillCategory {
@@ -23,20 +41,6 @@ export enum SkillCategory {
   GEAR = 'Gear', // are related to the use of gear
   NATURAL = 'Natural', //  actions that do not need to be called to be used ??? These sound like traits or something?
 }
-
-const MasterSkillList = {
-  ...WeaponSkillList,
-  ...TrapSkillList,
-  ...ClassSkillList,
-  ...DriveSkillList,
-  ...ComboSkillList,
-  ...SpellSkillList,
-  ...TeamworkSkillList,
-  ...PassiveSkillList,
-  ...ItemSkillList,
-  ...InteractionSkillList,
-};
-export type MasterSkillListType = typeof MasterSkillList;
 
 /**
  * BaseSkill

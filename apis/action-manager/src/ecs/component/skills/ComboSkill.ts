@@ -3,7 +3,7 @@ import {BaseSkill} from './BaseSkill';
 import {Slash, WeaponSkill} from './WeaponSkill';
 
 export enum ComboSkillList {
-  'Blitz',
+  BLITZ = 'Blitz',
 }
 
 export abstract class ComboSkill implements BaseSkill {
@@ -24,7 +24,7 @@ export abstract class ComboSkill implements BaseSkill {
 }
 
 export class Blitz extends ComboSkill {
-  name: 'Blitz';
+  name: ComboSkillList.BLITZ;
   description: '';
   prerequisite: [Slash, Slash, Slash];
 }

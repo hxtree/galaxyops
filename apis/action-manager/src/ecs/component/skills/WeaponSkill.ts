@@ -5,38 +5,39 @@ import {EffectTable, Modifier} from '../effect/EffectTable';
 import {MenuSlot} from '../character/MenuSlot';
 
 /**
- * Weapon Actions
+ * Weapon Skill
  *
- * Weapon actions are granted based on the equipped item and characters ability to use weapon.
- * Weapon actions directly related to simple use of the players equipped weapon.
- * Weapon actions are a type of Command Menu Action which means they can be used in game.
+ * Weapon sklills are granted based on the equipped item and characters ability to use weapon.
+ * Each directly related to simple use of the players equipped weapon.
+ * Each are a type of Command Menu Action which means they can be used in game.
  * They are always located in the first slot of the Basic Command Menu Actions.
  */
+
+export enum WeaponSkillList {
+  PARRY = 'Parry',
+  SLASH = 'Slash',
+  STRIKE = 'Strike',
+  STAB = 'Stab',
+  CHOP = 'Chop',
+  CLEAVE = 'Cleave',
+}
+
 export abstract class WeaponSkill implements BaseSkill {
-  abstract name: string;
+  abstract name: WeaponSkillList;
   abstract description: string;
   abstract effect: EffectTable;
   menuSlot: MenuSlot.First;
   category: SkillCategory.WEAPON;
 }
 
-export enum WeaponSkillList {
-  'Parry',
-  'Slash',
-  'Strike',
-  'Stab',
-  'Chop',
-  'Cleave',
-}
-
 export class Parry extends WeaponSkill {
-  name: 'Parry';
+  name: WeaponSkillList.PARRY;
   description: 'Ward off incoming attack with a countermove.';
   effect: [];
 }
 
 export class Slash extends WeaponSkill {
-  name: 'Slash';
+  name: WeaponSkillList.SLASH;
   description: 'Attack with a blade.';
   effect: [
     {
@@ -49,7 +50,7 @@ export class Slash extends WeaponSkill {
 }
 
 export class Strike extends WeaponSkill {
-  name: 'Strike';
+  name: WeaponSkillList.STRIKE;
   description: 'Attack with a sudden effect with a blade.';
   effect: [
     {
@@ -62,7 +63,7 @@ export class Strike extends WeaponSkill {
 }
 
 export class Stab extends WeaponSkill {
-  name: 'Stab';
+  name: WeaponSkillList.STAB;
   description: 'Attach with a forward striking motion with a blade.';
   effect: [
     {
@@ -75,7 +76,7 @@ export class Stab extends WeaponSkill {
 }
 
 export class Chop extends WeaponSkill {
-  name: 'Chop';
+  name: WeaponSkillList.CHOP;
   description: 'Attack with a downward motion with a blade.';
   effect: [
     {
@@ -88,7 +89,7 @@ export class Chop extends WeaponSkill {
 }
 
 export class Cleave extends WeaponSkill {
-  name: 'Cleave';
+  name: WeaponSkillList.CLEAVE;
   description: 'A slash technique.';
   effect: [
     {
@@ -99,6 +100,7 @@ export class Cleave extends WeaponSkill {
     },
   ];
 }
+
 // "15","Cleave lv2",,"13",,"13"
 
 // export class Tech

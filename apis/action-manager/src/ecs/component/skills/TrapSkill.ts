@@ -1,46 +1,46 @@
 import {MenuSlot} from '../character/MenuSlot';
 import {BaseSkill, SkillCategory} from './BaseSkill';
 
-export enum TrapSkillList {
-  'Poison Trap',
-  'Explosive Trap',
-  'Time Bomb Trap',
-  'Caltrops Trap',
-  'Disable Trap',
-}
-
 /**
- * Trap Action
+ * Trap Skill
  * set a trap that will go off when the tile is stood on.
  */
+export enum TrapSkillList {
+  POISON_TRAP = 'Poison Trap',
+  EXPLOSIVE_TRAP = 'Explosive Trap',
+  TIME_BOMB_TRAP = 'Time Bomb Trap',
+  CALTROPS_TRAP = 'Caltrops Trap',
+  DISABLE_TRAP = 'Disable Trap',
+}
+
 export abstract class TrapSkill implements BaseSkill {
-  abstract name: string;
+  abstract name: TrapSkillList;
   abstract description: string;
   menuSlot: MenuSlot.Fourth;
   category: SkillCategory.CLASS;
 }
 
 export class PoisonTrap extends TrapSkill {
-  name: 'Poison Trap';
+  name: TrapSkillList.POISON_TRAP;
   description: 'Set a poison trap';
 }
 
 export class ExplosiveTrap extends TrapSkill {
-  name: 'Explosive Trap';
+  name: TrapSkillList.EXPLOSIVE_TRAP;
   description: 'Set a explosive trap';
 }
 
 export class TimeBombTrap extends TrapSkill {
-  name: 'Time Bomb Trap';
+  name: TrapSkillList.TIME_BOMB_TRAP;
   description: 'Set a time bomb trap';
 }
 
 export class CaltropsTrap extends TrapSkill {
-  name: 'Caltrops Trap';
+  name: TrapSkillList.CALTROPS_TRAP;
   description: 'Throw spiked caltrops to form a trap';
 }
 
 export class DisableTrap extends TrapSkill {
-  name: 'Disable Trap';
+  name: TrapSkillList.DISABLE_TRAP;
   description: 'Disable a set trap';
 }
