@@ -300,6 +300,20 @@ export class Light extends SpellSkill {
   ];
 }
 
+export class Desolate extends SpellSkill {
+  name: 'Desolate';
+  description: 'To make an area empty or bare.';
+  targets: 1;
+  effect: [
+    {remove: Attribute.LIFE; quanity: '1d6+4'; tags: [EffectTag.DARKNESS]},
+    {
+      remove: StatusEffect.LIFELESS;
+      quanity: '1d6+4';
+      tags: [EffectTag.DARKNESS];
+    },
+  ];
+}
+
 export class Darkness extends SpellSkill {
   name: 'Darkness';
   description: 'Decrease the area that your opponent can see';

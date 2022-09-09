@@ -1,5 +1,3 @@
-// Some tags can be automatically added, like LIFE_DECREASE IF attack decreases life.
-
 import {Attribute} from '../character/Attribute';
 import {ClassSkillList} from './ClassSkill';
 import {ComboSkillList} from './ComboSkill';
@@ -12,7 +10,7 @@ import {TeamworkSkillList} from './TeamworkSkill';
 import {TrapSkillList} from './TrapSkill';
 import {WeaponSkillList} from './WeaponSkill';
 
-// Is this more of a system then a component?
+// Is this more of a system than a component?
 export enum SkillCategory {
   MOVEMENT = 'Movement', // changes position
   MENU = 'Menu', // activated via menu
@@ -40,12 +38,24 @@ const MasterSkillList = {
 };
 export type MasterSkillListType = typeof MasterSkillList;
 
+/**
+ * BaseSkill
+ * Skills are decoupled from the actor and target.
+ * Skills refer to abilities that assigned to characters.
+ */
 export interface BaseSkill {
+  /**
+   * The name is used to identify the skill
+   */
   name: string;
+
+  /**
+   * The description explains the skill to the player
+   */
   description: string;
 
   /**
-   * Fixed Action A action that must be canceled or will not stop being used
+   * Whether the skill must be canceled or automatically stop being performed
    */
   fixed?: boolean;
 

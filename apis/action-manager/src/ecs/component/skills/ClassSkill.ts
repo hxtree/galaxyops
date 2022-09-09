@@ -11,12 +11,17 @@ export enum Focusable {
 }
 
 export enum ClassSkillList {
-  'Barrier',
-  'Boast',
-  'Disguise',
-  'Focus',
-  'Grapple',
-  'Hide',
+  BARRIER = 'Barrier',
+  BOAST = 'Boast',
+  DISGUISE = 'Disguise',
+  FOCUS = 'Focus',
+  GRAPPLE = 'Grapple',
+  HIDE = 'Hide',
+  SCAN = 'Scan',
+  CHEER = 'Cheer',
+  SUPPORT = 'Support',
+  HOPE = 'Hope',
+  INSPIRE = 'Inspire',
 }
 
 /**
@@ -31,59 +36,85 @@ export abstract class ClassSkill implements BaseSkill {
 }
 
 export class Barrier extends ClassSkill {
-  name: 'Barrier';
+  name: ClassSkillList.BARRIER;
   description: '';
   effect: [];
 }
 
 export class Boast extends ClassSkill {
-  name: 'Boast';
+  name: ClassSkillList.BOAST;
   description: 'increase party’s moral';
   effect: [];
 }
 
 export class Disguise extends ClassSkill {
-  name: 'Disguise';
+  name: ClassSkillList.DISGUISE;
   description: 'Changes appearance and disables command menu until canceled.';
   effect: [];
   // stamina
 }
 
 export class Focus extends ClassSkill {
-  name: 'Focus';
+  name: ClassSkillList.FOCUS;
   description: 'raise attack and attack percent for following move.';
   effect: [];
 }
 
 export class Grapple extends ClassSkill {
-  name: 'Grapple';
+  name: ClassSkillList.GRAPPLE;
   description: 'Lowers character and opponents life.';
   effect: [];
 }
 
 export class Hide extends ClassSkill {
-  name: 'Hide';
+  name: ClassSkillList.HIDE;
   description: 'Enemy cannot see you';
   effect: [];
   // [stamina]
 }
+
+export class Scan extends ClassSkill {
+  name: ClassSkillList.SCAN;
+  description: 'Read enemies stats.';
+  effect: [];
+}
+
+export class Cheer extends ClassSkill {
+  name: ClassSkillList.CHEER;
+  description: 'Targets Spirit increases by 10% for a duration';
+  effect: [];
+}
+
+export class Support extends ClassSkill {
+  name: ClassSkillList.SUPPORT;
+  description: 'Read enemies stats.';
+  effect: [];
+}
+
+export class Hope extends ClassSkill {
+  name: ClassSkillList.HOPE;
+  description: 'The most powerful status bonus';
+  effect: [];
+}
+
+export class Inspire extends ClassSkill {
+  name: ClassSkillList.INSPIRE;
+  description: 'Increases target Drive gauge';
+  effect: [];
+}
+
+// "12","Boast/Rally/Inspire","Increase allies determination","10",,"10"
 
 // Mimic – use the same move that was used on you on the enemy.
 // Mock – [stamina] make a mocking action to cause Berserk on the opponent.
 // Pickpocket – [stamina] steal from enemy
 // Protect – [stamina] guard party members behind you.
 // Sacrifice –
-// Scan – read enemies stats.
+// Scan –.
 // Scout – [stamina] move ahead of party.
 // Seal – hold an enemy off.
 // Search – scan nearby area for goods.
 // Steal - [stamina] Take item from opponent
-
-// "65","Cheer","Targets Spirit increases by 10% for a duration","64",,"64"
-// "66","Support",,"65",,"65"
-// "67","Hope","The most powerful status bonus","66",,"66"
-
-// "68","Inspire","Increases target Drive gauge","67",,"67"
 
 // "42","Craft","Combined multiple items into one.","39",,"39"
 // "45","Reflect","Send enemies moves back at them.","44",,"44"
@@ -93,5 +124,3 @@ export class Hide extends ClassSkill {
 
 // "43","Ward","Keep enemies from getting close. (Good for when party is powering up)","42",,"42"
 // "44","Seal","Keep enemies from getting close. (Good for when party is powering up)","43",,"43"
-
-// "12","Boast/Rally/Inspire","Increase allies determination","10",,"10"

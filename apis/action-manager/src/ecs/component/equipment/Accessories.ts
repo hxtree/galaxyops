@@ -8,6 +8,7 @@ import {GearSlot} from './Gear';
 export interface Accessory {
   name: string;
   description: string;
+  history?: string; // the history of an item must be discovered
   purpose: string;
   character: Character;
   gearSlots: Array<GearSlot>;
@@ -43,7 +44,8 @@ export class GoldBracelets {
 export class RedScarf {
   name: 'Red Scarf';
   character: [MeekuOni];
-  description: 'a red scarf knitted by Meeku’s mother to keep him warm.';
+  description: 'A red scarf knitted.';
+  history: 'Knitted by Meeku’s mother to keep him warm';
   gearSlots: [GearSlot.NECK];
   removable: false;
 }

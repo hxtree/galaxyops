@@ -26,3 +26,8 @@ export class Formations extends TeamworkSkill {
   name: 'Formations';
   description: 'get part to move to certain areas.';
 }
+
+export class Order extends TeamworkSkill {
+  name: 'Order';
+  description: 'Tell any what to do.';
+}

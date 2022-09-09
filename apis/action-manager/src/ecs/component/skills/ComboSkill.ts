@@ -1,3 +1,4 @@
+import {MenuSlot} from '../character/MenuSlot';
 import {BaseSkill} from './BaseSkill';
 import {Slash, WeaponSkill} from './WeaponSkill';
 
@@ -5,7 +6,9 @@ export enum ComboSkillList {
   'Blitz',
 }
 
-export interface ComboSkill extends BaseSkill {
+export abstract class ComboSkill implements BaseSkill {
+  abstract name: string;
+  abstract description: string;
   /**
    * Combo Skills use is revoked unless character action history matches exactly
    * prerequisite of prior skills
@@ -16,9 +19,11 @@ export interface ComboSkill extends BaseSkill {
    * combo in order for quicker action selection.
    */
   prerequisite?: Array<WeaponSkill>; // todo figure our programmatic solution
+
+  menuSlot: MenuSlot.First;
 }
 
-export class Blitz implements ComboSkill {
+export class Blitz extends ComboSkill {
   name: 'Blitz';
   description: '';
   prerequisite: [Slash, Slash, Slash];
