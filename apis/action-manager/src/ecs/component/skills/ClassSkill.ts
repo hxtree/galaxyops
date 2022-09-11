@@ -28,13 +28,22 @@ export enum ClassSkillList {
   SEAL = 'Seal',
   LULLABY = 'Lullaby',
   WARD = 'Ward',
+  SACRIFICE = 'Sacrifice',
+  PROTECT = 'Protect',
+  MOCK = 'Mock',
+  SEARCH = 'Search',
+  STEAL = 'Steal',
+  PROTECTION = 'Protection',
+  LIGHT = 'Light',
+  REFLECT = 'Reflect',
 }
 
 // todo really what makes something a class skill is whether it can be earned via class, decouple
 
 /**
- * Class Actions are motor programs that a character learns to preform.
- * Class Actions progression are often determined by determined by class.
+ * Class Skills are motor programs that a character learns to preform.
+ * Each skill can be acquired via items, etc. but often
+ * progression is determined by class.
  */
 export abstract class ClassSkill implements BaseSkill {
   abstract name: string;
@@ -133,7 +142,7 @@ export class Pickpocket extends ClassSkill {
 
 export class Seal extends ClassSkill {
   name: ClassSkillList.SEAL;
-  description: 'Keep enemies from getting close.';
+  description: 'Keep enemies from getting close.'; //hold an enemy off
   //  (Good for when party is powering up)
   effect: [];
 }
@@ -151,14 +160,54 @@ export class Ward extends ClassSkill {
   effect: [];
 }
 
+export class Sacrifice extends ClassSkill {
+  name: ClassSkillList.SACRIFICE;
+  description: '';
+  effect: [];
+}
+
+export class Protect extends ClassSkill {
+  name: ClassSkillList.PROTECT;
+  description: 'guard party members behind you.';
+  // [stamina]
+  effect: [];
+}
+
+export class Mock extends ClassSkill {
+  name: ClassSkillList.MOCK;
+  description: 'make a mocking action to cause Berserk on the opponent';
+  // stamina]
+  effect: [];
+}
+
+export class Search extends ClassSkill {
+  name: ClassSkillList.SEARCH;
+  description: 'scan nearby area for goods.';
+  effect: [];
+}
+
+export class Steal extends ClassSkill {
+  name: ClassSkillList.STEAL;
+  description: 'Take item from opponent';
+  // [stamina]
+  effect: [];
+}
+
+export class Reflect extends ClassSkill {
+  name: ClassSkillList.REFLECT;
+  description: 'Send enemies moves back at them.';
+  effect: [];
+}
+
+export class Protection extends ClassSkill {
+  name: ClassSkillList.PROTECTION;
+  description: 'Create a barrier around a ally';
+  effect: [];
+}
+export class Light extends ClassSkill {
+  name: ClassSkillList.LIGHT;
+  description: 'Keep enemies from moving for a duration of time. Chance Puts enemy to sleep. Stops rage';
+  effect: [];
+}
+
 // "12","Boast/Rally/Inspire","Increase allies determination","10",,"10"
-// Mock – [stamina] make a mocking action to cause Berserk on the opponent.
-// Protect – [stamina] guard party members behind you.
-// Sacrifice –
-// Seal – hold an enemy off.
-// Search – scan nearby area for goods.
-// Steal - [stamina] Take item from opponent
-// "42","Craft","Combined multiple items into one.","39",,"39"
-// "45","Reflect","Send enemies moves back at them.","44",,"44"
-// "47","Light","Keep enemies from moving for a duration of time.– chance Puts enemy to sleep. Stops rage","46",,"46"
-// "48","Protection"," Create a barrier around a ally","47",,"47"

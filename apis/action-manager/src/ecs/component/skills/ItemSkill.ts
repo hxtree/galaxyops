@@ -38,6 +38,7 @@ export class PrepareFood implements ItemSkill {
   description: 'Make a meal';
 }
 
+// "42","Craft","Combined multiple items into one.","39",,"39"
 // Item - use an item from stock.
 // Item – use one item from stock
 // Item (x2) – Use two Items from stock at once
