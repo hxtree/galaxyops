@@ -5,14 +5,16 @@
 import {BaseSkill} from './BaseSkill';
 
 export enum InteractionSkillList {
-  'Grab',
-  'Push',
-  'Pull',
-  'Lift',
-  'Throw',
+  GRAB = 'Grab',
+  PUSH = 'Push',
+  PULL = 'Pull',
+  LIFT = 'Lift',
+  THROW = 'Throw',
 }
 
-export interface InteractionSkill extends BaseSkill {}
+export interface InteractionSkill extends BaseSkill {
+  name: InteractionSkillList;
+}
 
 export enum ObjectCategory {
   MOVEABLE = 'Moveable',
@@ -20,31 +22,31 @@ export enum ObjectCategory {
 }
 
 export class Grab implements InteractionSkill {
-  name: 'Grab';
+  name: InteractionSkillList.GRAB;
   description: 'Grab object';
   target: ObjectCategory.MOVEABLE;
 }
 
 export class Push implements InteractionSkill {
-  name: 'Push';
+  name: InteractionSkillList.PUSH;
   description: 'Push object';
   target: ObjectCategory.MOVEABLE;
 }
 
 export class Pull implements InteractionSkill {
-  name: 'Pull';
+  name: InteractionSkillList.PULL;
   description: 'Pull object';
   target: ObjectCategory.MOVEABLE;
 }
 
 export class Lift implements InteractionSkill {
-  name: 'Lift';
+  name: InteractionSkillList.LIFT;
   description: 'Lift object';
   target: ObjectCategory.MOVEABLE;
 }
 
 export class Throw implements InteractionSkill {
-  name: 'Throw';
+  name: InteractionSkillList.THROW;
   description: 'Thow object';
   target: ObjectCategory.MOVEABLE;
 }

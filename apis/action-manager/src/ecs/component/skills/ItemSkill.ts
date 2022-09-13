@@ -10,31 +10,33 @@
 import {BaseSkill} from './BaseSkill';
 
 export enum ItemSkillList {
-  'Appraise',
-  'Combine',
-  'Throw',
-  'Prepare Food',
+  APPRIASE = 'Appraise',
+  COMBINE = 'Combine',
+  THROW = 'Throw',
+  PREPARE_FOOD = 'Prepare Food',
 }
 
-export interface ItemSkill extends BaseSkill {}
+export interface ItemSkill extends BaseSkill {
+  name: ItemSkillList;
+}
 
 export class Appraise implements ItemSkill {
-  name: 'Appraise';
+  name: ItemSkillList.APPRIASE;
   description: 'Determine the market value of an item';
 }
 
 export class Combine implements ItemSkill {
-  name: 'Combine';
+  name: ItemSkillList.COMBINE;
   description: 'Turn two or more items into one item if combatiable';
 }
 
 export class Throw implements ItemSkill {
-  name: 'Throw';
+  name: ItemSkillList.THROW;
   description: 'Toss an item from stock away or to injure enemy.';
 }
 
 export class PrepareFood implements ItemSkill {
-  name: 'Prepare Food';
+  name: ItemSkillList.PREPARE_FOOD;
   description: 'Make a meal';
 }
 
