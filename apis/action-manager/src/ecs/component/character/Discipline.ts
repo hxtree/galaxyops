@@ -1,6 +1,7 @@
 import {
   Boast,
   Cheer,
+  Dismiss,
   Hope,
   Inspire,
   Rage,
@@ -25,8 +26,9 @@ import {
   Stop,
   Tsunami,
 } from '../skill/SpellSkill';
-import {HeraldicLion} from '../skill/SummonSkill';
-import {Formations, Order} from '../skill/TeamworkSkill';
+import {HeraldicLion, Summon} from '../skill/SummonSkill';
+import {Command, Formations, Order} from '../skill/TeamworkSkill';
+import {Cleave} from '../skill/WeaponSkill';
 
 export enum DisciplineCategory {
   PROFESSION = 'Profession',
@@ -41,6 +43,7 @@ export enum DisciplineCategory {
 export enum Discipline {
   // penny
   NINJA = 'Ninja',
+  ASSASSIN = 'Assassin',
   AMBER_ASSASSIN = 'Amber Assassin',
   ELITE_ASSASIN = 'Elite Assasin',
   THIEF = 'Thief',
@@ -49,17 +52,28 @@ export enum Discipline {
   MADIEN = 'Madien',
   KEEPER = 'Keeper',
   COOK = 'Cook',
+  HEALER = 'Healer',
+  SAGE = 'Sage',
+  GUARDIAN = 'Guardian', // Loomee’s omega class
   // gaali
   BARD = 'Bard',
   DUELIST = 'Duelist',
   KNIGHT = 'Knight',
   RUNE_KING = 'Rune King',
+  ROYALTY = 'Royalty',
+  // - Nobel
+  // - Duke
+  // - King
+  // Hero
+  // King
+  WARRIOR = 'Warrior',
   // gunter
   GAURD = 'Gaurd',
   BODY_BUILDER = 'Body Builder',
   COMMANDER = 'Commander',
   // traez
   ENGINEER = 'Engineer',
+  MECHANIC = 'Mechanic',
   LIGHTENING_WARRIOR = 'Lightening Warrior',
   REBEL = 'Rebel',
   // meeku
@@ -67,11 +81,14 @@ export enum Discipline {
   XSOLIDER = 'XSolider',
   BERSERKER = 'Berserker',
   ONI = 'Oni',
+  HERO = 'Hero',
   // malace
   GYMNAST = 'Gymnast',
   POSSESSED = 'Possessed',
   SCOUT = 'Scout',
   OUROBOROS = 'Ouroboros',
+  SUMMONER = 'Summoner',
+  ROUGE = 'Rouge',
   // faye
   WIZARD = 'Wizard',
   HISTORIAN = 'Historian',
@@ -83,9 +100,7 @@ export enum Discipline {
   MAGI_PURPLE = 'Magi Purple',
   MAGI_WHITE = 'Magi White',
   MAGI_YELLOW = 'Magi Yellow',
-
   // other
-  WARRIOR = 'Warrior',
 }
 
 export abstract class BaseDiscipline {
@@ -254,8 +269,103 @@ export class Gaurd extends BaseDiscipline {
 }
 
 export class Gaurdian extends BaseDiscipline {
-  name: Discipline.GAURD;
+  name: Discipline.GUARDIAN;
   description: 'Specialize in protection.';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Hero extends BaseDiscipline {
+  name: Discipline.HERO;
+  description: 'Specialize in saving others.';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Knight extends BaseDiscipline {
+  name: Discipline.KNIGHT;
+  description: 'A honored fighter for protects the kingdom.';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Mechanic extends BaseDiscipline {
+  name: Discipline.MECHANIC;
+  description: 'Specializes in electromechanical engineering';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: []; // Actions: Tools
+}
+
+export class Rouge extends BaseDiscipline {
+  name: Discipline.ROUGE;
+  description: 'Specializes sneak attacks and picking locks';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Royalty extends BaseDiscipline {
+  name: Discipline.ROYALTY;
+  description: 'Specializes in ruling others';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Scout extends BaseDiscipline {
+  name: Discipline.SCOUT;
+  description: 'Specialize in moving ahead of the party to gathering information and reconnaissance.';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Solider extends BaseDiscipline {
+  name: Discipline.SOLIDER;
+  description: 'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [[level: 10, skill: Cleave]];
+}
+
+export class Summoner extends BaseDiscipline {
+  name: Discipline.SUMMONER;
+  description: 'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [
+    [level: 10, skill: Summon],
+    [level: 10, skill: Dismiss],
+    [level: 10, skill: Command],
+  ];
+}
+
+export class Thief extends BaseDiscipline {
+  name: Discipline.THIEF;
+  description: '';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Warrior extends BaseDiscipline {
+  name: Discipline.WARRIOR;
+  description: 'Specializzes in combat on the battlefield.';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class XSolider extends BaseDiscipline {
+  name: Discipline.XSOLIDER;
+  description: 'Soldiers that have gone against their teachings to gain new skills.';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Assassin extends BaseDiscipline {
+  name: Discipline.ASSASSIN;
+  description: '';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Healer extends BaseDiscipline {
+  name: Discipline.HEALER;
+  description: 'Specialize in healing.';
   category: DisciplineCategory.ARCHETYPE;
   skillProgression: [];
 }

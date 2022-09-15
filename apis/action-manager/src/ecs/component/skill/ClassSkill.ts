@@ -37,9 +37,10 @@ export enum ClassSkillList {
   LIGHT = 'Light',
   REFLECT = 'Reflect',
   RAGE = 'Rage',
+  DISMISS = 'Dismiss',
 }
 
-// todo really what makes something a class skill is whether it can be earned via class, decouple
+// todo really what makes something a class skill is whether it can be earned via class? decouple
 
 /**
  * Class Skills are motor programs that a character learns to preform.
@@ -70,6 +71,12 @@ export class Disguise extends ClassSkill {
   description: 'Changes appearance and disables command menu until canceled.';
   effect: [];
   // stamina
+}
+
+export class Dismiss extends ClassSkill {
+  name: ClassSkillList.DISMISS;
+  description: 'Release a summon.';
+  effect: [];
 }
 
 export class Focus extends ClassSkill {

@@ -25,6 +25,7 @@ export enum SummonSkillList {
   'OURUBORUS' = 'Ouruborus',
   'MISCHIEVOUS' = 'Mischievous',
   'SCRIBBLES' = 'Scribbles',
+  // Malace's tattoos reference lesser key of solomon?
 }
 
 export interface Summon {
