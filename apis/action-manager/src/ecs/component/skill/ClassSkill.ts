@@ -36,6 +36,7 @@ export enum ClassSkillList {
   PROTECTION = 'Protection',
   LIGHT = 'Light',
   REFLECT = 'Reflect',
+  RAGE = 'Rage',
 }
 
 // todo really what makes something a class skill is whether it can be earned via class, decouple
@@ -207,6 +208,12 @@ export class Protection extends ClassSkill {
 export class Light extends ClassSkill {
   name: ClassSkillList.LIGHT;
   description: 'Keep enemies from moving for a duration of time. Chance Puts enemy to sleep. Stops rage';
+  effect: [];
+}
+
+export class Rage extends ClassSkill {
+  name: ClassSkillList.RAGE;
+  description: 'Increase power decrease wisdom';
   effect: [];
 }
 

@@ -362,3 +362,39 @@ export class Haste extends SpellSkill {
     },
   ];
 }
+
+export class Chill extends SpellSkill {
+  name: 'Chill';
+  description: '';
+  targets: 1;
+}
+
+export class Charm extends SpellSkill {
+  name: 'Charm';
+  description: '';
+  targets: 1;
+}
+
+export class Frost extends SpellSkill {
+  name: 'Frost';
+  description: '';
+  targets: 1;
+}
+
+export class Absorb extends SpellSkill {
+  name: 'Frost';
+  description: '';
+  targets: 1;
+}
+
+export class Leech extends SpellSkill {
+  name: 'Leech';
+  description: '';
+  targets: 1;
+}
+
+export class Drain extends SpellSkill {
+  name: 'Drain';
+  description: '';
+  targets: 1;
+}

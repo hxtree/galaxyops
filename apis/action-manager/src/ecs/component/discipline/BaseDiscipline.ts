@@ -3,13 +3,30 @@ import {
   Cheer,
   Hope,
   Inspire,
+  Rage,
   Scan,
   Support,
-} from '../../skills/ClassSkill';
-import {Appraise, PrepareFood} from '../../skills/ItemSkill';
-import {Darkness, Desolate} from '../../skills/SpellSkill';
-import {HeraldicLion} from '../../skills/Summon';
-import {Formations, Order} from '../../skills/TeamworkSkill';
+} from '../skill/ClassSkill';
+import {Appraise, PrepareFood} from '../skill/ItemSkill';
+import {
+  Aqua,
+  Blizzard,
+  Charm,
+  Chill,
+  Darkness,
+  Desolate,
+  Drain,
+  Frost,
+  Haste,
+  Landslide,
+  Leech,
+  Quake,
+  Slow,
+  Stop,
+  Tsunami,
+} from '../skill/SpellSkill';
+import {HeraldicLion} from '../skill/SummonSkill';
+import {Formations, Order} from '../skill/TeamworkSkill';
 
 export enum DisciplineCategory {
   PROFESSION = 'Profession',
@@ -157,17 +174,88 @@ export class MagiBlack extends BaseDiscipline {
   ];
 }
 
-// Magi Blue - Water – (Harnessed from the power of Genki) –
-// Actions: Rage, Tsunami, ,
-// Magi Brown - Rock – (Harnessed from the power of Asmin) –
-// Actions: Quake, , ,
-// Magi Green - Time– (Harnessed from the power of Void) –
-// Actions: Stop, Slow, Haste,
-// Magi Pink - Charm – (Harnessed from the power of Suyri) –
-// Actions: Charm, , Chill,
-// Magi Purple -  – (Harnessed from the power of Diag) –
-// Actions: Quake, , ,
-// Magi White - Snow – (Harnessed from the power of Lawzon) –
-// Actions: Blizzard, Frost, Chill,
-// Magi Yellow – Absorption / Leech – (Harnessed from the power of Wisp) –
-// Actions: Absorb, Drain, ,
+export class MagiBlue extends BaseDiscipline {
+  name: Discipline.MAGI_BLUE;
+  description: 'Specialize water Magic';
+  history: 'Harnessed from the power of Genki';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [
+    [level: 10, skill: Rage],
+    [level: 15, skill: Aqua],
+    [level: 25, skill: Tsunami],
+  ];
+}
+
+export class MagiBrown extends BaseDiscipline {
+  name: Discipline.MAGI_BROWN;
+  description: 'Specialize rock Magic';
+  history: 'Harnessed from the power of Asmin';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [[level: 10, skill: Quake], [level: 15, skill: Landslide]];
+}
+
+export class MagiGreen extends BaseDiscipline {
+  name: Discipline.MAGI_GREEN;
+  description: 'Specialize time Magic';
+  history: 'Harnessed from the power of Void';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [
+    [level: 10, skill: Stop],
+    [level: 15, skill: Slow],
+    [level: 15, skill: Haste],
+  ];
+}
+
+export class MagiPink extends BaseDiscipline {
+  name: Discipline.MAGI_PINK;
+  description: 'Specialize charm Magic';
+  history: 'Harnessed from the power of Suyri';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [[level: 10, skill: Charm], [level: 15, skill: Chill]];
+}
+
+export class MagiPurple extends BaseDiscipline {
+  name: Discipline.MAGI_PURPLE;
+  description: 'Specialize ??? Magic';
+  history: 'Harnessed from the power of Diag';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [[level: 10, skill: Quake]]; // ?? is quake correct
+}
+
+export class MagiWhite extends BaseDiscipline {
+  name: Discipline.MAGI_WHITE;
+  description: 'Specialize snow Magic';
+  history: 'Harnessed from the power of Lawzon';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [
+    [level: 10, skill: Blizzard],
+    [level: 10, skill: Frost],
+    [level: 10, skill: Chill],
+  ];
+}
+
+export class MagiYellow extends BaseDiscipline {
+  name: Discipline.MAGI_YELLOW;
+  description: 'Specialize absorption Magic';
+  history: 'Harnessed from the power of Wisp';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [
+    [level: 10, skill: Drain],
+    [level: 25, skill: Leech],
+    [level: 50, skill: Drain],
+  ];
+}
+
+export class Gaurd extends BaseDiscipline {
+  name: Discipline.GAURD;
+  description: 'Specialize in protection.';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Gaurdian extends BaseDiscipline {
+  name: Discipline.GAURD;
+  description: 'Specialize in protection.';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
