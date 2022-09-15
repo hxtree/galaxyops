@@ -92,6 +92,7 @@ export enum Discipline {
   // faye
   WIZARD = 'Wizard',
   HISTORIAN = 'Historian',
+  MAGI = 'Magi',
   MAGI_BLACK = 'Magi Black',
   MAGI_BLUE = 'Magi Blue',
   MAGI_BROWN = 'Magi Brown',
@@ -107,6 +108,8 @@ export abstract class BaseDiscipline {
   abstract name: string;
   abstract description: string;
   abstract category: DisciplineCategory;
+  prerequisites?: Array<Discipline>; // could also be event like defeated Lawzon, but may be that's too character specific?
+
   protected _experience: number;
 
   public constructor(experience: number = 0) {
@@ -178,11 +181,20 @@ export class Commander extends BaseDiscipline {
   ];
 }
 
+export class Magi extends BaseDiscipline {
+  name: Discipline.MAGI;
+  description: 'Has a basic understanding of Magic';
+  category: DisciplineCategory.ARCHETYPE;
+  prerequisites: [];
+  skillProgression: [];
+}
+
 export class MagiBlack extends BaseDiscipline {
   name: Discipline.MAGI_BLACK;
   description: 'Specialize destruction Magic';
   history: 'Harnessed from the power of Ouren';
   category: DisciplineCategory.ARCHETYPE;
+  prerequisites: [Discipline.MAGI];
   skillProgression: [
     [level: 10, skill: Darkness],
     [level: 25, skill: Desolate],
@@ -194,6 +206,7 @@ export class MagiBlue extends BaseDiscipline {
   description: 'Specialize water Magic';
   history: 'Harnessed from the power of Genki';
   category: DisciplineCategory.ARCHETYPE;
+  prerequisites: [Discipline.MAGI];
   skillProgression: [
     [level: 10, skill: Rage],
     [level: 15, skill: Aqua],
@@ -206,6 +219,7 @@ export class MagiBrown extends BaseDiscipline {
   description: 'Specialize rock Magic';
   history: 'Harnessed from the power of Asmin';
   category: DisciplineCategory.ARCHETYPE;
+  prerequisites: [Discipline.MAGI];
   skillProgression: [[level: 10, skill: Quake], [level: 15, skill: Landslide]];
 }
 
@@ -214,6 +228,7 @@ export class MagiGreen extends BaseDiscipline {
   description: 'Specialize time Magic';
   history: 'Harnessed from the power of Void';
   category: DisciplineCategory.ARCHETYPE;
+  prerequisites: [Discipline.MAGI];
   skillProgression: [
     [level: 10, skill: Stop],
     [level: 15, skill: Slow],
@@ -226,6 +241,7 @@ export class MagiPink extends BaseDiscipline {
   description: 'Specialize charm Magic';
   history: 'Harnessed from the power of Suyri';
   category: DisciplineCategory.ARCHETYPE;
+  prerequisites: [Discipline.MAGI];
   skillProgression: [[level: 10, skill: Charm], [level: 15, skill: Chill]];
 }
 
@@ -234,6 +250,7 @@ export class MagiPurple extends BaseDiscipline {
   description: 'Specialize ??? Magic';
   history: 'Harnessed from the power of Diag';
   category: DisciplineCategory.ARCHETYPE;
+  prerequisites: [Discipline.MAGI];
   skillProgression: [[level: 10, skill: Quake]]; // ?? is quake correct
 }
 
@@ -242,6 +259,7 @@ export class MagiWhite extends BaseDiscipline {
   description: 'Specialize snow Magic';
   history: 'Harnessed from the power of Lawzon';
   category: DisciplineCategory.ARCHETYPE;
+  prerequisites: [Discipline.MAGI];
   skillProgression: [
     [level: 10, skill: Blizzard],
     [level: 10, skill: Frost],
@@ -254,6 +272,7 @@ export class MagiYellow extends BaseDiscipline {
   description: 'Specialize absorption Magic';
   history: 'Harnessed from the power of Wisp';
   category: DisciplineCategory.ARCHETYPE;
+  prerequisites: [Discipline.MAGI];
   skillProgression: [
     [level: 10, skill: Drain],
     [level: 25, skill: Leech],
