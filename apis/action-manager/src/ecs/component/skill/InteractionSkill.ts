@@ -47,7 +47,7 @@ export class Lift implements InteractionSkill {
 
 export class Throw implements InteractionSkill {
   name: InteractionSkillList.THROW;
-  description: 'Thow object';
+  description: 'Throw object';
   target: ObjectCategory.MOVEABLE;
 }
 

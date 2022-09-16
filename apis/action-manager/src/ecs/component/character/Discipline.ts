@@ -41,57 +41,27 @@ export enum DisciplineCategory {
 }
 
 export enum Discipline {
-  // penny
-  NINJA = 'Ninja',
-  ASSASSIN = 'Assassin',
   AMBER_ASSASSIN = 'Amber Assassin',
-  ELITE_ASSASIN = 'Elite Assasin',
-  THIEF = 'Thief',
-  // loomee
-  CHEERLEADER = 'Cheerleader',
-  MADIEN = 'Madien',
-  KEEPER = 'Keeper',
-  COOK = 'Cook',
-  HEALER = 'Healer',
-  SAGE = 'Sage',
-  GUARDIAN = 'Guardian', // Loomee’s omega class
-  // gaali
+  ASSASSIN = 'Assassin',
   BARD = 'Bard',
-  DUELIST = 'Duelist',
-  KNIGHT = 'Knight',
-  RUNE_KING = 'Rune King',
-  ROYALTY = 'Royalty',
-  // - Nobel
-  // - Duke
-  // - King
-  // Hero
-  // King
-  WARRIOR = 'Warrior',
-  // gunter
-  GAURD = 'Gaurd',
-  BODY_BUILDER = 'Body Builder',
-  COMMANDER = 'Commander',
-  // traez
-  ENGINEER = 'Engineer',
-  MECHANIC = 'Mechanic',
-  LIGHTENING_WARRIOR = 'Lightening Warrior',
-  REBEL = 'Rebel',
-  // meeku
-  SOLIDER = 'Solider',
-  XSOLIDER = 'XSolider',
   BERSERKER = 'Berserker',
-  ONI = 'Oni',
-  HERO = 'Hero',
-  // malace
+  BODY_BUILDER = 'Body Builder',
+  CHEERLEADER = 'Cheerleader',
+  COMMANDER = 'Commander',
+  COOK = 'Cook',
+  DUELIST = 'Duelist',
+  ELITE_ASSASIN = 'Elite Assasin',
+  ENGINEER = 'Engineer',
+  GAURD = 'Gaurd',
+  GUARDIAN = 'Guardian',
   GYMNAST = 'Gymnast',
-  POSSESSED = 'Possessed',
-  SCOUT = 'Scout',
-  OUROBOROS = 'Ouroboros',
-  SUMMONER = 'Summoner',
-  ROUGE = 'Rouge',
-  // faye
-  WIZARD = 'Wizard',
+  HEALER = 'Healer',
+  HERO = 'Hero',
   HISTORIAN = 'Historian',
+  KEEPER = 'Keeper',
+  KNIGHT = 'Knight',
+  LIGHTENING_WARRIOR = 'Lightening Warrior',
+  MADIEN = 'Madien',
   MAGI = 'Magi',
   MAGI_BLACK = 'Magi Black',
   MAGI_BLUE = 'Magi Blue',
@@ -101,7 +71,23 @@ export enum Discipline {
   MAGI_PURPLE = 'Magi Purple',
   MAGI_WHITE = 'Magi White',
   MAGI_YELLOW = 'Magi Yellow',
-  // other
+  MECHANIC = 'Mechanic',
+  NINJA = 'Ninja',
+  ONI = 'Oni',
+  OUROBOROS = 'Ouroboros',
+  POSSESSED = 'Possessed',
+  REBEL = 'Rebel',
+  ROUGE = 'Rouge',
+  ROYALTY = 'Royalty',
+  RUNE_KING = 'Rune King',
+  SAGE = 'Sage',
+  SCOUT = 'Scout',
+  SOLIDER = 'Solider',
+  SUMMONER = 'Summoner',
+  THIEF = 'Thief',
+  WARRIOR = 'Warrior',
+  WIZARD = 'Wizard',
+  XSOLIDER = 'XSolider',
 }
 
 export abstract class BaseDiscipline {
@@ -138,9 +124,39 @@ export abstract class BaseDiscipline {
   }
 }
 
+// TODO add
+// Wizard,
+// Bard,
+// Duelist,
+// Knight,
+// RuneKing,
+// Maiden,
+// Keeper,
+// Sage,
+// Guardian'
+// Gymnast,
+// Possessed,
+// Ouroboros,?
+// Berserker,
+// Ninja,
+// AmberAssassin,
+// EliteAssasin,
+// Engineer,
+// LighteningWarrior,
+
 export class Historian extends BaseDiscipline {
   name: Discipline.HISTORIAN;
   description: 'Studies the world as it was.';
+  category: DisciplineCategory.PROFESSION;
+  skillProgression: [
+    [level: 10, skill: Appraise],
+    [level: 25, skill: Scan],
+    [level: 50, skill: HeraldicLion],
+  ];
+}
+export class BodyBuilder extends BaseDiscipline {
+  name: Discipline.BODY_BUILDER;
+  description: 'Do you even lift?';
   category: DisciplineCategory.PROFESSION;
   skillProgression: [
     [level: 10, skill: Appraise],
@@ -325,6 +341,13 @@ export class Rouge extends BaseDiscipline {
 export class Royalty extends BaseDiscipline {
   name: Discipline.ROYALTY;
   description: 'Specializes in ruling others';
+  category: DisciplineCategory.ARCHETYPE;
+  skillProgression: [];
+}
+
+export class Rebel extends BaseDiscipline {
+  name: Discipline.REBEL;
+  description: 'Rebel';
   category: DisciplineCategory.ARCHETYPE;
   skillProgression: [];
 }

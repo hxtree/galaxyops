@@ -32,12 +32,12 @@ export class ExplosiveTrap extends TrapSkill {
 
 export class TimeBombTrap extends TrapSkill {
   name: TrapSkillList.TIME_BOMB_TRAP;
-  description: 'Set a time bomb trap';
+  description: 'Set a time based trap';
 }
 
 export class CaltropsTrap extends TrapSkill {
   name: TrapSkillList.CALTROPS_TRAP;
-  description: 'Throw spiked caltrops to form a trap';
+  description: 'Set a trap of spiked caltrops';
 }
 
 export class DisableTrap extends TrapSkill {

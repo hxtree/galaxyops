@@ -40,7 +40,8 @@ export class Bluff implements PassiveSkill {
 
 export class SenseBluff implements PassiveSkill {
   name: 'Sense Bluff';
-  description: 'A little icon on the screen will tell if someone is trying to bluff party (if character beats bluff check).';
+  description: 'Detect if a lie is being told';
+  // if character beats bluff check, a little icon on the screen will tell if someone is trying to bluff party
 }
 
 export class GreedyIntent implements PassiveSkill {
