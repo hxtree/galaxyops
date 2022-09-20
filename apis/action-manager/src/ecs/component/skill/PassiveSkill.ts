@@ -73,3 +73,8 @@ export class GluttonousDesire implements PassiveSkill {
   description: 'Comsumer food items twice as fast';
   // earned from defeating Glutony
 }
+
+export class Catcher implements PassiveSkill {
+  name: 'Catcher';
+  description: 'Receive bonus when catching items';
+}

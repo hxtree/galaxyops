@@ -1,6 +1,7 @@
 import {EffectTag} from './EffectTag';
 import {StatusEffect} from './StatusEffect';
 import {Attribute} from '../character/Attribute';
+import {BaseSkill} from '../skill/BaseSkill';
 
 export enum Modifier {
   ADD = 'ADD',
@@ -8,6 +9,11 @@ export enum Modifier {
 }
 
 export enum StatusEffectModifier {
+  ADD = 'ADD',
+  REMOVE = 'REMOVE',
+}
+
+export enum SkillffectModifier {
   ADD = 'ADD',
   REMOVE = 'REMOVE',
 }
@@ -21,9 +27,8 @@ export interface AttributeEffectRecord {
 }
 
 export interface SkillEffectRecord {
-  name: string; // todo enum WeaponActionList |
-  thing: string; // todo
-  amount: number;
+  skill: BaseSkill;
+  modifer: SkillffectModifier;
   tags?: Array<EffectTag>;
 }
 

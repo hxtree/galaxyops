@@ -1,8 +1,9 @@
 import {Character} from '../../../entity/Character';
 import {MeekuOni} from '../archetype/PlayerCharacter';
 import {Attribute} from '../character/Attribute';
-import {EffectTable} from '../effect/EffectTable';
+import {EffectTable, SkillffectModifier} from '../effect/EffectTable';
 import {EffectTag} from '../effect/EffectTag';
+import {Catcher} from '../skill/PassiveSkill';
 import {GearSlot} from './Gear';
 
 export interface Accessory {
@@ -79,12 +80,13 @@ export class SwordSheath {
 
 export class MagenticGloves {
   name: 'Magnetic Gloves';
-  description: 'Helps catch metal objects (Traez’s boomerang).';
+  description: 'Helps catch metal objects.';
+  // Particularly useful with regards to Traez’s boomerang
   effects: [
     {
-      add: Attribute.DEFENSE; // how to represent +20 to catch action?
-      quanity: '+20';
-      tags: [];
+      skill: Catcher;
+      modifer: SkillffectModifier.ADD;
+      tags: [EffectTag.METAL];
     },
   ];
   gearSlots: [GearSlot.RIGHT_HAND, GearSlot.LEFT_HAND];
@@ -92,6 +94,12 @@ export class MagenticGloves {
 
 export class CatchersMitt {
   name: 'Catchers Mitt';
-  effects: '+20 to catch action.';
+  effects: [
+    {
+      skill: Catcher;
+      modifer: SkillffectModifier.ADD;
+      tags: [EffectTag.PHYSICAL];
+    },
+  ];
   gearSlots: [GearSlot.RIGHT_HAND, GearSlot.LEFT_HAND];
 }

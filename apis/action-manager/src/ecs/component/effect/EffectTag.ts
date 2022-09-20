@@ -16,6 +16,7 @@ export enum EffectTag {
   DARKNESS = 'Darkness',
   LIGHT = 'Light',
   TIME = 'Time',
+  METAL = 'Metal',
 
   // flying
   AERIAL = 'Aerial', // happening in the sky, effective against flying
