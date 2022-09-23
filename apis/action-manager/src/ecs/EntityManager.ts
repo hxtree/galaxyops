@@ -1,5 +1,5 @@
 class EntityManager {
 
     public entities = [];
-        
+ 
 }

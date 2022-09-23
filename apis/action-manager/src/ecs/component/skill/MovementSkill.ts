@@ -3,7 +3,7 @@
  * actions that are directly related to movement
  */
 
-import {BaseSkill} from './BaseSkill';
+import { BaseSkill } from './BaseSkill';
 
 export interface MovementSkill extends BaseSkill {}
 
@@ -33,8 +33,13 @@ export class BackFlip implements MovementSkill {
 }
 
 export class DoubleBackFlip implements MovementSkill {
-  name: 'DoubleBackFlip';
+  name: 'Double Back Flip';
   description: 'Quickly move backwards twice';
+}
+
+export class HighJump implements MovementSkill {
+  name: 'High Jump';
+  description: 'Charged vertical jump';
 }
 
 // Climb –
@@ -49,7 +54,6 @@ export class DoubleBackFlip implements MovementSkill {
 // Jump – (Square) Jumping uses stamina and can be used to move to otherwise unreachable places. The more stamina
 // "85","Jump","(Square) Jumping uses stamina and can be used to move to otherwise unreachable places. The more stamina","84",,"84"
 
-// "86","High Jump","Charged vertical jump","85",,"85"
 // High – (Stamina Boost + Square) jump straight up in the air using a stamina boost.
 
 // Long – (Directional Pad + Press Square) jump a long way.

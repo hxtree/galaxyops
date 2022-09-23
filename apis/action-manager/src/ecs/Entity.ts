@@ -10,7 +10,7 @@ export class Entity {
 
     protected _id: string;
 
-    protected _components: IComponent[] = []
+    protected _components: IComponent[] = [];
 
     public get id(): string {
         return this._id;

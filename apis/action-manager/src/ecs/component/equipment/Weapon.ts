@@ -1,4 +1,4 @@
-import {Slash, Stab, Strike, WeaponSkill} from '../skills/WeaponSkill';
+import {Slash, Stab, Strike, WeaponSkill} from '../skill/WeaponSkill';
 
 /**
  * Weapon is a tag applied to a weapon class and is used to determine the damage type of the weapon.

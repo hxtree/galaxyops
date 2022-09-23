@@ -8,7 +8,16 @@ import {
   Scan,
   Support,
 } from '../skill/ClassSkill';
-import {Appraise, PrepareFood} from '../skill/ItemSkill';
+import {
+  Appraise,
+  PrepareFood,
+} from '../skill/ItemSkill';
+import {
+  BackFlip,
+  DoubleBackFlip,
+  HighJump,
+} from '../skill/MovementSkill';
+import { Concentration } from '../skill/PassiveSkill';
 import {
   Aqua,
   Blizzard,
@@ -17,18 +26,29 @@ import {
   Darkness,
   Desolate,
   Drain,
+  Flare,
   Frost,
+  Gust,
   Haste,
+  Heal,
   Landslide,
   Leech,
+  Light,
   Quake,
   Slow,
   Stop,
   Tsunami,
 } from '../skill/SpellSkill';
-import {HeraldicLion, Summon} from '../skill/SummonSkill';
-import {Command, Formations, Order} from '../skill/TeamworkSkill';
-import {Cleave} from '../skill/WeaponSkill';
+import {
+  HeraldicLion,
+  Summon,
+} from '../skill/SummonSkill';
+import {
+  Command,
+  Formations,
+  Order,
+} from '../skill/TeamworkSkill';
+import { Cleave } from '../skill/WeaponSkill';
 
 export enum DisciplineCategory {
   PROFESSION = 'Profession',
@@ -125,7 +145,6 @@ export abstract class BaseDiscipline {
 }
 
 // TODO add
-// Wizard,
 // Bard,
 // Duelist,
 // Knight,
@@ -134,7 +153,6 @@ export abstract class BaseDiscipline {
 // Keeper,
 // Sage,
 // Guardian'
-// Gymnast,
 // Possessed,
 // Ouroboros,?
 // Berserker,
@@ -143,6 +161,30 @@ export abstract class BaseDiscipline {
 // EliteAssasin,
 // Engineer,
 // LighteningWarrior,
+
+export class Gymnast extends BaseDiscipline {
+  name: Discipline.GYMNAST;
+  description: 'Studies mysterious forces.';
+  category: DisciplineCategory.PROFESSION;
+  skillProgression: [
+    [level: 10, skill: BackFlip],
+    [level: 25, skill: DoubleBackFlip],
+    [level: 50, skill: HighJump],
+    [level: 70, skill: Concentration],
+  ];
+}
+
+export class Wizard extends BaseDiscipline {
+  name: Discipline.WIZARD;
+  description: 'Studies mysterious forces.';
+  category: DisciplineCategory.PROFESSION;
+  skillProgression: [
+    [level: 10, skill: Gust],
+    [level: 25, skill: Flare],
+    [level: 50, skill: Heal],
+    [level: 70, skill: Light],
+  ];
+}
 
 export class Historian extends BaseDiscipline {
   name: Discipline.HISTORIAN;
