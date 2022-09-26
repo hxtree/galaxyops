@@ -1,6 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, Column, OneToMany, CreateDateColumn, UpdateDateColumn} from 'typeorm';
-import { Character } from "./Character";
-import { Discipline } from "./../discipline/BaseDiscipline";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  Column,
+  OneToMany,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
+import {Character} from './Character';
+import {Discipline} from '../discipline/BaseDiscipline';
 
 /**
  * Experience records a character experience for a specific discipline.
@@ -10,25 +18,24 @@ import { Discipline } from "./../discipline/BaseDiscipline";
  */
 @Entity()
 export class Experience {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-    @PrimaryGeneratedColumn("uuid")
-    id: string;
-      
-    @ManyToOne(() => Character, (character) => character.equipment)
-    character: Character;
+  @ManyToOne(() => Character, character => character.equipment)
+  character: Character;
 
-    @Column({
-        type: "enum",
-        enum: Discipline
-    })
-    discipline: Discipline;
+  @Column({
+    type: 'enum',
+    enum: Discipline,
+  })
+  discipline: Discipline;
 
-    @Column()
-    experience: number;
+  @Column()
+  experience: number;
 
-    @UpdateDateColumn()
-    updatedAt: Date;
+  @UpdateDateColumn()
+  updatedAt: Date;
 
-    @CreateDateColumn()
-    createdAt: Date;
+  @CreateDateColumn()
+  createdAt: Date;
 }
