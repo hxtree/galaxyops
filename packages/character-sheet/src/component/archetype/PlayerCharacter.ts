@@ -1,9 +1,11 @@
 import {StatusEffects} from '../effect/StatusEffect';
 import {Drive, Life, Spirit, Stats} from '../character/Attribute';
 import {Traits} from '../character/Trait';
-import {Token} from './../equipment/Token';
+import {Token} from '../equipment/Token';
 import {Assassin, Cheerleader, Commander, Cook, Discipline, Gaurd, Healer, Hero, Historian, Knight, Magi, MagiBlack, MagiBlue, MagiBrown, MagiGreen, MagiPink, MagiPurple, MagiWhite, MagiYellow, Mechanic, Rouge, Royalty, Scout, Solider, Summoner, Thief, Warrior, XSolider} from '../character/Discipline';
 import { Oni } from '../skill/DriveSkill';
+import { OfficersUniform, Outfit, Outfits, TShirtAndJeans } from '../equipment/Outfit';
+import { GearSlot } from '../equipment/Gear';
 
 /**
  * A character that can be played
@@ -14,14 +16,38 @@ export interface PlayerCharacter {
   lastName: string;
   backstory: string;
   experience?: number;
+
+  // these seem more like they loaded or determined for player characters
   life?: Life;
   drive?: Drive;
   spirit?: Spirit;
   stats?: Stats;
+
   traits?: Traits;
   statusEffects?: StatusEffects;
   token?: Token;
   potentialDisciplines?: Array<Discipline>;
+  potentialOutfits?: Array<Outfit>;
+  potentialGeatSlots?: Array<GearSlot>;
+}
+
+export class Character {
+
+  // base character not stored in database
+  archetype: MeekuOni;
+
+  // the values actually stored in the database are the raw stats
+  // characters actual stats vary based on disciplines, afflictions, and equipment
+  rawStats = [];
+
+
+  /**
+   * skills are determined based on disciplines, afflictions, and equipment
+   * they are not correlated to character
+   */
+  getSkills(){
+
+  }
 }
 
 export class ArinothDiyath implements PlayerCharacter {
@@ -109,7 +135,7 @@ export class MalaceTsia implements PlayerCharacter {
     Summoner,
     Rouge
   ];
-
+  potentialOutfits: [OfficersUniform]
 }
 
 export class MeekuOni implements PlayerCharacter {
@@ -123,6 +149,7 @@ export class MeekuOni implements PlayerCharacter {
     Oni,
     Hero,
   ];
+  potentialOutfits: [TShirtAndJeans];
 }
 
 export class PennyKibbutz implements PlayerCharacter {

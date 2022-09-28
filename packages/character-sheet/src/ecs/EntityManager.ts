@@ -1,5 +1,0 @@
-class EntityManager {
-
-    public entities = [];
- 
-}

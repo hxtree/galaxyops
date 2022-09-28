@@ -3,7 +3,7 @@
  * actions that are directly related to movement
  */
 
-import { BaseSkill } from './BaseSkill';
+import {BaseSkill} from './BaseSkill';
 
 export interface MovementSkill extends BaseSkill {}
 
@@ -42,7 +42,10 @@ export class HighJump implements MovementSkill {
   description: 'Charged vertical jump';
 }
 
-// Climb –
+export class Climb implements MovementSkill {
+  name: 'Climb';
+  description: 'Scale a wall';
+}
 
 // "83","Trek","Used to determine how steep an angled tile you can stand on. If your character fails to trek the tile then they will fall from it and will be to step onto it.","82",,"82"
 // Trek – Used to determine how steep an angled tile you can stand on. If your character fails to trek the tile then they will fall from it and will be to step onto it.

@@ -14,23 +14,22 @@ import {
  * Characters cannot change out bottom and tops individuallly.
  */
 
+export type Outfits = Array<Outfit>;
+
 export interface Outfit {
   name: string;
   description: string;
-  gearSlots: Array<GearSlot>;
-  character: PlayerCharacter;
+  gearSlots?: Array<GearSlot>;
 }
 
-export class MeekuOniCausal {
-  name: 'Casual';
+export class TShirtAndJeans implements Outfit {
+  name: 'T-Shirt and Jeans';
   description: 'White t-Shirt and denim jeans';
   gearSlots: [GearSlot.OUTFIT];
-  character: MeekuOni;
 }
 
-export class MalaceTsiaUniform {
+export class OfficersUniform implements Outfit {
   name: "Officer's Uniform";
   description: 'Black Embellished Tarry Coat';
   gearSlots: [GearSlot.OUTFIT];
-  character: MalaceTsia;
 }

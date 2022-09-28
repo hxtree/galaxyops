@@ -17,14 +17,14 @@ import {
  * The more a Player uses them the more powerful they grow.
  */
 export enum SummonSkillList {
-  'VACHEL' = 'Vachel',
-  'FELIX' = 'Felix',
-  'HERALDIC_LION' = 'Heraldic Lion',
-  'LYRE' = 'Lyre',
-  'SANDY' = 'Sandy',
-  'OURUBORUS' = 'Ouruborus',
-  'MISCHIEVOUS' = 'Mischievous',
-  'SCRIBBLES' = 'Scribbles',
+  VACHEL = 'Vachel',
+  FELIX = 'Felix',
+  HERALDIC_LION = 'Heraldic Lion',
+  LYRE = 'Lyre',
+  SANDY = 'Sandy',
+  OURUBORUS = 'Ouruborus',
+  MISCHIEVOUS = 'Mischievous',
+  SCRIBBLES = 'Scribbles',
   // Malace's tattoos reference lesser key of solomon?
 }
 
