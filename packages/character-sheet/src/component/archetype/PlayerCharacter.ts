@@ -2,10 +2,39 @@ import {StatusEffects} from '../effect/StatusEffect';
 import {Drive, Life, Spirit, Stats} from '../character/Attribute';
 import {Traits} from '../character/Trait';
 import {Token} from '../equipment/Token';
-import {Assassin, Cheerleader, Commander, Cook, Discipline, Gaurd, Healer, Hero, Historian, Knight, Magi, MagiBlack, MagiBlue, MagiBrown, MagiGreen, MagiPink, MagiPurple, MagiWhite, MagiYellow, Mechanic, Rouge, Royalty, Scout, Solider, Summoner, Thief, Warrior, XSolider} from '../character/Discipline';
-import { Oni } from '../skill/DriveSkill';
-import { OfficersUniform, Outfit, Outfits, TShirtAndJeans } from '../equipment/Outfit';
-import { GearSlot } from '../equipment/Gear';
+import {
+  Assassin,
+  BaseDiscipline,
+  Cheerleader,
+  Commander,
+  Cook,
+  Gaurd,
+  Healer,
+  Hero,
+  Historian,
+  Knight,
+  Magi,
+  MagiBlack,
+  MagiBlue,
+  MagiBrown,
+  MagiGreen,
+  MagiPink,
+  MagiPurple,
+  MagiWhite,
+  MagiYellow,
+  Mechanic,
+  Rouge,
+  Royalty,
+  Scout,
+  Solider,
+  Summoner,
+  Thief,
+  Warrior,
+  XSolider,
+} from '../character/Discipline';
+import {Oni} from '../skill/DriveSkill';
+import {OfficersUniform, Outfit, TShirtAndJeans} from '../equipment/Outfit';
+import {GearSlot} from '../equipment/Gear';
 
 /**
  * A character that can be played
@@ -26,28 +55,9 @@ export interface PlayerCharacter {
   traits?: Traits;
   statusEffects?: StatusEffects;
   token?: Token;
-  potentialDisciplines?: Array<Discipline>;
+  potentialDisciplines?: Array<BaseDiscipline>;
   potentialOutfits?: Array<Outfit>;
   potentialGeatSlots?: Array<GearSlot>;
-}
-
-export class Character {
-
-  // base character not stored in database
-  archetype: MeekuOni;
-
-  // the values actually stored in the database are the raw stats
-  // characters actual stats vary based on disciplines, afflictions, and equipment
-  rawStats = [];
-
-
-  /**
-   * skills are determined based on disciplines, afflictions, and equipment
-   * they are not correlated to character
-   */
-  getSkills(){
-
-  }
 }
 
 export class ArinothDiyath implements PlayerCharacter {
@@ -62,7 +72,7 @@ export class FayeImago implements PlayerCharacter {
   lastName: 'Imago';
   backstory: 'A young girl who weilds magic and studies history';
   potentialDisciplines: [
-    Wizard,
+    // Wizard,
     Historian,
     Magi,
     MagiBlack,
@@ -81,10 +91,10 @@ export class GaaliRuin implements PlayerCharacter {
   lastName: 'Ruin';
   backstory: 'A prince with little interest in becoming king. Instead, he lives for testing his sword in raw danger.';
   potentialDisciplines: [
-    Bard,
-    Duelist,
+    // Bard,
+    // Duelist,
     Knight,
-    RuneKing,
+    // RuneKing,
     Royalty,
     // - Nobel
     // - Duke
@@ -101,7 +111,7 @@ export class GunterStonewell implements PlayerCharacter {
   backstory: 'A solider for life';
   potentialDisciplines: [
     Gaurd,
-    BodyBuilder,
+    //  BodyBuilder,
     Commander,
   ];
 }
@@ -114,12 +124,12 @@ export class LoomeeAngora implements PlayerCharacter {
   affiliation: ['The Keeper'];
   potentialDisciplines: [
     Cheerleader,
-    Maiden,
-    Keeper,
+    // Maiden,
+    // Keeper,
     Cook,
     Healer,
-    Sage,
-    Guardian' // omega class
+    // Sage,
+    // Guardian' // omega class
   ];
 }
 
@@ -128,14 +138,14 @@ export class MalaceTsia implements PlayerCharacter {
   lastName: 'Tsia';
   backstory: 'was used as a scarifice for his people to hold demons by sewing them to his skin';
   potentialDisciplines: [
-    Gymnast,
-    Possessed,
+    // Gymnast,
+    // Possessed,
     Scout,
-    Ouroboros,
+    // Ouroboros,
     Summoner,
-    Rouge
+    Rouge,
   ];
-  potentialOutfits: [OfficersUniform]
+  potentialOutfits: [OfficersUniform];
 }
 
 export class MeekuOni implements PlayerCharacter {
@@ -145,8 +155,8 @@ export class MeekuOni implements PlayerCharacter {
   potentialDisciplines: [
     Solider,
     XSolider,
-    Berserker,
-    Oni,
+    // Berserker,
+    // Oni,
     Hero,
   ];
   potentialOutfits: [TShirtAndJeans];
@@ -157,11 +167,11 @@ export class PennyKibbutz implements PlayerCharacter {
   lastName: 'Kibbutz';
   backstory: '';
   potentialDisciplines: [
-    Ninja,
+    // Ninja,
     Assassin,
-    AmberAssassin,
-    EliteAssasin,
-    Thief
+    // AmberAssassin,
+    // EliteAssasin,
+    Thief,
   ];
 }
 
@@ -170,9 +180,9 @@ export class TraezUthsha implements PlayerCharacter {
   lastName: 'Uthsha';
   backstory: '';
   potentialDisciplines: [
-    Engineer,
+    // Engineer,
     Mechanic,
-    LighteningWarrior,
-    Rebel,
+    // LighteningWarrior,
+    // Rebel,
   ];
 }

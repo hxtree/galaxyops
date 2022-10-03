@@ -8,16 +8,9 @@ import {
   Scan,
   Support,
 } from '../skill/ClassSkill';
-import {
-  Appraise,
-  PrepareFood,
-} from '../skill/ItemSkill';
-import {
-  BackFlip,
-  DoubleBackFlip,
-  HighJump,
-} from '../skill/MovementSkill';
-import { Concentration } from '../skill/PassiveSkill';
+import {Appraise, PrepareFood} from '../skill/ItemSkill';
+import {BackFlip, DoubleBackFlip, HighJump} from '../skill/MovementSkill';
+import {Concentration} from '../skill/PassiveSkill';
 import {
   Aqua,
   Blizzard,
@@ -39,16 +32,9 @@ import {
   Stop,
   Tsunami,
 } from '../skill/SpellSkill';
-import {
-  HeraldicLion,
-  Summon,
-} from '../skill/SummonSkill';
-import {
-  Command,
-  Formations,
-  Order,
-} from '../skill/TeamworkSkill';
-import { Cleave } from '../skill/WeaponSkill';
+import {HeraldicLion, Summon} from '../skill/SummonSkill';
+import {Command, Formations, Order} from '../skill/TeamworkSkill';
+import {Cleave} from '../skill/WeaponSkill';
 
 export enum DisciplineCategory {
   PROFESSION = 'Profession',
