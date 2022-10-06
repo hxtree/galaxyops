@@ -1,10 +1,11 @@
-import {Character} from '../../../entity/Character';
+import {Character} from '../../entity/Character';
 import {MeekuOni} from '../archetype/PlayerCharacter';
 import {Attribute} from '../character/Attribute';
 import {EffectTable, SkillffectModifier} from '../effect/EffectTable';
 import {EffectTag} from '../effect/EffectTag';
 import {Catcher} from '../skill/PassiveSkill';
 import {GearSlot} from './Gear';
+
 
 export interface Accessory {
   name: string;

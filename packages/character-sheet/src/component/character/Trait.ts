@@ -1,4 +1,4 @@
-import {EffectTag} from './../effect/EffectTag';
+import {EffectTag} from '../effect/EffectTag';
 
 export enum Effect {
   WEAK = 'Weak', // Weakness, increases damage taken by the damage type.

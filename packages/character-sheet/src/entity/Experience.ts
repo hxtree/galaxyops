@@ -7,8 +7,8 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import {Character} from './Character';
-import {Discipline} from '../discipline/BaseDiscipline';
+import {CharacterSheet} from './CharacterSheet';
+import {Discipline} from '../component/character/Discipline';
 
 /**
  * Experience records a character experience for a specific discipline.
@@ -21,8 +21,8 @@ export class Experience {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => Character, character => character.equipment)
-  character: Character;
+  @ManyToOne(() => CharacterSheet, characterSheet => characterSheet.equipment)
+  characterSheet: CharacterSheet;
 
   @Column({
     type: 'enum',
