@@ -12,7 +12,7 @@
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 3,
   "approvedPackagesPolicy": {
-    "reviewCategories": ["apis", "clients", "libraries", "heft"],
+    "reviewCategories": ["apis", "clients", "libraries", "heft", "platform"],
     "ignoredNpmScopes": ["@types"]
   },
 

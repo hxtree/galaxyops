@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GrapplingHook = exports.ToolAction = exports.ToolSkillList = void 0;
+var ToolSkillList;
+(function (ToolSkillList) {
+    ToolSkillList["GRAPPLING_HOOK"] = "Grappling Hook";
+})(ToolSkillList = exports.ToolSkillList || (exports.ToolSkillList = {}));
+/**
+ * Tool Action
+ * Tool actions are based on using reusable tools
+ */
+class ToolAction {
+}
+exports.ToolAction = ToolAction;
+class GrapplingHook extends ToolAction {
+}
+exports.GrapplingHook = GrapplingHook;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVG9vbFNraWxsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vc3JjL2NvbXBvbmVudC9za2lsbC9Ub29sU2tpbGwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBRUEsSUFBWSxhQUVYO0FBRkQsV0FBWSxhQUFhO0lBQ3ZCLGtEQUFpQyxDQUFBO0FBQ25DLENBQUMsRUFGVyxhQUFhLEdBQWIscUJBQWEsS0FBYixxQkFBYSxRQUV4QjtBQUVEOzs7R0FHRztBQUNILE1BQXNCLFVBQVU7Q0FJL0I7QUFKRCxnQ0FJQztBQUVELE1BQWEsYUFBYyxTQUFRLFVBQVU7Q0FHNUM7QUFIRCxzQ0FHQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7TWVudVNsb3R9IGZyb20gJy4uL2NoYXJhY3Rlci9NZW51U2xvdCc7XG5cbmV4cG9ydCBlbnVtIFRvb2xTa2lsbExpc3Qge1xuICBHUkFQUExJTkdfSE9PSyA9ICdHcmFwcGxpbmcgSG9vaycsXG59XG5cbi8qKlxuICogVG9vbCBBY3Rpb25cbiAqIFRvb2wgYWN0aW9ucyBhcmUgYmFzZWQgb24gdXNpbmcgcmV1c2FibGUgdG9vbHNcbiAqL1xuZXhwb3J0IGFic3RyYWN0IGNsYXNzIFRvb2xBY3Rpb24ge1xuICBhYnN0cmFjdCBuYW1lOiBUb29sU2tpbGxMaXN0O1xuICBhYnN0cmFjdCBkZXNjcmlwdGlvbjogc3RyaW5nO1xuICBtZW51U2xvdDogTWVudVNsb3QuRm91cnRoO1xufVxuXG5leHBvcnQgY2xhc3MgR3JhcHBsaW5nSG9vayBleHRlbmRzIFRvb2xBY3Rpb24ge1xuICBuYW1lOiBUb29sU2tpbGxMaXN0LkdSQVBQTElOR19IT09LO1xuICBkZXNjcmlwdGlvbjogJ0VuYWJsZXMgcGFydHkgdG8gbW92ZSB0byBoaWdoZXIgZ3JvdW5kcy4nO1xufVxuIl19

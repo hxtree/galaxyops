@@ -95,6 +95,10 @@
       "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
+      "name": "dotenv",
+      "allowedCategories": [ "platform" ]
+    },
+    {
       "name": "eslint",
       "allowedCategories": [ "apis", "apps", "clients", "heft" ]
     },
@@ -173,6 +177,14 @@
     {
       "name": "lodash",
       "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "mongodb",
+      "allowedCategories": [ "apis", "platform" ]
+    },
+    {
+      "name": "mongoose",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "prettier",

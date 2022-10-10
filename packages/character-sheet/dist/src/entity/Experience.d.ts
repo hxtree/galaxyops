@@ -1,5 +1,5 @@
-import { Character } from "./Character";
-import { Discipline } from "./../discipline/BaseDiscipline";
+import { CharacterSheet } from './CharacterSheet';
+import { Discipline } from '../component/character/Discipline';
 /**
  * Experience records a character experience for a specific discipline.
  * Different disciplines have different experience requirements.
@@ -8,7 +8,7 @@ import { Discipline } from "./../discipline/BaseDiscipline";
  */
 export declare class Experience {
     id: string;
-    character: Character;
+    characterSheet: CharacterSheet;
     discipline: Discipline;
     experience: number;
     updatedAt: Date;

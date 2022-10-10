@@ -1,7 +1,7 @@
-import { Gauge } from "../WIP/Gauge";
+import { Gauge } from '../WIP/Gauge';
 export declare class Attributes {
     id: string;
-    characterId: number;
+    characterSheetId: number;
     life: Gauge;
     spirit: Gauge;
     drive: Gauge;

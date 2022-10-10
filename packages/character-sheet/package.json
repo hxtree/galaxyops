@@ -35,6 +35,8 @@
     "@aws-cdk/aws-appsync": "~1.158.0",
     "@aws-cdk/aws-dynamodb": "~1.158.0",
     "@aws-cdk/aws-lambda": "~1.158.0",
-    "typeorm": "~0.3.6"
+    "typeorm": "~0.3.6",
+    "mongodb": "~4.10.0",
+    "mongoose": "~6.6.5"
   }
 }

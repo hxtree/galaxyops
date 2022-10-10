@@ -4,6 +4,13 @@ import {Traits} from '../character/Trait';
 import {Token} from '../equipment/Token';
 import {Items} from '../equipment/Item';
 
+
+/**
+ * base character information not stored in database
+ * contains potentialGeatSlots, potentialDisciplines, etc.
+ */
+export IArchetype {};
+
 /**
  * A character that can be played
  * values are relative to player instance

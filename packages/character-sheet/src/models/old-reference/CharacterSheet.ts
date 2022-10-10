@@ -67,3 +67,13 @@ export class CharacterSheet {
     this.equipment.splice(this.equipment.indexOf(equipment), 1);
   }
 }
+
+const User = dynamoose.model('CharacterSheet', {
+  id: Number,
+  name: String,
+});
+const myUser = new User({
+  id: 1,
+  name: 'Tim',
+});
+console.log(myUser.id);

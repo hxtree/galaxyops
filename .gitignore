@@ -25,3 +25,5 @@ common/temp/
 
 **/docs/.nojekyll
 **/docs/*.html
+
+.env
