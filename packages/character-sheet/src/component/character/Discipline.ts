@@ -37,7 +37,7 @@ import {Command, Formations, Order} from '../skill/TeamworkSkill';
 import {Cleave} from '../skill/WeaponSkill';
 
 /**
- * A character experience are for specific discipline.
+ * Experience records a character experience for a specific discipline.
  * Different disciplines have different experience requirements.
  * A character can have multiple disciplines and therefore multiple experience records.
  * Progression in one discipine may unlock other disciplines, actions, and attributes bonuses.
