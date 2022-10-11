@@ -1,4 +1,23 @@
-import {INonPlayerCharacter} from './IArchetype';
+import {IArchetype} from './IArchetype';
+import {Drive, Life, Spirit, Stats} from '../character/Attribute';
+import {Traits} from '../character/Trait';
+import {Items} from '../gear/Item';
+import {StatusEffects} from '../effect/StatusEffect';
+
+/**
+ * A human or non-humanoid character.
+ */
+export interface INonPlayerCharacter extends IArchetype {
+  name: string;
+  description: string;
+  life?: Life;
+  drive?: Drive;
+  spirit?: Spirit;
+  stats?: Stats;
+  traits?: Traits;
+  statusEffects?: StatusEffects;
+  loot?: Items;
+}
 
 export class VallonOni implements INonPlayerCharacter {
   name: 'Vallon Oni';

@@ -37,6 +37,8 @@
     "@aws-cdk/aws-lambda": "~1.158.0",
     "typeorm": "~0.3.6",
     "mongodb": "~4.10.0",
-    "mongoose": "~6.6.5"
+    "mongoose": "~6.6.5",
+    "uuid": "~9.0.0",
+    "class-validator": "~0.13.2"
   }
 }

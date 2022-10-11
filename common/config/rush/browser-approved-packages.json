@@ -221,6 +221,10 @@
     {
       "name": "typescript",
       "allowedCategories": [ "apis", "apps", "clients", "heft" ]
+    },
+    {
+      "name": "uuid",
+      "allowedCategories": [ "apis" ]
     }
   ]
 }

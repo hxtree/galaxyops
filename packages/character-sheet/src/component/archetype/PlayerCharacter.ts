@@ -1,7 +1,7 @@
 import {StatusEffects} from '../effect/StatusEffect';
 import {Drive, Life, Spirit, Stats} from '../character/Attribute';
 import {Traits} from '../character/Trait';
-import {Token} from '../equipment/Token';
+import {Token} from '../gear/Token';
 import {
   Assassin,
   BaseDiscipline,
@@ -32,15 +32,15 @@ import {
   Warrior,
   XSolider,
 } from '../character/Discipline';
-import {Oni} from '../skill/DriveSkill';
-import {OfficersUniform, Outfit, TShirtAndJeans} from '../equipment/Outfit';
-import {GearSlot} from '../equipment/Gear';
+import {OfficersUniform, Outfit, TShirtAndJeans} from '../gear/Outfit';
+import {GearSlot} from '../gear/Gear';
+import {IArchetype} from './IArchetype';
 
 /**
  * A character that can be played
  * values are relative to player instance
  */
-export interface PlayerCharacter {
+export interface PlayerCharacter extends IArchetype {
   firstName: string;
   lastName: string;
   backstory: string;

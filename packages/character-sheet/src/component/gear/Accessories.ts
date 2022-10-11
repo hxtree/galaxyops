@@ -1,18 +1,16 @@
-import {Character} from '../../entity/Character';
-import {MeekuOni} from '../archetype/PlayerCharacter';
+import {MeekuOni, PlayerCharacter} from '../archetype/PlayerCharacter';
 import {Attribute} from '../character/Attribute';
 import {EffectTable, SkillffectModifier} from '../effect/EffectTable';
 import {EffectTag} from '../effect/EffectTag';
 import {Catcher} from '../skill/PassiveSkill';
 import {GearSlot} from './Gear';
 
-
 export interface Accessory {
   name: string;
   description: string;
   history?: string; // the history of an item must be discovered
   purpose: string;
-  character: Character;
+  character: PlayerCharacter;
   gearSlots: Array<GearSlot>;
   effects?: EffectTable;
   removable: boolean; // whether player can remove via menus
@@ -22,8 +20,18 @@ export interface Accessory {
  * Accessories
  * Seondary items that are equippable
  */
+export enum Accessories {
+  GOLD_BRACELETS = 'Gold Bracelets',
+  RED_SCRAF = 'Red Scarf',
+  COWHIDE_VEST = 'Cowhide Vest',
+  FUNERAL_JAR = 'Funeral Jar',
+  SWORD_SHEATH = 'Sword sheath',
+  MAGNETIC_GLOVES = 'Magnetic Gloves',
+  CATCHERS_MITT = 'Catchers Mitt',
+}
+
 export class GoldBracelets {
-  name: 'Gold Bracelets';
+  name: Accessories.GOLD_BRACELETS;
   description: 'Weighted gold bracelets that occupy both wrists meant';
   purpose: 'Suppress hidden power';
   character: [MeekuOni];
@@ -44,7 +52,7 @@ export class GoldBracelets {
 }
 
 export class RedScarf {
-  name: 'Red Scarf';
+  name: Accessories.RED_SCRAF;
   character: [MeekuOni];
   description: 'A red scarf knitted.';
   history: 'Knitted by Meeku’s mother to keep him warm';
@@ -53,7 +61,7 @@ export class RedScarf {
 }
 
 export class CowhideVest {
-  name: 'Cowhide Vest';
+  name: Accessories.COWHIDE_VEST;
   character: [MeekuOni];
   effects: [
     {

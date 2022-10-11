@@ -36,6 +36,13 @@ import {HeraldicLion, Summon} from '../skill/SummonSkill';
 import {Command, Formations, Order} from '../skill/TeamworkSkill';
 import {Cleave} from '../skill/WeaponSkill';
 
+/**
+ * A character experience are for specific discipline.
+ * Different disciplines have different experience requirements.
+ * A character can have multiple disciplines and therefore multiple experience records.
+ * Progression in one discipine may unlock other disciplines, actions, and attributes bonuses.
+ */
+
 export enum DisciplineCategory {
   PROFESSION = 'Profession',
   ARCHETYPE = 'Archetype',

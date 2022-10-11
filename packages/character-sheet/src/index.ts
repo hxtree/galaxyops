@@ -1,6 +1,6 @@
 import {connect} from 'mongoose';
 import {MeekuOni} from './component/archetype/PlayerCharacter';
-import {CharacterSheet} from './models/character-sheet.model';
+import {CharacterSheet} from './model/character-sheet.model';
 
 run().catch(err => console.log(err));
 

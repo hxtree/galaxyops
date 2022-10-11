@@ -67,6 +67,37 @@ export abstract class Weapon {
   abstract actions: Array<WeaponSkill>; // could also be Ward, Protect, etc. for Pendents :?
 }
 
+export enum Weapons {
+  ASMINS_AXE = "Asmin's Axe",
+  GREAT_WAIL = 'Great Wail',
+  JUSTICE = 'Justice',
+  KEYSTONE = 'Keystone',
+  ASSUALTER = 'Assaulter',
+  STRIKER = 'Striker',
+  ENERGY_BREAKER = 'Energy Breaker',
+  STONE_BREAKER = 'Stone Breaker',
+  THE_MAN_SLAYER = 'The Man Slayer',
+  HEROS_BLADE = "Hero's Blade",
+  SWORD_OF_LAWZON = 'Sword of Lawzon',
+  TINY_TIMBER = 'Tiny Timber',
+  CADUCEUS = 'Caduceus',
+  ANTEDILUVIAN = 'Antediluvian',
+  ETERNAL_FOLD = 'Eternal Fold',
+  GOLD_RUSH = 'Gold Rush',
+  KINGS_BLADE = 'Kings Blade',
+  RUSTY_RAPIER = 'Rusty Rapier',
+  MYSTERIOUS_PENDANT = 'Mysterious Pendant',
+  PEACEKEEPER = 'PeaceKeeper',
+  TROUBLE_MAKER = 'Trouble Maker',
+  STANDARD_ISSUE = 'Standard Issue',
+  GREED = 'Greed',
+  LIBERTY = 'Liberty',
+  MONARCH = 'Monarch',
+  REGRET = 'Regret',
+  VICEROY = 'Viceroy',
+  VIOLATED = 'Violated',
+}
+
 /**
  * Axes
  * Axes are an extremely powerful branch of weapons that take a fierce amount of strength to wield but the damage provided by them is usually worth it.
@@ -74,7 +105,7 @@ export abstract class Weapon {
  * Can be used by: Gunter
  */
 class AsminsAze implements Weapon {
-  name: "Asmin's Axe";
+  name: Weapons.ASMINS_AXE;
   category: WeaponCategory.TWO_HANDED_AXE;
   power: 100;
   speed: 30;
@@ -83,7 +114,7 @@ class AsminsAze implements Weapon {
 }
 
 class GreatWail implements Weapon {
-  name: 'Great Wail';
+  name: Weapons.GREAT_WAIL;
   category: WeaponCategory.TWO_HANDED_AXE;
   description: 'A large axe that can break through bone and makes a loud sound when swung';
   power: 100;
@@ -93,7 +124,7 @@ class GreatWail implements Weapon {
 }
 
 class Justice implements Weapon {
-  name: 'Justice';
+  name: Weapons.JUSTICE;
   category: WeaponCategory.TWO_HANDED_AXE;
   history: "Gunter's trademark axe";
   power: 100;
@@ -103,7 +134,7 @@ class Justice implements Weapon {
 }
 
 class Keystone implements Weapon {
-  name: 'Keystone';
+  name: Weapons.KEYSTONE;
   category: WeaponCategory.TWO_HANDED_AXE;
   description: 'A giant axe made of from a giant keystone with an iron bar stuck through it.';
   power: 100;
@@ -121,7 +152,7 @@ class Keystone implements Weapon {
  */
 
 class Assaulter implements Weapon {
-  name: 'Assaulter';
+  name: Weapons.ASSUALTER;
   category: WeaponCategory.BOOMERANG;
   power: 100;
   speed: 30;
@@ -130,7 +161,7 @@ class Assaulter implements Weapon {
 }
 
 class Striker implements Weapon {
-  name: 'Striker';
+  name: Weapons.STRIKER;
   category: WeaponCategory.BOOMERANG;
   description: ' An extremely fast and deadly boomerang.';
   power: 100;
@@ -146,7 +177,7 @@ class Striker implements Weapon {
  * Gear Slots – Right Hand AND Left Hand
  */
 class EnergyBreaker implements Weapon {
-  name: 'Energy Breaker';
+  name: Weapons.ENERGY_BREAKER;
   category: WeaponCategory.SHIELD_SWORD;
   description: string =
     'An extremely large and heavy weapon that absorbs and releases energy.';
@@ -159,7 +190,7 @@ class EnergyBreaker implements Weapon {
 }
 
 class StoneBreaker implements Weapon {
-  name: 'Stone Breaker';
+  name: Weapons.STONE_BREAKER;
   category: WeaponCategory.SHIELD_SWORD;
   description: 'An extremely large and heavy weapon with a special guilloche handle for grip.';
   history: 'It was reportedly used by Galax to bring peace.';
@@ -174,7 +205,7 @@ class StoneBreaker implements Weapon {
 }
 
 class TheManSlayer implements Weapon {
-  name: 'The Man Slayer';
+  name: Weapons.THE_MAN_SLAYER;
   category: WeaponCategory.SHIELD_SWORD;
   description: 'A giant ancient hellish looking blade. Its handle bares a dogtooth design.';
   history: 'It was reportedly used by Galax to bring peace.';
@@ -192,7 +223,7 @@ class TheManSlayer implements Weapon {
  * Gear Slots – Right Hand AND Left Hand
  */
 class HerosBlade implements Weapon {
-  name: "Hero's Blade";
+  name: Weapons.HEROS_BLADE;
   category: WeaponCategory.BROAD_SWORD;
   description: 'A mystical blade that is destine to fall into the hands of the next true hero.';
   power: 100;
@@ -202,7 +233,7 @@ class HerosBlade implements Weapon {
 }
 
 class SwordOfLawzon implements Weapon {
-  name: 'Sword of Lawzon';
+  name: Weapons.SWORD_OF_LAWZON;
   category: WeaponCategory.BROAD_SWORD;
   description: 'A dirty simple solid blade forged of harden steel.';
   power: 100;
@@ -216,8 +247,8 @@ class SwordOfLawzon implements Weapon {
  * Staffs are weapons designed as a focusing point for magical users to amplify and release their spells.
  * They can also be used to deal melee damage.
  */
-class TinyTimer implements Weapon {
-  name: 'Tiny Timer';
+class TinyTimber implements Weapon {
+  name: Weapons.TINY_TIMBER;
   category: WeaponCategory.STAFF;
   description: 'A basic staff given to Magi in training';
   power: 100;
@@ -227,7 +258,7 @@ class TinyTimer implements Weapon {
 }
 
 class Caduceus implements Weapon {
-  name: 'Caduceus';
+  name: Weapons.CADUCEUS;
   category: WeaponCategory.STAFF;
   description: 'A staff with two serpents wrapped around it base and two wings that expand from its top.';
   history: 'An ancient wand said to be carried by the messenger of God.';
@@ -238,7 +269,7 @@ class Caduceus implements Weapon {
 }
 
 class Antediluvian implements Weapon {
-  name: 'Antediluvian';
+  name: Weapons.ANTEDILUVIAN;
   category: WeaponCategory.STAFF;
   description: 'An acient wooden staff';
   history: 'An ancient weapon used to slay devils of the old world';
@@ -256,7 +287,7 @@ class Antediluvian implements Weapon {
  */
 
 class EternalFold implements Weapon {
-  name: 'Eternal Fold';
+  name: Weapons.ETERNAL_FOLD;
   category: WeaponCategory.RAPIER;
   history: 'A sword that has been folded by generations of blacksmiths to create a flawless steel sword';
   power: 100;
@@ -266,7 +297,7 @@ class EternalFold implements Weapon {
 }
 
 class GoldRush implements Weapon {
-  name: 'Gold Rush';
+  name: Weapons.GOLD_RUSH;
   category: WeaponCategory.RAPIER;
   description: 'A golden color sword that looks more fitting on a wall then a battlefield.';
   power: 100;
@@ -276,7 +307,7 @@ class GoldRush implements Weapon {
 }
 
 class KingsBlade implements Weapon {
-  name: 'Kings Blade';
+  name: Weapons.KINGS_BLADE;
   category: WeaponCategory.RAPIER;
   description: 'Whomever posses this blade is King of Rudner.';
   power: 100;
@@ -286,7 +317,7 @@ class KingsBlade implements Weapon {
 }
 
 class RustyRapier implements Weapon {
-  name: 'Rusty Rapier';
+  name: Weapons.RUSTY_RAPIER;
   category: WeaponCategory.RAPIER;
   description: 'A rusty sword. Chance of poisoning target.';
   power: 100;
@@ -304,7 +335,7 @@ class RustyRapier implements Weapon {
  */
 
 class MysteriousPendant implements Weapon {
-  name: 'Mysterious Pendant';
+  name: Weapons.MYSTERIOUS_PENDANT;
   category: WeaponCategory.PENDANT;
   // Grants Ward
   power: 100;
@@ -314,7 +345,7 @@ class MysteriousPendant implements Weapon {
 }
 
 class PeaceKeeper implements Weapon {
-  name: 'PeaceKeeper';
+  name: Weapons.PEACEKEEPER;
   category: WeaponCategory.PENDANT;
   power: 100;
   speed: 30;
@@ -323,7 +354,7 @@ class PeaceKeeper implements Weapon {
 }
 
 class TroubleMaker implements Weapon {
-  name: 'Trouble Maker';
+  name: Weapons.TROUBLE_MAKER;
   category: WeaponCategory.PENDANT;
   power: 100;
   speed: 30;
@@ -337,7 +368,7 @@ class TroubleMaker implements Weapon {
  */
 
 class StandardIssue implements Weapon {
-  name: 'Standard Issue';
+  name: Weapons.STANDARD_ISSUE;
   category: WeaponCategory.DUAL_KYOKETSU_SHOGE;
   description: 'The common Dual Kyoketsu Shoge given to fascist.';
   power: 100;
@@ -356,7 +387,7 @@ class StandardIssue implements Weapon {
 // which one is Wisp’s Knife?
 
 class Greed implements Weapon {
-  name: 'Greed';
+  name: Weapons.GREED;
   category: WeaponCategory.KNIFE;
   description =
     'A intricate, powerful weapon that is capable of stealing the life from its target.';
@@ -368,7 +399,7 @@ class Greed implements Weapon {
 }
 
 class Liberty implements Weapon {
-  name: 'Liberty';
+  name: Weapons.LIBERTY;
   category: WeaponCategory.KNIFE;
   power: 100;
   speed: 30;
@@ -377,7 +408,7 @@ class Liberty implements Weapon {
 }
 
 class Monarch implements Weapon {
-  name: 'Monarch';
+  name: Weapons.MONARCH;
   category: WeaponCategory.KNIFE;
   description: 'A brilliantly designed insect looking blade with a sharp and deadly tip that is dripping with poison.';
   power: 100;
@@ -387,7 +418,7 @@ class Monarch implements Weapon {
 }
 
 class Regret implements Weapon {
-  name: 'Regret';
+  name: Weapons.REGRET;
   category: WeaponCategory.KNIFE;
   power: 100;
   speed: 30;
@@ -396,7 +427,7 @@ class Regret implements Weapon {
 }
 
 class Viceroy implements Weapon {
-  name: 'Viceroy';
+  name: Weapons.VICEROY;
   category: WeaponCategory.KNIFE;
   description: 'A brilliantly designed insect looking blade with a sharp and deadly tip.';
   // The viceroy looks almost identical to the monarch';
@@ -409,7 +440,7 @@ class Viceroy implements Weapon {
 }
 
 class Violated implements Weapon {
-  name: 'Violated';
+  name: Weapons.VIOLATED;
   category: WeaponCategory.KNIFE;
   // Weapon Absorbs the previous monsters type and uses it for the next attack.
   // This weapon must be used to slay the most poisonous monster

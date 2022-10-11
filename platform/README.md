@@ -30,4 +30,5 @@ MongoDB Atlas. [Register](https://www.mongodb.com/cloud/atlas/register)
 
 Mongoose
 
-- TypeORM has poor support for MongoDB; it's more for RDMS.
+- TypeORM has poor support for MongoDB; it's more for RDMS. Using and ORM is a
+  bit too lambdalith.

@@ -16,6 +16,7 @@ importers:
       '@types/node': ~14
       aws-cdk: ~2.26.0
       aws-cdk-lib: 2.15.0
+      class-validator: ~0.13.2
       jest: ^26.4.2
       mongodb: ~4.10.0
       mongoose: ~6.6.5
@@ -24,16 +25,19 @@ importers:
       ts-node: 10.4.0
       typeorm: ~0.3.6
       typescript: 4.6.2
+      uuid: ~9.0.0
     dependencies:
       '@aws-cdk/aws-appsync': 1.158.0
       '@aws-cdk/aws-dynamodb': 1.158.0
       '@aws-cdk/aws-lambda': 1.158.0
       '@aws-cdk/core': 1.158.0
       aws-cdk-lib: 2.15.0
+      class-validator: 0.13.2
       mongodb: 4.10.0
       mongoose: 6.6.5
       source-map-support: 0.5.21
       typeorm: 0.3.10_mongodb@4.10.0+ts-node@10.4.0
+      uuid: 9.0.0
     devDependencies:
       '@aws-cdk/assert': 1.63.0_jest@26.6.3
       '@types/jest': 27.4.0
@@ -2303,6 +2307,13 @@ packages:
       static-extend: 0.1.2
     dev: true
 
+  /class-validator/0.13.2:
+    resolution: {integrity: sha512-yBUcQy07FPlGzUjoLuUfIOXzgynnQPPruyK1Ge2B74k9ROwnle1E+NxLWnUv5OLU8hA/qL5leAE9XnXq3byaBw==}
+    dependencies:
+      libphonenumber-js: 1.10.13
+      validator: 13.7.0
+    dev: false
+
   /cli-highlight/2.1.11:
     resolution: {integrity: sha512-9KDcoEVwyUXrjcJNvHD0NFc/hiwe/WPVYIleQh2O1N2Zro5gWJZ/K+3DGn8w8P/F6FxOgzyC5bxDyHIgCSPhGg==}
     engines: {node: '>=8.0.0', npm: '>=5.0.0'}
@@ -4430,6 +4441,10 @@ packages:
       type-check: 0.4.0
     dev: true
 
+  /libphonenumber-js/1.10.13:
+    resolution: {integrity: sha512-b74iyWmwb4GprAUPjPkJ11GTC7KX4Pd3onpJfKxYyY8y9Rbb4ERY47LvCMEDM09WD3thiLDMXtkfDK/AX+zT7Q==}
+    dev: false
+
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
@@ -5981,6 +5996,11 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
 
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
+    dev: false
+
   /v8-compile-cache/2.3.0:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
     dev: true
@@ -6000,6 +6020,11 @@ packages:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
     dev: true
+
+  /validator/13.7.0:
+    resolution: {integrity: sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==}
+    engines: {node: '>= 0.10'}
+    dev: false
 
   /vscode-oniguruma/1.6.2:
     resolution: {integrity: sha512-KH8+KKov5eS/9WhofZR8M8dMHWN2gTxjMsG4jd04YhpbPR91fUj7rYQ2/XjeHCJWbg7X++ApRIU9NUwM2vTvLA==}

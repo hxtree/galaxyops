@@ -1,9 +1,4 @@
 import {GearSlot} from './Gear';
-import {
-  MeekuOni,
-  MalaceTsia,
-  PlayerCharacter,
-} from '../archetype/PlayerCharacter';
 
 /**
  * Outfit
@@ -14,22 +9,25 @@ import {
  * Characters cannot change out bottom and tops individuallly.
  */
 
-export type Outfits = Array<Outfit>;
-
 export interface Outfit {
   name: string;
   description: string;
   gearSlots?: Array<GearSlot>;
 }
 
+export enum Outfits {
+  TSHIRT_AND_JEANS = 'T-Shirt and Jeans',
+  OFFICERS_UNIFORM = "Officer's Uniform",
+}
+
 export class TShirtAndJeans implements Outfit {
-  name: 'T-Shirt and Jeans';
+  name: Outfits.TSHIRT_AND_JEANS;
   description: 'White t-Shirt and denim jeans';
   gearSlots: [GearSlot.OUTFIT];
 }
 
 export class OfficersUniform implements Outfit {
-  name: "Officer's Uniform";
+  name: Outfits.OFFICERS_UNIFORM;
   description: 'Black Embellished Tarry Coat';
   gearSlots: [GearSlot.OUTFIT];
 }
