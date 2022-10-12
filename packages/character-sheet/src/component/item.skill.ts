@@ -7,7 +7,7 @@
  * Item actions are only accessible by a Player through the Menu screen
  */
 
-import {BaseSkill} from './BaseSkill';
+import {BaseSkill} from './base.skill';
 
 export enum ItemSkillList {
   APPRIASE = 'Appraise',

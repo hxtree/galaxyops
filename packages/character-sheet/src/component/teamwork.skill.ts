@@ -1,4 +1,4 @@
-import {BaseSkill, SkillCategory} from './BaseSkill';
+import {BaseSkill, SkillCategory} from './base.skill';
 import {MenuSlot} from '../character/MenuSlot';
 
 /**

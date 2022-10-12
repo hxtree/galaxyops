@@ -1,4 +1,4 @@
-import {BaseSkill, SkillCategory} from './BaseSkill';
+import {BaseSkill, SkillCategory} from './base.skill';
 import {Attribute} from '../character/Attribute';
 import {EffectTag} from '../effect/EffectTag';
 import {StatusEffect} from '../effect/StatusEffect';

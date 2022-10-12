@@ -2,7 +2,7 @@
  * InteractionSkills are actions that can only be used when a compatable object is present
  */
 
-import {BaseSkill} from './BaseSkill';
+import {BaseSkill} from './base.skill';
 
 export enum InteractionSkillList {
   GRAB = 'Grab',

@@ -1,7 +1,7 @@
 import {IArchetype} from './IArchetype';
 import {Drive, Life, Spirit, Stats} from '../character/Attribute';
 import {Traits} from '../character/Trait';
-import {Items} from '../gear/Item';
+import {Items} from '../gear/item.gear';
 import {StatusEffects} from '../effect/StatusEffect';
 
 /**

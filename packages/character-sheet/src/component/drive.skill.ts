@@ -4,7 +4,7 @@ import {
   PlayerCharacter,
   TraezUthsha,
 } from '../archetype/PlayerCharacter';
-import {BaseSkill, SkillCategory} from './BaseSkill';
+import {BaseSkill, SkillCategory} from './base.skill';
 import {MenuSlot} from '../character/MenuSlot';
 
 export enum DriveSkillList {

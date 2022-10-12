@@ -1,6 +1,6 @@
 import {EffectTable} from '../effect/EffectTable';
 import {MenuSlot} from '../character/MenuSlot';
-import {BaseSkill} from './BaseSkill';
+import {BaseSkill} from './base.skill';
 
 // fuel?
 // Whether when performing move if character can hold action to put more effort into action

@@ -1,4 +1,4 @@
-import {BaseSkill} from './BaseSkill';
+import {BaseSkill} from './base.skill';
 
 export enum PassiveSkillList {
   DUAL_WELD = 'Dual Weld',

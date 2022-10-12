@@ -3,7 +3,7 @@
  * actions that are directly related to movement
  */
 
-import {BaseSkill} from './BaseSkill';
+import {BaseSkill} from './base.skill';
 
 export interface MovementSkill extends BaseSkill {}
 

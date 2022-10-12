@@ -1,4 +1,4 @@
-import {GearSlot} from './Gear';
+import {GearSlot} from './gear';
 
 /**
  * Outfit

@@ -2,8 +2,8 @@ import {MeekuOni, PlayerCharacter} from '../archetype/PlayerCharacter';
 import {Attribute} from '../character/Attribute';
 import {EffectTable, SkillffectModifier} from '../effect/EffectTable';
 import {EffectTag} from '../effect/EffectTag';
-import {Catcher} from '../skill/PassiveSkill';
-import {GearSlot} from './Gear';
+import {Catcher} from '../skill/passive.skill';
+import {GearSlot} from './gear';
 
 export interface Accessory {
   name: string;

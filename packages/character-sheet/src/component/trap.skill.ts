@@ -1,5 +1,5 @@
 import {MenuSlot} from '../character/MenuSlot';
-import {BaseSkill, SkillCategory} from './BaseSkill';
+import {BaseSkill, SkillCategory} from './base.skill';
 
 /**
  * Trap Skill

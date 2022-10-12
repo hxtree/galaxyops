@@ -1,7 +1,7 @@
 import {StatusEffects} from '../effect/StatusEffect';
 import {Drive, Life, Spirit, Stats} from '../character/Attribute';
 import {Traits} from '../character/Trait';
-import {Token} from '../gear/Token';
+import {Token} from '../gear/token.gear';
 import {
   Assassin,
   BaseDiscipline,
@@ -32,8 +32,8 @@ import {
   Warrior,
   XSolider,
 } from '../character/Discipline';
-import {OfficersUniform, Outfit, TShirtAndJeans} from '../gear/Outfit';
-import {GearSlot} from '../gear/Gear';
+import {OfficersUniform, Outfit, TShirtAndJeans} from '../gear/outfit.gear';
+import {GearSlot} from '../gear/gear';
 import {IArchetype} from './IArchetype';
 
 /**

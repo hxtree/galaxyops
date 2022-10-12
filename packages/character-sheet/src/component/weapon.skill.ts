@@ -1,6 +1,6 @@
 import {Attribute} from '../character/Attribute';
 import {EffectTag} from '../effect/EffectTag';
-import {BaseSkill, SkillCategory} from './BaseSkill';
+import {BaseSkill, SkillCategory} from './base.skill';
 import {EffectTable, Modifier} from '../effect/EffectTable';
 import {MenuSlot} from '../character/MenuSlot';
 

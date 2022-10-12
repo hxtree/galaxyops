@@ -1,5 +1,5 @@
-import {Accessories} from './Accessories';
-import {Outfits} from './Outfit';
+import {Accessories} from './accessories.gear';
+import {Outfits} from './outfit.gear';
 import {Weapons} from './Weapon';
 
 export const Equipment = {

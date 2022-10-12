@@ -1,6 +1,6 @@
 import {MenuSlot} from '../character/MenuSlot';
-import {BaseSkill} from './BaseSkill';
-import {Slash, WeaponSkill} from './WeaponSkill';
+import {BaseSkill} from './base.skill';
+import {Slash, WeaponSkill} from './weapon.skill';
 
 export enum ComboSkillList {
   BLITZ = 'Blitz',

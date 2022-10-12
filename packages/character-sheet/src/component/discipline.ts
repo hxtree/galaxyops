@@ -7,10 +7,10 @@ import {
   Rage,
   Scan,
   Support,
-} from '../skill/ClassSkill';
-import {Appraise, PrepareFood} from '../skill/ItemSkill';
-import {BackFlip, DoubleBackFlip, HighJump} from '../skill/MovementSkill';
-import {Concentration} from '../skill/PassiveSkill';
+} from '../skill/class.skill';
+import {Appraise, PrepareFood} from '../skill/item.skill';
+import {BackFlip, DoubleBackFlip, HighJump} from '../skill/movement.skill';
+import {Concentration} from '../skill/passive.skill';
 import {
   Aqua,
   Blizzard,
@@ -31,10 +31,10 @@ import {
   Slow,
   Stop,
   Tsunami,
-} from '../skill/SpellSkill';
-import {HeraldicLion, Summon} from '../skill/SummonSkill';
-import {Command, Formations, Order} from '../skill/TeamworkSkill';
-import {Cleave} from '../skill/WeaponSkill';
+} from '../skill/spell.skill';
+import {HeraldicLion, Summon} from '../skill/summon.skill';
+import {Command, Formations, Order} from '../skill/teamwork.skill';
+import {Cleave} from '../skill/weapon.skill';
 
 /**
  * Experience records a character experience for a specific discipline.
@@ -157,7 +157,7 @@ export abstract class BaseDiscipline {
 
 export class Gymnast extends BaseDiscipline {
   name: Discipline.GYMNAST;
-  description: 'Studies mysterious forces.';
+  description: 'Trains in gymnastics.';
   category: DisciplineCategory.PROFESSION;
   skillProgression: [
     [level: 10, skill: BackFlip],
