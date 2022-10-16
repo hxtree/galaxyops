@@ -1,7 +1,7 @@
-import {EffectTag} from './EffectTag';
-import {StatusEffect} from './StatusEffect';
-import {Attribute} from '../character/Attribute';
-import {BaseSkill} from '../skill/base.skill';
+import {EffectTag} from './tag.effect';
+import {StatusEffect} from './status.effect';
+import {Attribute} from './attribute';
+import {BaseSkill} from './base.skill';
 
 export enum Modifier {
   ADD = 'ADD',

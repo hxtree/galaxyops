@@ -7,10 +7,10 @@ import {
   Rage,
   Scan,
   Support,
-} from '../skill/class.skill';
-import {Appraise, PrepareFood} from '../skill/item.skill';
-import {BackFlip, DoubleBackFlip, HighJump} from '../skill/movement.skill';
-import {Concentration} from '../skill/passive.skill';
+} from './class.skill';
+import {Appraise, PrepareFood} from './item.skill';
+import {BackFlip, DoubleBackFlip, HighJump} from './movement.skill';
+import {Concentration} from './passive.skill';
 import {
   Aqua,
   Blizzard,
@@ -31,10 +31,10 @@ import {
   Slow,
   Stop,
   Tsunami,
-} from '../skill/spell.skill';
-import {HeraldicLion, Summon} from '../skill/summon.skill';
-import {Command, Formations, Order} from '../skill/teamwork.skill';
-import {Cleave} from '../skill/weapon.skill';
+} from './spell.skill';
+import {HeraldicLion, Summon} from './summon.skill';
+import {Command, Formations, Order} from './teamwork.skill';
+import {Cleave} from './weapon.skill';
 
 /**
  * Experience records a character experience for a specific discipline.
@@ -203,7 +203,7 @@ export class BodyBuilder extends BaseDiscipline {
 // may be anyone can become a cook?>
 export class Cook extends BaseDiscipline {
   name: Discipline.COOK;
-  description: 'Someone who prepares and cooks food';
+  description: 'Prepares and cooks food';
   category: DisciplineCategory.PROFESSION;
   skillProgression: [[level: 10, skill: PrepareFood]];
   // todo prepare different food items
@@ -211,7 +211,7 @@ export class Cook extends BaseDiscipline {
 
 export class Cheerleader extends BaseDiscipline {
   name: Discipline.CHEERLEADER;
-  description: 'Someone who cheer for their team as a form of encouragement.';
+  description: 'Cheers their team as a form of encouragement.';
   category: DisciplineCategory.PROFESSION;
   skillProgression: [
     [level: 1, skill: Cheer],

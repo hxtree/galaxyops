@@ -7,7 +7,7 @@ import {
   PennyKibbutz,
   PlayerCharacter,
   TraezUthsha,
-} from '../archetype/PlayerCharacter';
+} from '../archetype/player';
 
 /**
  * Summons are compainons that may be called into play in varying ways to aid party.

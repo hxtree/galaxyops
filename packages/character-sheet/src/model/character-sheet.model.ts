@@ -1,10 +1,10 @@
 import {Schema, model} from 'mongoose';
 import {v4 as uuidv4} from 'uuid';
-import {Trait} from '../component/character/Trait';
-import {Discipline} from '../component//character/Discipline';
-import {Drive, Life, Spirit} from '../component//character/Attribute';
-import {GearSlot} from '../component/gear/gear';
-import {Equipment} from '../component/gear/equipment.gear';
+import {Trait} from '../component/Trait';
+import {Discipline} from '../component/discipline';
+import {Drive, Life, Spirit} from '../component/gauges';
+import {GearSlot} from '../component/gear';
+import {Equipment} from '../component/equipment.gear';
 
 // interface representing a document
 export interface ICharacterSheet {

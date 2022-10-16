@@ -1,7 +1,8 @@
-import {StatusEffects} from '../effect/StatusEffect';
-import {Drive, Life, Spirit, Stats} from '../character/Attribute';
-import {Traits} from '../character/Trait';
-import {Token} from '../gear/token.gear';
+import {StatusEffect} from '../component/status.effect';
+import {Drive, Life, Spirit} from '../component/gauges';
+import {Stats} from '../component/stats';
+import {Effect, Operator, Trait} from '../component/trait';
+import {Token} from '../component/token.gear';
 import {
   Assassin,
   BaseDiscipline,
@@ -31,10 +32,15 @@ import {
   Thief,
   Warrior,
   XSolider,
-} from '../character/Discipline';
-import {OfficersUniform, Outfit, TShirtAndJeans} from '../gear/outfit.gear';
-import {GearSlot} from '../gear/gear';
-import {IArchetype} from './IArchetype';
+} from '../component/discipline';
+import {
+  OfficersUniform,
+  Outfit,
+  TShirtAndJeans,
+} from '../component/outfit.gear';
+import {GearSlot} from '../component/gear';
+import {IArchetype} from './archetype.interface';
+import {EffectTag} from '../component/tag.effect';
 
 /**
  * A character that can be played
@@ -52,8 +58,8 @@ export interface PlayerCharacter extends IArchetype {
   spirit?: Spirit;
   stats?: Stats;
 
-  traits?: Traits;
-  statusEffects?: StatusEffects;
+  traits?: Trait[];
+  statusEffects?: StatusEffect[];
   token?: Token;
   potentialDisciplines?: Array<BaseDiscipline>;
   potentialOutfits?: Array<Outfit>;
@@ -103,6 +109,15 @@ export class GaaliRuin implements PlayerCharacter {
     // King
     Warrior,
   ];
+  traits: [
+    {
+      // innate prociency with sword
+      tag: EffectTag.SWORD;
+      modifier: Effect.RESIST;
+      quantity: 0.5;
+      operator: Operator.DIVIDE;
+    },
+  ];
 }
 
 export class GunterStonewell implements PlayerCharacter {
@@ -133,6 +148,9 @@ export class LoomeeAngora implements PlayerCharacter {
   ];
 }
 
+/**
+ * Malace
+ */
 export class MalaceTsia implements PlayerCharacter {
   firstName: 'Malace';
   lastName: 'Tsia';
@@ -144,6 +162,14 @@ export class MalaceTsia implements PlayerCharacter {
     // Ouroboros,
     Summoner,
     Rouge,
+  ];
+  traits: [
+    {
+      // Can single handedly carry party through foes of darkness due to his darkness healing trait.
+      tag: EffectTag.DARKNESS;
+      modifier: Effect.HEAL;
+      percent: 80;
+    },
   ];
   potentialOutfits: [OfficersUniform];
 }
@@ -159,10 +185,19 @@ export class MeekuOni implements PlayerCharacter {
     // Oni,
     Hero,
   ];
+  traits: [
+    {
+      // learns quickly
+      tag: EffectTag.EXPERIENCE;
+      modifier: Effect.WEAK;
+      quantity: 1.2;
+      operator: Operator.MULTIPLY;
+    },
+  ];
   potentialOutfits: [TShirtAndJeans];
 }
 
-export class PennyKibbutz implements PlayerCharacter {
+export class PennyK1ibbutz implements PlayerCharacter {
   firstName: 'Penny';
   lastName: 'Kibbutz';
   backstory: '';
@@ -172,6 +207,13 @@ export class PennyKibbutz implements PlayerCharacter {
     // AmberAssassin,
     // EliteAssasin,
     Thief,
+  ];
+  traits: [
+    {
+      // has built up tolerance to poisons
+      tag: EffectTag.POISON;
+      modifier: Effect.IMMUNE;
+    },
   ];
 }
 

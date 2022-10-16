@@ -1,5 +1,5 @@
-import {EffectTable} from '../effect/EffectTable';
-import {MenuSlot} from '../character/MenuSlot';
+import {EffectTable} from './table.effect';
+import {MenuSlot} from './menu-slot';
 import {BaseSkill} from './base.skill';
 
 // fuel?

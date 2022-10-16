@@ -3,9 +3,9 @@ import {
   PennyKibbutz,
   PlayerCharacter,
   TraezUthsha,
-} from '../archetype/PlayerCharacter';
+} from '../archetype/player';
 import {BaseSkill, SkillCategory} from './base.skill';
-import {MenuSlot} from '../character/MenuSlot';
+import {MenuSlot} from './menu-slot';
 
 export enum DriveSkillList {
   BERSERK = 'Berserk',

@@ -1,8 +1,8 @@
 import {BaseSkill, SkillCategory} from './base.skill';
-import {Attribute} from '../character/Attribute';
-import {EffectTag} from '../effect/EffectTag';
-import {StatusEffect} from '../effect/StatusEffect';
-import {MenuSlot} from '../character/MenuSlot';
+import {Attribute} from './attribute';
+import {EffectTag} from './tag.effect';
+import {StatusEffect} from './status.effect';
+import {MenuSlot} from './menu-slot';
 
 /**
  * Spells are actions that are casted by magic users.

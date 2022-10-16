@@ -1,8 +1,9 @@
-import {IArchetype} from './IArchetype';
-import {Drive, Life, Spirit, Stats} from '../character/Attribute';
-import {Traits} from '../character/Trait';
-import {Items} from '../gear/item.gear';
-import {StatusEffects} from '../effect/StatusEffect';
+import {IArchetype} from './archetype.interface';
+import {Drive, Life, Spirit} from '../component/gauges';
+import {Stats} from '../component/stats';
+import {Trait} from '../component/trait';
+import {Items} from '../component/item.gear';
+import {StatusEffect} from '../component/status.effect';
 
 /**
  * A human or non-humanoid character.
@@ -14,8 +15,8 @@ export interface INonPlayerCharacter extends IArchetype {
   drive?: Drive;
   spirit?: Spirit;
   stats?: Stats;
-  traits?: Traits;
-  statusEffects?: StatusEffects;
+  traits?: Trait[];
+  statusEffects?: StatusEffect[];
   loot?: Items;
 }
 

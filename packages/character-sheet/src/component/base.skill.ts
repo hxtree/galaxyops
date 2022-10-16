@@ -1,4 +1,4 @@
-import {Attribute} from '../character/Attribute';
+import {Attribute} from './attribute';
 import {ClassSkillList} from './class.skill';
 import {ComboSkillList} from './combo.skill';
 import {DriveSkillList} from './drive.skill';

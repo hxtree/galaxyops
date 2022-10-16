@@ -1,8 +1,8 @@
-import {Attribute} from '../character/Attribute';
-import {EffectTag} from '../effect/EffectTag';
+import {Attribute} from './attribute';
+import {EffectTag} from './tag.effect';
 import {BaseSkill, SkillCategory} from './base.skill';
-import {EffectTable, Modifier} from '../effect/EffectTable';
-import {MenuSlot} from '../character/MenuSlot';
+import {EffectTable, Modifier} from './table.effect';
+import {MenuSlot} from './menu-slot';
 
 /**
  * Weapon Skill

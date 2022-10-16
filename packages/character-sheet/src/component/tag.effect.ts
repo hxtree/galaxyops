@@ -22,7 +22,7 @@ export enum EffectTag {
   AERIAL = 'Aerial', // happening in the sky, effective against flying
   GROUNDLEVEL = 'Ground-Level', // happens on the ground, ineffective against flying
 
-  //
+  // side effect
   POISON = 'Poison',
 
   // Weapon
@@ -50,4 +50,30 @@ export enum EffectTag {
   WAND = 'Wand',
   UNARMED = 'Unarmed',
   UNKNOWN = 'Unknown',
+
+  // attribute
+  LIFE_DECREASE = 'Life Decrease',
+  LIFE_INCREASE = 'Life Increase',
+  SPIRIT_DECREASE = 'Spirit Decrease',
+  SPIRIT_INCREASE = 'Spirit Increase',
+  DRIVE_DECREASE = 'Drive Decrease',
+  DRIVE_INCREASE = 'Drive Increase',
+  POWER_DECREASE = 'Power Decrease',
+  POWER_INCREASE = 'Power Increase',
+  SPEED_DECREASE = 'Speed Decrease',
+  SPEED_INCREASE = 'Speed Increase',
+  WISDOM_DECREASE = 'Wisdom Decrease',
+  WISDOM_INCREASE = 'Wisdom Increase',
+  INTELLIGENCE_DECREASE = 'Intelligence Decrease',
+  INTELLIGENCE_INCREASE = 'Intelligence Increase',
+  DEFENSE_DECREASE = 'Defense Decrease',
+  DEFENSE_INCREASE = 'Defense Increase',
+  ACCURACY_DECREASE = 'Accuracy Decrease',
+  ACCURACY_INCREASE = 'Accuracy Increase',
+  EVASION_DECREASE = 'Evasion Decrease',
+  EVASION_INCREASE = 'Evasion Increase',
+  LUCK_DECREASE = 'Luck Decrease',
+  LUCK_INCREASE = 'Luck Increase',
+
+  EXPERIENCE = 'Experience',
 }

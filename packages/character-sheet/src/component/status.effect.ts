@@ -41,5 +41,3 @@ export enum StatusEffect {
   REFLECT = 'Reflect', // damage is reflected back
   HASTE = 'Haste', // speed increased
 }
-
-export type StatusEffects = Array<StatusEffect>;
