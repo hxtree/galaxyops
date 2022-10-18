@@ -1,0 +1,7 @@
+"use strict";
+// /**
+//  * characters actual stats vary based on disciplines, afflictions, and equipment
+//  * the values actually stored in the database are the raw stats
+//  */
+//  getStats() {}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RhdHMuc2VydmljZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9zdGF0cy5zZXJ2aWNlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxNQUFNO0FBQ04sbUZBQW1GO0FBQ25GLGtFQUFrRTtBQUNsRSxNQUFNO0FBQ04saUJBQWlCIiwic291cmNlc0NvbnRlbnQiOlsiLy8gLyoqXG4vLyAgKiBjaGFyYWN0ZXJzIGFjdHVhbCBzdGF0cyB2YXJ5IGJhc2VkIG9uIGRpc2NpcGxpbmVzLCBhZmZsaWN0aW9ucywgYW5kIGVxdWlwbWVudFxuLy8gICogdGhlIHZhbHVlcyBhY3R1YWxseSBzdG9yZWQgaW4gdGhlIGRhdGFiYXNlIGFyZSB0aGUgcmF3IHN0YXRzXG4vLyAgKi9cbi8vICBnZXRTdGF0cygpIHt9XG4iXX0=

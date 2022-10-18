@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.59.2",
+  "pnpmVersion": "6.23.5",
+  "pnpmOptions": {
+    "strictPeerDependencies": false,
+    "preventManualShrinkwrapChanges": true,
+    "useWorkspaces": true
+  },
+  "nodeSupportedVersionRange": ">=14.17.0",
+  "ensureConsistentVersions": true,
+  "projectFolderMinDepth": 2,
+  "projectFolderMaxDepth": 3,
+  "approvedPackagesPolicy": {
+    "reviewCategories": ["apis", "clients", "libraries", "heft"],
+    "ignoredNpmScopes": ["@types"]
+  },
+
+  "repository": {
+    "url": "https://github.com/oucsoft/cdk-monorepo",
+    "defaultBranch": "main",
+    "defaultRemote": "origin"
+  },
+  "eventHooks": {
+    "preRushInstall": ["common/scripts/pre-rush-install/pre-rush-install.sh"],
+    "postRushInstall": [],
+    "preRushBuild": [],
+    "postRushBuild": []
+  },
+  "projects": [
+    {
+      "packageName": "@org-package/character-sheet",
+      "projectFolder": "packages/character-sheet",
+      "reviewCategory": "apis",
+      "cyclicDependencyProjects": []
+    },
+    {
+      "packageName": "@org-package/luck-by-dice",
+      "projectFolder": "packages/luck-by-dice",
+      "reviewCategory": "apis",
+      "cyclicDependencyProjects": []
+    },
+    {
+      "packageName": "@org-package/luck-by-dice-monitor",
+      "projectFolder": "packages/luck-by-dice-monitor",
+      "reviewCategory": "clients",
+      "cyclicDependencyProjects": []
+    }
+  ]
+}

@@ -52,26 +52,6 @@ export class AppsyncCdkAppStack extends cdk.Stack {
     //   fieldName: 'getNoteById',
     // });
 
-    // lambdaDs.createResolver({
-    //   typeName: 'Query',
-    //   fieldName: 'listNotes',
-    // });
-
-    // lambdaDs.createResolver({
-    //   typeName: 'Mutation',
-    //   fieldName: 'createNote',
-    // });
-
-    // lambdaDs.createResolver({
-    //   typeName: 'Mutation',
-    //   fieldName: 'deleteNote',
-    // });
-
-    // lambdaDs.createResolver({
-    //   typeName: 'Mutation',
-    //   fieldName: 'updateNote',
-    // });
-
     // // enable the Lambda function to access the DynamoDB table (using IAM)
     // notesTable.grantFullAccess(notesLambda);
 

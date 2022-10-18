@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Spirit = exports.Drive = exports.Life = void 0;
+// stat bonus are computed at runtime
+class Life {
+}
+exports.Life = Life;
+// stat bonus are computed at runtime
+class Drive {
+}
+exports.Drive = Drive;
+// stat bonus are computed at runtime
+class Spirit {
+}
+exports.Spirit = Spirit;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2F1Z2VzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2NvbXBvbmVudC9nYXVnZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEscUNBQXFDO0FBQ3JDLE1BQWEsSUFBSTtDQUdoQjtBQUhELG9CQUdDO0FBRUQscUNBQXFDO0FBQ3JDLE1BQWEsS0FBSztDQUdqQjtBQUhELHNCQUdDO0FBRUQscUNBQXFDO0FBQ3JDLE1BQWEsTUFBTTtDQUdsQjtBQUhELHdCQUdDIiwic291cmNlc0NvbnRlbnQiOlsiLy8gc3RhdCBib251cyBhcmUgY29tcHV0ZWQgYXQgcnVudGltZVxuZXhwb3J0IGNsYXNzIExpZmUge1xuICBjdXJyZW50OiBudW1iZXI7XG4gIG1heDogbnVtYmVyO1xufVxuXG4vLyBzdGF0IGJvbnVzIGFyZSBjb21wdXRlZCBhdCBydW50aW1lXG5leHBvcnQgY2xhc3MgRHJpdmUge1xuICBjdXJyZW50OiBudW1iZXI7XG4gIG1heDogbnVtYmVyO1xufVxuXG4vLyBzdGF0IGJvbnVzIGFyZSBjb21wdXRlZCBhdCBydW50aW1lXG5leHBvcnQgY2xhc3MgU3Bpcml0IHtcbiAgY3VycmVudDogbnVtYmVyO1xuICBtYXg6IG51bWJlcjtcbn1cbiJdfQ==

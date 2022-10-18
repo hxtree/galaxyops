@@ -1,0 +1,36 @@
+"use strict";
+/**
+ * Item Skill
+ *
+ * MenuAction.Fifth
+ *
+ * Item actions are quite simply actions that are related to the use of an item.
+ * Item actions are only accessible by a Player through the Menu screen
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PrepareFood = exports.Throw = exports.Combine = exports.Appraise = exports.ItemSkillList = void 0;
+var ItemSkillList;
+(function (ItemSkillList) {
+    ItemSkillList["APPRIASE"] = "Appraise";
+    ItemSkillList["COMBINE"] = "Combine";
+    ItemSkillList["THROW"] = "Throw";
+    ItemSkillList["PREPARE_FOOD"] = "Prepare Food";
+})(ItemSkillList = exports.ItemSkillList || (exports.ItemSkillList = {}));
+class Appraise {
+}
+exports.Appraise = Appraise;
+class Combine {
+}
+exports.Combine = Combine;
+class Throw {
+}
+exports.Throw = Throw;
+class PrepareFood {
+}
+exports.PrepareFood = PrepareFood;
+// "42","Craft","Combined multiple items into one.","39",,"39"
+// Item - use an item from stock.
+// Item – use one item from stock
+// Item (x2) – Use two Items from stock at once
+// Item (x3) – Use three Items from stock at once
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaXRlbS5za2lsbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9jb21wb25lbnQvaXRlbS5za2lsbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7Ozs7Ozs7R0FPRzs7O0FBSUgsSUFBWSxhQUtYO0FBTEQsV0FBWSxhQUFhO0lBQ3ZCLHNDQUFxQixDQUFBO0lBQ3JCLG9DQUFtQixDQUFBO0lBQ25CLGdDQUFlLENBQUE7SUFDZiw4Q0FBNkIsQ0FBQTtBQUMvQixDQUFDLEVBTFcsYUFBYSxHQUFiLHFCQUFhLEtBQWIscUJBQWEsUUFLeEI7QUFNRCxNQUFhLFFBQVE7Q0FHcEI7QUFIRCw0QkFHQztBQUVELE1BQWEsT0FBTztDQUduQjtBQUhELDBCQUdDO0FBRUQsTUFBYSxLQUFLO0NBR2pCO0FBSEQsc0JBR0M7QUFFRCxNQUFhLFdBQVc7Q0FHdkI7QUFIRCxrQ0FHQztBQUVELDhEQUE4RDtBQUM5RCxpQ0FBaUM7QUFDakMsaUNBQWlDO0FBQ2pDLCtDQUErQztBQUMvQyxpREFBaUQiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEl0ZW0gU2tpbGxcbiAqXG4gKiBNZW51QWN0aW9uLkZpZnRoXG4gKlxuICogSXRlbSBhY3Rpb25zIGFyZSBxdWl0ZSBzaW1wbHkgYWN0aW9ucyB0aGF0IGFyZSByZWxhdGVkIHRvIHRoZSB1c2Ugb2YgYW4gaXRlbS5cbiAqIEl0ZW0gYWN0aW9ucyBhcmUgb25seSBhY2Nlc3NpYmxlIGJ5IGEgUGxheWVyIHRocm91Z2ggdGhlIE1lbnUgc2NyZWVuXG4gKi9cblxuaW1wb3J0IHtCYXNlU2tpbGx9IGZyb20gJy4vYmFzZS5za2lsbCc7XG5cbmV4cG9ydCBlbnVtIEl0ZW1Ta2lsbExpc3Qge1xuICBBUFBSSUFTRSA9ICdBcHByYWlzZScsXG4gIENPTUJJTkUgPSAnQ29tYmluZScsXG4gIFRIUk9XID0gJ1Rocm93JyxcbiAgUFJFUEFSRV9GT09EID0gJ1ByZXBhcmUgRm9vZCcsXG59XG5cbmV4cG9ydCBpbnRlcmZhY2UgSXRlbVNraWxsIGV4dGVuZHMgQmFzZVNraWxsIHtcbiAgbmFtZTogSXRlbVNraWxsTGlzdDtcbn1cblxuZXhwb3J0IGNsYXNzIEFwcHJhaXNlIGltcGxlbWVudHMgSXRlbVNraWxsIHtcbiAgbmFtZTogSXRlbVNraWxsTGlzdC5BUFBSSUFTRTtcbiAgZGVzY3JpcHRpb246ICdEZXRlcm1pbmUgdGhlIG1hcmtldCB2YWx1ZSBvZiBhbiBpdGVtJztcbn1cblxuZXhwb3J0IGNsYXNzIENvbWJpbmUgaW1wbGVtZW50cyBJdGVtU2tpbGwge1xuICBuYW1lOiBJdGVtU2tpbGxMaXN0LkNPTUJJTkU7XG4gIGRlc2NyaXB0aW9uOiAnVHVybiB0d28gb3IgbW9yZSBpdGVtcyBpbnRvIG9uZSBpdGVtIGlmIGNvbWJhdGlhYmxlJztcbn1cblxuZXhwb3J0IGNsYXNzIFRocm93IGltcGxlbWVudHMgSXRlbVNraWxsIHtcbiAgbmFtZTogSXRlbVNraWxsTGlzdC5USFJPVztcbiAgZGVzY3JpcHRpb246ICdUb3NzIGFuIGl0ZW0gZnJvbSBzdG9jayBhd2F5IG9yIHRvIGluanVyZSBlbmVteS4nO1xufVxuXG5leHBvcnQgY2xhc3MgUHJlcGFyZUZvb2QgaW1wbGVtZW50cyBJdGVtU2tpbGwge1xuICBuYW1lOiBJdGVtU2tpbGxMaXN0LlBSRVBBUkVfRk9PRDtcbiAgZGVzY3JpcHRpb246ICdNYWtlIGEgbWVhbCc7XG59XG5cbi8vIFwiNDJcIixcIkNyYWZ0XCIsXCJDb21iaW5lZCBtdWx0aXBsZSBpdGVtcyBpbnRvIG9uZS5cIixcIjM5XCIsLFwiMzlcIlxuLy8gSXRlbSAtIHVzZSBhbiBpdGVtIGZyb20gc3RvY2suXG4vLyBJdGVtIOKAkyB1c2Ugb25lIGl0ZW0gZnJvbSBzdG9ja1xuLy8gSXRlbSAoeDIpIOKAkyBVc2UgdHdvIEl0ZW1zIGZyb20gc3RvY2sgYXQgb25jZVxuLy8gSXRlbSAoeDMpIOKAkyBVc2UgdGhyZWUgSXRlbXMgZnJvbSBzdG9jayBhdCBvbmNlXG4iXX0=

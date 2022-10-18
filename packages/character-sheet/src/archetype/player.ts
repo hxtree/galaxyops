@@ -197,7 +197,7 @@ export class MeekuOni implements PlayerCharacter {
   potentialOutfits: [TShirtAndJeans];
 }
 
-export class PennyK1ibbutz implements PlayerCharacter {
+export class PennyKibbutz implements PlayerCharacter {
   firstName: 'Penny';
   lastName: 'Kibbutz';
   backstory: '';

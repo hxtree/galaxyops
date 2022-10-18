@@ -1,6 +1,6 @@
 import {Schema, model} from 'mongoose';
 import {v4 as uuidv4} from 'uuid';
-import {Trait} from '../component/Trait';
+import {Trait} from '../component/trait';
 import {Discipline} from '../component/discipline';
 import {Drive, Life, Spirit} from '../component/gauges';
 import {GearSlot} from '../component/gear';
@@ -8,7 +8,7 @@ import {Equipment} from '../component/equipment.gear';
 
 // interface representing a document
 export interface ICharacterSheet {
-  id: uuidv4;
+  id: typeof uuidv4;
   archetype: string;
   traits: Trait[];
   attributes: {
@@ -32,14 +32,39 @@ export interface ICharacterSheet {
 
 // Schema for document interface
 export const characterSheetSchema = new Schema<ICharacterSheet>({
-  id: {type: uuidv4, required: true},
-  archetype: {type: String, required: true},
-  traits: {type: [], required: true},
-  attributes: {type: [], required: true},
-  experiences: {type: [], required: true},
-  equipment: {type: [], required: true},
-  updatedAt: {Date, required: true},
-  createdAt: {Date, required: true},
+  id: {
+    type: String,
+    required: true,
+  },
+  archetype: {
+    type: String,
+    required: true,
+    trim: true,
+    minlength: 1,
+    maxlength: 255,
+  },
+  traits: {
+    type: [],
+    required: true,
+  },
+  attributes: {
+    type: [],
+    required: true,
+  },
+  experiences: {
+    type: [],
+    required: true,
+  },
+  equipment: {
+    type: [],
+    required: true,
+  },
+  updatedAt: {
+    Date,
+  },
+  createdAt: {
+    Date,
+  },
 });
 
 // Model.

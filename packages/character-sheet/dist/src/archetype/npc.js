@@ -1,0 +1,38 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Spider = exports.Janus = exports.Lawzon = exports.MahdiTsia = exports.Mischievous = exports.VallonOni = void 0;
+class VallonOni {
+}
+exports.VallonOni = VallonOni;
+class Mischievous {
+    constructor() {
+        this.affiliation = ['The Keepers of Law'];
+    }
+}
+exports.Mischievous = Mischievous;
+class MahdiTsia {
+}
+exports.MahdiTsia = MahdiTsia;
+class Lawzon {
+    constructor() {
+        this.name = 'Lawzon';
+        this.description = '';
+        this.history = 'Rumored to be the most powerful fighter from the north. He fought only to protect his village until it was wiped out from a great frost. He now wonders around lifelessly in search of an end. He is by far the most strongest of the seven but has no will to fight.';
+    }
+}
+exports.Lawzon = Lawzon;
+class Janus {
+    constructor() {
+        this.name = 'Janus';
+        this.description = 'The Keeper of Time';
+    }
+}
+exports.Janus = Janus;
+class Spider {
+    constructor() {
+        this.name = 'Spider';
+        this.description = 'A spider';
+    }
+}
+exports.Spider = Spider;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibnBjLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2FyY2hldHlwZS9ucGMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBc0JBLE1BQWEsU0FBUztDQUdyQjtBQUhELDhCQUdDO0FBRUQsTUFBYSxXQUFXO0lBQXhCO1FBR0UsZ0JBQVcsR0FBa0IsQ0FBQyxvQkFBb0IsQ0FBQyxDQUFDO0lBQ3RELENBQUM7Q0FBQTtBQUpELGtDQUlDO0FBRUQsTUFBYSxTQUFTO0NBR3JCO0FBSEQsOEJBR0M7QUFFRCxNQUFhLE1BQU07SUFBbkI7UUFDRSxTQUFJLEdBQVcsUUFBUSxDQUFDO1FBQ3hCLGdCQUFXLEdBQVcsRUFBRSxDQUFDO1FBQ3pCLFlBQU8sR0FDTCx1UUFBdVEsQ0FBQztJQUM1USxDQUFDO0NBQUE7QUFMRCx3QkFLQztBQUVELE1BQWEsS0FBSztJQUFsQjtRQUNFLFNBQUksR0FBVyxPQUFPLENBQUM7UUFDdkIsZ0JBQVcsR0FBVyxvQkFBb0IsQ0FBQztJQUM3QyxDQUFDO0NBQUE7QUFIRCxzQkFHQztBQUVELE1BQWEsTUFBTTtJQUFuQjtRQUNFLFNBQUksR0FBVyxRQUFRLENBQUM7UUFDeEIsZ0JBQVcsR0FBVyxVQUFVLENBQUM7SUFDbkMsQ0FBQztDQUFBO0FBSEQsd0JBR0MiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge0lBcmNoZXR5cGV9IGZyb20gJy4vYXJjaGV0eXBlLmludGVyZmFjZSc7XG5pbXBvcnQge0RyaXZlLCBMaWZlLCBTcGlyaXR9IGZyb20gJy4uL2NvbXBvbmVudC9nYXVnZXMnO1xuaW1wb3J0IHtTdGF0c30gZnJvbSAnLi4vY29tcG9uZW50L3N0YXRzJztcbmltcG9ydCB7VHJhaXR9IGZyb20gJy4uL2NvbXBvbmVudC90cmFpdCc7XG5pbXBvcnQge0l0ZW1zfSBmcm9tICcuLi9jb21wb25lbnQvaXRlbS5nZWFyJztcbmltcG9ydCB7U3RhdHVzRWZmZWN0fSBmcm9tICcuLi9jb21wb25lbnQvc3RhdHVzLmVmZmVjdCc7XG5cbi8qKlxuICogQSBodW1hbiBvciBub24taHVtYW5vaWQgY2hhcmFjdGVyLlxuICovXG5leHBvcnQgaW50ZXJmYWNlIElOb25QbGF5ZXJDaGFyYWN0ZXIgZXh0ZW5kcyBJQXJjaGV0eXBlIHtcbiAgbmFtZTogc3RyaW5nO1xuICBkZXNjcmlwdGlvbjogc3RyaW5nO1xuICBsaWZlPzogTGlmZTtcbiAgZHJpdmU/OiBEcml2ZTtcbiAgc3Bpcml0PzogU3Bpcml0O1xuICBzdGF0cz86IFN0YXRzO1xuICB0cmFpdHM/OiBUcmFpdFtdO1xuICBzdGF0dXNFZmZlY3RzPzogU3RhdHVzRWZmZWN0W107XG4gIGxvb3Q/OiBJdGVtcztcbn1cblxuZXhwb3J0IGNsYXNzIFZhbGxvbk9uaSBpbXBsZW1lbnRzIElOb25QbGF5ZXJDaGFyYWN0ZXIge1xuICBuYW1lOiAnVmFsbG9uIE9uaSc7XG4gIGRlc2NyaXB0aW9uOiAnJztcbn1cblxuZXhwb3J0IGNsYXNzIE1pc2NoaWV2b3VzIGltcGxlbWVudHMgSU5vblBsYXllckNoYXJhY3RlciB7XG4gIG5hbWU6ICdNaXNjaGlldm91cyc7XG4gIGRlc2NyaXB0aW9uOiAnQSBibGFjayBhbmQgd2hpdGUgY2F0IHdpdGggeWVsbG93IGV5ZXMuJztcbiAgYWZmaWxpYXRpb246IEFycmF5PHN0cmluZz4gPSBbJ1RoZSBLZWVwZXJzIG9mIExhdyddO1xufVxuXG5leHBvcnQgY2xhc3MgTWFoZGlUc2lhIGltcGxlbWVudHMgSU5vblBsYXllckNoYXJhY3RlciB7XG4gIG5hbWU6ICdNYWhkaSBUc2lhJztcbiAgZGVzY3JpcHRpb246IFwiTWFsYWNlJ3MgYnJvdGhlclwiO1xufVxuXG5leHBvcnQgY2xhc3MgTGF3em9uIGltcGxlbWVudHMgSU5vblBsYXllckNoYXJhY3RlciB7XG4gIG5hbWU6IHN0cmluZyA9ICdMYXd6b24nO1xuICBkZXNjcmlwdGlvbjogc3RyaW5nID0gJyc7XG4gIGhpc3Rvcnk6IHN0cmluZyA9XG4gICAgJ1J1bW9yZWQgdG8gYmUgdGhlIG1vc3QgcG93ZXJmdWwgZmlnaHRlciBmcm9tIHRoZSBub3J0aC4gSGUgZm91Z2h0IG9ubHkgdG8gcHJvdGVjdCBoaXMgdmlsbGFnZSB1bnRpbCBpdCB3YXMgd2lwZWQgb3V0IGZyb20gYSBncmVhdCBmcm9zdC4gSGUgbm93IHdvbmRlcnMgYXJvdW5kIGxpZmVsZXNzbHkgaW4gc2VhcmNoIG9mIGFuIGVuZC4gSGUgaXMgYnkgZmFyIHRoZSBtb3N0IHN0cm9uZ2VzdCBvZiB0aGUgc2V2ZW4gYnV0IGhhcyBubyB3aWxsIHRvIGZpZ2h0Lic7XG59XG5cbmV4cG9ydCBjbGFzcyBKYW51cyBpbXBsZW1lbnRzIElOb25QbGF5ZXJDaGFyYWN0ZXIge1xuICBuYW1lOiBzdHJpbmcgPSAnSmFudXMnO1xuICBkZXNjcmlwdGlvbjogc3RyaW5nID0gJ1RoZSBLZWVwZXIgb2YgVGltZSc7XG59XG5cbmV4cG9ydCBjbGFzcyBTcGlkZXIgaW1wbGVtZW50cyBJTm9uUGxheWVyQ2hhcmFjdGVyIHtcbiAgbmFtZTogc3RyaW5nID0gJ1NwaWRlcic7XG4gIGRlc2NyaXB0aW9uOiBzdHJpbmcgPSAnQSBzcGlkZXInO1xufVxuIl19

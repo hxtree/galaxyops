@@ -91,6 +91,10 @@
       "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
+      "name": "class-validator",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "constructs",
       "allowedCategories": [ "apis", "apps", "clients" ]
     },
