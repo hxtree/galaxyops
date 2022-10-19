@@ -1,34 +1,34 @@
-/**
- * Item Skill
- *
- * MenuAction.Fifth
- *
- * Item actions are quite simply actions that are related to the use of an item.
- * Item actions are only accessible by a Player through the Menu screen
- */
 import { BaseSkill } from './base.skill';
+import { MenuSlot } from './menu-slot';
 export declare enum ItemSkillList {
     APPRIASE = "Appraise",
     COMBINE = "Combine",
     THROW = "Throw",
     PREPARE_FOOD = "Prepare Food"
 }
-export interface ItemSkill extends BaseSkill {
+/**
+ * Item Skill
+ * Are quite simply actions that are related to the use of an item.
+ * Are only accessible by a Player through the Menu screen
+ */
+export declare class ItemSkill implements BaseSkill {
     name: ItemSkillList;
+    description: string;
+    menuSlot: MenuSlot.Fifth;
 }
-export declare class Appraise implements ItemSkill {
+export declare class Appraise extends ItemSkill {
     name: ItemSkillList.APPRIASE;
     description: 'Determine the market value of an item';
 }
-export declare class Combine implements ItemSkill {
+export declare class Combine extends ItemSkill {
     name: ItemSkillList.COMBINE;
     description: 'Turn two or more items into one item if combatiable';
 }
-export declare class Throw implements ItemSkill {
+export declare class Throw extends ItemSkill {
     name: ItemSkillList.THROW;
     description: 'Toss an item from stock away or to injure enemy.';
 }
-export declare class PrepareFood implements ItemSkill {
+export declare class PrepareFood extends ItemSkill {
     name: ItemSkillList.PREPARE_FOOD;
     description: 'Make a meal';
 }

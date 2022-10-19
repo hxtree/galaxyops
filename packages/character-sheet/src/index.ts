@@ -1,11 +1,16 @@
 import {connect} from 'mongoose';
-import {MeekuOni} from './component/archetype/PlayerCharacter';
+import {MeekuOni} from './archetype/player';
 import {CharacterSheet} from './model/character-sheet.model';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const connectionString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.axqeoec.mongodb.net/?retryWrites=true&w=majority`;
 
 run().catch(err => console.log(err));
 
 async function run() {
-  await connect('mongodb://localhost:27017/test');
+  await connect(connectionString);
 
   const charactersheet = new CharacterSheet({
     archetype: MeekuOni,

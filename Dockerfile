@@ -2,14 +2,16 @@
 ################################################################################
 #                                     Base                                     #
 ################################################################################
-FROM node:fermium-buster as base
+# https://hub.docker.com/_/node
+# https://github.com/nodejs/release#nodejs-release-working-group
+FROM node:gallium-buster as base
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    tzdata \ 
+    tzdata \
     build-essential \
     curl \
     zip \
@@ -29,10 +31,11 @@ RUN apt-get update && \
     npm install --global typedocs && \
     # install AWS Organization Formation
     # https://github.com/org-formation/org-formation-cli
-    npm install --global aws-organization-formation && \
-    # install AWS Command Line Interface
-    # https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
-    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    npm install --global aws-organization-formation
+
+# install AWS Command Line Interface
+# https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && \
     chmod +x ./aws/install && \
     ./aws/install -i /usr/local/aws-cli -b /usr/local/bin && \
@@ -60,7 +63,7 @@ RUN apt-get install -y sudo \
     mkdir -p /home/$USER/.rush && \
     chown -R $USER /home/$USER/.rush && \
     mkdir -p /usr/src/app/common/temp && \
-    chown -R $USER /usr/src/app/common/temp 
+    chown -R $USER /usr/src/app/common/temp
 
     # git config --global core.editor "code --wait"
 

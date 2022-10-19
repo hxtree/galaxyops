@@ -130,7 +130,7 @@ export declare class MeekuOni implements PlayerCharacter {
     ];
     potentialOutfits: [TShirtAndJeans];
 }
-export declare class PennyK1ibbutz implements PlayerCharacter {
+export declare class PennyKibbutz implements PlayerCharacter {
     firstName: 'Penny';
     lastName: 'Kibbutz';
     backstory: '';

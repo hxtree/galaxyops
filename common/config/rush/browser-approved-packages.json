@@ -100,7 +100,7 @@
     },
     {
       "name": "dotenv",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "eslint",
