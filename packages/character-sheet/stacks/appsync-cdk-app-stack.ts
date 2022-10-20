@@ -48,7 +48,12 @@ export class AppsyncCdkAppStack extends cdk.Stack {
     // create resolvers to match GraphQL operations in schema
     lambdaDs.createResolver({
       typeName: 'Query',
-      fieldName: 'getNoteById',
+      fieldName: 'getCharacterSheetById',
+    });
+
+    lambdaDs.createResolver({
+      typeName: 'Query',
+      fieldName: 'listCharacterSheets',
     });
 
     // // enable the Lambda function to access the DynamoDB table (using IAM)

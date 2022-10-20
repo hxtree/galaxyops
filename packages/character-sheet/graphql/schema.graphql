@@ -1,34 +1,39 @@
-type Note {
+type CharacterSheet {
   id: ID!
-  name: String!
+  name: String
   description: String
 }
 
-input NoteInput {
+input CharacterSheetInput {
   id: ID!
-  name: String!
+  name: String
   description: String
 }
 
-input UpdateNoteInput {
+input UpdateCharacterSheetInput {
   id: ID!
   name: String
   description: String
 }
 
 type Query {
-  getNoteById(noteId: String!): Note
-  listNotes: [Note]
+  getCharacterSheetById(characterSheetId: String!): CharacterSheet
+  listCharacterSheets: [CharacterSheet]
 }
 
 type Mutation {
-  createNote(note: NoteInput!): Note
-  updateNote(note: UpdateNoteInput!): Note
-  deleteNote(noteId: String!): String
+  createCharacterSheet(characterSheet: CharacterSheetInput!): CharacterSheet
+  updateCharacterSheet(
+    characterSheet: UpdateCharacterSheetInput!
+  ): CharacterSheet
+  deleteCharacterSheet(characterSheetId: String!): String
 }
 
 type Subscription {
-  onCreateNote: Note @aws_subscribe(mutations: ["createNote"])
-  onDeleteNote: String @aws_subscribe(mutations: ["deleteNote"])
-  onUpdateNote: Note @aws_subscribe(mutations: ["updateNote"])
+  onCreateCharacterSheet: CharacterSheet
+    @aws_subscribe(mutations: ["createCharacterSheet"])
+  onDeleteCharacterSheet: String
+    @aws_subscribe(mutations: ["deleteCharacterSheet"])
+  onUpdateCharacterSheet: CharacterSheet
+    @aws_subscribe(mutations: ["updateCharacterSheet"])
 }
