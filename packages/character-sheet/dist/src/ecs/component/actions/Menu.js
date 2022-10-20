@@ -1,9 +1,0 @@
-"use strict";
-// Menu Actions – actions that can only be used through the menu screen
-// Appraise – Tell how much an items worth.
-// Boast – increase party’s moral
-// Combined – make two or more items one.
-// Bluff – Tell a lie without being caught
-// Sense Bluff – This represented by a little icon on the screen that will tell if someone is trying to bluff you (if you beat their bluff check).
-// Throw - Toss an item from stock to injure enemy.
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTWVudS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9lY3MvY29tcG9uZW50L2FjdGlvbnMvTWVudS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsdUVBQXVFO0FBQ3ZFLDJDQUEyQztBQUMzQyxpQ0FBaUM7QUFDakMseUNBQXlDO0FBQ3pDLDBDQUEwQztBQUMxQyxrSkFBa0o7QUFDbEosbURBQW1EIiwic291cmNlc0NvbnRlbnQiOlsiLy8gTWVudSBBY3Rpb25zIOKAkyBhY3Rpb25zIHRoYXQgY2FuIG9ubHkgYmUgdXNlZCB0aHJvdWdoIHRoZSBtZW51IHNjcmVlblxuLy8gQXBwcmFpc2Ug4oCTIFRlbGwgaG93IG11Y2ggYW4gaXRlbXMgd29ydGguXG4vLyBCb2FzdCDigJMgaW5jcmVhc2UgcGFydHnigJlzIG1vcmFsXG4vLyBDb21iaW5lZCDigJMgbWFrZSB0d28gb3IgbW9yZSBpdGVtcyBvbmUuXG4vLyBCbHVmZiDigJMgVGVsbCBhIGxpZSB3aXRob3V0IGJlaW5nIGNhdWdodFxuLy8gU2Vuc2UgQmx1ZmYg4oCTIFRoaXMgcmVwcmVzZW50ZWQgYnkgYSBsaXR0bGUgaWNvbiBvbiB0aGUgc2NyZWVuIHRoYXQgd2lsbCB0ZWxsIGlmIHNvbWVvbmUgaXMgdHJ5aW5nIHRvIGJsdWZmIHlvdSAoaWYgeW91IGJlYXQgdGhlaXIgYmx1ZmYgY2hlY2spLlxuLy8gVGhyb3cgLSBUb3NzIGFuIGl0ZW0gZnJvbSBzdG9jayB0byBpbmp1cmUgZW5lbXkuXG4iXX0=

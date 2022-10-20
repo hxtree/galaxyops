@@ -21,9 +21,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    "typeRoots": ["./node_modules/@types"]
   },
   "typedocOptions": {
     "entryPoints": ["src/index.ts"],
@@ -35,7 +33,5 @@
     "src/**/*.tsx",
     "stacks/appsync-cdk-app-stack.d.ts"
   ],
-  "exclude": [
-    "src/__tests__"
-  ]
+  "exclude": ["src/__tests__"]
 }
