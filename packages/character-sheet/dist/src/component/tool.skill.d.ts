@@ -1,4 +1,4 @@
-import { MenuSlot } from '../character/MenuSlot';
+import { MenuSlot } from './menu-slot';
 export declare enum ToolSkillList {
     GRAPPLING_HOOK = "Grappling Hook"
 }

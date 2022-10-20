@@ -1,5 +1,5 @@
 import { BaseSkill, SkillCategory } from './base.skill';
-import { MenuSlot } from '../character/MenuSlot';
+import { MenuSlot } from './menu-slot';
 /**
  * Teamwork Skill
  * Actions that involve multiple Player characters interacting to perform an action.

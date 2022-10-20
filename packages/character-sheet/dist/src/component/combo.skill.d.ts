@@ -1,4 +1,4 @@
-import { MenuSlot } from '../character/MenuSlot';
+import { MenuSlot } from './menu-slot';
 import { BaseSkill } from './base.skill';
 import { Slash, WeaponSkill } from './weapon.skill';
 export declare enum ComboSkillList {

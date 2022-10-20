@@ -1,7 +1,7 @@
 import {connect} from 'mongoose';
 import {MeekuOni} from './archetype/player';
 import {CharacterSheet} from './model/character-sheet.model';
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 
 dotenv.config();
 

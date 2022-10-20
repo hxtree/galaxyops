@@ -1,6 +1,5 @@
 import * as cdk from '@aws-cdk/core';
-import * as appsync from '@aws-cdk/aws-appsync';
-import * as ddb from '@aws-cdk/aws-dynamodb';
+// import * as appsync from '@aws-cdk/aws-appsync';
 import * as lambda from '@aws-cdk/aws-lambda';
 
 export class AppsyncCdkAppStack extends cdk.Stack {
