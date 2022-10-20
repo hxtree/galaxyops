@@ -19,13 +19,19 @@
       "safeForSimultaneousRushProcesses": true
     },
     {
+      "name": "nuke",
+      "commandKind": "global",
+      "summary": "Nuke All Local Changes",
+      "shellCommand": "common/scripts/nuke/nuke.sh",
+      "safeForSimultaneousRushProcesses": false
+    },
+    {
       "name": "help",
       "commandKind": "global",
       "summary": "A list of common commands",
       "shellCommand": "common/scripts/help.sh",
       "safeForSimultaneousRushProcesses": true
     }
-
   ],
   "parameters": [
     {
@@ -44,9 +50,7 @@
         }
       ],
       "defaultValue": "DeveloperSandbox",
-      "associatedCommands": [
-        "sso"
-      ]
+      "associatedCommands": ["sso"]
     }
   ]
 }

@@ -1,8 +1,8 @@
 #!/bin/bash
 # a list of commands displayed via help
 
-cat << EOF
-rush [command]       run a command in bulk or globally. 
+cat <<EOF
+rush [command]       run a command in bulk or globally.
 rushx [command]      run a command relative to the current working directory.
 rush sso             authenticate to AWS SSO and set profile
 rushx bootstrap      bootstrap deploy for the first time
@@ -13,6 +13,7 @@ rushx docs           generate documents from code
 rushx synth          show synthesized CloudFormation template
 rushx diff           compare deployed stack with current state
 rushx deploy         deploy apps using AWS CDK
+rush nuke            git clean, purge, and update
 rush purge           purge packages
 rush update          update workspace files
   --full             full update of workspace files
