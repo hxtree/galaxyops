@@ -1,19 +1,19 @@
 type Note {
   id: ID!
   name: String!
-  completed: Boolean!
+  description: String
 }
 
 input NoteInput {
   id: ID!
   name: String!
-  completed: Boolean!
+  description: String
 }
 
 input UpdateNoteInput {
   id: ID!
   name: String
-  completed: Boolean
+  description: String
 }
 
 type Query {
@@ -28,10 +28,7 @@ type Mutation {
 }
 
 type Subscription {
-  onCreateNote: Note
-    @aws_subscribe(mutations: ["createNote"])
-  onDeleteNote: String
-    @aws_subscribe(mutations: ["deleteNote"])
-  onUpdateNote: Note
-    @aws_subscribe(mutations: ["updateNote"])
+  onCreateNote: Note @aws_subscribe(mutations: ["createNote"])
+  onDeleteNote: String @aws_subscribe(mutations: ["deleteNote"])
+  onUpdateNote: Note @aws_subscribe(mutations: ["updateNote"])
 }

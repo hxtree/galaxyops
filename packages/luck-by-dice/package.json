@@ -16,7 +16,7 @@
     "destroy": "cdk destroy",
     "diff": "cdk diff",
     "synth": "cdk synth",
-    "bootsrap": "cdk bootstrap"
+    "bootstrap": "cdk bootstrap"
   },
   "devDependencies": {
     "@types/jest": "27.4.0",

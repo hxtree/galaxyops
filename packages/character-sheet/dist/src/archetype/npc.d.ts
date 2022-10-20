@@ -20,7 +20,7 @@ export interface INonPlayerCharacter extends IArchetype {
 }
 export declare class VallonOni implements INonPlayerCharacter {
     name: 'Vallon Oni';
-    description: '';
+    description: 'White hair';
 }
 export declare class Mischievous implements INonPlayerCharacter {
     name: 'Mischievous';

@@ -91,6 +91,10 @@
       "allowedCategories": [ "apis", "apps", "clients" ]
     },
     {
+      "name": "aws-lambda",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "class-validator",
       "allowedCategories": [ "apis" ]
     },
