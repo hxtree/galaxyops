@@ -1,14 +1,10 @@
 import {AppSyncResolverEvent} from 'aws-lambda';
-import {VallonOni} from './archetype/npc';
+import {NPCList, npc} from './archetype/npc';
 
 async function getCharacterSheet(id: string): Promise<any> {
   try {
-    // const archetype = new VallonOni();
-    const character = {
-      id: '2222',
-      name: 'Vallon Oni',
-      description: 'White hair',
-    };
+    const archetype = npc(id);
+    const character = {id: 2, ...archetype};
     return await Promise.resolve(character);
   } catch (err) {
     Promise.reject(new Error('Failed to get CharacterSheet'));
@@ -17,12 +13,8 @@ async function getCharacterSheet(id: string): Promise<any> {
 
 async function listCharacterSheets(): Promise<any> {
   try {
-    const archetype = new VallonOni();
-    const character = {
-      id: '22',
-      name: archetype.name,
-      description: archetype.description,
-    };
+    const archetype: NPCList.Character = NPCList['Lawzon'];
+    const character = {id: 2, ...archetype};
     return await Promise.resolve(character);
   } catch (err) {
     Promise.reject(new Error('Failed to get CharacterSheets'));
@@ -34,7 +26,7 @@ export const handler = async (event: AppSyncResolverEvent<any>) => {
     case 'listCharacterSheets':
       return await listCharacterSheets();
     case 'getCharacterSheetById':
-      return await getCharacterSheet(event.arguments.id);
+      return await getCharacterSheet(event.arguments.characterSheetId);
     default:
       return null;
   }

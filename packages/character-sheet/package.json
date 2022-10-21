@@ -10,6 +10,7 @@
     "watch": "tsc -w",
     "test": "jest --logHeapUsage",
     "cdk": "cdk",
+    "hotswap": "cdk deploy --hotswap",
     "lint": "eslint --config .eslintrc.js -f unix \"src/**/*.{ts,tsx}\"",
     "docs": "typedoc --entryPointStrategy expand ./src",
     "deploy": "tsc && cdk deploy",
