@@ -1,4 +1,3 @@
-import {MeekuOni, PlayerCharacter} from '../archetype/player';
 import {Attribute} from './attribute';
 import {EffectTable, SkillffectModifier} from './table.effect';
 import {EffectTag} from './tag.effect';
@@ -10,7 +9,6 @@ export interface Accessory {
   description: string;
   history?: string; // the history of an item must be discovered
   purpose: string;
-  character: PlayerCharacter;
   gearSlots: Array<GearSlot>;
   effects?: EffectTable;
   removable: boolean; // whether player can remove via menus
@@ -34,7 +32,6 @@ export class GoldBracelets {
   name: Accessories.GOLD_BRACELETS;
   description: 'Weighted gold bracelets that occupy both wrists meant';
   purpose: 'Suppress hidden power';
-  character: [MeekuOni];
   gearSlots: [GearSlot.RIGHT_WRIST, GearSlot.LEFT_WRIST];
   effects: [
     {
@@ -53,7 +50,6 @@ export class GoldBracelets {
 
 export class RedScarf {
   name: Accessories.RED_SCRAF;
-  character: [MeekuOni];
   description: 'A red scarf knitted.';
   history: 'Knitted by Meeku’s mother to keep him warm';
   gearSlots: [GearSlot.NECK];
@@ -62,7 +58,6 @@ export class RedScarf {
 
 export class CowhideVest {
   name: Accessories.COWHIDE_VEST;
-  character: [MeekuOni];
   effects: [
     {
       add: Attribute.DEFENSE;

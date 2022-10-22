@@ -32,7 +32,7 @@ import {
   Stop,
   Tsunami,
 } from './spell.skill';
-import {HeraldicLion, Summon} from './summon.skill';
+import {Summon} from './summon.skill';
 import {Command, Formations, Order} from './teamwork.skill';
 import {Cleave} from './weapon.skill';
 
@@ -107,7 +107,7 @@ export abstract class BaseDiscipline {
   abstract name: string;
   abstract description: string;
   abstract category: DisciplineCategory;
-  prerequisites?: Array<Discipline>; // could also be event like defeated Lawzon, but may be that's too character specific?
+  prerequisites?: Discipline[]; // could also be event like defeated Lawzon, but may be that's too character specific?
 
   protected _experience: number;
 
@@ -186,7 +186,7 @@ export class Historian extends BaseDiscipline {
   skillProgression: [
     [level: 10, skill: Appraise],
     [level: 25, skill: Scan],
-    [level: 50, skill: HeraldicLion],
+    [level: 50, skill: Summon.HERALDIC_LION],
   ];
 }
 export class BodyBuilder extends BaseDiscipline {
@@ -196,7 +196,7 @@ export class BodyBuilder extends BaseDiscipline {
   skillProgression: [
     [level: 10, skill: Appraise],
     [level: 25, skill: Scan],
-    [level: 50, skill: HeraldicLion],
+    [level: 50, skill: Summon.SCRIBBLES],
   ];
 }
 

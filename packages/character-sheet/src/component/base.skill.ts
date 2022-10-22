@@ -6,7 +6,7 @@ import {InteractionSkillList} from './interaction.skill';
 import {ItemSkillList} from './item.skill';
 import {PassiveSkillList} from './passive.skill';
 import {SpellSkillList} from './spell.skill';
-import {SummonSkillList} from './summon.skill';
+import {Summon} from './summon.skill';
 import {TeamworkSkillList} from './teamwork.skill';
 import {ToolSkillList} from './tool.skill';
 import {TrapSkillList} from './trap.skill';
@@ -24,7 +24,7 @@ const MasterSkillList = {
   ...ItemSkillList,
   ...InteractionSkillList,
   ...ToolSkillList,
-  ...SummonSkillList,
+  ...Summon,
 };
 export type MasterSkillListType = typeof MasterSkillList;
 

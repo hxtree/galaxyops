@@ -3,7 +3,7 @@ import { Appraise, PrepareFood } from './item.skill';
 import { BackFlip, DoubleBackFlip, HighJump } from './movement.skill';
 import { Concentration } from './passive.skill';
 import { Aqua, Blizzard, Charm, Chill, Darkness, Desolate, Drain, Flare, Frost, Gust, Haste, Heal, Landslide, Leech, Light, Quake, Slow, Stop, Tsunami } from './spell.skill';
-import { HeraldicLion, Summon } from './summon.skill';
+import { Summon } from './summon.skill';
 import { Command, Formations, Order } from './teamwork.skill';
 import { Cleave } from './weapon.skill';
 /**
@@ -69,7 +69,7 @@ export declare abstract class BaseDiscipline {
     abstract name: string;
     abstract description: string;
     abstract category: DisciplineCategory;
-    prerequisites?: Array<Discipline>;
+    prerequisites?: Discipline[];
     protected _experience: number;
     constructor(experience?: number);
     get level(): number;
@@ -139,7 +139,7 @@ export declare class Historian extends BaseDiscipline {
         ],
         [
             level: 50,
-            skill: HeraldicLion
+            skill: Summon.HERALDIC_LION
         ]
     ];
 }
@@ -158,7 +158,7 @@ export declare class BodyBuilder extends BaseDiscipline {
         ],
         [
             level: 50,
-            skill: HeraldicLion
+            skill: Summon.SCRIBBLES
         ]
     ];
 }

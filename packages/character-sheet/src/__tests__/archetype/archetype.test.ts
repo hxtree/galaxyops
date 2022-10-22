@@ -2,10 +2,14 @@ import {ArchetypeList, Archetype} from '../../archetype/archetype';
 
 describe('NPCList', () => {
   test('able to get character', () => {
-    expect(ArchetypeList['VallonOni'].name).toBe('Vallon Oni');
+    expect(ArchetypeList['VallonOni'].firstName).toBe('Vallon');
   });
 
-  test('able to lookup character', () => {
-    expect(Archetype('VallonOni').name).toBe('Vallon Oni');
+  test('can lookup', () => {
+    expect(Archetype('VallonOni').firstName).toBe('Vallon');
+  });
+
+  test('can list', () => {
+    expect(Archetype('VallonOni').firstName).toBe('Vallon');
   });
 });

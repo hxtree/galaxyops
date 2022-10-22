@@ -7,22 +7,14 @@ import { GearSlot } from './gear';
  * Characters can change out between for example swimsuits into casual wear.
  * Characters cannot change out bottom and tops individuallly.
  */
-export interface Outfit {
+export declare type OutfitType = {
     name: string;
     description: string;
-    gearSlots?: Array<GearSlot>;
-}
-export declare enum Outfits {
+    gearSlots?: GearSlot[];
+};
+export declare enum Outfit {
     TSHIRT_AND_JEANS = "T-Shirt and Jeans",
     OFFICERS_UNIFORM = "Officer's Uniform"
 }
-export declare class TShirtAndJeans implements Outfit {
-    name: Outfits.TSHIRT_AND_JEANS;
-    description: 'White t-Shirt and denim jeans';
-    gearSlots: [GearSlot.OUTFIT];
-}
-export declare class OfficersUniform implements Outfit {
-    name: Outfits.OFFICERS_UNIFORM;
-    description: 'Black Embellished Tarry Coat';
-    gearSlots: [GearSlot.OUTFIT];
-}
+export declare const TShirtAndJeans: OutfitType;
+export declare const OfficersUniform: OutfitType;

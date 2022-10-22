@@ -1,5 +1,5 @@
 import { Accessories } from './accessories.gear';
-import { Outfits } from './outfit.gear';
+import { Outfit } from './outfit.gear';
 import { Weapons } from './weapon.gear';
 export declare const Equipment: {
     ASMINS_AXE: Weapons.ASMINS_AXE;
@@ -30,8 +30,8 @@ export declare const Equipment: {
     REGRET: Weapons.REGRET;
     VICEROY: Weapons.VICEROY;
     VIOLATED: Weapons.VIOLATED;
-    TSHIRT_AND_JEANS: Outfits.TSHIRT_AND_JEANS;
-    OFFICERS_UNIFORM: Outfits.OFFICERS_UNIFORM;
+    TSHIRT_AND_JEANS: Outfit.TSHIRT_AND_JEANS;
+    OFFICERS_UNIFORM: Outfit.OFFICERS_UNIFORM;
     GOLD_BRACELETS: Accessories.GOLD_BRACELETS;
     RED_SCRAF: Accessories.RED_SCRAF;
     COWHIDE_VEST: Accessories.COWHIDE_VEST;
