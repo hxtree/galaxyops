@@ -1,39 +1,43 @@
-type CharacterSheet {
+type Archetype {
+  id: ID!
+  firstName: String
+  lastName: String
+  alias: [String]
+  description: String
+  backstory: String
+  symbolizes: String
+  affiliation: [String]
+  history: String
+  statusEffects: [String]
+  potentialDisciplines: [String]
+  potentialOutfits: [String]
+}
+
+input ArchetypeInput {
   id: ID!
   name: String
   description: String
 }
 
-input CharacterSheetInput {
-  id: ID!
-  name: String
-  description: String
-}
-
-input UpdateCharacterSheetInput {
+input UpdateArchetypeInput {
   id: ID!
   name: String
   description: String
 }
 
 type Query {
-  getCharacterSheetById(characterSheetId: String!): CharacterSheet
-  listCharacterSheets: [CharacterSheet]
+  getArchetypeById(archetypeId: String!): Archetype
+  listArchetypes: [Archetype]
 }
 
 type Mutation {
-  createCharacterSheet(characterSheet: CharacterSheetInput!): CharacterSheet
-  updateCharacterSheet(
-    characterSheet: UpdateCharacterSheetInput!
-  ): CharacterSheet
-  deleteCharacterSheet(characterSheetId: String!): String
+  createArchetype(archetype: ArchetypeInput!): Archetype
+  updateArchetype(archetype: UpdateArchetypeInput!): Archetype
+  deleteArchetype(archetypeId: String!): String
 }
 
 type Subscription {
-  onCreateCharacterSheet: CharacterSheet
-    @aws_subscribe(mutations: ["createCharacterSheet"])
-  onDeleteCharacterSheet: String
-    @aws_subscribe(mutations: ["deleteCharacterSheet"])
-  onUpdateCharacterSheet: CharacterSheet
-    @aws_subscribe(mutations: ["updateCharacterSheet"])
+  onCreateArchetype: Archetype @aws_subscribe(mutations: ["createArchetype"])
+  onDeleteArchetype: String @aws_subscribe(mutations: ["deleteArchetype"])
+  onUpdateArchetype: Archetype @aws_subscribe(mutations: ["updateArchetype"])
 }

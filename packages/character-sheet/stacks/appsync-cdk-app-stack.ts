@@ -3,6 +3,10 @@ import * as appsync from '@aws-cdk/aws-appsync';
 import * as lambda from '@aws-cdk/aws-lambda';
 
 export class AppsyncCdkAppStack extends cdk.Stack {
+  // TODO Move to param store, etc.
+  DB_PASSWORD = 'test';
+  DB_USERNAME = 'test';
+
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
@@ -36,11 +40,13 @@ export class AppsyncCdkAppStack extends cdk.Stack {
     });
 
     const notesLambda = new lambda.Function(this, 'AppSyncNotesHandler', {
-      runtime: lambda.Runtime.NODEJS_12_X,
+      runtime: lambda.Runtime.NODEJS_16_X,
       handler: 'main.handler',
       code: lambda.Code.fromAsset('dist/src'),
       memorySize: 1024,
     });
+    notesLambda.addEnvironment('DB_USERNAME', this.DB_USERNAME);
+    notesLambda.addEnvironment('DB_PASSWORD', this.DB_PASSWORD);
 
     // set the new Lambda function as a data source for the AppSync API
     const lambdaDs = api.addLambdaDataSource('lambdaDatasource', notesLambda);
@@ -48,17 +54,12 @@ export class AppsyncCdkAppStack extends cdk.Stack {
     // create resolvers to match GraphQL operations in schema
     lambdaDs.createResolver({
       typeName: 'Query',
-      fieldName: 'getCharacterSheetById',
+      fieldName: 'getArchetypeById',
     });
 
     lambdaDs.createResolver({
       typeName: 'Query',
-      fieldName: 'listCharacterSheets',
+      fieldName: 'listArchetypes',
     });
-
-    // // enable the Lambda function to access the DynamoDB table (using IAM)
-    // notesTable.grantFullAccess(notesLambda);
-
-    // notesLambda.addEnvironment('NOTES_TABLE', notesTable.tableName);
   }
 }

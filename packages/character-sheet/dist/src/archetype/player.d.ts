@@ -3,7 +3,7 @@ import { Drive, Life, Spirit } from '../component/gauges';
 import { Stats } from '../component/stats';
 import { Effect, Operator, Trait } from '../component/trait';
 import { Token } from '../component/token.gear';
-import { Assassin, BaseDiscipline, Cheerleader, Commander, Cook, Gaurd, Healer, Hero, Historian, Knight, Magi, MagiBlack, MagiBlue, MagiBrown, MagiGreen, MagiPink, MagiPurple, MagiWhite, MagiYellow, Mechanic, Rouge, Royalty, Scout, Solider, Summoner, Thief, Warrior, XSolider } from '../component/discipline';
+import { Assassin, BaseDiscipline, Commander, Gaurd, Hero, Historian, Magi, MagiBlack, MagiBlue, MagiBrown, MagiGreen, MagiPink, MagiPurple, MagiWhite, MagiYellow, Mechanic, Rouge, Scout, Solider, Summoner, Thief, XSolider } from '../component/discipline';
 import { OfficersUniform, Outfit, TShirtAndJeans } from '../component/outfit.gear';
 import { GearSlot } from '../component/gear';
 import { IArchetype } from './archetype.interface';
@@ -51,24 +51,6 @@ export declare class FayeImago implements PlayerCharacter {
         MagiYellow
     ];
 }
-export declare class GaaliRuin implements PlayerCharacter {
-    firstName: 'Gaali';
-    lastName: 'Ruin';
-    backstory: 'A prince with little interest in becoming king. Instead, he lives for testing his sword in raw danger.';
-    potentialDisciplines: [
-        Knight,
-        Royalty,
-        Warrior
-    ];
-    traits: [
-        {
-            tag: EffectTag.SWORD;
-            modifier: Effect.RESIST;
-            quantity: 0.5;
-            operator: Operator.DIVIDE;
-        }
-    ];
-}
 export declare class GunterStonewell implements PlayerCharacter {
     firstName: 'Gunter';
     lastName: 'Stonewell';
@@ -76,18 +58,6 @@ export declare class GunterStonewell implements PlayerCharacter {
     potentialDisciplines: [
         Gaurd,
         Commander
-    ];
-}
-export declare class LoomeeAngora implements PlayerCharacter {
-    firstName: 'Loomee';
-    lastName: 'Angora';
-    backstory: 'A girl created when the Song Maiden left her post to become human.';
-    symbolizes: 'The Keeper of Heart';
-    affiliation: ['The Keeper'];
-    potentialDisciplines: [
-        Cheerleader,
-        Cook,
-        Healer
     ];
 }
 /**

@@ -3,13 +3,19 @@ import { Stats } from '../component/stats';
 import { Trait } from '../component/trait';
 import { Items } from '../component/item.gear';
 import { StatusEffect } from '../component/status.effect';
+import { Discipline } from '../component/discipline';
 /**
  * A human or non-humanoid character.
  */
 export declare namespace NPCList {
     type Character = {
-        name: string;
-        description: string;
+        firstName: string;
+        lastName?: string;
+        alias?: string[];
+        description?: string;
+        backstory?: string;
+        symbolizes?: string;
+        affiliation?: string[];
         history?: string;
         life?: Life;
         drive?: Drive;
@@ -17,13 +23,25 @@ export declare namespace NPCList {
         stats?: Stats;
         traits?: Trait[];
         statusEffects?: StatusEffect[];
+        potentialDisciplines?: Discipline[];
         loot?: Items;
     };
-    const VallonOni: Character;
+    /**
+     * Keepers
+     */
     const Mischievous: Character;
-    const MahdiTsia: Character;
-    const Lawzon: Character;
     const Janus: Character;
+    const Loomee: Character;
+    /**
+     *
+     */
+    const GaaliRuin: Character;
+    /**
+     * Sins
+     */
+    const Vallon: Character;
+    const Mahdi: Character;
+    const Lawzon: Character;
     const Spider: Character;
 }
 export declare type NPCKey = typeof NPCList;

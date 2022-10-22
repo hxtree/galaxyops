@@ -1,13 +1,4 @@
-import {
-  FayeImago,
-  GunterStonewell,
-  LoomeeAngora,
-  MalaceTsia,
-  MeekuOni,
-  PennyKibbutz,
-  PlayerCharacter,
-  TraezUthsha,
-} from '../archetype/player';
+import {ArchetypeList} from '../archetype/archetype';
 
 /**
  * Summons are compainons that may be called into play in varying ways to aid party.
@@ -31,15 +22,15 @@ export enum SummonSkillList {
 export interface Summon {
   name: SummonSkillList;
   description: string;
-  summoner: PlayerCharacter;
-  commands?: Array<string>; // must be invoked by summoner through Command
+  summoner: ArchetypeList;
+  commands?: string[]; // must be invoked by summoner through Command
 }
 
 export class Vachel implements Summon {
   name: SummonSkillList.VACHEL;
   description: 'A silver bull';
   backstory: 'A bull that Meeku raised as a child';
-  summoner: MeekuOni;
+  summoner: ArchetypeList.MeekuOni;
   commands: [
     'Charge',
     'Graze', // eat grass
@@ -52,13 +43,13 @@ export class Felix implements Summon {
   name: SummonSkillList.FELIX;
   description: 'A white lop-eared dwarf rabbit';
   backstory: 'Felix is a pet that Loomee adopts. He does not listen well. He likes to nibble on grass slowly.';
-  summoner: LoomeeAngora;
+  summoner: ArchetypeList.LoomeeAngora;
 }
 
 export class HeraldicLion implements Summon {
   name: SummonSkillList.HERALDIC_LION;
   description: 'A regal lion with an impecable stance';
-  summoner: PennyKibbutz;
+  summoner: ArchetypeList.PennyKibbutz;
   commands: [
     // https://familyhistoryfoundation.com/2020/07/17/heraldic-lion-positions/
     'Passant Stance', // claw
@@ -72,33 +63,33 @@ export class Lyre implements Summon {
   name: SummonSkillList.LYRE;
   description: 'A giant half Luna moth and lyrebird that Faye can summon at will';
   backstory: '';
-  summoner: FayeImago;
+  summoner: ArchetypeList.FayeImago;
 }
 
 export class Sandy implements Summon {
   name: SummonSkillList.SANDY;
   description: 'A box turtle';
   backstory: '';
-  summoner: TraezUthsha;
+  summoner: ArchetypeList.TraezUthsha;
 }
 
 export class Ouruborus implements Summon {
   name: SummonSkillList.OURUBORUS;
   description: 'A demon that consumes itself';
   backstory: '';
-  summoner: MalaceTsia;
+  summoner: ArchetypeList.MalaceTsia;
 }
 
 export class Mischievous implements Summon {
   name: SummonSkillList.MISCHIEVOUS;
   description: 'A black and white cat';
   backstory: 'The Keeper of Law';
-  summoner: MalaceTsia;
+  summoner: ArchetypeList.MalaceTsia;
 }
 
 export class Scribbles implements Summon {
   name: SummonSkillList.SCRIBBLES;
   description: 'A flying squirrel';
   backstory: '';
-  summoner: GunterStonewell;
+  summoner: ArchetypeList.GunterStonewell;
 }
