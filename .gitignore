@@ -27,3 +27,6 @@ common/temp/
 **/docs/*.html
 
 .env
+
+# Dist
+**/dist/**
