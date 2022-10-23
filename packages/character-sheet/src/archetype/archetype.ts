@@ -7,15 +7,20 @@ import {EffectTag} from '../component/tag.effect';
 import {Summon} from '../component/skill/summon.skill';
 import * as Gear from '../component/gear';
 
+/**
+ * A human or non-humanoid
+ */
 export type CharacterSheet = {
+  statusEffects?: StatusEffect[];
   token?: Gear.Token;
 };
 
 /**
- * A human or non-humanoid base character.
- * base character information not stored in database
+ * Base character information that does not change as the game progress
+ * and therefore is not stored in database.
  * contains potentialGeatSlots, potentialDisciplines, etc.
- * only contains archetypes that can become character sheets, would not include a tree, etc.
+ *
+ * only contains archetypes that can become character sheets; would not include a tree, etc.
  */
 export namespace ArchetypeList {
   export type ArchetypeType = {
@@ -28,7 +33,6 @@ export namespace ArchetypeList {
     alias?: string[];
     symbolizes?: string[];
     affiliation?: string[];
-    weaponProficiency?: Gear.WeaponCategory[];
 
     // these seem more like they loaded or determined for player characters
     life?: Life;
@@ -37,11 +41,12 @@ export namespace ArchetypeList {
     stats?: Stats;
 
     traits?: Trait[];
-    statusEffects?: StatusEffect[];
+
     potentialDisciplines?: Discipline[];
     potentialOutfits?: Gear.Outfit[];
     potentialGeatSlots?: Gear.Slot[];
     summonCompatibility?: Summon[];
+    weaponCompatibility?: Gear.WeaponCategory[];
 
     // compatibility [
     // disciplines?: Discipline[];
@@ -83,7 +88,8 @@ export namespace ArchetypeList {
     surname: 'Angora',
     description: 'Light blonde girl wearing white linen',
     backstory:
-      'She governs and protects the ones heart to make sure it is not lost. A girl created when the Song Maiden left her post to become human.',
+      'She governs and protects the ones heart to make sure it is not lost. ' +
+      'A girl created when the Song Maiden left her post to become human.',
     alias: ['Keeper of Heart', 'Song Maiden', 'Mom'],
     symbolizes: ['Chastity'],
     affiliation: ['The Keepers'],
@@ -98,7 +104,7 @@ export namespace ArchetypeList {
     ],
 
     summonCompatibility: [Summon.FELIX],
-    weaponProficiency: [Gear.WeaponCategory.PENDANT],
+    weaponCompatibility: [Gear.WeaponCategory.PENDANT],
   };
 
   /**
@@ -110,7 +116,7 @@ export namespace ArchetypeList {
     symbolizes: ['Destroyer of Heart'],
     description: 'White hair',
     potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
-    weaponProficiency: [Gear.WeaponCategory.SWORD],
+    weaponCompatibility: [Gear.WeaponCategory.SWORD],
   };
 
   export const OuernOni: ArchetypeType = {
@@ -147,7 +153,7 @@ export namespace ArchetypeList {
     ],
     potentialOutfits: [Gear.Outfit.TSHIRT_AND_JEANS],
     summonCompatibility: [Summon.VACHEL],
-    weaponProficiency: [Gear.WeaponCategory.SHIELD_SWORD],
+    weaponCompatibility: [Gear.WeaponCategory.SHIELD_SWORD],
   };
 
   /**
@@ -182,7 +188,7 @@ export namespace ArchetypeList {
       Discipline.MAGI_YELLOW,
     ],
     summonCompatibility: [Summon.LYRE],
-    weaponProficiency: [Gear.WeaponCategory.STAFF],
+    weaponCompatibility: [Gear.WeaponCategory.STAFF],
   };
 
   export const GaaliRuin: ArchetypeType = {
@@ -213,7 +219,7 @@ export namespace ArchetypeList {
         operator: Operator.DIVIDE,
       },
     ],
-    weaponProficiency: [Gear.WeaponCategory.RAPIER],
+    weaponCompatibility: [Gear.WeaponCategory.RAPIER],
   };
 
   export const GunterStonewell: ArchetypeType = {
@@ -229,7 +235,7 @@ export namespace ArchetypeList {
       Discipline.COMMANDER,
     ],
     summonCompatibility: [Summon.SCRIBBLES],
-    weaponProficiency: [Gear.WeaponCategory.TWO_HANDED_AXE],
+    weaponCompatibility: [Gear.WeaponCategory.TWO_HANDED_AXE],
   };
 
   export const MalaceTsia: ArchetypeType = {
@@ -263,7 +269,7 @@ export namespace ArchetypeList {
     ],
     potentialOutfits: [Gear.Outfit.OFFICERS_UNIFORM],
     summonCompatibility: [Summon.OURUBORUS, Summon.MISCHIEVOUS],
-    weaponProficiency: [Gear.WeaponCategory.KNIFE],
+    weaponCompatibility: [Gear.WeaponCategory.KNIFE],
   };
 
   export const PennyKibbutz: ArchetypeType = {
@@ -287,7 +293,7 @@ export namespace ArchetypeList {
       },
     ],
     summonCompatibility: [Summon.HERALDIC_LION],
-    weaponProficiency: [Gear.WeaponCategory.DUAL_KYOKETSU_SHOGE],
+    weaponCompatibility: [Gear.WeaponCategory.DUAL_KYOKETSU_SHOGE],
   };
 
   export const TraezUthsha: ArchetypeType = {
@@ -302,7 +308,7 @@ export namespace ArchetypeList {
       Discipline.REBEL,
     ],
     summonCompatibility: [Summon.SANDY],
-    weaponProficiency: [Gear.WeaponCategory.BOOMERANG],
+    weaponCompatibility: [Gear.WeaponCategory.BOOMERANG],
   };
 
   /**
@@ -311,8 +317,9 @@ export namespace ArchetypeList {
   export const Void: ArchetypeType = {
     name: 'Void',
     backstory:
-      'Is one of the original seven demons. He was killed before the story begins. His place is taken by Mahdi.',
-
+      'Is one of the original seven demons.' +
+      'He was killed before the story begins. ' +
+      'His place is taken by Mahdi.',
     potentialDisciplines: [Discipline.MAGI_BLACK],
   };
 
@@ -320,7 +327,7 @@ export namespace ArchetypeList {
     name: 'Genki',
     symbolizes: ['Wrath', 'Fish'],
     potentialDisciplines: [Discipline.MAGI_BLUE],
-    weaponProficiency: [Gear.WeaponCategory.HAND_SWORD],
+    weaponCompatibility: [Gear.WeaponCategory.HAND_SWORD],
   };
 
   export const Lawzon: ArchetypeType = {
@@ -328,9 +335,12 @@ export namespace ArchetypeList {
     surname: 'Grey',
     symbolizes: ['Sloth', 'Wolf'],
     history:
-      'Rumored to be the most powerful fighter from the north. He fought only to protect his village until it was wiped out from a great frost. He now wonders around lifelessly in search of an end. He is by far the most strongest of the seven but has no will to fight.',
+      'Rumored to be the most powerful fighter from the north. ' +
+      'He fought only to protect his village until it was wiped out from a great frost. ' +
+      'He now wonders around lifelessly in search of an end. ' +
+      'He is by far the most strongest of the seven but has no will to fight.',
     potentialDisciplines: [Discipline.MAGI_WHITE],
-    weaponProficiency: [Gear.WeaponCategory.BROAD_SWORD],
+    weaponCompatibility: [Gear.WeaponCategory.BROAD_SWORD],
   };
 
   export const Madhi: ArchetypeType = {
@@ -339,7 +349,7 @@ export namespace ArchetypeList {
     description: "Malace's brother",
     backstory: 'When the world is about to end he is its savor',
     potentialDisciplines: [Discipline.POSSESSED, Discipline.MAGI_BLACK],
-    weaponProficiency: [Gear.WeaponCategory.KNIFE],
+    weaponCompatibility: [Gear.WeaponCategory.KNIFE],
   };
 
   export const Suyri: ArchetypeType = {
@@ -359,7 +369,7 @@ export namespace ArchetypeList {
     name: 'Asmin',
     symbolizes: ['Pride', 'Ox'],
     potentialDisciplines: [Discipline.MAGI_BROWN],
-    weaponProficiency: [Gear.WeaponCategory.TWO_HANDED_AXE],
+    weaponCompatibility: [Gear.WeaponCategory.TWO_HANDED_AXE],
   };
 
   export const Diag: ArchetypeType = {
@@ -374,13 +384,13 @@ export namespace ArchetypeList {
   export const Monarch: ArchetypeType = {
     name: 'Monarch',
     alias: ['The Deadly One'],
-    weaponProficiency: [Gear.WeaponCategory.DAGGER],
+    weaponCompatibility: [Gear.WeaponCategory.DAGGER],
   };
 
   export const Viceroy: ArchetypeType = {
     name: 'Viceroy',
     backstory: 'mimic monarch',
-    weaponProficiency: [Gear.WeaponCategory.DAGGER],
+    weaponCompatibility: [Gear.WeaponCategory.DAGGER],
   };
 
   /**
