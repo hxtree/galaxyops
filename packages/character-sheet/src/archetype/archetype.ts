@@ -1,18 +1,14 @@
 import {Drive, Life, Spirit} from '../component/gauges';
 import {Stats} from '../component/stats';
 import {Effect, Operator, Trait} from '../component/trait';
-import {Items} from '../component/item.gear';
 import {StatusEffect} from '../component/status.effect';
 import {Discipline} from '../component/discipline';
-import {Outfit} from '../component/outfit.gear';
-import {GearSlot} from '../component/gear';
-import {Token} from '../component/token.gear';
 import {EffectTag} from '../component/tag.effect';
 import {Summon} from '../component/skill/summon.skill';
-import * as Gear from '../component/weapon.gear';
+import * as Gear from '../component/gear';
 
 export type CharacterSheet = {
-  token?: Token;
+  token?: Gear.Token;
 };
 
 /**
@@ -32,7 +28,7 @@ export namespace ArchetypeList {
     alias?: string[];
     symbolizes?: string[];
     affiliation?: string[];
-    weaponProficiency?: Weapon[];
+    weaponProficiency?: Gear.WeaponCategory[];
 
     // these seem more like they loaded or determined for player characters
     life?: Life;
@@ -43,8 +39,8 @@ export namespace ArchetypeList {
     traits?: Trait[];
     statusEffects?: StatusEffect[];
     potentialDisciplines?: Discipline[];
-    potentialOutfits?: Outfit[];
-    potentialGeatSlots?: GearSlot[];
+    potentialOutfits?: Gear.Outfit[];
+    potentialGeatSlots?: Gear.Slot[];
     summonCompatibility?: Summon[];
 
     // compatibility [
@@ -54,7 +50,7 @@ export namespace ArchetypeList {
     // summon?: Summon[];
     // ]
 
-    loot?: Items;
+    loot?: Gear.Item[];
   };
 
   /**
@@ -149,7 +145,7 @@ export namespace ArchetypeList {
         operator: Operator.MULTIPLY,
       },
     ],
-    potentialOutfits: [Outfit.TSHIRT_AND_JEANS],
+    potentialOutfits: [Gear.Outfit.TSHIRT_AND_JEANS],
     summonCompatibility: [Summon.VACHEL],
     weaponProficiency: [Gear.WeaponCategory.SHIELD_SWORD],
   };
@@ -265,7 +261,7 @@ export namespace ArchetypeList {
         percent: 80,
       },
     ],
-    potentialOutfits: [Outfit.OFFICERS_UNIFORM],
+    potentialOutfits: [Gear.Outfit.OFFICERS_UNIFORM],
     summonCompatibility: [Summon.OURUBORUS, Summon.MISCHIEVOUS],
     weaponProficiency: [Gear.WeaponCategory.KNIFE],
   };

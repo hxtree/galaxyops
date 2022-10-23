@@ -1,4 +1,4 @@
-import {GearSlot} from './gear';
+import {Slot} from './slot';
 
 /**
  * Outfit
@@ -11,7 +11,7 @@ import {GearSlot} from './gear';
 export type OutfitType = {
   name: string;
   description: string;
-  gearSlots?: GearSlot[];
+  gearSlots?: Slot[];
 };
 
 export enum Outfit {
@@ -22,11 +22,11 @@ export enum Outfit {
 export const TShirtAndJeans: OutfitType = {
   name: Outfit.TSHIRT_AND_JEANS,
   description: 'White t-Shirt and denim jeans',
-  gearSlots: [GearSlot.OUTFIT],
+  gearSlots: [Slot.OUTFIT],
 };
 
 export const OfficersUniform: OutfitType = {
   name: Outfit.OFFICERS_UNIFORM,
   description: 'Black Embellished Tarry Coat',
-  gearSlots: [GearSlot.OUTFIT],
+  gearSlots: [Slot.OUTFIT],
 };

@@ -3,8 +3,7 @@ import {v4 as uuidv4} from 'uuid';
 import {Trait} from '../component/trait';
 import {Discipline} from '../component/discipline';
 import {Drive, Life, Spirit} from '../component/gauges';
-import {GearSlot} from '../component/gear';
-import {Equipment} from '../component/equipment.gear';
+import * as Gear from '../component/gear';
 
 // interface representing a document
 export interface ICharacterSheet {
@@ -25,7 +24,7 @@ export interface ICharacterSheet {
     luck: number;
   };
   experiences: {discipline: Discipline; experience: number}[];
-  equipment: {gearSlot: GearSlot; equipment: Equipment}[];
+  equipment: {gearSlot: Gear.Slot; equipment: Gear.Equipment}[];
   updatedAt: Date;
   createdAt: Date;
 }

@@ -1,4 +1,4 @@
-import * as Skill from './skill/weapon.skill';
+import * as Skill from '../skill/weapon.skill';
 
 /**
  * Weapon is a tag applied to a weapon class and is used to determine the damage type of the weapon.

@@ -1,15 +1,15 @@
-import {Attribute} from './attribute';
-import {EffectTable, SkillffectModifier} from './table.effect';
-import {EffectTag} from './tag.effect';
-import * as Skill from './skill';
-import {GearSlot} from './gear';
+import {Attribute} from '../attribute';
+import {EffectTable, SkillffectModifier} from '../table.effect';
+import {EffectTag} from '../tag.effect';
+import * as Skill from '../skill';
+import {Slot} from './slot';
 
 export interface Accessory {
   name: string;
   description: string;
   history?: string; // the history of an item must be discovered
   purpose: string;
-  gearSlots: Array<GearSlot>;
+  gearSlots: Slot[];
   effects?: EffectTable;
   removable: boolean; // whether player can remove via menus
 }
@@ -33,7 +33,7 @@ export class GoldBracelets {
   name: Accessories.GOLD_BRACELETS;
   description: 'Weighted gold bracelets that occupy both wrists meant';
   purpose: 'Suppress hidden power';
-  gearSlots: [GearSlot.RIGHT_WRIST, GearSlot.LEFT_WRIST];
+  gearSlots: [Slot.RIGHT_WRIST, Slot.LEFT_WRIST];
   effects: [
     {
       add: Attribute.EXPERIENCE;
@@ -53,7 +53,7 @@ export class RedScarf {
   name: Accessories.RED_SCRAF;
   description: 'A red scarf knitted.';
   history: 'Knitted by Meeku’s mother to keep him warm';
-  gearSlots: [GearSlot.NECK];
+  gearSlots: [Slot.NECK];
   removable: false;
 }
 
@@ -67,20 +67,20 @@ export class CowhideVest {
     },
   ];
   description: 'A brown protective vest made out of cow hide.';
-  gearSlots: [GearSlot.TORSO];
+  gearSlots: [Slot.TORSO];
 }
 
 export class FuneralJar {
   name: 'Funeral Jar';
   description: 'a jar holding the ashes of the dead';
-  gearSlots: [GearSlot.WAIST];
+  gearSlots: [Slot.WAIST];
   removable: false;
 }
 
 export class SwordSheath {
   name: 'Sword sheath';
   description: 'a sheath meant to hold a broad sword.';
-  gearSlots: [GearSlot.BACK];
+  gearSlots: [Slot.BACK];
 }
 
 export class MagenticGloves {
@@ -94,7 +94,7 @@ export class MagenticGloves {
       tags: [EffectTag.METAL];
     },
   ];
-  gearSlots: [GearSlot.RIGHT_HAND, GearSlot.LEFT_HAND];
+  gearSlots: [Slot.RIGHT_HAND, Slot.LEFT_HAND];
 }
 
 export class CatchersMitt {
@@ -106,5 +106,5 @@ export class CatchersMitt {
       tags: [EffectTag.PHYSICAL];
     },
   ];
-  gearSlots: [GearSlot.RIGHT_HAND, GearSlot.LEFT_HAND];
+  gearSlots: [Slot.RIGHT_HAND, Slot.LEFT_HAND];
 }
