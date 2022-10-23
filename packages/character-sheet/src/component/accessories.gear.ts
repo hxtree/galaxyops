@@ -1,7 +1,7 @@
 import {Attribute} from './attribute';
 import {EffectTable, SkillffectModifier} from './table.effect';
 import {EffectTag} from './tag.effect';
-import {Catcher} from './passive.skill';
+import * as Skill from './skill';
 import {GearSlot} from './gear';
 
 export interface Accessory {
@@ -18,6 +18,7 @@ export interface Accessory {
  * Accessories
  * Seondary items that are equippable
  */
+
 export enum Accessories {
   GOLD_BRACELETS = 'Gold Bracelets',
   RED_SCRAF = 'Red Scarf',
@@ -88,7 +89,7 @@ export class MagenticGloves {
   // Particularly useful with regards to Traez’s boomerang
   effects: [
     {
-      skill: Catcher;
+      skill: Skill.Passive.CATCHER;
       modifer: SkillffectModifier.ADD;
       tags: [EffectTag.METAL];
     },
@@ -100,7 +101,7 @@ export class CatchersMitt {
   name: 'Catchers Mitt';
   effects: [
     {
-      skill: Catcher;
+      skill: Skill.Passive.CATCHER;
       modifer: SkillffectModifier.ADD;
       tags: [EffectTag.PHYSICAL];
     },

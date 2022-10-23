@@ -1,11 +1,11 @@
 type Archetype {
   id: ID!
-  firstName: String
-  lastName: String
+  name: String
+  surname: String
   alias: [String]
   description: String
   backstory: String
-  symbolizes: String
+  symbolizes: [String]
   affiliation: [String]
   history: String
   statusEffects: [String]
@@ -28,7 +28,7 @@ input UpdateArchetypeInput {
 
 type Query {
   getArchetypeById(archetypeId: String!): Archetype
-  listArchetypes: [Archetype]
+  listArchetypes: [String]
 }
 
 type Mutation {

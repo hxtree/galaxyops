@@ -7,7 +7,8 @@ import { Discipline } from '../component/discipline';
 import { Outfit } from '../component/outfit.gear';
 import { GearSlot } from '../component/gear';
 import { Token } from '../component/token.gear';
-import { Summon } from '../component/summon.skill';
+import { Summon } from '../component/skill/summon.skill';
+import { Weapon } from '../component/weapon.gear';
 export declare type CharacterSheet = {
     token?: Token;
 };
@@ -19,15 +20,16 @@ export declare type CharacterSheet = {
  */
 export declare namespace ArchetypeList {
     type Character = {
-        firstName: string;
-        lastName?: string;
+        name: string;
+        surname?: string;
         description?: string;
         history?: string;
         backstory?: string;
         experience?: number;
         alias?: string[];
-        symbolizes?: string;
+        symbolizes?: string[];
         affiliation?: string[];
+        weaponProficiency?: Weapon[];
         life?: Life;
         drive?: Drive;
         spirit?: Spirit;
@@ -41,30 +43,51 @@ export declare namespace ArchetypeList {
         loot?: Items;
     };
     /**
-     * Keepers
+     * Three Keepers
      */
     const MischievousPiebald: Character;
     const JanusPersian: Character;
     const LoomeeAngora: Character;
     /**
-     * Virtues
+     * Three Destroyer
+     */
+    const VallonOni: Character;
+    const OuernOni: Character;
+    const MeekuOni: Character;
+    /**
+     * Seven Virtues
      */
     const ArinothDiyath: Character;
     const FayeImago: Character;
     const GaaliRuin: Character;
     const GunterStonewell: Character;
     const MalaceTsia: Character;
-    const MeekuOni: Character;
     const PennyKibbutz: Character;
     const TraezUthsha: Character;
     /**
-     * Sins
+     * Seven Sins
      */
-    const VallonOni: Character;
-    const Madhi: Character;
+    const Void: Character;
+    const Genki: Character;
     const Lawzon: Character;
+    const Madhi: Character;
+    const Suyri: Character;
+    const Wisp: Character;
+    const Asmin: Character;
+    const Diag: Character;
+    /**
+     * Notable Bad Guys
+     */
+    const Monarch: Character;
+    const Viceroy: Character;
+    /**
+     * Battlers
+     */
     const Spider: Character;
+    const SeaHorse: Character;
+    const SensitivePlant: Character;
 }
 export declare type ArchetypeKey = typeof ArchetypeList;
 export declare type ArchetypeType = keyof ArchetypeKey;
 export declare const Archetype: (id: string) => ArchetypeList.Character;
+export declare const getArchetypeList: () => string[];

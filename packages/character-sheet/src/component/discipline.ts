@@ -1,40 +1,4 @@
-import {
-  Boast,
-  Cheer,
-  Dismiss,
-  Hope,
-  Inspire,
-  Rage,
-  Scan,
-  Support,
-} from './class.skill';
-import {Appraise, PrepareFood} from './item.skill';
-import {BackFlip, DoubleBackFlip, HighJump} from './movement.skill';
-import {Concentration} from './passive.skill';
-import {
-  Aqua,
-  Blizzard,
-  Charm,
-  Chill,
-  Darkness,
-  Desolate,
-  Drain,
-  Flare,
-  Frost,
-  Gust,
-  Haste,
-  Heal,
-  Landslide,
-  Leech,
-  Light,
-  Quake,
-  Slow,
-  Stop,
-  Tsunami,
-} from './spell.skill';
-import {Summon} from './summon.skill';
-import {Command, Formations, Order} from './teamwork.skill';
-import {Cleave} from './weapon.skill';
+import * as Skill from './skill';
 
 /**
  * Experience records a character experience for a specific discipline.
@@ -160,10 +124,10 @@ export class Gymnast extends BaseDiscipline {
   description: 'Trains in gymnastics.';
   category: DisciplineCategory.PROFESSION;
   skillProgression: [
-    [level: 10, skill: BackFlip],
-    [level: 25, skill: DoubleBackFlip],
-    [level: 50, skill: HighJump],
-    [level: 70, skill: Concentration],
+    [level: 10, skill: Skill.Movement.BACK_FLIP],
+    [level: 25, skill: Skill.Movement.DOUBLE_BACK_FLIP],
+    [level: 50, skill: Skill.Movement.HIGH_JUMP],
+    [level: 70, skill: Skill.Passive.CONCENTRATION],
   ];
 }
 
@@ -172,10 +136,10 @@ export class Wizard extends BaseDiscipline {
   description: 'Studies mysterious forces.';
   category: DisciplineCategory.PROFESSION;
   skillProgression: [
-    [level: 10, skill: Gust],
-    [level: 25, skill: Flare],
-    [level: 50, skill: Heal],
-    [level: 70, skill: Light],
+    [level: 10, skill: Skill.Spell.GUST],
+    [level: 25, skill: Skill.Spell.FLARE],
+    [level: 50, skill: Skill.Spell.HEAL],
+    [level: 70, skill: Skill.Spell.LIGHT],
   ];
 }
 
@@ -184,20 +148,16 @@ export class Historian extends BaseDiscipline {
   description: 'Studies the world as it was.';
   category: DisciplineCategory.PROFESSION;
   skillProgression: [
-    [level: 10, skill: Appraise],
-    [level: 25, skill: Scan],
-    [level: 50, skill: Summon.HERALDIC_LION],
+    [level: 10, skill: Skill.Item.APPRIASE],
+    [level: 25, skill: Skill.Basic.SCAN],
+    [level: 50, skill: Skill.Summon.HERALDIC_LION],
   ];
 }
 export class BodyBuilder extends BaseDiscipline {
   name: Discipline.BODY_BUILDER;
   description: 'Do you even lift?';
   category: DisciplineCategory.PROFESSION;
-  skillProgression: [
-    [level: 10, skill: Appraise],
-    [level: 25, skill: Scan],
-    [level: 50, skill: Summon.SCRIBBLES],
-  ];
+  skillProgression: [[level: 50, skill: Skill.Summon.SCRIBBLES]];
 }
 
 // may be anyone can become a cook?>
@@ -205,7 +165,7 @@ export class Cook extends BaseDiscipline {
   name: Discipline.COOK;
   description: 'Prepares and cooks food';
   category: DisciplineCategory.PROFESSION;
-  skillProgression: [[level: 10, skill: PrepareFood]];
+  skillProgression: [[level: 10, skill: Skill.Item.PREPARE_FOOD]];
   // todo prepare different food items
 }
 
@@ -214,10 +174,10 @@ export class Cheerleader extends BaseDiscipline {
   description: 'Cheers their team as a form of encouragement.';
   category: DisciplineCategory.PROFESSION;
   skillProgression: [
-    [level: 1, skill: Cheer],
-    [level: 10, skill: Support],
-    [level: 40, skill: Inspire],
-    [level: 50, skill: Hope],
+    [level: 1, skill: Skill.Basic.CHEER],
+    [level: 10, skill: Skill.Basic.SUPPORT],
+    [level: 40, skill: Skill.Basic.INSPIRE],
+    [level: 50, skill: Skill.Basic.HOPE],
   ];
 }
 
@@ -226,9 +186,9 @@ export class Commander extends BaseDiscipline {
   description: 'Specialize in giving orders to others.';
   category: DisciplineCategory.ARCHETYPE;
   skillProgression: [
-    [level: 1, skill: Boast],
-    [level: 10, skill: Formations],
-    [level: 50, skill: Order],
+    [level: 1, skill: Skill.Basic.BOAST],
+    [level: 10, skill: Skill.Teamwork.FORMATIONS],
+    [level: 50, skill: Skill.Teamwork.ORDER],
   ];
 }
 
@@ -247,8 +207,8 @@ export class MagiBlack extends BaseDiscipline {
   category: DisciplineCategory.ARCHETYPE;
   prerequisites: [Discipline.MAGI];
   skillProgression: [
-    [level: 10, skill: Darkness],
-    [level: 25, skill: Desolate],
+    [level: 10, skill: Skill.Spell.DARKNESS],
+    [level: 25, skill: Skill.Spell.DESOLATE],
   ];
 }
 
@@ -259,9 +219,9 @@ export class MagiBlue extends BaseDiscipline {
   category: DisciplineCategory.ARCHETYPE;
   prerequisites: [Discipline.MAGI];
   skillProgression: [
-    [level: 10, skill: Rage],
-    [level: 15, skill: Aqua],
-    [level: 25, skill: Tsunami],
+    [level: 10, skill: Skill.Basic.RAGE],
+    [level: 15, skill: Skill.Spell.AQUA],
+    [level: 25, skill: Skill.Spell.TSUMANI],
   ];
 }
 
@@ -271,7 +231,10 @@ export class MagiBrown extends BaseDiscipline {
   history: 'Harnessed from the power of Asmin';
   category: DisciplineCategory.ARCHETYPE;
   prerequisites: [Discipline.MAGI];
-  skillProgression: [[level: 10, skill: Quake], [level: 15, skill: Landslide]];
+  skillProgression: [
+    [level: 10, skill: Skill.Spell.QUAKE],
+    [level: 15, skill: Skill.Spell.LANDSLIDE],
+  ];
 }
 
 export class MagiGreen extends BaseDiscipline {
@@ -281,9 +244,9 @@ export class MagiGreen extends BaseDiscipline {
   category: DisciplineCategory.ARCHETYPE;
   prerequisites: [Discipline.MAGI];
   skillProgression: [
-    [level: 10, skill: Stop],
-    [level: 15, skill: Slow],
-    [level: 15, skill: Haste],
+    [level: 10, skill: Skill.Spell.STOP],
+    [level: 15, skill: Skill.Spell.SLOW],
+    [level: 15, skill: Skill.Spell.HASTE],
   ];
 }
 
@@ -293,7 +256,10 @@ export class MagiPink extends BaseDiscipline {
   history: 'Harnessed from the power of Suyri';
   category: DisciplineCategory.ARCHETYPE;
   prerequisites: [Discipline.MAGI];
-  skillProgression: [[level: 10, skill: Charm], [level: 15, skill: Chill]];
+  skillProgression: [
+    [level: 10, skill: Skill.Spell.CHARM],
+    [level: 15, skill: Skill.Spell.CHILL],
+  ];
 }
 
 export class MagiPurple extends BaseDiscipline {
@@ -302,7 +268,7 @@ export class MagiPurple extends BaseDiscipline {
   history: 'Harnessed from the power of Diag';
   category: DisciplineCategory.ARCHETYPE;
   prerequisites: [Discipline.MAGI];
-  skillProgression: [[level: 10, skill: Quake]]; // ?? is quake correct
+  skillProgression: [[level: 10, skill: Skill.Spell.QUAKE]]; // TODO CHANGE may be instead of quake do tainted
 }
 
 export class MagiWhite extends BaseDiscipline {
@@ -312,9 +278,9 @@ export class MagiWhite extends BaseDiscipline {
   category: DisciplineCategory.ARCHETYPE;
   prerequisites: [Discipline.MAGI];
   skillProgression: [
-    [level: 10, skill: Blizzard],
-    [level: 10, skill: Frost],
-    [level: 10, skill: Chill],
+    [level: 10, skill: Skill.Spell.BLIZZARD],
+    [level: 10, skill: Skill.Spell.FROST],
+    [level: 10, skill: Skill.Spell.CHILL],
   ];
 }
 
@@ -325,9 +291,9 @@ export class MagiYellow extends BaseDiscipline {
   category: DisciplineCategory.ARCHETYPE;
   prerequisites: [Discipline.MAGI];
   skillProgression: [
-    [level: 10, skill: Drain],
-    [level: 25, skill: Leech],
-    [level: 50, skill: Drain],
+    [level: 10, skill: Skill.Spell.DRAIN],
+    [level: 25, skill: Skill.Spell.LEECH],
+    [level: 50, skill: Skill.Spell.DRAIN],
   ];
 }
 
@@ -398,7 +364,7 @@ export class Solider extends BaseDiscipline {
   name: Discipline.SOLIDER;
   description: 'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.';
   category: DisciplineCategory.ARCHETYPE;
-  skillProgression: [[level: 10, skill: Cleave]];
+  skillProgression: [[level: 10, skill: Skill.Weapon.CLEAVE]];
 }
 
 export class Summoner extends BaseDiscipline {
@@ -406,9 +372,9 @@ export class Summoner extends BaseDiscipline {
   description: 'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.';
   category: DisciplineCategory.ARCHETYPE;
   skillProgression: [
-    [level: 10, skill: Summon],
-    [level: 10, skill: Dismiss],
-    [level: 10, skill: Command],
+    [level: 10, skill: Skill.Summon.SUMMON],
+    [level: 10, skill: Skill.Summon.DISMISS],
+    [level: 10, skill: Skill.Summon.COMMAND],
   ];
 }
 

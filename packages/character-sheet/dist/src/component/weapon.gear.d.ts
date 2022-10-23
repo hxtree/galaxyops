@@ -1,4 +1,4 @@
-import { WeaponSkill } from './weapon.skill';
+import * as Skill from './skill/weapon.skill';
 /**
  * Weapon is a tag applied to a weapon class and is used to determine the damage type of the weapon.
  * It is used to determine equability, weakness and resistance.
@@ -44,7 +44,7 @@ export declare abstract class Weapon {
     abstract power: number;
     abstract speed: number;
     abstract area: number;
-    abstract actions: Array<WeaponSkill>;
+    abstract actions: Skill.Weapon[];
 }
 export declare enum Weapons {
     ASMINS_AXE = "Asmin's Axe",

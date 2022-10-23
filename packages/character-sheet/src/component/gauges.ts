@@ -11,6 +11,7 @@ export class Drive {
 }
 
 // stat bonus are computed at runtime
+// also called Stamina?
 export class Spirit {
   current: number;
   max: number;

@@ -1,7 +1,7 @@
 import { Attribute } from './attribute';
 import { EffectTable, SkillffectModifier } from './table.effect';
 import { EffectTag } from './tag.effect';
-import { Catcher } from './passive.skill';
+import * as Skill from './skill';
 import { GearSlot } from './gear';
 export interface Accessory {
     name: string;
@@ -79,7 +79,7 @@ export declare class MagenticGloves {
     description: 'Helps catch metal objects.';
     effects: [
         {
-            skill: Catcher;
+            skill: Skill.Passive.CATCHER;
             modifer: SkillffectModifier.ADD;
             tags: [EffectTag.METAL];
         }
@@ -90,7 +90,7 @@ export declare class CatchersMitt {
     name: 'Catchers Mitt';
     effects: [
         {
-            skill: Catcher;
+            skill: Skill.Passive.CATCHER;
             modifer: SkillffectModifier.ADD;
             tags: [EffectTag.PHYSICAL];
         }

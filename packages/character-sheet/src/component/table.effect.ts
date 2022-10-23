@@ -1,7 +1,7 @@
 import {EffectTag} from './tag.effect';
 import {StatusEffect} from './status.effect';
 import {Attribute} from './attribute';
-import {BaseSkill} from './base.skill';
+import * as Skill from './skill';
 
 export enum Modifier {
   ADD = 'ADD',
@@ -18,23 +18,46 @@ export enum SkillffectModifier {
   REMOVE = 'REMOVE',
 }
 
-export interface AttributeEffectRecord {
-  name: Attribute;
-  modifier: Modifier;
+export interface AttributeAddEffectRecord {
+  add: Attribute;
+  quantity: string;
+  chance?: number;
+  tags?: Array<EffectTag>;
+}
+
+export interface AttributeRemoveEffectRecord {
+  remove: Attribute;
   quantity: string;
   chance?: number;
   tags?: Array<EffectTag>;
 }
 
 export interface SkillEffectRecord {
-  skill: BaseSkill;
+  skill:
+    | Skill.Basic
+    | Skill.Drive
+    | Skill.Item
+    | Skill.Spell
+    | Skill.Tool
+    | Skill.Weapon
+    | Skill.Movement
+    | Skill.Passive
+    | Skill.Teamwork
+    | Skill.Summon
+    | Skill.Trap;
+
   modifer: SkillffectModifier;
   tags?: Array<EffectTag>;
 }
 
-export interface StatusEffectRecord {
-  name: StatusEffect;
-  modifier: StatusEffectModifier;
+export interface StatusEffectAddRecord {
+  add: StatusEffect;
+  chance?: number;
+  tags?: Array<EffectTag>;
+}
+
+export interface StatusEffectRemoveRecord {
+  remove: StatusEffect;
   chance: number;
   tags?: Array<EffectTag>;
 }
@@ -42,11 +65,13 @@ export interface StatusEffectRecord {
 // EffectRecords do not specify a target
 export type EffectRecord =
   | SkillEffectRecord
-  | StatusEffectRecord
-  | AttributeEffectRecord;
+  | StatusEffectAddRecord
+  | StatusEffectRemoveRecord
+  | AttributeAddEffectRecord
+  | AttributeRemoveEffectRecord;
 
 /**
  * EffectTable
  * A representation of the effect of an action
  */
-export type EffectTable = Array<EffectRecord>;
+export type EffectTable = EffectRecord[];

@@ -1,4 +1,4 @@
-import {Slash, Stab, Strike, WeaponSkill} from './weapon.skill';
+import * as Skill from './skill/weapon.skill';
 
 /**
  * Weapon is a tag applied to a weapon class and is used to determine the damage type of the weapon.
@@ -64,7 +64,7 @@ export abstract class Weapon {
   // todo UOM? feet, yards, meters?
   abstract area: number;
 
-  abstract actions: Array<WeaponSkill>; // could also be Ward, Protect, etc. for Pendents :?
+  abstract actions: Skill.Weapon[]; // could also be Ward, Protect, etc. for Pendents :?
 }
 
 export enum Weapons {
@@ -110,7 +110,7 @@ class AsminsAze implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Slash];
+  actions: [Skill.Weapon.SLASH];
 }
 
 class GreatWail implements Weapon {
@@ -120,7 +120,7 @@ class GreatWail implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Slash];
+  actions: [Skill.Weapon.SLASH];
 }
 
 class Justice implements Weapon {
@@ -130,7 +130,7 @@ class Justice implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Slash];
+  actions: [Skill.Weapon.SLASH];
 }
 
 class Keystone implements Weapon {
@@ -140,7 +140,7 @@ class Keystone implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Slash];
+  actions: [Skill.Weapon.SLASH];
 }
 
 /**
@@ -157,7 +157,7 @@ class Assaulter implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Strike];
+  actions: [Skill.Weapon.STRIKE];
 }
 
 class Striker implements Weapon {
@@ -167,7 +167,7 @@ class Striker implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Strike];
+  actions: [Skill.Weapon.STRIKE];
 }
 
 /**
@@ -184,7 +184,7 @@ class EnergyBreaker implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Strike];
+  actions: [Skill.Weapon.STRIKE];
   // SPEED_DECREASE 1d5
   // FIRE 2d5
 }
@@ -197,7 +197,7 @@ class StoneBreaker implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Strike];
+  actions: [Skill.Weapon.STRIKE];
   // Increases wait time
   // Increases recovery time
   // Increases damage
@@ -212,7 +212,7 @@ class TheManSlayer implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Strike];
+  actions: [Skill.Weapon.STRIKE];
 }
 
 /**
@@ -229,7 +229,7 @@ class HerosBlade implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Strike];
+  actions: [Skill.Weapon.STRIKE];
 }
 
 class SwordOfLawzon implements Weapon {
@@ -239,7 +239,7 @@ class SwordOfLawzon implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Strike];
+  actions: [Skill.Weapon.STRIKE];
 }
 
 /**
@@ -254,7 +254,7 @@ class TinyTimber implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Strike];
+  actions: [Skill.Weapon.STRIKE];
 }
 
 class Caduceus implements Weapon {
@@ -265,7 +265,7 @@ class Caduceus implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Strike];
+  actions: [Skill.Weapon.STRIKE];
 }
 
 class Antediluvian implements Weapon {
@@ -276,7 +276,7 @@ class Antediluvian implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Strike];
+  actions: [Skill.Weapon.STRIKE];
 }
 
 /**
@@ -293,7 +293,7 @@ class EternalFold implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Stab];
+  actions: [Skill.Weapon.STAB];
 }
 
 class GoldRush implements Weapon {
@@ -303,7 +303,7 @@ class GoldRush implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Stab];
+  actions: [Skill.Weapon.STAB];
 }
 
 class KingsBlade implements Weapon {
@@ -313,7 +313,7 @@ class KingsBlade implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Stab];
+  actions: [Skill.Weapon.STAB];
 }
 
 class RustyRapier implements Weapon {
@@ -323,7 +323,7 @@ class RustyRapier implements Weapon {
   power: 100;
   speed: 30;
   area: 1;
-  actions: [Stab];
+  actions: [Skill.Weapon.STAB];
 }
 
 /**

@@ -13,3 +13,12 @@ export const enum MenuSlot {
   Fourth = 4,
   Fifth = 5,
 }
+
+// TODO interactions? Are they 0 slot?
+export const Slot: Record<string, string[]> = {
+  First: ['Basic', 'Combo', 'Weapon'],
+  Second: [],
+  Third: ['Drive'],
+  Fouth: ['Teamwork', 'Tools', 'Trap'],
+  Fifth: ['Item'],
+};

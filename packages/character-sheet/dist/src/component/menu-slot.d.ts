@@ -13,3 +13,4 @@ export declare const enum MenuSlot {
     Fourth = 4,
     Fifth = 5
 }
+export declare const Slot: Record<string, string[]>;

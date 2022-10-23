@@ -1,11 +1,4 @@
-import { Boast, Cheer, Dismiss, Hope, Inspire, Rage, Scan, Support } from './class.skill';
-import { Appraise, PrepareFood } from './item.skill';
-import { BackFlip, DoubleBackFlip, HighJump } from './movement.skill';
-import { Concentration } from './passive.skill';
-import { Aqua, Blizzard, Charm, Chill, Darkness, Desolate, Drain, Flare, Frost, Gust, Haste, Heal, Landslide, Leech, Light, Quake, Slow, Stop, Tsunami } from './spell.skill';
-import { Summon } from './summon.skill';
-import { Command, Formations, Order } from './teamwork.skill';
-import { Cleave } from './weapon.skill';
+import * as Skill from './skill';
 /**
  * Experience records a character experience for a specific discipline.
  * Different disciplines have different experience requirements.
@@ -85,19 +78,19 @@ export declare class Gymnast extends BaseDiscipline {
     skillProgression: [
         [
             level: 10,
-            skill: BackFlip
+            skill: Skill.Movement.BACK_FLIP
         ],
         [
             level: 25,
-            skill: DoubleBackFlip
+            skill: Skill.Movement.DOUBLE_BACK_FLIP
         ],
         [
             level: 50,
-            skill: HighJump
+            skill: Skill.Movement.HIGH_JUMP
         ],
         [
             level: 70,
-            skill: Concentration
+            skill: Skill.Passive.CONCENTRATION
         ]
     ];
 }
@@ -108,19 +101,19 @@ export declare class Wizard extends BaseDiscipline {
     skillProgression: [
         [
             level: 10,
-            skill: Gust
+            skill: Skill.Spell.GUST
         ],
         [
             level: 25,
-            skill: Flare
+            skill: Skill.Spell.FLARE
         ],
         [
             level: 50,
-            skill: Heal
+            skill: Skill.Spell.HEAL
         ],
         [
             level: 70,
-            skill: Light
+            skill: Skill.Spell.LIGHT
         ]
     ];
 }
@@ -131,15 +124,15 @@ export declare class Historian extends BaseDiscipline {
     skillProgression: [
         [
             level: 10,
-            skill: Appraise
+            skill: Skill.Item.APPRIASE
         ],
         [
             level: 25,
-            skill: Scan
+            skill: Skill.Basic.SCAN
         ],
         [
             level: 50,
-            skill: Summon.HERALDIC_LION
+            skill: Skill.Summon.HERALDIC_LION
         ]
     ];
 }
@@ -147,26 +140,13 @@ export declare class BodyBuilder extends BaseDiscipline {
     name: Discipline.BODY_BUILDER;
     description: 'Do you even lift?';
     category: DisciplineCategory.PROFESSION;
-    skillProgression: [
-        [
-            level: 10,
-            skill: Appraise
-        ],
-        [
-            level: 25,
-            skill: Scan
-        ],
-        [
-            level: 50,
-            skill: Summon.SCRIBBLES
-        ]
-    ];
+    skillProgression: [[level: 50, skill: Skill.Summon.SCRIBBLES]];
 }
 export declare class Cook extends BaseDiscipline {
     name: Discipline.COOK;
     description: 'Prepares and cooks food';
     category: DisciplineCategory.PROFESSION;
-    skillProgression: [[level: 10, skill: PrepareFood]];
+    skillProgression: [[level: 10, skill: Skill.Item.PREPARE_FOOD]];
 }
 export declare class Cheerleader extends BaseDiscipline {
     name: Discipline.CHEERLEADER;
@@ -175,19 +155,19 @@ export declare class Cheerleader extends BaseDiscipline {
     skillProgression: [
         [
             level: 1,
-            skill: Cheer
+            skill: Skill.Basic.CHEER
         ],
         [
             level: 10,
-            skill: Support
+            skill: Skill.Basic.SUPPORT
         ],
         [
             level: 40,
-            skill: Inspire
+            skill: Skill.Basic.INSPIRE
         ],
         [
             level: 50,
-            skill: Hope
+            skill: Skill.Basic.HOPE
         ]
     ];
 }
@@ -198,15 +178,15 @@ export declare class Commander extends BaseDiscipline {
     skillProgression: [
         [
             level: 1,
-            skill: Boast
+            skill: Skill.Basic.BOAST
         ],
         [
             level: 10,
-            skill: Formations
+            skill: Skill.Teamwork.FORMATIONS
         ],
         [
             level: 50,
-            skill: Order
+            skill: Skill.Teamwork.ORDER
         ]
     ];
 }
@@ -226,11 +206,11 @@ export declare class MagiBlack extends BaseDiscipline {
     skillProgression: [
         [
             level: 10,
-            skill: Darkness
+            skill: Skill.Spell.DARKNESS
         ],
         [
             level: 25,
-            skill: Desolate
+            skill: Skill.Spell.DESOLATE
         ]
     ];
 }
@@ -243,15 +223,15 @@ export declare class MagiBlue extends BaseDiscipline {
     skillProgression: [
         [
             level: 10,
-            skill: Rage
+            skill: Skill.Basic.RAGE
         ],
         [
             level: 15,
-            skill: Aqua
+            skill: Skill.Spell.AQUA
         ],
         [
             level: 25,
-            skill: Tsunami
+            skill: Skill.Spell.TSUMANI
         ]
     ];
 }
@@ -261,7 +241,16 @@ export declare class MagiBrown extends BaseDiscipline {
     history: 'Harnessed from the power of Asmin';
     category: DisciplineCategory.ARCHETYPE;
     prerequisites: [Discipline.MAGI];
-    skillProgression: [[level: 10, skill: Quake], [level: 15, skill: Landslide]];
+    skillProgression: [
+        [
+            level: 10,
+            skill: Skill.Spell.QUAKE
+        ],
+        [
+            level: 15,
+            skill: Skill.Spell.LANDSLIDE
+        ]
+    ];
 }
 export declare class MagiGreen extends BaseDiscipline {
     name: Discipline.MAGI_GREEN;
@@ -272,15 +261,15 @@ export declare class MagiGreen extends BaseDiscipline {
     skillProgression: [
         [
             level: 10,
-            skill: Stop
+            skill: Skill.Spell.STOP
         ],
         [
             level: 15,
-            skill: Slow
+            skill: Skill.Spell.SLOW
         ],
         [
             level: 15,
-            skill: Haste
+            skill: Skill.Spell.HASTE
         ]
     ];
 }
@@ -290,7 +279,16 @@ export declare class MagiPink extends BaseDiscipline {
     history: 'Harnessed from the power of Suyri';
     category: DisciplineCategory.ARCHETYPE;
     prerequisites: [Discipline.MAGI];
-    skillProgression: [[level: 10, skill: Charm], [level: 15, skill: Chill]];
+    skillProgression: [
+        [
+            level: 10,
+            skill: Skill.Spell.CHARM
+        ],
+        [
+            level: 15,
+            skill: Skill.Spell.CHILL
+        ]
+    ];
 }
 export declare class MagiPurple extends BaseDiscipline {
     name: Discipline.MAGI_PURPLE;
@@ -298,7 +296,7 @@ export declare class MagiPurple extends BaseDiscipline {
     history: 'Harnessed from the power of Diag';
     category: DisciplineCategory.ARCHETYPE;
     prerequisites: [Discipline.MAGI];
-    skillProgression: [[level: 10, skill: Quake]];
+    skillProgression: [[level: 10, skill: Skill.Spell.QUAKE]];
 }
 export declare class MagiWhite extends BaseDiscipline {
     name: Discipline.MAGI_WHITE;
@@ -309,15 +307,15 @@ export declare class MagiWhite extends BaseDiscipline {
     skillProgression: [
         [
             level: 10,
-            skill: Blizzard
+            skill: Skill.Spell.BLIZZARD
         ],
         [
             level: 10,
-            skill: Frost
+            skill: Skill.Spell.FROST
         ],
         [
             level: 10,
-            skill: Chill
+            skill: Skill.Spell.CHILL
         ]
     ];
 }
@@ -330,15 +328,15 @@ export declare class MagiYellow extends BaseDiscipline {
     skillProgression: [
         [
             level: 10,
-            skill: Drain
+            skill: Skill.Spell.DRAIN
         ],
         [
             level: 25,
-            skill: Leech
+            skill: Skill.Spell.LEECH
         ],
         [
             level: 50,
-            skill: Drain
+            skill: Skill.Spell.DRAIN
         ]
     ];
 }
@@ -400,7 +398,7 @@ export declare class Solider extends BaseDiscipline {
     name: Discipline.SOLIDER;
     description: 'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.';
     category: DisciplineCategory.ARCHETYPE;
-    skillProgression: [[level: 10, skill: Cleave]];
+    skillProgression: [[level: 10, skill: Skill.Weapon.CLEAVE]];
 }
 export declare class Summoner extends BaseDiscipline {
     name: Discipline.SUMMONER;
@@ -409,15 +407,15 @@ export declare class Summoner extends BaseDiscipline {
     skillProgression: [
         [
             level: 10,
-            skill: Summon
+            skill: Skill.Summon.SUMMON
         ],
         [
             level: 10,
-            skill: Dismiss
+            skill: Skill.Summon.DISMISS
         ],
         [
             level: 10,
-            skill: Command
+            skill: Skill.Summon.COMMAND
         ]
     ];
 }
