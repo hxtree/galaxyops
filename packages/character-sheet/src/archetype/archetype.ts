@@ -18,7 +18,7 @@ export type CharacterSheet = {
  * only contains archetypes that can become character sheets, would not include a tree, etc.
  */
 export namespace ArchetypeList {
-  export type Character = {
+  export type ArchetypeType = {
     name: string;
     surname?: string;
     description?: string;
@@ -56,7 +56,7 @@ export namespace ArchetypeList {
   /**
    * Three Keepers
    */
-  export const MischievousPiebald: Character = {
+  export const MischievousPiebald: ArchetypeType = {
     name: 'Mischievous',
     surname: 'Piebald',
     alias: ['Keeper of Law'],
@@ -67,7 +67,7 @@ export namespace ArchetypeList {
     potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
   };
 
-  export const JanusPersian: Character = {
+  export const JanusPersian: ArchetypeType = {
     name: 'Janus',
     surname: 'Persian',
     backstory: 'Governs the flow of time the one has been in this state',
@@ -78,7 +78,7 @@ export namespace ArchetypeList {
     potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
   };
 
-  export const LoomeeAngora: Character = {
+  export const LoomeeAngora: ArchetypeType = {
     name: 'Loomee',
     surname: 'Angora',
     description: 'Light blonde girl wearing white linen',
@@ -104,7 +104,7 @@ export namespace ArchetypeList {
   /**
    * Three Destroyer
    */
-  export const VallonOni: Character = {
+  export const VallonOni: ArchetypeType = {
     name: 'Vallon',
     surname: 'Oni',
     symbolizes: ['Destroyer of Heart'],
@@ -113,7 +113,7 @@ export namespace ArchetypeList {
     weaponProficiency: [Gear.WeaponCategory.SWORD],
   };
 
-  export const OuernOni: Character = {
+  export const OuernOni: ArchetypeType = {
     name: 'Ouern',
     surname: 'Oni',
     symbolizes: ['Destroyer of Time'],
@@ -123,7 +123,7 @@ export namespace ArchetypeList {
     potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
   };
 
-  export const MeekuOni: Character = {
+  export const MeekuOni: ArchetypeType = {
     name: 'Meeku',
     surname: 'Oni',
     symbolizes: ['Destroyer of Law'],
@@ -153,7 +153,7 @@ export namespace ArchetypeList {
   /**
    * Seven Virtues
    */
-  export const ArinothDiyath: Character = {
+  export const ArinothDiyath: ArchetypeType = {
     name: 'Arinoth',
     surname: 'Diyath',
     symbolizes: ['Patience'],
@@ -161,7 +161,7 @@ export namespace ArchetypeList {
     potentialDisciplines: [],
   };
 
-  export const FayeImago: Character = {
+  export const FayeImago: ArchetypeType = {
     name: 'Faye',
     surname: 'Imago',
     backstory:
@@ -185,7 +185,7 @@ export namespace ArchetypeList {
     weaponProficiency: [Gear.WeaponCategory.STAFF],
   };
 
-  export const GaaliRuin: Character = {
+  export const GaaliRuin: ArchetypeType = {
     name: 'Gaali',
     surname: 'Runewin',
     symbolizes: ['Temperance'],
@@ -216,7 +216,7 @@ export namespace ArchetypeList {
     weaponProficiency: [Gear.WeaponCategory.RAPIER],
   };
 
-  export const GunterStonewell: Character = {
+  export const GunterStonewell: ArchetypeType = {
     name: 'Gunter',
     surname: 'Stonewell',
     symbolizes: ['Humility'],
@@ -232,7 +232,7 @@ export namespace ArchetypeList {
     weaponProficiency: [Gear.WeaponCategory.TWO_HANDED_AXE],
   };
 
-  export const MalaceTsia: Character = {
+  export const MalaceTsia: ArchetypeType = {
     name: 'Malace',
     surname: 'Tsia',
     alias: [
@@ -266,7 +266,7 @@ export namespace ArchetypeList {
     weaponProficiency: [Gear.WeaponCategory.KNIFE],
   };
 
-  export const PennyKibbutz: Character = {
+  export const PennyKibbutz: ArchetypeType = {
     name: 'Penny',
     surname: 'Kibbutz',
     description: 'A red head girl',
@@ -290,7 +290,7 @@ export namespace ArchetypeList {
     weaponProficiency: [Gear.WeaponCategory.DUAL_KYOKETSU_SHOGE],
   };
 
-  export const TraezUthsha: Character = {
+  export const TraezUthsha: ArchetypeType = {
     name: 'Traez',
     surname: 'Uthsha',
     backstory: '',
@@ -308,7 +308,7 @@ export namespace ArchetypeList {
   /**
    * Seven Sins
    */
-  export const Void: Character = {
+  export const Void: ArchetypeType = {
     name: 'Void',
     backstory:
       'Is one of the original seven demons. He was killed before the story begins. His place is taken by Mahdi.',
@@ -316,14 +316,14 @@ export namespace ArchetypeList {
     potentialDisciplines: [Discipline.MAGI_BLACK],
   };
 
-  export const Genki: Character = {
+  export const Genki: ArchetypeType = {
     name: 'Genki',
     symbolizes: ['Wrath', 'Fish'],
     potentialDisciplines: [Discipline.MAGI_BLUE],
     weaponProficiency: [Gear.WeaponCategory.HAND_SWORD],
   };
 
-  export const Lawzon: Character = {
+  export const Lawzon: ArchetypeType = {
     name: 'Lawzon',
     surname: 'Grey',
     symbolizes: ['Sloth', 'Wolf'],
@@ -333,7 +333,7 @@ export namespace ArchetypeList {
     weaponProficiency: [Gear.WeaponCategory.BROAD_SWORD],
   };
 
-  export const Madhi: Character = {
+  export const Madhi: ArchetypeType = {
     name: 'Mahdi',
     surname: 'Tsia',
     description: "Malace's brother",
@@ -342,27 +342,27 @@ export namespace ArchetypeList {
     weaponProficiency: [Gear.WeaponCategory.KNIFE],
   };
 
-  export const Suyri: Character = {
+  export const Suyri: ArchetypeType = {
     name: 'Suyri',
     description: 'uses strong magical powers',
     symbolizes: ['Luxury (later lust)', 'Fox'],
     potentialDisciplines: [Discipline.WIZARD, Discipline.MAGI_PINK],
   };
 
-  export const Wisp: Character = {
+  export const Wisp: ArchetypeType = {
     name: 'Wisp',
     symbolizes: ['Gluttony', 'Henya'],
     potentialDisciplines: [Discipline.MAGI_YELLOW],
   };
 
-  export const Asmin: Character = {
+  export const Asmin: ArchetypeType = {
     name: 'Asmin',
     symbolizes: ['Pride', 'Ox'],
     potentialDisciplines: [Discipline.MAGI_BROWN],
     weaponProficiency: [Gear.WeaponCategory.TWO_HANDED_AXE],
   };
 
-  export const Diag: Character = {
+  export const Diag: ArchetypeType = {
     name: 'Diag',
     symbolizes: ['Envy', 'Snake'],
     potentialDisciplines: [Discipline.MAGI_PURPLE],
@@ -371,13 +371,13 @@ export namespace ArchetypeList {
   /**
    * Notable Bad Guys
    */
-  export const Monarch: Character = {
+  export const Monarch: ArchetypeType = {
     name: 'Monarch',
     alias: ['The Deadly One'],
     weaponProficiency: [Gear.WeaponCategory.DAGGER],
   };
 
-  export const Viceroy: Character = {
+  export const Viceroy: ArchetypeType = {
     name: 'Viceroy',
     backstory: 'mimic monarch',
     weaponProficiency: [Gear.WeaponCategory.DAGGER],
@@ -386,17 +386,17 @@ export namespace ArchetypeList {
   /**
    * Battlers
    */
-  export const Spider: Character = {
+  export const Spider: ArchetypeType = {
     name: 'Spider',
     description: 'A spider',
   };
 
-  export const SeaHorse: Character = {
+  export const SeaHorse: ArchetypeType = {
     name: 'Sea Horse',
     description: 'A spider',
   };
 
-  export const SensitivePlant: Character = {
+  export const SensitivePlant: ArchetypeType = {
     name: 'Sensitive Plant',
     description: 'A plant that drops when touched',
   };

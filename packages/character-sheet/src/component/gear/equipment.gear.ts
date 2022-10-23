@@ -1,11 +1,11 @@
-import {Accessories} from './accessories.gear';
+import {Accessory} from './accessories.gear';
 import {Outfit} from './outfit.gear';
-import {Weapons} from './weapon.gear';
+import {Weapon} from './weapon.gear';
 
 export const Equipment = {
-  ...Accessories,
+  ...Accessory,
   ...Outfit,
-  ...Weapons,
+  ...Weapon,
 };
 
 export type Equipment = typeof Equipment;
