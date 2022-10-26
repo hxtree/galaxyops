@@ -32,9 +32,9 @@ RUN apt-get update &&
     # install AWS Organization Formation
     # https://github.com/org-formation/org-formation-cli
     npm install --global aws-organization-formation &&
-    # install nestjs/cli
+    # SKIPPED install nestjs/cli, not useful
     # https://docs.nestjs.com/first-steps
-    npm install --global @nestjs/cli &&
+    # npm install --global @nestjs/cli &&
     # install esbuild
     # https://esbuild.github.io/getting-started/#install-esbuild
     npm install esbuild

@@ -10,11 +10,11 @@ export class LuckByDiceApiStack extends cdk.Stack {
     const awsLambdaResource = new lambda.Function(this, 'IndexHandler', {
       runtime: lambda.Runtime.NODEJS_14_X,
       code: lambda.Code.fromAsset('dist/src'),
-      handler: 'index.handler'
+      handler: 'index.handler',
     });
 
     // API Gateway resource
-    new apigateway.LambdaRestApi(this, 'Endpoint', {
+    const rest = new apigateway.LambdaRestApi(this, 'Endpoint', {
       handler: awsLambdaResource,
       defaultCorsPreflightOptions: {
         allowHeaders: [
@@ -25,11 +25,13 @@ export class LuckByDiceApiStack extends cdk.Stack {
         ],
         allowOrigins: apigateway.Cors.ALL_ORIGINS,
         allowCredentials: true,
-        allowMethods: [  'GET', 'POST' ]
-      }
+        allowMethods: ['GET', 'POST'],
+      },
     });
 
-
-
+    // TODO DTO?
+    new cdk.CfnOutput(this, 'endpoint', {
+      value: `${rest.url}?notionation10d4&luck=4`,
+    });
   }
 }
