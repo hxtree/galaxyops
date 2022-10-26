@@ -2,7 +2,7 @@ import {
   ArchetypeList,
   Archetype,
   getArchetypeList,
-} from '../../archetype/archetype';
+} from '../../component/archetype/archetype';
 
 describe('NPCList', () => {
   test('able to get character', () => {

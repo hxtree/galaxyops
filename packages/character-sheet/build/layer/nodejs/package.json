@@ -29,14 +29,13 @@
     "@nestjs/common": "9.1.1",
     "@nestjs/core": "9.1.1",
     "@nestjs/terminus": "9.1.1",
-    "@nestjs/platform-express": "9.1.1",
-    "aws-serverless-express": "~3.4.0",
     "@vendia/serverless-express": "4.8.2",
     "express": "4.18.1",
     "node-cache": "5.1.2",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.5.6",
-    "mongoose": "~6.6.5"
+    "@nestjs/platform-express": "9.1.1",
+    "aws-serverless-express": "~3.4.0"
   },
   "devDependencies": {
     "aws-cdk-lib": "2.47.0",

@@ -1,11 +1,11 @@
-import {Drive, Life, Spirit} from '../component/gauges';
-import {Stats} from '../component/stats';
-import {Effect, Operator, Trait} from '../component/trait';
-import {StatusEffect} from '../component/status.effect';
-import {Discipline} from '../component/discipline';
-import {EffectTag} from '../component/tag.effect';
-import {Summon} from '../component/skill/summon.skill';
-import * as Gear from '../component/gear';
+import {Drive, Life, Spirit} from '../gauges';
+import {Stats} from '../stats';
+import {Effect, Operator, Trait} from '../trait';
+import {StatusEffect} from '../status.effect';
+import {Discipline} from '../discipline';
+import {EffectTag} from '../tag.effect';
+import {Summon} from '../skill/summon.skill';
+import * as Gear from '../gear';
 
 /**
  * A human or non-humanoid
