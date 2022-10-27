@@ -1,3 +1,5 @@
+// used in lambda
+
 import {NestFactory} from '@nestjs/core';
 import {ExpressAdapter} from '@nestjs/platform-express';
 import serverlessExpress from '@vendia/serverless-express';

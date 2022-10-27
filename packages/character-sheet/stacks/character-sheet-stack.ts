@@ -23,9 +23,9 @@ export class CharacterSheetStack extends cdk.Stack {
     // packages that are common or do not bundle include in layer
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.BundlingOutput.html
     const nodejsModuleLayer = new LayerVersion(this, 'AuthorizerLayer', {
+      compatibleArchitectures: [Architecture.X86_64, Architecture.ARM_64],
       removalPolicy: RemovalPolicy.DESTROY,
       // TODO auto build in docker container
-      // compatibleArchitectures: [Architecture.X86_64, Architecture.ARM_64],
       code: Code.fromAsset('build/layer'),
       // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_s3_assets.AssetOptions.html
       // code: Code.fromAsset('.', {
@@ -119,8 +119,15 @@ export class CharacterSheetStack extends cdk.Stack {
       value: this.region,
     });
 
+    // Notable endpoints
+    new cdk.CfnOutput(this, 'archetype/list', {
+      value: `${rest.url}archetype/list`,
+    });
     new cdk.CfnOutput(this, 'archetype/:id', {
       value: `${rest.url}archetype/id/MeekuOni`,
+    });
+    new cdk.CfnOutput(this, 'skills/list', {
+      value: `${rest.url}skill/list`,
     });
   }
 }

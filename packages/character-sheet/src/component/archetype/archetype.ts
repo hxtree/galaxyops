@@ -55,7 +55,7 @@ export namespace ArchetypeList {
     // summon?: Summon[];
     // ]
 
-    loot?: Gear.Item[];
+    // loot?: Gear.Item[];
   };
 
   /**
@@ -153,7 +153,11 @@ export namespace ArchetypeList {
     ],
     potentialOutfits: [Gear.Outfit.TSHIRT_AND_JEANS],
     summonCompatibility: [Summon.VACHEL],
-    weaponCompatibility: [Gear.WeaponCategory.SHIELD_SWORD],
+    weaponCompatibility: [
+      Gear.WeaponCategory.SHIELD_SWORD,
+      Gear.WeaponCategory.SWORD,
+      Gear.WeaponCategory.BROAD_SWORD,
+    ],
   };
 
   /**
@@ -165,6 +169,7 @@ export namespace ArchetypeList {
     symbolizes: ['Patience'],
     backstory: '',
     potentialDisciplines: [],
+    weaponCompatibility: [Gear.WeaponCategory.STAFF],
   };
 
   export const FayeImago: ArchetypeType = {
@@ -269,7 +274,10 @@ export namespace ArchetypeList {
     ],
     potentialOutfits: [Gear.Outfit.OFFICERS_UNIFORM],
     summonCompatibility: [Summon.OURUBORUS, Summon.MISCHIEVOUS],
-    weaponCompatibility: [Gear.WeaponCategory.KNIFE],
+    weaponCompatibility: [
+      Gear.WeaponCategory.KNIFE,
+      Gear.WeaponCategory.DAGGER,
+    ],
   };
 
   export const PennyKibbutz: ArchetypeType = {
@@ -399,6 +407,12 @@ export namespace ArchetypeList {
   export const Spider: ArchetypeType = {
     name: 'Spider',
     description: 'A spider',
+  };
+
+  export const Warling: ArchetypeType = {
+    name: 'Warling',
+    description: 'The embodyment of a traveling cyclone',
+    potentialDisciplines: [Discipline.WIZARD, Discipline.HISTORIAN],
   };
 
   export const SeaHorse: ArchetypeType = {

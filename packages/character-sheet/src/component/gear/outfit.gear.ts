@@ -8,25 +8,28 @@ import {Slot} from './slot';
  * Characters can change out between for example swimsuits into casual wear.
  * Characters cannot change out bottom and tops individuallly.
  */
-export type OutfitType = {
-  name: string;
-  description: string;
-  gearSlots?: Slot[];
-};
 
 export enum Outfit {
   TSHIRT_AND_JEANS = 'T-Shirt and Jeans',
   OFFICERS_UNIFORM = "Officer's Uniform",
 }
 
-export const TShirtAndJeans: OutfitType = {
-  name: Outfit.TSHIRT_AND_JEANS,
-  description: 'White t-Shirt and denim jeans',
-  gearSlots: [Slot.OUTFIT],
-};
+export namespace Outfit {
+  export type OutfitType = {
+    name: string;
+    description: string;
+    gearSlots?: Slot[];
+  };
 
-export const OfficersUniform: OutfitType = {
-  name: Outfit.OFFICERS_UNIFORM,
-  description: 'Black Embellished Tarry Coat',
-  gearSlots: [Slot.OUTFIT],
-};
+  export const TShirtAndJeans: OutfitType = {
+    name: Outfit.TSHIRT_AND_JEANS,
+    description: 'White t-Shirt and denim jeans',
+    gearSlots: [Slot.OUTFIT],
+  };
+
+  export const OfficersUniform: OutfitType = {
+    name: Outfit.OFFICERS_UNIFORM,
+    description: 'Black Embellished Tarry Coat',
+    gearSlots: [Slot.OUTFIT],
+  };
+}
