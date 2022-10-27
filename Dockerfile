@@ -39,6 +39,23 @@ RUN apt-get update &&
     # https://esbuild.github.io/getting-started/#install-esbuild
     npm install esbuild
 
+# rush tab ompletion
+# https://rushjs.io/pages/developer/tab_completion/
+RUN echo "# bash parameter completion for the Rush CLI" >>/home/node/.bashrc &&
+    echo "_rush_bash_complete()" >>/home/node/.bashrc &&
+    echo "{" >>/home/node/.bashrc &&
+    echo "  local word=\${COMP_WORDS[COMP_CWORD]}" >>/home/node/.bashrc &&
+    echo "" >>/home/node/.bashrc &&
+    echo "  local completions" >>/home/node/.bashrc &&
+    echo "  completions=\"\$(rush tab-complete --position \"\${COMP_POINT}\" --word \"\${COMP_LINE}\" 2>/dev/null)\"" >>/home/node/.bashrc &&
+    echo "  if [ \$? -ne 0 ]; then" >>/home/node/.bashrc &&
+    echo "    completions=\"\"" >>/home/node/.bashrc &&
+    echo "  fi" >>/home/node/.bashrc &&
+    echo "" >>/home/node/.bashrc &&
+    echo "  COMPREPLY=( \$(compgen -W \"\$completions\" -- \"\$word\") )" >>/home/node/.bashrc &&
+    echo "}" >>/home/node/.bashrc &&
+    echo "complete -f -F _rush_bash_complete rush" >>/home/node/.bashrc
+
 # install AWS Command Line Interface
 # https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &&
