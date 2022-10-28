@@ -1,7 +1,7 @@
 import {ApiProperty} from '@nestjs/swagger';
-import {getArchetypeList} from './component/archetype/archetype';
+import {ArchetypeList} from './component/archetype/archetype';
 
 export class QueryArchetypeDto {
-  @ApiProperty({enum: getArchetypeList()})
+  @ApiProperty({enum: Object.keys(ArchetypeList)})
   id: string;
 }

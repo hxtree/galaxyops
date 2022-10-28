@@ -12,8 +12,8 @@ export class ArchetypeController {
   }
 
   @Get('id/:id')
-  async findOne(@Param() QueryArchetypeDto: QueryArchetypeDto): Promise<any> {
-    return await this._archetypeService.getByID(QueryArchetypeDto.id);
+  async find(@Param() QueryArchetypeDto: QueryArchetypeDto): Promise<any> {
+    return await this._archetypeService.find(QueryArchetypeDto.id);
   }
 
   @Get('list')

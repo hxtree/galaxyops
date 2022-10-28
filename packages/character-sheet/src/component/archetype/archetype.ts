@@ -432,12 +432,13 @@ export namespace ArchetypeList {
   // A snow leopard creature that lives up north (can be seen near Lawzon)
 }
 
-export type ArchetypeKey = typeof ArchetypeList;
-export type ArchetypeType = keyof ArchetypeKey;
-
 export const Archetype = (id: string) => {
+  type ArchetypeKey = typeof ArchetypeList;
+  type ArchetypeType = keyof ArchetypeKey;
+
   const archetypeId: ArchetypeType = id as ArchetypeType;
   const archetype = ArchetypeList[archetypeId];
+
   return archetype;
 };
 

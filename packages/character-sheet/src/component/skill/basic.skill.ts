@@ -45,7 +45,7 @@ export enum Basic {
  * Each skill can be acquired via items, etc. but often
  * progression is determined by class.
  */
-export namespace Basic {
+export namespace BasicList {
   export type BasicType = {
     name: string;
     description: string;

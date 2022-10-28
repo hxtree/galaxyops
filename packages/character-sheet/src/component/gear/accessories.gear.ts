@@ -20,7 +20,7 @@ export enum Accessory {
   CATCHERS_MITT = 'Catchers Mitt',
 }
 
-export namespace Accessory {
+export namespace AccessoryList {
   export type AccessoryType = {
     name: string;
     description: string;

@@ -7,6 +7,24 @@ import * as Skill from './component/skill';
  */
 @Injectable()
 export class SkillService {
+  async find(id: string): Promise<any> {
+    try {
+      // TODO add support for other than basic
+      const skill = (id: string) => {
+        type SkillKey = typeof Skill.BasicList;
+        type SkillType = keyof SkillKey;
+
+        const skillId: SkillType = id as SkillType;
+        return Skill.BasicList[skillId];
+      };
+      const result = {id: id, ...skill(id)};
+
+      return await Promise.resolve(result);
+    } catch (err) {
+      Promise.reject(new Error('Failed to get Archetype'));
+    }
+  }
+
   async list(): Promise<any> {
     try {
       const skills: string[] = [];
