@@ -1,5 +1,5 @@
 import {ApiProperty} from '@nestjs/swagger';
-import {Gear} from '../../value-object/gear';
+import {Gear} from '../../data/gear';
 
 export class QueryGearDto {
   @ApiProperty({enum: Object.keys(Gear)})

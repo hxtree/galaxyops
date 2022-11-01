@@ -19,6 +19,13 @@ export namespace Archetype {
   export type Type = {
     name: string;
     surname?: string;
+    age?: number;
+    height?: string;
+    weight?: number;
+    gender?: string;
+    element?: string;
+    occupation?: string;
+    characteristics?: string;
     description?: string;
     history?: string;
     backstory?: string;
@@ -273,9 +280,18 @@ export namespace Archetype {
   export const PENNY_KIBBUTZ: Type = {
     name: 'Penny',
     surname: 'Kibbutz',
+    alias: ['Crazy Chick'],
     description: 'A red head girl',
+    age: 22,
+    height: '5ft 8',
+    weight: 120,
+    gender: 'Female',
+    element: 'Fire',
+    occupation: 'Mercenary',
+    characteristics:
+      'Strong, defiant, kills without question, and motivated by money',
     backstory: '',
-    symbolizes: ['Kindness'],
+    symbolizes: ['Kindness', 'Independance'],
     potentialDisciplines: [
       Discipline.NINJA,
       Discipline.ASSASSIN,
@@ -284,6 +300,9 @@ export namespace Archetype {
       Discipline.THIEF,
     ],
     traits: [
+      // **Battle +**: Attack, and Techniques.\\
+      // **Battle -**: Magic.\\
+
       {
         // has built up tolerance to poisons
         tag: EffectTag.POISON,

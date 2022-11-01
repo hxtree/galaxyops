@@ -1,5 +1,5 @@
 import {Injectable} from '@nestjs/common';
-import {Archetype} from '../../value-object/archetype/archetype';
+import {Archetype} from '../../data/archetype/archetype';
 
 @Injectable()
 export class ArchetypeService {

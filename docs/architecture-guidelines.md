@@ -29,9 +29,11 @@ performance and omnipresence. Microsoft backed Typescript compiling is used for
 Javascript. Typescript offers typehinting, easies in maintenance, and code
 readability.
 
-## Repo Structure
+## File Structure
 
-Parent project folder structure mimics that of Microsoft Rushstack.
+Parent project folder structure mimics that of Microsoft Rushstack. As for
+individual package files, generally files that change together should stay
+together. Structure code by feature.
 
 ## Package Manager
 

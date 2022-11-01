@@ -1,10 +1,10 @@
 import {Schema, model} from 'mongoose';
 import {v4 as uuidv4} from 'uuid';
-import {Trait} from '../value-object/trait';
-import {Discipline} from '../value-object/discipline';
-import {Drive, Life, Spirit} from '../value-object/gauges';
-import * as Gear from '../value-object/gear';
-import {StatusEffect} from '../value-object/status.effect';
+import {Trait} from '../data/trait';
+import {Discipline} from '../data/discipline';
+import {Drive, Life, Spirit} from '../data/gauges';
+import * as Gear from '../data/gear';
+import {StatusEffect} from '../data/status.effect';
 
 /**
  * A human or non-humanoid instance of a character archetype

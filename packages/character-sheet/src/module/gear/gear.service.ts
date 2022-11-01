@@ -1,5 +1,5 @@
 import {Injectable} from '@nestjs/common';
-import {Gear} from '../../value-object/gear';
+import {Gear} from '../../data/gear';
 
 @Injectable()
 export class GearService {

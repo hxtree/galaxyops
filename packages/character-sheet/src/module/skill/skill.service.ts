@@ -1,5 +1,5 @@
 import {Injectable} from '@nestjs/common';
-import {Skill, SkillType} from '../../value-object/skill';
+import {Skill, SkillType} from '../../data/skill';
 
 /**
  * skills are determined based on disciplines, afflictions, and equipment
