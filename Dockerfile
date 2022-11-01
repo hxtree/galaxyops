@@ -56,6 +56,9 @@ RUN echo "# bash parameter completion for the Rush CLI" >>/home/node/.bashrc &&
     echo "}" >>/home/node/.bashrc &&
     echo "complete -f -F _rush_bash_complete rush" >>/home/node/.bashrc
 
+# Add alias
+RUN echo "alias app=\"cd /usr/src/app\"" >>/home/node/.bashrc
+
 # install AWS Command Line Interface
 # https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &&
