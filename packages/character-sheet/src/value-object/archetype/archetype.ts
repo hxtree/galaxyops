@@ -331,6 +331,11 @@ export namespace Archetype {
   export const LAWZON_GREY: Type = {
     name: 'Lawzon',
     surname: 'Grey',
+    description:
+      'wears sleep mask.' +
+      'wears a wolfs head. ' +
+      'Has horns. ' +
+      'barely stays standing and can be found sleeping everywhere.',
     symbolizes: ['Sloth', 'Wolf'],
     history:
       'Rumored to be the most powerful fighter from the north. ' +
@@ -413,6 +418,11 @@ export namespace Archetype {
   export const SENSITIVE_PLANT: Type = {
     name: 'Sensitive Plant',
     description: 'A plant that drops when touched',
+  };
+
+  export const DEEP_THINKER: Type = {
+    name: 'Deep Thinker',
+    description: 'A humaniod, fish, monster',
   };
 
   // Bird of Fire - phoenix
