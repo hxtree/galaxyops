@@ -38,10 +38,7 @@ Microservice API Patterns (MAP)
 File structure whise how do these look inside the service
 
 Queries -> API/Rest/POJO
-  query / find, findAll, get. has
-    DTO
-
-
+  query / find, findBy, findAll, get. has
 
 Commands -> Fires off a SNS -> SQS
   subscribe

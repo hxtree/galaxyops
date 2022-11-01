@@ -119,15 +119,8 @@ export class CharacterSheetStack extends cdk.Stack {
       value: this.region,
     });
 
-    // Notable endpoints
-    new cdk.CfnOutput(this, 'archetype/list', {
-      value: `${rest.url}archetype/list`,
-    });
-    new cdk.CfnOutput(this, 'archetype/:id', {
-      value: `${rest.url}archetype/id/MeekuOni`,
-    });
-    new cdk.CfnOutput(this, 'skills/list', {
-      value: `${rest.url}skill/list`,
+    new cdk.CfnOutput(this, 'Localhost API Docs', {
+      value: `${rest.url}api`,
     });
   }
 }

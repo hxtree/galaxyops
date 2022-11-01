@@ -1,13 +1,11 @@
 import {Module} from '@nestjs/common';
-import {SkillController} from './skill.controller';
-import {SkillService} from './skill.service';
-import {ArchetypeService} from './archetype.service';
-import {ArchetypeController} from './archetype.controller';
-import {GearService} from './gear.service';
-import {GearController} from './gear.controller';
+import {ArchetypeModule} from './module/archetype/archetype.module';
+import {GearModule} from './module/gear/gear.module';
+import {SkillModule} from './module/skill/skill.module';
 
 @Module({
-  controllers: [ArchetypeController, SkillController, GearController],
-  providers: [ArchetypeService, SkillService, GearService],
+  imports: [ArchetypeModule, GearModule, SkillModule],
+  providers: [],
+  exports: [],
 })
 export class AppModule {}
