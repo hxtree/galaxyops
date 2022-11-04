@@ -1,14 +1,14 @@
-# Service Endpoint Contracts
+# @org-contracts
 
-Contracts are a part of the Microservice API Patterns (MAP). Contracts are used
-for communication between microservices. Contracts are owned by the service that
-is depended on.
+Service Endpoint Contracts are a part of the Microservice API Patterns (MAP).
+Contracts are used for to define communication agreements between microservices.
 
 ## Updating Contracts
 
 **WARNING: DO NOT MODIFY SUBFOLDERS.**
 
-All contracts are automatically generated.
+All contracts are owned by the service that is depended on. All contracts are
+automatically generated from the services that is depended on.
 
 1. Bring up the service with openapi endpoint
 
