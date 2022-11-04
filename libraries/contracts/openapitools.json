@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "6.2.1",
+    "generators": {
+      "character-sheet": {
+        "output": "./character-sheet",
+        "inputSpec": "http://localhost:3000/api-json",
+        "ignoreFileOverride": "./.openapi-generator-ignore",
+        "generatorName": "typescript-axios",
+        "additionalProperties": {
+          "npmName": "@org-contracts/character-sheet",
+          "npmRepository": "https://github.com/hxtree/keepers-cradle",
+          "withInterfaces": true,
+          "stringEnums": true
+        }
+      }
+    }
+  }
+}

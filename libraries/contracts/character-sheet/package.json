@@ -1,0 +1,34 @@
+{
+  "name": "@org-contracts/character-sheet",
+  "version": "1.0",
+  "description": "OpenAPI client for @org-contracts/character-sheet",
+  "author": "OpenAPI-Generator Contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+  },
+  "keywords": [
+    "axios",
+    "typescript",
+    "openapi-client",
+    "openapi-generator",
+    "@org-contracts/character-sheet"
+  ],
+  "license": "Unlicense",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc ",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.5",
+    "typescript": "^4.0"
+  },
+  "publishConfig": {
+    "registry": "https://github.com/hxtree/keepers-cradle"
+  }
+}

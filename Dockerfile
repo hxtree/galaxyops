@@ -37,7 +37,11 @@ RUN apt-get update &&
     npm install --global @nestjs/cli &&
     # install esbuild
     # https://esbuild.github.io/getting-started/#install-esbuild
-    npm install esbuild
+    npm install esbuild &&
+    # install openapi generator for generating microservice contracts
+    # https://openapi-generator.tech
+    sudo apt install default-jre &&
+    npm install @openapitools/openapi-generator-cli -g
 
 # rush tab ompletion
 # https://rushjs.io/pages/developer/tab_completion/
