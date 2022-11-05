@@ -32,6 +32,18 @@ export namespace Archetype {
     experience?: number;
     alias?: string[];
     symbolizes?: string[];
+
+    biological?: {
+      race?: string;
+      gender?: string;
+      age?: string;
+      height?: string;
+      weight?: string;
+      hairColor: string;
+      eyeColor: string;
+    };
+
+    relationships?: string[];
     affiliation?: string[];
 
     // these seem more like they loaded or determined for player characters

@@ -7,6 +7,6 @@ Source code has only two types executable and non-executable. Non-executable
 libraries configuration contains files are better stored separately here away
 from source code as to keep code clean and readable.
 
-# Documentation
+## Documentation
 
 - [Rule of three](<https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)>)
