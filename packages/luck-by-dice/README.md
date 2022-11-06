@@ -7,5 +7,10 @@ A microservice api for simulating luck based dice rolls from dice notaiton.
 
 ## Stacks
 
-- APIGateway
+- [Swagger](http://localhost:3000/api/) (localhost only)
 - Lambda
+- ApiGateway
+
+## Features:
+
+- **Roll**: Simulates dice roll from notation using luck.

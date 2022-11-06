@@ -23,12 +23,14 @@ export class Luck implements ILuck {
 
   private _value: number;
 
-  private _history: Array<number> = [];
+  private _history: number[];
 
   private _algorithm: ILuckAdjustment;
 
   public constructor(value?: number) {
     this._algorithm = new DefaultLuckAdjustment();
+
+    this._history = [];
 
     // disable luck if undefined
     if (value === undefined) {

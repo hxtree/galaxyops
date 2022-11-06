@@ -1,6 +1,0 @@
-{
-    "entryPoints": [
-        "src/*.ts"
-    ],
-    "out": "docs"
-}
