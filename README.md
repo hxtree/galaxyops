@@ -6,7 +6,7 @@
 A online mobile RPG game engine and infrastructure as code monorepo in
 development. Built using Unreal 5, AWS CDKv2, Typescript.
 
-![Base Game Client](/docs/assets/images/base-game-client.png)
+![Base Game Client](/docs/assets/images/shield-sword.png)
 
 ## Getting Started
 
