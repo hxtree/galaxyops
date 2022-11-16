@@ -1,6 +1,6 @@
 import {Construct} from 'constructs';
 import * as cdk from 'aws-cdk-lib';
-
+import * as ssm from 'aws-cdk-lib/aws-ssm';
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
 import {BundlingOutput, Duration, RemovalPolicy, StackProps} from 'aws-cdk-lib';
@@ -107,6 +107,13 @@ export class LuckByDiceStack extends cdk.Stack {
         allowCredentials: true,
         allowMethods: ['GET', 'POST'],
       },
+    });
+
+    // Store API Gateway URL
+    new ssm.StringParameter(this, 'Parameter', {
+      description: 'LuckByDiceApiUrl',
+      parameterName: 'LuckByDiceApiUrl',
+      stringValue: `${rest.url}api`,
     });
 
     new cdk.CfnOutput(this, 'Region', {

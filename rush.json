@@ -29,11 +29,18 @@
   },
   "projects": [
     {
+      "packageName": "@org-package/api-gateway",
+      "projectFolder": "packages/api-gateway",
+      "reviewCategory": "apis",
+      "cyclicDependencyProjects": []
+    },
+    {
       "packageName": "@org-package/character-sheet",
       "projectFolder": "packages/character-sheet",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": []
     },
+
     {
       "packageName": "@org-package/luck-by-dice",
       "projectFolder": "packages/luck-by-dice",
