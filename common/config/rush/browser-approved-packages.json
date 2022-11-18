@@ -175,6 +175,18 @@
       "allowedCategories": [ "heft" ]
     },
     {
+      "name": "@testing-library/jest-dom",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@testing-library/react",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@testing-library/user-event",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@typescript-eslint/eslint-plugin",
       "allowedCategories": [ "apis", "apps", "clients" ]
     },
@@ -383,6 +395,18 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "react",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "react-dom",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "react-scripts",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "reflect-metadata",
       "allowedCategories": [ "apis", "heft" ]
     },
@@ -436,6 +460,10 @@
     },
     {
       "name": "uuid",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "web-vitals",
       "allowedCategories": [ "apis" ]
     },
     {

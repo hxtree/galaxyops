@@ -13,3 +13,10 @@ a count down until our universe begins.
 Time Format:
 
 -00E-053-0125HT
+
+Game time should always be going. There should be no downtime while accessing
+menus. When a player select a character and goes into thier equipment menu they
+adjust it live with while the majority of the screen is visiable.
+
+A pause feature may be used but would freeze all players menu in a game
+instance.
