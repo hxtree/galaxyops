@@ -29,6 +29,12 @@
   },
   "projects": [
     {
+      "packageName": "@org-package/gm-client",
+      "projectFolder": "packages/gm-client",
+      "reviewCategory": "apis",
+      "cyclicDependencyProjects": []
+    },
+    {
       "packageName": "@org-package/api-gateway",
       "projectFolder": "packages/api-gateway",
       "reviewCategory": "apis",
