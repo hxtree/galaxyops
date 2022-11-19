@@ -1,3 +1,5 @@
 packages:
-    - 'apps/**'
-    - 'lib/**'
+  - 'packages/**'
+  - 'libraries/**'
+  - 'tests/**'
+  - 'platform/**'

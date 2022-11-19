@@ -159,6 +159,14 @@
       "allowedCategories": [ "heft" ]
     },
     {
+      "name": "@org-package/design-system",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@reduxjs/toolkit",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@rushstack/eslint-config",
       "allowedCategories": [ "heft" ]
     },
@@ -173,6 +181,46 @@
     {
       "name": "@rushstack/node-core-library",
       "allowedCategories": [ "heft" ]
+    },
+    {
+      "name": "@storybook/addon-actions",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/addon-essentials",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/addon-interactions",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/addon-links",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/builder-webpack5",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/manager-webpack5",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/node-logger",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/preset-create-react-app",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/react",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/testing-library",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "@testing-library/jest-dom",
@@ -228,6 +276,10 @@
     },
     {
       "name": "axios",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "babel-plugin-named-exports-order",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -391,6 +443,10 @@
       "allowedCategories": [ "clients" ]
     },
     {
+      "name": "prop-types",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "qs",
       "allowedCategories": [ "apis" ]
     },
@@ -400,6 +456,10 @@
     },
     {
       "name": "react-dom",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "react-redux",
       "allowedCategories": [ "apis" ]
     },
     {
