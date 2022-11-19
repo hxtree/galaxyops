@@ -3,7 +3,7 @@ docker-compose.override.yml
 
 # ssh
 .devcontainer/.ssh/**
-!.devcontainer/.ssh/README.md
+!.devcontainer/.ssh/config
 
 # AWS CLI
 .devcontainer/.aws/**
