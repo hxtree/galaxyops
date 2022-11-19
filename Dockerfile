@@ -9,16 +9,6 @@ FROM node:gallium-buster as base
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
-# install AWS Command Line Interface
-# https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &&
-    unzip awscliv2.zip &&
-    chmod +x ./aws/install &&
-    ./aws/install -i /usr/local/aws-cli -b /usr/local/bin &&
-    mkdir /usr/src/app
-
-WORKDIR /usr/src/app
-
 # install tools
 RUN apt-get update &&
     apt-get install -y --no-install-recommends \
@@ -54,6 +44,14 @@ RUN apt-get update &&
     apt-get install -y default-jre &&
     npm install @openapitools/openapi-generator-cli -g
 
+# install AWS Command Line Interface
+# https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &&
+    unzip awscliv2.zip &&
+    chmod +x ./aws/install &&
+    ./aws/install -i /usr/local/aws-cli -b /usr/local/bin &&
+    mkdir /usr/src/app
+
 # rush tab ompletion
 # https://rushjs.io/pages/developer/tab_completion/
 RUN echo "# bash parameter completion for the Rush CLI" >>/home/node/.bashrc &&
@@ -79,6 +77,8 @@ RUN echo "parse_git_branch() {" >>/home/node/.bashrc &&
 
 # Add alias
 RUN echo "alias app=\"cd /usr/src/app\"" >>/home/node/.bashrc
+
+WORKDIR /usr/src/app
 
 ################################################################################
 #                               Development Base                               #
