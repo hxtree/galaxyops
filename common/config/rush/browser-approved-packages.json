@@ -4,475 +4,535 @@
   "packages": [
     {
       "name": "@anatine/esbuild-decorators",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "@aws-cdk/assert",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@aws-cdk/aws-appsync",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@aws-cdk/aws-dynamodb",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@aws-cdk/core",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@aws-cdk/lambda",
-      "allowedCategories": [ "apps" ]
+      "allowedCategories": ["apps"]
     },
     {
       "name": "@jest/core",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "@jest/reporters",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "@jest/transform",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "@jest/types",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "@microsoft/api-extractor",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "@microsoft/tsdoc",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "@middy/core",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@middy/http-error-handler",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@middy/http-json-body-parser",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@middy/validator",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/apollo",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/cli",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/common",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/core",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/cqrs",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/graphql",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/jwt",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/microservice",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/microservices",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/passport",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/platform-express",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/platform-socket.io",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/schematics",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/swagger",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/terminus",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/testing",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nestjs/websockets",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nxb-libs/ability",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nxb-libs/async",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nxb-libs/core-contracts",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@nxb-libs/schema",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@org-heft/heft-jest-plugin",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
+    },
+    {
+      "name": "@org-package/design-system",
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "@reduxjs/toolkit",
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@rushstack/eslint-config",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "@rushstack/heft",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "@rushstack/heft-config-file",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "@rushstack/node-core-library",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
+    },
+    {
+      "name": "@storybook/addon-actions",
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "@storybook/addon-essentials",
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "@storybook/addon-interactions",
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "@storybook/addon-links",
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "@storybook/builder-webpack5",
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "@storybook/manager-webpack5",
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "@storybook/node-logger",
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "@storybook/preset-create-react-app",
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "@storybook/react",
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "@storybook/testing-library",
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@testing-library/jest-dom",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@testing-library/react",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@testing-library/user-event",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "@vendia/serverless-express",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "apollo-server-core",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "apollo-server-express",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "aws-cdk",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "aws-cdk-lib",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "aws-lambda",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "aws-sdk",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "aws-serverless-express",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "axios",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "babel-plugin-named-exports-order",
+      "allowedCategories": ["apis"]
     },
     {
       "name": "cache-manager",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "class-transformer",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "class-validator",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "cli-color",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "constructs",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "dotenv",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": ["apis", "platform"]
     },
     {
       "name": "esbuild",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "apis", "apps", "clients", "heft" ]
+      "allowedCategories": ["apis", "apps", "clients", "heft"]
     },
     {
       "name": "eslint-config-airbnb",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": ["apis", "clients"]
     },
     {
       "name": "eslint-config-airbnb-base",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": ["apis", "clients"]
     },
     {
       "name": "eslint-config-airbnb-typescript",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": ["apis", "clients"]
     },
     {
       "name": "eslint-config-prettier",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": ["apis", "clients"]
     },
     {
       "name": "eslint-plugin-disable",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "eslint-plugin-import",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": ["apis", "clients"]
     },
     {
       "name": "eslint-plugin-jest",
-      "allowedCategories": [ "apis", "clients", "heft" ]
+      "allowedCategories": ["apis", "clients", "heft"]
     },
     {
       "name": "eslint-plugin-jsx-a11y",
-      "allowedCategories": [ "clients" ]
+      "allowedCategories": ["clients"]
     },
     {
       "name": "eslint-plugin-playwright",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "eslint-plugin-prettier",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "eslint-plugin-tsdoc",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "express",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "fs",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "graphql",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "graphql-tools",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "jest",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "jest-config",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "jest-environment-node",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "jest-extended",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "jest-mock-extended",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "jest-resolve",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "jest-snapshot",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "jest-watch-select-projects",
-      "allowedCategories": [ "heft" ]
+      "allowedCategories": ["heft"]
     },
     {
       "name": "lodash",
-      "allowedCategories": [ "apis", "heft" ]
+      "allowedCategories": ["apis", "heft"]
     },
     {
       "name": "mongodb",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": ["apis", "platform"]
     },
     {
       "name": "mongoose",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "nest-aws-sdk",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "node-cache",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "path",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "pino",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "prettier",
-      "allowedCategories": [ "apis", "clients", "heft" ]
+      "allowedCategories": ["apis", "clients", "heft"]
     },
     {
       "name": "prettier-package-json",
-      "allowedCategories": [ "clients" ]
+      "allowedCategories": ["clients"]
+    },
+    {
+      "name": "prop-types",
+      "allowedCategories": ["apis"]
     },
     {
       "name": "qs",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "react",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "react-dom",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
+    },
+    {
+      "name": "react-redux",
+      "allowedCategories": ["apis"]
     },
     {
       "name": "react-scripts",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "reflect-metadata",
-      "allowedCategories": [ "apis", "heft" ]
+      "allowedCategories": ["apis", "heft"]
     },
     {
       "name": "rimraf",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "rsx",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "rxjs",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "source-map-support",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "supertest",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "ts-loader",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "ts-node",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "tsconfig-paths",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "typedoc",
-      "allowedCategories": [ "apis", "apps", "clients" ]
+      "allowedCategories": ["apis", "apps", "clients"]
     },
     {
       "name": "typeorm",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "apis", "apps", "clients", "heft" ]
+      "allowedCategories": ["apis", "apps", "clients", "heft"]
     },
     {
       "name": "uuid",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "web-vitals",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "webpack",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     },
     {
       "name": "webpack-cli",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": ["apis"]
     }
   ]
 }
