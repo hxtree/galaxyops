@@ -9,6 +9,17 @@ FROM node:gallium-buster as base
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
+# install AWS Command Line Interface
+# https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &&
+    unzip awscliv2.zip &&
+    chmod +x ./aws/install &&
+    ./aws/install -i /usr/local/aws-cli -b /usr/local/bin &&
+    mkdir /usr/src/app
+
+WORKDIR /usr/src/app
+
+# install tools
 RUN apt-get update &&
     apt-get install -y --no-install-recommends \
         tzdata \
@@ -40,7 +51,7 @@ RUN apt-get update &&
     npm install esbuild &&
     # install openapi generator for generating microservice contracts
     # https://openapi-generator.tech
-    sudo apt install default-jre &&
+    apt-get install -y default-jre &&
     npm install @openapitools/openapi-generator-cli -g
 
 # rush tab ompletion
@@ -60,18 +71,14 @@ RUN echo "# bash parameter completion for the Rush CLI" >>/home/node/.bashrc &&
     echo "}" >>/home/node/.bashrc &&
     echo "complete -f -F _rush_bash_complete rush" >>/home/node/.bashrc
 
+# Add Git Branch to Bash
+RUN echo "parse_git_branch() {" >>/home/node/.bashrc &&
+    echo "git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\\1)/'" >>/home/node/.bashrc &&
+    echo "}" >>/home/node/.bashrc &&
+    echo "export PS1=\"\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ \"" >>/home/node/.bashrc
+
 # Add alias
 RUN echo "alias app=\"cd /usr/src/app\"" >>/home/node/.bashrc
-
-# install AWS Command Line Interface
-# https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &&
-    unzip awscliv2.zip &&
-    chmod +x ./aws/install &&
-    ./aws/install -i /usr/local/aws-cli -b /usr/local/bin &&
-    mkdir /usr/src/app
-
-WORKDIR /usr/src/app
 
 ################################################################################
 #                               Development Base                               #
