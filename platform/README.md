@@ -12,6 +12,19 @@ At a base level a platform can just a curated list of perfered packages.
 rush add --package pino
 ```
 
+Use "err" namespace to properly serialize error namespace.
+
+```
+try {
+ ...
+} catch (err) {
+  logger.info('message', {err});
+}
+```
+
+- https://getpino.io/#/docs/api?id=serializers-object
+- https://bobbyhadz.com/blog/typescript-object-is-of-type-unknown
+
 ### Database
 
 MongoDB Atlas. [Register](https://www.mongodb.com/cloud/atlas/register)

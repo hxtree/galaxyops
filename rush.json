@@ -29,6 +29,12 @@
   },
   "projects": [
     {
+      "packageName": "@org-package/design-system",
+      "projectFolder": "packages/design-system",
+      "reviewCategory": "apis",
+      "cyclicDependencyProjects": []
+    },
+    {
       "packageName": "@org-package/gm-client",
       "projectFolder": "packages/gm-client",
       "reviewCategory": "apis",
