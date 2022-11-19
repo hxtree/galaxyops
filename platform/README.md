@@ -8,13 +8,13 @@ At a base level a platform can just a curated list of perfered packages.
 
 [Pino](https://github.com/pinojs/pino)
 
-```
+```bash
 rush add --package pino
 ```
 
-Use "err" namespace to serialize error namespace.
+Use "err" namespace to properly serialize error namespace.
 
-```
+```typescript
 try {
  ...
 } catch (err) {
@@ -22,8 +22,8 @@ try {
 }
 ```
 
-https://getpino.io/#/docs/api?id=serializers-object
-https://bobbyhadz.com/blog/typescript-object-is-of-type-unknown
+- https://getpino.io/#/docs/api?id=serializers-object
+- https://bobbyhadz.com/blog/typescript-object-is-of-type-unknown
 
 ### Database
 
