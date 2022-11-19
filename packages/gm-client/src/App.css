@@ -9,17 +9,35 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
+<<<<<<< HEAD
     animation: App-logo-float infinite 3s ease-in-out;
+=======
+<<<<<<< HEAD
+    animation: App-logo-float infinite 3s ease-in-out;
+=======
+    animation: App-logo-spin infinite 20s linear;
+>>>>>>> origin/main
+>>>>>>> origin/main
   }
 }
 
 .App-header {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  background-color: #282c34;
+>>>>>>> origin/main
+>>>>>>> origin/main
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 }
 
 .App-link {
@@ -35,5 +53,29 @@
   }
   100% {
     transform: translateY(0px);
+=======
+  color: white;
+>>>>>>> origin/main
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+<<<<<<< HEAD
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+=======
+  to {
+    transform: rotate(360deg);
+>>>>>>> origin/main
+>>>>>>> origin/main
   }
 }

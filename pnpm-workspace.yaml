@@ -1,4 +1,5 @@
 packages:
   - 'packages/**'
-  - 'libaries/**'
+  - 'libraries/**'
+  - 'tests/**'
   - 'platform/**'
