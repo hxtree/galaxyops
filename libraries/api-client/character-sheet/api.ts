@@ -14,13 +14,60 @@
 
 
 import { Configuration } from './configuration';
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from './common';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from './base';
 
+
+
+export const archetypeControllerFindKey = (id: 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER', options: any = {}) => {
+    const localVarPath = `/archetype/id/{id}`
+        .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+    // use dummy base URL string because the URL constructor only accepts absolute URLs.
+    const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+    const canSearch = true && id !== undefined && id !== null;
+    return canSearch ? localVarUrlObj.toString() : null;
+}        
+export const archetypeControllerListKey = (options: any = {}) => {
+    const localVarPath = `/archetype/list`;
+    // use dummy base URL string because the URL constructor only accepts absolute URLs.
+    const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+    const canSearch = true;
+    return canSearch ? localVarUrlObj.toString() : null;
+}        
+export const gearControllerFindKey = (id: 'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED', options: any = {}) => {
+    const localVarPath = `/gear/id/{id}`
+        .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+    // use dummy base URL string because the URL constructor only accepts absolute URLs.
+    const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+    const canSearch = true && id !== undefined && id !== null;
+    return canSearch ? localVarUrlObj.toString() : null;
+}        
+export const gearControllerListKey = (options: any = {}) => {
+    const localVarPath = `/gear/list`;
+    // use dummy base URL string because the URL constructor only accepts absolute URLs.
+    const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+    const canSearch = true;
+    return canSearch ? localVarUrlObj.toString() : null;
+}        
+export const skillControllerFindKey = (id: 'BERSERK' | 'TOXIC_THRUST' | 'AERIAL_ASSUALT' | 'ONI' | 'TRUE_ONI' | 'APPRIASE' | 'COMBINE' | 'THROW' | 'PREPARE_FOOD' | 'GRAVITY' | 'SHOCK' | 'QUAKE' | 'LANDSLIDE' | 'BLIZZARD' | 'FIREBALL' | 'INFERNO' | 'TWISTER' | 'GUST' | 'GALE' | 'CYCLONE' | 'TSUNAMI' | 'AQUA' | 'HEAL' | 'REVIVE' | 'CURE' | 'BARRIER' | 'BOOM' | 'REFLECT' | 'FLARE' | 'METEOR' | 'TELEPATHY' | 'LIGHT' | 'DESOLATE' | 'DARKNESS' | 'STOP' | 'SLOW' | 'HASTE' | 'CHILL' | 'CHARM' | 'FROST' | 'ABSORB' | 'LEECH' | 'DRAIN' | 'GRAPPLING_HOOK' | 'PARRY' | 'SLASH' | 'STRIKE' | 'STAB' | 'CHOP' | 'CLEAVE' | 'WALK' | 'RUN' | 'SWIM' | 'BACK_FLIP' | 'DOUBLE_BACK_FLIP' | 'HIGH_JUMP' | 'CLIMB' | 'DUAL_WELD' | 'ESCAPE_ARTIST' | 'INTIMIDATE' | 'CONCENTRATION' | 'BLUFF' | 'SENSE_BLUFF' | 'GREEDY_INTENT' | 'SLOTH_COMPOSURE' | 'BLOOD_LUST' | 'ENVIOUS_OF_COMBAT' | 'GLUTTONOUS_DESIRE' | 'CATCHER' | 'COMMAND' | 'FORMATIONS' | 'ORDER' | 'VACHEL' | 'FELIX' | 'HERALDIC_LION' | 'SUMMON' | 'DISMISS' | 'LYRE' | 'SANDY' | 'OURUBORUS' | 'MISCHIEVOUS' | 'SCRIBBLES' | 'POISON_TRAP' | 'EXPLOSIVE_TRAP' | 'TIME_BOMB_TRAP' | 'CALTROPS_TRAP' | 'DISABLE_TRAP' | 'Focusable' | 'BOAST' | 'DISGUISE' | 'FOCUS' | 'GRAPPLE' | 'HIDE' | 'SCAN' | 'CHEER' | 'SUPPORT' | 'HOPE' | 'INSPIRE' | 'SCOUT' | 'MIMIC' | 'PICKPOCKET' | 'SEAL' | 'LULLABY' | 'WARD' | 'SACRIFICE' | 'PROTECT' | 'MOCK' | 'SEARCH' | 'STEAL' | 'PROTECTION' | 'RAGE', options: any = {}) => {
+    const localVarPath = `/skill/id/{id}`
+        .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+    // use dummy base URL string because the URL constructor only accepts absolute URLs.
+    const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+    const canSearch = true && id !== undefined && id !== null;
+    return canSearch ? localVarUrlObj.toString() : null;
+}        
+export const skillControllerListKey = (options: any = {}) => {
+    const localVarPath = `/skill/list`;
+    // use dummy base URL string because the URL constructor only accepts absolute URLs.
+    const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+    const canSearch = true;
+    return canSearch ? localVarUrlObj.toString() : null;
+}        
 
 /**
  * DefaultApi - axios parameter creator
@@ -34,7 +81,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        archetypeControllerFind: async (id: 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        archetypeControllerFind: async (id: 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER', options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('archetypeControllerFind', 'id', id)
             const localVarPath = `/archetype/id/{id}`
@@ -52,7 +99,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -66,7 +113,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        archetypeControllerList: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        archetypeControllerList: async (options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/archetype/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -81,7 +128,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -96,7 +143,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        gearControllerFind: async (id: 'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        gearControllerFind: async (id: 'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED', options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('gearControllerFind', 'id', id)
             const localVarPath = `/gear/id/{id}`
@@ -114,7 +161,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -128,7 +175,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        gearControllerList: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        gearControllerList: async (options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/gear/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -143,7 +190,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -158,7 +205,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        skillControllerFind: async (id: 'BERSERK' | 'TOXIC_THRUST' | 'AERIAL_ASSUALT' | 'ONI' | 'TRUE_ONI' | 'APPRIASE' | 'COMBINE' | 'THROW' | 'PREPARE_FOOD' | 'GRAVITY' | 'SHOCK' | 'QUAKE' | 'LANDSLIDE' | 'BLIZZARD' | 'FIREBALL' | 'INFERNO' | 'TWISTER' | 'GUST' | 'GALE' | 'CYCLONE' | 'TSUNAMI' | 'AQUA' | 'HEAL' | 'REVIVE' | 'CURE' | 'BARRIER' | 'BOOM' | 'REFLECT' | 'FLARE' | 'METEOR' | 'TELEPATHY' | 'LIGHT' | 'DESOLATE' | 'DARKNESS' | 'STOP' | 'SLOW' | 'HASTE' | 'CHILL' | 'CHARM' | 'FROST' | 'ABSORB' | 'LEECH' | 'DRAIN' | 'GRAPPLING_HOOK' | 'PARRY' | 'SLASH' | 'STRIKE' | 'STAB' | 'CHOP' | 'CLEAVE' | 'WALK' | 'RUN' | 'SWIM' | 'BACK_FLIP' | 'DOUBLE_BACK_FLIP' | 'HIGH_JUMP' | 'CLIMB' | 'DUAL_WELD' | 'ESCAPE_ARTIST' | 'INTIMIDATE' | 'CONCENTRATION' | 'BLUFF' | 'SENSE_BLUFF' | 'GREEDY_INTENT' | 'SLOTH_COMPOSURE' | 'BLOOD_LUST' | 'ENVIOUS_OF_COMBAT' | 'GLUTTONOUS_DESIRE' | 'CATCHER' | 'COMMAND' | 'FORMATIONS' | 'ORDER' | 'VACHEL' | 'FELIX' | 'HERALDIC_LION' | 'SUMMON' | 'DISMISS' | 'LYRE' | 'SANDY' | 'OURUBORUS' | 'MISCHIEVOUS' | 'SCRIBBLES' | 'POISON_TRAP' | 'EXPLOSIVE_TRAP' | 'TIME_BOMB_TRAP' | 'CALTROPS_TRAP' | 'DISABLE_TRAP' | 'Focusable' | 'BOAST' | 'DISGUISE' | 'FOCUS' | 'GRAPPLE' | 'HIDE' | 'SCAN' | 'CHEER' | 'SUPPORT' | 'HOPE' | 'INSPIRE' | 'SCOUT' | 'MIMIC' | 'PICKPOCKET' | 'SEAL' | 'LULLABY' | 'WARD' | 'SACRIFICE' | 'PROTECT' | 'MOCK' | 'SEARCH' | 'STEAL' | 'PROTECTION' | 'RAGE', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        skillControllerFind: async (id: 'BERSERK' | 'TOXIC_THRUST' | 'AERIAL_ASSUALT' | 'ONI' | 'TRUE_ONI' | 'APPRIASE' | 'COMBINE' | 'THROW' | 'PREPARE_FOOD' | 'GRAVITY' | 'SHOCK' | 'QUAKE' | 'LANDSLIDE' | 'BLIZZARD' | 'FIREBALL' | 'INFERNO' | 'TWISTER' | 'GUST' | 'GALE' | 'CYCLONE' | 'TSUNAMI' | 'AQUA' | 'HEAL' | 'REVIVE' | 'CURE' | 'BARRIER' | 'BOOM' | 'REFLECT' | 'FLARE' | 'METEOR' | 'TELEPATHY' | 'LIGHT' | 'DESOLATE' | 'DARKNESS' | 'STOP' | 'SLOW' | 'HASTE' | 'CHILL' | 'CHARM' | 'FROST' | 'ABSORB' | 'LEECH' | 'DRAIN' | 'GRAPPLING_HOOK' | 'PARRY' | 'SLASH' | 'STRIKE' | 'STAB' | 'CHOP' | 'CLEAVE' | 'WALK' | 'RUN' | 'SWIM' | 'BACK_FLIP' | 'DOUBLE_BACK_FLIP' | 'HIGH_JUMP' | 'CLIMB' | 'DUAL_WELD' | 'ESCAPE_ARTIST' | 'INTIMIDATE' | 'CONCENTRATION' | 'BLUFF' | 'SENSE_BLUFF' | 'GREEDY_INTENT' | 'SLOTH_COMPOSURE' | 'BLOOD_LUST' | 'ENVIOUS_OF_COMBAT' | 'GLUTTONOUS_DESIRE' | 'CATCHER' | 'COMMAND' | 'FORMATIONS' | 'ORDER' | 'VACHEL' | 'FELIX' | 'HERALDIC_LION' | 'SUMMON' | 'DISMISS' | 'LYRE' | 'SANDY' | 'OURUBORUS' | 'MISCHIEVOUS' | 'SCRIBBLES' | 'POISON_TRAP' | 'EXPLOSIVE_TRAP' | 'TIME_BOMB_TRAP' | 'CALTROPS_TRAP' | 'DISABLE_TRAP' | 'Focusable' | 'BOAST' | 'DISGUISE' | 'FOCUS' | 'GRAPPLE' | 'HIDE' | 'SCAN' | 'CHEER' | 'SUPPORT' | 'HOPE' | 'INSPIRE' | 'SCOUT' | 'MIMIC' | 'PICKPOCKET' | 'SEAL' | 'LULLABY' | 'WARD' | 'SACRIFICE' | 'PROTECT' | 'MOCK' | 'SEARCH' | 'STEAL' | 'PROTECTION' | 'RAGE', options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('skillControllerFind', 'id', id)
             const localVarPath = `/skill/id/{id}`
@@ -176,7 +223,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -190,7 +237,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        skillControllerList: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        skillControllerList: async (options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/skill/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -205,7 +252,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -230,7 +277,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async archetypeControllerFind(id: 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async archetypeControllerFind(id: 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.archetypeControllerFind(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -239,7 +286,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async archetypeControllerList(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async archetypeControllerList(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.archetypeControllerList(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -249,7 +296,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async gearControllerFind(id: 'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async gearControllerFind(id: 'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.gearControllerFind(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -258,7 +305,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async gearControllerList(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async gearControllerList(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.gearControllerList(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -268,7 +315,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async skillControllerFind(id: 'BERSERK' | 'TOXIC_THRUST' | 'AERIAL_ASSUALT' | 'ONI' | 'TRUE_ONI' | 'APPRIASE' | 'COMBINE' | 'THROW' | 'PREPARE_FOOD' | 'GRAVITY' | 'SHOCK' | 'QUAKE' | 'LANDSLIDE' | 'BLIZZARD' | 'FIREBALL' | 'INFERNO' | 'TWISTER' | 'GUST' | 'GALE' | 'CYCLONE' | 'TSUNAMI' | 'AQUA' | 'HEAL' | 'REVIVE' | 'CURE' | 'BARRIER' | 'BOOM' | 'REFLECT' | 'FLARE' | 'METEOR' | 'TELEPATHY' | 'LIGHT' | 'DESOLATE' | 'DARKNESS' | 'STOP' | 'SLOW' | 'HASTE' | 'CHILL' | 'CHARM' | 'FROST' | 'ABSORB' | 'LEECH' | 'DRAIN' | 'GRAPPLING_HOOK' | 'PARRY' | 'SLASH' | 'STRIKE' | 'STAB' | 'CHOP' | 'CLEAVE' | 'WALK' | 'RUN' | 'SWIM' | 'BACK_FLIP' | 'DOUBLE_BACK_FLIP' | 'HIGH_JUMP' | 'CLIMB' | 'DUAL_WELD' | 'ESCAPE_ARTIST' | 'INTIMIDATE' | 'CONCENTRATION' | 'BLUFF' | 'SENSE_BLUFF' | 'GREEDY_INTENT' | 'SLOTH_COMPOSURE' | 'BLOOD_LUST' | 'ENVIOUS_OF_COMBAT' | 'GLUTTONOUS_DESIRE' | 'CATCHER' | 'COMMAND' | 'FORMATIONS' | 'ORDER' | 'VACHEL' | 'FELIX' | 'HERALDIC_LION' | 'SUMMON' | 'DISMISS' | 'LYRE' | 'SANDY' | 'OURUBORUS' | 'MISCHIEVOUS' | 'SCRIBBLES' | 'POISON_TRAP' | 'EXPLOSIVE_TRAP' | 'TIME_BOMB_TRAP' | 'CALTROPS_TRAP' | 'DISABLE_TRAP' | 'Focusable' | 'BOAST' | 'DISGUISE' | 'FOCUS' | 'GRAPPLE' | 'HIDE' | 'SCAN' | 'CHEER' | 'SUPPORT' | 'HOPE' | 'INSPIRE' | 'SCOUT' | 'MIMIC' | 'PICKPOCKET' | 'SEAL' | 'LULLABY' | 'WARD' | 'SACRIFICE' | 'PROTECT' | 'MOCK' | 'SEARCH' | 'STEAL' | 'PROTECTION' | 'RAGE', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async skillControllerFind(id: 'BERSERK' | 'TOXIC_THRUST' | 'AERIAL_ASSUALT' | 'ONI' | 'TRUE_ONI' | 'APPRIASE' | 'COMBINE' | 'THROW' | 'PREPARE_FOOD' | 'GRAVITY' | 'SHOCK' | 'QUAKE' | 'LANDSLIDE' | 'BLIZZARD' | 'FIREBALL' | 'INFERNO' | 'TWISTER' | 'GUST' | 'GALE' | 'CYCLONE' | 'TSUNAMI' | 'AQUA' | 'HEAL' | 'REVIVE' | 'CURE' | 'BARRIER' | 'BOOM' | 'REFLECT' | 'FLARE' | 'METEOR' | 'TELEPATHY' | 'LIGHT' | 'DESOLATE' | 'DARKNESS' | 'STOP' | 'SLOW' | 'HASTE' | 'CHILL' | 'CHARM' | 'FROST' | 'ABSORB' | 'LEECH' | 'DRAIN' | 'GRAPPLING_HOOK' | 'PARRY' | 'SLASH' | 'STRIKE' | 'STAB' | 'CHOP' | 'CLEAVE' | 'WALK' | 'RUN' | 'SWIM' | 'BACK_FLIP' | 'DOUBLE_BACK_FLIP' | 'HIGH_JUMP' | 'CLIMB' | 'DUAL_WELD' | 'ESCAPE_ARTIST' | 'INTIMIDATE' | 'CONCENTRATION' | 'BLUFF' | 'SENSE_BLUFF' | 'GREEDY_INTENT' | 'SLOTH_COMPOSURE' | 'BLOOD_LUST' | 'ENVIOUS_OF_COMBAT' | 'GLUTTONOUS_DESIRE' | 'CATCHER' | 'COMMAND' | 'FORMATIONS' | 'ORDER' | 'VACHEL' | 'FELIX' | 'HERALDIC_LION' | 'SUMMON' | 'DISMISS' | 'LYRE' | 'SANDY' | 'OURUBORUS' | 'MISCHIEVOUS' | 'SCRIBBLES' | 'POISON_TRAP' | 'EXPLOSIVE_TRAP' | 'TIME_BOMB_TRAP' | 'CALTROPS_TRAP' | 'DISABLE_TRAP' | 'Focusable' | 'BOAST' | 'DISGUISE' | 'FOCUS' | 'GRAPPLE' | 'HIDE' | 'SCAN' | 'CHEER' | 'SUPPORT' | 'HOPE' | 'INSPIRE' | 'SCOUT' | 'MIMIC' | 'PICKPOCKET' | 'SEAL' | 'LULLABY' | 'WARD' | 'SACRIFICE' | 'PROTECT' | 'MOCK' | 'SEARCH' | 'STEAL' | 'PROTECTION' | 'RAGE', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.skillControllerFind(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -277,7 +324,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async skillControllerList(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async skillControllerList(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.skillControllerList(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -358,7 +405,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    archetypeControllerFind(id: 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER', options?: AxiosRequestConfig): AxiosPromise<void>;
+    archetypeControllerFind(id: 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER', options?: any): AxiosPromise<void>;
 
     /**
      * 
@@ -366,7 +413,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    archetypeControllerList(options?: AxiosRequestConfig): AxiosPromise<void>;
+    archetypeControllerList(options?: any): AxiosPromise<void>;
 
     /**
      * 
@@ -375,7 +422,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    gearControllerFind(id: 'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED', options?: AxiosRequestConfig): AxiosPromise<void>;
+    gearControllerFind(id: 'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED', options?: any): AxiosPromise<void>;
 
     /**
      * 
@@ -383,7 +430,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    gearControllerList(options?: AxiosRequestConfig): AxiosPromise<void>;
+    gearControllerList(options?: any): AxiosPromise<void>;
 
     /**
      * 
@@ -392,7 +439,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    skillControllerFind(id: 'BERSERK' | 'TOXIC_THRUST' | 'AERIAL_ASSUALT' | 'ONI' | 'TRUE_ONI' | 'APPRIASE' | 'COMBINE' | 'THROW' | 'PREPARE_FOOD' | 'GRAVITY' | 'SHOCK' | 'QUAKE' | 'LANDSLIDE' | 'BLIZZARD' | 'FIREBALL' | 'INFERNO' | 'TWISTER' | 'GUST' | 'GALE' | 'CYCLONE' | 'TSUNAMI' | 'AQUA' | 'HEAL' | 'REVIVE' | 'CURE' | 'BARRIER' | 'BOOM' | 'REFLECT' | 'FLARE' | 'METEOR' | 'TELEPATHY' | 'LIGHT' | 'DESOLATE' | 'DARKNESS' | 'STOP' | 'SLOW' | 'HASTE' | 'CHILL' | 'CHARM' | 'FROST' | 'ABSORB' | 'LEECH' | 'DRAIN' | 'GRAPPLING_HOOK' | 'PARRY' | 'SLASH' | 'STRIKE' | 'STAB' | 'CHOP' | 'CLEAVE' | 'WALK' | 'RUN' | 'SWIM' | 'BACK_FLIP' | 'DOUBLE_BACK_FLIP' | 'HIGH_JUMP' | 'CLIMB' | 'DUAL_WELD' | 'ESCAPE_ARTIST' | 'INTIMIDATE' | 'CONCENTRATION' | 'BLUFF' | 'SENSE_BLUFF' | 'GREEDY_INTENT' | 'SLOTH_COMPOSURE' | 'BLOOD_LUST' | 'ENVIOUS_OF_COMBAT' | 'GLUTTONOUS_DESIRE' | 'CATCHER' | 'COMMAND' | 'FORMATIONS' | 'ORDER' | 'VACHEL' | 'FELIX' | 'HERALDIC_LION' | 'SUMMON' | 'DISMISS' | 'LYRE' | 'SANDY' | 'OURUBORUS' | 'MISCHIEVOUS' | 'SCRIBBLES' | 'POISON_TRAP' | 'EXPLOSIVE_TRAP' | 'TIME_BOMB_TRAP' | 'CALTROPS_TRAP' | 'DISABLE_TRAP' | 'Focusable' | 'BOAST' | 'DISGUISE' | 'FOCUS' | 'GRAPPLE' | 'HIDE' | 'SCAN' | 'CHEER' | 'SUPPORT' | 'HOPE' | 'INSPIRE' | 'SCOUT' | 'MIMIC' | 'PICKPOCKET' | 'SEAL' | 'LULLABY' | 'WARD' | 'SACRIFICE' | 'PROTECT' | 'MOCK' | 'SEARCH' | 'STEAL' | 'PROTECTION' | 'RAGE', options?: AxiosRequestConfig): AxiosPromise<void>;
+    skillControllerFind(id: 'BERSERK' | 'TOXIC_THRUST' | 'AERIAL_ASSUALT' | 'ONI' | 'TRUE_ONI' | 'APPRIASE' | 'COMBINE' | 'THROW' | 'PREPARE_FOOD' | 'GRAVITY' | 'SHOCK' | 'QUAKE' | 'LANDSLIDE' | 'BLIZZARD' | 'FIREBALL' | 'INFERNO' | 'TWISTER' | 'GUST' | 'GALE' | 'CYCLONE' | 'TSUNAMI' | 'AQUA' | 'HEAL' | 'REVIVE' | 'CURE' | 'BARRIER' | 'BOOM' | 'REFLECT' | 'FLARE' | 'METEOR' | 'TELEPATHY' | 'LIGHT' | 'DESOLATE' | 'DARKNESS' | 'STOP' | 'SLOW' | 'HASTE' | 'CHILL' | 'CHARM' | 'FROST' | 'ABSORB' | 'LEECH' | 'DRAIN' | 'GRAPPLING_HOOK' | 'PARRY' | 'SLASH' | 'STRIKE' | 'STAB' | 'CHOP' | 'CLEAVE' | 'WALK' | 'RUN' | 'SWIM' | 'BACK_FLIP' | 'DOUBLE_BACK_FLIP' | 'HIGH_JUMP' | 'CLIMB' | 'DUAL_WELD' | 'ESCAPE_ARTIST' | 'INTIMIDATE' | 'CONCENTRATION' | 'BLUFF' | 'SENSE_BLUFF' | 'GREEDY_INTENT' | 'SLOTH_COMPOSURE' | 'BLOOD_LUST' | 'ENVIOUS_OF_COMBAT' | 'GLUTTONOUS_DESIRE' | 'CATCHER' | 'COMMAND' | 'FORMATIONS' | 'ORDER' | 'VACHEL' | 'FELIX' | 'HERALDIC_LION' | 'SUMMON' | 'DISMISS' | 'LYRE' | 'SANDY' | 'OURUBORUS' | 'MISCHIEVOUS' | 'SCRIBBLES' | 'POISON_TRAP' | 'EXPLOSIVE_TRAP' | 'TIME_BOMB_TRAP' | 'CALTROPS_TRAP' | 'DISABLE_TRAP' | 'Focusable' | 'BOAST' | 'DISGUISE' | 'FOCUS' | 'GRAPPLE' | 'HIDE' | 'SCAN' | 'CHEER' | 'SUPPORT' | 'HOPE' | 'INSPIRE' | 'SCOUT' | 'MIMIC' | 'PICKPOCKET' | 'SEAL' | 'LULLABY' | 'WARD' | 'SACRIFICE' | 'PROTECT' | 'MOCK' | 'SEARCH' | 'STEAL' | 'PROTECTION' | 'RAGE', options?: any): AxiosPromise<void>;
 
     /**
      * 
@@ -400,7 +447,7 @@ export interface DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    skillControllerList(options?: AxiosRequestConfig): AxiosPromise<void>;
+    skillControllerList(options?: any): AxiosPromise<void>;
 
 }
 
@@ -418,7 +465,7 @@ export class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public archetypeControllerFind(id: 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER', options?: AxiosRequestConfig) {
+    public archetypeControllerFind(id: 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER', options?: any) {
         return DefaultApiFp(this.configuration).archetypeControllerFind(id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -428,7 +475,7 @@ export class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public archetypeControllerList(options?: AxiosRequestConfig) {
+    public archetypeControllerList(options?: any) {
         return DefaultApiFp(this.configuration).archetypeControllerList(options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -439,7 +486,7 @@ export class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public gearControllerFind(id: 'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED', options?: AxiosRequestConfig) {
+    public gearControllerFind(id: 'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED', options?: any) {
         return DefaultApiFp(this.configuration).gearControllerFind(id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -449,7 +496,7 @@ export class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public gearControllerList(options?: AxiosRequestConfig) {
+    public gearControllerList(options?: any) {
         return DefaultApiFp(this.configuration).gearControllerList(options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -460,7 +507,7 @@ export class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public skillControllerFind(id: 'BERSERK' | 'TOXIC_THRUST' | 'AERIAL_ASSUALT' | 'ONI' | 'TRUE_ONI' | 'APPRIASE' | 'COMBINE' | 'THROW' | 'PREPARE_FOOD' | 'GRAVITY' | 'SHOCK' | 'QUAKE' | 'LANDSLIDE' | 'BLIZZARD' | 'FIREBALL' | 'INFERNO' | 'TWISTER' | 'GUST' | 'GALE' | 'CYCLONE' | 'TSUNAMI' | 'AQUA' | 'HEAL' | 'REVIVE' | 'CURE' | 'BARRIER' | 'BOOM' | 'REFLECT' | 'FLARE' | 'METEOR' | 'TELEPATHY' | 'LIGHT' | 'DESOLATE' | 'DARKNESS' | 'STOP' | 'SLOW' | 'HASTE' | 'CHILL' | 'CHARM' | 'FROST' | 'ABSORB' | 'LEECH' | 'DRAIN' | 'GRAPPLING_HOOK' | 'PARRY' | 'SLASH' | 'STRIKE' | 'STAB' | 'CHOP' | 'CLEAVE' | 'WALK' | 'RUN' | 'SWIM' | 'BACK_FLIP' | 'DOUBLE_BACK_FLIP' | 'HIGH_JUMP' | 'CLIMB' | 'DUAL_WELD' | 'ESCAPE_ARTIST' | 'INTIMIDATE' | 'CONCENTRATION' | 'BLUFF' | 'SENSE_BLUFF' | 'GREEDY_INTENT' | 'SLOTH_COMPOSURE' | 'BLOOD_LUST' | 'ENVIOUS_OF_COMBAT' | 'GLUTTONOUS_DESIRE' | 'CATCHER' | 'COMMAND' | 'FORMATIONS' | 'ORDER' | 'VACHEL' | 'FELIX' | 'HERALDIC_LION' | 'SUMMON' | 'DISMISS' | 'LYRE' | 'SANDY' | 'OURUBORUS' | 'MISCHIEVOUS' | 'SCRIBBLES' | 'POISON_TRAP' | 'EXPLOSIVE_TRAP' | 'TIME_BOMB_TRAP' | 'CALTROPS_TRAP' | 'DISABLE_TRAP' | 'Focusable' | 'BOAST' | 'DISGUISE' | 'FOCUS' | 'GRAPPLE' | 'HIDE' | 'SCAN' | 'CHEER' | 'SUPPORT' | 'HOPE' | 'INSPIRE' | 'SCOUT' | 'MIMIC' | 'PICKPOCKET' | 'SEAL' | 'LULLABY' | 'WARD' | 'SACRIFICE' | 'PROTECT' | 'MOCK' | 'SEARCH' | 'STEAL' | 'PROTECTION' | 'RAGE', options?: AxiosRequestConfig) {
+    public skillControllerFind(id: 'BERSERK' | 'TOXIC_THRUST' | 'AERIAL_ASSUALT' | 'ONI' | 'TRUE_ONI' | 'APPRIASE' | 'COMBINE' | 'THROW' | 'PREPARE_FOOD' | 'GRAVITY' | 'SHOCK' | 'QUAKE' | 'LANDSLIDE' | 'BLIZZARD' | 'FIREBALL' | 'INFERNO' | 'TWISTER' | 'GUST' | 'GALE' | 'CYCLONE' | 'TSUNAMI' | 'AQUA' | 'HEAL' | 'REVIVE' | 'CURE' | 'BARRIER' | 'BOOM' | 'REFLECT' | 'FLARE' | 'METEOR' | 'TELEPATHY' | 'LIGHT' | 'DESOLATE' | 'DARKNESS' | 'STOP' | 'SLOW' | 'HASTE' | 'CHILL' | 'CHARM' | 'FROST' | 'ABSORB' | 'LEECH' | 'DRAIN' | 'GRAPPLING_HOOK' | 'PARRY' | 'SLASH' | 'STRIKE' | 'STAB' | 'CHOP' | 'CLEAVE' | 'WALK' | 'RUN' | 'SWIM' | 'BACK_FLIP' | 'DOUBLE_BACK_FLIP' | 'HIGH_JUMP' | 'CLIMB' | 'DUAL_WELD' | 'ESCAPE_ARTIST' | 'INTIMIDATE' | 'CONCENTRATION' | 'BLUFF' | 'SENSE_BLUFF' | 'GREEDY_INTENT' | 'SLOTH_COMPOSURE' | 'BLOOD_LUST' | 'ENVIOUS_OF_COMBAT' | 'GLUTTONOUS_DESIRE' | 'CATCHER' | 'COMMAND' | 'FORMATIONS' | 'ORDER' | 'VACHEL' | 'FELIX' | 'HERALDIC_LION' | 'SUMMON' | 'DISMISS' | 'LYRE' | 'SANDY' | 'OURUBORUS' | 'MISCHIEVOUS' | 'SCRIBBLES' | 'POISON_TRAP' | 'EXPLOSIVE_TRAP' | 'TIME_BOMB_TRAP' | 'CALTROPS_TRAP' | 'DISABLE_TRAP' | 'Focusable' | 'BOAST' | 'DISGUISE' | 'FOCUS' | 'GRAPPLE' | 'HIDE' | 'SCAN' | 'CHEER' | 'SUPPORT' | 'HOPE' | 'INSPIRE' | 'SCOUT' | 'MIMIC' | 'PICKPOCKET' | 'SEAL' | 'LULLABY' | 'WARD' | 'SACRIFICE' | 'PROTECT' | 'MOCK' | 'SEARCH' | 'STEAL' | 'PROTECTION' | 'RAGE', options?: any) {
         return DefaultApiFp(this.configuration).skillControllerFind(id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -470,7 +517,7 @@ export class DefaultApi extends BaseAPI implements DefaultApiInterface {
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public skillControllerList(options?: AxiosRequestConfig) {
+    public skillControllerList(options?: any) {
         return DefaultApiFp(this.configuration).skillControllerList(options).then((request) => request(this.axios, this.basePath));
     }
 }

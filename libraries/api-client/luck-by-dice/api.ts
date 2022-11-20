@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * @org-packages/luck-by-dice
- * An API for simulating dice rolls and from dice notations with luck modifiers
+ * An API for simulating dice rolls and luck from dice notation
  *
  * The version of the OpenAPI document: 1.0
  * 
@@ -14,13 +14,24 @@
 
 
 import { Configuration } from './configuration';
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from './common';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from './base';
 
+
+
+export const rollControllerTurnKey = (notation: string, luck: number, options: any = {}) => {
+    const localVarPath = `/roll/notation/{notation}/luck/{luck}`
+        .replace(`{${"notation"}}`, encodeURIComponent(String(notation)))
+        .replace(`{${"luck"}}`, encodeURIComponent(String(luck)));
+    // use dummy base URL string because the URL constructor only accepts absolute URLs.
+    const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+    const canSearch = true && notation !== undefined && notation !== null && luck !== undefined && luck !== null;
+    return canSearch ? localVarUrlObj.toString() : null;
+}        
 
 /**
  * DefaultApi - axios parameter creator
@@ -30,16 +41,16 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
     return {
         /**
          * 
-         * @param {string} notation The dice notation
-         * @param {number} luck The luck of the character performing action
+         * @param {string} notation 
+         * @param {number} luck 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        rollControllerFind: async (notation: string, luck: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        rollControllerTurn: async (notation: string, luck: number, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'notation' is not null or undefined
-            assertParamExists('rollControllerFind', 'notation', notation)
+            assertParamExists('rollControllerTurn', 'notation', notation)
             // verify required parameter 'luck' is not null or undefined
-            assertParamExists('rollControllerFind', 'luck', luck)
+            assertParamExists('rollControllerTurn', 'luck', luck)
             const localVarPath = `/roll/notation/{notation}/luck/{luck}`
                 .replace(`{${"notation"}}`, encodeURIComponent(String(notation)))
                 .replace(`{${"luck"}}`, encodeURIComponent(String(luck)));
@@ -56,7 +67,7 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -77,13 +88,13 @@ export const DefaultApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
-         * @param {string} notation The dice notation
-         * @param {number} luck The luck of the character performing action
+         * @param {string} notation 
+         * @param {number} luck 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async rollControllerFind(notation: string, luck: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.rollControllerFind(notation, luck, options);
+        async rollControllerTurn(notation: string, luck: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.rollControllerTurn(notation, luck, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -98,13 +109,13 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
     return {
         /**
          * 
-         * @param {string} notation The dice notation
-         * @param {number} luck The luck of the character performing action
+         * @param {string} notation 
+         * @param {number} luck 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        rollControllerFind(notation: string, luck: number, options?: any): AxiosPromise<void> {
-            return localVarFp.rollControllerFind(notation, luck, options).then((request) => request(axios, basePath));
+        rollControllerTurn(notation: string, luck: number, options?: any): AxiosPromise<void> {
+            return localVarFp.rollControllerTurn(notation, luck, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -117,13 +128,13 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
 export interface DefaultApiInterface {
     /**
      * 
-     * @param {string} notation The dice notation
-     * @param {number} luck The luck of the character performing action
+     * @param {string} notation 
+     * @param {number} luck 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApiInterface
      */
-    rollControllerFind(notation: string, luck: number, options?: AxiosRequestConfig): AxiosPromise<void>;
+    rollControllerTurn(notation: string, luck: number, options?: any): AxiosPromise<void>;
 
 }
 
@@ -136,14 +147,14 @@ export interface DefaultApiInterface {
 export class DefaultApi extends BaseAPI implements DefaultApiInterface {
     /**
      * 
-     * @param {string} notation The dice notation
-     * @param {number} luck The luck of the character performing action
+     * @param {string} notation 
+     * @param {number} luck 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public rollControllerFind(notation: string, luck: number, options?: AxiosRequestConfig) {
-        return DefaultApiFp(this.configuration).rollControllerFind(notation, luck, options).then((request) => request(this.axios, this.basePath));
+    public rollControllerTurn(notation: string, luck: number, options?: any) {
+        return DefaultApiFp(this.configuration).rollControllerTurn(notation, luck, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

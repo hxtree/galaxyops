@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * @org-packages/character-sheet
- * An API for the character sheet service
+ * @org-packages/luck-by-dice
+ * An API for simulating dice rolls and luck from dice notation
  *
  * The version of the OpenAPI document: 1.0
  * 
@@ -14,8 +14,8 @@
 
 
 import { Configuration } from "./configuration";
-import { RequiredError, RequestArgs } from "./base";
-import { AxiosInstance, AxiosResponse } from 'axios';
+import { RequiredError,　RequestArgs } from "./base";
+import { AxiosInstance } from 'axios';
 
 /**
  *
@@ -83,34 +83,24 @@ export const setOAuthToObject = async function (object: any, name: string, scope
     }
 }
 
-function setFlattenedQueryParams(urlSearchParams: URLSearchParams, parameter: any, key: string = ""): void {
-    if (typeof parameter === "object") {
-        if (Array.isArray(parameter)) {
-            (parameter as any[]).forEach(item => setFlattenedQueryParams(urlSearchParams, item, key));
-        } 
-        else {
-            Object.keys(parameter).forEach(currentKey => 
-                setFlattenedQueryParams(urlSearchParams, parameter[currentKey], `${key}${key !== '' ? '.' : ''}${currentKey}`)
-            );
-        }
-    } 
-    else {
-        if (urlSearchParams.has(key)) {
-            urlSearchParams.append(key, parameter);
-        } 
-        else {
-            urlSearchParams.set(key, parameter);
-        }
-    }
-}
-
 /**
  *
  * @export
  */
 export const setSearchParams = function (url: URL, ...objects: any[]) {
     const searchParams = new URLSearchParams(url.search);
-    setFlattenedQueryParams(searchParams, objects);
+    for (const object of objects) {
+        for (const key in object) {
+            if (Array.isArray(object[key])) {
+                searchParams.delete(key);
+                for (const item of object[key]) {
+                    searchParams.append(key, item);
+                }
+            } else {
+                searchParams.set(key, object[key]);
+            }
+        }
+    }
     url.search = searchParams.toString();
 }
 
@@ -141,8 +131,8 @@ export const toPathString = function (url: URL) {
  * @export
  */
 export const createRequestFunction = function (axiosArgs: RequestArgs, globalAxios: AxiosInstance, BASE_PATH: string, configuration?: Configuration) {
-    return <T = unknown, R = AxiosResponse<T>>(axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+    return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
         const axiosRequestArgs = {...axiosArgs.options, url: (configuration?.basePath || basePath) + axiosArgs.url};
-        return axios.request<T, R>(axiosRequestArgs);
+        return axios.request(axiosRequestArgs);
     };
 }

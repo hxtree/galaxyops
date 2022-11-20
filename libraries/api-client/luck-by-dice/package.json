@@ -1,32 +1,29 @@
 {
-  "name": "@org-contracts/luck-by-dice",
-  "version": "1.0",
-  "description": "OpenAPI client for @org-contracts/luck-by-dice",
+  "name": "@org-api-client/luck-by-dice",
+  "version": "1.0.0",
+  "description": "OpenAPI client for @org-api-client/luck-by-dice",
   "author": "OpenAPI-Generator Contributors",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
-  },
   "keywords": [
     "axios",
     "typescript",
     "openapi-client",
     "openapi-generator",
-    "@org-contracts/luck-by-dice"
+    "@org-api-client/luck-by-dice"
   ],
   "license": "Unlicense",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc ",
-    "prepare": "npm run build"
+    "build": "tsc --outDir dist/",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "axios": "^0.26.1"
+    "axios": "^0.21.1",
+    "swr": "^0.5.6"
   },
   "devDependencies": {
-    "@types/node": "^12.11.5",
-    "typescript": "^4.0"
+    "@types/node": "^16.0.0",
+    "typescript": "4.8.4"
   },
   "publishConfig": {
     "registry": "https://github.com/hxtree/keepers-cradle"

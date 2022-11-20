@@ -1,7 +1,0 @@
-# See bug
-# https://github.com/OpenAPITools/openapi-generator/issues/5723
-**/.npmignore
-**/git_push.sh
-**/.openapi-generator-ignore
-**/.gitignore
-**/.openapi-generator

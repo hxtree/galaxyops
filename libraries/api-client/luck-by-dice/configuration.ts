@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * @org-packages/luck-by-dice
- * An API for simulating dice rolls and from dice notations with luck modifiers
+ * An API for simulating dice rolls and luck from dice notation
  *
  * The version of the OpenAPI document: 1.0
  * 

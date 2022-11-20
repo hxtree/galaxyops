@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * @org-packages/character-sheet
- * An API for the character sheet service
+ * @org-packages/luck-by-dice
+ * An API for simulating dice rolls and luck from dice notation
  *
  * The version of the OpenAPI document: 1.0
  * 
@@ -16,7 +16,7 @@
 import { Configuration } from "./configuration";
 // Some imports not used depending on template conditions
 // @ts-ignore
-import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
 
 export const BASE_PATH = "http://localhost".replace(/\/+$/, "");
 
@@ -38,7 +38,7 @@ export const COLLECTION_FORMATS = {
  */
 export interface RequestArgs {
     url: string;
-    options: AxiosRequestConfig;
+    options: any;
 }
 
 /**
