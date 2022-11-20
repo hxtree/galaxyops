@@ -199,6 +199,7 @@ importers:
   ../../packages/gm-client:
     specifiers:
       '@org-package/design-system': workspace:*
+      '@org-package/luck-by-dice-api-client': workspace:*
       '@reduxjs/toolkit': ^1.9.0
       '@testing-library/jest-dom': ^5.16.5
       '@testing-library/react': ^13.4.0
@@ -215,6 +216,7 @@ importers:
       web-vitals: ^2.1.4
     dependencies:
       '@org-package/design-system': link:../design-system
+      '@org-package/luck-by-dice-api-client': link:../luck-by-dice-api-client
       '@reduxjs/toolkit': 1.9.0_react-redux@8.0.5+react@18.2.0
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/react': 13.4.0_react-dom@18.2.0+react@18.2.0
@@ -301,6 +303,19 @@ importers:
       path: 0.12.7
       ts-jest: 28.0.8_beb58f9bbd5006d5bb745e9c0feb51ac
       ts-node: 10.9.1_27f150aaefb5a0dcdf3a968254cff9bf
+      typescript: 4.8.4
+
+  ../../packages/luck-by-dice-api-client:
+    specifiers:
+      '@types/node': ^16.0.0
+      axios: ^0.21.1
+      swr: ^0.5.6
+      typescript: 4.8.4
+    dependencies:
+      axios: 0.21.4
+      swr: 0.5.7
+    devDependencies:
+      '@types/node': 16.18.3
       typescript: 4.8.4
 
   ../../packages/luck-by-dice-monitor:
@@ -2649,6 +2664,9 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+
+  /@balena/dockerignore/1.0.2:
+    resolution: {integrity: sha512-wMue2Sy4GAVTk6Ic4tJVcnfdau+gx2EnG7S+uAEe+TWJFqE4YoWN4/H8MSLj4eYJKxGg26lZwboEniNiNwZQ6Q==}
 
   /@base2/pretty-print-object/1.0.1:
     resolution: {integrity: sha512-4iri8i1AqYHJE2DstZYkyEprg6Pq6sKx3xn5FpySk9sNhH7qN2LLlHJCfDTZRILNwQNPD7mATWM0TBui7uC1pA==}
@@ -7141,7 +7159,16 @@ packages:
     peerDependencies:
       constructs: ^10.0.0
     dependencies:
+      '@balena/dockerignore': 1.0.2
+      case: 1.6.3
       constructs: 10.1.164
+      fs-extra: 9.1.0
+      ignore: 5.2.0
+      jsonschema: 1.4.1
+      minimatch: 3.1.2
+      punycode: 2.1.1
+      semver: 7.3.8
+      yaml: 1.10.2
     bundledDependencies:
       - '@balena/dockerignore'
       - case
@@ -7191,6 +7218,14 @@ packages:
   /axe-core/4.5.2:
     resolution: {integrity: sha512-u2MVsXfew5HBvjsczCv+xlwdNnB1oQR9HlAcsejZttNjKKSkeDNVwB1vMThIUIFI9GoT57Vtk8iQLwqOfAkboA==}
     engines: {node: '>=4'}
+    dev: false
+
+  /axios/0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.15.2
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /axobject-query/2.2.0:
@@ -7961,6 +7996,10 @@ packages:
   /case-sensitive-paths-webpack-plugin/2.4.0:
     resolution: {integrity: sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==}
     engines: {node: '>=4'}
+
+  /case/1.6.3:
+    resolution: {integrity: sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==}
+    engines: {node: '>= 0.8.0'}
 
   /ccount/1.1.0:
     resolution: {integrity: sha512-vlNK021QdI7PNeiUh/lKkC/mNHHfV0m/Ad5JoI0TYtlBnJAslM/JIkm/tGC88bkLIwO6OQ5uV6ztS6kVAtCDlg==}
@@ -8958,6 +8997,11 @@ packages:
   /depd/2.0.0:
     resolution: {integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==}
     engines: {node: '>= 0.8'}
+
+  /dequal/2.0.2:
+    resolution: {integrity: sha512-q9K8BlJVxK7hQYqa6XISGmBZbtQQWVXSrRrWreHC94rMt1QL/Impruc+7p2CYSYuVIUr+YCt6hjrs1kkdJRTug==}
+    engines: {node: '>=6'}
+    dev: false
 
   /des.js/1.0.1:
     resolution: {integrity: sha512-Q0I4pfFrv2VPd34/vfLrFOoRmlYj3OV50i7fskps1jZWK1kApMWWT9G6RRUeYedLcBDIhnSDaUvJMb3AhUlaEA==}
@@ -13037,6 +13081,9 @@ packages:
     resolution: {integrity: sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ==}
     engines: {node: '>=0.10.0'}
     dev: false
+
+  /jsonschema/1.4.1:
+    resolution: {integrity: sha512-S6cATIPVv1z0IlxdN+zUk5EPjkGCdnhN4wVSBlvoUO1tOLJootbo9CquNJmbIh4yikWHiUedhRYrNPn1arpEmQ==}
 
   /jsx-ast-utils/3.3.3:
     resolution: {integrity: sha512-fYQHZTZ8jSfmWZ0iyzfwiU4WDX4HpHbMCZ3gPlWYiCl3BoeOTsqKBqnTVfH2rYT7eP5c3sVbeSPHnnJOaTrWiw==}
@@ -17266,6 +17313,14 @@ packages:
 
   /swagger-ui-dist/4.15.1:
     resolution: {integrity: sha512-DlZARu6ckUFqDe0j5IPayO4k0gQvYQw9Un02MhxAgaMtVnTH2vmyyDe+yKeV0r1LiiPx3JbasdS/5Yyb/AV3iw==}
+    dev: false
+
+  /swr/0.5.7:
+    resolution: {integrity: sha512-Jh1Efgu8nWZV9rU4VLUMzBzcwaZgi4znqbVXvAtUy/0JzSiN6bNjLaJK8vhY/Rtp7a83dosz5YuehfBNwC/ZoQ==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0
+    dependencies:
+      dequal: 2.0.2
     dev: false
 
   /symbol-tree/3.2.4:

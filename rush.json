@@ -12,7 +12,7 @@
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 3,
   "approvedPackagesPolicy": {
-    "reviewCategories": ["apis", "clients", "libraries", "heft"],
+    "reviewCategories": ["apis", "api-client", "clients", "libraries", "heft"],
     "ignoredNpmScopes": ["@types"]
   },
 
@@ -28,6 +28,18 @@
     "postRushBuild": []
   },
   "projects": [
+    {
+      "packageName": "@org-api-client/luck-by-dice",
+      "projectFolder": "libraries/api-client/luck-by-dice",
+      "reviewCategory": "api-client",
+      "cyclicDependencyProjects": []
+    },
+    {
+      "packageName": "@org-api-client/character-sheet",
+      "projectFolder": "libraries/api-client/character-sheet",
+      "reviewCategory": "api-client",
+      "cyclicDependencyProjects": []
+    },
     {
       "packageName": "@org-package/design-system",
       "projectFolder": "packages/design-system",

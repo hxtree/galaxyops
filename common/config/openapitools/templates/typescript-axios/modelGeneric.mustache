@@ -1,0 +1,45 @@
+/**
+ * {{{description}}}
+ * @export
+ * @interface {{classname}}
+ */
+export interface {{classname}} {{#parent}}extends {{{parent}}} {{/parent}}{
+{{#additionalPropertiesType}}
+    [key: string]: {{{additionalPropertiesType}}}{{#hasVars}} | any{{/hasVars}};
+
+{{/additionalPropertiesType}}
+{{#vars}}
+    /**
+     * {{{description}}}
+     * @type {{=<% %>=}}{<%&datatype%>}<%={{ }}=%>
+     * @memberof {{classname}}
+    {{#deprecated}}
+     * @deprecated
+    {{/deprecated}}
+     */
+    {{name}}{{^required}}?{{/required}}: {{#isEnum}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{#isNullable}} | null{{/isNullable}}{{/isEnum}};
+{{/vars}}
+}{{#hasEnums}}
+
+{{#vars}}
+{{#isEnum}}
+/**
+ * @export
+ * @enum {string}
+ */
+export type {{enumName}} = {{#allowableValues}}{{#enumVars.0}}{{#enumVars}}{{{value}}}{{^-last}} | {{/-last}}{{/enumVars}}{{/enumVars.0}}{{^enumVars.0}} 'string' {{/enumVars.0}}{{/allowableValues}}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export const {{enumName}} = {
+{{#allowableValues}}
+{{#enumVars}}
+    {{{name}}}: {{{value}}} as {{enumName}}{{^-last}},{{/-last}}
+{{/enumVars}}
+{{/allowableValues}}
+};
+{{/isEnum}}
+{{/vars}}
+{{/hasEnums}}

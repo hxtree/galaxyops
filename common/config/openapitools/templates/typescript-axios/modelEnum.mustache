@@ -1,0 +1,20 @@
+
+/**
+ * {{{description}}}
+ * @export
+ * @enum {string}
+ */
+export type {{classname}} = {{#allowableValues}}{{#enumVars}}{{{value}}}{{^-last}} | {{/-last}}{{/enumVars}}{{/allowableValues}}
+
+/**
+ * {{{description}}}
+ * @export
+ * @enum {string}
+ */
+export const {{classname}} = {
+{{#allowableValues}}
+{{#enumVars}}
+    {{{name}}}: {{{value}}} as {{classname}}{{^-last}},{{/-last}}
+{{/enumVars}}
+{{/allowableValues}}
+};

@@ -27,7 +27,27 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@org-api-client/luck-by-dice",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@org-contact/luck-by-dice",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@org-contract/luck-by-dice",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@org-library/luck-by-dice",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@org-package/design-system",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@org-package/luck-by-dice-api-client",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -109,6 +129,10 @@
     {
       "name": "aws-serverless-express",
       "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "axios",
+      "allowedCategories": [ "api-client", "contracts" ]
     },
     {
       "name": "babel-plugin-named-exports-order",
@@ -219,6 +243,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "swr",
+      "allowedCategories": [ "api-client", "contracts" ]
+    },
+    {
       "name": "ts-jest",
       "allowedCategories": [ "apis", "clients" ]
     },
@@ -232,7 +260,7 @@
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": [ "api-client", "apis", "clients", "contracts" ]
     },
     {
       "name": "uuid",

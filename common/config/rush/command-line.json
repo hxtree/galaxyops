@@ -31,6 +31,13 @@
       "summary": "A list of common commands",
       "shellCommand": "common/scripts/help.sh",
       "safeForSimultaneousRushProcesses": true
+    },
+    {
+      "name": "api",
+      "commandKind": "global",
+      "summary": "Create OpenApi client libaries",
+      "shellCommand": "common/scripts/api-client/build.sh",
+      "safeForSimultaneousRushProcesses": true
     }
   ],
   "parameters": [
