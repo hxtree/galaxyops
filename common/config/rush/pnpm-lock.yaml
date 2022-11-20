@@ -5,6 +5,32 @@ importers:
   .:
     specifiers: {}
 
+  ../../libraries/api-client/character-sheet:
+    specifiers:
+      '@types/node': ^16.0.0
+      axios: ^0.21.1
+      swr: ^0.5.6
+      typescript: 4.8.4
+    dependencies:
+      axios: 0.21.4
+      swr: 0.5.7
+    devDependencies:
+      '@types/node': 16.18.3
+      typescript: 4.8.4
+
+  ../../libraries/api-client/luck-by-dice:
+    specifiers:
+      '@types/node': ^16.0.0
+      axios: ^0.21.1
+      swr: ^0.5.6
+      typescript: 4.8.4
+    dependencies:
+      axios: 0.21.4
+      swr: 0.5.7
+    devDependencies:
+      '@types/node': 16.18.3
+      typescript: 4.8.4
+
   ../../packages/api-gateway:
     specifiers:
       '@nestjs/common': 9.1.1
@@ -198,8 +224,8 @@ importers:
 
   ../../packages/gm-client:
     specifiers:
+      '@org-api-client/luck-by-dice': workspace:*
       '@org-package/design-system': workspace:*
-      '@org-package/luck-by-dice-api-client': workspace:*
       '@reduxjs/toolkit': ^1.9.0
       '@testing-library/jest-dom': ^5.16.5
       '@testing-library/react': ^13.4.0
@@ -215,8 +241,8 @@ importers:
       typescript: 4.8.4
       web-vitals: ^2.1.4
     dependencies:
+      '@org-api-client/luck-by-dice': link:../../libraries/api-client/luck-by-dice
       '@org-package/design-system': link:../design-system
-      '@org-package/luck-by-dice-api-client': link:../luck-by-dice-api-client
       '@reduxjs/toolkit': 1.9.0_react-redux@8.0.5+react@18.2.0
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/react': 13.4.0_react-dom@18.2.0+react@18.2.0
@@ -303,19 +329,6 @@ importers:
       path: 0.12.7
       ts-jest: 28.0.8_beb58f9bbd5006d5bb745e9c0feb51ac
       ts-node: 10.9.1_27f150aaefb5a0dcdf3a968254cff9bf
-      typescript: 4.8.4
-
-  ../../packages/luck-by-dice-api-client:
-    specifiers:
-      '@types/node': ^16.0.0
-      axios: ^0.21.1
-      swr: ^0.5.6
-      typescript: 4.8.4
-    dependencies:
-      axios: 0.21.4
-      swr: 0.5.7
-    devDependencies:
-      '@types/node': 16.18.3
       typescript: 4.8.4
 
   ../../packages/luck-by-dice-monitor:
