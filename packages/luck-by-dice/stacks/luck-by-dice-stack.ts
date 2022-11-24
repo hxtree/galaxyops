@@ -3,50 +3,25 @@ import * as cdk from 'aws-cdk-lib';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
-import {BundlingOutput, Duration, RemovalPolicy, StackProps} from 'aws-cdk-lib';
-import {
-  Architecture,
-  Code,
-  LayerVersion,
-  Runtime,
-} from 'aws-cdk-lib/aws-lambda';
+import {Duration, StackProps, Stack} from 'aws-cdk-lib';
+import {LayerVersion, Runtime} from 'aws-cdk-lib/aws-lambda';
 import {RetentionDays} from 'aws-cdk-lib/aws-logs';
 
 export class LuckByDiceStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // packages that are common or do not bundle include in layer
-    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.BundlingOutput.html
-    const nodejsModuleLayer = new LayerVersion(this, 'AuthorizerLayer', {
-      compatibleArchitectures: [Architecture.X86_64, Architecture.ARM_64],
-      removalPolicy: RemovalPolicy.DESTROY,
-      // TODO auto build in docker container
-      code: Code.fromAsset('build/layer'),
-      // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_s3_assets.AssetOptions.html
-      // code: Code.fromAsset('.', {
-      //   // exclude: ['*', '!package.json'],
-      //   bundling: {
-      //     // privileged: true,
-      //     image: Runtime.NODEJS_16_X.bundlingImage,
-      //     environment: {
-      //       npm_config_cache: '/tmp/npm_cache',
-      //       npm_config_update_notifier: 'false',
-      //     },
-      //     command: [
-      //       'sh',
-      //       '-c',
-      //       // [
-      //       //   // 'cd $(mktemp -d)',
-      //       //   // 'cp /asset-input/* .',
-      //       //   // 'npm install --production',
-      //       //   // 'cp -r ./node_modules /asset-output/nodejs/node_modules',
-      //       ].join(' && '),
-      //     ],
-      //     outputType: BundlingOutput.ARCHIVED,
-      //   },
-      // }),
-    });
+    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.LayerVersion.html
+    const awsAccountId = Stack.of(this).account;
+    const awsAccountRegion = Stack.of(this).region;
+    const layerVerison = '1'; // TODO store in ssm?
+    const nestJsAppLayer = LayerVersion.fromLayerVersionAttributes(
+      this,
+      'NestJsAppLayer',
+      {
+        layerVersionArn: `arn:aws:lambda:${awsAccountRegion}:${awsAccountId}:layer:NestJsAppLayer:${layerVerison}`,
+      },
+    );
 
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html
     const lambdaFunction = new NodejsFunction(this, 'nodejsFunction', {
@@ -83,7 +58,7 @@ export class LuckByDiceStack extends cdk.Stack {
           'rxjs',
         ],
       },
-      layers: [nodejsModuleLayer],
+      layers: [nestJsAppLayer],
       memorySize: 1024, // 128 -- TODO reduce
       environment: {
         ACCOUNT_ID: this.account,
@@ -121,7 +96,7 @@ export class LuckByDiceStack extends cdk.Stack {
     });
 
     new cdk.CfnOutput(this, 'Localhost API Docs', {
-      value: `${rest.url}api`,
+      value: `${rest.url}roll/notation/1d6/luck/2`,
     });
   }
 }

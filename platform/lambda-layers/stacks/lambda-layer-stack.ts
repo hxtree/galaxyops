@@ -17,7 +17,7 @@ export class LambdaLayerStack extends cdk.Stack {
     const awsAccountId = Stack.of(this).account;
     const awsAccountRegion = Stack.of(this).region;
 
-    // packages that are common or do not bundle well include in layer
+    // include in layer packages that are common or do not bundle well
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.BundlingOutput.html
     const nestJsAppLayer = new LayerVersion(this, 'NestJsAppLayer', {
       layerVersionName: `arn:aws:lambda:${awsAccountRegion}:${awsAccountId}:layer:NestJsAppLayer`,

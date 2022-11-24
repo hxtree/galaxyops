@@ -3,22 +3,9 @@ import * as cdk from 'aws-cdk-lib';
 
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
-import {
-  BundlingOutput,
-  Duration,
-  RemovalPolicy,
-  Stack,
-  StackProps,
-} from 'aws-cdk-lib';
-import {
-  Architecture,
-  Code,
-  LayerVersion,
-  Runtime,
-} from 'aws-cdk-lib/aws-lambda';
+import {Duration, Stack, StackProps} from 'aws-cdk-lib';
+import {LayerVersion, Runtime} from 'aws-cdk-lib/aws-lambda';
 import {RetentionDays} from 'aws-cdk-lib/aws-logs';
-
-import * as child from 'child_process';
 
 export class CharacterSheetStack extends cdk.Stack {
   // TODO Move to param store, etc.
@@ -28,12 +15,10 @@ export class CharacterSheetStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
+    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.LayerVersion.html
     const awsAccountId = Stack.of(this).account;
     const awsAccountRegion = Stack.of(this).region;
-    const layerVerison = '1'; // TODO store in ssm
-
-    // Get Lambda layer - AWS region is important!
-    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.LayerVersion.html
+    const layerVerison = '1'; // TODO store in ssm?
     const nestJsAppLayer = LayerVersion.fromLayerVersionAttributes(
       this,
       'NestJsAppLayer',
