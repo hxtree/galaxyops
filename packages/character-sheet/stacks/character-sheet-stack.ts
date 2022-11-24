@@ -12,6 +12,8 @@ import {
 } from 'aws-cdk-lib/aws-lambda';
 import {RetentionDays} from 'aws-cdk-lib/aws-logs';
 
+import * as child from 'child_process';
+
 export class CharacterSheetStack extends cdk.Stack {
   // TODO Move to param store, etc.
   DB_PASSWORD = 'test';
@@ -20,43 +22,49 @@ export class CharacterSheetStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // packages that are common or do not bundle include in layer
+    // packages that are common or do not bundle well include in layer
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.BundlingOutput.html
-    const nodejsModuleLayer = new LayerVersion(this, 'AuthorizerLayer', {
+    const nestJsAppLayer = new LayerVersion(this, 'NestJsAppLayer', {
       compatibleArchitectures: [Architecture.X86_64, Architecture.ARM_64],
       removalPolicy: RemovalPolicy.DESTROY,
-      // TODO auto build in docker container
-      code: Code.fromAsset('build/layer'),
-      // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_s3_assets.AssetOptions.html
-      // code: Code.fromAsset('.', {
-      //   // exclude: ['*', '!package.json'],
-      //   bundling: {
-      //     // privileged: true,
-      //     image: Runtime.NODEJS_16_X.bundlingImage,
-      //     environment: {
-      //       npm_config_cache: '/tmp/npm_cache',
-      //       npm_config_update_notifier: 'false',
-      //     },
-      //     command: [
-      //       'sh',
-      //       '-c',
-      //       // [
-      //       //   // 'cd $(mktemp -d)',
-      //       //   // 'cp /asset-input/* .',
-      //       //   // 'npm install --production',
-      //       //   // 'cp -r ./node_modules /asset-output/nodejs/node_modules',
-      //       ].join(' && '),
-      //     ],
-      //     outputType: BundlingOutput.ARCHIVED,
-      //   },
-      // }),
+      code: Code.fromAsset('.', {
+        exclude: ['*', '!package.json'],
+        bundling: {
+          image: Runtime.NODEJS_16_X.bundlingImage,
+          command: [],
+          local: {
+            tryBundle(outputDir: string) {
+              try {
+                child.execSync('npm --version');
+              } catch {
+                return false;
+              }
+
+              const commands = [
+                'LAYER_TMP_DIR=`mktemp -t ${lambda-layer}` || exit 1',
+                'mkdir -p "$LAYER_TMP_DIR/nodejs"',
+                `cat package.json | jq 'del(.devDependencies)' > "$LAYER_TMP_DIR/nodejs/package.json"`,
+                'cd "$LAYER_TMP_DIR/nodejs"',
+                'npm install --prefer-offline --production',
+                'cd ..',
+                'zip -rq layer.zip nodejs',
+                `cp layer.zip ${outputDir}`,
+              ];
+
+              child.execSync(commands.join(' && '));
+              return true;
+            },
+          },
+          outputType: BundlingOutput.ARCHIVED,
+        },
+      }),
     });
 
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html
     const lambdaFunction = new NodejsFunction(this, 'nodejsFunction', {
       handler: 'handler',
       entry: 'src/index.ts',
-      depsLockFilePath: 'build/layer/nodejs/package-lock.json',
+      depsLockFilePath: '../../common/config/rush/pnpm-lock.yaml',
       runtime: Runtime.NODEJS_16_X,
       bundling: {
         dockerImage: Runtime.NODEJS_16_X.bundlingImage,
@@ -87,7 +95,7 @@ export class CharacterSheetStack extends cdk.Stack {
           'rxjs',
         ],
       },
-      layers: [nodejsModuleLayer],
+      layers: [nestJsAppLayer],
       memorySize: 1024, // 128 -- TODO reduce
       environment: {
         ACCOUNT_ID: this.account,
@@ -121,6 +129,10 @@ export class CharacterSheetStack extends cdk.Stack {
 
     new cdk.CfnOutput(this, 'Localhost API Docs', {
       value: `${rest.url}api`,
+    });
+
+    new cdk.CfnOutput(this, 'Localhost API Example', {
+      value: `${rest.url}archetype/list`,
     });
   }
 }

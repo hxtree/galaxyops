@@ -12,7 +12,14 @@
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 3,
   "approvedPackagesPolicy": {
-    "reviewCategories": ["apis", "api-client", "clients", "libraries", "heft"],
+    "reviewCategories": [
+      "apis",
+      "api-client",
+      "clients",
+      "libraries",
+      "heft",
+      "platform"
+    ],
     "ignoredNpmScopes": ["@types"]
   },
 
@@ -28,6 +35,12 @@
     "postRushBuild": []
   },
   "projects": [
+    {
+      "packageName": "@org-platform/lambda-layers",
+      "projectFolder": "platform/lambda-layers",
+      "reviewCategory": "platform",
+      "cyclicDependencyProjects": []
+    },
     {
       "packageName": "@org-api-client/luck-by-dice",
       "projectFolder": "libraries/api-client/luck-by-dice",

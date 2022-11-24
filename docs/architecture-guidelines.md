@@ -74,6 +74,12 @@ documentation. Typedoc was selected to compile documentation as code.
 deployment folder including applicable dependencies. Instead apps deploy
 themselves using CDK stacks via `rushx deploy`.
 
+## NestJS
+
+NestJS was selected as a framework for building server-side applications. It
+comes with dependency injection, swagger intergration for generating OpenAPI
+spec, is decorator based, and is sponsored as an open collective project.
+
 ## Mobile Client
 
 There is a healthy marketplace for mobile games to making frontend mobile
@@ -82,14 +88,7 @@ according to
 Healthy enough where using a frontend mobile client makes sense. Mobile clients
 now feature adaquate hardware unlike in 2005.
 
-## 3D
-
-The original tech demo engine was built as an isometric game engine. However
-creating a isometric spritemap for each object becomes time consuming and
-difficult to manage changes. It is easier to generate frames using 3D.
-Performance of 3D on mobile has drastically improved in the last 20 years.
-
-## Unreal for Mobile Client
+### Unreal for Mobile Client
 
 Although the server side uses JS based microsevices, etc. there isn't much of a
 marketplace for a JS game client. ThreeJS is neat library for generating 3D
@@ -102,7 +101,13 @@ Andriod is much easier using Unity but Unreal can do it too. As to increase
 velocity but avoiding the need to write indifferent 3D code, Unreal was
 selected.
 
+## 3D
+
+The original tech demo engine was built as an isometric game engine. However
+creating a isometric spritemap for each object becomes time consuming and
+difficult to manage changes. It is easier to generate frames using 3D.
+Performance of 3D on mobile has drastically improved in the last 20 years.
+
 ## Considering
 
-- Contracts for interdependent apps, possibly <https://nestjs.com/> .
 - Codegen: yeoman-generator, plopjs, hygen, etc.

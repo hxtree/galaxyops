@@ -8,7 +8,6 @@
   "scripts": {
     "start": "nest start --debug --watch",
     "build": "tsc",
-    "build:layer": "(rm -rf build && mkdir -p build/layer/nodejs/ && cp package.json ./build/layer/nodejs/ && cd build/layer/nodejs/ && npm install --prefer-offline --production)",
     "watch": "tsc -w",
     "test": "jest --logHeapUsage",
     "cdk": "cdk",

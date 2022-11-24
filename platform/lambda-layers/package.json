@@ -1,0 +1,27 @@
+{
+  "name": "@org-platform/lambda-layers",
+  "module": "commonjs",
+  "version": "0.0.1",
+  "dependencies": {
+    "aws-lambda": "1.0.7"
+  },
+  "devDependencies": {
+    "aws-cdk-lib": "2.47.0",
+    "constructs": "^10.0.0",
+    "@types/jest": "28.1.8",
+    "@types/node": "^16.0.0",
+    "@types/aws-lambda": "~8.10.93",
+    "jest": "28.1.3",
+    "ts-jest": "28.0.8",
+    "@typescript-eslint/eslint-plugin": "5.15.0",
+    "@typescript-eslint/parser": "5.15.0",
+    "eslint": "8.11.0",
+    "typescript": "4.8.4",
+    "ts-node": "10.9.1",
+    "esbuild": "~0.15.12",
+    "fs": "~0.0.1-security",
+    "path": "~0.12.7",
+    "@types/express": "~4.17.14",
+    "@types/uuid": "~8.3.4"
+  }
+}

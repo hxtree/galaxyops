@@ -108,11 +108,11 @@
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "@vendia/serverless-express",
@@ -120,11 +120,11 @@
     },
     {
       "name": "aws-cdk-lib",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "aws-lambda",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "aws-serverless-express",
@@ -148,15 +148,15 @@
     },
     {
       "name": "constructs",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "esbuild",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "eslint-config-airbnb",
@@ -192,11 +192,11 @@
     },
     {
       "name": "fs",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "jest",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "mongoose",
@@ -208,7 +208,7 @@
     },
     {
       "name": "path",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "prop-types",
@@ -248,11 +248,11 @@
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "ts-node",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "typedoc",
@@ -260,7 +260,7 @@
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "api-client", "apis", "clients", "contracts" ]
+      "allowedCategories": [ "api-client", "apis", "clients", "contracts", "platform" ]
     },
     {
       "name": "uuid",
