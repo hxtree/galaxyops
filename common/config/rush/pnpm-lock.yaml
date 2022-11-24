@@ -390,6 +390,11 @@ importers:
 
   ../../platform/lambda-layers:
     specifiers:
+      '@nestjs/common': 9.1.1
+      '@nestjs/core': 9.1.1
+      '@nestjs/platform-express': 9.1.1
+      '@nestjs/swagger': ~6.1.3
+      '@nestjs/terminus': 9.1.1
       '@types/aws-lambda': ~8.10.93
       '@types/express': ~4.17.14
       '@types/jest': 28.1.8
@@ -397,19 +402,46 @@ importers:
       '@types/uuid': ~8.3.4
       '@typescript-eslint/eslint-plugin': 5.15.0
       '@typescript-eslint/parser': 5.15.0
+      '@vendia/serverless-express': 4.8.2
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
+      aws-serverless-express: ~3.4.0
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
       constructs: ^10.0.0
       esbuild: ~0.15.12
       eslint: 8.11.0
+      express: 4.18.1
       fs: ~0.0.1-security
       jest: 28.1.3
+      mongoose: ~6.6.5
+      node-cache: 5.1.2
       path: ~0.12.7
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.6
+      source-map-support: ~0.5.21
       ts-jest: 28.0.8
       ts-node: 10.9.1
       typescript: 4.8.4
+      uuid: ~9.0.0
     dependencies:
+      '@nestjs/common': 9.1.1_02d66f081444430c9a02612f8d586d74
+      '@nestjs/core': 9.1.1_8b69cb064f4ce3b033affd71fba1da41
+      '@nestjs/platform-express': 9.1.1_b9d488fa0f13506021f37a33923c7dab
+      '@nestjs/swagger': 6.1.3_8d12a4243453d6c216f75398bb866df6
+      '@nestjs/terminus': 9.1.1_5d714a739a0be2680a5ae00ecfff051b
+      '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
+      aws-serverless-express: 3.4.0
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
+      express: 4.18.1
+      mongoose: 6.6.7
+      node-cache: 5.1.2
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.6
+      source-map-support: 0.5.21
+      uuid: 9.0.0
     devDependencies:
       '@types/aws-lambda': 8.10.108
       '@types/express': 4.17.14

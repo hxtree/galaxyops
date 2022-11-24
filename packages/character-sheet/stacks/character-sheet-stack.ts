@@ -3,7 +3,13 @@ import * as cdk from 'aws-cdk-lib';
 
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
-import {BundlingOutput, Duration, RemovalPolicy, StackProps} from 'aws-cdk-lib';
+import {
+  BundlingOutput,
+  Duration,
+  RemovalPolicy,
+  Stack,
+  StackProps,
+} from 'aws-cdk-lib';
 import {
   Architecture,
   Code,
@@ -22,43 +28,19 @@ export class CharacterSheetStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // packages that are common or do not bundle well include in layer
-    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.BundlingOutput.html
-    const nestJsAppLayer = new LayerVersion(this, 'NestJsAppLayer', {
-      compatibleArchitectures: [Architecture.X86_64, Architecture.ARM_64],
-      removalPolicy: RemovalPolicy.DESTROY,
-      code: Code.fromAsset('.', {
-        exclude: ['*', '!package.json'],
-        bundling: {
-          image: Runtime.NODEJS_16_X.bundlingImage,
-          command: [],
-          local: {
-            tryBundle(outputDir: string) {
-              try {
-                child.execSync('npm --version');
-              } catch {
-                return false;
-              }
+    const awsAccountId = Stack.of(this).account;
+    const awsAccountRegion = Stack.of(this).region;
+    const layerVerison = '1'; // TODO store in ssm
 
-              const commands = [
-                'LAYER_TMP_DIR=`mktemp -t ${lambda-layer}` || exit 1',
-                'mkdir -p "$LAYER_TMP_DIR/nodejs"',
-                `cat package.json | jq 'del(.devDependencies)' > "$LAYER_TMP_DIR/nodejs/package.json"`,
-                'cd "$LAYER_TMP_DIR/nodejs"',
-                'npm install --prefer-offline --production',
-                'cd ..',
-                'zip -rq layer.zip nodejs',
-                `cp layer.zip ${outputDir}`,
-              ];
-
-              child.execSync(commands.join(' && '));
-              return true;
-            },
-          },
-          outputType: BundlingOutput.ARCHIVED,
-        },
-      }),
-    });
+    // Get Lambda layer - AWS region is important!
+    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.LayerVersion.html
+    const nestJsAppLayer = LayerVersion.fromLayerVersionAttributes(
+      this,
+      'NestJsAppLayer',
+      {
+        layerVersionArn: `arn:aws:lambda:${awsAccountRegion}:${awsAccountId}:layer:NestJsAppLayer:${layerVerison}`,
+      },
+    );
 
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html
     const lambdaFunction = new NodejsFunction(this, 'nodejsFunction', {

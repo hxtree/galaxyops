@@ -8,23 +8,23 @@
     },
     {
       "name": "@nestjs/common",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "@nestjs/core",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "@nestjs/platform-express",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "@nestjs/swagger",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "@nestjs/terminus",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "@org-api-client/luck-by-dice",
@@ -116,7 +116,7 @@
     },
     {
       "name": "@vendia/serverless-express",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "aws-cdk-lib",
@@ -128,7 +128,7 @@
     },
     {
       "name": "aws-serverless-express",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "axios",
@@ -140,11 +140,11 @@
     },
     {
       "name": "class-transformer",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "class-validator",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "constructs",
@@ -188,7 +188,7 @@
     },
     {
       "name": "express",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "fs",
@@ -200,11 +200,11 @@
     },
     {
       "name": "mongoose",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "node-cache",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "path",
@@ -232,15 +232,15 @@
     },
     {
       "name": "reflect-metadata",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "rxjs",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "source-map-support",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "swr",
@@ -264,7 +264,7 @@
     },
     {
       "name": "uuid",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "web-vitals",
