@@ -21,6 +21,9 @@
     "@org-api-client/luck-by-dice": "workspace:*",
     "@storybook/addon-a11y": "~6.5.13"
   },
+  "devDependencies": {
+    "@org-rig/base-nodejs": "workspace:*"
+  },
   "scripts": {
     "build:all": "rush build -t .",
     "start": "react-scripts start",

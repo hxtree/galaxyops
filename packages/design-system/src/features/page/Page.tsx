@@ -3,7 +3,7 @@ import React from 'react';
 import {Header} from '../header';
 import './page.css';
 
-type User = {
+export type User = {
   name: string;
 };
 

@@ -63,6 +63,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@org-rigs/base-nodejs",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@reduxjs/toolkit",
       "allowedCategories": [ "apis" ]
     },

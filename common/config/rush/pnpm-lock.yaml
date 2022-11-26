@@ -183,6 +183,7 @@ importers:
 
   ../../packages/design-system:
     specifiers:
+      '@org-rig/base-nodejs': workspace:*
       '@storybook/addon-a11y': ~6.5.13
       '@storybook/addon-actions': ^6.5.13
       '@storybook/addon-essentials': ^6.5.13
@@ -223,6 +224,7 @@ importers:
       typescript: 4.8.4
       web-vitals: 2.1.4
     devDependencies:
+      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
       '@storybook/addon-a11y': 6.5.13_react-dom@18.2.0+react@18.2.0
       '@storybook/addon-actions': 6.5.13_react-dom@18.2.0+react@18.2.0
       '@storybook/addon-essentials': 6.5.13_2d254ae28685cc097cfa01c8688313e0
@@ -242,6 +244,7 @@ importers:
     specifiers:
       '@org-api-client/luck-by-dice': workspace:*
       '@org-package/design-system': workspace:*
+      '@org-rig/base-nodejs': workspace:*
       '@reduxjs/toolkit': ^1.9.0
       '@storybook/addon-a11y': ~6.5.13
       '@testing-library/jest-dom': ^5.16.5
@@ -275,6 +278,8 @@ importers:
       react-scripts: 5.0.1_react@18.2.0+typescript@4.8.4
       typescript: 4.8.4
       web-vitals: 2.1.4
+    devDependencies:
+      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
 
   ../../packages/luck-by-dice:
     specifiers:

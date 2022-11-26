@@ -1,11 +1,16 @@
-import {withA11y} from '@storybook/addon-a11y';
-import {storiesOf} from '@storybook/react';
-import * as React from 'react';
+import React from 'react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
+
 import {Button} from './Button';
-storiesOf('button', module)
-  .add('Accessible', () => <button>Accessible button</button>)
-  .add('Inaccessible', () => (
-    <button style={{backgroundColor: 'red', color: 'darkRed'}}>
-      Inaccessible button
-    </button>
-  ));
+
+export default {
+  title: 'Interactive/Button',
+  component: Button,
+} as ComponentMeta<typeof Button>;
+
+const Template: ComponentStory<typeof Button> = args => (
+  <Button {...args}>Click me!</Button>
+);
+
+export const Default: ComponentStory<typeof Button> = Template.bind({});
+Default.args = {};
