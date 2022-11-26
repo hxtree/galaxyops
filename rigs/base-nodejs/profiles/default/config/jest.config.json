@@ -1,0 +1,10 @@
+{
+  "roots": ["<rootDir>/src/", "<rootDir>/stacks/"],
+  "testMatch": ["<rootDir>/src/**/*.test.ts", "<rootDir>/stacks/**/*.test.ts"],
+  "testPathIgnorePatterns": ["/node_modules/"],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "collectCoverage": false,
+  "collectCoverageFrom": ["**/*.{ts}"]
+}

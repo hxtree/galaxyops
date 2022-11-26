@@ -51,8 +51,32 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@org-platform/constructs",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@org-rig/base-node-rig",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@org-rig/base-nodejs",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@reduxjs/toolkit",
       "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@rushstack/eslint-config",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
+      "name": "@rushstack/heft",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
+      "name": "@rushstack/heft-node-rig",
+      "allowedCategories": [ "rigs" ]
     },
     {
       "name": "@storybook/addon-actions",
@@ -156,7 +180,7 @@
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "apis", "clients", "platform", "rigs" ]
     },
     {
       "name": "eslint-config-airbnb",
@@ -260,7 +284,7 @@
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "api-client", "apis", "clients", "contracts", "platform" ]
+      "allowedCategories": [ "api-client", "apis", "clients", "contracts", "platform", "rigs" ]
     },
     {
       "name": "uuid",

@@ -17,7 +17,7 @@
       "api-client",
       "clients",
       "libraries",
-      "heft",
+      "rigs",
       "platform"
     ],
     "ignoredNpmScopes": ["@types"]
@@ -35,6 +35,18 @@
     "postRushBuild": []
   },
   "projects": [
+    {
+      "packageName": "@org-rig/base-nodejs",
+      "projectFolder": "rigs/base-nodejs",
+      "reviewCategory": "rigs",
+      "cyclicDependencyProjects": []
+    },
+    {
+      "packageName": "@org-platform/constructs",
+      "projectFolder": "platform/constructs",
+      "reviewCategory": "platform",
+      "cyclicDependencyProjects": []
+    },
     {
       "packageName": "@org-platform/lambda-layers",
       "projectFolder": "platform/lambda-layers",

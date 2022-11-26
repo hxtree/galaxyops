@@ -1,29 +1,16 @@
 {
-  "name": "@org-package/luck-by-dice",
+  "name": "@org-platform/constructs",
   "module": "commonjs",
-  "version": "0.1.2",
-  "bin": {
-    "app": "bin/app.js"
-  },
+  "main": "./dist/src/index.js",
+  "version": "0.0.1",
   "scripts": {
-    "start": "nest start --debug --watch",
     "build": "tsc",
-    "build:all": "rush build -t .",
     "watch": "tsc -w",
     "test": "jest --logHeapUsage",
-    "cdk": "cdk",
-    "hotswap": "cdk deploy --hotswap",
     "lint": "eslint --config .eslintrc.js -f unix \"src/**/*.{ts,tsx}\"",
-    "docs": "typedoc --entryPointStrategy expand ./src",
-    "deploy": "cdk deploy",
-    "destroy": "cdk destroy",
-    "diff": "cdk diff",
-    "synth": "cdk synth",
-    "bootstrap": "cdk bootstrap",
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@org-platform/constructs": "workspace:*",
     "aws-lambda": "1.0.7",
     "class-transformer": "0.5.1",
     "class-validator": "0.13.2",
