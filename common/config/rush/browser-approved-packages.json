@@ -79,6 +79,10 @@
       "allowedCategories": [ "rigs" ]
     },
     {
+      "name": "@storybook/addon-a11y",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/addon-actions",
       "allowedCategories": [ "apis" ]
     },

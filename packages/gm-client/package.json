@@ -18,9 +18,11 @@
     "typescript": "4.8.4",
     "web-vitals": "^2.1.4",
     "@org-package/design-system": "workspace:*",
-    "@org-api-client/luck-by-dice": "workspace:*"
+    "@org-api-client/luck-by-dice": "workspace:*",
+    "@storybook/addon-a11y": "~6.5.13"
   },
   "scripts": {
+    "build:all": "rush build -t .",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

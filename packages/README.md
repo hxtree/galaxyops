@@ -1,4 +1,4 @@
-# @org-packages
+# @org-package
 
 This directory contains deployable organization packages. Each folder contains a
 package consisting of the source code and the IaC to deploy the package as one

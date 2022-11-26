@@ -1,4 +1,4 @@
-# @org-rig/base-node-rig
+# @org-rig/base-nodejs
 
 This project folder demonstrates a sample configuration of the
 [Heft](https://www.npmjs.com/package/@rushstack/heft) build system. It

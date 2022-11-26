@@ -27,7 +27,8 @@
     "allowJs": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["../../node_modules/@types"]
+    "typeRoots": ["../../node_modules/@types"],
+    "jsx": "react-jsx"
   },
   "typedocOptions": {
     "entryPoints": ["src/main.handler.ts"],
@@ -36,8 +37,7 @@
   "sourceMap": true,
   "include": [
     "../../../../../package.json",
-    "../../../../../src/**/*.ts",
-    "../../../../../src/**/*.tsx",
+    "../../../../../src/**/*.{ts|tsx}",
     "../../../../../stacks/*.ts"
   ],
   "exclude": ["../../../../../src/__tests__"]

@@ -2,7 +2,7 @@ import React from 'react';
 import {Counter} from './features/counter/Counter';
 import {MainNavigation} from './features/main-navigation/MainNavigation';
 import './App.css';
-// import * as design from '@org-package/design-system';
+import {Button} from '@org-package/design-system';
 
 function App() {
   return (

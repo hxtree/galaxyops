@@ -1,8 +1,10 @@
-# Platform
+# @org-platform
+
+At a base level a platform can just a curated list of perfered packages. In
+addition, platform contains packages related to laying the fundations for other
+services.
 
 ## Curated List of Recommend Packages
-
-At a base level a platform can just a curated list of perfered packages.
 
 ### Logging
 
