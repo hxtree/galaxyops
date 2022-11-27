@@ -7,8 +7,16 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@emotion/react",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@microsoft/tsdoc",
       "allowedCategories": [ "clients" ]
+    },
+    {
+      "name": "@mui/material",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "@nestjs/common",
@@ -305,6 +313,10 @@
     {
       "name": "source-map-support",
       "allowedCategories": [ "apis", "platform" ]
+    },
+    {
+      "name": "styled-components",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "swr",

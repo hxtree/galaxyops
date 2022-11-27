@@ -1,31 +1,13 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
+import MUIButton, { ButtonProps as MUIButtonProps } from '@mui/material/Button';
 
-interface Props extends HTMLAttributes<HTMLButtonElement> {
-  variant: 'primary' | 'secondary';
-  label: string;
-}
+export type ButtonProps = {} & MUIButtonProps;
 
-/**
- * This is a default button
- * @param param0
- * @returns
- */
-export const Button = ({
-  variant = 'primary',
-  label = 'Button',
-  ...props
-}: Props) => {
+export default function Button(props: ButtonProps) {
+  const { children, ...muiProps } = props;
   return (
-    <button
-      {...props}
-      style={{
-        backgroundColor: variant === 'primary' ? 'blue' : 'gray',
-        color: 'white',
-        border: 'none',
-        padding: '1em',
-      }}
-    >
-      {label}
-    </button>
+    <MUIButton variant="outlined" {...muiProps}>
+      {children}
+    </MUIButton>
   );
-};
+}

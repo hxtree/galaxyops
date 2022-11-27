@@ -1,12 +1,10 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Button, Props } from '../src/Button';
+import Button from '../src/Button';
 
-const meta: Meta = {
-  title: 'Button',
+export default {
+  title: 'Components/Button',
   component: Button,
-};
+} as Meta<typeof Button>;
 
-export default meta;
-
-export const Default = () => <Button variant="primary">Click Me</Button>;
+export const Default = () => <Button>Click Me</Button>;

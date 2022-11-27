@@ -17,6 +17,7 @@ to keep track of.
 
 ## References
 
+- [MUI](https://mui.com/material-ui/)
 - [Architecture](https://storybook.js.org/tutorials/design-systems-for-developers/react/en/architecture/)
 - [TSDX](https://tsdx.io/)
 - [TSDX Repo](https://github.com/jaredpalmer/tsdx#optimization)
