@@ -13,7 +13,11 @@ to keep track of.
 ## Guidelines:
 
 - Use Component Story Format(CSF) https://storybook.js.org/docs/react/api/csf
+- Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
 
 ## References
 
 - [Architecture](https://storybook.js.org/tutorials/design-systems-for-developers/react/en/architecture/)
+- [TSDX](https://tsdx.io/)
+- [TSDX Repo](https://github.com/jaredpalmer/tsdx#optimization)
+- [Create Design System](https://www.youtube.com/watch?v=qSkHRVLcj6U)

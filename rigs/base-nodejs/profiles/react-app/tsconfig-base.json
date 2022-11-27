@@ -6,6 +6,7 @@
     "target": "es2021",
     "module": "esnext",
     "lib": ["dom", "dom.iterable", "esnext", "es2021"],
+    "jsx": "react-jsx",
     "allowUnreachableCode": false,
     "declaration": true,
     "noImplicitAny": true,
@@ -15,6 +16,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitReturns": true,
+    "sourceMap": true,
     "inlineSourceMap": true,
     "inlineSources": true,
     "experimentalDecorators": true,
@@ -31,18 +33,13 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "ts-node": {
-      "compilerOptions": {
-        "module": "CommonJS"
-      }
-    }
+    "noEmit": true
   },
   "sourceMap": true,
   "include": [
     "../../../../../package.json",
-    "../../../../../src/**/*.{ts|tsx}",
+    "../../../../../src/**/*.ts",
+    "../../../../../src/**/*.tsx",
     "../../../../../stacks/*.ts"
   ],
   "exclude": ["../../../../../src/__tests__"]

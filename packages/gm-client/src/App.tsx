@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         Game Master Client
-        <Button label="ss" />
+        <Button label="Click Me" variant="primary" />
         <MainNavigation />
         <Counter />
       </header>

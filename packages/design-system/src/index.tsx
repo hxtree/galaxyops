@@ -1,19 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { FC, HTMLAttributes, ReactChild } from 'react';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+export interface Props extends HTMLAttributes<HTMLDivElement> {
+  /** custom content, defaults to 'the snozzberries taste like snozzberries' */
+  children?: ReactChild;
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Please do not use types off of a default export module or else Storybook Docs will suffer.
+// see: https://github.com/storybookjs/storybook/issues/9556
+/**
+ * A custom Thing component. Neat!
+ */
+export const Thing: FC<Props> = ({ children }) => {
+  return <div>{children || `the snozzberries taste like snozzberries`}</div>;
+};
+
+export * from './Button';

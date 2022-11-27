@@ -3,6 +3,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@babel/core",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@microsoft/tsdoc",
       "allowedCategories": [ "clients" ]
     },
@@ -83,6 +87,10 @@
       "allowedCategories": [ "rigs" ]
     },
     {
+      "name": "@size-limit/preset-small-lib",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/addon-a11y",
       "allowedCategories": [ "apis" ]
     },
@@ -95,11 +103,19 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@storybook/addon-info",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/addon-interactions",
       "allowedCategories": [ "apis" ]
     },
     {
       "name": "@storybook/addon-links",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/addons",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -167,6 +183,10 @@
       "allowedCategories": [ "api-client", "contracts" ]
     },
     {
+      "name": "babel-loader",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "babel-plugin-named-exports-order",
       "allowedCategories": [ "apis" ]
     },
@@ -227,6 +247,10 @@
       "allowedCategories": [ "apis", "platform" ]
     },
     {
+      "name": "husky",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "jest",
       "allowedCategories": [ "apis", "clients", "platform" ]
     },
@@ -255,6 +279,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "react-is",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "react-redux",
       "allowedCategories": [ "apis" ]
     },
@@ -271,6 +299,10 @@
       "allowedCategories": [ "apis", "platform" ]
     },
     {
+      "name": "size-limit",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "source-map-support",
       "allowedCategories": [ "apis", "platform" ]
     },
@@ -285,6 +317,14 @@
     {
       "name": "ts-node",
       "allowedCategories": [ "apis", "clients", "platform" ]
+    },
+    {
+      "name": "tsdx",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "tslib",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "typedoc",
