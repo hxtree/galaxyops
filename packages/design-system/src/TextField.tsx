@@ -5,7 +5,7 @@ import MUITextField, {
 
 export type TextFieldProps = {} & MUITextFieldProps;
 
-export default function TextField(props: TextFieldProps) {
+export const TextField = (props: TextFieldProps) => {
   const { ...muiProps } = props;
   return <MUITextField {...muiProps} />;
-}
+};

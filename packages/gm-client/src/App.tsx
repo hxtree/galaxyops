@@ -2,14 +2,16 @@ import React from 'react';
 import {Counter} from './features/counter/Counter';
 import {MainNavigation} from './features/main-navigation/MainNavigation';
 import './App.css';
-import {Button} from '@org-package/design-system';
+import {Button, Paper} from '@org-package/design-system';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Game Master Client
-        <Button label="Click Me" variant="primary" />
+        <Paper elevation={3}>
+          Game Master Client
+          <Button>Roll Dice</Button>
+        </Paper>
         <MainNavigation />
         <Counter />
       </header>

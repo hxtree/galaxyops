@@ -5,7 +5,7 @@ import MUICheckbox, {
 
 export type CheckboxProps = {} & MUICheckboxProps;
 
-export default function Checkbox(props: CheckboxProps) {
+export const Checkbox = (props: CheckboxProps) => {
   const { ...muiProps } = props;
   return <MUICheckbox {...muiProps} />;
-}
+};

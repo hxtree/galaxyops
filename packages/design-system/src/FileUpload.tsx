@@ -4,7 +4,7 @@ interface FileUploadProps {
   setFile: (file: File) => void;
 }
 
-export default function FileUpload({ setFile }: FileUploadProps) {
+export const FileUpload = ({ setFile }: FileUploadProps) => {
   const onChangeFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { files } = e.target;
     if (files && files[0]) {
@@ -13,4 +13,4 @@ export default function FileUpload({ setFile }: FileUploadProps) {
   };
 
   return <input name="file" type="file" onChange={onChangeFile} />;
-}
+};
