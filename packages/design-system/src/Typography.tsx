@@ -8,6 +8,7 @@ export const Typography = styled(MuiTypography)<TypographyProps>(() => ({
   },
   '&.MuiTypography-h1': {
     fontFamily: '"Eczar", serif',
+    fontWeight: '800',
     fontSize: '2rem',
     color: 'var(--primary)',
     padding: '12px 0',
@@ -76,18 +77,28 @@ export const Typography = styled(MuiTypography)<TypographyProps>(() => ({
     },
   },
   '&.MuiTypography-h3': {
+    fontFamily: "'Roboto', sans-serif",
+    fontWeight: '400',
     fontSize: '1.05rem',
   },
   '&.MuiTypography-h4': {
+    fontFamily: "'Roboto', sans-serif",
+    fontWeight: '400',
     fontSize: '1rem',
   },
   '&.MuiTypography-h5': {
+    fontFamily: "'Roboto', sans-serif",
+    fontWeight: '400',
     fontSize: '1rem',
   },
   '&.MuiTypography-h6': {
+    fontFamily: "'Roboto', sans-serif",
+    fontWeight: '400',
     fontSize: '1rem',
   },
   '&.MuiTypography-body1': {
+    fontFamily: "'Roboto', sans-serif",
+    fontWeight: '400',
     fontSize: '1rem',
   },
 }));
