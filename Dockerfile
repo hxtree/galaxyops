@@ -26,7 +26,7 @@ RUN apt-get update \
         npm \
         default-jre \
     # https://pnpm.io/installation
-    && npm install --global pnpm \
+    && npm install --global pnpm@7.17.1 \
     # install Microsoft Rush globally
     # https://rushjs.io/
     && npm install --global @microsoft/rush \

@@ -3,6 +3,8 @@ import MUIBox, { BoxProps as MUIBoxProps } from '@mui/material/Box';
 import MUIStack, { StackProps as MUIStackProps } from '@mui/material/Stack';
 import MUIGrid, { GridProps as MUIGridProps } from '@mui/material/Grid';
 import MUIPaper, { PaperProps as MUIPaperProps } from '@mui/material/Paper';
+import styled from 'styled-components';
+
 // import { styled } from '@mui/material/styles';
 
 export type StackProps = {} & MUIStackProps;
@@ -28,6 +30,17 @@ export const Paper = (props: PaperProps) => {
   const { children, ...muiProps } = props;
   return <MUIPaper {...muiProps}>{children}</MUIPaper>;
 };
+
+export type ItemProps = {} & MUIPaperProps;
+// export const Item = (props: PaperProps) => {
+//   const { children, ...muiProps } = props;
+//   return <MUIPaper {...muiProps}>{children}</MUIPaper>;
+// };
+
+export const Item = styled(Paper)`
+  padding: 0.5rem;
+  font-family: 'Eczar', serif;
+`;
 
 // export const Item = styled(Paper)(({ theme }) => ({
 //   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',

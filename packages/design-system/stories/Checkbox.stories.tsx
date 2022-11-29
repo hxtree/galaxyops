@@ -7,4 +7,8 @@ export default {
   component: Checkbox,
 } as Meta<typeof Checkbox>;
 
-export const Default = () => <Checkbox />;
+export const Default = () => (
+  <>
+    <Checkbox /> Label
+  </>
+);

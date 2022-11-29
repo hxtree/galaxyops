@@ -11,11 +11,19 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@emotion/styled",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@microsoft/tsdoc",
       "allowedCategories": [ "clients" ]
     },
     {
       "name": "@mui/material",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@mui/system",
       "allowedCategories": [ "apis" ]
     },
     {
