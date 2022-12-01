@@ -1,15 +1,14 @@
-import React from 'react';
 import {Counter} from './features/counter/Counter';
 import {MainNavigation} from './features/main-navigation/MainNavigation';
 import './App.css';
-import {Button, Paper} from '@org-package/design-system';
+import {Button, Typography, Paper} from '@org-package/design-system';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Paper elevation={3}>
-          Game Master Client
+          <Typography variant="h1">Game Master Client</Typography>
           <Button>Roll Dice</Button>
         </Paper>
         <MainNavigation />

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Typography as MuiTypography, TypographyProps } from '@mui/material';
 import { styled } from '@mui/system';
 
@@ -18,7 +18,7 @@ export const Typography = styled(MuiTypography)<TypographyProps>(() => ({
       color: 'var(--primary)',
     },
     '&.border': {
-      fontSize: '1.4rem',
+      fontSize: '4rem',
       width: '100%',
       position: 'relative',
       padding: { xs: '5px 0', sm: '10px 0' },
@@ -41,7 +41,7 @@ export const Typography = styled(MuiTypography)<TypographyProps>(() => ({
     },
   },
   '&.MuiTypography-h2': {
-    fontSize: '1.7rem',
+    fontSize: '2rem',
     color: 'var(--primary)',
     fontWeight: 'bold',
     padding: '12px 0',
@@ -102,5 +102,3 @@ export const Typography = styled(MuiTypography)<TypographyProps>(() => ({
     fontSize: '1rem',
   },
 }));
-
-export default Typography;

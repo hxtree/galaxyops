@@ -31,5 +31,6 @@ common/temp/
 # Dist
 **/dist/**
 **/.cache/**
+**/build/**
 
 .DS_Store
