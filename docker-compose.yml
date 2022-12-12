@@ -1,11 +1,11 @@
-version: '3.8'
+version: "3.8"
 services:
-    cdk-monorepo:
+    keepers-cradle:
         build:
             context: .
             dockerfile: Dockerfile
             target: development
-        container_name: cdk-monorepo
+        container_name: keepers-cradle
         tty: true
         stdin_open: true
         volumes:
