@@ -31,7 +31,6 @@
     "@nestjs/common": "9.1.1",
     "@nestjs/core": "9.1.1",
     "@nestjs/terminus": "9.1.1",
-    Untracked files:
     "@nestjs/platform-express": "9.1.1",
     "aws-serverless-express": "~3.4.0",
     "@vendia/serverless-express": "4.8.2",
