@@ -39,7 +39,8 @@
     "mongoose": "~6.6.5",
     "source-map-support": "~0.5.21",
     "@nestjs/swagger": "~6.1.3",
-    "uuid": "~9.0.0"
+    "uuid": "~9.0.0",
+    "@aws-cdk/core": "~1.182.0"
   },
   "devDependencies": {
     "aws-cdk-lib": "2.47.0",
