@@ -48,7 +48,10 @@ RUN apt-get update \
     && npm install esbuild \
     # install openapi generator for generating microservice contracts
     # https://openapi-generator.tech
-    && npm install --global @openapitools/openapi-generator-cli
+    && npm install --global @openapitools/openapi-generator-cli \
+    # install prettier globally
+    # https://rushjs.io/pages/maintainer/enabling_prettier/
+    && npm install --global prettier
 
 # install AWS Command Line Interface
 # https://awscli.amazonaws.com/v2/documentation/api/latest/index.html

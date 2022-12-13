@@ -1,21 +1,18 @@
 {
-	"name": "keepers-cradle",
-  "dockerComposeFile": [
-		"../docker-compose.yml",
-		"docker-compose.yml"
-	],
-	"service": "keepers-cradle",
-	"settings": {},
-	"extensions": [
-		"folke.vscode-monorepo-workspace",
-		"GitHub.copilot",
-		"vivaxy.vscode-conventional-commits",
-		"yzhang.markdown-all-in-one",
-		"foxundermoon.shell-format",
-		"dbaeumer.vscode-eslint",
-		"esbenp.prettier-vscode"
-	],
-	"workspaceFolder": "/usr/src/app",
-	"postCreateCommand": "",
-	"remoteUser": "node"
+  "name": "keepers-cradle",
+  "dockerComposeFile": ["../docker-compose.yml", "docker-compose.yml"],
+  "service": "keepers-cradle",
+  "settings": {},
+  "extensions": [
+    "folke.vscode-monorepo-workspace",
+    "GitHub.copilot",
+    "vivaxy.vscode-conventional-commits",
+    "yzhang.markdown-all-in-one",
+    "foxundermoon.shell-format",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ],
+  "workspaceFolder": "/usr/src/app",
+  "postCreateCommand": "",
+  "remoteUser": "node"
 }

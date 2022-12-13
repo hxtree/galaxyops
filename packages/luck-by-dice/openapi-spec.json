@@ -1,1 +1,34 @@
-{"openapi":"3.0.0","paths":{"/roll/notation/{notation}/luck/{luck}":{"get":{"operationId":"RollController_turn","parameters":[{"name":"notation","required":true,"in":"path","schema":{"type":"string"}},{"name":"luck","required":true,"in":"path","schema":{"type":"number"}}],"responses":{"200":{"description":""}}}}},"info":{"title":"@org-packages/luck-by-dice","description":"An API for simulating dice rolls and luck from dice notation","version":"1.0","contact":{}},"tags":[],"servers":[],"components":{"schemas":{}}}
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/roll/notation/{notation}/luck/{luck}": {
+      "get": {
+        "operationId": "RollController_turn",
+        "parameters": [
+          {
+            "name": "notation",
+            "required": true,
+            "in": "path",
+            "schema": {"type": "string"}
+          },
+          {
+            "name": "luck",
+            "required": true,
+            "in": "path",
+            "schema": {"type": "number"}
+          }
+        ],
+        "responses": {"200": {"description": ""}}
+      }
+    }
+  },
+  "info": {
+    "title": "@org-packages/luck-by-dice",
+    "description": "An API for simulating dice rolls and luck from dice notation",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {"schemas": {}}
+}

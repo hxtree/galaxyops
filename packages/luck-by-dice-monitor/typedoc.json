@@ -1,6 +1,4 @@
 {
-    "entryPoints": [
-        "src/*.ts"
-    ],
-    "out": "docs"
+  "entryPoints": ["src/*.ts"],
+  "out": "docs"
 }

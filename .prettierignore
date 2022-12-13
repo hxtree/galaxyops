@@ -1,0 +1,93 @@
+#-------------------------------------------------------------------------------------------------------------------
+# Keep this section in sync with .gitignore
+#-------------------------------------------------------------------------------------------------------------------
+
+# Docker
+docker-compose.override.yml
+
+# ssh
+.devcontainer/.ssh/**
+!.devcontainer/.ssh/config
+
+# AWS CLI
+.devcontainer/.aws/**
+!.devcontainer/.aws/*.dist
+
+# AWS CDK
+**/cdk.out/*
+cdk.out/
+*.yml
+clients/base-game-engine/*
+
+# Packages
+node_modules/*#-------------------------------------------------------------------------------------------------------------------
+# Keep this section in sync with .gitignore
+#-------------------------------------------------------------------------------------------------------------------
+
+👋 (copy + paste your .gitignore file contents here) 👋
+
+#-------------------------------------------------------------------------------------------------------------------
+# Prettier-specific overrides
+#-------------------------------------------------------------------------------------------------------------------
+
+# Rush files
+common/changes/
+common/scripts/
+common/config/
+CHANGELOG.*
+
+# Package manager files
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+shrinkwrap.json
+
+# Build outputs
+dist
+lib
+
+# Prettier reformats code blocks inside Markdown, which affects rendered output
+*.md
+**/node_modules/*
+
+# Logs
+*.log
+
+.pnpm-store/
+common/temp/
+**/.rush/temp/
+
+**/docs/.nojekyll
+**/docs/*.html
+
+.env
+
+# Dist
+**/dist/**
+**/.cache/**
+**/build/**
+
+.DS_Store
+
+#-------------------------------------------------------------------------------------------------------------------
+# Prettier-specific overrides
+#-------------------------------------------------------------------------------------------------------------------
+
+# Rush files
+common/changes/
+common/scripts/
+common/config/
+CHANGELOG.*
+
+# Package manager files
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+shrinkwrap.json
+
+# Build outputs
+dist
+lib
+
+# Prettier reformats code blocks inside Markdown, which affects rendered output
+*.md

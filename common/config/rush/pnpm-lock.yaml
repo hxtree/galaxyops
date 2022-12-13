@@ -33,6 +33,7 @@ importers:
 
   ../../packages/api-gateway:
     specifiers:
+      '@aws-cdk/core': ~1.182.0
       '@nestjs/common': 9.1.1
       '@nestjs/core': 9.1.1
       '@nestjs/platform-express': 9.1.1
@@ -68,6 +69,7 @@ importers:
       typescript: 4.8.4
       uuid: ~9.0.0
     dependencies:
+      '@aws-cdk/core': 1.182.0
       '@nestjs/common': 9.1.1_02d66f081444430c9a02612f8d586d74
       '@nestjs/core': 9.1.1_8b69cb064f4ce3b033affd71fba1da41
       '@nestjs/platform-express': 9.1.1_b9d488fa0f13506021f37a33923c7dab
@@ -586,6 +588,43 @@ packages:
       json-schema: 0.4.0
       jsonpointer: 5.0.1
       leven: 3.1.0
+    dev: false
+
+  /@aws-cdk/cloud-assembly-schema/1.182.0:
+    resolution: {integrity: sha512-ZevTQ0qnpZpdVN503Au0TugVLl6SD24r9zZzBUOKFxbV47LCwr2hexKat/wQKMCUrtQ8MEQP6DzdcbM51XBmdg==}
+    engines: {node: '>= 14.15.0'}
+    dev: false
+    bundledDependencies:
+      - jsonschema
+      - semver
+
+  /@aws-cdk/core/1.182.0:
+    resolution: {integrity: sha512-tZh7Cn2d913A6I4V7f6MLCQEnVCIiNWlhvNJqLtHkuetN1d/a+riyqRIS68NvJVljENIjUVFOAY+ePpIKltqQg==}
+    engines: {node: '>= 14.15.0'}
+    dependencies:
+      '@aws-cdk/cloud-assembly-schema': 1.182.0
+      '@aws-cdk/cx-api': 1.182.0
+      '@aws-cdk/region-info': 1.182.0
+      constructs: 3.4.182
+    dev: false
+    bundledDependencies:
+      - fs-extra
+      - minimatch
+      - '@balena/dockerignore'
+      - ignore
+
+  /@aws-cdk/cx-api/1.182.0:
+    resolution: {integrity: sha512-LxgCtILk2iAls155GiE7VdM0zTow/uURQkrT1iMGqt4CLTtZ1W+sIomR7lM28CiBNdEqMKu+TaHmYPqXtis8kQ==}
+    engines: {node: '>= 14.15.0'}
+    dependencies:
+      '@aws-cdk/cloud-assembly-schema': 1.182.0
+    dev: false
+    bundledDependencies:
+      - semver
+
+  /@aws-cdk/region-info/1.182.0:
+    resolution: {integrity: sha512-H6KtVOHHsrlPO5sRs21iZmWGyFKziPyI552tHC7B7fOisxHpd+pnPLHJI/WC52wko5JizQ5wjbvR+r6cul9Diw==}
+    engines: {node: '>= 14.15.0'}
     dev: false
 
   /@babel/code-frame/7.18.6:
@@ -9028,6 +9067,11 @@ packages:
   /constructs/10.1.164:
     resolution: {integrity: sha512-nUd43oMqE3JojI3qfbiWMOLJYsbnvN0EyAmhsOrKKxmBP649z5IOR8ILOyrhDEHDUia/h9FkfD8oUv4QBimMSw==}
     engines: {node: '>= 14.17.0'}
+
+  /constructs/3.4.182:
+    resolution: {integrity: sha512-tAXV9b4s1jb3ubPg6zIka99zMTelRszpMkWYiNH077yoxoWRhrx8VdUJ6xBlrdfvoZnV3Hdw07sN+sonnx3rew==}
+    engines: {node: '>= 14.17.0'}
+    dev: false
 
   /content-disposition/0.5.4:
     resolution: {integrity: sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==}

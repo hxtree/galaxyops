@@ -37,7 +37,6 @@
 // engine is ran on server and simulated for user input on client.
 // NPC actions decided by server, including team NPC -- ones not selected for play.
 
-
 // ## Damage Type Modifier (DTM)
 
 // A character may be impacted affected more or less due to the type of damage.
@@ -50,4 +49,4 @@
 
 // A User's understand of DTM can be the difference between success and failure.
 
-// The type of damage being done. The entities damage type modified. 
+// The type of damage being done. The entities damage type modified.

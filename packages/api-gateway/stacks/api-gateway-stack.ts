@@ -17,45 +17,45 @@ export class ApiGatewayStack extends cdk.Stack {
     // https://github.com/aws-samples/aws-cdk-openapi
     // https://medium.com/@gwieser/solving-a-nightmare-aws-cdk-openapi-and-api-gateway-a1b6fdc1fd24
 
-    const openApiasset = new Asset(this, 'openApiFile', {
-      path: path.join(__dirname, '../openapi-spec.json'),
-    });
+    // const openApiasset = new Asset(this, 'openApiFile', {
+    //   path: path.join(__dirname, '../openapi-spec.json'),
+    // });
 
-    const transformMap = {
-      Location: openApiasset.s3ObjectUrl,
-    };
+    // const transformMap = {
+    //   Location: openApiasset.s3ObjectUrl,
+    // };
 
-    const data: IResolvable = Fn.transform('AWS::Include', transformMap);
+    // const data: IResolvable = Fn.transform('AWS::Include', transformMap);
 
-    const apiDefinition: InlineApiDefinition = ApiDefinition.fromInline(data);
+    // const apiDefinition: InlineApiDefinition = ApiDefinition.fromInline(data);
 
-    const specRestApi = new SpecRestApi(this, 'RestApi', {
-      apiDefinition: apiDefinition,
-      restApiName: 'open-api',
-      deployOptions: {
-        stageName: process.env.stage ?? 'default',        let raw = yaml.stringify(
-          yaml.parse(fs.readFileSync(this.path, 'utf8'))
-      );
-      props.lambdas?.map((lambda) => {
-          raw = raw.replace(`\${${lambda.name}.Arn}`, lambda.arn);
-      });
-      const openapi = yaml.parse(raw);
+    // const specRestApi = new SpecRestApi(this, 'RestApi', {
+    //   apiDefinition: apiDefinition,
+    //   restApiName: 'open-api',
+    //   deployOptions: {
+    //     stageName: process.env.stage ?? 'default',        let raw = yaml.stringify(
+    //       yaml.parse(fs.readFileSync(this.path, 'utf8'))
+    //   );
+    //   props.lambdas?.map((lambda) => {
+    //       raw = raw.replace(`\${${lambda.name}.Arn}`, lambda.arn);
+    //   });
+    //   const openapi = yaml.parse(raw);
 
-      const openApiDef = AssetApiDefinition.fromInline(openapi);
+    //   const openApiDef = AssetApiDefinition.fromInline(openapi);
 
-      const service = this.node.tryGetContext('service');
-      const api = new SpecRestApi(this, 'OpenApiSpec', {
-          restApiName: capitalize(service),
-          apiDefinition: openApiDef,
-          deployOptions: {
-              stageName: 'dev',
-          },
-      });
+    //   const service = this.node.tryGetContext('service');
+    //   const api = new SpecRestApi(this, 'OpenApiSpec', {
+    //       restApiName: capitalize(service),
+    //       apiDefinition: openApiDef,
+    //       deployOptions: {
+    //           stageName: 'dev',
+    //       },
+    //   });
 
-        loggingLevel: MethodLoggingLevel.INFO,
-      },
-      deploy: true,
-    });
+    //     loggingLevel: MethodLoggingLevel.INFO,
+    //   },
+    //   deploy: true,
+    // });
 
     // import using openapi spec
     // https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-quick-start-import-export.html
