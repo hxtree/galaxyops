@@ -3,16 +3,25 @@ import {writeFileSync} from 'fs';
 import {NestFactory} from '@nestjs/core';
 import {SwaggerModule, DocumentBuilder} from '@nestjs/swagger';
 import {AppModule} from './app.module';
+import * as pkg from '../package.json';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('@org-packages/luck-by-dice')
-    .setDescription(
-      'An API for simulating dice rolls and luck from dice notation',
+    .setTitle(pkg.name)
+    .setVersion(pkg.version)
+    .setDescription(pkg.description)
+    .addApiKey(
+      {
+        type: 'apiKey',
+        name: 'x-lambda-token',
+        in: 'header',
+        description: 'The API key for lambda request.',
+      },
+      'lambda',
     )
-    .setVersion('1.0')
+    // .addServer()) // TODO add varies endpoints
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
