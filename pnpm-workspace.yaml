@@ -4,3 +4,5 @@ packages:
   - 'libraries/**'
   - 'tests/**'
   - 'platform/**'
+  - 'rigs/**'
+  - 'common/autoinstallers/**'

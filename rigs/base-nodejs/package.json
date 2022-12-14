@@ -1,11 +1,11 @@
 {
   "name": "@org-rig/base-nodejs",
+  "version": "1.0.0",
   "description": "Heft rig package",
   "scripts": {
     "build": "",
     "test": ""
   },
-  "version": "0.1.0",
   "devDependencies": {
     "@rushstack/eslint-config": "^2.4.0",
     "@rushstack/heft": "~0.44.0",

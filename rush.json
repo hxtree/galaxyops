@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
   "rushVersion": "5.59.2",
-  "pnpmVersion": "6.23.5",
+  "pnpmVersion": "7.18.2",
   "pnpmOptions": {
     "strictPeerDependencies": false,
     "preventManualShrinkwrapChanges": true,
@@ -29,7 +29,7 @@
     "defaultRemote": "origin"
   },
   "eventHooks": {
-    "preRushInstall": ["common/scripts/pre-rush-install/pre-rush-install.sh"],
+    "preRushInstall": [],
     "postRushInstall": [],
     "preRushBuild": [],
     "postRushBuild": []
@@ -89,7 +89,6 @@
       "reviewCategory": "apis",
       "cyclicDependencyProjects": []
     },
-
     {
       "packageName": "@org-package/luck-by-dice",
       "projectFolder": "packages/luck-by-dice",

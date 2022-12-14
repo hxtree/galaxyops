@@ -1,7 +1,6 @@
 {
   "name": "@org-package/design-system",
-  "version": "0.1.0",
-  "license": "MIT",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -16,7 +15,6 @@
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
@@ -24,17 +22,6 @@
   },
   "peerDependencies": {
     "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
   },
   "author": "hxtree",
   "module": "dist/design-system.esm.js",
@@ -60,7 +47,6 @@
     "@types/react-dom": "^18.0.9",
     "@types/styled-components": "4.1.8",
     "babel-loader": "^9.1.0",
-    "husky": "^8.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
