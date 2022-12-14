@@ -1,6 +1,6 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { FileUpload } from '../src/FileUpload';
+import {Meta, Story} from '@storybook/react';
+import {FileUpload} from '../src/FileUpload';
 
 export default {
   title: 'Components/FileUpload',

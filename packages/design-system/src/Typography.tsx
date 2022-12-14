@@ -1,6 +1,6 @@
 // import React from 'react';
-import { Typography as MuiTypography, TypographyProps } from '@mui/material';
-import { styled } from '@mui/system';
+import {Typography as MuiTypography, TypographyProps} from '@mui/material';
+import {styled} from '@mui/system';
 
 export const Typography = styled(MuiTypography)<TypographyProps>(() => ({
   '&.center': {
@@ -21,7 +21,7 @@ export const Typography = styled(MuiTypography)<TypographyProps>(() => ({
       fontSize: '4rem',
       width: '100%',
       position: 'relative',
-      padding: { xs: '5px 0', sm: '10px 0' },
+      padding: {xs: '5px 0', sm: '10px 0'},
       paddingLeft: '15px',
       fontWeight: '600',
       verticalAlign: 'center',
@@ -49,7 +49,7 @@ export const Typography = styled(MuiTypography)<TypographyProps>(() => ({
       fontSize: '1.4rem',
       width: '100%',
       position: 'relative',
-      padding: { xs: '5px 0', sm: '10px 0' },
+      padding: {xs: '5px 0', sm: '10px 0'},
       paddingLeft: '15px',
       fontWeight: '600',
       verticalAlign: 'center',

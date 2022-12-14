@@ -1,6 +1,6 @@
 import React from 'react';
-import { Meta } from '@storybook/react';
-import { Box, Stack, Item } from '../src/Layout';
+import {Meta} from '@storybook/react';
+import {Box, Stack, Item} from '../src/Layout';
 
 export default {
   title: 'Components/Layout',
@@ -8,7 +8,7 @@ export default {
 } as Meta<typeof Stack>;
 
 export const Default = () => (
-  <Box sx={{ width: '100%' }}>
+  <Box sx={{width: '100%'}}>
     <Stack spacing={2}>
       <Item>First</Item>
       <Item>Second</Item>

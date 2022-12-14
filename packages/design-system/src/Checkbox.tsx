@@ -6,6 +6,6 @@ import MUICheckbox, {
 export type CheckboxProps = {} & MUICheckboxProps;
 
 export const Checkbox = (props: CheckboxProps) => {
-  const { ...muiProps } = props;
+  const {...muiProps} = props;
   return <MUICheckbox {...muiProps} />;
 };
