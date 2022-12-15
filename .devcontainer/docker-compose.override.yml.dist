@@ -4,7 +4,7 @@ services:
     build:
       context: .
       args:
-          # container and devcontainer defauly user
+          # container and devcontainer default user
           USER: node
           # UID should match host automatically, if not adjust
           UID: 1000
