@@ -99,12 +99,6 @@
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["game-design-team"]
-    },
-    {
-      "packageName": "@org-package/luck-by-dice-monitor",
-      "projectFolder": "packages/luck-by-dice-monitor",
-      "reviewCategory": "clients",
-      "cyclicDependencyProjects": []
     }
   ]
 }

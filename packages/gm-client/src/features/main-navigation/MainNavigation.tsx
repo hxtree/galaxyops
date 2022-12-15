@@ -4,7 +4,7 @@ export function MainNavigation() {
   return (
     <Stack spacing={2}>
       <Item>
-        <a href="/luck-by-dice-monitor">Luck By Dice</a>
+        <a href="/luck-by-dice-monitor.html">Luck By Dice</a>
       </Item>
       <Item>
         <a href="/weather">Weather</a>
