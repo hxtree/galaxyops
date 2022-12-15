@@ -1,8 +1,6 @@
 packages:
-  - 'contract/**'
-  - 'packages/**'
-  - 'libraries/**'
-  - 'tests/**'
   - 'platform/**'
   - 'rigs/**'
-  - '!common/autoinstallers/**'
+  - 'libraries/**'
+  - 'packages/**'
+  - 'tests/**'

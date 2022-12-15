@@ -29,6 +29,7 @@
     "preRushBuild": [],
     "postRushBuild": []
   },
+  "allowedProjectTags": ["platform-team", "game-design-team", "ux-team"],
   "projects": [
     {
       "packageName": "@org-rig/base-nodejs",
