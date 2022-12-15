@@ -26,6 +26,8 @@ RUN apt-get update \
         jq \
         npm \
         default-jre \
+    # install latest npm
+    && npm install --global npm@9.2.0 \
     # https://pnpm.io/installation
     && npm install --global pnpm@7.18.2 \
     # install Microsoft Rush globally
@@ -53,7 +55,7 @@ RUN apt-get update \
     # install prettier globally
     # https://rushjs.io/pages/maintainer/enabling_prettier/
     && npm install --global prettier \
-    && npm install --global pretty-quick \
+    && npm install --global pretty-quick
 
 # install AWS Command Line Interface
 # https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
@@ -77,7 +79,10 @@ RUN echo "# bash parameter completion for the Rush CLI" >>/home/node/.zshrc \
     && echo "" >>/home/node/.zshrc \
     && echo "  COMPREPLY=( \$(compgen -W \"\$completions\" -- \"\$word\") )" >>/home/node/.zshrc \
     && echo "}" >>/home/node/.zshrc \
-    && echo "complete -f -F _rush_bash_complete rush" >>/home/node/.zshrc
+    && echo "complete -f -F _rush_bash_complete rush" >>/home/node/.zshrc \
+    # Powerlevel10K
+    && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/node/powerlevel10k \
+    && echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/node/.zshrc
 
 # Add alias
 RUN echo "alias app=\"cd /usr/src/app\"" >>/home/node/.zshrc
@@ -102,13 +107,12 @@ RUN apt-get install -y sudo \
     && mkdir -p /home/$USER/.rush \
     && chown -R $USER /home/$USER/.rush \
     && mkdir -p /usr/src/app/common/temp \
-    && chown -R $USER /usr/src/app/common/temp
-
-# git config --global core.editor "code --wait"
+    && chown -R $USER /usr/src/app/common/temp \
+    && chown -R $USER /home/$USER/.zshrc
 
 COPY .devcontainer/.ssh/config /home/$USER/.ssh/config
 RUN chown -R $USER /home/$USER/.ssh
 
 USER $USER
 
-SHELL ["/bin/bash", "-c"]
+SHELL ["/bin/zsh", "-c"]
