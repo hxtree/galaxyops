@@ -26,10 +26,10 @@ RUN apt-get update \
         npm \
         default-jre \
     # https://pnpm.io/installation
-    && npm install --global pnpm@7.17.1 \
+    && npm install --global pnpm@7.18.2 \
     # install Microsoft Rush globally
     # https://rushjs.io/
-    && npm install --global @microsoft/rush \
+    && npm install --global @microsoft/rush@5.79.0 \
     # install AWS CDK globally
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
     && npm install --global aws-cdk \

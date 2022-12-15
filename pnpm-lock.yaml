@@ -111,81 +111,6 @@ importers:
       ts-node: 10.9.1_e6s7au4lqjtw7drgwiyo53qlte
       typescript: 4.8.4
 
-  packages/api-gateway/dist:
-    specifiers:
-      '@aws-cdk/core': ~1.182.0
-      '@nestjs/common': 9.1.1
-      '@nestjs/core': 9.1.1
-      '@nestjs/platform-express': 9.1.1
-      '@nestjs/swagger': ~6.1.3
-      '@nestjs/terminus': 9.1.1
-      '@types/aws-lambda': ~8.10.93
-      '@types/express': ~4.17.14
-      '@types/jest': 28.1.8
-      '@types/node': ^16.0.0
-      '@types/uuid': ~8.3.4
-      '@typescript-eslint/eslint-plugin': 5.15.0
-      '@typescript-eslint/parser': 5.15.0
-      '@vendia/serverless-express': 4.8.2
-      aws-cdk-lib: 2.47.0
-      aws-lambda: 1.0.7
-      aws-serverless-express: ~3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      constructs: ^10.0.0
-      esbuild: ~0.15.12
-      eslint: 8.11.0
-      express: 4.18.1
-      fs: ~0.0.1-security
-      jest: 28.1.3
-      mongoose: ~6.6.5
-      node-cache: 5.1.2
-      path: ~0.12.7
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: ~0.5.21
-      ts-jest: 28.0.8
-      ts-node: 10.9.1
-      typescript: 4.8.4
-      uuid: ~9.0.0
-    dependencies:
-      '@aws-cdk/core': 1.182.0_constructs@10.1.189
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
-      '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
-      '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
-      '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
-      '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@vendia/serverless-express': 4.8.2
-      aws-lambda: 1.0.7
-      aws-serverless-express: 3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      express: 4.18.1
-      mongoose: 6.6.7
-      node-cache: 5.1.2
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: 0.5.21
-      uuid: 9.0.0
-    devDependencies:
-      '@types/aws-lambda': 8.10.109
-      '@types/express': 4.17.15
-      '@types/jest': 28.1.8
-      '@types/node': 16.18.9
-      '@types/uuid': 8.3.4
-      '@typescript-eslint/eslint-plugin': 5.15.0_kjpgj5mwuhqsafyl367g3mx6ni
-      '@typescript-eslint/parser': 5.15.0_himlt4eddny2rsb5zkuydvuf7u
-      aws-cdk-lib: 2.47.0_constructs@10.1.189
-      constructs: 10.1.189
-      esbuild: 0.15.18
-      eslint: 8.11.0
-      fs: 0.0.1-security
-      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
-      path: 0.12.7
-      ts-jest: 28.0.8_hbp4nlh7437kgdmqvmxl7epvsu
-      ts-node: 10.9.1_e6s7au4lqjtw7drgwiyo53qlte
-      typescript: 4.8.4
-
   packages/audio:
     specifiers:
       '@microsoft/tsdoc': ~0.13.2
@@ -277,7 +202,7 @@ importers:
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@org-platform/constructs': link:../../platform/constructs/dist
+      '@org-platform/constructs': link:../../platform/constructs
       '@org-rig/base-nodejs': link:../../rigs/base-nodejs
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
@@ -292,83 +217,6 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
-      '@types/aws-lambda': 8.10.109
-      '@types/express': 4.17.15
-      '@types/jest': 28.1.8
-      '@types/node': 16.18.9
-      '@types/uuid': 8.3.4
-      '@typescript-eslint/eslint-plugin': 5.15.0_kjpgj5mwuhqsafyl367g3mx6ni
-      '@typescript-eslint/parser': 5.15.0_himlt4eddny2rsb5zkuydvuf7u
-      aws-cdk-lib: 2.47.0_constructs@10.1.189
-      constructs: 10.1.189
-      esbuild: 0.15.18
-      eslint: 8.11.0
-      fs: 0.0.1-security
-      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
-      path: 0.12.7
-      ts-jest: 28.0.8_hbp4nlh7437kgdmqvmxl7epvsu
-      ts-node: 10.9.1_e6s7au4lqjtw7drgwiyo53qlte
-      typescript: 4.8.4
-
-  packages/character-sheet/dist:
-    specifiers:
-      '@nestjs/common': 9.1.1
-      '@nestjs/core': 9.1.1
-      '@nestjs/platform-express': 9.1.1
-      '@nestjs/swagger': ~6.1.3
-      '@nestjs/terminus': 9.1.1
-      '@org-platform/constructs': workspace:*
-      '@org-rig/base-nodejs': workspace:*
-      '@types/aws-lambda': ~8.10.93
-      '@types/express': ~4.17.14
-      '@types/jest': 28.1.8
-      '@types/node': ^16.0.0
-      '@types/uuid': ~8.3.4
-      '@typescript-eslint/eslint-plugin': 5.15.0
-      '@typescript-eslint/parser': 5.15.0
-      '@vendia/serverless-express': 4.8.2
-      aws-cdk-lib: 2.47.0
-      aws-lambda: 1.0.7
-      aws-serverless-express: ~3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      constructs: ^10.0.0
-      esbuild: ~0.15.12
-      eslint: 8.11.0
-      express: 4.18.1
-      fs: ~0.0.1-security
-      jest: 28.1.3
-      mongoose: ~6.6.5
-      node-cache: 5.1.2
-      path: ~0.12.7
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: ~0.5.21
-      ts-jest: 28.0.8
-      ts-node: 10.9.1
-      typescript: 4.8.4
-      uuid: ~9.0.0
-    dependencies:
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
-      '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
-      '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
-      '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
-      '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@vendia/serverless-express': 4.8.2
-      aws-lambda: 1.0.7
-      aws-serverless-express: 3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      express: 4.18.1
-      mongoose: 6.6.7
-      node-cache: 5.1.2
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: 0.5.21
-      uuid: 9.0.0
-    devDependencies:
-      '@org-platform/constructs': link:../../../platform/constructs/dist
-      '@org-rig/base-nodejs': link:../../../rigs/base-nodejs
       '@types/aws-lambda': 8.10.109
       '@types/express': 4.17.15
       '@types/jest': 28.1.8
@@ -523,7 +371,7 @@ importers:
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@org-platform/constructs': link:../../platform/constructs/dist
+      '@org-platform/constructs': link:../../platform/constructs
       '@org-rig/base-nodejs': link:../../rigs/base-nodejs
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
@@ -603,157 +451,7 @@ importers:
       typedoc: 0.22.18_typescript@4.8.4
       typescript: 4.8.4
 
-  packages/luck-by-dice/dist:
-    specifiers:
-      '@nestjs/common': 9.1.1
-      '@nestjs/core': 9.1.1
-      '@nestjs/platform-express': 9.1.1
-      '@nestjs/swagger': ~6.1.3
-      '@nestjs/terminus': 9.1.1
-      '@org-platform/constructs': workspace:*
-      '@org-rig/base-nodejs': workspace:*
-      '@types/aws-lambda': ~8.10.93
-      '@types/express': ~4.17.14
-      '@types/jest': 28.1.8
-      '@types/node': ^16.0.0
-      '@types/uuid': ~8.3.4
-      '@typescript-eslint/eslint-plugin': 5.15.0
-      '@typescript-eslint/parser': 5.15.0
-      '@vendia/serverless-express': 4.8.2
-      aws-cdk-lib: 2.47.0
-      aws-lambda: 1.0.7
-      aws-serverless-express: ~3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      constructs: ^10.0.0
-      esbuild: ~0.15.12
-      eslint: 8.11.0
-      express: 4.18.1
-      fs: ~0.0.1-security
-      jest: 28.1.3
-      mongoose: ~6.6.5
-      node-cache: 5.1.2
-      path: ~0.12.7
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: ~0.5.21
-      ts-jest: 28.0.8
-      ts-node: 10.9.1
-      typescript: 4.8.4
-      uuid: ~9.0.0
-    dependencies:
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
-      '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
-      '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
-      '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
-      '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@org-platform/constructs': link:../../../platform/constructs/dist
-      '@org-rig/base-nodejs': link:../../../rigs/base-nodejs
-      '@vendia/serverless-express': 4.8.2
-      aws-lambda: 1.0.7
-      aws-serverless-express: 3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      express: 4.18.1
-      mongoose: 6.6.7
-      node-cache: 5.1.2
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: 0.5.21
-      uuid: 9.0.0
-    devDependencies:
-      '@types/aws-lambda': 8.10.109
-      '@types/express': 4.17.15
-      '@types/jest': 28.1.8
-      '@types/node': 16.18.9
-      '@types/uuid': 8.3.4
-      '@typescript-eslint/eslint-plugin': 5.15.0_kjpgj5mwuhqsafyl367g3mx6ni
-      '@typescript-eslint/parser': 5.15.0_himlt4eddny2rsb5zkuydvuf7u
-      aws-cdk-lib: 2.47.0_constructs@10.1.189
-      constructs: 10.1.189
-      esbuild: 0.15.18
-      eslint: 8.11.0
-      fs: 0.0.1-security
-      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
-      path: 0.12.7
-      ts-jest: 28.0.8_hbp4nlh7437kgdmqvmxl7epvsu
-      ts-node: 10.9.1_e6s7au4lqjtw7drgwiyo53qlte
-      typescript: 4.8.4
-
   platform/constructs:
-    specifiers:
-      '@nestjs/common': 9.1.1
-      '@nestjs/core': 9.1.1
-      '@nestjs/platform-express': 9.1.1
-      '@nestjs/swagger': ~6.1.3
-      '@nestjs/terminus': 9.1.1
-      '@types/aws-lambda': ~8.10.93
-      '@types/express': ~4.17.14
-      '@types/jest': 28.1.8
-      '@types/node': ^16.0.0
-      '@types/uuid': ~8.3.4
-      '@typescript-eslint/eslint-plugin': 5.15.0
-      '@typescript-eslint/parser': 5.15.0
-      '@vendia/serverless-express': 4.8.2
-      aws-cdk-lib: 2.47.0
-      aws-lambda: 1.0.7
-      aws-serverless-express: ~3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      constructs: ^10.0.0
-      esbuild: ~0.15.12
-      eslint: 8.11.0
-      express: 4.18.1
-      fs: ~0.0.1-security
-      jest: 28.1.3
-      mongoose: ~6.6.5
-      node-cache: 5.1.2
-      path: ~0.12.7
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: ~0.5.21
-      ts-jest: 28.0.8
-      ts-node: 10.9.1
-      typescript: 4.8.4
-      uuid: ~9.0.0
-    dependencies:
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
-      '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
-      '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
-      '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
-      '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@vendia/serverless-express': 4.8.2
-      aws-lambda: 1.0.7
-      aws-serverless-express: 3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      express: 4.18.1
-      mongoose: 6.6.7
-      node-cache: 5.1.2
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: 0.5.21
-      uuid: 9.0.0
-    devDependencies:
-      '@types/aws-lambda': 8.10.109
-      '@types/express': 4.17.15
-      '@types/jest': 28.1.8
-      '@types/node': 16.18.9
-      '@types/uuid': 8.3.4
-      '@typescript-eslint/eslint-plugin': 5.15.0_kjpgj5mwuhqsafyl367g3mx6ni
-      '@typescript-eslint/parser': 5.15.0_himlt4eddny2rsb5zkuydvuf7u
-      aws-cdk-lib: 2.47.0_constructs@10.1.189
-      constructs: 10.1.189
-      esbuild: 0.15.18
-      eslint: 8.11.0
-      fs: 0.0.1-security
-      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
-      path: 0.12.7
-      ts-jest: 28.0.8_hbp4nlh7437kgdmqvmxl7epvsu
-      ts-node: 10.9.1_e6s7au4lqjtw7drgwiyo53qlte
-      typescript: 4.8.4
-
-  platform/constructs/dist:
     specifiers:
       '@nestjs/common': 9.1.1
       '@nestjs/core': 9.1.1
