@@ -52,5 +52,6 @@
   },
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+  "files.associations": {"*.json": "jsonc"}
 }

@@ -16,6 +16,7 @@ WORKDIR /usr/src/app
 # install tools
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+        zsh \
         tzdata \
         build-essential \
         curl \
@@ -51,7 +52,8 @@ RUN apt-get update \
     && npm install --global @openapitools/openapi-generator-cli \
     # install prettier globally
     # https://rushjs.io/pages/maintainer/enabling_prettier/
-    && npm install --global prettier
+    && npm install --global prettier \
+    && npm install --global pretty-quick \
 
 # install AWS Command Line Interface
 # https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
@@ -62,29 +64,23 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 
 # rush tab ompletion
 # https://rushjs.io/pages/developer/tab_completion/
-RUN echo "# bash parameter completion for the Rush CLI" >>/home/node/.bashrc \
-    && echo "_rush_bash_complete()" >>/home/node/.bashrc \
-    && echo "{" >>/home/node/.bashrc \
-    && echo "  local word=\${COMP_WORDS[COMP_CWORD]}" >>/home/node/.bashrc \
-    && echo "" >>/home/node/.bashrc \
-    && echo "  local completions" >>/home/node/.bashrc \
-    && echo "  completions=\"\$(rush tab-complete --position \"\${COMP_POINT}\" --word \"\${COMP_LINE}\" 2>/dev/null)\"" >>/home/node/.bashrc \
-    && echo "  if [ \$? -ne 0 ]; then" >>/home/node/.bashrc \
-    && echo "    completions=\"\"" >>/home/node/.bashrc \
-    && echo "  fi" >>/home/node/.bashrc \
-    && echo "" >>/home/node/.bashrc \
-    && echo "  COMPREPLY=( \$(compgen -W \"\$completions\" -- \"\$word\") )" >>/home/node/.bashrc \
-    && echo "}" >>/home/node/.bashrc \
-    && echo "complete -f -F _rush_bash_complete rush" >>/home/node/.bashrc
-
-# Add Git Branch to Bash
-RUN echo "parse_git_branch() {" >>/home/node/.bashrc \
-    && echo "git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\\1)/'" >>/home/node/.bashrc \
-    && echo "}" >>/home/node/.bashrc \
-    && echo "export PS1=\"\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ \"" >>/home/node/.bashrc
+RUN echo "# bash parameter completion for the Rush CLI" >>/home/node/.zshrc \
+    && echo "_rush_bash_complete()" >>/home/node/.zshrc \
+    && echo "{" >>/home/node/.zshrc \
+    && echo "  local word=\${COMP_WORDS[COMP_CWORD]}" >>/home/node/.zshrc \
+    && echo "" >>/home/node/.zshrc \
+    && echo "  local completions" >>/home/node/.zshrc \
+    && echo "  completions=\"\$(rush tab-complete --position \"\${COMP_POINT}\" --word \"\${COMP_LINE}\" 2>/dev/null)\"" >>/home/node/.zshrc \
+    && echo "  if [ \$? -ne 0 ]; then" >>/home/node/.zshrc \
+    && echo "    completions=\"\"" >>/home/node/.zshrc \
+    && echo "  fi" >>/home/node/.zshrc \
+    && echo "" >>/home/node/.zshrc \
+    && echo "  COMPREPLY=( \$(compgen -W \"\$completions\" -- \"\$word\") )" >>/home/node/.zshrc \
+    && echo "}" >>/home/node/.zshrc \
+    && echo "complete -f -F _rush_bash_complete rush" >>/home/node/.zshrc
 
 # Add alias
-RUN echo "alias app=\"cd /usr/src/app\"" >>/home/node/.bashrc
+RUN echo "alias app=\"cd /usr/src/app\"" >>/home/node/.zshrc
 
 ################################################################################
 #                               Development Base                               #

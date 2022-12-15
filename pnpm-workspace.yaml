@@ -5,4 +5,4 @@ packages:
   - 'tests/**'
   - 'platform/**'
   - 'rigs/**'
-  - 'common/autoinstallers/**'
+  - '!common/autoinstallers/**'
