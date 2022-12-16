@@ -18,13 +18,13 @@
 
 # This example enforces that commit message should contain a minimum amount of
 # description text.
+commit_message="$1"
+
 if [ $(cat $1 | wc -w) -lt 3 ]; then
   echo ""
   echo "Invalid commit message: The message must contain at least 3 words."
   exit 1
 fi
-
-commit_message="$1"
 
 # use git-conventional-commits, see https://github.com/qoomon/git-conventional-commits
 git-conventional-commits commit-msg-hook "$commit_message"
