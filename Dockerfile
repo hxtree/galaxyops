@@ -55,7 +55,9 @@ RUN apt-get update \
     # install prettier globally
     # https://rushjs.io/pages/maintainer/enabling_prettier/
     && npm install --global prettier \
-    && npm install --global pretty-quick
+    && npm install --global pretty-quick \
+    # npm install --global git-conventional-commits
+    && npm install --global git-conventional-commits
 
 # install AWS Command Line Interface
 # https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
