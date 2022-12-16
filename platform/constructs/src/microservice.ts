@@ -1,8 +1,12 @@
 import {Construct} from 'constructs';
 import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
-import {Duration, StackProps, Stack} from 'aws-cdk-lib';
+import {Duration, Stack} from 'aws-cdk-lib';
 import {LayerVersion, Runtime} from 'aws-cdk-lib/aws-lambda';
 import {RetentionDays} from 'aws-cdk-lib/aws-logs';
+import * as ssm from 'aws-cdk-lib/aws-ssm';
+import {kebabCase} from 'lodash';
+import {LambdaRestApi, Cors} from 'aws-cdk-lib/aws-apigateway';
+import * as cdk from 'aws-cdk-lib';
 
 export interface MicroserviceProps {
   //insert properties you wish to expose
@@ -10,6 +14,7 @@ export interface MicroserviceProps {
 
 export class Microservice extends Construct {
   private nodeJsFunction: NodejsFunction;
+  private apiGateway: LambdaRestApi;
 
   constructor(scope: Construct, id: string, props: MicroserviceProps) {
     super(scope, id);
@@ -70,6 +75,42 @@ export class Microservice extends Construct {
       timeout: Duration.seconds(30),
       // deadLetterQueueEnabled: true
     });
+
+    const stage = process.env.STAGE ?? 'default';
+    const stackName = Stack.of(this).stackName;
+
+    // API Gateway resource
+    this.apiGateway = new LambdaRestApi(this, 'Endpoint', {
+      handler: this.nodeJsFunction,
+      defaultCorsPreflightOptions: {
+        allowHeaders: [
+          'Content-Type',
+          'X-Amz-Date',
+          'Authorization',
+          'X-Api-Key',
+        ],
+        allowOrigins: Cors.ALL_ORIGINS,
+        allowCredentials: true,
+        allowMethods: ['GET', 'POST'],
+      },
+    });
+
+    const apiEndpoint = `${this.apiGateway.url}api`;
+    const appName = stackName.replace('Stack', '');
+    const apiEndpointkey = kebabCase(`${stage}-${appName}-base-url`);
+    new ssm.StringParameter(this, 'Parameter', {
+      description: `${appName} ${stage} API baseUrl`,
+      parameterName: apiEndpointkey,
+      stringValue: apiEndpoint,
+    });
+
+    new cdk.CfnOutput(this, apiEndpointkey, {
+      value: apiEndpoint,
+    });
+  }
+
+  getRestApi(): LambdaRestApi {
+    return this.apiGateway;
   }
 
   getNodeJsFunction(): NodejsFunction {

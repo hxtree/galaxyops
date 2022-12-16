@@ -275,6 +275,10 @@
       "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
+      "name": "lodash",
+      "allowedCategories": [ "apis", "platform" ]
+    },
+    {
       "name": "mongoose",
       "allowedCategories": [ "apis", "platform" ]
     },

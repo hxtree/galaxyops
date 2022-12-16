@@ -287,6 +287,7 @@ importers:
       '@types/aws-lambda': ~8.10.93
       '@types/express': ~4.17.14
       '@types/jest': 28.1.8
+      '@types/lodash': ~4.14.191
       '@types/node': ^16.0.0
       '@types/uuid': ~8.3.4
       '@typescript-eslint/eslint-plugin': 5.15.0
@@ -303,6 +304,7 @@ importers:
       express: 4.18.1
       fs: ~0.0.1-security
       jest: 28.1.3
+      lodash: ~4.17.21
       mongoose: ~6.6.5
       node-cache: 5.1.2
       path: ~0.12.7
@@ -337,6 +339,7 @@ importers:
       '@types/aws-lambda': 8.10.109
       '@types/express': 4.17.15
       '@types/jest': 28.1.8
+      '@types/lodash': 4.14.191
       '@types/node': 16.18.9
       '@types/uuid': 8.3.4
       '@typescript-eslint/eslint-plugin': 5.15.0_kjpgj5mwuhqsafyl367g3mx6ni
@@ -347,6 +350,7 @@ importers:
       eslint: 8.11.0
       fs: 0.0.1-security
       jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
+      lodash: 4.17.21
       path: 0.12.7
       ts-jest: 28.0.8_hbp4nlh7437kgdmqvmxl7epvsu
       ts-node: 10.9.1_e6s7au4lqjtw7drgwiyo53qlte
@@ -362,6 +366,7 @@ importers:
       '@types/aws-lambda': ~8.10.93
       '@types/express': ~4.17.14
       '@types/jest': 28.1.8
+      '@types/lodash': ~4.14.191
       '@types/node': ^16.0.0
       '@types/uuid': ~8.3.4
       '@typescript-eslint/eslint-plugin': 5.15.0
@@ -378,6 +383,7 @@ importers:
       express: 4.18.1
       fs: ~0.0.1-security
       jest: 28.1.3
+      lodash: ~4.17.21
       mongoose: ~6.6.5
       node-cache: 5.1.2
       path: ~0.12.7
@@ -394,12 +400,14 @@ importers:
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
+      '@types/lodash': 4.14.191
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
       express: 4.18.1
+      lodash: 4.17.21
       mongoose: 6.6.7
       node-cache: 5.1.2
       reflect-metadata: 0.1.13
@@ -544,6 +552,9 @@ packages:
   /@aws-cdk/cloud-assembly-schema/1.182.0:
     resolution: {integrity: sha512-ZevTQ0qnpZpdVN503Au0TugVLl6SD24r9zZzBUOKFxbV47LCwr2hexKat/wQKMCUrtQ8MEQP6DzdcbM51XBmdg==}
     engines: {node: '>= 14.15.0'}
+    dependencies:
+      jsonschema: 1.4.1
+      semver: 7.3.8
     dev: false
     bundledDependencies:
       - jsonschema
@@ -558,7 +569,11 @@ packages:
       '@aws-cdk/cloud-assembly-schema': 1.182.0
       '@aws-cdk/cx-api': 1.182.0
       '@aws-cdk/region-info': 1.182.0
+      '@balena/dockerignore': 1.0.2
       constructs: 10.1.190
+      fs-extra: 9.1.0
+      ignore: 5.2.1
+      minimatch: 3.1.2
     dev: false
     bundledDependencies:
       - fs-extra
@@ -571,6 +586,7 @@ packages:
     engines: {node: '>= 14.15.0'}
     dependencies:
       '@aws-cdk/cloud-assembly-schema': 1.182.0
+      semver: 7.3.8
     dev: false
     bundledDependencies:
       - semver
@@ -1992,6 +2008,9 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+
+  /@balena/dockerignore/1.0.2:
+    resolution: {integrity: sha512-wMue2Sy4GAVTk6Ic4tJVcnfdau+gx2EnG7S+uAEe+TWJFqE4YoWN4/H8MSLj4eYJKxGg26lZwboEniNiNwZQ6Q==}
 
   /@base2/pretty-print-object/1.0.1:
     resolution: {integrity: sha512-4iri8i1AqYHJE2DstZYkyEprg6Pq6sKx3xn5FpySk9sNhH7qN2LLlHJCfDTZRILNwQNPD7mATWM0TBui7uC1pA==}
@@ -6057,7 +6076,6 @@ packages:
 
   /@types/lodash/4.14.191:
     resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
-    dev: true
 
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
@@ -7519,7 +7537,16 @@ packages:
     peerDependencies:
       constructs: ^10.0.0
     dependencies:
+      '@balena/dockerignore': 1.0.2
+      case: 1.6.3
       constructs: 10.1.190
+      fs-extra: 9.1.0
+      ignore: 5.2.1
+      jsonschema: 1.4.1
+      minimatch: 3.1.2
+      punycode: 2.1.1
+      semver: 7.3.8
+      yaml: 1.10.2
     dev: true
     bundledDependencies:
       - '@balena/dockerignore'
@@ -8497,6 +8524,11 @@ packages:
   /case-sensitive-paths-webpack-plugin/2.4.0:
     resolution: {integrity: sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==}
     engines: {node: '>=4'}
+
+  /case/1.6.3:
+    resolution: {integrity: sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==}
+    engines: {node: '>= 0.8.0'}
+    dev: true
 
   /caseless/0.12.0:
     resolution: {integrity: sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==}
@@ -14793,6 +14825,9 @@ packages:
     resolution: {integrity: sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ==}
     engines: {node: '>=0.10.0'}
     dev: false
+
+  /jsonschema/1.4.1:
+    resolution: {integrity: sha512-S6cATIPVv1z0IlxdN+zUk5EPjkGCdnhN4wVSBlvoUO1tOLJootbo9CquNJmbIh4yikWHiUedhRYrNPn1arpEmQ==}
 
   /jsprim/1.4.2:
     resolution: {integrity: sha512-P2bSOMAc/ciLz6DzgjVlGJP9+BrJWu5UDGK70C2iweC5QBIeFf0ZXRvGjEj2uYgrY2MkAAhsSWHDWlFtEroZWw==}
