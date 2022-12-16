@@ -3,8 +3,8 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/monorepo/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/monorepo&utm_campaign=Badge_Grade)
 [![GitHub issues by-label](https://img.shields.io/github/issues/hxtree/monorepo/help%20wanted.svg)](https://github.com/hxtree/monorepo/issues)
 
-Keepers Cradle is a online mobile RPG game engine and infrastructure as code monorepo in
-development. Built using Unreal 5, AWS CDKv2, Typescript.
+Keepers Cradle is a online mobile RPG. This monorepo contains the game engine and infrastructure as code.
+The is being being developed using Unreal 5, AWS CDKv2, and Typescript.
 
 ![Base Game Client](/docs/assets/images/shield-sword.png)
 
