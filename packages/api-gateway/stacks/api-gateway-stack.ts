@@ -1,107 +1,73 @@
 import {Construct} from 'constructs';
-import {Fn, IResolvable, StackProps} from 'aws-cdk-lib';
+import {StackProps} from 'aws-cdk-lib';
 import * as cdk from 'aws-cdk-lib';
-import {Asset} from 'aws-cdk-lib/aws-s3-assets';
-import {
-  ApiDefinition,
-  InlineApiDefinition,
-  MethodLoggingLevel,
-  SpecRestApi,
-} from 'aws-cdk-lib/aws-apigateway';
-import path from 'path';
+import * as ssm from 'aws-cdk-lib/aws-ssm';
+import * as apigw from 'aws-cdk-lib/aws-apigateway';
 
+/**
+ * each api is broken up by client
+ * backends for frontends
+ * these are base clients which other stacks add resources to
+ */
 export class ApiGatewayStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // https://github.com/aws-samples/aws-cdk-openapi
-    // https://medium.com/@gwieser/solving-a-nightmare-aws-cdk-openapi-and-api-gateway-a1b6fdc1fd24
+    /**
+     * Mobile API Gateway
+     * used for mobile clients
+     */
 
-    // const openApiasset = new Asset(this, 'openApiFile', {
-    //   path: path.join(__dirname, '../openapi-spec.json'),
-    // });
+    // TODO
 
-    // const transformMap = {
-    //   Location: openApiasset.s3ObjectUrl,
-    // };
+    /**
+     * Web API Gateway
+     * used for web browsers clients
+     */
+    const webApiGateway = new apigw.RestApi(this, 'web-api-gateway', {
+      restApiName: `web-api-gateway`,
+      deploy: false,
+    });
 
-    // const data: IResolvable = Fn.transform('AWS::Include', transformMap);
+    new ssm.StringParameter(this, 'web-api-gateway-id', {
+      description: `Web API Gateway Rest API ID`,
+      parameterName: 'web-api-gateway-rest-api-id',
+      stringValue: webApiGateway.restApiId,
+    });
 
-    // const apiDefinition: InlineApiDefinition = ApiDefinition.fromInline(data);
+    new ssm.StringParameter(this, 'web-api-gateway-resource-id', {
+      description: `Web Gateway Resource ID`,
+      parameterName: 'web-api-gateway-root-resource-id',
+      stringValue: webApiGateway.restApiRootResourceId,
+    });
 
-    // const specRestApi = new SpecRestApi(this, 'RestApi', {
-    //   apiDefinition: apiDefinition,
-    //   restApiName: 'open-api',
-    //   deployOptions: {
-    //     stageName: process.env.stage ?? 'default',        let raw = yaml.stringify(
-    //       yaml.parse(fs.readFileSync(this.path, 'utf8'))
-    //   );
-    //   props.lambdas?.map((lambda) => {
-    //       raw = raw.replace(`\${${lambda.name}.Arn}`, lambda.arn);
-    //   });
-    //   const openapi = yaml.parse(raw);
+    const mock = webApiGateway.root.addResource('mock').addMethod(
+      'ANY',
+      new apigw.MockIntegration({
+        integrationResponses: [
+          {
+            statusCode: '200',
+          },
+        ],
+        passthroughBehavior: apigw.PassthroughBehavior.NEVER,
+        requestTemplates: {
+          'application/json': '{ "statusCode": 200 }',
+        },
+      }),
+      {
+        methodResponses: [{statusCode: '200'}],
+      },
+    );
 
-    //   const openApiDef = AssetApiDefinition.fromInline(openapi);
-
-    //   const service = this.node.tryGetContext('service');
-    //   const api = new SpecRestApi(this, 'OpenApiSpec', {
-    //       restApiName: capitalize(service),
-    //       apiDefinition: openApiDef,
-    //       deployOptions: {
-    //           stageName: 'dev',
-    //       },
-    //   });
-
-    //     loggingLevel: MethodLoggingLevel.INFO,
-    //   },
-    //   deploy: true,
-    // });
-
-    // import using openapi spec
-    // https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-quick-start-import-export.html
-
-    // https://medium.com/@gwieser/solving-a-nightmare-aws-cdk-openapi-and-api-gateway-a1b6fdc1fd24
-
-    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-apigatewayv2-alpha-readme.html
-
-    // const api = new apigateway.RestApi(this, 'api', {
-    //   description: 'Mono API Gateway',
-    //   deployOptions: {
-    //     stageName: 'dev',
-    //   },
-    //   defaultCorsPreflightOptions: {
-    //     allowHeaders: [
-    //       'Content-Type',
-    //       'X-Amz-Date',
-    //       'Authorization',
-    //       'X-Api-Key',
-    //     ],
-    //     allowMethods: ['OPTIONS', 'GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    //     allowCredentials: true,
-    //     allowOrigins: ['http://localhost:3000'],
-    //   },
-    // });
-
-    // new cdk.CfnOutput(this, 'apiUrl', {value: api.url});
-
-    // const getTodosLambda = new lambda.Function(this, 'get-todos-lambda', {
-    //   runtime: lambda.Runtime.NODEJS_16_X,
-    //   handler: 'index.main',
-    //   code: lambda.Code.fromAsset(path.join(__dirname, '/../src/get-todos')),
-    // });
-
-    // 👇 add a /todos resource
-    // const todos = api.root.addResource('todos');
-
-    // // 👇 integrate GET /todos with getTodosLambda
-    // todos.addMethod(
-    //   'GET',
-    //   new apigateway.LambdaIntegration(getTodosLambda, {proxy: true}),
-    // );
+    new ssm.StringParameter(this, 'web-mock-resource-id', {
+      description: `Web Mock Resource ID`,
+      parameterName: 'web-mock-root-resource-id',
+      stringValue: webApiGateway.restApiRootResourceId,
+    });
 
     // // API Gateway resource
-    // const rest = new apigateway.LambdaRestApi(this, 'Endpoint', {
-    //   handler: lambdaFunction,
+    // this.apiGateway = new LambdaRestApi(this, 'Endpoint', {
+    //   handler: this.nodeJsFunction,
     //   defaultCorsPreflightOptions: {
     //     allowHeaders: [
     //       'Content-Type',
@@ -109,57 +75,10 @@ export class ApiGatewayStack extends cdk.Stack {
     //       'Authorization',
     //       'X-Api-Key',
     //     ],
-    //     allowOrigins: apigateway.Cors.ALL_ORIGINS,
+    //     allowOrigins: Cors.ALL_ORIGINS,
     //     allowCredentials: true,
     //     allowMethods: ['GET', 'POST'],
     //   },
     // });
-
-    // const restApi = new apigateway.RestApi(this, 'my-api', {
-    //   restApiName: `my-api`,
-    // });
-
-    // const mockIntegration = new apigateway.MockIntegration();
-
-    // const someResource = new apigateway.Resource(this, 'new-resource', {
-    //   parent: restApi.root,
-    //   pathPart: 'somePath',
-    //   defaultIntegration: mockIntegration,
-    // });
-    // someResource.addMethod('GET', mockIntegration);
-
-    // https://docs.aws.amazon.com/cdk/api/v1/docs/@aws-cdk_aws-ssm.StringListParameter.html
-    // new ssm.StringParameter(this, 'rest-api', {
-    //   description: 'ApiGateway arn',
-    //   parameterName: 'rest-api',
-    //   stringValue: restApi.restApiId,
-    // });
-
-    //   new cdk.CfnOutput(this, `my-api-export`, {
-    //     exportName: `my-api-id`,
-    //     value: restApi.restApiId,
-    //   });
-
-    //   new cdk.CfnOutput(this, `my-api-somepath-export`, {
-    //     exportName: `my-api-somepath-resource-id`,
-    //     value: someResource.resourceId,
-    //   });
-
-    //   new cdk.CfnOutput(this, 'Region', {
-    //     value: this.region,
-    //   });
-    // }
   }
-
-  // const restApi = apigateway .RestApi.fromRestApiAttributes(this, "my-api", {
-  //   restApiId: cdk.Fn.importValue(`my-api-id`),
-  //   rootResourceId: cdk.Fn.importValue(`my-api-somepath-resource-id`),
-  // });
-
-  // const mockIntegration = new apigateway .MockIntegration();
-  // new apigateway .Resource(this, "new-resource", {
-  //   parent: restApi.root,
-  //   pathPart: "new",
-  //   defaultIntegration: mockIntegration,
-  // });
 }

@@ -47,6 +47,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.15.0
       '@typescript-eslint/parser': 5.15.0
       '@vendia/serverless-express': 4.8.2
+      aws-cdk: ~2.55.1
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
@@ -76,6 +77,7 @@ importers:
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
       '@vendia/serverless-express': 4.8.2
+      aws-cdk: 2.55.1
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
@@ -7558,6 +7560,14 @@ packages:
       - punycode
       - semver
       - yaml
+
+  /aws-cdk/2.55.1:
+    resolution: {integrity: sha512-M/d4lO7rLMvPedNj7pEQtwyxn7nVLluiHggftXlYHOIeaoMG1QCbH1zTuZtMZZxdRRD4ZiOEHvvPYFU/HMcrPQ==}
+    engines: {node: '>= 14.15.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: false
 
   /aws-lambda/1.0.7:
     resolution: {integrity: sha512-9GNFMRrEMG5y3Jvv+V4azWvc+qNWdWLTjDdhf/zgMlz8haaaLWv0xeAIWxz9PuWUBawsVxy0zZotjCdR3Xq+2w==}

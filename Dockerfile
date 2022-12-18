@@ -35,7 +35,7 @@ RUN apt-get update \
     && npm install --global @microsoft/rush@5.79.0 \
     # install AWS CDK globally
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
-    && npm install --global aws-cdk \
+    && npm install --global aws-cdk@2.55.1 \
     # install typescript globally (perhaps this should be moved for rush's package)
     && npm install --global typescript \
     # install typescript globally (perhaps this could be moved to local)

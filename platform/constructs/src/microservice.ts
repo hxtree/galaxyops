@@ -1,14 +1,21 @@
 import {Construct} from 'constructs';
 import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
-import {Duration, Stack} from 'aws-cdk-lib';
+import {Duration, Resource, Stack} from 'aws-cdk-lib';
 import {LayerVersion, Runtime} from 'aws-cdk-lib/aws-lambda';
 import {RetentionDays} from 'aws-cdk-lib/aws-logs';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
-import {kebabCase} from 'lodash';
-import {LambdaRestApi, Cors} from 'aws-cdk-lib/aws-apigateway';
+import {kebabCase, rest} from 'lodash';
+import {
+  LambdaRestApi,
+  Cors,
+  LambdaIntegration,
+} from 'aws-cdk-lib/aws-apigateway';
 import * as cdk from 'aws-cdk-lib';
+import * as apigw from 'aws-cdk-lib/aws-apigateway';
+// import {ApiRoute} from './api-route';
 
 export interface MicroserviceProps {
+  path: string;
   //insert properties you wish to expose
 }
 
@@ -20,7 +27,9 @@ export class Microservice extends Construct {
     super(scope, id);
 
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.LayerVersion.html
+    const microserviceName = kebabCase(Stack.of(this).stackName);
     const awsAccountId = Stack.of(this).account;
+
     const awsAccountRegion = Stack.of(this).region;
     const layerVerison = '1'; // TODO store in ssm?
     const nestJsAppLayer = LayerVersion.fromLayerVersionAttributes(
@@ -76,41 +85,88 @@ export class Microservice extends Construct {
       // deadLetterQueueEnabled: true
     });
 
-    const stage = process.env.STAGE ?? 'default';
-    const stackName = Stack.of(this).stackName;
+    // TODO separate into multiple Constucts,
 
-    // API Gateway resource
-    this.apiGateway = new LambdaRestApi(this, 'Endpoint', {
-      handler: this.nodeJsFunction,
-      defaultCorsPreflightOptions: {
-        allowHeaders: [
-          'Content-Type',
-          'X-Amz-Date',
-          'Authorization',
-          'X-Api-Key',
-        ],
-        allowOrigins: Cors.ALL_ORIGINS,
-        allowCredentials: true,
-        allowMethods: ['GET', 'POST'],
+    // const apiRoute = new ApiRoute(this, 'microservice-api-route', {
+    //   nodeJsFunction: this.nodeJsFunction,
+    //   prefix: 'v1',
+    // });
+
+    // const stage = process.env.STAGE ?? 'default';
+    // const stackName = Stack.of(this).stackName;
+
+    const restApiId = ssm.StringParameter.fromStringParameterAttributes(
+      this,
+      `${microserviceName}-rest-api-id-ssm`,
+      {
+        parameterName: 'web-api-gateway-rest-api-id',
       },
+    ).stringValue;
+
+    const rootResourceId = ssm.StringParameter.fromStringParameterAttributes(
+      this,
+      `${microserviceName}-root-resource-id-ssm`,
+      {
+        parameterName: 'web-api-gateway-root-resource-id',
+      },
+    ).stringValue;
+
+    const mainApi = apigw.RestApi.fromRestApiAttributes(this, 'main-api', {
+      restApiId: restApiId,
+      rootResourceId: rootResourceId,
     });
 
-    const apiEndpoint = `${this.apiGateway.url}api`;
-    const appName = stackName.replace('Stack', '');
-    const apiEndpointkey = kebabCase(`${stage}-${appName}-base-url`);
-    new ssm.StringParameter(this, 'Parameter', {
-      description: `${appName} ${stage} API baseUrl`,
-      parameterName: apiEndpointkey,
-      stringValue: apiEndpoint,
+    const webApiGateway = new apigw.Resource(
+      this,
+      `${microserviceName}-apigw-resource`,
+      {
+        parent: mainApi.root,
+        pathPart: props.path,
+      },
+    );
+
+    const proxy = webApiGateway.addProxy({
+      defaultIntegration: new apigw.LambdaIntegration(this.nodeJsFunction),
+      anyMethod: true,
     });
 
-    new cdk.CfnOutput(this, apiEndpointkey, {
-      value: apiEndpoint,
+    const deployment = new apigw.Deployment(
+      this,
+      'deployment-' + new Date().toISOString(),
+      {
+        api: apigw.RestApi.fromRestApiId(this, 'RestApi', restApiId),
+        description: `...`,
+        retainDeployments: true,
+      },
+    );
+
+    // force deployment by changing hash
+    deployment.addToLogicalId(new Date().toISOString());
+
+    // props.methods!.forEach((method) => deployment.node.addDependency(method));
+    //  if the 'stageName' already exists (from the core apigateway deployment) then the existing stage will be used !
+    const stage = new apigw.Stage(this, 'Stage', {deployment});
+
+    new cdk.CfnOutput(this, 'Rest API Stack Name', {
+      value: `https://${restApiId}.execute-api.${awsAccountRegion}.amazonaws.com/prod/v1/roll/notation/1d2/luck/1`,
     });
   }
 
   getRestApi(): LambdaRestApi {
     return this.apiGateway;
+  }
+
+  getBaseUrl(): string {
+    const awsAccountRegion = Stack.of(this).region;
+    const restApiId = ssm.StringParameter.fromStringParameterAttributes(
+      this,
+      'web-api-gateway-rest-api-id-ssm',
+      {
+        parameterName: 'web-api-gateway-rest-api-id',
+      },
+    ).stringValue;
+
+    return `https://${restApiId}.execute-api.${awsAccountRegion}.amazonaws.com/prod/`;
   }
 
   getNodeJsFunction(): NodejsFunction {

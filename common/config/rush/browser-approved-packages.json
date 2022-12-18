@@ -187,6 +187,10 @@
       "allowedCategories": [ "apis", "platform" ]
     },
     {
+      "name": "aws-cdk",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "aws-cdk-lib",
       "allowedCategories": [ "apis", "clients", "platform" ]
     },
