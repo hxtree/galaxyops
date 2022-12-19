@@ -29,18 +29,6 @@ export class ApiGatewayStack extends cdk.Stack {
       deploy: false,
     });
 
-    new ssm.StringParameter(this, 'web-api-gateway-id', {
-      description: `Web API Gateway Rest API ID`,
-      parameterName: 'web-api-gateway-rest-api-id',
-      stringValue: webApiGateway.restApiId,
-    });
-
-    new ssm.StringParameter(this, 'web-api-gateway-resource-id', {
-      description: `Web Gateway Resource ID`,
-      parameterName: 'web-api-gateway-root-resource-id',
-      stringValue: webApiGateway.restApiRootResourceId,
-    });
-
     const mock = webApiGateway.root.addResource('mock').addMethod(
       'ANY',
       new apigw.MockIntegration({
@@ -59,9 +47,36 @@ export class ApiGatewayStack extends cdk.Stack {
       },
     );
 
+    const webApiGatewayV1Resource = new apigw.Resource(
+      this,
+      `web-api-gateway-v1-resource`,
+      {
+        parent: webApiGateway.root,
+        pathPart: 'v1',
+      },
+    );
+
+    new ssm.StringParameter(this, 'web-api-gateway-id', {
+      description: `Web API Gateway Rest API ID`,
+      parameterName: 'web-api-gateway-rest-api-id',
+      stringValue: webApiGateway.restApiId,
+    });
+
+    new ssm.StringParameter(this, 'web-api-gateway-resource-id', {
+      description: `Web Gateway Resource ID`,
+      parameterName: 'web-api-gateway-root-resource-id',
+      stringValue: webApiGateway.restApiRootResourceId,
+    });
+
+    new ssm.StringParameter(this, 'web-api-gateway-v1-resource-id', {
+      description: `Web API Gateway V1 Resource ID`,
+      parameterName: 'web-api-gateway-v1-resource-id',
+      stringValue: webApiGatewayV1Resource.resourceId,
+    });
+
     new ssm.StringParameter(this, 'web-mock-resource-id', {
       description: `Web Mock Resource ID`,
-      parameterName: 'web-mock-root-resource-id',
+      parameterName: 'web-mockapi-gateway-root-resource-id',
       stringValue: webApiGateway.restApiRootResourceId,
     });
 

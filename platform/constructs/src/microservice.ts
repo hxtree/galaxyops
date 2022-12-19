@@ -22,6 +22,8 @@ export interface MicroserviceProps {
 export class Microservice extends Construct {
   private nodeJsFunction: NodejsFunction;
   private apiGateway: LambdaRestApi;
+  private restApiId: string;
+  private path: string;
 
   constructor(scope: Construct, id: string, props: MicroserviceProps) {
     super(scope, id);
@@ -29,7 +31,7 @@ export class Microservice extends Construct {
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.LayerVersion.html
     const microserviceName = kebabCase(Stack.of(this).stackName);
     const awsAccountId = Stack.of(this).account;
-
+    this.path = props.path;
     const awsAccountRegion = Stack.of(this).region;
     const layerVerison = '1'; // TODO store in ssm?
     const nestJsAppLayer = LayerVersion.fromLayerVersionAttributes(
@@ -95,7 +97,7 @@ export class Microservice extends Construct {
     // const stage = process.env.STAGE ?? 'default';
     // const stackName = Stack.of(this).stackName;
 
-    const restApiId = ssm.StringParameter.fromStringParameterAttributes(
+    this.restApiId = ssm.StringParameter.fromStringParameterAttributes(
       this,
       `${microserviceName}-rest-api-id-ssm`,
       {
@@ -111,30 +113,52 @@ export class Microservice extends Construct {
       },
     ).stringValue;
 
-    const mainApi = apigw.RestApi.fromRestApiAttributes(this, 'main-api', {
-      restApiId: restApiId,
-      rootResourceId: rootResourceId,
-    });
+    const v1ResourceId = ssm.StringParameter.fromStringParameterAttributes(
+      this,
+      `${microserviceName}-v1-resource-id-ssm`,
+      {
+        parameterName: 'web-api-gateway-v1-resource-id',
+      },
+    ).stringValue;
 
-    const webApiGateway = new apigw.Resource(
+    const mainApi = apigw.RestApi.fromRestApiAttributes(
+      this,
+      `${microserviceName}-main-api`,
+      {
+        restApiId: this.restApiId,
+        rootResourceId: rootResourceId,
+      },
+    );
+
+    const v1Resource = apigw.Resource.fromResourceAttributes(
+      this,
+      'web-api-gateway-v1-resource-id',
+      {
+        restApi: mainApi,
+        path: '/v1',
+        resourceId: v1ResourceId,
+      },
+    );
+
+    const lambdaPath = new apigw.Resource(
       this,
       `${microserviceName}-apigw-resource`,
       {
-        parent: mainApi.root,
+        parent: v1Resource,
         pathPart: props.path,
       },
     );
 
-    const proxy = webApiGateway.addProxy({
+    const proxy = lambdaPath.addProxy({
       defaultIntegration: new apigw.LambdaIntegration(this.nodeJsFunction),
       anyMethod: true,
     });
 
     const deployment = new apigw.Deployment(
       this,
-      'deployment-' + new Date().toISOString(),
+      `${microserviceName}-deployment-` + new Date().toISOString(),
       {
-        api: apigw.RestApi.fromRestApiId(this, 'RestApi', restApiId),
+        api: apigw.RestApi.fromRestApiId(this, 'RestApi', this.restApiId),
         description: `...`,
         retainDeployments: true,
       },
@@ -143,12 +167,10 @@ export class Microservice extends Construct {
     // force deployment by changing hash
     deployment.addToLogicalId(new Date().toISOString());
 
-    // props.methods!.forEach((method) => deployment.node.addDependency(method));
-    //  if the 'stageName' already exists (from the core apigateway deployment) then the existing stage will be used !
-    const stage = new apigw.Stage(this, 'Stage', {deployment});
-
-    new cdk.CfnOutput(this, 'Rest API Stack Name', {
-      value: `https://${restApiId}.execute-api.${awsAccountRegion}.amazonaws.com/prod/v1/roll/notation/1d2/luck/1`,
+    // // props.methods!.forEach((method) => deployment.node.addDependency(method));
+    // //  if the 'stageName' already exists (from the core apigateway deployment) then the existing stage will be used !
+    const stage = new apigw.Stage(this, `${microserviceName}-stage`, {
+      deployment,
     });
   }
 
@@ -158,15 +180,8 @@ export class Microservice extends Construct {
 
   getBaseUrl(): string {
     const awsAccountRegion = Stack.of(this).region;
-    const restApiId = ssm.StringParameter.fromStringParameterAttributes(
-      this,
-      'web-api-gateway-rest-api-id-ssm',
-      {
-        parameterName: 'web-api-gateway-rest-api-id',
-      },
-    ).stringValue;
 
-    return `https://${restApiId}.execute-api.${awsAccountRegion}.amazonaws.com/prod/`;
+    return `https://${this.restApiId}.execute-api.${awsAccountRegion}.amazonaws.com/prod/v1/${this.path}`;
   }
 
   getNodeJsFunction(): NodejsFunction {
