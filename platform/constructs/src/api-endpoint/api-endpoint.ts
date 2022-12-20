@@ -70,16 +70,9 @@ export class ApiEndpoint extends Construct {
       },
     );
 
-    stage.restApi.latestDeployment?.addToLogicalId(new Date().toISOString());
-
-    // deploy to existing API & stage
-    // const stage = new apigw.Stage(this, `${id}-stage`, {
-    //   deployment,
-    //   stageName: props.stageName,
-    // });
-
     // force deployment by changing hash
     this.restApi.latestDeployment?.addToLogicalId(new Date().toISOString());
+    stage.restApi.latestDeployment?.addToLogicalId(new Date().toISOString());
     deployment.addToLogicalId(new Date().toISOString());
 
     (deployment as any).resource.stageName = stage.stageName;

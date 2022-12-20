@@ -1,7 +1,7 @@
 import {Construct} from 'constructs';
 import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
-import {ApiEndpoint} from './api-endpoint';
-import {NestJs} from './nestjs';
+import {ApiEndpoint} from '../api-endpoint/api-endpoint';
+import {NestJs} from '../nestjs/nestjs';
 
 export interface MicroserviceProps {
   path: string;
