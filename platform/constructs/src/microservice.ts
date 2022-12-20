@@ -24,9 +24,12 @@ export class Microservice extends Construct {
   private apiGateway: LambdaRestApi;
   private restApiId: string;
   private path: string;
+  private stageName: string;
 
   constructor(scope: Construct, id: string, props: MicroserviceProps) {
     super(scope, id);
+
+    this.stageName = 'prod';
 
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.LayerVersion.html
     const microserviceName = kebabCase(Stack.of(this).stackName);
@@ -156,22 +159,26 @@ export class Microservice extends Construct {
 
     const deployment = new apigw.Deployment(
       this,
-      `${microserviceName}-deployment-` + new Date().toISOString(),
-      {
-        api: apigw.RestApi.fromRestApiId(this, 'RestApi', this.restApiId),
-        description: `...`,
-        retainDeployments: true,
-      },
+      'deployment' + new Date().toISOString(),
+      {api: mainApi, retainDeployments: false},
     );
 
+    const stage = apigw.Stage.fromStageAttributes(this, 'Stage', {
+      restApi: mainApi,
+      stageName: this.stageName,
+    });
+
     // force deployment by changing hash
+    mainApi.latestDeployment?.addToLogicalId(new Date().toISOString());
     deployment.addToLogicalId(new Date().toISOString());
 
-    // // props.methods!.forEach((method) => deployment.node.addDependency(method));
-    // //  if the 'stageName' already exists (from the core apigateway deployment) then the existing stage will be used !
-    const stage = new apigw.Stage(this, `${microserviceName}-stage`, {
-      deployment,
-    });
+    (deployment as any).resource.stageName = stage.stageName;
+
+    // deploy to existing API & stage
+    // const stage = new apigw.Stage(this, 'stage-alpha', {
+    //   deployment,
+    //   stageName: 'default',
+    // });
   }
 
   getRestApi(): LambdaRestApi {
@@ -181,7 +188,7 @@ export class Microservice extends Construct {
   getBaseUrl(): string {
     const awsAccountRegion = Stack.of(this).region;
 
-    return `https://${this.restApiId}.execute-api.${awsAccountRegion}.amazonaws.com/prod/v1/${this.path}`;
+    return `https://${this.restApiId}.execute-api.${awsAccountRegion}.amazonaws.com/${this.stageName}/v1/${this.path}`;
   }
 
   getNodeJsFunction(): NodejsFunction {

@@ -27,6 +27,7 @@ export class ApiGatewayStack extends cdk.Stack {
     const webApiGateway = new apigw.RestApi(this, 'web-api-gateway', {
       restApiName: `web-api-gateway`,
       deploy: false,
+      // deploy: true,      // deploy: false,
     });
 
     const mock = webApiGateway.root.addResource('mock').addMethod(
@@ -79,6 +80,33 @@ export class ApiGatewayStack extends cdk.Stack {
       parameterName: 'web-mockapi-gateway-root-resource-id',
       stringValue: webApiGateway.restApiRootResourceId,
     });
+
+    const deployment = new apigw.Deployment(
+      this,
+      'deployment' + new Date().toISOString(),
+      {api: webApiGateway, retainDeployments: false},
+    );
+
+    const stage = new apigw.Stage(this, 'default', {
+      stageName: 'prod',
+      deployment,
+    });
+
+    // const deployment = new apigw.Deployment(
+    //   this,
+    //   `${microserviceName}-deployment-` + new Date().toISOString(),
+    //   {
+    //     api: apigw.RestApi.fromRestApiId(this, 'RestApi', this.restApiId),
+    //     description: `...`,
+    //     retainDeployments: true,
+    //   },
+    // );
+
+    // // // props.methods!.forEach((method) => deployment.node.addDependency(method));
+    // // //  if the 'stageName' already exists (from the core apigateway deployment) then the existing stage will be used !
+    // const stage = new apigw.Stage(this, `${microserviceName}-stage`, {
+    //   deployment,
+    // });
 
     // // API Gateway resource
     // this.apiGateway = new LambdaRestApi(this, 'Endpoint', {
