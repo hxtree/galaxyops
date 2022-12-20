@@ -17,7 +17,7 @@ export class Microservice extends Construct {
     this.nestJs = new NestJs(this, `${id}-nestjs`, {});
 
     this.apiEndpoint = new ApiEndpoint(this, `${id}-api-endpoint`, {
-      stageName: 'prod',
+      stageName: 'default',
       path: props.path,
       nodeJsFunction: this.nestJs.getNodeJsFunction(),
     });

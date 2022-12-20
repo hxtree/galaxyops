@@ -19,13 +19,11 @@ export class ApiEndpoint extends Construct {
   private restApiId: string;
   private path: string;
   private stageName: string;
-  private stackName: string;
 
   constructor(scope: Construct, id: string, props: ApiEndpointProps) {
     super(scope, id);
 
     this.region = Stack.of(this).region;
-    this.stackName = kebabCase(Stack.of(this).stackName);
     this.stageName = props.stageName;
     this.path = props.path;
 
@@ -63,10 +61,16 @@ export class ApiEndpoint extends Construct {
       {api: this.restApi, retainDeployments: false},
     );
 
-    const stage = apigw.Stage.fromStageAttributes(this, `${id}-stage`, {
-      restApi: this.restApi,
-      stageName: props.stageName,
-    });
+    const stage = apigw.Stage.fromStageAttributes(
+      this,
+      `${id}-stage` + new Date().toISOString(),
+      {
+        restApi: this.restApi,
+        stageName: props.stageName,
+      },
+    );
+
+    stage.restApi.latestDeployment?.addToLogicalId(new Date().toISOString());
 
     // deploy to existing API & stage
     // const stage = new apigw.Stage(this, `${id}-stage`, {

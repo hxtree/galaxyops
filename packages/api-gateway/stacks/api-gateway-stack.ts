@@ -24,10 +24,9 @@ export class ApiGatewayStack extends cdk.Stack {
      * Web API Gateway
      * used for web browsers clients
      */
-    const webApiGateway = new apigw.RestApi(this, 'web-api-gateway', {
+    const webApiGateway = new apigw.RestApi(this, `${id}-web-api-gateway`, {
       restApiName: `web-api-gateway`,
       deploy: false,
-      // deploy: true,      // deploy: false,
     });
 
     const mock = webApiGateway.root.addResource('mock').addMethod(
@@ -50,32 +49,32 @@ export class ApiGatewayStack extends cdk.Stack {
 
     const webApiGatewayV1Resource = new apigw.Resource(
       this,
-      `web-api-gateway-v1-resource`,
+      `${id}-web-api-gateway-v1-resource`,
       {
         parent: webApiGateway.root,
         pathPart: 'v1',
       },
     );
 
-    new ssm.StringParameter(this, 'web-api-gateway-id', {
+    new ssm.StringParameter(this, `${id}-web-api-gateway-id`, {
       description: `Web API Gateway Rest API ID`,
       parameterName: 'web-api-gateway-rest-api-id',
       stringValue: webApiGateway.restApiId,
     });
 
-    new ssm.StringParameter(this, 'web-api-gateway-resource-id', {
+    new ssm.StringParameter(this, `${id}-web-api-gateway-resource-id`, {
       description: `Web Gateway Resource ID`,
       parameterName: 'web-api-gateway-root-resource-id',
       stringValue: webApiGateway.restApiRootResourceId,
     });
 
-    new ssm.StringParameter(this, 'web-api-gateway-v1-resource-id', {
+    new ssm.StringParameter(this, `${id}-web-api-gateway-v1-resource-id`, {
       description: `Web API Gateway V1 Resource ID`,
       parameterName: 'web-api-gateway-v1-resource-id',
       stringValue: webApiGatewayV1Resource.resourceId,
     });
 
-    new ssm.StringParameter(this, 'web-mock-resource-id', {
+    new ssm.StringParameter(this, `${id}-web-mock-resource-id`, {
       description: `Web Mock Resource ID`,
       parameterName: 'web-mockapi-gateway-root-resource-id',
       stringValue: webApiGateway.restApiRootResourceId,
@@ -83,12 +82,12 @@ export class ApiGatewayStack extends cdk.Stack {
 
     const deployment = new apigw.Deployment(
       this,
-      'deployment' + new Date().toISOString(),
+      `${id}-deployment` + new Date().toISOString(),
       {api: webApiGateway, retainDeployments: false},
     );
 
-    const stage = new apigw.Stage(this, 'default', {
-      stageName: 'prod',
+    const stage = new apigw.Stage(this, `${id}-stage`, {
+      stageName: 'default',
       deployment,
     });
 
