@@ -1,10 +1,14 @@
-# Keepers Cradle [![Sparkline](https://stars.medv.io/hxtree/keepers-cradle.svg)](https://stars.medv.io/hxtree/keepers-cradle)
+# Keepers Cradle  :hourglass: :infinity: :white_heart:
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/monorepo/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/monorepo&utm_campaign=Badge_Grade)
 [![GitHub issues by-label](https://img.shields.io/github/issues/hxtree/monorepo/help%20wanted.svg)](https://github.com/hxtree/monorepo/issues)
 
-Keepers Cradle is a online mobile RPG. This monorepo contains the game engine and infrastructure as code.
-The is being being developed using Unreal 5, AWS CDKv2, and Typescript.
+**Keepers Cradle** is a online mobile RPG.
+
+This monorepo contains the game engine, development container, and infrastructure as code (IaC).
+The serverless backend is programmed primarly in Typescript.
+Microservices are deployed using AWS CDKv2 for IaC.
+The game engine client is built using a Unreal Engine 5.
 
 ![Base Game Client](/docs/assets/images/shield-sword.png)
 
