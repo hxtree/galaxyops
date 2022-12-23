@@ -3,8 +3,13 @@ import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
 import {Duration, Stack} from 'aws-cdk-lib';
 import {LayerVersion, Runtime} from 'aws-cdk-lib/aws-lambda';
 import {RetentionDays} from 'aws-cdk-lib/aws-logs';
+import {getBaseUrl} from '../api-endpoint/get-base-url';
 
-export interface NestJsProps {}
+export interface NestJsProps {
+  apiId: string;
+  region: string;
+  stageName: string;
+}
 
 export class NestJs extends Construct {
   private nodeJsFunction: NodejsFunction;
@@ -63,6 +68,8 @@ export class NestJs extends Construct {
       memorySize: 1024, // 128 -- TODO reduce
       environment: {
         ACCOUNT_ID: awsAccountId,
+        STAGE_NAME: props.stageName,
+        BASE_URL: getBaseUrl(props.apiId, props.region, props.stageName),
       },
       logRetention: RetentionDays.ONE_DAY,
       timeout: Duration.seconds(30),
