@@ -5,6 +5,7 @@ import {kebabCase} from 'lodash';
 import {IRestApi} from 'aws-cdk-lib/aws-apigateway';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import * as apigw from 'aws-cdk-lib/aws-apigateway';
+import {getBaseUrl} from './get-base-url';
 
 export interface ApiEndpointProps {
   stageName: string;
@@ -79,7 +80,7 @@ export class ApiEndpoint extends Construct {
   }
 
   getBaseUrl(): string {
-    return `https://${this.restApiId}.execute-api.${this.region}.amazonaws.com/${this.stageName}/v1/${this.path}`;
+    return getBaseUrl(this.restApiId, this.region, this.stageName, this.path);
   }
 
   getNodeJsFunction(): NodejsFunction {
