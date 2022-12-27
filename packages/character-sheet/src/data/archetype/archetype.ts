@@ -7,6 +7,7 @@ import {Summon} from '../skill/summon.skill';
 import {Outfit} from '../gear/outfit.gear';
 import {Slot} from '../gear/slot';
 import {Weapon} from '../gear/weapon.gear';
+import {Affiliation} from '../affiliations';
 
 /**
  * Base character information that does not change as the game progress
@@ -44,7 +45,7 @@ export namespace Archetype {
     };
 
     relationships?: string[];
-    affiliation?: string[];
+    affiliation?: Affiliation.Type[];
 
     // these seem more like they loaded or determined for player characters
     life?: Life;
@@ -70,41 +71,62 @@ export namespace Archetype {
     // loot?: Gear.Item[];
   };
 
+  export const MOTHER: Type = {
+    name: 'Mother',
+    alias: ['Lady of the Vase', 'Ashes', 'Dust'],
+    backstory:
+      'She is known only as Mother. ' +
+      'She often can be found carring things back and forth from the garden. ' +
+      'She is mother to both Vallon and Meeku. ' +
+      'Mother knits Meeku a red scarf. ' +
+      'Mother dies of during act one. ' +
+      "Meeku carries Mother's ashes around his waist with him in a goard. ",
+  };
+
   /**
    * Three Keepers
    */
   export const MISCHIEVOUS_PIEBALD: Type = {
     name: 'Mischievous',
     surname: 'Piebald',
-    alias: ['Keeper of Law'],
+    alias: ['Keeper of Law', 'Mischief'],
     backstory: 'Governs the logical of this realm.',
-    symbolizes: ['Law'],
-    affiliation: ['The Keepers'],
-    description: 'A black and white cat with yellow eyes.',
+    symbolizes: ['Law', 'Causality', 'Absolute'],
+    affiliation: [Affiliation.THE_KEEPERS],
+    description:
+      'A black and white cat. ' +
+      'His face is primarly white with a black noise. ' +
+      'He has emerald yellowish greenish eyes. ' +
+      'His ears are black. ' +
+      'His fur is short. ' +
+      'His tail is black. ',
+    // a red colored thread can be used to control him
     potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
   };
 
   export const JANUS_PERSIAN: Type = {
     name: 'Janus',
     surname: 'Persian',
+    description: 'An orange old persian cat',
     backstory: 'Governs the flow of time the one has been in this state',
-    alias: ['Keeper of Time', 'Wise-Kitty'],
+    alias: ['Keeper of Time', 'Wise-Kitty', 'Old Coat'],
     symbolizes: ['Time'],
-    affiliation: ['The Keepers'],
-    description: 'A orange old perian cat',
+    affiliation: [Affiliation.THE_KEEPERS],
     potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
   };
 
   export const LOOMEE_ANGORA: Type = {
     name: 'Loomee',
     surname: 'Angora',
-    description: 'Light blonde girl wearing white linen',
+    description:
+      'A white angora cat. ' +
+      'In human form a light blonde girl wearing white linen',
     backstory:
       'She governs and protects the ones heart to make sure it is not lost. ' +
       'A girl created when the Song Maiden left her post to become human.',
     alias: ['Keeper of Heart', 'Song Maiden', 'Mom'],
     symbolizes: ['Chastity'],
-    affiliation: ['The Keepers'],
+    affiliation: [Affiliation.THE_KEEPERS],
     potentialDisciplines: [
       Discipline.CHEERLEADER,
       Discipline.MAIDEN,
@@ -122,23 +144,41 @@ export namespace Archetype {
   /**
    * Three Destroyer
    */
-  export const VALLON_ONI: Type = {
-    name: 'Vallon',
-    surname: 'Oni',
-    symbolizes: ['Destroyer of Heart'],
-    description: 'White hair',
-    potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
-    weaponCompatibility: [Weapon.Category.SWORD],
-  };
 
   export const OUERN_ONI: Type = {
     name: 'Ouern',
     surname: 'Oni',
     symbolizes: ['Destroyer of Time'],
     alias: ['The Black Plague'],
-    backstory: 'Said to led to end of all who exist',
+    backstory:
+      'Rumored to be end cause the end of all existenance. ' +
+      'Whereabouts unknown. ' +
+      'Often sang a song similar to Tumbalalaika to his sons when they were young. ',
+    affiliation: [Affiliation.THE_DESTROYERS, Affiliation.SOLIDER_FORCES],
     description: 'White hair',
     potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
+  };
+
+  export const VALLON_ONI: Type = {
+    name: 'Vallon',
+    surname: 'Oni',
+    symbolizes: ['Destroyer of Heart'],
+    description: 'White hair',
+    affiliation: [
+      Affiliation.THE_DESTROYERS,
+      Affiliation.VALLONS_SEVEN,
+      Affiliation.SOLIDER_FORCES,
+    ],
+    backstory:
+      'Grow up with Meeku. ' +
+      'Left to become a Solider. ' +
+      'Disappeared from Solider. ',
+    // 'Sets out in search of his father to freeze all time. ' +
+    // 'Raises the floating island. ' +
+    // 'Taints the Keeper of Heart. ' +
+    // 'Unleases Ouren. '
+    potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
+    weaponCompatibility: [Weapon.Category.SWORD],
   };
 
   export const MEEKU_ONI: Type = {
@@ -147,6 +187,7 @@ export namespace Archetype {
     symbolizes: ['Destroyer of Law'],
     alias: ['Kid', 'Brother'],
     backstory: 'A boy who has lost his past',
+    affiliation: [Affiliation.THE_DESTROYERS, Affiliation.SOLIDER_FORCES],
     potentialDisciplines: [
       Discipline.SOLIDER,
       Discipline.XSOLIDER,
@@ -179,6 +220,7 @@ export namespace Archetype {
     name: 'Arinoth',
     surname: 'Diyath',
     symbolizes: ['Patience'],
+    affiliation: [],
     backstory: '',
     potentialDisciplines: [],
     weaponCompatibility: [Weapon.Category.STAFF],
@@ -190,6 +232,7 @@ export namespace Archetype {
     backstory:
       'A young girl with light violet hair who weilds magic and studies history',
     symbolizes: ['Charity'],
+    affiliation: [Affiliation.MAGI_ORDER],
     alias: ['Bookworm'],
     potentialDisciplines: [
       Discipline.WIZARD,
@@ -215,6 +258,7 @@ export namespace Archetype {
     description: 'A white haired thin teenager',
     backstory:
       'A prince with little interest in becoming king. Instead, he lives for testing his sword in raw danger.',
+    affiliation: [],
     potentialDisciplines: [
       Discipline.BARD,
       Discipline.DUELIST,
@@ -244,8 +288,10 @@ export namespace Archetype {
     surname: 'Stonewell',
     symbolizes: ['Humility'],
     description:
-      'A large old man with grey hair who looks as though they have spend their life in battle',
+      'A large old man with grey hair. ' +
+      'Looks like they spend their entire life in battle. ',
     backstory: 'A solider for life',
+    affiliation: [Affiliation.SOLIDER_FORCES],
     potentialDisciplines: [
       Discipline.GAURD,
       Discipline.BODY_BUILDER,
@@ -267,7 +313,10 @@ export namespace Archetype {
     ],
     symbolizes: ['Despair'],
     backstory:
-      'was used as a scarifice for his people to hold demons by sewing them to his skin',
+      `As a child, his people scarificed him to save themselves. ` +
+      `They sewed the demons plaguing the village into his skin. ` +
+      `The demons were drawn to his purity. `,
+    affiliation: [Affiliation.CATCHERS],
     potentialDisciplines: [
       Discipline.GYMNAST,
       Discipline.POSSESSED,
@@ -301,9 +350,11 @@ export namespace Archetype {
     element: 'Fire',
     occupation: 'Mercenary',
     characteristics:
-      'Strong, defiant, kills without question, and motivated by money',
+      'Strong, defiant, kills without question. ' +
+      'Motivated primarly by money. ',
     backstory: '',
     symbolizes: ['Kindness', 'Independance'],
+    affiliation: [Affiliation.NINJA],
     potentialDisciplines: [
       Discipline.NINJA,
       Discipline.ASSASSIN,
@@ -314,7 +365,6 @@ export namespace Archetype {
     traits: [
       // **Battle +**: Attack, and Techniques.\\
       // **Battle -**: Magic.\\
-
       {
         // has built up tolerance to poisons
         tag: EffectTag.POISON,
@@ -330,6 +380,7 @@ export namespace Archetype {
     surname: 'Uthsha',
     backstory: '',
     symbolizes: ['Diligence'],
+    affiliation: [Affiliation.REBEL],
     potentialDisciplines: [
       Discipline.ENGINEER,
       Discipline.MECHANIC,
@@ -345,6 +396,7 @@ export namespace Archetype {
    */
   export const VOID: Type = {
     name: 'Void',
+    affiliation: [Affiliation.ORIGINAL_SEVEN],
     backstory:
       'Is one of the original seven demons.' +
       'He was killed before the story begins. ' +
@@ -354,6 +406,7 @@ export namespace Archetype {
 
   export const GENKI: Type = {
     name: 'Genki',
+    affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Wrath', 'Fish'],
     potentialDisciplines: [Discipline.MAGI_BLUE],
     weaponCompatibility: [Weapon.Category.HAND_SWORD],
@@ -366,13 +419,15 @@ export namespace Archetype {
       'wears sleep mask.' +
       'wears a wolfs head. ' +
       'Has horns. ' +
-      'barely stays standing and can be found sleeping everywhere.',
+      'barely stays standing. ' +
+      'A narcoleptic often found sleeping even when standing.',
     symbolizes: ['Sloth', 'Wolf'],
     history:
-      'Rumored to be the most powerful fighter from the north. ' +
+      'Rumored to once of been the most powerful fighter from the north. ' +
       'He fought only to protect his village until it was wiped out from a great frost. ' +
-      'He now wonders around lifelessly in search of an end. ' +
+      'He now wanders seemingly lifelessly in search of an end. ' +
       'He is by far the most strongest of the seven but has no will to fight.',
+    affiliation: [Affiliation.VALLONS_SEVEN],
     potentialDisciplines: [Discipline.MAGI_WHITE],
     weaponCompatibility: [Weapon.Category.BROAD_SWORD],
   };
@@ -382,25 +437,32 @@ export namespace Archetype {
     surname: 'Tsia',
     description: "Malace's brother",
     backstory: 'When the world is about to end he is its savor',
+    symbolizes: ['Mahdi', 'German Shepherd'],
+    affiliation: [Affiliation.VALLONS_SEVEN, Affiliation.CATCHERS],
     potentialDisciplines: [Discipline.POSSESSED, Discipline.MAGI_BLACK],
     weaponCompatibility: [Weapon.Category.KNIFE],
   };
 
   export const SUYRI: Type = {
     name: 'Suyri',
-    description: 'uses strong magical powers',
+    description:
+      'Has and uses strong magical powers. ' +
+      'A female with pink colored hair. ',
+    affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Luxury (later lust)', 'Fox'],
     potentialDisciplines: [Discipline.WIZARD, Discipline.MAGI_PINK],
   };
 
   export const WISP: Type = {
     name: 'Wisp',
+    affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Gluttony', 'Henya'],
     potentialDisciplines: [Discipline.MAGI_YELLOW],
   };
 
   export const ASMIN: Type = {
     name: 'Asmin',
+    affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Pride', 'Ox'],
     potentialDisciplines: [Discipline.MAGI_BROWN],
     weaponCompatibility: [Weapon.Category.TWO_HANDED_AXE],
@@ -408,6 +470,7 @@ export namespace Archetype {
 
   export const DIAG: Type = {
     name: 'Diag',
+    affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Envy', 'Snake'],
     potentialDisciplines: [Discipline.MAGI_PURPLE],
   };
