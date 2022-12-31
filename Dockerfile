@@ -56,7 +56,7 @@ RUN apt-get update \
     # https://rushjs.io/pages/maintainer/enabling_prettier/
     && npm install --global prettier \
     && npm install --global pretty-quick \
-    # npm install --global git-conventional-commits
+    # install git-conventional-commits
     && npm install --global git-conventional-commits
 
 RUN chown -R $USER /usr/src/app \
@@ -124,6 +124,7 @@ RUN echo "# bash parameter completion for the Rush CLI" >>/home/$USER/.zshrc \
 RUN echo "alias app=\"cd /usr/src/app\"" >>/home/$USER/.zshrc
 
 COPY .devcontainer/.ssh/config /home/$USER/.ssh/config
+
 RUN chown -R $USER /home/$USER/.ssh \
     && chown -R $USER /home/$USER/.zshrc
 

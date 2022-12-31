@@ -4,14 +4,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-            target: development
+            target: test
         container_name: keepers-cradle
         tty: true
         stdin_open: true
-        volumes:
-            - .:/usr/src/app
-            - .devcontainer/.aws:/home/node/.aws
-            - github-ssh-key:/home/node/github-ssh-key
-
-volumes:
-   github-ssh-key:
