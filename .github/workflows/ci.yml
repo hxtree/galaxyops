@@ -31,7 +31,7 @@ jobs:
           cache-to: type=inline
 
       - name: Download packages
-        run: docker-compose run rush update
+        run: docker-compose run keepers-cradle rush update
 
       - name: Run unit tests
-        run: docker-compose run rush test
+        run: docker compose run keepers-cradle rush test
