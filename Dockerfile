@@ -17,7 +17,6 @@ WORKDIR /usr/src/app
 # install tools
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        zsh \
         tzdata \
         build-essential \
         curl \
@@ -90,6 +89,7 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     && ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
 
 RUN apt-get install -y sudo --no-install-recommends \
+    zsh \
     vim \
     # add to sudo group, remove need to use password
     && usermod -aG sudo $USER \
