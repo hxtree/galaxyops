@@ -54,7 +54,9 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.4.1",
     "typescript": "4.8.4",
-    "@mui/system": "~5.10.16"
+    "@mui/system": "~5.10.16",
+    "@types/jest": "28.1.8",
+    "babel-jest": "~29.3.1"
   },
   "dependencies": {
     "styled-components": "~5.3.6",

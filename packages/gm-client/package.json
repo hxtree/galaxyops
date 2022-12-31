@@ -28,7 +28,8 @@
     "build:all": "rush build -t .",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "",
+    "test:react": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "browserslist": [

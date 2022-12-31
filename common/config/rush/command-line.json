@@ -45,6 +45,12 @@
       "summary": "Create OpenApi client libaries",
       "shellCommand": "common/scripts/api-client/build.sh",
       "safeForSimultaneousRushProcesses": true
+    },
+    {
+      "name": "test",
+      "commandKind": "bulk",
+      "summary": "Run unit tests",
+      "enableParallelism": true
     }
   ],
   "parameters": [

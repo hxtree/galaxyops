@@ -207,6 +207,10 @@
       "allowedCategories": [ "api-client", "contracts" ]
     },
     {
+      "name": "babel-jest",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "babel-loader",
       "allowedCategories": [ "apis" ]
     },
