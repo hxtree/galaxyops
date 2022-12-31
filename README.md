@@ -1,7 +1,9 @@
 # Keepers Cradle :hourglass: :infinity: :white_heart:
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/monorepo&utm_campaign=Badge_Grade)
+[![ci](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml)
 [![GitHub issues by-label](https://img.shields.io/github/issues/hxtree/monorepo/help%20wanted.svg)](https://github.com/hxtree/monorepo/issues)
+
 
 **Keepers Cradle** is a online mobile RPG.
 
