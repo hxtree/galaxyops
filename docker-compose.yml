@@ -8,3 +8,5 @@ services:
         container_name: keepers-cradle
         tty: true
         stdin_open: true
+        volumes:
+        - .:/usr/src/app
