@@ -79,7 +79,7 @@ export namespace Archetype {
       'She often can be found carring things back and forth from the garden. ' +
       'She is mother to both Vallon and Meeku. ' +
       'Mother knits Meeku a red scarf. ' +
-      'Mother dies of during act one. ' +
+      'Mother dies and is turned to ashes during act one. ' +
       "Meeku carries Mother's ashes around his waist with him in a goard. ",
   };
 
@@ -149,20 +149,30 @@ export namespace Archetype {
     name: 'Ouern',
     surname: 'Oni',
     symbolizes: ['Destroyer of Time'],
-    alias: ['The Black Plague'],
+    alias: ['The Black Plague', 'Skyfall', 'Timestopper', 'Standstill'],
     backstory:
+      'Often sang a song similar to Tumbalalaika to his sons when they were young. ' +
       'Rumored to be end cause the end of all existenance. ' +
-      'Whereabouts unknown. ' +
-      'Often sang a song similar to Tumbalalaika to his sons when they were young. ',
+      'Whereabouts unknown. ',
+    history:
+      'He went is sealed inside the Floating Island waiting for his sons' +
+      'When his eyes are open only greater beings can move the rest of the world stands still.' +
+      'He possess sight beyond sight; is able to perseve the world from afar' +
+      'He is responsible for battle his son win where time seems to stand still. ',
     affiliation: [Affiliation.THE_DESTROYERS, Affiliation.SOLIDER_FORCES],
-    description: 'White hair',
+    description: 'White hair. Has a prominent tattoo FTW',
     potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
   };
 
   export const VALLON_ONI: Type = {
     name: 'Vallon',
     surname: 'Oni',
-    symbolizes: ['Destroyer of Heart'],
+    symbolizes: [
+      'Destroyer of Heart',
+      'Loveless Lover',
+      'Heartache',
+      'Heart Wrench',
+    ],
     description: 'White hair',
     affiliation: [
       Affiliation.THE_DESTROYERS,
@@ -177,6 +187,11 @@ export namespace Archetype {
     // 'Raises the floating island. ' +
     // 'Taints the Keeper of Heart. ' +
     // 'Unleases Ouren. '
+    history:
+      'Women easily fall in love with Vallon. ' +
+      'Vallon is not interested in love and those who love him have their heart painfully broken.' +
+      `It's not his fault; it's an effect he has on others. ` +
+      'The Devils love him because of the heartache he causes them. ',
     potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
     weaponCompatibility: [Weapon.Category.SWORD],
   };
@@ -187,6 +202,11 @@ export namespace Archetype {
     symbolizes: ['Destroyer of Law'],
     alias: ['Kid', 'Brother'],
     backstory: 'A boy who has lost his past',
+    history:
+      'Has the ability to break the fundamental laws of the world. ' +
+      'Trapped by the observed logic. ' +
+      `He believes in the veil the ${Affiliation.THE_KEEPERS} made is real. ` +
+      'As a Berserker he uses a mask to break the veil and tap into his limitless ability',
     affiliation: [Affiliation.THE_DESTROYERS, Affiliation.SOLIDER_FORCES],
     potentialDisciplines: [
       Discipline.SOLIDER,
@@ -396,7 +416,7 @@ export namespace Archetype {
    */
   export const VOID: Type = {
     name: 'Void',
-    affiliation: [Affiliation.ORIGINAL_SEVEN],
+    affiliation: [Affiliation.DEVILS],
     backstory:
       'Is one of the original seven demons.' +
       'He was killed before the story begins. ' +

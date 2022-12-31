@@ -1,54 +1,107 @@
 export namespace Affiliation {
+  export enum Reputation {
+    HONORED = 'HONORED',
+    FREINDLY = 'FRIENDLY',
+    NEUTRAL = 'NUETRAL',
+    HATED = 'HATED',
+  }
+
+  // The affliation relationship tendency towards another
+  export type Standing = {
+    affliation: Affiliation.Type;
+    reputation: Reputation;
+  };
+
   export type Type = {
     name: string;
     description?: string;
     lore?: string[];
     history?: string[];
     aliases?: string[];
+    parentAffliation?: Affiliation.Type;
+    standings?: Standing[];
+  };
+
+  export const THE_DESTROYERS: Type = {
+    name: 'The Destroyers',
+    aliases: ['Trinity of Destruction', 'The Boundless'],
+    description:
+      'Three beings whose abilities and existances defies the fundementals of the natural world',
+    lore: [
+      'The destroyers are said to bring about an end to all time, heart, and law in the world.',
+    ],
+    standings: [
+      {affliation: Affiliation.THE_KEEPERS, reputation: Reputation.NEUTRAL},
+      {affliation: Affiliation.DEVILS, reputation: Reputation.HONORED},
+      {affliation: Affiliation.VALLONS_SEVEN, reputation: Reputation.HONORED},
+    ],
   };
 
   export const THE_KEEPERS: Type = {
     name: 'The Keepers',
     description:
-      'Each member takes form of a household cat. ' +
-      'They can lower themselves to becoming humans. ' +
+      'Each member usually takes form of a household cat. ' +
+      'They can take human form, but it drastically lowers their power due to the limits of the normal human potential. ' +
       'The world is said to be their cradle',
     lore: [],
-    history: ['Three beings who maintain the world. '],
-  };
-
-  export const THE_DESTROYERS: Type = {
-    name: 'The Destroyers',
-    description: 'Three beings',
-    lore: [],
+    history: ['Three beings who maintain the fundemental order in the world. '],
+    standings: [
+      {affliation: Affiliation.THE_DESTROYERS, reputation: Reputation.NEUTRAL},
+    ],
   };
 
   export const ARCHANGLES: Type = {
     name: 'Archangles',
-    description:
-      'They lived among the clouds, had wings, and used magic. ' +
-      'They banished their sinners by cutting of their wings and throwing them to the land below. ' +
-      'Some retained their powers and thus formed the Magi Order.',
-    aliases: ['Race that lives in the clouds'],
-    history: ['They were an ancient race '],
+    aliases: ['Those Who Live In The Clouds'],
+    description: 'They lived among the clouds, had wings, and used magic. ',
+    lore: [],
+    history: [
+      'They were a prevenlaint an ancient race ',
+      'They culled and banished their sinners by cutting of their wings and throwing them to the land below. ',
+      'Some who fell from the sky retained their powers and thus formed the Magi Order.',
+    ],
+  };
+
+  export const DEVILS: Type = {
+    name: 'Devils',
+    aliases: ['Eight Shames', 'Sinners'],
+    description: 'Eight powerful beings',
+    lore: [
+      'They were born to destroy the world. ',
+      'One member who harm the motherland.', // - Wisp
+      'One member betray the people. ', // Diag
+      'One member who refuse to be educated. ', // Asmin
+      'One member who indulge in comfort and hate work. ', // Lawzon
+      'One member who gains at the expense of others. ', // Void, Mahdi
+      'One member who trade integrity for profits. ', // Genki
+      'One member who break laws and discipline. ', // Vallon
+      'One member who wallow in extravagance and pleasures. ', // SUYRI
+    ],
+    history: [
+      `The ${ARCHANGLES.name} consider their power too grand and sealed their bodies away`,
+      'Each member embodies one of the seven sins',
+    ],
   };
 
   export const GAUARDIANS: Type = {
     name: 'Gaurdians',
-  };
-
-  export const EIGHT_DEVILS: Type = {
-    name: 'Eight Devils',
-    description:
-      'Eight beings that were born to destroy the world. ' +
-      'Their power was too great. ' +
-      `Their bodies were locked away by the ${ARCHANGLES.name}. `,
-  };
-
-  export const ORIGINAL_SEVEN: Type = {
-    name: 'Original Seven',
-    description: 'Each memeber embodies one of the seven sins',
-    history: [],
+    aliases: ['Eight Honors', 'Virtous'],
+    description: 'Each memeber embodies one of the eight honors',
+    history: [
+      'Each member become a party member. ',
+      'Each member embodies an honorable trait. ',
+      'One member who love the motherland. ', // Gunter
+      'One member serve the people. ', // Penny
+      'One member quest for science. ', // Traez
+      'One member is hardworking. ', // Meeku
+      'One member help each other. ', // Loomee
+      'One member is trustworthy. ', // Aniroth
+      'One member abide by law and discipline. ', // Gaali
+      'One member uphold plain living and hard struggle. ', // Malace
+    ],
+    standings: [
+      {affliation: Affiliation.THE_KEEPERS, reputation: Reputation.HONORED},
+    ],
   };
 
   export const VALLONS_SEVEN: Type = {
@@ -65,26 +118,39 @@ export namespace Affiliation {
 
   export const SOLIDER_FORCES: Type = {
     name: 'Solider Forces',
+    parentAffliation: Affiliation.OCEANIA,
   };
 
   export const MAGI_ORDER: Type = {
     name: 'Magi Order',
     description:
-      'They are a group of divine people. ' +
       'They were formed to keep the greater evils of the world at bay. ' +
-      'Magi is a class that enables it followers to harness the power of the Eight Devils of the old world (a secret that the Elders keep). ' +
-      'The class Magi can only be taking up by the Divine Race. ' +
-      'Faye gem reacts with devils in combat to gain new classes',
+      'The Magi category of disciplines can only be learned by the Divine Race. ' +
+      'The Magi Order members are all divine people. ' +
+      'The Magi discipline enables followers to harness the power of the Eight Devils of the old world. ' +
+      "Faye's gem reacts with Eight Devils in combat to gain new Disciplines",
+    standings: [{affliation: Affiliation.DEVILS, reputation: Reputation.HATED}],
+  };
+
+  export const MAGI_ORDER_ELDERS: Type = {
+    name: 'Magi Order Elders',
+    description:
+      'These are the Elders who run the Magi Order. ' +
+      'The Magi Order Elders keep secret that the Magi power comes from the Eight Devils. ',
+    parentAffliation: MAGI_ORDER,
+    standings: [{affliation: Affiliation.DEVILS, reputation: Reputation.HATED}],
   };
 
   export const CATCHERS: Type = {
     name: 'Catchers',
     description:
-      'They wear mask when they fight to become warriors so that when they return home they can remove their masks and become civilians again. ' +
-      'Those who shed kill when not wearing a mask will always be warriors and cannot return home. ' +
-      'They specialize is summoning spirits.' +
-      'The village uses the yin yang symbol. ' +
-      'The Yang being the purified village and the dark inside the yang being the body of the sacrife. ' +
+      'The Catchers wear mask when they fight to become warriors. ' +
+      'When they return home they can remove their masks to become civilians again. ' +
+      'Those who kill when not wearing a mask are said to always be warriors and cannot return home. ' +
+      'The Catchers specialize in summoning spirits. ' +
+      'A Catcher can often be identified by their tattoos. ' +
+      'The Catchers village uses the yin yang symbol. ' +
+      'The Yang being the purified village and the dark inside the yang being the body of the sacrifice. ' +
       'The Yin being the demon world and the light inside the yang being the sacrified soul' +
       'It is later inferred the soul of the village has turned dark from performing ritual',
   };
@@ -106,10 +172,16 @@ export namespace Affiliation {
       'In order to save what they believe in those at the top of the organization have become corrupt. ' +
       'They have started to resurrect ancient technology that can be used to destroy the other side.' +
       'They are a peaceful nation that is always at war.',
+    standings: [
+      {affliation: Affiliation.EURASIA, reputation: Reputation.HATED},
+    ],
   };
 
   export const EURASIA: Type = {
     name: 'Eurasia',
+    standings: [
+      {affliation: Affiliation.OCEANIA, reputation: Reputation.HATED},
+    ],
   };
 
   export const BARBARIANS: Type = {
@@ -121,5 +193,13 @@ export namespace Affiliation {
 
   export const NINJA: Type = {
     name: 'Ninja',
+  };
+
+  export const LEGION_SEE: Type = {
+    name: 'Legion See',
+    description: 'Essentially a gouping of lesser bosses',
+    standings: [
+      {affliation: Affiliation.DEVILS, reputation: Reputation.FREINDLY},
+    ],
   };
 }
