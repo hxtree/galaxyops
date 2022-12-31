@@ -6,6 +6,7 @@
 # https://github.com/nodejs/release#nodejs-release-working-group
 FROM node:gallium-buster as base
 
+ARG USER=node
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
@@ -59,6 +60,28 @@ RUN apt-get update \
     # npm install --global git-conventional-commits
     && npm install --global git-conventional-commits
 
+RUN chown -R $USER /usr/src/app \
+    && mkdir -p /home/$USER/.rush \
+    && chown -R $USER /home/$USER/.rush \
+    && mkdir -p /usr/src/app/common/temp \
+    && chown -R $USER /usr/src/app/common/temp \
+
+################################################################################
+#                                  Test Base                                   #
+################################################################################
+FROM base AS test
+ARG USER=node
+USER $USER
+
+SHELL ["/bin/zsh", "-c"]
+
+################################################################################
+#                               Development Base                               #
+################################################################################
+FROM base AS development
+ARG UID=1000
+ARG USER=node
+
 # install AWS Command Line Interface
 # https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
@@ -66,7 +89,18 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     && chmod +x ./aws/install \
     && ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
 
-# rush tab ompletion
+RUN apt-get install -y sudo --no-install-recommends \
+    vim \
+    # add to sudo group, remove need to use password
+    && usermod -aG sudo $USER \
+    && passwd -d $USER  \
+    && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers \
+    # make directory for VS Code extensions
+    && mkdir -p /home/$USER/.vscode-server/extensions \
+    && chown -R $USER /home/$USER/.vscode-server \
+    && chown -R $USER /home/$USER/.zshrc
+
+# rush tab completion
 # https://rushjs.io/pages/developer/tab_completion/
 RUN echo "# bash parameter completion for the Rush CLI" >>/home/node/.zshrc \
     && echo "_rush_bash_complete()" >>/home/node/.zshrc \
@@ -88,29 +122,6 @@ RUN echo "# bash parameter completion for the Rush CLI" >>/home/node/.zshrc \
 
 # Add alias
 RUN echo "alias app=\"cd /usr/src/app\"" >>/home/node/.zshrc
-
-################################################################################
-#                               Development Base                               #
-################################################################################
-FROM base AS development
-ARG UID=1000
-ARG USER=node
-
-RUN apt-get install -y sudo --no-install-recommends \
-    vim \
-    # create $USER, add to sudo group, remove need to use password
-    && usermod -aG sudo $USER \
-    && passwd -d $USER  \
-    && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers \
-    && chown -R $USER /usr/src/app \
-    # make directory for VS Code extensions
-    && mkdir -p /home/$USER/.vscode-server/extensions \
-    && chown -R $USER /home/$USER/.vscode-server \
-    && mkdir -p /home/$USER/.rush \
-    && chown -R $USER /home/$USER/.rush \
-    && mkdir -p /usr/src/app/common/temp \
-    && chown -R $USER /usr/src/app/common/temp \
-    && chown -R $USER /home/$USER/.zshrc
 
 COPY .devcontainer/.ssh/config /home/$USER/.ssh/config
 RUN chown -R $USER /home/$USER/.ssh

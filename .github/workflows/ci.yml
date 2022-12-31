@@ -25,6 +25,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
+          target: test
           push: true
           tags: hxtree/keepers-cradle:latest
           cache-from: type=registry,ref=hxtree/keepers-cradle:latest
