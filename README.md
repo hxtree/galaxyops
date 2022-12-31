@@ -1,7 +1,7 @@
-# Keepers Cradle :hourglass: :infinity: :white_heart:
+# Keepers Cradle
 
+[![CI](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/monorepo&utm_campaign=Badge_Grade)
-[![ci](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml)
 [![GitHub issues by-label](https://img.shields.io/github/issues/hxtree/monorepo/help%20wanted.svg)](https://github.com/hxtree/monorepo/issues)
 
 
@@ -44,3 +44,5 @@ Development of `@org-clients/base-game-engine` client requires
 - [Coding Standards](docs/CODING_STANDARDS.md)
 - [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 - [Third Party Docs](docs/third-party-docs.md)
+
+ :hourglass: :infinity: :white_heart:
