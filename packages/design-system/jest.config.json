@@ -1,0 +1,3 @@
+{
+  "preset": "./node_modules/@org-rig/base-nodejs/profiles/react-app/config/jest.config.json"
+}

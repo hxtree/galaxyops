@@ -192,6 +192,7 @@ importers:
       '@emotion/styled': ~11.10.5
       '@mui/material': ~5.10.15
       '@mui/system': ~5.10.16
+      '@org-rig/base-nodejs': workspace:*
       '@size-limit/preset-small-lib': ^8.1.0
       '@storybook/addon-essentials': ^6.5.13
       '@storybook/addon-info': ^5.3.21
@@ -220,6 +221,7 @@ importers:
     devDependencies:
       '@babel/core': 7.20.5
       '@mui/system': 5.10.17_ogriz7mfahdh34qnfautfro5yu
+      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@storybook/addon-essentials': 6.5.14_a555fauc6gq3jl4m72pnoq2zbq
       '@storybook/addon-info': 5.3.21_ib3m5ricvtkl2cll7qpr2f6lvq

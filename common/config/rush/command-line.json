@@ -50,7 +50,8 @@
       "name": "test",
       "commandKind": "bulk",
       "summary": "Run unit tests",
-      "enableParallelism": true
+      "enableParallelism": true,
+      "allowWarningsInSuccessfulBuild": true
     }
   ],
   "parameters": [

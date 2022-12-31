@@ -36,6 +36,7 @@
     }
   ],
   "devDependencies": {
+    "@org-rig/base-nodejs": "workspace:*",
     "@babel/core": "^7.20.2",
     "@size-limit/preset-small-lib": "^8.1.0",
     "@storybook/addon-essentials": "^6.5.13",
