@@ -71,6 +71,12 @@ RUN chown -R $USER /usr/src/app \
 FROM base AS test
 ARG USER=node
 
+COPY . /
+
+RUN chown -R $USER /usr/src/app \
+    && mkdir -p /usr/src/app/common/temp \
+    && chown -R $USER /usr/src/app/common/temp
+
 USER $USER
 
 SHELL ["/bin/bash", "-c"]
