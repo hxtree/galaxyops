@@ -153,5 +153,5 @@
    */
   "globalNeverBuiltDependencies": [
     // "fsevents"
-  ],
+  ]
 }
