@@ -73,7 +73,7 @@ FROM base AS test
 ARG USER=node
 USER $USER
 
-SHELL ["/bin/zsh", "-c"]
+SHELL ["/bin/bash", "-c"]
 
 ################################################################################
 #                               Development Base                               #
