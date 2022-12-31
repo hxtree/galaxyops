@@ -79,6 +79,10 @@ RUN chown -R $USER /usr/src/app \
 
 USER $USER
 
+WORKDIR /usr/src/app
+
+RUN rush install
+
 SHELL ["/bin/bash", "-c"]
 
 ################################################################################
