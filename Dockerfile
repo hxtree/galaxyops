@@ -71,7 +71,7 @@ RUN chown -R $USER /usr/src/app \
 FROM base AS test
 ARG USER=node
 
-COPY . /
+COPY . /usr/src/app
 
 RUN chown -R $USER /usr/src/app \
     && mkdir -p /usr/src/app/common/temp \
