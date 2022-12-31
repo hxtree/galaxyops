@@ -96,7 +96,7 @@ FROM base AS development
 ARG UID=1000
 ARG USER=node
 
-RUN apt-get install -y sudo \
+RUN apt-get install -y sudo --no-install-recommends \
     vim \
     # create $USER, add to sudo group, remove need to use password
     && usermod -aG sudo $USER \
