@@ -64,7 +64,7 @@ RUN chown -R $USER /usr/src/app \
     && mkdir -p /home/$USER/.rush \
     && chown -R $USER /home/$USER/.rush \
     && mkdir -p /usr/src/app/common/temp \
-    && chown -R $USER /usr/src/app/common/temp \
+    && chown -R $USER /usr/src/app/common/temp
 
 ################################################################################
 #                                  Test Base                                   #
