@@ -70,6 +70,7 @@ RUN chown -R $USER /usr/src/app \
 ################################################################################
 FROM base AS test
 ARG USER=node
+
 USER $USER
 
 SHELL ["/bin/bash", "-c"]
@@ -81,13 +82,6 @@ FROM base AS development
 ARG UID=1000
 ARG USER=node
 
-# install AWS Command Line Interface
-# https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
-    && unzip awscliv2.zip \
-    && chmod +x ./aws/install \
-    && ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
-
 RUN apt-get install -y sudo --no-install-recommends \
     zsh \
     vim \
@@ -97,34 +91,41 @@ RUN apt-get install -y sudo --no-install-recommends \
     && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers \
     # make directory for VS Code extensions
     && mkdir -p /home/$USER/.vscode-server/extensions \
-    && chown -R $USER /home/$USER/.vscode-server \
-    && chown -R $USER /home/$USER/.zshrc
+    && chown -R $USER /home/$USER/.vscode-server
+
+# install AWS Command Line Interface
+# https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    && unzip awscliv2.zip \
+    && chmod +x ./aws/install \
+    && ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
 
 # rush tab completion
 # https://rushjs.io/pages/developer/tab_completion/
-RUN echo "# bash parameter completion for the Rush CLI" >>/home/node/.zshrc \
-    && echo "_rush_bash_complete()" >>/home/node/.zshrc \
-    && echo "{" >>/home/node/.zshrc \
-    && echo "  local word=\${COMP_WORDS[COMP_CWORD]}" >>/home/node/.zshrc \
-    && echo "" >>/home/node/.zshrc \
-    && echo "  local completions" >>/home/node/.zshrc \
-    && echo "  completions=\"\$(rush tab-complete --position \"\${COMP_POINT}\" --word \"\${COMP_LINE}\" 2>/dev/null)\"" >>/home/node/.zshrc \
-    && echo "  if [ \$? -ne 0 ]; then" >>/home/node/.zshrc \
-    && echo "    completions=\"\"" >>/home/node/.zshrc \
-    && echo "  fi" >>/home/node/.zshrc \
-    && echo "" >>/home/node/.zshrc \
-    && echo "  COMPREPLY=( \$(compgen -W \"\$completions\" -- \"\$word\") )" >>/home/node/.zshrc \
-    && echo "}" >>/home/node/.zshrc \
-    && echo "complete -f -F _rush_bash_complete rush" >>/home/node/.zshrc \
+RUN echo "# bash parameter completion for the Rush CLI" >>/home/$USER/.zshrc \
+    && echo "_rush_bash_complete()" >>/home/$USER/.zshrc \
+    && echo "{" >>/home/$USER/.zshrc \
+    && echo "  local word=\${COMP_WORDS[COMP_CWORD]}" >>/home/$USER/.zshrc \
+    && echo "" >>/home/$USER/.zshrc \
+    && echo "  local completions" >>/home/$USER/.zshrc \
+    && echo "  completions=\"\$(rush tab-complete --position \"\${COMP_POINT}\" --word \"\${COMP_LINE}\" 2>/dev/null)\"" >>/home/$USER/.zshrc \
+    && echo "  if [ \$? -ne 0 ]; then" >>/home/$USER/.zshrc \
+    && echo "    completions=\"\"" >>/home/$USER/.zshrc \
+    && echo "  fi" >>/home/$USER/.zshrc \
+    && echo "" >>/home/$USER/.zshrc \
+    && echo "  COMPREPLY=( \$(compgen -W \"\$completions\" -- \"\$word\") )" >>/home/$USER/.zshrc \
+    && echo "}" >>/home/$USER/.zshrc \
+    && echo "complete -f -F _rush_bash_complete rush" >>/home/$USER/.zshrc \
     # Powerlevel10K
-    && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/node/powerlevel10k \
-    && echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/node/.zshrc
+    && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/$USER/powerlevel10k \
+    && echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/$USER/.zshrc
 
 # Add alias
-RUN echo "alias app=\"cd /usr/src/app\"" >>/home/node/.zshrc
+RUN echo "alias app=\"cd /usr/src/app\"" >>/home/$USER/.zshrc
 
 COPY .devcontainer/.ssh/config /home/$USER/.ssh/config
-RUN chown -R $USER /home/$USER/.ssh
+RUN chown -R $USER /home/$USER/.ssh \
+    && chown -R $USER /home/$USER/.zshrc
 
 USER $USER
 
