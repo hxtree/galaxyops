@@ -7,7 +7,7 @@ on:
 
 jobs:
   # https://docs.docker.com/build/ci/github-actions/examples/#cache
-  docker:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
