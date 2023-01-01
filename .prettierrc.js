@@ -7,4 +7,10 @@ module.exports = {
   trailingComma: 'all',
   bracketSpacing: false,
   proseWrap: 'always',
+  overrides: [
+    {
+      files: '**/*.md',
+      options: {parser: 'markdown'},
+    },
+  ],
 };

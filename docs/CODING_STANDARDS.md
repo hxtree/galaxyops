@@ -1,22 +1,24 @@
 # Coding Standards
 
-All coding standards are written to conform to [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119).
+All coding standards are written to conform to
+[RFC2119](https://datatracker.ietf.org/doc/html/rfc2119).
 
 ## Typescript
 
-1. All Typescript apps SHOULD use single quotes (not double quotes) excluding third party libraries.
+1. All Typescript apps SHOULD use single quotes (not double quotes) excluding
+   third party libraries.
 
-    Good:
+   Good:
 
-    ```typescript
-    let x = 'yes';
-    ```
+   ```typescript
+   let x = 'yes';
+   ```
 
-    Bad:
+   Bad:
 
-    ```typescript
-    let x = "yes";
-    ```
+   ```typescript
+   let x = 'yes';
+   ```
 
 2. Typescript files SHOULD adhere to Eslint settings.
 
@@ -24,31 +26,31 @@ All coding standards are written to conform to [RFC2119](https://datatracker.iet
 
 1. Typescript filenames MUST use Pascal case.
 
-    Good:
+   Good:
 
-    ```bash
-    BlackAndWhite.ts
-    ```
+   ```bash
+   BlackAndWhite.ts
+   ```
 
-    Bad:
+   Bad:
 
-    ```bash
-    blackandwhite.ts
-    black-and-white.ts
-    ```
+   ```bash
+   blackandwhite.ts
+   black-and-white.ts
+   ```
 
 2. All folder names SHOULD be snake case or kebab case.
 
-    Good:
+   Good:
 
-    ```bash
-    black-and-white
-    black
-    ```
+   ```bash
+   black-and-white
+   black
+   ```
 
-    Bad:
+   Bad:
 
-    ```bash
-    blackandwhite
-    BlackAndWhtite
-    ```
+   ```bash
+   blackandwhite
+   BlackAndWhtite
+   ```

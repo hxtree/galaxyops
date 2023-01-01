@@ -7,10 +7,10 @@
 
 **Keepers Cradle** is a online mobile RPG.
 
-This monorepo contains the game engine, development container, and infrastructure as code (IaC).
-The serverless backend is programmed primarly in Typescript.
-Microservices are deployed using AWS CDKv2 for IaC.
-The game engine client is built using a Unreal Engine 5.
+This monorepo contains the game engine, development container, and
+infrastructure as code (IaC). The serverless backend is programmed primarly in
+Typescript. Microservices are deployed using AWS CDKv2 for IaC. The game engine
+client is built using a Unreal Engine 5.
 
 ![Base Game Client](/docs/assets/images/shield-sword.png)
 
@@ -45,4 +45,4 @@ Development of `@org-clients/base-game-engine` client requires
 - [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 - [Third Party Docs](docs/third-party-docs.md)
 
- :hourglass: :infinity: :white_heart:
+:hourglass: :infinity: :white_heart:

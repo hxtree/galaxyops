@@ -6,4 +6,4 @@ This is an mobile client. It aims to be cross platform mobile support. Android w
 
 ## Getting started
 
-Install [Unreal](https://www.unrealengine.com/en-US/download) directly on host PC. Do not use a VSCode remote container to develop this app. Instead, open project folder using Unreal Engine. 
+Install [Unreal](https://www.unrealengine.com/en-US/download) directly on host PC. Do not use a VSCode remote container to develop this app. Instead, open project folder using Unreal Engine.
