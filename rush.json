@@ -53,6 +53,13 @@
       "tags": ["platform-team"]
     },
     {
+      "packageName": "@org-platform/eslint-config",
+      "projectFolder": "platform/eslint-config",
+      "reviewCategory": "platform",
+      "cyclicDependencyProjects": [],
+      "tags": ["platform-team"]
+    },
+    {
       "packageName": "@org-api-client/luck-by-dice",
       "projectFolder": "libraries/api-client/luck-by-dice",
       "reviewCategory": "api-client",

@@ -52,6 +52,12 @@
       "summary": "Run unit tests",
       "enableParallelism": true,
       "allowWarningsInSuccessfulBuild": true
+    },
+    {
+      "name": "lint",
+      "commandKind": "bulk",
+      "summary": "Run lint",
+      "enableParallelism": true
     }
   ],
   "parameters": [

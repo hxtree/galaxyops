@@ -7,7 +7,7 @@ export class Gauge {
   private _current: number;
   private _max: number;
 
-  constructor(current: number, max: number, min: number = 0) {
+  constructor(current: number, max: number, min = 0) {
     this._current = current;
     this._max = max;
     this._min = min;

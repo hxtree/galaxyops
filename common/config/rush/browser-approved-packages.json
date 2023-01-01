@@ -11,6 +11,18 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@babel/eslint-parser",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "@babel/eslint-plugin",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "@babel/preset-react",
+      "allowedCategories": [ "platform" ]
+    },
+    {
       "name": "@emotion/react",
       "allowedCategories": [ "apis" ]
     },
@@ -20,7 +32,7 @@
     },
     {
       "name": "@microsoft/tsdoc",
-      "allowedCategories": [ "clients" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@mui/material",
@@ -79,6 +91,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@org-platform/eslint-config",
+      "allowedCategories": [ "apis", "platform" ]
+    },
+    {
       "name": "@org-rig/base-node-rig",
       "allowedCategories": [ "apis" ]
     },
@@ -96,7 +112,11 @@
     },
     {
       "name": "@rushstack/eslint-config",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
+    },
+    {
+      "name": "@rushstack/eslint-plugin",
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "@rushstack/heft",
@@ -207,6 +227,10 @@
       "allowedCategories": [ "api-client", "contracts" ]
     },
     {
+      "name": "babel-eslint",
+      "allowedCategories": [ "platform" ]
+    },
+    {
       "name": "babel-jest",
       "allowedCategories": [ "apis" ]
     },
@@ -240,31 +264,83 @@
     },
     {
       "name": "eslint-config-airbnb",
-      "allowedCategories": [ "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "eslint-config-airbnb-base",
-      "allowedCategories": [ "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "eslint-config-airbnb-typescript",
-      "allowedCategories": [ "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "eslint-config-prettier",
-      "allowedCategories": [ "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
+    },
+    {
+      "name": "eslint-config-react-app",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "eslint-plugin-disable",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "eslint-plugin-flowtype",
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "eslint-plugin-import",
-      "allowedCategories": [ "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
     },
     {
       "name": "eslint-plugin-jest",
-      "allowedCategories": [ "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
+    },
+    {
+      "name": "eslint-plugin-jsx-a11y",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "eslint-plugin-no-async-foreach",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "eslint-plugin-playwright",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "eslint-plugin-prettier",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "eslint-plugin-react",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "eslint-plugin-simple-import-sort",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "eslint-plugin-testing-library",
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "eslint-plugin-tsdoc",
-      "allowedCategories": [ "clients" ]
+      "allowedCategories": [ "apis", "clients", "platform" ]
+    },
+    {
+      "name": "eslint-plugin-unicorn",
+      "allowedCategories": [ "platform" ]
+    },
+    {
+      "name": "eslint-plugin-unused-imports",
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "express",
@@ -299,6 +375,10 @@
       "allowedCategories": [ "apis", "platform" ]
     },
     {
+      "name": "prettier",
+      "allowedCategories": [ "platform" ]
+    },
+    {
       "name": "prop-types",
       "allowedCategories": [ "apis" ]
     },
@@ -323,12 +403,20 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "read-pkg-up",
+      "allowedCategories": [ "platform" ]
+    },
+    {
       "name": "reflect-metadata",
       "allowedCategories": [ "apis", "platform" ]
     },
     {
       "name": "rxjs",
       "allowedCategories": [ "apis", "platform" ]
+    },
+    {
+      "name": "semver",
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "size-limit",

@@ -14,7 +14,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "eslint --format visualstudio \"./{stacks,src}/*.{ts,tsx}\" --fix",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
@@ -37,6 +37,8 @@
   ],
   "devDependencies": {
     "@org-rig/base-nodejs": "workspace:*",
+    "eslint": "8.26.0",
+    "@org-platform/eslint-config": "workspace:*",
     "@babel/core": "^7.20.2",
     "@size-limit/preset-small-lib": "^8.1.0",
     "@storybook/addon-essentials": "^6.5.13",
