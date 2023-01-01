@@ -9,6 +9,7 @@ import * as apigw from 'aws-cdk-lib/aws-apigateway';
  * backends for frontends
  * these are base clients which other stacks add resources to
  */
+// eslint-disable-next-line import/prefer-default-export
 export class ApiGatewayStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
@@ -56,24 +57,28 @@ export class ApiGatewayStack extends cdk.Stack {
       },
     );
 
+    // eslint-disable-next-line no-new
     new ssm.StringParameter(this, `${id}-web-api-gateway-id`, {
       description: `Web API Gateway Rest API ID`,
       parameterName: 'web-api-gateway-rest-api-id',
       stringValue: webApiGateway.restApiId,
     });
 
+    // eslint-disable-next-line no-new
     new ssm.StringParameter(this, `${id}-web-api-gateway-resource-id`, {
       description: `Web Gateway Resource ID`,
       parameterName: 'web-api-gateway-root-resource-id',
       stringValue: webApiGateway.restApiRootResourceId,
     });
 
+    // eslint-disable-next-line no-new
     new ssm.StringParameter(this, `${id}-web-api-gateway-v1-resource-id`, {
       description: `Web API Gateway V1 Resource ID`,
       parameterName: 'web-api-gateway-v1-resource-id',
       stringValue: webApiGatewayV1Resource.resourceId,
     });
 
+    // eslint-disable-next-line no-new
     new ssm.StringParameter(this, `${id}-web-mock-resource-id`, {
       description: `Web Mock Resource ID`,
       parameterName: 'web-mockapi-gateway-root-resource-id',
@@ -90,37 +95,5 @@ export class ApiGatewayStack extends cdk.Stack {
       stageName: 'default',
       deployment,
     });
-
-    // const deployment = new apigw.Deployment(
-    //   this,
-    //   `${microserviceName}-deployment-` + new Date().toISOString(),
-    //   {
-    //     api: apigw.RestApi.fromRestApiId(this, 'RestApi', this.restApiId),
-    //     description: `...`,
-    //     retainDeployments: true,
-    //   },
-    // );
-
-    // // // props.methods!.forEach((method) => deployment.node.addDependency(method));
-    // // //  if the 'stageName' already exists (from the core apigateway deployment) then the existing stage will be used !
-    // const stage = new apigw.Stage(this, `${microserviceName}-stage`, {
-    //   deployment,
-    // });
-
-    // // API Gateway resource
-    // this.apiGateway = new LambdaRestApi(this, 'Endpoint', {
-    //   handler: this.nodeJsFunction,
-    //   defaultCorsPreflightOptions: {
-    //     allowHeaders: [
-    //       'Content-Type',
-    //       'X-Amz-Date',
-    //       'Authorization',
-    //       'X-Api-Key',
-    //     ],
-    //     allowOrigins: Cors.ALL_ORIGINS,
-    //     allowCredentials: true,
-    //     allowMethods: ['GET', 'POST'],
-    //   },
-    // });
   }
 }

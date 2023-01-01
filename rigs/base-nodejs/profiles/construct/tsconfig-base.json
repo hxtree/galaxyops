@@ -30,16 +30,9 @@
     "typeRoots": ["../../node_modules/@types"]
   },
   "typedocOptions": {
-    "entryPoints": ["src/main.handler.ts"],
-    "out": "docs"
+    "entryPoints": ["bin/app.ts"]
   },
   "sourceMap": true,
-  "include": [
-    "../../../../../package.json",
-    "../../../../../src/*.{ts|tsx}",
-    "../../../../../src/**/*.{ts|tsx}",
-    "../../../../../stacks/*.ts",
-    "../../../../../src/"
-  ],
+  "include": ["../../../../../package.json", "../../../../../stacks/*.ts"],
   "exclude": ["../../../../../src/__tests__"]
 }

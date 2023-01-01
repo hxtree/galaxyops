@@ -1,6 +1,7 @@
 import {Controller, Get, Param} from '@nestjs/common';
 import {RollService} from './roll.service';
-import {QueryRollDto, ResponseRollDto} from './roll.dto';
+import {QueryRollDto} from './query-roll.dto';
+import {ResponseRollDto} from './response-roll.dto';
 
 @Controller('roll')
 export class RollController {
@@ -12,10 +13,7 @@ export class RollController {
   }
 
   @Get('notation/:notation/luck/:luck')
-  async turn(@Param() QueryRollDto: QueryRollDto): Promise<ResponseRollDto> {
-    return await this._rollService.turn(
-      QueryRollDto.notation,
-      QueryRollDto.luck,
-    );
+  async turn(@Param() param: QueryRollDto): Promise<ResponseRollDto> {
+    return await this._rollService.turn(param.notation, param.luck);
   }
 }

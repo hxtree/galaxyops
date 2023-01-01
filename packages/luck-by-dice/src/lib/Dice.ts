@@ -15,7 +15,8 @@ export interface IDice {
 }
 
 /**
- * A dice has one or more faces, can be roll, features a value after rolling, and may also have a bonus
+ * A dice has one or more faces, can be roll, features a value after rolling,
+ * and may also have a bonus
  */
 export class Dice implements IDice {
   /**

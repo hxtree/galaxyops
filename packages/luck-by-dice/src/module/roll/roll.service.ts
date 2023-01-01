@@ -21,10 +21,7 @@ export class RollService {
       });
       // todo define response format, jsend, etc.
     } catch (err) {
-      return Promise.reject({
-        message: 'Error',
-        error: 'Failed to get Roll',
-      });
+      return Promise.reject(new Error('Failed to get Roll'));
     }
   }
 }
