@@ -30,6 +30,7 @@
     "build": "react-scripts build",
     "test": "",
     "lint": "",
+    "lint:ci": "",
     "test:react": "react-scripts test",
     "eject": "react-scripts eject"
   },

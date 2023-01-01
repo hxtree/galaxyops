@@ -58,6 +58,12 @@
       "commandKind": "bulk",
       "summary": "Run lint",
       "enableParallelism": true
+    },
+    {
+      "name": "lint:ci",
+      "commandKind": "bulk",
+      "summary": "Run lint dry run",
+      "enableParallelism": true
     }
   ],
   "parameters": [

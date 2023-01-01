@@ -32,5 +32,8 @@ jobs:
           cache-from: type=registry,ref=hxtree/keepers-cradle:latest
           cache-to: type=inline
 
+      - name: Code standards
+        run: docker compose run keepers-cradle rush lint:ci
+
       - name: Run unit tests
         run: docker compose run keepers-cradle rush test

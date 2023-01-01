@@ -13,6 +13,7 @@
     "cdk": "cdk",
     "hotswap": "cdk deploy --hotswap",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.{ts,tsx}\" --fix",
+    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.{ts,tsx}\" --fix-dry-run",
     "deploy": "cdk deploy",
     "destroy": "cdk destroy",
     "diff": "cdk diff",

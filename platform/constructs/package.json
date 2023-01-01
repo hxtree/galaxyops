@@ -8,6 +8,7 @@
     "watch": "tsc -w",
     "test": "",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix",
+    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run",
     "depcheck": "npx depcheck"
   },
   "dependencies": {

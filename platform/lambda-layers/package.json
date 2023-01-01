@@ -7,6 +7,7 @@
     "watch": "tsc -w",
     "test": "",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.{js,ts}\" --fix",
+    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.{js,ts}\" --fix-dry-run",
     "deploy": "cdk deploy",
     "destroy": "cdk destroy",
     "diff": "cdk diff",
