@@ -52,7 +52,11 @@ export namespace InteractionSkill {
   };
 
   // InteractionSkill Actions
-  // InteractionSkill Actions are a type of Command Menu actions, which essentially means that they take up a slot on the players Command Menu. InteractionSkill Actions take up the InteractionSkill Slot on the Commnd Menu. What distinguishes InteractionSkill Actions from the rest is that all interaction actions relate to interacting with other objects.
+  // InteractionSkill Actions are a type of Command Menu actions,
+  // which essentially means that they take up a slot on the players Command
+  // Menu. InteractionSkill Actions take up the InteractionSkill Slot on the
+  //  Commnd Menu. What distinguishes InteractionSkill Actions from the rest
+  // is that all interaction actions relate to interacting with other objects.
   // Counter – make a maneuver in reaction to an enemy’s.
   // Disobey – do not follow orders given.
   // Parry – use your weapon to block / deflect the enemies attack.

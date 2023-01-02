@@ -1,6 +1,6 @@
-import {Controller, Get, Param} from '@nestjs/common';
-import {GearService} from './gear.service';
-import {QueryGearDto} from './query-gear.dto';
+import { Controller, Get, Param } from '@nestjs/common';
+import { GearService } from './gear.service';
+import { QueryGearDto } from './query-gear.dto';
 
 @Controller('gear')
 export class GearController {
@@ -12,12 +12,12 @@ export class GearController {
   }
 
   @Get('id/:id')
-  async find(@Param() QueryGearDto: QueryGearDto): Promise<any> {
-    return await this._gearService.find(QueryGearDto.id);
+  async find(@Param() param: QueryGearDto): Promise<any> {
+    return this._gearService.find(param.id);
   }
 
   @Get('list')
   async list(): Promise<any> {
-    return await this._gearService.list();
+    return this._gearService.list();
   }
 }

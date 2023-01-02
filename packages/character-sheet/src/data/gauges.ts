@@ -1,18 +1,23 @@
-// stat bonus are computed at runtime
-export class Life {
+export type Gauge = {
   current: number;
   max: number;
-}
+};
 
 // stat bonus are computed at runtime
-export class Drive {
+export type Life = {
   current: number;
   max: number;
-}
+};
+
+// stat bonus are computed at runtime
+export type Drive = {
+  current: number;
+  max: number;
+};
 
 // stat bonus are computed at runtime
 // also called Stamina?
-export class Spirit {
+export type Spirit = {
   current: number;
   max: number;
-}
+};

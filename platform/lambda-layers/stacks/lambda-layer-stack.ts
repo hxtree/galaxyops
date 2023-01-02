@@ -1,8 +1,8 @@
-/*eslint no-template-curly-in-string: 0 */
+/* eslint no-template-curly-in-string: 0 */
 
-import {Construct} from 'constructs';
+import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
-import {BundlingOutput, RemovalPolicy, Stack, StackProps} from 'aws-cdk-lib';
+import { BundlingOutput, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 import {
   Architecture,
   Code,

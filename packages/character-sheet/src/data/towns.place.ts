@@ -1,4 +1,4 @@
-import {Affiliation} from './affiliations';
+import { Affiliation } from './affiliations';
 
 namespace Place {
   export type Type = {

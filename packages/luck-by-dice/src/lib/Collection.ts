@@ -1,5 +1,5 @@
-import {Dice} from './Dice';
-import {NotationCodec} from './NotationCodec';
+import { Dice } from './Dice';
+import { NotationCodec } from './NotationCodec';
 
 export interface ICollection {
   set modifier(value: number);

@@ -1,5 +1,6 @@
 /**
- * Tag  are used in determining effectiveness of an effect with regards to weaknesses and resistances
+ * Tags are used in determining effectiveness of an effect
+ * with regards to weaknesses and resistances
  * can be to assign to a action, trait, or effect.
  * Some tags can be automatically added, like LIFE_DECREASE IF attack decreases life.
  */

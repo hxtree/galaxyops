@@ -4,11 +4,11 @@ import {
   Handler,
 } from 'aws-lambda';
 
-import {Turn} from './Turn';
+import { Turn } from './Turn';
 
 export type ProxyHandler = Handler<
-  APIGatewayProxyEventV2,
-  APIGatewayProxyResultV2
+APIGatewayProxyEventV2,
+APIGatewayProxyResultV2
 >;
 
 export const handler: ProxyHandler = async (event, context) => {

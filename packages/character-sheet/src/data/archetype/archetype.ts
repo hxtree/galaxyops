@@ -1,13 +1,13 @@
-import {Drive, Life, Spirit} from '../gauges';
-import {Stats} from '../stats';
-import {Effect, Operator, Trait} from '../trait';
-import {Discipline} from '../discipline';
-import {EffectTag} from '../tag.effect';
-import {Summon} from '../skill/summon.skill';
-import {Outfit} from '../gear/outfit.gear';
-import {Slot} from '../gear/slot';
-import {Weapon} from '../gear/weapon.gear';
-import {Affiliation} from '../affiliations';
+import { Drive, Life, Spirit } from '../gauges';
+import { Stats } from '../stats';
+import { Effect, Operator, Trait } from '../trait';
+import { Discipline } from '../discipline';
+import { EffectTag } from '../tag.effect';
+import { Summon } from '../skill/summon.skill';
+import { Outfit } from '../gear/outfit.gear';
+import { Slot } from '../gear/slot';
+import { Weapon } from '../gear/weapon.gear';
+import { Affiliation } from '../affiliations';
 
 /**
  * Base character information that does not change as the game progress
@@ -190,7 +190,7 @@ export namespace Archetype {
     history:
       'Women easily fall in love with Vallon. ' +
       'Vallon is not interested in love and those who love him have their heart painfully broken.' +
-      `It's not his fault; it's an effect he has on others. ` +
+      "It's not his fault; it's an effect he has on others. " +
       'The Devils love him because of the heartache he causes them. ',
     potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
     weaponCompatibility: [Weapon.Category.SWORD],
@@ -333,9 +333,9 @@ export namespace Archetype {
     ],
     symbolizes: ['Despair'],
     backstory:
-      `As a child, his people scarificed him to save themselves. ` +
-      `They sewed the demons plaguing the village into his skin. ` +
-      `The demons were drawn to his purity. `,
+      'As a child, his people scarificed him to save themselves. ' +
+      'They sewed the demons plaguing the village into his skin. ' +
+      'The demons were drawn to his purity. ',
     affiliation: [Affiliation.CATCHERS],
     potentialDisciplines: [
       Discipline.GYMNAST,
@@ -347,7 +347,8 @@ export namespace Archetype {
     ],
     traits: [
       {
-        // Can single handedly carry party through foes of darkness due to his darkness healing trait.
+        // Can single handedly carry party through foes of darkness due to
+        // his darkness healing trait.
         tag: EffectTag.DARKNESS,
         modifier: Effect.HEAL,
         percent: 80,

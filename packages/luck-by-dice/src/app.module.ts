@@ -1,5 +1,5 @@
-import {Module} from '@nestjs/common';
-import {RollModule} from './module/roll/roll.module';
+import { Module } from '@nestjs/common';
+import { RollModule } from './module/roll/roll.module';
 
 @Module({
   imports: [RollModule],

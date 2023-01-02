@@ -1,5 +1,5 @@
-import {Injectable} from '@nestjs/common';
-import {Turn} from '../../lib/Turn';
+import { Injectable } from '@nestjs/common';
+import { Turn } from '../../lib/Turn';
 
 @Injectable()
 export class RollService {

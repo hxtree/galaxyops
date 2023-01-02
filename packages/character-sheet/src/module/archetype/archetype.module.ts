@@ -1,6 +1,6 @@
-import {Module} from '@nestjs/common';
-import {ArchetypeService} from './archetype.service';
-import {ArchetypeController} from './archetype.controller';
+import { Module } from '@nestjs/common';
+import { ArchetypeService } from './archetype.service';
+import { ArchetypeController } from './archetype.controller';
 
 @Module({
   controllers: [ArchetypeController],

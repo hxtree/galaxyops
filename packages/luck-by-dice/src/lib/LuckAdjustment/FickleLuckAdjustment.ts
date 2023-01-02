@@ -1,4 +1,4 @@
-import {AbstractLuckAdjustment} from './AbstractLuckAdjustment';
+import { AbstractLuckAdjustment } from './AbstractLuckAdjustment';
 
 export class FickleLuckAdjustment extends AbstractLuckAdjustment {
   public adjustment(rollPercent: number = 0.5): number {

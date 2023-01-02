@@ -1,12 +1,12 @@
 // used in lambda
 
-import {NestFactory} from '@nestjs/core';
-import {ExpressAdapter} from '@nestjs/platform-express';
+import { NestFactory } from '@nestjs/core';
+import { ExpressAdapter } from '@nestjs/platform-express';
 import serverlessExpress from '@vendia/serverless-express';
-import {Context, Handler} from 'aws-lambda';
+import { Context, Handler } from 'aws-lambda';
 import express from 'express';
 
-import {AppModule} from './app.module';
+import { AppModule } from './app.module';
 
 let cachedServer: Handler;
 
@@ -22,7 +22,7 @@ async function bootstrap() {
 
     await nestApp.init();
 
-    cachedServer = serverlessExpress({app: expressApp});
+    cachedServer = serverlessExpress({ app: expressApp });
   }
 
   return cachedServer;

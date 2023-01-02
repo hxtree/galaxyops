@@ -1,11 +1,11 @@
-export {Token} from './token.gear';
-export {Equipment} from './equipment.gear';
-export {Slot} from './slot';
+import { Accessory } from './accessory.gear';
+import { Item } from './item.gear';
+import { Outfit } from './outfit.gear';
+import { Weapon } from './weapon.gear';
 
-import {Accessory} from './accessory.gear';
-import {Item} from './item.gear';
-import {Outfit} from './outfit.gear';
-import {Weapon} from './weapon.gear';
+export { Token } from './token.gear';
+export { Equipment } from './equipment.gear';
+export { Slot } from './slot';
 
 export const Gear = {
   ...Accessory,

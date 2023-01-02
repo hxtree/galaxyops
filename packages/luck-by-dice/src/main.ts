@@ -1,8 +1,8 @@
 // used in development
-import {writeFileSync} from 'fs';
-import {NestFactory} from '@nestjs/core';
-import {SwaggerModule, DocumentBuilder} from '@nestjs/swagger';
-import {AppModule} from './app.module';
+import { writeFileSync } from 'fs';
+import { NestFactory } from '@nestjs/core';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { AppModule } from './app.module';
 import * as pkg from '../package.json';
 
 async function bootstrap() {

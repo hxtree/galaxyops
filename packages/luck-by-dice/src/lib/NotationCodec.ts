@@ -1,6 +1,6 @@
-import {Collection, ICollection} from './Collection';
-import {Cup, ICup} from './Cup';
-import {Dice, IDice} from './Dice';
+import { Collection, ICollection } from './Collection';
+import { Cup, ICup } from './Cup';
+import { Dice, IDice } from './Dice';
 
 export interface INotationCodec {
   get cup(): string;
@@ -58,20 +58,20 @@ export class NotationCodec {
       notation += amount;
     }
 
-    const {sides} = collection;
+    const { sides } = collection;
     if (sides === 100) {
       notation += 'd%';
     } else {
       notation += `d${sides}`;
     }
-    const {modifier} = collection;
+    const { modifier } = collection;
     if (modifier > 0) {
       notation += `+${Math.abs(modifier)}`;
     } else if (modifier < 0) {
       notation += `-${Math.abs(modifier)}`;
     }
 
-    const {multiplier} = collection;
+    const { multiplier } = collection;
     if (multiplier > 1) {
       notation += `*${multiplier}`;
     }

@@ -37,7 +37,8 @@ export namespace Passive {
   export const SENSE_BLUFF: Type = {
     name: 'Sense Bluff',
     description: 'Detect if a lie is being told',
-    // if character beats bluff check, a little icon on the screen will tell if someone is trying to bluff party
+    // if character beats bluff check, a little icon on the screen will tell
+    // if someone is trying to bluff party
   };
 
   export const GREEDY_INTENT: Type = {

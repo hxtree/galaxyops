@@ -1,7 +1,7 @@
-import {ApiProperty} from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class ResponseRollDto {
-  @ApiProperty({enum: ['Success', 'Error', 'Fail']})
+  @ApiProperty({ enum: ['Success', 'Error', 'Fail'] })
   message: string;
 
   @ApiProperty()

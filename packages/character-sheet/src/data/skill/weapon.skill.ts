@@ -1,6 +1,6 @@
-import {Attribute} from '../attribute';
-import {EffectTag} from '../tag.effect';
-import {EffectTable} from '../table.effect';
+import { Attribute } from '../attribute';
+import { EffectTag } from '../tag.effect';
+import { EffectTable } from '../table.effect';
 
 /**
  * Weapon Skill
@@ -90,7 +90,8 @@ export namespace Weapon {
   // Weapon Tech
   // Slash – (stamina)
 
-  // "60","Restoring Aura","Allies withing 5 foot radius slowly gain life. 1/2 of Spirit per/sec","59",,"59"
+  // "60","Restoring Aura","Allies withing 5 foot radius slowly gain life.
+  // 1/2 of Spirit per/sec","59",,"59"
   // "61","Resurrect","Cures Lifeless","60",,"60"
   // "62","Cure",,"61",,"61"
   // "63","Heal","Restore life to one target","62",,"62"
@@ -103,14 +104,19 @@ export namespace Weapon {
   // "75","Quick"," Increase movement speed","74",,"74"
   // "76","Darkness"," Decrease the area that your opponent can see.","75",,"75"
   // "77","Fighter","Double Strike","76",,"76"
-  // "78","Block","Block enemies with wielding item. Preventing Crital Attacks from doing additional damage","77",,"77"
+  // "78","Block","Block enemies with wielding item. Preventing Crital Attacks
+  // from doing additional damage","77",,"77"
 
   // "49","Cheer","Targets Spirit increases by 10% for a duration.","48",,"48"
   // "50","Support","The most powerful status bonus","49",,"49"
   // "51","Bluff","Deceive a character.","50",,"50"
-  // "52","Sense Bluff","Detect if someone is lying (indicated by a icon when character is talking)","51",,"51"
+  // "52","Sense Bluff","Detect if someone is lying (indicated
+  // by a icon when character is talking)","51",,"51"
 
-  // "53","Wraftful Blow","If a player holds down the button for a basic attack move they will do additional physical damage at the cost of Life to the Berserker. The longer they hold down the button the more Life will be taken in the exchange.","52",,"52"
+  // "53","Wraftful Blow","If a player holds down the button for a basic attack
+  // move they will do additional physical damage at the cost of Life to the
+  // Berserker. The longer they hold down the button the more Life will be
+  // taken in the exchange.","52",,"52"
   // "54","Undying Pride","Gain Rage twice as fast when attacked.","53",,"53"
   // "3","Scout","Break away from party","1",,"1"
   // "4","Scan",,"2",,"2"

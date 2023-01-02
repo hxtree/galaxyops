@@ -1,6 +1,6 @@
-import {Module} from '@nestjs/common';
-import {GearService} from './gear.service';
-import {GearController} from './gear.controller';
+import { Module } from '@nestjs/common';
+import { GearService } from './gear.service';
+import { GearController } from './gear.controller';
 
 @Module({
   controllers: [GearController],

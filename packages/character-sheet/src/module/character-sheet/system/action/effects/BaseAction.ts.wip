@@ -83,7 +83,7 @@
 //    * Every action can be represented by the time it takes to peform various stages of the action.
 //    * Although it's possble the time to perform an action is null, most user based action will take time to perform.
 //    * Each stage may be a different method depending on the action.
-//    * The duration and effects change character to character.
+//    * The duration and effects change character to character.QueryGearDto
 //    */
 //   public get totalDuration(): number {
 //     return this.perpareTime + this.executionTime + this.recoveryTime;

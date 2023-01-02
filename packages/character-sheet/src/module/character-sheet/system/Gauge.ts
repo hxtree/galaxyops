@@ -4,7 +4,9 @@
  */
 export class Gauge {
   private _min: number;
+
   private _current: number;
+
   private _max: number;
 
   constructor(current: number, max: number, min = 0) {

@@ -1,5 +1,5 @@
-import {Construct} from 'constructs';
-import {StackProps} from 'aws-cdk-lib';
+import { Construct } from 'constructs';
+import { StackProps } from 'aws-cdk-lib';
 import * as cdk from 'aws-cdk-lib';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import * as apigw from 'aws-cdk-lib/aws-apigateway';
@@ -26,7 +26,7 @@ export class ApiGatewayStack extends cdk.Stack {
      * used for web browsers clients
      */
     const webApiGateway = new apigw.RestApi(this, `${id}-web-api-gateway`, {
-      restApiName: `web-api-gateway`,
+      restApiName: 'web-api-gateway',
       deploy: false,
     });
 
@@ -44,7 +44,7 @@ export class ApiGatewayStack extends cdk.Stack {
         },
       }),
       {
-        methodResponses: [{statusCode: '200'}],
+        methodResponses: [{ statusCode: '200' }],
       },
     );
 
@@ -59,36 +59,36 @@ export class ApiGatewayStack extends cdk.Stack {
 
     // eslint-disable-next-line no-new
     new ssm.StringParameter(this, `${id}-web-api-gateway-id`, {
-      description: `Web API Gateway Rest API ID`,
+      description: 'Web API Gateway Rest API ID',
       parameterName: 'web-api-gateway-rest-api-id',
       stringValue: webApiGateway.restApiId,
     });
 
     // eslint-disable-next-line no-new
     new ssm.StringParameter(this, `${id}-web-api-gateway-resource-id`, {
-      description: `Web Gateway Resource ID`,
+      description: 'Web Gateway Resource ID',
       parameterName: 'web-api-gateway-root-resource-id',
       stringValue: webApiGateway.restApiRootResourceId,
     });
 
     // eslint-disable-next-line no-new
     new ssm.StringParameter(this, `${id}-web-api-gateway-v1-resource-id`, {
-      description: `Web API Gateway V1 Resource ID`,
+      description: 'Web API Gateway V1 Resource ID',
       parameterName: 'web-api-gateway-v1-resource-id',
       stringValue: webApiGatewayV1Resource.resourceId,
     });
 
     // eslint-disable-next-line no-new
     new ssm.StringParameter(this, `${id}-web-mock-resource-id`, {
-      description: `Web Mock Resource ID`,
+      description: 'Web Mock Resource ID',
       parameterName: 'web-mockapi-gateway-root-resource-id',
       stringValue: webApiGateway.restApiRootResourceId,
     });
 
     const deployment = new apigw.Deployment(
       this,
-      `${id}-deployment` + new Date().toISOString(),
-      {api: webApiGateway, retainDeployments: false},
+      `${id}-deployment${new Date().toISOString()}`,
+      { api: webApiGateway, retainDeployments: false },
     );
 
     const stage = new apigw.Stage(this, `${id}-stage`, {

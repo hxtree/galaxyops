@@ -1,5 +1,5 @@
-import {EffectTable} from '../table.effect';
-import {Attribute} from '../attribute';
+import { EffectTable } from '../table.effect';
+import { Attribute } from '../attribute';
 
 // todo really what makes something a class skill is whether it can be earned via class? decouple
 
@@ -127,7 +127,7 @@ export namespace Basic {
 
   export const SEAL: Type = {
     name: 'Seal',
-    description: 'Keep enemies from getting close.', //hold an enemy off
+    description: 'Keep enemies from getting close.', // hold an enemy off
     //  (Good for when party is powering up)
     effect: [],
   };

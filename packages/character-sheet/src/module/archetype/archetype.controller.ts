@@ -1,6 +1,6 @@
-import {Controller, Get, Param} from '@nestjs/common';
-import {ArchetypeService} from './archetype.service';
-import {QueryArchetypeDto} from './query-archetype.dto';
+import { Controller, Get, Param } from '@nestjs/common';
+import { ArchetypeService } from './archetype.service';
+import { QueryArchetypeDto } from './query-archetype.dto';
 
 @Controller('archetype')
 export class ArchetypeController {
@@ -12,12 +12,12 @@ export class ArchetypeController {
   }
 
   @Get('id/:id')
-  async find(@Param() QueryArchetypeDto: QueryArchetypeDto): Promise<any> {
-    return await this._archetypeService.find(QueryArchetypeDto.id);
+  async find(@Param() param: QueryArchetypeDto): Promise<any> {
+    return this._archetypeService.find(param.id);
   }
 
   @Get('list')
   async list(): Promise<any> {
-    return await this._archetypeService.findAll();
+    return this._archetypeService.findAll();
   }
 }

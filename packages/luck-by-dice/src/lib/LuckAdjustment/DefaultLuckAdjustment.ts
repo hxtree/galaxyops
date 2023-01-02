@@ -1,4 +1,4 @@
-import {AbstractLuckAdjustment} from './AbstractLuckAdjustment';
+import { AbstractLuckAdjustment } from './AbstractLuckAdjustment';
 
 export class DefaultLuckAdjustment extends AbstractLuckAdjustment {
   public get phi(): number {
@@ -6,7 +6,7 @@ export class DefaultLuckAdjustment extends AbstractLuckAdjustment {
   }
 
   public adjustment(rollPercent: number = 0.5): number {
-    const {phi} = this;
+    const { phi } = this;
 
     if (rollPercent >= 1 / phi) {
       return 1;

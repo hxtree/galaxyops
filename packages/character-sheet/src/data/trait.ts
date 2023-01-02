@@ -1,4 +1,4 @@
-import {EffectTag} from './tag.effect';
+import { EffectTag } from './tag.effect';
 
 export enum Effect {
   WEAK = 'Weak',

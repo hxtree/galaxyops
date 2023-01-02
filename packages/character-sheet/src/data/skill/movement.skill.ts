@@ -1,4 +1,4 @@
-import {Attribute} from '../attribute';
+import { Attribute } from '../attribute';
 
 /**
  * MovementSkill
@@ -52,15 +52,22 @@ export namespace Movement {
     description: 'Scale a wall',
   };
 
-  // "83","Trek","Used to determine how steep an angled tile you can stand on. If your character fails to trek the tile then they will fall from it and will be to step onto it.","82",,"82"
-  // Trek – Used to determine how steep an angled tile you can stand on. If your character fails to trek the tile then they will fall from it and will be to step onto it.
+  // "83","Trek","Used to determine how steep an angled tile you can stand on.
+  // If your character fails to trek the tile then they will fall from it and
+  // will be to step onto it.","82",,"82"
+  // Trek – Used to determine how steep an angled tile you can stand on.
+  //  If your character fails to trek the tile then they will fall from it
+  // and will be to step onto it.
 
   // Duck – (Hold Square + Backwards?) used to evaded attacks works best if preformed during attack.
-  // "84","Duck","(Hold Square + Backwards?) used to evaded attacks works best if preformed during attack.","83",,"83"
+  // "84","Duck","(Hold Square + Backwards?) used to evaded attacks works
+  // best if preformed during attack.","83",,"83"
 
   // Basic – (Square) jump.
-  // Jump – (Square) Jumping uses stamina and can be used to move to otherwise unreachable places. The more stamina
-  // "85","Jump","(Square) Jumping uses stamina and can be used to move to otherwise unreachable places. The more stamina","84",,"84"
+  // Jump – (Square) Jumping uses stamina and can be used to move to otherwise
+  //  unreachable places. The more stamina
+  // "85","Jump","(Square) Jumping uses stamina and can be used to move to
+  // otherwise unreachable places. The more stamina","84",,"84"
 
   // High – (Stamina Boost + Square) jump straight up in the air using a stamina boost.
 

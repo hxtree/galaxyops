@@ -1,5 +1,5 @@
-import {Slot} from './gear';
-import {Skill, SkillType} from './skill';
+import { Slot } from './gear';
+import { Skill, SkillType } from './skill';
 
 /**
  * Experience records a character experience for a specific discipline.
@@ -29,7 +29,9 @@ export namespace Discipline {
     description: string;
     category: Category;
     history?: string;
-    prerequisites?: Type[]; //Discipline[]; // could also be event like defeated Lawzon, but may be that's too character specific?
+    prerequisites?: Type[]; // Discipline[];
+    // could also be event like defeated Lawzon, but may be that's too
+    // character specific?
     skillProgression?: SkillProgressionType[];
   };
 
@@ -38,10 +40,10 @@ export namespace Discipline {
     description: 'Trains in gymnastics.',
     category: Category.PROFESSION,
     skillProgression: [
-      {level: 10, skill: Skill.BACK_FLIP},
-      {level: 25, skill: Skill.DOUBLE_BACK_FLIP},
-      {level: 50, skill: Skill.HIGH_JUMP},
-      {level: 70, skill: Skill.CONCENTRATION},
+      { level: 10, skill: Skill.BACK_FLIP },
+      { level: 25, skill: Skill.DOUBLE_BACK_FLIP },
+      { level: 50, skill: Skill.HIGH_JUMP },
+      { level: 70, skill: Skill.CONCENTRATION },
     ],
   };
 
@@ -50,10 +52,10 @@ export namespace Discipline {
     description: 'Studies mysterious forces.',
     category: Category.PROFESSION,
     skillProgression: [
-      {level: 10, skill: Skill.GUST},
-      {level: 25, skill: Skill.FLARE},
-      {level: 50, skill: Skill.HEAL},
-      {level: 70, skill: Skill.LIGHT},
+      { level: 10, skill: Skill.GUST },
+      { level: 25, skill: Skill.FLARE },
+      { level: 50, skill: Skill.HEAL },
+      { level: 70, skill: Skill.LIGHT },
     ],
   };
 
@@ -62,16 +64,16 @@ export namespace Discipline {
     description: 'Studies the world as it was.',
     category: Category.PROFESSION,
     skillProgression: [
-      {level: 10, skill: Skill.APPRIASE},
-      {level: 25, skill: Skill.SCAN},
-      {level: 50, skill: Skill.HERALDIC_LION},
+      { level: 10, skill: Skill.APPRIASE },
+      { level: 25, skill: Skill.SCAN },
+      { level: 50, skill: Skill.HERALDIC_LION },
     ],
   };
   export const BODY_BUILDER: Type = {
     name: 'Body Builder',
     description: 'Do you even lift?',
     category: Category.PROFESSION,
-    skillProgression: [{level: 50, skill: Skill.SCRIBBLES}],
+    skillProgression: [{ level: 50, skill: Skill.SCRIBBLES }],
   };
 
   // may be anyone can become a cook?>
@@ -79,7 +81,7 @@ export namespace Discipline {
     name: 'Cook',
     description: 'Prepares and cooks food',
     category: Category.PROFESSION,
-    skillProgression: [{level: 10, skill: Skill.PREPARE_FOOD}],
+    skillProgression: [{ level: 10, skill: Skill.PREPARE_FOOD }],
     // todo prepare different food items
   };
 
@@ -88,10 +90,10 @@ export namespace Discipline {
     description: 'Cheers their team as a form of encouragement.',
     category: Category.PROFESSION,
     skillProgression: [
-      {level: 1, skill: Skill.CHEER},
-      {level: 10, skill: Skill.SUPPORT},
-      {level: 40, skill: Skill.INSPIRE},
-      {level: 50, skill: Skill.HOPE},
+      { level: 1, skill: Skill.CHEER },
+      { level: 10, skill: Skill.SUPPORT },
+      { level: 40, skill: Skill.INSPIRE },
+      { level: 50, skill: Skill.HOPE },
     ],
   };
 
@@ -100,9 +102,9 @@ export namespace Discipline {
     description: 'Specialize in giving orders to others.',
     category: Category.ARCHETYPE,
     skillProgression: [
-      {level: 1, skill: Skill.BOAST},
-      {level: 10, skill: Skill.FORMATIONS},
-      {level: 50, skill: Skill.ORDER},
+      { level: 1, skill: Skill.BOAST },
+      { level: 10, skill: Skill.FORMATIONS },
+      { level: 50, skill: Skill.ORDER },
     ],
   };
 
@@ -121,8 +123,8 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
     skillProgression: [
-      {level: 10, skill: Skill.DARKNESS},
-      {level: 25, skill: Skill.DESOLATE},
+      { level: 10, skill: Skill.DARKNESS },
+      { level: 25, skill: Skill.DESOLATE },
     ],
   };
 
@@ -133,9 +135,9 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
     skillProgression: [
-      {level: 10, skill: Skill.RAGE},
-      {level: 15, skill: Skill.AQUA},
-      {level: 25, skill: Skill.TSUNAMI},
+      { level: 10, skill: Skill.RAGE },
+      { level: 15, skill: Skill.AQUA },
+      { level: 25, skill: Skill.TSUNAMI },
     ],
   };
 
@@ -146,8 +148,8 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
     skillProgression: [
-      {level: 10, skill: Skill.QUAKE},
-      {level: 15, skill: Skill.LANDSLIDE},
+      { level: 10, skill: Skill.QUAKE },
+      { level: 15, skill: Skill.LANDSLIDE },
     ],
   };
 
@@ -158,9 +160,9 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
     skillProgression: [
-      {level: 10, skill: Skill.STOP},
-      {level: 15, skill: Skill.SLOW},
-      {level: 15, skill: Skill.HASTE},
+      { level: 10, skill: Skill.STOP },
+      { level: 15, skill: Skill.SLOW },
+      { level: 15, skill: Skill.HASTE },
     ],
   };
 
@@ -171,8 +173,8 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
     skillProgression: [
-      {level: 10, skill: Skill.CHARM},
-      {level: 15, skill: Skill.CHILL},
+      { level: 10, skill: Skill.CHARM },
+      { level: 15, skill: Skill.CHILL },
     ],
   };
 
@@ -182,7 +184,8 @@ export namespace Discipline {
     history: 'Harnessed from the power of Diag',
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
-    skillProgression: [{level: 10, skill: Skill.QUAKE}], // TODO CHANGE may be instead of quake do tainted
+    skillProgression: [{ level: 10, skill: Skill.QUAKE }],
+    // TODO CHANGE may be instead of quake do tainted
   };
 
   export const MAGI_WHITE: Type = {
@@ -192,9 +195,9 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
     skillProgression: [
-      {level: 10, skill: Skill.BLIZZARD},
-      {level: 10, skill: Skill.FROST},
-      {level: 10, skill: Skill.CHILL},
+      { level: 10, skill: Skill.BLIZZARD },
+      { level: 10, skill: Skill.FROST },
+      { level: 10, skill: Skill.CHILL },
     ],
   };
 
@@ -205,9 +208,9 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
     skillProgression: [
-      {level: 10, skill: Skill.DRAIN},
-      {level: 25, skill: Skill.LEECH},
-      {level: 50, skill: Skill.DRAIN},
+      { level: 10, skill: Skill.DRAIN },
+      { level: 25, skill: Skill.LEECH },
+      { level: 50, skill: Skill.DRAIN },
     ],
   };
 
@@ -280,7 +283,7 @@ export namespace Discipline {
     description:
       'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.',
     category: Category.ARCHETYPE,
-    skillProgression: [{level: 10, skill: Skill.CLEAVE}],
+    skillProgression: [{ level: 10, skill: Skill.CLEAVE }],
   };
 
   export const SUMMONER: Type = {
@@ -289,9 +292,9 @@ export namespace Discipline {
       'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.',
     category: Category.ARCHETYPE,
     skillProgression: [
-      {level: 10, skill: Skill.SUMMON},
-      {level: 10, skill: Skill.DISMISS},
-      {level: 10, skill: Skill.COMMAND},
+      { level: 10, skill: Skill.SUMMON },
+      { level: 10, skill: Skill.DISMISS },
+      { level: 10, skill: Skill.COMMAND },
     ],
   };
 
