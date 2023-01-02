@@ -1,6 +1,6 @@
-import {Controller, Get, Param} from '@nestjs/common';
-import {SkillService} from './skill.service';
-import {QuerySkillDto} from './query-skill.dto';
+import { Controller, Get, Param } from '@nestjs/common';
+import { SkillService } from './skill.service';
+import { QuerySkillDto } from './query-skill.dto';
 
 @Controller('skill')
 export class SkillController {
@@ -12,12 +12,12 @@ export class SkillController {
   }
 
   @Get('id/:id')
-  async find(@Param() QuerySkillDto: QuerySkillDto): Promise<any> {
-    return await this._skillService.find(QuerySkillDto.id);
+  async find(@Param() param: QuerySkillDto): Promise<any> {
+    return this._skillService.find(param.id);
   }
 
   @Get('list')
   async list(): Promise<any> {
-    return await this._skillService.list();
+    return this._skillService.list();
   }
 }

@@ -4,7 +4,8 @@
  * Different types of Actions may occupy the same slot as different characters may have different
  * abilities in the same slot.
  *
- * For example, one character's Slot 4 may have Traps whereas a different character may have Command.
+ * For example, one character's Slot 4 may have Traps whereas a different
+ * character may have Command.
  */
 export const enum MenuSlot {
   First = 1,

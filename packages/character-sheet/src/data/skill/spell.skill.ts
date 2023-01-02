@@ -1,7 +1,7 @@
-import {Attribute} from '../attribute';
-import {EffectTag} from '../tag.effect';
-import {StatusEffect} from '../status.effect';
-import {EffectRecord} from '../table.effect';
+import { Attribute } from '../attribute';
+import { EffectTag } from '../tag.effect';
+import { StatusEffect } from '../status.effect';
+import { EffectRecord } from '../table.effect';
 
 /**
  * Spells are actions that are casted by magic users.
@@ -47,8 +47,8 @@ export namespace Spell {
     description: 'Electrocutes target',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.ELECTRIC]},
-      {add: StatusEffect.STUNNED, chance: 0.2, tags: [EffectTag.ELECTRIC]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.ELECTRIC] },
+      { add: StatusEffect.STUNNED, chance: 0.2, tags: [EffectTag.ELECTRIC] },
     ],
   };
 
@@ -57,7 +57,7 @@ export namespace Spell {
     description: 'Shakes earth surrounding target',
     targets: 1, // AOE?
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.EARTH]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.EARTH] },
       {
         add: StatusEffect.DOWN,
         chance: 0.2,
@@ -71,9 +71,9 @@ export namespace Spell {
     description: 'Creates a landslide',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.EARTH]},
-      {add: StatusEffect.DOWN, chance: 0.2, tags: [EffectTag.EARTH]},
-      {add: StatusEffect.EXILED, chance: 0.3, tags: [EffectTag.EARTH]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.EARTH] },
+      { add: StatusEffect.DOWN, chance: 0.2, tags: [EffectTag.EARTH] },
+      { add: StatusEffect.EXILED, chance: 0.3, tags: [EffectTag.EARTH] },
     ],
   };
 
@@ -105,8 +105,8 @@ export namespace Spell {
     description: 'Shoot a fireball at target',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE]},
-      {add: StatusEffect.BURNED, chance: 0.2, tags: [EffectTag.FIRE]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE] },
+      { add: StatusEffect.BURNED, chance: 0.2, tags: [EffectTag.FIRE] },
     ],
   };
 
@@ -115,8 +115,8 @@ export namespace Spell {
     description: 'Creates a Inferno',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE]},
-      {add: StatusEffect.BURNED, chance: 0.2, tags: [EffectTag.FIRE]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE] },
+      { add: StatusEffect.BURNED, chance: 0.2, tags: [EffectTag.FIRE] },
     ],
   };
 
@@ -125,7 +125,7 @@ export namespace Spell {
     description: 'Creates a Twister',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
       {
         add: StatusEffect.BURNED,
         chance: 0.2,
@@ -139,7 +139,7 @@ export namespace Spell {
     description: 'Creates a Gust',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
       {
         add: StatusEffect.EXILED,
         chance: 0.2,
@@ -153,7 +153,7 @@ export namespace Spell {
     description: 'Creates Gale',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
       {
         add: StatusEffect.EXILED,
         chance: 0.2,
@@ -167,7 +167,7 @@ export namespace Spell {
     description: 'Creates Cyclone',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
       {
         add: StatusEffect.EXILED,
         chance: 0.2,
@@ -181,7 +181,7 @@ export namespace Spell {
     description: 'A water-based attack that creates Tsunami',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
       {
         add: StatusEffect.EXILED,
         chance: 0.2,
@@ -195,7 +195,7 @@ export namespace Spell {
     description: 'Creates Aqua',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER]},
+      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
       {
         add: StatusEffect.EXILED,
         chance: 0.2,
@@ -208,14 +208,16 @@ export namespace Spell {
     name: 'Heal',
     description: 'Heal target',
     targets: 1,
-    effect: [{add: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER]}],
+    effect: [
+      { add: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
+    ],
   };
 
   export const REVIVE: Type = {
     name: 'Revive',
     description: 'Restore life to target',
     targets: 1,
-    effect: [{remove: StatusEffect.LIFELESS, chance: 0.9, tags: []}],
+    effect: [{ remove: StatusEffect.LIFELESS, chance: 0.9, tags: [] }],
   };
 
   export const CURE: Type = {
@@ -223,10 +225,10 @@ export namespace Spell {
     description: 'Cures StatusEffects',
     targets: 1,
     effect: [
-      {remove: StatusEffect.COLD, chance: 1},
-      {remove: StatusEffect.DOOMED, chance: 1},
-      {remove: StatusEffect.INFECTION, chance: 1},
-      {remove: StatusEffect.SILENCE, chance: 1},
+      { remove: StatusEffect.COLD, chance: 1 },
+      { remove: StatusEffect.DOOMED, chance: 1 },
+      { remove: StatusEffect.INFECTION, chance: 1 },
+      { remove: StatusEffect.SILENCE, chance: 1 },
     ],
   };
 
@@ -234,7 +236,7 @@ export namespace Spell {
     name: 'Barrier',
     description: 'Barrier StatusEffects',
     targets: 1,
-    effect: [{add: StatusEffect.BARRIER, chance: 1, tags: [EffectTag.AIR]}],
+    effect: [{ add: StatusEffect.BARRIER, chance: 1, tags: [EffectTag.AIR] }],
   };
 
   export const BOOM: Type = {
@@ -254,7 +256,7 @@ export namespace Spell {
     name: 'Reflect',
     description: 'Cast Reflect on target',
     targets: 1,
-    effect: [{add: StatusEffect.REFLECT, chance: 1}],
+    effect: [{ add: StatusEffect.REFLECT, chance: 1 }],
   };
 
   export const FLARE: Type = {
@@ -324,7 +326,7 @@ export namespace Spell {
     description: 'To make an area empty or bare.',
     targets: 1,
     effect: [
-      {remove: Attribute.LIFE, quantity: '1d6+4', tags: [EffectTag.DARKNESS]},
+      { remove: Attribute.LIFE, quantity: '1d6+4', tags: [EffectTag.DARKNESS] },
       {
         remove: Attribute.LIFE,
         quantity: '1d6+4',

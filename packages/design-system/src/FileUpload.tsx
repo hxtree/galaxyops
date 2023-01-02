@@ -4,9 +4,9 @@ interface FileUploadProps {
   setFile: (file: File) => void;
 }
 
-export const FileUpload = ({setFile}: FileUploadProps) => {
+export const FileUpload = ({ setFile }: FileUploadProps) => {
   const onChangeFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {files} = e.target;
+    const { files } = e.target;
     if (files && files[0]) {
       setFile(files[0]);
     }

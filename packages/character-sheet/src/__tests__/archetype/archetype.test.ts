@@ -1,15 +1,12 @@
-import {Archetype} from '../../data/archetype/archetype';
+import { Archetype } from '../../data/archetype/archetype';
 
 describe('NPCList', () => {
   test('able to get character', () => {
-    const archetype = (id: string) => {
-      type ArchetypeKey = typeof Archetype;
-      type ArchetypeType = keyof ArchetypeKey;
+    type ArchetypeKey = typeof Archetype;
+    type ArchetypeType = keyof ArchetypeKey;
 
-      const archetypeId: ArchetypeType = id as ArchetypeType;
-      const archetype = Archetype[archetypeId];
-      return archetype;
-    };
-    expect(archetype('MISCHIEVOUS_PIEBALD').name).toBe('Mischievous');
+    const archetypeId: ArchetypeType = 'MISCHIEVOUS_PIEBALD' as ArchetypeType;
+    const archetype = Archetype[archetypeId];
+    expect(archetype.name).toBe('Mischievous');
   });
 });

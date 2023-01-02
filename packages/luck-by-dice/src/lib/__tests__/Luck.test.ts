@@ -1,8 +1,8 @@
-import {Active, Luck} from '../Luck';
-import {FickleLuckAdjustment} from '../LuckAdjustment/FickleLuckAdjustment';
+import { Active, Luck } from '../Luck';
+import { FickleLuckAdjustment } from '../LuckAdjustment/FickleLuckAdjustment';
 
 describe('Luck', () => {
-  test.each([[Active.enable], [Active.disable]])('status()', status => {
+  test.each([[Active.enable], [Active.disable]])('status()', (status) => {
     const luck = new Luck(0);
     luck.status = status;
     expect(luck.status).toEqual(status);

@@ -1,10 +1,10 @@
-import {Schema, model} from 'mongoose';
-import {v4 as uuidv4} from 'uuid';
-import {Trait} from '../data/trait';
-import {Discipline} from '../data/discipline';
-import {Drive, Life, Spirit} from '../data/gauges';
+import { Schema, model } from 'mongoose';
+import { v4 as uuidv4 } from 'uuid';
+import { Trait } from '../data/trait';
+import { Discipline } from '../data/discipline';
+import { Drive, Life, Spirit } from '../data/gauges';
 import * as Gear from '../data/gear';
-import {StatusEffect} from '../data/status.effect';
+import { StatusEffect } from '../data/status.effect';
 
 /**
  * A human or non-humanoid instance of a character archetype
@@ -30,8 +30,8 @@ export interface ICharacterSheet {
   };
   statusEffects?: StatusEffect[];
   token?: Gear.Token;
-  experiences: {discipline: Discipline.Type; experience: number}[];
-  equipment: {gearSlot: Gear.Slot; equipment: Gear.Equipment}[];
+  experiences: { discipline: Discipline.Type; experience: number }[];
+  equipment: { gearSlot: Gear.Slot; equipment: Gear.Equipment }[];
   updatedAt: Date;
   createdAt: Date;
 }

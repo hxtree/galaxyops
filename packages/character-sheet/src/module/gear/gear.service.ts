@@ -1,24 +1,17 @@
-import {Injectable} from '@nestjs/common';
-import {Gear} from '../../data/gear';
+import { Injectable } from '@nestjs/common';
+import { Gear } from '../../data/gear';
 
 @Injectable()
 export class GearService {
   async find(id: string): Promise<any> {
     try {
-      const gear = (id: string) => {
-        type GearKey = typeof Gear;
-        type GearType = keyof GearKey;
+      type GearKey = typeof Gear;
+      type GearType = keyof GearKey;
 
-        const gearId: GearType = id as GearType;
-        const gear = Gear[gearId];
-        return gear;
-      };
-
-      const result = {id: id, ...gear(id)};
-
-      return await Promise.resolve(result);
+      const gearId: GearType = id as GearType;
+      return await Promise.resolve({ id, ...Gear[gearId] });
     } catch (err) {
-      Promise.reject(new Error('Failed to get Archetype'));
+      return Promise.reject(new Error('Failed to get Archetype'));
     }
   }
 
@@ -31,7 +24,7 @@ export class GearService {
 
       return await Promise.resolve(gears);
     } catch (err) {
-      Promise.reject(new Error('Failed to get Gears'));
+      return Promise.reject(new Error('Failed to get Gears'));
     }
   }
 }

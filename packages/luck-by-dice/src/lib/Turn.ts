@@ -1,7 +1,7 @@
-import {ICollection} from './Collection';
-import {Cup, ICup} from './Cup';
-import {Active, ILuck, Luck} from './Luck';
-import {INotationCodec, NotationCodec} from './NotationCodec';
+import { ICollection } from './Collection';
+import { Cup, ICup } from './Cup';
+import { Active, ILuck, Luck } from './Luck';
+import { INotationCodec, NotationCodec } from './NotationCodec';
 
 export interface ITurn {
   get notation(): string;

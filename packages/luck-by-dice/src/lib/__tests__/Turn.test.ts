@@ -1,5 +1,5 @@
-import {NotationCodec} from '../NotationCodec';
-import {Turn} from '../Turn';
+import { NotationCodec } from '../NotationCodec';
+import { Turn } from '../Turn';
 
 describe('Turn', () => {
   test('.constructor()', () => {

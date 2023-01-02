@@ -5,12 +5,12 @@ module.exports = {
   useTabs: false,
   singleQuote: true,
   trailingComma: 'all',
-  bracketSpacing: false,
+  bracketSpacing: true,
   proseWrap: 'always',
   overrides: [
     {
       files: '**/*.md',
-      options: {parser: 'markdown'},
+      options: { parser: 'markdown' },
     },
   ],
 };

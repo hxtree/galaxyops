@@ -1,4 +1,4 @@
-import {ICollection} from './Collection';
+import { ICollection } from './Collection';
 
 export interface ICup extends Array<ICollection> {
   roll(): number;

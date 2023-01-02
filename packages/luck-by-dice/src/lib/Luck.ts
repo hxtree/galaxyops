@@ -1,5 +1,5 @@
-import {ILuckAdjustment} from './LuckAdjustment/AbstractLuckAdjustment';
-import {DefaultLuckAdjustment} from './LuckAdjustment/DefaultLuckAdjustment';
+import { ILuckAdjustment } from './LuckAdjustment/AbstractLuckAdjustment';
+import { DefaultLuckAdjustment } from './LuckAdjustment/DefaultLuckAdjustment';
 
 export enum Active {
   enable = 0,

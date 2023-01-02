@@ -31,9 +31,9 @@ export namespace Affiliation {
       'The destroyers are said to bring about an end to all time, heart, and law in the world.',
     ],
     standings: [
-      {affliation: Affiliation.THE_KEEPERS, reputation: Reputation.NEUTRAL},
-      {affliation: Affiliation.DEVILS, reputation: Reputation.HONORED},
-      {affliation: Affiliation.VALLONS_SEVEN, reputation: Reputation.HONORED},
+      { affliation: Affiliation.THE_KEEPERS, reputation: Reputation.NEUTRAL },
+      { affliation: Affiliation.DEVILS, reputation: Reputation.HONORED },
+      { affliation: Affiliation.VALLONS_SEVEN, reputation: Reputation.HONORED },
     ],
   };
 
@@ -46,7 +46,10 @@ export namespace Affiliation {
     lore: [],
     history: ['Three beings who maintain the fundemental order in the world. '],
     standings: [
-      {affliation: Affiliation.THE_DESTROYERS, reputation: Reputation.NEUTRAL},
+      {
+        affliation: Affiliation.THE_DESTROYERS,
+        reputation: Reputation.NEUTRAL,
+      },
     ],
   };
 
@@ -100,7 +103,7 @@ export namespace Affiliation {
       'One member uphold plain living and hard struggle. ', // Malace
     ],
     standings: [
-      {affliation: Affiliation.THE_KEEPERS, reputation: Reputation.HONORED},
+      { affliation: Affiliation.THE_KEEPERS, reputation: Reputation.HONORED },
     ],
   };
 
@@ -129,7 +132,9 @@ export namespace Affiliation {
       'The Magi Order members are all divine people. ' +
       'The Magi discipline enables followers to harness the power of the Eight Devils of the old world. ' +
       "Faye's gem reacts with Eight Devils in combat to gain new Disciplines",
-    standings: [{affliation: Affiliation.DEVILS, reputation: Reputation.HATED}],
+    standings: [
+      { affliation: Affiliation.DEVILS, reputation: Reputation.HATED },
+    ],
   };
 
   export const MAGI_ORDER_ELDERS: Type = {
@@ -138,7 +143,9 @@ export namespace Affiliation {
       'These are the Elders who run the Magi Order. ' +
       'The Magi Order Elders keep secret that the Magi power comes from the Eight Devils. ',
     parentAffliation: MAGI_ORDER,
-    standings: [{affliation: Affiliation.DEVILS, reputation: Reputation.HATED}],
+    standings: [
+      { affliation: Affiliation.DEVILS, reputation: Reputation.HATED },
+    ],
   };
 
   export const CATCHERS: Type = {
@@ -173,14 +180,14 @@ export namespace Affiliation {
       'They have started to resurrect ancient technology that can be used to destroy the other side.' +
       'They are a peaceful nation that is always at war.',
     standings: [
-      {affliation: Affiliation.EURASIA, reputation: Reputation.HATED},
+      { affliation: Affiliation.EURASIA, reputation: Reputation.HATED },
     ],
   };
 
   export const EURASIA: Type = {
     name: 'Eurasia',
     standings: [
-      {affliation: Affiliation.OCEANIA, reputation: Reputation.HATED},
+      { affliation: Affiliation.OCEANIA, reputation: Reputation.HATED },
     ],
   };
 
@@ -199,7 +206,7 @@ export namespace Affiliation {
     name: 'Legion See',
     description: 'Essentially a gouping of lesser bosses',
     standings: [
-      {affliation: Affiliation.DEVILS, reputation: Reputation.FREINDLY},
+      { affliation: Affiliation.DEVILS, reputation: Reputation.FREINDLY },
     ],
   };
 }

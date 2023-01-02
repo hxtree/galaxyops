@@ -1,8 +1,8 @@
-import {Attribute} from '../attribute';
-import {EffectTable, SkillffectModifier} from '../table.effect';
-import {EffectTag} from '../tag.effect';
-import {Skill} from '../skill';
-import {Slot} from './slot';
+import { Attribute } from '../attribute';
+import { EffectTable, SkillffectModifier } from '../table.effect';
+import { EffectTag } from '../tag.effect';
+import { Skill } from '../skill';
+import { Slot } from './slot';
 
 /**
  * Accessory

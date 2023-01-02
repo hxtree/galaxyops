@@ -1,4 +1,4 @@
-import {Weapon} from './weapon.skill';
+import { Weapon } from './weapon.skill';
 
 /**
  * Combo Skills use is revoked unless character action history matches exactly

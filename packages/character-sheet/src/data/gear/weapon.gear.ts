@@ -1,9 +1,11 @@
 import * as Skill from '../skill/weapon.skill';
 
 /**
- * Weapon is a tag applied to a weapon export const and is used to determine the damage type of the weapon.
+ * Weapon is a tag applied to a weapon export const and is used to determine
+ * the damage type of the weapon.
  * It is used to determine equability, weakness and resistance.
- * For example, a character may be immune to unarmed attacks therefore boxing gloves would deal no damage.
+ * For example, a character may be immune to unarmed attacks therefore boxing
+ * gloves would deal no damage.
  */
 export namespace Weapon {
   export type Type = {
@@ -62,7 +64,8 @@ export namespace Weapon {
 
   /**
    * Axes
-   * Axes are an extremely powerful branch of weapons that take a fierce amount of strength to wield but the damage provided by them is usually worth it.
+   * Axes are an extremely powerful branch of weapons that take
+   * a fierce amount of strength to wield but the damage provided by them is usually worth it.
    * Gear Slots – Right Hand AND Left Hand
    */
   export const ASMINS_AXE: Type = {
@@ -108,8 +111,11 @@ export namespace Weapon {
 
   /**
    * Boomerangs
-   * Boomerangs – Boomerangs provide both a melee (slash) and a ranged (throw) attack.
-   * If a boomerang is thrown make sure that it is not going to be caught or else you will be left without a weapon. If the weapon is caught then it maybe retrieved by defeating the enemy who caught it.
+   * Boomerangs – Boomerangs provide both a melee (slash) and a ranged (throw)
+   * attack.
+   * If a boomerang is thrown make sure that it is not going to be caught or
+   * else you will be left without a weapon. If the weapon is caught then it
+   * maybe retrieved by defeating the enemy who caught it.
    * Gear Slots – Right Hand AND Left Hand
    */
 
@@ -209,7 +215,8 @@ export namespace Weapon {
 
   /**
    * Staff
-   * Staffs are weapons designed as a focusing point for magical users to amplify and release their spells.
+   * Staffs are weapons designed as a focusing point for magical users to
+   * amplify and release their spells.
    * They can also be used to deal melee damage.
    */
   export const TINY_TIMBER: Type = {
@@ -295,7 +302,8 @@ export namespace Weapon {
 
   /**
    * Pendants
-   * Pendants – Pendants are Magical amplifiers that often increase the user’s stats and grants them new actions.
+   * Pendants – Pendants are Magical amplifiers that often increase the user’s
+   * stats and grants them new actions.
    * It takes two hands to be able to harness the power of the pendant.
    * Gear Slots – Necklace AND DISABLED (Right Hand AND Left Hand)
    */
