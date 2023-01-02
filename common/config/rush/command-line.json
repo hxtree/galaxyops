@@ -19,6 +19,13 @@
       "shellCommand": "pretty-quick --staged"
     },
     {
+      "name": "branch-naming-policy",
+      "commandKind": "global",
+      "summary": "Check git branch name against git flow policy",
+      "shellCommand": "common/scripts/branch-naming-policy/branch-naming-policy.sh",
+      "safeForSimultaneousRushProcesses": true
+    },
+    {
       "name": "sso",
       "commandKind": "global",
       "summary": "AWS SSO Authentication",

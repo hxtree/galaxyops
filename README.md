@@ -1,9 +1,9 @@
-# Keepers Cradle
+<h1 align="center">Keepers Cradle</h1>
 
-[![CI](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml)
+[![CI](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/keepers-crttps://shields.io/badge/AWS%23FF9900?adle/actions/workflows/ci.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/monorepo&utm_campaign=Badge_Grade)
 ![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
-[![GitHub issues by-label](https://img.shields.io/github/issues/hxtree/monorepo/help%20wanted.svg)](https://github.com/hxtree/monorepo/issues)
+![AWS CDKv2](https://shields.io/badge/AWS%20CDKv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
 
 **Keepers Cradle** is a online mobile RPG.
 
@@ -45,7 +45,15 @@ Development of `@org-clients/base-game-engine` client requires
 - [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 - [Third Party Docs](docs/third-party-docs.md)
 
-## Contributors
+## Contributing
+
+Pull requests and bug reports are welcome on GitHub at
+[https://github.com/hxtree/keepers-cradle](https://github.com/hxtree/keepers-cradle).
+This project is intended to be a safe, welcoming space for collaboration, and
+contributors are expected to adhere to the
+[code of conduct](docs/CODE_OF_CONDUCT.md).
+
+## List of Contributors
 
 <a href="https://github.com/hxtree/keepers-cradle/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=hxtree/keepers-cradle" />
