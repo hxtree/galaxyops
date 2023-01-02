@@ -4,6 +4,13 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/monorepo&utm_campaign=Badge_Grade)
 ![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 ![AWS CDKv2](https://shields.io/badge/AWS%20CDKv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
+- [ ] The pull request is complete according to the [Definition of Done](https://sites.google.com/leviy.com/development/development/definition-of-done)
+  - [ ] Acceptance criteria in the ticket have been met
+  - [ ] Automated tests are written according to the [test plan](https://docs.google.com/document/d/106bwyTS-gIrT7edLW4_5pCl6DSDaZBEMiiyBw1za0R8/edit#heading=h.5ybg7xjjzlkj)
+  - [ ] The documentation is up-to-date
+  - [ ] Deployment automation includes newly introduced environment variables and credentials are added to the credentials.fact file of all servers
+- [ ] The pull request has a descriptive title that describes what has changed, and provides enough context for the changelog
+- [ ] When applicable, the pull request title starts with the issue number
 [![Slack](https://img.shields.io/badge/slack-keeperscradle-purple)](https://ouxsoft.slack.com/archives/C02FR135CN9)
 
 **Keepers Cradle** is a online mobile RPG.
