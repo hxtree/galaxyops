@@ -2,16 +2,17 @@
 # a list of commands displayed via help
 
 cat <<EOF
-rush [command]       run a command in bulk or globally.
-rush sso             authenticate to AWS SSO and set profile
-rush test            run all unit tests
-rush nuke            git clean, purge, and update
-rush purge           purge packages
-rush update          update workspace files
-  --full             full update of workspace files
-rush add -p @a/b     add a new package to app
- --make-consistent   make package version consistant across monorepo
- --dev               install as dev dependency
+rush [command]             run a command in bulk or globally.
+rush sso                   authenticate to AWS SSO and set profile
+rush test                  run all unit tests
+rush nuke                  git clean, purge, and update
+rush purge                 purge packages
+rush update                update workspace files
+  --full                   full update of workspace files
+rush add -p @a/b           add a new package to app
+ --make-consistent         make package version consistant across monorepo
+ --dev                     install as dev dependency
+rush upgrade-interactive   interactively update packages
 
 rushx [command]      run a command relative to the current working directory.
 rushx bootstrap      bootstrap deploy for the first time

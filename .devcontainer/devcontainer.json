@@ -11,6 +11,7 @@
     }
   },
   "extensions": [
+    "pflannery.vscode-versionlens",
     "folke.vscode-monorepo-workspace",
     "GitHub.copilot",
     "vivaxy.vscode-conventional-commits",

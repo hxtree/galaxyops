@@ -33,6 +33,11 @@
     "entryPoints": ["bin/app.ts"]
   },
   "sourceMap": true,
-  "include": ["../../../../../package.json", "../../../../../stacks/*.ts"],
-  "exclude": ["../../../../../src/__tests__"]
+  "include": [
+    "../../../../../package.json",
+    "../../../../../src/*.{ts|tsx}",
+    "../../../../../src/**/*.{ts|tsx}",
+    "../../../../../stacks/*.ts",
+    "../../../../../src/"
+  ]
 }
