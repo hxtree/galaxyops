@@ -9,6 +9,7 @@ FROM node:gallium-buster as base
 ARG USER=node
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
+ENV HOME /home/node
 
 RUN mkdir /usr/src/app
 
