@@ -13,8 +13,6 @@ infrastructure as code (IaC). The serverless backend is programmed primarly in
 Typescript. Microservices are deployed using AWS CDKv2 for IaC. The game engine
 client is built using a Unreal Engine 5.
 
-![Base Game Client](/docs/assets/images/shield-sword.png)
-
 ## Getting Started
 
 Get started building, testing, and deploying apps.
@@ -38,7 +36,11 @@ For information on builtin commands, use `rush help`.
 Development of `@org-clients/base-game-engine` client requires
 [additional tools](clients/base-game-engine/README.md).
 
-## Folder Structure
+![Base Game Client](/docs/assets/images/shield-sword.png)
+
+## Documentation
+
+### Folder Structure
 
 ```graphql
 ./*
@@ -61,8 +63,6 @@ Development of `@org-clients/base-game-engine` client requires
   └─ tests - # e2e tests.
 ```
 
-## Documentation
-
 - [Git Setup](docs/git-setup.md)
 - [Architecture Guidelines](docs/architecture-guidelines.md)
 - [Coding Standards](docs/CODING_STANDARDS.md)
@@ -77,7 +77,7 @@ This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the
 [code of conduct](docs/CODE_OF_CONDUCT.md).
 
-## List of Contributors
+### List of Contributors
 
 <a href="https://github.com/hxtree/keepers-cradle/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=hxtree/keepers-cradle" />

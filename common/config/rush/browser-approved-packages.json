@@ -303,6 +303,10 @@
       "allowedCategories": [ "platform" ]
     },
     {
+      "name": "eslint-plugin-jsx-ally",
+      "allowedCategories": [ "platform" ]
+    },
+    {
       "name": "eslint-plugin-no-async-foreach",
       "allowedCategories": [ "platform" ]
     },
@@ -356,7 +360,7 @@
     },
     {
       "name": "jest",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "apis", "clients", "platform", "rigs" ]
     },
     {
       "name": "lodash",
@@ -436,7 +440,7 @@
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "apis", "clients", "platform", "rigs" ]
     },
     {
       "name": "ts-node",

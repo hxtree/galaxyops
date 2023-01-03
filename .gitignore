@@ -1,3 +1,6 @@
+# coverage
+clover.xml
+
 # Docker
 docker-compose.override.yml
 
