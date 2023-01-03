@@ -27,7 +27,7 @@ var __setModuleDefault =
   (this && this.__setModuleDefault) ||
   (Object.create
     ? function (o, v) {
-        Object.defineProperty(o, 'default', {enumerable: true, value: v});
+        Object.defineProperty(o, 'default', { enumerable: true, value: v });
       }
     : function (o, v) {
         o['default'] = v;
@@ -44,7 +44,7 @@ var __importStar =
     __setModuleDefault(result, mod);
     return result;
   };
-Object.defineProperty(exports, '__esModule', {value: true});
+Object.defineProperty(exports, '__esModule', { value: true });
 const cdk = __importStar(require('aws-cdk-lib'));
 const lambda_layer_stack_1 = require('../stacks/lambda-layer-stack');
 const app = new cdk.App();
