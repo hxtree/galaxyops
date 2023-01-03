@@ -13,4 +13,3 @@
 - [Rushstack](https://github.com/microsoft/rushstack)
 - [TSDoc](https://github.com/microsoft/tsdoc)
 - [Typedoc](https://github.com/TypeStrong/typedoc)
-- [Unity](https://docs.unity3d.com/Manual/index.html)
