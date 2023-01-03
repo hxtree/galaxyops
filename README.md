@@ -1,6 +1,5 @@
 <h1 align="center">Keepers Cradle</h1>
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
 [![CI](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/keepers-crttps://shields.io/badge/AWS%23FF9900?adle/actions/workflows/ci.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/monorepo&utm_campaign=Badge_Grade)
 ![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
@@ -16,9 +15,9 @@ client is built using a Unreal Engine 5.
 
 ## Getting Started
 
-Open in
-[CodeSpace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
-or to get started building, testing, and deploying apps locally:
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
+
+Altenratively, build, test, and deploy apps locally using the devcontainer:
 
 1. Clone this repo using [Git](https://git-scm.com/downloads).
 
