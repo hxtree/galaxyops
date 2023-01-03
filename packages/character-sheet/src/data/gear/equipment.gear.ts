@@ -7,5 +7,3 @@ export const Equipment = {
   ...Outfit,
   ...Weapon,
 };
-
-export type EquipmentType = typeof Equipment;
