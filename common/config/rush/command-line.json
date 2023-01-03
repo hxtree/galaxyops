@@ -57,6 +57,10 @@
       "name": "test",
       "commandKind": "bulk",
       "summary": "Run unit tests",
+      "description": "Run unit test this will not display coverage reports",
+      "safeForSimultaneousRushProcesses": true,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
       "enableParallelism": true,
       "allowWarningsInSuccessfulBuild": true
     },

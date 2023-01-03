@@ -64,3 +64,21 @@ export const awsProfiles: AwsProfileType[] = [
     credentialProcess: 'aws-sso-credential-process --profile DeveloperSandbox',
   },
 ];
+
+export const awsConfigFilepath = '~/.aws/config';
+
+export const awsConfigFileContent = (): string => {
+  let output = '';
+  awsProfiles.forEach((awsProfile: AwsProfileType) => {
+    output += `
+  [profile ${awsProfile.name}]
+  sso_start_url = ${awsProfile.sso.startUrl}
+  sso_region = ${awsProfile.sso.region}
+  sso_account_id = ${awsProfile.sso.accountId}
+  sso_role_name =${awsProfile.sso.roleName}
+  region = ${awsProfile.region};
+  `;
+  });
+
+  return output;
+};
