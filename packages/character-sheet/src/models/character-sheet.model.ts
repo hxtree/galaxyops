@@ -31,7 +31,7 @@ export interface ICharacterSheet {
   statusEffects?: StatusEffect[];
   token?: Gear.Token;
   experiences: { discipline: Discipline.Type; experience: number }[];
-  equipment: { gearSlot: Gear.Slot; equipment: Gear.Equipment }[];
+  equipment: { gearSlot: Gear.Slot; equipment: Gear.EquipmentType }[];
   updatedAt: Date;
   createdAt: Date;
 }
