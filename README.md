@@ -38,6 +38,29 @@ For information on builtin commands, use `rush help`.
 Development of `@org-clients/base-game-engine` client requires
 [additional tools](clients/base-game-engine/README.md).
 
+## Folder Structure
+
+```graphql
+./*
+  ├─ clients - # user facing clients.
+  ├─ common - # rushjs common folder; contains scripts, commands, etc.
+  ├─ docs - # repo wide documentation.
+  ├─ libraries - # resources intented for use in three or more packages.
+  │  └─ api-client - # openapi generated clients.
+  ├─ packages - # contains deployable microservices.
+  │  └─ ./**/*
+  │     ├─ bin - # binary file that invokes stack.
+  │     ├─ src - # source code.
+  │     └─ stack - # CDK deployment code.
+  ├─ platform - # fundemental bases for other applications.
+  │  ├─ aws-org-formation - # AWS account provisioning, SSO, etc.
+  │  ├─ constructs - # Custom AWS constructs used in package deployments.
+  │  ├─ eslint-config - # eslint configurations.
+  │  └─ lambda-layers - # serverless lambda layers.
+  ├─ rigs - # rushjs heft rigs.
+  └─ tests - # e2e tests.
+```
+
 ## Documentation
 
 - [Git Setup](docs/git-setup.md)
@@ -60,4 +83,6 @@ contributors are expected to adhere to the
   <img src="https://contrib.rocks/image?repo=hxtree/keepers-cradle" />
 </a>
 
+<p align="center">
 :hourglass: :infinity: :white_heart:
+</p>
