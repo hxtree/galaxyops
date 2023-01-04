@@ -30,7 +30,7 @@ RUN apt-get update \
     # install latest npm
     && npm install --global npm@9.2.0 \
     # https://pnpm.io/installation
-    && npm install --global pnpm@7.21.0 \
+    && npm install --global pnpm@7.22.0 \
     # install Microsoft Rush globally
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.88.0 \
@@ -69,10 +69,8 @@ ARG USER=node
 COPY . /usr/src/app
 
 RUN chown -R $USER /usr/src/app \
-    && mkdir -p /home/$USER/.rush \
-    && chown -R $USER /home/$USER/.rush \
-    && mkdir -p /usr/src/app/common/temp \
-    && chown -R $USER /usr/src/app/common/temp
+    && install -d -m 0755 -o $USER /home/$USER/.rush \
+    && install -d -m 0755 -o $USER /usr/src/app/common/temp \
 
 USER $USER
 
