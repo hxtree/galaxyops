@@ -13,7 +13,7 @@
   "extensions": [
     "pflannery.vscode-versionlens",
     "folke.vscode-monorepo-workspace",
-    "GitHub.copilot",
+    // "GitHub.copilot",
     "vivaxy.vscode-conventional-commits",
     "yzhang.markdown-all-in-one",
     "foxundermoon.shell-format",
@@ -21,5 +21,6 @@
     "esbenp.prettier-vscode"
   ],
   "workspaceFolder": "/usr/src/app",
-  "remoteUser": "node"
+  "remoteUser": "node",
+  "postStartCommand": "rush update"
 }
