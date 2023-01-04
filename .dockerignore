@@ -1,4 +1,5 @@
 common/temp/**
+node_modules
 !common/temp/pnpm-lock.yaml
 .devcontainer
 .github
