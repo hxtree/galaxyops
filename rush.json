@@ -33,7 +33,7 @@
   "projects": [
     {
       "packageName": "@org-rig/base-nodejs",
-      "projectFolder": "rigs/base-nodejs",
+      "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]

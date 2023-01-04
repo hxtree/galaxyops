@@ -93,7 +93,7 @@ importers:
     devDependencies:
       '@org-platform/constructs': link:../../platform/constructs
       '@org-platform/eslint-config': link:../../platform/eslint-config
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@org-rig/base-nodejs': link:../../platform/rigs/base-nodejs
       '@types/aws-lambda': 8.10.109
       '@types/express': 4.17.15
       '@types/jest': 28.1.8
@@ -153,7 +153,7 @@ importers:
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
       '@org-platform/constructs': link:../../platform/constructs
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@org-rig/base-nodejs': link:../../platform/rigs/base-nodejs
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
@@ -226,7 +226,7 @@ importers:
       '@babel/core': 7.20.5
       '@mui/system': 5.10.17_ogriz7mfahdh34qnfautfro5yu
       '@org-platform/eslint-config': link:../../platform/eslint-config
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@org-rig/base-nodejs': link:../../platform/rigs/base-nodejs
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@storybook/addon-essentials': 6.5.14_nq2wjkgn2nfnrgjtutdj3uohfy
       '@storybook/addon-info': 5.3.21_ib3m5ricvtkl2cll7qpr2f6lvq
@@ -289,7 +289,7 @@ importers:
       typescript: 4.9.4
       web-vitals: 2.1.4
     devDependencies:
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@org-rig/base-nodejs': link:../../platform/rigs/base-nodejs
 
   ../../packages/luck-by-dice:
     specifiers:
@@ -336,7 +336,7 @@ importers:
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
       '@org-platform/constructs': link:../../platform/constructs
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@org-rig/base-nodejs': link:../../platform/rigs/base-nodejs
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
@@ -519,7 +519,7 @@ importers:
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@org-rig/base-nodejs': link:../rigs/base-nodejs
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
@@ -550,7 +550,7 @@ importers:
       ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
       typescript: 4.9.4
 
-  ../../rigs/base-nodejs:
+  ../../platform/rigs/base-nodejs:
     specifiers:
       '@rushstack/heft': ~0.44.0
       '@rushstack/heft-node-rig': ^1.0.31

@@ -130,10 +130,7 @@ RUN touch /home/$USER/.zshrc \
     && echo "  COMPREPLY=( \$(compgen -W \"\$completions\" -- \"\$word\") )" >>/home/$USER/.zshrc \
     && echo "}" >>/home/$USER/.zshrc \
     && echo "complete -f -F _rush_bash_complete rush" >>/home/$USER/.zshrc \
-    # Powerlevel10K
-    # && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/$USER/powerlevel10k \
-    # && echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/$USER/.zshrc
-    # ohmyzsh
+    # ohmyzsh to show git branch
     && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Add alias
@@ -143,6 +140,7 @@ RUN chown -R $USER /home/$USER
 
 USER $USER
 
+# git credentials https://github.com/microsoft/vscode-remote-release/issues/720#issuecomment-503492715
 ENV HOME /home/$USER
 
 SHELL ["/bin/zsh", "-c"]
