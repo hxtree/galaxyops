@@ -22,5 +22,5 @@
   ],
   "workspaceFolder": "/usr/src/app",
   "remoteUser": "node",
-  "postStartCommand": "rush update"
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && rush update"
 }
