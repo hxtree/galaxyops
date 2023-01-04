@@ -53,5 +53,6 @@
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "files.associations": {"*.json": "jsonc"}
+  "files.associations": { "*.json": "jsonc" },
+  "versionlens.suggestions.showOnStartup": true
 }

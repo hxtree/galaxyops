@@ -38,8 +38,6 @@ For information on builtin commands, use `rush help`.
 Development of `@org-clients/base-game-engine` client requires
 [additional tools](clients/base-game-engine/README.md).
 
-![Base Game Client](/docs/assets/images/shield-sword.png)
-
 ## Documentation
 
 ### Folder Structure

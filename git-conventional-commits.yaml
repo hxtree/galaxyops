@@ -4,6 +4,7 @@ convention:
     - feat
     - fix
     - perf
+    - wip
     - refactor
     - style
     - test
