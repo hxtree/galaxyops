@@ -27,9 +27,10 @@ RUN apt-get update \
         npm \
         default-jre \
     # install latest npm
+    # install latest npm
     && npm install --global npm@9.2.0 \
     # https://pnpm.io/installation
-    && npm install --global pnpm@7.22.0 \
+    && npm install --global pnpm@7.21.0 \
     # install Microsoft Rush globally
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.88.0 \
@@ -112,8 +113,6 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     && chmod +x ./aws/install \
     && ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
 
-COPY .devcontainer/.ssh/config /home/$USER/.ssh/config
-
 # rush tab completion
 # https://rushjs.io/pages/developer/tab_completion/
 RUN touch /home/$USER/.zshrc \
@@ -132,8 +131,10 @@ RUN touch /home/$USER/.zshrc \
     && echo "}" >>/home/$USER/.zshrc \
     && echo "complete -f -F _rush_bash_complete rush" >>/home/$USER/.zshrc \
     # Powerlevel10K
-    && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/$USER/powerlevel10k \
-    && echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/$USER/.zshrc
+    # && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/$USER/powerlevel10k \
+    # && echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/$USER/.zshrc
+    # ohmyzsh
+    && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Add alias
 RUN echo "alias app=\"cd /usr/src/app\"" >>/home/$USER/.zshrc
