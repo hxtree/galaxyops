@@ -88,6 +88,9 @@ FROM base AS development
 ARG UID=1000
 ARG USER=node
 
+ENV AWS_SDK_LOAD_CONFIG=1
+ENV STAGE=default
+
 RUN apt-get install -y --no-install-recommends \
     sudo \
     zsh \
