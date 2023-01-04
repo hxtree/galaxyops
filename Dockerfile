@@ -71,6 +71,7 @@ COPY . /usr/src/app
 RUN chown -R $USER /usr/src/app \
     && install -d -m 0755 -o $USER /home/$USER/.rush \
     && install -d -m 0755 -o $USER /usr/src/app/common/temp \
+    && git config --global --add safe.directory /usr/src/app
 
 USER $USER
 
