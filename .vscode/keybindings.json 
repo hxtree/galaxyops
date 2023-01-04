@@ -1,7 +1,7 @@
 / Place your key bindings in this file to overwrite the defaults
 [
     {
-        "key": "alt+enter",
+        "key": "ctrl+enter",
         "command": "editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
     }
