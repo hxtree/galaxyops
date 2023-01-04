@@ -6,7 +6,6 @@
 # https://github.com/nodejs/release#nodejs-release-working-group
 FROM node:gallium-buster as base
 
-ARG USER=node
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 ENV HOME /home/node
@@ -60,12 +59,6 @@ RUN apt-get update \
     # install git-conventional-commits
     && npm install --global git-conventional-commits
 
-RUN chown -R $USER /usr/src/app \
-    && mkdir -p /home/$USER/.rush \
-    && chown -R $USER /home/$USER/.rush \
-    && mkdir -p /usr/src/app/common/temp \
-    && chown -R $USER /usr/src/app/common/temp
-
 ################################################################################
 #                                  Test Base                                   #
 ################################################################################
@@ -75,6 +68,8 @@ ARG USER=node
 COPY . /usr/src/app
 
 RUN chown -R $USER /usr/src/app \
+    && mkdir -p /home/$USER/.rush \
+    && chown -R $USER /home/$USER/.rush \
     && mkdir -p /usr/src/app/common/temp \
     && chown -R $USER /usr/src/app/common/temp
 
@@ -93,16 +88,19 @@ FROM base AS development
 ARG UID=1000
 ARG USER=node
 
-RUN apt-get install -y sudo --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
+    sudo \
     zsh \
-    vim \
-    # add to sudo group, remove need to use password
-    && usermod -aG sudo $USER \
+    vim
+
+#RUN adduser --home /home/$USER --shell /bin/zsh $USER \
+RUN usermod -aG sudo $USER \
     && passwd -d $USER  \
     && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers \
-    # make directory for VS Code extensions
-    && mkdir -p /home/$USER/.vscode-server/extensions \
-    && chown -R $USER /home/$USER/.vscode-server
+    && chown -R $USER /usr/src/app \
+    && install -d -m 0755 -o $USER /home/$USER/.rush \
+    && install -d -m 0755 -o $USER /usr/src/app/common/temp \
+    && install -d -m 0755 -o $USER /home/$USER/.vscode-server/extensions
 
 # install AWS Command Line Interface
 # https://awscli.amazonaws.com/v2/documentation/api/latest/index.html
@@ -111,9 +109,12 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     && chmod +x ./aws/install \
     && ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
 
+COPY .devcontainer/.ssh/config /home/$USER/.ssh/config
+
 # rush tab completion
 # https://rushjs.io/pages/developer/tab_completion/
-RUN echo "# bash parameter completion for the Rush CLI" >>/home/$USER/.zshrc \
+RUN touch /home/$USER/.zshrc \
+    && echo "# bash parameter completion for the Rush CLI" >>/home/$USER/.zshrc \
     && echo "_rush_bash_complete()" >>/home/$USER/.zshrc \
     && echo "{" >>/home/$USER/.zshrc \
     && echo "  local word=\${COMP_WORDS[COMP_CWORD]}" >>/home/$USER/.zshrc \
@@ -134,11 +135,10 @@ RUN echo "# bash parameter completion for the Rush CLI" >>/home/$USER/.zshrc \
 # Add alias
 RUN echo "alias app=\"cd /usr/src/app\"" >>/home/$USER/.zshrc
 
-COPY .devcontainer/.ssh/config /home/$USER/.ssh/config
-
-RUN chown -R $USER /home/$USER/.ssh \
-    && chown -R $USER /home/$USER/.zshrc
+RUN chown -R $USER /home/$USER
 
 USER $USER
+
+ENV HOME /home/$USER
 
 SHELL ["/bin/zsh", "-c"]

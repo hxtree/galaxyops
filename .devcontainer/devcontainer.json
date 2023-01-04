@@ -21,6 +21,5 @@
     "esbenp.prettier-vscode"
   ],
   "workspaceFolder": "/usr/src/app",
-  "postCreateCommand": "",
   "remoteUser": "node"
 }
