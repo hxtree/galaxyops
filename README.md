@@ -38,8 +38,6 @@ For information on builtin commands, use `rush help`.
 Development of `@org-clients/base-game-engine` client requires
 [additional tools](clients/base-game-engine/README.md).
 
-## Documentation
-
 ### Folder Structure
 
 ```graphql
@@ -58,10 +56,12 @@ Development of `@org-clients/base-game-engine` client requires
   │  ├─ aws-org-formation - # AWS account provisioning, SSO, etc.
   │  ├─ constructs - # Custom AWS constructs used in package deployments.
   │  ├─ eslint-config - # eslint configurations.
+  │  ├─ rigs - # rushjs heft rigs.
   │  └─ lambda-layers - # serverless lambda layers.
-  ├─ rigs - # rushjs heft rigs.
   └─ tests - # e2e tests.
 ```
+
+## Documentation
 
 - [Git Setup](docs/git-setup.md)
 - [Architecture Guidelines](docs/architecture-guidelines.md)
