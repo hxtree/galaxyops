@@ -54,6 +54,17 @@
       "safeForSimultaneousRushProcesses": true
     },
     {
+      "name": "build",
+      "commandKind": "bulk",
+      "summary": "Run build",
+      "description": "Run build",
+      "safeForSimultaneousRushProcesses": false,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
+      "enableParallelism": false,
+      "allowWarningsInSuccessfulBuild": true
+    },
+    {
       "name": "test",
       "commandKind": "bulk",
       "summary": "Run unit tests",
