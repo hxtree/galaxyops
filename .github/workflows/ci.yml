@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '16.18.0'
 
       - name: Cache rush
         id: cache
@@ -42,6 +42,13 @@ jobs:
 
       - name: Test
         run: node common/scripts/install-run-rush.js test
+
+      - name: Submit code coverage
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
+        with:
+          project-token: ${{ secrets.CODACY_API_TOKEN }}
+          coverage-reports: /packages/luck-by-dice/src/__tests__/coverage.yml, /packages/character-sheet/src/__tests__/coverage.yml
+
 
 
     # runs-on: ubuntu-latest
@@ -73,12 +80,6 @@ jobs:
 
     #   - name: Run unit tests generate coverage report
     #     run: docker compose run keepers-cradle rush test
-
-      # - name: Submit code coverage
-      #   uses: codacy/codacy-coverage-reporter-action@v1
-      #   with:
-      #     project-token: ${{ secrets.CODACY_API_TOKEN }}
-      #     coverage-reports: tests/output/clover.xml
 
   # slack-notification:
   #   name: "Slack Notification"
