@@ -72,13 +72,15 @@ Development of `@org-clients/base-game-engine` client requires
 
 ## Contributing
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 Pull requests and bug reports are welcome on GitHub at
 [https://github.com/hxtree/keepers-cradle](https://github.com/hxtree/keepers-cradle).
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the
 [code of conduct](docs/CODE_OF_CONDUCT.md).
 
-### List of Contributors
+### Our Contributors
 
 <a href="https://github.com/hxtree/keepers-cradle/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=hxtree/keepers-cradle" />
