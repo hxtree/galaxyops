@@ -1,7 +1,9 @@
 <h1 align="center">Keepers Cradle</h1>
 
-[![CI](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/monorepo&utm_campaign=Badge_Grade)
+[![Continue Intergration](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml)
+[![Codacy Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?
+utm_source=github.com&utm_medium=referral&utm_content=hxtree/monorepo&utm_campaign=Badge_Grade)
+[![Code Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/keepers-cradle&utm_campaign=Badge_Coverage)
 [![Slack](https://img.shields.io/badge/slack-keeperscradle-purple)](https://ouxsoft.slack.com/archives/C02FR135CN9)
 ![TypeScript](https://shields.io/badge/typescript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 ![AWS CDKv2](https://shields.io/badge/cdkv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
