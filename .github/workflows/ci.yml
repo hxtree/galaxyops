@@ -30,8 +30,8 @@ jobs:
             ${{ runner.os }}-
 
       - name: Rush install
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: node common/scripts/install-run-rush.js install
+        # if: steps.cache.outputs.cache-hit != 'true'
+        run: node common/scripts/install-run-rush.js update
 
       - name: Build
         run: node common/scripts/install-run-rush.js build
@@ -42,7 +42,7 @@ jobs:
       - name: Submit code coverage
         uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
-          project-token: ${{ secrets.CODACY_API_TOKEN }}
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: /packages/luck-by-dice/src/__tests__/coverage.yml, /packages/character-sheet/src/__tests__/coverage.yml
 
   # slack-notification:
@@ -50,7 +50,6 @@ jobs:
   #   runs-on: ubuntu-latest
   #   if: always()
   #   needs:
-  #     - composer-validate
   #     - docker-hub
   #   steps:
   #     - name: Send message to Slack API
