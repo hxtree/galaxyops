@@ -31,8 +31,8 @@ jobs:
             ${{ runner.os }}-
 
       - name: Rush install
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: node common/scripts/install-run-rush.js update
+        # if: steps.cache.outputs.cache-hit != 'true'
+        run: node common/scripts/install-run-rush.js install
 
       - name: Build
         run: node common/scripts/install-run-rush.js build
