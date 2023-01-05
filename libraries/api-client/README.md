@@ -50,6 +50,6 @@ e.g. create-user.command.ts
 
 ## Documentation
 
-- https://openapi-generator.tech/docs/configuration/
-- https://openapi-generator.tech/docs/generators/typescript-axios/
-- https://cloud.google.com/appengine/docs/legacy/standard/java/designing-microservice-api#using_strong_contracts
+- <https://openapi-generator.tech/docs/configuration/>
+- <https://openapi-generator.tech/docs/generators/typescript-axios/>
+- <https://cloud.google.com/appengine/docs/legacy/standard/java/designing-microservice-api#using_strong_contracts>

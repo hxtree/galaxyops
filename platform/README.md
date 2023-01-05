@@ -24,8 +24,8 @@ try {
 }
 ```
 
-- https://getpino.io/#/docs/api?id=serializers-object
-- https://bobbyhadz.com/blog/typescript-object-is-of-type-unknown
+- <https://getpino.io/#/docs/api?id=serializers-object>
+- <https://bobbyhadz.com/blog/typescript-object-is-of-type-unknown>
 
 ### Database
 

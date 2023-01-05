@@ -11,6 +11,6 @@ A microservice api for simulating luck based dice rolls from dice notaiton.
 - Lambda
 - ApiGateway
 
-## Features:
+## Features
 
 - **Roll**: Simulates dice roll from notation using luck.
