@@ -34,9 +34,10 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 3. Open repo Project Folder using VSCode and build and connect to remote
    container.
 
-For information on builtin commands, use `rush help`.
+---
 
-Development of `@org-clients/base-game-engine` client requires
+> **Note** 
+> Development of `@org-clients/base-game-engine` client requires
 [additional tools](clients/base-game-engine/README.md).
 
 ### Folder Structure
@@ -69,6 +70,9 @@ Development of `@org-clients/base-game-engine` client requires
 - [Coding Standards](docs/CODING_STANDARDS.md)
 - [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 - [Third Party Docs](docs/third-party-docs.md)
+
+> **Note**
+> Use `rush help` for information on builtin commands.
 
 ## Contributing
 
