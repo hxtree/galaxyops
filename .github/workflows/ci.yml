@@ -23,7 +23,7 @@ jobs:
 
       - name: Cache rush
         id: cache
-        uses: actions/cache@vv3.2.2
+        uses: actions/cache@v3.2.2
         with:
           path: common/temp
           key: ${{ runner.os }}-build-branch-${{ hashFiles('common/config/rush/repo-state.json') }}
