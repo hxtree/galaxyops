@@ -1,9 +1,7 @@
-name: CI
+name: Coverage
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 
 jobs:
@@ -40,19 +38,8 @@ jobs:
       - name: Test
         run: node common/scripts/install-run-rush.js test
 
-  # slack-notification:
-  #   name: "Slack Notification"
-  #   runs-on: ubuntu-latest
-  #   if: always()
-  #   needs:
-  #     - docker-hub
-  #   steps:
-  #     - name: Send message to Slack API
-  #       uses: archive/github-actions-slack@v2.0.0
-  #       with:
-  #         slack-bot-user-oauth-access-token: ${{ secrets.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
-  #         slack-channel: ${{ secrets.SLACK_CHANNEL_ID }}
-  #         slack-text: |
-  #           Event "${{ github.event_name }}" in "${{ github.repository }}" by @${{ github.actor }}
-  #           Commit ${{ github.sha }}
-  #           ${{ needs.composer-validate.result == 'success' && ':white_check_mark:' || ':no_entry_sign:' }} Composer Validate.
+      - name: Submit code coverage
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: packages/luck-by-dice/src/__tests__/coverage/clover.xml, packages/character-sheet/src/__tests__/coverage/clover.xml
