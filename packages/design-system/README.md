@@ -12,7 +12,7 @@ to keep track of.
 
 ## Guidelines
 
-- Use Component Story Format(CSF) https://storybook.js.org/docs/react/api/csf
+- Use Component Story Format(CSF) <https://storybook.js.org/docs/react/api/csf>
 - Per Palmer Group guidelines,
   [always use named exports.](https://github.com/palmerhq/typescript#exports)
   Code split inside your React app instead of your React library.

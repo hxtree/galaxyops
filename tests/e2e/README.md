@@ -8,14 +8,14 @@ End-to-end tests built using `microsoft/playwright`.
 
 1. Install Playwright and dependencies:
 
-   ```
+   ```bash
    npm init playwright@latest
    sudo npx playwright install-deps
    ```
 
 2. Common Commands:
 
-   ```
+   ```bash
    npx playwright test
        Runs the end-to-end tests.
 
@@ -32,7 +32,7 @@ End-to-end tests built using `microsoft/playwright`.
        Auto generate tests with Codegen.
    ```
 
-# Architectural Assumptions:
+## Architectural Assumptions
 
 - Playwright was selected for end to end tests due to its support for Webkit.
 - Cypress was not selected due to Cypress lack of Safari/Webkit support.

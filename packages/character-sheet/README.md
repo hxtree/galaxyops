@@ -16,7 +16,7 @@ includes attributes, skills, disciplines, etc.
 
 - MongoDB
 
-## Features:
+## Features
 
 - **Components**: structs of plain old data. Components have no functions. Base
   class with sub class. Helper function for access info. Nothing else. They mean
