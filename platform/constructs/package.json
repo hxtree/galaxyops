@@ -49,5 +49,11 @@
     "@types/uuid": "~8.3.4",
     "eslint": "8.26.0",
     "@org-platform/eslint-config": "workspace:*"
+  },
+  "exports": {
+    "./api-endpoint": "./dist/src/api-endpoint/index.js",
+    "./aws-account": "./dist/src/aws-accounts/index.js",
+    "./microservice": "./dist/src/microservice/index.js",
+    "./nestjs": "./dist/src/nestjs/index.js"
   }
 }

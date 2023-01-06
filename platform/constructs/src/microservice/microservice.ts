@@ -1,9 +1,9 @@
-import {Construct} from 'constructs';
-import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
-import {ApiEndpoint} from '../api-endpoint/api-endpoint';
-import {NestJs} from '../nestjs/nestjs';
+import { Construct } from 'constructs';
+import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
-import {Stack} from 'aws-cdk-lib';
+import { Stack } from 'aws-cdk-lib';
+import { ApiEndpoint } from '../api-endpoint/api-endpoint';
+import { NestJs } from '../nestjs/nestjs';
 
 export interface MicroserviceProps {
   path: string;
@@ -11,25 +11,26 @@ export interface MicroserviceProps {
 
 export class Microservice extends Construct {
   private nestJs: NestJs;
+
   private apiEndpoint: ApiEndpoint;
 
   constructor(scope: Construct, id: string, props: MicroserviceProps) {
     super(scope, id);
 
-    const region = Stack.of(this).region;
+    const { region } = Stack.of(this);
     const stageName = 'default';
     const apiId = ssm.StringParameter.fromStringParameterAttributes(
       scope,
-      `rest-api-id-ssm`,
+      'rest-api-id-ssm',
       {
         parameterName: 'web-api-gateway-rest-api-id',
       },
     ).stringValue;
 
     this.nestJs = new NestJs(scope, `${id}-nestjs`, {
-      apiId: apiId,
-      region: region,
-      stageName: stageName,
+      apiId,
+      region,
+      stageName,
     });
 
     this.apiEndpoint = new ApiEndpoint(this, `${id}-api-endpoint`, {

@@ -11,6 +11,7 @@
     }
   },
   "extensions": [
+    // "Orta.vscode-jest",
     "pflannery.vscode-versionlens",
     "folke.vscode-monorepo-workspace",
     // "GitHub.copilot",

@@ -31,7 +31,7 @@
   "devDependencies": {
     "@org-platform/eslint-config": "workspace:*",
     "aws-cdk-lib": "2.47.0",
-    "constructs": "^10.0.0",
+    "constructs": "^10.1.211",
     "@types/jest": "28.1.8",
     "@types/node": "^16.0.0",
     "@types/aws-lambda": "~8.10.93",
