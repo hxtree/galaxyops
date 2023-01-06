@@ -39,6 +39,13 @@
       "tags": ["platform-team"]
     },
     {
+      "packageName": "@org-platform/pipeline",
+      "projectFolder": "platform/pipeline",
+      "reviewCategory": "platform",
+      "cyclicDependencyProjects": [],
+      "tags": ["platform-team"]
+    },
+    {
       "packageName": "@org-platform/constructs",
       "projectFolder": "platform/constructs",
       "reviewCategory": "platform",

@@ -550,6 +550,45 @@ importers:
       ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
       typescript: 4.9.4
 
+  ../../platform/pipeline:
+    specifiers:
+      '@org-platform/constructs': workspace:*
+      '@org-platform/eslint-config': workspace:*
+      '@org-rig/base-nodejs': workspace:*
+      '@types/aws-lambda': ~8.10.93
+      '@types/jest': 28.1.8
+      '@types/lodash': ~4.14.191
+      '@types/node': ^16.0.0
+      aws-cdk-lib: 2.47.0
+      aws-lambda: 1.0.7
+      constructs: ^10.1.211
+      eslint: 8.26.0
+      fs: ~0.0.1-security
+      jest: 28.1.3
+      lodash: ~4.17.21
+      path: ~0.12.7
+      ts-node: 10.9.1
+      typescript: 4.9.4
+    dependencies:
+      '@org-platform/constructs': link:../constructs
+      '@org-rig/base-nodejs': link:../rigs/base-nodejs
+      aws-lambda: 1.0.7
+      eslint: 8.26.0
+    devDependencies:
+      '@org-platform/eslint-config': link:../eslint-config
+      '@types/aws-lambda': 8.10.109
+      '@types/jest': 28.1.8
+      '@types/lodash': 4.14.191
+      '@types/node': 16.18.9
+      aws-cdk-lib: 2.47.0_constructs@10.1.211
+      constructs: 10.1.211
+      fs: 0.0.1-security
+      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
+      lodash: 4.17.21
+      path: 0.12.7
+      ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
+      typescript: 4.9.4
+
   ../../platform/rigs/base-nodejs:
     specifiers:
       '@rushstack/heft': ~0.44.0
@@ -5206,7 +5245,7 @@ packages:
       babel-plugin-polyfill-corejs3: 0.1.7_@babel+core@7.20.5
       chalk: 4.1.2
       core-js: 3.26.1
-      express: 4.18.1
+      express: 4.18.2
       file-system-cache: 1.1.0
       find-up: 5.0.0
       fork-ts-checker-webpack-plugin: 6.5.2_t7kzpi2b2rccyz3x7c6qv75m54
@@ -5288,7 +5327,7 @@ packages:
       core-js: 3.26.1
       cpy: 8.1.2
       detect-port: 1.5.1
-      express: 4.18.1
+      express: 4.18.2
       fs-extra: 9.1.0
       global: 4.4.0
       globby: 11.1.0
@@ -5437,7 +5476,7 @@ packages:
       chalk: 4.1.2
       core-js: 3.26.1
       css-loader: 3.6.0_webpack@4.46.0
-      express: 4.18.1
+      express: 4.18.2
       file-loader: 6.2.0_webpack@4.46.0
       find-up: 5.0.0
       fs-extra: 9.1.0
@@ -8356,6 +8395,7 @@ packages:
       raw-body: 2.5.1
       type-is: 1.6.18
       unpipe: 1.0.0
+    dev: false
 
   /body-parser/1.20.1:
     resolution: {integrity: sha512-jWi7abTbYwajOytWCQc37VulmWiRae5RyTpaCyDcS5/lMdtwSz5lOpDE67srw/HYe35f1z3fDQw+3txg7gNtWw==}
@@ -8373,7 +8413,6 @@ packages:
       raw-body: 2.5.1
       type-is: 1.6.18
       unpipe: 1.0.0
-    dev: false
 
   /bonjour-service/1.0.14:
     resolution: {integrity: sha512-HIMbgLnk1Vqvs6B4Wq5ep7mxvj9sGz5d1JJyDNSGNIdA/w2MCz6GTjWTdjqOJV1bEPj+6IkxDvWNFKEBxNt4kQ==}
@@ -11495,6 +11534,7 @@ packages:
       type-is: 1.6.18
       utils-merge: 1.0.1
       vary: 1.1.2
+    dev: false
 
   /express/4.18.2:
     resolution: {integrity: sha512-5/PsL6iGPdfQ/lKM1UuielYgv3BUoJfz1aUwU9vHZ+J7gyvwdQXFEBIEIaxeGf0GIcreATNyBExtalisDbuMqQ==}
@@ -11531,7 +11571,6 @@ packages:
       type-is: 1.6.18
       utils-merge: 1.0.1
       vary: 1.1.2
-    dev: false
 
   /extend-shallow/2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
@@ -17989,6 +18028,7 @@ packages:
     engines: {node: '>=0.6'}
     dependencies:
       side-channel: 1.0.4
+    dev: false
 
   /qs/6.11.0:
     resolution: {integrity: sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==}
@@ -21549,7 +21589,7 @@ packages:
       compression: 1.7.4
       connect-history-api-fallback: 2.0.0
       default-gateway: 6.0.3
-      express: 4.18.1
+      express: 4.18.2
       graceful-fs: 4.2.10
       html-entities: 2.3.3
       http-proxy-middleware: 2.0.6_@types+express@4.17.15

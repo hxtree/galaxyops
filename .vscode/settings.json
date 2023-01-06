@@ -55,5 +55,6 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "files.associations": { "*.json": "jsonc" },
-  "versionlens.suggestions.showOnStartup": true
+  "versionlens.suggestions.showOnStartup": true,
+  "jest.jestCommandLine": "rush test"
 }

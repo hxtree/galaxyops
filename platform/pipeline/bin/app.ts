@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import {MyPipelineStack} from '../stacks/pipeline.stack';
+import { MyPipelineStack } from '../stacks/pipeline.stack';
+import { awsAccounts } from '@org-platform/constructs';
 
 const app = new cdk.App();
 new MyPipelineStack(app, 'MyPipelineStack', {
   env: {
-    account: '111111111111',
-    region: 'eu-west-1',
+    account: awsAccounts.dev.accountId,
+    region: awsAccounts.dev.region,
   },
 });
 

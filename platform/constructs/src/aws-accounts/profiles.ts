@@ -20,18 +20,22 @@ export const awsAccounts = {
   dev: {
     accountId: '298217020330',
     description: 'Use for development',
+    region: 'us-east-2',
   },
   test: {
     accountId: '298217020330',
     description: 'Use to run Acceptance Test',
+    region: 'us-east-2',
   },
   prod: {
     accountId: '298217020330',
     description: 'Use for production',
+    region: 'us-east-2',
   },
   tools: {
     accountId: '298217020330',
     description: 'Use to deploy resources to other accounts',
+    region: 'us-east-2',
   },
 };
 

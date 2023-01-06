@@ -10,7 +10,7 @@
     "build": "tsc",
     "build:all": "rush build -t .",
     "watch": "tsc -w",
-    "test": "jest --logHeapUsage",
+    "test": "",
     "cdk": "cdk",
     "hotswap": "cdk deploy --hotswap",
     "lint": "eslint --format visualstudio \"./src/**/*.ts\" --fix",
@@ -26,12 +26,13 @@
   "dependencies": {
     "@org-platform/constructs": "workspace:*",
     "aws-lambda": "1.0.7",
-    "eslint": "8.26.0"
+    "eslint": "8.26.0",
+    "@org-rig/base-nodejs": "workspace:*"
   },
   "devDependencies": {
     "@org-platform/eslint-config": "workspace:*",
     "aws-cdk-lib": "2.47.0",
-    "constructs": "^10.0.0",
+    "constructs": "^10.1.211",
     "@types/jest": "28.1.8",
     "@types/node": "^16.0.0",
     "@types/aws-lambda": "~8.10.93",
