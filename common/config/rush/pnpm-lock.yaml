@@ -554,6 +554,7 @@ importers:
     specifiers:
       '@org-platform/constructs': workspace:*
       '@org-platform/eslint-config': workspace:*
+      '@org-rig/base-nodejs': workspace:*
       '@types/aws-lambda': ~8.10.93
       '@types/jest': 28.1.8
       '@types/lodash': ~4.14.191
@@ -570,6 +571,7 @@ importers:
       typescript: 4.9.4
     dependencies:
       '@org-platform/constructs': link:../constructs
+      '@org-rig/base-nodejs': link:../rigs/base-nodejs
       aws-lambda: 1.0.7
       eslint: 8.26.0
     devDependencies:
