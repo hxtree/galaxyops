@@ -82,6 +82,10 @@ This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the
 [code of conduct](docs/CODE_OF_CONDUCT.md).
 
+The quickest way to start contibuting is to
+[fork repo](https://github.com/hxtree/keepers-cradle/fork) and submit changes
+back.
+
 ### Our Contributors
 
 <a href="https://github.com/hxtree/keepers-cradle/graphs/contributors">
