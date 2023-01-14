@@ -29,7 +29,12 @@
     "preRushBuild": [],
     "postRushBuild": []
   },
-  "allowedProjectTags": ["platform-team", "game-design-team", "ux-team"],
+  "allowedProjectTags": [
+    "platform-team",
+    "game-design-team",
+    "ux-team",
+    "library"
+  ],
   "projects": [
     {
       "packageName": "@org-rig/base-nodejs",
@@ -65,6 +70,13 @@
       "reviewCategory": "platform",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
+    },
+    {
+      "packageName": "@org-library/mock-factory",
+      "projectFolder": "libraries/mock-factory",
+      "reviewCategory": "rigs",
+      "cyclicDependencyProjects": [],
+      "tags": ["library"]
     },
     {
       "packageName": "@org-api-client/luck-by-dice",

@@ -10,7 +10,7 @@ client is built using Unreal Engine 5.
 [![Continue Intergration](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/keepers-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/keepers-cradle&utm_campaign=Badge_Coverage)
-[![Slack](https://img.shields.io/badge/slack-keeperscradle-purple)](https://ouxsoft.slack.com/archives/C02FR135CN9)
+[![Slack](https://img.shields.io/badge/slack-keeperscradle-purple)](https://keeperscradle.slack.com/archives/C04JH10RP9V)
 ![TypeScript](https://shields.io/badge/typescript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 ![AWS CDKv2](https://shields.io/badge/cdkv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
 
@@ -36,9 +36,8 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 
 ---
 
-> **Note** 
-> Development of `@org-clients/base-game-engine` client requires
-[additional tools](clients/base-game-engine/README.md).
+> **Note** Development of `@org-clients/base-game-engine` client requires
+> [additional tools](clients/base-game-engine/README.md).
 
 ### Folder Structure
 
@@ -71,8 +70,7 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 - [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 - [Third Party Docs](docs/third-party-docs.md)
 
-> **Note**
-> Use `rush help` for information on builtin commands.
+> **Note** Use `rush help` for information on builtin commands.
 
 ## Contributing
 

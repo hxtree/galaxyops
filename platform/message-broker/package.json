@@ -1,0 +1,47 @@
+{
+  "name": "@org-platform/message-broker",
+  "module": "commonjs",
+  "version": "1.0.0",
+  "description": "An API for publishing and receiving async messages",
+  "bin": {
+    "app": "bin/app.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:all": "rush build -t .",
+    "watch": "tsc -w",
+    "test": "",
+    "cdk": "cdk",
+    "hotswap": "cdk deploy --hotswap",
+    "lint": "eslint --format visualstudio \"./src/**/*.ts\" --fix",
+    "lint:ci": "eslint --format visualstudio \"./src/**/*.ts\" --fix-dry-run",
+    "docs": "typedoc --entryPointStrategy expand ./src",
+    "deploy": "cdk deploy",
+    "destroy": "cdk destroy",
+    "diff": "cdk diff",
+    "synth": "cdk synth",
+    "bootstrap": "cdk bootstrap",
+    "depcheck": "npx depcheck"
+  },
+  "dependencies": {
+    "@org-platform/constructs": "workspace:*",
+    "aws-lambda": "1.0.7",
+    "eslint": "8.26.0",
+    "@org-rig/base-nodejs": "workspace:*"
+  },
+  "devDependencies": {
+    "@org-platform/eslint-config": "workspace:*",
+    "aws-cdk-lib": "2.47.0",
+    "constructs": "^10.1.211",
+    "@types/jest": "28.1.8",
+    "@types/node": "^16.0.0",
+    "@types/aws-lambda": "~8.10.93",
+    "jest": "28.1.3",
+    "typescript": "4.9.4",
+    "ts-node": "10.9.1",
+    "fs": "~0.0.1-security",
+    "path": "~0.12.7",
+    "lodash": "~4.17.21",
+    "@types/lodash": "~4.14.191"
+  }
+}
