@@ -22,7 +22,7 @@
       "name": "branch-naming-policy",
       "commandKind": "global",
       "summary": "Check git branch name against git flow policy",
-      "shellCommand": "common/scripts/branch-naming-policy/branch-naming-policy.sh",
+      "shellCommand": "common/scripts/git-scm/branch-naming-policy.sh",
       "safeForSimultaneousRushProcesses": true
     },
     {
