@@ -23,7 +23,7 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 1. Clone this repo using [Git](https://git-scm.com/downloads).
 
    ```bash
-   git clone git@github.com:hxtree/monorepo.git
+   git clone git@github.com:hxtree/keepers-cradle
    ```
 
 2. Install [Docker](https://docs.docker.com/get-docker/),
