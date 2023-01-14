@@ -31,6 +31,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@faker-js/faker",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
       "name": "@microsoft/tsdoc",
       "allowedCategories": [ "apis", "clients" ]
     },
@@ -92,7 +96,7 @@
     },
     {
       "name": "@org-platform/eslint-config",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
       "name": "@org-rig/base-node-rig",
@@ -244,11 +248,11 @@
     },
     {
       "name": "class-transformer",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
       "name": "class-validator",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
       "name": "construct",
@@ -260,7 +264,7 @@
     },
     {
       "name": "esbuild",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
       "name": "eslint",
@@ -356,7 +360,7 @@
     },
     {
       "name": "fs",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
       "name": "husky",
@@ -368,7 +372,7 @@
     },
     {
       "name": "lodash",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
       "name": "mongoose",
@@ -380,7 +384,7 @@
     },
     {
       "name": "path",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
       "name": "prettier",
@@ -448,7 +452,7 @@
     },
     {
       "name": "ts-node",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "apis", "clients", "platform", "rigs" ]
     },
     {
       "name": "tsdx",
@@ -468,7 +472,7 @@
     },
     {
       "name": "uuid",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
       "name": "web-vitals",
