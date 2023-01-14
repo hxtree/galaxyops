@@ -420,7 +420,7 @@
     },
     {
       "name": "reflect-metadata",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
       "name": "rxjs",

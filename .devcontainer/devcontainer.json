@@ -14,6 +14,7 @@
     // "Orta.vscode-jest",
     "pflannery.vscode-versionlens",
     "folke.vscode-monorepo-workspace",
+    "ryanluker.vscode-coverage-gutters",
     // "GitHub.copilot",
     "DavidAnson.vscode-markdownlint",
     "vivaxy.vscode-conventional-commits",
