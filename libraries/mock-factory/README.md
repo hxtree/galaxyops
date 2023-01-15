@@ -18,7 +18,7 @@ export class Person {
   public passed: boolean;
 }
 
-// Person {firstName: "Bob Gravy", visits: 43, passed: true }
+// Person {firstName: "Bobgravy", visits: 43, passed: true }
 const mockPerson = MockFactory.create<Person>(Person, { passed: true });
 ```
 
