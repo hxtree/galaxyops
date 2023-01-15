@@ -20,6 +20,8 @@ export class Person {
 
 // Person {firstName: "Bob Gravy", visits: 43, passed: true }
 const mockPerson = MockFactory.create<Person>(Person, { passed: true });
+```
+
 ## Documentation
 
 - [F.I.R.S.T Principles of Testing](https://medium.com/@tasdikrahman/f-i-r-s-t-principles-of-testing-1a497acda8d6>6)
