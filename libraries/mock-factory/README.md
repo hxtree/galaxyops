@@ -24,13 +24,19 @@ const mockPerson = MockFactory.create<Person>(Person, { passed: true });
 
 ## Assumptions
 
-Object data can be faked to the correct type based on either decorator, property
-name, or property typehint. Decorator was choosen over the other two. Although
-property names should remain somewhat consistant, it is unreasonable many to
-many relationship to maintain. Generating values based on typehinting is less
-then ideal due to special tsc requirements and compiled code being type
-agnostic. Decorators are ideal for this repository as decorators are already
-used for validation and object mapping.
+In typescript object data can be faked based on either: the decorator, the
+property name, or property typehint.
+
+Although property names should remain somewhat consistant, it is unreasonable
+many to many relationship to maintain. Generating values based on typehinting is
+less then ideal due to special tsc requirements and compiled code being type
+agnostic.
+
+Class validator decorators are ideal for this repository as decorators are
+already used for validation and object mapping. Mock data should be valid and
+meet class validator requirements. If a class validator requires a string length
+mock data should meet that requirement. New decorators are easy to add. It is
+for these reasons decorators were choosen.
 
 ## Documentation
 
@@ -50,3 +56,4 @@ tests.
 It would be nice to be able to intergrate with swagger. e.g.
 
 - <https://www.reddit.com/r/Python/comments/n4giff/automatic_fake_json_data_creation_from_schema/>
+- <https://github.com/subeeshcbabu-zz/swagmock>
