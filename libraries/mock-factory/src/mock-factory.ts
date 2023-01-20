@@ -1,7 +1,12 @@
 import { faker } from '@faker-js/faker';
+// import {
+//   Type,
+//   plainToClass,
+//   plainToInstance,
+//   ClassConstructor,
+// } from 'class-transformer';
 
 // TODO mock type
-// import { Type, plainToInstance, ClassConstructor } from 'class-transformer';
 // import { cloneDeep } from 'lodash';
 // export function build(cls: ClassConstructor<unknown>, seed: any): any {
 //   const mockSeed = cloneDeep(seed);
@@ -39,8 +44,11 @@ export class MockFactory {
     let randomFixture = {} as T;
 
     for (const propertyName of Object.keys(groupedMetadatas)) {
-      const metadatas = groupedMetadatas[propertyName];
-      const value = this.generatePropertyValueFromMetadatas(metadatas);
+      // console.log(JSON.stringify(groupedMetadatas));
+
+      const value = this.generatePropertyValueFromMetadatas(
+        groupedMetadatas[propertyName],
+      );
 
       if (value !== undefined) {
         randomFixture = {
@@ -50,6 +58,7 @@ export class MockFactory {
       }
     }
 
+    // return plainToClass(constructor, { ...randomFixture, ...partial });
     return { ...randomFixture, ...partial };
   }
 

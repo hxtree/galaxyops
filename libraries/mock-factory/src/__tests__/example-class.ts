@@ -3,16 +3,18 @@ import {
   IsNumber,
   IsBoolean,
   IsUUID,
-  Contains,
-  IsInt,
-  Length,
+  // Contains,
+  // IsInt,
+  // Length,
   IsEmail,
   IsFQDN,
-  IsDate,
-  Min,
-  Max,
+  // IsDate,
+  // Min,
+  // Max,
   IsCurrency,
+  ValidateNested,
 } from 'class-validator';
+import { ExampleChildClass } from './example-child-class';
 
 export class ExampleClass {
   @IsBoolean()
@@ -36,7 +38,7 @@ export class ExampleClass {
   @IsFQDN()
   public site: string;
 
-  //   @Length(10, 20)
+  //   @Length(10, 20):
   //   title: string;
 
   //   @Contains('hello')
@@ -49,4 +51,7 @@ export class ExampleClass {
 
   //   @IsDate()
   //   createDate: Date;
+
+  @ValidateNested()
+  exampleChildClass: ExampleChildClass;
 }
