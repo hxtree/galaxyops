@@ -20,7 +20,8 @@
     "@org-rig/base-nodejs": "workspace:*",
     "@faker-js/faker": "~7.6.0",
     "reflect-metadata": "0.1.13",
-    "@types/validator": "~13.7.10"
+    "@types/validator": "~13.7.10",
+    "currency.js": "~2.0.4"
   },
   "devDependencies": {
     "@types/jest": "28.1.8",

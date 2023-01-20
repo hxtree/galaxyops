@@ -22,6 +22,22 @@ export class Person {
 const mockPerson = MockFactory.create<Person>(Person, { passed: true });
 ```
 
+## Assumptions
+
+In typescript object data can be faked based on either: the decorator, the
+property name, or property typehint.
+
+Although property names should remain somewhat consistant, it is unreasonable
+many to many relationship to maintain. Generating values based on typehinting is
+less then ideal due to special tsc requirements and compiled code being type
+agnostic.
+
+Class validator decorators are ideal for this repository as decorators are
+already used for validation and object mapping. Mock data should be valid and
+meet class validator requirements. If a class validator requires a string length
+mock data should meet that requirement. New decorators are easy to add. It is
+for these reasons decorators were choosen.
+
 ## Documentation
 
 - [F.I.R.S.T Principles of Testing](https://medium.com/@tasdikrahman/f-i-r-s-t-principles-of-testing-1a497acda8d6>6)
@@ -29,3 +45,15 @@ const mockPerson = MockFactory.create<Person>(Person, { passed: true });
 - [fakerJs](https://fakerjs.dev/api/date.html#date)
 - [class-transformer](https://github.com/typestack/class-transformer/tree/master)
 - [class-validator](https://github.com/typestack/class-validator)
+
+## TODO
+
+It would be nice to be able to generate fake recusive objects data for unit
+tests.
+
+- <https://github.com/google/intermock/blob/master/src/lib/generators.ts>
+
+It would be nice to be able to intergrate with swagger. e.g.
+
+- <https://www.reddit.com/r/Python/comments/n4giff/automatic_fake_json_data_creation_from_schema/>
+- <https://github.com/subeeshcbabu-zz/swagmock>

@@ -1,4 +1,5 @@
 import { MockFactory } from '../mock-factory';
+import { ExampleChildClass } from './example-child-class';
 import { ExampleClass } from './example-class';
 
 describe('MockFactory', () => {
@@ -55,5 +56,9 @@ describe('MockFactory', () => {
       expect(mock.string).toBe(partial.string);
       expect(mock.boolean).toBe(partial.boolean);
     });
+
+    // it('should create nested objects based on decorators', () => {
+    //   expect(typeof mock.exampleChildClass).toBeInstanceOf(ExampleChildClass);
+    // });
   });
 });
