@@ -8,7 +8,7 @@ import {
   // Length,
   IsEmail,
   IsFQDN,
-  // IsDate,
+  IsDate,
   Min,
   Max,
   IsCurrency,
@@ -38,6 +38,12 @@ export class ExampleClass {
 
   @IsFQDN()
   public site: string;
+
+  @IsDate()
+  public date: Date;
+
+  // @IsDiceNotation()
+  // public diceNotation: string;
 
   // @IsString()
   // @Min(255)

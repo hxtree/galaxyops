@@ -5,12 +5,16 @@ describe('MockFactory', () => {
   describe('create', () => {
     let mock: ExampleClass;
 
-    beforeAll(async () => {
+    beforeAll(() => {
       mock = MockFactory.create<ExampleClass>(ExampleClass);
     });
 
     it('should create a mock object', () => {
       expect(typeof mock).toBe('object');
+    });
+
+    it('should create correct instance', () => {
+      expect(mock).toBeInstanceOf(ExampleClass);
     });
 
     it('should create boolean based on decorators', () => {
@@ -41,6 +45,10 @@ describe('MockFactory', () => {
     it('should create site based on decorators', () => {
       expect(typeof mock.site).toContain('string');
       expect(mock.site).toContain('.');
+    });
+
+    it('should create date on decorators', () => {
+      expect(typeof mock.date).toContain('string');
     });
 
     it('should create mock object using seeded data', async () => {

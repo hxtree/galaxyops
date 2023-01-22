@@ -33,6 +33,8 @@ export function generateFakeData(
 
   JSONSchemaFaker.format('uuid', () => faker.datatype.uuid());
 
+  JSONSchemaFaker.format('date', () => faker.date.past());
+
   // use the async-version (preferred way)
   JSONSchemaFaker.resolve(jsonSchema).then(sample => {
     console.log(sample);
