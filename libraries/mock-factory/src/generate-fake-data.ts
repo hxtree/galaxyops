@@ -6,7 +6,7 @@ import { faker } from '@faker-js/faker';
 export function generateFakeData(
   jsonSchema: any,
   definitions: { [name: string]: any } = {},
-): object {
+): any {
   if (
     jsonSchema.$ref &&
     definitions[jsonSchema.$ref.replace('#/definitions/', '')]
