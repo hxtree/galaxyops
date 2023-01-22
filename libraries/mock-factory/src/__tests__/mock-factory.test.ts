@@ -1,12 +1,11 @@
 import { MockFactory } from '../mock-factory';
-import { ExampleChildClass } from './example-child-class';
 import { ExampleClass } from './example-class';
 
 describe('MockFactory', () => {
   describe('create', () => {
     let mock: ExampleClass;
 
-    beforeAll(() => {
+    beforeAll(async () => {
       mock = MockFactory.create<ExampleClass>(ExampleClass);
     });
 
@@ -44,7 +43,7 @@ describe('MockFactory', () => {
       expect(mock.site).toContain('.');
     });
 
-    it('should create mock object using seeded data', () => {
+    it('should create mock object using seeded data', async () => {
       const partial = {
         number: 2131,
         string: 'Test data',
