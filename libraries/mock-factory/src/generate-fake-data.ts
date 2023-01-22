@@ -39,7 +39,7 @@ export function generateFakeData(
 
   JSONSchemaFaker.format('hostname', () => faker.internet.url());
 
-  // use the async-version (preferred way)
+// use the async-version (preferred way)
   JSONSchemaFaker.resolve(jsonSchema).then(sample => {
     console.log(sample);
   });
