@@ -6,10 +6,18 @@ It creates a mock object by first inferring each property's type based the
 decorator. Next, it generate fake data for the property based on the type.
 Lastly it returns the object.
 
+## Example
+
 ```typescript
 export class Person {
+  @IsUuid();
+  public id: string;
+
   @IsString()
   public firstName: string;
+
+  @IsCurrency()
+  public currency: string;
 
   @IsNumber()
   public visits: number;
@@ -18,8 +26,18 @@ export class Person {
   public passed: boolean;
 }
 
-// Person {firstName: "Bobgravy", visits: 43, passed: true }
 const mockPerson = MockFactory.create<Person>(Person, { passed: true });
+
+```
+
+```json
+{
+  "id": "4cb85e06-1060-4bed-8224-14ec39e0dfa9",
+  "firstName": "irure in",
+  "currency": "887.56",
+  "visits": -91521537.9856908,
+  "passed": true
+}
 ```
 
 ## Assumptions
@@ -32,11 +50,11 @@ many to many relationship to maintain. Generating values based on typehinting is
 less then ideal due to special tsc requirements and compiled code being type
 agnostic.
 
-Class validator decorators are ideal for this repository as decorators are
-already used for validation and object mapping. Mock data should be valid and
-meet class validator requirements. If a class validator requires a string length
-mock data should meet that requirement. New decorators are easy to add. It is
-for these reasons decorators were choosen.
+Using class validator decorators and schema are ideal for this repository as
+decorators are already used for validation and object mapping. Mock data should
+be valid and meet class validator requirements. If a class validator requires a
+string length mock data should meet that requirement. New decorators are easy to
+add. It is for these reasons decorators were choosen.
 
 ## Documentation
 

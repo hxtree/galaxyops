@@ -8,12 +8,13 @@ import {
   // Length,
   IsEmail,
   IsFQDN,
-  // IsDate,
-  // Min,
-  // Max,
+  IsDate,
+  Min,
+  Max,
   IsCurrency,
   ValidateNested,
 } from 'class-validator';
+import { Type } from 'class-transformer';
 import { ExampleChildClass } from './example-child-class';
 
 export class ExampleClass {
@@ -38,6 +39,20 @@ export class ExampleClass {
   @IsFQDN()
   public site: string;
 
+  @IsDate()
+  public date: Date;
+
+  // @IsDiceNotation()
+  // public diceNotation: string;
+
+  // @IsString()
+  // @Min(255)
+  // public min: string;
+
+  // @IsString()
+  // @Max(10)
+  // public max: string;
+
   //   @Length(10, 20):
   //   title: string;
 
@@ -52,6 +67,7 @@ export class ExampleClass {
   //   @IsDate()
   //   createDate: Date;
 
-  @ValidateNested()
-  exampleChildClass: ExampleChildClass;
+  // @ValidateNested()
+  // @Type(() => ExampleChildClass)
+  // exampleChildClass: ExampleChildClass;
 }

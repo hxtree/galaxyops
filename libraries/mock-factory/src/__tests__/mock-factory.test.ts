@@ -1,5 +1,4 @@
 import { MockFactory } from '../mock-factory';
-import { ExampleChildClass } from './example-child-class';
 import { ExampleClass } from './example-class';
 
 describe('MockFactory', () => {
@@ -12,6 +11,10 @@ describe('MockFactory', () => {
 
     it('should create a mock object', () => {
       expect(typeof mock).toBe('object');
+    });
+
+    it('should create correct instance', () => {
+      expect(mock).toBeInstanceOf(ExampleClass);
     });
 
     it('should create boolean based on decorators', () => {
@@ -44,7 +47,11 @@ describe('MockFactory', () => {
       expect(mock.site).toContain('.');
     });
 
-    it('should create mock object using seeded data', () => {
+    it('should create date on decorators', () => {
+      expect(typeof mock.date).toContain('string');
+    });
+
+    it('should create mock object using seeded data', async () => {
       const partial = {
         number: 2131,
         string: 'Test data',
