@@ -9,8 +9,7 @@ import {
   IsEmail,
   IsFQDN,
   IsDate,
-  Min,
-  Max,
+  Length,
   IsCurrency,
   ValidateNested,
 } from 'class-validator';
@@ -42,18 +41,13 @@ export class ExampleClass {
   @IsDate()
   public date: Date;
 
+  @IsString()
+  @Length(1, 10)
+  public min: string;
+
   // @IsDiceNotation()
   // public diceNotation: string;
 
-  // @IsString()
-  // @Min(255)
-  // public min: string;
-
-  // @IsString()
-  // @Max(10)
-  // public max: string;
-
-  //   @Length(10, 20):
   //   title: string;
 
   //   @Contains('hello')

@@ -1,4 +1,4 @@
-import * as _ from 'lodash';
+import { cloneDeep } from 'lodash';
 import { JSONSchemaFaker } from 'json-schema-faker';
 import currency from 'currency.js';
 import { faker } from '@faker-js/faker';
@@ -7,6 +7,8 @@ export function generateFakeData(
   jsonSchema: any,
   definitions: { [name: string]: any } = {},
 ): any {
+  console.log(jsonSchema);
+
   if (
     jsonSchema.$ref &&
     definitions[jsonSchema.$ref.replace('#/definitions/', '')]
@@ -14,7 +16,7 @@ export function generateFakeData(
     jsonSchema = definitions[jsonSchema.$ref.replace('#/definitions/', '')];
   }
 
-  const toDealJsonSchema = _.cloneDeep(jsonSchema);
+  const toDealJsonSchema = cloneDeep(jsonSchema);
   if (definitions) {
     toDealJsonSchema.definitions = definitions;
   }
@@ -35,7 +37,9 @@ export function generateFakeData(
 
   JSONSchemaFaker.format('date', () => faker.date.past());
 
-  // use the async-version (preferred way)
+  JSONSchemaFaker.format('hostname', () => faker.internet.url());
+
+// use the async-version (preferred way)
   JSONSchemaFaker.resolve(jsonSchema).then(sample => {
     console.log(sample);
   });
