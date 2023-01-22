@@ -255,6 +255,10 @@
       "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
+      "name": "class-validator-jsonschema",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
       "name": "construct",
       "allowedCategories": [ "apis" ]
     },
@@ -373,6 +377,14 @@
     {
       "name": "jest",
       "allowedCategories": [ "apis", "clients", "platform", "rigs" ]
+    },
+    {
+      "name": "json-schema",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
+      "name": "json-schema-faker",
+      "allowedCategories": [ "rigs" ]
     },
     {
       "name": "lodash",
