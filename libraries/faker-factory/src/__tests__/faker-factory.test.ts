@@ -1,4 +1,4 @@
-import { fakerFactory } from '../faker-factory';
+import { FakerFactory } from '../faker-factory';
 import { SampleClass, SampleChildClass, SampleEnum } from './sample-class';
 
 describe('fakerFactory', () => {
@@ -6,7 +6,7 @@ describe('fakerFactory', () => {
     let faker: SampleClass;
 
     beforeAll(async () => {
-      faker = await fakerFactory.create<SampleClass>(SampleClass);
+      faker = await FakerFactory.create<SampleClass>(SampleClass);
     });
 
     it('should create a faker object', () => {
@@ -71,7 +71,7 @@ describe('fakerFactory', () => {
         string: 'Test data',
         boolean: true,
       };
-      faker = await fakerFactory.create<SampleClass>(SampleClass, partial);
+      faker = await FakerFactory.create<SampleClass>(SampleClass, partial);
 
       expect(faker.number).toBe(partial.number);
       expect(faker.string).toBe(partial.string);
