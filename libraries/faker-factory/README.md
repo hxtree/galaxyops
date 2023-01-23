@@ -26,7 +26,7 @@ export class Person {
   public passed: boolean;
 }
 
-const fakerPerson = await fakerFactory.create<Person>(Person, { passed: true });
+const fakerPerson = await FakerFactory.create<Person>(Person, { passed: true });
 
 ```
 
