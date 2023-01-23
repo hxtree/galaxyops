@@ -8,7 +8,31 @@ Lastly, the faked object is return.
 
 ## Example
 
+Create a new fake by importing the library and the class to be faked and call
+factory.
+
 ```typescript
+import { FakerFactory } from '@org-library/faker-factory';
+import { Person } from './person.ts';
+
+const fakerPerson = await FakerFactory.create<Person>(Person, { passed: true });
+
+console.log(fakerPerson);
+```
+
+```json
+{
+  "id": "4cb85e06-1060-4bed-8224-14ec39e0dfa9",
+  "firstName": "irure in",
+  "currency": "887.56",
+  "visits": -91521537.9856908,
+  "passed": true
+}
+```
+
+```typescript
+// person.ts
+
 export class Person {
   @IsUuid();
   public id: string;
@@ -24,19 +48,6 @@ export class Person {
 
   @IsBoolean()
   public passed: boolean;
-}
-
-const fakerPerson = await FakerFactory.create<Person>(Person, { passed: true });
-
-```
-
-```json
-{
-  "id": "4cb85e06-1060-4bed-8224-14ec39e0dfa9",
-  "firstName": "irure in",
-  "currency": "887.56",
-  "visits": -91521537.9856908,
-  "passed": true
 }
 ```
 
@@ -57,7 +68,7 @@ Class-validator decorators and schema was choosen for the following reasons.
   class-validator requirements.
 - If a class-validator requires a string length faker data should meet that
   requirement.
-- Class-validator is easy to extend with new decorators.
+- It is easy to create new class-validator decorators and extend functionality.
 
 ## Documentation
 
@@ -71,7 +82,6 @@ Class-validator decorators and schema was choosen for the following reasons.
 
 ## TODO
 
-- [ ] Optional parameters
 - [ ] Itergrate with swagger e.g.
-- <https://www.reddit.com/r/Python/comments/n4giff/automatic_fake_json_data_creation_from_schema/>
-- <https://github.com/subeeshcbabu-zz/swagmock>
+      <https://www.reddit.com/r/Python/comments/n4giff/automatic_fake_json_data_creation_from_schema/>
+      <https://github.com/subeeshcbabu-zz/swagmock>

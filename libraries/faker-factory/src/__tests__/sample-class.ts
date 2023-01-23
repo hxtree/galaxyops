@@ -16,6 +16,7 @@ import {
   IsCurrency,
   IsInstance,
   ValidateNested,
+  IsOptional,
 } from 'class-validator';
 import { Type } from 'class-transformer';
 
@@ -74,6 +75,10 @@ export class SampleClass {
 
   @Contains('needle')
   public haystack: string;
+
+  @IsString()
+  @IsOptional()
+  public optional: string;
 
   @IsInstance(SampleChildClass)
   @Type(() => SampleChildClass)

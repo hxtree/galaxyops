@@ -35,6 +35,7 @@ export async function generateFakeData(
   JSONSchemaFaker.option('ignoreMissingRefs', true);
   JSONSchemaFaker.option('failOnInvalidTypes', false);
   JSONSchemaFaker.option('failOnInvalidFormat', false);
+  JSONSchemaFaker.option('optionalsProbability', 0.5);
 
   // ideally fakers would be sync or async
   // JSONSchemaFaker has issues with resolve() in v3.1.1
