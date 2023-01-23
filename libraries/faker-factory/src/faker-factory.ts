@@ -4,12 +4,12 @@ import { cloneDeep } from 'lodash';
 import { generateFakeData } from './generate-fake-data';
 import { getSchemas } from './schemas';
 
-export class MockFactory {
+export class fakerFactory {
   public static create<T>(
     constructor: ClassConstructor<unknown>,
     partial: Partial<T> = {},
   ): Promise<T> {
-    return new MockFactory().create(constructor, partial);
+    return new fakerFactory().create(constructor, partial);
   }
 
   public async create<T>(

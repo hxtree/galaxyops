@@ -1,8 +1,8 @@
-# @org-library/mock-factory
+# @org-library/faker-factory
 
-Mock factory creates fakes of classes for testing purposes.
+faker factory creates fakes of classes for testing purposes.
 
-It creates a mock object by first inferring each property's type based the
+It creates a faker object by first inferring each property's type based the
 decorator. Next, it generate fake data for the property based on the type.
 Lastly it returns the object.
 
@@ -26,7 +26,7 @@ export class Person {
   public passed: boolean;
 }
 
-const mockPerson = await MockFactory.create<Person>(Person, { passed: true });
+const fakerPerson = await fakerFactory.create<Person>(Person, { passed: true });
 
 ```
 
@@ -51,14 +51,15 @@ less then ideal due to special tsc requirements and compiled code being type
 agnostic.
 
 Using class validator decorators and schema are ideal for this repository as
-decorators are already used for validation and object mapping. Mock data should
+decorators are already used for validation and object mapping. faker data should
 be valid and meet class validator requirements. If a class validator requires a
-string length mock data should meet that requirement. New decorators are easy to
-add. It is for these reasons decorators were choosen.
+string length faker data should meet that requirement. New decorators are easy
+to add. It is for these reasons decorators were choosen.
 
 ## Documentation
 
 - [F.I.R.S.T Principles of Testing](https://medium.com/@tasdikrahman/f-i-r-s-t-principles-of-testing-1a497acda8d6>6)
+- [Fake vs Mock](https://medium.com/@june.pravin/mocking-is-not-practical-use-fakes-e30cc6eaaf4e)
 - [Faking vs Mocking vs Stubbing](https://www.educative.io/answers/what-is-faking-vs-mocking-vs-stubbinghttps://www.educative.io/answers/what-is-faking-vs-mocking-vs-stubbing)
 - [fakerJs](https://fakerjs.dev/api/date.html#date)
 - [class-transformer](https://github.com/typestack/class-transformer/tree/master)
@@ -67,7 +68,7 @@ add. It is for these reasons decorators were choosen.
 
 ## TODO
 
-- [] Optional parameters
-- [] Itergrate with swagger e.g.
+- [ ] Optional parameters
+- [ ] Itergrate with swagger e.g.
 - <https://www.reddit.com/r/Python/comments/n4giff/automatic_fake_json_data_creation_from_schema/>
 - <https://github.com/subeeshcbabu-zz/swagmock>

@@ -72,9 +72,9 @@
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-library/mock-factory",
-      "projectFolder": "libraries/mock-factory",
-      "reviewCategory": "rigs",
+      "packageName": "@org-library/faker-factory",
+      "projectFolder": "libraries/faker-factory",
+      "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
       "tags": ["library"]
     },
