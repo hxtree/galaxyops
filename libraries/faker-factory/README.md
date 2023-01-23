@@ -1,10 +1,10 @@
 # @org-library/faker-factory
 
-faker factory creates fakes of classes for testing purposes.
+FakerFactory creates fakes of classes for testing purposes.
 
 It creates a faker object by first inferring each property's type based the
-decorator. Next, it generate fake data for the property based on the type.
-Lastly it returns the object.
+class-validator decorator. Next, a fake data is generated for the property.
+Lastly, the faked object is return.
 
 ## Example
 
@@ -46,15 +46,18 @@ In typescript object data can be faked based on either: the decorator, the
 property name, or property typehint.
 
 Although property names should remain somewhat consistant, it is unreasonable
-many to many relationship to maintain. Generating values based on typehinting is
-less then ideal due to special tsc requirements and compiled code being type
-agnostic.
+many-to-many relationship to maintain for faking purposes. Generating values
+based on typehinting is less then ideal due to compiled code being type agnostic
+and special tsc requirements.
 
-Using class validator decorators and schema are ideal for this repository as
-decorators are already used for validation and object mapping. faker data should
-be valid and meet class validator requirements. If a class validator requires a
-string length faker data should meet that requirement. New decorators are easy
-to add. It is for these reasons decorators were choosen.
+Class-validator decorators and schema was choosen for the following reasons.
+
+- Decorators are already present when using class-validation.
+- Faker data should not just be fake, it should be valid and meet
+  class-validator requirements.
+- If a class-validator requires a string length faker data should meet that
+  requirement.
+- Class-validator is easy to extend with new decorators.
 
 ## Documentation
 
