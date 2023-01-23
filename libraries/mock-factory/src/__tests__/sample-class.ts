@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-classes-per-file
 import {
   IsString,
   IsNumber,
@@ -17,15 +18,24 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { ExampleChildClass } from './example-child-class';
 
-export enum ExampleEnum {
+export enum SampleEnum {
   RED = 'red',
   YELLOw = 'yellow',
   BLUE = 'blue',
 }
 
-export class ExampleClass {
+export class SampleChildClass {
+  @IsString()
+  public string: string;
+}
+
+export class SamplePropertyClass {
+  @IsString()
+  public string: string;
+}
+
+export class SampleClass {
   @IsBoolean()
   public boolean: boolean;
 
@@ -54,8 +64,8 @@ export class ExampleClass {
   @Length(1, 10)
   public min: string;
 
-  @IsEnum(ExampleEnum)
-  public enum: ExampleEnum;
+  @IsEnum(SampleEnum)
+  public enum: SampleEnum;
 
   @IsInt()
   @Min(0)
@@ -65,15 +75,14 @@ export class ExampleClass {
   @Contains('needle')
   public haystack: string;
 
-  // @IsInstance(value: any)
-  // @ValidateNested()
-  // @IsInstance(ExampleChildClass)
-  // public exampleChildClass: ExampleChildClass;
-  // @Type(() => ExampleChildClass)
+  @IsInstance(SampleChildClass)
+  @Type(() => SampleChildClass)
+  public childClass: SampleChildClass;
+
+  @ValidateNested({ each: true })
+  @Type(() => SampleChildClass)
+  public nestedClass: SampleChildClass[];
 
   // @IsDiceNotation()
   // public diceNotation: string;
-
-  //   @IsDate()
-  //   createDate: Date;
 }
