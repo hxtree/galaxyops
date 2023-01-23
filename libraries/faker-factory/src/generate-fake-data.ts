@@ -36,7 +36,7 @@ export async function generateFakeData(
   JSONSchemaFaker.option('failOnInvalidTypes', false);
   JSONSchemaFaker.option('failOnInvalidFormat', false);
 
-  // ideally mocks would be sync or async
+  // ideally fakers would be sync or async
   // JSONSchemaFaker has issues with resolve() in v3.1.1
   const schema = JSONSchemaFaker.generate(fakerSchema, fakerRefs);
 

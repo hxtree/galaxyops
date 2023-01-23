@@ -27,7 +27,7 @@ importers:
       '@types/node': 16.18.9
       typescript: 4.9.4
 
-  ../../libraries/mock-factory:
+  ../../libraries/faker-factory:
     specifiers:
       '@faker-js/faker': ~7.6.0
       '@org-platform/eslint-config': workspace:*
@@ -825,7 +825,7 @@ packages:
     resolution: {integrity: sha512-duORpUiYrEpzKIop6iNbjnwKLAKnJ47csTyRACyEmWj0QdUrm5aqNJGHSSEQSUAvNW0ojX0dOmK9dZduvkfeXA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.20.5
+      '@babel/types': 7.20.7
 
   /@babel/helper-builder-binary-assignment-operator-visitor/7.18.9:
     resolution: {integrity: sha512-yFQ0YCHoIqarl8BCRwBL8ulYUaZpz3bNsA7oFepAzee+8/+ImtADXNOmO5vJvsPff3qi+hvpkY/NYBTrBQgdNw==}
@@ -939,8 +939,8 @@ packages:
     resolution: {integrity: sha512-WAwHBINyrpqywkUH0nTnNgI5ina5TFn85HKS0pbPDfxFfhyR/aNQEn4hGi1P1JyT//I0t4OgXUlofzWILRvS5w==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/template': 7.18.10
-      '@babel/types': 7.20.5
+      '@babel/template': 7.20.7
+      '@babel/types': 7.20.7
 
   /@babel/helper-hoist-variables/7.18.6:
     resolution: {integrity: sha512-UlJQPkFqFULIcyW5sbzgbkxn2FKRgwWiRexcuaR8RNJRy8+LLveqPjwZV/bwrLZCN0eUHD/x8D0heK1ozuoo6Q==}
@@ -958,7 +958,7 @@ packages:
     resolution: {integrity: sha512-0NFvs3VkuSYbFi1x2Vd6tKrywq+z/cLeYC/RJNFrIX/30Bf5aiGYbtvGXolEktzJH8o5E5KJ3tT+nkxuuZFVlA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.20.5
+      '@babel/types': 7.20.7
 
   /@babel/helper-module-transforms/7.20.2:
     resolution: {integrity: sha512-zvBKyJXRbmK07XhMuujYoJ48B5yvvmM6+wcpv6Ivj4Yg6qO7NOZOSnvZN9CRl1zz1Z4cKf8YejmCMh8clOoOeA==}
@@ -979,7 +979,7 @@ packages:
     resolution: {integrity: sha512-HP59oD9/fEHQkdcbgFCnbmgH5vIQTJbxh2yf+CdM89/glUNnuzr87Q8GIjGEnOktTROemO0Pe0iPAYbqZuOUiA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.20.5
+      '@babel/types': 7.20.7
 
   /@babel/helper-plugin-utils/7.10.4:
     resolution: {integrity: sha512-O4KCvQA6lLiMU9l2eawBPMf1xPP8xPfB3iEQw150hOVTqj/rfXz0ThTb4HEzqQfs2Bmo5Ay8BzxfzVtBrr9dVg==}
@@ -1026,13 +1026,13 @@ packages:
     resolution: {integrity: sha512-5y1JYeNKfvnT8sZcK9DVRtpTbGiomYIHviSP3OQWmDPU3DeH4a1ZlT/N2lyQ5P8egjcRaT/Y9aNqUxK0WsnIIg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.20.5
+      '@babel/types': 7.20.7
 
   /@babel/helper-split-export-declaration/7.18.6:
     resolution: {integrity: sha512-bde1etTx6ZyTmobl9LLMMQsaizFVZrquTEHOqKeQESMKo4PlObf+8+JA25ZsIpZhT/WEd39+vOdLXAFG/nELpA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.20.5
+      '@babel/types': 7.20.7
 
   /@babel/helper-string-parser/7.19.4:
     resolution: {integrity: sha512-nHtDoQcuqFmwYNYPz3Rah5ph2p8PFeFCsZk9A/48dPc/rGocJ5J3hAAZ7pb76VWX3fZKu+uEr/FhH5jLx7umrw==}
@@ -2020,7 +2020,7 @@ packages:
       '@babel/plugin-transform-unicode-escapes': 7.18.10_@babel+core@7.20.5
       '@babel/plugin-transform-unicode-regex': 7.18.6_@babel+core@7.20.5
       '@babel/preset-modules': 0.1.5_@babel+core@7.20.5
-      '@babel/types': 7.20.5
+      '@babel/types': 7.20.7
       babel-plugin-polyfill-corejs2: 0.3.3_@babel+core@7.20.5
       babel-plugin-polyfill-corejs3: 0.6.0_@babel+core@7.20.5
       babel-plugin-polyfill-regenerator: 0.4.1_@babel+core@7.20.5
@@ -6187,7 +6187,7 @@ packages:
   /@types/babel__core/7.1.20:
     resolution: {integrity: sha512-PVb6Bg2QuscZ30FvOU7z4guG6c926D9YRvOxEaelzndpMsvP+YM74Q/dAFASpg2l6+XLalxSGxcq/lrgYWZtyQ==}
     dependencies:
-      '@babel/parser': 7.20.5
+      '@babel/parser': 7.20.7
       '@babel/types': 7.20.7
       '@types/babel__generator': 7.6.4
       '@types/babel__template': 7.4.1
@@ -7940,9 +7940,9 @@ packages:
       eslint: '>= 4.12.1'
     dependencies:
       '@babel/code-frame': 7.18.6
-      '@babel/parser': 7.20.5
-      '@babel/traverse': 7.20.5
-      '@babel/types': 7.20.5
+      '@babel/parser': 7.20.7
+      '@babel/traverse': 7.20.12
+      '@babel/types': 7.20.7
       eslint: 6.8.0
       eslint-visitor-keys: 1.3.0
       resolve: 1.22.1

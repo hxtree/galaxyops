@@ -32,7 +32,7 @@
     },
     {
       "name": "@faker-js/faker",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "libraries", "rigs" ]
     },
     {
       "name": "@microsoft/tsdoc",
@@ -96,7 +96,7 @@
     },
     {
       "name": "@org-platform/eslint-config",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
     },
     {
       "name": "@org-rig/base-node-rig",
@@ -104,7 +104,7 @@
     },
     {
       "name": "@org-rig/base-nodejs",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
     },
     {
       "name": "@org-rigs/base-nodejs",
@@ -248,15 +248,15 @@
     },
     {
       "name": "class-transformer",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
     },
     {
       "name": "class-validator",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
     },
     {
       "name": "class-validator-jsonschema",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "libraries", "rigs" ]
     },
     {
       "name": "construct",
@@ -268,15 +268,15 @@
     },
     {
       "name": "currency.js",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "libraries", "rigs" ]
     },
     {
       "name": "esbuild",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "apis", "clients", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "clients", "libraries", "platform", "rigs" ]
     },
     {
       "name": "eslint-config-airbnb",
@@ -376,19 +376,19 @@
     },
     {
       "name": "jest",
-      "allowedCategories": [ "apis", "clients", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "clients", "libraries", "platform", "rigs" ]
     },
     {
       "name": "json-schema",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "libraries", "rigs" ]
     },
     {
       "name": "json-schema-faker",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "libraries", "rigs" ]
     },
     {
       "name": "lodash",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
     },
     {
       "name": "mongoose",
@@ -400,7 +400,7 @@
     },
     {
       "name": "openapi3-ts",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "libraries", "rigs" ]
     },
     {
       "name": "path",
@@ -440,7 +440,7 @@
     },
     {
       "name": "reflect-metadata",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
     },
     {
       "name": "rxjs",
@@ -468,11 +468,11 @@
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "apis", "clients", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "clients", "libraries", "platform", "rigs" ]
     },
     {
       "name": "ts-node",
-      "allowedCategories": [ "apis", "clients", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "clients", "libraries", "platform", "rigs" ]
     },
     {
       "name": "tsdx",
@@ -488,11 +488,11 @@
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "api-client", "apis", "clients", "contracts", "platform", "rigs" ]
+      "allowedCategories": [ "api-client", "apis", "clients", "contracts", "libraries", "platform", "rigs" ]
     },
     {
       "name": "uuid",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
     },
     {
       "name": "web-vitals",

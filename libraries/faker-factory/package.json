@@ -1,5 +1,5 @@
 {
-  "name": "@org-library/mock-factory",
+  "name": "@org-library/faker-factory",
   "main": "./dist/src/index.js",
   "version": "0.0.1",
   "scripts": {
