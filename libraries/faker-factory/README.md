@@ -3,8 +3,9 @@
 FakerFactory creates fakes of classes for testing purposes.
 
 It creates a faker object by first inferring each property's type based the
-class-validator decorator. Next, a fake data is generated for the property.
-Lastly, the faked object is return.
+class-validator decorator. Next, it changes the object to a schema then it
+generates fake data for each property. Lastly, the faked object is instantiated
+and returned.
 
 ## Example
 
@@ -32,12 +33,23 @@ console.log(fakerPerson);
 
 ```typescript
 // person.ts
+import {
+  IsString,
+  IsNumber,
+  IsBoolean,
+  IsUUID,
+  IsCurrency,
+  ValidateNested,
+} from 'class-validator';
+import { Type } from 'class-transformer';
 
 export class Person {
   @IsUuid();
   public id: string;
 
   @IsString()
+  @Length(0,50)
+  @IsOptional()
   public firstName: string;
 
   @IsCurrency()
@@ -48,6 +60,11 @@ export class Person {
 
   @IsBoolean()
   public passed: boolean;
+
+  @IsOptional()
+  @ValidateNested({ each: true })
+  @Type(() => Person)
+  public guests: Person[];
 }
 ```
 
