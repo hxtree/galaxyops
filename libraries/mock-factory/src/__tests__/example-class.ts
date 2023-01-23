@@ -3,18 +3,27 @@ import {
   IsNumber,
   IsBoolean,
   IsUUID,
-  // Contains,
-  // IsInt,
-  // Length,
+  IsEnum,
+  Contains,
+  IsInt,
+  Max,
+  Min,
   IsEmail,
   IsFQDN,
   IsDate,
   Length,
   IsCurrency,
+  IsInstance,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
 import { ExampleChildClass } from './example-child-class';
+
+export enum ExampleEnum {
+  RED = 'red',
+  YELLOw = 'yellow',
+  BLUE = 'blue',
+}
 
 export class ExampleClass {
   @IsBoolean()
@@ -45,23 +54,26 @@ export class ExampleClass {
   @Length(1, 10)
   public min: string;
 
+  @IsEnum(ExampleEnum)
+  public enum: ExampleEnum;
+
+  @IsInt()
+  @Min(0)
+  @Max(10)
+  public rating: number;
+
+  @Contains('needle')
+  public haystack: string;
+
+  // @IsInstance(value: any)
+  // @ValidateNested()
+  // @IsInstance(ExampleChildClass)
+  // public exampleChildClass: ExampleChildClass;
+  // @Type(() => ExampleChildClass)
+
   // @IsDiceNotation()
   // public diceNotation: string;
 
-  //   title: string;
-
-  //   @Contains('hello')
-  //   text: string;
-
-  //   @IsInt()
-  //   @Min(0)
-  //   @Max(10)
-  //   rating: number;
-
   //   @IsDate()
   //   createDate: Date;
-
-  // @ValidateNested()
-  // @Type(() => ExampleChildClass)
-  // exampleChildClass: ExampleChildClass;
 }

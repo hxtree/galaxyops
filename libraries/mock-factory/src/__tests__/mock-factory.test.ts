@@ -1,5 +1,5 @@
 import { MockFactory } from '../mock-factory';
-import { ExampleClass } from './example-class';
+import { ExampleClass, ExampleEnum } from './example-class';
 
 describe('MockFactory', () => {
   describe('create', () => {
@@ -49,6 +49,20 @@ describe('MockFactory', () => {
 
     it('should create date on decorators', () => {
       expect(typeof mock.date).toContain('string');
+    });
+
+    it('should create enum of defined type', () => {
+      const enumValues = Object.values(ExampleEnum);
+      expect(enumValues.includes(mock.enum));
+    });
+
+    it('should create int between min and max', () => {
+      expect(mock.rating).toBeGreaterThanOrEqual(0);
+      expect(mock.rating).toBeLessThanOrEqual(10);
+    });
+
+    it('should create string that contains value', () => {
+      expect(mock.haystack.includes('needle'));
     });
 
     it('should create mock object using seeded data', async () => {
