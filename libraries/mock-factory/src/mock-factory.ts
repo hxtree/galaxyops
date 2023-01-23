@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import { targetConstructorToSchema } from 'class-validator-jsonschema';
 import { ClassConstructor, plainToInstance } from 'class-transformer';
 import { cloneDeep } from 'lodash';
+
 import { generateFakeData } from './generate-fake-data';
 
 export class MockFactory {
@@ -19,8 +20,10 @@ export class MockFactory {
     const schema = targetConstructorToSchema(constructor);
     const randomFixture = generateFakeData(schema);
     const partialClone = cloneDeep(partial);
-    const object = { ...randomFixture, ...partialClone };
-    const objectInstance = plainToInstance(constructor, object);
+    const objectInstance = plainToInstance(constructor, {
+      ...randomFixture,
+      ...partialClone,
+    });
 
     return objectInstance as T;
   }

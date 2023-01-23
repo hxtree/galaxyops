@@ -15,7 +15,5 @@ describe('generateFakeData', () => {
     expect(typeof result.currency).toBe('string');
     expect(typeof result.email).toBe('string');
     expect(typeof result.site).toBe('string');
-    // expect(result.min.length).toBeGreaterThanOrEqual(255);
-    // expect(result.max.length).toBeLessThanOrEqual(10);
   });
 });
