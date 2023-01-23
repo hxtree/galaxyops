@@ -40,7 +40,7 @@ importers:
       '@types/validator': ~13.7.10
       class-transformer: 0.5.1
       class-validator: 0.13.2
-      class-validator-jsonschema: ~5.0.0
+      class-validator-jsonschema: 3.1.1
       currency.js: ~2.0.4
       esbuild: ~0.15.12
       eslint: 8.26.0
@@ -48,6 +48,7 @@ importers:
       json-schema: ~0.4.0
       json-schema-faker: ~0.5.0-rcv.46
       lodash: ~4.17.21
+      openapi3-ts: ~3.1.2
       reflect-metadata: 0.1.13
       ts-jest: 28.0.8
       ts-node: 10.9.1
@@ -60,11 +61,12 @@ importers:
       '@types/validator': 13.7.10
       class-transformer: 0.5.1
       class-validator: 0.13.2
-      class-validator-jsonschema: 5.0.0_e6kgdsnyya5caxg3ysdyxrqm7a
+      class-validator-jsonschema: 3.1.1_e6kgdsnyya5caxg3ysdyxrqm7a
       currency.js: 2.0.4
       json-schema: 0.4.0
       json-schema-faker: 0.5.0-rcv.46
       lodash: 4.17.21
+      openapi3-ts: 3.1.2
       reflect-metadata: 0.1.13
       uuid: 9.0.0
     devDependencies:
@@ -9056,17 +9058,17 @@ packages:
       static-extend: 0.1.2
     dev: true
 
-  /class-validator-jsonschema/5.0.0_e6kgdsnyya5caxg3ysdyxrqm7a:
-    resolution: {integrity: sha512-F1skc5+NHZUxtVH56js1wdPKayUoIEZNpiZeNYIAJO0L6hCODmlX+lXwb26RRqTrjo0U24tNkSujn/G0zOvZoQ==}
+  /class-validator-jsonschema/3.1.1_e6kgdsnyya5caxg3ysdyxrqm7a:
+    resolution: {integrity: sha512-xga/5rTDKaYysivdX6OWaVllAS2OGeXgRRaXRo5QAW+mSDOpbjrf5JhmdPvUKMEkGyQer0gCoferB3COl170Rg==}
     peerDependencies:
       class-transformer: ^0.4.0 || ^0.5.0
-      class-validator: ^0.14.0
+      class-validator: ^0.13.1
     dependencies:
       class-transformer: 0.5.1
       class-validator: 0.13.2
       lodash.groupby: 4.6.0
       lodash.merge: 4.6.2
-      openapi3-ts: 3.1.2
+      openapi3-ts: 2.0.2
       reflect-metadata: 0.1.13
       tslib: 2.4.1
     dev: false
@@ -16676,6 +16678,12 @@ packages:
       define-lazy-prop: 2.0.0
       is-docker: 2.2.1
       is-wsl: 2.2.0
+
+  /openapi3-ts/2.0.2:
+    resolution: {integrity: sha512-TxhYBMoqx9frXyOgnRHufjQfPXomTIHYKhSKJ6jHfj13kS8OEIhvmE8CTuQyKtjjWttAjX5DPxM1vmalEpo8Qw==}
+    dependencies:
+      yaml: 1.10.2
+    dev: false
 
   /openapi3-ts/3.1.2:
     resolution: {integrity: sha512-S8fijNOqe/ut0kEDAwHZnI7sVYqb8Q3XnISmSyXmK76jgrcf4ableI75KTY1qdksd9EI/t39Vi5M4VYKrkNKfQ==}

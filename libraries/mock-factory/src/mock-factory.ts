@@ -1,5 +1,6 @@
 import { ClassConstructor, plainToInstance } from 'class-transformer';
 import { cloneDeep } from 'lodash';
+
 import { generateFakeData } from './generate-fake-data';
 import { getSchemas } from './schemas';
 
@@ -21,8 +22,10 @@ export class MockFactory {
       schemas,
     );
     const partialClone = cloneDeep(partial);
-    const object = { ...randomFixture, ...partialClone };
-    const objectInstance = plainToInstance(constructor, object);
+    const objectInstance = plainToInstance(constructor, {
+      ...randomFixture,
+      ...partialClone,
+    });
 
     return objectInstance as T;
   }
