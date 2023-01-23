@@ -1,7 +1,7 @@
 import { FakerFactory } from '../faker-factory';
 import { SampleClass, SampleChildClass, SampleEnum } from './sample-class';
 
-describe('fakerFactory', () => {
+describe('FakerFactory', () => {
   describe('create', () => {
     let faker: SampleClass;
 
@@ -80,6 +80,12 @@ describe('fakerFactory', () => {
 
     it('should create property objects based on decorators', () => {
       expect(faker.childClass).toBeInstanceOf(SampleChildClass);
+    });
+
+    it('should populate optional params some of the time based on decorators', () => {
+      expect(
+        faker.optional === undefined || faker.optional.length > 0,
+      ).toBeTruthy();
     });
 
     // it('should create property nested objects based on decorators', () => {
