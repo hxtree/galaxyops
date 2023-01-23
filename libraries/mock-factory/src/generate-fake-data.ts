@@ -1,28 +1,19 @@
+import 'reflect-metadata';
 import { cloneDeep } from 'lodash';
 import { JSONSchemaFaker } from 'json-schema-faker';
 import currency from 'currency.js';
 import { faker } from '@faker-js/faker';
 
-export function generateFakeData(
-  jsonSchema: any,
-  definitions: { [name: string]: any } = {},
-): any {
-  console.log(jsonSchema);
-
-  if (
-    jsonSchema.$ref &&
-    definitions[jsonSchema.$ref.replace('#/definitions/', '')]
-  ) {
-    jsonSchema = definitions[jsonSchema.$ref.replace('#/definitions/', '')];
-  }
-
-  const toDealJsonSchema = cloneDeep(jsonSchema);
-  if (definitions) {
-    toDealJsonSchema.definitions = definitions;
-  }
+export async function generateFakeData(
+  inputSchema: any,
+  fakerRefs: any,
+): Promise<any> {
+  const fakerSchema = cloneDeep(inputSchema);
 
   // custom types
+
   JSONSchemaFaker.format('currency', () =>
+    // eslint-disable-next-line implicit-arrow-linebreak
     currency(faker.finance.amount(), {
       symbol: '',
       separator: '',
@@ -38,18 +29,16 @@ export function generateFakeData(
   JSONSchemaFaker.format('date', () => faker.date.past());
 
   JSONSchemaFaker.format('hostname', () => faker.internet.url());
+  JSONSchemaFaker.format('string', () => faker.internet.url());
 
-// use the async-version (preferred way)
-  JSONSchemaFaker.resolve(jsonSchema).then(sample => {
-    console.log(sample);
-  });
+  JSONSchemaFaker.option('alwaysFakeOptionals', false);
+  JSONSchemaFaker.option('ignoreMissingRefs', true);
+  JSONSchemaFaker.option('failOnInvalidTypes', false);
+  JSONSchemaFaker.option('failOnInvalidFormat', false);
 
-  // JSONSchemaFaker.option('alwaysFakeOptionals', false);
-  // JSONSchemaFaker.option('ignoreMissingRefs', true);
-  // JSONSchemaFaker.option('failOnInvalidTypes', false);
-  // JSONSchemaFaker.option('failOnInvalidFormat', false);
-
-  const schema = JSONSchemaFaker.generate(toDealJsonSchema);
+  // ideally mocks would be sync or async
+  // JSONSchemaFaker has issues with resolve() in v3.1.1
+  const schema = JSONSchemaFaker.generate(fakerSchema, fakerRefs);
 
   return schema;
 }

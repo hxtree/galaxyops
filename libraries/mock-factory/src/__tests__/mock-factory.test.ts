@@ -1,12 +1,12 @@
 import { MockFactory } from '../mock-factory';
-import { ExampleClass, ExampleEnum } from './example-class';
+import { SampleClass, SampleChildClass, SampleEnum } from './sample-class';
 
 describe('MockFactory', () => {
   describe('create', () => {
-    let mock: ExampleClass;
+    let mock: SampleClass;
 
-    beforeAll(() => {
-      mock = MockFactory.create<ExampleClass>(ExampleClass);
+    beforeAll(async () => {
+      mock = await MockFactory.create<SampleClass>(SampleClass);
     });
 
     it('should create a mock object', () => {
@@ -14,7 +14,7 @@ describe('MockFactory', () => {
     });
 
     it('should create correct instance', () => {
-      expect(mock).toBeInstanceOf(ExampleClass);
+      expect(mock).toBeInstanceOf(SampleClass);
     });
 
     it('should create boolean based on decorators', () => {
@@ -52,7 +52,7 @@ describe('MockFactory', () => {
     });
 
     it('should create enum of defined type', () => {
-      const enumValues = Object.values(ExampleEnum);
+      const enumValues = Object.values(SampleEnum);
       expect(enumValues.includes(mock.enum));
     });
 
@@ -71,15 +71,19 @@ describe('MockFactory', () => {
         string: 'Test data',
         boolean: true,
       };
-      mock = MockFactory.create<ExampleClass>(ExampleClass, partial);
+      mock = await MockFactory.create<SampleClass>(SampleClass, partial);
 
       expect(mock.number).toBe(partial.number);
       expect(mock.string).toBe(partial.string);
       expect(mock.boolean).toBe(partial.boolean);
     });
 
-    // it('should create nested objects based on decorators', () => {
-    //   expect(typeof mock.exampleChildClass).toBeInstanceOf(ExampleChildClass);
-    // });
+    it('should create property objects based on decorators', () => {
+      expect(mock.childClass).toBeInstanceOf(SampleChildClass);
+    });
+
+    it('should create property nested objects based on decorators', () => {
+      expect(mock.nestedClass).toBeInstanceOf(SampleChildClass);
+    });
   });
 });

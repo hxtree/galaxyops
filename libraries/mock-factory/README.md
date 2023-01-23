@@ -26,7 +26,7 @@ export class Person {
   public passed: boolean;
 }
 
-const mockPerson = MockFactory.create<Person>(Person, { passed: true });
+const mockPerson = await MockFactory.create<Person>(Person, { passed: true });
 
 ```
 
@@ -63,15 +63,11 @@ add. It is for these reasons decorators were choosen.
 - [fakerJs](https://fakerjs.dev/api/date.html#date)
 - [class-transformer](https://github.com/typestack/class-transformer/tree/master)
 - [class-validator](https://github.com/typestack/class-validator)
+- [class-validator jsonschema](https://github.com/epiphone/class-validator-jsonschema)
 
 ## TODO
 
-It would be nice to be able to generate fake recusive objects data for unit
-tests.
-
-- <https://github.com/google/intermock/blob/master/src/lib/generators.ts>
-
-It would be nice to be able to intergrate with swagger. e.g.
-
+- [] Optional parameters
+- [] Itergrate with swagger e.g.
 - <https://www.reddit.com/r/Python/comments/n4giff/automatic_fake_json_data_creation_from_schema/>
 - <https://github.com/subeeshcbabu-zz/swagmock>

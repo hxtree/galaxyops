@@ -1,12 +1,14 @@
-import { targetConstructorToSchema } from 'class-validator-jsonschema';
 import { generateFakeData } from '../generate-fake-data';
-import { ExampleClass } from './example-class';
+import { SampleClass } from './sample-class';
+import { getSchemas } from '../schemas';
 
 describe('generateFakeData', () => {
   it('should change to schema and back again correctly', async () => {
-    const exampleClassSchema = targetConstructorToSchema(ExampleClass);
-    const fakeData = generateFakeData(exampleClassSchema);
-    const result = fakeData as ExampleClass;
+    const schemas = getSchemas();
+
+    const fakeData = await generateFakeData(schemas[SampleClass.name], schemas);
+
+    const result = fakeData as SampleClass;
 
     expect(typeof result.boolean).toBe('boolean');
     expect(typeof result.number).toBe('number');
