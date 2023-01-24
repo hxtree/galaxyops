@@ -35,11 +35,11 @@ jobs:
       - name: Build
         run: node common/scripts/install-run-rush.js build
 
-      - name: Test
-        run: node common/scripts/install-run-rush.js test
+      - name: Test coverage
+        run: node common/scripts/install-run-rush.js test:cov
 
       - name: Submit code coverage
         uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: libraries/faker-factory/coverage/clover.xml, packages/luck-by-dice/src/__tests__/coverage/clover.xml, packages/character-sheet/src/__tests__/coverage/clover.xml
+          coverage-reports: libraries/faker-factory/coverage/clover.xml, packages/luck-by-dice/coverage/clover.xml, packages/character-sheet/coverage/clover.xml

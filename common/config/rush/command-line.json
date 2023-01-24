@@ -74,6 +74,17 @@
       "allowWarningsInSuccessfulBuild": true
     },
     {
+      "name": "test:cov",
+      "commandKind": "bulk",
+      "summary": "Run unit tests with coverage",
+      "description": "Run unit test with coverage reports",
+      "safeForSimultaneousRushProcesses": false,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
+      "enableParallelism": false,
+      "allowWarningsInSuccessfulBuild": true
+    },
+    {
       "name": "lint",
       "commandKind": "bulk",
       "summary": "Run lint",
