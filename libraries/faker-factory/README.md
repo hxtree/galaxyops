@@ -91,7 +91,8 @@ const Person = await FakerFactory.create<Person>(
 In typescript object data can be faked based on either: the decorator, the
 property name, or property typehint.
 
-Although property names should remain somewhat consistant, it is unreasonable
+Although property names should remain somewhat consistant, such as
+[Intermock](https://github.com/google/intermock) does, it is unreasonable
 many-to-many relationship to maintain for faking purposes. Generating values
 based on typehinting is less then ideal due to compiled code being type agnostic
 and special tsc requirements.
