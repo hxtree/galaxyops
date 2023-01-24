@@ -1,12 +1,6 @@
 # @org-libary/promare-gradients
 
 ![SASS](https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
-[![npm version](https://img.shields.io/npm/v/@ouxsoft/promare-gradients)](https://www.npmjs.com/package/@ouxsoft/promare-gradients)
-[![Packagist Version](https://img.shields.io/packagist/v/ouxsoft/promare-gradients.svg)](https://packagist.org/packages/Ouxsoft/promare-gradients)
-[![Github Release](https://shields.io/github/v/release/ouxsoft/promare-gradients?display_name=release&include_prereleases&sort=date)](https://github.com/Ouxsoft/promare-gradients/releases)
-[![Known Vulnerabilities](https://snyk.io/test/github/Ouxsoft/promare-gradients/badge.svg)](https://snyk.io/test/github/Ouxsoft/promare-gradients)
-[![Total Downloads](https://img.shields.io/packagist/dt/Ouxsoft/promare-gradients.svg)](https://packagist.org/packages/Ouxsoft/promare-gradients)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Promare Gradients standardizes the use of **neon colors** for web backgrounds.
 It's a tiny stylesheet library that comes with over **25,000** different neon
@@ -16,19 +10,9 @@ Neon colors have a high chroma. When they are contrasted they psychologically
 grab the users' attention[^1]. It's no wonder why neon signs have been used for
 call to actions.
 
-## Quick start
+## Usage
 
-Here are some ways to start your own dramatic neon colored web presence:
-
-- [Download the latest release](https://github.com/Ouxsoft/promare-gradients/releases)
-- Clone the repo: `git clone https://github.com/Ouxsoft/promare-gradients.git`
-- Install with [npm](https://www.npmjs.com/): `npm i @ouxsoft/promare-gradients`
-- Install with [Composer](https://getcomposer.org/):
-  `composer require ouxsoft/promare-gradients`
-
-### Usage
-
-#### Neon Colors
+### Neon Colors
 
 Promare Gradients features sixteen (16) base colors that were carefully chosen
 to embody neon lights:
@@ -41,7 +25,7 @@ to embody neon lights:
 <div class=".bg-blue">Call to Action</div>
 ```
 
-#### Shades and Tones
+### Shades and Tones
 
 Each neon color comes in a regular form, two **shades** (`*-0`, `*-25`), and two
 **tints** (`*-75`, `*-100`). These classes color backgrounds a solid neon color:
@@ -65,12 +49,12 @@ Each neon color comes in a regular form, two **shades** (`*-0`, `*-25`), and two
 | .bg-cyan       | .bg-cyan-0       | .bg-cyan-25       | .bg-cyan-75       | .bg-cyan-100       |
 | .bg-grayscale  | .bg-grayscale-0  | .bg-grayscale-25  | .bg-grayscale-75  | .bg-grayscale-100  |
 
-#### Gradients
+### Gradients
 
 Combine any two of the above shades and tones to add a neon background gradient
 to your web page.
 
-**Example**
+Example
 
 ```html
 <div class=".bg-blue-to-lime-75-nw">
@@ -81,7 +65,7 @@ to your web page.
 </div>
 ```
 
-##### Direction of Gradient
+### Direction of Gradient
 
 The last suffix in the class defines the direction of the gradient. The below
 options are available:
