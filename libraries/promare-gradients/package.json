@@ -1,0 +1,31 @@
+{
+  "name": "@org-library/promare-gradients",
+  "version": "1.0.0",
+  "description": "Neon background gradients",
+  "keywords": [
+    "neon",
+    "background",
+    "scss",
+    "css"
+  ],
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "npm-run-all css-compile css-minify",
+    "build:all": "rush build -t .",
+    "css-compile": "node-sass --precision 1 --output dist/css src/scss/promare-gradients.scss --output-style nested",
+    "css-minify": "cleancss -o dist/css/promare-gradients.min.css dist/css/promare-gradients.css",
+    "test": "",
+    "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix",
+    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run"
+  },
+  "dependencies": {
+    "clean-css-cli": "^5.5.0",
+    "express": "4.18.2",
+    "sass": "^1.47.0",
+    "@org-platform/eslint-config": "workspace:*"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

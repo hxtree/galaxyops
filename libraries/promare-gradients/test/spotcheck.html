@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../dist/css/promare-gradients.min.css" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #000;
+        color: #fff;
+      }
+      td {
+        color: transparent;
+      }
+      td {
+        height: 30px !important;
+      }
+      td:hover {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Promare Gradients</h1>
+    <p>Hover over background to see class name.</p>
+
+    <h2>Solid Colors</h2>
+    <table id="base-palette"></table>
+
+    <h2>Gradients</h2>
+    <table id="gradient-palette"></table>
+
+    <script>
+      const base_colors = [
+        'green',
+        'ufo',
+        'lime',
+        'red',
+        'orange',
+        'yellow',
+        'absinthe',
+        'chartreuse',
+        'pink',
+        'magenta',
+        'plastic',
+        'purple',
+        'proton',
+        'blue',
+        'cyan',
+        'grayscale',
+      ];
+      const suffixes = ['0', '25', '', '75', '100'];
+      const directions = ['ne', 'se', 'sw', 'nw'];
+
+      let raw_palette = [];
+      let base_palette = [];
+      let gradient_palette = [];
+
+      function makeRawPalette() {
+        for (var i = 0; i < base_colors.length; i++) {
+          raw_palette.push('bg-' + base_colors[i]);
+        }
+      }
+
+      function makeSolidPalette() {
+        for (var i = 0; i < raw_palette.length; i++) {
+          for (var s = 0; s < suffixes.length; s++) {
+            let color = raw_palette[i];
+            if (suffixes[s] != '') {
+              color += '-' + suffixes[s];
+            }
+            base_palette.push(color);
+          }
+        }
+      }
+
+      function makeGradientPalette() {
+        for (var i = 0; i < base_palette.length; i++) {
+          for (var j = 0; j < base_palette.length; j++) {
+            for (var d = 0; d < directions.length; d++) {
+              if (base_palette[i] == base_palette[j]) {
+                continue;
+              }
+              gradient_palette.push(
+                base_palette[i] +
+                  '-to-' +
+                  base_palette[j].slice(3) +
+                  '-' +
+                  directions[d],
+              );
+            }
+          }
+        }
+      }
+
+      function drawSolidPalette() {
+        var table = document.getElementById('base-palette');
+
+        // solid colors
+        for (var i = 0; i < base_palette.length; i++) {
+          if (i % 5 == 0) {
+            var row = table.insertRow();
+          }
+
+          var columns = row.insertCell(0);
+          columns.innerHTML = '.' + base_palette[i];
+          columns.className = base_palette[i];
+        }
+      }
+
+      function drawGradientPalette() {
+        var table = document.getElementById('gradient-palette');
+
+        for (var i = 0; i < gradient_palette.length; i++) {
+          if (i % 16 == 0) {
+            var row = table.insertRow();
+          }
+
+          var column = row.insertCell(0);
+          column.innerHTML = '<small>.' + gradient_palette[i] + '</small>';
+          column.className = gradient_palette[i];
+        }
+      }
+
+      makeRawPalette();
+
+      makeSolidPalette();
+      drawSolidPalette();
+
+      makeGradientPalette();
+      drawGradientPalette();
+    </script>
+  </body>
+</html>

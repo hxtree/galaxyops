@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'mixins';
+
+@each $color-1-key, $color-1-value in get-color-palette() {
+  @each $color-2-key, $color-2-value in get-color-palette() {
+    @each $degree-key, $degree-value in $degrees {
+      @include bg-gradient(
+        $color-1-key,
+        $color-1-value,
+        $color-2-key,
+        $color-2-value,
+        $degree-key,
+        $degree-value
+      );
+    }
+  }
+}

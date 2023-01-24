@@ -1,0 +1,30 @@
+# Upstream: github.com/tzkhan/pr-update-action
+
+name: PR update
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  update_pr:
+    name: PR update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Branch
+        id: check-branch
+        run: |
+          if [[ ${{ github.head_ref }} =~ ^[A-Za-z]+-[0-9]+.*$ ]]; then
+              echo ::set-output name=match::true
+          fi
+      - uses: tzkhan/pr-update-action@v2
+        if: steps.check-branch.outputs.match == 'true'
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          base-branch-regex: '[A-Za-z\d-_.\\/]+'
+          head-branch-regex: '^([A-Za-z])+-\d+'
+          title-template: '[%headbranch%] '
+          body-template: |
+            Issue: %headbranch%
+            ---
+          body-update-action: 'prefix'
+          body-uppercase-base-match: false

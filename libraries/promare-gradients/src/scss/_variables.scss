@@ -1,0 +1,77 @@
+@import 'functions';
+
+// neon color palette
+
+// greens
+$neon-green: #39ff14 !default;
+$ufo-green: #7fff00 !default;
+$electric-lime: #ccff00 !default;
+// reds
+$neon-red: #ff3131 !default;
+$electric-orange: #ff5e00 !default;
+// yellows
+$neon-yellow: #fff01f !default;
+$absinthe: #e7ee4f !default;
+$chartreuse-yellow: #dfff00 !default;
+// pinks
+$neon-pink: #ff44cc !default;
+$neon-magenta: #ea00ff !default;
+$plastic-pink: #ff1493 !default;
+// purples
+$neon-purple: #bc13fe !default;
+$proton-purple: #8a2be2 !default;
+// blues
+$neon-blue: #1f51ff !default;
+$electric-cyan: #0ff0fc !default;
+// grayscale
+$grayscale: #888888 !default;
+
+$base-colors: (
+  'green': $neon-green,
+  'ufo': $ufo-green,
+  'lime': $electric-lime,
+  'red': $neon-red,
+  'orange': $electric-orange,
+  'yellow': $neon-yellow,
+  'absinthe': $absinthe,
+  'chartreuse': $chartreuse-yellow,
+  'pink': $neon-pink,
+  'magenta': $neon-magenta,
+  'plastic': $plastic-pink,
+  'purple': $neon-purple,
+  'proton': $proton-purple,
+  'blue': $neon-blue,
+  'cyan': $electric-cyan,
+  'grayscale': $grayscale,
+) !default;
+
+// Phi is the key to beauty and appealing design
+$phi: (square-root(5) + 1)/2;
+
+// shades
+$shade: '0' percentage(1 - 1/ ($phi * 3)), '25' percentage(1 / $phi);
+// tints
+$tints: '75' percentage(1 / $phi), '100' percentage(1 - 1/ ($phi * 3));
+
+// degrees make use of compass ratios using golden ratio / phi
+$degrees: (
+  'nw': (
+    360-360 / power($phi, 5),
+  ) + deg,
+  // "top-start" / "top-left" / northwest
+  'ne':
+    (
+      360 / power($phi, 5),
+    ) + deg,
+  // "top-end" / "top-right" / northeast
+  'sw':
+    (
+      360 / $phi,
+    ) + deg,
+  // "bottom-start" / "bottom-left" / southwest
+  'se':
+    (
+      360 / power($phi, 2),
+    ) + deg,
+  // "bottom-end" / "bottom-right" / southeast
+);

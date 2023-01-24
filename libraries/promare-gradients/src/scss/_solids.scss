@@ -1,0 +1,6 @@
+@import 'variables';
+@import 'mixins';
+
+@each $color-key, $color-value in get-color-palette() {
+  @include bg-color($color-key, $color-value);
+}

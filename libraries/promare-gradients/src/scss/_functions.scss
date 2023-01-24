@@ -1,0 +1,64 @@
+// mixture of a color with white
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}
+
+// a mixture of a color with black
+@function shade-color($color, $weight) {
+  @return mix(black, $color, $weight);
+}
+
+// get color palette
+@function get-color-palette() {
+  $list: ();
+
+  @each $color-key, $color-value in $base-colors {
+    // shades
+    @each $shade-name, $shade-percent in $shade {
+      $value: shade-color($color-value, $shade-percent);
+      $key: '#{$color-key}-#{$shade-name}';
+      $list: append($list, $key $value);
+    }
+
+    // base
+    $list: append($list, $color-key $color-value);
+
+    // tints
+    @each $tint-name, $tint-percent in $tints {
+      $value: tint-color($color-value, $tint-percent);
+      $key: '#{$color-key}-#{$tint-name}';
+      $list: append($list, $key $value);
+    }
+  }
+
+  @return $list;
+}
+
+// square root
+@function square-root($number) {
+  $guess-0: 1;
+  $guess-1: $guess-0;
+
+  @for $i from 1 through 10 {
+    $guess-1: $guess-0 - ($guess-0 * $guess-0 - abs($number)) / (2 * $guess-0);
+    $guess-0: $guess-1;
+  }
+
+  @return $guess-1;
+}
+
+// power
+@function power($base, $exponent) {
+  $raised: 1;
+
+  @for $i from 1 through $exponent {
+    $raised: $raised * $base;
+  }
+
+  @return $raised;
+}
+
+// prepend
+@function prepend($list, $value) {
+  @return join($value, $list);
+}
