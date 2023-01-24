@@ -1,27 +1,26 @@
 # @org-library/faker-factory
 
-FakerFactory creates fakes of classes for testing purposes.
+FakerFactory creates fakes of classes with class-validator decorators for
+testing purposes.
 
 It creates a faker object by first inferring each property's type based the
 class-validator decorator. Next, it changes the object to a schema then it
 generates fake data for each property. Lastly, the faked object is instantiated
 and returned.
 
-## Example
+## Getting Started
 
-Create a new fake by importing the library and the class to be faked and call
-factory.
+Create a fake by calling the FakerFactory.
 
 ```typescript
 import { FakerFactory } from '@org-library/faker-factory';
 import { Person } from './person.ts';
 
 const fakerPerson = await FakerFactory.create<Person>(Person, { passed: true });
-
-console.log(fakerPerson);
 ```
 
 ```json
+// console.log(fakerPerson);
 {
   "id": "4cb85e06-1060-4bed-8224-14ec39e0dfa9",
   "firstName": "irure in",
@@ -68,6 +67,25 @@ export class Person {
 }
 ```
 
+## Settings
+
+The FakerFactory accepts a third optional parameter for settings. Settings are
+used to change the way the FakerFactory works. Adjusting the settings can be
+useful for when writting unit tests on optional fields.
+
+| Property    | Descripion                             | Possible Values        |
+| ----------- | -------------------------------------- | ---------------------- |
+| probability | probability for faking optional fields | 0, ... 0.5, ... 1      |
+| optionals   | whether to fake optional fields        | true, false, undefined |
+
+```typescript
+const Person = await FakerFactory.create<Person>(
+  Person,
+  {},
+  { optionals: true },
+);
+```
+
 ## Assumptions
 
 In typescript object data can be faked based on either: the decorator, the
@@ -87,9 +105,9 @@ Class-validator decorators and schema was choosen for the following reasons.
   requirement.
 - It is easy to create new class-validator decorators and extend functionality.
 
-## Documentation
+## References
 
-- [F.I.R.S.T Principles of Testing](https://medium.com/@tasdikrahman/f-i-r-s-t-principles-of-testing-1a497acda8d6>6)
+- [F.I.R.S.T Principles of Testing](https://medium.com/@tasdikrahman/f-i-r-s-t-principles-of-testing-1a497acda8d6)
 - [Fake vs Mock](https://medium.com/@june.pravin/mocking-is-not-practical-use-fakes-e30cc6eaaf4e)
 - [Faking vs Mocking vs Stubbing](https://www.educative.io/answers/what-is-faking-vs-mocking-vs-stubbinghttps://www.educative.io/answers/what-is-faking-vs-mocking-vs-stubbing)
 - [fakerJs](https://fakerjs.dev/api/date.html#date)

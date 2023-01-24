@@ -18,4 +18,32 @@ describe('generateFakeData', () => {
     expect(typeof result.email).toBe('string');
     expect(typeof result.site).toBe('string');
   });
+
+  it('should generate optional fields when probability 1', async () => {
+    const schemas = getSchemas();
+
+    const fakeData = await generateFakeData(
+      schemas[SampleClass.name],
+      schemas,
+      { probability: 1 },
+    );
+
+    const result = fakeData as SampleClass;
+
+    expect(typeof result.optional).toBe('string');
+  });
+
+  it('should not generate optional fields when probability 0', async () => {
+    const schemas = getSchemas();
+
+    const fakeData = await generateFakeData(
+      schemas[SampleClass.name],
+      schemas,
+      { probability: 0 },
+    );
+
+    const result = fakeData as SampleClass;
+
+    expect(typeof result.optional).toBe('undefined');
+  });
 });
