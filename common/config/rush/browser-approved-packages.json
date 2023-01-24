@@ -403,6 +403,10 @@
       "allowedCategories": [ "apis", "platform" ]
     },
     {
+      "name": "node-sass",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "npm-run-all",
       "allowedCategories": [ "libraries" ]
     },
