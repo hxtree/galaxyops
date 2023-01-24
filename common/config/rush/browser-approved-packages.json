@@ -259,6 +259,10 @@
       "allowedCategories": [ "libraries", "rigs" ]
     },
     {
+      "name": "clean-css-cli",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "construct",
       "allowedCategories": [ "apis" ]
     },
@@ -364,7 +368,7 @@
     },
     {
       "name": "express",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "libraries", "platform" ]
     },
     {
       "name": "fs",
@@ -397,6 +401,10 @@
     {
       "name": "node-cache",
       "allowedCategories": [ "apis", "platform" ]
+    },
+    {
+      "name": "npm-run-all",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "openapi3-ts",
@@ -445,6 +453,10 @@
     {
       "name": "rxjs",
       "allowedCategories": [ "apis", "platform" ]
+    },
+    {
+      "name": "sass",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "semver",

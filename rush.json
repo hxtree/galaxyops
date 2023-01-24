@@ -33,7 +33,8 @@
     "platform-team",
     "game-design-team",
     "ux-team",
-    "library"
+    "library",
+    "npm-publish"
   ],
   "projects": [
     {
@@ -76,7 +77,14 @@
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["library"]
+      "tags": ["library", "npm-publish"]
+    },
+    {
+      "packageName": "@org-library/promare-gradients",
+      "projectFolder": "libraries/promare-gradients",
+      "reviewCategory": "libraries",
+      "cyclicDependencyProjects": [],
+      "tags": ["library", "npm-publish"]
     },
     {
       "packageName": "@org-api-client/luck-by-dice",

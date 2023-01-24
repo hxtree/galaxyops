@@ -1,0 +1,30 @@
+@mixin bg-gradient(
+  $color-start-key,
+  $color-start-value,
+  $color-end-key,
+  $color-end-value,
+  $degree-key,
+  $degree-value
+) {
+  @if $color-start-value != $color-end-value {
+    @if $degree-key == '0' {
+      .bg-#{$color-start-key}-to-#{$color-end-key} {
+        background: $color-start-value;
+        background: linear-gradient(
+          $degree-value,
+          rgba($color-start-value, 1),
+          rgba($color-end-value, 1)
+        );
+      }
+    } @else {
+      .bg-#{$color-start-key}-to-#{$color-end-key}-#{$degree-key} {
+        background: $color-start-value;
+        background: linear-gradient(
+          $degree-value,
+          rgba($color-start-value, 1),
+          rgba($color-end-value, 1)
+        );
+      }
+    }
+  }
+}

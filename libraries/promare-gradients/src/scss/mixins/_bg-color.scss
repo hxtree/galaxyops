@@ -1,0 +1,5 @@
+@mixin bg-color($color-key, $color-value) {
+  .bg-#{$color-key} {
+    background: $color-value;
+  }
+}
