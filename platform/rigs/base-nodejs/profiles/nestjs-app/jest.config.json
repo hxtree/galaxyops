@@ -5,11 +5,10 @@
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
-  "collectCoverage": true,
   "collectCoverageFrom": ["<rootDir>/**/*.ts"],
   "coverageReporters": ["text-summary", "clover"],
   "coveragePathIgnorePattern": ["/node_modules/", "/cdk.out/", "/dist/"],
-  "coverageDirectory": "<rootDir>/src/__tests__/coverage",
+  "coverageDirectory": "<rootDir>/coverage",
   "coverageThreshold": {
     "global": {
       "branches": 40,

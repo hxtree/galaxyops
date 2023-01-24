@@ -8,6 +8,7 @@
     "build:all": "rush build -t .",
     "watch": "tsc -w",
     "test": "jest --logHeapUsage",
+    "test:cov": "jest --coverage",
     "cdk": "cdk",
     "hotswap": "cdk deploy --hotswap",
     "lint": "eslint --format visualstudio \"./{stacks,src}/**/*.ts\" --fix",
