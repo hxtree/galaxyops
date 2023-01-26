@@ -1,5 +1,5 @@
 {
-  "name": "@org-platform/pipeline",
+  "name": "@org-cicd/pipeline",
   "module": "commonjs",
   "version": "1.0.0",
   "description": "An API for simulating dice rolls and luck from dice notation",

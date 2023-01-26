@@ -13,7 +13,8 @@
       "clients",
       "libraries",
       "rigs",
-      "platform"
+      "platform",
+      "cicd"
     ],
     "ignoredNpmScopes": ["@types"]
   },
@@ -34,7 +35,8 @@
     "game-design-team",
     "ux-team",
     "library",
-    "npm-publish"
+    "npm-publish",
+    "cicd"
   ],
   "projects": [
     {
@@ -45,9 +47,16 @@
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-platform/pipeline",
-      "projectFolder": "platform/pipeline",
-      "reviewCategory": "platform",
+      "packageName": "@org-cicd/pipeline",
+      "projectFolder": "cicd/pipeline",
+      "reviewCategory": "cicd",
+      "cyclicDependencyProjects": [],
+      "tags": ["platform-team"]
+    },
+    {
+      "packageName": "@org-cicd/aggregate-coverage",
+      "projectFolder": "cicd/aggregate-coverage",
+      "reviewCategory": "cicd",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },

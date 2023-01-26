@@ -32,7 +32,7 @@
     },
     {
       "name": "@faker-js/faker",
-      "allowedCategories": [ "libraries", "rigs" ]
+      "allowedCategories": [ "cicd", "libraries", "rigs" ]
     },
     {
       "name": "@microsoft/tsdoc",
@@ -92,11 +92,11 @@
     },
     {
       "name": "@org-platform/constructs",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "cicd", "platform" ]
     },
     {
       "name": "@org-platform/eslint-config",
-      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "@org-rig/base-node-rig",
@@ -104,7 +104,7 @@
     },
     {
       "name": "@org-rig/base-nodejs",
-      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "@org-rigs/base-nodejs",
@@ -216,11 +216,11 @@
     },
     {
       "name": "aws-cdk-lib",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "apis", "cicd", "clients", "platform" ]
     },
     {
       "name": "aws-lambda",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "cicd", "platform" ]
     },
     {
       "name": "aws-serverless-express",
@@ -248,15 +248,15 @@
     },
     {
       "name": "class-transformer",
-      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "class-validator",
-      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "class-validator-jsonschema",
-      "allowedCategories": [ "libraries", "rigs" ]
+      "allowedCategories": [ "cicd", "libraries", "rigs" ]
     },
     {
       "name": "clean-css-cli",
@@ -268,19 +268,19 @@
     },
     {
       "name": "constructs",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "apis", "cicd", "clients", "platform" ]
     },
     {
       "name": "currency.js",
-      "allowedCategories": [ "libraries", "rigs" ]
+      "allowedCategories": [ "cicd", "libraries", "rigs" ]
     },
     {
       "name": "esbuild",
-      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "apis", "clients", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "clients", "libraries", "platform", "rigs" ]
     },
     {
       "name": "eslint-config-airbnb",
@@ -372,27 +372,39 @@
     },
     {
       "name": "fs",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "platform", "rigs" ]
     },
     {
       "name": "husky",
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "istanbul-lib-coverage",
+      "allowedCategories": [ "cicd" ]
+    },
+    {
+      "name": "istanbul-lib-report",
+      "allowedCategories": [ "cicd" ]
+    },
+    {
+      "name": "istanbul-reports",
+      "allowedCategories": [ "cicd" ]
+    },
+    {
       "name": "jest",
-      "allowedCategories": [ "apis", "clients", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "clients", "libraries", "platform", "rigs" ]
     },
     {
       "name": "json-schema",
-      "allowedCategories": [ "libraries", "rigs" ]
+      "allowedCategories": [ "cicd", "libraries", "rigs" ]
     },
     {
       "name": "json-schema-faker",
-      "allowedCategories": [ "libraries", "rigs" ]
+      "allowedCategories": [ "cicd", "libraries", "rigs" ]
     },
     {
       "name": "lodash",
-      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "mongoose",
@@ -412,11 +424,11 @@
     },
     {
       "name": "openapi3-ts",
-      "allowedCategories": [ "libraries", "rigs" ]
+      "allowedCategories": [ "cicd", "libraries", "rigs" ]
     },
     {
       "name": "path",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "platform", "rigs" ]
     },
     {
       "name": "prettier",
@@ -452,7 +464,7 @@
     },
     {
       "name": "reflect-metadata",
-      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "rxjs",
@@ -484,11 +496,11 @@
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "apis", "clients", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "clients", "libraries", "platform", "rigs" ]
     },
     {
       "name": "ts-node",
-      "allowedCategories": [ "apis", "clients", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "clients", "libraries", "platform", "rigs" ]
     },
     {
       "name": "tsdx",
@@ -504,11 +516,11 @@
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "api-client", "apis", "clients", "contracts", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "api-client", "apis", "cicd", "clients", "contracts", "libraries", "platform", "rigs" ]
     },
     {
       "name": "uuid",
-      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "web-vitals",
