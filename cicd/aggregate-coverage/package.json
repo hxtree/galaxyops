@@ -18,6 +18,8 @@
     "istanbul-lib-coverage": "~3.2.0",
     "istanbul-lib-report": "~3.0.0",
     "istanbul-reports": "~3.1.5",
+    "@types/istanbul-reports": "~3.0.1",
+    "@microsoft/rush-lib": "~5.89.1"
     "@types/istanbul-reports": "~3.0.1"
   },
   "devDependencies": {

@@ -35,6 +35,10 @@
       "allowedCategories": [ "cicd", "libraries", "rigs" ]
     },
     {
+      "name": "@microsoft/rush-lib",
+      "allowedCategories": [ "cicd" ]
+    },
+    {
       "name": "@microsoft/tsdoc",
       "allowedCategories": [ "apis", "clients" ]
     },
