@@ -5,6 +5,82 @@ importers:
   .:
     specifiers: {}
 
+  ../../cicd/aggregate-coverage:
+    specifiers:
+      '@org-platform/eslint-config': workspace:*
+      '@org-rig/base-nodejs': workspace:*
+      '@types/istanbul-reports': ~3.0.1
+      '@types/jest': 28.1.8
+      '@types/json-schema': ~7.0.11
+      '@types/node': ^16.0.0
+      '@types/uuid': ~8.3.4
+      esbuild: ~0.15.12
+      eslint: 8.26.0
+      istanbul-lib-coverage: ~3.2.0
+      istanbul-lib-report: ~3.0.0
+      istanbul-reports: ~3.1.5
+      jest: 28.1.3
+      ts-jest: 28.0.8
+      ts-node: 10.9.1
+      typescript: 4.9.4
+    dependencies:
+      '@org-rig/base-nodejs': link:../../platform/rigs/base-nodejs
+      '@types/istanbul-reports': 3.0.1
+      istanbul-lib-coverage: 3.2.0
+      istanbul-lib-report: 3.0.0
+      istanbul-reports: 3.1.5
+    devDependencies:
+      '@org-platform/eslint-config': link:../../platform/eslint-config
+      '@types/jest': 28.1.8
+      '@types/json-schema': 7.0.11
+      '@types/node': 16.18.9
+      '@types/uuid': 8.3.4
+      esbuild: 0.15.18
+      eslint: 8.26.0
+      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
+      ts-jest: 28.0.8_bmizz235s3uo5hc7hnt2whzrqq
+      ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
+      typescript: 4.9.4
+
+  ../../cicd/pipeline:
+    specifiers:
+      '@org-platform/constructs': workspace:*
+      '@org-platform/eslint-config': workspace:*
+      '@org-rig/base-nodejs': workspace:*
+      '@types/aws-lambda': ~8.10.93
+      '@types/jest': 28.1.8
+      '@types/lodash': ~4.14.191
+      '@types/node': ^16.0.0
+      aws-cdk-lib: 2.47.0
+      aws-lambda: 1.0.7
+      constructs: ^10.1.211
+      eslint: 8.26.0
+      fs: ~0.0.1-security
+      jest: 28.1.3
+      lodash: ~4.17.21
+      path: ~0.12.7
+      ts-node: 10.9.1
+      typescript: 4.9.4
+    dependencies:
+      '@org-platform/constructs': link:../../platform/constructs
+      '@org-rig/base-nodejs': link:../../platform/rigs/base-nodejs
+      aws-lambda: 1.0.7
+      eslint: 8.26.0
+    devDependencies:
+      '@org-platform/eslint-config': link:../../platform/eslint-config
+      '@types/aws-lambda': 8.10.109
+      '@types/jest': 28.1.8
+      '@types/lodash': 4.14.191
+      '@types/node': 16.18.9
+      aws-cdk-lib: 2.47.0_constructs@10.1.211
+      constructs: 10.1.211
+      fs: 0.0.1-security
+      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
+      lodash: 4.17.21
+      path: 0.12.7
+      ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
+      typescript: 4.9.4
+
   ../../libraries/api-client/character-sheet:
     specifiers:
       '@types/node': ^16.0.0
@@ -619,45 +695,6 @@ importers:
       jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
       path: 0.12.7
       ts-jest: 28.0.8_bmizz235s3uo5hc7hnt2whzrqq
-      ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
-      typescript: 4.9.4
-
-  ../../platform/pipeline:
-    specifiers:
-      '@org-platform/constructs': workspace:*
-      '@org-platform/eslint-config': workspace:*
-      '@org-rig/base-nodejs': workspace:*
-      '@types/aws-lambda': ~8.10.93
-      '@types/jest': 28.1.8
-      '@types/lodash': ~4.14.191
-      '@types/node': ^16.0.0
-      aws-cdk-lib: 2.47.0
-      aws-lambda: 1.0.7
-      constructs: ^10.1.211
-      eslint: 8.26.0
-      fs: ~0.0.1-security
-      jest: 28.1.3
-      lodash: ~4.17.21
-      path: ~0.12.7
-      ts-node: 10.9.1
-      typescript: 4.9.4
-    dependencies:
-      '@org-platform/constructs': link:../constructs
-      '@org-rig/base-nodejs': link:../rigs/base-nodejs
-      aws-lambda: 1.0.7
-      eslint: 8.26.0
-    devDependencies:
-      '@org-platform/eslint-config': link:../eslint-config
-      '@types/aws-lambda': 8.10.109
-      '@types/jest': 28.1.8
-      '@types/lodash': 4.14.191
-      '@types/node': 16.18.9
-      aws-cdk-lib: 2.47.0_constructs@10.1.211
-      constructs: 10.1.211
-      fs: 0.0.1-security
-      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
-      lodash: 4.17.21
-      path: 0.12.7
       ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
       typescript: 4.9.4
 
@@ -8768,7 +8805,7 @@ packages:
     resolution: {integrity: sha512-xq+q3SRMOxGivLhBNaUdC64hDTQwejJ+H0T/NB1XMtTVEwNTrfFF3gAxiyW0Bu/xWEGhjVKgUcMhCrUy2+uCWg==}
     dependencies:
       base64-js: 1.5.1
-      ieee754: 1.1.13
+      ieee754: 1.2.1
       isarray: 1.0.0
 
   /buffer/5.7.1:
@@ -13237,10 +13274,10 @@ packages:
 
   /ieee754/1.1.13:
     resolution: {integrity: sha512-4vf7I2LYV/HaWerSo3XmlMkp5eZ83i+/CDluXi/IGTs/O1sejBNhTtnxzmRZfvOUqj7lZjqHkeTvpgSFDlWZTg==}
+    dev: false
 
   /ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
-    dev: false
 
   /iferr/0.1.5:
     resolution: {integrity: sha512-DUNFN5j7Tln0D+TxzloUjKB+CtVu6myn0JEFak6dG18mNt9YkQ6lzGCdafwofISZ1lLF3xRHJ98VKy9ynkcFaA==}
@@ -22847,7 +22884,7 @@ packages:
   /xml2js/0.4.19:
     resolution: {integrity: sha512-esZnJZJOiJR9wWKMyuvSE1y6Dq5LCuJanqhxslH2bxM6duahNZ+HMpCLhBQGZkbX6xRf8x1Y2eJlgt2q3qo49Q==}
     dependencies:
-      sax: 1.2.1
+      sax: 1.2.4
       xmlbuilder: 9.0.7
     dev: false
 
