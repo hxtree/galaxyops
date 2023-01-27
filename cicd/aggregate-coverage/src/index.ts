@@ -3,7 +3,7 @@ import fs from 'fs';
 // import istanbulCoverage from 'istanbul-lib-coverage';
 // import istanbulReport from 'istanbul-lib-report';
 // import istanbulReports from 'istanbul-reports';
-import { getProjects } from './getProjects';
+import { getProjects } from './get-projects';
 
 // const destination = '../coverage/coverage-final.json';
 const projects = getProjects();

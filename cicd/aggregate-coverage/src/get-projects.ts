@@ -5,12 +5,14 @@ export const getProjects = (configFile?: string) => {
     ? rushLib.RushConfiguration.loadFromConfigurationFile(configFile)
     : rushLib.RushConfiguration.loadFromDefaultLocation();
 
-  const normalized = rushConfiguration.projects.map(project =>
-    Object.assign(project, {
+  const projects: any[] = [];
+
+  rushConfiguration.projects.forEach((project: any) => {
+    projects.push({
       relativeFolder: project.projectRelativeFolder,
       absoluteFolder: project.projectFolder,
-    }),
-  );
+    });
+  });
 
-  return normalized;
+  return projects;
 };
