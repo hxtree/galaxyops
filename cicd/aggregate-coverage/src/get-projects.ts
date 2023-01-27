@@ -1,14 +1,24 @@
-import * as rushLib from '@microsoft/rush-lib';
+import {
+  RushConfiguration,
+  RushConfigurationProject,
+} from '@microsoft/rush-lib';
 
-export const getProjects = (configFile?: string) => {
+export type ProjectType = {
+  packageName: string;
+  relativeFolder: string;
+  absoluteFolder: string;
+};
+
+export const getProjects = (configFile?: string): ProjectType[] => {
   const rushConfiguration = configFile
-    ? rushLib.RushConfiguration.loadFromConfigurationFile(configFile)
-    : rushLib.RushConfiguration.loadFromDefaultLocation();
+    ? RushConfiguration.loadFromConfigurationFile(configFile)
+    : RushConfiguration.loadFromDefaultLocation();
 
-  const projects: any[] = [];
+  const projects: ProjectType[] = [];
 
-  rushConfiguration.projects.forEach((project: any) => {
+  rushConfiguration.projects.forEach((project: RushConfigurationProject) => {
     projects.push({
+      packageName: project.packageName,
       relativeFolder: project.projectRelativeFolder,
       absoluteFolder: project.projectFolder,
     });
