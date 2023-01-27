@@ -7,8 +7,9 @@ describe('getProjects', () => {
     expect(projects).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          absoluteFolder: '/usr/src/app/libraries/api-client/character-sheet',
-          relativeFolder: 'libraries/api-client/character-sheet',
+          packageName: '@org-cicd/aggregate-coverage',
+          relativeFolder: 'cicd/aggregate-coverage',
+          absoluteFolder: '/usr/src/app/cicd/aggregate-coverage',
         }),
       ]),
     );
