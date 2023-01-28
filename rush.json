@@ -54,8 +54,8 @@
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-cicd/aggregate-coverage",
-      "projectFolder": "cicd/aggregate-coverage",
+      "packageName": "@org-cicd/rush-coverage",
+      "projectFolder": "cicd/rush-coverage",
       "reviewCategory": "cicd",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
