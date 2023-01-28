@@ -7,9 +7,9 @@ describe('getProjects', () => {
     expect(projects).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          packageName: '@org-cicd/aggregate-coverage',
-          relativeFolder: 'cicd/aggregate-coverage',
-          absoluteFolder: '/usr/src/app/cicd/aggregate-coverage',
+          packageName: '@org-cicd/rush-coverage',
+          relativeFolder: 'cicd/rush-coverage',
+          absoluteFolder: '/usr/src/app/cicd/rush-coverage',
         }),
       ]),
     );

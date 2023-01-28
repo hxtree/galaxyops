@@ -1,5 +1,5 @@
 {
-  "name": "@org-cicd/aggregate-coverage",
+  "name": "@org-cicd/rush-coverage",
   "main": "./dist/src/index.js",
   "version": "0.0.1",
   "scripts": {
