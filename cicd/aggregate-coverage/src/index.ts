@@ -1,33 +1,27 @@
-import fs from 'fs';
-// import { createRequire } from 'module';
-// import istanbulCoverage from 'istanbul-lib-coverage';
-// import istanbulReport from 'istanbul-lib-report';
-// import istanbulReports from 'istanbul-reports';
-import { getProjects } from './get-projects';
+const istanbulCoverage = require('istanbul-lib-coverage');
+const istanbulReport = require('istanbul-lib-report');
+const istanbulReports = require('istanbul-reports');
 
-// const destination = '../coverage/coverage-final.json';
-const projects = getProjects();
-const coverageFiles: String[] = [];
+import { getCoverageReports } from './get-coverage-reports';
 
-projects.forEach((project: any) => {
-  const projectCoverageFile = `${project.projectFolder}/coverage/lcov.info`;
-  if (fs.existsSync(projectCoverageFile)) {
-    coverageFiles.push(projectCoverageFile);
-  }
+const rootDir = '/usr/src/app/';
+const coverageReports = getCoverageReports();
+
+const map = istanbulCoverage.createCoverageMap({});
+
+coverageReports.forEach((coverageReport: any) => {
+  const coverage = require(coverageReport);
+  Object.keys(coverage).forEach(filename =>
+    map.addFileCoverage(coverage[filename]),
+  );
 });
 
-console.log(coverageFiles);
+const context = istanbulReport.createContext({ coverageMap: map });
 
-// TODO combine all coverage reports
-
-// const map = istanbulCoverage.createCoverageMap();
-
-// // Object.keys(coverage).forEach(filename =>
-// //   map.addFileCoverage(mapFileCoverage(coverage[filename])),
-// // );
-
-// // const context = istanbulReport.createContext({ coverageMap: map });
-
-// // ['lcov'].forEach(reporter =>
-// //   istanbulReports.create(reporter, {}).execute(context),
-// // );
+['json', 'lcov', 'text'].forEach(reporter =>
+  istanbulReports
+    .create(reporter, {
+      projectRoot: rootDir,
+    })
+    .execute(context),
+);
