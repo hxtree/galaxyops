@@ -15,5 +15,5 @@ entire monorepo.
 
 ## TODO
 
-- [ ] consolidate by tool
-- [ ] finalize out folde structure
+- [ ] consolidate by tag
+- [ ] finalize out folder structure
