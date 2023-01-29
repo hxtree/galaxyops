@@ -6,6 +6,7 @@ on:
 
 jobs:
   build-rush:
+    timeout-minutes: 15
     name: Rush build
     runs-on: ubuntu-latest
     steps:
