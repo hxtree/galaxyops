@@ -6,7 +6,7 @@
     "^.+\\.tsx?$": "ts-jest"
   },
   "collectCoverageFrom": ["<rootDir>/**/*.ts"],
-  "coverageReporters": ["text-summary", "clover"],
+  "coverageReporters": ["json", "text-summary"],
   "coveragePathIgnorePattern": ["/node_modules/", "/cdk.out/", "/dist/"],
   "coverageDirectory": "<rootDir>/coverage",
   "coverageThreshold": {
