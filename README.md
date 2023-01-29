@@ -1,11 +1,15 @@
 <h1 align="center">Keepers Cradle</h1>
 
-**Keepers Cradle** is a online mobile RPG.
+**Keepers Cradle** is a unreleased online mobile role-playing game (RPG).
 
-This monorepo contains the game engine, development container, and
-infrastructure as code (IaC). The serverless backend is programmed primarly in
-Typescript. Microservices are deployed using AWS CDKv2 for IaC. The game engine
-client is built using Unreal Engine 5.
+This monorepo contains the development container, game engine, and
+infrastructure as code (IaC) used to continously deploy Keepers Cradle in its
+entirety.
+
+The backend is serverless and programmed primarly in Typescript. Microservices
+are deployed using IaC, specically AWS CDKv2.
+
+The game engine client is built using Unreal Engine 5.
 
 [![Continue Intergration](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/keepers-cradle/actions/workflows/ci.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/keepers-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/keepers-cradle&utm_campaign=Badge_Grade)
@@ -77,10 +81,9 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 Pull requests and bug reports are welcome on GitHub at
-[https://github.com/hxtree/keepers-cradle](https://github.com/hxtree/keepers-cradle).
-This project is intended to be a safe, welcoming space for collaboration, and
-contributors are expected to adhere to the
-[code of conduct](docs/CODE_OF_CONDUCT.md).
+<https://github.com/hxtree/keepers-cradle>. This project is intended to be a
+safe, welcoming space for collaboration, and contributors are expected to adhere
+to the [code of conduct](docs/CODE_OF_CONDUCT.md).
 
 The quickest way to start contibuting is to
 [fork repo](https://github.com/hxtree/keepers-cradle/fork) and submit changes
