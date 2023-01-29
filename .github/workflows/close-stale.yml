@@ -10,6 +10,7 @@ permissions:
 jobs:
   stale:
     name: 'Close month old issues and PRs'
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
       - uses: actions/stale@v7
@@ -30,6 +31,7 @@ jobs:
           operations-per-run: 100
   stale-legacy:
     name: 'Close year old issues and PRs'
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
       - uses: actions/stale@v7

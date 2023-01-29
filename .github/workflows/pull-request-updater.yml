@@ -8,6 +8,7 @@ on:
 jobs:
   update_pr:
     name: PR update
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - name: Check Branch
