@@ -1,6 +1,9 @@
 {
   "name": "@org-cicd/rush-coverage",
-  "main": "./dist/src/index.js",
+  "bin": {
+    "app": "./dist/src/app.js"
+  },
+  "main": "index.js",
   "version": "0.0.1",
   "scripts": {
     "start": "ts-node ./src/index.ts",
