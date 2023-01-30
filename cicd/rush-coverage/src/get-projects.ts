@@ -9,7 +9,19 @@ export type ProjectType = {
   absoluteFolder: string;
 };
 
-export const getProjects = (configFile?: string): ProjectType[] => {
+/**
+ * Get Projects from Rush.json
+ *
+ * Tags can be used to generate coverage reports for projects tagged only with certain words
+ *
+ * @param configFile optional parameter to specify the config file
+ * @param tag optional parameter to collect projects with specific tags
+ * @returns
+ */
+export const getProjects = (
+  configFile?: string,
+  tag?: string,
+): ProjectType[] => {
   const rushConfiguration = configFile
     ? RushConfiguration.loadFromConfigurationFile(configFile)
     : RushConfiguration.loadFromDefaultLocation();
@@ -17,11 +29,13 @@ export const getProjects = (configFile?: string): ProjectType[] => {
   const projects: ProjectType[] = [];
 
   rushConfiguration.projects.forEach((project: RushConfigurationProject) => {
-    projects.push({
-      packageName: project.packageName,
-      relativeFolder: project.projectRelativeFolder,
-      absoluteFolder: project.projectFolder,
-    });
+    if (tag === undefined || project.tags.has(tag)) {
+      projects.push({
+        packageName: project.packageName,
+        relativeFolder: project.projectRelativeFolder,
+        absoluteFolder: project.projectFolder,
+      });
+    }
   });
 
   return projects;
