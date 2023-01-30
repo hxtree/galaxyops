@@ -4,7 +4,7 @@ on:
     workflow_call:
 
 jobs:
-  lint:
+  rush-lint:
     name: rush lint
     timeout-minutes: 15
     runs-on: ubuntu-latest

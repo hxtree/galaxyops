@@ -1,12 +1,16 @@
 name: CodeCoverage
 
 on:
-    workflow_call:
+  workflow_call:
+    secrets:
+      CODACY_PROJECT_TOKEN:
+        required: true
+
 
 jobs:
-  coverage:
+  rush-coverage:
     timeout-minutes: 15
-    name: Rush build
+    name: coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

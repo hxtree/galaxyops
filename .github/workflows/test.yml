@@ -4,8 +4,8 @@ on:
     workflow_call:
 
 jobs:
-  test:
-    name: test
+  rush-test:
+    name: rush test
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:

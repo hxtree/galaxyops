@@ -4,20 +4,20 @@ on:
     workflow_call:
 
 jobs:
-  build:
-    name: build
+  rush-build:
+    name: rush build
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '16.18.0'
 
-      - name: Cache rush
+      - name: cache rush
         id: cache
         uses: actions/cache@v3.2.2
         with:
@@ -28,9 +28,9 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Rush install
+      - name: rush install
         # if: steps.cache.outputs.cache-hit != 'true'
         run: node common/scripts/install-run-rush.js install
 
-      - name: Build
+      - name: rush build
         run: node common/scripts/install-run-rush.js build

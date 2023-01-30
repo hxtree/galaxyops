@@ -7,17 +7,20 @@ on:
     branches: [ main ]
 
 jobs:
-  call-workflow-build:
+  Build:
     uses: ./.github/workflows/build.yml
 
-  call-workflow-lint:
+  Lint:
     uses: ./.github/workflows/lint.yml
 
-  call-workflow-test:
+  Test:
     uses: ./.github/workflows/test.yml
 
-  call-workflow-coverage:
+  Coverage:
     uses: ./.github/workflows/coverage.yml
+    secrets:
+      CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+
 
   # slack-notification:
   #   name: "Slack Notification"
