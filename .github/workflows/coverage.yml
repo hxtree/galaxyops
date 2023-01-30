@@ -1,11 +1,14 @@
-name: Build
+name: CodeCoverage
 
 on:
-    workflow_call:
+  workflow_call:
+    secrets:
+      CODACY_PROJECT_TOKEN:
+        required: true
 
 jobs:
-  build:
-    name: build
+  rush-coverage:
+    name: rush coverage
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
@@ -34,3 +37,15 @@ jobs:
 
       - name: Build
         run: node common/scripts/install-run-rush.js build
+
+      - name: Test coverage
+        run: node common/scripts/install-run-rush.js test:cov
+
+      - name: Merge coverage
+        run: node cicd/rush-coverage/dist
+
+      - name: Submit merged code coverage
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: coverage/lcov.info

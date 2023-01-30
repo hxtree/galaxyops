@@ -1,11 +1,11 @@
-name: Test
+name: Lint
 
 on:
     workflow_call:
 
 jobs:
-  test:
-    name: test
+  rush-lint:
+    name: rush lint
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
@@ -32,5 +32,5 @@ jobs:
         # if: steps.cache.outputs.cache-hit != 'true'
         run: node common/scripts/install-run-rush.js install
 
-      - name: Test
-        run: node common/scripts/install-run-rush.js test
+      - name: lint
+        run: node common/scripts/install-run-rush.js lint:ci
