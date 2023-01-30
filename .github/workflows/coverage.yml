@@ -6,11 +6,10 @@ on:
       CODACY_PROJECT_TOKEN:
         required: true
 
-
 jobs:
   rush-coverage:
+    name: rush coverage
     timeout-minutes: 15
-    name: coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
