@@ -1,4 +1,4 @@
-import { Archetype } from '../../data/archetype/archetype';
+import { Archetype } from '../data/archetype/archetype';
 
 describe('NPCList', () => {
   test('able to get character', () => {
