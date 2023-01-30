@@ -1,13 +1,14 @@
 <h1 align="center">Keepers Cradle</h1>
 
-**Keepers Cradle** is a unreleased online mobile role-playing game (RPG).
+**Keepers Cradle** is a unreleased online mobile role-playing game (RPG) looking
+for contributors.
 
 This monorepo contains the development container, game engine, and
 infrastructure as code (IaC) used to continously deploy Keepers Cradle in its
 entirety.
 
-The backend is serverless and programmed primarly in Typescript. Microservices
-are deployed using IaC, specically AWS CDKv2.
+The backend consist of many microservices programmed primarly in Typescript.
+These microservices are deployed using IaC, specically AWS CDKv2.
 
 The game engine client is built using Unreal Engine 5.
 
