@@ -7,14 +7,17 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-      uses: ./.github/workflows/reusable/build.yml
-  coverage:
-      uses: ./.github/workflows/reusable/coverage.yml
-  lint:
-      uses: ./.github/workflows/reusable/lint.yml
-  test:
-      uses: ./.github/workflows/reusable/test.yml
+  call-workflow-build:
+    uses: ./.github/workflows/reusable/build.yml
+
+  call-workflow-lint:
+    uses: ./.github/workflows/reusable/lint.yml
+
+  call-workflow-test:
+    uses: ./.github/workflows/reusable/test.yml
+
+  call-workflow-coverage:
+    uses: ./.github/workflows/reusable/coverage.yml
 
   # slack-notification:
   #   name: "Slack Notification"
