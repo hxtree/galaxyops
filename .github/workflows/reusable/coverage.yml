@@ -1,0 +1,48 @@
+name: CodeCoverage
+
+on:
+    workflow_call:
+
+jobs:
+  coverage:
+    timeout-minutes: 15
+    name: Rush build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.18.0'
+
+      - name: Cache rush
+        id: cache
+        uses: actions/cache@v3.2.2
+        with:
+          path: common/temp
+          key: ${{ runner.os }}-build-branch-${{ hashFiles('common/config/rush/repo-state.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-pr-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Rush install
+        # if: steps.cache.outputs.cache-hit != 'true'
+        run: node common/scripts/install-run-rush.js install
+
+      - name: Build
+        run: node common/scripts/install-run-rush.js build
+
+      - name: Test coverage
+        run: node common/scripts/install-run-rush.js test:cov
+
+      - name: Merge coverage
+        run: node cicd/rush-coverage/dist
+
+      - name: Submit merged code coverage
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: coverage/lcov.info

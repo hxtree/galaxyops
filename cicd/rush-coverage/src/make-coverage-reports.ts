@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import path from 'path';
 
 const istanbulReport = require('istanbul-lib-report');
