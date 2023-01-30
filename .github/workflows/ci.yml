@@ -8,16 +8,16 @@ on:
 
 jobs:
   call-workflow-build:
-    uses: ./.github/workflows/reusable/build.yml
+    uses: ./.github/workflows/build.yml
 
   call-workflow-lint:
-    uses: ./.github/workflows/reusable/lint.yml
+    uses: ./.github/workflows/lint.yml
 
   call-workflow-test:
-    uses: ./.github/workflows/reusable/test.yml
+    uses: ./.github/workflows/test.yml
 
   call-workflow-coverage:
-    uses: ./.github/workflows/reusable/coverage.yml
+    uses: ./.github/workflows/coverage.yml
 
   # slack-notification:
   #   name: "Slack Notification"
