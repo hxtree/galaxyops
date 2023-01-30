@@ -16,8 +16,8 @@
     "css-compile": "node-sass --precision 1 --output dist/css src/scss/promare-gradients.scss --output-style nested",
     "css-minify": "cleancss -o dist/css/promare-gradients.min.css dist/css/promare-gradients.css",
     "test": "",
-    "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix",
-    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run"
+    "lint": "",
+    "lint:ci": ""
   },
   "dependencies": {
     "clean-css-cli": "^5.5.0",

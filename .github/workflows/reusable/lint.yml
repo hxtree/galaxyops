@@ -1,13 +1,12 @@
-name: Coverage
+name: Lint
 
 on:
-  push:
-    branches: [ main ]
+    workflow_call:
 
 jobs:
-  build-rush:
+  lint:
+    name: rush lint
     timeout-minutes: 15
-    name: Rush build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -33,17 +32,5 @@ jobs:
         # if: steps.cache.outputs.cache-hit != 'true'
         run: node common/scripts/install-run-rush.js install
 
-      - name: Build
-        run: node common/scripts/install-run-rush.js build
-
-      - name: Test coverage
-        run: node common/scripts/install-run-rush.js test:cov
-
-      - name: Merge coverage
-        run: node cicd/rush-coverage/dist
-
-      - name: Submit merged code coverage
-        uses: codacy/codacy-coverage-reporter-action@v1.3.0
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: coverage/lcov.info
+      - name: lint
+        run: node common/scripts/install-run-rush.js lint:ci
