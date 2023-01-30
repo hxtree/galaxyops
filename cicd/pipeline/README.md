@@ -12,6 +12,8 @@ Unstable WIP
 
 Default policy `AdministratorAccess`
 
+Pipelines should accept a stage param as to build feature branches.
+
 ## Documentation
 
 - [CDK Pipeline](https://docs.aws.amazon.com/cdk/v2/guide/cdk_pipeline.html)
