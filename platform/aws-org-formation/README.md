@@ -5,12 +5,14 @@ The AWS Organization is initalized, managed, and synced using
 
 ## Getting Started
 
-1. Use an existing adequately permissioned IAM user or create an
+1. Login to the AWS Management Console. Go to Org Formations and create an Org.
+
+2. Use an existing adequately permissioned IAM user or create an
    [Administrator IAM user](https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up-create-iam-user.html).
    Set user or Administrator `aws_access_key_id` and `aws_secret_access_key`
    credentials in ~/.aws/credentials if missing.
 
-2. Initialize the organization using an adequately permissioned user or
+3. Initialize the organization using an adequately permissioned user or
    Administrator profile recently added. This pulls changes for the AWS
    Organization to the Org template file.
 

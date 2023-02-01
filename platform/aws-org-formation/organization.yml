@@ -20,10 +20,19 @@ Organization:
   SandboxAccount:
     Type: OC::ORG::Account
     Properties:
+      AccountName: tools
+      AccountId: '760440398296'
+      RootEmail: matthew.heroux+1@gmail.com
+      Alias: tools-1
+
+  SandboxAccount:
+    Type: OC::ORG::Account
+    Properties:
       AccountName: Sandbox
       AccountId: '298217020330'
       RootEmail: matthew.heroux@gmail.com
-  
+      Alias: dev-1
+
   RestrictUnusedRegionsSCP:
     Type: OC::ORG::ServiceControlPolicy
     Properties:
