@@ -33,7 +33,7 @@ export const awsAccounts = {
     region: 'us-east-2',
   },
   tools: {
-    accountId: '298217020330',
+    accountId: '124653296725',
     description: 'Use to deploy resources to other accounts',
     region: 'us-east-2',
   },

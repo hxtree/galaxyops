@@ -1,8 +1,8 @@
 {
   "name": "@org-platform/constructs",
+  "version": "0.0.1",
   "module": "commonjs",
   "main": "./dist/src/index.js",
-  "version": "0.0.1",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
@@ -51,6 +51,7 @@
     "@org-platform/eslint-config": "workspace:*"
   },
   "exports": {
+    ".": "./dist/src/index.js",
     "./api-endpoint": "./dist/src/api-endpoint/index.js",
     "./aws-account": "./dist/src/aws-accounts/index.js",
     "./microservice": "./dist/src/microservice/index.js",
