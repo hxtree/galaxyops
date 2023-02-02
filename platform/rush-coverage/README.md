@@ -22,6 +22,4 @@ rush test:cov && rushx start
 
 ## TODO
 
-- [ ] consolidate by tag filter
-- [ ] finalize out folder structure
-- [ ] hook to codacy and CI
+- [ ] add tag filter support as arg
