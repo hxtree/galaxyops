@@ -48,14 +48,14 @@
     },
     {
       "packageName": "@org-cicd/pipeline",
-      "projectFolder": "cicd/pipeline",
+      "projectFolder": "platform/cicd/pipeline",
       "reviewCategory": "cicd",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },
     {
       "packageName": "@org-cicd/rush-coverage",
-      "projectFolder": "cicd/rush-coverage",
+      "projectFolder": "platform/cicd/rush-coverage",
       "reviewCategory": "cicd",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
