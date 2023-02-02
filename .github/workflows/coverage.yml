@@ -42,7 +42,7 @@ jobs:
         run: node common/scripts/install-run-rush.js test:cov
 
       - name: Merge coverage
-        run: node cicd/rush-coverage/dist
+        run: node platform/rush-coverage/dist
 
       - name: Submit merged code coverage
         uses: codacy/codacy-coverage-reporter-action@v1.3.0
