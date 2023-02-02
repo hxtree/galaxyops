@@ -4,7 +4,7 @@ import path from 'path';
 const istanbulReport = require('istanbul-lib-report');
 const istanbulReports = require('istanbul-reports');
 
-const rootDir = path.resolve(__dirname, '../../../');
+const rootDir = path.resolve(__dirname, '../../../../');
 const reportDir = `${rootDir}/coverage`;
 
 export function makeCoverageReports(coverageMap: any, formats: string[]) {
