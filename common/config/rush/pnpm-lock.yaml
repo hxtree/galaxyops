@@ -440,84 +440,6 @@ importers:
       ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
       typescript: 4.9.4
 
-  ../../platform/cicd/pipeline:
-    specifiers:
-      '@org-platform/constructs': workspace:*
-      '@org-platform/eslint-config': workspace:*
-      '@org-rig/base-nodejs': workspace:*
-      '@types/aws-lambda': ~8.10.93
-      '@types/jest': 28.1.8
-      '@types/lodash': ~4.14.191
-      '@types/node': ^16.0.0
-      aws-cdk-lib: 2.47.0
-      aws-lambda: 1.0.7
-      constructs: ^10.1.211
-      eslint: 8.26.0
-      fs: ~0.0.1-security
-      jest: 28.1.3
-      lodash: ~4.17.21
-      path: ~0.12.7
-      ts-node: 10.9.1
-      typescript: 4.9.4
-    dependencies:
-      '@org-platform/constructs': link:../../constructs
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
-      aws-lambda: 1.0.7
-      eslint: 8.26.0
-    devDependencies:
-      '@org-platform/eslint-config': link:../../eslint-config
-      '@types/aws-lambda': 8.10.109
-      '@types/jest': 28.1.8
-      '@types/lodash': 4.14.191
-      '@types/node': 16.18.9
-      aws-cdk-lib: 2.47.0_constructs@10.1.211
-      constructs: 10.1.211
-      fs: 0.0.1-security
-      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
-      lodash: 4.17.21
-      path: 0.12.7
-      ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
-      typescript: 4.9.4
-
-  ../../platform/cicd/rush-coverage:
-    specifiers:
-      '@microsoft/rush-lib': ~5.89.1
-      '@org-platform/eslint-config': workspace:*
-      '@org-rig/base-nodejs': workspace:*
-      '@types/istanbul-reports': ~3.0.1
-      '@types/jest': 28.1.8
-      '@types/json-schema': ~7.0.11
-      '@types/node': ^16.0.0
-      '@types/uuid': ~8.3.4
-      esbuild: ~0.15.12
-      eslint: 8.26.0
-      istanbul-lib-coverage: ~3.2.0
-      istanbul-lib-report: ~3.0.0
-      istanbul-reports: ~3.1.5
-      jest: 28.1.3
-      ts-jest: 28.0.8
-      ts-node: 10.9.1
-      typescript: 4.9.4
-    dependencies:
-      '@microsoft/rush-lib': 5.89.1
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
-      '@types/istanbul-reports': 3.0.1
-      istanbul-lib-coverage: 3.2.0
-      istanbul-lib-report: 3.0.0
-      istanbul-reports: 3.1.5
-    devDependencies:
-      '@org-platform/eslint-config': link:../../eslint-config
-      '@types/jest': 28.1.8
-      '@types/json-schema': 7.0.11
-      '@types/node': 16.18.9
-      '@types/uuid': 8.3.4
-      esbuild: 0.15.18
-      eslint: 8.26.0
-      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
-      ts-jest: 28.0.8_bmizz235s3uo5hc7hnt2whzrqq
-      ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
-      typescript: 4.9.4
-
   ../../platform/constructs:
     specifiers:
       '@nestjs/common': 9.1.1
@@ -700,6 +622,45 @@ importers:
       ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
       typescript: 4.9.4
 
+  ../../platform/pipeline:
+    specifiers:
+      '@org-platform/constructs': workspace:*
+      '@org-platform/eslint-config': workspace:*
+      '@org-rig/base-nodejs': workspace:*
+      '@types/aws-lambda': ~8.10.93
+      '@types/jest': 28.1.8
+      '@types/lodash': ~4.14.191
+      '@types/node': ^16.0.0
+      aws-cdk-lib: 2.47.0
+      aws-lambda: 1.0.7
+      constructs: ^10.1.211
+      eslint: 8.26.0
+      fs: ~0.0.1-security
+      jest: 28.1.3
+      lodash: ~4.17.21
+      path: ~0.12.7
+      ts-node: 10.9.1
+      typescript: 4.9.4
+    dependencies:
+      '@org-platform/constructs': link:../constructs
+      '@org-rig/base-nodejs': link:../rigs/base-nodejs
+      aws-lambda: 1.0.7
+      eslint: 8.26.0
+    devDependencies:
+      '@org-platform/eslint-config': link:../eslint-config
+      '@types/aws-lambda': 8.10.109
+      '@types/jest': 28.1.8
+      '@types/lodash': 4.14.191
+      '@types/node': 16.18.9
+      aws-cdk-lib: 2.47.0_constructs@10.1.211
+      constructs: 10.1.211
+      fs: 0.0.1-security
+      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
+      lodash: 4.17.21
+      path: 0.12.7
+      ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
+      typescript: 4.9.4
+
   ../../platform/rigs/base-nodejs:
     specifiers:
       '@rushstack/heft': ~0.44.0
@@ -717,6 +678,45 @@ importers:
       '@rushstack/heft-node-rig': 1.11.10_@rushstack+heft@0.44.13
       '@types/heft-jest': 1.0.2
       '@types/node': 16.18.9
+      typescript: 4.9.4
+
+  ../../platform/rush-coverage:
+    specifiers:
+      '@microsoft/rush-lib': ~5.89.1
+      '@org-platform/eslint-config': workspace:*
+      '@org-rig/base-nodejs': workspace:*
+      '@types/istanbul-reports': ~3.0.1
+      '@types/jest': 28.1.8
+      '@types/json-schema': ~7.0.11
+      '@types/node': ^16.0.0
+      '@types/uuid': ~8.3.4
+      esbuild: ~0.15.12
+      eslint: 8.26.0
+      istanbul-lib-coverage: ~3.2.0
+      istanbul-lib-report: ~3.0.0
+      istanbul-reports: ~3.1.5
+      jest: 28.1.3
+      ts-jest: 28.0.8
+      ts-node: 10.9.1
+      typescript: 4.9.4
+    dependencies:
+      '@microsoft/rush-lib': 5.89.1
+      '@org-rig/base-nodejs': link:../rigs/base-nodejs
+      '@types/istanbul-reports': 3.0.1
+      istanbul-lib-coverage: 3.2.0
+      istanbul-lib-report: 3.0.0
+      istanbul-reports: 3.1.5
+    devDependencies:
+      '@org-platform/eslint-config': link:../eslint-config
+      '@types/jest': 28.1.8
+      '@types/json-schema': 7.0.11
+      '@types/node': 16.18.9
+      '@types/uuid': 8.3.4
+      esbuild: 0.15.18
+      eslint: 8.26.0
+      jest: 28.1.3_gf6zimgeamfhxmgdphbwcn4tse
+      ts-jest: 28.0.8_bmizz235s3uo5hc7hnt2whzrqq
+      ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
       typescript: 4.9.4
 
 packages:
