@@ -35,7 +35,9 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
+        # uses shouldPublish in rush.json
+        # https://rushjs.io/pages/maintainer/publishing/ ?
         # TODO issue individual publishes for applicable?
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

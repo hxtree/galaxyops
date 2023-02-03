@@ -93,7 +93,8 @@
       "projectFolder": "libraries/promare-gradients",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["library", "npm-publish"]
+      "tags": ["library", "npm-publish"],
+      "shouldPublish": true
     },
     {
       "packageName": "@org-api-client/luck-by-dice",
