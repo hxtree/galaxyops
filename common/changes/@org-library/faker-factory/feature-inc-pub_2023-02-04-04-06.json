@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@org-library/faker-factory",
+      "comment": "Update docs",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@org-library/faker-factory"
+}
