@@ -32,7 +32,7 @@ End-to-end tests built using `microsoft/playwright`.
        Auto generate tests with Codegen.
    ```
 
-## Architectural Assumptions
+## Architectural Opinions
 
 - Playwright was selected for end to end tests due to its support for Webkit.
 - Cypress was not selected due to Cypress lack of Safari/Webkit support.

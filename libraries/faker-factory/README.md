@@ -85,7 +85,7 @@ const Person = await FakerFactory.create<Person>(
 );
 ```
 
-## Assumptions
+## Opinions
 
 In typescript object data can be automatically faked based on either: the
 decorator, the property name, or property typehint.
