@@ -1,7 +1,11 @@
 {
   "name": "@cats-cradle/eslint-config",
   "version": "1.0.0",
-  "description": "Eslint rule",
+  "description": "Eslint rules by profile",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxtree/cats-cradle.git"
+  },
   "scripts": {
     "build": "",
     "test": "",
