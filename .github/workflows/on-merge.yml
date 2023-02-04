@@ -1,4 +1,4 @@
-name: CI Merge
+name: CI
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: CI PR Opened
+name: PR Opened
 
 on:
   pull_request:
