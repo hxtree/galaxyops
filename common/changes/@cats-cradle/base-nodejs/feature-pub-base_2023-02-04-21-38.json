@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/base-nodejs",
+      "comment": "init publication",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/base-nodejs"
+}
