@@ -1,6 +1,5 @@
-# Upstream: github.com/tzkhan/pr-update-action
+name: CI PR Opened
 
-name: PR update
 on:
   pull_request:
     types: [opened]
@@ -17,6 +16,7 @@ jobs:
           if [[ ${{ github.head_ref }} =~ ^[A-Za-z]+-[0-9]+.*$ ]]; then
               echo ::set-output name=match::true
           fi
+      # Upstream: github.com/tzkhan/pr-update-action
       - uses: tzkhan/pr-update-action@v2
         if: steps.check-branch.outputs.match == 'true'
         with:

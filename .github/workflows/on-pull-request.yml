@@ -1,0 +1,19 @@
+name: CI PR
+
+on:
+  pull_request
+
+jobs:
+  Build:
+    uses: ./.github/workflows/call-build.yml
+
+  Lint:
+    uses: ./.github/workflows/call-lint.yml
+
+  Test:
+    uses: ./.github/workflows/call-test.yml
+
+  Coverage:
+    uses: ./.github/workflows/call-coverage.yml
+    secrets:
+      CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}

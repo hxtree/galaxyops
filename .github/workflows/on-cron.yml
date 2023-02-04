@@ -1,0 +1,14 @@
+name: 'Cron'
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+
+  CloseStale:
+    uses: ./.github/workflows/call-close-stale.yml

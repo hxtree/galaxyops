@@ -1,33 +1,28 @@
-name: CI
+name: CI Merge
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   Build:
-    uses: ./.github/workflows/build.yml
+    uses: ./.github/workflows/call-build.yml
 
   Lint:
-    uses: ./.github/workflows/lint.yml
+    uses: ./.github/workflows/call-lint.yml
 
   Test:
-    uses: ./.github/workflows/test.yml
+    uses: ./.github/workflows/call-test.yml
 
   Coverage:
-    uses: ./.github/workflows/coverage.yml
+    uses: ./.github/workflows/call-coverage.yml
     secrets:
       CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
 
   Publish:
-    if: github.event.pull_request.merged == true
-    uses: ./.github/workflows/publish.yml
+    uses: ./.github/workflows/call-publish.yml
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-
 
   # slack-notification:
   #   name: "Slack Notification"
