@@ -2,6 +2,18 @@
   "name": "@org-library/faker-factory",
   "entries": [
     {
+      "version": "0.0.3",
+      "tag": "@org-library/faker-factory_v0.0.3",
+      "date": "Sat, 04 Feb 2023 05:22:13 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update docs"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.2",
       "tag": "@org-library/faker-factory_v0.0.2",
       "date": "Sat, 04 Feb 2023 04:27:50 GMT",

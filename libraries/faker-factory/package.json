@@ -1,7 +1,7 @@
 {
   "name": "@org-library/faker-factory",
   "main": "./dist/src/index.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "build": "tsc",
     "build:all": "rush build -t .",
