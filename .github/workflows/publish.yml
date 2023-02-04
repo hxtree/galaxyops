@@ -1,7 +1,6 @@
 name: Publish
 
-on:
-    workflow_call:
+on: workflow_dispatch
 
 jobs:
   rush-build:
@@ -29,15 +28,14 @@ jobs:
             ${{ runner.os }}-
 
       - name: rush install
-        # if: steps.cache.outputs.cache-hit != 'true'
         run: node common/scripts/install-run-rush.js install
 
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
-        # uses shouldPublish in rush.json
-        # https://rushjs.io/pages/maintainer/publishing/ ?
-        # TODO issue individual publishes for applicable?
-      - run: npm publish
+      # https://rushjs.io/pages/maintainer/publishing/
+      # uses shouldPublish in rush.json
+      - name: rush publish
+        run: node common/scripts/install-run-rush.js publish --publish --npm-auth-token $NPM_TOKEN --add-commit-details
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
