@@ -1,5 +1,5 @@
 {
-  "name": "@catscradle/faker-factory",
+  "name": "@cats-cradle/faker-factory",
   "version": "0.0.3",
   "main": "./dist/src/index.js",
   "repository": {
@@ -22,7 +22,7 @@
     "uuid": "~9.0.0",
     "lodash": "~4.17.21",
     "@types/lodash": "~4.14.191",
-    "@catscradle/base-nodejs": "workspace:*",
+    "@cats-cradle/base-nodejs": "workspace:*",
     "@faker-js/faker": "~7.6.0",
     "reflect-metadata": "0.1.13",
     "@types/validator": "~13.7.10",
@@ -42,7 +42,7 @@
     "esbuild": "~0.15.12",
     "@types/uuid": "~8.3.4",
     "eslint": "8.26.0",
-    "@catscradle/eslint-config": "workspace:*",
+    "@cats-cradle/eslint-config": "workspace:*",
     "@types/json-schema": "~7.0.11"
   }
 }

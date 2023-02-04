@@ -1,7 +1,7 @@
 import { Counter } from './features/counter/Counter';
 import { MainNavigation } from './features/main-navigation/MainNavigation';
 import './App.css';
-import { Button, Typography, Paper } from '@catscradle/design-system';
+import { Button, Typography, Paper } from '@cats-cradle/design-system';
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 {
-  "name": "@catscradle/base-nodejs",
+  "name": "@cats-cradle/base-nodejs",
   "version": "1.0.0",
   "description": "Heft rig package",
   "scripts": {

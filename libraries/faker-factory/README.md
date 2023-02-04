@@ -1,4 +1,4 @@
-# @catscradle/faker-factory
+# @cats-cradle/faker-factory
 
 FakerFactory creates fakes of classes using class-validator decorators for
 testing purposes.
@@ -13,7 +13,7 @@ and returned.
 Create a fake by calling the FakerFactory.
 
 ```typescript
-import { FakerFactory } from '@catscradle/faker-factory';
+import { FakerFactory } from '@cats-cradle/faker-factory';
 import { Person } from './person.ts';
 
 const fakerPerson = await FakerFactory.create<Person>(Person, { passed: true });

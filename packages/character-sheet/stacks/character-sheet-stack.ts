@@ -1,4 +1,4 @@
-import { Microservice } from '@catscradle/constructs';
+import { Microservice } from '@cats-cradle/constructs';
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import { StackProps } from 'aws-cdk-lib';

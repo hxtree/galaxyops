@@ -1,5 +1,5 @@
 {
-  "name": "@catscradle/gm-client",
+  "name": "@cats-cradle/gm-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,12 +17,12 @@
     "react-scripts": "5.0.1",
     "typescript": "4.9.4",
     "web-vitals": "^2.1.4",
-    "@catscradle/design-system": "workspace:*",
-    "@catscradle/luck-by-dice": "workspace:*",
+    "@cats-cradle/design-system": "workspace:*",
+    "@cats-cradle/luck-by-dice": "workspace:*",
     "@storybook/addon-a11y": "~6.5.13"
   },
   "devDependencies": {
-    "@catscradle/base-nodejs": "workspace:*"
+    "@cats-cradle/base-nodejs": "workspace:*"
   },
   "scripts": {
     "build:all": "rush build -t .",

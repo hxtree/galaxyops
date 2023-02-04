@@ -1,5 +1,5 @@
 {
-  "name": "@catscradle/audio",
+  "name": "@cats-cradle/audio",
   "module": "commonjs",
   "version": "0.1.2",
   "bin": {

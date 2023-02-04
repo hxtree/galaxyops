@@ -1,4 +1,4 @@
-# @catscradle/constructs
+# @cats-cradle/constructs
 
 L1 constructs L2 constructs L3 constructs
 

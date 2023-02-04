@@ -1,4 +1,4 @@
-# @catscradle/rush-coverage
+# @cats-cradle/rush-coverage
 
 RushCoverage is a code coverage consolidation tool for RushJs based monorepos.
 

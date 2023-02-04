@@ -23,7 +23,7 @@
     }
   },
   "info": {
-    "title": "@catscradles/luck-by-dice",
+    "title": "@cats-cradles/luck-by-dice",
     "description": "An API for simulating dice rolls and luck from dice notation",
     "version": "1.0",
     "contact": {}

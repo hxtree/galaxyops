@@ -1,4 +1,4 @@
-# @catscradle/e2e
+# @cats-cradle/e2e
 
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 

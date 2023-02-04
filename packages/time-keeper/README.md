@@ -1,4 +1,4 @@
-# @catscradle/time-keeper
+# @cats-cradle/time-keeper
 
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 

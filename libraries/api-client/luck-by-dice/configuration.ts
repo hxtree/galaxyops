@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * @catscradles/luck-by-dice
+ * @cats-cradles/luck-by-dice
  * An API for simulating dice rolls and luck from dice notation
  *
  * The version of the OpenAPI document: 1.0

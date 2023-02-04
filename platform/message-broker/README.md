@@ -1,4 +1,4 @@
-# @catscradle/message-broker
+# @cats-cradle/message-broker
 
 This is a “Pub/Sub Message Broker”. It enables async communication between
 microservices to provide loosely coupling.

@@ -257,7 +257,7 @@
     }
   },
   "info": {
-    "title": "@catscradles/character-sheet",
+    "title": "@cats-cradles/character-sheet",
     "description": "An API for the character sheet service",
     "version": "1.0",
     "contact": {}

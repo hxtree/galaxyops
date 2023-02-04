@@ -1,4 +1,4 @@
-# @catscradle/design-system
+# @cats-cradle/design-system
 
 [Design system](https://storybook.js.org/tutorials/design-systems-for-developers/)
 containing common components for other front end applications.

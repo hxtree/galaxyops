@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * @catscradles/character-sheet
+ * @cats-cradles/character-sheet
  * An API for the character sheet service
  *
  * The version of the OpenAPI document: 1.0

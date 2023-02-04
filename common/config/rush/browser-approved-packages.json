@@ -11,23 +11,23 @@
       "allowedCategories": [ "apis" ]
     },
     {
-      "name": "@catscradle/base-nodejs",
+      "name": "@cats-cradle/base-nodejs",
       "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
     },
     {
-      "name": "@catscradle/constructs",
+      "name": "@cats-cradle/constructs",
       "allowedCategories": [ "apis", "cicd" ]
     },
     {
-      "name": "@catscradle/design-system",
+      "name": "@cats-cradle/design-system",
       "allowedCategories": [ "apis" ]
     },
     {
-      "name": "@catscradle/eslint-config",
+      "name": "@cats-cradle/eslint-config",
       "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
     },
     {
-      "name": "@catscradle/luck-by-dice",
+      "name": "@cats-cradle/luck-by-dice",
       "allowedCategories": [ "apis" ]
     },
     {

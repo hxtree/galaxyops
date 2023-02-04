@@ -1,4 +1,4 @@
-## @catscradle/api-client-luck-by-dice@1.0.0
+## @cats-cradle/api-client-luck-by-dice@1.0.0
 
 This generator creates TypeScript/JavaScript client that utilizes
 [axios](https://github.com/axios/axios). The generated Node module can be used
@@ -45,7 +45,7 @@ commands.
 _published:_
 
 ```
-npm install @catscradle/api-client-luck-by-dice@1.0.0 --save
+npm install @cats-cradle/api-client-luck-by-dice@1.0.0 --save
 ```
 
 _unPublished (not recommended):_
