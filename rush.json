@@ -82,7 +82,7 @@
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@ouxsoft/faker-factory",
+      "packageName": "@org-library/faker-factory",
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
@@ -90,7 +90,7 @@
       "shouldPublish": true
     },
     {
-      "packageName": "@ouxsoft/promare-gradients",
+      "packageName": "@org-library/promare-gradients",
       "projectFolder": "libraries/promare-gradients",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
