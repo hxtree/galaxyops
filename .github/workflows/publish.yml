@@ -1,0 +1,41 @@
+name: Publish
+
+on: workflow_dispatch
+
+jobs:
+  rush-build:
+    name: rush build
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+      - name: setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.18.0'
+
+      - name: cache rush
+        id: cache
+        uses: actions/cache@v3.2.2
+        with:
+          path: common/temp
+          key: ${{ runner.os }}-build-branch-${{ hashFiles('common/config/rush/repo-state.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-pr-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: rush install
+        run: node common/scripts/install-run-rush.js install
+
+      - name: rush build
+        run: node common/scripts/install-run-rush.js build
+
+      # https://rushjs.io/pages/maintainer/publishing/
+      # uses shouldPublish in rush.json
+      - name: rush publish
+        run: node common/scripts/install-run-rush.js publish --publish --npm-auth-token $NPM_TOKEN --add-commit-details
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
