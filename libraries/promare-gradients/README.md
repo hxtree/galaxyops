@@ -7,8 +7,8 @@ It's a tiny stylesheet library that comes with over **25,000** different neon
 background combinations.
 
 Neon colors have a high chroma. When they are contrasted they psychologically
-grab the users' attention[^1]. It's no wonder why neon signs have been used for
-call to actions.
+grab the users' attention[^1]. It's no wonder why neon signs are commonly used
+for call to actions.
 
 ## Usage
 
@@ -79,7 +79,7 @@ options are available:
 
 ## Acknowledgements
 
-Promare Gradients derives its name from the movie
+Promare Gradients is named after the movie
 [Promare](https://en.wikipedia.org/wiki/Promare) which features rich neon
 gradient coloring and inspired this package.
 
