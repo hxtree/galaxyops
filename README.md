@@ -1,7 +1,6 @@
 <h1 align="center">Cats Cradle</h1>
 
-**Cats Cradle** is a unreleased online mobile role-playing game (RPG) looking
-for contributors.
+**Cats Cradle** is a unreleased online mobile role-playing game (RPG).
 
 This monorepo contains the development container, game engine, and
 infrastructure as code (IaC) used to continously deploy Cats Cradle in its
@@ -12,7 +11,7 @@ These microservices are deployed using IaC, specically AWS CDKv2.
 
 The game engine client is built using Unreal Engine 5.
 
-[![Continue Intergration](https://github.com/hxtree/cats-cradle/actions/workflows/ci.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/ci.yml)
+[![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Coverage)
 [![Slack](https://img.shields.io/badge/slack-cats-cradle-purple)](https://cats-cradle.slack.com/archives/C04JH10RP9V)
