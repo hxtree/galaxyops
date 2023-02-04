@@ -3,28 +3,9 @@
 All coding standards are written to conform to
 [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119).
 
-## Typescript
+1. Typescript files SHOULD adhere to Eslint settings.
 
-1. All Typescript apps SHOULD use single quotes (not double quotes) excluding
-   third party libraries.
-
-   Good:
-
-   ```typescript
-   let x = 'yes';
-   ```
-
-   Bad:
-
-   ```typescript
-   let x = 'yes';
-   ```
-
-2. Typescript files SHOULD adhere to Eslint settings.
-
-### Directory Structure
-
-1. Typescript filenames MUST use Pascal case.
+2. Typescript filenames MUST use Pascal case.
 
    Good:
 
@@ -39,7 +20,7 @@ All coding standards are written to conform to
    black-and-white.ts
    ```
 
-2. All folder names SHOULD be snake case or kebab case.
+3. All folder names SHOULD be snake case or kebab case.
 
    Good:
 
