@@ -27,11 +27,19 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
+      - name: Setup git
+        run: |
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+
       - name: rush install
         run: node common/scripts/install-run-rush.js install
 
       - name: rush build
         run: node common/scripts/install-run-rush.js build
+
+      - name: Bump version
+        run: node common/scripts/install-run-rush.js version --bump
 
       # https://rushjs.io/pages/maintainer/publishing/
       # uses shouldPublish in rush.json
