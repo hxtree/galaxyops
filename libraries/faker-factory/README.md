@@ -1,6 +1,6 @@
 # @org-library/faker-factory
 
-FakerFactory creates fakes of classes with class-validator decorators for
+FakerFactory creates fakes of classes using class-validator decorators for
 testing purposes.
 
 It creates a faker object by first inferring each property's type based the
@@ -17,17 +17,16 @@ import { FakerFactory } from '@org-library/faker-factory';
 import { Person } from './person.ts';
 
 const fakerPerson = await FakerFactory.create<Person>(Person, { passed: true });
-```
 
-```json
-// console.log(fakerPerson);
-{
-  "id": "4cb85e06-1060-4bed-8224-14ec39e0dfa9",
-  "firstName": "irure in",
-  "currency": "887.56",
-  "visits": -91521537.9856908,
-  "passed": true
-}
+console.log(fakerPerson);
+
+// {
+//   "id": "4cb85e06-1060-4bed-8224-14ec39e0dfa9",
+//   "firstName": "irure in",
+//   "currency": "887.56",
+//   "visits": -91521537.9856908,
+//   "passed": true
+// }
 ```
 
 ```typescript
@@ -88,16 +87,16 @@ const Person = await FakerFactory.create<Person>(
 
 ## Assumptions
 
-In typescript object data can be faked based on either: the decorator, the
-property name, or property typehint.
+In typescript object data can be automatically faked based on either: the
+decorator, the property name, or property typehint.
 
-Although property names should remain somewhat consistant, such as
-[Intermock](https://github.com/google/intermock) does, it is unreasonable
-many-to-many relationship to maintain for faking purposes. Generating values
-based on typehinting is less then ideal due to compiled code being type agnostic
-and special tsc requirements.
+Property names should remain somewhat consistant and fakes can be generated
+based on them, this is how [Intermock](https://github.com/google/intermock)
+works. However, it is unreasonable many-to-many relationship to maintain for
+reasonable faking purposes. Generating values based on typehinting is less then
+ideal due to compiled code being type agnostic and special tsc requirements.
 
-Class-validator decorators and schema was choosen for the following reasons.
+Class-validator decorators and schema were choosen for the following reasons:
 
 - Decorators are already present when using class-validation.
 - Faker data should not just be fake, it should be valid and meet
