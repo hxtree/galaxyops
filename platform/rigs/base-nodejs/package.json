@@ -1,6 +1,10 @@
 {
   "name": "@cats-cradle/base-nodejs",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxtree/cats-cradle.git"
+  },
   "description": "Heft rig package",
   "scripts": {
     "build": "",
