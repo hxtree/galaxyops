@@ -1,6 +1,6 @@
-<h1 align="center">Cats Cradle</h1>
+<h1 align="center">Cats Cradle :yarn:</h1>
 
-**Cats Cradle** is a unreleased online mobile role-playing game (RPG).
+**Cats Cradle** is a unreleased mobile role-playing game (RPG).
 
 This monorepo contains the development container, game engine, and
 infrastructure as code (IaC) used to continously deploy Cats Cradle in its
