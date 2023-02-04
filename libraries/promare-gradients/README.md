@@ -2,9 +2,9 @@
 
 ![SASS](https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
 
-Promare Gradients standardizes the use of **neon colors** for web backgrounds.
-It's a tiny stylesheet library that comes with over **25,000** different neon
-background solid and gadient combinations.
+Promare Gradients makes it easy to set **neon colors** backgrounds. It's a tiny
+stylesheet library that comes with over **25,000** different neon background
+solid and gadient combinations.
 
 Neon colors have a high chroma. When they are contrasted they psychologically
 grab the users' attention[^1]. It's no wonder why neon signs are commonly used
