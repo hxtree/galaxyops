@@ -82,18 +82,19 @@
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-library/faker-factory",
+      "packageName": "@ouxsoft/faker-factory",
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["library", "npm-publish"]
+      "tags": ["library"],
+      "shouldPublish": true
     },
     {
-      "packageName": "@org-library/promare-gradients",
+      "packageName": "@ouxsoft/promare-gradients",
       "projectFolder": "libraries/promare-gradients",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["library", "npm-publish"],
+      "tags": ["library"],
       "shouldPublish": true
     },
     {
