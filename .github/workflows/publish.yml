@@ -8,8 +8,8 @@ on:
         required: true
 
 jobs:
-  rush-build:
-    name: rush build
+  rush-publish:
+    name: rush publish
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
