@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@org-library/promare-gradients",
+      "comment": "docs",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@org-library/promare-gradients"
+}

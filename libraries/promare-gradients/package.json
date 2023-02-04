@@ -2,6 +2,10 @@
   "name": "@org-library/promare-gradients",
   "version": "1.0.0",
   "description": "Neon background gradients",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxtree/keepers-cradle.git"
+  },
   "keywords": [
     "neon",
     "background",
