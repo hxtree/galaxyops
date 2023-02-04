@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * @org-packages/luck-by-dice
+ * @catscradles/luck-by-dice
  * An API for simulating dice rolls and luck from dice notation
  *
  * The version of the OpenAPI document: 1.0
@@ -12,9 +12,9 @@
  * Do not edit the class manually.
  */
 
-import {Configuration} from './configuration';
-import {RequiredError, RequestArgs} from './base';
-import {AxiosInstance} from 'axios';
+import { Configuration } from './configuration';
+import { RequiredError, RequestArgs } from './base';
+import { AxiosInstance } from 'axios';
 
 /**
  *

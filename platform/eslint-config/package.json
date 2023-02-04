@@ -1,5 +1,5 @@
 {
-  "name": "@org-platform/eslint-config",
+  "name": "@catscradle/eslint-config",
   "version": "1.0.0",
   "description": "Eslint rule",
   "scripts": {

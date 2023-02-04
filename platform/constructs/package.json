@@ -1,5 +1,5 @@
 {
-  "name": "@org-platform/constructs",
+  "name": "@catscradle/constructs",
   "version": "0.0.1",
   "module": "commonjs",
   "main": "./dist/src/index.js",
@@ -48,7 +48,7 @@
     "@types/express": "~4.17.14",
     "@types/uuid": "~8.3.4",
     "eslint": "8.26.0",
-    "@org-platform/eslint-config": "workspace:*"
+    "@catscradle/eslint-config": "workspace:*"
   },
   "exports": {
     ".": "./dist/src/index.js",

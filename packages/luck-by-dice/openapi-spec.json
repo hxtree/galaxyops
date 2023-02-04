@@ -9,26 +9,26 @@
             "name": "notation",
             "required": true,
             "in": "path",
-            "schema": {"type": "string"}
+            "schema": { "type": "string" }
           },
           {
             "name": "luck",
             "required": true,
             "in": "path",
-            "schema": {"type": "number"}
+            "schema": { "type": "number" }
           }
         ],
-        "responses": {"200": {"description": ""}}
+        "responses": { "200": { "description": "" } }
       }
     }
   },
   "info": {
-    "title": "@org-packages/luck-by-dice",
+    "title": "@catscradles/luck-by-dice",
     "description": "An API for simulating dice rolls and luck from dice notation",
     "version": "1.0",
     "contact": {}
   },
   "tags": [],
   "servers": [],
-  "components": {"schemas": {}}
+  "components": { "schemas": {} }
 }

@@ -8,7 +8,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('@org-packages/character-sheet')
+    .setTitle('@catscradles/character-sheet')
     .setDescription('An API for the character sheet service')
     .setVersion('1.0')
     .build();

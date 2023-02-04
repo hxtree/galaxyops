@@ -11,7 +11,7 @@ export class MyPipelineStack extends cdk.Stack {
     super(scope, id, props);
 
     const owner = 'hxtree';
-    const repo = 'keepers-cradle';
+    const repo = 'cats-cradle';
     const branch = 'main';
 
     const pipeline = new CodePipeline(this, 'Pipeline', {

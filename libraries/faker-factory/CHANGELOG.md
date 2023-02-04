@@ -1,4 +1,4 @@
-# Change Log - @org-library/faker-factory
+# Change Log - @catscradle/faker-factory
 
 This log was last generated on Sat, 04 Feb 2023 05:22:13 GMT and should not be manually modified.
 

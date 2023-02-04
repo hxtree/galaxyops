@@ -1,10 +1,10 @@
 version: "3.8"
 services:
-    keepers-cradle:
+    cats-cradle:
         build:
             context: .
             dockerfile: Dockerfile
             target: test
-        container_name: keepers-cradle
+        container_name: cats-cradle
         tty: true
         stdin_open: true

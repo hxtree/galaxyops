@@ -1,11 +1,11 @@
 version: "3.8"
 services:
-  keepers-cradle:
+  cats-cradle:
     build:
         context: .
         dockerfile: Dockerfile
         target: development
-    container_name: keepers-cradle
+    container_name: cats-cradle
     tty: true
     stdin_open: true
     command: /bin/sh -c "while sleep 1000; do :; done"

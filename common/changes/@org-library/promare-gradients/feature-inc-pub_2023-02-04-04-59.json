@@ -1,10 +1,10 @@
 {
   "changes": [
     {
-      "packageName": "@org-library/promare-gradients",
+      "packageName": "@catscradle/promare-gradients",
       "comment": "docs",
       "type": "patch"
     }
   ],
-  "packageName": "@org-library/promare-gradients"
+  "packageName": "@catscradle/promare-gradients"
 }

@@ -1,4 +1,4 @@
-# @org-package/api-gateway
+# @catscradle/api-gateway
 
 ![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 ![Lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen)

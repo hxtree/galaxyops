@@ -1,5 +1,5 @@
 {
-  "name": "@org-platform/lambda-layers",
+  "name": "@catscradle/lambda-layers",
   "module": "commonjs",
   "version": "0.1.2",
   "scripts": {
@@ -16,7 +16,7 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@org-rig/base-nodejs": "workspace:*",
+    "@catscradle/base-nodejs": "workspace:*",
     "aws-lambda": "1.0.7",
     "class-transformer": "0.5.1",
     "class-validator": "0.13.2",
@@ -51,6 +51,6 @@
     "@types/express": "~4.17.14",
     "@types/uuid": "~8.3.4",
     "eslint": "8.26.0",
-    "@org-platform/eslint-config": "workspace:*"
+    "@catscradle/eslint-config": "workspace:*"
   }
 }

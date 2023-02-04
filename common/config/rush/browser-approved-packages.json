@@ -11,16 +11,24 @@
       "allowedCategories": [ "apis" ]
     },
     {
-      "name": "@babel/eslint-parser",
-      "allowedCategories": [ "platform" ]
+      "name": "@catscradle/base-nodejs",
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
     },
     {
-      "name": "@babel/eslint-plugin",
-      "allowedCategories": [ "platform" ]
+      "name": "@catscradle/constructs",
+      "allowedCategories": [ "apis", "cicd" ]
     },
     {
-      "name": "@babel/preset-react",
-      "allowedCategories": [ "platform" ]
+      "name": "@catscradle/design-system",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@catscradle/eslint-config",
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
+    },
+    {
+      "name": "@catscradle/luck-by-dice",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "@emotion/react",
@@ -32,7 +40,7 @@
     },
     {
       "name": "@faker-js/faker",
-      "allowedCategories": [ "cicd", "libraries", "rigs" ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@microsoft/rush-lib",
@@ -40,7 +48,7 @@
     },
     {
       "name": "@microsoft/tsdoc",
-      "allowedCategories": [ "apis", "clients" ]
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "@mui/material",
@@ -71,56 +79,12 @@
       "allowedCategories": [ "apis", "platform" ]
     },
     {
-      "name": "@org-api-client/luck-by-dice",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@org-contact/luck-by-dice",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@org-contract/luck-by-dice",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@org-library/luck-by-dice",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@org-package/design-system",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@org-package/luck-by-dice-api-client",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@org-platform/constructs",
-      "allowedCategories": [ "apis", "cicd", "platform" ]
-    },
-    {
-      "name": "@org-platform/eslint-config",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
-    },
-    {
-      "name": "@org-rig/base-node-rig",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@org-rig/base-nodejs",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
-    },
-    {
-      "name": "@org-rigs/base-nodejs",
-      "allowedCategories": [ "apis" ]
-    },
-    {
       "name": "@reduxjs/toolkit",
       "allowedCategories": [ "apis" ]
     },
     {
       "name": "@rushstack/eslint-config",
-      "allowedCategories": [ "apis", "platform", "rigs" ]
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "@rushstack/eslint-plugin",
@@ -143,19 +107,11 @@
       "allowedCategories": [ "apis" ]
     },
     {
-      "name": "@storybook/addon-actions",
-      "allowedCategories": [ "apis" ]
-    },
-    {
       "name": "@storybook/addon-essentials",
       "allowedCategories": [ "apis" ]
     },
     {
       "name": "@storybook/addon-info",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@storybook/addon-interactions",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -167,27 +123,7 @@
       "allowedCategories": [ "apis" ]
     },
     {
-      "name": "@storybook/builder-webpack5",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@storybook/manager-webpack5",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@storybook/node-logger",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@storybook/preset-create-react-app",
-      "allowedCategories": [ "apis" ]
-    },
-    {
       "name": "@storybook/react",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "@storybook/testing-library",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -204,11 +140,11 @@
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "@vendia/serverless-express",
@@ -220,7 +156,7 @@
     },
     {
       "name": "aws-cdk-lib",
-      "allowedCategories": [ "apis", "cicd", "clients", "platform" ]
+      "allowedCategories": [ "apis", "cicd", "platform" ]
     },
     {
       "name": "aws-lambda",
@@ -232,11 +168,7 @@
     },
     {
       "name": "axios",
-      "allowedCategories": [ "api-client", "contracts" ]
-    },
-    {
-      "name": "babel-eslint",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "api-client" ]
     },
     {
       "name": "babel-jest",
@@ -247,20 +179,16 @@
       "allowedCategories": [ "apis" ]
     },
     {
-      "name": "babel-plugin-named-exports-order",
-      "allowedCategories": [ "apis" ]
-    },
-    {
       "name": "class-transformer",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform" ]
     },
     {
       "name": "class-validator",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform" ]
     },
     {
       "name": "class-validator-jsonschema",
-      "allowedCategories": [ "cicd", "libraries", "rigs" ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "clean-css-cli",
@@ -272,74 +200,42 @@
     },
     {
       "name": "constructs",
-      "allowedCategories": [ "apis", "cicd", "clients", "platform" ]
+      "allowedCategories": [ "apis", "cicd", "platform" ]
     },
     {
       "name": "currency.js",
-      "allowedCategories": [ "cicd", "libraries", "rigs" ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "esbuild",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "apis", "cicd", "clients", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
     },
     {
       "name": "eslint-config-airbnb",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "eslint-config-airbnb-base",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "eslint-config-airbnb-typescript",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "eslint-config-prettier",
-      "allowedCategories": [ "apis", "clients", "platform" ]
-    },
-    {
-      "name": "eslint-config-react-app",
-      "allowedCategories": [ "platform" ]
-    },
-    {
-      "name": "eslint-plugin-disable",
-      "allowedCategories": [ "platform" ]
-    },
-    {
-      "name": "eslint-plugin-flowtype",
       "allowedCategories": [ "platform" ]
     },
     {
       "name": "eslint-plugin-import",
-      "allowedCategories": [ "apis", "clients", "platform" ]
-    },
-    {
-      "name": "eslint-plugin-jest",
-      "allowedCategories": [ "apis", "clients", "platform" ]
+      "allowedCategories": [ "platform" ]
     },
     {
       "name": "eslint-plugin-jsx-a11y",
-      "allowedCategories": [ "platform" ]
-    },
-    {
-      "name": "eslint-plugin-jsx-ally",
-      "allowedCategories": [ "platform" ]
-    },
-    {
-      "name": "eslint-plugin-no-async-foreach",
-      "allowedCategories": [ "platform" ]
-    },
-    {
-      "name": "eslint-plugin-playwright",
-      "allowedCategories": [ "platform" ]
-    },
-    {
-      "name": "eslint-plugin-prettier",
       "allowedCategories": [ "platform" ]
     },
     {
@@ -351,36 +247,12 @@
       "allowedCategories": [ "platform" ]
     },
     {
-      "name": "eslint-plugin-simple-import-sort",
-      "allowedCategories": [ "platform" ]
-    },
-    {
-      "name": "eslint-plugin-testing-library",
-      "allowedCategories": [ "platform" ]
-    },
-    {
-      "name": "eslint-plugin-tsdoc",
-      "allowedCategories": [ "apis", "clients", "platform" ]
-    },
-    {
-      "name": "eslint-plugin-unicorn",
-      "allowedCategories": [ "platform" ]
-    },
-    {
-      "name": "eslint-plugin-unused-imports",
-      "allowedCategories": [ "platform" ]
-    },
-    {
       "name": "express",
       "allowedCategories": [ "apis", "libraries", "platform" ]
     },
     {
       "name": "fs",
-      "allowedCategories": [ "apis", "cicd", "platform", "rigs" ]
-    },
-    {
-      "name": "husky",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "cicd", "platform" ]
     },
     {
       "name": "istanbul-lib-coverage",
@@ -396,19 +268,19 @@
     },
     {
       "name": "jest",
-      "allowedCategories": [ "apis", "cicd", "clients", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "json-schema",
-      "allowedCategories": [ "cicd", "libraries", "rigs" ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "json-schema-faker",
-      "allowedCategories": [ "cicd", "libraries", "rigs" ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "lodash",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
     },
     {
       "name": "mongoose",
@@ -428,19 +300,15 @@
     },
     {
       "name": "openapi3-ts",
-      "allowedCategories": [ "cicd", "libraries", "rigs" ]
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "path",
-      "allowedCategories": [ "apis", "cicd", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "platform" ]
     },
     {
       "name": "prettier",
       "allowedCategories": [ "platform" ]
-    },
-    {
-      "name": "prop-types",
-      "allowedCategories": [ "apis" ]
     },
     {
       "name": "react",
@@ -463,12 +331,8 @@
       "allowedCategories": [ "apis" ]
     },
     {
-      "name": "read-pkg-up",
-      "allowedCategories": [ "platform" ]
-    },
-    {
       "name": "reflect-metadata",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform" ]
     },
     {
       "name": "rxjs",
@@ -477,10 +341,6 @@
     {
       "name": "sass",
       "allowedCategories": [ "libraries" ]
-    },
-    {
-      "name": "semver",
-      "allowedCategories": [ "platform" ]
     },
     {
       "name": "size-limit",
@@ -496,15 +356,15 @@
     },
     {
       "name": "swr",
-      "allowedCategories": [ "api-client", "contracts" ]
+      "allowedCategories": [ "api-client" ]
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "apis", "cicd", "clients", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "ts-node",
-      "allowedCategories": [ "apis", "cicd", "clients", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
     },
     {
       "name": "tsdx",
@@ -515,23 +375,15 @@
       "allowedCategories": [ "apis" ]
     },
     {
-      "name": "typedoc",
-      "allowedCategories": [ "clients" ]
-    },
-    {
       "name": "typescript",
-      "allowedCategories": [ "api-client", "apis", "cicd", "clients", "contracts", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "api-client", "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "uuid",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "platform" ]
     },
     {
       "name": "web-vitals",
-      "allowedCategories": [ "apis" ]
-    },
-    {
-      "name": "webpack",
       "allowedCategories": [ "apis" ]
     }
   ]

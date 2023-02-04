@@ -1,4 +1,4 @@
-# @org-package/design-system
+# @catscradle/design-system
 
 [Design system](https://storybook.js.org/tutorials/design-systems-for-developers/)
 containing common components for other front end applications.

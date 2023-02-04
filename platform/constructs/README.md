@@ -1,4 +1,4 @@
-# @org-platform/constructs
+# @catscradle/constructs
 
 L1 constructs L2 constructs L3 constructs
 

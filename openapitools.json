@@ -11,9 +11,9 @@
         "generatorName": "typescript-axios",
         "templateDir": "./common/config/openapitools/templates/typescript-axios",
         "additionalProperties": {
-          "npmName": "@org-api-client/character-sheet",
+          "npmName": "@catscradle/api-client-character-sheet",
           "npmVersion": "1.0.0",
-          "npmRepository": "https://github.com/hxtree/keepers-cradle",
+          "npmRepository": "https://github.com/hxtree/cats-cradle",
           "withInterfaces": true,
           "stringEnums": true
         }
@@ -25,9 +25,9 @@
         "generatorName": "typescript-axios",
         "templateDir": "./common/config/openapitools/templates/typescript-axios",
         "additionalProperties": {
-          "npmName": "@org-api-client/luck-by-dice",
+          "npmName": "@catscradle/api-client-luck-by-dice",
           "npmVersion": "1.0.0",
-          "npmRepository": "https://github.com/hxtree/keepers-cradle",
+          "npmRepository": "https://github.com/hxtree/cats-cradle",
           "withInterfaces": true,
           "stringEnums": true
         }

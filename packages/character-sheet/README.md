@@ -1,4 +1,4 @@
-# @org-package/character-sheet
+# @catscradle/character-sheet
 
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 

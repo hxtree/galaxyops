@@ -20,7 +20,7 @@
   },
 
   "repository": {
-    "url": "https://github.com/hxtree/keepers-cradle",
+    "url": "https://github.com/hxtree/cats-cradle",
     "defaultBranch": "main",
     "defaultRemote": "origin"
   },
@@ -40,49 +40,49 @@
   ],
   "projects": [
     {
-      "packageName": "@org-rig/base-nodejs",
+      "packageName": "@catscradle/base-nodejs",
       "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-cicd/pipeline",
+      "packageName": "@catscradle/pipeline",
       "projectFolder": "platform/pipeline",
       "reviewCategory": "cicd",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-cicd/rush-coverage",
+      "packageName": "@catscradle/rush-coverage",
       "projectFolder": "platform/rush-coverage",
       "reviewCategory": "cicd",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-platform/constructs",
+      "packageName": "@catscradle/constructs",
       "projectFolder": "platform/constructs",
       "reviewCategory": "platform",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-platform/lambda-layers",
+      "packageName": "@catscradle/lambda-layers",
       "projectFolder": "platform/lambda-layers",
       "reviewCategory": "platform",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-platform/eslint-config",
+      "packageName": "@catscradle/eslint-config",
       "projectFolder": "platform/eslint-config",
       "reviewCategory": "platform",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-library/faker-factory",
+      "packageName": "@catscradle/faker-factory",
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
@@ -90,7 +90,7 @@
       "shouldPublish": true
     },
     {
-      "packageName": "@org-library/promare-gradients",
+      "packageName": "@catscradle/promare-gradients",
       "projectFolder": "libraries/promare-gradients",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
@@ -98,49 +98,49 @@
       "shouldPublish": true
     },
     {
-      "packageName": "@org-api-client/luck-by-dice",
+      "packageName": "@catscradle/api-client-luck-by-dice",
       "projectFolder": "libraries/api-client/luck-by-dice",
       "reviewCategory": "api-client",
       "cyclicDependencyProjects": [],
       "tags": ["game-design-team"]
     },
     {
-      "packageName": "@org-api-client/character-sheet",
+      "packageName": "@catscradle/api-client-character-sheet",
       "projectFolder": "libraries/api-client/character-sheet",
       "reviewCategory": "api-client",
       "cyclicDependencyProjects": [],
       "tags": ["game-design-team"]
     },
     {
-      "packageName": "@org-package/design-system",
+      "packageName": "@catscradle/design-system",
       "projectFolder": "packages/design-system",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["ux-team"]
     },
     {
-      "packageName": "@org-package/gm-client",
+      "packageName": "@catscradle/gm-client",
       "projectFolder": "packages/gm-client",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["game-design-team"]
     },
     {
-      "packageName": "@org-package/api-gateway",
+      "packageName": "@catscradle/api-gateway",
       "projectFolder": "packages/api-gateway",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@org-package/character-sheet",
+      "packageName": "@catscradle/character-sheet",
       "projectFolder": "packages/character-sheet",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["game-design-team"]
     },
     {
-      "packageName": "@org-package/luck-by-dice",
+      "packageName": "@catscradle/luck-by-dice",
       "projectFolder": "packages/luck-by-dice",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],

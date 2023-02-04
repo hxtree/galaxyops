@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@org-platform/eslint-config/profile/react'],
+  extends: ['@catscradle/eslint-config/profile/react'],
   parserOptions: {
     tsconfigRootDir: __dirname,
   },

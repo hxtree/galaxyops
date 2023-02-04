@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * @org-packages/character-sheet
+ * @catscradles/character-sheet
  * An API for the character sheet service
  *
  * The version of the OpenAPI document: 1.0
@@ -12,8 +12,8 @@
  * Do not edit the class manually.
  */
 
-import {Configuration} from './configuration';
-import globalAxios, {AxiosPromise, AxiosInstance} from 'axios';
+import { Configuration } from './configuration';
+import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import {

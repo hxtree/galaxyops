@@ -84,7 +84,7 @@ export namespace Archetype {
   };
 
   /**
-   * Three Keepers
+   * Three Cats
    */
   export const MISCHIEVOUS_PIEBALD: Type = {
     name: 'Mischievous',
@@ -92,7 +92,7 @@ export namespace Archetype {
     alias: ['Keeper of Law', 'Mischief'],
     backstory: 'Governs the logical of this realm.',
     symbolizes: ['Law', 'Causality', 'Absolute'],
-    affiliation: [Affiliation.THE_KEEPERS],
+    affiliation: [Affiliation.THE_CATS],
     description:
       'A black and white cat. ' +
       'His face is primarly white with a black noise. ' +
@@ -111,7 +111,7 @@ export namespace Archetype {
     backstory: 'Governs the flow of time the one has been in this state',
     alias: ['Keeper of Time', 'Wise-Kitty', 'Old Coat'],
     symbolizes: ['Time'],
-    affiliation: [Affiliation.THE_KEEPERS],
+    affiliation: [Affiliation.THE_CATS],
     potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
   };
 
@@ -126,7 +126,7 @@ export namespace Archetype {
       'A girl created when the Song Maiden left her post to become human.',
     alias: ['Keeper of Heart', 'Song Maiden', 'Mom'],
     symbolizes: ['Chastity'],
-    affiliation: [Affiliation.THE_KEEPERS],
+    affiliation: [Affiliation.THE_CATS],
     potentialDisciplines: [
       Discipline.CHEERLEADER,
       Discipline.MAIDEN,
@@ -205,7 +205,7 @@ export namespace Archetype {
     history:
       'Has the ability to break the fundamental laws of the world. ' +
       'Trapped by the observed logic. ' +
-      `He believes in the veil the ${Affiliation.THE_KEEPERS} made is real. ` +
+      `He believes in the veil the ${Affiliation.THE_CATS} made is real. ` +
       'As a Berserker he uses a mask to break the veil and tap into his limitless ability',
     affiliation: [Affiliation.THE_DESTROYERS, Affiliation.SOLIDER_FORCES],
     potentialDisciplines: [

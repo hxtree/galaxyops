@@ -1,5 +1,5 @@
 {
-  "name": "@org-cicd/pipeline",
+  "name": "@catscradle/pipeline",
   "module": "commonjs",
   "version": "1.0.0",
   "description": "An API for simulating dice rolls and luck from dice notation",
@@ -24,13 +24,13 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@org-platform/constructs": "workspace:*",
+    "@catscradle/constructs": "workspace:*",
     "aws-lambda": "1.0.7",
     "eslint": "8.26.0",
-    "@org-rig/base-nodejs": "workspace:*"
+    "@catscradle/base-nodejs": "workspace:*"
   },
   "devDependencies": {
-    "@org-platform/eslint-config": "workspace:*",
+    "@catscradle/eslint-config": "workspace:*",
     "aws-cdk-lib": "2.47.0",
     "constructs": "^10.1.211",
     "@types/jest": "28.1.8",
