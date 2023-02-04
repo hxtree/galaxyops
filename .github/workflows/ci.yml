@@ -21,6 +21,13 @@ jobs:
     secrets:
       CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
 
+  Publish:
+    if: github.event.pull_request.merged == true
+    uses: ./.github/workflows/publish.yml
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+
 
   # slack-notification:
   #   name: "Slack Notification"

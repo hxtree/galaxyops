@@ -1,6 +1,11 @@
 name: Publish
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  workflow_call:
+    secrets:
+      NPM_TOKEN:
+        required: true
 
 jobs:
   rush-build:
