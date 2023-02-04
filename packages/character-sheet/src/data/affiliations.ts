@@ -31,14 +31,14 @@ export namespace Affiliation {
       'The destroyers are said to bring about an end to all time, heart, and law in the world.',
     ],
     standings: [
-      { affliation: Affiliation.THE_KEEPERS, reputation: Reputation.NEUTRAL },
+      { affliation: Affiliation.THE_CATS, reputation: Reputation.NEUTRAL },
       { affliation: Affiliation.DEVILS, reputation: Reputation.HONORED },
       { affliation: Affiliation.VALLONS_SEVEN, reputation: Reputation.HONORED },
     ],
   };
 
-  export const THE_KEEPERS: Type = {
-    name: 'The Keepers',
+  export const THE_CATS: Type = {
+    name: 'The Cats',
     description:
       'Each member usually takes form of a household cat. ' +
       'They can take human form, but it drastically lowers their power due to the limits of the normal human potential. ' +
@@ -103,7 +103,7 @@ export namespace Affiliation {
       'One member uphold plain living and hard struggle. ', // Malace
     ],
     standings: [
-      { affliation: Affiliation.THE_KEEPERS, reputation: Reputation.HONORED },
+      { affliation: Affiliation.THE_CATS, reputation: Reputation.HONORED },
     ],
   };
 

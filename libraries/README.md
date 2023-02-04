@@ -1,4 +1,4 @@
-# @org-library
+# @cats-cradle
 
 Libraries are packages written specifically to be dependencies used in more than
 three packages.

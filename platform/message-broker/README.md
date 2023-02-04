@@ -1,4 +1,4 @@
-# @org-platform/message-broker
+# @cats-cradle/message-broker
 
 This is a “Pub/Sub Message Broker”. It enables async communication between
 microservices to provide loosely coupling.
@@ -40,6 +40,7 @@ request.
 - Indicate whether message was sent only for testing / debugging purposes and
   should not contaminate history.
 - Hydration that ties into api-client query might be nifty.
+- logical id format
 
 ## Documentation
 

@@ -1,10 +1,10 @@
 {
   "changes": [
     {
-      "packageName": "@org-library/faker-factory",
+      "packageName": "@cats-cradle/faker-factory",
       "comment": "add repo",
       "type": "patch"
     }
   ],
-  "packageName": "@org-library/faker-factory"
+  "packageName": "@cats-cradle/faker-factory"
 }

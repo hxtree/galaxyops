@@ -1,4 +1,4 @@
-# @org-package/luck-by-dice
+# @cats-cradle/luck-by-dice
 
 ![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 ![Lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen)

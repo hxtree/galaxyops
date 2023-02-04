@@ -1,4 +1,4 @@
-# @org-api-client/luck-by-dice@1.0.0
+## @cats-cradle/api-client-luck-by-dice@1.0.0
 
 This generator creates TypeScript/JavaScript client that utilizes
 [axios](https://github.com/axios/axios). The generated Node module can be used
@@ -24,32 +24,32 @@ It can be used in both TypeScript and JavaScript. In TypeScript, the definition
 should be automatically resolved via `package.json`.
 ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
 
-## Building
+### Building
 
 To build and compile the typescript sources to javascript use:
 
-```bash
+```
 npm install
 npm run build
 ```
 
-## Publishing
+### Publishing
 
 First build the package then run `npm publish`
 
-## Consuming
+### Consuming
 
 navigate to the folder of your consuming project and run one of the following
 commands.
 
 _published:_
 
-```bash
-npm install @org-api-client/luck-by-dice@1.0.0 --save
+```
+npm install @cats-cradle/api-client-luck-by-dice@1.0.0 --save
 ```
 
 _unPublished (not recommended):_
 
-```bash
+```
 npm install PATH_TO_GENERATED_PACKAGE --save
 ```

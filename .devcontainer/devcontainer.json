@@ -1,7 +1,7 @@
 {
-  "name": "keepers-cradle",
+  "name": "cats-cradle",
   "dockerComposeFile": ["../docker-compose.yml", "docker-compose.yml"],
-  "service": "keepers-cradle",
+  "service": "cats-cradle",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.profiles.linux": {
@@ -29,7 +29,7 @@
   "customizations": {
     "codespaces": {
       "repositories": {
-        "hxtree/keepers-cradle": {
+        "hxtree/cats-cradle": {
           "permissions": "write-all"
         }
       }

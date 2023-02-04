@@ -1,5 +1,5 @@
 {
-  "name": "@org-cicd/rush-coverage",
+  "name": "@cats-cradle/rush-coverage",
   "bin": {
     "app": "./dist/src/app.js"
   },
@@ -17,7 +17,7 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@org-rig/base-nodejs": "workspace:*",
+    "@cats-cradle/base-nodejs": "workspace:*",
     "istanbul-lib-coverage": "~3.2.0",
     "istanbul-lib-report": "~3.0.0",
     "istanbul-reports": "~3.1.5",
@@ -34,7 +34,7 @@
     "esbuild": "~0.15.12",
     "@types/uuid": "~8.3.4",
     "eslint": "8.26.0",
-    "@org-platform/eslint-config": "workspace:*",
+    "@cats-cradle/eslint-config": "workspace:*",
     "@types/json-schema": "~7.0.11"
   }
 }

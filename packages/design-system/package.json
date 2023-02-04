@@ -1,5 +1,5 @@
 {
-  "name": "@org-package/design-system",
+  "name": "@cats-cradle/design-system",
   "version": "1.0.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -37,9 +37,9 @@
     }
   ],
   "devDependencies": {
-    "@org-rig/base-nodejs": "workspace:*",
+    "@cats-cradle/base-nodejs": "workspace:*",
     "eslint": "8.26.0",
-    "@org-platform/eslint-config": "workspace:*",
+    "@cats-cradle/eslint-config": "workspace:*",
     "@babel/core": "^7.20.12",
     "@size-limit/preset-small-lib": "^8.1.2",
     "@storybook/addon-essentials": "^6.5.16",

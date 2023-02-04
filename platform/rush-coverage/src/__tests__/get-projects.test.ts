@@ -7,7 +7,7 @@ describe('getProjects', () => {
     expect(projects).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          packageName: '@org-cicd/rush-coverage',
+          packageName: '@cats-cradle/rush-coverage',
           relativeFolder: 'platform/rush-coverage',
         }),
       ]),

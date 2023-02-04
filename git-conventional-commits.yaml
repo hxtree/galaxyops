@@ -30,7 +30,7 @@ changelog:
     perf: Performance Improvements
     merge: Merges
     breakingChange: BREAKING CHANGES
-  commitUrl: https://github.com/hxtree/keepers-cradel/commit/%commit%
-  commitRangeUrl: https://github.com/hxtree/keepers-cradel/compare/%from%...%to%?diff=split
+  commitUrl: https://github.com/hxtree/cats-cradel/commit/%commit%
+  commitRangeUrl: https://github.com/hxtree/cats-cradel/compare/%from%...%to%?diff=split
   issueRegexPattern: '#[0-9]+'
-  issueUrl: https://github.com/hxtree/keepers-cradel/issues/%issue%
+  issueUrl: https://github.com/hxtree/cats-cradel/issues/%issue%

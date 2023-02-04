@@ -1,4 +1,4 @@
-# @org-platform/feature-flag
+# @cats-cradle/feature-flag
 
 TODO add a feature flagging system to safely deploy services that are
 independently deploy

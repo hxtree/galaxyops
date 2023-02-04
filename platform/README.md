@@ -1,4 +1,4 @@
-# @org-platform
+# @cats-cradle
 
 The platform give teams the tools and automation capabilities necessary to
 perform and manage continuous delivery.

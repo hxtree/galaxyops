@@ -32,9 +32,9 @@ importers:
       '@nestjs/platform-express': 9.1.1
       '@nestjs/swagger': ~6.1.3
       '@nestjs/terminus': 9.1.1
-      '@org-platform/constructs': workspace:*
-      '@org-platform/eslint-config': workspace:*
-      '@org-rig/base-nodejs': workspace:*
+      '@cats-cradle/constructs': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/base-nodejs': workspace:*
       '@types/aws-lambda': ~8.10.93
       '@types/express': ~4.17.14
       '@types/jest': 28.1.8
@@ -88,9 +88,9 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
-      '@org-platform/constructs': link:../../platform/constructs/dist
-      '@org-platform/eslint-config': link:../../platform/eslint-config
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@cats-cradle/constructs': link:../../platform/constructs/dist
+      '@cats-cradle/eslint-config': link:../../platform/eslint-config
+      '@cats-cradle/base-nodejs': link:../../rigs/base-nodejs
       '@types/aws-lambda': 8.10.109
       '@types/express': 4.17.15
       '@types/jest': 28.1.8
@@ -237,9 +237,9 @@ importers:
       '@nestjs/platform-express': 9.1.1
       '@nestjs/swagger': ~6.1.3
       '@nestjs/terminus': 9.1.1
-      '@org-platform/constructs': workspace:*
-      '@org-platform/eslint-config': workspace:*
-      '@org-rig/base-nodejs': workspace:*
+      '@cats-cradle/constructs': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/base-nodejs': workspace:*
       '@types/aws-lambda': ~8.10.93
       '@types/express': ~4.17.14
       '@types/jest': 28.1.8
@@ -273,8 +273,8 @@ importers:
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@org-platform/constructs': link:../../platform/constructs/dist
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@cats-cradle/constructs': link:../../platform/constructs/dist
+      '@cats-cradle/base-nodejs': link:../../rigs/base-nodejs
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
@@ -289,7 +289,7 @@ importers:
       uuid: 9.0.0
     devDependencies:
       '@microsoft/tsdoc': 0.13.2
-      '@org-platform/eslint-config': link:../../platform/eslint-config
+      '@cats-cradle/eslint-config': link:../../platform/eslint-config
       '@types/aws-lambda': 8.10.109
       '@types/express': 4.17.15
       '@types/jest': 28.1.8
@@ -314,9 +314,9 @@ importers:
       '@nestjs/platform-express': 9.1.1
       '@nestjs/swagger': ~6.1.3
       '@nestjs/terminus': 9.1.1
-      '@org-platform/constructs': workspace:*
-      '@org-platform/eslint-config': workspace:*
-      '@org-rig/base-nodejs': workspace:*
+      '@cats-cradle/constructs': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/base-nodejs': workspace:*
       '@types/aws-lambda': ~8.10.93
       '@types/express': ~4.17.14
       '@types/jest': 28.1.8
@@ -350,9 +350,9 @@ importers:
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@org-platform/constructs': link:../../../platform/constructs/dist
-      '@org-platform/eslint-config': link:../../../platform/eslint-config
-      '@org-rig/base-nodejs': link:../../../rigs/base-nodejs
+      '@cats-cradle/constructs': link:../../../platform/constructs/dist
+      '@cats-cradle/eslint-config': link:../../../platform/eslint-config
+      '@cats-cradle/base-nodejs': link:../../../rigs/base-nodejs
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
@@ -390,8 +390,8 @@ importers:
       '@emotion/styled': ~11.10.5
       '@mui/material': ~5.10.15
       '@mui/system': ~5.10.16
-      '@org-platform/eslint-config': workspace:*
-      '@org-rig/base-nodejs': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/base-nodejs': workspace:*
       '@size-limit/preset-small-lib': ^8.1.0
       '@storybook/addon-essentials': ^6.5.13
       '@storybook/addon-info': ^5.3.21
@@ -423,8 +423,8 @@ importers:
     devDependencies:
       '@babel/core': 7.20.7
       '@mui/system': 5.10.17_ogriz7mfahdh34qnfautfro5yu
-      '@org-platform/eslint-config': link:../../platform/eslint-config
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@cats-cradle/eslint-config': link:../../platform/eslint-config
+      '@cats-cradle/base-nodejs': link:../../rigs/base-nodejs
       '@size-limit/preset-small-lib': 8.1.0_size-limit@8.1.0
       '@storybook/addon-essentials': 6.5.15_vf4h5znnfbjxfhxby2mqqdktv4
       '@storybook/addon-info': 5.3.21_jtnwzmp2bhvy2d7b6v2nrahh2q
@@ -450,9 +450,9 @@ importers:
 
   packages/gm-client:
     specifiers:
-      '@org-api-client/luck-by-dice': workspace:*
-      '@org-package/design-system': workspace:*
-      '@org-rig/base-nodejs': workspace:*
+      '@cats-cradle/luck-by-dice': workspace:*
+      '@cats-cradle/design-system': workspace:*
+      '@cats-cradle/base-nodejs': workspace:*
       '@reduxjs/toolkit': ^1.9.0
       '@storybook/addon-a11y': ~6.5.13
       '@testing-library/jest-dom': ^5.16.5
@@ -469,8 +469,8 @@ importers:
       typescript: 4.9.4
       web-vitals: ^2.1.4
     dependencies:
-      '@org-api-client/luck-by-dice': link:../../libraries/api-client/luck-by-dice
-      '@org-package/design-system': link:../design-system
+      '@cats-cradle/luck-by-dice': link:../../libraries/api-client/luck-by-dice
+      '@cats-cradle/design-system': link:../design-system
       '@reduxjs/toolkit': 1.9.1_k4ae6lp43ej6mezo3ztvx6pykq
       '@storybook/addon-a11y': 6.5.15_biqbaboplfbrettd7655fr4n2y
       '@testing-library/jest-dom': 5.16.5
@@ -487,7 +487,7 @@ importers:
       typescript: 4.9.4
       web-vitals: 2.1.4
     devDependencies:
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@cats-cradle/base-nodejs': link:../../rigs/base-nodejs
 
   packages/luck-by-dice:
     specifiers:
@@ -496,9 +496,9 @@ importers:
       '@nestjs/platform-express': 9.1.1
       '@nestjs/swagger': ~6.1.3
       '@nestjs/terminus': 9.1.1
-      '@org-platform/constructs': workspace:*
-      '@org-platform/eslint-config': workspace:*
-      '@org-rig/base-nodejs': workspace:*
+      '@cats-cradle/constructs': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/base-nodejs': workspace:*
       '@types/aws-lambda': ~8.10.93
       '@types/express': ~4.17.14
       '@types/jest': 28.1.8
@@ -533,8 +533,8 @@ importers:
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@org-platform/constructs': link:../../platform/constructs/dist
-      '@org-rig/base-nodejs': link:../../rigs/base-nodejs
+      '@cats-cradle/constructs': link:../../platform/constructs/dist
+      '@cats-cradle/base-nodejs': link:../../rigs/base-nodejs
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
@@ -549,7 +549,7 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
-      '@org-platform/eslint-config': link:../../platform/eslint-config
+      '@cats-cradle/eslint-config': link:../../platform/eslint-config
       '@types/aws-lambda': 8.10.109
       '@types/express': 4.17.15
       '@types/jest': 28.1.8
@@ -573,8 +573,8 @@ importers:
       '@nestjs/platform-express': 9.1.1
       '@nestjs/swagger': ~6.1.3
       '@nestjs/terminus': 9.1.1
-      '@org-platform/constructs': workspace:*
-      '@org-rig/base-nodejs': workspace:*
+      '@cats-cradle/constructs': workspace:*
+      '@cats-cradle/base-nodejs': workspace:*
       '@types/aws-lambda': ~8.10.93
       '@types/express': ~4.17.14
       '@types/jest': 28.1.8
@@ -612,8 +612,8 @@ importers:
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
       '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
-      '@org-platform/constructs': link:../../../platform/constructs/dist
-      '@org-rig/base-nodejs': link:../../../rigs/base-nodejs
+      '@cats-cradle/constructs': link:../../../platform/constructs/dist
+      '@cats-cradle/base-nodejs': link:../../../rigs/base-nodejs
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
@@ -654,7 +654,7 @@ importers:
       '@nestjs/platform-express': 9.1.1
       '@nestjs/swagger': ~6.1.3
       '@nestjs/terminus': 9.1.1
-      '@org-platform/eslint-config': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
       '@types/aws-lambda': ~8.10.93
       '@types/express': ~4.17.14
       '@types/jest': 28.1.8
@@ -705,7 +705,7 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
-      '@org-platform/eslint-config': link:../eslint-config
+      '@cats-cradle/eslint-config': link:../eslint-config
       '@types/aws-lambda': 8.10.109
       '@types/express': 4.17.15
       '@types/jest': 28.1.8
@@ -840,7 +840,7 @@ importers:
       '@nestjs/platform-express': 9.1.1
       '@nestjs/swagger': ~6.1.3
       '@nestjs/terminus': 9.1.1
-      '@org-platform/eslint-config': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
       '@types/aws-lambda': ~8.10.93
       '@types/express': ~4.17.14
       '@types/jest': 28.1.8
@@ -887,7 +887,7 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
-      '@org-platform/eslint-config': link:../eslint-config
+      '@cats-cradle/eslint-config': link:../eslint-config
       '@types/aws-lambda': 8.10.109
       '@types/express': 4.17.15
       '@types/jest': 28.1.8
@@ -906,8 +906,8 @@ importers:
 
   platform/pipeline:
     specifiers:
-      '@org-platform/constructs': workspace:*
-      '@org-platform/eslint-config': workspace:*
+      '@cats-cradle/constructs': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
       '@types/aws-lambda': ~8.10.93
       '@types/jest': 28.1.8
       '@types/lodash': ~4.14.191
@@ -923,11 +923,11 @@ importers:
       ts-node: 10.9.1
       typescript: 4.9.4
     dependencies:
-      '@org-platform/constructs': link:../constructs/dist
+      '@cats-cradle/constructs': link:../constructs/dist
       aws-lambda: 1.0.7
       eslint: 8.26.0
     devDependencies:
-      '@org-platform/eslint-config': link:../eslint-config
+      '@cats-cradle/eslint-config': link:../eslint-config
       '@types/aws-lambda': 8.10.109
       '@types/jest': 28.1.8
       '@types/lodash': 4.14.191

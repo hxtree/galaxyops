@@ -1,4 +1,4 @@
-# @org-platform/pipeline
+# @cats-cradle/pipeline
 
 Unstable WIP
 

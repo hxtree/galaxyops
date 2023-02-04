@@ -1,10 +1,10 @@
 {
-  "name": "@org-library/promare-gradients",
+  "name": "@cats-cradle/promare-gradients",
   "version": "1.0.0",
   "description": "Neon background gradients",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hxtree/keepers-cradle.git"
+    "url": "git+https://github.com/hxtree/cats-cradle.git"
   },
   "keywords": [
     "neon",
@@ -27,7 +27,7 @@
     "clean-css-cli": "^5.5.0",
     "express": "4.18.2",
     "sass": "^1.47.0",
-    "@org-platform/eslint-config": "workspace:*",
+    "@cats-cradle/eslint-config": "workspace:*",
     "node-sass": "~8.0.0"
   },
   "devDependencies": {

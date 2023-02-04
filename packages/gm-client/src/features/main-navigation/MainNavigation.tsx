@@ -1,4 +1,4 @@
-import {Stack, Item} from '@org-package/design-system';
+import { Stack, Item } from '@cats-cradle/design-system';
 
 export function MainNavigation() {
   return (

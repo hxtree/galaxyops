@@ -44,14 +44,14 @@
             }
           }
         ],
-        "responses": {"200": {"description": ""}}
+        "responses": { "200": { "description": "" } }
       }
     },
     "/archetype/list": {
       "get": {
         "operationId": "ArchetypeController_list",
         "parameters": [],
-        "responses": {"200": {"description": ""}}
+        "responses": { "200": { "description": "" } }
       }
     },
     "/gear/id/{id}": {
@@ -109,14 +109,14 @@
             }
           }
         ],
-        "responses": {"200": {"description": ""}}
+        "responses": { "200": { "description": "" } }
       }
     },
     "/gear/list": {
       "get": {
         "operationId": "GearController_list",
         "parameters": [],
-        "responses": {"200": {"description": ""}}
+        "responses": { "200": { "description": "" } }
       }
     },
     "/skill/id/{id}": {
@@ -245,24 +245,24 @@
             }
           }
         ],
-        "responses": {"200": {"description": ""}}
+        "responses": { "200": { "description": "" } }
       }
     },
     "/skill/list": {
       "get": {
         "operationId": "SkillController_list",
         "parameters": [],
-        "responses": {"200": {"description": ""}}
+        "responses": { "200": { "description": "" } }
       }
     }
   },
   "info": {
-    "title": "@org-packages/character-sheet",
+    "title": "@cats-cradles/character-sheet",
     "description": "An API for the character sheet service",
     "version": "1.0",
     "contact": {}
   },
   "tags": [],
   "servers": [],
-  "components": {"schemas": {}}
+  "components": { "schemas": {} }
 }
