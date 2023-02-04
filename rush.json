@@ -86,14 +86,15 @@
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["library", "npm-publish"]
+      "tags": ["library"],
+      "shouldPublish": true
     },
     {
       "packageName": "@org-library/promare-gradients",
       "projectFolder": "libraries/promare-gradients",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["library", "npm-publish"],
+      "tags": ["library"],
       "shouldPublish": true
     },
     {
