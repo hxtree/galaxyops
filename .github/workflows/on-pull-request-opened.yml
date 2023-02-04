@@ -1,12 +1,12 @@
-name: PR Opened
+name: 'PR / Opened'
 
 on:
   pull_request:
     types: [opened]
 
 jobs:
-  update_pr:
-    name: PR update
+  detect-branch:
+    name: 'detect ticket'
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
