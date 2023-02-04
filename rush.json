@@ -44,6 +44,7 @@
       "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",
       "cyclicDependencyProjects": [],
+      "shouldPublish": true,
       "tags": ["platform-team"]
     },
     {
@@ -78,6 +79,7 @@
       "packageName": "@cats-cradle/eslint-config",
       "projectFolder": "platform/eslint-config",
       "reviewCategory": "platform",
+      "shouldPublish": true,
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },
