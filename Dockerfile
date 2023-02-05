@@ -30,7 +30,7 @@ RUN apt-get update \
     # install latest npm
     && npm install --global npm@9.2.0 \
     # https://pnpm.io/installation
-    && npm install --global pnpm@7.22.0 \
+    && npm install --global pnpm@7.26.3 \
     # install Microsoft Rush globally
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.88.0 \
