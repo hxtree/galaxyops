@@ -561,7 +561,6 @@ importers:
 
   ../../platform/lambda-layers:
     specifiers:
-      '@cats-cradle/base-nodejs': workspace:*
       '@cats-cradle/eslint-config': workspace:*
       '@nestjs/common': 9.1.1
       '@nestjs/core': 9.1.1
@@ -596,7 +595,6 @@ importers:
       typescript: 4.9.5
       uuid: ~9.0.0
     dependencies:
-      '@cats-cradle/base-nodejs': link:../rigs/base-nodejs
       '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
       '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
