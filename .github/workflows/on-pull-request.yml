@@ -13,7 +13,7 @@ jobs:
   Test:
     uses: ./.github/workflows/call-test.yml
 
-  CDK:
+  IaC:
     uses: ./.github/workflows/call-cdk-synth.yml
 
   Coverage:
