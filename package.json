@@ -3,7 +3,9 @@
   "module": "commonjs",
   "version": "1.0.0",
   "scripts": {
-    "lint": ""
+    "lint": "",
+    "lint:ci": "",
+    "test:ci": ""
   },
   "dependencies": {
     "esbuild": "~0.17.5"
