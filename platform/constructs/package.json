@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "",
+    "test": "jest",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run",
     "depcheck": "npx depcheck"

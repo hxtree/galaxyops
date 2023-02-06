@@ -14,8 +14,6 @@ The game engine client is built using Unreal Engine 5.
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Coverage)
-![TypeScript](https://shields.io/badge/typescript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
-![AWS CDKv2](https://shields.io/badge/cdkv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
 
 ## Getting Started
 
@@ -66,6 +64,11 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 ```
 
 ## Documentation
+
+![TypeScript](https://shields.io/badge/typescript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
+![AWS CDKv2](https://shields.io/badge/cdkv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
+![PNPM](https://shields.io/badge/pnpm-000?logo=pnpm&logoColor=FF9900&style=flat-square)
+![RushJS](https://shields.io/badge/RushJS-333?logo=microsoft&logoColor=FF7711&style=flat-square)
 
 - [Git Setup](docs/git-setup.md)
 - [Architecture Guidelines](docs/architecture-guidelines.md)
