@@ -20,6 +20,7 @@ export async function esbuilder(options: EsbuildOptions): Promise<any> {
     sourcemap: false,
     keepNames: true,
     logLimit: 0,
+    // skipLibCheck: true,
     // platform: options.platform ?? 'node',
   });
 }
