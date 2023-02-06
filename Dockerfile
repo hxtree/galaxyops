@@ -36,7 +36,7 @@ RUN apt-get update \
     && npm install --global @microsoft/rush@5.88.0 \
     # install AWS CDK globally
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
-    && npm install --global aws-cdk@2.56.0 \
+    && npm install --global aws-cdk@2.63.1 \
     # install typescript globally (perhaps this should be moved for rush's package)
     && npm install --global typescript \
     # install typescript globally (perhaps this could be moved to local)
@@ -49,7 +49,7 @@ RUN apt-get update \
     && npm install --global @nestjs/cli \
     # install esbuild
     # https://esbuild.github.io/getting-started/#install-esbuild
-    && npm install esbuild \
+    # && npm install --global esbuild \
     # install openapi generator for generating microservice contracts
     # https://openapi-generator.tech
     && npm install --global @openapitools/openapi-generator-cli \

@@ -208,7 +208,7 @@
     },
     {
       "name": "esbuild",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "eslint",

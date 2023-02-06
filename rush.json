@@ -40,6 +40,13 @@
   ],
   "projects": [
     {
+      "packageName": "@cats-cradle/root",
+      "projectFolder": "/",
+      "reviewCategory": "rigs",
+      "cyclicDependencyProjects": [],
+      "tags": ["platform-team"]
+    },
+    {
       "packageName": "@cats-cradle/base-nodejs",
       "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",

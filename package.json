@@ -1,0 +1,8 @@
+{
+  "name": "@cats-cradle/root",
+  "module": "commonjs",
+  "version": "1.0.0",
+  "dependencies": {
+    "esbuild": "~0.17.5"
+  }
+}

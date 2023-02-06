@@ -74,6 +74,59 @@
       "allowWarningsInSuccessfulBuild": true
     },
     {
+      "name": "cdk:bootstrap",
+      "commandKind": "bulk",
+      "summary": "Run cdk bootstrap",
+      "description": "Run cdk bootstrap",
+      "safeForSimultaneousRushProcesses": false,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
+      "enableParallelism": false,
+      "allowWarningsInSuccessfulBuild": true
+    },
+    {
+      "name": "cdk:diff",
+      "commandKind": "bulk",
+      "summary": "Run cdk diff",
+      "description": "Run cdk diff",
+      "safeForSimultaneousRushProcesses": false,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
+      "enableParallelism": false,
+      "allowWarningsInSuccessfulBuild": true
+    },    {
+      "name": "cdk:synth",
+      "commandKind": "bulk",
+      "summary": "Run cdk synth",
+      "description": "Run cdk synth",
+      "safeForSimultaneousRushProcesses": false,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
+      "enableParallelism": false,
+      "allowWarningsInSuccessfulBuild": true
+    },    {
+      "name": "cdk:deploy",
+      "commandKind": "bulk",
+      "summary": "Run cdk deploy",
+      "description": "Run cdk deploy to upsert stacks on AWS",
+      "safeForSimultaneousRushProcesses": false,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
+      "enableParallelism": false,
+      "allowWarningsInSuccessfulBuild": true
+    },
+    {
+      "name": "cdk:destory",
+      "commandKind": "bulk",
+      "summary": "Run cdk destroyW",
+      "description": "Run cdk destroy to remove stacks on AWS",
+      "safeForSimultaneousRushProcesses": false,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
+      "enableParallelism": false,
+      "allowWarningsInSuccessfulBuild": true
+    },
+    {
       "name": "test:cov",
       "commandKind": "bulk",
       "summary": "Run unit tests with coverage",
