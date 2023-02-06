@@ -44,6 +44,9 @@ RUN apt-get update \
     # install AWS Organization Formation
     # https://github.com/org-formation/org-formation-cli
     && npm install --global aws-organization-formation \
+    # install dependency check
+    # https://www.npmjs.com/package/depcheck
+    && npm install --global depcheck \
     # install nestjs/cli globally (used to run nest services locally)
     # https://docs.nestjs.com/first-steps
     && npm install --global @nestjs/cli \
@@ -141,5 +144,9 @@ USER $USER
 
 # git credentials https://github.com/microsoft/vscode-remote-release/issues/720#issuecomment-503492715
 ENV HOME /home/$USER
+
+# pnpm exec esbuild requires this for to access esbuild global
+# CDK NodeJsFunction requires esbuild to be installed globally due to the deps lock file being root
+ENV PNPM_HOME=/usr/local/sbin
 
 SHELL ["/bin/zsh", "-c"]

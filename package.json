@@ -1,6 +1,7 @@
 {
   "name": "@cats-cradle/root",
   "module": "commonjs",
+  "description": "temp fix for cdk, pnpm, esbuild issue",
   "version": "1.0.0",
   "scripts": {
     "lint": "",
