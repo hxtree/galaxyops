@@ -561,6 +561,7 @@ importers:
 
   ../../platform/lambda-layers:
     specifiers:
+      '@cats-cradle/base-nodejs': workspace:*
       '@cats-cradle/eslint-config': workspace:*
       '@nestjs/common': 9.1.1
       '@nestjs/core': 9.1.1
@@ -613,6 +614,7 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
+      '@cats-cradle/base-nodejs': link:../rigs/base-nodejs
       '@cats-cradle/eslint-config': link:../eslint-config
       '@types/aws-lambda': 8.10.109
       '@types/express': 4.17.15
