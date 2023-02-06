@@ -31,10 +31,10 @@ export class NestJs extends Construct {
 
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html
     this.nodeJsFunction = new NodejsFunction(this, 'nodejsFunction', {
-      projectRoot: '/usr/src/app/',
+      projectRoot: process.env.PROJECT_ROOT ?? '',
       handler: 'handler',
       entry: 'src/index.ts',
-      depsLockFilePath: '/usr/src/app/pnpm-lock.yaml',
+      depsLockFilePath: `${process.env.PROJECT_ROOT}/pnpm-lock.yaml`,
       runtime: Runtime.NODEJS_16_X,
       bundling: {
         preCompilation: true,

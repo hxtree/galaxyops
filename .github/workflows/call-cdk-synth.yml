@@ -2,6 +2,9 @@ name: CDK Synth
 
 on:
     workflow_call:
+      secrets:
+        PROJECT_ROOT:
+          required: true
 
 jobs:
   cdk-synth:

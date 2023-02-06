@@ -148,5 +148,6 @@ ENV HOME /home/$USER
 # pnpm exec esbuild requires this for to access esbuild global
 # CDK NodeJsFunction requires esbuild to be installed globally due to the deps lock file being root
 ENV PNPM_HOME=/usr/local/sbin
+ENV PROJECT_ROOT=/usr/src/app
 
 SHELL ["/bin/zsh", "-c"]

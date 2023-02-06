@@ -15,6 +15,8 @@ jobs:
 
   IaC:
     uses: ./.github/workflows/call-cdk-synth.yml
+    secrets:
+      PROJECT_ROOT: ${{ GITHUB_WORKSPACE }}
 
   Coverage:
     uses: ./.github/workflows/call-coverage.yml
