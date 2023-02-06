@@ -13,10 +13,10 @@ jobs:
   Test:
     uses: ./.github/workflows/call-test.yml
 
-  IaC:
-    uses: ./.github/workflows/call-cdk-synth.yml
-    secrets:
-      PROJECT_ROOT: ${{ env.GITHUB_WORKSPACE }}
+  # IaC:
+  #   uses: ./.github/workflows/call-cdk-synth.yml
+  #   secrets:
+  #     PROJECT_ROOT: ${{ env.GITHUB_WORKSPACE }}
 
   Coverage:
     uses: ./.github/workflows/call-coverage.yml

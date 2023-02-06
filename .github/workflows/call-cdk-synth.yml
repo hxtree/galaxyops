@@ -5,6 +5,7 @@ on:
     secrets:
       PROJECT_ROOT:
         required: true
+
 jobs:
   cdk-synth:
     name: cdk synth
