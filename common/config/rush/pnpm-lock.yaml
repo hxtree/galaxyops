@@ -49,7 +49,7 @@ importers:
       '@types/uuid': ~8.3.4
       '@types/validator': ~13.7.10
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       class-validator-jsonschema: 3.1.1
       currency.js: ~2.0.4
       esbuild: ~0.17.5
@@ -70,8 +70,8 @@ importers:
       '@types/lodash': 4.14.191
       '@types/validator': 13.7.10
       class-transformer: 0.5.1
-      class-validator: 0.13.2
-      class-validator-jsonschema: 3.1.1_e6kgdsnyya5caxg3ysdyxrqm7a
+      class-validator: 0.14.0
+      class-validator-jsonschema: 3.1.1_p4ywi7fdcrugq6nsanv77hac4q
       currency.js: 2.0.4
       json-schema: 0.4.0
       json-schema-faker: 0.5.0-rcv.46
@@ -131,7 +131,7 @@ importers:
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       construct: ~1.0.0
       constructs: ^10.1.211
       esbuild: ~0.17.5
@@ -151,10 +151,10 @@ importers:
       uuid: ~9.0.0
     dependencies:
       '@aws-cdk/core': 1.182.0_constructs@10.1.211
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/common': 9.1.1_r72jqgu3m7fr66qxp7vl4agwte
       '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
-      '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
+      '@nestjs/swagger': 6.1.4_vdkdmsqddod7ouw7vpa5g4isge
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
       '@vendia/serverless-express': 4.8.2
       aws-cdk: 2.55.1
@@ -162,7 +162,7 @@ importers:
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       construct: 1.0.0
       constructs: 10.1.211
       express: 4.18.2
@@ -211,7 +211,7 @@ importers:
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       constructs: ^10.1.211
       esbuild: ~0.17.5
       eslint: 8.26.0
@@ -231,16 +231,16 @@ importers:
     dependencies:
       '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs': link:../../platform/constructs
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/common': 9.1.1_r72jqgu3m7fr66qxp7vl4agwte
       '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
-      '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
+      '@nestjs/swagger': 6.1.4_vdkdmsqddod7ouw7vpa5g4isge
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       express: 4.18.2
       mongoose: 6.6.7
       node-cache: 5.1.2
@@ -394,7 +394,7 @@ importers:
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       constructs: ^10.1.211
       esbuild: ~0.17.5
       eslint: 8.26.0
@@ -414,16 +414,16 @@ importers:
     dependencies:
       '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs': link:../../platform/constructs
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/common': 9.1.1_r72jqgu3m7fr66qxp7vl4agwte
       '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
-      '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
+      '@nestjs/swagger': 6.1.4_vdkdmsqddod7ouw7vpa5g4isge
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       eslint: 8.26.0
       express: 4.18.2
       mongoose: 6.6.7
@@ -469,7 +469,7 @@ importers:
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       constructs: ^10.1.211
       esbuild: ~0.17.5
       eslint: 8.26.0
@@ -488,17 +488,17 @@ importers:
       typescript: 4.9.5
       uuid: ~9.0.0
     dependencies:
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/common': 9.1.1_r72jqgu3m7fr66qxp7vl4agwte
       '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
-      '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
+      '@nestjs/swagger': 6.1.4_vdkdmsqddod7ouw7vpa5g4isge
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
       '@types/lodash': 4.14.191
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       express: 4.18.2
       lodash: 4.17.21
       mongoose: 6.6.7
@@ -578,7 +578,7 @@ importers:
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       constructs: ^10.1.211
       esbuild: ~0.17.5
       eslint: 8.26.0
@@ -596,16 +596,16 @@ importers:
       typescript: 4.9.5
       uuid: ~9.0.0
     dependencies:
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/common': 9.1.1_r72jqgu3m7fr66qxp7vl4agwte
       '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
-      '@nestjs/swagger': 6.1.4_rujkijbukplmefxxkomlxbtn6y
+      '@nestjs/swagger': 6.1.4_vdkdmsqddod7ouw7vpa5g4isge
       '@nestjs/terminus': 9.1.1_lvyuu442bprgqcs24ahm77yfdm
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       express: 4.18.2
       mongoose: 6.6.7
       node-cache: 5.1.2
@@ -4308,7 +4308,7 @@ packages:
       react: 18.2.0
       react-is: 18.2.0
 
-  /@nestjs/common/9.1.1_allg6cauirbqzgqcmexy2wdnoq:
+  /@nestjs/common/9.1.1_r72jqgu3m7fr66qxp7vl4agwte:
     resolution: {integrity: sha512-qrrCnc7FwYzJDjGJTRdL68nULFV0dkEa1DTJgtR7nHXzwcJU8EC+9wfMkahQdyB7ZPAQNJSuyarwmbgVFFNoLg==}
     peerDependencies:
       cache-manager: '*'
@@ -4325,7 +4325,7 @@ packages:
         optional: true
     dependencies:
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       iterare: 1.2.1
       reflect-metadata: 0.1.13
       rxjs: 7.5.6
@@ -4351,7 +4351,7 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/common': 9.1.1_r72jqgu3m7fr66qxp7vl4agwte
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.1.1
@@ -4366,7 +4366,7 @@ packages:
       - encoding
     dev: false
 
-  /@nestjs/mapped-types/1.2.0_mnwmb2qyg6bd62kf4exvs2n4fu:
+  /@nestjs/mapped-types/1.2.0_lpn62dptbz23bcbvlfhqqvunvy:
     resolution: {integrity: sha512-NTFwPZkQWsArQH8QSyFWGZvJ08gR+R4TofglqZoihn/vU+ktHEJjMqsIsADwb7XD97DhiD+TVv5ac+jG33BHrg==}
     peerDependencies:
       '@nestjs/common': ^7.0.8 || ^8.0.0 || ^9.0.0
@@ -4379,9 +4379,9 @@ packages:
       class-validator:
         optional: true
     dependencies:
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/common': 9.1.1_r72jqgu3m7fr66qxp7vl4agwte
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       reflect-metadata: 0.1.13
     dev: false
 
@@ -4391,7 +4391,7 @@ packages:
       '@nestjs/common': ^9.0.0
       '@nestjs/core': ^9.0.0
     dependencies:
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/common': 9.1.1_r72jqgu3m7fr66qxp7vl4agwte
       '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
       body-parser: 1.20.0
       cors: 2.8.5
@@ -4400,7 +4400,7 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@nestjs/swagger/6.1.4_rujkijbukplmefxxkomlxbtn6y:
+  /@nestjs/swagger/6.1.4_vdkdmsqddod7ouw7vpa5g4isge:
     resolution: {integrity: sha512-kE8VjR+NaoKqxg8XqM/YYfALScPh4AcoR8Wywga8/OxHsTHY+MKxqvTpWp7IhCUWSA6xT8nQUpcC9Rt7C+r7Hw==}
     peerDependencies:
       '@fastify/static': ^6.0.0
@@ -4417,11 +4417,11 @@ packages:
       class-validator:
         optional: true
     dependencies:
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/common': 9.1.1_r72jqgu3m7fr66qxp7vl4agwte
       '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
-      '@nestjs/mapped-types': 1.2.0_mnwmb2qyg6bd62kf4exvs2n4fu
+      '@nestjs/mapped-types': 1.2.0_lpn62dptbz23bcbvlfhqqvunvy
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       js-yaml: 4.1.0
       lodash: 4.17.21
       path-to-regexp: 3.2.0
@@ -4437,7 +4437,7 @@ packages:
       reflect-metadata: 0.1.x
       rxjs: 7.x
     dependencies:
-      '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/common': 9.1.1_r72jqgu3m7fr66qxp7vl4agwte
       '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
       boxen: 5.1.2
       check-disk-space: 3.3.1
@@ -10049,14 +10049,14 @@ packages:
       static-extend: 0.1.2
     dev: true
 
-  /class-validator-jsonschema/3.1.1_e6kgdsnyya5caxg3ysdyxrqm7a:
+  /class-validator-jsonschema/3.1.1_p4ywi7fdcrugq6nsanv77hac4q:
     resolution: {integrity: sha512-xga/5rTDKaYysivdX6OWaVllAS2OGeXgRRaXRo5QAW+mSDOpbjrf5JhmdPvUKMEkGyQer0gCoferB3COl170Rg==}
     peerDependencies:
       class-transformer: ^0.4.0 || ^0.5.0
       class-validator: ^0.13.1
     dependencies:
       class-transformer: 0.5.1
-      class-validator: 0.13.2
+      class-validator: 0.14.0
       lodash.groupby: 4.6.0
       lodash.merge: 4.6.2
       openapi3-ts: 2.0.2
@@ -10064,9 +10064,10 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /class-validator/0.13.2:
-    resolution: {integrity: sha512-yBUcQy07FPlGzUjoLuUfIOXzgynnQPPruyK1Ge2B74k9ROwnle1E+NxLWnUv5OLU8hA/qL5leAE9XnXq3byaBw==}
+  /class-validator/0.14.0:
+    resolution: {integrity: sha512-ct3ltplN8I9fOwUd8GrP8UQixwff129BkEtuWDKL5W45cQuLd19xqmTLu5ge78YDm/fdje6FMt0hGOhl0lii3A==}
     dependencies:
+      '@types/validator': 13.7.10
       libphonenumber-js: 1.10.15
       validator: 13.7.0
     dev: false
