@@ -2,7 +2,9 @@ name: CDK Synth
 
 on:
   workflow_call:
-
+    secrets:
+      PROJECT_ROOT:
+        required: true
 jobs:
   cdk-synth:
     name: cdk synth
@@ -35,14 +37,14 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
         env:
-          PROJECT_ROOT: ${{ GITHUB_WORKSPACE }}
+          PROJECT_ROOT: ${{ PROJECT_ROOT }}
 
       - name: install cdk
         run: npm install --global aws-cdk@2.63.1
         env:
-          PROJECT_ROOT: ${{ GITHUB_WORKSPACE }}
+          PROJECT_ROOT: ${{ PROJECT_ROOT }}
 
       - name: rush synth
         run: node common/scripts/install-run-rush.js cdk:synth
         env:
-          PROJECT_ROOT: ${{ GITHUB_WORKSPACE }}
+          PROJECT_ROOT: ${{ PROJECT_ROOT }}
