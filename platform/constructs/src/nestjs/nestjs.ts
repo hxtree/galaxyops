@@ -1,9 +1,9 @@
-import {Construct} from 'constructs';
-import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
-import {Duration, Stack} from 'aws-cdk-lib';
-import {LayerVersion, Runtime} from 'aws-cdk-lib/aws-lambda';
-import {RetentionDays} from 'aws-cdk-lib/aws-logs';
-import {getBaseUrl} from '../api-endpoint/get-base-url';
+import { Construct } from 'constructs';
+import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
+import { Duration, Stack } from 'aws-cdk-lib';
+import { LayerVersion, Runtime } from 'aws-cdk-lib/aws-lambda';
+import { RetentionDays } from 'aws-cdk-lib/aws-logs';
+import { getBaseUrl } from '../api-endpoint/get-base-url';
 
 export interface NestJsProps {
   apiId: string;
@@ -31,21 +31,29 @@ export class NestJs extends Construct {
 
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html
     this.nodeJsFunction = new NodejsFunction(this, 'nodejsFunction', {
+      projectRoot: process.env.PROJECT_ROOT ?? '',
       handler: 'handler',
       entry: 'src/index.ts',
-      depsLockFilePath: '/usr/src/app/common/config/rush/pnpm-lock.yaml',
+      depsLockFilePath: `${process.env.PROJECT_ROOT}/pnpm-lock.yaml`,
       runtime: Runtime.NODEJS_16_X,
       bundling: {
+        preCompilation: true,
+        esbuildArgs: {
+          '--log-limit': '0',
+        },
         dockerImage: Runtime.NODEJS_16_X.bundlingImage,
         keepNames: true,
         minify: false,
         target: 'es2021',
         sourceMap: true,
 
-        // By default, all node modules referenced in your Lambda code will be bundled by esbuild.
-        // Use the nodeModules prop under bundling to specify a list of modules that should not be bundled
-        // but instead included in the node_modules folder of the Lambda package. This is useful
-        // when working with native dependencies or when esbuild fails to bundle a module.
+        /**
+         * By default, all node modules referenced in your Lambda code will be bundled by esbuild.
+         * Use the nodeModules prop under bundling to specify a list of modules that
+         * should not be bundled, but instead included in the node_modules folder of the
+         * Lambda package. This is useful when working with native dependencies or when
+         * esbuild fails to bundle a module.
+         */
         externalModules: [
           'express',
           'reflect-metadata',

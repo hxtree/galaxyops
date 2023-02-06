@@ -23,12 +23,22 @@
     }
   },
   "info": {
-    "title": "@cats-cradles/luck-by-dice",
+    "title": "@cats-cradle/luck-by-dice",
     "description": "An API for simulating dice rolls and luck from dice notation",
-    "version": "1.0",
+    "version": "1.0.0",
     "contact": {}
   },
   "tags": [],
   "servers": [],
-  "components": { "schemas": {} }
+  "components": {
+    "securitySchemes": {
+      "lambda": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-lambda-token",
+        "description": "The API key for lambda request."
+      }
+    },
+    "schemas": {}
+  }
 }

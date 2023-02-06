@@ -30,13 +30,13 @@ RUN apt-get update \
     # install latest npm
     && npm install --global npm@9.2.0 \
     # https://pnpm.io/installation
-    && npm install --global pnpm@7.22.0 \
+    && npm install --global pnpm@7.26.3 \
     # install Microsoft Rush globally
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.88.0 \
     # install AWS CDK globally
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
-    && npm install --global aws-cdk@2.56.0 \
+    && npm install --global aws-cdk@2.63.1 \
     # install typescript globally (perhaps this should be moved for rush's package)
     && npm install --global typescript \
     # install typescript globally (perhaps this could be moved to local)
@@ -44,12 +44,15 @@ RUN apt-get update \
     # install AWS Organization Formation
     # https://github.com/org-formation/org-formation-cli
     && npm install --global aws-organization-formation \
+    # install dependency check
+    # https://www.npmjs.com/package/depcheck
+    && npm install --global depcheck \
     # install nestjs/cli globally (used to run nest services locally)
     # https://docs.nestjs.com/first-steps
     && npm install --global @nestjs/cli \
     # install esbuild
     # https://esbuild.github.io/getting-started/#install-esbuild
-    && npm install esbuild \
+    # && npm install --global esbuild \
     # install openapi generator for generating microservice contracts
     # https://openapi-generator.tech
     && npm install --global @openapitools/openapi-generator-cli \
@@ -141,5 +144,10 @@ USER $USER
 
 # git credentials https://github.com/microsoft/vscode-remote-release/issues/720#issuecomment-503492715
 ENV HOME /home/$USER
+
+# pnpm exec esbuild requires this for to access esbuild global
+# CDK NodeJsFunction requires esbuild to be installed globally due to the deps lock file being root
+ENV PNPM_HOME=/usr/local/sbin
+ENV PROJECT_ROOT=/usr/src/app
 
 SHELL ["/bin/zsh", "-c"]
