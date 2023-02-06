@@ -35,5 +35,8 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
-      - name: rush build
+      - name: install cdk
+        run: npm install --global aws-cdk@2.63.1
+
+      - name: rush synth
         run: node common/scripts/install-run-rush.js cdk:synth
