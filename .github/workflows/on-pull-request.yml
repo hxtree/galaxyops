@@ -4,19 +4,19 @@ on:
   pull_request
 
 jobs:
-  Build:
-    uses: ./.github/workflows/call-build.yml
-
-  Lint:
+  "Code Standards":
     uses: ./.github/workflows/call-lint.yml
 
-  Test:
+  "Build":
+    uses: ./.github/workflows/call-build.yml
+
+  "Unit Test":
     uses: ./.github/workflows/call-test.yml
 
-  IaC:
+  "IaC Synthesis":
     uses: ./.github/workflows/call-cdk-synth.yml
 
-  Coverage:
+  "Code Coverage":
     uses: ./.github/workflows/call-coverage.yml
     secrets:
       CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
