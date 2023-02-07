@@ -11,7 +11,7 @@ docker-compose.override.yml
 
 # AWS CLI
 .devcontainer/.aws/**
-!.devcontainer/.aws/*.dist
+!.devcontainer/.aws/config
 
 # AWS CDK
 **/cdk.out/*
