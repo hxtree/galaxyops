@@ -35,8 +35,8 @@
     {
       "name": "nuke",
       "commandKind": "global",
-      "summary": "Nuke All Local Changes",
-      "shellCommand": "common/scripts/nuke/nuke.sh",
+      "summary": "Nuke all local changes",
+      "shellCommand": "common/scripts/git-scm/nuke.sh",
       "safeForSimultaneousRushProcesses": false
     },
     {

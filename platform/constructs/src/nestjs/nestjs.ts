@@ -37,7 +37,7 @@ export class NestJs extends Construct {
       depsLockFilePath: `${process.env.PROJECT_ROOT}/pnpm-lock.yaml`,
       runtime: Runtime.NODEJS_16_X,
       bundling: {
-        preCompilation: true,
+        preCompilation: false,
         esbuildArgs: {
           '--log-limit': '0',
         },
