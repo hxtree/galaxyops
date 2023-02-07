@@ -5,14 +5,17 @@ on:
     branches: [ main ]
 
 jobs:
-  Build:
-    uses: ./.github/workflows/call-build.yml
-
   Lint:
     uses: ./.github/workflows/call-lint.yml
 
+  Build:
+    uses: ./.github/workflows/call-build.yml
+
   Test:
     uses: ./.github/workflows/call-test.yml
+
+  IaC:
+    uses: ./.github/workflows/call-cdk-synth.yml
 
   Coverage:
     uses: ./.github/workflows/call-coverage.yml
