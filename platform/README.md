@@ -1,9 +1,8 @@
 # platform
 
 The platform give teams the tools and automation capabilities necessary to
-perform and manage continuous delivery.
-
-It contains packages that related to laying the foundations for other services.
+perform and manage continuous delivery. It contains packages that are related to
+laying the foundations for other services.
 
 ## Curated List of Recommend Packages
 
