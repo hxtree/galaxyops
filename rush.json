@@ -91,6 +91,14 @@
       "tags": ["platform-team"]
     },
     {
+      "packageName": "@cats-cradle/validation-decorators",
+      "projectFolder": "libraries/validation-decorators",
+      "reviewCategory": "libraries",
+      "cyclicDependencyProjects": [],
+      "tags": ["library"],
+      "shouldPublish": true
+    },
+    {
       "packageName": "@cats-cradle/faker-factory",
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
