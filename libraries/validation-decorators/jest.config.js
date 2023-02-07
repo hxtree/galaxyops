@@ -10,6 +10,6 @@ module.exports = {
     'html',
     ['text', { skipFull: true }],
   ],
-  testMatch: ['<rootDir>/src/*.test.ts'],
+  testMatch: ['<rootDir>/src/**/*.test.ts'],
   coverageDirectory: '<rootDir>/coverage',
 };
