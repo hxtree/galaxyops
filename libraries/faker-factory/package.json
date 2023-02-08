@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"
   },
+  "bugs": {
+    "url": "https://github.com/hxtree/cats-cradle/issues"
+  },
   "scripts": {
     "build": "tsc",
     "build:all": "rush build -t .",

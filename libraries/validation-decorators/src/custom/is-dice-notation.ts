@@ -1,8 +1,8 @@
-import {
-  registerDecorator,
-  ValidationOptions,
-  ValidationArguments,
-} from 'class-validator';
+import { registerDecorator, ValidationOptions } from 'class-validator';
+
+export function IsDiceNotationValidator(value: any): boolean {
+  return typeof value === 'string' && /(\d+)?d(\d+)([\+\-]\d+)?/.test(value);
+}
 
 /**
  * Checks if is dice notation
@@ -13,23 +13,16 @@ import {
  * @param validationOptions
  * @returns
  */
-export function IsDiceNotation(
-  property: string,
-  validationOptions?: ValidationOptions,
-) {
+export function IsDiceNotation(validationOptions?: ValidationOptions) {
   return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'isMoney',
+      name: 'isDiceNotation',
       target: object.constructor,
       propertyName,
-      constraints: [property],
+      constraints: [],
       options: validationOptions,
       validator: {
-        validate(value: any, args: ValidationArguments) {
-          const [relatedPropertyName] = args.constraints;
-          const relatedValue = (args.object as any)[relatedPropertyName];
-          return typeof value === 'string' && typeof relatedValue === 'string';
-        },
+        validate: IsDiceNotationValidator,
       },
     });
   };

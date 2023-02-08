@@ -1,9 +1,9 @@
 import { validateSync, ValidationError } from 'class-validator';
-import { IsDiceNotation } from '../custom/is-dice-notation';
+import { IsMoney } from '../custom/is-money';
 
-describe('IsDiceNotation', () => {
+describe('IsMoney', () => {
   class TestClass {
-    @IsDiceNotation()
+    @IsMoney()
     public property: string;
   }
 
@@ -14,14 +14,14 @@ describe('IsDiceNotation', () => {
       testClass = new TestClass();
     });
 
-    it('should not error on valid dice notation', () => {
-      testClass.property = '1d6';
+    it('should not error on valid', () => {
+      testClass.property = '0.22';
       const errors: ValidationError[] = validateSync(testClass);
       expect(errors.length).toBe(0);
     });
 
-    it('should error on invalid dice notation', () => {
-      testClass.property = 'rrr';
+    it('should error on invalid', () => {
+      testClass.property = '$0.1';
       const errors: ValidationError[] = validateSync(testClass);
       expect(errors.length).toBe(1);
     });

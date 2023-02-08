@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/validation-decorators",
+      "comment": "fix dice notation and money validator",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/validation-decorators"
+}
