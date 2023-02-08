@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/faker-factory",
+      "comment": "add bug reporting",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/faker-factory"
+}

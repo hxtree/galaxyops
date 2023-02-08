@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/promare-gradients",
+      "comment": "add bug reporting",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/promare-gradients"
+}
