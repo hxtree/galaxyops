@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/validation-decorators",
+      "comment": "add license",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/validation-decorators"
+}

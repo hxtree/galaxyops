@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/base-nodejs",
+      "comment": "add license",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/base-nodejs"
+}
