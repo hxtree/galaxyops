@@ -7,13 +7,15 @@ infrastructure as code (IaC) used to continously deploy Cats Cradle in its
 entirety.
 
 The backend consist of many microservices programmed primarly in Typescript.
-These microservices are deployed using IaC, specically AWS CDKv2.
+These microservices are deployed using IaC, specically AWS CDKv2. Many packages
+developed from use in the game are avaliable as releases on NPM.
 
 The game engine client is built using Unreal Engine 5.
 
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Coverage)
+[![NPM Packages](https://img.shields.io/static/v1?label=Publishes&message=6%20Packages&color=000?style=flat&logo=npm)](https://www.npmjs.com/search?q=%40cats-cradle)
 
 ## Getting Started
 

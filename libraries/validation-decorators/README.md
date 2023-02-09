@@ -12,7 +12,7 @@ import {
 
 class Turn {
   @IsDiceNotation()
-  public property: string;
+  public diceNotation: string;
 }
 
 let turn = new Turn();
