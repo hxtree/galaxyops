@@ -1,7 +1,7 @@
 # @cats-cradle/validation-decorators
 
 Contains standard class-validator decorators and custom decorators for use
-primarly in validation data in game design.
+primarly in defining and validating data used in game design.
 
 ```typescript
 import {

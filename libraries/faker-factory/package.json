@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/faker-factory",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./dist/src/index.js",
   "repository": {
     "type": "git",

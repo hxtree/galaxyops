@@ -1,10 +1,11 @@
 {
   "name": "@cats-cradle/rush-coverage",
+  "license": "MIT",
   "bin": {
     "app": "./dist/src/app.js"
   },
   "main": "index.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "build": "tsc",

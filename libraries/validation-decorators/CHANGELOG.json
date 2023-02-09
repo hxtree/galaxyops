@@ -1,0 +1,36 @@
+{
+  "name": "@cats-cradle/validation-decorators",
+  "entries": [
+    {
+      "version": "0.1.0",
+      "tag": "@cats-cradle/validation-decorators_v0.1.0",
+      "date": "Thu, 09 Feb 2023 04:49:11 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "add more class-validator decorators"
+          },
+          {
+            "comment": "add uuidv4 decorator"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "fix dice notation and money validator"
+          },
+          {
+            "comment": "add license"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.1`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/eslint-config\" to `1.0.1`"
+          }
+        ]
+      }
+    }
+  ]
+}

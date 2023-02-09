@@ -1,0 +1,34 @@
+{
+  "name": "@cats-cradle/promare-gradients",
+  "entries": [
+    {
+      "version": "1.0.1",
+      "tag": "@cats-cradle/promare-gradients_v1.0.1",
+      "date": "Thu, 09 Feb 2023 04:49:11 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "improve docs"
+          },
+          {
+            "comment": "add bug reporting"
+          },
+          {
+            "comment": "add license"
+          },
+          {
+            "comment": "improve readme"
+          },
+          {
+            "comment": "docs"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/eslint-config\" to `1.0.1`"
+          }
+        ]
+      }
+    }
+  ]
+}
