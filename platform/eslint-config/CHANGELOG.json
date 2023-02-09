@@ -1,0 +1,23 @@
+{
+  "name": "@cats-cradle/eslint-config",
+  "entries": [
+    {
+      "version": "1.0.1",
+      "tag": "@cats-cradle/eslint-config_v1.0.1",
+      "date": "Thu, 09 Feb 2023 04:49:11 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "update docs"
+          },
+          {
+            "comment": "init publication"
+          },
+          {
+            "comment": "add license"
+          }
+        ]
+      }
+    }
+  ]
+}

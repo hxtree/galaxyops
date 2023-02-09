@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Eslint rules by profile",
   "license": "MIT",
   "repository": {

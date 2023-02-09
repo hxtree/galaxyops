@@ -1,0 +1,25 @@
+{
+  "name": "@cats-cradle/rush-coverage",
+  "entries": [
+    {
+      "version": "0.0.2",
+      "tag": "@cats-cradle/rush-coverage_v0.0.2",
+      "date": "Thu, 09 Feb 2023 04:49:11 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add license"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.1`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/eslint-config\" to `1.0.1`"
+          }
+        ]
+      }
+    }
+  ]
+}
