@@ -1,10 +1,31 @@
 # @cats-cradle/validation-decorators
 
-Unstable WIP
+Contains standard class-validator decorators and custom decorators for use
+primarly in validation data in game design.
 
-Custom and standard class validator decorators used for the purpose of
-validation. All validation decorators should be supported by FakerFactory
-enabling automatic fake generation.
+```typescript
+import {
+  validateSync,
+  ValidationError,
+  IsDiceNotation,
+} from '@cats-cradle/validation-decorators';
+
+class Turn {
+  @IsDiceNotation()
+  public property: string;
+}
+
+let turn = new Turn();
+turn.diceNotation = '1d6+4';
+
+const errors: ValidationError[] = validateSync(testClass);
+
+// outputs 0
+console.log(errors.length);
+```
+
+All validation decorators should be supported by `@cats-cradle/FakerFactory`
+enabling automatic generation of fakes.
 
 ## Documentation
 
