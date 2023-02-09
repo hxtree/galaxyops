@@ -1,7 +1,7 @@
 # @cats-cradle/eslint-config
 
-EslintConfig contains common eslint config settings by profile to help simply
-app development.
+EslintConfig contains common eslint config settings by profile or to help
+simplify app development.
 
 ## Getting Started
 
