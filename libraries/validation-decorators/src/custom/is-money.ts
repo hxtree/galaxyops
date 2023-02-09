@@ -4,6 +4,7 @@ import currency from 'currency.js';
 export function isMoneyValidator(value: any): boolean {
   const formatted = currency(value, {
     symbol: '',
+    separator: '',
     precision: 2,
     decimal: '.',
   }).format();
