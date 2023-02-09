@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/eslint-config",
+      "comment": "update docs",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/eslint-config"
+}
