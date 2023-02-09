@@ -2,6 +2,7 @@
   "name": "@cats-cradle/eslint-config",
   "version": "1.0.0",
   "description": "Eslint rules by profile",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"

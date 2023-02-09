@@ -2,6 +2,7 @@
   "name": "@cats-cradle/promare-gradients",
   "version": "1.0.0",
   "description": "Neon background gradients",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"

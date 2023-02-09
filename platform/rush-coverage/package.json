@@ -1,5 +1,6 @@
 {
   "name": "@cats-cradle/rush-coverage",
+  "license": "MIT",
   "bin": {
     "app": "./dist/src/app.js"
   },

@@ -65,6 +65,7 @@
       "packageName": "@cats-cradle/rush-coverage",
       "projectFolder": "platform/rush-coverage",
       "reviewCategory": "cicd",
+      "shouldPublish": true,
       "cyclicDependencyProjects": [],
       "tags": ["platform-team"]
     },
