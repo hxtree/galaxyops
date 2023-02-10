@@ -2,6 +2,29 @@
 
 The guide below describes guidelines applicable to repository.
 
+## Folder Structure
+
+```graphql
+./*
+  ├─ clients - # user facing clients.
+  ├─ common - # rushjs common folder; contains scripts, commands, etc.
+  ├─ docs - # repo wide documentation.
+  ├─ libraries - # resources intented for use in three or more packages.
+  │  └─ api-client - # openapi generated clients.
+  ├─ packages - # contains deployable microservices.
+  │  └─ ./**/*
+  │     ├─ bin - # binary file that invokes stack.
+  │     ├─ src - # source code.
+  │     └─ stack - # CDK deployment code.
+  ├─ platform - # fundemental bases for other applications.
+  │  ├─ aws-org-formation - # AWS account provisioning, SSO, etc.
+  │  ├─ constructs - # Custom AWS constructs used in package deployments.
+  │  ├─ eslint-config - # eslint configurations.
+  │  ├─ rigs - # rushjs heft rigs.
+  │  └─ lambda-layers - # serverless lambda layers.
+  └─ tests - # e2e tests.
+```
+
 ## MACH Architecture
 
 Overall this repository adheres to a Microservices-based, API-first,

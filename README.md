@@ -44,55 +44,44 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 
 ### Lifecycle of a Pull Request (~5 mins)
 
+1. Create a new branch in Git from the main branch.
+
 ```bash
-# Create a new branch in Git from the main branch
 git checkout -b feature/improve-readme
-# Work on changes (e.g. fix a bug or add a new feature)
-# Build project
+```
+
+2. Work on changes (e.g. fix a bug or add a new feature).
+
+3. Build, lint, and unit test projects.
+
+```bash
 rush build
-# Run linter locally
 rush lint
-# Run unit tests
 rush test
-# stage changes
+```
+
+4. Stage and commit changes using Conventional Commit.
+
+```bash
 git add .
-# commit changes using Conventional Commit
 git commit -m 'doc: fix spelling of computers'
-# document SemVer changes in Changelog
+```
+
+5. Document SemVer changes and cut new Changelog.
+
+```bash
 rush change
-# cut new change log
 rush version --bump
-# commit change log changes
+```
+
+6. Commit change log changes, push code to repo, and open PR.
+
+```bash
 git commit -m 'chore: bump change log'
-# push code to repo
 git push
-# open PR
 ```
 
-Celebrate contributing to @cats-cradle!
-
-### Folder Structure
-
-```graphql
-./*
-  ├─ clients - # user facing clients.
-  ├─ common - # rushjs common folder; contains scripts, commands, etc.
-  ├─ docs - # repo wide documentation.
-  ├─ libraries - # resources intented for use in three or more packages.
-  │  └─ api-client - # openapi generated clients.
-  ├─ packages - # contains deployable microservices.
-  │  └─ ./**/*
-  │     ├─ bin - # binary file that invokes stack.
-  │     ├─ src - # source code.
-  │     └─ stack - # CDK deployment code.
-  ├─ platform - # fundemental bases for other applications.
-  │  ├─ aws-org-formation - # AWS account provisioning, SSO, etc.
-  │  ├─ constructs - # Custom AWS constructs used in package deployments.
-  │  ├─ eslint-config - # eslint configurations.
-  │  ├─ rigs - # rushjs heft rigs.
-  │  └─ lambda-layers - # serverless lambda layers.
-  └─ tests - # e2e tests.
-```
+7. Celebrate contributing to @cats-cradle!
 
 ## Documentation
 
