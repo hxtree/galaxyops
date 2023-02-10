@@ -46,55 +46,55 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 
 1. Create a new branch in Git from the main branch.
 
-```bash
-git checkout -b feature/improve-readme
-```
+   ```bash
+   git checkout -b feature/improve-readme
+   ```
 
 2. Work on changes (e.g. fix a bug or add a new feature).
 
 3. Build, lint, and unit test projects.
 
-```bash
-rush build
-rush lint
-rush test
-```
+   ```bash
+   rush build
+   rush lint
+   rush test
+   ```
 
 4. Stage and commit changes using Conventional Commit.
 
-```bash
-git add .
-git commit -m 'doc: fix spelling of computers'
-```
+   ```bash
+   git add .
+   git commit -m 'doc: fix spelling of computers'
+   ```
 
 5. Document SemVer changes and cut new Changelog.
 
-```bash
-rush change
-rush version --bump
-```
+   ```bash
+   rush change
+   rush version --bump
+   ```
 
 6. Commit change log changes, push code to repo, and open PR.
 
-```bash
-git commit -m 'chore: bump change log'
-git push
-```
+   ```bash
+   git commit -m 'chore: bump change log'
+   git push
+   ```
 
 7. Celebrate contributing to @cats-cradle!
 
 ## Documentation
-
-![TypeScript](https://shields.io/badge/typescript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
-![AWS CDKv2](https://shields.io/badge/cdkv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
-![PNPM](https://shields.io/badge/pnpm-000?logo=pnpm&logoColor=FF9900&style=flat-square)
-![RushJS](https://shields.io/badge/RushJS-333?logo=microsoft&logoColor=FF7711&style=flat-square)
 
 - [Git Setup](docs/git-setup.md)
 - [Architecture Guidelines](docs/architecture-guidelines.md)
 - [Coding Standards](docs/CODING_STANDARDS.md)
 - [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 - [Third Party Docs](docs/third-party-docs.md)
+
+![TypeScript](https://shields.io/badge/typescript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
+![AWS CDKv2](https://shields.io/badge/cdkv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
+![PNPM](https://shields.io/badge/pnpm-000?logo=pnpm&logoColor=FF9900&style=flat-square)
+![RushJS](https://shields.io/badge/RushJS-333?logo=microsoft&logoColor=FF7711&style=flat-square)
 
 > **Note** Use `rush help` for information on builtin commands.
 
