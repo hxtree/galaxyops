@@ -42,6 +42,35 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 > **Note** Development of `@cats-cradle/base-game-engine` client requires
 > [additional tools](clients/base-game-engine/README.md).
 
+### Lifecycle of a Pull Request (~5 mins)
+
+```bash
+# Create a new branch in Git from the main branch
+git checkout -b feature/improve-readme
+# Work on changes (e.g. fix a bug or add a new feature)
+# Build project
+rush build
+# Run linter locally
+rush lint
+# Run unit tests
+rush test
+# stage changes
+git add .
+# commit changes using Conventional Commit
+git commit -m 'doc: fix spelling of computers'
+# document SemVer changes in Changelog
+rush change
+# cut new change log
+rush version --bump
+# commit change log changes
+git commit -m 'chore: bump change log'
+# push code to repo
+git push
+# open PR
+```
+
+Celebrate contributing to @cats-cradle!
+
 ### Folder Structure
 
 ```graphql

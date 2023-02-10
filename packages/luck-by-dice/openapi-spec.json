@@ -1,24 +1,19 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/roll/notation/{notation}/luck/{luck}": {
-      "get": {
-        "operationId": "RollController_turn",
-        "parameters": [
-          {
-            "name": "notation",
-            "required": true,
-            "in": "path",
-            "schema": { "type": "string" }
-          },
-          {
-            "name": "luck",
-            "required": true,
-            "in": "path",
-            "schema": { "type": "number" }
+    "/dice-roll": {
+      "post": {
+        "operationId": "DiceRollController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/QueryRollDto" }
+            }
           }
-        ],
-        "responses": { "200": { "description": "" } }
+        },
+        "responses": { "201": { "description": "" } }
       }
     }
   },
@@ -39,6 +34,26 @@
         "description": "The API key for lambda request."
       }
     },
-    "schemas": {}
+    "schemas": {
+      "QueryRollDto": {
+        "type": "object",
+        "properties": {
+          "notation": {
+            "type": "string",
+            "description": "Dice notation",
+            "default": "1d6"
+          },
+          "luck": { "type": "number", "description": "Characters luck" },
+          "iterations": {
+            "type": "number",
+            "description": "Amount of times to roll",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 1
+          }
+        },
+        "required": ["notation", "luck", "iterations"]
+      }
+    }
   }
 }
