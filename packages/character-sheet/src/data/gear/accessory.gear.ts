@@ -63,14 +63,14 @@ export namespace Accessory {
 
   export const FUNERAL_JAR: Type = {
     name: 'Funeral Jar',
-    description: 'a jar holding the ashes of the dead',
+    description: 'A jar holding the ashes of the dead',
     gearSlots: [Slot.WAIST],
     removable: false,
   };
 
   export const SWORD_SHEATH: Type = {
     name: 'Sword Sheath',
-    description: 'a sheath meant to hold a broad sword.',
+    description: 'A sheath meant to hold a broad sword.',
     gearSlots: [Slot.BACK],
   };
 
