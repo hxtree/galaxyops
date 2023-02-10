@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/archetype/id/{id}": {
+    "/archetypes/{id}": {
       "get": {
         "operationId": "ArchetypeController_find",
         "parameters": [
@@ -11,11 +11,12 @@
             "in": "path",
             "schema": {
               "enum": [
+                "MOTHER",
                 "MISCHIEVOUS_PIEBALD",
                 "JANUS_PERSIAN",
                 "LOOMEE_ANGORA",
-                "VALLON_ONI",
                 "OUERN_ONI",
+                "VALLON_ONI",
                 "MEEKU_ONI",
                 "ARINOTH_DIYATH",
                 "FAYE_IMAGO",
@@ -47,14 +48,21 @@
         "responses": { "200": { "description": "" } }
       }
     },
-    "/archetype/list": {
+    "/archetypes": {
       "get": {
         "operationId": "ArchetypeController_list",
         "parameters": [],
         "responses": { "200": { "description": "" } }
       }
     },
-    "/gear/id/{id}": {
+    "/gears": {
+      "get": {
+        "operationId": "GearController_list",
+        "parameters": [],
+        "responses": { "200": { "description": "" } }
+      }
+    },
+    "/gears/{id}": {
       "get": {
         "operationId": "GearController_find",
         "parameters": [
@@ -112,14 +120,14 @@
         "responses": { "200": { "description": "" } }
       }
     },
-    "/gear/list": {
+    "/skills": {
       "get": {
-        "operationId": "GearController_list",
+        "operationId": "SkillController_list",
         "parameters": [],
         "responses": { "200": { "description": "" } }
       }
     },
-    "/skill/id/{id}": {
+    "/skills/{id}": {
       "get": {
         "operationId": "SkillController_find",
         "parameters": [
@@ -245,13 +253,6 @@
             }
           }
         ],
-        "responses": { "200": { "description": "" } }
-      }
-    },
-    "/skill/list": {
-      "get": {
-        "operationId": "SkillController_list",
-        "parameters": [],
         "responses": { "200": { "description": "" } }
       }
     }
