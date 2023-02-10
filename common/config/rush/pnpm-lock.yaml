@@ -425,6 +425,7 @@ importers:
       '@cats-cradle/base-nodejs': workspace:*
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/validation-decorators': workspace:*
       '@nestjs/common': 9.1.1
       '@nestjs/core': 9.1.1
       '@nestjs/platform-express': 9.1.1
@@ -461,6 +462,7 @@ importers:
     dependencies:
       '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs': link:../../platform/constructs
+      '@cats-cradle/validation-decorators': link:../../libraries/validation-decorators
       '@nestjs/common': 9.1.1_allg6cauirbqzgqcmexy2wdnoq
       '@nestjs/core': 9.1.1_rnu4wbspjtr3am5p7vy7xio2ie
       '@nestjs/platform-express': 9.1.1_xhkir6qpcnigaiptpizzepd5vm

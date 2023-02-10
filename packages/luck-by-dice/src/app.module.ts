@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { RollModule } from './module/roll/roll.module';
+import { DiceRollModule } from './module/dice-roll/dice-roll.module';
 
 @Module({
-  imports: [RollModule],
+  imports: [DiceRollModule],
   providers: [],
   exports: [],
 })

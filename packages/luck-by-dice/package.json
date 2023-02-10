@@ -45,7 +45,8 @@
     "source-map-support": "~0.5.21",
     "@nestjs/swagger": "~6.1.3",
     "uuid": "~9.0.0",
-    "eslint": "8.26.0"
+    "eslint": "8.26.0",
+    "@cats-cradle/validation-decorators": "workspace:*"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "workspace:*",

@@ -2,6 +2,18 @@
   "name": "@cats-cradle/faker-factory",
   "entries": [
     {
+      "version": "0.0.5",
+      "tag": "@cats-cradle/faker-factory_v0.0.5",
+      "date": "Fri, 10 Feb 2023 06:12:26 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/eslint-config\" to `1.0.2`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.4",
       "tag": "@cats-cradle/faker-factory_v0.0.4",
       "date": "Thu, 09 Feb 2023 04:49:11 GMT",
