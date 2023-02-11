@@ -103,6 +103,10 @@
       "allowedCategories": [ "rigs" ]
     },
     {
+      "name": "@rushstack/node-core-library",
+      "allowedCategories": [ "cicd" ]
+    },
+    {
       "name": "@size-limit/preset-small-lib",
       "allowedCategories": [ "apis" ]
     },

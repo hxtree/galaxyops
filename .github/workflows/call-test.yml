@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        run: git fetch origin "+refs/heads/main:refs/remotes/origin/main"
 
       - name: Setup Node
         uses: actions/setup-node@v3
