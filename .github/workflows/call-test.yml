@@ -9,11 +9,20 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
+      - name: Check out code base
+        if: github.event_name == 'push'
         uses: actions/checkout@v3
         with:
           # fetch all history for all branches and tags (slow)
-          fetch-depth: '0'
+          fetch-depth: 0
+
+      - name: Check out code base
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v3
+        with:
+          # fetch all history for all branches and tags (slow)
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -36,4 +45,4 @@ jobs:
         run: node common/scripts/install-run-rush.js install
 
       - name: Test
-        run: node common/scripts/install-run-rush.js test
+        run: node common/scripts/install-run-rush.js test --impacted-by git:${{ github.event.pull_request.base.sha }}
