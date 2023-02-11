@@ -2,13 +2,12 @@
 
 **Cats Cradle** is a unreleased mobile role-playing game (RPG).
 
-This monorepo contains the development container, game engine, and
-infrastructure as code (IaC) used to continously deploy Cats Cradle in its
-entirety.
+This monorepo contains a devcontainer, platform as a service (PaaS),
+microservices, and infrastructure as code (IaC) used to continously deploy Cats
+Cradle in its entirety.
 
-The backend consist of many microservices programmed primarly in Typescript.
-These microservices are deployed using IaC, specically AWS CDKv2. Many packages
-developed from use in the game are avaliable as releases on NPM.
+Most packages developed for the game engine but are also published individually
+on NPM.
 
 The game engine client is built using Unreal Engine 5.
 
@@ -89,18 +88,17 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 - [Architecture Guidelines](docs/architecture-guidelines.md)
 - [Coding Standards](docs/CODING_STANDARDS.md)
 - [Code of Conduct](docs/CODE_OF_CONDUCT.md)
-- [Third Party Docs](docs/third-party-docs.md)
-
-![TypeScript](https://shields.io/badge/typescript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
-![AWS CDKv2](https://shields.io/badge/cdkv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
-![PNPM](https://shields.io/badge/pnpm-000?logo=pnpm&logoColor=FF9900&style=flat-square)
-![RushJS](https://shields.io/badge/RushJS-333?logo=microsoft&logoColor=FF7711&style=flat-square)
+- [Important Third Party Docs](docs/third-party-docs.md)
 
 > **Note** Use `rush help` for information on builtin commands.
 
 ## Contributing
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+![TypeScript](https://shields.io/badge/typescript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
+![AWS CDKv2](https://shields.io/badge/cdkv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
+![PNPM](https://shields.io/badge/pnpm-000?logo=pnpm&logoColor=FF9900&style=flat-square)
+![RushJS](https://shields.io/badge/RushJS-333?logo=microsoft&logoColor=FF7711&style=flat-square)
 
 Pull requests and bug reports are welcome on GitHub at
 <https://github.com/hxtree/cats-cradle>. This project is intended to be a safe,

@@ -19,7 +19,7 @@ export async function getChangedProjects(
   branch: string,
   tag?: string,
   configFile?: string,
-): Promise<any> {
+): Promise<ProjectType[]> {
   const rushConfiguration = configFile
     ? RushConfiguration.loadFromConfigurationFile(configFile)
     : RushConfiguration.loadFromDefaultLocation();
