@@ -36,4 +36,4 @@ jobs:
         run: node common/scripts/install-run-rush.js install
 
       - name: Test
-        run: node common/scripts/install-run-rush.js test --impacted-by git:${{ github.event.pull_request.base.sha }}
+        run: node common/scripts/install-run-rush.js test
