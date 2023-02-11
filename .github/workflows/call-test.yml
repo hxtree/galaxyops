@@ -11,7 +11,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        run: git fetch origin "+refs/heads/main:refs/remotes/origin/main"
 
       - name: Fetch main branch from origin
         run: git fetch --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
