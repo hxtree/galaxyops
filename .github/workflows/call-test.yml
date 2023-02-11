@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Fetch main branch from origin
-        run: git fetch --no-tags --prune --no-recurse-submodules --depth=$((${{ github.event.pull_request.commits }} + 1)) origin +refs/heads/main:refs/remotes/origin/main
+        run: git fetch --no-tags --prune --deepen=$((${{ github.event.pull_request.commits }} + 1)) origin +refs/heads/main:refs/remotes/origin/main
 
       - name: Setup Node
         uses: actions/setup-node@v3
