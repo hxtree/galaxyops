@@ -2,13 +2,24 @@ import {
   ProjectChangeAnalyzer,
   RushConfiguration,
   IGetChangedProjectsOptions,
+  RushConfigurationProject,
 } from '@microsoft/rush-lib';
 import {
   Terminal,
   ConsoleTerminalProvider,
 } from '@rushstack/node-core-library';
 
-export async function getChangedProjects(configFile?: string): Promise<any> {
+export type ProjectType = {
+  packageName: string;
+  relativeFolder: string;
+  absoluteFolder: string;
+};
+
+export async function getChangedProjects(
+  branch: string,
+  tag?: string,
+  configFile?: string,
+): Promise<any> {
   const rushConfiguration = configFile
     ? RushConfiguration.loadFromConfigurationFile(configFile)
     : RushConfiguration.loadFromDefaultLocation();
@@ -20,7 +31,7 @@ export async function getChangedProjects(configFile?: string): Promise<any> {
   const terminal = new Terminal(terminalProvider);
 
   const getChangedProjectOptions: IGetChangedProjectsOptions = {
-    targetBranchName: 'main',
+    targetBranchName: branch,
     includeExternalDependencies: true,
     terminal: terminal,
     enableFiltering: false,
@@ -30,7 +41,17 @@ export async function getChangedProjects(configFile?: string): Promise<any> {
     getChangedProjectOptions,
   );
 
-  console.log(changedProjects);
+  let projects: ProjectType[] = [];
 
-  return changedProjects;
+  changedProjects.forEach((project: RushConfigurationProject) => {
+    if (tag === undefined || project.tags.has(tag)) {
+      projects.push({
+        packageName: project.packageName,
+        relativeFolder: project.projectRelativeFolder,
+        absoluteFolder: project.projectFolder,
+      });
+    }
+  });
+
+  return Promise.resolve(projects);
 }
