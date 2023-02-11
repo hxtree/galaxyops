@@ -10,7 +10,7 @@
     "build": "tsc",
     "build:all": "rush build -t .",
     "watch": "tsc -w",
-    "test": "jest",
+    "test:local": "jest",
     "cdk": "cdk",
     "hotswap": "cdk deploy --hotswap",
     "lint": "",
