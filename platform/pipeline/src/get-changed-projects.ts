@@ -20,38 +20,46 @@ export async function getChangedProjects(
   tag?: string,
   configFile?: string,
 ): Promise<ProjectType[]> {
-  const rushConfiguration = configFile
-    ? RushConfiguration.loadFromConfigurationFile(configFile)
-    : RushConfiguration.loadFromDefaultLocation();
+  try {
+    const rushConfiguration = configFile
+      ? RushConfiguration.loadFromConfigurationFile(configFile)
+      : RushConfiguration.loadFromDefaultLocation();
 
-  const projectChangeAnalyzer: ProjectChangeAnalyzer =
-    new ProjectChangeAnalyzer(rushConfiguration);
+    const projectChangeAnalyzer: ProjectChangeAnalyzer =
+      new ProjectChangeAnalyzer(rushConfiguration);
 
-  const terminalProvider = new ConsoleTerminalProvider();
-  const terminal = new Terminal(terminalProvider);
+    const terminalProvider = new ConsoleTerminalProvider();
+    const terminal = new Terminal(terminalProvider);
 
-  const getChangedProjectOptions: IGetChangedProjectsOptions = {
-    targetBranchName: branch,
-    includeExternalDependencies: true,
-    terminal: terminal,
-    enableFiltering: false,
-  };
+    const getChangedProjectOptions: IGetChangedProjectsOptions = {
+      targetBranchName: branch,
+      includeExternalDependencies: true,
+      terminal: terminal,
+      enableFiltering: false,
+    };
 
-  const changedProjects = await projectChangeAnalyzer.getChangedProjectsAsync(
-    getChangedProjectOptions,
-  );
+    const changedProjects = await projectChangeAnalyzer.getChangedProjectsAsync(
+      getChangedProjectOptions,
+    );
 
-  let projects: ProjectType[] = [];
+    let projects: ProjectType[] = [];
 
-  changedProjects.forEach((project: RushConfigurationProject) => {
-    if (tag === undefined || project.tags.has(tag)) {
-      projects.push({
-        packageName: project.packageName,
-        relativeFolder: project.projectRelativeFolder,
-        absoluteFolder: project.projectFolder,
-      });
-    }
-  });
+    changedProjects.forEach((project: RushConfigurationProject) => {
+      if (tag === undefined || project.tags.has(tag)) {
+        projects.push({
+          packageName: project.packageName,
+          relativeFolder: project.projectRelativeFolder,
+          absoluteFolder: project.projectFolder,
+        });
+      }
+    });
 
-  return Promise.resolve(projects);
+    return Promise.resolve(projects);
+  } catch (error: any) {
+    return Promise.reject(
+      new Error(
+        'Failed to detect project change, presumably git clone is not deep enough',
+      ),
+    );
+  }
 }
