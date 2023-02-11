@@ -46,6 +46,6 @@ jobs:
           PROJECT_ROOT: ${{ github.workspace }}
 
       - name: rush synth
-        run: node common/scripts/install-run-rush.js cdk:synth
+        run: node common/scripts/install-run-rush.js cdk:synth --impacted-by git:${{ github.event.pull_request.base.sha }}
         env:
           PROJECT_ROOT: ${{ github.workspace }}
