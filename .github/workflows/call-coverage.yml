@@ -5,6 +5,8 @@ on:
     secrets:
       CODACY_PROJECT_TOKEN:
         required: true
+      IMPACTED_BY_SHA:
+        required: true
 
 jobs:
   rush-coverage:

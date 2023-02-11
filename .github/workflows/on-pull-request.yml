@@ -6,9 +6,13 @@ on:
 jobs:
   Lint:
     uses: ./.github/workflows/call-lint.yml
+    secrets:
+      IMPACTED_BY_SHA: ${{ github.event.pull_request.head.sha }}
 
   Build:
     uses: ./.github/workflows/call-build.yml
+    secrets:
+      IMPACTED_BY_SHA: ${{ github.event.pull_request.head.sha }}
 
   Test:
     uses: ./.github/workflows/call-test.yml
@@ -17,8 +21,11 @@ jobs:
 
   IaC:
     uses: ./.github/workflows/call-cdk-synth.yml
+    secrets:
+      IMPACTED_BY_SHA: ${{ github.event.pull_request.head.sha }}
 
   Coverage:
     uses: ./.github/workflows/call-coverage.yml
     secrets:
       CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+      IMPACTED_BY_SHA: ${{ github.event.pull_request.head.sha }}
