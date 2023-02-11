@@ -13,6 +13,8 @@ jobs:
 
   Test:
     uses: ./.github/workflows/call-test.yml
+    secrets:
+      IMPACTED_BY_SHA: ${{ github.event.before }}
 
   IaC:
     uses: ./.github/workflows/call-cdk-synth.yml
