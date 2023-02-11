@@ -1,7 +1,10 @@
 name: Lint
 
 on:
-    workflow_call:
+  workflow_call:
+    secrets:
+      IMPACTED_BY_SHA:
+        required: true
 
 jobs:
   rush-lint:
@@ -33,4 +36,4 @@ jobs:
         run: node common/scripts/install-run-rush.js install
 
       - name: lint
-        run: node common/scripts/install-run-rush.js lint:ci
+        run: node common/scripts/install-run-rush.js lint:ci --impacted-by git:${{ secrets.IMPACTED_BY_SHA }}
