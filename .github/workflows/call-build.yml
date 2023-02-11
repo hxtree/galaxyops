@@ -1,8 +1,10 @@
 name: Build
 
 on:
-    workflow_call:
-
+  workflow_call:
+    secrets:
+      IMPACTED_BY_SHA:
+        required: true
 jobs:
   rush-build:
     name: rush build
