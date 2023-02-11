@@ -9,8 +9,11 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: checkout repository
         uses: actions/checkout@v3
+        with:
+          # fetch all history for all branches and tags (slow)
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -33,4 +36,4 @@ jobs:
         run: node common/scripts/install-run-rush.js install
 
       - name: lint
-        run: node common/scripts/install-run-rush.js lint:ci
+        run: node common/scripts/install-run-rush.js lint:ci --impacted-by git:${{ github.event.pull_request.base.sha }}

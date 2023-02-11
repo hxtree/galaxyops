@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
+        with:
+          # fetch all history for all branches and tags (slow)
+          fetch-depth: 0
 
       - name: setup Node
         uses: actions/setup-node@v3
@@ -46,6 +49,6 @@ jobs:
           PROJECT_ROOT: ${{ github.workspace }}
 
       - name: rush synth
-        run: node common/scripts/install-run-rush.js cdk:synth
+        run: node common/scripts/install-run-rush.js cdk:synth --impacted-by git:${{ github.event.pull_request.base.sha }}
         env:
           PROJECT_ROOT: ${{ github.workspace }}

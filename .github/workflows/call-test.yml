@@ -9,12 +9,11 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: checkout repository
         uses: actions/checkout@v3
-        run: git fetch origin "+refs/heads/main:refs/remotes/origin/main"
-
-      - name: Fetch main branch from origin
-        run: git fetch --no-tags --prune --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+        with:
+          # fetch all history for all branches and tags (slow)
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v3
