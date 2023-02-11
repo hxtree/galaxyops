@@ -1,7 +1,10 @@
 name: Test
 
 on:
-    workflow_call:
+  workflow_call:
+    secrets:
+      IMPACTED_BY_SHA:
+        required: true
 
 jobs:
   rush-test:
@@ -22,7 +25,7 @@ jobs:
         with:
           # fetch all history for all branches and tags (slow)
           fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ secrets.IMPACTED_BY_SHA }}
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -45,4 +48,4 @@ jobs:
         run: node common/scripts/install-run-rush.js install
 
       - name: Test
-        run: node common/scripts/install-run-rush.js test --impacted-by git:${{ github.event.pull_request.base.sha }}
+        run: node common/scripts/install-run-rush.js test --impacted-by git:${{ secrets.IMPACTED_BY_SHA }}
