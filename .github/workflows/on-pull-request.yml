@@ -28,3 +28,4 @@ jobs:
     uses: ./.github/workflows/call-coverage.yml
     secrets:
       CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+      IMPACTED_BY_SHA: ${{ github.event.pull_request.head.sha }}
