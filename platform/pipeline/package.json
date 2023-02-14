@@ -16,11 +16,11 @@
     "lint": "",
     "lint:ci": "",
     "docs": "typedoc --entryPointStrategy expand ./src",
-    "cdk:deploy": "cdk deploy",
-    "cdk:destroy": "cdk destroy",
-    "cdk:diff": "cdk diff",
-    "cdk:synth": "cdk synth",
-    "cdk:bootstrap": "cdk bootstrap",
+    "cdk:deploy:tools": "cdk deploy",
+    "cdk:destroy:tools": "cdk destroy",
+    "cdk:diff:tools": "cdk diff",
+    "cdk:synth:tools": "cdk synth",
+    "cdk:bootstrap:tools": "cdk bootstrap",
     "depcheck": "npx depcheck"
   },
   "dependencies": {
