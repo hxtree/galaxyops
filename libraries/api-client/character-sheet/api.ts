@@ -39,11 +39,12 @@ import {
 
 export const archetypeControllerFindKey = (
   id:
+    | 'MOTHER'
     | 'MISCHIEVOUS_PIEBALD'
     | 'JANUS_PERSIAN'
     | 'LOOMEE_ANGORA'
-    | 'VALLON_ONI'
     | 'OUERN_ONI'
+    | 'VALLON_ONI'
     | 'MEEKU_ONI'
     | 'ARINOTH_DIYATH'
     | 'FAYE_IMAGO'
@@ -69,7 +70,7 @@ export const archetypeControllerFindKey = (
     | 'DEEP_THINKER',
   options: any = {},
 ) => {
-  const localVarPath = `/archetype/id/{id}`.replace(
+  const localVarPath = `/archetypes/{id}`.replace(
     `{${'id'}}`,
     encodeURIComponent(String(id)),
   );
@@ -79,7 +80,7 @@ export const archetypeControllerFindKey = (
   return canSearch ? localVarUrlObj.toString() : null;
 };
 export const archetypeControllerListKey = (options: any = {}) => {
-  const localVarPath = `/archetype/list`;
+  const localVarPath = `/archetypes`;
   // use dummy base URL string because the URL constructor only accepts absolute URLs.
   const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
   const canSearch = true;
@@ -129,7 +130,7 @@ export const gearControllerFindKey = (
     | 'VIOLATED',
   options: any = {},
 ) => {
-  const localVarPath = `/gear/id/{id}`.replace(
+  const localVarPath = `/gears/{id}`.replace(
     `{${'id'}}`,
     encodeURIComponent(String(id)),
   );
@@ -139,7 +140,7 @@ export const gearControllerFindKey = (
   return canSearch ? localVarUrlObj.toString() : null;
 };
 export const gearControllerListKey = (options: any = {}) => {
-  const localVarPath = `/gear/list`;
+  const localVarPath = `/gears`;
   // use dummy base URL string because the URL constructor only accepts absolute URLs.
   const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
   const canSearch = true;
@@ -260,7 +261,7 @@ export const skillControllerFindKey = (
     | 'RAGE',
   options: any = {},
 ) => {
-  const localVarPath = `/skill/id/{id}`.replace(
+  const localVarPath = `/skills/{id}`.replace(
     `{${'id'}}`,
     encodeURIComponent(String(id)),
   );
@@ -270,7 +271,7 @@ export const skillControllerFindKey = (
   return canSearch ? localVarUrlObj.toString() : null;
 };
 export const skillControllerListKey = (options: any = {}) => {
-  const localVarPath = `/skill/list`;
+  const localVarPath = `/skills`;
   // use dummy base URL string because the URL constructor only accepts absolute URLs.
   const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
   const canSearch = true;
@@ -287,17 +288,18 @@ export const DefaultApiAxiosParamCreator = function (
   return {
     /**
      *
-     * @param {'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER'} id
+     * @param {'MOTHER' | 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'OUERN_ONI' | 'VALLON_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER'} id
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     archetypeControllerFind: async (
       id:
+        | 'MOTHER'
         | 'MISCHIEVOUS_PIEBALD'
         | 'JANUS_PERSIAN'
         | 'LOOMEE_ANGORA'
-        | 'VALLON_ONI'
         | 'OUERN_ONI'
+        | 'VALLON_ONI'
         | 'MEEKU_ONI'
         | 'ARINOTH_DIYATH'
         | 'FAYE_IMAGO'
@@ -325,7 +327,7 @@ export const DefaultApiAxiosParamCreator = function (
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('archetypeControllerFind', 'id', id);
-      const localVarPath = `/archetype/id/{id}`.replace(
+      const localVarPath = `/archetypes/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id)),
       );
@@ -366,7 +368,7 @@ export const DefaultApiAxiosParamCreator = function (
     archetypeControllerList: async (
       options: any = {},
     ): Promise<RequestArgs> => {
-      const localVarPath = `/archetype/list`;
+      const localVarPath = `/archetypes`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
       let baseOptions;
@@ -448,7 +450,7 @@ export const DefaultApiAxiosParamCreator = function (
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('gearControllerFind', 'id', id);
-      const localVarPath = `/gear/id/{id}`.replace(
+      const localVarPath = `/gears/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id)),
       );
@@ -487,7 +489,7 @@ export const DefaultApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     gearControllerList: async (options: any = {}): Promise<RequestArgs> => {
-      const localVarPath = `/gear/list`;
+      const localVarPath = `/gears`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
       let baseOptions;
@@ -640,7 +642,7 @@ export const DefaultApiAxiosParamCreator = function (
     ): Promise<RequestArgs> => {
       // verify required parameter 'id' is not null or undefined
       assertParamExists('skillControllerFind', 'id', id);
-      const localVarPath = `/skill/id/{id}`.replace(
+      const localVarPath = `/skills/{id}`.replace(
         `{${'id'}}`,
         encodeURIComponent(String(id)),
       );
@@ -679,7 +681,7 @@ export const DefaultApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     skillControllerList: async (options: any = {}): Promise<RequestArgs> => {
-      const localVarPath = `/skill/list`;
+      const localVarPath = `/skills`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
       let baseOptions;
@@ -721,17 +723,18 @@ export const DefaultApiFp = function (configuration?: Configuration) {
   return {
     /**
      *
-     * @param {'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER'} id
+     * @param {'MOTHER' | 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'OUERN_ONI' | 'VALLON_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER'} id
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     async archetypeControllerFind(
       id:
+        | 'MOTHER'
         | 'MISCHIEVOUS_PIEBALD'
         | 'JANUS_PERSIAN'
         | 'LOOMEE_ANGORA'
-        | 'VALLON_ONI'
         | 'OUERN_ONI'
+        | 'VALLON_ONI'
         | 'MEEKU_ONI'
         | 'ARINOTH_DIYATH'
         | 'FAYE_IMAGO'
@@ -1034,17 +1037,18 @@ export const DefaultApiFactory = function (
   return {
     /**
      *
-     * @param {'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER'} id
+     * @param {'MOTHER' | 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'OUERN_ONI' | 'VALLON_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER'} id
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     archetypeControllerFind(
       id:
+        | 'MOTHER'
         | 'MISCHIEVOUS_PIEBALD'
         | 'JANUS_PERSIAN'
         | 'LOOMEE_ANGORA'
-        | 'VALLON_ONI'
         | 'OUERN_ONI'
+        | 'VALLON_ONI'
         | 'MEEKU_ONI'
         | 'ARINOTH_DIYATH'
         | 'FAYE_IMAGO'
@@ -1294,18 +1298,19 @@ export const DefaultApiFactory = function (
 export interface DefaultApiInterface {
   /**
    *
-   * @param {'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER'} id
+   * @param {'MOTHER' | 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'OUERN_ONI' | 'VALLON_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER'} id
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
    * @memberof DefaultApiInterface
    */
   archetypeControllerFind(
     id:
+      | 'MOTHER'
       | 'MISCHIEVOUS_PIEBALD'
       | 'JANUS_PERSIAN'
       | 'LOOMEE_ANGORA'
-      | 'VALLON_ONI'
       | 'OUERN_ONI'
+      | 'VALLON_ONI'
       | 'MEEKU_ONI'
       | 'ARINOTH_DIYATH'
       | 'FAYE_IMAGO'
@@ -1541,18 +1546,19 @@ export interface DefaultApiInterface {
 export class DefaultApi extends BaseAPI implements DefaultApiInterface {
   /**
    *
-   * @param {'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'VALLON_ONI' | 'OUERN_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER'} id
+   * @param {'MOTHER' | 'MISCHIEVOUS_PIEBALD' | 'JANUS_PERSIAN' | 'LOOMEE_ANGORA' | 'OUERN_ONI' | 'VALLON_ONI' | 'MEEKU_ONI' | 'ARINOTH_DIYATH' | 'FAYE_IMAGO' | 'GAALI_RUNEWIN' | 'GUNTER_STONEWELL' | 'MALACE_TSIA' | 'PENNY_KIBBUTZ' | 'TRAEZ_UTHSHA' | 'VOID' | 'GENKI' | 'LAWZON_GREY' | 'MADHI_TSIA' | 'SUYRI' | 'WISP' | 'ASMIN' | 'DIAG' | 'MONARCH' | 'VICEROY' | 'SPIDER' | 'WARLING' | 'SEA_HORSE' | 'SENSITIVE_PLANT' | 'DEEP_THINKER'} id
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
    * @memberof DefaultApi
    */
   public archetypeControllerFind(
     id:
+      | 'MOTHER'
       | 'MISCHIEVOUS_PIEBALD'
       | 'JANUS_PERSIAN'
       | 'LOOMEE_ANGORA'
-      | 'VALLON_ONI'
       | 'OUERN_ONI'
+      | 'VALLON_ONI'
       | 'MEEKU_ONI'
       | 'ARINOTH_DIYATH'
       | 'FAYE_IMAGO'
