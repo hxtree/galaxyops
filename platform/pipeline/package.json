@@ -18,9 +18,9 @@
     "docs": "typedoc --entryPointStrategy expand ./src",
     "cdk:deploy": "cdk deploy",
     "cdk:destroy": "cdk destroy",
-    "diff": "cdk diff",
-    "synth": "cdk synth",
-    "bootstrap": "cdk bootstrap",
+    "cdk:diff": "cdk diff",
+    "cdk:synth": "cdk synth",
+    "cdk:bootstrap": "cdk bootstrap",
     "depcheck": "npx depcheck"
   },
   "dependencies": {
