@@ -12,7 +12,7 @@
         "templateDir": "./common/config/openapitools/templates/typescript-axios",
         "additionalProperties": {
           "npmName": "@cats-cradle/api-client-character-sheet",
-          "npmVersion": "1.0.0",
+          "npmVersion": "1.0.2",
           "npmRepository": "https://github.com/hxtree/cats-cradle",
           "withInterfaces": true,
           "stringEnums": true
@@ -26,7 +26,7 @@
         "templateDir": "./common/config/openapitools/templates/typescript-axios",
         "additionalProperties": {
           "npmName": "@cats-cradle/api-client-luck-by-dice",
-          "npmVersion": "1.0.0",
+          "npmVersion": "1.0.2",
           "npmRepository": "https://github.com/hxtree/cats-cradle",
           "withInterfaces": true,
           "stringEnums": true
