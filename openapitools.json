@@ -5,7 +5,7 @@
     "version": "6.2.1",
     "generators": {
       "character-sheet": {
-        "output": "./libraries/api-client/character-sheet",
+        "output": "./libraries/api-client-character-sheet",
         "inputSpec": "./packages/character-sheet/openapi-spec.json",
         "ignoreFileOverride": "./common/config/openapitools/.openapi-generator-ignore",
         "generatorName": "typescript-axios",
@@ -19,7 +19,7 @@
         }
       },
       "luck-by-dice": {
-        "output": "./libraries/api-client/luck-by-dice",
+        "output": "./libraries/api-client-luck-by-dice",
         "inputSpec": "./packages/luck-by-dice/openapi-spec.json",
         "ignoreFileOverride": "./common/config/openapitools/.openapi-generator-ignore",
         "generatorName": "typescript-axios",

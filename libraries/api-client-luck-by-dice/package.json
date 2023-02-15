@@ -1,16 +1,16 @@
 {
-  "name": "@cats-cradle/api-client-character-sheet",
+  "name": "@cats-cradle/api-client-luck-by-dice",
   "version": "1.0.0",
-  "description": "OpenAPI client for @cats-cradle/api-client-character-sheet",
+  "description": "OpenAPI client for @cats-cradle/api-client-luck-by-dice",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
     "axios",
     "typescript",
     "openapi-client",
     "openapi-generator",
-    "@cats-cradle/api-client-character-sheet"
+    "@cats-cradle/api-client-luck-by-dice"
   ],
-  "license": "Unlicense",
+  "license": "MIT",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {

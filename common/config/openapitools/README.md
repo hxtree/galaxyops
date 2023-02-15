@@ -1,4 +1,4 @@
-# @cats-cradle
+# openapitools
 
 Service Endpoint Contracts are a part of the Microservice API Patterns (MAP).
 Contracts are used for to define communication agreements between microservices.
