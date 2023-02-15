@@ -117,7 +117,7 @@
     },
     {
       "packageName": "@cats-cradle/api-client-luck-by-dice",
-      "projectFolder": "libraries/api-client/luck-by-dice",
+      "projectFolder": "libraries/api-client-luck-by-dice",
       "reviewCategory": "api-client",
       "shouldPublish": true,
       "cyclicDependencyProjects": [],
@@ -125,7 +125,7 @@
     },
     {
       "packageName": "@cats-cradle/api-client-character-sheet",
-      "projectFolder": "libraries/api-client/character-sheet",
+      "projectFolder": "libraries/api-client-character-sheet",
       "reviewCategory": "api-client",
       "shouldPublish": true,
       "cyclicDependencyProjects": [],
