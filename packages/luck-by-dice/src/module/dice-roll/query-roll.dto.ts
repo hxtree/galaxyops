@@ -3,7 +3,7 @@ import {
   IsDiceNotation,
   IsNumber,
   IsOptional,
-} from '@cats-cradle/validation-decorators';
+} from '@cats-cradle/validation-schemas';
 import { Max, Min } from 'class-validator';
 
 export class QueryRollDto {

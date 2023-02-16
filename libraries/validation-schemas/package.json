@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/validation-decorators",
+  "name": "@cats-cradle/validation-schemas",
   "version": "0.2.0",
   "main": "./dist/index.js",
   "license": "MIT",
