@@ -116,6 +116,14 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@cats-cradle/inject-database",
+      "projectFolder": "libraries/inject-database",
+      "reviewCategory": "libraries",
+      "cyclicDependencyProjects": [],
+      "tags": ["library"],
+      "shouldPublish": true
+    },
+    {
       "packageName": "@cats-cradle/api-client-luck-by-dice",
       "projectFolder": "libraries/api-client-luck-by-dice",
       "reviewCategory": "api-client",

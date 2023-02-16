@@ -64,11 +64,19 @@
     },
     {
       "name": "@nestjs/common",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+    },
+    {
+      "name": "@nestjs/config",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/core",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "libraries", "platform" ]
+    },
+    {
+      "name": "@nestjs/mongoose",
+      "allowedCategories": [ "libraries", "rigs" ]
     },
     {
       "name": "@nestjs/platform-express",
@@ -81,6 +89,10 @@
     {
       "name": "@nestjs/terminus",
       "allowedCategories": [ "apis", "platform" ]
+    },
+    {
+      "name": "@nestjs/testing",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@reduxjs/toolkit",
@@ -203,6 +215,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "connection-string",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "construct",
       "allowedCategories": [ "apis" ]
     },
@@ -291,8 +307,12 @@
       "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
     },
     {
+      "name": "mongodb-memory-server",
+      "allowedCategories": [ "libraries", "rigs" ]
+    },
+    {
       "name": "mongoose",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
     },
     {
       "name": "node-cache",
@@ -369,6 +389,10 @@
     {
       "name": "ts-jest",
       "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
+    },
+    {
+      "name": "ts-mongoose-pagination",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "ts-node",
