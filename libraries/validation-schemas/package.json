@@ -1,13 +1,11 @@
 {
-  "name": "@cats-cradle/inject-database",
-  "version": "0.0.1",
-  "main": "./dist/src/index.js",
+  "name": "@cats-cradle/validation-schemas",
+  "version": "0.2.0",
+  "main": "./dist/index.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"
-  },
-  "bugs": {
-    "url": "https://github.com/hxtree/cats-cradle/issues"
   },
   "scripts": {
     "build": "tsc",
@@ -15,25 +13,21 @@
     "watch": "tsc -w",
     "test": "jest",
     "test:cov": "jest --coverage",
-    "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix",
-    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run",
+    "lint": "eslint --format visualstudio \"./src/*.ts\" --fix",
+    "lint:ci": "eslint --format visualstudio \"./src/*.ts\" --fix-dry-run",
     "depcheck": "npx depcheck"
   },
   "dependencies": {
     "class-transformer": "0.5.1",
     "class-validator": "0.13.2",
+    "uuid": "~9.0.0",
+    "lodash": "~4.17.21",
+    "@types/lodash": "~4.14.191",
     "@cats-cradle/base-nodejs": "workspace:*",
     "reflect-metadata": "0.1.13",
     "@types/validator": "~13.7.10",
-    "mongodb-memory-server": "~8.11.4",
-    "@nestjs/config": "~2.3.1",
-    "@nestjs/common": "9.3.9",
-    "@nestjs/mongoose": "9.2.1",
-    "@nestjs/core": "9.3.9",
-    "mongoose": "~6.9.1",
-    "connection-string": "~4.3.6",
-    "uuid": "~9.0.0",
-    "ts-mongoose-pagination": "~1.1.2"
+    "currency.js": "~2.0.4",
+    "openapi3-ts": "~3.1.2"
   },
   "devDependencies": {
     "@types/jest": "28.1.8",
@@ -43,8 +37,9 @@
     "typescript": "4.9.5",
     "ts-node": "10.9.1",
     "esbuild": "~0.17.5",
+    "@types/uuid": "~8.3.4",
     "eslint": "8.26.0",
     "@cats-cradle/eslint-config": "workspace:*",
-    "@nestjs/testing": "~9.3.9"
+    "@types/json-schema": "~7.0.11"
   }
 }

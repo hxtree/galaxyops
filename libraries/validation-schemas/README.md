@@ -1,4 +1,4 @@
-# @cats-cradle/validation-decorators
+# @cats-cradle/validation-schemas
 
 Contains standard class-validator decorators and custom decorators for use
 primarly in defining and validating data used in game design.
@@ -8,7 +8,7 @@ import {
   validateSync,
   ValidationError,
   IsDiceNotation,
-} from '@cats-cradle/validation-decorators';
+} from '@cats-cradle/validation-schemas';
 
 class Turn {
   @IsDiceNotation()

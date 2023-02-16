@@ -35,6 +35,14 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@cats-cradle/validation-schemas",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@cats-cradle/validation-schemass",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@emotion/react",
       "allowedCategories": [ "apis" ]
     },
@@ -79,8 +87,16 @@
       "allowedCategories": [ "libraries", "rigs" ]
     },
     {
+      "name": "@nestjs/passport",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@nestjs/platform-express",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "libraries", "platform" ]
+    },
+    {
+      "name": "@nestjs/schematics",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@nestjs/swagger",
@@ -363,8 +379,12 @@
       "allowedCategories": [ "apis", "libraries", "platform" ]
     },
     {
+      "name": "rimraf",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "rxjs",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "libraries", "platform" ]
     },
     {
       "name": "sass",

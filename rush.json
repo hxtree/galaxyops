@@ -92,8 +92,8 @@
       "tags": ["platform-team"]
     },
     {
-      "packageName": "@cats-cradle/validation-decorators",
-      "projectFolder": "libraries/validation-decorators",
+      "packageName": "@cats-cradle/validation-schemas",
+      "projectFolder": "libraries/validation-schemas",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
       "tags": ["library"],
@@ -116,8 +116,8 @@
       "shouldPublish": true
     },
     {
-      "packageName": "@cats-cradle/inject-database",
-      "projectFolder": "libraries/inject-database",
+      "packageName": "@cats-cradle/nestjs-modules",
+      "projectFolder": "libraries/nestjs-modules",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
       "tags": ["library"],
