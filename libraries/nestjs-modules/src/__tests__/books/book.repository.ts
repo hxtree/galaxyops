@@ -40,7 +40,7 @@ export class BooksRepository {
     size: number,
   ): Promise<IPaginateResult<TBookDocument>> {
     const conditions = {
-      $or: [{ brand: { $regex: search } }, { description: { $regex: search } }],
+      $or: [{ title: { $regex: search } }],
     };
     const options = {
       perPage: size,

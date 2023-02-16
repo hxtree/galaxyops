@@ -1,1 +1,1 @@
-export * from './mongoose-factories';
+export * from './mongoose.module';
