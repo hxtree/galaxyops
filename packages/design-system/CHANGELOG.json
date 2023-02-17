@@ -1,0 +1,17 @@
+{
+  "name": "@cats-cradle/design-system",
+  "entries": [
+    {
+      "version": "1.0.1",
+      "tag": "@cats-cradle/design-system_v1.0.1",
+      "date": "Fri, 17 Feb 2023 14:05:59 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/eslint-config\" to `1.0.3`"
+          }
+        ]
+      }
+    }
+  ]
+}
