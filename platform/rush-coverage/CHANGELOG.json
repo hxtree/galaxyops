@@ -2,6 +2,18 @@
   "name": "@cats-cradle/rush-coverage",
   "entries": [
     {
+      "version": "0.0.4",
+      "tag": "@cats-cradle/rush-coverage_v0.0.4",
+      "date": "Fri, 17 Feb 2023 14:05:59 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/eslint-config\" to `1.0.3`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.3",
       "tag": "@cats-cradle/rush-coverage_v0.0.3",
       "date": "Fri, 10 Feb 2023 06:12:26 GMT",

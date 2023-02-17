@@ -2,6 +2,18 @@
   "name": "@cats-cradle/promare-gradients",
   "entries": [
     {
+      "version": "1.0.3",
+      "tag": "@cats-cradle/promare-gradients_v1.0.3",
+      "date": "Fri, 17 Feb 2023 14:05:59 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/eslint-config\" to `1.0.3`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.2",
       "tag": "@cats-cradle/promare-gradients_v1.0.2",
       "date": "Fri, 10 Feb 2023 06:12:26 GMT",

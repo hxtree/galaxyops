@@ -1,6 +1,18 @@
 {
-  "name": "@cats-cradle/validation-decorators",
+  "name": "@cats-cradle/validation-schemas",
   "entries": [
+    {
+      "version": "0.2.1",
+      "tag": "@cats-cradle/validation-schemas_v0.2.1",
+      "date": "Fri, 17 Feb 2023 14:05:59 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/eslint-config\" to `1.0.3`"
+          }
+        ]
+      }
+    },
     {
       "version": "0.2.0",
       "tag": "@cats-cradle/validation-decorators_v0.2.0",

@@ -173,7 +173,8 @@
       "projectFolder": "packages/luck-by-dice",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["game-design-team"]
+      "tags": ["game-design-team"],
+      "shouldPublish": true
     }
   ]
 }
