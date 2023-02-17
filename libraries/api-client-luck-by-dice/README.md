@@ -1,6 +1,6 @@
 ## @cats-cradle/api-client-luck-by-dice
 
-1.0.0
+1.0.2
 
 This is an [axios](https://github.com/axios/axios) client for making request to
 a @cats-cradle/api-client-luck-by-dice endpoint. It can be used in both
@@ -11,5 +11,5 @@ resolved via `package.json`
 ## Getting Started
 
 ```
-npm install @cats-cradle/api-client-luck-by-dice@1.0.0 --save
+npm install @cats-cradle/api-client-luck-by-dice@1.0.2 --save
 ```

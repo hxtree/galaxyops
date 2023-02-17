@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/api-client-character-sheet",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "OpenAPI client for @cats-cradle/api-client-character-sheet",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
