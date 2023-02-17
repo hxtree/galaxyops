@@ -1,6 +1,7 @@
 # @cats-cradle/nestjs-modules
 
-NestJs Modules contains injectable NestJs modules for use in other packages.
+NestJs Modules contains resuable injectable NestJs modules for use in other
+packages.
 
 ## Documentation
 

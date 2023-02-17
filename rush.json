@@ -51,8 +51,8 @@
       "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",
       "cyclicDependencyProjects": [],
-      "shouldPublish": true,
-      "tags": ["platform-team"]
+      "tags": ["platform-team"],
+      "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/pipeline",
@@ -65,9 +65,9 @@
       "packageName": "@cats-cradle/rush-coverage",
       "projectFolder": "platform/rush-coverage",
       "reviewCategory": "cicd",
-      "shouldPublish": true,
       "cyclicDependencyProjects": [],
-      "tags": ["platform-team"]
+      "tags": ["platform-team"],
+      "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/constructs",
@@ -87,9 +87,9 @@
       "packageName": "@cats-cradle/eslint-config",
       "projectFolder": "platform/eslint-config",
       "reviewCategory": "platform",
-      "shouldPublish": true,
       "cyclicDependencyProjects": [],
-      "tags": ["platform-team"]
+      "tags": ["platform-team"],
+      "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/validation-schemas",
@@ -127,24 +127,25 @@
       "packageName": "@cats-cradle/api-client-luck-by-dice",
       "projectFolder": "libraries/api-client-luck-by-dice",
       "reviewCategory": "api-client",
-      "shouldPublish": true,
       "cyclicDependencyProjects": [],
-      "tags": ["game-design-team"]
+      "tags": ["game-design-team"],
+      "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/api-client-character-sheet",
       "projectFolder": "libraries/api-client-character-sheet",
       "reviewCategory": "api-client",
-      "shouldPublish": true,
       "cyclicDependencyProjects": [],
-      "tags": ["game-design-team"]
+      "tags": ["game-design-team"],
+      "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/design-system",
       "projectFolder": "packages/design-system",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["ux-team"]
+      "tags": ["ux-team"],
+      "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/gm-client",
