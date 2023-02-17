@@ -31,6 +31,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@cats-cradle/nestjs-modules",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@cats-cradle/validation-decorators",
       "allowedCategories": [ "apis" ]
     },
@@ -108,7 +112,7 @@
     },
     {
       "name": "@nestjs/testing",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "@reduxjs/toolkit",
@@ -400,6 +404,10 @@
     },
     {
       "name": "styled-components",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "supertest",
       "allowedCategories": [ "apis" ]
     },
     {

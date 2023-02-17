@@ -1,6 +1,9 @@
 {
   "roots": ["<rootDir>/src/", "<rootDir>/stacks/"],
-  "testMatch": ["<rootDir>/src/**/*.test.ts", "<rootDir>/stacks/**/*.test.ts"],
+  "testMatch": [
+    "<rootDir>/src/**/*.{test,e2e-spec}.ts",
+    "<rootDir>/stacks/**/*.test.ts"
+  ],
   "testPathIgnorePatterns": ["/node_modules/"],
   "transform": {
     "^.+\\.tsx?$": "ts-jest"

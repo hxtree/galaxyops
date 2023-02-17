@@ -1,8 +1,6 @@
-# @cats-cradle/inject-database
+# @cats-cradle/nestjs-modules
 
-Inject-Database is a NestJs Injectable database designed to be a one stop shop
-for other services to connect to databases. Currently only MongoDB using MongoDB
-should be supported.
+NestJs Modules contains injectable NestJs modules for use in other packages.
 
 ## Documentation
 
