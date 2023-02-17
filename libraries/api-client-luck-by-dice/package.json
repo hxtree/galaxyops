@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/api-client-luck-by-dice",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "OpenAPI client for @cats-cradle/api-client-luck-by-dice",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
