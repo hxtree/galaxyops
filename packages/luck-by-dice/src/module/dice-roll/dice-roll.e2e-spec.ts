@@ -3,7 +3,6 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import { DiceRollModule } from './dice-roll.module';
 import { DiceRollService } from './dice-roll.service';
-import { ResponseRollDto } from './response-roll.dto';
 
 describe('/dice-roll', () => {
   let app: INestApplication;

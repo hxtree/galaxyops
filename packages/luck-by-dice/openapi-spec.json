@@ -19,8 +19,8 @@
   },
   "info": {
     "title": "@cats-cradle/luck-by-dice",
-    "description": "An API for simulating dice rolls and luck from dice notation",
-    "version": "1.0.0",
+    "description": "An API Simulating dice rolls that can be effected by luck from dice notation",
+    "version": "1.0.3",
     "contact": {}
   },
   "tags": [],

@@ -311,6 +311,7 @@ importers:
       '@microsoft/tsdoc': ~0.13.2
       '@nestjs/common': 9.2.1
       '@nestjs/core': 9.2.1
+      '@nestjs/mongoose': 9.2.1
       '@nestjs/platform-express': 9.3.9
       '@nestjs/swagger': ~6.1.3
       '@nestjs/terminus': 9.1.1
@@ -350,6 +351,7 @@ importers:
       '@cats-cradle/nestjs-modules': link:../../libraries/nestjs-modules
       '@nestjs/common': 9.2.1_allg6cauirbqzgqcmexy2wdnoq
       '@nestjs/core': 9.2.1_t4tu55xk3gdu6rkxhjusbio6gi
+      '@nestjs/mongoose': 9.2.1_slyr4f67rvsaunobuigtblg45m
       '@nestjs/platform-express': 9.3.9_hjcqpoaebdr7gdo5hgc22hthbe
       '@nestjs/swagger': 6.1.4_zvabycmw733xee3ikaxv4c7mny
       '@nestjs/terminus': 9.1.1_5jpsbfbll2knk5qgjb5qqh7xhu
