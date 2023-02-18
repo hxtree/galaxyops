@@ -37,6 +37,110 @@ import {
   RequiredError,
 } from './base';
 
+/**
+ *
+ * @export
+ * @interface CreateCharacterSheetDto
+ */
+export interface CreateCharacterSheetDto {
+  /**
+   *
+   * @type {string}
+   * @memberof CreateCharacterSheetDto
+   */
+  id: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateCharacterSheetDto
+   */
+  firstName: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateCharacterSheetDto
+   */
+  lastName: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateCharacterSheetDto
+   */
+  archetypeId: CreateCharacterSheetDtoArchetypeIdEnum;
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export type CreateCharacterSheetDtoArchetypeIdEnum =
+  | 'MOTHER'
+  | 'MISCHIEVOUS_PIEBALD'
+  | 'JANUS_PERSIAN'
+  | 'LOOMEE_ANGORA'
+  | 'OUERN_ONI'
+  | 'VALLON_ONI'
+  | 'MEEKU_ONI'
+  | 'ARINOTH_DIYATH'
+  | 'FAYE_IMAGO'
+  | 'GAALI_RUNEWIN'
+  | 'GUNTER_STONEWELL'
+  | 'MALACE_TSIA'
+  | 'PENNY_KIBBUTZ'
+  | 'TRAEZ_UTHSHA'
+  | 'VOID'
+  | 'GENKI'
+  | 'LAWZON_GREY'
+  | 'MADHI_TSIA'
+  | 'SUYRI'
+  | 'WISP'
+  | 'ASMIN'
+  | 'DIAG'
+  | 'MONARCH'
+  | 'VICEROY'
+  | 'SPIDER'
+  | 'WARLING'
+  | 'SEA_HORSE'
+  | 'SENSITIVE_PLANT'
+  | 'DEEP_THINKER';
+
+/**
+ * @export
+ * @enum {string}
+ */
+export const CreateCharacterSheetDtoArchetypeIdEnum = {
+  Mother: 'MOTHER' as CreateCharacterSheetDtoArchetypeIdEnum,
+  MischievousPiebald:
+    'MISCHIEVOUS_PIEBALD' as CreateCharacterSheetDtoArchetypeIdEnum,
+  JanusPersian: 'JANUS_PERSIAN' as CreateCharacterSheetDtoArchetypeIdEnum,
+  LoomeeAngora: 'LOOMEE_ANGORA' as CreateCharacterSheetDtoArchetypeIdEnum,
+  OuernOni: 'OUERN_ONI' as CreateCharacterSheetDtoArchetypeIdEnum,
+  VallonOni: 'VALLON_ONI' as CreateCharacterSheetDtoArchetypeIdEnum,
+  MeekuOni: 'MEEKU_ONI' as CreateCharacterSheetDtoArchetypeIdEnum,
+  ArinothDiyath: 'ARINOTH_DIYATH' as CreateCharacterSheetDtoArchetypeIdEnum,
+  FayeImago: 'FAYE_IMAGO' as CreateCharacterSheetDtoArchetypeIdEnum,
+  GaaliRunewin: 'GAALI_RUNEWIN' as CreateCharacterSheetDtoArchetypeIdEnum,
+  GunterStonewell: 'GUNTER_STONEWELL' as CreateCharacterSheetDtoArchetypeIdEnum,
+  MalaceTsia: 'MALACE_TSIA' as CreateCharacterSheetDtoArchetypeIdEnum,
+  PennyKibbutz: 'PENNY_KIBBUTZ' as CreateCharacterSheetDtoArchetypeIdEnum,
+  TraezUthsha: 'TRAEZ_UTHSHA' as CreateCharacterSheetDtoArchetypeIdEnum,
+  Void: 'VOID' as CreateCharacterSheetDtoArchetypeIdEnum,
+  Genki: 'GENKI' as CreateCharacterSheetDtoArchetypeIdEnum,
+  LawzonGrey: 'LAWZON_GREY' as CreateCharacterSheetDtoArchetypeIdEnum,
+  MadhiTsia: 'MADHI_TSIA' as CreateCharacterSheetDtoArchetypeIdEnum,
+  Suyri: 'SUYRI' as CreateCharacterSheetDtoArchetypeIdEnum,
+  Wisp: 'WISP' as CreateCharacterSheetDtoArchetypeIdEnum,
+  Asmin: 'ASMIN' as CreateCharacterSheetDtoArchetypeIdEnum,
+  Diag: 'DIAG' as CreateCharacterSheetDtoArchetypeIdEnum,
+  Monarch: 'MONARCH' as CreateCharacterSheetDtoArchetypeIdEnum,
+  Viceroy: 'VICEROY' as CreateCharacterSheetDtoArchetypeIdEnum,
+  Spider: 'SPIDER' as CreateCharacterSheetDtoArchetypeIdEnum,
+  Warling: 'WARLING' as CreateCharacterSheetDtoArchetypeIdEnum,
+  SeaHorse: 'SEA_HORSE' as CreateCharacterSheetDtoArchetypeIdEnum,
+  SensitivePlant: 'SENSITIVE_PLANT' as CreateCharacterSheetDtoArchetypeIdEnum,
+  DeepThinker: 'DEEP_THINKER' as CreateCharacterSheetDtoArchetypeIdEnum,
+};
+
 export const archetypeControllerFindKey = (
   id:
     | 'MOTHER'
@@ -84,6 +188,51 @@ export const archetypeControllerListKey = (options: any = {}) => {
   // use dummy base URL string because the URL constructor only accepts absolute URLs.
   const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
   const canSearch = true;
+  return canSearch ? localVarUrlObj.toString() : null;
+};
+export const characterSheetControllerCreateKey = (
+  id: string,
+  createCharacterSheetDto: CreateCharacterSheetDto,
+  options: any = {},
+) => {
+  const localVarPath = `/character-sheets/{id}`.replace(
+    `{${'id'}}`,
+    encodeURIComponent(String(id)),
+  );
+  // use dummy base URL string because the URL constructor only accepts absolute URLs.
+  const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+  const canSearch =
+    true &&
+    id !== undefined &&
+    id !== null &&
+    createCharacterSheetDto !== undefined &&
+    createCharacterSheetDto !== null;
+  return canSearch ? localVarUrlObj.toString() : null;
+};
+export const characterSheetControllerDeleteKey = (
+  id: string,
+  options: any = {},
+) => {
+  const localVarPath = `/character-sheets/{id}`.replace(
+    `{${'id'}}`,
+    encodeURIComponent(String(id)),
+  );
+  // use dummy base URL string because the URL constructor only accepts absolute URLs.
+  const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+  const canSearch = true && id !== undefined && id !== null;
+  return canSearch ? localVarUrlObj.toString() : null;
+};
+export const characterSheetControllerFindOneKey = (
+  id: string,
+  options: any = {},
+) => {
+  const localVarPath = `/character-sheets/{id}`.replace(
+    `{${'id'}}`,
+    encodeURIComponent(String(id)),
+  );
+  // use dummy base URL string because the URL constructor only accepts absolute URLs.
+  const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+  const canSearch = true && id !== undefined && id !== null;
   return canSearch ? localVarUrlObj.toString() : null;
 };
 export const gearControllerFindKey = (
@@ -369,6 +518,156 @@ export const DefaultApiAxiosParamCreator = function (
       options: any = {},
     ): Promise<RequestArgs> => {
       const localVarPath = `/archetypes`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: 'GET',
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {string} id
+     * @param {CreateCharacterSheetDto} createCharacterSheetDto
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    characterSheetControllerCreate: async (
+      id: string,
+      createCharacterSheetDto: CreateCharacterSheetDto,
+      options: any = {},
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists('characterSheetControllerCreate', 'id', id);
+      // verify required parameter 'createCharacterSheetDto' is not null or undefined
+      assertParamExists(
+        'characterSheetControllerCreate',
+        'createCharacterSheetDto',
+        createCharacterSheetDto,
+      );
+      const localVarPath = `/character-sheets/{id}`.replace(
+        `{${'id'}}`,
+        encodeURIComponent(String(id)),
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: 'POST',
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      localVarHeaderParameter['Content-Type'] = 'application/json';
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+      localVarRequestOptions.data = serializeDataIfNeeded(
+        createCharacterSheetDto,
+        localVarRequestOptions,
+        configuration,
+      );
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {string} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    characterSheetControllerDelete: async (
+      id: string,
+      options: any = {},
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists('characterSheetControllerDelete', 'id', id);
+      const localVarPath = `/character-sheets/{id}`.replace(
+        `{${'id'}}`,
+        encodeURIComponent(String(id)),
+      );
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: 'DELETE',
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {string} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    characterSheetControllerFindOne: async (
+      id: string,
+      options: any = {},
+    ): Promise<RequestArgs> => {
+      // verify required parameter 'id' is not null or undefined
+      assertParamExists('characterSheetControllerFindOne', 'id', id);
+      const localVarPath = `/character-sheets/{id}`.replace(
+        `{${'id'}}`,
+        encodeURIComponent(String(id)),
+      );
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
       let baseOptions;
@@ -792,6 +1091,81 @@ export const DefaultApiFp = function (configuration?: Configuration) {
     },
     /**
      *
+     * @param {string} id
+     * @param {CreateCharacterSheetDto} createCharacterSheetDto
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async characterSheetControllerCreate(
+      id: string,
+      createCharacterSheetDto: CreateCharacterSheetDto,
+      options?: any,
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.characterSheetControllerCreate(
+          id,
+          createCharacterSheetDto,
+          options,
+        );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration,
+      );
+    },
+    /**
+     *
+     * @param {string} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async characterSheetControllerDelete(
+      id: string,
+      options?: any,
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.characterSheetControllerDelete(
+          id,
+          options,
+        );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration,
+      );
+    },
+    /**
+     *
+     * @param {string} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async characterSheetControllerFindOne(
+      id: string,
+      options?: any,
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.characterSheetControllerFindOne(
+          id,
+          options,
+        );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration,
+      );
+    },
+    /**
+     *
      * @param {'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED'} id
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1090,6 +1464,50 @@ export const DefaultApiFactory = function (
     },
     /**
      *
+     * @param {string} id
+     * @param {CreateCharacterSheetDto} createCharacterSheetDto
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    characterSheetControllerCreate(
+      id: string,
+      createCharacterSheetDto: CreateCharacterSheetDto,
+      options?: any,
+    ): AxiosPromise<void> {
+      return localVarFp
+        .characterSheetControllerCreate(id, createCharacterSheetDto, options)
+        .then(request => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {string} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    characterSheetControllerDelete(
+      id: string,
+      options?: any,
+    ): AxiosPromise<void> {
+      return localVarFp
+        .characterSheetControllerDelete(id, options)
+        .then(request => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {string} id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    characterSheetControllerFindOne(
+      id: string,
+      options?: any,
+    ): AxiosPromise<void> {
+      return localVarFp
+        .characterSheetControllerFindOne(id, options)
+        .then(request => request(axios, basePath));
+    },
+    /**
+     *
      * @param {'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED'} id
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1347,6 +1765,41 @@ export interface DefaultApiInterface {
 
   /**
    *
+   * @param {string} id
+   * @param {CreateCharacterSheetDto} createCharacterSheetDto
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DefaultApiInterface
+   */
+  characterSheetControllerCreate(
+    id: string,
+    createCharacterSheetDto: CreateCharacterSheetDto,
+    options?: any,
+  ): AxiosPromise<void>;
+
+  /**
+   *
+   * @param {string} id
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DefaultApiInterface
+   */
+  characterSheetControllerDelete(id: string, options?: any): AxiosPromise<void>;
+
+  /**
+   *
+   * @param {string} id
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DefaultApiInterface
+   */
+  characterSheetControllerFindOne(
+    id: string,
+    options?: any,
+  ): AxiosPromise<void>;
+
+  /**
+   *
    * @param {'GOLD_BRACELETS' | 'RED_SCRAF' | 'COWHIDE_VEST' | 'FUNERAL_JAR' | 'SWORD_SHEATH' | 'MAGENETIC_GLOVES' | 'CATCHERS_MITT' | 'COMPASS' | 'GC' | 'TSHIRT_AND_JEANS' | 'OFFICERS_UNIFORM' | 'Category' | 'ASMINS_AXE' | 'GREAT_WAIL' | 'JUSTICE' | 'KEYSTONE' | 'ASSUALTER' | 'STRIKER' | 'ENERGY_BREAKER' | 'STONE_BREAKER' | 'THE_MAN_SLAYER' | 'HEROS_BLADE' | 'SWORD_OF_LAWZON' | 'TINY_TIMBER' | 'CADUCEUS' | 'ANTEDILUVIAN' | 'ETERNAL_FOLD' | 'GOLD_RUSH' | 'KINGS_BLADE' | 'RUSTY_RAPIER' | 'MYSTERIOUS_PENDANT' | 'PEACEKEEPER' | 'TROUBLE_MAKER' | 'STANDARD_ISSUE' | 'GREED' | 'LIBERTY' | 'MONARCH' | 'REGRET' | 'VICEROY' | 'VIOLATED'} id
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
@@ -1598,6 +2051,50 @@ export class DefaultApi extends BaseAPI implements DefaultApiInterface {
   public archetypeControllerList(options?: any) {
     return DefaultApiFp(this.configuration)
       .archetypeControllerList(options)
+      .then(request => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {string} id
+   * @param {CreateCharacterSheetDto} createCharacterSheetDto
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DefaultApi
+   */
+  public characterSheetControllerCreate(
+    id: string,
+    createCharacterSheetDto: CreateCharacterSheetDto,
+    options?: any,
+  ) {
+    return DefaultApiFp(this.configuration)
+      .characterSheetControllerCreate(id, createCharacterSheetDto, options)
+      .then(request => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {string} id
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DefaultApi
+   */
+  public characterSheetControllerDelete(id: string, options?: any) {
+    return DefaultApiFp(this.configuration)
+      .characterSheetControllerDelete(id, options)
+      .then(request => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {string} id
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DefaultApi
+   */
+  public characterSheetControllerFindOne(id: string, options?: any) {
+    return DefaultApiFp(this.configuration)
+      .characterSheetControllerFindOne(id, options)
       .then(request => request(this.axios, this.basePath));
   }
 
