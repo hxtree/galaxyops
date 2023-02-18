@@ -3,11 +3,15 @@ import {
   Controller,
   Delete,
   Get,
+  Post,
   Param,
+  Body,
   ParseUUIDPipe,
 } from '@nestjs/common';
 import { CharacterSheetRepository } from './character-sheet.repository';
 import { CharacterSheetService } from './character-sheet.service';
+import { CharacterSheet } from './character-sheet.schema';
+import { CreateCharacterSheetDto } from './create-character-sheet-dto';
 
 @Controller('/character-sheets')
 export class CharacterSheetController {
@@ -33,5 +37,13 @@ export class CharacterSheetController {
     return this._characterSheetRepository.delete({
       id,
     });
+  }
+
+  @Post()
+  async create(
+    @Body() createCharacterSheetDto: CreateCharacterSheetDto,
+  ): Promise<any> {
+    const characterSheet = new CharacterSheet(createCharacterSheetDto);
+    return this._characterSheetRepository.create(characterSheet);
   }
 }
