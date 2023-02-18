@@ -6,8 +6,9 @@ import {
   MongooseModule,
   closeInMongodConnection,
 } from '@cats-cradle/nestjs-modules';
+import { FakerFactory } from '@cats-cradle/faker-factory';
 import { CharacterSheetService } from './character-sheet.service';
-import { CharacterSheetSchema } from './character-sheet.schema';
+import { CharacterSheetSchema, CharacterSheet } from './character-sheet.schema';
 import { CharacterSheetRepository } from './character-sheet.repository';
 
 describe('/character-sheets', () => {
@@ -42,10 +43,21 @@ describe('/character-sheets', () => {
     app.close();
   });
 
-  describe('/GET /character-sheets/:id', () => {
+  describe('GET /character-sheets/:id', () => {
     it('should not find results that do not exists', async () => {
       await supertest(app.getHttpServer())
         .get('/character-sheets/1f251943-174c-4ee0-87e4-0a52ed2eebbc')
+        .expect(404);
+    });
+
+    it('should find result if exists', async () => {
+      const characterSheet = await FakerFactory.create<CharacterSheet>(
+        CharacterSheet,
+      );
+      await characterSheetRepository.create(characterSheet);
+
+      await supertest(app.getHttpServer())
+        .get(`/character-sheets/${characterSheet.id}`)
         .expect(404);
     });
   });

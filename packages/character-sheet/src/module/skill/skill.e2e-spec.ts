@@ -22,14 +22,14 @@ describe('/skills', () => {
     app.close();
   });
 
-  it('/GET /skills', async () => {
+  it('GET /skills', async () => {
     await supertest(app.getHttpServer())
       .get('/skills')
       .expect(200)
       .expect(await skillService.list());
   });
 
-  it('/GET /skills/:id', async () => {
+  it('GET /skills/:id', async () => {
     await supertest(app.getHttpServer())
       .get('/skills/JUMP')
       .expect(200)

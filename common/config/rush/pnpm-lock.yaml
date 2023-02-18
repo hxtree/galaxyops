@@ -307,7 +307,9 @@ importers:
       '@cats-cradle/base-nodejs': workspace:*
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/faker-factory': workspace:*
       '@cats-cradle/nestjs-modules': workspace:*
+      '@cats-cradle/validation-schemas': workspace:*
       '@microsoft/tsdoc': ~0.13.2
       '@nestjs/common': 9.2.1
       '@nestjs/core': 9.2.1
@@ -349,6 +351,7 @@ importers:
       '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs': link:../../platform/constructs
       '@cats-cradle/nestjs-modules': link:../../libraries/nestjs-modules
+      '@cats-cradle/validation-schemas': link:../../libraries/validation-schemas
       '@nestjs/common': 9.2.1_allg6cauirbqzgqcmexy2wdnoq
       '@nestjs/core': 9.2.1_t4tu55xk3gdu6rkxhjusbio6gi
       '@nestjs/mongoose': 9.2.1_slyr4f67rvsaunobuigtblg45m
@@ -369,6 +372,7 @@ importers:
       uuid: 9.0.0
     devDependencies:
       '@cats-cradle/eslint-config': link:../../platform/eslint-config
+      '@cats-cradle/faker-factory': link:../../libraries/faker-factory
       '@microsoft/tsdoc': 0.13.2
       '@nestjs/testing': 9.2.1_qtfdfhl7yltwfy6w66cbj2fnoa
       '@types/aws-lambda': 8.10.109

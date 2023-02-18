@@ -27,6 +27,10 @@
       "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
     },
     {
+      "name": "@cats-cradle/faker-factory",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@cats-cradle/luck-by-dice",
       "allowedCategories": [ "apis" ]
     },
