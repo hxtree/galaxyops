@@ -11,6 +11,7 @@ import { CharacterSheetService } from './character-sheet.service';
 import { CharacterSheetSchema, CharacterSheet } from './character-sheet.schema';
 import { CharacterSheetRepository } from './character-sheet.repository';
 import { CharacterSheetController } from './character-sheet.controller';
+import { Archetype } from '../../data/archetype/archetype';
 
 describe('/character-sheets', () => {
   let app: INestApplication;
