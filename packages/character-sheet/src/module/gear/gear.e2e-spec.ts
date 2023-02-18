@@ -22,14 +22,14 @@ describe('/gears', () => {
     app.close();
   });
 
-  it('/GET /gears', async () => {
+  it('GET /gears', async () => {
     await supertest(app.getHttpServer())
       .get('/gears')
       .expect(200)
       .expect(await gearService.list());
   });
 
-  it('/GET /gears/:id', async () => {
+  it('GET /gears/:id', async () => {
     await supertest(app.getHttpServer())
       .get('/gears/COWHIDE_VEST')
       .expect(200)

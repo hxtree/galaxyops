@@ -22,7 +22,7 @@ describe('/dice-roll', () => {
     app.close();
   });
 
-  it('/POST /dice-roll', async () => {
+  it('POST /dice-roll', async () => {
     const response = await supertest(app.getHttpServer())
       .post('/dice-roll')
       .send({

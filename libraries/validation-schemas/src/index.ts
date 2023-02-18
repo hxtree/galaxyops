@@ -8,6 +8,7 @@ export {
   Equals,
   NotEquals,
   IsEmpty,
+  IsUUID,
   // IsNotEmpty.
   IsIn,
   IsNotIn,
