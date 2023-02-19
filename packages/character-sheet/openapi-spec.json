@@ -280,17 +280,12 @@
           }
         ],
         "responses": { "200": { "description": "" } }
-      },
+      }
+    },
+    "/character-sheets": {
       "post": {
         "operationId": "CharacterSheetController_create",
-        "parameters": [
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "schema": { "type": "string" }
-          }
-        ],
+        "parameters": [],
         "requestBody": {
           "required": true,
           "content": {
@@ -319,8 +314,6 @@
         "type": "object",
         "properties": {
           "id": { "type": "string" },
-          "firstName": { "type": "string" },
-          "lastName": { "type": "string" },
           "archetypeId": {
             "type": "string",
             "enum": [
@@ -354,9 +347,11 @@
               "SENSITIVE_PLANT",
               "DEEP_THINKER"
             ]
-          }
+          },
+          "name": { "type": "string" },
+          "surname": { "type": "string" }
         },
-        "required": ["id", "firstName", "lastName", "archetypeId"]
+        "required": ["id", "archetypeId", "name", "surname"]
       }
     }
   }
