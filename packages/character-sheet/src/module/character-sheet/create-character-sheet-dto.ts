@@ -6,12 +6,12 @@ export class CreateCharacterSheetDto {
   @ApiProperty()
   public id?: string;
 
-  @ApiProperty()
-  public firstName!: string;
-
-  @ApiProperty()
-  public lastName!: string;
-
   @ApiProperty({ enum: Object.keys(Archetype) })
   public archetypeId!: string;
+
+  @ApiProperty()
+  public name?: string;
+
+  @ApiProperty()
+  public surname?: string;
 }
