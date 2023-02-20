@@ -1,5 +1,5 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { IsString, IsInt } from '@cats-cradle/validation-schemas';
+import { Prop, Schema } from '@nestjs/mongoose';
+import { IsString, IsInt, Min, Max } from '@cats-cradle/validation-schemas';
 
 @Schema()
 export class DisciplineEmbeddable {
@@ -8,6 +8,8 @@ export class DisciplineEmbeddable {
   public name!: string;
 
   @IsInt()
+  @Min(0)
+  @Max(255000)
   @Prop()
   public experience!: number;
 

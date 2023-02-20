@@ -14,6 +14,7 @@ import { ArchetypeType } from '../../data/archetype';
 import { Archetype } from '../../data/archetype/archetype';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
+import { EquipmentEmbeddable } from './equipment-embeddable.schema';
 
 @Schema()
 export class CharacterSheet {
@@ -33,7 +34,7 @@ export class CharacterSheet {
   @IsString()
   @IsOptional()
   @Prop()
-  public surname!: string;
+  public surname?: string;
 
   @IsInstance(StatsEmbeddable)
   @Prop()
@@ -44,9 +45,16 @@ export class CharacterSheet {
   @Prop()
   public disciplines: DisciplineEmbeddable[];
 
+  @IsOptional()
+  @IsEnum(EquipmentEmbeddable)
+  @Prop()
+  public equipment: EquipmentEmbeddable[];
+
   constructor(createCharacterSheetDto: CreateCharacterSheetDto) {
     this.id = createCharacterSheetDto?.id ? createCharacterSheetDto.id : v4();
     this.archetypeId = createCharacterSheetDto?.archetypeId;
+    this.name = createCharacterSheetDto?.name;
+    this.surname = createCharacterSheetDto?.surname;
   }
 }
 
@@ -61,4 +69,12 @@ export const CharacterSheetSchema = SchemaFactory.createForClass(
     ret.id = ret._id;
     delete ret._id;
   },
+});
+
+CharacterSheetSchema.virtual('fullname').get(function () {
+  return `${this.name} ${this.surname}`;
+});
+
+CharacterSheetSchema.index({
+  id: 1,
 });
