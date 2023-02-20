@@ -1,7 +1,6 @@
 import { Prop, Schema } from '@nestjs/mongoose';
-import { IsString } from '@cats-cradle/validation-schemas';
-
-// import {Gear} from '../component/gear/Gear';
+import { IsEnum, IsString } from '@cats-cradle/validation-schemas';
+import { Slot } from '../../data/gear/slot';
 
 @Schema()
 export class EquipmentEmbeddable {
@@ -9,6 +8,7 @@ export class EquipmentEmbeddable {
   @Prop()
   public name!: string;
 
+  @IsEnum(Slot)
   @Prop()
-  public gearSlots!: string[];
+  public gearSlots!: Slot[];
 }
