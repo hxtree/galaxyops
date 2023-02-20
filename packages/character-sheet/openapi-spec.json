@@ -256,6 +256,28 @@
         "responses": { "200": { "description": "" } }
       }
     },
+    "/character-sheets": {
+      "get": {
+        "operationId": "CharacterSheetController_findAll",
+        "parameters": [],
+        "responses": { "200": { "description": "" } }
+      },
+      "post": {
+        "operationId": "CharacterSheetController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCharacterSheetDto"
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
     "/character-sheets/{id}": {
       "get": {
         "operationId": "CharacterSheetController_findOne",
@@ -280,23 +302,6 @@
           }
         ],
         "responses": { "200": { "description": "" } }
-      }
-    },
-    "/character-sheets": {
-      "post": {
-        "operationId": "CharacterSheetController_create",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCharacterSheetDto"
-              }
-            }
-          }
-        },
-        "responses": { "201": { "description": "" } }
       }
     }
   },

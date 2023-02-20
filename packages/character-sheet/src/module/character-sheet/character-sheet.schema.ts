@@ -17,7 +17,6 @@ import { StatsEmbeddable } from './stats-embeddable.schema';
 
 @Schema()
 export class CharacterSheet {
-  @IsUuidV4() // TODO add suport to fakerfactory
   @IsUUID()
   @Prop()
   public id!: string;
@@ -53,5 +52,13 @@ export class CharacterSheet {
 
 export type TCharacterSheetDocument = CharacterSheet & Document;
 
-export const CharacterSheetSchema =
-  SchemaFactory.createForClass(CharacterSheet);
+export const CharacterSheetSchema = SchemaFactory.createForClass(
+  CharacterSheet,
+).set('toJSON', {
+  virtuals: true,
+  versionKey: false,
+  transform(doc, ret) {
+    ret.id = ret._id;
+    delete ret._id;
+  },
+});

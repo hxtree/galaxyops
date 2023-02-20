@@ -2,19 +2,19 @@
 
 **Cats Cradle** is a unreleased mobile role-playing game (RPG).
 
-This monorepo contains a devcontainer, platform as a service (PaaS),
-microservices, and infrastructure as code (IaC) used to continously deploy Cats
+This monorepo contains platform as a service (PaaS), microservices, a
+devcontainer, and infrastructure as code (IaC) used to continously deploy Cats
 Cradle in its entirety.
 
-Although most of the packages within this repo were created for use in relation
-to the game engine, they are also published individually and available on NPM.
+Although these packages are for the game, they are also published for use
+individually and available on NPM.
 
 The game engine client is built using Unreal Engine 5.
 
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Coverage)
-[![NPM Packages](https://img.shields.io/static/v1?label=Publishes&message=6%20Packages&color=000?style=flat&logo=npm)](https://www.npmjs.com/search?q=%40cats-cradle)
+[![NPM Packages](https://img.shields.io/static/v1?label=Publishes&message=11%20Packages&color=000?style=flat&logo=npm)](https://www.npmjs.com/search?q=%40cats-cradle)
 
 ## Getting Started
 
@@ -95,10 +95,6 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 ## Contributing
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-![TypeScript](https://shields.io/badge/typescript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
-![AWS CDKv2](https://shields.io/badge/cdkv2-FF9900?logo=amazon-aws&logoColor=FFF&style=flat-square)
-![PNPM](https://shields.io/badge/pnpm-000?logo=pnpm&logoColor=FF9900&style=flat-square)
-![RushJS](https://shields.io/badge/RushJS-333?logo=microsoft&logoColor=FF7711&style=flat-square)
 
 Pull requests and bug reports are welcome on GitHub at
 <https://github.com/hxtree/cats-cradle>. This project is intended to be a safe,

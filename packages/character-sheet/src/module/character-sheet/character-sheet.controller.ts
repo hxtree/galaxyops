@@ -20,6 +20,16 @@ export class CharacterSheetController {
     private _characterSheetRepository: CharacterSheetRepository,
   ) {}
 
+  @Get()
+  async findAll(): Promise<any> {
+    const result = await this._characterSheetRepository.findAll();
+
+    if (!result) {
+      throw new NotFoundException();
+    }
+    return result;
+  }
+
   @Get(':id')
   async findOne(@Param('id', new ParseUUIDPipe()) id: string): Promise<any> {
     const result = await this._characterSheetRepository.findOne({
