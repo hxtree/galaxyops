@@ -1,0 +1,86 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/templates/user-forgotten-password-reset": {
+      "post": {
+        "operationId": "TemplateController_getUserForgottenPasswordReset",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserForgottenPasswordResetDto"
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/templates/user-account-created": {
+      "post": {
+        "operationId": "TemplateController_getUserAccountCreated",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UserAccountCreatedDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    }
+  },
+  "info": {
+    "title": "@cats-cradles/email-service",
+    "description": "An API for the email service",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "UserForgottenPasswordResetDto": {
+        "type": "object",
+        "properties": {
+          "recipient": {
+            "type": "string",
+            "description": "The email of the receipent",
+            "default": "jane.doe@example.com"
+          },
+          "username": {
+            "type": "string",
+            "description": "The username of the receipent",
+            "default": "janedoe"
+          },
+          "link": {
+            "type": "string",
+            "description": "The link for the reset password",
+            "default": "https://example.com/forgot-password-reset?token=abc123"
+          }
+        },
+        "required": ["recipient", "username", "link"]
+      },
+      "UserAccountCreatedDto": {
+        "type": "object",
+        "properties": {
+          "recipient": {
+            "type": "string",
+            "description": "The email receipent",
+            "default": "jane.doe@example.com"
+          },
+          "firstName": {
+            "type": "string",
+            "description": "The first name of the receipent",
+            "default": "Jane"
+          }
+        },
+        "required": ["recipient", "firstName"]
+      }
+    }
+  }
+}

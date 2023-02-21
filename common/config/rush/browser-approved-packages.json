@@ -303,6 +303,14 @@
       "allowedCategories": [ "apis", "cicd", "platform" ]
     },
     {
+      "name": "handlebars",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "html-to-text",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "istanbul-lib-coverage",
       "allowedCategories": [ "cicd" ]
     },
