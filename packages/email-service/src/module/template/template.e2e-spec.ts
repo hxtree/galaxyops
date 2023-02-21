@@ -25,24 +25,42 @@ describe('/templates', () => {
   });
 
   it('POST /templates/user-account-created', async () => {
-    const body = FakerFactory.create<UserAccountCreatedDto>(
+    const body = await FakerFactory.create<UserAccountCreatedDto>(
       UserAccountCreatedDto,
     );
 
-    await supertest(app.getHttpServer())
+    const response = await supertest(app.getHttpServer())
       .post('/templates/user-account-created')
-      .send(body)
+      .send({
+        recipient: body.recipient,
+        firstName: body.firstName,
+      })
       .expect(201);
+    expect(response.body).toEqual({
+      template: expect.stringContaining('html'),
+      html: expect.stringContaining('html'),
+      text: expect.stringContaining(body.firstName),
+    });
   });
 
   it('POST /templates/user-forgotten-password-reset', async () => {
-    const body = FakerFactory.create<UserForgottenPasswordResetDto>(
+    const body = await FakerFactory.create<UserForgottenPasswordResetDto>(
       UserForgottenPasswordResetDto,
     );
 
-    await supertest(app.getHttpServer())
+    const response = await supertest(app.getHttpServer())
       .post('/templates/user-forgotten-password-reset')
-      .send(body)
+      .send({
+        recipient: body.recipient,
+        username: body.username,
+        link: body.link,
+      })
       .expect(201);
+
+    expect(response.body).toEqual({
+      template: expect.stringContaining('html'),
+      html: expect.stringContaining('html'),
+      text: expect.stringContaining(body.username),
+    });
   });
 });
