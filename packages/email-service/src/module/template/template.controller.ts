@@ -1,13 +1,11 @@
 import { Controller, Post, Body, Param, Query } from '@nestjs/common';
 import { TemplateService } from './template.service';
 import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dtos';
-import { ClassConstructor, plainToInstance } from 'class-transformer';
+import { plainToInstance } from 'class-transformer';
 import {
   UserForgottenPasswordResetTemplate,
   UserAccountCreatedTemplate,
-  TemplateType,
 } from './templates';
-import { NotFoundException } from '@nestjs/common';
 import { FormatType } from './format.type';
 import { ApiBody, ApiProperty, ApiQuery } from '@nestjs/swagger';
 
@@ -27,21 +25,11 @@ export class TemplateController {
     @Body() body: any,
     @Query('format') format: FormatType,
   ): Promise<any> {
-    const { html, text, template } = await this._templateService.convert(
+    return await this._templateService.convertToFormat(
       UserAccountCreatedTemplate,
       plainToInstance(UserAccountCreatedDto, body),
+      format,
     );
-
-    switch (format) {
-      case FormatType.HTML:
-        return await Promise.resolve({ data: html });
-      case FormatType.TEXT:
-        return await Promise.resolve({ data: text });
-      case FormatType.TEMPLATE:
-        return await Promise.resolve({ data: template });
-      default:
-        return await Promise.resolve({ html, text });
-    }
   }
 
   @ApiBody({ type: [UserForgottenPasswordResetDto] })
@@ -51,20 +39,10 @@ export class TemplateController {
     @Body() body: any,
     @Query('format') format: FormatType,
   ): Promise<any> {
-    const { html, text, template } = await this._templateService.convert(
+    return await this._templateService.convertToFormat(
       UserForgottenPasswordResetTemplate,
       plainToInstance(UserForgottenPasswordResetDto, body),
+      format,
     );
-
-    switch (format) {
-      case FormatType.HTML:
-        return await Promise.resolve({ data: html });
-      case FormatType.TEXT:
-        return await Promise.resolve({ data: text });
-      case FormatType.TEMPLATE:
-        return await Promise.resolve({ data: template });
-      default:
-        return await Promise.resolve({ html, text });
-    }
   }
 }
