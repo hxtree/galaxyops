@@ -1,6 +1,3 @@
 {
-  "extends": "./node_modules/@cats-cradle/base-nodejs/profiles/nestjs-app/tsconfig-base.json",
-  "compilerOptions": {
-    "assets": ["**/*.template"]
-  }
+  "extends": "./node_modules/@cats-cradle/base-nodejs/profiles/nestjs-app/tsconfig-base.json"
 }
