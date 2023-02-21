@@ -124,6 +124,13 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@cats-cradle/email-service",
+      "projectFolder": "packages/email-service",
+      "reviewCategory": "apis",
+      "cyclicDependencyProjects": [],
+      "tags": ["game-design-team"]
+    },
+    {
       "packageName": "@cats-cradle/api-client-luck-by-dice",
       "projectFolder": "libraries/api-client-luck-by-dice",
       "reviewCategory": "api-client",
