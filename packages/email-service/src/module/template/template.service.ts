@@ -5,19 +5,10 @@ import { instanceToPlain } from 'class-transformer';
 
 @Injectable()
 export class TemplateService {
-  private TEMPLATES_DIR_PATH = './templates';
-
-  async convert(dto: any): Promise<any> {
-    try {
-      const html = await this.parse(dto.html, dto);
-      const text = await this.toText(html);
-      return await Promise.resolve({ template: dto.html, html, text });
-    } catch (err) {
-      const error = err as Error;
-      return Promise.reject(
-        new Error(`Failed to get Template. ${error.message}`),
-      );
-    }
+  async convert(template: string, dto: any): Promise<any> {
+    const html = await this.parse(template, dto);
+    const text = await this.toText(html);
+    return await Promise.resolve({ html, text });
   }
 
   async parse(template: string, params: any): Promise<string> {

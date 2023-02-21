@@ -1,7 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsFQDN, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
-import { html } from '../templates/user-forgotten-password-reset.template';
 
 export class UserForgottenPasswordResetDto {
   @IsEmail()
@@ -27,7 +26,4 @@ export class UserForgottenPasswordResetDto {
   })
   @Expose()
   link!: string;
-
-  @IsString()
-  html = html;
 }

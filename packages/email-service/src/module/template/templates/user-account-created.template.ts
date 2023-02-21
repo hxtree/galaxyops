@@ -1,4 +1,4 @@
-export const html = `<html>
+export const UserAccountCreatedTemplate = `<html>
   <head>User Account Created</head>
   <body>
     <h1>User Account Created</h1>

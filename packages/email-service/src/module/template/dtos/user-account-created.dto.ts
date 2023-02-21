@@ -1,7 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
-import { html } from '../templates/user-account-created.template';
 
 export class UserAccountCreatedDto {
   @IsEmail()
@@ -19,7 +18,4 @@ export class UserAccountCreatedDto {
   })
   @Expose()
   firstName!: string;
-
-  @IsString()
-  html = html;
 }

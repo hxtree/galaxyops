@@ -37,7 +37,6 @@ describe('/templates', () => {
       })
       .expect(201);
     expect(response.body).toEqual({
-      template: expect.stringContaining('html'),
       html: expect.stringContaining('html'),
       text: expect.stringContaining(body.firstName),
     });
@@ -58,7 +57,6 @@ describe('/templates', () => {
       .expect(201);
 
     expect(response.body).toEqual({
-      template: expect.stringContaining('html'),
       html: expect.stringContaining('html'),
       text: expect.stringContaining(body.username),
     });

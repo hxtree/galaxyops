@@ -1,4 +1,4 @@
-export const html = `<html>
+export const UserForgottenPasswordResetTemplate = `<html>
 <head>User Forgotten Password Reset</head>
 <body>
   <h1>User Forgotten Password Reset</h1>
