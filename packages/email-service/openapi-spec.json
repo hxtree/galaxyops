@@ -1,16 +1,26 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/templates/user-forgotten-password-reset": {
+    "/templates/user-account-created": {
       "post": {
-        "operationId": "TemplateController_getUserForgottenPasswordReset",
-        "parameters": [],
+        "operationId": "TemplateController_convert",
+        "parameters": [
+          {
+            "name": "format",
+            "required": true,
+            "in": "query",
+            "schema": { "enum": ["text", "html", "template"], "type": "string" }
+          }
+        ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserForgottenPasswordResetDto"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserAccountCreatedDto"
+                }
               }
             }
           }
@@ -18,15 +28,27 @@
         "responses": { "201": { "description": "" } }
       }
     },
-    "/templates/user-account-created": {
+    "/templates/user-forgotten-password-reset": {
       "post": {
-        "operationId": "TemplateController_getUserAccountCreated",
-        "parameters": [],
+        "operationId": "TemplateController_convertUserForgottenPasswordReset",
+        "parameters": [
+          {
+            "name": "format",
+            "required": true,
+            "in": "query",
+            "schema": { "enum": ["text", "html", "template"], "type": "string" }
+          }
+        ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/UserAccountCreatedDto" }
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserForgottenPasswordResetDto"
+                }
+              }
             }
           }
         },
@@ -44,6 +66,22 @@
   "servers": [],
   "components": {
     "schemas": {
+      "UserAccountCreatedDto": {
+        "type": "object",
+        "properties": {
+          "recipient": {
+            "type": "string",
+            "description": "The email receipent",
+            "default": "jane.doe@example.com"
+          },
+          "firstName": {
+            "type": "string",
+            "description": "The first name of the receipent",
+            "default": "Jane"
+          }
+        },
+        "required": ["recipient", "firstName"]
+      },
       "UserForgottenPasswordResetDto": {
         "type": "object",
         "properties": {
@@ -64,22 +102,6 @@
           }
         },
         "required": ["recipient", "username", "link"]
-      },
-      "UserAccountCreatedDto": {
-        "type": "object",
-        "properties": {
-          "recipient": {
-            "type": "string",
-            "description": "The email receipent",
-            "default": "jane.doe@example.com"
-          },
-          "firstName": {
-            "type": "string",
-            "description": "The first name of the receipent",
-            "default": "Jane"
-          }
-        },
-        "required": ["recipient", "firstName"]
       }
     }
   }
