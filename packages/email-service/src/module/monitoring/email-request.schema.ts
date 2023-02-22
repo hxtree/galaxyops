@@ -25,7 +25,7 @@ export class EmailRequest {
 
   @IsEnum(StatusType)
   @Prop()
-  public status: StatusType[];
+  public status: StatusType;
 
   @IsDateString()
   @Prop()

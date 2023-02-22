@@ -6,10 +6,11 @@ import {
   MongooseModule,
 } from '@cats-cradle/nestjs-modules';
 import { EmailRequestSchema } from './email-request.schema';
+import { EmailRequestRepository } from './email-request.repository';
 
 @Module({
   controllers: [MonitoringController],
-  providers: [MonitoringService],
+  providers: [MonitoringService, EmailRequestRepository],
   imports: [
     rootMongooseTestModule(),
     MongooseModule.forFeature([
