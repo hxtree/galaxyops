@@ -54,6 +54,39 @@
         },
         "responses": { "201": { "description": "" } }
       }
+    },
+    "/requests": {
+      "post": {
+        "operationId": "MonitoringController_create",
+        "parameters": [
+          {
+            "name": "template",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "enum": ["user-account-created", "user-forgotten-password-reset"],
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/SendEmailRequestDto" }
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      },
+      "get": {
+        "operationId": "MonitoringController_findAll",
+        "parameters": [],
+        "responses": { "200": { "description": "" } }
+      }
     }
   },
   "info": {
@@ -102,6 +135,17 @@
           }
         },
         "required": ["recipient", "username", "link"]
+      },
+      "SendEmailRequestDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Status of the send email request",
+            "default": "OPEN"
+          }
+        },
+        "required": ["status"]
       }
     }
   }

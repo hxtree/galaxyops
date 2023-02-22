@@ -4,14 +4,15 @@ import {
   IsString,
 } from '@cats-cradle/validation-schemas';
 import { StatusType } from './status.type';
-import { TemplateType } from '../template/templates';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class SendEmailRequestDto {
   @IsEnum(StatusType)
-  public status!: StatusType;
-
-  @IsEnum(TemplateType)
-  public template!: TemplateType;
+  @ApiProperty({
+    description: 'Status of the send email request',
+    default: StatusType.OPEN,
+  })
+  public status?: StatusType;
 
   @IsString()
   public data: string;

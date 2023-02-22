@@ -15,6 +15,7 @@
     "pflannery.vscode-versionlens",
     "folke.vscode-monorepo-workspace",
     "ryanluker.vscode-coverage-gutters",
+    "streetsidesoftware.code-spell-checker",
     // "GitHub.copilot",
     "DavidAnson.vscode-markdownlint",
     "vivaxy.vscode-conventional-commits",
