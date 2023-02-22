@@ -2,6 +2,18 @@
   "name": "@cats-cradle/faker-factory",
   "entries": [
     {
+      "version": "0.0.7",
+      "tag": "@cats-cradle/faker-factory_v0.0.7",
+      "date": "Wed, 22 Feb 2023 14:29:10 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.2`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.6",
       "tag": "@cats-cradle/faker-factory_v0.0.6",
       "date": "Fri, 17 Feb 2023 14:05:59 GMT",

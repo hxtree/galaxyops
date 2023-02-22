@@ -56,5 +56,6 @@
   },
   "files.associations": { "*.json": "jsonc" },
   "versionlens.suggestions.showOnStartup": true,
-  "jest.jestCommandLine": "rush test"
+  "jest.jestCommandLine": "rush test",
+  "cSpell.words": ["nestjs", "virtuals"]
 }

@@ -2,6 +2,18 @@
   "name": "@cats-cradle/rush-coverage",
   "entries": [
     {
+      "version": "0.0.5",
+      "tag": "@cats-cradle/rush-coverage_v0.0.5",
+      "date": "Wed, 22 Feb 2023 14:29:10 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.2`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.4",
       "tag": "@cats-cradle/rush-coverage_v0.0.4",
       "date": "Fri, 17 Feb 2023 14:05:59 GMT",
