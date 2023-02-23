@@ -1,9 +1,15 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsFQDN } from 'class-validator';
+import { IsEmail, IsString, IsFQDN } from 'class-validator';
 import { Expose } from 'class-transformer';
-import { TemplateDto } from './template.dto';
 
-export class UserForgottenPasswordResetDto extends TemplateDto {
+export class UserForgottenPasswordResetDto {
+  @IsEmail()
+  @ApiProperty({
+    description: 'The email recipient',
+    default: 'jane.doe@example.com',
+  })
+  @Expose()
+  recipient!: string;
   @IsString()
   @ApiProperty({
     description: 'The username of the recipient',
@@ -12,7 +18,8 @@ export class UserForgottenPasswordResetDto extends TemplateDto {
   @Expose()
   username!: string;
 
-  @IsFQDN()
+  // @IsFQDN() doesn't work with pipe for some reason
+  @IsString()
   @ApiProperty({
     description: 'The link for the reset password',
     default: 'https://example.com/forgot-password-reset?token=abc123',

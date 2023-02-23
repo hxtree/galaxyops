@@ -10,6 +10,12 @@
             "required": true,
             "in": "query",
             "schema": { "enum": ["text", "html", "template"], "type": "string" }
+          },
+          {
+            "name": "send",
+            "required": false,
+            "in": "query",
+            "schema": { "type": "boolean" }
           }
         ],
         "requestBody": {
