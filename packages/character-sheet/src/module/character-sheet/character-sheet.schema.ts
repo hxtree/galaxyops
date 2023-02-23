@@ -71,7 +71,7 @@ export const CharacterSheetSchema = SchemaFactory.createForClass(
   },
 });
 
-CharacterSheetSchema.virtual('fullname').get(function () {
+CharacterSheetSchema.virtual('fullName').get(function () {
   return `${this.name} ${this.surname}`;
 });
 

@@ -6,11 +6,10 @@ import {
   IsUUID,
   IsEnum,
 } from '@cats-cradle/validation-schemas';
-import { v4 } from 'uuid';
-import { StatusType } from './status.type';
+import { StatusType } from './types/status.type';
 
 @Schema()
-export class EmailRequest {
+export class EmailMessage {
   @IsUUID()
   @Prop()
   public id!: string;
@@ -38,10 +37,10 @@ export class EmailRequest {
   constructor() {}
 }
 
-export type TEmailRequestDocument = EmailRequest & Document;
+export type TEmailMessageDocument = EmailMessage & Document;
 
-export const EmailRequestSchema = SchemaFactory.createForClass(
-  EmailRequest,
+export const EmailMessageSchema = SchemaFactory.createForClass(
+  EmailMessage,
 ).set('toJSON', {
   virtuals: true,
   versionKey: false,
@@ -51,6 +50,6 @@ export const EmailRequestSchema = SchemaFactory.createForClass(
   },
 });
 
-EmailRequestSchema.index({
+EmailMessageSchema.index({
   id: 1,
 });
