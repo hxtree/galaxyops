@@ -29,11 +29,12 @@ export class EmailMessageController {
   ) {}
 
   @ApiBody({ type: [UserAccountCreatedDto] })
+  @ApiQuery({ name: 'send', required: false, type: Boolean })
   @ApiQuery({ name: 'format', enum: FormatType })
   @UsePipes(ValidationPipe)
   @Post('user-account-created')
   async convert(
-    @Body() body: any,
+    @Body() body: UserAccountCreatedDto,
     @Query('format') format: FormatType,
   ): Promise<any> {
     this._queueService.create('user-account-created', body);
@@ -47,9 +48,10 @@ export class EmailMessageController {
 
   @ApiBody({ type: [UserForgottenPasswordResetDto] })
   @ApiQuery({ name: 'format', enum: FormatType })
+  @UsePipes(ValidationPipe)
   @Post('user-forgotten-password-reset')
   async convertUserForgottenPasswordReset(
-    @Body() body: any,
+    @Body() body: UserForgottenPasswordResetDto,
     @Query('format') format?: FormatType,
   ): Promise<any> {
     this._queueService.create('user-forgotten-password-reset', body);

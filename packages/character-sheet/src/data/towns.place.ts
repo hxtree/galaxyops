@@ -32,7 +32,7 @@ namespace Place {
   export const FLOATING_ISLAND: Type = {
     name: 'Floating Island',
     facts: [
-      `This was home to the ${Affiliation.ARCHANGLES.name}`,
+      `This was home to the ${Affiliation.ARCHANGELS.name}`,
       'Ouren Oni is sealed away within the center of the island',
       'The island fell into the sea',
     ],

@@ -7,11 +7,11 @@ import { FormatType } from './types/format.type';
 @Injectable()
 export class TemplateService {
   async convertToFormat(
-    templateId: string,
+    template: string,
     data: any,
     format: FormatType,
   ): Promise<any> {
-    const { html, text, template } = await this.convert(templateId, data);
+    const { html, text } = await this.convert(template, data);
 
     switch (format) {
       case FormatType.HTML:
@@ -30,13 +30,12 @@ export class TemplateService {
     const html = await this.parse(template, data);
     const text = await this.toText(html);
 
-    return { html, text, template } as const;
+    return { html, text } as const;
   }
 
   async parse(template: string, data: any): Promise<string> {
     const templateCompiled = Handlebars.compile(template);
-    const output = templateCompiled(data);
-    return output;
+    return templateCompiled(data);
   }
 
   async toText(html: string): Promise<string> {
