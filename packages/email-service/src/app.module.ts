@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
-import { MonitoringModule } from './module/monitoring/monitoring.module';
-import { TemplateModule } from './module/template/template.module';
+import { EmailMessageModule } from './module/email-message/email-message.module';
 
 @Module({
-  imports: [TemplateModule, MonitoringModule],
+  imports: [EmailMessageModule],
   providers: [],
   exports: [],
 })

@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/templates/user-account-created": {
+    "/email-message/user-account-created": {
       "post": {
-        "operationId": "TemplateController_convert",
+        "operationId": "EmailMessageController_convert",
         "parameters": [
           {
             "name": "format",
@@ -28,9 +28,9 @@
         "responses": { "201": { "description": "" } }
       }
     },
-    "/templates/user-forgotten-password-reset": {
+    "/email-message/user-forgotten-password-reset": {
       "post": {
-        "operationId": "TemplateController_convertUserForgottenPasswordReset",
+        "operationId": "EmailMessageController_convertUserForgottenPasswordReset",
         "parameters": [
           {
             "name": "format",
@@ -55,35 +55,9 @@
         "responses": { "201": { "description": "" } }
       }
     },
-    "/requests": {
-      "post": {
-        "operationId": "MonitoringController_create",
-        "parameters": [
-          {
-            "name": "template",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "enum": ["user-account-created", "user-forgotten-password-reset"],
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": { "$ref": "#/components/schemas/SendEmailRequestDto" }
-              }
-            }
-          }
-        },
-        "responses": { "201": { "description": "" } }
-      },
+    "/email-message/stats": {
       "get": {
-        "operationId": "MonitoringController_findAll",
+        "operationId": "EmailMessageController_stats",
         "parameters": [],
         "responses": { "200": { "description": "" } }
       }
@@ -104,12 +78,12 @@
         "properties": {
           "recipient": {
             "type": "string",
-            "description": "The email receipent",
+            "description": "The email recipient",
             "default": "jane.doe@example.com"
           },
           "firstName": {
             "type": "string",
-            "description": "The first name of the receipent",
+            "description": "The first name of the recipient",
             "default": "Jane"
           }
         },
@@ -120,13 +94,13 @@
         "properties": {
           "recipient": {
             "type": "string",
-            "description": "The email of the receipent",
+            "description": "The email recipient",
             "default": "jane.doe@example.com"
           },
           "username": {
             "type": "string",
-            "description": "The username of the receipent",
-            "default": "janedoe"
+            "description": "The username of the recipient",
+            "default": "jane.doe"
           },
           "link": {
             "type": "string",
@@ -135,17 +109,6 @@
           }
         },
         "required": ["recipient", "username", "link"]
-      },
-      "SendEmailRequestDto": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Status of the send email request",
-            "default": "OPEN"
-          }
-        },
-        "required": ["status"]
       }
     }
   }

@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Repository } from '@cats-cradle/nestjs-modules';
-import { TEmailRequestDocument, EmailRequest } from './email-request.schema';
+import { TEmailMessageDocument, EmailMessage } from './email-message.schema';
 
 @Injectable()
-export class EmailRequestRepository extends Repository<TEmailRequestDocument> {
+export class EmailMessageRepository extends Repository<TEmailMessageDocument> {
   constructor(
-    @InjectModel(EmailRequest.name)
-    private entity: Model<TEmailRequestDocument>,
+    @InjectModel(EmailMessage.name)
+    private entity: Model<TEmailMessageDocument>,
   ) {
     super(entity);
   }

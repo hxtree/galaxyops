@@ -3,10 +3,10 @@ import {
   IsDateString,
   IsString,
 } from '@cats-cradle/validation-schemas';
-import { StatusType } from './status.type';
+import { StatusType } from '../types/status.type';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class SendEmailRequestDto {
+export class SendEmailMessageDto {
   @IsEnum(StatusType)
   @ApiProperty({
     description: 'Status of the send email request',

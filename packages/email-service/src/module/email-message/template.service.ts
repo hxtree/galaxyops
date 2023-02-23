@@ -2,7 +2,7 @@ import Handlebars = require('handlebars');
 import { convert as htmlToText } from 'html-to-text';
 import { Injectable } from '@nestjs/common';
 import { instanceToPlain } from 'class-transformer';
-import { FormatType } from './format.type';
+import { FormatType } from './types/format.type';
 
 @Injectable()
 export class TemplateService {
@@ -25,8 +25,8 @@ export class TemplateService {
     }
   }
 
-  async convert(template: string, dto: any): Promise<any> {
-    const data = instanceToPlain(dto)[0];
+  async convert(template: string, data: any): Promise<any> {
+    // const data = await instanceToPlain(dto)[0];
     const html = await this.parse(template, data);
     const text = await this.toText(html);
 

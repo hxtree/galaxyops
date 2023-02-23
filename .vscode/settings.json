@@ -57,5 +57,21 @@
   "files.associations": { "*.json": "jsonc" },
   "versionlens.suggestions.showOnStartup": true,
   "jest.jestCommandLine": "rush test",
-  "cSpell.words": ["nestjs", "virtuals"]
+  "cSpell.words": [
+    "Aniroth",
+    "Asmin",
+    "Embeddable",
+    "Gaali",
+    "Genki",
+    "Lawzon",
+    "Loomee",
+    "Malace",
+    "Meeku",
+    "nestjs",
+    "SUYRI",
+    "Traez",
+    "Vallon",
+    "VALLONS",
+    "virtuals"
+  ]
 }

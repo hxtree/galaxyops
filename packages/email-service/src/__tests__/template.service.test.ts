@@ -1,4 +1,4 @@
-import { TemplateService } from '../module/template/template.service';
+import { TemplateService } from '../module/email-message/template.service';
 
 describe('TemplateService', () => {
   describe('toText', () => {

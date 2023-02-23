@@ -1,33 +1,46 @@
-import { Controller, Post, Body, Param, Query } from '@nestjs/common';
+import {
+  UsePipes,
+  Get,
+  Controller,
+  Post,
+  Body,
+  ValidationPipe,
+  Param,
+  Query,
+} from '@nestjs/common';
 import { TemplateService } from './template.service';
-import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dtos';
+import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dto';
 import { plainToInstance } from 'class-transformer';
 import {
   UserForgottenPasswordResetTemplate,
   UserAccountCreatedTemplate,
 } from './templates';
-import { FormatType } from './format.type';
+import { FormatType } from './types/format.type';
 import { ApiBody, ApiProperty, ApiQuery } from '@nestjs/swagger';
+import { QueueService } from './queue.service';
 
-@Controller('templates')
-export class TemplateController {
-  _templateService;
-
-  // DI not working, probably due to esbuildtemplate
-  constructor() {
-    this._templateService = new TemplateService();
-  }
+// POST /email-message/:template?format=html
+// POST /email-message/:template?send=false&format=html,text
+@Controller('email-message')
+export class EmailMessageController {
+  constructor(
+    private _templateService: TemplateService,
+    private _queueService: QueueService,
+  ) {}
 
   @ApiBody({ type: [UserAccountCreatedDto] })
   @ApiQuery({ name: 'format', enum: FormatType })
+  @UsePipes(ValidationPipe)
   @Post('user-account-created')
   async convert(
     @Body() body: any,
     @Query('format') format: FormatType,
   ): Promise<any> {
+    this._queueService.create('user-account-created', body);
+
     return await this._templateService.convertToFormat(
       UserAccountCreatedTemplate,
-      plainToInstance(UserAccountCreatedDto, body),
+      body,
       format,
     );
   }
@@ -37,12 +50,19 @@ export class TemplateController {
   @Post('user-forgotten-password-reset')
   async convertUserForgottenPasswordReset(
     @Body() body: any,
-    @Query('format') format: FormatType,
+    @Query('format') format?: FormatType,
   ): Promise<any> {
+    this._queueService.create('user-forgotten-password-reset', body);
+
     return await this._templateService.convertToFormat(
       UserForgottenPasswordResetTemplate,
-      plainToInstance(UserForgottenPasswordResetDto, body),
-      format,
+      body,
+      format ?? FormatType.HTML,
     );
+  }
+
+  @Get('stats')
+  async stats(): Promise<any> {
+    return this._queueService.findAll();
   }
 }
