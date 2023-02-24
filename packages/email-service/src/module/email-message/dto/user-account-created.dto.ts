@@ -1,16 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEmail, IsString } from 'class-validator';
+import { IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
+import { TemplateDto } from './template.dto';
 
-export class UserAccountCreatedDto {
-  @IsEmail()
-  @ApiProperty({
-    description: 'The email recipient',
-    default: 'jane.doe@example.com',
-  })
-  @Expose()
-  recipient!: string;
-
+export class UserAccountCreatedDto extends TemplateDto {
   @IsString()
   @ApiProperty({
     description: 'The first name of the recipient',

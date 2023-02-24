@@ -17,10 +17,8 @@ describe('/email-message', () => {
     app = moduleRef.createNestApplication();
     app.useGlobalPipes(
       new ValidationPipe({
-        // disableErrorMessages: true,
-        enableDebugMessages: true,
-
         transform: true,
+        transformOptions: { enableImplicitConversion: true },
       }),
     );
     await app.init();
@@ -38,37 +36,26 @@ describe('/email-message', () => {
       );
 
       const response = await supertest(app.getHttpServer())
-        .post('/email-message/user-account-created')
-        .send({
-          recipient: body.recipient,
-          firstName: body.firstName,
-        })
+        .post('/email-message/user-account-created?action=VIEW_TEXT')
+        .send(body)
         .expect(201);
-      expect(response.body).toEqual({
-        html: expect.stringContaining('html'),
-        text: expect.stringContaining(body.firstName),
-      });
+
+      expect(response.text).toEqual(expect.stringContaining(body.firstName));
     });
   });
 
-  describe('POST /email-message/user-forgotten-password-reset?format=html', () => {
-    it('should return data as html', async () => {
+  describe('POST /email-message/user-forgotten-password-reset?action=VIEW_HTML', () => {
+    it('should return html', async () => {
       const body = await FakerFactory.create<UserForgottenPasswordResetDto>(
         UserForgottenPasswordResetDto,
       );
 
       const response = await supertest(app.getHttpServer())
-        .post('/email-message/user-forgotten-password-reset?format=html')
-        .send({
-          recipient: body.recipient,
-          username: body.username,
-          link: body.link,
-        })
+        .post('/email-message/user-forgotten-password-reset?action=VIEW_HTML')
+        .send(body)
         .expect(201);
 
-      expect(response.body).toEqual({
-        data: expect.stringContaining('html'),
-      });
+      expect(response.text).toEqual(expect.stringContaining('html'));
     });
   });
 });

@@ -1,8 +1,7 @@
-// used in lambda
-
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import serverlessExpress from '@vendia/serverless-express';
+import { ValidationPipe } from '@nestjs/common';
 import { Context, Handler } from 'aws-lambda';
 import express from 'express';
 
@@ -13,14 +12,18 @@ let cachedServer: Handler;
 async function bootstrap() {
   if (!cachedServer) {
     const expressApp = express();
-    const nestApp = await NestFactory.create(
+    const app = await NestFactory.create(
       AppModule,
       new ExpressAdapter(expressApp),
     );
-
-    nestApp.enableCors();
-
-    await nestApp.init();
+    app.enableCors();
+    app.useGlobalPipes(
+      new ValidationPipe({
+        transform: true,
+        transformOptions: { enableImplicitConversion: true },
+      }),
+    );
+    await app.init();
 
     cachedServer = serverlessExpress({ app: expressApp });
   }

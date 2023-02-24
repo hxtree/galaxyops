@@ -8,10 +8,16 @@ import { EmailMessageSchema } from './email-message.schema';
 import { EmailMessageRepository } from './email-message.repository';
 import { EmailMessageController } from './email-message.controller';
 import { QueueService } from './queue.service';
+import { EngineService } from './engine.service';
 
 @Module({
   controllers: [EmailMessageController],
-  providers: [TemplateService, EmailMessageRepository, QueueService],
+  providers: [
+    TemplateService,
+    EmailMessageRepository,
+    QueueService,
+    EngineService,
+  ],
   imports: [
     rootMongooseTestModule(),
     MongooseModule.forFeature([

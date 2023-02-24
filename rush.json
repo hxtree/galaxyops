@@ -124,9 +124,9 @@
       "shouldPublish": true
     },
     {
-      "packageName": "@cats-cradle/email-service",
-      "projectFolder": "packages/email-service",
-      "reviewCategory": "apis",
+      "packageName": "@cats-cradle/api-client-email-service",
+      "projectFolder": "libraries/api-client-email-service",
+      "reviewCategory": "api-client",
       "cyclicDependencyProjects": [],
       "tags": ["game-design-team"]
     },
@@ -178,6 +178,14 @@
     {
       "packageName": "@cats-cradle/luck-by-dice",
       "projectFolder": "packages/luck-by-dice",
+      "reviewCategory": "apis",
+      "cyclicDependencyProjects": [],
+      "tags": ["game-design-team"],
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@cats-cradle/email-service",
+      "projectFolder": "packages/email-service",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["game-design-team"],

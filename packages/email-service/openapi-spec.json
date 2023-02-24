@@ -6,28 +6,26 @@
         "operationId": "EmailMessageController_convert",
         "parameters": [
           {
-            "name": "format",
+            "name": "action",
             "required": true,
             "in": "query",
-            "schema": { "enum": ["text", "html", "template"], "type": "string" }
-          },
-          {
-            "name": "send",
-            "required": false,
-            "in": "query",
-            "schema": { "type": "boolean" }
+            "schema": {
+              "enum": [
+                "VIEW_TEXT",
+                "VIEW_HTML",
+                "VIEW_TEMPLATE",
+                "SEND",
+                "QUEUE"
+              ],
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/UserAccountCreatedDto"
-                }
-              }
+              "schema": { "$ref": "#/components/schemas/UserAccountCreatedDto" }
             }
           }
         },
@@ -39,10 +37,19 @@
         "operationId": "EmailMessageController_convertUserForgottenPasswordReset",
         "parameters": [
           {
-            "name": "format",
+            "name": "action",
             "required": true,
             "in": "query",
-            "schema": { "enum": ["text", "html", "template"], "type": "string" }
+            "schema": {
+              "enum": [
+                "VIEW_TEXT",
+                "VIEW_HTML",
+                "VIEW_TEMPLATE",
+                "SEND",
+                "QUEUE"
+              ],
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -50,10 +57,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/UserForgottenPasswordResetDto"
-                }
+                "$ref": "#/components/schemas/UserForgottenPasswordResetDto"
               }
             }
           }
