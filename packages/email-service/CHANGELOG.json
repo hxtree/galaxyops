@@ -1,0 +1,25 @@
+{
+  "name": "@cats-cradle/email-service",
+  "entries": [
+    {
+      "version": "0.0.2",
+      "tag": "@cats-cradle/email-service_v0.0.2",
+      "date": "Fri, 24 Feb 2023 04:55:39 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add queue service"
+          },
+          {
+            "comment": "improve typehinting"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/faker-factory\" to `0.0.8`"
+          }
+        ]
+      }
+    }
+  ]
+}
