@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/api-client-character-sheet",
+      "comment": "alter archetype data",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/api-client-character-sheet"
+}

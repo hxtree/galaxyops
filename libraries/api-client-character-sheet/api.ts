@@ -54,19 +54,19 @@ export interface CreateCharacterSheetDto {
    * @type {string}
    * @memberof CreateCharacterSheetDto
    */
-  firstName: string;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateCharacterSheetDto
-   */
-  lastName: string;
-  /**
-   *
-   * @type {string}
-   * @memberof CreateCharacterSheetDto
-   */
   archetypeId: CreateCharacterSheetDtoArchetypeIdEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateCharacterSheetDto
+   */
+  name: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CreateCharacterSheetDto
+   */
+  surname: string;
 }
 
 /**
@@ -191,20 +191,14 @@ export const archetypeControllerListKey = (options: any = {}) => {
   return canSearch ? localVarUrlObj.toString() : null;
 };
 export const characterSheetControllerCreateKey = (
-  id: string,
   createCharacterSheetDto: CreateCharacterSheetDto,
   options: any = {},
 ) => {
-  const localVarPath = `/character-sheets/{id}`.replace(
-    `{${'id'}}`,
-    encodeURIComponent(String(id)),
-  );
+  const localVarPath = `/character-sheets`;
   // use dummy base URL string because the URL constructor only accepts absolute URLs.
   const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
   const canSearch =
     true &&
-    id !== undefined &&
-    id !== null &&
     createCharacterSheetDto !== undefined &&
     createCharacterSheetDto !== null;
   return canSearch ? localVarUrlObj.toString() : null;
@@ -220,6 +214,13 @@ export const characterSheetControllerDeleteKey = (
   // use dummy base URL string because the URL constructor only accepts absolute URLs.
   const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
   const canSearch = true && id !== undefined && id !== null;
+  return canSearch ? localVarUrlObj.toString() : null;
+};
+export const characterSheetControllerFindAllKey = (options: any = {}) => {
+  const localVarPath = `/character-sheets`;
+  // use dummy base URL string because the URL constructor only accepts absolute URLs.
+  const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+  const canSearch = true;
   return canSearch ? localVarUrlObj.toString() : null;
 };
 export const characterSheetControllerFindOneKey = (
@@ -549,28 +550,21 @@ export const DefaultApiAxiosParamCreator = function (
     },
     /**
      *
-     * @param {string} id
      * @param {CreateCharacterSheetDto} createCharacterSheetDto
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     characterSheetControllerCreate: async (
-      id: string,
       createCharacterSheetDto: CreateCharacterSheetDto,
       options: any = {},
     ): Promise<RequestArgs> => {
-      // verify required parameter 'id' is not null or undefined
-      assertParamExists('characterSheetControllerCreate', 'id', id);
       // verify required parameter 'createCharacterSheetDto' is not null or undefined
       assertParamExists(
         'characterSheetControllerCreate',
         'createCharacterSheetDto',
         createCharacterSheetDto,
       );
-      const localVarPath = `/character-sheets/{id}`.replace(
-        `{${'id'}}`,
-        encodeURIComponent(String(id)),
-      );
+      const localVarPath = `/character-sheets`;
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
       let baseOptions;
@@ -632,6 +626,44 @@ export const DefaultApiAxiosParamCreator = function (
 
       const localVarRequestOptions = {
         method: 'DELETE',
+        ...baseOptions,
+        ...options,
+      };
+      const localVarHeaderParameter = {} as any;
+      const localVarQueryParameter = {} as any;
+
+      setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+      let headersFromBaseOptions =
+        baseOptions && baseOptions.headers ? baseOptions.headers : {};
+      localVarRequestOptions.headers = {
+        ...localVarHeaderParameter,
+        ...headersFromBaseOptions,
+        ...options.headers,
+      };
+
+      return {
+        url: toPathString(localVarUrlObj),
+        options: localVarRequestOptions,
+      };
+    },
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    characterSheetControllerFindAll: async (
+      options: any = {},
+    ): Promise<RequestArgs> => {
+      const localVarPath = `/character-sheets`;
+      // use dummy base URL string because the URL constructor only accepts absolute URLs.
+      const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+      let baseOptions;
+      if (configuration) {
+        baseOptions = configuration.baseOptions;
+      }
+
+      const localVarRequestOptions = {
+        method: 'GET',
         ...baseOptions,
         ...options,
       };
@@ -1091,13 +1123,11 @@ export const DefaultApiFp = function (configuration?: Configuration) {
     },
     /**
      *
-     * @param {string} id
      * @param {CreateCharacterSheetDto} createCharacterSheetDto
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     async characterSheetControllerCreate(
-      id: string,
       createCharacterSheetDto: CreateCharacterSheetDto,
       options?: any,
     ): Promise<
@@ -1105,7 +1135,6 @@ export const DefaultApiFp = function (configuration?: Configuration) {
     > {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.characterSheetControllerCreate(
-          id,
           createCharacterSheetDto,
           options,
         );
@@ -1131,6 +1160,27 @@ export const DefaultApiFp = function (configuration?: Configuration) {
       const localVarAxiosArgs =
         await localVarAxiosParamCreator.characterSheetControllerDelete(
           id,
+          options,
+        );
+      return createRequestFunction(
+        localVarAxiosArgs,
+        globalAxios,
+        BASE_PATH,
+        configuration,
+      );
+    },
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    async characterSheetControllerFindAll(
+      options?: any,
+    ): Promise<
+      (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>
+    > {
+      const localVarAxiosArgs =
+        await localVarAxiosParamCreator.characterSheetControllerFindAll(
           options,
         );
       return createRequestFunction(
@@ -1464,18 +1514,16 @@ export const DefaultApiFactory = function (
     },
     /**
      *
-     * @param {string} id
      * @param {CreateCharacterSheetDto} createCharacterSheetDto
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     characterSheetControllerCreate(
-      id: string,
       createCharacterSheetDto: CreateCharacterSheetDto,
       options?: any,
     ): AxiosPromise<void> {
       return localVarFp
-        .characterSheetControllerCreate(id, createCharacterSheetDto, options)
+        .characterSheetControllerCreate(createCharacterSheetDto, options)
         .then(request => request(axios, basePath));
     },
     /**
@@ -1490,6 +1538,16 @@ export const DefaultApiFactory = function (
     ): AxiosPromise<void> {
       return localVarFp
         .characterSheetControllerDelete(id, options)
+        .then(request => request(axios, basePath));
+    },
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    characterSheetControllerFindAll(options?: any): AxiosPromise<void> {
+      return localVarFp
+        .characterSheetControllerFindAll(options)
         .then(request => request(axios, basePath));
     },
     /**
@@ -1765,14 +1823,12 @@ export interface DefaultApiInterface {
 
   /**
    *
-   * @param {string} id
    * @param {CreateCharacterSheetDto} createCharacterSheetDto
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
    * @memberof DefaultApiInterface
    */
   characterSheetControllerCreate(
-    id: string,
     createCharacterSheetDto: CreateCharacterSheetDto,
     options?: any,
   ): AxiosPromise<void>;
@@ -1785,6 +1841,14 @@ export interface DefaultApiInterface {
    * @memberof DefaultApiInterface
    */
   characterSheetControllerDelete(id: string, options?: any): AxiosPromise<void>;
+
+  /**
+   *
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DefaultApiInterface
+   */
+  characterSheetControllerFindAll(options?: any): AxiosPromise<void>;
 
   /**
    *
@@ -2056,19 +2120,17 @@ export class DefaultApi extends BaseAPI implements DefaultApiInterface {
 
   /**
    *
-   * @param {string} id
    * @param {CreateCharacterSheetDto} createCharacterSheetDto
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
    * @memberof DefaultApi
    */
   public characterSheetControllerCreate(
-    id: string,
     createCharacterSheetDto: CreateCharacterSheetDto,
     options?: any,
   ) {
     return DefaultApiFp(this.configuration)
-      .characterSheetControllerCreate(id, createCharacterSheetDto, options)
+      .characterSheetControllerCreate(createCharacterSheetDto, options)
       .then(request => request(this.axios, this.basePath));
   }
 
@@ -2082,6 +2144,18 @@ export class DefaultApi extends BaseAPI implements DefaultApiInterface {
   public characterSheetControllerDelete(id: string, options?: any) {
     return DefaultApiFp(this.configuration)
       .characterSheetControllerDelete(id, options)
+      .then(request => request(this.axios, this.basePath));
+  }
+
+  /**
+   *
+   * @param {*} [options] Override http request option.
+   * @throws {RequiredError}
+   * @memberof DefaultApi
+   */
+  public characterSheetControllerFindAll(options?: any) {
+    return DefaultApiFp(this.configuration)
+      .characterSheetControllerFindAll(options)
       .then(request => request(this.axios, this.basePath));
   }
 

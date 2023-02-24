@@ -1,65 +1,48 @@
-import {
-  UsePipes,
-  Get,
-  Controller,
-  Post,
-  Body,
-  ValidationPipe,
-  Param,
-  Query,
-} from '@nestjs/common';
-import { TemplateService } from './template.service';
+import { Get, Controller, Post, Body, Query } from '@nestjs/common';
 import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dto';
-import { plainToInstance } from 'class-transformer';
 import {
   UserForgottenPasswordResetTemplate,
   UserAccountCreatedTemplate,
 } from './templates';
-import { FormatType } from './types/format.type';
+import { ActionType } from './types/action.type';
 import { ApiBody, ApiProperty, ApiQuery } from '@nestjs/swagger';
+import { EngineService } from './engine.service';
 import { QueueService } from './queue.service';
 
-// POST /email-message/:template?format=html
-// POST /email-message/:template?send=false&format=html,text
 @Controller('email-message')
 export class EmailMessageController {
   constructor(
-    private _templateService: TemplateService,
+    private _engineService: EngineService,
     private _queueService: QueueService,
   ) {}
 
-  @ApiBody({ type: [UserAccountCreatedDto] })
-  @ApiQuery({ name: 'send', required: false, type: Boolean })
-  @ApiQuery({ name: 'format', enum: FormatType })
-  @UsePipes(ValidationPipe)
+  @ApiBody({ type: UserAccountCreatedDto })
+  @ApiQuery({ name: 'action', enum: ActionType })
   @Post('user-account-created')
   async convert(
-    @Body() body: UserAccountCreatedDto,
-    @Query('format') format: FormatType,
+    @Body() data: UserAccountCreatedDto,
+    @Query('action') action: ActionType,
   ): Promise<any> {
-    this._queueService.create('user-account-created', body);
-
-    return await this._templateService.convertToFormat(
+    return this._engineService.process(
+      action,
+      UserAccountCreatedDto.slug,
       UserAccountCreatedTemplate,
-      body,
-      format,
+      data,
     );
   }
 
-  @ApiBody({ type: [UserForgottenPasswordResetDto] })
-  @ApiQuery({ name: 'format', enum: FormatType })
-  @UsePipes(ValidationPipe)
+  @ApiBody({ type: UserForgottenPasswordResetDto })
+  @ApiQuery({ name: 'action', enum: ActionType })
   @Post('user-forgotten-password-reset')
   async convertUserForgottenPasswordReset(
-    @Body() body: UserForgottenPasswordResetDto,
-    @Query('format') format?: FormatType,
+    @Body() data: any, //UserForgottenPasswordResetDto,
+    @Query('action') action: ActionType,
   ): Promise<any> {
-    this._queueService.create('user-forgotten-password-reset', body);
-
-    return await this._templateService.convertToFormat(
+    return this._engineService.process(
+      action,
+      UserForgottenPasswordResetDto.slug,
       UserForgottenPasswordResetTemplate,
-      body,
-      format ?? FormatType.HTML,
+      data,
     );
   }
 

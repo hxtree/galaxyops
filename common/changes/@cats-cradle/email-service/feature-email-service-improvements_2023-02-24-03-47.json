@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/email-service",
+      "comment": "add queue service",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/email-service"
+}

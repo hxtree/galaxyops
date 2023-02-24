@@ -31,6 +31,20 @@
           "withInterfaces": true,
           "stringEnums": true
         }
+      },
+      "email-service": {
+        "output": "./libraries/api-client-email-service",
+        "inputSpec": "./packages/email-service/openapi-spec.json",
+        "ignoreFileOverride": "./common/config/openapitools/.openapi-generator-ignore",
+        "generatorName": "typescript-axios",
+        "templateDir": "./common/config/openapitools/templates/typescript-axios",
+        "additionalProperties": {
+          "npmName": "@cats-cradle/api-client-email-service",
+          "npmVersion": "0.0.1",
+          "npmRepository": "https://github.com/hxtree/cats-cradle",
+          "withInterfaces": true,
+          "stringEnums": true
+        }
       }
     }
   }

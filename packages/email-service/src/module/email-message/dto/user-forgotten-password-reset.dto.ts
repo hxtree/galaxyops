@@ -1,15 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEmail, IsString, IsFQDN } from 'class-validator';
+import { IsString, IsFQDN } from 'class-validator';
 import { Expose } from 'class-transformer';
+import { TemplateDto } from './template.dto';
 
-export class UserForgottenPasswordResetDto {
-  @IsEmail()
-  @ApiProperty({
-    description: 'The email recipient',
-    default: 'jane.doe@example.com',
-  })
-  @Expose()
-  recipient!: string;
+export class UserForgottenPasswordResetDto extends TemplateDto {
   @IsString()
   @ApiProperty({
     description: 'The username of the recipient',
