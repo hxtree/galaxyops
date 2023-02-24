@@ -17,6 +17,12 @@
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run",
     "depcheck": "npx depcheck"
   },
+  "keywords": [
+    "rushjs",
+    "code coverage",
+    "monorepo",
+    "rush"
+  ],
   "dependencies": {
     "@cats-cradle/base-nodejs": "workspace:*",
     "istanbul-lib-coverage": "~3.2.0",

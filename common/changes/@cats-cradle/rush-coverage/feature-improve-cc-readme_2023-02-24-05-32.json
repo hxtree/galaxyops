@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/rush-coverage",
+      "comment": "add keywords to package.json",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/rush-coverage"
+}
