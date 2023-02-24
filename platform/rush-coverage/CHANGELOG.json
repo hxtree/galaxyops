@@ -2,6 +2,18 @@
   "name": "@cats-cradle/rush-coverage",
   "entries": [
     {
+      "version": "0.0.7",
+      "tag": "@cats-cradle/rush-coverage_v0.0.7",
+      "date": "Fri, 24 Feb 2023 05:33:02 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add keywords to package.json"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.6",
       "tag": "@cats-cradle/rush-coverage_v0.0.6",
       "date": "Fri, 24 Feb 2023 04:55:39 GMT",

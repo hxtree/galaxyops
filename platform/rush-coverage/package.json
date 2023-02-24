@@ -5,7 +5,7 @@
     "app": "./dist/src/app.js"
   },
   "main": "index.js",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "build": "tsc",
@@ -17,6 +17,12 @@
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run",
     "depcheck": "npx depcheck"
   },
+  "keywords": [
+    "rushjs",
+    "code coverage",
+    "monorepo",
+    "rush"
+  ],
   "dependencies": {
     "@cats-cradle/base-nodejs": "workspace:*",
     "istanbul-lib-coverage": "~3.2.0",

@@ -15,11 +15,13 @@ entire monorepo.
 
 ## Usage
 
+Run code coverage for each project then run this project to combine them.
+
 ```bash
 
 rush test:cov && rushx start
 ```
 
-## TODO
-
-- [ ] add tag filter support as arg
+Coverage files generated will be saved to the `coverage/` directory. These files
+can then be used to report code coverage for entire monorepo. They can be used
+in CI to get monitor code coverage just as any single coverage report would be.
