@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { EmailMessage } from './email-message.schema';
+import { EmailMessage, TEmailMessageDocument } from './email-message.schema';
 import { v4 } from 'uuid';
 import { StatusType } from './types/status.type';
 import { EmailMessageRepository } from './email-message.repository';
@@ -19,7 +19,7 @@ export class QueueService {
     return this._emailMessageRepository.create(emailRequest);
   }
 
-  public async findAll(): Promise<any> {
+  public async findAll(): Promise<TEmailMessageDocument[]> {
     return this._emailMessageRepository.findAll();
   }
 }

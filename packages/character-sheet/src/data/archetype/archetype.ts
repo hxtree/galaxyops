@@ -12,7 +12,7 @@ import { Affiliation } from '../affiliations';
 /**
  * Base character information that does not change as the game progress
  * and therefore is not stored in database.
- * contains potentialGeatSlots, potentialDisciplines, etc.
+ * contains potentialGearSlots, potentialDisciplines, etc.
  *
  * only contains archetypes that can become character sheets; would not include a tree, etc.
  */
@@ -57,14 +57,14 @@ export namespace Archetype {
 
     potentialDisciplines?: Discipline.Type[];
     potentialOutfits?: Outfit.Type[];
-    potentialGeatSlots?: Slot[];
+    potentialGearSlots?: Slot[];
     summonCompatibility?: Summon.Type[];
     weaponCompatibility?: Weapon.Category[];
 
     // compatibility [
     // disciplines?: Discipline[];
     // outfits?: Outfit[];
-    // geatSlots?: GearSlot[];
+    // gearSlots?: GearSlot[];
     // summon?: Summon[];
     // ]
 
@@ -76,11 +76,11 @@ export namespace Archetype {
     alias: ['Lady of the Vase', 'Ashes', 'Dust'],
     backstory:
       'She is known only as Mother. ' +
-      'She often can be found carring things back and forth from the garden. ' +
+      'She often can be found carrying things back and forth from the garden. ' +
       'She is mother to both Vallon and Meeku. ' +
       'Mother knits Meeku a red scarf. ' +
       'Mother dies and is turned to ashes during act one. ' +
-      "Meeku carries Mother's ashes around his waist with him in a goard. ",
+      "Meeku carries Mother's ashes around his waist with him in a gourd. ",
   };
 
   /**
@@ -95,7 +95,7 @@ export namespace Archetype {
     affiliation: [Affiliation.THE_CATS],
     description:
       'A black and white cat. ' +
-      'His face is primarly white with a black noise. ' +
+      'His face is primarily white with a black noise. ' +
       'He has emerald yellowish greenish eyes. ' +
       'His ears are black. ' +
       'His fur is short. ' +
@@ -146,18 +146,18 @@ export namespace Archetype {
    */
 
   export const OUERN_ONI: Type = {
-    name: 'Ouern',
+    name: 'Ouren',
     surname: 'Oni',
     symbolizes: ['Destroyer of Time'],
     alias: ['The Black Plague', 'Skyfall', 'Timestopper', 'Standstill'],
     backstory:
       'Often sang a song similar to Tumbalalaika to his sons when they were young. ' +
-      'Rumored to be end cause the end of all existenance. ' +
+      'Rumored to be end cause the end of all existence. ' +
       'Whereabouts unknown. ',
     history:
       'He went is sealed inside the Floating Island waiting for his sons' +
       'When his eyes are open only greater beings can move the rest of the world stands still.' +
-      'He possess sight beyond sight; is able to perseve the world from afar' +
+      'He possess sight beyond sight; is able to preserve the world from afar' +
       'He is responsible for battle his son win where time seems to stand still. ',
     affiliation: [Affiliation.THE_DESTROYERS, Affiliation.SOLIDER_FORCES],
     description: 'White hair. Has a prominent tattoo FTW',
@@ -186,7 +186,7 @@ export namespace Archetype {
     // 'Sets out in search of his father to freeze all time. ' +
     // 'Raises the floating island. ' +
     // 'Taints the Keeper of Heart. ' +
-    // 'Unleases Ouren. '
+    // 'Unleashes Ouren. '
     history:
       'Women easily fall in love with Vallon. ' +
       'Vallon is not interested in love and those who love him have their heart painfully broken.' +
@@ -250,7 +250,7 @@ export namespace Archetype {
     name: 'Faye',
     surname: 'Imago',
     backstory:
-      'A young girl with light violet hair who weilds magic and studies history',
+      'A young girl with light violet hair who wields magic and studies history',
     symbolizes: ['Charity'],
     affiliation: [Affiliation.MAGI_ORDER],
     alias: ['Bookworm'],
@@ -293,7 +293,7 @@ export namespace Archetype {
     ],
     traits: [
       {
-        // innate prociency with sword
+        // innate proficiency with sword
         tag: EffectTag.SWORD,
         modifier: Effect.RESIST,
         quantity: 0.5,
@@ -313,7 +313,7 @@ export namespace Archetype {
     backstory: 'A solider for life',
     affiliation: [Affiliation.SOLIDER_FORCES],
     potentialDisciplines: [
-      Discipline.GAURD,
+      Discipline.GUARD,
       Discipline.BODY_BUILDER,
       Discipline.COMMANDER,
     ],
@@ -333,7 +333,7 @@ export namespace Archetype {
     ],
     symbolizes: ['Despair'],
     backstory:
-      'As a child, his people scarificed him to save themselves. ' +
+      'As a child, his people sacrificed him to save themselves. ' +
       'They sewed the demons plaguing the village into his skin. ' +
       'The demons were drawn to his purity. ',
     affiliation: [Affiliation.CATCHERS],
@@ -372,9 +372,9 @@ export namespace Archetype {
     occupation: 'Mercenary',
     characteristics:
       'Strong, defiant, kills without question. ' +
-      'Motivated primarly by money. ',
+      'Motivated primarily by money. ',
     backstory: '',
-    symbolizes: ['Kindness', 'Independance'],
+    symbolizes: ['Kindness', 'Independence'],
     affiliation: [Affiliation.NINJA],
     potentialDisciplines: [
       Discipline.NINJA,
@@ -477,7 +477,7 @@ export namespace Archetype {
   export const WISP: Type = {
     name: 'Wisp',
     affiliation: [Affiliation.VALLONS_SEVEN],
-    symbolizes: ['Gluttony', 'Henya'],
+    symbolizes: ['Gluttony', 'Hyena'],
     potentialDisciplines: [Discipline.MAGI_YELLOW],
   };
 
@@ -521,7 +521,7 @@ export namespace Archetype {
 
   export const WARLING: Type = {
     name: 'Warling',
-    description: 'The embodyment of a traveling cyclone',
+    description: 'The embodiment of a traveling cyclone',
     potentialDisciplines: [Discipline.WIZARD, Discipline.HISTORIAN],
   };
 
@@ -537,7 +537,7 @@ export namespace Archetype {
 
   export const DEEP_THINKER: Type = {
     name: 'Deep Thinker',
-    description: 'A humaniod, fish, monster',
+    description: 'A humanoid, fish, monster',
   };
 
   // Bird of Fire - phoenix

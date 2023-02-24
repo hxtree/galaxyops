@@ -16,7 +16,7 @@ request.
 > Publisher -> SNS -> SQS -> Consumer
 
 **Event** Publish to a SNS topic informing any subscribers that something
-occured within a given system. Events published may be significant events that
+occurred within a given system. Events published may be significant events that
 were published only for the purpose of data retention and analytic purposes.
 
 > Publisher -> SNS -> SQS -> Consumer

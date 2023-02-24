@@ -2,6 +2,12 @@
   "name": "@cats-cradle/api-client-luck-by-dice",
   "entries": [
     {
+      "version": "1.0.2",
+      "tag": "@cats-cradle/api-client-luck-by-dice_v1.0.2",
+      "date": "Fri, 24 Feb 2023 04:55:39 GMT",
+      "comments": {}
+    },
+    {
       "version": "1.0.3",
       "tag": "@cats-cradle/api-client-luck-by-dice_v1.0.3",
       "date": "Sat, 18 Feb 2023 22:07:33 GMT",

@@ -6,7 +6,7 @@ laying the foundations for other services.
 
 ## Curated List of Recommend Packages
 
-At a base level a platform can be a curated list of perfered packages such as
+At a base level a platform can be a curated list of preferred packages such as
 the one below.
 
 ### Database

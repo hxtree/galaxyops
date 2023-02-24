@@ -1,5 +1,5 @@
 /**
- * InteractionSkills are actions that can only be used when a compatable object is present
+ * InteractionSkills are actions that can only be used when a compatible object is present
  */
 export enum Interaction {
   GRAB = 'Grab',
@@ -55,7 +55,7 @@ export namespace InteractionSkill {
   // InteractionSkill Actions are a type of Command Menu actions,
   // which essentially means that they take up a slot on the players Command
   // Menu. InteractionSkill Actions take up the InteractionSkill Slot on the
-  //  Commnd Menu. What distinguishes InteractionSkill Actions from the rest
+  //  Command Menu. What distinguishes InteractionSkill Actions from the rest
   // is that all interaction actions relate to interacting with other objects.
   // Counter – make a maneuver in reaction to an enemy’s.
   // Disobey – do not follow orders given.

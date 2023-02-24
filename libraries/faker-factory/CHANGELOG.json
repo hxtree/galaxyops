@@ -2,6 +2,18 @@
   "name": "@cats-cradle/faker-factory",
   "entries": [
     {
+      "version": "0.0.8",
+      "tag": "@cats-cradle/faker-factory_v0.0.8",
+      "date": "Fri, 24 Feb 2023 04:55:39 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix grammar"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.7",
       "tag": "@cats-cradle/faker-factory_v0.0.7",
       "date": "Wed, 22 Feb 2023 14:29:10 GMT",

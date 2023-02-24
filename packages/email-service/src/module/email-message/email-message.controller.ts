@@ -35,7 +35,7 @@ export class EmailMessageController {
   @ApiQuery({ name: 'action', enum: ActionType })
   @Post('user-forgotten-password-reset')
   async convertUserForgottenPasswordReset(
-    @Body() data: any, //UserForgottenPasswordResetDto,
+    @Body() data: UserForgottenPasswordResetDto,
     @Query('action') action: ActionType,
   ): Promise<any> {
     return this._engineService.process(

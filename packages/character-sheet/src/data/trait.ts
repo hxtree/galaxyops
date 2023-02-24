@@ -34,7 +34,7 @@ export type WeaknessTrait = {
  * Resistance. decreases damage taken by the damage type.
  *
  * e.g.
- * ELECTIC RESISTANCE 0.8x
+ * ELECTRIC RESISTANCE 0.8x
  * SWORD RESISTANCE 0.5x
  */
 export type ResistanceTrait = {
@@ -45,7 +45,7 @@ export type ResistanceTrait = {
 };
 
 /**
- * Bonuses, not applicable to LIFE gauage
+ * Bonuses, not applicable to LIFE gauge
  *
  * e.g.
  * EXPERIENCE BONUS 1.2x

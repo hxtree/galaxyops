@@ -16,7 +16,7 @@ export namespace Passive {
 
   export const ESCAPE_ARTIST: Type = {
     name: 'Escape Artist',
-    description: 'Makes it easier to run away from aggresive targets',
+    description: 'Makes it easier to run away from aggressive targets',
   };
 
   export const INTIMIDATE: Type = {
@@ -67,8 +67,8 @@ export namespace Passive {
 
   export const GLUTTONOUS_DESIRE: Type = {
     name: 'Gluttonous Desire',
-    description: 'Comsumer food items twice as fast',
-    // earned from defeating Glutony
+    description: 'Consumer food items twice as fast',
+    // earned from defeating Gluttony
   };
 
   export const CATCHER: Type = {
