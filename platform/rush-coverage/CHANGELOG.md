@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/rush-coverage
 
-This log was last generated on Fri, 24 Feb 2023 04:55:39 GMT and should not be manually modified.
+This log was last generated on Fri, 24 Feb 2023 05:33:02 GMT and should not be manually modified.
+
+## 0.0.7
+Fri, 24 Feb 2023 05:33:02 GMT
+
+### Patches
+
+- add keywords to package.json
 
 ## 0.0.6
 Fri, 24 Feb 2023 04:55:39 GMT
