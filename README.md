@@ -3,7 +3,7 @@
 **Cats Cradle** is a unreleased mobile role-playing game (RPG).
 
 This monorepo contains platform as a service (PaaS), microservices, a
-devcontainer, and infrastructure as code (IaC) used to continously deploy Cats
+devcontainer, and infrastructure as code (IaC) used to continuously deploy Cats
 Cradle in its entirety.
 
 Although these packages are for the game, they are also published for use
@@ -101,7 +101,7 @@ Pull requests and bug reports are welcome on GitHub at
 welcoming space for collaboration, and contributors are expected to adhere to
 the [code of conduct](docs/CODE_OF_CONDUCT.md).
 
-The quickest way to start contibuting is to
+The quickest way to start contributing is to
 [fork repo](https://github.com/hxtree/cats-cradle/fork) and submit changes back.
 
 ### Our Contributors

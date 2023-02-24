@@ -1,6 +1,6 @@
 # AWS Org Formation
 
-The AWS Organization is initalized, managed, and synced using
+The AWS Organization is initialized, managed, and synced using
 [AWS Organization Formation](https://github.com/org-formation/org-formation-cli).
 
 ## Getting Started
@@ -32,7 +32,7 @@ The AWS Organization is initalized, managed, and synced using
    org-formation update organization.yml --profile=Administrator
    ```
 
-# Need help?
+## Need help?
 
 ```bash
 org-formation --help

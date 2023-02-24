@@ -5,7 +5,7 @@ import { EffectTable } from '../table.effect';
 /**
  * Weapon Skill
  *
- * Weapon sklills are granted based on the equipped item and characters ability to use weapon.
+ * Weapon skills are granted based on the equipped item and characters ability to use weapon.
  * Each directly related to simple use of the players equipped weapon.
  * Each are a type of Command Menu Action which means they can be used in game.
  * They are always located in the first slot of the Basic Command Menu Actions.
@@ -104,7 +104,7 @@ export namespace Weapon {
   // "75","Quick"," Increase movement speed","74",,"74"
   // "76","Darkness"," Decrease the area that your opponent can see.","75",,"75"
   // "77","Fighter","Double Strike","76",,"76"
-  // "78","Block","Block enemies with wielding item. Preventing Crital Attacks
+  // "78","Block","Block enemies with wielding item. Preventing Critical Attacks
   // from doing additional damage","77",,"77"
 
   // "49","Cheer","Targets Spirit increases by 10% for a duration.","48",,"48"
@@ -113,7 +113,7 @@ export namespace Weapon {
   // "52","Sense Bluff","Detect if someone is lying (indicated
   // by a icon when character is talking)","51",,"51"
 
-  // "53","Wraftful Blow","If a player holds down the button for a basic attack
+  // "53","Wrathful Blow","If a player holds down the button for a basic attack
   // move they will do additional physical damage at the cost of Life to the
   // Berserker. The longer they hold down the button the more Life will be
   // taken in the exchange.","52",,"52"
@@ -126,7 +126,7 @@ export namespace Weapon {
   // "8","Focus",,"6",,"6"
   // "9","Parry","Attack someones attack to block","7",,"7"
   // "10","Order/Command",,"8",,"8"
-  // "11","Formation","Get in predifend organization","9",,"9"
+  // "11","Formation","Get in predefined organization","9",,"9"
   // "13","Liberate",,"11",,"11"
   // "14","Disobey","Block a command","12",,"12"
   // "16","Protect","Guard an ally","14",,"14"
@@ -137,7 +137,7 @@ export namespace Weapon {
   // "26","Blizzard",,"24",,"24"
   // "28","Frost",,"25",,"25"
   // "29","Chill",,"26",,"26"
-  // "30","Absorb","Aborb the targets life","27",,"27"
+  // "30","Absorb","Absorb the targets life","27",,"27"
   // "31","Drain",,"28",,"28"
   // "33","Dismiss",,"30",,"30"
 

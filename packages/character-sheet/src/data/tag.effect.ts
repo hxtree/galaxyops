@@ -21,7 +21,7 @@ export enum EffectTag {
 
   // flying
   AERIAL = 'Aerial', // happening in the sky, effective against flying
-  GROUNDLEVEL = 'Ground-Level', // happens on the ground, ineffective against flying
+  GROUND_LEVEL = 'Ground-Level', // happens on the ground, ineffective against flying
 
   // side effect
   POISON = 'Poison',
@@ -46,7 +46,7 @@ export enum EffectTag {
   SHIELD = 'Shield',
   STAFF = 'Staff',
   SWORD = 'Sword',
-  SHEILD_SWORD = 'Shield Sword',
+  SHIELD_SWORD = 'Shield Sword',
   TOME = 'Tome',
   WAND = 'Wand',
   UNARMED = 'Unarmed',

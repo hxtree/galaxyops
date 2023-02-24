@@ -6,7 +6,7 @@ import { Weapon } from './weapon.skill';
  * Once prerequisite is matched the combination activation button (Square by default)
  * can be pressed to activate the action
  *
- * If prerequestes is undefined, a player may customize a characters to set a custom
+ * If prerequisites is undefined, a player may customize a characters to set a custom
  * combo in order for quicker action selection.
  */
 export namespace Combo {

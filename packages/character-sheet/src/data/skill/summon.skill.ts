@@ -35,7 +35,7 @@ export namespace Summon {
 
   export const HERALDIC_LION: Type = {
     name: 'Heraldic Lion',
-    description: 'A regal lion with an impecable stance',
+    description: 'A regal lion with an impeccable stance',
     commands: [
       // https://familyhistoryfoundation.com/2020/07/17/heraldic-lion-positions/
       'Passant Stance', // claw
@@ -94,6 +94,6 @@ export namespace Summon {
     backstory: '',
   };
 
-  // todo flesh out how these work with individual summons, seens like theyed be individually based
+  // todo flesh out how these work with individual summons, seems like they'ed be individually based
   // Malace's tattoos reference lesser key of solomon?
 }

@@ -1,12 +1,12 @@
 import { Attribute } from '../attribute';
-import { EffectTable, SkillffectModifier } from '../table.effect';
+import { EffectTable, SkillEffectModifier } from '../table.effect';
 import { EffectTag } from '../tag.effect';
 import { Skill } from '../skill';
 import { Slot } from './slot';
 
 /**
  * Accessory
- * Secondary items that are equippable
+ * Ares secondary items that can be equipped
  * An object or device that is not essential in itself but adds to the beauty, convenience, etc.
  */
 export namespace Accessory {
@@ -81,7 +81,7 @@ export namespace Accessory {
     effects: [
       {
         skill: Skill.CATCHER,
-        modifer: SkillffectModifier.ADD,
+        modifer: SkillEffectModifier.ADD,
         tags: [EffectTag.METAL],
       },
     ],
@@ -94,7 +94,7 @@ export namespace Accessory {
     effects: [
       {
         skill: Skill.CATCHER,
-        modifer: SkillffectModifier.ADD,
+        modifer: SkillEffectModifier.ADD,
         tags: [EffectTag.PHYSICAL],
       },
     ],

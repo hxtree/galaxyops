@@ -4,7 +4,10 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class TemplateService {
-  async convert(template: string, data: any): Promise<any> {
+  async convert(
+    template: string,
+    data: any,
+  ): Promise<{ readonly html: string; readonly text: string }> {
     const html = await this.parse(template, data);
     const text = await this.toText(html);
 

@@ -16,7 +16,7 @@ namespace Place {
       'It is home to many master tattoo artist. ',
       'The people of the town wear ninja masks often. ',
       'The village contains a gate to the demon realm. ',
-      'The preist lure demons plaguing the town into the skins on innocent as to protect the village and then banish the individual. ',
+      'The priest lure demons plaguing the town into the skins on innocent as to protect the village and then banish the individual. ',
       'The Catchers village uses the yin yang symbol. ',
     ],
   };

@@ -20,6 +20,6 @@ export const Slot: Record<string, string[]> = {
   First: ['Basic', 'Combo', 'Weapon'],
   Second: [],
   Third: ['Drive'],
-  Fouth: ['Teamwork', 'Tools', 'Trap'],
+  Fourth: ['Teamwork', 'Tools', 'Trap'],
   Fifth: ['Item'],
 };

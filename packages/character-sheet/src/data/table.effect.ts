@@ -13,7 +13,7 @@ export enum StatusEffectModifier {
   REMOVE = 'REMOVE',
 }
 
-export enum SkillffectModifier {
+export enum SkillEffectModifier {
   ADD = 'ADD',
   REMOVE = 'REMOVE',
 }
@@ -34,7 +34,7 @@ export interface AttributeRemoveEffectRecord {
 
 export interface SkillEffectRecord {
   skill: SkillType;
-  modifer: SkillffectModifier;
+  modifer: SkillEffectModifier;
   tags?: Array<EffectTag>;
 }
 

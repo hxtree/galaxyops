@@ -21,7 +21,7 @@ export namespace Movement {
     name: 'Run',
     description: 'Move quickly using stamina',
     consumes: Attribute.SPIRIT,
-    // consumes stanmina
+    // consumes stamina
     // (walk + Square)
     // (Hard press Direction Pad with Stamina)
   };
@@ -29,7 +29,7 @@ export namespace Movement {
   export const SWIM: Type = {
     name: 'Swim',
     description: 'Move in deep water',
-    // consumes stanmina
+    // consumes stamina
   };
 
   export const BACK_FLIP: Type = {

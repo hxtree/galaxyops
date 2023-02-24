@@ -9,14 +9,14 @@ export namespace Item {
     description: string;
   };
 
-  export const APPRIASE: Type = {
+  export const APPRAISE: Type = {
     name: 'Appraise',
     description: 'Determine the market value of an item',
   };
 
   export const COMBINE: Type = {
     name: 'Combine',
-    description: 'Turn two or more items into one item if combatiable',
+    description: 'Turn two or more items into one item if compatible',
   };
 
   export const THROW: Type = {

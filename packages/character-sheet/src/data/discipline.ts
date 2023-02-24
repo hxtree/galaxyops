@@ -5,7 +5,7 @@ import { Skill, SkillType } from './skill';
  * Experience records a character experience for a specific discipline.
  * Different disciplines have different experience requirements.
  * A character can have multiple disciplines and therefore multiple experience records.
- * Progression in one discipine may unlock other disciplines, actions, and attributes bonuses.
+ * Progression in one discipline may unlock other disciplines, actions, and attributes bonuses.
  */
 
 export namespace Discipline {
@@ -64,7 +64,7 @@ export namespace Discipline {
     description: 'Studies the world as it was.',
     category: Category.PROFESSION,
     skillProgression: [
-      { level: 10, skill: Skill.APPRIASE },
+      { level: 10, skill: Skill.APPRAISE },
       { level: 25, skill: Skill.SCAN },
       { level: 50, skill: Skill.HERALDIC_LION },
     ],
@@ -214,15 +214,15 @@ export namespace Discipline {
     ],
   };
 
-  export const GAURD: Type = {
-    name: 'Gaurd',
+  export const GUARD: Type = {
+    name: 'Guard',
     description: 'Specialize in protection.',
     category: Category.ARCHETYPE,
     skillProgression: [],
   };
 
   export const GUARDIAN: Type = {
-    name: 'Gaurdian',
+    name: 'Guardian',
     description: 'Specialize in protection.',
     category: Category.ARCHETYPE,
     skillProgression: [],
@@ -307,7 +307,7 @@ export namespace Discipline {
 
   export const WARRIOR: Type = {
     name: 'Warrior',
-    description: 'Specializzes in combat on the battlefield.',
+    description: 'Specializes in combat on the battlefield.',
     category: Category.ARCHETYPE,
     skillProgression: [],
   };
@@ -356,7 +356,7 @@ export namespace Discipline {
   };
 
   export const MAIDEN: Type = {
-    name: 'Madien',
+    name: 'Maiden',
     description: '',
     category: Category.ARCHETYPE,
     skillProgression: [],

@@ -33,5 +33,5 @@ includes attributes, skills, disciplines, etc.
 
 ## Guidelines
 
-- Implmentation MUST avoid infringing on patent
+- Implementation MUST avoid infringing on patent
   ["Method and system for improved performance of a video game engine"](https://patents.google.com/patent/US10599560B2/en)

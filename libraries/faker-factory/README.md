@@ -70,9 +70,9 @@ export class Person {
 
 The FakerFactory accepts a third optional parameter for settings. Settings are
 used to change the way the FakerFactory works. Adjusting the settings can be
-useful for when writting unit tests on optional fields.
+useful for when writing unit tests on optional fields.
 
-| Property    | Descripion                             | Possible Values        |
+| Property    | Description                            | Possible Values        |
 | ----------- | -------------------------------------- | ---------------------- |
 | probability | probability for faking optional fields | 0, ... 0.5, ... 1      |
 | optionals   | whether to fake optional fields        | true, false, undefined |
@@ -90,13 +90,13 @@ const Person = await FakerFactory.create<Person>(
 In typescript object data can be automatically faked based on either: the
 decorator, the property name, or property typehint.
 
-Property names should remain somewhat consistant and fakes can be generated
+Property names should remain somewhat consistent and fakes can be generated
 based on them, this is how [Intermock](https://github.com/google/intermock)
 works. However, it is unreasonable many-to-many relationship to maintain for
 reasonable faking purposes. Generating values based on typehinting is less then
 ideal due to compiled code being type agnostic and special tsc requirements.
 
-Class-validator decorators and schema were choosen for the following reasons:
+Class-validator decorators and schema were chosen for the following reasons:
 
 - Decorators are already present when using class-validation.
 - Faker data should not just be fake, it should be valid and meet
@@ -114,9 +114,3 @@ Class-validator decorators and schema were choosen for the following reasons:
 - [class-transformer](https://github.com/typestack/class-transformer/tree/master)
 - [class-validator](https://github.com/typestack/class-validator)
 - [class-validator jsonschema](https://github.com/epiphone/class-validator-jsonschema)
-
-## TODO
-
-- [ ] Itergrate with swagger e.g.
-      <https://www.reddit.com/r/Python/comments/n4giff/automatic_fake_json_data_creation_from_schema/>
-      <https://github.com/subeeshcbabu-zz/swagmock>

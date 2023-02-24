@@ -92,7 +92,7 @@ export namespace Affiliation {
   export const GUARDIANS: Type = {
     name: 'Guardians',
     aliases: ['Eight Honors', 'Virtuous'],
-    description: 'Each memeber embodies one of the eight honors',
+    description: 'Each member embodies one of the eight honors',
     history: [
       'Each member become a party member. ',
       'Each member embodies an honorable trait. ',

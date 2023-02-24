@@ -61,7 +61,7 @@ export namespace Spell {
       {
         add: StatusEffect.DOWN,
         chance: 0.2,
-        tags: [EffectTag.EARTH, EffectTag.GROUNDLEVEL],
+        tags: [EffectTag.EARTH, EffectTag.GROUND_LEVEL],
       },
     ],
   };
@@ -185,7 +185,7 @@ export namespace Spell {
       {
         add: StatusEffect.EXILED,
         chance: 0.2,
-        tags: [EffectTag.WATER, EffectTag.GROUNDLEVEL],
+        tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
       },
     ],
   };
@@ -199,7 +199,7 @@ export namespace Spell {
       {
         add: StatusEffect.EXILED,
         chance: 0.2,
-        tags: [EffectTag.WATER, EffectTag.GROUNDLEVEL],
+        tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
       },
     ],
   };
@@ -350,7 +350,7 @@ export namespace Spell {
 
   export const STOP: Type = {
     name: 'Stop',
-    description: 'Freezes a chracter in time',
+    description: 'Freezes a character in time',
     targets: 1,
     effect: [
       {
