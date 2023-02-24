@@ -22,5 +22,6 @@ Run code coverage for each project then run this project to combine them.
 rush test:cov && rushx start
 ```
 
-Coverage files will be generated to `coverage/` directory. These files can then
-be used to reports for entire monorepo or in CI to get monitor code coverage.
+Coverage files generated will be saved to the `coverage/` directory. These files
+can then be used to report code coverage for entire monorepo. They can be used
+in CI to get monitor code coverage just as any single coverage report would be.
