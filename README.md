@@ -43,7 +43,7 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 
 ### Lifecycle of a Pull Request (~5 mins)
 
-1. Create a new branch in Git from the main branch.
+1. Create a new branch from the main using git.
 
    ```bash
    git checkout -b feature/improve-readme
