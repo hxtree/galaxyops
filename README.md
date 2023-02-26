@@ -6,8 +6,7 @@ This monorepo contains platform as a service (PaaS), microservices, a
 devcontainer, and infrastructure as code (IaC) used to continuously deploy Cats
 Cradle in its entirety.
 
-Although these packages are for the game, they are also published for use
-individually and available on NPM.
+Although each package is for the game, many are released and available on NPM.
 
 The game engine client is built using Unreal Engine 5.
 
