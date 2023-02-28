@@ -45,5 +45,8 @@ jobs:
         # if: steps.cache.outputs.cache-hit != 'true'
         run: node common/scripts/install-run-rush.js install
 
+      - name: rush build
+        run: node common/scripts/install-run-rush.js build
+
       - name: Test
         run: node common/scripts/install-run-rush.js test --impacted-by git:${{ secrets.IMPACTED_BY_SHA }}
