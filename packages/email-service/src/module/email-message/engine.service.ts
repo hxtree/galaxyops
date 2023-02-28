@@ -27,8 +27,11 @@ export class EngineService {
         return template;
       case ActionType.VIEW_TEXT:
         return text;
+      case ActionType.QUEUE:
+        await this._queueService.create(slug, data);
+        return '';
       case ActionType.SEND:
-        this._queueService.create(slug, data);
+        await this._queueService.create(slug, data);
 
         return this._mailerService.sendMail({
           toAddresses: data.recipient,
