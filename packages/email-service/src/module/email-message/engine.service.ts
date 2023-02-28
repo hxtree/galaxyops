@@ -28,12 +28,10 @@ export class EngineService {
       case ActionType.VIEW_TEXT:
         return text;
       case ActionType.QUEUE:
-        await this._queueService.create(slug, data);
+        await this._queueService.addOpen(slug, data);
         return '';
       case ActionType.SEND:
-        await this._queueService.create(slug, data);
-
-        return this._mailerService.sendMail({
+        await this._mailerService.sendMail({
           toAddresses: data.recipient,
           fromAddress: data.fromAddress,
           subject: data.subject,
@@ -41,6 +39,9 @@ export class EngineService {
           textMessage: text,
         });
 
+        await this._queueService.addCompleted(slug, data);
+
+        return undefined;
       default:
         return html;
     }

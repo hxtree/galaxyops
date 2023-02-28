@@ -46,7 +46,7 @@ jobs:
         run: node common/scripts/install-run-rush.js install
 
       - name: rush build
-        run: node common/scripts/install-run-rush.js build
+        run: node common/scripts/install-run-rush.js build --impacted-by git:${{ secrets.IMPACTED_BY_SHA }}
 
       - name: Test
         run: node common/scripts/install-run-rush.js test --impacted-by git:${{ secrets.IMPACTED_BY_SHA }}
