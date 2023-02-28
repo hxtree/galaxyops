@@ -81,7 +81,7 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 
 ## Initial AWS Deployment
 
-1. Setup [AWS Org Formation](/plaform/README.md).
+1. Setup [AWS Org Formation](/platform/aws-org-formation/README.md).
 
 2. Login via SSO, bootstrap deployments, deploy platform, and then deploy apps.
 
