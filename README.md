@@ -19,6 +19,7 @@ The game engine client is built using Unreal Engine 5.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
 
+Use the link above for a turn-key codespace development environment.
 Alternatively, locally build, test, and deploy apps using the devcontainer:
 
 1. Clone this repo using [Git](https://git-scm.com/downloads).
@@ -57,7 +58,8 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
    rush test
    ```
 
-3. Stage and commit changes using Conventional Commit.
+3. Stage and commit changes using
+   [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#specification).
 
    ```bash
    git add .
