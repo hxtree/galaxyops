@@ -1,19 +1,16 @@
-import { SendEmailCommand, SESClient } from '@aws-sdk/client-ses';
+import {
+  SendEmailCommand,
+  SendEmailCommandOutput,
+  SESClient,
+} from '@aws-sdk/client-ses';
 import { Injectable } from '@nestjs/common';
-
-export type SendMailDto = {
-  toAddresses: string | string[];
-  fromAddress: string;
-  subject: string;
-  htmlMessage: string;
-  textMessage: string;
-  replyToAddresses?: string | string[];
-  ccAddresses?: string | string[];
-};
+import { SendEmailCommandDto } from './dto/send-email-command.dto';
 
 @Injectable()
 export class MailerService {
-  public async sendMail(params: SendMailDto): Promise<any> {
+  public async sendMail(
+    params: SendEmailCommandDto,
+  ): Promise<SendEmailCommandOutput> {
     const sesClient = new SESClient({
       region: process.env?.AWS_REGION ?? 'us-east-2',
     });
@@ -21,14 +18,16 @@ export class MailerService {
     const sendEmailCommand = this.createSendEmailCommand(params);
 
     try {
-      return sesClient.send(sendEmailCommand);
+      const result = sesClient.send(sendEmailCommand);
+      return result;
     } catch (e) {
       console.error('Failed to send email.');
-      return e;
+      return Promise.reject(e);
     }
   }
 
-  createSendEmailCommand = (params: SendMailDto) =>
+  createSendEmailCommand = (params: SendEmailCommandDto) =>
+    // eslint-disable-next-line implicit-arrow-linebreak
     new SendEmailCommand({
       Destination: {
         CcAddresses: [],
