@@ -1,10 +1,11 @@
-import { SendEmailCommand, SESClient } from '@aws-sdk/client-ses';
 import { Injectable } from '@nestjs/common';
+import { SendEmailCommand, SESClient } from '@aws-sdk/client-ses';
 import { SendEmailCommandDto } from './dto/send-email-command.dto';
 
 @Injectable()
 export class MailerService {
   public async sendMail(params: SendEmailCommandDto): Promise<any> {
+};
     const sesClient = new SESClient({
       region: process.env?.AWS_REGION ?? 'us-east-2',
     });
