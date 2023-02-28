@@ -41,7 +41,7 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: install pnpm needed for cdk nodejsfunction esbuild
+      - name: install pnpm needed for cdk NodeJsFunction esbuild
         run: npm install --global pnpm@7.26.3
 
       - name: rush install

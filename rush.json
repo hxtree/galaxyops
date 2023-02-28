@@ -13,8 +13,8 @@
       "clients",
       "libraries",
       "rigs",
-      "platform",
-      "cicd"
+      "category-platform",
+      "category-ci-cd"
     ],
     "ignoredNpmScopes": ["@types"]
   },
@@ -31,14 +31,15 @@
     "postRushBuild": []
   },
   "allowedProjectTags": [
+    "category-platform",
+    "category-library",
+    "category-ci-cd",
+    "owner-game-design",
+    "owner-ux",
+    "publish-npm",
+    "publish-aws",
     "deploy-platform",
-    "deploy-app",
-    "platform",
-    "game-design-team",
-    "ux-team",
-    "library",
-    "npm-publish",
-    "cicd"
+    "deploy-app"
   ],
   "projects": [
     {
@@ -53,44 +54,44 @@
       "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",
       "cyclicDependencyProjects": [],
-      "tags": [],
+      "tags": ["publish-npm", "publish-aws"],
       "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/pipeline",
       "projectFolder": "platform/pipeline",
-      "reviewCategory": "cicd",
+      "reviewCategory": "category-ci-cd",
       "cyclicDependencyProjects": [],
       "tags": ["deploy-platform"]
     },
     {
       "packageName": "@cats-cradle/rush-coverage",
       "projectFolder": "platform/rush-coverage",
-      "reviewCategory": "cicd",
+      "reviewCategory": "category-ci-cd",
       "cyclicDependencyProjects": [],
-      "tags": [],
+      "tags": ["publish-npm", "publish-aws"],
       "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/constructs",
       "projectFolder": "platform/constructs",
-      "reviewCategory": "platform",
+      "reviewCategory": "category-platform",
       "cyclicDependencyProjects": [],
       "tags": []
     },
     {
       "packageName": "@cats-cradle/lambda-layers",
       "projectFolder": "platform/lambda-layers",
-      "reviewCategory": "platform",
+      "reviewCategory": "category-platform",
       "cyclicDependencyProjects": [],
       "tags": ["deploy-platform"]
     },
     {
       "packageName": "@cats-cradle/eslint-config",
       "projectFolder": "platform/eslint-config",
-      "reviewCategory": "platform",
+      "reviewCategory": "category-platform",
       "cyclicDependencyProjects": [],
-      "tags": [],
+      "tags": ["publish-npm", "publish-aws"],
       "shouldPublish": true
     },
     {
@@ -98,7 +99,7 @@
       "projectFolder": "libraries/validation-schemas",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["library"],
+      "tags": ["publish-npm", "publish-aws", "category-library"],
       "shouldPublish": true
     },
     {
@@ -106,7 +107,7 @@
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["library"],
+      "tags": ["publish-npm", "publish-aws", "category-library"],
       "shouldPublish": true
     },
     {
@@ -114,7 +115,7 @@
       "projectFolder": "libraries/promare-gradients",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["library"],
+      "tags": ["publish-npm", "publish-aws", "category-library"],
       "shouldPublish": true
     },
     {
@@ -122,7 +123,7 @@
       "projectFolder": "libraries/nestjs-modules",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["library"],
+      "tags": ["publish-npm", "publish-aws", "category-library"],
       "shouldPublish": true
     },
     {
@@ -130,14 +131,15 @@
       "projectFolder": "libraries/api-client-email-service",
       "reviewCategory": "api-client",
       "cyclicDependencyProjects": [],
-      "tags": ["game-design-team"]
+      "tags": ["publish-npm", "publish-aws", "category-library"],
+      "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/api-client-luck-by-dice",
       "projectFolder": "libraries/api-client-luck-by-dice",
       "reviewCategory": "api-client",
       "cyclicDependencyProjects": [],
-      "tags": ["game-design-team"],
+      "tags": ["publish-npm", "publish-aws", "category-library"],
       "shouldPublish": true
     },
     {
@@ -145,7 +147,7 @@
       "projectFolder": "libraries/api-client-character-sheet",
       "reviewCategory": "api-client",
       "cyclicDependencyProjects": [],
-      "tags": ["game-design-team"],
+      "tags": ["publish-npm", "publish-aws", "category-library"],
       "shouldPublish": true
     },
     {
@@ -153,7 +155,7 @@
       "projectFolder": "packages/design-system",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["ux-team"],
+      "tags": ["publish-npm", "publish-aws", "category-library", "owner-ux"],
       "shouldPublish": true
     },
     {
@@ -182,7 +184,7 @@
       "projectFolder": "packages/luck-by-dice",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["deploy-app"],
+      "tags": ["deploy-app", "publish-npm", "publish-aws"],
       "shouldPublish": true
     },
     {
@@ -190,7 +192,7 @@
       "projectFolder": "packages/email-service",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["deploy-app"],
+      "tags": ["deploy-app", "publish-npm", "publish-aws"],
       "shouldPublish": true
     }
   ]

@@ -16,11 +16,11 @@
     },
     {
       "name": "@cats-cradle/base-nodejs",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform" ]
     },
     {
       "name": "@cats-cradle/constructs",
-      "allowedCategories": [ "apis", "cicd" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "cicd" ]
     },
     {
       "name": "@cats-cradle/design-system",
@@ -28,7 +28,7 @@
     },
     {
       "name": "@cats-cradle/eslint-config",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform" ]
     },
     {
       "name": "@cats-cradle/faker-factory",
@@ -68,7 +68,7 @@
     },
     {
       "name": "@microsoft/rush-lib",
-      "allowedCategories": [ "cicd" ]
+      "allowedCategories": [ "category-ci-cd", "cicd" ]
     },
     {
       "name": "@microsoft/tsdoc",
@@ -84,7 +84,7 @@
     },
     {
       "name": "@nestjs/common",
-      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "category-platform", "libraries", "platform", "rigs" ]
     },
     {
       "name": "@nestjs/config",
@@ -92,7 +92,7 @@
     },
     {
       "name": "@nestjs/core",
-      "allowedCategories": [ "apis", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
     {
       "name": "@nestjs/mongoose",
@@ -104,7 +104,7 @@
     },
     {
       "name": "@nestjs/platform-express",
-      "allowedCategories": [ "apis", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
     {
       "name": "@nestjs/schematics",
@@ -112,11 +112,11 @@
     },
     {
       "name": "@nestjs/swagger",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
       "name": "@nestjs/terminus",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
       "name": "@nestjs/testing",
@@ -128,11 +128,11 @@
     },
     {
       "name": "@rushstack/eslint-config",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "@rushstack/eslint-plugin",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "@rushstack/heft",
@@ -144,7 +144,7 @@
     },
     {
       "name": "@rushstack/node-core-library",
-      "allowedCategories": [ "cicd" ]
+      "allowedCategories": [ "category-ci-cd", "cicd" ]
     },
     {
       "name": "@size-limit/preset-small-lib",
@@ -188,15 +188,15 @@
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "@vendia/serverless-express",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
       "name": "aws-cdk",
@@ -204,11 +204,11 @@
     },
     {
       "name": "aws-cdk-lib",
-      "allowedCategories": [ "apis", "cicd", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform" ]
     },
     {
       "name": "aws-lambda",
-      "allowedCategories": [ "apis", "cicd", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform" ]
     },
     {
       "name": "aws-sdk",
@@ -216,7 +216,7 @@
     },
     {
       "name": "aws-serverless-express",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
       "name": "axios",
@@ -232,11 +232,11 @@
     },
     {
       "name": "class-transformer",
-      "allowedCategories": [ "apis", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
     {
       "name": "class-validator",
-      "allowedCategories": [ "apis", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
     {
       "name": "class-validator-jsonschema",
@@ -256,7 +256,7 @@
     },
     {
       "name": "constructs",
-      "allowedCategories": [ "apis", "cicd", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform" ]
     },
     {
       "name": "currency.js",
@@ -264,51 +264,51 @@
     },
     {
       "name": "esbuild",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform" ]
     },
     {
       "name": "eslint-config-airbnb",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "eslint-config-airbnb-base",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "eslint-config-airbnb-typescript",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "eslint-config-prettier",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "eslint-plugin-import",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "eslint-plugin-jsx-a11y",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "eslint-plugin-react",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "eslint-plugin-react-hooks",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "express",
-      "allowedCategories": [ "apis", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
     {
       "name": "fs",
-      "allowedCategories": [ "apis", "cicd", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform" ]
     },
     {
       "name": "handlebars",
@@ -320,19 +320,19 @@
     },
     {
       "name": "istanbul-lib-coverage",
-      "allowedCategories": [ "cicd" ]
+      "allowedCategories": [ "category-ci-cd", "cicd" ]
     },
     {
       "name": "istanbul-lib-report",
-      "allowedCategories": [ "cicd" ]
+      "allowedCategories": [ "category-ci-cd", "cicd" ]
     },
     {
       "name": "istanbul-reports",
-      "allowedCategories": [ "cicd" ]
+      "allowedCategories": [ "category-ci-cd", "cicd" ]
     },
     {
       "name": "jest",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "json-schema",
@@ -344,7 +344,7 @@
     },
     {
       "name": "lodash",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform" ]
     },
     {
       "name": "mongodb-memory-server",
@@ -352,11 +352,11 @@
     },
     {
       "name": "mongoose",
-      "allowedCategories": [ "apis", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "category-platform", "libraries", "platform", "rigs" ]
     },
     {
       "name": "node-cache",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
       "name": "node-sass",
@@ -372,11 +372,11 @@
     },
     {
       "name": "path",
-      "allowedCategories": [ "apis", "cicd", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform" ]
     },
     {
       "name": "prettier",
-      "allowedCategories": [ "platform" ]
+      "allowedCategories": [ "category-platform", "platform" ]
     },
     {
       "name": "react",
@@ -400,7 +400,7 @@
     },
     {
       "name": "reflect-metadata",
-      "allowedCategories": [ "apis", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
     {
       "name": "rimraf",
@@ -408,7 +408,7 @@
     },
     {
       "name": "rxjs",
-      "allowedCategories": [ "apis", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
     {
       "name": "sass",
@@ -420,7 +420,7 @@
     },
     {
       "name": "source-map-support",
-      "allowedCategories": [ "apis", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
       "name": "styled-components",
@@ -436,7 +436,7 @@
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "ts-mongoose-pagination",
@@ -444,7 +444,7 @@
     },
     {
       "name": "ts-node",
-      "allowedCategories": [ "apis", "cicd", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform" ]
     },
     {
       "name": "tsdx",
@@ -456,11 +456,11 @@
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "api-client", "apis", "cicd", "libraries", "platform", "rigs" ]
+      "allowedCategories": [ "api-client", "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "uuid",
-      "allowedCategories": [ "apis", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
     {
       "name": "web-vitals",
