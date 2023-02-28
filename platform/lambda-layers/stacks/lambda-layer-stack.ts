@@ -2,6 +2,7 @@
 
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
+import * as ssm from 'aws-cdk-lib/aws-ssm';
 import { BundlingOutput, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 import {
   Architecture,
@@ -43,7 +44,7 @@ export class LambdaLayerStack extends cdk.Stack {
                 'mkdir -p "${LAYER_TMP_DIR}/nodejs"',
                 'cat package.json | jq \'del(.devDependencies)\' > "${LAYER_TMP_DIR}/nodejs/package.json"',
                 'cd "${LAYER_TMP_DIR}/nodejs"',
-                'npm install --prefer-offline --production',
+                'npm install --production',
                 'cd ..',
                 'zip -rq layer.zip nodejs',
                 `cp layer.zip ${outputDir}`,
@@ -56,6 +57,12 @@ export class LambdaLayerStack extends cdk.Stack {
           outputType: BundlingOutput.ARCHIVED,
         },
       }),
+    });
+
+    new ssm.StringParameter(this, 'lambda-layer-nestjs-latest-version', {
+      description: 'NestJS Lambda Layer Latest Version',
+      parameterName: 'lambda-layer-nestjs-latest-version',
+      stringValue: nestJsAppLayer.layerVersionArn,
     });
 
     new cdk.CfnOutput(this, 'layerVersionArn', {

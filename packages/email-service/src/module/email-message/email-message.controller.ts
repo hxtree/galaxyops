@@ -1,11 +1,11 @@
 import { Get, Controller, Post, Body, Query } from '@nestjs/common';
+import { ApiBody, ApiQuery } from '@nestjs/swagger';
 import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dto';
 import {
   UserForgottenPasswordResetTemplate,
   UserAccountCreatedTemplate,
 } from './templates';
 import { ActionType } from './types/action.type';
-import { ApiBody, ApiProperty, ApiQuery } from '@nestjs/swagger';
 import { EngineService } from './engine.service';
 import { QueueService } from './queue.service';
 

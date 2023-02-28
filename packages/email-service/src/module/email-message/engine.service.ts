@@ -29,6 +29,8 @@ export class EngineService {
         return template;
       case ActionType.VIEW_TEXT:
         return text;
+      default:
+        return html;
     }
   }
 }

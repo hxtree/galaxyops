@@ -1,10 +1,10 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
-import { EmailMessageModule } from './email-message.module';
 import { FakerFactory } from '@cats-cradle/faker-factory';
-import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dto';
 import { closeInMongodConnection } from '@cats-cradle/nestjs-modules';
+import { EmailMessageModule } from './email-message.module';
+import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dto';
 
 describe('/email-message', () => {
   let app: INestApplication;

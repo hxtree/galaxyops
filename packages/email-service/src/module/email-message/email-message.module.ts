@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { TemplateService } from './template.service';
 import {
   rootMongooseTestModule,
   MongooseModule,
 } from '@cats-cradle/nestjs-modules';
+import { TemplateService } from './template.service';
 import { EmailMessageSchema } from './email-message.schema';
 import { EmailMessageRepository } from './email-message.repository';
 import { EmailMessageController } from './email-message.controller';

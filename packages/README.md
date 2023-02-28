@@ -6,7 +6,10 @@ or more services.
 
 ---
 
+> **Note** Prior to deploying `packages/`, deploy platform/lambda-layers and
+> packages/api-gateway.
+>
 > **Warning** As to prevent interservice dependencies, packages within this
-> folder MUST not contain any interconnected platform contructs that are used as
-> the fundemental bases to make multiple applications work. Instead, those
+> folder MUST not contain any interconnected platform constructs that are used
+> as the fundamental bases to make multiple applications work. Instead, those
 > should be placed in elsewhere.
