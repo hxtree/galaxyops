@@ -31,7 +31,9 @@
     "postRushBuild": []
   },
   "allowedProjectTags": [
-    "platform-team",
+    "deploy-platform",
+    "deploy-app",
+    "platform",
     "game-design-team",
     "ux-team",
     "library",
@@ -44,14 +46,14 @@
       "projectFolder": "/",
       "reviewCategory": "rigs",
       "cyclicDependencyProjects": [],
-      "tags": ["platform-team"]
+      "tags": []
     },
     {
       "packageName": "@cats-cradle/base-nodejs",
       "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",
       "cyclicDependencyProjects": [],
-      "tags": ["platform-team"],
+      "tags": [],
       "shouldPublish": true
     },
     {
@@ -59,14 +61,14 @@
       "projectFolder": "platform/pipeline",
       "reviewCategory": "cicd",
       "cyclicDependencyProjects": [],
-      "tags": ["platform-team"]
+      "tags": ["deploy-platform"]
     },
     {
       "packageName": "@cats-cradle/rush-coverage",
       "projectFolder": "platform/rush-coverage",
       "reviewCategory": "cicd",
       "cyclicDependencyProjects": [],
-      "tags": ["platform-team"],
+      "tags": [],
       "shouldPublish": true
     },
     {
@@ -74,21 +76,21 @@
       "projectFolder": "platform/constructs",
       "reviewCategory": "platform",
       "cyclicDependencyProjects": [],
-      "tags": ["platform-team"]
+      "tags": []
     },
     {
       "packageName": "@cats-cradle/lambda-layers",
       "projectFolder": "platform/lambda-layers",
       "reviewCategory": "platform",
       "cyclicDependencyProjects": [],
-      "tags": ["platform-team"]
+      "tags": ["deploy-platform"]
     },
     {
       "packageName": "@cats-cradle/eslint-config",
       "projectFolder": "platform/eslint-config",
       "reviewCategory": "platform",
       "cyclicDependencyProjects": [],
-      "tags": ["platform-team"],
+      "tags": [],
       "shouldPublish": true
     },
     {
@@ -159,28 +161,28 @@
       "projectFolder": "packages/gm-client",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["game-design-team"]
+      "tags": ["deploy-app"]
     },
     {
       "packageName": "@cats-cradle/api-gateway",
       "projectFolder": "packages/api-gateway",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["platform-team"]
+      "tags": ["deploy-platform"]
     },
     {
       "packageName": "@cats-cradle/character-sheet",
       "projectFolder": "packages/character-sheet",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["game-design-team"]
+      "tags": ["deploy-app"]
     },
     {
       "packageName": "@cats-cradle/luck-by-dice",
       "projectFolder": "packages/luck-by-dice",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["game-design-team"],
+      "tags": ["deploy-app"],
       "shouldPublish": true
     },
     {
@@ -188,7 +190,7 @@
       "projectFolder": "packages/email-service",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["game-design-team"],
+      "tags": ["deploy-app"],
       "shouldPublish": true
     }
   ]

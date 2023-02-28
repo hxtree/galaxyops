@@ -12,7 +12,7 @@ export class LuckByDiceStack extends cdk.Stack {
     });
 
     new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${microservice.getBaseUrl()}/roll/notation/1d6/luck/4`,
+      value: `${microservice.getBaseUrl()}/dice-roll`,
     });
   }
 }

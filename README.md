@@ -48,9 +48,8 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
    git checkout -b feature/improve-readme
    ```
 
-2. Work on changes (e.g. fix a bug or add a new feature).
-
-3. Build, lint, and unit test projects.
+2. Work on changes (e.g. fix a bug or add a new feature). Build, lint, and unit
+   test projects.
 
    ```bash
    rush build
@@ -58,28 +57,40 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
    rush test
    ```
 
-4. Stage and commit changes using Conventional Commit.
+3. Stage and commit changes using Conventional Commit.
 
    ```bash
    git add .
    git commit -m 'doc: fix spelling of computers'
    ```
 
-5. Document SemVer changes and cut new Changelog.
+4. If applicable, document [semantic version](https://semver.org/) changes,
+   generate Changelogs, and commit changes.
 
    ```bash
    rush change
    rush version --bump
+   git commit -m 'chore: bump change log'
    ```
 
-6. Commit change log changes, push code to repo, and open PR.
+5. Push code and open a PR. Celebrate contributing to @cats-cradle!
 
    ```bash
-   git commit -m 'chore: bump change log'
    git push
    ```
 
-7. Celebrate contributing to @cats-cradle!
+## Initial AWS Deployment
+
+1. Setup [AWS Org Formation](/plaform/README.md).
+
+2. Login via SSO, bootstrap deployments, deploy platform, and then deploy apps.
+
+   ```bash
+   rush sso
+   rush cdk:bootstrap
+   rush cdk:deploy --to=tag:deploy-platform
+   rush cdk:deploy --to=tag:deploy-app
+   ```
 
 ## Documentation
 
