@@ -4,6 +4,10 @@ import { Expose } from 'class-transformer';
 import { kebabCase } from 'lodash';
 
 export abstract class TemplateDto {
+  abstract subject: string;
+
+  abstract fromAddress: string;
+
   @IsEmail()
   @ApiProperty({
     description: 'The email recipient',

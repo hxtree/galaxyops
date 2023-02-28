@@ -4,6 +4,10 @@ import { Expose } from 'class-transformer';
 import { TemplateDto } from './template.dto';
 
 export class UserForgottenPasswordResetDto extends TemplateDto {
+  readonly subject: 'Forgotten Password Reset';
+
+  readonly fromAddress = 'contact@ouxsoft.com';
+
   @IsString()
   @ApiProperty({
     description: 'The username of the recipient',

@@ -207,6 +207,10 @@
       "allowedCategories": [ "apis", "cicd", "platform" ]
     },
     {
+      "name": "aws-sdk",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "aws-serverless-express",
       "allowedCategories": [ "apis", "platform" ]
     },
