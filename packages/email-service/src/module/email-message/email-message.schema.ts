@@ -33,8 +33,6 @@ export class EmailMessage {
   @IsDateString()
   @Prop()
   public updatedAt: string;
-
-  constructor() {}
 }
 
 export type TEmailMessageDocument = EmailMessage & Document;

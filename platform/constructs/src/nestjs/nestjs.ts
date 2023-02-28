@@ -3,6 +3,7 @@ import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Duration, Stack } from 'aws-cdk-lib';
 import { LayerVersion, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { RetentionDays } from 'aws-cdk-lib/aws-logs';
+import * as ssm from 'aws-cdk-lib/aws-ssm';
 import { getBaseUrl } from '../api-endpoint/get-base-url';
 
 export interface NestJsProps {
@@ -17,15 +18,22 @@ export class NestJs extends Construct {
   constructor(scope: Construct, id: string, props: NestJsProps) {
     super(scope, id);
 
+    const lambdaLayerNestJsLatestVersion =
+      ssm.StringParameter.fromStringParameterAttributes(
+        scope,
+        'lambda-layer-nestjs-latest-version-ssm',
+        {
+          parameterName: 'lambda-layer-nestjs-latest-version',
+        },
+      ).stringValue;
+
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.LayerVersion.html
     const awsAccountId = Stack.of(this).account;
-    const awsAccountRegion = Stack.of(this).region;
-    const layerVerison = '1'; // TODO store in ssm?
     const nestJsAppLayer = LayerVersion.fromLayerVersionAttributes(
       this,
       'NestJsAppLayer',
       {
-        layerVersionArn: `arn:aws:lambda:${awsAccountRegion}:${awsAccountId}:layer:NestJsAppLayer:${layerVerison}`,
+        layerVersionArn: lambdaLayerNestJsLatestVersion,
       },
     );
 

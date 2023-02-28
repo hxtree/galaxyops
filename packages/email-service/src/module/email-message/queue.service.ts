@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { EmailMessage, TEmailMessageDocument } from './email-message.schema';
 import { v4 } from 'uuid';
+import { EmailMessage, TEmailMessageDocument } from './email-message.schema';
 import { StatusType } from './types/status.type';
 import { EmailMessageRepository } from './email-message.repository';
 
