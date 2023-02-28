@@ -2,12 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { TemplateService } from './template.service';
 import { ActionType } from './types/action.type';
 import { QueueService } from './queue.service';
+import { MailerService } from './mailer.service';
 
 @Injectable()
 export class EngineService {
   constructor(
     private _queueService: QueueService,
     private _templateService: TemplateService,
+    private _mailerService: MailerService,
   ) {}
 
   public async process(
@@ -16,10 +18,6 @@ export class EngineService {
     template: string,
     data: any,
   ): Promise<any> {
-    if (action === ActionType.SEND) {
-      this._queueService.create(slug, data);
-    }
-
     const { html, text } = await this._templateService.convert(template, data);
 
     switch (action) {
@@ -29,6 +27,20 @@ export class EngineService {
         return template;
       case ActionType.VIEW_TEXT:
         return text;
+      case ActionType.QUEUE:
+        await this._queueService.create(slug, data);
+        return '';
+      case ActionType.SEND:
+        await this._queueService.create(slug, data);
+
+        return this._mailerService.sendMail({
+          toAddresses: data.recipient,
+          fromAddress: data.fromAddress,
+          subject: data.subject,
+          htmlMessage: html,
+          textMessage: text,
+        });
+
       default:
         return html;
     }

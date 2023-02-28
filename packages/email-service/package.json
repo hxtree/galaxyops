@@ -46,7 +46,8 @@
     "@cats-cradle/validation-schemas": "workspace:*",
     "handlebars": "~4.7.7",
     "html-to-text": "~9.0.4",
-    "lodash": "~4.17.21"
+    "lodash": "~4.17.21",
+    "@aws-sdk/client-ses": "~3.279.0"
   },
   "devDependencies": {
     "aws-cdk-lib": "2.47.0",

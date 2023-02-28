@@ -9,6 +9,7 @@ import { EmailMessageRepository } from './email-message.repository';
 import { EmailMessageController } from './email-message.controller';
 import { QueueService } from './queue.service';
 import { EngineService } from './engine.service';
+import { MailerService } from './mailer.service';
 
 @Module({
   controllers: [EmailMessageController],
@@ -17,6 +18,7 @@ import { EngineService } from './engine.service';
     EmailMessageRepository,
     QueueService,
     EngineService,
+    MailerService,
   ],
   imports: [
     rootMongooseTestModule(),

@@ -4,6 +4,10 @@ import { Expose } from 'class-transformer';
 import { TemplateDto } from './template.dto';
 
 export class UserAccountCreatedDto extends TemplateDto {
+  readonly subject: 'User Account Created';
+
+  readonly fromAddress = 'contact@ouxsoft.com';
+
   @IsString()
   @ApiProperty({
     description: 'The first name of the recipient',

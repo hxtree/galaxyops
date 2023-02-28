@@ -7,6 +7,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@aws-sdk/client-ses",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@babel/core",
       "allowedCategories": [ "apis" ]
     },
@@ -205,6 +209,10 @@
     {
       "name": "aws-lambda",
       "allowedCategories": [ "apis", "cicd", "platform" ]
+    },
+    {
+      "name": "aws-sdk",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "aws-serverless-express",
