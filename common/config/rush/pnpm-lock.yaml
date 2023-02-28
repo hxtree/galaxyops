@@ -499,7 +499,6 @@ importers:
       '@vendia/serverless-express': 4.8.2
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
-      aws-sdk: ~2.1324.0
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
@@ -537,7 +536,6 @@ importers:
       '@nestjs/terminus': 9.1.1_5jpsbfbll2knk5qgjb5qqh7xhu
       '@vendia/serverless-express': 4.8.2
       aws-lambda: 1.0.7
-      aws-sdk: 2.1324.0
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2

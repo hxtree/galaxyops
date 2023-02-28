@@ -7,6 +7,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@aws-sdk/client-ses",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@babel/core",
       "allowedCategories": [ "apis" ]
     },
