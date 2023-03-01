@@ -48,9 +48,6 @@ jobs:
       # https://rushjs.io/pages/maintainer/publishing/
       # uses shouldPublish in rush.json
       - name: rush publish to npm
-        run: node common/scripts/install-run-rush.js publish --to=tag:publish-npm --apply --publish --include-all --target-branch main --npm-auth-token ${NPM_TOKEN} --add-commit-details --set-access-level public
+        run: node common/scripts/install-run-rush.js publish --apply --publish --include-all --target-branch main --npm-auth-token ${NPM_TOKEN} --add-commit-details --set-access-level public
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # TODO publish code artifact
-      # https://gist.github.com/lotharschulz/291a46c4e573d99fb3d9ffd710a38ac4

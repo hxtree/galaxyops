@@ -37,7 +37,6 @@
     "owner-game-design",
     "owner-ux",
     "publish-npm",
-    "publish-aws",
     "deploy-platform",
     "deploy-app"
   ],
@@ -54,7 +53,7 @@
       "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws"],
+      "tags": ["publish-npm"],
       "shouldPublish": true
     },
     {
@@ -69,7 +68,7 @@
       "projectFolder": "platform/rush-coverage",
       "reviewCategory": "category-ci-cd",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws"],
+      "tags": ["publish-npm"],
       "shouldPublish": true
     },
     {
@@ -91,7 +90,7 @@
       "projectFolder": "platform/eslint-config",
       "reviewCategory": "category-platform",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws"],
+      "tags": ["publish-npm"],
       "shouldPublish": true
     },
     {
@@ -99,7 +98,7 @@
       "projectFolder": "libraries/validation-schemas",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws", "category-library"],
+      "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
     {
@@ -107,7 +106,7 @@
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws", "category-library"],
+      "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
     {
@@ -115,7 +114,7 @@
       "projectFolder": "libraries/promare-gradients",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws", "category-library"],
+      "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
     {
@@ -123,7 +122,7 @@
       "projectFolder": "libraries/nestjs-modules",
       "reviewCategory": "libraries",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws", "category-library"],
+      "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
     {
@@ -131,7 +130,7 @@
       "projectFolder": "libraries/api-client-email-service",
       "reviewCategory": "api-client",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws", "category-library"],
+      "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
     {
@@ -139,7 +138,7 @@
       "projectFolder": "libraries/api-client-luck-by-dice",
       "reviewCategory": "api-client",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws", "category-library"],
+      "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
     {
@@ -147,7 +146,7 @@
       "projectFolder": "libraries/api-client-character-sheet",
       "reviewCategory": "api-client",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws", "category-library"],
+      "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
     {
@@ -155,7 +154,7 @@
       "projectFolder": "packages/design-system",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["publish-npm", "publish-aws", "category-library", "owner-ux"],
+      "tags": ["publish-npm", "category-library", "owner-ux"],
       "shouldPublish": true
     },
     {
@@ -184,7 +183,7 @@
       "projectFolder": "packages/luck-by-dice",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["deploy-app", "publish-npm", "publish-aws"],
+      "tags": ["deploy-app", "publish-npm"],
       "shouldPublish": true
     },
     {
@@ -192,7 +191,7 @@
       "projectFolder": "packages/email-service",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["deploy-app", "publish-npm", "publish-aws"],
+      "tags": ["deploy-app", "publish-npm"],
       "shouldPublish": true
     }
   ]
