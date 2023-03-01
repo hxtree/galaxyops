@@ -1,0 +1,68 @@
+name: Publish
+
+on:
+  workflow_call:
+    secrets:
+      AWS_TOKEN:
+        required: true
+
+jobs:
+  rush-publish:
+    name: rush publish
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+      - name: setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.18.0'
+
+      - name: cache rush
+        id: cache
+        uses: actions/cache@v3.2.2
+        with:
+          path: common/temp
+          key: ${{ runner.os }}-build-branch-${{ hashFiles('common/config/rush/repo-state.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-pr-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Setup git
+        run: |
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+
+      - name: rush install
+        run: node common/scripts/install-run-rush.js install
+
+      - name: rush build
+        run: node common/scripts/install-run-rush.js build
+
+      # build deployment package
+      # https://rushjs.io/pages/maintainer/deploying/
+      - name: rush deploy
+        run: |
+          node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --target-folder platform-lambda-layers
+          node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --target-folder platform-api-gateway
+          node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --target-folder app-character-sheet
+          node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --target-folder app-luck-by-dice
+          node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --target-folder app-email-service
+
+      # authenticate
+      # https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions
+      # - name: Configure AWS Credentials
+      #   uses: aws-actions/configure-aws-credentials@v1
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: us-east-2
+      #     role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+      #     role-external-id: ${{ secrets.AWS_ROLE_EXTERNAL_ID }}
+      #     role-duration-seconds: 1200
+      #     role-session-name: MySessionName
+
+      # ship deployments for each project for use in aws code pipelines

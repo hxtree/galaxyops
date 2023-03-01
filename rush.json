@@ -18,7 +18,6 @@
     ],
     "ignoredNpmScopes": ["@types"]
   },
-
   "repository": {
     "url": "https://github.com/hxtree/cats-cradle",
     "defaultBranch": "main",

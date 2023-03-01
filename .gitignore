@@ -1,3 +1,6 @@
+# rush deploy
+common/deploy/**
+
 # coverage
 clover.xml
 **/coverage/**
