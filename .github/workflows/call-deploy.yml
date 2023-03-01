@@ -46,37 +46,19 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
-            ${{ runner.os }}-
-
       - name: install pnpm needed for cdk NodeJsFunction esbuild
         run: npm install --global pnpm@7.26.3
-
-      - name: install rush to avoid header issue with list
-        run: npm install --global @microsoft/rush@5.88.0
 
       # build deployment package
       # https://rushjs.io/pages/maintainer/deploying/
       - name: rush deploy
         run: |
-          BASE_DIR=${GITHUB_WORKSPACE}
-          mkdir -p $BASE_DIR/.deploy
-          RUSH_LIST_JSON=$(rush list --only tag:deploy-app --json)
-          RUSH_LIST_ARRAY=$(RUSH_LIST_JSON | jq '.[]')
-          PROJECTS=${RUSH_LIST_JSON[projects]}
-          for row in $(echo "${PROJECTS}" | jq -r '.[] | @base64'); do
-            _jq() {
-              echo "${row}" | base64 --decode | jq -r "${1}"
-            }
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive deploy_lambda-layers.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive deploy_api-gateway.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive deploy_character-sheet.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive deploy_luck-by-dice.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive deploy_email-service.zip
 
-            name=$(_jq '.name')
-            appShortName=${name//@cats-cradle\//deploy_}
-
-            echo "Rush deploy $name...."
-            node $BASE_DIR/common/scripts/install-run-rush.js deploy --overwrite --project $name
-
-            echo "Compressing $appShortName"
-            tar -czvf $BASE_DIR/.deploy/$appShortName.tar.gz $BASE_DIR/common/deploy --remove-files
-          done
       # authenticate
       # https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions
       # - name: Configure AWS Credentials
@@ -90,4 +72,4 @@ jobs:
       #     role-duration-seconds: 1200
       #     role-session-name: MySessionName
 
-      # ship deployments for each project for use in aws code pipelines
+      # upload deploy zip folders to s3
