@@ -53,7 +53,11 @@ jobs:
       # https://rushjs.io/pages/maintainer/deploying/
       - name: rush deploy
         run: |
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive deploy_lambda-layers.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive deploy_api-gateway.zip
             node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive deploy_character-sheet.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive deploy_luck-by-dice.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive deploy_email-service.zip
 
       # authenticate
       # https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions
