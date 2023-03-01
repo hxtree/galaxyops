@@ -72,4 +72,4 @@ jobs:
       #     role-duration-seconds: 1200
       #     role-session-name: MySessionName
 
-      # ship deployments for each project for use in aws code pipelines
+      # upload deploy zip folders to s3
