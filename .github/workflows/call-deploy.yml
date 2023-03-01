@@ -58,7 +58,7 @@ jobs:
             }
 
             name=$(_jq '.name')
-            appShortName=${name//@cats-cradle\//app_}
+            appShortName=${name//@cats-cradle\//deploy_}
 
             echo "Rush deploy $name...."
             node node common/scripts/install-run-rush.js deploy --overwrite --project $name
