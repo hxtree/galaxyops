@@ -46,8 +46,6 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
-            ${{ runner.os }}-
-
       - name: install pnpm needed for cdk NodeJsFunction esbuild
         run: npm install --global pnpm@7.26.3
 
