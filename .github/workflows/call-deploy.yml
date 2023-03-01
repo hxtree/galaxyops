@@ -46,13 +46,24 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
+            ${{ runner.os }}-
+
+      - name: install pnpm needed for cdk NodeJsFunction esbuild
+        run: npm install --global pnpm@7.26.3
+
+      - name: install rush to avoid header issue with list
+        run: npm install --global @microsoft/rush@5.88.0
+
       # build deployment package
       # https://rushjs.io/pages/maintainer/deploying/
       - name: rush deploy
         run: |
-          rushListJson=$(node common/scripts/install-run-rush.js list --only tag:deploy-app --json | jq '.[]')
-          projects=${rushListJson[projects]}
-          for row in $(echo "${projects}" | jq -r '.[] | @base64'); do
+          BASE_DIR=${GITHUB_WORKSPACE}
+          mkdir -p $BASE_DIR/.deploy
+          RUSH_LIST_JSON=$(rush list --only tag:deploy-app --json)
+          RUSH_LIST_ARRAY=$(RUSH_LIST_JSON | jq '.[]')
+          PROJECTS=${RUSH_LIST_JSON[projects]}
+          for row in $(echo "${PROJECTS}" | jq -r '.[] | @base64'); do
             _jq() {
               echo "${row}" | base64 --decode | jq -r "${1}"
             }
@@ -61,12 +72,11 @@ jobs:
             appShortName=${name//@cats-cradle\//deploy_}
 
             echo "Rush deploy $name...."
-            node node common/scripts/install-run-rush.js deploy --overwrite --project $name
+            node $BASE_DIR/common/scripts/install-run-rush.js deploy --overwrite --project $name
 
             echo "Compressing $appShortName"
-            tar -czvf $appShortName.tar.gz common/deploy --remove-files
+            tar -czvf $BASE_DIR/.deploy/$appShortName.tar.gz $BASE_DIR/common/deploy --remove-files
           done
-
       # authenticate
       # https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions
       # - name: Configure AWS Credentials
