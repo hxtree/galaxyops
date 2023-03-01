@@ -50,7 +50,7 @@ jobs:
       # https://rushjs.io/pages/maintainer/deploying/
       - name: rush deploy
         run: |
-          rushListJson=$(node common/scripts/install-run-rush.js rush list --only tag:deploy-app --json | jq '.[]')
+          rushListJson=$(node common/scripts/install-run-rush.js list --only tag:deploy-app --json | jq '.[]')
           projects=${rushListJson[projects]}
           for row in $(echo "${projects}" | jq -r '.[] | @base64'); do
             _jq() {
