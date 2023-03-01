@@ -161,7 +161,7 @@
       "projectFolder": "packages/gm-client",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
-      "tags": ["deploy-app"]
+      "tags": []
     },
     {
       "packageName": "@cats-cradle/api-gateway",

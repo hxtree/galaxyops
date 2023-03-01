@@ -1,4 +1,4 @@
-name: Publish
+name: Deploy
 
 on:
   workflow_call:
@@ -11,8 +11,8 @@ on:
         required: true
 
 jobs:
-  rush-publish:
-    name: rush publish
+  rush-deploy:
+    name: rush deploy
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
@@ -50,11 +50,22 @@ jobs:
       # https://rushjs.io/pages/maintainer/deploying/
       - name: rush deploy
         run: |
-          node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --target-folder platform-lambda-layers
-          node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --target-folder platform-api-gateway
-          node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --target-folder app-character-sheet
-          node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --target-folder app-luck-by-dice
-          node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --target-folder app-email-service
+          rushListJson=$(node common/scripts/install-run-rush.js rush list --only tag:deploy-app --json | jq '.[]')
+          projects=${rushListJson[projects]}
+          for row in $(echo "${projects}" | jq -r '.[] | @base64'); do
+            _jq() {
+              echo "${row}" | base64 --decode | jq -r "${1}"
+            }
+
+            name=$(_jq '.name')
+            appShortName=${name//@cats-cradle\//app_}
+
+            echo "Rush deploy $name...."
+            node node common/scripts/install-run-rush.js deploy --overwrite --project $name
+
+            echo "Compressing $appShortName"
+            tar -czvf $appShortName.tar.gz common/deploy --remove-files
+          done
 
       # authenticate
       # https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions
