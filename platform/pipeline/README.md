@@ -2,6 +2,14 @@
 
 Unstable WIP
 
+## Steps
+
+1. Github CI runs `rush deploy` to build each project into a compressed file and
+   uploads file to S3 bucket.
+2. Each deployable project features a AWS CodePipeline with a filter that is
+   triggered when a file change is made to that S3 bucket.
+3. CodePipeline runs deploying the project through environments.
+
 ## AWS Environments
 
 | Environment | Description                                                    |
@@ -20,12 +28,6 @@ cdk bootstrap aws://298217020330/us-east-2 --profile tools \
     --trust 760440398296
 ```
 
-## TODO
-
-Try to publish packages to CodeArtifact and release from there to prevent need
-from pulling entire monorepo git history.
-
 ## Documentation
 
 - [CDK Pipeline](https://docs.aws.amazon.com/cdk/v2/guide/cdk_pipeline.html)
-- [Code Artificat](https://aws.amazon.com/blogs/devops/integrating-aws-codeartifact-package-mgmt-flow/)

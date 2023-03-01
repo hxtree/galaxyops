@@ -3,11 +3,13 @@ name: Deploy
 on:
   workflow_call:
     secrets:
-      AWS_DEPLOY_ACCESS_KEY_ID:
+      GITHUB_TOKEN:
+        required: true
+      AWS_DEPLOY_KEY_ID:
         required: true
       AWS_DEPLOY_SECRET_ACCESS_KEY:
         required: true
-      AWS_DEPLOY_REGION:
+      AWS_DEPLOY_BUCKET:
         required: true
 
 jobs:
@@ -53,23 +55,36 @@ jobs:
       # https://rushjs.io/pages/maintainer/deploying/
       - name: rush deploy
         run: |
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive deploy_lambda-layers.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive deploy_api-gateway.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive deploy_character-sheet.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive deploy_luck-by-dice.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive deploy_email-service.zip
+            mkdir -p .deploy
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive .deploy/deploy_lambda-layers.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive .deploy/deploy_api-gateway.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive .deploy/deploy_character-sheet.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive .deploy/deploy_luck-by-dice.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive .deploy/deploy_email-service.zip
 
-      # authenticate
-      # https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions
-      # - name: Configure AWS Credentials
-      #   uses: aws-actions/configure-aws-credentials@v1
-      #   with:
-      #     aws-access-key-id: ${{ secrets.AWS_DEPLOY_ACCESS_KEY_ID }}
-      #     aws-secret-access-key: ${{ secrets.AWS_DEPLOY_SECRET_ACCESS_KEY }}
-      #     aws-region: ${{ secrets.AWS_DEPLOY_REGION }}
-      #     role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-      #     role-external-id: ${{ secrets.AWS_ROLE_EXTERNAL_ID }}
-      #     role-duration-seconds: 1200
-      #     role-session-name: MySessionName
+      - uses: actions/checkout@master
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: pipeline
+        with:
+          token: ${{ secrets.GITHUB_TOKEN}}
+          description: 'Upload AWS S3'
+          environment: pipeline
 
-      # upload deploy zip folders to s3
+      - uses: shallwefootball/s3-upload-action@master
+        name: Upload S3
+        id: S3
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          source_dir: '.deploy'
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_url: https://aws-bucket.s3.ap-northeast-2.amazonaws.com/${{steps.S3.outputs.object_key}}/index.html
+          state: 'success'
+          deployment_id: ${{ steps.test.outputs.deployment_id }}

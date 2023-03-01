@@ -39,9 +39,11 @@ jobs:
   Deploy:
     uses: ./.github/workflows/call-deploy.yml
     secrets:
-      AWS_DEPLOY_ACCESS_KEY_ID: ${{ secrets.AWS_DEPLOY_ACCESS_KEY_ID }}
-      AWS_DEPLOY_SECRET_ACCESS_KEY: ${{ secrets.AWS_DEPLOY_REGION }}
-      AWS_DEPLOY_REGION: ${{ secrets.AWS_DEPLOY_REGION }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      AWS_DEPLOY_KEY_ID: ${{ secrets.AWS_DEPLOY_KEY_ID }}
+      AWS_DEPLOY_SECRET_ACCESS_KEY: ${{ secrets.AWS_DEPLOY_SECRET_ACCESS_KEY }}
+      AWS_DEPLOY_BUCKET: ${{ secrets.AWS_DEPLOY_BUCKET }}
+
 
   # slack-notification:
   #   name: "Slack Notification"
