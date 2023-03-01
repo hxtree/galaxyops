@@ -36,6 +36,9 @@ jobs:
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+  Deploy:
+    uses: ./.github/workflows/call-deploy.yml
+
   # slack-notification:
   #   name: "Slack Notification"
   #   runs-on: ubuntu-latest

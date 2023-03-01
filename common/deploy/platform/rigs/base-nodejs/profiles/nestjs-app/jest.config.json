@@ -1,0 +1,23 @@
+{
+  "roots": ["<rootDir>/src/", "<rootDir>/stacks/"],
+  "testMatch": [
+    "<rootDir>/src/**/*.{test,e2e-spec}.ts",
+    "<rootDir>/stacks/**/*.test.ts"
+  ],
+  "testPathIgnorePatterns": ["/node_modules/"],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "collectCoverageFrom": ["<rootDir>/**/*.ts"],
+  "coverageReporters": ["json", "text-summary"],
+  "coveragePathIgnorePattern": ["/node_modules/", "/cdk.out/", "/dist/"],
+  "coverageDirectory": "<rootDir>/coverage",
+  "coverageThreshold": {
+    "global": {
+      "branches": 0,
+      "functions": 30,
+      "lines": 60,
+      "statements": -250
+    }
+  }
+}
