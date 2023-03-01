@@ -3,8 +3,6 @@ name: Deploy
 on:
   workflow_call:
     secrets:
-      GITHUB_TOKEN:
-        required: true
       AWS_DEPLOY_KEY_ID:
         required: true
       AWS_DEPLOY_SECRET_ACCESS_KEY:
