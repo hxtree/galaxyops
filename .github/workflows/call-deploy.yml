@@ -22,7 +22,6 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v3
 
-      - uses: actions/checkout@master
       - uses: chrnorm/deployment-action@releases/v1
         name: Create GitHub deployment
         id: step-deployment-action
@@ -61,17 +60,18 @@ jobs:
       - name: install pnpm needed for cdk NodeJsFunction esbuild
         run: npm install --global pnpm@7.26.3
 
-      # build deployment package
-      # https://rushjs.io/pages/maintainer/deploying/
       - name: rush deploy
         run: |
             node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive lambda-layers.zip
             mv common/deploy/lambda-layers.zip common/deploy-ci/
-            find -name lambda-layers.zip
-            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive common/deploy-ci/api-gateway.zip
-            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive common/deploy-ci/character-sheet.zip
-            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive common/deploy-ci/luck-by-dice.zip
-            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive common/deploy-ci/email-service.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive api-gateway.zip
+            mv common/deploy/api-gateway.zip common/deploy-ci/
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive character-sheet.zip
+            mv common/deploy/character-sheet.zip common/deploy-ci/
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive luck-by-dice.zip
+            mv common/deploy/luck-by-dice.zip common/deploy-ci/
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive email-service.zip
+            mv common/deploy/email-service.zip common/deploy-ci/
 
       - uses: shallwefootball/s3-upload-action@master
         name: Upload S3
