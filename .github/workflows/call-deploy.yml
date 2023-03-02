@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: chrnorm/deployment-action@releases/v1
         name: Create GitHub deployment
-        id: pipeline
+        id: step-deployment-action
         with:
           token: ${{ secrets.GITHUB_TOKEN}}
           description: 'Upload AWS S3'
@@ -92,4 +92,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           target_url: https://aws-bucket.s3.ap-northeast-2.amazonaws.com/${{steps.S3.outputs.object_key}}/index.html
           state: 'success'
-          deployment_id: ${{ steps.test.outputs.deployment_id }}
+          deployment_id: ${{ steps.step-deployment-action.outputs.deployment_id }}
