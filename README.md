@@ -88,6 +88,9 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 2. Login via SSO, bootstrap deployments, deploy platform, and then deploy apps.
 
    ```bash
+   rush sso -p tools
+   rush cdk:bootstrap
+
    rush sso
    rush cdk:bootstrap
    rush cdk:deploy --to=tag:deploy-platform
