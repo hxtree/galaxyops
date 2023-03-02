@@ -78,7 +78,7 @@ jobs:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: ${{ GITHUB_WORKSPACE }}/common/deploy-ci
+          source_dir: ${{ github.workspace }}/common/deploy-ci
           destination_dir: ''
 
       - name: Update deployment status (success)
