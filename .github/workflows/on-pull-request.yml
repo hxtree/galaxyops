@@ -29,3 +29,11 @@ jobs:
     secrets:
       CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
       IMPACTED_BY_SHA: ${{ github.event.pull_request.head.sha }}
+
+  # Deploy:
+  #   uses: ./.github/workflows/call-deploy.yml
+  #   secrets:
+  #     AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+  #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #     AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
+  #     AWS_REGION: ${{ secrets.AWS_REGION }}

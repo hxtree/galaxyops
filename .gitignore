@@ -1,5 +1,7 @@
 # rush deploy
 common/deploy/**
+common/deploy-ci/**
+!common/deploy-ci/.gitkeep
 
 # coverage
 clover.xml
