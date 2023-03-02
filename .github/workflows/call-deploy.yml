@@ -54,10 +54,10 @@ jobs:
       # build deployment package
       # https://rushjs.io/pages/maintainer/deploying/
       - name: rush deploy
-        working-directory: ./
         run: |
             node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive lambda-layers.zip
             mv common/deploy/lambda-layers.zip common/deploy-ci/
+            find -name lambda-layers.zip
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive common/deploy-ci/api-gateway.zip
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive common/deploy-ci/character-sheet.zip
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive common/deploy-ci/luck-by-dice.zip
