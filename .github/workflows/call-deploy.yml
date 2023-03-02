@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: checkout repository
+        uses: actions/checkout@v3
+
       - uses: actions/checkout@master
       - uses: chrnorm/deployment-action@releases/v1
         name: Create GitHub deployment
@@ -27,9 +30,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN}}
           description: 'Upload AWS S3'
           environment: pipeline
-
-      - name: checkout repository
-        uses: actions/checkout@v3
 
       - name: setup Node
         uses: actions/setup-node@v3
@@ -80,8 +80,10 @@ jobs:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: 'common'
-          destination_dir: 'rush-deploy'
+          source_dir: 'common/deploy-ci'
+          destination_dir: ''
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
 
       - name: Update deployment status (success)
         if: success()
