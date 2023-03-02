@@ -55,11 +55,11 @@ jobs:
       # https://rushjs.io/pages/maintainer/deploying/
       - name: rush deploy
         run: |
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive common/deploy-ci/lambda-layers.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive common/deploy-ci/api-gateway.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive common/deploy-ci/character-sheet.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive common/deploy-ci/luck-by-dice.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive common/deploy-ci/email-service.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive ../deploy-ci/lambda-layers.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive ../deploy-ci/api-gateway.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive ../deploy-ci/character-sheet.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive ../deploy-ci/luck-by-dice.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive ../deploy-ci/email-service.zip
 
       - uses: actions/checkout@master
       - uses: chrnorm/deployment-action@releases/v1
