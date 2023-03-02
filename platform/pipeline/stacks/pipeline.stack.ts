@@ -65,6 +65,12 @@ export class DefaultPipelineStack extends cdk.Stack {
       stringValue: deployBucket.bucketName,
     });
 
+    new ssm.StringParameter(this, `${id}-github-ci-aws-region`, {
+      description: 'GithubCI secret.AWS_REGION',
+      parameterName: 'github-ci-aws-region',
+      stringValue: this.region,
+    });
+
     /**
      * Use the aws cli to test these credentials and then store in github secret
      *

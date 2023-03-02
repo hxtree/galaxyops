@@ -3,11 +3,13 @@ name: Deploy
 on:
   workflow_call:
     secrets:
-      AWS_DEPLOY_KEY_ID:
+      AWS_ACCESS_KEY:
         required: true
-      AWS_DEPLOY_SECRET_ACCESS_KEY:
+      AWS_SECRET_ACCESS_KEY:
         required: true
-      AWS_DEPLOY_BUCKET:
+      AWS_BUCKET:
+        required: true
+      AWS_REGION:
         required: true
 
 jobs:
@@ -73,7 +75,7 @@ jobs:
         name: Upload S3
         id: S3
         with:
-          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
           source_dir: '.deploy'
