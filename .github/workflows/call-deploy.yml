@@ -61,9 +61,9 @@ jobs:
       - name: install pnpm needed for cdk NodeJsFunction esbuild
         run: npm install --global pnpm@7.26.3
 
-      - uses: shallwefootball/s3-upload-action@master
-        name: Upload S3
-        id: S3
+      # build deployment package
+      # https://rushjs.io/pages/maintainer/deploying/
+      - name: rush deploy
         run: |
             node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive lambda-layers.zip
             mv common/deploy/lambda-layers.zip common/deploy-ci/
@@ -72,11 +72,15 @@ jobs:
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive common/deploy-ci/character-sheet.zip
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive common/deploy-ci/luck-by-dice.zip
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive common/deploy-ci/email-service.zip
+
+      - uses: shallwefootball/s3-upload-action@master
+        name: Upload S3
+        id: S3
         with:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: 'common/deploy-ci'
+          source_dir: .
           destination_dir: 'rush-deploy'
 
       - name: Update deployment status (success)
