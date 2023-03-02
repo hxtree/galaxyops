@@ -20,7 +20,6 @@ export class DefaultPipelineStack extends cdk.Stack {
     // provision deployment-bucket to store rush deployments
     const deployBucket = new Bucket(this, `${id}-rush-deploy-bucket`, {
       bucketName: `${this.account}-rush-deploy-bucket`,
-      blockPublicAccess: BlockPublicAccess.BLOCK_ACLS,
       encryption: BucketEncryption.S3_MANAGED,
       enforceSSL: true,
       versioned: true,
