@@ -55,11 +55,11 @@ jobs:
       # https://rushjs.io/pages/maintainer/deploying/
       - name: rush deploy
         run: |
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive deploy_lambda-layers.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive deploy_api-gateway.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive deploy_character-sheet.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive deploy_luck-by-dice.zip
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive deploy_email-service.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive common/deploy-ci/lambda-layers.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive common/deploy-ci/api-gateway.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive common/deploy-ci/character-sheet.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive common/deploy-ci/luck-by-dice.zip
+            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive common/deploy-ci/email-service.zip
 
       - uses: actions/checkout@master
       - uses: chrnorm/deployment-action@releases/v1
@@ -77,7 +77,7 @@ jobs:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: '.deploy'
+          source_dir: 'common/deploy-ci'
 
       - name: Update deployment status (success)
         if: success()
