@@ -33,7 +33,7 @@ RUN apt-get update \
     && npm install --global pnpm@7.26.3 \
     # install Microsoft Rush globally
     # https://rushjs.io/
-    && npm install --global @microsoft/rush@5.88.0 \
+    && npm install --global @microsoft/rush@5.93.1 \
     # install AWS CDK globally
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
     && npm install --global aws-cdk@2.63.1 \
