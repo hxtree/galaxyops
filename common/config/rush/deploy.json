@@ -60,7 +60,7 @@
    *   create the links described in the "deploy-metadata.json" output file.
    * - "none": Do nothing; some other tool may create the links later.
    */
-  // "linkCreation": "script",
+  "linkCreation": "script",
 
   /**
    * If this path is specified, then after "rush deploy", recursively copy the files from this folder to
