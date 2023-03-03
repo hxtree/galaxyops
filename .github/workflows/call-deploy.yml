@@ -28,7 +28,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN}}
           description: 'Upload AWS S3'
-          environment: pipeline
+          environment: AWS CodePipeline
 
       - name: setup Node
         uses: actions/setup-node@v3
