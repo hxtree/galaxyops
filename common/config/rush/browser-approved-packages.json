@@ -67,6 +67,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@microsoft/rush",
+      "allowedCategories": [ "category-ci-cd" ]
+    },
+    {
       "name": "@microsoft/rush-lib",
       "allowedCategories": [ "category-ci-cd", "cicd" ]
     },
