@@ -944,6 +944,7 @@ importers:
     specifiers:
       '@cats-cradle/base-nodejs': workspace:*
       '@cats-cradle/eslint-config': workspace:*
+      '@microsoft/rush': 5.93.1
       '@microsoft/rush-lib': ~5.89.1
       '@types/istanbul-reports': ~3.0.1
       '@types/jest': 28.1.8
@@ -961,6 +962,7 @@ importers:
       typescript: 4.9.5
     dependencies:
       '@cats-cradle/base-nodejs': link:../rigs/base-nodejs
+      '@microsoft/rush': 5.93.1_@types+node@16.18.9
       '@microsoft/rush-lib': 5.89.1
       '@types/istanbul-reports': 3.0.1
       istanbul-lib-coverage: 3.2.0
@@ -5390,6 +5392,70 @@ packages:
       - supports-color
     dev: false
 
+  /@microsoft/rush-lib/5.93.1_@types+node@16.18.9:
+    resolution: {integrity: sha512-8ZCSW4He9VPAAsF2T/OxVaTN06wLbzeEveOvEuwNJ5h6AQYPTtlH0yv8cDDuZqSEVgOv/gK4D+kAExOszYm06A==}
+    engines: {node: '>=5.6.0'}
+    dependencies:
+      '@pnpm/link-bins': 5.3.25
+      '@rushstack/heft-config-file': 0.11.9_@types+node@16.18.9
+      '@rushstack/node-core-library': 3.55.2_@types+node@16.18.9
+      '@rushstack/package-deps-hash': 4.0.8_@types+node@16.18.9
+      '@rushstack/rig-package': 0.3.18
+      '@rushstack/rush-amazon-s3-build-cache-plugin': 5.93.1_@types+node@16.18.9
+      '@rushstack/rush-azure-storage-build-cache-plugin': 5.93.1_@types+node@16.18.9
+      '@rushstack/stream-collator': 4.0.227_@types+node@16.18.9
+      '@rushstack/terminal': 0.5.2_@types+node@16.18.9
+      '@rushstack/ts-command-line': 4.13.2
+      '@types/node-fetch': 2.6.2
+      '@yarnpkg/lockfile': 1.0.2
+      builtin-modules: 3.1.0
+      cli-table: 0.3.11
+      colors: 1.2.5
+      dependency-path: 9.2.8
+      figures: 3.0.0
+      git-repo-info: 2.1.1
+      glob: 7.0.6
+      glob-escape: 0.0.2
+      https-proxy-agent: 5.0.1
+      ignore: 5.1.9
+      inquirer: 7.3.3
+      js-yaml: 3.13.1
+      jszip: 3.8.0
+      lodash: 4.17.21
+      node-fetch: 2.6.7
+      npm-check: 6.0.1
+      npm-package-arg: 6.1.1
+      npm-packlist: 2.1.5
+      read-package-tree: 5.1.6
+      resolve: 1.22.1
+      rxjs: 6.6.7
+      semver: 7.3.8
+      ssri: 8.0.1
+      strict-uri-encode: 2.0.0
+      tapable: 2.2.1
+      tar: 6.1.13
+      true-case-path: 2.2.1
+    transitivePeerDependencies:
+      - '@types/node'
+      - encoding
+      - supports-color
+    dev: false
+
+  /@microsoft/rush/5.93.1_@types+node@16.18.9:
+    resolution: {integrity: sha512-OzdPSA1jis1rYb96ry/dYtJdWSCD7Ao6B71hoiCoOwLtEIoHBbXv5MTxLZb3SvvlWOgrJvHtObSIccfb6DLOEg==}
+    engines: {node: '>=5.6.0'}
+    hasBin: true
+    dependencies:
+      '@microsoft/rush-lib': 5.93.1_@types+node@16.18.9
+      '@rushstack/node-core-library': 3.55.2_@types+node@16.18.9
+      colors: 1.2.5
+      semver: 7.3.8
+    transitivePeerDependencies:
+      - '@types/node'
+      - encoding
+      - supports-color
+    dev: false
+
   /@microsoft/tsdoc-config/0.16.2:
     resolution: {integrity: sha512-OGiIzzoBLgWWR0UdRJX98oYO+XKGf7tiK4Zk6tQ/E4IJqGCe7dvkTvgDZV5cFJUzLGDOjeAXrnZoA6QkVySuxw==}
     dependencies:
@@ -6279,6 +6345,17 @@ packages:
       jsonpath-plus: 4.0.0
     dev: false
 
+  /@rushstack/heft-config-file/0.11.9_@types+node@16.18.9:
+    resolution: {integrity: sha512-01JFmD+G44v5btO0fVIbVBJCfGWLTN2l4Y/+IVU8D9eR14+wYJjV5CO25uxydDynMr334URFcITuzG21L9L0GA==}
+    engines: {node: '>=10.13.0'}
+    dependencies:
+      '@rushstack/node-core-library': 3.55.2_@types+node@16.18.9
+      '@rushstack/rig-package': 0.3.18
+      jsonpath-plus: 4.0.0
+    transitivePeerDependencies:
+      - '@types/node'
+    dev: false
+
   /@rushstack/heft-config-file/0.8.2:
     resolution: {integrity: sha512-tVCHHleGkC60To7n3lbmXPFZSI/2verPRi6w5uG81l3NtMxDt9XRplBYPVbec5zIOPlHbULHgF5kLyRtBx3iHA==}
     engines: {node: '>=10.13.0'}
@@ -6403,6 +6480,14 @@ packages:
       '@rushstack/node-core-library': 3.53.3
     dev: false
 
+  /@rushstack/package-deps-hash/4.0.8_@types+node@16.18.9:
+    resolution: {integrity: sha512-ad2ZnGWLlcga4GVRVo3mibkTrrnDs8xvABTr79z7zwA43htaVbddwFs3Y+tyqaPo8s92Tqh47jzrGDJTqm6Vyg==}
+    dependencies:
+      '@rushstack/node-core-library': 3.55.2_@types+node@16.18.9
+    transitivePeerDependencies:
+      - '@types/node'
+    dev: false
+
   /@rushstack/rig-package/0.3.10:
     resolution: {integrity: sha512-4Z2HhXM4YBWOi4ZYFQNK6Yxz641v+cvc8NKiaNZh+RIdNb3D4Rfpy3XUkggbCozpfDriBfL1+KaXlJtfJfAIXw==}
     dependencies:
@@ -6416,6 +6501,13 @@ packages:
       resolve: 1.17.0
       strip-json-comments: 3.1.1
 
+  /@rushstack/rig-package/0.3.18:
+    resolution: {integrity: sha512-SGEwNTwNq9bI3pkdd01yCaH+gAsHqs0uxfGvtw9b0LJXH52qooWXnrFTRRLG1aL9pf+M2CARdrA9HLHJys3jiQ==}
+    dependencies:
+      resolve: 1.22.1
+      strip-json-comments: 3.1.1
+    dev: false
+
   /@rushstack/rush-amazon-s3-build-cache-plugin/5.89.1:
     resolution: {integrity: sha512-TyvsweC16xNoZeFEbv4vCD4z2L6jO6GXmw+97y1ep+OVJXQzKJHPgV4Wct2i+jYjO1+cbUsqshUwyJif42UqvA==}
     dependencies:
@@ -6424,6 +6516,19 @@ packages:
       https-proxy-agent: 5.0.1
       node-fetch: 2.6.7
     transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: false
+
+  /@rushstack/rush-amazon-s3-build-cache-plugin/5.93.1_@types+node@16.18.9:
+    resolution: {integrity: sha512-urEQ+u7oSdfQnbuuVURbTE3RaJVh7rOSyB8RN2xAYh88HveYMeduq3EU5/0afHKnRs/UJG/iwt6EqCbXRR0J+w==}
+    dependencies:
+      '@rushstack/node-core-library': 3.55.2_@types+node@16.18.9
+      '@rushstack/rush-sdk': 5.93.1_@types+node@16.18.9
+      https-proxy-agent: 5.0.1
+      node-fetch: 2.6.7
+    transitivePeerDependencies:
+      - '@types/node'
       - encoding
       - supports-color
     dev: false
@@ -6441,12 +6546,36 @@ packages:
       - supports-color
     dev: false
 
+  /@rushstack/rush-azure-storage-build-cache-plugin/5.93.1_@types+node@16.18.9:
+    resolution: {integrity: sha512-urbl28yUit+GJ4cgU9iAfWEhu6bP0/kdBaQEsOTYoLYRGnF0uBJ6O+46aMOp4WsqxAk+K+xL6ixw1ZE1BTix6g==}
+    dependencies:
+      '@azure/identity': 2.1.0
+      '@azure/storage-blob': 12.11.0
+      '@rushstack/node-core-library': 3.55.2_@types+node@16.18.9
+      '@rushstack/rush-sdk': 5.93.1_@types+node@16.18.9
+      '@rushstack/terminal': 0.5.2_@types+node@16.18.9
+    transitivePeerDependencies:
+      - '@types/node'
+      - encoding
+      - supports-color
+    dev: false
+
   /@rushstack/rush-sdk/5.89.1:
     resolution: {integrity: sha512-KSrcfycU82dI3+XIVIwiESnIXsMyvzkDHgfDexl1K+094klzYlmQBvDc8ladaUmTWs/9eRadggN/Y2xhgE7wOg==}
     dependencies:
       '@rushstack/node-core-library': 3.53.3
       '@types/node-fetch': 1.6.9
       tapable: 2.2.1
+    dev: false
+
+  /@rushstack/rush-sdk/5.93.1_@types+node@16.18.9:
+    resolution: {integrity: sha512-rHfGvxyiR6nO5nqruqz/0N3GpAIi4P565FYcadnHsK791ncoh60lBHvQU9b9oRdpZjl2dHjoAQrr+pgSgOY/vw==}
+    dependencies:
+      '@rushstack/node-core-library': 3.55.2_@types+node@16.18.9
+      '@types/node-fetch': 2.6.2
+      tapable: 2.2.1
+    transitivePeerDependencies:
+      - '@types/node'
     dev: false
 
   /@rushstack/stream-collator/4.0.222:
@@ -6456,11 +6585,33 @@ packages:
       '@rushstack/terminal': 0.3.91
     dev: false
 
+  /@rushstack/stream-collator/4.0.227_@types+node@16.18.9:
+    resolution: {integrity: sha512-SLHwjWqUlEfqA6KfLkSmZSr28/2Z5BxWnqtXqtLDFndZUuHUiUDg85w8GtS9MyZXMOfAjj9pS7Xi764bjsOKBA==}
+    dependencies:
+      '@rushstack/node-core-library': 3.55.2_@types+node@16.18.9
+      '@rushstack/terminal': 0.5.2_@types+node@16.18.9
+    transitivePeerDependencies:
+      - '@types/node'
+    dev: false
+
   /@rushstack/terminal/0.3.91:
     resolution: {integrity: sha512-m4XqR8HeffmsWR4qpYm4FpUU66vqYFJZJf8xuYO33zSkHDL5qdNjQ9yrtRJFs1mF38hMsXSHkvo2djRuf9MM5A==}
     dependencies:
       '@rushstack/node-core-library': 3.53.3
       '@types/node': 12.20.24
+      wordwrap: 1.0.0
+    dev: false
+
+  /@rushstack/terminal/0.5.2_@types+node@16.18.9:
+    resolution: {integrity: sha512-zyzUQLUkDhRdKIvEk94WforJHCITedizbr1215pSONRwWS8MQEMTcDY+dBz+U8Ar4s/4oJAtFuT5cHP/uTYYdw==}
+    peerDependencies:
+      '@types/node': '*'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+    dependencies:
+      '@rushstack/node-core-library': 3.55.2_@types+node@16.18.9
+      '@types/node': 16.18.9
       wordwrap: 1.0.0
     dev: false
 
@@ -6484,6 +6635,15 @@ packages:
       argparse: 1.0.10
       colors: 1.2.5
       string-argv: 0.3.1
+
+  /@rushstack/ts-command-line/4.13.2:
+    resolution: {integrity: sha512-bCU8qoL9HyWiciltfzg7GqdfODUeda/JpI0602kbN5YH22rzTxyqYvv7aRLENCM7XCQ1VRs7nMkEqgJUOU8Sag==}
+    dependencies:
+      '@types/argparse': 1.0.38
+      argparse: 1.0.10
+      colors: 1.2.5
+      string-argv: 0.3.1
+    dev: false
 
   /@selderee/plugin-htmlparser2/0.10.0:
     resolution: {integrity: sha512-gW69MEamZ4wk1OsOq1nG1jcyhXIQcnrsX5JwixVw/9xaiav8TCyjESAruu1Rz9yyInhgBXxkNwMeygKnN2uxNA==}
