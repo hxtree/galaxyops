@@ -36,6 +36,7 @@
     "owner-game-design",
     "owner-ux",
     "publish-npm",
+    "deploy-tools",
     "deploy-platform",
     "deploy-app"
   ],
@@ -60,7 +61,7 @@
       "projectFolder": "platform/pipeline",
       "reviewCategory": "category-ci-cd",
       "cyclicDependencyProjects": [],
-      "tags": ["deploy-platform"]
+      "tags": ["deploy-tools"]
     },
     {
       "packageName": "@cats-cradle/rush-coverage",
@@ -165,7 +166,7 @@
     },
     {
       "packageName": "@cats-cradle/api-gateway",
-      "projectFolder": "packages/api-gateway",
+      "projectFolder": "platform/api-gateway",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["deploy-platform"]

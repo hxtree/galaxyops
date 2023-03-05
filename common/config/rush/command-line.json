@@ -49,7 +49,7 @@
     {
       "name": "api",
       "commandKind": "global",
-      "summary": "Create OpenApi client libaries",
+      "summary": "Create OpenApi client libraries",
       "shellCommand": "common/scripts/api-client/build.sh",
       "safeForSimultaneousRushProcesses": true
     },
@@ -116,7 +116,7 @@
       "allowWarningsInSuccessfulBuild": true
     },
     {
-      "name": "cdk:destory",
+      "name": "cdk:destroy",
       "commandKind": "bulk",
       "summary": "Run cdk destroyW",
       "description": "Run cdk destroy to remove stacks on AWS",
@@ -172,6 +172,23 @@
       ],
       "defaultValue": "DeveloperSandbox",
       "associatedCommands": ["sso"]
+    },
+    {
+      "parameterKind": "choice",
+      "longName": "--require-approval",
+      "description": "Whether to require manual approval for changes",
+      "alternatives": [
+        {
+          "name": "never",
+          "description": "never ask for manual approval"
+        },
+        {
+          "name": "always",
+          "description": "always ask for manual approval"
+        }
+      ],
+      "defaultValue": "never",
+      "associatedCommands": ["cdk:deploy"]
     }
   ]
 }

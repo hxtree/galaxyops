@@ -20,7 +20,7 @@ git commit -s -m 'feat: add example commit'
 ## Manual SSH Key
 
 If authentication is not automatically copied over necessary to push, follow
-these steps to create SSH credientals to gain authorization to repository.
+these steps to create SSH credentials to gain authorization to repository.
 
 1. Create SSH key and add SSH public key printed to your
    [Github SSH Keys](https://github.com/settings/ssh/new)
@@ -41,5 +41,5 @@ these steps to create SSH credientals to gain authorization to repository.
 
 3. Verify it works by pushing code.
 
-The SSH key will be stored on a persistant Docker volume, which should enable
+The SSH key will be stored on a persistent Docker volume, which should enable
 this to be a one time procedure that persist between builds.
