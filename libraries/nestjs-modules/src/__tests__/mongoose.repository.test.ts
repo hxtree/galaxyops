@@ -4,7 +4,7 @@ import { INestApplication } from '@nestjs/common';
 import {
   closeInMongodConnection,
   rootMongooseTestModule,
-} from '../mongoose.module';
+} from '../mongoose/mongoose.module';
 import { PersonSchema } from './persons/person.schema';
 import { PersonRepository } from './persons/person.repository';
 
