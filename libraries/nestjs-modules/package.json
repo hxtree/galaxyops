@@ -25,7 +25,7 @@
     "@cats-cradle/base-nodejs": "workspace:*",
     "reflect-metadata": "0.1.13",
     "@types/validator": "~13.7.10",
-    "mongodb-memory-server": "~8.11.4",
+    "mongodb-memory-server": "8.11.2",
     "@nestjs/common": "9.2.1",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",

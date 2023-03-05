@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model, PaginateModel, IPaginateResult } from 'mongoose';
+import { PaginateModel, IPaginateResult } from 'mongoose';
 import { TBookDocument, Book } from './book.schema';
 import { CreateBookDto } from './create-book.dto';
 

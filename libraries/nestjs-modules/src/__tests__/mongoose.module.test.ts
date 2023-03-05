@@ -4,7 +4,7 @@ import { INestApplication } from '@nestjs/common';
 import {
   closeInMongodConnection,
   rootMongooseTestModule,
-} from '../mongoose.module';
+} from '../mongoose/mongoose.module';
 import { BookSchema } from './books/book.schema';
 import { BooksRepository } from './books/book.repository';
 import { CreateBookDto } from './books/create-book.dto';
