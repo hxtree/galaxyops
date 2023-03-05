@@ -8,5 +8,3 @@
 6. Cat's Eye;
 7. Fish in a Dish;
 8. Clock.
-
-## Cradle
