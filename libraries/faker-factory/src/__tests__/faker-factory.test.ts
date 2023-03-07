@@ -87,9 +87,5 @@ describe('FakerFactory', () => {
         faker.optional === undefined || faker.optional.length > 0,
       ).toBeTruthy();
     });
-
-    // it('should create property nested objects based on decorators', () => {
-    //   expect(faker.nestedClass[0]).toBeInstanceOf(SampleChildClass);
-    // });
   });
 });

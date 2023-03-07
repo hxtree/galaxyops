@@ -17,26 +17,17 @@ import { FakerFactory } from '@cats-cradle/faker-factory';
 import { Person } from './person.ts';
 
 const fakerPerson = await FakerFactory.create<Person>(Person, { passed: true });
-
-console.log(fakerPerson);
-
-// {
-//   "id": "4cb85e06-1060-4bed-8224-14ec39e0dfa9",
-//   "firstName": "irure in",
-//   "currency": "887.56",
-//   "visits": -91521537.9856908,
-//   "passed": true
-// }
 ```
 
 ```typescript
 // person.ts
 import {
   IsString,
-  IsNumber,
+  IsInt,
   IsBoolean,
   IsUUID,
   IsCurrency,
+  Min,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
@@ -53,7 +44,8 @@ export class Person {
   @IsCurrency()
   public currency: string;
 
-  @IsNumber()
+  @IsInt()
+  @Min(0)
   public visits: number;
 
   @IsBoolean()
@@ -66,11 +58,22 @@ export class Person {
 }
 ```
 
+```ts
+// console.log(fakerPerson);
+{
+  "id": "4cb85e06-1060-4bed-8224-14ec39e0dfa9",
+  "firstName": "irure in",
+  "currency": "887.56",
+  "visits": 24235,
+  "passed": true
+}
+```
+
 ## Settings
 
-The FakerFactory accepts a third optional parameter for settings. Settings are
-used to change the way the FakerFactory works. Adjusting the settings can be
-useful for when writing unit tests on optional fields.
+FakerFactory accepts a third optional parameter for settings. Settings are used
+to change the way the FakerFactory works. Adjusting the settings can be useful
+for when writing unit tests on optional fields.
 
 | Property    | Description                            | Possible Values        |
 | ----------- | -------------------------------------- | ---------------------- |
@@ -88,13 +91,21 @@ const Person = await FakerFactory.create<Person>(
 ## Opinions
 
 In typescript object data can be automatically faked based on either: the
-decorator, the property name, or property typehint.
+property name, property typehint, separate schema, or the decorator schema.
 
 Property names should remain somewhat consistent and fakes can be generated
 based on them, this is how [Intermock](https://github.com/google/intermock)
 works. However, it is unreasonable many-to-many relationship to maintain for
-reasonable faking purposes. Generating values based on typehinting is less then
-ideal due to compiled code being type agnostic and special tsc requirements.
+reasonable
+
+Generating values based on property typehinting is less then ideal due to
+compiled code being type agnostic and special tsc requirements.
+
+Generating fakes purely based on separate schema such as
+[AJV](https://www.npmjs.com/package/ajv),
+[JIO](https://www.npmjs.com/package/joi), or
+[validatorjs](https://www.npmjs.com/package/validatorjs) works but is less
+readable than a decorator based approach.
 
 Class-validator decorators and schema were chosen for the following reasons:
 

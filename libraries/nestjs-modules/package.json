@@ -37,7 +37,8 @@
     "uuid": "~9.0.0",
     "ts-mongoose-pagination": "~1.1.2",
     "rxjs": "7.5.6",
-    "rimraf": "~4.1.2"
+    "rimraf": "~4.1.2",
+    "dotenv": "~16.0.3"
   },
   "devDependencies": {
     "@types/jest": "28.1.8",

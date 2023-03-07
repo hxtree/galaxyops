@@ -8,7 +8,7 @@ export interface Settings {
   optionals?: boolean | undefined;
 
   /**
-   * whether optional properites are shown
+   * whether optional properties are shown
    */
   probability?: number;
 }

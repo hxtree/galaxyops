@@ -1,7 +1,7 @@
 /* eslint-disable implicit-arrow-linebreak */
 import { MongooseModule, MongooseModuleOptions } from '@nestjs/mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { ConfigService } from '../config/config.service';
+import { ConfigService } from '@nestjs/config';
 
 let mongod: MongoMemoryServer;
 
@@ -28,10 +28,13 @@ export const closeInMongodConnection = async () => {
 
 export const rootMongooseModule = (options: MongooseModuleOptions = {}) =>
   MongooseModule.forRootAsync({
-    useFactory: () => ({
-      uri: ConfigService.get('MONGO_DATABASE_URI'),
-      user: ConfigService.get('MONGO_DATABASE_USER'),
-      pass: ConfigService.get('MONGO_DATABASE_PASSWORD'),
+    inject: [ConfigService],
+    useFactory: (configService: ConfigService) => ({
+      uri: `${configService.get('MONGO_DATABASE_URI')}/${configService.get(
+        'STAGE',
+      )}-${configService.get('APP_NAME')}`,
+      user: configService.get('MONGO_DATABASE_USER'),
+      pass: configService.get('MONGO_DATABASE_PASSWORD'),
       ...options,
     }),
   });

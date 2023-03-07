@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/faker-factory",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
@@ -9,6 +9,15 @@
   "bugs": {
     "url": "https://github.com/hxtree/cats-cradle/issues"
   },
+  "license": "MIT",
+  "keywords": [
+    "faker-factory",
+    "faker",
+    "json-schema",
+    "class-validator",
+    "mocks",
+    "testing"
+  ],
   "scripts": {
     "build": "tsc",
     "build:all": "rush build -t .",
