@@ -1,9 +1,10 @@
+/* eslint-disable implicit-arrow-linebreak */
 import { MongooseModule, MongooseModuleOptions } from '@nestjs/mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
+import { ConfigService } from '../config/config.service';
 
 let mongod: MongoMemoryServer;
 
-// eslint-disable-next-line max-len
 export const rootMongooseTestModule = (options: MongooseModuleOptions = {}) =>
   MongooseModule.forRootAsync({
     useFactory: async () => {
@@ -24,3 +25,13 @@ export const rootMongooseTestModule = (options: MongooseModuleOptions = {}) =>
 export const closeInMongodConnection = async () => {
   if (mongod) await mongod.stop();
 };
+
+export const rootMongooseModule = (options: MongooseModuleOptions = {}) =>
+  MongooseModule.forRootAsync({
+    useFactory: () => ({
+      uri: ConfigService.get('MONGO_DATABASE_URI'),
+      user: ConfigService.get('MONGO_DATABASE_USER'),
+      pass: ConfigService.get('MONGO_DATABASE_PASSWORD'),
+      ...options,
+    }),
+  });
