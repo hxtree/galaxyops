@@ -1,11 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ConfigService } from './config.service';
+import { ConfigService, ConfigModule } from '@nestjs/config';
 
 describe('ConfigService', () => {
   let configService: ConfigService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      imports: [ConfigModule.forRoot()],
       providers: [ConfigService],
     }).compile();
 
@@ -14,10 +15,6 @@ describe('ConfigService', () => {
 
   it('should be defined', () => {
     expect(configService).toBeDefined();
-    expect(ConfigService.get()).toEqual(
-      expect.objectContaining({
-        CONFIG_ENABLED: 'true',
-      }),
-    );
+    expect(configService.get('CONFIG_ENABLED')).toEqual('true');
   });
 });

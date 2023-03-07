@@ -43,7 +43,8 @@
     "uuid": "~9.0.0",
     "@cats-cradle/nestjs-modules": "workspace:*",
     "@nestjs/mongoose": "9.2.1",
-    "@cats-cradle/validation-schemas": "workspace:*"
+    "@cats-cradle/validation-schemas": "workspace:*",
+    "@nestjs/config": "2.2.0"
   },
   "devDependencies": {
     "aws-cdk-lib": "2.47.0",

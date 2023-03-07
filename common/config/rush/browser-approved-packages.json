@@ -92,7 +92,7 @@
     },
     {
       "name": "@nestjs/config",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "@nestjs/core",
@@ -264,6 +264,10 @@
     },
     {
       "name": "currency.js",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "dotenv",
       "allowedCategories": [ "libraries" ]
     },
     {

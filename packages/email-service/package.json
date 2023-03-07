@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/email-service",
   "module": "commonjs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "start": "nest start --debug --watch",
     "build": "tsc",
@@ -47,7 +47,8 @@
     "handlebars": "~4.7.7",
     "html-to-text": "~9.0.4",
     "lodash": "~4.17.21",
-    "@aws-sdk/client-ses": "~3.279.0"
+    "@aws-sdk/client-ses": "~3.279.0",
+    "@nestjs/config": "2.2.0"
   },
   "devDependencies": {
     "aws-cdk-lib": "2.47.0",

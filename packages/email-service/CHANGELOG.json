@@ -2,6 +2,26 @@
   "name": "@cats-cradle/email-service",
   "entries": [
     {
+      "version": "0.0.3",
+      "tag": "@cats-cradle/email-service_v0.0.3",
+      "date": "Tue, 07 Mar 2023 14:08:30 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add dotenv dev settings"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/nestjs-modules\" to `0.2.0`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/faker-factory\" to `1.0.1`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.2",
       "tag": "@cats-cradle/email-service_v0.0.2",
       "date": "Fri, 24 Feb 2023 04:55:39 GMT",

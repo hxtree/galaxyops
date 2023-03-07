@@ -87,7 +87,4 @@ export class SampleClass {
   @ValidateNested({ each: true })
   @Type(() => SampleChildClass)
   public nestedClass: SampleChildClass[];
-
-  // @IsDiceNotation()
-  // public diceNotation: string;
 }
