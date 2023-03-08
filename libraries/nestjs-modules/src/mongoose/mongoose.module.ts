@@ -2,6 +2,7 @@
 import { MongooseModule, MongooseModuleOptions } from '@nestjs/mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import { ConfigService } from '@nestjs/config';
+import * as mongoose from 'mongoose';
 
 let mongod: MongoMemoryServer;
 
@@ -23,7 +24,10 @@ export const rootMongooseTestModule = (options: MongooseModuleOptions = {}) =>
   });
 
 export const closeInMongodConnection = async () => {
-  if (mongod) await mongod.stop();
+  if (mongod) {
+    await mongoose.disconnect();
+    await mongod.stop();
+  }
 };
 
 export const rootMongooseModule = (options: MongooseModuleOptions = {}) =>
