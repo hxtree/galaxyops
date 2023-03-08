@@ -13,6 +13,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
+    "build:all": "rush build -t .",
     "test": "tsdx test --passWithNoTests",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.{ts,tsx}\" --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.{ts,tsx}\" --fix-dry-run",
