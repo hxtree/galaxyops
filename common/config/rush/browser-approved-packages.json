@@ -80,11 +80,11 @@
     },
     {
       "name": "@mui/material",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "rigs" ]
     },
     {
       "name": "@mui/system",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "rigs" ]
     },
     {
       "name": "@nestjs/common",
@@ -327,6 +327,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "husky",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "istanbul-lib-coverage",
       "allowedCategories": [ "category-ci-cd", "cicd" ]
     },
@@ -432,7 +436,7 @@
     },
     {
       "name": "styled-components",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "rigs" ]
     },
     {
       "name": "supertest",

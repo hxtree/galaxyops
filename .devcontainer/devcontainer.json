@@ -22,7 +22,8 @@
     "yzhang.markdown-all-in-one",
     "foxundermoon.shell-format",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "ms-vsliveshare.vsliveshare"
   ],
   "workspaceFolder": "/usr/src/app",
   "remoteUser": "node",
