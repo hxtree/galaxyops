@@ -20,7 +20,7 @@ const fakerPerson = await FakerFactory.create<Person>(Person, { passed: true });
 ```
 
 ```typescript
-// person.ts
+// person.ts or any class that uses class-validator decorators
 import {
   IsString,
   IsInt,
@@ -59,6 +59,7 @@ export class Person {
 ```
 
 ```ts
+// result
 // console.log(fakerPerson);
 {
   "id": "4cb85e06-1060-4bed-8224-14ec39e0dfa9",
@@ -95,19 +96,21 @@ property name, property typehint, separate schema, or the decorator schema.
 
 Property names should remain somewhat consistent and fakes can be generated
 based on them, this is how [Intermock](https://github.com/google/intermock)
-works. However, it is unreasonable many-to-many relationship to maintain for
-reasonable
+works. However, it is unreasonable to maintain such a many-to-many relationship
+for faking purposes.
 
-Generating values based on property typehinting is less then ideal due to
-compiled code being type agnostic and special tsc requirements.
+Generating values based on property typehinting is less then ideal currently in
+typescript due to compiled code being type agnostic and the special tsc
+requirement to add such a feature.
 
 Generating fakes purely based on separate schema such as
 [AJV](https://www.npmjs.com/package/ajv),
 [JIO](https://www.npmjs.com/package/joi), or
-[validatorjs](https://www.npmjs.com/package/validatorjs) works but is less
-readable than a decorator based approach.
+[validatorjs](https://www.npmjs.com/package/validatorjs) works but it is less
+readable than a purely decorator based approach.
 
-Class-validator decorators and schema were chosen for the following reasons:
+A class-validator decorators and schema base approach was chosen for the
+following reasons:
 
 - Decorators are already present when using class-validation.
 - Faker data should not just be fake, it should be valid and meet
