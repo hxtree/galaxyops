@@ -340,6 +340,7 @@ importers:
   ../../packages/design-system:
     specifiers:
       '@babel/core': ^7.21.0
+      '@cats-cradle/eslint-config': workspace:*
       '@emotion/react': ~11.10.5
       '@emotion/styled': ~11.10.5
       '@mui/material': ~5.11.12
@@ -367,6 +368,7 @@ importers:
       tslib: ^2.5.0
       typescript: 4.9.5
     dependencies:
+      '@cats-cradle/eslint-config': link:../../platform/eslint-config
       '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
       '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
       '@mui/material': 5.11.12_xqeqsl5kvjjtyxwyi3jhw3yuli
