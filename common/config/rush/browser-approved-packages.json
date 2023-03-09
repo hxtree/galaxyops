@@ -7,6 +7,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@aws-sdk/client-s3",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@aws-sdk/client-ses",
       "allowedCategories": [ "apis" ]
     },
@@ -217,6 +221,10 @@
     {
       "name": "aws-sdk",
       "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "aws-sdk-client-mock",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "aws-serverless-express",
