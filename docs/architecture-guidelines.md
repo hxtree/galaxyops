@@ -93,9 +93,11 @@ documentation. Typedoc was selected to compile documentation as code.
 
 ## Deployments
 
-`rush deploy` is intentionally not used. It copies files from projects to a
-deployment folder including applicable dependencies. Instead apps deploy
-themselves using CDK stacks via `rushx deploy`.
+`rush deploy` is used in CI only to copy packages and dependencies into
+deployable compressed file. Each compressed file is uploaded to S3 for AWS
+CodePipeline.
+
+Each app is capable of deployment themselves using CDK via `rushx cdk:deploy`.
 
 ## NestJS
 

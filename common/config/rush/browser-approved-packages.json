@@ -44,7 +44,7 @@
     },
     {
       "name": "@cats-cradle/nestjs-modules",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "rigs" ]
     },
     {
       "name": "@cats-cradle/validation-decorators",

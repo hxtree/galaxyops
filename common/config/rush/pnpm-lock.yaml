@@ -7,12 +7,14 @@ importers:
 
   ../..:
     specifiers:
+      '@cats-cradle/nestjs-modules': workspace:*
       '@mui/material': ~5.11.12
       '@mui/system': ~5.11.12
       '@types/styled-components': ~5.1.26
       esbuild: ~0.17.5
       styled-components: ~5.3.8
     dependencies:
+      '@cats-cradle/nestjs-modules': link:libraries/nestjs-modules
       '@mui/material': 5.11.12
       '@mui/system': 5.11.12
       '@types/styled-components': 5.1.26
