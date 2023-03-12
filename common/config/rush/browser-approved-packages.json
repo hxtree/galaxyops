@@ -8,7 +8,7 @@
     },
     {
       "name": "@aws-sdk/client-s3",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "@aws-sdk/client-ses",
@@ -24,7 +24,7 @@
     },
     {
       "name": "@cats-cradle/constructs",
-      "allowedCategories": [ "apis", "category-ci-cd", "cicd" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "cicd", "rigs" ]
     },
     {
       "name": "@cats-cradle/design-system",
@@ -224,7 +224,7 @@
     },
     {
       "name": "aws-sdk-client-mock",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "aws-serverless-express",
