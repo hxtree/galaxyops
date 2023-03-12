@@ -6,9 +6,9 @@ import * as _ from 'lodash';
 
 const length = 80;
 
-function shorten(string) {
-  let res = _.truncate(string, {
-    length: length,
+function shorten(string: string) {
+  const res = _.truncate(string, {
+    length,
     omission: '***',
   });
 

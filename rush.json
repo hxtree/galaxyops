@@ -193,6 +193,14 @@
       "cyclicDependencyProjects": [],
       "tags": ["deploy-app", "publish-npm"],
       "shouldPublish": true
+    },
+    {
+      "packageName": "@cats-cradle/message-broker",
+      "projectFolder": "packages/message-broker",
+      "reviewCategory": "apis",
+      "cyclicDependencyProjects": [],
+      "tags": ["deploy-app", "publish-npm"],
+      "shouldPublish": true
     }
   ]
 }

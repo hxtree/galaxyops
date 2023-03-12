@@ -1,0 +1,21 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/messages": {
+      "post": {
+        "operationId": "PublishController_convert",
+        "parameters": [],
+        "responses": { "201": { "description": "" } }
+      }
+    }
+  },
+  "info": {
+    "title": "@cats-cradles/message-broker",
+    "description": "An API for the message broker",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": { "schemas": {} }
+}

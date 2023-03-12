@@ -13,6 +13,8 @@
     "@mui/material": "~5.11.12",
     "styled-components": "~5.3.8",
     "@types/styled-components": "~5.1.26",
-    "@mui/system": "~5.11.12"
+    "@mui/system": "~5.11.12",
+    "@cats-cradle/nestjs-modules": "workspace:*",
+    "@cats-cradle/constructs": "workspace:*"
   }
 }
