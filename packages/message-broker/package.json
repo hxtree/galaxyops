@@ -51,12 +51,13 @@
     "handlebars": "~4.7.7",
     "html-to-text": "~9.0.4",
     "lodash": "~4.17.21",
-    "@aws-sdk/client-ses": "~3.279.0",
     "@nestjs/config": "2.2.0",
-    "@aws-sdk/client-s3": "~3.287.0",
-    "aws-sdk-client-mock": "~2.1.0"
+    "@aws-sdk/client-s3": "3.289.0",
+    "@aws-sdk/client-sns": "3.289.0",
+    "luxon": "~3.3.0"
   },
   "devDependencies": {
+    "aws-sdk-client-mock": "~2.1.0",
     "aws-cdk-lib": "2.47.0",
     "constructs": "^10.1.211",
     "@types/jest": "28.1.8",
@@ -79,6 +80,7 @@
     "@types/supertest": "~2.0.12",
     "@cats-cradle/faker-factory": "workspace:*",
     "@types/html-to-text": "~9.0.0",
-    "@types/lodash": "~4.14.191"
+    "@types/lodash": "~4.14.191",
+    "@types/luxon": "~3.2.0"
   }
 }

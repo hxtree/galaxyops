@@ -15,6 +15,14 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@aws-sdk/client-sns",
+      "allowedCategories": [ "apis", "libraries" ]
+    },
+    {
+      "name": "@aws-sdk/types",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@babel/core",
       "allowedCategories": [ "apis" ]
     },
@@ -365,6 +373,10 @@
     {
       "name": "lodash",
       "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform" ]
+    },
+    {
+      "name": "luxon",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "mongodb-memory-server",

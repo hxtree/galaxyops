@@ -1,7 +1,7 @@
 # @cats-cradle/message-broker
 
 This is a “Pub/Sub Message Broker”. It enables async communication between
-microservices to provide loosely coupling.
+microservices to provide loose coupling.
 
 - SNS topics are deployed with the message broker.
 - SQS deployments should be owned by consumer.
@@ -9,8 +9,8 @@ microservices to provide loosely coupling.
 ## Message Categories
 
 **Command** Command send a idempotent request to a topic asking subscribers to
-perform task. The consumer of a command does not inform provide a response to
-the publisher. The publisher does expect something to occur as a result of the
+perform task. The consumer of a command does not inform or provide a response to
+the publisher. The publisher expects something to occur as a result of the
 request.
 
 > Publisher -> SNS -> SQS -> Consumer

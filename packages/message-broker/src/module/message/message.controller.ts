@@ -3,7 +3,7 @@ import { ApiBody, ApiQuery } from '@nestjs/swagger';
 import { PublishService } from './publish.service';
 
 @Controller('messages')
-export class PublishController {
+export class MessageController {
   constructor(private _publishService: PublishService) {}
 
   // @ApiBody({ type: UserAccountCreatedDto })
