@@ -4,6 +4,16 @@ The platform give teams the tools and automation capabilities necessary to
 perform and manage continuous delivery. It contains packages that are related to
 laying the foundations for other services.
 
+```graphql
+./*
+  └─ platform - # fundamental bases for other applications.
+     ├─ aws-org-formation - # AWS account provisioning, SSO, etc.
+     ├─ constructs - # Custom AWS constructs used in package deployments.
+     ├─ eslint-config - # eslint configurations.
+     ├─ rigs - # rushjs heft rigs.
+     └─ lambda-layers - # serverless lambda layers.
+```
+
 ## Curated List of Recommend Packages
 
 At a base level a platform can be a curated list of preferred packages such as

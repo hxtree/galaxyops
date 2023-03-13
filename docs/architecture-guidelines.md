@@ -2,29 +2,6 @@
 
 The guide below describes guidelines applicable to repository.
 
-## Folder Structure
-
-```graphql
-./*
-  ├─ clients - # user facing clients.
-  ├─ common - # rushjs common folder; contains scripts, commands, etc.
-  ├─ docs - # repo wide documentation.
-  ├─ libraries - # resources indented for use in three or more packages.
-  │  └─ api-client - # openapi generated clients.
-  ├─ packages - # contains deployable microservices.
-  │  └─ ./**/*
-  │     ├─ bin - # binary file that invokes stack.
-  │     ├─ src - # source code.
-  │     └─ stack - # CDK deployment code.
-  ├─ platform - # fundamental bases for other applications.
-  │  ├─ aws-org-formation - # AWS account provisioning, SSO, etc.
-  │  ├─ constructs - # Custom AWS constructs used in package deployments.
-  │  ├─ eslint-config - # eslint configurations.
-  │  ├─ rigs - # rushjs heft rigs.
-  │  └─ lambda-layers - # serverless lambda layers.
-  └─ tests - # e2e tests.
-```
-
 ## MACH Architecture
 
 Overall this repository adheres to a Microservices-based, API-first,
@@ -33,8 +10,8 @@ Cloud-native, and Headless architecture.
 ## Infrastructure as a Service
 
 AWS was selected a single IaaS provider. This project assumes it will fail
-before AWS does. Vendor lockin/buyin allows leveraging numerous undifferentiated
-services. For this project that outweighs being cloud agnostic.
+before AWS does. Vendor lock-in/buy-in allows leveraging numerous
+undifferentiated services. For this project that outweighs being cloud agnostic.
 
 ## Monorepo
 
@@ -93,7 +70,7 @@ documentation. Typedoc was selected to compile documentation as code.
 
 ## Deployments
 
-`rush deploy` is used in CI only to copy packages and dependencies into
+`rush deploy` is used in CI only to copy services and dependencies into
 deployable compressed file. Each compressed file is uploaded to S3 for AWS
 CodePipeline.
 
@@ -128,6 +105,6 @@ avoiding the need to write indifferent 3D code, Unreal was selected.
 ## 3D
 
 The original tech demo engine was built as an isometric game engine. However
-creating a isometric spritemap for each object becomes time consuming and
+creating a isometric sprite map for each object becomes time consuming and
 difficult to manage changes. It is easier to generate frames using 3D.
 Performance of 3D on mobile has drastically improved in the last 20 years.
