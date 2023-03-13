@@ -151,7 +151,7 @@
     },
     {
       "packageName": "@cats-cradle/design-system",
-      "projectFolder": "packages/design-system",
+      "projectFolder": "services/design-system",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["publish-npm", "category-library", "owner-ux"],
@@ -159,7 +159,7 @@
     },
     {
       "packageName": "@cats-cradle/gm-client",
-      "projectFolder": "packages/gm-client",
+      "projectFolder": "services/gm-client",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": []
@@ -173,14 +173,14 @@
     },
     {
       "packageName": "@cats-cradle/character-sheet",
-      "projectFolder": "packages/character-sheet",
+      "projectFolder": "services/character-sheet",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["deploy-app"]
     },
     {
       "packageName": "@cats-cradle/luck-by-dice",
-      "projectFolder": "packages/luck-by-dice",
+      "projectFolder": "services/luck-by-dice",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["deploy-app", "publish-npm"],
@@ -188,7 +188,7 @@
     },
     {
       "packageName": "@cats-cradle/email-service",
-      "projectFolder": "packages/email-service",
+      "projectFolder": "services/email-service",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["deploy-app", "publish-npm"],
@@ -196,7 +196,7 @@
     },
     {
       "packageName": "@cats-cradle/message-broker",
-      "projectFolder": "packages/message-broker",
+      "projectFolder": "services/message-broker",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["deploy-app", "publish-npm"],
