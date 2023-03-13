@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { PublishModule } from './module/publish/publish.module';
+import { MessageModule } from './module/message/message.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), PublishModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), MessageModule],
   providers: [],
   exports: [],
 })
