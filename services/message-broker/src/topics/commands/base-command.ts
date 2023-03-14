@@ -1,3 +1,3 @@
 import { BaseMessage } from '../base-message';
 
-export class BaseEvent extends BaseMessage {}
+export class BaseCommand extends BaseMessage {}
