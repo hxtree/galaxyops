@@ -22,7 +22,7 @@ were published only for the purpose of data retention and analytic purposes.
 > Publisher -> SNS -> SQS -> Consumer
 
 **Request** Publish an async message to a single queue letting them know which
-queue to sen a reply to.
+queue to send a reply to.
 
 > Publisher -> SQS -> Consumer -> (SQS -> Publisher)
 
