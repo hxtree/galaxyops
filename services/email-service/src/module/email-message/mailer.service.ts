@@ -19,7 +19,7 @@ export class MailerService {
 
     try {
       const result = sesClient.send(sendEmailCommand);
-      return result;
+      return await result;
     } catch (e) {
       console.error('Failed to send email.');
       return Promise.reject(e);

@@ -14,7 +14,7 @@ export function isMoneyValidator(value: any): boolean {
 /**
  * Checks if Money "0.00", "101.00", "9999.00"
  *
- * All money is communicated without separator, with a decimal, and percision 2.
+ * All money is communicated without separator, with a decimal, and precision 2.
  *
  * @param property
  * @param validationOptions
