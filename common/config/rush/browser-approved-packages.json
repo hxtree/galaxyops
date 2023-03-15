@@ -44,11 +44,15 @@
     },
     {
       "name": "@cats-cradle/faker-factory",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "@cats-cradle/luck-by-dice",
       "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@cats-cradle/messaging-schemas",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "@cats-cradle/nestjs-modules",
@@ -60,7 +64,7 @@
     },
     {
       "name": "@cats-cradle/validation-schemas",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "@cats-cradle/validation-schemass",

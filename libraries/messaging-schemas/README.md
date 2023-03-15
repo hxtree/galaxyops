@@ -1,7 +1,7 @@
-# @cats-cradle/message-broker
+# @cats-cradle/messaging-schemas
 
-This is a “Pub/Sub Message Broker”. It enables async communication between
-microservices to provide loose coupling.
+This contains Pub/Sub message schemas. These help provide loose coupling during
+async communication between microservices.
 
 - SNS topics are deployed with the message broker.
 - SQS deployments should be owned by consumer.
@@ -33,18 +33,17 @@ request.
 
 ## TODO
 
-- Add a feature to make it easy for apps to publish to events.
 - Add a feature to make it easy to subscribe to events.
 - Provision S3 bucket and place all history of all events into.
 - Save all messages received to bucket.
 - Indicate whether message was sent only for testing / debugging purposes and
   should not contaminate history.
 - Hydration that ties into api-client query might be nifty.
-- logical id format
-- decouple topics from broker into global lib
 
-## Documentation
+## References
 
-- <https://medium.com/design-microservices-architecture-with-patterns/microservices-asynchronous-message-based-communication-6643bee06123>
-- <https://badia-kharroubi.gitbooks.io/microservices-architecture/content/patterns/communication-patterns/message-queue-pattern.html>
-- <https://aws.plainenglish.io/an-introduction-to-request-reply-pattern-and-its-uses-2a0bb74ff7d8>
+- [Pub/Sub Messaging Schema](https://cloud.google.com/pubsub/docs/schemas)
+- [Microservice Async Message Based Communication](https://medium.com/design-microservices-architecture-with-patterns/microservices-asynchronous-message-based-communication-6643bee06123)
+- [Message Queue Pattern](https://badia-kharroubi.gitbooks.io/microservices-architecture/content/patterns/communication-patterns/message-queue-pattern.html)
+- [Request Reply Pattern](https://aws.plainenglis.io/an-introduction-to-request-reply-pattern-and-its-uses-2a0bb74ff7d8)
+- [CQRS](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)

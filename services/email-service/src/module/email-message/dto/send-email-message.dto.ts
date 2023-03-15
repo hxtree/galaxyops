@@ -3,8 +3,8 @@ import {
   IsDateString,
   IsString,
 } from '@cats-cradle/validation-schemas';
-import { StatusType } from '../types/status.type';
 import { ApiProperty } from '@nestjs/swagger';
+import { StatusType } from '../types/status.type';
 
 export class SendEmailMessageDto {
   @IsEnum(StatusType)

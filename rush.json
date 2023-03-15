@@ -102,6 +102,13 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@cats-cradle/messaging-schemas",
+      "projectFolder": "libraries/messaging-schemas",
+      "reviewCategory": "libraries",
+      "cyclicDependencyProjects": [],
+      "tags": ["category-library"]
+    },
+    {
       "packageName": "@cats-cradle/faker-factory",
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
@@ -189,14 +196,6 @@
     {
       "packageName": "@cats-cradle/email-service",
       "projectFolder": "services/email-service",
-      "reviewCategory": "apis",
-      "cyclicDependencyProjects": [],
-      "tags": ["deploy-app", "publish-npm"],
-      "shouldPublish": true
-    },
-    {
-      "packageName": "@cats-cradle/message-broker",
-      "projectFolder": "services/message-broker",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["deploy-app", "publish-npm"],

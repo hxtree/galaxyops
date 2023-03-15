@@ -117,6 +117,65 @@ importers:
       ts-node: 10.9.1_zix2iy4c4a7fivhrc3ey4gy2pu
       typescript: 4.9.5
 
+  ../../libraries/messaging-schemas:
+    specifiers:
+      '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/faker-factory': workspace:*
+      '@cats-cradle/validation-schemas': workspace:*
+      '@faker-js/faker': ~7.6.0
+      '@types/jest': 28.1.8
+      '@types/json-schema': ~7.0.11
+      '@types/lodash': ~4.14.191
+      '@types/node': ^16.0.0
+      '@types/uuid': ~8.3.4
+      '@types/validator': ~13.7.10
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
+      class-validator-jsonschema: 3.1.1
+      currency.js: ~2.0.4
+      esbuild: ~0.17.5
+      eslint: 8.26.0
+      jest: 29.4.3
+      json-schema: ~0.4.0
+      json-schema-faker: ~0.5.0-rcv.46
+      lodash: ~4.17.21
+      openapi3-ts: ~3.1.2
+      reflect-metadata: 0.1.13
+      ts-jest: 29.0.5
+      ts-node: 10.9.1
+      typescript: 4.9.5
+      uuid: ~9.0.0
+    dependencies:
+      '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
+      '@cats-cradle/faker-factory': link:../faker-factory
+      '@cats-cradle/validation-schemas': link:../validation-schemas
+      '@faker-js/faker': 7.6.0
+      '@types/lodash': 4.14.191
+      '@types/validator': 13.7.13
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
+      class-validator-jsonschema: 3.1.1_e6kgdsnyya5caxg3ysdyxrqm7a
+      currency.js: 2.0.4
+      json-schema: 0.4.0
+      json-schema-faker: 0.5.0-rcv.46
+      lodash: 4.17.21
+      openapi3-ts: 3.1.2
+      reflect-metadata: 0.1.13
+      uuid: 9.0.0
+    devDependencies:
+      '@cats-cradle/eslint-config': link:../../platform/eslint-config
+      '@types/jest': 28.1.8
+      '@types/json-schema': 7.0.11
+      '@types/node': 16.18.14
+      '@types/uuid': 8.3.4
+      esbuild: 0.17.11
+      eslint: 8.26.0
+      jest: 29.4.3_clz7q7i76oq2x7yxwnubwg6ita
+      ts-jest: 29.0.5_zppvaeuldsrkd2dx6uua2f37ra
+      ts-node: 10.9.1_zix2iy4c4a7fivhrc3ey4gy2pu
+      typescript: 4.9.5
+
   ../../libraries/nestjs-modules:
     specifiers:
       '@aws-sdk/client-s3': 3.289.0
@@ -124,6 +183,8 @@ importers:
       '@aws-sdk/types': 3.289.0
       '@cats-cradle/base-nodejs': workspace:*
       '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/faker-factory': workspace:*
+      '@cats-cradle/messaging-schemas': workspace:*
       '@nestjs/common': 9.2.1
       '@nestjs/config': 2.2.0
       '@nestjs/core': 9.2.1
@@ -158,6 +219,7 @@ importers:
       '@aws-sdk/client-s3': 3.289.0
       '@aws-sdk/client-sns': 3.289.0
       '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
+      '@cats-cradle/messaging-schemas': link:../messaging-schemas
       '@nestjs/common': 9.2.1_allg6cauirbqzgqcmexy2wdnoq
       '@nestjs/config': 2.2.0_jeqwo7fzb4lebm6nefyhh5xlci
       '@nestjs/core': 9.2.1_t4tu55xk3gdu6rkxhjusbio6gi
@@ -179,6 +241,7 @@ importers:
     devDependencies:
       '@aws-sdk/types': 3.289.0
       '@cats-cradle/eslint-config': link:../../platform/eslint-config
+      '@cats-cradle/faker-factory': link:../faker-factory
       '@nestjs/schematics': 9.0.4_typescript@4.9.5
       '@nestjs/testing': 9.2.1_qtfdfhl7yltwfy6w66cbj2fnoa
       '@types/jest': 28.1.8
@@ -213,6 +276,7 @@ importers:
     specifiers:
       '@cats-cradle/base-nodejs': workspace:*
       '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/faker-factory': workspace:*
       '@types/jest': 28.1.8
       '@types/json-schema': ~7.0.11
       '@types/lodash': ~4.14.191
@@ -245,6 +309,7 @@ importers:
       uuid: 9.0.0
     devDependencies:
       '@cats-cradle/eslint-config': link:../../platform/eslint-config
+      '@cats-cradle/faker-factory': link:../faker-factory
       '@types/jest': 28.1.8
       '@types/json-schema': 7.0.11
       '@types/node': 16.18.14
@@ -998,119 +1063,6 @@ importers:
       lodash: 4.17.21
       path: 0.12.7
       supertest: 6.3.3
-      ts-node: 10.9.1_zix2iy4c4a7fivhrc3ey4gy2pu
-      typescript: 4.9.5
-
-  ../../services/message-broker:
-    specifiers:
-      '@aws-sdk/client-s3': 3.289.0
-      '@aws-sdk/client-sns': 3.289.0
-      '@cats-cradle/base-nodejs': workspace:*
-      '@cats-cradle/constructs': workspace:*
-      '@cats-cradle/eslint-config': workspace:*
-      '@cats-cradle/faker-factory': workspace:*
-      '@cats-cradle/nestjs-modules': workspace:*
-      '@cats-cradle/validation-schemas': workspace:*
-      '@microsoft/tsdoc': ~0.13.2
-      '@nestjs/common': 9.2.1
-      '@nestjs/config': 2.2.0
-      '@nestjs/core': 9.2.1
-      '@nestjs/mongoose': 9.2.1
-      '@nestjs/platform-express': 9.3.9
-      '@nestjs/swagger': ~6.1.3
-      '@nestjs/terminus': 9.1.1
-      '@nestjs/testing': 9.2.1
-      '@types/aws-lambda': ~8.10.93
-      '@types/express': ~4.17.14
-      '@types/html-to-text': ~9.0.0
-      '@types/jest': 28.1.8
-      '@types/lodash': ~4.14.191
-      '@types/luxon': ~3.2.0
-      '@types/node': ^16.0.0
-      '@types/supertest': ~2.0.12
-      '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
-      aws-cdk-lib: 2.47.0
-      aws-lambda: 1.0.7
-      aws-sdk-client-mock: ~2.1.0
-      aws-serverless-express: ~3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      constructs: ^10.1.211
-      esbuild: ~0.17.5
-      eslint: 8.26.0
-      express: 4.18.2
-      fs: ~0.0.1-security
-      handlebars: ~4.7.7
-      html-to-text: ~9.0.4
-      jest: 29.4.3
-      lodash: ~4.17.21
-      luxon: ~3.3.0
-      mongoose: ~6.9.1
-      node-cache: 5.1.2
-      path: ~0.12.7
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: ~0.5.21
-      supertest: ~6.3.3
-      ts-jest: 29.0.5
-      ts-node: 10.9.1
-      typescript: 4.9.5
-      uuid: ~9.0.0
-    dependencies:
-      '@aws-sdk/client-s3': 3.289.0
-      '@aws-sdk/client-sns': 3.289.0
-      '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
-      '@cats-cradle/constructs': link:../../platform/constructs
-      '@cats-cradle/nestjs-modules': link:../../libraries/nestjs-modules
-      '@cats-cradle/validation-schemas': link:../../libraries/validation-schemas
-      '@nestjs/common': 9.2.1_allg6cauirbqzgqcmexy2wdnoq
-      '@nestjs/config': 2.2.0_jeqwo7fzb4lebm6nefyhh5xlci
-      '@nestjs/core': 9.2.1_t4tu55xk3gdu6rkxhjusbio6gi
-      '@nestjs/mongoose': 9.2.1_tuibhcomjhfg2674mrxnkwpcwq
-      '@nestjs/platform-express': 9.3.9_hjcqpoaebdr7gdo5hgc22hthbe
-      '@nestjs/swagger': 6.1.4_zvabycmw733xee3ikaxv4c7mny
-      '@nestjs/terminus': 9.1.1_5jpsbfbll2knk5qgjb5qqh7xhu
-      '@vendia/serverless-express': 4.8.2
-      aws-lambda: 1.0.7
-      aws-serverless-express: 3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      express: 4.18.2
-      handlebars: 4.7.7
-      html-to-text: 9.0.4
-      lodash: 4.17.21
-      luxon: 3.3.0
-      mongoose: 6.9.3
-      node-cache: 5.1.2
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: 0.5.21
-      uuid: 9.0.0
-    devDependencies:
-      '@cats-cradle/eslint-config': link:../../platform/eslint-config
-      '@cats-cradle/faker-factory': link:../../libraries/faker-factory
-      '@microsoft/tsdoc': 0.13.2
-      '@nestjs/testing': 9.2.1_qtfdfhl7yltwfy6w66cbj2fnoa
-      '@types/aws-lambda': 8.10.111
-      '@types/express': 4.17.17
-      '@types/html-to-text': 9.0.0
-      '@types/jest': 28.1.8
-      '@types/lodash': 4.14.191
-      '@types/luxon': 3.2.0
-      '@types/node': 16.18.14
-      '@types/supertest': 2.0.12
-      '@types/uuid': 8.3.4
-      aws-cdk-lib: 2.47.0_constructs@10.1.268
-      aws-sdk-client-mock: 2.1.0
-      constructs: 10.1.268
-      esbuild: 0.17.11
-      eslint: 8.26.0
-      fs: 0.0.1-security
-      jest: 29.4.3_clz7q7i76oq2x7yxwnubwg6ita
-      path: 0.12.7
-      supertest: 6.3.3
-      ts-jest: 29.0.5_zppvaeuldsrkd2dx6uua2f37ra
       ts-node: 10.9.1_zix2iy4c4a7fivhrc3ey4gy2pu
       typescript: 4.9.5
 
@@ -9672,10 +9624,6 @@ packages:
 
   /@types/lodash/4.14.191:
     resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
-
-  /@types/luxon/3.2.0:
-    resolution: {integrity: sha512-lGmaGFoaXHuOLXFvuju2bfvZRqxAqkHPx9Y9IQdQABrinJJshJwfNCKV+u7rR3kJbiqfTF/NhOkcxxAFrObyaA==}
-    dev: true
 
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
@@ -19869,11 +19817,6 @@ packages:
 
   /lru-cache/7.18.2:
     resolution: {integrity: sha512-KytVYmZ3reaw/f3d7GCISvWWjTYxszNdvD5rDvm/zECga3eSWzryRY7iauJsjo6aaw03lHYTSNTk7lW83Bv+zQ==}
-    engines: {node: '>=12'}
-    dev: false
-
-  /luxon/3.3.0:
-    resolution: {integrity: sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==}
     engines: {node: '>=12'}
     dev: false
 
