@@ -46,3 +46,4 @@ request.
 - [Microservice Async Message Based Communication](https://medium.com/design-microservices-architecture-with-patterns/microservices-asynchronous-message-based-communication-6643bee06123)
 - [Message Queue Pattern](https://badia-kharroubi.gitbooks.io/microservices-architecture/content/patterns/communication-patterns/message-queue-pattern.html)
 - [Request Reply Pattern](https://aws.plainenglis.io/an-introduction-to-request-reply-pattern-and-its-uses-2a0bb74ff7d8)
+- [CQRS](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)
