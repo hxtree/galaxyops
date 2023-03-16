@@ -83,8 +83,15 @@ export class NestJs extends Construct {
       layers: [nestJsAppLayer],
       memorySize: 1024, // 128 -- TODO reduce
       environment: {
+        /**
+         * Environmental variables
+         * The following ENV are reserved by AWS, set by default AWS, and used
+         * They are not visible in AWS Management Console under Lambda Environment
+         * {@link https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html }
+         *
+         * AWS_REGION
+         */
         AWS_ACCOUNT_ID: awsAccountId,
-        AWS_REGION: props.region,
         STAGE_NAME: props.stageName,
         BASE_URL: getBaseUrl(props.apiId, props.region, props.stageName),
       },
