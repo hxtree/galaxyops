@@ -83,7 +83,8 @@ export class NestJs extends Construct {
       layers: [nestJsAppLayer],
       memorySize: 1024, // 128 -- TODO reduce
       environment: {
-        ACCOUNT_ID: awsAccountId,
+        AWS_ACCOUNT_ID: awsAccountId,
+        AWS_REGION: props.region,
         STAGE_NAME: props.stageName,
         BASE_URL: getBaseUrl(props.apiId, props.region, props.stageName),
       },
