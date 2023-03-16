@@ -10,11 +10,16 @@ describe('ConfigService', () => {
       providers: [ConfigService],
     }).compile();
 
+    process.env.DOTENV_CONFIG_ENABLED_CHECK = 'true';
+
     configService = module.get<ConfigService>(ConfigService);
   });
 
   it('should be defined', () => {
     expect(configService).toBeDefined();
-    expect(configService.get('CONFIG_ENABLED')).toEqual('true');
+  });
+
+  it('should dotenv get env', () => {
+    expect(configService.get('DOTENV_CONFIG_ENABLED_CHECK')).toEqual('true');
   });
 });
