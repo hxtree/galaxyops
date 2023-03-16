@@ -380,7 +380,7 @@
     },
     {
       "name": "luxon",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "mongodb-memory-server",

@@ -47,3 +47,4 @@ request.
 - [Message Queue Pattern](https://badia-kharroubi.gitbooks.io/microservices-architecture/content/patterns/communication-patterns/message-queue-pattern.html)
 - [Request Reply Pattern](https://aws.plainenglis.io/an-introduction-to-request-reply-pattern-and-its-uses-2a0bb74ff7d8)
 - [CQRS](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)
+- [Event Driven Schemas](https://medium.com/flippengineering/schema-and-topic-design-in-event-driven-systems-featuring-kafka-a555ddfdb8d8)

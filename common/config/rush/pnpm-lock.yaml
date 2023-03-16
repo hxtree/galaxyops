@@ -194,8 +194,10 @@ importers:
       '@nestjs/schematics': ^9.0.0
       '@nestjs/testing': 9.2.1
       '@types/jest': 28.1.8
+      '@types/luxon': ~3.2.0
       '@types/mongoose': ~5.11.97
       '@types/node': ^16.0.0
+      '@types/uuid': ~8.3.4
       '@types/validator': ~13.7.10
       aws-sdk-client-mock: ~2.1.0
       class-transformer: 0.5.1
@@ -205,6 +207,7 @@ importers:
       esbuild: ~0.17.5
       eslint: 8.26.0
       jest: 29.4.3
+      luxon: ~3.3.0
       mongodb-memory-server: 8.11.2
       mongoose: ~6.9.1
       reflect-metadata: 0.1.13
@@ -226,11 +229,13 @@ importers:
       '@nestjs/mongoose': 9.2.1_tuibhcomjhfg2674mrxnkwpcwq
       '@nestjs/passport': 9.0.0_@nestjs+common@9.2.1
       '@nestjs/platform-express': 9.3.9_hjcqpoaebdr7gdo5hgc22hthbe
+      '@types/uuid': 8.3.4
       '@types/validator': 13.7.13
       class-transformer: 0.5.1
       class-validator: 0.13.2
       connection-string: 4.3.6
       dotenv: 16.0.3
+      luxon: 3.3.0
       mongodb-memory-server: 8.11.2
       mongoose: 6.9.3
       reflect-metadata: 0.1.13
@@ -245,6 +250,7 @@ importers:
       '@nestjs/schematics': 9.0.4_typescript@4.9.5
       '@nestjs/testing': 9.2.1_qtfdfhl7yltwfy6w66cbj2fnoa
       '@types/jest': 28.1.8
+      '@types/luxon': 3.2.0
       '@types/mongoose': 5.11.97
       '@types/node': 16.18.14
       aws-sdk-client-mock: 2.1.0
@@ -9625,6 +9631,10 @@ packages:
   /@types/lodash/4.14.191:
     resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
 
+  /@types/luxon/3.2.0:
+    resolution: {integrity: sha512-lGmaGFoaXHuOLXFvuju2bfvZRqxAqkHPx9Y9IQdQABrinJJshJwfNCKV+u7rR3kJbiqfTF/NhOkcxxAFrObyaA==}
+    dev: true
+
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
@@ -9868,7 +9878,6 @@ packages:
 
   /@types/uuid/8.3.4:
     resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
-    dev: true
 
   /@types/validator/13.7.13:
     resolution: {integrity: sha512-EMfHccxNKXaSxTK6DN0En9WsXa7uR4w3LQtx31f6Z2JjG5hJQeVX5zUYMZoatjZgnoQmRcT94WnNWwi0BzQW6Q==}
@@ -19817,6 +19826,11 @@ packages:
 
   /lru-cache/7.18.2:
     resolution: {integrity: sha512-KytVYmZ3reaw/f3d7GCISvWWjTYxszNdvD5rDvm/zECga3eSWzryRY7iauJsjo6aaw03lHYTSNTk7lW83Bv+zQ==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /luxon/3.3.0:
+    resolution: {integrity: sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==}
     engines: {node: '>=12'}
     dev: false
 
