@@ -659,10 +659,7 @@ importers:
       '@microsoft/rush-lib': 5.93.1
       '@types/istanbul-reports': ~3.0.1
       '@types/jest': 28.1.8
-      '@types/json-schema': ~7.0.11
       '@types/node': ^16.0.0
-      '@types/uuid': ~8.3.4
-      esbuild: ~0.17.5
       eslint: 8.26.0
       istanbul-lib-coverage: ~3.2.0
       istanbul-lib-report: ~3.0.0
@@ -681,13 +678,10 @@ importers:
     devDependencies:
       '@cats-cradle/eslint-config': link:../eslint-config
       '@types/jest': 28.1.8
-      '@types/json-schema': 7.0.11
       '@types/node': 16.18.14
-      '@types/uuid': 8.3.4
-      esbuild: 0.17.11
       eslint: 8.26.0
       jest: 29.4.3_clz7q7i76oq2x7yxwnubwg6ita
-      ts-jest: 29.0.5_zppvaeuldsrkd2dx6uua2f37ra
+      ts-jest: 29.0.5_orzzknleilowtsz34rkaotjvzm
       ts-node: 10.9.1_zix2iy4c4a7fivhrc3ey4gy2pu
       typescript: 4.9.5
 
@@ -5720,7 +5714,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - ts-node
-    dev: false
 
   /@jest/core/29.5.0_ts-node@10.9.1:
     resolution: {integrity: sha512-28UzQc7ulUrOQw1IsN/kv1QES3q2kkbl/wGslyhAclqZ/8cMdB5M68BffkIdSJgKBUt50d3hbwJ92XESlE7LiQ==}
@@ -17690,7 +17683,6 @@ packages:
       - '@types/node'
       - supports-color
       - ts-node
-    dev: false
 
   /jest-cli/29.5.0_clz7q7i76oq2x7yxwnubwg6ita:
     resolution: {integrity: sha512-L1KcP1l4HtfwdxXNFCL5bmUbLQiKrakMUriBEcc1Vfz6gx31ORKdreuWvmQVBit+1ss9NNR3yxjwfwzZNdQXJw==}
@@ -19186,7 +19178,6 @@ packages:
       - '@types/node'
       - supports-color
       - ts-node
-    dev: false
 
   /jest/29.4.3_clz7q7i76oq2x7yxwnubwg6ita:
     resolution: {integrity: sha512-XvK65feuEFGZT8OO0fB/QAQS+LGHvQpaadkH5p47/j3Ocqq3xf2pK9R+G0GzgfuhXVxEv76qCOOcMb5efLk6PA==}
@@ -25780,7 +25771,6 @@ packages:
       semver: 7.3.8
       typescript: 4.9.5
       yargs-parser: 21.1.1
-    dev: false
 
   /ts-jest/29.0.5_zppvaeuldsrkd2dx6uua2f37ra:
     resolution: {integrity: sha512-PL3UciSgIpQ7f6XjVOmbi96vmDHUqAyqDr8YxzopDqX3kfgYtX1cuNeBjP+L9sFXi6nzsGGA6R3fP3DDDJyrxA==}

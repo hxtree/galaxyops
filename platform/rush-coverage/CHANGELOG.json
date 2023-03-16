@@ -2,6 +2,18 @@
   "name": "@cats-cradle/rush-coverage",
   "entries": [
     {
+      "version": "1.0.0",
+      "tag": "@cats-cradle/rush-coverage_v1.0.0",
+      "date": "Thu, 16 Mar 2023 06:38:44 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "stablize api"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.7",
       "tag": "@cats-cradle/rush-coverage_v0.0.7",
       "date": "Fri, 24 Feb 2023 05:33:02 GMT",
