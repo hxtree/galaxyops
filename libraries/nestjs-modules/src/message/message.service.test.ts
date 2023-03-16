@@ -46,11 +46,11 @@ describe(MessageService, () => {
         $metadata: { httpStatusCode: 200 },
       });
 
-      const body = await FakerFactory.create<CharacterLevelUpEvent>(
+      const message = await FakerFactory.create<CharacterLevelUpEvent>(
         CharacterLevelUpEvent,
       );
 
-      const response = await messageService.publish(body, body.topicArn);
+      const response = await messageService.publish(message);
 
       expect(response).toBeUndefined();
     });

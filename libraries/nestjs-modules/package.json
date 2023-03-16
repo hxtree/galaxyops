@@ -41,7 +41,9 @@
     "dotenv": "~16.0.3",
     "@aws-sdk/client-s3": "3.289.0",
     "@aws-sdk/client-sns": "3.289.0",
-    "@cats-cradle/messaging-schemas": "workspace:*"
+    "@cats-cradle/messaging-schemas": "workspace:*",
+    "@types/uuid": "~8.3.4",
+    "luxon": "~3.3.0"
   },
   "devDependencies": {
     "@types/jest": "28.1.8",
@@ -58,6 +60,7 @@
     "@types/mongoose": "~5.11.97",
     "aws-sdk-client-mock": "~2.1.0",
     "@aws-sdk/types": "3.289.0",
-    "@cats-cradle/faker-factory": "workspace:*"
+    "@cats-cradle/faker-factory": "workspace:*",
+    "@types/luxon": "~3.2.0"
   }
 }
