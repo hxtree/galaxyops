@@ -5,7 +5,14 @@
     "app": "./dist/src/app.js"
   },
   "main": "index.js",
-  "version": "0.0.7",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxtree/cats-cradle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hxtree/cats-cradle/issues"
+  },
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "build": "tsc",
@@ -38,10 +45,7 @@
     "ts-jest": "29.0.5",
     "typescript": "4.9.5",
     "ts-node": "10.9.1",
-    "esbuild": "~0.17.5",
-    "@types/uuid": "~8.3.4",
     "eslint": "8.26.0",
-    "@cats-cradle/eslint-config": "workspace:*",
-    "@types/json-schema": "~7.0.11"
+    "@cats-cradle/eslint-config": "workspace:*"
   }
 }
