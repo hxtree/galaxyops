@@ -20,10 +20,11 @@ describe('BaseMessageDto', () => {
   }
 
   beforeAll(async () => {
-    process.env.STAGE = 'default';
-    process.env.APP_NAME = 'message-broker';
-    process.env.AWS_ACCOUNT = '123456789012';
+    // set by default in consumers
+    process.env.AWS_ACCOUNT_ID = '123456789012';
     process.env.AWS_REGION = 'us-east-2';
+    process.env.STAGE_NAME = 'default';
+    process.env.APP_NAME = 'message-broker';
 
     event = await FakerFactory.create<PlayerCreateEvent>(PlayerCreateEvent);
     eventLong =

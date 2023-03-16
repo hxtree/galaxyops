@@ -6,15 +6,8 @@ import { SnsService } from '../sns';
 
 @Injectable()
 export class MessageService {
-  constructor(
-    // private _configService: ConfigService,
-    // private _s3Service: S3Service,
-    private _snsService: SnsService,
-  ) {}
+  constructor(private _snsService: SnsService) {}
 
-  /**
-   * Save to data lake and send message
-   */
   async publish(message: BaseMessageDto): Promise<void> {
     if (!message.messageId) {
       message.messageId = v4();
