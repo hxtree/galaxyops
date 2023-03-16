@@ -14,7 +14,6 @@
     "build:all": "rush build -t .",
     "watch": "tsc -w",
     "test": "jest",
-    "test:cov": "jest --coverage",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run",
     "depcheck": "npx depcheck"
