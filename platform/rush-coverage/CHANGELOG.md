@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/rush-coverage
 
-This log was last generated on Fri, 17 Mar 2023 00:16:45 GMT and should not be manually modified.
+This log was last generated on Fri, 17 Mar 2023 00:52:55 GMT and should not be manually modified.
+
+## 1.1.1
+Fri, 17 Mar 2023 00:52:55 GMT
+
+### Patches
+
+- add shebang for npx
 
 ## 1.1.0
 Fri, 17 Mar 2023 00:16:45 GMT
