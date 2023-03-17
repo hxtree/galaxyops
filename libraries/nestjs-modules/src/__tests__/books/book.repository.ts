@@ -7,6 +7,7 @@ import { CreateBookDto } from './create-book.dto';
 @Injectable()
 export class BooksRepository {
   constructor(
+    // @ts-ignore
     @InjectModel(Book.name)
     private BookModel: PaginateModel<TBookDocument>,
   ) {}

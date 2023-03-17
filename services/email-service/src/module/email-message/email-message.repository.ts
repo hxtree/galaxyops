@@ -7,6 +7,7 @@ import { TEmailMessageDocument, EmailMessage } from './email-message.schema';
 @Injectable()
 export class EmailMessageRepository extends Repository<TEmailMessageDocument> {
   constructor(
+    // @ts-ignore
     @InjectModel(EmailMessage.name)
     private entity: Model<TEmailMessageDocument>,
   ) {
