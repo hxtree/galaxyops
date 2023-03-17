@@ -10,6 +10,7 @@ import {
 @Injectable()
 export class CharacterSheetRepository extends Repository<TCharacterSheetDocument> {
   constructor(
+    // @ts-ignore
     @InjectModel(CharacterSheet.name)
     private entity: Model<TCharacterSheetDocument>,
   ) {
