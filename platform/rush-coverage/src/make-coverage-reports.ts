@@ -21,7 +21,7 @@ export function makeCoverageReports(coverageMap: any, formats: string[]) {
           projectRoot: rootDir,
         })
         .execute(reportGenerationContext);
-      console.log(`create ${reporter}`);
+      console.log(`create ${reporter} to ${reportDir}`);
     });
     console.log('Complete');
   } catch (error) {
