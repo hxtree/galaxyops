@@ -7,6 +7,7 @@ import { TPersonDocument, Person } from './person.schema';
 @Injectable()
 export class PersonRepository extends Repository<TPersonDocument> {
   constructor(
+    // @ts-ignore
     @InjectModel(Person.name) private entity: Model<TPersonDocument>,
   ) {
     super(entity);
