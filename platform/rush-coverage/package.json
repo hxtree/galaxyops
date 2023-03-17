@@ -1,11 +1,9 @@
 {
   "name": "@cats-cradle/rush-coverage",
   "license": "MIT",
-  "bin": {
-    "app": "./dist/src/app.js"
-  },
+  "bin": "./dist/index.js",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"
