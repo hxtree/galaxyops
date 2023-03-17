@@ -26,7 +26,8 @@ The consolidated code coverage reports are generated to root monorepo
 
 ### Github Action
 
-Github Action Codacy integration example.
+Example Github Action integration using [Codacy](https://www.codacy.com/) for
+code coverage. See vendor documentation for vendor specific documentation.
 
 ```yaml
 name: CodeCoverage
@@ -35,8 +36,6 @@ on:
   workflow_call:
     secrets:
       CODACY_PROJECT_TOKEN:
-        required: true
-      IMPACTED_BY_SHA:
         required: true
 
 jobs:

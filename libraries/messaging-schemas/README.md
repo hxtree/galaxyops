@@ -6,6 +6,19 @@ async communication between microservices.
 - SNS topics are deployed with the message broker.
 - SQS deployments should be owned by consumer.
 
+## Naming Convention
+
+```txt
+CONTEXT - VERB - CATEGORY
+```
+
+e.g.
+
+- EmailSendCommand
+- UserPasswordResetEvent
+- PlayerDisconnectedEvent
+- CharacterRankRequest
+
 ## Message Categories
 
 **Command** Command send a idempotent request to a topic asking subscribers to
