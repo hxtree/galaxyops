@@ -1,11 +1,14 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import path from 'path';
-
 const istanbulReport = require('istanbul-lib-report');
 const istanbulReports = require('istanbul-reports');
 
-const rootDir = path.resolve(__dirname, '../../../');
-const reportDir = `${rootDir}/coverage`;
+/**
+ * the outputDir is the cwd to avoid coverage files being relative to npx path
+ * e.g. /home/runner/.npm/_npx/0cb0be537d78c849/node_modules/coverage
+ */
+const outputDir = process.cwd();
+
+const reportDir = `${outputDir}/coverage`;
 
 export function makeCoverageReports(coverageMap: any, formats: string[]) {
   const reportGenerationContext = istanbulReport.createContext({
@@ -18,7 +21,7 @@ export function makeCoverageReports(coverageMap: any, formats: string[]) {
     formats.forEach((reporter: string) => {
       istanbulReports
         .create(reporter, {
-          projectRoot: rootDir,
+          projectRoot: outputDir,
         })
         .execute(reportGenerationContext);
       console.log(`create ${reporter} to ${reportDir}`);
