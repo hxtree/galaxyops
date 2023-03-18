@@ -18,7 +18,7 @@ Now its ready to run the script to merge coverage files from all projects into a
 single `/coverage` directory:
 
 ```bash
-npx @cats-cradle/rush-coverage
+npx @cats-cradle/rush-coverage@1.1.4
 ```
 
 That's it. The consolidated code coverage reports are generated to cwd
@@ -28,8 +28,10 @@ That's it. The consolidated code coverage reports are generated to cwd
 
 This is an example of how to use a Github Action, RushCoverage, and third party,
 in this case [Codacy](https://www.codacy.com/), to generate code coverage in CI.
-See vendor specific documentation for vendor specific instructions for coverage
-submission, badging, pr feedback, etc.
+
+See vendor specific documentation for specific instructions for vendor coverage
+submission, badging, pr feedback, etc. Change `test:cov` command as specific to
+monorepo. Set secrets, `CODACY_PROJECT_TOKEN` as necessary.
 
 ```yaml
 name: CodeCoverage
@@ -57,14 +59,14 @@ jobs:
       - name: Rush install
         run: node common/scripts/install-run-rush.js install
 
-      - name: Build
+      - name: Rush build
         run: node common/scripts/install-run-rush.js build
 
-      - name: Test coverage
+      - name: Rush test with coverage
         run: node common/scripts/install-run-rush.js test:cov
 
       - name: Merge coverage reports
-        run: npx @cats-cradle/rush-coverage
+        run: npx @cats-cradle/rush-coverage@1.1.4
 
       - name: Submit merged coverage report
         uses: codacy/codacy-coverage-reporter-action@v1.3.0
