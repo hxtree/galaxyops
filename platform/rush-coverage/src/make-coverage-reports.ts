@@ -7,7 +7,6 @@ const istanbulReports = require('istanbul-reports');
  * e.g. /home/runner/.npm/_npx/0cb0be537d78c849/node_modules/coverage
  */
 const outputDir = process.cwd();
-
 const reportDir = `${outputDir}/coverage`;
 
 export function makeCoverageReports(coverageMap: any, formats: string[]) {
