@@ -13,6 +13,7 @@ importers:
       '@mui/system': ~5.11.12
       '@types/styled-components': ~5.1.26
       esbuild: ~0.17.5
+      pdf2html: ~3.1.0
       styled-components: ~5.3.8
     dependencies:
       '@cats-cradle/constructs': link:platform/constructs
@@ -21,6 +22,7 @@ importers:
       '@mui/system': 5.11.12
       '@types/styled-components': 5.1.26
       esbuild: 0.17.11
+      pdf2html: 3.1.0
       styled-components: 5.3.8
 
   ../../libraries/api-client-character-sheet:
@@ -986,6 +988,89 @@ importers:
       web-vitals: 2.1.4
     devDependencies:
       '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
+
+  ../../services/html-to-pdf:
+    specifiers:
+      '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/constructs': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/validation-schemas': workspace:*
+      '@nestjs/axios': ~2.0.0
+      '@nestjs/common': 9.3.10
+      '@nestjs/core': 9.2.1
+      '@nestjs/platform-express': 9.3.9
+      '@nestjs/swagger': ~6.1.3
+      '@nestjs/terminus': 9.1.1
+      '@nestjs/testing': 9.2.1
+      '@types/aws-lambda': ~8.10.93
+      '@types/express': ~4.17.14
+      '@types/jest': 28.1.8
+      '@types/lodash': ~4.14.191
+      '@types/node': ^16.0.0
+      '@types/supertest': ~2.0.12
+      '@types/uuid': ~8.3.4
+      '@vendia/serverless-express': 4.8.2
+      aws-cdk-lib: 2.47.0
+      aws-lambda: 1.0.7
+      aws-serverless-express: ~3.4.0
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
+      constructs: ^10.1.211
+      esbuild: ~0.17.5
+      eslint: 8.26.0
+      express: 4.18.2
+      fs: ~0.0.1-security
+      jest: 29.4.3
+      lodash: ~4.17.21
+      node-cache: 5.1.2
+      path: ~0.12.7
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.6
+      source-map-support: ~0.5.21
+      supertest: ~6.3.3
+      ts-node: 10.9.1
+      typescript: 5.0.2
+    dependencies:
+      '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
+      '@cats-cradle/constructs': link:../../platform/constructs
+      '@cats-cradle/validation-schemas': link:../../libraries/validation-schemas
+      '@nestjs/axios': 2.0.0_hlezbtj73u6lfj5t62teiqjtby
+      '@nestjs/common': 9.3.10_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/core': 9.2.1_cl2xnuptsgbxx4ccjuaj5ckuf4
+      '@nestjs/platform-express': 9.3.9_n4ruuahoetno5jsfmwl6mo7j6u
+      '@nestjs/swagger': 6.1.4_uuh46betucnyp3ccp7y4flktrm
+      '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
+      '@nestjs/testing': 9.2.1_hrm7vyq2ue5n7ivxddmbbapisa
+      '@vendia/serverless-express': 4.8.2
+      aws-lambda: 1.0.7
+      aws-serverless-express: 3.4.0
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
+      eslint: 8.26.0
+      express: 4.18.2
+      node-cache: 5.1.2
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.6
+      source-map-support: 0.5.21
+    devDependencies:
+      '@cats-cradle/eslint-config': link:../../platform/eslint-config
+      '@types/aws-lambda': 8.10.111
+      '@types/express': 4.17.17
+      '@types/jest': 28.1.8
+      '@types/lodash': 4.14.191
+      '@types/node': 16.18.14
+      '@types/supertest': 2.0.12
+      '@types/uuid': 8.3.4
+      aws-cdk-lib: 2.47.0_constructs@10.1.268
+      constructs: 10.1.268
+      esbuild: 0.17.11
+      fs: 0.0.1-security
+      jest: 29.4.3_clz7q7i76oq2x7yxwnubwg6ita
+      lodash: 4.17.21
+      path: 0.12.7
+      supertest: 6.3.3
+      ts-node: 10.9.1_nmak7b3gdebbs5fsmnlpuyhq7y
+      typescript: 5.0.2
 
   ../../services/luck-by-dice:
     specifiers:
@@ -11086,6 +11171,14 @@ packages:
       get-intrinsic: 1.2.0
       is-string: 1.0.7
 
+  /array-parallel/0.1.3:
+    resolution: {integrity: sha512-TDPTwSWW5E4oiFiKmz6RGJ/a80Y91GuLgUYuLd49+XBS75tYo8PNgaT2K/OxuQYqkoI852MDGBorg9OcUSTQ8w==}
+    dev: false
+
+  /array-series/0.1.5:
+    resolution: {integrity: sha512-L0XlBwfx9QetHOsbLDrE/vh2t018w9462HM3iaFfxRiK83aJjAt/Ja3NMkOW7FICwWTlQBa3ZbL5FKhuQWkDrg==}
+    dev: false
+
   /array-union/1.0.2:
     resolution: {integrity: sha512-Dxr6QJj/RdU/hCaBjOfxW+q6lyuVE6JFWIrAUpuOOhoJJoQ99cUn3igRaHVB5P9WrgFVN0FfArM3x0cueOU8ng==}
     engines: {node: '>=0.10.0'}
@@ -12449,6 +12542,30 @@ packages:
     resolution: {integrity: sha512-HBiYvXvn9Z70Z88XKjz3AEKd4HJhBXsa3j7xFnITAzoS8+q6eIGi8qDB8FKPBAjtuxjI/zFpwuiCb8oDtKOYrA==}
     dev: false
 
+  /cheerio-select/2.1.0:
+    resolution: {integrity: sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==}
+    dependencies:
+      boolbase: 1.0.0
+      css-select: 5.1.0
+      css-what: 6.1.0
+      domelementtype: 2.3.0
+      domhandler: 5.0.3
+      domutils: 3.0.1
+    dev: false
+
+  /cheerio/1.0.0-rc.12:
+    resolution: {integrity: sha512-VqR8m68vM46BNnuZ5NtnGBKIE/DfN0cRIzg9n40EIq9NOv90ayxLBXA8fXC5gquFRGJSTRqBq25Jt2ECLR431Q==}
+    engines: {node: '>= 6'}
+    dependencies:
+      cheerio-select: 2.1.0
+      dom-serializer: 2.0.0
+      domhandler: 5.0.3
+      domutils: 3.0.1
+      htmlparser2: 8.0.1
+      parse5: 7.1.2
+      parse5-htmlparser2-tree-adapter: 7.0.0
+    dev: false
+
   /chokidar/2.1.8:
     resolution: {integrity: sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==}
     deprecated: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
@@ -13068,6 +13185,13 @@ packages:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
 
+  /cross-spawn/4.0.2:
+    resolution: {integrity: sha512-yAXz/pA1tD8Gtg2S98Ekf/sewp3Lcp3YoFKJ4Hkp5h5yLWnKVTDU0kwjKJ8NDCYcfTLfyGkzTikst+jWypT1iA==}
+    dependencies:
+      lru-cache: 4.1.5
+      which: 1.3.1
+    dev: false
+
   /cross-spawn/6.0.5:
     resolution: {integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==}
     engines: {node: '>=4.8'}
@@ -13242,6 +13366,16 @@ packages:
       domhandler: 4.3.1
       domutils: 2.8.0
       nth-check: 2.1.1
+
+  /css-select/5.1.0:
+    resolution: {integrity: sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==}
+    dependencies:
+      boolbase: 1.0.0
+      css-what: 6.1.0
+      domhandler: 5.0.3
+      domutils: 3.0.1
+      nth-check: 2.1.1
+    dev: false
 
   /css-to-react-native/3.2.0:
     resolution: {integrity: sha512-e8RKaLXMOFii+02mOlqwjbD00KSEKqblnpO9e++1aXS1fPQOpS1YoqdVHBqPjHNoxeF2mimzVqawm2KCbEdtHQ==}
@@ -15761,7 +15895,6 @@ packages:
       graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
-    dev: true
 
   /fs-extra/7.0.1:
     resolution: {integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==}
@@ -16156,6 +16289,16 @@ packages:
       glob: 7.1.7
       lodash: 4.17.21
       minimatch: 3.0.8
+    dev: false
+
+  /gm/1.25.0:
+    resolution: {integrity: sha512-4kKdWXTtgQ4biIo7hZA396HT062nDVVHPjQcurNZ3o/voYN+o5FUC5kOwuORbpExp3XbTJ3SU7iRipiIhQtovw==}
+    engines: {node: '>=14'}
+    dependencies:
+      array-parallel: 0.1.3
+      array-series: 0.1.5
+      cross-spawn: 4.0.2
+      debug: 3.2.7
     dev: false
 
   /good-listener/1.2.2:
@@ -19730,6 +19873,10 @@ packages:
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
 
+  /lodash.defaults/4.2.0:
+    resolution: {integrity: sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==}
+    dev: false
+
   /lodash.get/4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
 
@@ -19824,6 +19971,13 @@ packages:
       fault: 1.0.4
       highlight.js: 9.13.1
     dev: true
+
+  /lru-cache/4.1.5:
+    resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
+    dependencies:
+      pseudomap: 1.0.2
+      yallist: 2.1.2
+    dev: false
 
   /lru-cache/5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
@@ -21406,12 +21560,25 @@ packages:
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
 
+  /parse5-htmlparser2-tree-adapter/7.0.0:
+    resolution: {integrity: sha512-B77tOZrqqfUfnVcOrUvfdLbz4pu4RopLD/4vmu3HUPswwTA8OH0EMW9BlWR2B0RCoiZRAHEUu7IxeP1Pd1UU+g==}
+    dependencies:
+      domhandler: 5.0.3
+      parse5: 7.1.2
+    dev: false
+
   /parse5/5.1.0:
     resolution: {integrity: sha512-fxNG2sQjHvlVAYmzBZS9YlDp6PTSSDwa98vkD4QgVDDCAo84z5X1t5XyJQ62ImdLXx5NdIIfihey6xpum9/gRQ==}
     dev: true
 
   /parse5/6.0.1:
     resolution: {integrity: sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==}
+
+  /parse5/7.1.2:
+    resolution: {integrity: sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==}
+    dependencies:
+      entities: 4.4.0
+    dev: false
 
   /parseley/0.11.0:
     resolution: {integrity: sha512-VfcwXlBWgTF+unPcr7yu3HSSA6QUdDaDnrHcytVfj5Z8azAyKBDrYnSIfeSxlrEayndNcLmrXzg+Vxbo6DWRXQ==}
@@ -21525,6 +21692,21 @@ packages:
       safe-buffer: 5.2.1
       sha.js: 2.4.11
     dev: true
+
+  /pdf2html/3.1.0:
+    resolution: {integrity: sha512-S6d64dwkTOpnMVzn8zq4muycurlvS/UAg6apTqN1Afi7dph/Lwm4uvEVbRAYFNtYsOOlj2IgHYhMztojM179HQ==}
+    engines: {node: '>= 14'}
+    requiresBuild: true
+    dependencies:
+      cheerio: 1.0.0-rc.12
+      debug: 4.3.4
+      fs-extra: 11.1.0
+      gm: 1.25.0
+      lodash.defaults: 4.2.0
+      urijs: 1.19.11
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /peberminta/0.8.0:
     resolution: {integrity: sha512-YYEs+eauIjDH5nUEGi18EohWE0nV2QbGTqmxQcqgZ/0g+laPCQmuIqq7EBLVi9uim9zMgfJv0QBZEnQ3uHw/Tw==}
@@ -22702,6 +22884,10 @@ packages:
   /prr/1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
     dev: true
+
+  /pseudomap/1.0.2:
+    resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}
+    dev: false
 
   /psl/1.9.0:
     resolution: {integrity: sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==}
@@ -26326,6 +26512,10 @@ packages:
     dependencies:
       punycode: 2.3.0
 
+  /urijs/1.19.11:
+    resolution: {integrity: sha512-HXgFDgDommxn5/bIv0cnQZsPhHDA90NPHD6+c/v21U5+Sx5hoP8+dP9IZXBU1gIfvdRfhG8cel9QNPeionfcCQ==}
+    dev: false
+
   /urix/0.1.0:
     resolution: {integrity: sha512-Am1ousAhSLBeB9cG/7k7r2R0zj50uDRlZHPGbazid5s9rlF1F/QKYObEKSIunSjIOkJZqwRRLpvewjEkM7pSqg==}
     deprecated: Please see https://github.com/lydell/urix#deprecated
@@ -27330,6 +27520,10 @@ packages:
   /y18n/5.0.8:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
+
+  /yallist/2.1.2:
+    resolution: {integrity: sha512-ncTzHV7NvsQZkYe1DW7cbDLm0YpzHmZF5r/iyP3ZnQtMiJ+pjzisCiMNI+Sj+xQF5pXhSHxSB3uDbsBTzY/c2A==}
+    dev: false
 
   /yallist/3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
