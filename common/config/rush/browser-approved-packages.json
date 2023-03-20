@@ -52,7 +52,7 @@
     },
     {
       "name": "@cats-cradle/messaging-schemas",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "@cats-cradle/nestjs-modules",

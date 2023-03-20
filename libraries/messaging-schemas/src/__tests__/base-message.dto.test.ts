@@ -35,11 +35,15 @@ describe('BaseMessageDto', () => {
 
   describe('topicName', () => {
     it('should make topic name based on class name prefix with STAGE, kebab case, ending in topic', async () => {
-      expect(event.topicName).toEqual('default-player-create-event-topic');
+      expect(PlayerCreateEvent.topicName()).toEqual(
+        'default-player-create-event-topic',
+      );
     });
 
     it('should truncate long class names', async () => {
-      expect(eventLong.topicName).toEqual(
+      expect(
+        TheQuickBrownFoxJumpsOverALazyDogAndCreateALongTopicNameThatMustBeShortenedForAws.topicName(),
+      ).toEqual(
         'default-the-quick-brown-fox-jumps-over-a-lazy-dog-and-create-a-long-topic-name-that-must-be-shortened-for-aws-topic',
       );
     });

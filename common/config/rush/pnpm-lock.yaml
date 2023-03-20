@@ -846,6 +846,7 @@ importers:
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': workspace:*
       '@cats-cradle/faker-factory': workspace:*
+      '@cats-cradle/messaging-schemas': workspace:*
       '@cats-cradle/nestjs-modules': workspace:*
       '@cats-cradle/validation-schemas': workspace:*
       '@microsoft/tsdoc': ~0.13.2
@@ -895,6 +896,7 @@ importers:
       '@aws-sdk/client-ses': 3.279.0
       '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs': link:../../platform/constructs
+      '@cats-cradle/messaging-schemas': link:../../libraries/messaging-schemas
       '@cats-cradle/nestjs-modules': link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas': link:../../libraries/validation-schemas
       '@nestjs/common': 9.3.10_allg6cauirbqzgqcmexy2wdnoq
