@@ -415,6 +415,10 @@
       "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform" ]
     },
     {
+      "name": "pdf2html",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
       "name": "prettier",
       "allowedCategories": [ "category-platform", "platform" ]
     },
