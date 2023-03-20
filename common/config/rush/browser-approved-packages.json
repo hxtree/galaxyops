@@ -103,6 +103,10 @@
       "allowedCategories": [ "apis", "rigs" ]
     },
     {
+      "name": "@nestjs/axios",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@nestjs/common",
       "allowedCategories": [ "apis", "category-platform", "libraries", "platform", "rigs" ]
     },

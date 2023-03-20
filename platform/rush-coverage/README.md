@@ -2,36 +2,36 @@
 
 RushCoverage is a code coverage consolidation tool for RushJs based monorepos.
 
-It consolidate code coverage reports from multiple projects into one report.
+It consolidates code coverage reports from multiple projects into one report.
 This allows for one coverage badge to cover the entire monorepo or one badge to
 coverage each team, etc. as to help promote team ownership of code base.
 
 This can be useful for continuous integration purposes. It can also be useful
-for browsing coverage html, et al. reports for the entire repo simultaneously.
+for simultaneously browsing coverage html, et al. reports for the entire repo.
 
 ## Usage
 
 Beforehand, use Jest (or similar) to generate
 `**/**/coverage/coverage-final.json` coverage reports for each project.
 
-Now its ready to run the script to merge coverage files from all projects into a
-single `/coverage` directory:
+Now that it's ready, run the script to merge coverage files from all projects
+into a single report:
 
 ```bash
 npx @cats-cradle/rush-coverage@1.1.4
 ```
 
-That's it. The consolidated code coverage reports are generated to cwd
-`/coverage`. Reports can reviewed manually or integrated into CI.
+That's it! The consolidated code coverage reports are generated to cwd
+`./coverage`. Reports can reviewed manually or integrated into CI.
 
 ### Github Action
 
-This is an example of how to use a Github Action, RushCoverage, and third party,
-in this case [Codacy](https://www.codacy.com/), to generate code coverage in CI.
+This is an example of how to use a Github Action, RushCoverage, and third party
+-- in this case [Codacy](https://www.codacy.com/) -- to generate code coverage
+in CI.
 
-See vendor specific documentation for specific instructions for vendor coverage
-submission, badging, pr feedback, etc. Change `test:cov` command as specific to
-monorepo. Set secrets, `CODACY_PROJECT_TOKEN` as necessary.
+See vendor specific documentation for instructions on coverage submission,
+badging, pr feedback, etc.
 
 ```yaml
 name: CodeCoverage
@@ -75,10 +75,12 @@ jobs:
           coverage-reports: coverage/lcov.info
 ```
 
+> **Note** Change `test:cov` command as specific to your monorepo setup. Set
+> secrets, in this case `CODACY_PROJECT_TOKEN`, as necessary in Github.
+
 ## How it Works
 
-RushCoverage works by obtaining a list of all projects from the `rush.json`.
-Then it checks each project for a compatible `./coverage/coverage-final.json` to
-gather a list of all coverage files. It then combines all the coverage files
-found into one consolidated coverage file to monitor code coverage for the
-entire monorepo.
+RushCoverage works by obtaining a list of all projects from `rush.json`. Then
+gather a list of all coverage files from each project with a compatible
+`./coverage/coverage-final.json` . It then combines all the coverage files found
+into one consolidated coverage report.
