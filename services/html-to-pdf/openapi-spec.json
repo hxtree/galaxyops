@@ -103,10 +103,24 @@
           }
         }
       }
+    },
+    "/pdf/render-url": {
+      "post": {
+        "operationId": "PdfController_postRenderFromUrl",
+        "parameters": [],
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/pdf/render-html": {
+      "post": {
+        "operationId": "PdfController_postRenderFromHtml",
+        "parameters": [],
+        "responses": { "201": { "description": "" } }
+      }
     }
   },
   "info": {
-    "title": "@cats-cradle/HtmlToPdf",
+    "title": "@cats-cradle/html-to-pdf",
     "description": "An API Simulating dice rolls that can be effected by luck from dice notation",
     "version": "1.0.4",
     "contact": {}

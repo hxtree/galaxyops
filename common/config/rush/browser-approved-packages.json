@@ -259,6 +259,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "chrome-aws-lambda",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "class-transformer",
       "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
@@ -421,6 +425,14 @@
     {
       "name": "prettier",
       "allowedCategories": [ "category-platform", "platform" ]
+    },
+    {
+      "name": "puppeteer",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "puppeteer-core",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "react",

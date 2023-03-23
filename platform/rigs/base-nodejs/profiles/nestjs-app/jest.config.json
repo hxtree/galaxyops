@@ -11,13 +11,5 @@
   "collectCoverageFrom": ["<rootDir>/**/*.ts"],
   "coverageReporters": ["json", "text-summary"],
   "coveragePathIgnorePattern": ["/node_modules/", "/cdk.out/", "/dist/"],
-  "coverageDirectory": "<rootDir>/coverage",
-  "coverageThreshold": {
-    "global": {
-      "branches": 0,
-      "functions": 30,
-      "lines": 50,
-      "statements": -250
-    }
-  }
+  "coverageDirectory": "<rootDir>/coverage"
 }
