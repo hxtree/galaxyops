@@ -1,6 +1,8 @@
 import { Controller, Post, Body, Res } from '@nestjs/common';
 import { Response } from 'express';
-import { PdfService, PDFRenderOptions } from './pdf.service';
+import { PdfService } from './pdf.service';
+import { CreateHtmlToPdfDto } from './create-html-to-pdf.dto';
+import { CreateUrlToPdfDto } from './create-url-to-pdf.dto';
 
 @Controller('pdf')
 export class PdfController {
@@ -9,9 +11,7 @@ export class PdfController {
   @Post('render-url')
   async postRenderFromUrl(
     @Res() res: Response,
-    @Body('url') url: string,
-    @Body('filename') filename?: string,
-    @Body('json') json?: boolean,
+    @Body() body: CreateUrlToPdfDto,
   ) {
     const options = {
       page: 1,
@@ -26,19 +26,17 @@ export class PdfController {
       path: 'invoice.pdf',
     };
 
-    const buffer = await this.pdfService.renderUrl(url);
-    this.responseAsPdf(json || true, buffer, res, filename || '');
+    const buffer = await this.pdfService.renderUrl(body.url);
+    this.responseAsPdf(false, buffer, res, body.filename || '');
   }
 
   @Post('render-html')
   async postRenderFromHtml(
     @Res() res: Response,
-    @Body('html') html: string,
-    @Body('filename') filename?: string,
-    @Body('json') json?: boolean,
+    @Body() body: CreateHtmlToPdfDto,
   ) {
-    const buffer = await this.pdfService.renderHtml(html);
-    this.responseAsPdf(json || true, buffer, res, filename || '');
+    const buffer = await this.pdfService.renderHtml(body.html);
+    this.responseAsPdf(false, buffer, res, body.filename);
   }
 
   private responseAsPdf(

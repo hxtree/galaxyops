@@ -1,12 +1,10 @@
 # @org-apis/html-to-pdf
 
-WIP unstable
-
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 
 # TODO
 
-Lambda layer
+- [] Lambda layer
 
 ## References
 
