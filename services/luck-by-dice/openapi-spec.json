@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/dice-roll": {
+    "/v1/dice-roll": {
       "post": {
         "operationId": "DiceRollController_create",
         "parameters": [],
@@ -16,7 +16,7 @@
         "responses": { "201": { "description": "" } }
       }
     },
-    "/health": {
+    "/v1/health": {
       "get": {
         "operationId": "HealthController_check",
         "parameters": [],

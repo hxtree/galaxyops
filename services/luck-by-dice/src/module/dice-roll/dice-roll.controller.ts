@@ -3,7 +3,7 @@ import { DiceRollService } from './dice-roll.service';
 import { QueryRollDto } from './query-roll.dto';
 import { ResponseRollDto } from './response-roll.dto';
 
-@Controller('dice-roll')
+@Controller({ path: 'dice-roll', version: ['1'] })
 export class DiceRollController {
   private _rollService;
 

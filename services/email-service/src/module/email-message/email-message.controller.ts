@@ -9,7 +9,7 @@ import { ActionType } from './types/action.type';
 import { EngineService } from './engine.service';
 import { QueueService } from './queue.service';
 
-@Controller('email-message')
+@Controller({ path: 'email-message', version: ['1'] })
 export class EmailMessageController {
   constructor(
     private _engineService: EngineService,

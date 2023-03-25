@@ -1,5 +1,5 @@
 // used in lambda
-
+import { VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import serverlessExpress from '@vendia/serverless-express';
@@ -17,6 +17,11 @@ async function bootstrap() {
       AppModule,
       new ExpressAdapter(expressApp),
     );
+
+    nestApp.enableVersioning({
+      type: VersioningType.URI,
+      defaultVersion: '1',
+    });
 
     nestApp.enableCors();
 

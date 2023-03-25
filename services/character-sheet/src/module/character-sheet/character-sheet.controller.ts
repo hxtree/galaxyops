@@ -13,7 +13,7 @@ import { CharacterSheetService } from './character-sheet.service';
 import { CharacterSheet } from './character-sheet.schema';
 import { CreateCharacterSheetDto } from './create-character-sheet-dto';
 
-@Controller('/character-sheets')
+@Controller({ path: 'character-sheets', version: ['1'] })
 export class CharacterSheetController {
   constructor(
     private _characterSheetService: CharacterSheetService,
