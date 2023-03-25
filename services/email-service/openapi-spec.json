@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/health": {
+    "/v1/health": {
       "get": {
         "operationId": "HealthController_check",
         "parameters": [],
@@ -104,7 +104,7 @@
         }
       }
     },
-    "/email-message/user-account-created": {
+    "/v1/email-message/user-account-created": {
       "post": {
         "operationId": "EmailMessageController_convert",
         "parameters": [
@@ -135,7 +135,7 @@
         "responses": { "201": { "description": "" } }
       }
     },
-    "/email-message/user-forgotten-password-reset": {
+    "/v1/email-message/user-forgotten-password-reset": {
       "post": {
         "operationId": "EmailMessageController_convertUserForgottenPasswordReset",
         "parameters": [
@@ -168,7 +168,7 @@
         "responses": { "201": { "description": "" } }
       }
     },
-    "/email-message/stats": {
+    "/v1/email-message/stats": {
       "get": {
         "operationId": "EmailMessageController_stats",
         "parameters": [],

@@ -4,7 +4,7 @@ import { PdfService } from './pdf.service';
 import { CreateHtmlToPdfDto } from './create-html-to-pdf.dto';
 import { CreateUrlToPdfDto } from './create-url-to-pdf.dto';
 
-@Controller('pdf')
+@Controller({ path: 'pdf', version: ['1'] })
 export class PdfController {
   constructor(private readonly pdfService: PdfService) {}
 

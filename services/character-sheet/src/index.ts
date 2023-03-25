@@ -5,7 +5,7 @@ import { ExpressAdapter } from '@nestjs/platform-express';
 import serverlessExpress from '@vendia/serverless-express';
 import { Context, Handler } from 'aws-lambda';
 import express from 'express';
-
+import { VersioningType } from '@nestjs/common';
 import { AppModule } from './app.module';
 
 let cachedServer: Handler;
@@ -17,6 +17,10 @@ async function bootstrap() {
       AppModule,
       new ExpressAdapter(expressApp),
     );
+    nestApp.enableVersioning({
+      type: VersioningType.URI,
+      defaultVersion: '1',
+    });
 
     nestApp.enableCors();
 
