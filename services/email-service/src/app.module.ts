@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { EmailMessageModule } from './module/email-message/email-message.module';
-import { HealthModule } from './module/health/health.module';
+import { EmailMessageModule } from './modules/email-message/email-message.module';
+import { HealthModule } from './modules/health/health.module';
 
 @Module({
   imports: [

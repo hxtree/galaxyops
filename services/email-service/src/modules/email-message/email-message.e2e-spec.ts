@@ -9,7 +9,7 @@ import {
 } from '@cats-cradle/nestjs-modules';
 import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dto';
 import { TemplateService } from './template.service';
-import { EmailMessageSchema } from './email-message.schema';
+import { EmailMessageSchema } from '../../models/email-message/email-message.schema';
 import { EmailMessageRepository } from './email-message.repository';
 import { EmailMessageController } from './email-message.controller';
 import { QueueService } from './queue.service';

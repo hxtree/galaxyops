@@ -186,6 +186,13 @@
       "tags": ["deploy-app"]
     },
     {
+      "packageName": "@cats-cradle/audio-service",
+      "projectFolder": "services/audio-service",
+      "reviewCategory": "apis",
+      "cyclicDependencyProjects": [],
+      "tags": ["deploy-app"]
+    },
+    {
       "packageName": "@cats-cradle/character-sheet",
       "projectFolder": "services/character-sheet",
       "reviewCategory": "apis",
