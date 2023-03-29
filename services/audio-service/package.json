@@ -42,7 +42,8 @@
     "uuid": "~9.0.0",
     "@cats-cradle/nestjs-modules": "workspace:*",
     "@cats-cradle/validation-schemas": "workspace:*",
-    "@nestjs/config": "2.2.0"
+    "@nestjs/config": "2.2.0",
+    "@nestjs/serve-static": "~3.0.1"
   },
   "devDependencies": {
     "aws-cdk-lib": "2.47.0",

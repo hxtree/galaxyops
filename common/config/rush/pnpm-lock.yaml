@@ -700,6 +700,7 @@ importers:
       '@nestjs/config': 2.2.0
       '@nestjs/core': 9.2.1
       '@nestjs/platform-express': 9.3.9
+      '@nestjs/serve-static': ~3.0.1
       '@nestjs/swagger': ~6.1.3
       '@nestjs/terminus': 9.1.1
       '@nestjs/testing': 9.2.1
@@ -740,6 +741,7 @@ importers:
       '@nestjs/config': 2.2.0_hlezbtj73u6lfj5t62teiqjtby
       '@nestjs/core': 9.2.1_cl2xnuptsgbxx4ccjuaj5ckuf4
       '@nestjs/platform-express': 9.3.9_n4ruuahoetno5jsfmwl6mo7j6u
+      '@nestjs/serve-static': 3.0.1_kq3mag5umbsuszwy7ws4xfi4xi
       '@nestjs/swagger': 6.1.4_uuh46betucnyp3ccp7y4flktrm
       '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
       '@vendia/serverless-express': 4.8.2
@@ -7127,6 +7129,28 @@ packages:
     transitivePeerDependencies:
       - chokidar
     dev: true
+
+  /@nestjs/serve-static/3.0.1_kq3mag5umbsuszwy7ws4xfi4xi:
+    resolution: {integrity: sha512-i766UJPYOqvQ2BbRKh0/+Mmq5NkJnmKcShjWV1i5qpXyeM0KDZTn0n7g7ykWq/3LbQgjpMzrhYtGv35GX7GVQw==}
+    peerDependencies:
+      '@fastify/static': ^6.5.0
+      '@nestjs/common': ^9.0.0
+      '@nestjs/core': ^9.0.0
+      express: ^4.18.1
+      fastify: ^4.7.0
+    peerDependenciesMeta:
+      '@fastify/static':
+        optional: true
+      express:
+        optional: true
+      fastify:
+        optional: true
+    dependencies:
+      '@nestjs/common': 9.3.10_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/core': 9.2.1_cl2xnuptsgbxx4ccjuaj5ckuf4
+      express: 4.18.2
+      path-to-regexp: 0.2.5
+    dev: false
 
   /@nestjs/swagger/6.1.4_uuh46betucnyp3ccp7y4flktrm:
     resolution: {integrity: sha512-kE8VjR+NaoKqxg8XqM/YYfALScPh4AcoR8Wywga8/OxHsTHY+MKxqvTpWp7IhCUWSA6xT8nQUpcC9Rt7C+r7Hw==}
@@ -21846,6 +21870,10 @@ packages:
 
   /path-to-regexp/0.1.7:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==}
+
+  /path-to-regexp/0.2.5:
+    resolution: {integrity: sha512-l6qtdDPIkmAmzEO6egquYDfqQGPMRNGjYtrU13HAXb3YSRrt7HSb1sJY0pKp6o2bAa86tSB6iwaW2JbthPKr7Q==}
+    dev: false
 
   /path-to-regexp/1.8.0:
     resolution: {integrity: sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==}
