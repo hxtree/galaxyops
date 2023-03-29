@@ -14,7 +14,7 @@ export class UserForgottenPasswordResetDto extends TemplateDto {
     default: 'jane.doe',
   })
   @Expose()
-  username!: string;
+  public username!: string;
 
   // @IsFQDN() doesn't work with pipe for some reason
   @IsString()
@@ -23,5 +23,5 @@ export class UserForgottenPasswordResetDto extends TemplateDto {
     default: 'https://example.com/forgot-password-reset?token=abc123',
   })
   @Expose()
-  link!: string;
+  public link!: string;
 }

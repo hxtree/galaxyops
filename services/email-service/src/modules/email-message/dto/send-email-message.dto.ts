@@ -4,7 +4,7 @@ import {
   IsString,
 } from '@cats-cradle/validation-schemas';
 import { ApiProperty } from '@nestjs/swagger';
-import { StatusType } from '../types/status.type';
+import { StatusType } from '../../../models/email-message/status.type';
 
 export class SendEmailMessageDto {
   @IsEnum(StatusType)
