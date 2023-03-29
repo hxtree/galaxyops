@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { TemplateService } from './template.service';
-import { ActionType } from './types/action.type';
+import { ActionType } from '../../models/email-message/action.type';
 import { QueueService } from './queue.service';
 import { MailerService } from './mailer.service';
 

@@ -1,7 +1,7 @@
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import { SendEmailCommand } from '@aws-sdk/client-ses';
-import { MailerService } from '../module/email-message/mailer.service';
-import { SendEmailCommandDto } from '../module/email-message/dto/send-email-command.dto';
+import { MailerService } from '../modules/email-message/mailer.service';
+import { SendEmailCommandDto } from '../modules/email-message/dto/send-email-command.dto';
 
 describe('MailerService', () => {
   let mailerService: MailerService;

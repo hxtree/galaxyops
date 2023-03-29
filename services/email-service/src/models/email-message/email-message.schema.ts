@@ -6,7 +6,7 @@ import {
   IsUUID,
   IsEnum,
 } from '@cats-cradle/validation-schemas';
-import { StatusType } from './types/status.type';
+import { StatusType } from './status.type';
 
 @Schema()
 export class EmailMessage {

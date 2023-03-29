@@ -1,4 +1,4 @@
-import { TemplateService } from '../module/email-message/template.service';
+import { TemplateService } from '../modules/email-message/template.service';
 
 describe('TemplateService', () => {
   let templateService: TemplateService;

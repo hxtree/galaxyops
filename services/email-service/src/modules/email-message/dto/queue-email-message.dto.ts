@@ -3,7 +3,7 @@ import {
   IsDateString,
   IsString,
 } from '@cats-cradle/validation-schemas';
-import { StatusType } from '../types/status.type';
+import { StatusType } from '../../../models/email-message/status.type';
 
 export class QueueEmailMessageDto {
   @IsEnum(StatusType)

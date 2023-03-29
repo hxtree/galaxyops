@@ -1,4 +1,6 @@
-# Audio
+# @cats-cradle/audio-service
+
+WIP unstable
 
 The audio for the game is intentionally retro, we're talking tracker files.
 

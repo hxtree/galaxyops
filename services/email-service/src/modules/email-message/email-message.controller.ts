@@ -5,7 +5,7 @@ import {
   UserForgottenPasswordResetTemplate,
   UserAccountCreatedTemplate,
 } from './templates';
-import { ActionType } from './types/action.type';
+import { ActionType } from '../../models/email-message/action.type';
 import { EngineService } from './engine.service';
 import { QueueService } from './queue.service';
 

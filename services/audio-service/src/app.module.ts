@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { EmailMessageModule } from './modules/email-message/email-message.module';
-import { HealthModule } from './modules/health/health.module';
+import { AudioPlayerModule } from './module/audio-player/audio-player.module';
+import { HealthModule } from './module/health/health.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     HealthModule,
-    EmailMessageModule,
+    AudioPlayerModule,
   ],
   providers: [],
   exports: [],
