@@ -1,15 +1,9 @@
 <h1 align="center">Cats Cradle :yarn:</h1>
 
-**Cats Cradle** is a unreleased mobile role-playing game (RPG).
-
-This monorepo contains platform as a service (PaaS), microservices, a
-devcontainer, and infrastructure as code (IaC) used to continuously deploy Cats
-Cradle in its entirety.
-
-Although each package is maintained for the game, many are released individually
-as open-source software and available on NPM.
-
-The game engine client is built using Unreal Engine 5.
+This monorepo contains numerous microservices with infrastructure as code (IaC),
+built on a platform as a service (PaaS). Although each package is maintained for
+**Cats Cradle**, a unreleased mobile role-playing game (RPG), many are
+individually released as open-source software (OSS) and available on NPM.
 
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
@@ -39,12 +33,13 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
 
 ---
 
-> **Note** Development of `@cats-cradle/base-game-engine` client requires
+> **Note** Development of `@cats-cradle/base-game-engine` client which is built
+> using Unreal Engine 5. requires
 > [additional tools](clients/base-game-engine/README.md).
 
 ### Lifecycle of a Pull Request (~5 mins)
 
-1. Create a new branch from the main using git.
+1. Checkout a new branch from main using git.
 
    ```bash
    git checkout -b feature/improve-readme

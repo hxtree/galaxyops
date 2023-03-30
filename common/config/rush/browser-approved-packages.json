@@ -83,6 +83,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "@fastify/static",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@microsoft/rush",
       "allowedCategories": [ "category-ci-cd" ]
     },
