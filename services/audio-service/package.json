@@ -66,6 +66,7 @@
     "@nestjs/testing": "9.2.1",
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.12",
-    "@cats-cradle/faker-factory": "workspace:*"
+    "@cats-cradle/faker-factory": "workspace:*",
+    "@fastify/static": "~6.9.0"
   }
 }

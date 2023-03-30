@@ -2,8 +2,8 @@
 
 WIP unstable
 
-The audio for the game is intentionally retro, we're talking Impulse Tracker
-(\*.it) files.
+This audio service is intentionally designed to play only retro music. We're
+talking Impulse Tracker (\*.it) files.
 
 Audio files will imported and consumed by Unreal game engine. Unreal features
 ability to play multiple files at once, e.g. sound effects. and govern the
