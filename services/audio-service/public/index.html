@@ -2,11 +2,11 @@
 <html class="no-js">
   <head>
     <title>Cat's Cradle Audio</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
     <script type="text/javascript" src="js/libxmp.js"></script>
     <script type="text/javascript" src="js/chiptune.js"></script>
@@ -23,42 +23,48 @@
       var context = new AudioContext();
       var player = new ChiptunePlayer(context.destination);
 
-      window.onload = function() {
-        document.getElementById("play").onclick = function() {
+      window.onload = function () {
+        document.getElementById('play').onclick = function () {
           player.play();
-        }
-        document.getElementById("pause").onclick = function() {
+        };
+        document.getElementById('pause').onclick = function () {
           player.pause();
-        }
-        document.getElementById("loop").onclick = function() {
+        };
+        document.getElementById('loop').onclick = function () {
           player.setLooping(this.checked);
-        }
+        };
 
-        var fileaccess = document.querySelector("*");
-        fileaccess.ondrop = function(e) {
+        var fileaccess = document.querySelector('*');
+        fileaccess.ondrop = function (e) {
           var file = e.dataTransfer.files[0];
-          try { player.unload(); } catch(err) {};
+          try {
+            player.unload();
+          } catch (err) {}
 
-          var loop = document.getElementById("loop").checked;
-          player.load(file, loop, function() {
-            document.querySelector(".loadedfile").innerHTML = file.name;
+          var loop = document.getElementById('loop').checked;
+          player.load(file, loop, function () {
+            document.querySelector('.loadedfile').innerHTML = file.name;
           });
           e.preventDefault();
-        }
-        fileaccess.ondragenter = function(e){e.preventDefault();}
-        fileaccess.ondragover = function(e){e.preventDefault();}
+        };
+        fileaccess.ondragenter = function (e) {
+          e.preventDefault();
+        };
+        fileaccess.ondragover = function (e) {
+          e.preventDefault();
+        };
 
-        var demolink = document.querySelector("#demosong");
-
-      }
+        var demolink = document.querySelector('#demosong');
+      };
       function playSong(filepath) {
-          try { player.unload(); } catch(err) {};
-          var loop = document.getElementById("loop").checked;
-          player.load(`songs/${filepath}.it`, loop, function() {
-            document.querySelector(".loadedfile").innerHTML = filepath;
-          });
-        }
-
+        try {
+          player.unload();
+        } catch (err) {}
+        var loop = document.getElementById('loop').checked;
+        player.load(`songs/${filepath}.it`, loop, function () {
+          document.querySelector('.loadedfile').innerHTML = filepath;
+        });
+      }
     </script>
   </head>
   <body>
@@ -68,18 +74,19 @@
         <p>Cat's Cradle Play Audio</p>
       </div>
       <div id="controls">
-        <span class="loadedfile">nothing loaded</span><br>
+        <span class="loadedfile">nothing loaded</span><br />
         <a id="play" class="control"></a>
         <a id="pause" class="control"></a>
-        <input type="checkbox" id="loop"></a>
+        <input type="checkbox" id="loop" />
         <label for="loop" class="control"></label>
       </div>
-      <a href="#" onclick="playSong('bad-guy-1')">bad-guy-1</a>
+
       <a href="#" onclick="playSong('battle-1')">battle-1</a>
       <a href="#" onclick="playSong('battle-2')">battle-2</a>
+      <a href="#" onclick="playSong('bad-guy-1')">bad-guy-1</a>
+      <a href="#" onclick="playSong('boss-battle-1')">boss-battle-1</a>
       <a href="#" onclick="playSong('battle-end-1')">battle-end-1</a>
       <a href="#" onclick="playSong('battle-end-2')">battle-end-2</a>
-      <a href="#" onclick="playSong('boss-battle-1')">boss-battle-1</a>
       <a href="#" onclick="playSong('cave-1')">cave-1</a>
       <a href="#" onclick="playSong('cave-2')">cave-2</a>
       <a href="#" onclick="playSong('faye-theme')">faye-theme</a>
@@ -87,8 +94,8 @@
       <a href="#" onclick="playSong('game-over')">game-over</a>
       <a href="#" onclick="playSong('gunter-theme')">gunter-theme</a>
       <a href="#" onclick="playSong('loomee-theme')">loomee-theme</a>
-      <a href="#" onclick="playSong('malace-theme')">malace-theme</a>
       <a href="#" onclick="playSong('menu')">menu</a>
+      <a href="#" onclick="playSong('malace-theme')">malace-theme</a>
       <a href="#" onclick="playSong('mini-game-1')">mini-game-1</a>
       <a href="#" onclick="playSong('mining-theme')">mining-theme</a>
       <a href="#" onclick="playSong('pretty-theme')">pretty-theme</a>
