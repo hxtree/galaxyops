@@ -41,9 +41,11 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
+      - name: Install PNPM
+        run: npm install --global pnpm@7.26.3
+
       - name: Rush install
-        # if: steps.cache.outputs.cache-hit != 'true'
-        run: node common/scripts/install-run-rush.js install
+        run: node common/scripts/install-run-rush.js install -p
 
       - name: rush build
         run: node common/scripts/install-run-rush.js build
