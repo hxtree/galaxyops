@@ -51,14 +51,14 @@ jobs:
             git config user.name github-actions
             git config user.email github-actions@github.com
 
+      - name: install pnpm needed for cdk NodeJsFunction esbuild
+        run: npm install --global pnpm@7.26.3
+
       - name: rush install
-        run: node common/scripts/install-run-rush.js install
+        run: node common/scripts/install-run-rush.js install -p
 
       - name: rush build
         run: node common/scripts/install-run-rush.js build
-
-      - name: install pnpm needed for cdk NodeJsFunction esbuild
-        run: npm install --global pnpm@7.26.3
 
       - name: rush deploy
         run: |
