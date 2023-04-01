@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html class="no-js">
   <head>
-    <title>Cat's Cradle Audio</title>
+    <title>Cats Cradle Jukebox</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="css/normalize.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
 
     <script type="text/javascript" src="js/libxmp.js"></script>
     <script type="text/javascript" src="js/chiptune.js"></script>
@@ -56,53 +73,379 @@
 
         var demolink = document.querySelector('#demosong');
       };
+
       function playSong(filepath) {
         try {
           player.unload();
-        } catch (err) {}
+        } catch (e) {}
         var loop = document.getElementById('loop').checked;
         player.load(`songs/${filepath}.it`, loop, function () {
+          document.querySelector('.loadedfile').innerHTML = filepath;
+        });
+      }
+
+      function playSoundEffect(filepath) {
+        try {
+          player.unload();
+        } catch (e) {}
+        var loop = document.getElementById('loop').checked;
+        player.load(`sound-effects/${filepath}.it`, loop, function () {
           document.querySelector('.loadedfile').innerHTML = filepath;
         });
       }
     </script>
   </head>
   <body>
-    <div id="headphones"></div>
-    <div id="content">
-      <div id="info">
-        <p>Cat's Cradle Play Audio</p>
+    <nav class="navbar sticky-top navbar-dark bg-primary border-bottom">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 fs-1">Cats Cradle Jukebox</span>
+
+        <div id="info" class="d-flex text-center bg-info px-4 rounded-3">
+          Loaded: <span class="loadedfile d-inline-block px-4">nothing</span>
+        </div>
+
+        <div id="controls" class="d-flex">
+          <button
+            id="play"
+            class="control border-3 border-dark rounded-3 bg-success"
+            type="submit"
+          ></button>
+          <button
+            id="pause"
+            class="control border-3 border-dark rounded-3 bg-danger"
+            type="submit"
+          ></button>
+
+          <input type="checkbox" id="loop" />
+          <label
+            for="loop"
+            class="control border-3 border-dark rounded-3 bg-warning"
+          ></label>
+        </div>
       </div>
-      <div id="controls">
-        <span class="loadedfile">nothing loaded</span><br />
-        <a id="play" class="control"></a>
-        <a id="pause" class="control"></a>
-        <input type="checkbox" id="loop" />
-        <label for="loop" class="control"></label>
+    </nav>
+
+    <div class="container">
+      <h2>Soundtracks</h2>
+
+      <div class="m-4 row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('battle-1')">battle-1</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('battle-2')">battle-2</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('bad-guy-1')">bad-guy-1</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('boss-battle-1')">boss-battle-1</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('battle-end-1')">battle-end-1</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('battle-end-2')">battle-end-2</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('cave-1')">cave-1</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('cave-2')">cave-2</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('faye-theme')">faye-theme</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('forrest-1')">forrest-1</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('game-over')">game-over</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('gunter-theme')">gunter-theme</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('loomee-theme')">loomee-theme</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('menu')">menu</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('malace-theme')">malace-theme</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('mini-game-1')">mini-game-1</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('mining-theme')">mining-theme</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('pretty-theme')">pretty-theme</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('something-theme')"
+                >something-theme</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('title-3')">title-3</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('traez-theme')">traez-theme</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSong('vachel-theme')">vachel-theme</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <a href="#" onclick="playSong('battle-1')">battle-1</a>
-      <a href="#" onclick="playSong('battle-2')">battle-2</a>
-      <a href="#" onclick="playSong('bad-guy-1')">bad-guy-1</a>
-      <a href="#" onclick="playSong('boss-battle-1')">boss-battle-1</a>
-      <a href="#" onclick="playSong('battle-end-1')">battle-end-1</a>
-      <a href="#" onclick="playSong('battle-end-2')">battle-end-2</a>
-      <a href="#" onclick="playSong('cave-1')">cave-1</a>
-      <a href="#" onclick="playSong('cave-2')">cave-2</a>
-      <a href="#" onclick="playSong('faye-theme')">faye-theme</a>
-      <a href="#" onclick="playSong('forrest-1')">forrest-1</a>
-      <a href="#" onclick="playSong('game-over')">game-over</a>
-      <a href="#" onclick="playSong('gunter-theme')">gunter-theme</a>
-      <a href="#" onclick="playSong('loomee-theme')">loomee-theme</a>
-      <a href="#" onclick="playSong('menu')">menu</a>
-      <a href="#" onclick="playSong('malace-theme')">malace-theme</a>
-      <a href="#" onclick="playSong('mini-game-1')">mini-game-1</a>
-      <a href="#" onclick="playSong('mining-theme')">mining-theme</a>
-      <a href="#" onclick="playSong('pretty-theme')">pretty-theme</a>
-      <a href="#" onclick="playSong('something-theme')">something-theme</a>
-      <a href="#" onclick="playSong('title-3')">title-3</a>
-      <a href="#" onclick="playSong('traez-theme')">traez-theme</a>
-      <a href="#" onclick="playSong('vachel-theme')">vachel-theme</a>
+      <h2>Sound Effects</h2>
+
+      <div class="m-4 row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('1')">1</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('2')">2</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('3')">3</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('4')">4</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('5')">5</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('6')">6</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('7')">7</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('8')">8</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('9')">9</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('10')">10</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('11')">11</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('12')">12</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('13')">13</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('14')">14</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('15')">15</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('16')">16</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('17')">17</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('18')">18</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <a href="#" onclick="playSoundEffect('19')">19</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
