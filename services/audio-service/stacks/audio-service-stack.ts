@@ -1,4 +1,3 @@
-import { Microservice } from '@cats-cradle/constructs';
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import { StackProps } from 'aws-cdk-lib';
@@ -10,40 +9,48 @@ import {
   ResponseHeadersPolicy,
 } from 'aws-cdk-lib/aws-cloudfront';
 import { S3Origin } from 'aws-cdk-lib/aws-cloudfront-origins';
-import * as s3 from 'aws-cdk-lib/aws-s3';
-import * as route53 from 'aws-cdk-lib/aws-route53';
+// import * as s3 from 'aws-cdk-lib/aws-s3';
+// import * as route53 from 'aws-cdk-lib/aws-route53';
 
 export class AudioServiceStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    //     // s3 bucket
-    //     const bucket = new Bucket(this, 'Bucket', {
-    //       accessControl: BucketAccessControl.PRIVATE,
-    //     });
+    // s3 bucket
+    const bucket = new Bucket(this, 'Bucket', {
+      accessControl: BucketAccessControl.PRIVATE,
+    });
 
-    //     const originAccessIdentity = new OriginAccessIdentity(
-    //       this,
-    //       'OriginAccessIdentity',
-    //     );
-    //     bucket.grantRead(originAccessIdentity);
+    const originAccessIdentity = new OriginAccessIdentity(
+      this,
+      'OriginAccessIdentity',
+    );
+    bucket.grantRead(originAccessIdentity);
 
-    //     // cloudfront distribution
-    //     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    //     const distribution = new Distribution(this, 'Distribution', {
-    //       defaultRootObject: 'index.html',
-    //       defaultBehavior: {
-    //         origin: new S3Origin(bucket, { originAccessIdentity }),
-    //         // todo lock down CORS later
-    //         responseHeadersPolicy:
-    //           ResponseHeadersPolicy.CORS_ALLOW_ALL_ORIGINS_WITH_PREFLIGHT,
-    //       },
-    //     });
+    // cloudfront distribution
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const distribution = new Distribution(this, 'Distribution', {
+      defaultRootObject: 'index.html',
+      defaultBehavior: {
+        origin: new S3Origin(bucket, { originAccessIdentity }),
+        // todo lock down CORS later
+        responseHeadersPolicy:
+          ResponseHeadersPolicy.CORS_ALLOW_ALL_ORIGINS_WITH_PREFLIGHT,
+      },
+    });
 
-    //     new cdk.CfnOutput(this, 'Domain Name', {
-    //       value: distribution.domainName,
-    //     });
+    // bucket resource
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const awsBucketResource = new BucketDeployment(this, 'BucketDeployment', {
+      destinationBucket: bucket,
+      sources: [Source.asset('./public')],
+    });
 
+    new cdk.CfnOutput(this, 'Domain Name', {
+      value: distribution.domainName,
+    });
+
+    // TODO assign to url
     //     // const recordName = 'monitor';
     //     // const domainName = 'ouxsoft.com';
 
@@ -62,21 +69,5 @@ export class AudioServiceStack extends cdk.Stack {
     //     //     new targets.BucketWebsiteTarget(bucketWebsite),
     //     //   ),
     //     // });
-
-    //     // // bucket resource
-    //     // // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    //     // const awsBucketResource = new BucketDeployment(this, 'BucketDeployment', {
-    //     //   destinationBucket: bucket,
-    //     //   sources: [Source.asset('dist')],
-    //     // });
-
-    // deploy lambda
-    const microservice = new Microservice(this, 'audio-service-stack', {
-      path: 'audio-message',
-    });
-
-    new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${microservice.getBaseUrl()}/`,
-    });
   }
 }
