@@ -96,187 +96,229 @@
     </script>
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-dark bg-primary border-bottom">
+    <nav
+      class="navbar sticky-top navbar-dark bg-warning border-dark border-bottom border-3"
+    >
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 fs-1">Cats Cradle Jukebox</span>
+        <span
+          class="navbar-brand mb-0 fs-1 border-dark border border-3 px-4 bg-white text-dark"
+          >Cats Cradle Jukebox</span
+        >
 
-        <div id="info" class="d-flex text-center bg-info px-4 rounded-3">
+        <div id="info" class="d-flex text-center bg-info px-4 rounded-0">
           Loaded: <span class="loadedfile d-inline-block px-4">nothing</span>
         </div>
 
         <div id="controls" class="d-flex">
           <button
             id="play"
-            class="control border-3 border-dark rounded-3 bg-success"
+            class="control border-3 border-dark rounded-0 bg-success rounded-circle"
             type="submit"
           ></button>
           <button
             id="pause"
-            class="control border-3 border-dark rounded-3 bg-danger"
+            class="control border-3 border-dark rounded-0 bg-danger rounded-circle"
             type="submit"
           ></button>
 
           <input type="checkbox" id="loop" />
           <label
             for="loop"
-            class="control border-3 border-dark rounded-3 bg-warning"
+            class="control border-3 border-dark rounded-0 bg-secondary rounded-circle"
           ></label>
         </div>
       </div>
     </nav>
 
     <div class="container">
-      <h2>Soundtracks</h2>
+      <h2 class="text-light text-center">Soundtracks</h2>
 
       <div class="m-4 row row-cols-1 row-cols-md-4 g-4">
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('battle-1')">battle-1</a>
+              <a href="#" class="text-light" onclick="playSong('battle-1')"
+                >battle-1</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('battle-2')">battle-2</a>
+              <a href="#" class="text-light" onclick="playSong('battle-2')"
+                >battle-2</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('bad-guy-1')">bad-guy-1</a>
+              <a href="#" class="text-light" onclick="playSong('bad-guy-1')"
+                >bad-guy-1</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('boss-battle-1')">boss-battle-1</a>
+              <a href="#" class="text-light" onclick="playSong('boss-battle-1')"
+                >boss-battle-1</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('battle-end-1')">battle-end-1</a>
+              <a href="#" class="text-light" onclick="playSong('battle-end-1')"
+                >battle-end-1</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('battle-end-2')">battle-end-2</a>
+              <a href="#" class="text-light" onclick="playSong('battle-end-2')"
+                >battle-end-2</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('cave-1')">cave-1</a>
+              <a href="#" class="text-light" onclick="playSong('cave-1')"
+                >cave-1</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('cave-2')">cave-2</a>
+              <a href="#" class="text-light" onclick="playSong('cave-2')"
+                >cave-2</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('faye-theme')">faye-theme</a>
+              <a href="#" class="text-light" onclick="playSong('faye-theme')"
+                >faye-theme</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('forrest-1')">forrest-1</a>
+              <a href="#" class="text-light" onclick="playSong('forrest-1')"
+                >forrest-1</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('game-over')">game-over</a>
+              <a href="#" class="text-light" onclick="playSong('game-over')"
+                >game-over</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('gunter-theme')">gunter-theme</a>
+              <a href="#" class="text-light" onclick="playSong('gunter-theme')"
+                >gunter-theme</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('loomee-theme')">loomee-theme</a>
+              <a href="#" class="text-light" onclick="playSong('loomee-theme')"
+                >loomee-theme</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('menu')">menu</a>
+              <a href="#" class="text-light" onclick="playSong('menu')">menu</a>
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('malace-theme')">malace-theme</a>
+              <a href="#" class="text-light" onclick="playSong('malace-theme')"
+                >malace-theme</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('mini-game-1')">mini-game-1</a>
+              <a href="#" class="text-light" onclick="playSong('mini-game-1')"
+                >mini-game-1</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('mining-theme')">mining-theme</a>
+              <a href="#" class="text-light" onclick="playSong('mining-theme')"
+                >mining-theme</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('pretty-theme')">pretty-theme</a>
+              <a href="#" class="text-light" onclick="playSong('pretty-theme')"
+                >pretty-theme</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('something-theme')"
+              <a
+                href="#"
+                class="text-light"
+                onclick="playSong('something-theme')"
                 >something-theme</a
               >
             </div>
@@ -284,164 +326,208 @@
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('title-3')">title-3</a>
+              <a href="#" class="text-light" onclick="playSong('title-3')"
+                >title-3</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('traez-theme')">traez-theme</a>
+              <a href="#" class="text-light" onclick="playSong('traez-theme')"
+                >traez-theme</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSong('vachel-theme')">vachel-theme</a>
+              <a href="#" class="text-light" onclick="playSong('vachel-theme')"
+                >vachel-theme</a
+              >
             </div>
           </div>
         </div>
       </div>
 
-      <h2>Sound Effects</h2>
+      <h2 class="text-light text-center">Sound Effects</h2>
 
       <div class="m-4 row row-cols-1 row-cols-md-4 g-4">
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('1')">1</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('1')"
+                >1</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('2')">2</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('2')"
+                >2</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('3')">3</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('3')"
+                >3</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('4')">4</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('4')"
+                >4</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('5')">5</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('5')"
+                >5</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('6')">6</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('6')"
+                >6</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('7')">7</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('7')"
+                >7</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('8')">8</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('8')"
+                >8</a
+              >
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('9')">9</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('9')"
+                >9</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('10')">10</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('10')"
+                >10</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('11')">11</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('11')"
+                >11</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('12')">12</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('12')"
+                >12</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('13')">13</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('13')"
+                >13</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('14')">14</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('14')"
+                >14</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('15')">15</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('15')"
+                >15</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('16')">16</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('16')"
+                >16</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('17')">17</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('17')"
+                >17</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('18')">18</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('18')"
+                >18</a
+              >
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card bg-dark">
+          <div class="card bg-primary rounded-0 border-0">
             <div class="card-body">
-              <a href="#" onclick="playSoundEffect('19')">19</a>
+              <a href="#" class="text-light" onclick="playSoundEffect('19')"
+                >19</a
+              >
             </div>
           </div>
         </div>
