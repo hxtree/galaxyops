@@ -10,12 +10,13 @@ concepts but also complex and difficult to predict.
 
 Unlike our weather system, the game weather system is based on:
 
-- The happiness of "one" character. Like a customer satisfaction survey, except
-  results cause violate winds and showers or peaceful crystal clear azure skys.
-  Weather is immediately apparent.
-- Time of day.
-- Geo location to the one character.
 - Climate.
+- Geo location to the "one" character and their happiness. The happiness of
+  "one" character. Like a customer satisfaction survey, except results cause
+  violate winds and showers or peaceful crystal clear azure skys. Weather is
+  immediately apparent. Although there is another underlying reason for this,
+  this is helpful for using the weather as dramatic effect.
+- Time of day.
 
 Weather at Focal Point
 
@@ -37,4 +38,6 @@ Weather should be related to geo location and travel from one area to another.
 There should be seasons, it should not be sunny out and snow the next minute.
 Some areas to the north should snow mostly while warmer areas should stay warm.
 
-Weather can be used in areas for dramatic effect.
+There are also other global forces that influence the weather:
+
+- There is a traveling tornado that manifest itself.
