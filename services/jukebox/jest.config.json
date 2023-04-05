@@ -1,0 +1,3 @@
+{
+  "preset": "./node_modules/@cats-cradle/base-nodejs/profiles/nestjs-app/jest.config.json"
+}

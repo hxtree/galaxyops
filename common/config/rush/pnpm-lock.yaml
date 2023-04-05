@@ -687,99 +687,6 @@ importers:
       ts-node: 10.9.1_nmak7b3gdebbs5fsmnlpuyhq7y
       typescript: 5.0.2
 
-  ../../services/audio-service:
-    specifiers:
-      '@cats-cradle/base-nodejs': workspace:*
-      '@cats-cradle/constructs': workspace:*
-      '@cats-cradle/eslint-config': workspace:*
-      '@cats-cradle/faker-factory': workspace:*
-      '@cats-cradle/nestjs-modules': workspace:*
-      '@cats-cradle/validation-schemas': workspace:*
-      '@fastify/static': ~6.9.0
-      '@microsoft/tsdoc': ~0.13.2
-      '@nestjs/common': 9.3.10
-      '@nestjs/config': 2.2.0
-      '@nestjs/core': 9.2.1
-      '@nestjs/platform-express': 9.3.9
-      '@nestjs/serve-static': ~3.0.1
-      '@nestjs/swagger': ~6.1.3
-      '@nestjs/terminus': 9.1.1
-      '@nestjs/testing': 9.2.1
-      '@types/aws-lambda': ~8.10.93
-      '@types/express': ~4.17.14
-      '@types/jest': 28.1.8
-      '@types/node': ^16.0.0
-      '@types/supertest': ~2.0.12
-      '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
-      aws-cdk-lib: 2.47.0
-      aws-lambda: 1.0.7
-      aws-serverless-express: ~3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      constructs: ^10.1.211
-      esbuild: ~0.17.5
-      eslint: 8.26.0
-      express: 4.18.2
-      fs: ~0.0.1-security
-      jest: 29.4.3
-      node-cache: 5.1.2
-      path: ~0.12.7
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: ~0.5.21
-      supertest: ~6.3.3
-      ts-jest: 29.0.5
-      ts-node: 10.9.1
-      typescript: 5.0.2
-      uuid: ~9.0.0
-    dependencies:
-      '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
-      '@cats-cradle/constructs': link:../../platform/constructs
-      '@cats-cradle/nestjs-modules': link:../../libraries/nestjs-modules
-      '@cats-cradle/validation-schemas': link:../../libraries/validation-schemas
-      '@nestjs/common': 9.3.10_allg6cauirbqzgqcmexy2wdnoq
-      '@nestjs/config': 2.2.0_hlezbtj73u6lfj5t62teiqjtby
-      '@nestjs/core': 9.2.1_cl2xnuptsgbxx4ccjuaj5ckuf4
-      '@nestjs/platform-express': 9.3.9_n4ruuahoetno5jsfmwl6mo7j6u
-      '@nestjs/serve-static': 3.0.1_bgzusqmc3zwr55g3hjp3u3p4gm
-      '@nestjs/swagger': 6.1.4_x2u4c4b35qoq7aj52tzlbmjvay
-      '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
-      '@vendia/serverless-express': 4.8.2
-      aws-lambda: 1.0.7
-      aws-serverless-express: 3.4.0
-      class-transformer: 0.5.1
-      class-validator: 0.13.2
-      express: 4.18.2
-      node-cache: 5.1.2
-      reflect-metadata: 0.1.13
-      rxjs: 7.5.6
-      source-map-support: 0.5.21
-      uuid: 9.0.0
-    devDependencies:
-      '@cats-cradle/eslint-config': link:../../platform/eslint-config
-      '@cats-cradle/faker-factory': link:../../libraries/faker-factory
-      '@fastify/static': 6.9.0
-      '@microsoft/tsdoc': 0.13.2
-      '@nestjs/testing': 9.2.1_hrm7vyq2ue5n7ivxddmbbapisa
-      '@types/aws-lambda': 8.10.111
-      '@types/express': 4.17.17
-      '@types/jest': 28.1.8
-      '@types/node': 16.18.14
-      '@types/supertest': 2.0.12
-      '@types/uuid': 8.3.4
-      aws-cdk-lib: 2.47.0_constructs@10.1.268
-      constructs: 10.1.268
-      esbuild: 0.17.11
-      eslint: 8.26.0
-      fs: 0.0.1-security
-      jest: 29.4.3_clz7q7i76oq2x7yxwnubwg6ita
-      path: 0.12.7
-      supertest: 6.3.3
-      ts-jest: 29.0.5_rxf5l6ukqe2x3rhrcbk3rqccwy
-      ts-node: 10.9.1_nmak7b3gdebbs5fsmnlpuyhq7y
-      typescript: 5.0.2
-
   ../../services/character-sheet:
     specifiers:
       '@cats-cradle/base-nodejs': workspace:*
@@ -1172,6 +1079,99 @@ importers:
       lodash: 4.17.21
       path: 0.12.7
       supertest: 6.3.3
+      ts-node: 10.9.1_nmak7b3gdebbs5fsmnlpuyhq7y
+      typescript: 5.0.2
+
+  ../../services/jukebox:
+    specifiers:
+      '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/constructs': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
+      '@cats-cradle/faker-factory': workspace:*
+      '@cats-cradle/nestjs-modules': workspace:*
+      '@cats-cradle/validation-schemas': workspace:*
+      '@fastify/static': ~6.9.0
+      '@microsoft/tsdoc': ~0.13.2
+      '@nestjs/common': 9.3.10
+      '@nestjs/config': 2.2.0
+      '@nestjs/core': 9.2.1
+      '@nestjs/platform-express': 9.3.9
+      '@nestjs/serve-static': ~3.0.1
+      '@nestjs/swagger': ~6.1.3
+      '@nestjs/terminus': 9.1.1
+      '@nestjs/testing': 9.2.1
+      '@types/aws-lambda': ~8.10.93
+      '@types/express': ~4.17.14
+      '@types/jest': 28.1.8
+      '@types/node': ^16.0.0
+      '@types/supertest': ~2.0.12
+      '@types/uuid': ~8.3.4
+      '@vendia/serverless-express': 4.8.2
+      aws-cdk-lib: 2.47.0
+      aws-lambda: 1.0.7
+      aws-serverless-express: ~3.4.0
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
+      constructs: ^10.1.211
+      esbuild: ~0.17.5
+      eslint: 8.26.0
+      express: 4.18.2
+      fs: ~0.0.1-security
+      jest: 29.4.3
+      node-cache: 5.1.2
+      path: ~0.12.7
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.6
+      source-map-support: ~0.5.21
+      supertest: ~6.3.3
+      ts-jest: 29.0.5
+      ts-node: 10.9.1
+      typescript: 5.0.2
+      uuid: ~9.0.0
+    dependencies:
+      '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
+      '@cats-cradle/constructs': link:../../platform/constructs
+      '@cats-cradle/nestjs-modules': link:../../libraries/nestjs-modules
+      '@cats-cradle/validation-schemas': link:../../libraries/validation-schemas
+      '@nestjs/common': 9.3.10_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/config': 2.2.0_hlezbtj73u6lfj5t62teiqjtby
+      '@nestjs/core': 9.2.1_cl2xnuptsgbxx4ccjuaj5ckuf4
+      '@nestjs/platform-express': 9.3.9_n4ruuahoetno5jsfmwl6mo7j6u
+      '@nestjs/serve-static': 3.0.1_bgzusqmc3zwr55g3hjp3u3p4gm
+      '@nestjs/swagger': 6.1.4_x2u4c4b35qoq7aj52tzlbmjvay
+      '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
+      '@vendia/serverless-express': 4.8.2
+      aws-lambda: 1.0.7
+      aws-serverless-express: 3.4.0
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
+      express: 4.18.2
+      node-cache: 5.1.2
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.6
+      source-map-support: 0.5.21
+      uuid: 9.0.0
+    devDependencies:
+      '@cats-cradle/eslint-config': link:../../platform/eslint-config
+      '@cats-cradle/faker-factory': link:../../libraries/faker-factory
+      '@fastify/static': 6.9.0
+      '@microsoft/tsdoc': 0.13.2
+      '@nestjs/testing': 9.2.1_hrm7vyq2ue5n7ivxddmbbapisa
+      '@types/aws-lambda': 8.10.111
+      '@types/express': 4.17.17
+      '@types/jest': 28.1.8
+      '@types/node': 16.18.14
+      '@types/supertest': 2.0.12
+      '@types/uuid': 8.3.4
+      aws-cdk-lib: 2.47.0_constructs@10.1.268
+      constructs: 10.1.268
+      esbuild: 0.17.11
+      eslint: 8.26.0
+      fs: 0.0.1-security
+      jest: 29.4.3_clz7q7i76oq2x7yxwnubwg6ita
+      path: 0.12.7
+      supertest: 6.3.3
+      ts-jest: 29.0.5_rxf5l6ukqe2x3rhrcbk3rqccwy
       ts-node: 10.9.1_nmak7b3gdebbs5fsmnlpuyhq7y
       typescript: 5.0.2
 
