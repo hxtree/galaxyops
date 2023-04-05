@@ -186,8 +186,8 @@
       "tags": ["deploy-app"]
     },
     {
-      "packageName": "@cats-cradle/audio-service",
-      "projectFolder": "services/audio-service",
+      "packageName": "@cats-cradle/jukebox",
+      "projectFolder": "services/jukebox",
       "reviewCategory": "apis",
       "cyclicDependencyProjects": [],
       "tags": ["deploy-app"]
