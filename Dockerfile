@@ -84,8 +84,7 @@ COPY . /usr/src/app
 RUN chown -R $USER /usr/src/app \
     && install -d -m 0755 -o $USER /home/$USER/.rush \
     && install -d -m 0755 -o $USER /usr/src/app/common/temp \
-    && git config --global --add safe.directory /usr/src/app \
-    && git config --global push.default current
+    && git config --global --add safe.directory /usr/src/app
 
 USER $USER
 
@@ -148,6 +147,9 @@ RUN touch /home/$USER/.zshrc \
 
 # Add alias
 RUN echo "alias app=\"cd /usr/src/app\"" >>/home/$USER/.zshrc
+
+# Auto create remote branch on push
+RUN git config --global push.default current
 
 RUN chown -R $USER /home/$USER
 
