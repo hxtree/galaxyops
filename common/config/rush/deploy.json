@@ -31,7 +31,7 @@
    *
    * The default value is false.
    */
-  // "includeDevDependencies": true,
+  "includeDevDependencies": true,
 
   /**
    * When deploying a local Rush project, normally the .npmignore filter is applied so that Rush only copies
@@ -73,7 +73,7 @@
    * Customize how Rush projects are processed during deployment.
    */
   "projectSettings": [
-    // {
+    {
     //   /**
     //    * The full package name of the project, which must be declared in rush.json.
     //    */
@@ -83,9 +83,9 @@
     //    * A list of additional local Rush projects to be deployed with this project (beyond the package.json
     //    * dependencies).  Specify full package names, which must be declared in rush.json.
     //    */
-    //   "additionalProjectsToInclude": [
-    //     // "@my-scope/my-project2"
-    //   ],
+      "additionalProjectsToInclude": [
+        "@cats-cradle/eslint-config"
+      ],
     //
     //   /**
     //    * When deploying a project, the included dependencies are normally determined automatically based on
@@ -115,6 +115,6 @@
     //   "dependenciesToExclude": [
     //     // "@types/*"
     //   ]
-    // }
+    }
   ]
 }
