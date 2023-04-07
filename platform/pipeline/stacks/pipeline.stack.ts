@@ -107,7 +107,11 @@ export class DefaultPipelineStack extends cdk.Stack {
             commands: ['npm install -g @microsoft/rush', 'rush install'],
           },
           build: {
-            commands: ['rush build'],
+            commands: [
+              'node create-links.js create',
+              'pnpm install',
+              'npm cdk:deploy',
+            ],
           },
         },
         artifacts: {
@@ -118,7 +122,7 @@ export class DefaultPipelineStack extends cdk.Stack {
 
     // create a new CodePipeline object
     const pipeline = new codepipeline.Pipeline(this, 'Pipeline', {
-      pipelineName: 'character-sheet'. // props.pipelineName,
+      pipelineName: 'character-sheet', // props.pipelineName,
       // crossAccountKeys: props.crossAccountKeys,
       // restartExecutionOnUpdate: true,
     });
