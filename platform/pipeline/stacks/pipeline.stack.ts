@@ -1,3 +1,7 @@
+import * as codebuild from 'aws-cdk-lib/aws-codebuild';
+import * as codepipelineActions from 'aws-cdk-lib/aws-codepipeline-actions';
+import * as codepipeline from 'aws-cdk-lib/aws-codepipeline';
+import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as cdk from 'aws-cdk-lib';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import {
@@ -7,11 +11,11 @@ import {
 } from 'aws-cdk-lib/aws-s3';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
-// import {
-//   CodePipeline,
-//   CodePipelineSource,
-//   ShellStep,
-// } from 'aws-cdk-lib/pipelines';
+import {
+  CodePipeline,
+  CodePipelineSource,
+  ShellStep,
+} from 'aws-cdk-lib/pipelines';
 
 export class DefaultPipelineStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -86,19 +90,84 @@ export class DefaultPipelineStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'AWS_REGION', {
       value: this.region,
     });
-  }
 
-  // setup a pipeline for each project and trigger when deployment file changes in bucket
-  // deploy s3 bucket
-  //   const owner = 'hxtree';
-  //   const repo = 'cats-cradle';
-  //   const branch = 'main';
-  //   const pipeline = new CodePipeline(this, 'Pipeline', {
-  //     pipelineName: 'MyPipeline',
-  //     synth: new ShellStep('Synth', {
-  //       input: CodePipelineSource.gitHub(`${owner}/${repo}`, branch),
-  //       commands: ['npm ci', 'npm run build', 'npx cdk synth'],
-  //     }),
-  //   });
-  // }
+    // 			`cd ${dirPipeline}`,
+    // 			"npm ci",
+    // 			"npm run build",
+    // 			"npx cdk synth",
+
+    const project = new codebuild.Project(this, 'MyProject', {
+      environment: {
+        buildImage: codebuild.LinuxBuildImage.STANDARD_5_0, // or use RUSH_5_0 if available
+      },
+      buildSpec: codebuild.BuildSpec.fromObject({
+        version: '0.2',
+        phases: {
+          install: {
+            commands: ['npm install -g @microsoft/rush', 'rush install'],
+          },
+          build: {
+            commands: ['rush build'],
+          },
+        },
+        artifacts: {
+          files: ['**/*'],
+        },
+      }),
+    });
+
+    // create a new CodePipeline object
+    const pipeline = new codepipeline.Pipeline(this, 'Pipeline', {
+      pipelineName: 'character-sheet'. // props.pipelineName,
+      // crossAccountKeys: props.crossAccountKeys,
+      // restartExecutionOnUpdate: true,
+    });
+
+    // create a new IAM role object for the pipeline
+    const pipelineRole = new iam.Role(this, 'MyPipelineRole', {
+      assumedBy: new iam.ServicePrincipal('codepipeline.amazonaws.com'),
+    });
+
+    // attach the necessary policies to the pipeline role
+    pipelineRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: ['s3:Get*', 's3:List*', 's3:PutObject'],
+        resources: [deployBucket.bucketArn, `${deployBucket.bucketArn}/*`],
+      }),
+    );
+
+    pipelineRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: ['codebuild:StartBuild'],
+        resources: [project.projectArn],
+      }),
+    );
+
+    // create an S3 source action
+    const sourceAction = new codepipelineActions.S3SourceAction({
+      actionName: 'Source',
+      bucket: deployBucket,
+      bucketKey: 'luck-by-dice.zip',
+      output: new codepipeline.Artifact('Source'),
+    });
+
+    // add the source action to the pipeline
+    pipeline.addStage({
+      stageName: 'Source',
+      actions: [sourceAction],
+    });
+
+    // add a CodeBuild action to a stage in the pipeline
+    const buildAction = new codepipelineActions.CodeBuildAction({
+      actionName: 'Build',
+      project: project,
+      input: new codepipeline.Artifact('Source'),
+      outputs: [new codepipeline.Artifact('Output')],
+    });
+
+    pipeline.addStage({
+      stageName: 'Build',
+      actions: [buildAction],
+    });
+  }
 }
