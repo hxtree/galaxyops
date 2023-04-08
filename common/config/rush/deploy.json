@@ -73,7 +73,7 @@
    * Customize how Rush projects are processed during deployment.
    */
   "projectSettings": [
-    {
+    // {
     //   /**
     //    * The full package name of the project, which must be declared in rush.json.
     //    */
@@ -115,6 +115,6 @@
     //   "dependenciesToExclude": [
     //     // "@types/*"
     //   ]
-    }
+    // }
   ]
 }
