@@ -1,21 +1,11 @@
 import * as codebuild from 'aws-cdk-lib/aws-codebuild';
 import * as codepipelineActions from 'aws-cdk-lib/aws-codepipeline-actions';
 import * as codepipeline from 'aws-cdk-lib/aws-codepipeline';
-import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as cdk from 'aws-cdk-lib';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
-import {
-  Bucket,
-  BlockPublicAccess,
-  BucketEncryption,
-} from 'aws-cdk-lib/aws-s3';
+import { Bucket, BucketEncryption } from 'aws-cdk-lib/aws-s3';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
-import {
-  CodePipeline,
-  CodePipelineSource,
-  ShellStep,
-} from 'aws-cdk-lib/pipelines';
 
 export class DefaultPipelineStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -91,38 +81,9 @@ export class DefaultPipelineStack extends cdk.Stack {
       value: this.region,
     });
 
-    // 			`cd ${dirPipeline}`,
-    // 			"npm ci",
-    // 			"npm run build",
-    // 			"npx cdk synth",
-
-    const project = new codebuild.Project(this, 'MyProject', {
-      environment: {
-        buildImage: codebuild.LinuxBuildImage.STANDARD_5_0, // or use RUSH_5_0 if available
-      },
-      buildSpec: codebuild.BuildSpec.fromObject({
-        version: '0.2',
-        phases: {
-          install: {
-            commands: ['npm install -g @microsoft/rush', 'rush install'],
-          },
-          build: {
-            commands: [
-              'node create-links.js create',
-              'pnpm install',
-              'npm cdk:deploy',
-            ],
-          },
-        },
-        artifacts: {
-          files: ['**/*'],
-        },
-      }),
-    });
-
     // create a new CodePipeline object
     const pipeline = new codepipeline.Pipeline(this, 'Pipeline', {
-      pipelineName: 'character-sheet', // props.pipelineName,
+      pipelineName: 'luck-by-dice', // props.pipelineName,
       // crossAccountKeys: props.crossAccountKeys,
       // restartExecutionOnUpdate: true,
     });
@@ -140,35 +101,69 @@ export class DefaultPipelineStack extends cdk.Stack {
       }),
     );
 
-    pipelineRole.addToPolicy(
-      new iam.PolicyStatement({
-        actions: ['codebuild:StartBuild'],
-        resources: [project.projectArn],
-      }),
-    );
-
-    // create an S3 source action
+    // add a source stage to the pipeline
+    const sourceOutput = new codepipeline.Artifact();
     const sourceAction = new codepipelineActions.S3SourceAction({
       actionName: 'Source',
       bucket: deployBucket,
       bucketKey: 'luck-by-dice.zip',
-      output: new codepipeline.Artifact('Source'),
+      output: sourceOutput,
     });
-
-    // add the source action to the pipeline
     pipeline.addStage({
       stageName: 'Source',
       actions: [sourceAction],
     });
 
-    // add a CodeBuild action to a stage in the pipeline
-    const buildAction = new codepipelineActions.CodeBuildAction({
-      actionName: 'Build',
-      project: project,
-      input: new codepipeline.Artifact('Source'),
-      outputs: [new codepipeline.Artifact('Output')],
+    // TOOD this is deploy; not build
+    // add a build stage to the pipeline
+    const buildOutput = new codepipeline.Artifact();
+    const buildProject = new codebuild.Project(this, 'MyProject', {
+      environment: {
+        buildImage: codebuild.LinuxBuildImage.STANDARD_6_0, // or use RUSH_5_0 if available
+      },
+      // set up the project configuration
+      buildSpec: codebuild.BuildSpec.fromObject({
+        // set up the buildspec.yml file with necessary commands
+        version: '0.2',
+        phases: {
+          install: {
+            commands: [
+              'npm install --global ts-node',
+              'npm install --global aws-cdk@2.63.1',
+              'npm install --global npm@9.2.0',
+              'npm install --global typescript',
+              'npm install --global pnpm@7.26.3',
+            ],
+          },
+          build: {
+            commands: [
+              // the code was automatically uncompressed
+              'ls $CODEBUILD_SRC_DIR',
+              'node create-links.js create',
+              '(cd ./services/luck-by-dice && npm run cdk:deploy)',
+            ],
+          },
+        },
+        artifacts: {
+          files: [
+            // specify the files to include in the build output artifact
+            '**/*',
+          ],
+        },
+      }),
     });
-
+    const buildAction = new codepipelineActions.CodeBuildAction({
+      actionName: 'BuildAction',
+      input: sourceOutput,
+      outputs: [buildOutput],
+      project: buildProject,
+    });
+    pipelineRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: ['codebuild:StartBuild'],
+        resources: [buildProject.projectArn],
+      }),
+    );
     pipeline.addStage({
       stageName: 'Build',
       actions: [buildAction],
