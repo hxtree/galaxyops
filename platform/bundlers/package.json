@@ -1,7 +1,9 @@
 {
   "name": "@cats-cradle/bundlers",
   "license": "MIT",
-  "bin": "./dist/index.js",
+  "bin": {
+    "nestjs-bundler": "./dist/bin-nestjs.js"
+  },
   "main": "./dist/index.js",
   "version": "0.0.1",
   "repository": {

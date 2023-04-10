@@ -20,7 +20,7 @@
     "cdk:bootstrap": "cdk bootstrap",
     "cdk:synth": "cdk synth",
     "cdk:diff": "cdk diff",
-    "cdk:deploy": "cdk deploy",
+    "cdk:deploy": "nestjs-bundler && cdk deploy",
     "cdk:hotswap": "cdk deploy --hotswap",
     "cdk:destroy": "cdk destroy",
     "depcheck": "npx depcheck"
@@ -46,8 +46,7 @@
     "eslint": "8.26.0",
     "@cats-cradle/validation-schemas": "workspace:*",
     "@nestjs/testing": "9.2.1",
-    "@nestjs/axios": "~2.0.0",
-    "@anatine/esbuild-decorators": "~0.2.19"
+    "@nestjs/axios": "~2.0.0"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "workspace:*",
@@ -67,6 +66,7 @@
     "lodash": "~4.17.21",
     "@types/lodash": "~4.14.191",
     "supertest": "~6.3.3",
-    "@types/supertest": "~2.0.12"
+    "@types/supertest": "~2.0.12",
+    "@cats-cradle/bundlers": "workspace:*"
   }
 }

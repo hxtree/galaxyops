@@ -12,7 +12,7 @@ export async function nestJsBundler(options: NestJsBundlerOptions) {
   const entryPoint = join(options.projectRoot, 'src', 'index.ts');
   const outDir = join(options.projectRoot, 'dist');
 
-  // clear
+  // remove previous bundle
   rmSync(outDir, { recursive: true, force: true });
 
   try {
@@ -36,20 +36,13 @@ export async function nestJsBundler(options: NestJsBundlerOptions) {
 
     await build({
       entryPoints: [entryPoint],
-      // outfile: join(outDir, 'index.js'),
       outdir: outDir,
       bundle: true,
       platform: 'node',
       target: 'es2021',
       external: externalModules,
       tsconfig: tsconfigPath,
-      plugins: [
-        esbuildDecorators(),
-        //   require('esbuild-plugin-inline-node-modules')({
-        //     baseDir: __dirname,
-        //     includePaths: [path.join(__dirname, 'node_modules')],
-        //   }),
-      ],
+      plugins: [esbuildDecorators()],
     });
 
     console.log('Build succeeded!');
