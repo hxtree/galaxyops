@@ -1,11 +1,10 @@
 import { Construct } from 'constructs';
 import { Duration, Stack } from 'aws-cdk-lib';
-import { LayerVersion, Runtime } from 'aws-cdk-lib/aws-lambda';
+import { LayerVersion } from 'aws-cdk-lib/aws-lambda';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import * as path from 'path';
-import { readFileSync } from 'fs';
 import { getBaseUrl } from '../api-endpoint/get-base-url';
 
 export interface NestJsProps {
@@ -30,8 +29,9 @@ export class NestJs extends Construct {
         },
       ).stringValue;
 
-    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.LayerVersion.html
     const awsAccountId = Stack.of(this).account;
+
+    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.LayerVersion.html
     const nestJsAppLayer = LayerVersion.fromLayerVersionAttributes(
       this,
       'NestJsAppLayer',
@@ -40,14 +40,33 @@ export class NestJs extends Construct {
       },
     );
 
-    // // file must already be bundled
-    // const fileContent = readFileSync(
-    //   path.join(props.projectRoot, 'dist', 'index.js'),
-    // );
-    // const script = fileContent.toString('utf-8');
+    const mongoDatabaseUri = ssm.StringParameter.fromStringParameterAttributes(
+      scope,
+      'mongo-database-uri-ssm',
+      {
+        parameterName: 'MONGO_DATABASE_URI',
+      },
+    ).stringValue;
+
+    const mongoDatabaseUser = ssm.StringParameter.fromStringParameterAttributes(
+      scope,
+      'mongo-database-user-ssm',
+      {
+        parameterName: 'MONGO_DATABASE_USER',
+      },
+    ).stringValue;
+
+    const mongoDatabasePassword =
+      ssm.StringParameter.fromStringParameterAttributes(
+        scope,
+        'mongo-database-password-ssm',
+        {
+          parameterName: 'MONGO_DATABASE_PASSWORD',
+        },
+      ).stringValue;
+
     this.nodeJsFunction = new lambda.Function(this, 'NodeJsLambda', {
       runtime: lambda.Runtime.NODEJS_16_X,
-      // code: lambda.AssetCode(path.join(props.projectRoot, 'dist', 'index.js')),
       code: lambda.Code.fromAsset(path.join(props.projectRoot, 'dist')),
       handler: 'index.handler',
       layers: [nestJsAppLayer],
@@ -64,29 +83,13 @@ export class NestJs extends Construct {
         AWS_ACCOUNT_ID: awsAccountId,
         STAGE_NAME: props.stageName,
         BASE_URL: getBaseUrl(props.apiId, props.region, props.stageName),
+        MONGO_DATABASE_URI: mongoDatabaseUri,
+        MONGO_DATABASE_USER: mongoDatabaseUser,
+        MONGO_DATABASE_PASSWORD: mongoDatabasePassword,
       },
       logRetention: RetentionDays.ONE_DAY,
       timeout: Duration.seconds(30),
-      // deadLetterQueueEnabled: true
     });
-
-    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html
-    // this.nodeJsFunction = new NodejsFunction(this, 'nodejsFunction', {
-    //   projectRoot: process.env.PROJECT_ROOT ?? '',
-    //   handler: 'handler',
-    //   entry: 'src/index.ts',
-    //   depsLockFilePath: `${process.env.PROJECT_ROOT}/pnpm-lock.yaml`,
-    //   runtime: Runtime.NODEJS_16_X,
-    //   bundling: {
-    //     preCompilation: false,
-    //     esbuildArgs: {
-    //       '--log-limit': '0',
-    //     },
-    //     dockerImage: Runtime.NODEJS_16_X.bundlingImage,
-    //     keepNames: true,
-    //     minify: false,
-    //     target: 'es2021',
-    //     sourceMap: true,
   }
 
   getNodeJsFunction(): lambda.Function {
