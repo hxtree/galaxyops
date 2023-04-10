@@ -67,6 +67,10 @@ jobs:
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive api-gateway.zip
             # mv common/deploy/api-gateway.zip common/deploy-ci/
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive character-sheet.zip
+            # mv common/deploy/lambda-layers.zip common/deploy-ci/
+            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive api-gateway.zip
+            # mv common/deploy/api-gateway.zip common/deploy-ci/
+            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive character-sheet.zip
             # mv common/deploy/character-sheet.zip common/deploy-ci/
             node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive luck-by-dice.zip
             mv common/deploy/luck-by-dice.zip common/deploy-ci/
