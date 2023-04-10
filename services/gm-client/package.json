@@ -19,7 +19,9 @@
     "web-vitals": "^2.1.4",
     "@cats-cradle/design-system": "workspace:*",
     "@cats-cradle/luck-by-dice": "workspace:*",
-    "@storybook/addon-a11y": "~6.5.13"
+    "@storybook/addon-a11y": "~6.5.13",
+    "styled-components": "~5.3.8",
+    "@types/styled-components": "~5.1.26"
   },
   "devDependencies": {
     "@cats-cradle/base-nodejs": "workspace:*"
