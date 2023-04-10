@@ -149,7 +149,8 @@ RUN touch /home/$USER/.zshrc \
 RUN echo "alias app=\"cd /usr/src/app\"" >>/home/$USER/.zshrc
 
 # Auto create remote branch on push
-RUN git config --global push.default current
+RUN git config --global push.default current \
+    && git config --global push.autoSetupRemote true
 
 RUN chown -R $USER /home/$USER
 
