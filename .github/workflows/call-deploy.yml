@@ -63,19 +63,14 @@ jobs:
       - name: rush deploy
         run: |
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive lambda-layers.zip
-            # zip -ur common/deploy/lambda-layers.zip pnpm-lock.yaml
             # mv common/deploy/lambda-layers.zip common/deploy-ci/
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive api-gateway.zip
-            # zip -ur common/deploy/api-gateway.zip pnpm-lock.yaml
             # mv common/deploy/api-gateway.zip common/deploy-ci/
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive character-sheet.zip
-            # zip -ur common/deploy/character-sheet.zip pnpm-lock.yaml
             # mv common/deploy/character-sheet.zip common/deploy-ci/
             node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive luck-by-dice.zip
-            zip -ur common/deploy/luck-by-dice.zip pnpm-lock.yaml
             mv common/deploy/luck-by-dice.zip common/deploy-ci/
             # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive email-service.zip
-            # zip -ur common/deploy/email-service.zip pnpm-lock.yaml
             # mv common/deploy/email-service.zip common/deploy-ci/
 
       - uses: shallwefootball/s3-upload-action@master

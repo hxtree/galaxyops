@@ -16,7 +16,7 @@
         "responses": { "201": { "description": "" } }
       }
     },
-    "/v1/health": {
+    "/health": {
       "get": {
         "operationId": "HealthController_check",
         "parameters": [],

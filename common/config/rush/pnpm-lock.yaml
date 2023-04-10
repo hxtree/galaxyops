@@ -410,8 +410,36 @@ importers:
       ts-node: 10.9.1_nmak7b3gdebbs5fsmnlpuyhq7y
       typescript: 5.0.2
 
+  ../../platform/bundlers:
+    specifiers:
+      '@anatine/esbuild-decorators': ~0.2.19
+      '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/eslint-config': workspace:*
+      '@types/jest': 28.1.8
+      '@types/node': ^16.0.0
+      commander: ~10.0.0
+      eslint: 8.26.0
+      jest: 29.5.0
+      ts-jest: 29.1.0
+      ts-node: 10.9.1
+      typescript: 5.0.2
+    dependencies:
+      '@anatine/esbuild-decorators': 0.2.19
+      '@cats-cradle/base-nodejs': link:../rigs/base-nodejs
+      commander: 10.0.0
+    devDependencies:
+      '@cats-cradle/eslint-config': link:../eslint-config
+      '@types/jest': 28.1.8
+      '@types/node': 16.18.14
+      eslint: 8.26.0
+      jest: 29.5.0_clz7q7i76oq2x7yxwnubwg6ita
+      ts-jest: 29.1.0_44ttdtjaknnkcgzh5px4h2qxl4
+      ts-node: 10.9.1_nmak7b3gdebbs5fsmnlpuyhq7y
+      typescript: 5.0.2
+
   ../../platform/constructs:
     specifiers:
+      '@cats-cradle/bundlers': workspace:*
       '@cats-cradle/eslint-config': workspace:*
       '@nestjs/common': 9.3.10
       '@nestjs/core': 9.2.1
@@ -448,6 +476,7 @@ importers:
       typescript: 5.0.2
       uuid: ~9.0.0
     dependencies:
+      '@cats-cradle/bundlers': link:../bundlers
       '@nestjs/common': 9.3.10_allg6cauirbqzgqcmexy2wdnoq
       '@nestjs/core': 9.2.1_cl2xnuptsgbxx4ccjuaj5ckuf4
       '@nestjs/platform-express': 9.3.9_n4ruuahoetno5jsfmwl6mo7j6u
@@ -1177,6 +1206,7 @@ importers:
 
   ../../services/luck-by-dice:
     specifiers:
+      '@anatine/esbuild-decorators': ~0.2.19
       '@cats-cradle/base-nodejs': workspace:*
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': workspace:*
@@ -1217,6 +1247,7 @@ importers:
       ts-node: 10.9.1
       typescript: 5.0.2
     dependencies:
+      '@anatine/esbuild-decorators': 0.2.19_esbuild@0.17.11
       '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs': link:../../platform/constructs
       '@cats-cradle/validation-schemas': link:../../libraries/validation-schemas
@@ -1270,6 +1301,20 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.17
+
+  /@anatine/esbuild-decorators/0.2.19:
+    resolution: {integrity: sha512-pyj6ULyMacyzpDqlnbS2OCkOqxcVgk8IqiTMRJ5CrsF8Yl1azvlX/AM6xWR8UzHKUYDlWOw5mOpos3+7KKR0Lw==}
+    peerDependencies:
+      esbuild: ~0.14.29
+    dev: false
+
+  /@anatine/esbuild-decorators/0.2.19_esbuild@0.17.11:
+    resolution: {integrity: sha512-pyj6ULyMacyzpDqlnbS2OCkOqxcVgk8IqiTMRJ5CrsF8Yl1azvlX/AM6xWR8UzHKUYDlWOw5mOpos3+7KKR0Lw==}
+    peerDependencies:
+      esbuild: ~0.14.29
+    dependencies:
+      esbuild: 0.17.11
+    dev: false
 
   /@angular-devkit/core/15.0.4:
     resolution: {integrity: sha512-4ITpRAevd652SxB+qNesIQ9qfbm7wT5UBU5kJOPPwGL77I21g8CQpkmV1n5VSacPvC9Zbz90feOWexf7w7JzcA==}
@@ -13116,6 +13161,11 @@ packages:
   /comma-separated-tokens/1.0.8:
     resolution: {integrity: sha512-GHuDRO12Sypu2cV70d1dkA2EUmXHgntrzbpvOB+Qy+49ypNfGgFQIC2fhhXbnyrJRynDCAARsT7Ou0M6hirpfw==}
     dev: true
+
+  /commander/10.0.0:
+    resolution: {integrity: sha512-zS5PnTI22FIRM6ylNW8G4Ap0IEOyk62fhLSD0+uHRT9McRCLGpkVNvao4bjimpK/GShynyQkFFxHhwMcETmduA==}
+    engines: {node: '>=14'}
+    dev: false
 
   /commander/2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
