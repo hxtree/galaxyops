@@ -29,8 +29,8 @@ RUN apt-get update \
     # install latest npm
     # install latest npm
     && npm install --global npm@9.2.0 \
-    # https://pnpm.io/installation
-    && npm install --global pnpm@7.26.3 \
+    # https://pnpm.io/installation version 8 doesn't work currently with rush
+    && npm install --global pnpm@7.9.5 \
     # install Microsoft Rush globally
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.93.1 \

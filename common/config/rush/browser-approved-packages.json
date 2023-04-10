@@ -3,6 +3,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@anatine/esbuild-decorators",
+      "allowedCategories": [ "apis", "rigs" ]
+    },
+    {
       "name": "@aws-cdk/core",
       "allowedCategories": [ "apis" ]
     },
@@ -28,7 +32,11 @@
     },
     {
       "name": "@cats-cradle/base-nodejs",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
+    },
+    {
+      "name": "@cats-cradle/bundlers",
+      "allowedCategories": [ "category-platform" ]
     },
     {
       "name": "@cats-cradle/constructs",
@@ -40,7 +48,7 @@
     },
     {
       "name": "@cats-cradle/eslint-config",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "@cats-cradle/faker-factory",
@@ -287,6 +295,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "commander",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
       "name": "connection-string",
       "allowedCategories": [ "libraries" ]
     },
@@ -312,7 +324,7 @@
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "eslint-config-airbnb",
@@ -508,7 +520,7 @@
     },
     {
       "name": "ts-node",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
       "name": "tsdx",

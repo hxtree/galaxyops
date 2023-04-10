@@ -46,7 +46,8 @@
     "eslint": "8.26.0",
     "@cats-cradle/validation-schemas": "workspace:*",
     "@nestjs/testing": "9.2.1",
-    "@nestjs/axios": "~2.0.0"
+    "@nestjs/axios": "~2.0.0",
+    "@anatine/esbuild-decorators": "~0.2.19"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "workspace:*",

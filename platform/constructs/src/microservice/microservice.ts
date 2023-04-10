@@ -7,6 +7,7 @@ import { NestJs } from '../nestjs/nestjs';
 
 export interface MicroserviceProps {
   path: string;
+  projectRoot: string;
 }
 
 export class Microservice extends Construct {
@@ -28,6 +29,7 @@ export class Microservice extends Construct {
     ).stringValue;
 
     this.nestJs = new NestJs(scope, `${id}-nestjs`, {
+      projectRoot: props.projectRoot,
       apiId,
       region,
       stageName,
