@@ -6,6 +6,7 @@ import * as iam from 'aws-cdk-lib/aws-iam';
 import * as sns from 'aws-cdk-lib/aws-sns';
 import * as subscriptions from 'aws-cdk-lib/aws-sns-subscriptions';
 import { EmailSendCommand } from '@cats-cradle/messaging-schemas';
+import * as path from 'path';
 
 export class EmailServiceStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -19,6 +20,7 @@ export class EmailServiceStack extends cdk.Stack {
     // deploy lambda
     const microservice = new Microservice(this, 'email-service-stack', {
       path: 'email-message',
+      projectRoot: path.join(__dirname, '..'),
     });
 
     // add permissions to send emails

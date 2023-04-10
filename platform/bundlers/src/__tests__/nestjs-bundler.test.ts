@@ -5,7 +5,7 @@ import { nestJsBundler } from '../profiles/nestjs-bundler';
 describe('nestJsBundler', () => {
   it('should build src to dist', async () => {
     rmSync('./dist', { recursive: true, force: true });
-    const result = nestJsBundler({
+    const result = await nestJsBundler({
       projectRoot: join(__dirname, 'test-data/nestjs'),
     });
     const file = readFileSync(
