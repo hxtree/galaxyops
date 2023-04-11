@@ -47,7 +47,7 @@
     "uuid": "~9.0.0"
   },
   "devDependencies": {
-    "@cats-cradle/eslint-config": "workspace:*",
+    "@cats-cradle/eslint-config": "1.0.3",
     "@cats-cradle/faker-factory": "workspace:*",
     "@microsoft/tsdoc": "~0.13.2",
     "@nestjs/testing": "9.2.1",

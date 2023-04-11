@@ -45,15 +45,22 @@
       "packageName": "@cats-cradle/bundlers",
       "projectFolder": "platform/bundlers",
       "reviewCategory": "rigs",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": [],
       "shouldPublish": true
+    },
+    {
+      "packageName": "@cats-cradle/bundle-project",
+      "projectFolder": "platform/bundle-project",
+      "reviewCategory": "rigs",
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
+      "tags": ["publish-npm"]
     },
     {
       "packageName": "@cats-cradle/base-nodejs",
       "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm"],
       "shouldPublish": true
     },
@@ -61,14 +68,14 @@
       "packageName": "@cats-cradle/pipeline",
       "projectFolder": "platform/pipeline",
       "reviewCategory": "category-ci-cd",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["deploy-tools"]
     },
     {
       "packageName": "@cats-cradle/rush-coverage",
       "projectFolder": "platform/rush-coverage",
       "reviewCategory": "category-ci-cd",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm"],
       "shouldPublish": true
     },
@@ -76,21 +83,21 @@
       "packageName": "@cats-cradle/constructs",
       "projectFolder": "platform/constructs",
       "reviewCategory": "category-platform",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": []
     },
     {
       "packageName": "@cats-cradle/lambda-layers",
       "projectFolder": "platform/lambda-layers",
       "reviewCategory": "category-platform",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["deploy-platform"]
     },
     {
       "packageName": "@cats-cradle/eslint-config",
       "projectFolder": "platform/eslint-config",
       "reviewCategory": "category-platform",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm"],
       "shouldPublish": true
     },
@@ -98,7 +105,7 @@
       "packageName": "@cats-cradle/validation-schemas",
       "projectFolder": "libraries/validation-schemas",
       "reviewCategory": "libraries",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
@@ -106,14 +113,14 @@
       "packageName": "@cats-cradle/messaging-schemas",
       "projectFolder": "libraries/messaging-schemas",
       "reviewCategory": "libraries",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["category-library"]
     },
     {
       "packageName": "@cats-cradle/faker-factory",
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
@@ -121,7 +128,7 @@
       "packageName": "@cats-cradle/promare-gradients",
       "projectFolder": "libraries/promare-gradients",
       "reviewCategory": "libraries",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
@@ -129,7 +136,7 @@
       "packageName": "@cats-cradle/nestjs-modules",
       "projectFolder": "libraries/nestjs-modules",
       "reviewCategory": "libraries",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
@@ -137,7 +144,7 @@
       "packageName": "@cats-cradle/api-client-email-service",
       "projectFolder": "libraries/api-client-email-service",
       "reviewCategory": "api-client",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
@@ -145,7 +152,7 @@
       "packageName": "@cats-cradle/api-client-luck-by-dice",
       "projectFolder": "libraries/api-client-luck-by-dice",
       "reviewCategory": "api-client",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
@@ -153,7 +160,7 @@
       "packageName": "@cats-cradle/api-client-character-sheet",
       "projectFolder": "libraries/api-client-character-sheet",
       "reviewCategory": "api-client",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm", "category-library"],
       "shouldPublish": true
     },
@@ -161,7 +168,7 @@
       "packageName": "@cats-cradle/design-system",
       "projectFolder": "services/design-system",
       "reviewCategory": "apis",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["publish-npm", "category-library", "owner-ux"],
       "shouldPublish": true
     },
@@ -169,42 +176,42 @@
       "packageName": "@cats-cradle/gm-client",
       "projectFolder": "services/gm-client",
       "reviewCategory": "apis",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": []
     },
     {
       "packageName": "@cats-cradle/api-gateway",
       "projectFolder": "platform/api-gateway",
       "reviewCategory": "apis",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["deploy-platform"]
     },
     {
       "packageName": "@cats-cradle/html-to-pdf",
       "projectFolder": "services/html-to-pdf",
       "reviewCategory": "apis",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["deploy-app"]
     },
     {
       "packageName": "@cats-cradle/jukebox",
       "projectFolder": "services/jukebox",
       "reviewCategory": "apis",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["deploy-app"]
     },
     {
       "packageName": "@cats-cradle/character-sheet",
       "projectFolder": "services/character-sheet",
       "reviewCategory": "apis",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["deploy-app"]
     },
     {
       "packageName": "@cats-cradle/luck-by-dice",
       "projectFolder": "services/luck-by-dice",
       "reviewCategory": "apis",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["deploy-app", "publish-npm"],
       "shouldPublish": true
     },
@@ -212,7 +219,7 @@
       "packageName": "@cats-cradle/email-service",
       "projectFolder": "services/email-service",
       "reviewCategory": "apis",
-      "cyclicDependencyProjects": [],
+      "cyclicDependencyProjects": ["@cats-cradle/eslint-config"],
       "tags": ["deploy-app", "publish-npm"],
       "shouldPublish": true
     }
