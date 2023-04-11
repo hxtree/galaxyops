@@ -2,7 +2,7 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { ArchetypeService } from './archetype.service';
 import { QueryArchetypeDto } from './query-archetype.dto';
 
-@Controller('/archetypes')
+@Controller({ path: '/archetypes', version: ['1'] })
 export class ArchetypeController {
   _archetypeService;
 

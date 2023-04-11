@@ -50,6 +50,13 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@cats-cradle/bundle-project",
+      "projectFolder": "platform/bundle-project",
+      "reviewCategory": "rigs",
+      "cyclicDependencyProjects": [],
+      "tags": ["publish-npm"]
+    },
+    {
       "packageName": "@cats-cradle/base-nodejs",
       "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",

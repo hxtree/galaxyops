@@ -35,6 +35,10 @@
       "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
+      "name": "@cats-cradle/bundle-project",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@cats-cradle/bundlers",
       "allowedCategories": [ "apis", "category-platform" ]
     },
@@ -161,6 +165,18 @@
     {
       "name": "@nestjs/testing",
       "allowedCategories": [ "apis", "libraries" ]
+    },
+    {
+      "name": "@pnpm/find-workspace-packages",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
+      "name": "@pnpm/logger",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
+      "name": "@pnpm/types",
+      "allowedCategories": [ "rigs" ]
     },
     {
       "name": "@reduxjs/toolkit",
@@ -367,6 +383,10 @@
       "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform" ]
     },
     {
+      "name": "fs-extra",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
       "name": "handlebars",
       "allowedCategories": [ "apis" ]
     },
@@ -523,6 +543,10 @@
       "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
+      "name": "tsc-alias",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
       "name": "tsdx",
       "allowedCategories": [ "apis" ]
     },
@@ -541,6 +565,10 @@
     {
       "name": "web-vitals",
       "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "yargs",
+      "allowedCategories": [ "rigs" ]
     }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "name": "@cats-cradle/bundle-project",
+  "version": "1.0.3",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "bundle-project": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "bundle-project": "dist/index.js"
+  },
+  "dependencies": {
+    "@pnpm/find-workspace-packages": "^4.0.26",
+    "@pnpm/logger": "^4.0.0",
+    "fs-extra": "^10.1.0",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "@pnpm/types": "^8.5.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^16.0.0",
+    "@types/yargs": "^17.0.11",
+    "tsc-alias": "^1.7.0",
+    "typescript": "5.0.2"
+  }
+}
