@@ -44,6 +44,6 @@
     "typescript": "5.0.2",
     "ts-node": "10.9.1",
     "eslint": "8.26.0",
-    "@cats-cradle/eslint-config": "workspace:*"
+    "@cats-cradle/eslint-config": "1.0.3"
   }
 }
