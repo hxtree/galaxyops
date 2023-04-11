@@ -1,12 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import process from 'process';
-
 import { findWorkspacePackagesNoCheck } from '@pnpm/find-workspace-packages';
-
 import { Project } from '@pnpm/types';
 
-class Workspace {
+export class Workspace {
   public rootDir: string;
   public packages: Project[];
 
@@ -56,5 +54,3 @@ class Workspace {
     return packageByPath ? packageByPath : null;
   }
 }
-
-export { Workspace };

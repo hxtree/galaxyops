@@ -2,18 +2,20 @@
   "name": "@cats-cradle/bundle-project",
   "version": "1.0.3",
   "license": "MIT",
-  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "bin": {
-    "bundle-project": "dist/index.js"
+    "bundle-project": "dist/bin-bundle-project.js"
   },
   "scripts": {
     "build": "tsc && tsc-alias",
-    "bundle-project": "dist/index.js"
+    "bundle-project": "dist/index.js",
+    "build:all": "rush build -t .",
+    "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix",
+    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run"
   },
   "dependencies": {
     "@pnpm/find-workspace-packages": "^4.0.26",
@@ -22,6 +24,8 @@
     "yargs": "^17.5.1"
   },
   "devDependencies": {
+    "@cats-cradle/eslint-config": "1.0.3",
+    "eslint": "8.26.0",
     "@pnpm/types": "^8.5.0",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^16.0.0",

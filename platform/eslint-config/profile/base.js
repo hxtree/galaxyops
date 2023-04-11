@@ -10,7 +10,7 @@ module.exports = {
     'airbnb-typescript/base',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  plugins: [],
   root: true,
   rules: {
     '@typescript-eslint/no-inferrable-types': 'off',

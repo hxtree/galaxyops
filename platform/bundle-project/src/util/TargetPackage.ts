@@ -1,11 +1,9 @@
 import { Project } from '@pnpm/types';
+import { Workspace } from './Workspace';
 
-import { Workspace } from '@/util/Workspace.js';
-
-class TargetPackage {
+export class TargetPackage {
   pkg: Project;
   workspace: Workspace;
-
   workspaceDependencies: Project[];
 
   constructor(pkg: Project, workspace: Workspace) {
@@ -57,5 +55,3 @@ class TargetPackage {
     return targetPackageDependencies;
   }
 }
-
-export { TargetPackage };
