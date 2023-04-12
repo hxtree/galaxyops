@@ -1,7 +1,5 @@
-interface Config {
+export interface Config {
   outDir: string;
   overwrite: boolean;
   workspaceDependenciesFolder: string;
 }
-
-export { Config };

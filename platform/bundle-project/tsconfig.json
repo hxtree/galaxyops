@@ -1,18 +1,32 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "lib": ["ESNext", "DOM"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2018",
+    "lib": ["es2018"],
+    "outDir": "dist",
+    "rootDir": "./src",
     "strict": true,
-    "declaration": true,
-    "skipLibCheck": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "removeComments": false,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist/",
-    "baseUrl": "src/",
-    "paths": {
-      "@/*": ["./*"]
-    }
+    "skipLibCheck": true,
+    "declaration": true
+  },
+  "exclude": [
+    "build",
+    "node_modules",
+    "sample",
+    "**/*.spec.ts",
+    "test/**",
+    "dist/**/*"
+  ],
+  "paths": {
+    "@/*": ["./*"]
   }
 }

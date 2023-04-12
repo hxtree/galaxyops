@@ -2,6 +2,8 @@
 common/deploy/**
 common/deploy-ci/**
 !common/deploy-ci/.gitkeep
+dist/**
+!dist/README.md
 
 # coverage
 clover.xml

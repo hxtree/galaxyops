@@ -6,6 +6,7 @@
     "start": "nest start --debug --watch",
     "build": "tsc",
     "build:all": "rush build -t .",
+    "build:project": "bundle-project @cats-cradle/email-service --outDir=../../dist/email-service",
     "watch": "tsc -w",
     "test": "jest --logHeapUsage",
     "test:cov": "jest --coverage",
@@ -74,6 +75,7 @@
     "@types/supertest": "~2.0.12",
     "@cats-cradle/faker-factory": "workspace:*",
     "@types/html-to-text": "~9.0.0",
-    "@types/lodash": "~4.14.191"
+    "@types/lodash": "~4.14.191",
+    "@cats-cradle/bundle-project": "workspace:*"
   }
 }

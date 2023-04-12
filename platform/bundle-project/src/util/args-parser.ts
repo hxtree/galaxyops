@@ -1,6 +1,6 @@
 import yargs from 'yargs';
 
-const argsParserPromise = yargs(process.argv.slice(2)).options({
+export const argsParserPromise = yargs(process.argv.slice(2)).options({
   outDir: {
     description: 'Target package name or path',
     type: 'string',
@@ -12,5 +12,3 @@ const argsParserPromise = yargs(process.argv.slice(2)).options({
     default: true,
   },
 }).argv;
-
-export { argsParserPromise };

@@ -392,12 +392,14 @@ importers:
 
   ../../platform/bundle-project:
     specifiers:
+      '@cats-cradle/eslint-config': 1.0.3
       '@pnpm/find-workspace-packages': ^4.0.26
       '@pnpm/logger': ^4.0.0
       '@pnpm/types': ^8.5.0
       '@types/fs-extra': ^9.0.13
       '@types/node': ^16.0.0
       '@types/yargs': ^17.0.11
+      eslint: 8.26.0
       fs-extra: ^10.1.0
       tsc-alias: ^1.7.0
       typescript: 5.0.2
@@ -408,10 +410,12 @@ importers:
       fs-extra: 10.1.0
       yargs: 17.7.1
     devDependencies:
+      '@cats-cradle/eslint-config': 1.0.3
       '@pnpm/types': 8.9.0
       '@types/fs-extra': 9.0.13
       '@types/node': 16.18.14
       '@types/yargs': 17.0.22
+      eslint: 8.26.0
       tsc-alias: 1.8.5
       typescript: 5.0.2
 
@@ -524,7 +528,6 @@ importers:
   ../../platform/eslint-config:
     specifiers:
       '@rushstack/eslint-config': 3.1.1
-      '@rushstack/eslint-plugin': 0.11.0
       '@typescript-eslint/eslint-plugin': ~5.47.1
       '@typescript-eslint/parser': ~5.47.1
       eslint: 8.26.0
@@ -540,7 +543,6 @@ importers:
       typescript: 5.0.2
     dependencies:
       '@rushstack/eslint-config': 3.1.1_wfbjqwo7t3vcfhi3bbcsxszipi
-      '@rushstack/eslint-plugin': 0.11.0_wfbjqwo7t3vcfhi3bbcsxszipi
       '@typescript-eslint/eslint-plugin': 5.47.1_q2wuauokedym473ukwa4ba3a6u
       '@typescript-eslint/parser': 5.47.1_wfbjqwo7t3vcfhi3bbcsxszipi
       eslint: 8.26.0
@@ -726,6 +728,7 @@ importers:
   ../../services/character-sheet:
     specifiers:
       '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/bundle-project': workspace:*
       '@cats-cradle/bundlers': workspace:*
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': 1.0.3
@@ -795,6 +798,7 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
+      '@cats-cradle/bundle-project': link:../../platform/bundle-project
       '@cats-cradle/bundlers': link:../../platform/bundlers
       '@cats-cradle/eslint-config': 1.0.3
       '@cats-cradle/faker-factory': link:../../libraries/faker-factory
@@ -887,6 +891,7 @@ importers:
     specifiers:
       '@aws-sdk/client-ses': ~3.279.0
       '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/bundle-project': workspace:*
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': 1.0.3
       '@cats-cradle/faker-factory': workspace:*
@@ -966,6 +971,7 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
+      '@cats-cradle/bundle-project': link:../../platform/bundle-project
       '@cats-cradle/eslint-config': 1.0.3
       '@cats-cradle/faker-factory': link:../../libraries/faker-factory
       '@microsoft/tsdoc': 0.13.2
@@ -1131,6 +1137,7 @@ importers:
   ../../services/jukebox:
     specifiers:
       '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/bundle-project': workspace:*
       '@cats-cradle/bundlers': workspace:*
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': 1.0.3
@@ -1199,6 +1206,7 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
+      '@cats-cradle/bundle-project': link:../../platform/bundle-project
       '@cats-cradle/bundlers': link:../../platform/bundlers
       '@cats-cradle/eslint-config': 1.0.3
       '@cats-cradle/faker-factory': link:../../libraries/faker-factory

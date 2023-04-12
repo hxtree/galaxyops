@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const writeJsonFile = (
+export const writeJsonFile = (
   path: string,
   content: Object,
   prettyFormat: boolean = true,
@@ -11,5 +11,3 @@ const writeJsonFile = (
 
   fs.writeFileSync(path, jsonAsString);
 };
-
-export { writeJsonFile };

@@ -1,14 +1,30 @@
 # @cats-cradle/bundle-project
 
-Unstable WIP
+BundleProject is a tool to bundle a single pnpm workspace project.
 
-CLI tool to bundle a single pnpm workspace project.
+This allows a RushJS monorepo using pnpm to package a deployable project using
+CDK into something that can be used for in AWS CodePipelines.
 
-The goal of this package is to create a deployable project with CDK from a
-RushJS monorepo using pnpm that can be used in AWS CodePipelines.
+## Opinions
 
-Using the entire monorepo in deployments creates unnecessary overhead. Using git
-repository to base deployments on creates unnecessary head fetches.
+Often for a RushJS monorepo CI/CD that starts with Github CI and flow into a AWS
+CodePipeline, it seems simplest to mirror the repository in AWS CodeCommit and
+have CodePipeline build from pushes to main.
+
+This approach has several drawbacks:
+
+- This means that in order for a pipeline to build from that source it must
+  clone the repo in CodePipeline.
+- In order for a RushJS monorepo to perform diffs to see which projects change,
+  it must fetch all git histories, which is often a large file.
+- Then once it gets all histories it must build all applicable projects and
+  download the dependencies.
+
+An alternative approach, is to use Github CI to bundle each project changed
+individually along with workspace and non-workspace dependencies and place that
+in a S3 bucket. Then use a CodePipeline that is triggered on object put to
+deploy the project. This prevents the need for a CodePipeline to fetch and
+process large amounts of code.
 
 ## TODO
 
@@ -18,7 +34,6 @@ need to address:
 - [ ] eslint-config
 - [ ] devDependencies
 - [ ] recursive dev references, eslint-config, faker-factory,
-- [ ] bin, e.g. bundlers
 - [ ] zip / archive / compress
 
 ## References
