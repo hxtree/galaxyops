@@ -12,7 +12,6 @@
   },
   "scripts": {
     "build": "tsc && tsc-alias",
-    "bundle-project": "dist/index.js",
     "build:all": "rush build -t .",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run"

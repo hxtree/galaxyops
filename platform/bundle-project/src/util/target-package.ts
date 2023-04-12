@@ -1,5 +1,5 @@
 import { Project } from '@pnpm/types';
-import { Workspace } from './Workspace';
+import { Workspace } from './workspace';
 
 export class TargetPackage {
   pkg: Project;

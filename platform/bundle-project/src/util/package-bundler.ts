@@ -2,8 +2,8 @@ import fs, { existsSync, mkdirSync, rmSync } from 'fs';
 import fse from 'fs-extra';
 import path from 'path';
 import { Project } from '@pnpm/types';
-import { TargetPackage } from '../util/TargetPackage.js';
-import { Workspace } from '../util/Workspace.js';
+import { TargetPackage } from '../util/target-package.js';
+import { Workspace } from '../util/workspace.js';
 import { writeJsonFile } from '../util/json.js';
 import { Config } from '../types/cli.js';
 

@@ -1,12 +1,9 @@
 import { Project } from '@pnpm/types';
 import path from 'path';
 import { argsParserPromise } from './util/args-parser.js';
-import { Workspace } from './util/Workspace.js';
-import { PackageBundler } from './util/PackageBundler.js';
+import { Workspace } from './util/workspace.js';
+import { PackageBundler } from './util/package-bundler.js';
 import { Config } from './types/cli.js';
-
-// https://bobbyhadz.com/blog/javascript-dirname-is-not-defined-in-es-module-scope
-// import { fileURLToPath } from 'url';
 
 export const main = async () => {
   const argsParser = await argsParserPromise;
@@ -22,8 +19,7 @@ export const main = async () => {
     workspaceDependenciesFolder: 'workspace-dependencies',
   };
 
-  const filename = __dirname; //fileURLToPath(import.meta.url);
-  const dirname = path.dirname(filename);
+  const dirname = path.dirname(__dirname);
   const workspaceRootDir = Workspace.getRootDir(dirname);
   const workspacePackages = await Workspace.getPackages(workspaceRootDir);
   const workspace = new Workspace(workspaceRootDir, workspacePackages);

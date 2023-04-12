@@ -728,6 +728,7 @@ importers:
   ../../services/character-sheet:
     specifiers:
       '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/bundle-project': workspace:*
       '@cats-cradle/bundlers': workspace:*
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': 1.0.3
@@ -797,6 +798,7 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
+      '@cats-cradle/bundle-project': link:../../platform/bundle-project
       '@cats-cradle/bundlers': link:../../platform/bundlers
       '@cats-cradle/eslint-config': 1.0.3
       '@cats-cradle/faker-factory': link:../../libraries/faker-factory
@@ -889,6 +891,7 @@ importers:
     specifiers:
       '@aws-sdk/client-ses': ~3.279.0
       '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/bundle-project': workspace:*
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': 1.0.3
       '@cats-cradle/faker-factory': workspace:*
@@ -968,6 +971,7 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
+      '@cats-cradle/bundle-project': link:../../platform/bundle-project
       '@cats-cradle/eslint-config': 1.0.3
       '@cats-cradle/faker-factory': link:../../libraries/faker-factory
       '@microsoft/tsdoc': 0.13.2
@@ -1133,6 +1137,7 @@ importers:
   ../../services/jukebox:
     specifiers:
       '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/bundle-project': workspace:*
       '@cats-cradle/bundlers': workspace:*
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': 1.0.3
@@ -1201,6 +1206,7 @@ importers:
       source-map-support: 0.5.21
       uuid: 9.0.0
     devDependencies:
+      '@cats-cradle/bundle-project': link:../../platform/bundle-project
       '@cats-cradle/bundlers': link:../../platform/bundlers
       '@cats-cradle/eslint-config': 1.0.3
       '@cats-cradle/faker-factory': link:../../libraries/faker-factory
@@ -12227,7 +12233,7 @@ packages:
       '@types/semver': 7.3.13
       '@types/treeify': 1.0.0
       '@yarnpkg/fslib': 3.0.0-rc.42
-      '@yarnpkg/libzip': 3.0.0-rc.42_@yarnpkg+fslib@3.0.0-rc.42
+      '@yarnpkg/libzip': 3.0.0-rc.42
       '@yarnpkg/parsers': 3.0.0-rc.42
       '@yarnpkg/shell': 4.0.0-rc.42
       camelcase: 5.3.1
@@ -12258,7 +12264,7 @@ packages:
       '@types/semver': 7.3.13
       '@types/treeify': 1.0.0
       '@yarnpkg/fslib': 3.0.0-rc.42
-      '@yarnpkg/libzip': 3.0.0-rc.42_@yarnpkg+fslib@3.0.0-rc.42
+      '@yarnpkg/libzip': 3.0.0-rc.42
       '@yarnpkg/parsers': 3.0.0-rc.42
       '@yarnpkg/shell': 4.0.0-rc.42
       camelcase: 5.3.1
@@ -12311,11 +12317,9 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /@yarnpkg/libzip/3.0.0-rc.42_@yarnpkg+fslib@3.0.0-rc.42:
+  /@yarnpkg/libzip/3.0.0-rc.42:
     resolution: {integrity: sha512-Z8qXIOLSulT1NU+CPknddQhg6JpByVAkBpye1OQgTWbzuhBsp3Osh+R5Z604UZ3ulJ4KC4GblMxxz5AKoQfj4Q==}
     engines: {node: '>=14.15.0'}
-    peerDependencies:
-      '@yarnpkg/fslib': ^3.0.0-rc.42
     dependencies:
       '@types/emscripten': 1.39.6
       '@yarnpkg/fslib': 3.0.0-rc.42
