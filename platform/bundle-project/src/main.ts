@@ -4,6 +4,7 @@ import { argsParserPromise } from './util/args-parser.js';
 import { Workspace } from './util/workspace.js';
 import { PackageBundler } from './util/package-bundler.js';
 import { Config } from './types/cli.js';
+import { archive } from './util/archive';
 
 export const main = async () => {
   const argsParser = await argsParserPromise;
@@ -36,4 +37,6 @@ export const main = async () => {
   packageBundler.createDistFolder();
   packageBundler.copyTargetPackageFiles();
   packageBundler.copyTargetPackageWorkspaceDependencies();
+
+  archive(config.outDir, `${config.outDir}.zip`);
 };

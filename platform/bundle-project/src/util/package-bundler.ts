@@ -21,11 +21,10 @@ export class PackageBundler {
 
   createDistFolder() {
     if (existsSync(this.config.outDir)) {
-      if (this.config.overwrite) {
-        rmSync(this.config.outDir, { recursive: true });
-      } else {
+      if (!this.config.overwrite) {
         throw Error(`Output directory (${this.config.outDir}) already exists`);
       }
+      rmSync(this.config.outDir, { recursive: true });
     }
 
     mkdirSync(this.config.outDir, { recursive: true });

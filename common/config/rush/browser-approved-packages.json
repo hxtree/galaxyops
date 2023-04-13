@@ -255,6 +255,10 @@
       "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
+      "name": "archiver",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
       "name": "aws-cdk",
       "allowedCategories": [ "apis" ]
     },

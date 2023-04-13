@@ -60,22 +60,8 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
-      - name: rush deploy
-        run: |
-            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/lambda-layers --create-archive lambda-layers.zip
-            # mv common/deploy/lambda-layers.zip common/deploy-ci/
-            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive api-gateway.zip
-            # mv common/deploy/api-gateway.zip common/deploy-ci/
-            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive character-sheet.zip
-            # mv common/deploy/lambda-layers.zip common/deploy-ci/
-            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/api-gateway --create-archive api-gateway.zip
-            # mv common/deploy/api-gateway.zip common/deploy-ci/
-            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/character-sheet --create-archive character-sheet.zip
-            # mv common/deploy/character-sheet.zip common/deploy-ci/
-            node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/luck-by-dice --create-archive luck-by-dice.zip
-            mv common/deploy/luck-by-dice.zip common/deploy-ci/
-            # node common/scripts/install-run-rush.js deploy --overwrite --project @cats-cradle/email-service --create-archive email-service.zip
-            # mv common/deploy/email-service.zip common/deploy-ci/
+      - name: rush build:project
+        run: node common/scripts/install-run-rush.js build:project
 
       - uses: shallwefootball/s3-upload-action@master
         name: Upload S3
@@ -84,7 +70,7 @@ jobs:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: 'common/deploy-ci'
+          source_dir: 'dist'
           destination_dir: ''
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"

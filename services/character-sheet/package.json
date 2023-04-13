@@ -25,7 +25,7 @@
   "dependencies": {
     "@cats-cradle/base-nodejs": "workspace:*",
     "@cats-cradle/constructs": "workspace:*",
-    "@cats-cradle/nestjs-modules": "workspace:*",
+    "@cats-cradle/nestjs-modules": "0.2.0",
     "@cats-cradle/validation-schemas": "workspace:*",
     "@nestjs/common": "9.3.10",
     "@nestjs/config": "2.2.0",

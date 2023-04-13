@@ -17,13 +17,7 @@
    * If the main project should include other unrelated Rush projects, add it to the "projectSettings" section,
    * and then specify those projects in the "additionalProjectsToInclude" list.
    */
-  "deploymentProjectNames": [
-    "@cats-cradle/lambda-layers",
-    "@cats-cradle/api-gateway",
-    "@cats-cradle/character-sheet",
-    "@cats-cradle/luck-by-dice",
-    "@cats-cradle/email-service"
-  ],
+  "deploymentProjectNames": [],
 
   /**
    * When deploying a local Rush project, the package.json "devDependencies" are normally excluded.
