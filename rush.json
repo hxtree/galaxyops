@@ -197,7 +197,10 @@
       "packageName": "@cats-cradle/jukebox",
       "projectFolder": "services/jukebox",
       "reviewCategory": "apis",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/nestjs-modules"
+      ],
       "tags": ["deploy-app"]
     },
     {
