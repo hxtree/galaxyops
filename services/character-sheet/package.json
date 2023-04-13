@@ -48,7 +48,7 @@
     "uuid": "~9.0.0"
   },
   "devDependencies": {
-    "@cats-cradle/bundle-project": "1.0.6",
+    "@cats-cradle/bundle-project": "1.0.4",
     "@cats-cradle/eslint-config": "1.0.3",
     "@cats-cradle/faker-factory": "workspace:*",
     "@microsoft/tsdoc": "~0.13.2",

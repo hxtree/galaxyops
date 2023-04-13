@@ -69,6 +69,6 @@
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.12",
     "@cats-cradle/bundlers": "workspace:*",
-    "@cats-cradle/bundle-project": "1.0.6"
+    "@cats-cradle/bundle-project": "1.0.4"
   }
 }
