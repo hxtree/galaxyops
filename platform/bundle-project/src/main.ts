@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { Project } from '@pnpm/types';
 import path from 'path';
 import { argsParserPromise } from './util/args-parser.js';
@@ -7,21 +8,32 @@ import { Config } from './types/cli.js';
 import { archive } from './util/archive';
 
 export const main = async () => {
+  console.log('start bundle project...');
+
+  const dirname = path.dirname(__dirname);
+  const workspaceRootDir = Workspace.getRootDir(dirname);
+
   const argsParser = await argsParserPromise;
 
   const targetPackageNameOrPath = argsParser._[0];
+
+  console.log(targetPackageNameOrPath);
+
   if (!targetPackageNameOrPath || typeof targetPackageNameOrPath !== 'string') {
     throw Error('Target package name or path is required');
   }
 
   const config: Config = {
-    outDir: argsParser.outDir,
-    overwrite: argsParser.overwrite,
+    outDir: `${workspaceRootDir}dist/${targetPackageNameOrPath.replace(
+      '@cats-cradle/',
+      '',
+    )}`,
+    overwrite: true,
     workspaceDependenciesFolder: 'workspace-dependencies',
   };
 
-  const dirname = path.dirname(__dirname);
-  const workspaceRootDir = Workspace.getRootDir(dirname);
+  console.log(`bundling ${targetPackageNameOrPath} to ${config.outDir}`);
+
   const workspacePackages = await Workspace.getPackages(workspaceRootDir);
   const workspace = new Workspace(workspaceRootDir, workspacePackages);
 
@@ -37,6 +49,8 @@ export const main = async () => {
   packageBundler.createDistFolder();
   packageBundler.copyTargetPackageFiles();
   packageBundler.copyTargetPackageWorkspaceDependencies();
+
+  console.log(`archive ${config.outDir} to ${config.outDir}.zip`);
 
   archive(config.outDir, `${config.outDir}.zip`);
 };
