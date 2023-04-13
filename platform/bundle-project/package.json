@@ -20,7 +20,8 @@
     "@pnpm/find-workspace-packages": "^4.0.26",
     "@pnpm/logger": "^4.0.0",
     "fs-extra": "^10.1.0",
-    "yargs": "^17.5.1"
+    "yargs": "^17.5.1",
+    "archiver": "~5.3.1"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.3",
@@ -30,6 +31,7 @@
     "@types/node": "^16.0.0",
     "@types/yargs": "^17.0.11",
     "tsc-alias": "^1.7.0",
-    "typescript": "5.0.2"
+    "typescript": "5.0.2",
+    "@types/archiver": "~5.3.2"
   }
 }

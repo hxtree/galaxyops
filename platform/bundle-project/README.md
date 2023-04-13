@@ -34,7 +34,6 @@ need to address:
 - [ ] eslint-config
 - [ ] devDependencies
 - [ ] recursive dev references, eslint-config, faker-factory,
-- [ ] zip / archive / compress
 
 ## References
 

@@ -204,7 +204,10 @@
       "packageName": "@cats-cradle/character-sheet",
       "projectFolder": "services/character-sheet",
       "reviewCategory": "apis",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/nestjs-modules"
+      ],
       "tags": ["deploy-app"]
     },
     {
@@ -219,9 +222,22 @@
       "packageName": "@cats-cradle/email-service",
       "projectFolder": "services/email-service",
       "reviewCategory": "apis",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/nestjs-modules"
+      ],
       "tags": ["deploy-app", "publish-npm"],
       "shouldPublish": true
+    },
+    {
+      "packageName": "@cats-cradle/weather-control",
+      "projectFolder": "services/weather-control",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/nestjs-modules"
+      ],
+      "tags": ["deploy-app", "publish-npm"]
     }
   ]
 }
