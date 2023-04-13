@@ -14,19 +14,19 @@
     "lint:ci": ""
   },
   "dependencies": {
-    "@rushstack/eslint-config": "3.1.1",
-    "@typescript-eslint/eslint-plugin": "~5.47.1",
+    "@typescript-eslint/eslint-plugin": "~5.58.0",
     "eslint-config-airbnb-typescript": "~17.0.0",
     "eslint-config-airbnb": "~19.0.4",
     "prettier": "~2.8.1",
-    "eslint-config-prettier": "~8.5.0",
-    "eslint": "8.26.0",
-    "@typescript-eslint/parser": "~5.47.1",
+    "eslint-config-prettier": "~8.8.0",
+    "eslint": "8.38.0",
+    "@typescript-eslint/parser": "~5.58.0",
     "typescript": "5.0.2",
     "eslint-config-airbnb-base": "~15.0.0",
-    "eslint-plugin-import": "~2.26.0",
-    "eslint-plugin-jsx-a11y": "~6.6.1",
-    "eslint-plugin-react": "~7.31.11",
-    "eslint-plugin-react-hooks": "~4.6.0"
+    "eslint-plugin-import": "~2.27.5",
+    "eslint-plugin-jsx-a11y": "~6.7.1",
+    "eslint-plugin-react": "~7.32.2",
+    "eslint-plugin-react-hooks": "~4.6.0",
+    "@rushstack/eslint-config": "~3.2.0"
   }
 }
