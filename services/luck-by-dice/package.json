@@ -48,7 +48,7 @@
     "@cats-cradle/validation-schemas": "workspace:*",
     "@nestjs/testing": "9.2.1",
     "@nestjs/axios": "~2.0.0",
-    "@cats-cradle/bundle-project": "workspace:*"
+    "@cats-cradle/bundle-project": "1.0.3"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.3",
