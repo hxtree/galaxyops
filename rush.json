@@ -54,7 +54,8 @@
       "projectFolder": "platform/bundle-project",
       "reviewCategory": "rigs",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm"]
+      "tags": ["publish-npm"],
+      "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/base-nodejs",
