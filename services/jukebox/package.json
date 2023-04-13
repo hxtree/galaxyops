@@ -70,6 +70,6 @@
     "@cats-cradle/faker-factory": "workspace:*",
     "@fastify/static": "~6.9.0",
     "@cats-cradle/bundlers": "workspace:*",
-    "@cats-cradle/bundle-project": "workspace:*"
+    "@cats-cradle/bundle-project": "1.0.6"
   }
 }

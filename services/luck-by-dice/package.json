@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/luck-by-dice",
   "module": "commonjs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "An API Simulating dice rolls that can be effected by luck from dice notation",
   "bin": {
     "app": "bin/app.js"
@@ -69,6 +69,6 @@
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.12",
     "@cats-cradle/bundlers": "workspace:*",
-    "@cats-cradle/bundle-project": "workspace:*"
+    "@cats-cradle/bundle-project": "1.0.6"
   }
 }

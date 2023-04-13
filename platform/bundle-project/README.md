@@ -1,30 +1,31 @@
 # @cats-cradle/bundle-project
 
-BundleProject is a tool to bundle a single pnpm workspace project.
+BundleProject is a tool for bundling a single pnpm workspace project.
 
-This allows a RushJS monorepo using pnpm to package a deployable project using
-CDK into something that can be used for in AWS CodePipelines.
+It was designed for a RushJS monorepo that uses PNPM to help create small fast
+deployable projects using AWS CDK for in AWS CodePipelines.
 
 ## Opinions
 
-Often for a RushJS monorepo CI/CD that starts with Github CI and flow into a AWS
-CodePipeline, it seems simplest to mirror the repository in AWS CodeCommit and
-have CodePipeline build from pushes to main.
+The RushJS monorepo CI/CD process starts in Github CI and next went to AWS
+CodePipeline, Although it was quicker to get a mirror of the repository in AWS
+CodeCommit and have CodePipeline build trigger from pushes to main, that
+approach has several drawbacks:
 
-This approach has several drawbacks:
+- It means that in order for a pipeline to build from that source it must clone
+  the entire monorepo within CodePipeline.
+- It means the download must fetch all git histories which is an even larger
+  file to allow RushJS to perform diffs to determine which projects changed,
+- It means that a step need to build all applicable projects and download the
+  dependencies.
 
-- This means that in order for a pipeline to build from that source it must
-  clone the repo in CodePipeline.
-- In order for a RushJS monorepo to perform diffs to see which projects change,
-  it must fetch all git histories, which is often a large file.
-- Then once it gets all histories it must build all applicable projects and
-  download the dependencies.
-
-An alternative approach, is to use Github CI to bundle each project changed
-individually along with workspace and non-workspace dependencies and place that
-in a S3 bucket. Then use a CodePipeline that is triggered on object put to
-deploy the project. This prevents the need for a CodePipeline to fetch and
-process large amounts of code.
+Instead BundleProject was favored. It enables for a single dedicated Github CI
+build stage to individually bundle, compress each project changed (along with
+workspace and non-workspace dependencies), and put the compress object in a S3
+bucket. A CodePipeline then is triggered on each object put to deploy the
+project. This prevents the need for a CodePipeline to fetch and process large
+amounts of code and drastically speeds up CI/CD pipelines allow engineers to
+ship code faster.
 
 ## References
 
