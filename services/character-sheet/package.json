@@ -6,7 +6,7 @@
     "start": "nest start --debug --watch",
     "build": "tsc",
     "build:all": "rush build -t .",
-    "build:project": "bundle-project @cats-cradle/character-sheet --outDir=../../dist/character-sheet",
+    "build:project": "bundle-project @cats-cradle/character-sheet",
     "watch": "tsc -w",
     "test": "jest --logHeapUsage",
     "test:cov": "jest --coverage",
@@ -48,7 +48,7 @@
     "uuid": "~9.0.0"
   },
   "devDependencies": {
-    "@cats-cradle/bundle-project": "1.0.3",
+    "@cats-cradle/bundle-project": "workspace:*",
     "@cats-cradle/eslint-config": "1.0.3",
     "@cats-cradle/faker-factory": "workspace:*",
     "@microsoft/tsdoc": "~0.13.2",

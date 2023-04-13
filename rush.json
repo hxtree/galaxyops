@@ -200,8 +200,7 @@
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
-        "@cats-cradle/nestjs-modules",
-        "@cats-cradle/bundle-project"
+        "@cats-cradle/nestjs-modules"
       ],
       "tags": ["deploy-app"]
     },
@@ -211,8 +210,7 @@
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
-        "@cats-cradle/nestjs-modules",
-        "@cats-cradle/bundle-project"
+        "@cats-cradle/nestjs-modules"
       ],
       "tags": ["deploy-app"]
     },
@@ -220,10 +218,7 @@
       "packageName": "@cats-cradle/luck-by-dice",
       "projectFolder": "services/luck-by-dice",
       "reviewCategory": "apis",
-      "decoupledLocalDependencies": [
-        "@cats-cradle/eslint-config",
-        "@cats-cradle/bundle-project"
-      ],
+      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
       "tags": ["deploy-app", "publish-npm"],
       "shouldPublish": true
     },
@@ -233,8 +228,7 @@
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
-        "@cats-cradle/nestjs-modules",
-        "@cats-cradle/bundle-project"
+        "@cats-cradle/nestjs-modules"
       ],
       "tags": ["deploy-app", "publish-npm"],
       "shouldPublish": true

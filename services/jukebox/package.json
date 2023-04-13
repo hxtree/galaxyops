@@ -6,7 +6,7 @@
     "start": "nest start --debug --watch",
     "build": "tsc",
     "build:all": "rush build -t .",
-    "build:project": "bundle-project @cats-cradle/jukebox --outDir=../../dist/jukebox",
+    "build:project": "bundle-project @cats-cradle/jukebox",
     "watch": "tsc -w",
     "test": "jest --logHeapUsage",
     "test:cov": "jest --coverage",
@@ -70,6 +70,6 @@
     "@cats-cradle/faker-factory": "workspace:*",
     "@fastify/static": "~6.9.0",
     "@cats-cradle/bundlers": "workspace:*",
-    "@cats-cradle/bundle-project": "1.0.3"
+    "@cats-cradle/bundle-project": "workspace:*"
   }
 }
