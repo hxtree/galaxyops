@@ -8,7 +8,7 @@
     "dist"
   ],
   "bin": {
-    "bundle-project": "dist/bin-bundle-project.js"
+    "bundle-project": "bin/bundle-project"
   },
   "scripts": {
     "build": "tsc && tsc-alias",
