@@ -11,8 +11,9 @@ export enum ClimateType {
   DRY = 'DRY',
 
   /**
-   * Temperate climates of the Earth are characterized by relatively moderate mean annual temperatures,
-   * with average monthly temperatures above 10C/50F in their warmest months and above −3C/37.4F in their colder months
+   * Temperate climates of the Earth are characterized by relatively moderate mean
+   * annual temperatures, with average monthly temperatures above 10C/50F in their
+   * warmest months and above −3C/37.4F in their colder months
    */
   TEMPERATE = 'TEMPERATE',
 
@@ -22,7 +23,8 @@ export enum ClimateType {
   CONTINENTAL = 'CONTINENTAL',
 
   /**
-   * polar climate is a place where the climate usually has a temperature below freezing, icy, and covered in snow.
+   * polar climate is a place where the climate usually has a temperature below
+   * freezing, icy, and covered in snow.
    * These areas do not get direct heat and sunlight from the sun.
    * Polar climates are located at the north and south pole
    */

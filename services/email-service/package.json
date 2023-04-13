@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/email-service",
   "module": "commonjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "start": "nest start --debug --watch",
     "build": "tsc",
@@ -10,8 +10,8 @@
     "watch": "tsc -w",
     "test": "jest --logHeapUsage",
     "test:cov": "jest --coverage",
-    "lint": "eslint --format visualstudio \"./{stacks,src}/**/*.ts\" --fix",
-    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run",
+    "lint": "eslint --format visualstudio \"./{stacks,src}/**/*.ts\"  --fix",
+    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix-dry-run",
     "docs": "typedoc --entryPointStrategy expand ./src",
     "cdk": "cdk",
     "cdk:bootstrap": "cdk bootstrap",
@@ -68,7 +68,7 @@
     "path": "~0.12.7",
     "@types/express": "~4.17.14",
     "@types/uuid": "~8.3.4",
-    "eslint": "8.26.0",
+    "eslint": "8.38.0",
     "@cats-cradle/eslint-config": "1.0.3",
     "@nestjs/testing": "9.2.1",
     "supertest": "~6.3.3",

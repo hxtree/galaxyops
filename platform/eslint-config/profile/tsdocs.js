@@ -6,4 +6,5 @@ module.exports = {
   rules: {
     'tsdoc/syntax': 'warn',
   },
+  root: true,
 };

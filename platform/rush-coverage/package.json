@@ -3,7 +3,7 @@
   "license": "MIT",
   "bin": "./dist/index.js",
   "main": "index.js",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"
@@ -18,8 +18,8 @@
     "watch": "tsc -w",
     "test": "jest",
     "test:cov": "jest --coverage",
-    "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix",
-    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run",
+    "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix",
+    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix-dry-run",
     "depcheck": "npx depcheck"
   },
   "keywords": [
@@ -43,7 +43,7 @@
     "ts-jest": "29.1.0",
     "typescript": "5.0.2",
     "ts-node": "10.9.1",
-    "eslint": "8.26.0",
+    "eslint": "8.38.0",
     "@cats-cradle/eslint-config": "1.0.3"
   }
 }

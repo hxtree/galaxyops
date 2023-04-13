@@ -1,0 +1,17 @@
+{
+  "name": "@cats-cradle/bundlers",
+  "entries": [
+    {
+      "version": "0.0.2",
+      "tag": "@cats-cradle/bundlers_v0.0.2",
+      "date": "Thu, 13 Apr 2023 01:49:51 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "update packages"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/eslint-config
 
-This log was last generated on Fri, 17 Feb 2023 14:05:59 GMT and should not be manually modified.
+This log was last generated on Thu, 13 Apr 2023 01:49:51 GMT and should not be manually modified.
+
+## 1.0.5
+Thu, 13 Apr 2023 01:49:51 GMT
+
+### Patches
+
+- update packages
 
 ## 1.0.3
 Fri, 17 Feb 2023 14:05:59 GMT

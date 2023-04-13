@@ -25,7 +25,7 @@ export const main = async () => {
   const workspacePackages = await Workspace.getPackages(workspaceRootDir);
   const workspace = new Workspace(workspaceRootDir, workspacePackages);
 
-  let targetPackage: Project | null = workspace.tryToResolvePackage(
+  const targetPackage: Project | null = workspace.tryToResolvePackage(
     targetPackageNameOrPath,
   );
   if (!targetPackage) {

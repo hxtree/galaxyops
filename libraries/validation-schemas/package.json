@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/validation-schemas",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "./dist/index.js",
   "license": "MIT",
   "repository": {
@@ -13,8 +13,8 @@
     "watch": "tsc -w",
     "test": "jest",
     "test:cov": "jest --coverage",
-    "lint": "eslint --format visualstudio \"./src/*.ts\" --fix",
-    "lint:ci": "eslint --format visualstudio \"./src/*.ts\" --fix-dry-run",
+    "lint": "eslint --format visualstudio \"./src/*.ts\"  --fix",
+    "lint:ci": "eslint --format visualstudio \"./src/*.ts\"  --fix-dry-run",
     "depcheck": "npx depcheck"
   },
   "dependencies": {
@@ -38,7 +38,7 @@
     "ts-node": "10.9.1",
     "esbuild": "~0.17.5",
     "@types/uuid": "~8.3.4",
-    "eslint": "8.26.0",
+    "eslint": "8.38.0",
     "@cats-cradle/eslint-config": "1.0.3",
     "@types/json-schema": "~7.0.11",
     "@cats-cradle/faker-factory": "workspace:*"
