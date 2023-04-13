@@ -139,8 +139,6 @@ export class DefaultPipelineStack extends cdk.Stack {
             commands: [
               // the code was automatically uncompressed
               'ls $CODEBUILD_SRC_DIR',
-              'node create-links.js create',
-              'cd ./services/luck-by-dice',
               'npm install --package-lock-only',
               'npm run cdk:deploy',
             ],
