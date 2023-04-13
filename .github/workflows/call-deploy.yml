@@ -60,6 +60,9 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
+      - name: rush build
+        run: node common/scripts/install-run-rush.js build:all
+
       - name: rush build:project
         run: node common/scripts/install-run-rush.js build:project
 
