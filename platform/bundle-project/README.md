@@ -26,17 +26,8 @@ in a S3 bucket. Then use a CodePipeline that is triggered on object put to
 deploy the project. This prevents the need for a CodePipeline to fetch and
 process large amounts of code.
 
-## TODO
-
-need to address:
-
-- [ ] tsconfig reference
-- [ ] eslint-config
-- [ ] devDependencies
-- [ ] recursive dev references, eslint-config, faker-factory,
-
 ## References
 
-<https://github.com/elyse0/pnpm-bundle-workspace-package>
-<https://github.com/Madvinking/pnpm-isolate-workspace>
-<https://rushstack.zulipchat.com/#narrow/stream/262513-general/topic/rush.20deploy.20for.20docker.20images.3F>
+- [PNPM Bundle Workspace](https://github.com/elyse0/pnpm-bundle-workspace-package)
+- [PNPM Isolate Workspace](https://github.com/Madvinking/pnpm-isolate-workspace)
+- [Rush Deploy](https://rushstack.zulipchat.com/#narrow/stream/262513-general/topic/rush.20deploy.20for.20docker.20images.3F)

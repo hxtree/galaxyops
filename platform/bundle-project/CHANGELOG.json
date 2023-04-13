@@ -1,0 +1,17 @@
+{
+  "name": "@cats-cradle/bundle-project",
+  "entries": [
+    {
+      "version": "1.0.4",
+      "tag": "@cats-cradle/bundle-project_v1.0.4",
+      "date": "Thu, 13 Apr 2023 05:30:55 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "improve docs"
+          }
+        ]
+      }
+    }
+  ]
+}
