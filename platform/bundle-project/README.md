@@ -49,6 +49,12 @@ approach had several costly drawbacks:
   histories) to work, which is an even larger file.
 - A step that built all applicable projects and download the dependencies was
   required.
+- It exponentially increases the amount of downloading and processing that needs
+  to be done within a CodePipeline. This in turn can create prolonged contract
+  varations between microservices when deploying multi service changes, which
+  can cause system errors.
+- This expoententially increases disaster recovery time, as pipelines take
+  longer to ship code.
 
 Instead BundleProject was favored. It enables for a single dedicated Github CI
 build stage to individually bundle, compress each project changed (along with
