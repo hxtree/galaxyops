@@ -10,6 +10,7 @@ import { EmailMessageController } from './email-message.controller';
 import { QueueService } from './queue.service';
 import { EngineService } from './engine.service';
 import { MailerService } from './mailer.service';
+import { EmailMessage } from '../../models/email-message/email-message.schema';
 
 @Module({
   controllers: [EmailMessageController],
@@ -23,7 +24,7 @@ import { MailerService } from './mailer.service';
   imports: [
     rootMongooseModule(),
     MongooseModule.forFeature([
-      { name: 'EmailMessage', schema: EmailMessageSchema },
+      { name: EmailMessage.name, schema: EmailMessageSchema },
     ]),
   ],
 })
