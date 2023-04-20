@@ -70,7 +70,7 @@ jobs:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: 'dist'
+          source_dir: 'common/temp/dist'
           destination_dir: ''
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
