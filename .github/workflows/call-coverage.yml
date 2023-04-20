@@ -33,17 +33,19 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
+      # need to install rush for mongodb-memory-server to download mongo bin
       - name: Install PNPM
         run: npm install --global pnpm@7.26.3
+        run: npm install --global @microsoft/rush@5.93.1 \
 
       - name: Rush install
-        run: node common/scripts/install-run-rush.js install -p
+        run: rush install
 
       - name: Build
-        run: node common/scripts/install-run-rush.js build
+        run: rush build
 
       - name: Test coverage
-        run: node common/scripts/install-run-rush.js test:cov
+        run: rush test:cov
 
       - name: Merge coverage reports
         run: npx @cats-cradle/rush-coverage
