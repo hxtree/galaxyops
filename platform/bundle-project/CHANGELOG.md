@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/bundle-project
 
-This log was last generated on Thu, 20 Apr 2023 03:22:16 GMT and should not be manually modified.
+This log was last generated on Thu, 20 Apr 2023 15:41:51 GMT and should not be manually modified.
+
+## 1.0.8
+Thu, 20 Apr 2023 15:41:51 GMT
+
+### Patches
+
+- update documentation
 
 ## 1.0.7
 Thu, 20 Apr 2023 03:22:16 GMT
