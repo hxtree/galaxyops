@@ -25,7 +25,7 @@
     "reflect-metadata": "0.1.13",
     "@types/validator": "~13.7.10",
     "mongodb-memory-server": "8.11.2",
-    "@nestjs/common": "9.3.10",
+    "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",
     "@nestjs/passport": "9.0.0",

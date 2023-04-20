@@ -8,7 +8,7 @@ import {
 } from '@cats-cradle/validation-schemas';
 import { StatusType } from './status.type';
 
-@Schema()
+@Schema({ collection: 'email-messages' })
 export class EmailMessage {
   @IsUUID()
   @Prop()

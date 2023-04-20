@@ -9,7 +9,10 @@ import {
 } from '@cats-cradle/nestjs-modules';
 import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dto';
 import { TemplateService } from './template.service';
-import { EmailMessageSchema } from '../../models/email-message/email-message.schema';
+import {
+  EmailMessage,
+  EmailMessageSchema,
+} from '../../models/email-message/email-message.schema';
 import { EmailMessageRepository } from './email-message.repository';
 import { EmailMessageController } from './email-message.controller';
 import { QueueService } from './queue.service';
@@ -24,7 +27,7 @@ describe('/email-message', () => {
       imports: [
         rootMongooseTestModule(),
         MongooseModule.forFeature([
-          { name: 'EmailMessage', schema: EmailMessageSchema },
+          { name: EmailMessage.name, schema: EmailMessageSchema },
         ]),
       ],
       controllers: [EmailMessageController],
@@ -34,6 +37,7 @@ describe('/email-message', () => {
         QueueService,
         EngineService,
         MailerService,
+        EmailMessage,
       ],
     }).compile();
 
