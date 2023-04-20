@@ -2,6 +2,18 @@
   "name": "@cats-cradle/bundle-project",
   "entries": [
     {
+      "version": "1.0.8",
+      "tag": "@cats-cradle/bundle-project_v1.0.8",
+      "date": "Thu, 20 Apr 2023 15:41:51 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "update documentation"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.7",
       "tag": "@cats-cradle/bundle-project_v1.0.7",
       "date": "Thu, 20 Apr 2023 03:22:16 GMT",

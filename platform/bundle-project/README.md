@@ -1,28 +1,59 @@
 # @cats-cradle/bundle-project
 
-BundleProject is a tool for bundling a single pnpm workspace project.
+BundleProject is a tool for bundling a single PNPM workspace project as a
+compressed ZIP file.
 
-It was designed for a RushJS monorepo that uses PNPM to help create small fast
+It was designed for a monorepo that uses PNPM to help create small fast
 deployable projects using AWS CDK in AWS CodePipelines.
+
+## Usage
+
+### Example in RushJS
+
+For each project that will be compressed, add BundleProject as a dev dependency:
+
+```bash
+# example of how to add dev dependency in RushJS
+rush add --package @cats-cradle/bundle-project --dev
+```
+
+Add a script command to bundle your package to the project's package.json. Make
+sure to replace `my-package-name` with the name of your package.
+
+```json
+{
+  "name": "my-package-name",
+  "scripts": {
+    "build:project": "bundle-project my-package-name"
+  }
+}
+```
+
+Run the script to bundle the project.
+
+```bash
+rushx build:project
+```
 
 ## Opinions
 
-Originally, the RushJS monorepo CI/CD process started in Github CI and next went
+Originally, our RushJS monorepo CI/CD process started in Github CI and next went
 to AWS CodePipeline, Although it was quicker to get a mirror of the repository
-in AWS CodeCommit and have CodePipeline build trigger from pushes to main, that
-approach had several drawbacks:
+in AWS CodeCommit and trigger a CodePipeline build from pushes to main, that
+approach had several costly drawbacks:
 
 - In order for a pipeline to build from that source it must clone the entire
   monorepo within CodePipeline.
-- The clone had to bee deep and fetch all git histories, which is an even larger
-  file, to allow RushJS to perform diffs to determine which projects changed.
-- That a step need to build all applicable projects and download the
-  dependencies.
+- RushJS diffs to determine which projects changed are based on git histories.
+  This meant the clone had to be a deep fetch (had to download all git
+  histories) to work, which is an even larger file.
+- A step that built all applicable projects and download the dependencies was
+  required.
 
 Instead BundleProject was favored. It enables for a single dedicated Github CI
 build stage to individually bundle, compress each project changed (along with
 workspace and non-workspace dependencies), and put the compress object in a S3
-bucket. A CodePipeline then is triggered on each object put to deploy the
+bucket. A CodePipeline is then triggered on each object put to deploy the
 project. This prevents the need for a CodePipeline to fetch and process large
 amounts of code and drastically speeds up CI/CD pipelines, allowing engineers to
 ship code faster.
