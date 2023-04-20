@@ -325,7 +325,7 @@ importers:
       '@types/jest': 28.1.8
       '@types/node': ^16.0.0
       '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-cdk: ~2.55.1
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
@@ -356,7 +356,7 @@ importers:
       '@nestjs/platform-express': 9.3.9_n4ruuahoetno5jsfmwl6mo7j6u
       '@nestjs/swagger': 6.1.4_uuh46betucnyp3ccp7y4flktrm
       '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-cdk: 2.55.1
       aws-cdk-lib: 2.47.0_constructs@10.1.303
       aws-lambda: 1.0.7
@@ -467,7 +467,7 @@ importers:
       '@types/lodash': ~4.14.191
       '@types/node': ^16.0.0
       '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
@@ -498,7 +498,7 @@ importers:
       '@nestjs/swagger': 6.1.4_uuh46betucnyp3ccp7y4flktrm
       '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
       '@types/lodash': 4.14.191
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
@@ -575,7 +575,7 @@ importers:
       '@types/jest': 28.1.8
       '@types/node': ^16.0.0
       '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
@@ -603,7 +603,7 @@ importers:
       '@nestjs/platform-express': 9.3.9_n4ruuahoetno5jsfmwl6mo7j6u
       '@nestjs/swagger': 6.1.4_uuh46betucnyp3ccp7y4flktrm
       '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
@@ -754,7 +754,7 @@ importers:
       '@types/node': ^16.0.0
       '@types/supertest': ~2.0.12
       '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
@@ -789,7 +789,7 @@ importers:
       '@nestjs/platform-express': 9.3.9_n4ruuahoetno5jsfmwl6mo7j6u
       '@nestjs/swagger': 6.1.4_uuh46betucnyp3ccp7y4flktrm
       '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
@@ -919,7 +919,7 @@ importers:
       '@types/node': ^16.0.0
       '@types/supertest': ~2.0.12
       '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
@@ -959,7 +959,7 @@ importers:
       '@nestjs/platform-express': 9.3.9_n4ruuahoetno5jsfmwl6mo7j6u
       '@nestjs/swagger': 6.1.4_uuh46betucnyp3ccp7y4flktrm
       '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
@@ -1066,7 +1066,7 @@ importers:
       '@types/node': ^16.0.0
       '@types/supertest': ~2.0.12
       '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
@@ -1102,7 +1102,7 @@ importers:
       '@nestjs/swagger': 6.1.4_uuh46betucnyp3ccp7y4flktrm
       '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
       '@nestjs/testing': 9.2.1_hrm7vyq2ue5n7ivxddmbbapisa
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       chrome-aws-lambda: 10.1.0_puppeteer-core@19.7.5
@@ -1164,7 +1164,7 @@ importers:
       '@types/node': ^16.0.0
       '@types/supertest': ~2.0.12
       '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
@@ -1198,7 +1198,7 @@ importers:
       '@nestjs/serve-static': 3.0.1_bgzusqmc3zwr55g3hjp3u3p4gm
       '@nestjs/swagger': 6.1.4_x2u4c4b35qoq7aj52tzlbmjvay
       '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
@@ -1257,7 +1257,7 @@ importers:
       '@types/node': ^16.0.0
       '@types/supertest': ~2.0.12
       '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
@@ -1289,7 +1289,7 @@ importers:
       '@nestjs/swagger': 6.1.4_uuh46betucnyp3ccp7y4flktrm
       '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
       '@nestjs/testing': 9.2.1_hrm7vyq2ue5n7ivxddmbbapisa
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
@@ -1346,7 +1346,7 @@ importers:
       '@types/node': ^16.0.0
       '@types/supertest': ~2.0.12
       '@types/uuid': ~8.3.4
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
       aws-serverless-express: ~3.4.0
@@ -1380,7 +1380,7 @@ importers:
       '@nestjs/serve-static': 3.0.1_bgzusqmc3zwr55g3hjp3u3p4gm
       '@nestjs/swagger': 6.1.4_x2u4c4b35qoq7aj52tzlbmjvay
       '@nestjs/terminus': 9.1.1_kryba46ilpkqlqqtsq5dpua5ri
-      '@vendia/serverless-express': 4.8.2
+      '@vendia/serverless-express': 4.10.1
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
@@ -12059,8 +12059,8 @@ packages:
       type-is: 1.6.18
     dev: false
 
-  /@vendia/serverless-express/4.8.2:
-    resolution: {integrity: sha512-biv23HiYXZFe7ULKFIkdYLWtc07yN/iGMq9fg00nfbVqWeJvtfEubUimnhPwoR7I+kAm9ZDhuOBjMFjKmLPQzA==}
+  /@vendia/serverless-express/4.10.1:
+    resolution: {integrity: sha512-8FM/GnQ8bbp1fynAWLGzNIy3Hyhoevixwh2Aj8qBPpw7rkbWZ1I7RC2XhZZaTZo/1JTDlff4cDDmkgY0CzUV7g==}
     engines: {node: '>=12'}
     dev: false
 
