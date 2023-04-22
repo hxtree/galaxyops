@@ -1,9 +1,9 @@
 <h1 align="center">Cats Cradle :yarn:</h1>
 
-This monorepo contains numerous microservices and the platform as a service
-(PaaS) and the infrastructure as code (IaC) to build, test, and deploy them.
-Although each package is maintained for **Cats Cradle**, a unreleased mobile
-role-playing game (RPG), many are individually published to
+This enterprise architected monorepo contains numerous microservices and the
+platform as a service (PaaS) and the infrastructure as code (IaC) to build,
+test, and deploy them. Although each package is maintained for **Cats Cradle**,
+a unreleased mobile role-playing game (RPG), many are individually published to
 [NPM](https://www.npmjs.com/search?q=%40cats-cradle) under a open-source
 software (OSS) license.
 
@@ -13,32 +13,16 @@ software (OSS) license.
 
 ## Getting Started
 
+Get started contributing in minutes, simply
+[fork repo](https://github.com/hxtree/cats-cradle/fork) click the below link for
+a turn-key codespace development environment, and submit changes back.
+
+Alternatively, build, test, and deploy apps locally using the
+[devcontainer](docs/devcontainer.md).
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
 
-Use the link above for a turn-key codespace development environment.
-Alternatively, locally build, test, and deploy apps using the devcontainer:
-
-1. Clone this repo using [Git](https://git-scm.com/downloads).
-
-   ```bash
-   git clone git@github.com:hxtree/cats-cradle
-   ```
-
-2. Install [Docker](https://docs.docker.com/get-docker/),
-   [VSCode](https://code.visualstudio.com/), and the
-   [Remote - Containers](https://code.visualstudio.com/docs/remote/containers-tutorial)
-   extension.
-
-3. Open repo Project Folder using VSCode and build and connect to remote
-   container.
-
----
-
-> **Note** Development of `@cats-cradle/base-game-engine` client which is built
-> using Unreal Engine 5. requires
-> [additional tools](clients/base-game-engine/README.md).
-
-### Lifecycle of a Pull Request (~5 mins)
+### Pull Request Lifecycle (~5 mins)
 
 1. Checkout a new branch from main using git.
 
@@ -63,8 +47,9 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
    git commit -m 'doc: fix spelling of computers'
    ```
 
-4. If applicable, document [semantic version](https://semver.org/) changes,
-   generate Changelogs, and commit changes.
+4. (Optional) If changing a library that is published to NPM, document
+   [semantic version](https://semver.org/) changes, generate Changelogs, and
+   commit changes.
 
    ```bash
    rush change
@@ -72,41 +57,15 @@ Alternatively, locally build, test, and deploy apps using the devcontainer:
    git commit -m 'chore: bump change log'
    ```
 
-5. Push code and open a PR. Celebrate contributing to @cats-cradle!
+5. Push code and open a PR. Celebrate contributing to @cats-cradle.
 
    ```bash
    git push
    ```
 
-## Initial AWS Deployment
-
-1. Setup [AWS Org Formation](/platform/aws-org-formation/README.md).
-
-2. Login via SSO standard account, bootstrap deployments, deploy platform, and
-   then deploy apps.
-
-   ```bash
-   rush sso
-   rush cdk:bootstrap
-   rush cdk:deploy --to tag:deploy-platform
-   rush cdk:deploy --to tag:deploy-app
-   ```
-
-3. Login via SSO to tools account and then deploy tools.
-
-   ```bash
-   rush sso -p tools
-   rush cdk:bootstrap
-   rush cdk:deploy --to tag:deploy-tools
-   ```
-
 ## Documentation
 
-- [Git Setup](docs/git-setup.md)
-- [Architecture Guidelines](docs/architecture-guidelines.md)
-- [Coding Standards](docs/CODING_STANDARDS.md)
-- [Code of Conduct](docs/CODE_OF_CONDUCT.md)
-- [Important Third Party Docs](docs/third-party-docs.md)
+See [Documentation](docs/index.md).
 
 > **Note** Use `rush help` for information on builtin commands.
 
@@ -118,9 +77,6 @@ Pull requests and bug reports are welcome on GitHub at
 <https://github.com/hxtree/cats-cradle>. This project is intended to be a safe,
 welcoming space for collaboration, and contributors are expected to adhere to
 the [code of conduct](docs/CODE_OF_CONDUCT.md).
-
-The quickest way to start contributing is to
-[fork repo](https://github.com/hxtree/cats-cradle/fork) and submit changes back.
 
 ### Our Contributors
 

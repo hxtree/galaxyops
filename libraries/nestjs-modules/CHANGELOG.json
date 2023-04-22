@@ -2,6 +2,18 @@
   "name": "@cats-cradle/nestjs-modules",
   "entries": [
     {
+      "version": "0.2.2",
+      "tag": "@cats-cradle/nestjs-modules_v0.2.2",
+      "date": "Sat, 22 Apr 2023 14:09:01 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Describe services in documentation"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.2.1",
       "tag": "@cats-cradle/nestjs-modules_v0.2.1",
       "date": "Thu, 13 Apr 2023 01:49:51 GMT",
