@@ -17,10 +17,10 @@ Get started contributing in minutes, simply
 [fork repo](https://github.com/hxtree/cats-cradle/fork) click the below link for
 a turn-key codespace development environment, and submit changes back.
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
+
 Alternatively, build, test, and deploy apps locally using the
 [devcontainer](docs/devcontainer.md).
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
 
 ### Pull Request Lifecycle (~5 mins)
 
