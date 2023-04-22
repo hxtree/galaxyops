@@ -184,7 +184,7 @@
       "packageName": "@cats-cradle/dialogue-service",
       "projectFolder": "services/dialogue-service",
       "reviewCategory": "apis",
-      "decoupledLocalDependencies": [],
+      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
       "tags": []
     },
     {
