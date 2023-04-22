@@ -1,4 +1,24 @@
+#actorId:MEEKU_ONI
 Father?
+#actorId:OUREN_ONI
+Boys. It took you long enough.
+#actorId:OUREN_ONI
+The Destroyer of Law, the Destroyer of Heart, and the Destroyer of Time we are together at last my sons.
+ Are we ready to lift the veil?
+-> lift_veil
 
-What took you so long.
+== lift_veil ==
+#actorId:MEEKU_ONI
++ [Yes] -> yes_lift_veil
++ [No, I need more time] -> need_more_time
+
+== need_more_time ==
+#actorId:OUREN_ONI
+Time... I smother it, I cannot give it.
+If the fur beasts' caul still hold you, then you speak to Janus.
+-> END
+
+== yes_lift_veil ==
+#actorId:OUREN_ONI
+Then let's break free of the this hold.
 -> END
