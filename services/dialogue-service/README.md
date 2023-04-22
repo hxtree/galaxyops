@@ -12,15 +12,15 @@ data.
 Dialogue files can be viewed and edited using
 [Inky Editor](https://github.com/inkle/inky).
 
-## Resource Structure
+## Resources Structure
 
 ```graphql
 ./public
   └─ en - # english language
     └─ acts
       └─ {act_name}
-        ├─ dialogues - # ink files
-        └─ audio - # audio
+        ├─ dialogues - # dialoguge (*.ink) files
+        └─ audio - # audio (*.mp3) files
 ```
 
 ## References
