@@ -1,14 +1,15 @@
 <h1 align="center">Cats Cradle :yarn:</h1>
 
-This monorepo contains numerous microservices with infrastructure as code (IaC),
-built on a platform as a service (PaaS). Although each package is maintained for
-**Cats Cradle**, a unreleased mobile role-playing game (RPG), many are
-individually released as open-source software (OSS) and available on NPM.
+This monorepo contains numerous microservices and the platform as a service
+(PaaS) and the infrastructure as code (IaC) to build, test, and deploy them.
+Although each package is maintained for **Cats Cradle**, a unreleased mobile
+role-playing game (RPG), many are individually published to
+[NPM](https://www.npmjs.com/search?q=%40cats-cradle) under a open-source
+software (OSS) license.
 
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Coverage)
-[![NPM Packages](https://img.shields.io/static/v1?label=Publishes&message=11%20Packages&color=000?style=flat&logo=npm)](https://www.npmjs.com/search?q=%40cats-cradle)
 
 ## Getting Started
 
