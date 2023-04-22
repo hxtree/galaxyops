@@ -891,6 +891,17 @@ importers:
       tslib: 2.5.0
       typescript: 5.0.2
 
+  ../../services/dialogue-service:
+    specifiers:
+      '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/eslint-config': 1.0.5
+      eslint: 8.38.0
+    dependencies:
+      '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
+    devDependencies:
+      '@cats-cradle/eslint-config': 1.0.5
+      eslint: 8.38.0
+
   ../../services/email-service:
     specifiers:
       '@aws-sdk/client-ses': ~3.279.0

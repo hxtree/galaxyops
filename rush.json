@@ -181,6 +181,13 @@
       "tags": []
     },
     {
+      "packageName": "@cats-cradle/dialogue-service",
+      "projectFolder": "services/dialogue-service",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "tags": []
+    },
+    {
       "packageName": "@cats-cradle/api-gateway",
       "projectFolder": "platform/api-gateway",
       "reviewCategory": "apis",
