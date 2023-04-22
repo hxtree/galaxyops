@@ -4,13 +4,15 @@ import {
   MongooseModule,
 } from '@cats-cradle/nestjs-modules';
 import { TemplateService } from './template.service';
-import { EmailMessageSchema } from '../../models/email-message/email-message.schema';
+import {
+  EmailMessageSchema,
+  EmailMessage,
+} from '../../models/email-message/email-message.schema';
 import { EmailMessageRepository } from './email-message.repository';
 import { EmailMessageController } from './email-message.controller';
 import { QueueService } from './queue.service';
 import { EngineService } from './engine.service';
 import { MailerService } from './mailer.service';
-import { EmailMessage } from '../../models/email-message/email-message.schema';
 
 @Module({
   controllers: [EmailMessageController],
