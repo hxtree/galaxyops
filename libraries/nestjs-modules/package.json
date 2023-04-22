@@ -6,6 +6,14 @@
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"
   },
+  "keywords": [
+    "nestjs",
+    "aws",
+    "s3",
+    "mongo",
+    "sns",
+    "sqs"
+  ],
   "bugs": {
     "url": "https://github.com/hxtree/cats-cradle/issues"
   },
