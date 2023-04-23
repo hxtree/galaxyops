@@ -4,14 +4,11 @@
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "bin": {
     "bundle-project": "bin/bundle-project"
   },
   "scripts": {
-    "bundle-project": "bin/bundle-project",
     "build": "tsc && tsc-alias",
     "build:all": "rush build -t .",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix",

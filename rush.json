@@ -208,7 +208,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
         "@cats-cradle/nestjs-modules",
-        "@cats-cradle/bundle-project"
+        "@cats-cradle/bundle-project",
+        "@cats-cradle/bundlers"
       ],
       "tags": ["deploy-app"]
     },
@@ -219,7 +220,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
         "@cats-cradle/nestjs-modules",
-        "@cats-cradle/bundle-project"
+        "@cats-cradle/bundle-project",
+        "@cats-cradle/bundlers"
       ],
       "tags": ["deploy-app"]
     },
@@ -229,7 +231,8 @@
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
-        "@cats-cradle/bundle-project"
+        "@cats-cradle/bundle-project",
+        "@cats-cradle/bundlers"
       ],
       "tags": ["deploy-app", "publish-npm"],
       "shouldPublish": true
@@ -241,7 +244,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
         "@cats-cradle/nestjs-modules",
-        "@cats-cradle/bundle-project"
+        "@cats-cradle/bundle-project",
+        "@cats-cradle/bundlers"
       ],
       "tags": ["deploy-app", "publish-npm"],
       "shouldPublish": true
@@ -253,7 +257,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
         "@cats-cradle/nestjs-modules",
-        "@cats-cradle/bundle-project"
+        "@cats-cradle/bundle-project",
+        "@cats-cradle/bundlers"
       ],
       "tags": ["deploy-app", "publish-npm"]
     }

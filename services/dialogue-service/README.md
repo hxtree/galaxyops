@@ -26,6 +26,7 @@ Dialogue files can be viewed and edited using
 ## References
 
 - [Audio Voiceover AI](https://replicastudios.com/)
+- [Real Time Voice Cloning](https://github.com/CorentinJ/Real-Time-Voice-Cloning)
 - [Directed graph](https://en.wikipedia.org/wiki/Directed_graph)
 - [Ink](https://www.inklestudios.com/ink/)
 - [Inkjs](https://github.com/y-lohse/inkjs)
