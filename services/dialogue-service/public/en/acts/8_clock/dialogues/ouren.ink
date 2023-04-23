@@ -20,5 +20,5 @@ If the fur beasts' caul still hold you, then you speak to Janus.
 
 == yes_lift_veil ==
 #actorId:OUREN_ONI
-Then let's break free of the this hold.
+Then let's join to break free of this hold.
 -> END

@@ -69,7 +69,7 @@
     "@types/supertest": "~2.0.12",
     "@cats-cradle/faker-factory": "workspace:*",
     "@fastify/static": "~6.9.0",
-    "@cats-cradle/bundlers": "workspace:*",
+    "@cats-cradle/bundlers": "0.0.2",
     "@cats-cradle/bundle-project": "1.0.6"
   }
 }
