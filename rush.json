@@ -35,7 +35,6 @@
     "category-ci-cd",
     "owner-game-design",
     "owner-ux",
-    "publish-npm",
     "deploy-tools",
     "deploy-platform",
     "deploy-app"
@@ -54,7 +53,7 @@
       "projectFolder": "platform/bundle-project",
       "reviewCategory": "rigs",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm"],
+      "tags": [],
       "shouldPublish": true
     },
     {
@@ -62,7 +61,7 @@
       "projectFolder": "platform/rigs/base-nodejs",
       "reviewCategory": "rigs",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm"],
+      "tags": [],
       "shouldPublish": true
     },
     {
@@ -77,7 +76,7 @@
       "projectFolder": "platform/rush-coverage",
       "reviewCategory": "category-ci-cd",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm"],
+      "tags": [],
       "shouldPublish": true
     },
     {
@@ -85,7 +84,8 @@
       "projectFolder": "platform/constructs",
       "reviewCategory": "category-platform",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": []
+      "tags": [],
+      "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/lambda-layers",
@@ -99,7 +99,7 @@
       "projectFolder": "platform/eslint-config",
       "reviewCategory": "category-platform",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm"],
+      "tags": [],
       "shouldPublish": true
     },
     {
@@ -107,7 +107,7 @@
       "projectFolder": "libraries/validation-schemas",
       "reviewCategory": "libraries",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm", "category-library"],
+      "tags": ["category-library"],
       "shouldPublish": true
     },
     {
@@ -122,7 +122,7 @@
       "projectFolder": "libraries/faker-factory",
       "reviewCategory": "libraries",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm", "category-library"],
+      "tags": ["category-library"],
       "shouldPublish": true
     },
     {
@@ -130,7 +130,7 @@
       "projectFolder": "libraries/promare-gradients",
       "reviewCategory": "libraries",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm", "category-library"],
+      "tags": ["category-library"],
       "shouldPublish": true
     },
     {
@@ -138,7 +138,7 @@
       "projectFolder": "libraries/nestjs-modules",
       "reviewCategory": "libraries",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm", "category-library"],
+      "tags": ["category-library"],
       "shouldPublish": true
     },
     {
@@ -146,7 +146,7 @@
       "projectFolder": "libraries/api-client-email-service",
       "reviewCategory": "api-client",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm", "category-library"],
+      "tags": ["category-library"],
       "shouldPublish": true
     },
     {
@@ -154,7 +154,7 @@
       "projectFolder": "libraries/api-client-luck-by-dice",
       "reviewCategory": "api-client",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm", "category-library"],
+      "tags": ["category-library"],
       "shouldPublish": true
     },
     {
@@ -162,7 +162,7 @@
       "projectFolder": "libraries/api-client-character-sheet",
       "reviewCategory": "api-client",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm", "category-library"],
+      "tags": ["category-library"],
       "shouldPublish": true
     },
     {
@@ -170,7 +170,7 @@
       "projectFolder": "services/design-system",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["publish-npm", "category-library", "owner-ux"],
+      "tags": ["category-library", "owner-ux"],
       "shouldPublish": true
     },
     {
@@ -235,7 +235,7 @@
         "@cats-cradle/bundle-project",
         "@cats-cradle/bundlers"
       ],
-      "tags": ["deploy-app", "publish-npm"],
+      "tags": ["deploy-app"],
       "shouldPublish": true
     },
     {
@@ -248,7 +248,7 @@
         "@cats-cradle/bundle-project",
         "@cats-cradle/bundlers"
       ],
-      "tags": ["deploy-app", "publish-npm"],
+      "tags": ["deploy-app"],
       "shouldPublish": true
     },
     {
@@ -261,7 +261,7 @@
         "@cats-cradle/bundle-project",
         "@cats-cradle/bundlers"
       ],
-      "tags": ["deploy-app", "publish-npm"]
+      "tags": ["deploy-app"]
     }
   ]
 }
