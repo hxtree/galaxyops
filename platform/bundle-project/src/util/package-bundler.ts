@@ -6,10 +6,12 @@ import { TargetPackage } from '../util/target-package.js';
 import { Workspace } from '../util/workspace.js';
 import { writeJsonFile } from '../util/json.js';
 import { Config } from '../types/cli.js';
+import { WorkspaceDecouple } from './workspace-decouple.js';
 
 export class PackageBundler {
   workspace: Workspace;
   targetPackage: TargetPackage;
+  workspaceDecouple: WorkspaceDecouple;
 
   config: Config;
 
@@ -17,6 +19,7 @@ export class PackageBundler {
     this.workspace = workspace;
     this.targetPackage = new TargetPackage(targetPackage, workspace);
     this.config = config;
+    this.workspaceDecouple = new WorkspaceDecouple();
   }
 
   createDistFolder() {
@@ -75,6 +78,24 @@ export class PackageBundler {
       dependency = this.replaceWorkspaceDependenciesVersions(dependency, '..');
 
       writeJsonFile(path.join(distPath, 'package.json'), dependency.manifest);
+    });
+  }
+
+  copyPackageFiles() {
+    let targetPackage = this.targetPackage.pkg;
+
+    const filesToCopy = fs.readdirSync(targetPackage.dir);
+
+    filesToCopy.forEach(file => {
+      if (file !== this.config.outDir) {
+        fse.copySync(
+          path.join(targetPackage.dir, file),
+          path.join(this.config.outDir, file),
+          {
+            filter: this.filterFiles,
+          },
+        );
+      }
     });
   }
 

@@ -4,9 +4,9 @@ import { findWorkspacePackagesNoCheck } from '@pnpm/find-workspace-packages';
 
 export class WorkspaceDecouple {
   async changeDependency(dependencies: any) {
-    const projects = await findWorkspacePackagesNoCheck(
-      path.join(__dirname, '..', '..', '..'),
-    );
+    const rootWorkspaceDirectory = path.join(__dirname, '..', '..', '..', '..');
+
+    const projects = await findWorkspacePackagesNoCheck(rootWorkspaceDirectory);
 
     if (typeof dependencies !== 'object' || dependencies === null) {
       return;
