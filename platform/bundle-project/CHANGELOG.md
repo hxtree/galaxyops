@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/bundle-project
 
-This log was last generated on Mon, 24 Apr 2023 02:39:45 GMT and should not be manually modified.
+This log was last generated on Mon, 24 Apr 2023 03:48:09 GMT and should not be manually modified.
+
+## 1.1.1
+Mon, 24 Apr 2023 03:48:09 GMT
+
+### Patches
+
+- fix pnpm workspace detection
 
 ## 1.1.0
 Mon, 24 Apr 2023 02:39:45 GMT
