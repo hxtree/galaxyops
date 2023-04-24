@@ -27,7 +27,8 @@
     "allowJs": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["../../node_modules/@types"]
+    "typeRoots": ["../../node_modules/@types"],
+    "types": ["node"]
   },
   "typedocOptions": {
     "entryPoints": ["src/main.handler.ts"],
