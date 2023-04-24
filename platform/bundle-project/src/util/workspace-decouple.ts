@@ -29,7 +29,9 @@ export class WorkspaceDecouple {
         !matchingWorkspaceProject ||
         !matchingWorkspaceProject.manifest.version
       ) {
-        throw new Error(`Fail to replace workspace with package ${pkgName}`);
+        throw new Error(
+          `Fail to replace workspace with package ${pkgName} make sure its published`,
+        );
       }
       dependencies[pkgName] = `${matchingWorkspaceProject.manifest.version}`;
     }
