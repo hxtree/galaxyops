@@ -132,14 +132,13 @@ export class DefaultPipelineStack extends cdk.Stack {
               'npm install --global aws-cdk@2.63.1',
               'npm install --global npm@9.2.0',
               'npm install --global typescript',
-              'npm install --global pnpm@7.26.3',
             ],
           },
           build: {
             commands: [
               // the code was automatically uncompressed
               'ls $CODEBUILD_SRC_DIR',
-              'npm install --package-lock-only',
+              'npm install',
               'npm run cdk:deploy',
             ],
           },

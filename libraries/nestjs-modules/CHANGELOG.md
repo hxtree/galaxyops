@@ -1,6 +1,11 @@
 # Change Log - @cats-cradle/nestjs-modules
 
-This log was last generated on Sat, 22 Apr 2023 14:09:01 GMT and should not be manually modified.
+This log was last generated on Mon, 24 Apr 2023 06:43:20 GMT and should not be manually modified.
+
+## 0.2.3
+Mon, 24 Apr 2023 06:43:20 GMT
+
+_Version update only_
 
 ## 0.2.2
 Sat, 22 Apr 2023 14:09:01 GMT
