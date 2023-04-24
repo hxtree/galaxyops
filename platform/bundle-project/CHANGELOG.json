@@ -2,6 +2,18 @@
   "name": "@cats-cradle/bundle-project",
   "entries": [
     {
+      "version": "1.1.0",
+      "tag": "@cats-cradle/bundle-project_v1.1.0",
+      "date": "Mon, 24 Apr 2023 02:39:45 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "decouple workspace dependencies"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.8",
       "tag": "@cats-cradle/bundle-project_v1.0.8",
       "date": "Thu, 20 Apr 2023 15:41:51 GMT",
