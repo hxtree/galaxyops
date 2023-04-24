@@ -1,6 +1,11 @@
 # Change Log - @cats-cradle/email-service
 
-This log was last generated on Thu, 13 Apr 2023 13:12:14 GMT and should not be manually modified.
+This log was last generated on Mon, 24 Apr 2023 06:43:20 GMT and should not be manually modified.
+
+## 0.0.7
+Mon, 24 Apr 2023 06:43:20 GMT
+
+_Version update only_
 
 ## 0.0.6
 Thu, 13 Apr 2023 13:12:14 GMT
