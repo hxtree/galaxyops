@@ -1,7 +1,7 @@
 # @cats-cradle/eslint-config
 
 EslintConfig contains common eslint packages and settings organized by profile
-to help remove complexity and simplify app development.
+to help simplify app development by isolating linting complexity.
 
 ## Getting Started
 
