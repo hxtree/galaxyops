@@ -5,7 +5,7 @@ import { findWorkspaceDir } from '@pnpm/find-workspace-dir';
 
 export class WorkspaceDecouple {
   async changeDependency(dependencies: any) {
-    const workspaceDir = await findWorkspaceDir(process.cwd());
+    const workspaceDir: string = (await findWorkspaceDir(process.cwd())) ?? '';
 
     const projects = await findWorkspacePackagesNoCheck(workspaceDir);
 
