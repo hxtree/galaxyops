@@ -48,7 +48,7 @@
     "uuid": "~9.0.0"
   },
   "devDependencies": {
-    "@cats-cradle/bundle-project": "1.0.6",
+    "@cats-cradle/bundle-project": "1.1.0",
     "@cats-cradle/eslint-config": "1.0.5",
     "@cats-cradle/faker-factory": "workspace:*",
     "@microsoft/tsdoc": "~0.13.2",
@@ -60,7 +60,7 @@
     "@types/supertest": "~2.0.12",
     "@types/uuid": "~8.3.4",
     "aws-cdk-lib": "2.47.0",
-    "constructs": "^10.1.303",
+    "constructs": "^10.2.5",
     "esbuild": "~0.17.5",
     "eslint": "8.38.0",
     "fs": "~0.0.1-security",

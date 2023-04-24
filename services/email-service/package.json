@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "aws-cdk-lib": "2.47.0",
-    "constructs": "^10.1.303",
+    "constructs": "^10.2.5",
     "@types/jest": "28.1.8",
     "@types/node": "^16.0.0",
     "@types/aws-lambda": "~8.10.114",
@@ -76,6 +76,6 @@
     "@cats-cradle/faker-factory": "workspace:*",
     "@types/html-to-text": "~9.0.0",
     "@types/lodash": "~4.14.191",
-    "@cats-cradle/bundle-project": "1.0.6"
+    "@cats-cradle/bundle-project": "1.1.0"
   }
 }
