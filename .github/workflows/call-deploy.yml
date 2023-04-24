@@ -1,4 +1,4 @@
-# prior to services being deployed to S3 dependecies are published to npm services to ensure dependencies are avaliable
+# prior to services being deployed to S3 dependencies are published to npm services to ensure dependencies are avaliable
 
 name: Deploy
 

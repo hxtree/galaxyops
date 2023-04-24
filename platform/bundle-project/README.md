@@ -7,8 +7,8 @@ versions, and compresses the project as a ZIP file.
 It was designed for a monorepo that uses PNPM to help create small fast
 deployable projects using AWS CDK in AWS CodePipelines.
 
-In order for this to work properly each `workspace` dependency must be
-published.
+In order for this to work properly each `workspace` dependency must be published
+prior to services that use it being deployed.
 
 ## Usage
 
