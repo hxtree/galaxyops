@@ -18,7 +18,7 @@
     "@rushstack/heft-node-rig": "^1.0.31",
     "@types/heft-jest": "1.0.2",
     "@types/node": "^16.0.0",
-    "typescript": "5.0.2"
+    "typescript": "5.0.4"
   },
   "dependencies": {
     "ts-jest": "29.1.0",
