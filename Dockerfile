@@ -38,7 +38,7 @@ RUN apt-get update \
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
     && npm install --global aws-cdk@2.63.1 \
     # install typescript globally (perhaps this should be moved for rush's package)
-    && npm install --global typescript \
+    && npm install --global typescript@5.0.4 \
     # install typescript globally (perhaps this could be moved to local)
     && npm install --global typedocs \
     # install AWS Organization Formation
