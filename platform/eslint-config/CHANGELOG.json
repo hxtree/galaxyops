@@ -2,6 +2,18 @@
   "name": "@cats-cradle/eslint-config",
   "entries": [
     {
+      "version": "1.0.6",
+      "tag": "@cats-cradle/eslint-config_v1.0.6",
+      "date": "Mon, 24 Apr 2023 04:46:40 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Upgrade typescript version"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.5",
       "tag": "@cats-cradle/eslint-config_v1.0.5",
       "date": "Thu, 13 Apr 2023 01:49:51 GMT",
