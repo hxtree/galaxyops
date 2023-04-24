@@ -60,7 +60,7 @@
     "@types/supertest": "~2.0.12",
     "@types/uuid": "~8.3.4",
     "aws-cdk-lib": "2.47.0",
-    "constructs": "^10.1.303",
+    "constructs": "^10.2.5",
     "esbuild": "~0.17.5",
     "eslint": "8.38.0",
     "fs": "~0.0.1-security",

@@ -333,7 +333,7 @@ importers:
       class-transformer: 0.5.1
       class-validator: 0.13.2
       construct: ~1.0.0
-      constructs: ^10.1.303
+      constructs: ^10.2.5
       esbuild: ~0.17.5
       eslint: 8.38.0
       express: 4.18.2
@@ -350,7 +350,7 @@ importers:
       typescript: 5.0.2
       uuid: ~9.0.0
     dependencies:
-      '@aws-cdk/core': 1.182.0_constructs@10.1.303
+      '@aws-cdk/core': 1.182.0_constructs@10.2.5
       '@nestjs/common': 9.4.0_allg6cauirbqzgqcmexy2wdnoq
       '@nestjs/core': 9.2.1_uzys3jzqjtvgdhficpwno2724a
       '@nestjs/platform-express': 9.3.9_y6p6j3rifj555tf7jyp42t652e
@@ -358,13 +358,13 @@ importers:
       '@nestjs/terminus': 9.1.1_v5tzlebxkeoeqjjzp7mgbru5yi
       '@vendia/serverless-express': 4.10.1
       aws-cdk: 2.55.1
-      aws-cdk-lib: 2.47.0_constructs@10.1.303
+      aws-cdk-lib: 2.47.0_constructs@10.2.5
       aws-lambda: 1.0.7
       aws-serverless-express: 3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
       construct: 1.0.0
-      constructs: 10.1.303
+      constructs: 10.2.5
       express: 4.18.2
       mongoose: 6.9.3
       node-cache: 5.1.2
@@ -476,7 +476,7 @@ importers:
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
-      constructs: ^10.1.303
+      constructs: ^10.2.5
       esbuild: ~0.17.5
       eslint: 8.38.0
       express: 4.18.2
@@ -520,8 +520,8 @@ importers:
       '@types/jest': 28.1.8
       '@types/node': 16.18.14
       '@types/uuid': 8.3.4
-      aws-cdk-lib: 2.47.0_constructs@10.1.303
-      constructs: 10.1.303
+      aws-cdk-lib: 2.47.0_constructs@10.2.5
+      constructs: 10.2.5
       esbuild: 0.17.11
       eslint: 8.38.0
       fs: 0.0.1-security
@@ -583,7 +583,7 @@ importers:
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
-      constructs: ^10.1.303
+      constructs: ^10.2.5
       esbuild: ~0.17.5
       eslint: 8.38.0
       express: 4.18.2
@@ -625,8 +625,8 @@ importers:
       '@types/jest': 28.1.8
       '@types/node': 16.18.14
       '@types/uuid': 8.3.4
-      aws-cdk-lib: 2.47.0_constructs@10.1.303
-      constructs: 10.1.303
+      aws-cdk-lib: 2.47.0_constructs@10.2.5
+      constructs: 10.2.5
       esbuild: 0.17.11
       eslint: 8.38.0
       fs: 0.0.1-security
@@ -649,7 +649,7 @@ importers:
       '@types/node': ^16.0.0
       aws-cdk-lib: 2.47.0
       aws-lambda: 1.0.7
-      constructs: ^10.1.303
+      constructs: ^10.2.5
       eslint: 8.38.0
       fs: ~0.0.1-security
       jest: 29.5.0
@@ -670,8 +670,8 @@ importers:
       '@types/jest': 28.1.8
       '@types/lodash': 4.14.191
       '@types/node': 16.18.14
-      aws-cdk-lib: 2.47.0_constructs@10.1.303
-      constructs: 10.1.303
+      aws-cdk-lib: 2.47.0_constructs@10.2.5
+      constructs: 10.2.5
       fs: 0.0.1-security
       jest: 29.5.0_clz7q7i76oq2x7yxwnubwg6ita
       lodash: 4.17.21
@@ -762,7 +762,7 @@ importers:
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
-      constructs: ^10.1.303
+      constructs: ^10.2.5
       esbuild: ~0.17.5
       eslint: 8.38.0
       express: 4.18.2
@@ -816,8 +816,8 @@ importers:
       '@types/node': 16.18.14
       '@types/supertest': 2.0.12
       '@types/uuid': 8.3.4
-      aws-cdk-lib: 2.47.0_constructs@10.1.303
-      constructs: 10.1.303
+      aws-cdk-lib: 2.47.0_constructs@10.2.5
+      constructs: 10.2.5
       esbuild: 0.17.11
       eslint: 8.38.0
       fs: 0.0.1-security
@@ -938,7 +938,7 @@ importers:
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
-      constructs: ^10.1.303
+      constructs: ^10.2.5
       esbuild: ~0.17.5
       eslint: 8.38.0
       express: 4.18.2
@@ -1001,8 +1001,8 @@ importers:
       '@types/node': 16.18.14
       '@types/supertest': 2.0.12
       '@types/uuid': 8.3.4
-      aws-cdk-lib: 2.47.0_constructs@10.1.303
-      constructs: 10.1.303
+      aws-cdk-lib: 2.47.0_constructs@10.2.5
+      constructs: 10.2.5
       esbuild: 0.17.11
       eslint: 8.38.0
       fs: 0.0.1-security
@@ -1086,7 +1086,7 @@ importers:
       chrome-aws-lambda: ^10.1.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
-      constructs: ^10.1.303
+      constructs: ^10.2.5
       esbuild: ~0.17.5
       eslint: 8.38.0
       express: 4.18.2
@@ -1140,8 +1140,8 @@ importers:
       '@types/node': 16.18.14
       '@types/supertest': 2.0.12
       '@types/uuid': 8.3.4
-      aws-cdk-lib: 2.47.0_constructs@10.1.303
-      constructs: 10.1.303
+      aws-cdk-lib: 2.47.0_constructs@10.2.5
+      constructs: 10.2.5
       esbuild: 0.17.11
       fs: 0.0.1-security
       jest: 29.5.0_clz7q7i76oq2x7yxwnubwg6ita
@@ -1183,7 +1183,7 @@ importers:
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
-      constructs: ^10.1.303
+      constructs: ^10.2.5
       esbuild: ~0.17.5
       eslint: 8.38.0
       express: 4.18.2
@@ -1236,8 +1236,8 @@ importers:
       '@types/node': 16.18.14
       '@types/supertest': 2.0.12
       '@types/uuid': 8.3.4
-      aws-cdk-lib: 2.47.0_constructs@10.1.303
-      constructs: 10.1.303
+      aws-cdk-lib: 2.47.0_constructs@10.2.5
+      constructs: 10.2.5
       esbuild: 0.17.11
       eslint: 8.38.0
       fs: 0.0.1-security
@@ -1251,7 +1251,7 @@ importers:
   ../../services/luck-by-dice:
     specifiers:
       '@cats-cradle/base-nodejs': workspace:*
-      '@cats-cradle/bundle-project': 1.0.6
+      '@cats-cradle/bundle-project': 1.1.0
       '@cats-cradle/bundlers': 0.0.2
       '@cats-cradle/constructs': workspace:*
       '@cats-cradle/eslint-config': 1.0.5
@@ -1276,7 +1276,7 @@ importers:
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
-      constructs: ^10.1.303
+      constructs: ^10.2.5
       esbuild: ~0.17.5
       eslint: 8.38.0
       express: 4.18.2
@@ -1314,7 +1314,7 @@ importers:
       rxjs: 7.5.6
       source-map-support: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project': 1.0.6
+      '@cats-cradle/bundle-project': 1.1.0
       '@cats-cradle/bundlers': 0.0.2_mu22ebovweyb5rt4nvwkr2saf4
       '@cats-cradle/eslint-config': 1.0.5
       '@types/aws-lambda': 8.10.114
@@ -1324,8 +1324,8 @@ importers:
       '@types/node': 16.18.14
       '@types/supertest': 2.0.12
       '@types/uuid': 8.3.4
-      aws-cdk-lib: 2.47.0_constructs@10.1.303
-      constructs: 10.1.303
+      aws-cdk-lib: 2.47.0_constructs@10.2.5
+      constructs: 10.2.5
       esbuild: 0.17.11
       fs: 0.0.1-security
       jest: 29.5.0_clz7q7i76oq2x7yxwnubwg6ita
@@ -1365,7 +1365,7 @@ importers:
       aws-serverless-express: ~3.4.0
       class-transformer: 0.5.1
       class-validator: 0.13.2
-      constructs: ^10.1.303
+      constructs: ^10.2.5
       esbuild: ~0.17.5
       eslint: 8.38.0
       express: 4.18.2
@@ -1416,8 +1416,8 @@ importers:
       '@types/node': 16.18.14
       '@types/supertest': 2.0.12
       '@types/uuid': 8.3.4
-      aws-cdk-lib: 2.47.0_constructs@10.1.303
-      constructs: 10.1.303
+      aws-cdk-lib: 2.47.0_constructs@10.2.5
+      constructs: 10.2.5
       esbuild: 0.17.11
       eslint: 8.38.0
       fs: 0.0.1-security
@@ -1505,7 +1505,7 @@ packages:
       - jsonschema
       - semver
 
-  /@aws-cdk/core/1.182.0_constructs@10.1.303:
+  /@aws-cdk/core/1.182.0_constructs@10.2.5:
     resolution: {integrity: sha512-tZh7Cn2d913A6I4V7f6MLCQEnVCIiNWlhvNJqLtHkuetN1d/a+riyqRIS68NvJVljENIjUVFOAY+ePpIKltqQg==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -1515,7 +1515,7 @@ packages:
       '@aws-cdk/cx-api': 1.182.0
       '@aws-cdk/region-info': 1.182.0
       '@balena/dockerignore': 1.0.2
-      constructs: 10.1.303
+      constructs: 10.2.5
       fs-extra: 9.1.0
       ignore: 5.2.4
       minimatch: 3.1.2
@@ -5186,6 +5186,21 @@ packages:
 
   /@cats-cradle/bundle-project/1.0.6:
     resolution: {integrity: sha512-k5bPRQw0q/i9+O1aQyfVqWrQgtfGA0A68Pa7TR8VGemZSWgXwHgufDkCt4yH27+6YwV5ebZzKwL3BkH0FCppAQ==}
+    hasBin: true
+    dependencies:
+      '@pnpm/find-workspace-packages': 4.0.43_@pnpm+logger@4.0.0
+      '@pnpm/logger': 4.0.0
+      archiver: 5.3.1
+      fs-extra: 10.1.0
+      yargs: 17.7.1
+    transitivePeerDependencies:
+      - '@yarnpkg/core'
+      - domexception
+      - supports-color
+    dev: true
+
+  /@cats-cradle/bundle-project/1.1.0:
+    resolution: {integrity: sha512-0bjLL9HJsd/v3nZZftX1b+H+mpyI+2zFy/Yi/l69etv7G2uVeazTqNJDnlOqu6LpaYgkf1H6RgcwtBwoTaurTQ==}
     hasBin: true
     dependencies:
       '@pnpm/find-workspace-packages': 4.0.43_@pnpm+logger@4.0.0
@@ -13053,7 +13068,7 @@ packages:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
 
-  /aws-cdk-lib/2.47.0_constructs@10.1.303:
+  /aws-cdk-lib/2.47.0_constructs@10.2.5:
     resolution: {integrity: sha512-XnxA7FMhJljsj6OtMMDbUi5lPPYcrehAxqpui5b2Nv2cBWhiG7Wb5baOuQy7niyPhZEX03A4k0vYFas/nnB91g==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -13061,7 +13076,7 @@ packages:
     dependencies:
       '@balena/dockerignore': 1.0.2
       case: 1.6.3
-      constructs: 10.1.303
+      constructs: 10.2.5
       fs-extra: 9.1.0
       ignore: 5.2.4
       jsonschema: 1.4.1
@@ -14843,8 +14858,8 @@ packages:
     resolution: {integrity: sha512-AGU/GtcAyDLIToOmzth6/dfynQq7EJuhY4t3nK6Z8aYU+k3/SHOouD1S40q2rALxZN8glMN07jdFsMdVUpomjQ==}
     dev: false
 
-  /constructs/10.1.303:
-    resolution: {integrity: sha512-GPc3xTdItNVx4WGWSdTqh6Jz6IwBKts2hrJb9flqEjEYq/vRPFQFvvVlEjQmwQBzAhMvNLxwkhvQ/Tc6JysV9Q==}
+  /constructs/10.2.5:
+    resolution: {integrity: sha512-LyCWeQwD+kHu2gpoGzpnajdaUrtT5VaoQwxz0nzQb/38CF46X4CUlMYgPIqG3dt3yqMa9/xRU4M6br+7wVabHw==}
     engines: {node: '>= 14.17.0'}
 
   /content-disposition/0.5.4:
