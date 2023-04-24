@@ -50,7 +50,7 @@ export const main = async () => {
   console.log(`create ${config.outDir}`);
   packageBundler.createDistFolder();
 
-  console.log(`copying files...`);
+  console.log('copying files...');
   packageBundler.copyPackageFiles();
 
   const sourcePackageJsonFilepath = `${targetPackage.dir}/package.json`;
