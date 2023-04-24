@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/bundle-project",
+      "comment": "fix pnpm workspace detection",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/bundle-project"
+}
