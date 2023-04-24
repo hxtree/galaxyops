@@ -230,6 +230,7 @@
       "projectFolder": "services/luck-by-dice",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
+        "@cats-cradle/validation-schemas",
         "@cats-cradle/eslint-config",
         "@cats-cradle/bundle-project",
         "@cats-cradle/bundlers"

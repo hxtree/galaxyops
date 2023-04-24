@@ -6,6 +6,7 @@ import { Workspace } from './util/workspace.js';
 import { PackageBundler } from './util/package-bundler.js';
 import { Config } from './types/cli.js';
 import { archive } from './util/archive';
+import { WorkspaceDecouple } from './util/workspace-decouple.js';
 
 export const main = async () => {
   console.log('start bundle project...');
@@ -46,9 +47,22 @@ export const main = async () => {
 
   const packageBundler = new PackageBundler(workspace, targetPackage, config);
 
+  console.log(`create ${config.outDir}`);
   packageBundler.createDistFolder();
-  packageBundler.copyTargetPackageFiles();
-  packageBundler.copyTargetPackageWorkspaceDependencies();
+
+  console.log(`copying files...`);
+  packageBundler.copyPackageFiles();
+
+  const sourcePackageJsonFilepath = `${targetPackage.dir}/package.json`;
+  const destinationPackageJsonFilepath = `${config.outDir}/package.json`;
+  console.log(
+    `workspace decouple ${sourcePackageJsonFilepath} to ${destinationPackageJsonFilepath}`,
+  );
+  const workspaceDecouple = new WorkspaceDecouple();
+  await workspaceDecouple.convertFilename(
+    sourcePackageJsonFilepath,
+    destinationPackageJsonFilepath,
+  );
 
   console.log(`archive ${config.outDir} to ${config.outDir}.zip`);
 
