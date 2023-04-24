@@ -50,7 +50,7 @@
     "@nestjs/axios": "~2.0.0"
   },
   "devDependencies": {
-    "@cats-cradle/eslint-config": "1.0.5",
+    "@cats-cradle/eslint-config": "1.0.6",
     "aws-cdk-lib": "2.47.0",
     "constructs": "^10.2.5",
     "@types/jest": "28.1.8",

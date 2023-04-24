@@ -11,6 +11,6 @@
   },
   "devDependencies": {
     "eslint": "8.38.0",
-    "@cats-cradle/eslint-config": "1.0.5"
+    "@cats-cradle/eslint-config": "1.0.6"
   }
 }
