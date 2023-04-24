@@ -167,6 +167,10 @@
       "allowedCategories": [ "apis", "libraries" ]
     },
     {
+      "name": "@pnpm/find-workspace-dir",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
       "name": "@pnpm/find-workspace-packages",
       "allowedCategories": [ "rigs" ]
     },

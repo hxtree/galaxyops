@@ -24,7 +24,8 @@
     "@pnpm/logger": "^4.0.0",
     "fs-extra": "^10.1.0",
     "yargs": "^17.5.1",
-    "archiver": "~5.3.1"
+    "archiver": "~5.3.1",
+    "@pnpm/find-workspace-dir": "~6.0.0"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.5",

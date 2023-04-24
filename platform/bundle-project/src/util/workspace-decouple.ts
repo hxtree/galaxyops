@@ -1,12 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import { findWorkspacePackagesNoCheck } from '@pnpm/find-workspace-packages';
+import { findWorkspaceDir } from '@pnpm/find-workspace-dir';
 
 export class WorkspaceDecouple {
   async changeDependency(dependencies: any) {
-    const rootWorkspaceDirectory = path.join(__dirname, '..', '..', '..', '..');
+    const workspaceDir = await findWorkspaceDir(process.cwd());
 
-    const projects = await findWorkspacePackagesNoCheck(rootWorkspaceDirectory);
+    const projects = await findWorkspacePackagesNoCheck(workspaceDir);
 
     if (typeof dependencies !== 'object' || dependencies === null) {
       return;
