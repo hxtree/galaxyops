@@ -10,7 +10,6 @@ export type GaugeProps = {
 
 export const Gauge = (props: GaugeProps) => {
   const stroke = props.stroke ?? 7;
-  const strokeColor = 'blue';
   const isRight = true;
   const isLeft = false; //true;
 
