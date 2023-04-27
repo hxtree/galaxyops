@@ -6,6 +6,14 @@ import * as ssm from 'aws-cdk-lib/aws-ssm';
 import { Bucket, BucketEncryption } from 'aws-cdk-lib/aws-s3';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
+import { awsAccounts } from '@cats-cradle/constructs';
+
+import {
+  CodePipeline,
+  CodePipelineSource,
+  ManualApprovalStep,
+  ShellStep,
+} from 'aws-cdk-lib/pipelines';
 
 export class DefaultPipelineStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -92,12 +100,34 @@ export class DefaultPipelineStack extends cdk.Stack {
     const pipelineRole = new iam.Role(this, 'MyPipelineRole', {
       assumedBy: new iam.ServicePrincipal('codepipeline.amazonaws.com'),
     });
+    const pipelineServiceRolePolicy = new iam.PolicyStatement({
+      actions: ['sts:AssumeRole'],
+      resources: ['*'],
+      conditions: {
+        StringEquals: {
+          'iam:ResourceTag/aws-cdk:bootstrap-role': 'lookup',
+        },
+      },
+    });
+    pipelineRole.addToPolicy(pipelineServiceRolePolicy);
 
     // attach the necessary policies to the pipeline role
     pipelineRole.addToPolicy(
       new iam.PolicyStatement({
-        actions: ['s3:Get*', 's3:List*', 's3:PutObject'],
-        resources: [deployBucket.bucketArn, `${deployBucket.bucketArn}/*`],
+        actions: [
+          'sts:AssumeRole',
+          's3:Get*',
+          's3:List*',
+          's3:PutObject',
+          'cloudformation:*',
+          'iam:PassRole',
+        ],
+        resources: [
+          deployBucket.bucketArn,
+          `${deployBucket.bucketArn}/*`,
+          `arn:aws:cloudformation:${awsAccounts.tools.region}:${awsAccounts.tools.accountId}:stack/*`,
+          `arn:aws:iam::760440398296:role/cdk-hnb659fds-deploy-role-760440398296-us-east-2`,
+        ],
       }),
     );
 
@@ -114,7 +144,6 @@ export class DefaultPipelineStack extends cdk.Stack {
       actions: [sourceAction],
     });
 
-    // TOOD this is deploy; not build
     // add a build stage to the pipeline
     const buildOutput = new codepipeline.Artifact();
     const buildProject = new codebuild.Project(this, 'MyProject', {
@@ -135,13 +164,18 @@ export class DefaultPipelineStack extends cdk.Stack {
             ],
           },
           build: {
+            // the code was automatically uncompressed
             commands: [
-              // the code was automatically uncompressed
               'ls $CODEBUILD_SRC_DIR',
               'npm install',
-              'npm run cdk:deploy',
+              // `npm cdk:bootstrap aws://${awsAccounts.dev.accountId}/${awsAccounts.dev.region}`,
+              'npm run cdk:deploy --require-approval=never',
             ],
           },
+        },
+        environmentVariables: {
+          account: awsAccounts.dev.accountId,
+          region: awsAccounts.dev.region,
         },
         artifacts: {
           files: [
@@ -163,6 +197,7 @@ export class DefaultPipelineStack extends cdk.Stack {
         resources: [buildProject.projectArn],
       }),
     );
+
     pipeline.addStage({
       stageName: 'Build',
       actions: [buildAction],

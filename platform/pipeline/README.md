@@ -22,10 +22,17 @@ Default policy `AdministratorAccess`
 
 Pipelines should accept a stage param as to build feature branches.
 
+Prior to being able to deploy to an account te account being deployed into must
+be
+[bootstrapped](https://docs.aws.amazon.com/cdk/api/v1/docs/pipelines-readme.html#cdk-environment-bootstrapping)
+to allow the tools to deploy to it.
+
 ```bash
-cdk bootstrap aws://298217020330/us-east-2 --profile tools \
-    --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess \
-    --trust 760440398296
+CDK_NEW_BOOTSTRAP=1 cdk bootstrap
+   --profile tools \
+   --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess \
+   --trust 760440398296
+   aws://298217020330/us-east-2 \
 ```
 
 ## Documentation
