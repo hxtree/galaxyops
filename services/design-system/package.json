@@ -19,7 +19,6 @@
     "watch": "tsc -w",
     "lint": "",
     "lint:ci": "",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "storybook dev -p 6006",
