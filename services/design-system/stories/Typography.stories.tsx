@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import { Typography } from '../src/Typography';
 
 export default {

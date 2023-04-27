@@ -31,6 +31,18 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@babel/preset-env",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@babel/preset-react",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@babel/preset-typescript",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@cats-cradle/base-nodejs",
       "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
@@ -227,11 +239,23 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@storybook/addon-mdx-gfm",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/addons",
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@storybook/cli",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/react",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/react-webpack5",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -525,6 +549,10 @@
     {
       "name": "source-map-support",
       "allowedCategories": [ "apis", "category-platform", "platform" ]
+    },
+    {
+      "name": "storybook",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "styled-components",
