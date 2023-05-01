@@ -1,12 +1,12 @@
 <h1 align="center">Cats Cradle :yarn:</h1>
 
-Get ready to embark on a thrilling adventure with **Cats Cradle** - the upcoming
-co-op mobile RPG that will transport you to a mesmerizing world filled with
-meaning and wonder! Join us on this exciting journey as we continue to develop
-and bring this game to life.
+Get ready to embark on an adventure with **Cats Cradle** - the upcoming co-op
+mobile RPG that will transport you to a nostalgic world filled with wonder! Join
+us on this exciting journey as we continue to develop and bring this game to
+life.
 
 This repo houses the newest game code, utilizing an enterprise architecture
-monorepo. It includes multiple microservices built on top of a PaaS and IaC for
+monorepo. It includes numerous microservices built on a PaaS with IaC for
 streamlined development, testing, and deployment.
 
 Although each package is maintained for the game, many are individually
@@ -19,9 +19,8 @@ under open-source software (OSS) license.
 
 ## Getting Started
 
-Get started contributing in minutes, simply
-[fork repo](https://github.com/hxtree/cats-cradle/fork) click the below link for
-a turn-key codespace development environment, and submit changes back.
+Simply [fork the repo](https://github.com/hxtree/cats-cradle/fork) open in
+Github Codespaces for a turn-key development environment.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
 
