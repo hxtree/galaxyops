@@ -1,11 +1,17 @@
 <h1 align="center">Cats Cradle :yarn:</h1>
 
-This enterprise architected monorepo contains numerous microservices and the
-platform as a service (PaaS) and the infrastructure as code (IaC) to build,
-test, and deploy them. Although each package is maintained for **Cats Cradle**,
-a unreleased mobile role-playing game (RPG), many are individually published to
-[NPM](https://www.npmjs.com/search?q=%40cats-cradle) under a open-source
-software (OSS) license.
+Get ready to embark on a thrilling adventure with **Cats Cradle** - the upcoming
+co-op mobile RPG that will transport you to a mesmerizing world filled with
+meaning and wonder! Join us on this exciting journey as we continue to develop
+and bring this game to life.
+
+This repo houses the newest game code, utilizing an enterprise architecture
+monorepo. It includes multiple microservices built on top of a PaaS and IaC for
+streamlined development, testing, and deployment.
+
+Although each package is maintained for the game, many are individually
+published to [NPM](https://www.npmjs.com/search?q=%40cats-cradle) and available
+under open-source software (OSS) license.
 
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
@@ -72,6 +78,9 @@ See [Documentation](docs/index.md).
 ## Contributing
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
+Join us in building the future of gaming! Contribute to this repo and help shape
+the next generation of immersive entertainment.
 
 Pull requests and bug reports are welcome on GitHub at
 <https://github.com/hxtree/cats-cradle>. This project is intended to be a safe,
