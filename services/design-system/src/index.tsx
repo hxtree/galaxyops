@@ -11,3 +11,4 @@ export * from './TextField';
 export * from './FileUpload';
 export * from './Typography';
 export * from './Gauge';
+export * from './Meter';
