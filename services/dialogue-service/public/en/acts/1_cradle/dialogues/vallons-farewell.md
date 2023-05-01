@@ -1,10 +1,10 @@
-(Seven Years Later) (the scene opens to the same farm. Nothing visual has
-changed, until the scene pans once more. Vallon and Meeku are seen in the same
-pasture as before, but they are both older now. The two are dueling once more,
-however their skills have improved noticeably. They duel at a much quicker pace
-and much more aggressively. They seem to be evenly matched until Vallon leaps
-over Meeku. He trips him from behind, grabs one of his legs,and then throws him.
-Meeku lands several feet away, stands up and brushes himself off.)
+(the scene opens to the same farm. Nothing visual has changed, until the scene
+pans once more. Vallon and Meeku are seen in the same pasture as before, but
+they are both older now. The two are dueling once more, however their skills
+have improved noticeably. They duel at a much quicker pace and much more
+aggressively. They seem to be evenly matched until Vallon leaps over Meeku. He
+trips him from behind, grabs one of his legs,and then throws him. Meeku lands
+several feet away, stands up and brushes himself off.)
 
 Meeku: I thought we said no tripping!
 
