@@ -12,13 +12,13 @@
    the group, manages to keep the beast at bay. Meeku wakes up from his sickbed
    and joins the fight, ultimately defeating the worm with Gunter's help.
    Impressed by Meeku's bravery, Gunter asks for his name, but Meeku can't
-   recall it, so Gunter dubs him "Kid" from then on.
-3. Meeku decides to join the soldiers in their barracks with tall wooden walls,
-   not knowing much about his past. He forms a strong bond with Gunter, who
-   becomes a father figure to him. As Meeku recovers his memory, he becomes
-   quiet and focused, eventually becoming Gunter's right-hand man. He remembers
-   his quest to find his brother and makes plans on doing so after his service
-   as a soldier comes to an end.
+   recall it, so Gunter dubs him "Kid" from then on. The party head back to
+   their barrack with tall wooden walls.
+3. Meeku not knowing much about his past decides to enlist in Soldiers. He forms
+   a strong bond with Gunter, who becomes a father figure to him. As Meeku
+   recovers his memory, he becomes quiet and focused, eventually becoming
+   Gunter's right-hand man. He remembers his quest to find his brother and makes
+   plans on doing so after his service as a soldier comes to an end.
 4. Meeku's service is almost over, but he's sent on a mission with two fellow
    soldiers, including Malace Tsia, a dark and emotionless character. The battle
    lasts for hours, and only Gunter, Meeku, and Malace Tsia remain at the end.
