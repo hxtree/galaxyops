@@ -23,6 +23,11 @@ Dialogue files can be viewed and edited using
         └─ audio - # audio (*.mp3) files
 ```
 
+## Credits
+
+- Opening screenplay by Ethan Goodwin.
+- Train screenplay by Kion.
+
 ## References
 
 - [Audio Voiceover AI](https://replicastudios.com/)
