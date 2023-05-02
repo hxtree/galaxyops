@@ -18,7 +18,6 @@
     "typescript": "5.0.4",
     "web-vitals": "^2.1.4",
     "@cats-cradle/design-system": "workspace:*",
-    "@cats-cradle/luck-by-dice": "workspace:*",
     "styled-components": "~5.3.10",
     "@types/styled-components": "~5.1.26"
   },

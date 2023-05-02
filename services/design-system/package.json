@@ -53,7 +53,7 @@
     "ts-jest": "29.1.0"
   },
   "devDependencies": {
-    "@storybook/cli": "~7.0.7",
+    "@storybook/cli": "^7.0.7",
     "@storybook/addon-a11y": "^7.0.6",
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
@@ -75,7 +75,6 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "size-limit": "^8.2.4",
-    "storybook": "future",
     "tsdx": "^0.14.1",
     "tslib": "^2.5.0",
     "typescript": "5.0.4"
