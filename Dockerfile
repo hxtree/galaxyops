@@ -30,10 +30,10 @@ RUN apt-get update \
     # install latest npm
     && npm install --global npm@9.2.0 \
     # https://pnpm.io/installation version 8 doesn't work currently with rush
-    && npm install --global pnpm@7.9.5 \
+    && npm install --global pnpm@7.32.2 \
     # install Microsoft Rush globally
     # https://rushjs.io/
-    && npm install --global @microsoft/rush@5.93.1 \
+    && npm install --global @microsoft/rush@5.97.1 \
     # install AWS CDK globally
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
     && npm install --global aws-cdk@2.63.1 \

@@ -73,6 +73,8 @@ export namespace Affiliation {
     aliases: ['Eight Shames', 'Sinners'],
     description: 'Eight powerful beings',
     lore: [
+      'The demons and more powerful thoughts can change the very fabric of reality in ones mind. The sins can actually change the environment. For example they can pull down a wall that changes where they are.',
+      'Each one of the devils has at least two forms; first you must fight the human after defeating the human you fight the devil inside that devours the human.',
       'They were born to destroy the world. ',
       'One member who harm the motherland.', // - Wisp
       'One member betray the people. ', // Diag
