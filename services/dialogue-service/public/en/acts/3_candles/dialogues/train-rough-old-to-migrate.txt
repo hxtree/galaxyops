@@ -1,47 +1,17 @@
-/*
-Train rattled along quickly, Meeku sat by the window watching as the scenery flicked pass like a slideshow.
-*/
-
-So Meeku, I take it you have a plan about how to get at the military records? # actorId: MALACE_TSIA
-Cause the last time I tried knocking and asking it didn’t go down to well.
 
 /*
-Malace lay across the sofa in their compartment with his hands behind his head.
-Meeku lowered his head, he hadn’t thought about it he had been so wrapped up in finding his brother that he didn’t even consider what to do,
-*/
-
-I have a plan but I not sure if it will work, when we get there I’ll know. #actorId: MEEKU_ONI
-
-/*
-Meeku continued to look out of the window. Malace laughed loudly, the kind of laugh you get after you tell a joke,
-*/
-
-Liar # actorId: MALACE_TSIA
-
-/*
-Malace responded after he had finished.
-Meeku turned to face him, his head hung low and the expression he supported suggested he was sad.
-Malace sat up,
-*/
-
-Hey I didn’t mean to make fun # actorId: MALACE_TSIA
-
-/*
-Meeku looked up a faint smile appeared on his face,
-*/
-
-It’s not that, I just thinking about my brother # actorId: MEEKU_ONI Meeku told him. Malace suddenly found himself becoming interested, also fighting the overwhelming urge to be extremely sarcastic.
->> “You never said much about your brother, I take it you guys were close.” Even more jokes came into his head, but he knew this was too much of a serious conversation. Meeku glanced back at the window, he didn’t feel like discussing his brother. Malace stood up and walked over to the door,
->> “I’m going to take a look around and grabbed some food, be back in a bit,” Malace told Meeku and left. (A chance for the player to explore the train for items, weapons etc) Malace looked left and right down the corridor before deciding to go left. The train was a nice one he was surprised they managed to catch a ride on it, his shoes sank into the luscious red carpet as he continued down the corridor,
-> “When did they say…?” Malace heard some voices from another compartment he decided a little eves dropping would do any harm. He moved closer to the door and pressed his ear up against it.
->> “Shouldn’t be long,” a voice replied, it was a deep voice and wasn’t the posh kind of voice you would expect on a train like this, however him and Meeku managed to get on the train so he let it slide.
-> “Well I wish they would hurry,” a different voice replied, this voice was different from the other it was more defined better pronounced. The train hit a tunnel and everything went dark, someone said something that Malace didn’t catch. Suddenly Malace felt himself fall forward into someone knocking them to the ground. The train left the tunnel and Malace looked around, they had opened the door.
->> “Hello I’m an employee on the train I came by to make sure you were enjoying your trip and whether there was anything I do for you?” Malace informed them, he had never had to think so quickly in his life. The two men looked at him, one was dressed like a bandit while the other was wearing a suit.
-> “If you’re an employee why aren’t you wearing your uniform?” the one in the suit asked. Malace thought for a second, the guy had sussed him, Malace stood up,
->> “Well you see I…err…needed to have it washed and when I got it back it had shrunk so I need to get a new one,” Malace answered, he felt something hit him hard round the back of the head before falling un-conscious. Meeku looked around, Malace had been gone for ages, he decided to go look for him (Player wanders round the train as Meeku). He looked left and right before deciding to go right.
-> “Excuse me have you seen a guy with black hair wearing all black anywhere?” Meeku asked one of the train employees. She shook her head,
->> “No sorry,” she replied. Meeku sighed and carried on. Meeku asked a few more people before not getting anywhere no one had seen him, where the hell was he.
-> “Maybe he already went back to our compartment…” Meeku said to himself quietly. Meeku opened the compartment door expecting to see Malace, he wasn’t there. Meeku sat down and waited. After awhile he glanced out of the window again, a horse was running along side the train, it was saddled up but had no rider. Meeku stood up and watched as the horse slowly went out of view. Thumping sounded a long the roof, it was the sound of footsteps. Meeku heard a scream, he spun around to face the compartment door. SMASH the window behind him shattered spraying glass everywhere, the sound from outside destroyed quiet of the inside, a bandit swung in on a rope and kicked Meeku in the back. Meeku hit the compartment door, the bandit pulled out a knife and advanced on Meeku. Meeku span around un-sheathing his sword and sliced the bandit in half covering the nicely painted room in red. (Party Meeku player controlled) The compartment door slid open and Meeku’s head appeared he looked to the left, a group of bandits. Meeku walked out and ran right. Were the hell was Malace, why is it he disappears when he could be helpful. Someone was coming (A choice option hide or fight get different things depending on choice exp fight hide find an item), Meeku glanced around for somewhere to hide. The guy walked past, Meeku dropped down from the ceiling walked up and slit the bandit’s throat. Meeku walked back down the corridor the group of bandits had gone, one appeared at the end of the corridor, Meeku shot into the compartment on his left and waited. The bandit walked past, Meeku sighed, when he heard a noise coming from the cupboard, he walked over and opened it. Malace was inside tied up and gagged. Meeku removed the gag,
+Meeku opened the compartment door expecting to see Malace
+he wasn’t there.
+Meeku sat down and waited.
+After awhile he glanced out of the window again,
+a horse was running along side the train,
+it was saddled up but had no rider.
+Meeku stood up and watched as the horse slowly went out of view.
+Thumping sounded a long the roof,
+it was the sound of footsteps.
+Meeku heard a scream, he spun around to face the compartment door.
+SMASH the window behind him shattered spraying glass everywhere, the sound from outside destroyed quiet of the inside,
+ a bandit swung in on a rope and kicked Meeku in the back. Meeku hit the compartment door, the bandit pulled out a knife and advanced on Meeku. Meeku span around un-sheathing his sword and sliced the bandit in half covering the nicely painted room in red. (Party Meeku player controlled) The compartment door slid open and Meeku’s head appeared he looked to the left, a group of bandits. Meeku walked out and ran right. Were the hell was Malace, why is it he disappears when he could be helpful. Someone was coming (A choice option hide or fight get different things depending on choice exp fight hide find an item), Meeku glanced around for somewhere to hide. The guy walked past, Meeku dropped down from the ceiling walked up and slit the bandit’s throat. Meeku walked back down the corridor the group of bandits had gone, one appeared at the end of the corridor, Meeku shot into the compartment on his left and waited. The bandit walked past, Meeku sighed, when he heard a noise coming from the cupboard, he walked over and opened it. Malace was inside tied up and gagged. Meeku removed the gag,
 >> “Where the hell have you been!” Malace exclaimed loudly,
 > “Quiet they’ll hear you and what do you mean where have I been, where hell have you been?” Meeku replied, Malace glanced around before answering sarcastically,
 >> “Well I’ve been exploring this cupboard, where the hell do you think I’ve been, outside for a breath of fresh air?” Meeku sighed and replaced the gag, Malace started struggling annoyed, Meeku laughed quietly and removed the gag,
@@ -120,3 +90,4 @@ The remaining guards take care of the bandit leader.
 Meeku and Malace finally get back to the train with the fuel and hand it over.
 > “Here you are, so can we get moving now?” Malace asked. Meeku sat down. A group of train workers took the fuel to refill the train.
 >> “Thank you so much. I would like to reward you when we get to our destination. Until then you must be tired, you can rest.” (Player can now talk to people for abit or go straight to sleep. People talk about how grantful they are that the party was on the train. When player goes to sleep they wake up at their destination.)
+*/

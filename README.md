@@ -1,3 +1,5 @@
+![](docs/assets/images/malace-tsia.jpg)
+
 <h1 align="center">Cats Cradle :yarn:</h1>
 
 Get ready to embark on an adventure with **Cats Cradle** - the upcoming co-op

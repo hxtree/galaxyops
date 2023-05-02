@@ -6,7 +6,12 @@
  * Status Effects are visible to the player
  */
 export enum StatusEffect {
-  // afflictions
+  /**
+   * afflictions
+   * there are multiple ways in which an affliction can occur.
+   * for example a character could be exiled by being picked up by a dragon
+   * or transported into a void space. a character could be immobilized from being frozen
+   */
   LIFELESS = 'Lifeless', // Afflicted when Life is less than 0
   KNOCKED_OUT = 'Knocked Out', // is unable to move. Set when Stamina is less than 0.
   CONFUSED = 'Confused',
