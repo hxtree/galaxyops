@@ -13,8 +13,7 @@
    broken heart and passes away during winter.
 3. Despite his grief and loneliness, Meeku stays true to his promise and
    continues to farm the land and train by himself. Four and a half years later,
-   he returns from his training in the forest only to find his home in flames
-   and his brother missing.
+   he returns from his training in the forest only to find his home in flames.
 4. Meeku confronts a group of soldiers who surrounded him, demanding to know his
    brother's whereabouts. They engage in a battle, and Meeku emerges victorious.
    But in the fight, he encounters a mysterious beast that he had only heard
