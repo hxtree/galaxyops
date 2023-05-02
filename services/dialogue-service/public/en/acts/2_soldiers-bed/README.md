@@ -32,7 +32,7 @@
    death bed, Gunter reveals to Meeku that he was just following orders and
    cries, admitting that all he knows as a soldier is how to follow orders. This
    is the first time Meeku has seen Gunter cry. Meeku helps Malace Tsia and they
-   continue on their journey to find his brother.
+   set out on their journey to find his brother.
 
 ## Notes
 
