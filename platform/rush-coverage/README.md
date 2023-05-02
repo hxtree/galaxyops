@@ -21,6 +21,9 @@ into a single report:
 npx @cats-cradle/rush-coverage@1.1.4
 ```
 
+> **Note** Make sure the version of @microsoft/rush-lib specified in `rush.json`
+> matches the dependencies specified in this package.
+
 That's it! The consolidated code coverage reports are generated to cwd
 `./coverage`. Reports can reviewed manually or integrated into CI.
 
