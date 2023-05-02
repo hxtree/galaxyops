@@ -42,7 +42,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install PNPM
-        run: npm install --global pnpm@7.26.3
+        run: npm install --global pnpm@7.32.2
 
       - name: Rush install
         run: node common/scripts/install-run-rush.js install -p
