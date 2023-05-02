@@ -1,9 +1,12 @@
 # Services
 
-This directory contains deployable organization services. Services within this
-directory SHOULD contain the business logic. Each service MUST be independent of
-any other service project. Deleting or adding a service SHOULD only involve
-changing the monorepo config `rush.json` file and the actual project folder.
+This directory contains deployable organization services.
+
+Services within this directory SHOULD contain the business logic. Each service
+MUST be independent of any other service project; a service should not have a
+dependencies on another service. Deleting or adding a service SHOULD only
+involve changing the monorepo config `rush.json` file and the actual project
+folder.
 
 All folders within this directory contains a package consisting of the source
 code and the IaC used to deploy the package.
@@ -12,7 +15,7 @@ code and the IaC used to deploy the package.
 ./*
   └─ services - # contains deployable microservices.
      └─ ./**/*
-        ├─ bin - # binary file that invokes stack.
+        ├─ bin - # binary file that invokes ./stack deployment.
         ├─ src - # source code.
         └─ stack - # CDK deployment code.
 ```
