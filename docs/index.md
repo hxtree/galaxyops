@@ -2,14 +2,6 @@
 
 **Cats Cradle** is a unreleased mobile role-playing game (RPG).
 
-## Sibling Repos
-
-The following private repos contain work related to the game. Established
-contributors should ask for access.
-
-- [Concept Art](github.com/hxtree/cats-cradle-concept-art)
-- [Rough Ideas](https://github.com/hxtree/cats-cradle-ideas)
-
 ## Documentation
 
 - [Architecture Guidelines](./architecture-guidelines.md)

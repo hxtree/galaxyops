@@ -12,6 +12,13 @@ data.
 Dialogue files can be viewed and edited using
 [Inky Editor](https://github.com/inkle/inky).
 
+## Ideas
+
+The following private repo raw ideas related to the game. Established
+contributors should ask for access.
+
+- [Rough Ideas](https://github.com/hxtree/cats-cradle-ideas)
+
 ## Resources Structure
 
 ```graphql
