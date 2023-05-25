@@ -1,6 +1,6 @@
 # Act 7: Fish In A Dish
 
-# Plot
+## Plot
 
 Original rough story notes --probably inaccurate-- from 2006, need updating:
 

@@ -7,15 +7,15 @@ Hey Mom, I'm going to go...  # actorId:MEEKU_ONI
 * [Wash the pigs] -> wash_pigs
 
 == water_cows ==
-Okay have a good day. # actorId:MOTHER
+The cows are calling. # actorId:MOTHER
 -> END
 
 == feed_chickens ==
-Watch out, they're feisty today. # actorId:MOTHER
+Watch out, they seemed feisty today. # actorId:MOTHER
 -> END
 
 == wash_pigs ==
-Don't be silly, son. # actorId:MOTHER
+Don't be silly, I just finished with the laundry. # actorId:MOTHER
 -> animal_task
 
 -> END
