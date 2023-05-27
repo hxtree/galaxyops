@@ -1070,6 +1070,91 @@ importers:
     devDependencies:
       '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
 
+  ../../services/graphql:
+    specifiers:
+      '@cats-cradle/base-nodejs': workspace:*
+      '@cats-cradle/bundle-project': 1.1.1
+      '@cats-cradle/bundlers': 0.0.2
+      '@cats-cradle/constructs': workspace:*
+      '@cats-cradle/eslint-config': 1.0.6
+      '@cats-cradle/validation-schemas': workspace:*
+      '@nestjs/axios': ~2.0.0
+      '@nestjs/common': 9.4.0
+      '@nestjs/core': 9.2.1
+      '@nestjs/platform-express': 9.3.9
+      '@nestjs/terminus': 9.1.1
+      '@nestjs/testing': 9.2.1
+      '@types/aws-lambda': ~8.10.114
+      '@types/express': ~4.17.14
+      '@types/jest': 29.5.1
+      '@types/lodash': ~4.14.191
+      '@types/node': ^16.0.0
+      '@types/supertest': ~2.0.12
+      '@types/uuid': ~8.3.4
+      '@vendia/serverless-express': 4.10.1
+      aws-cdk-lib: 2.47.0
+      aws-lambda: 1.0.7
+      aws-serverless-express: ~3.4.0
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
+      constructs: ^10.2.8
+      esbuild: ~0.17.5
+      eslint: 8.38.0
+      express: 4.18.2
+      fs: ~0.0.1-security
+      jest: 29.5.0
+      lodash: ~4.17.21
+      node-cache: 5.1.2
+      path: ~0.12.7
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.6
+      source-map-support: ~0.5.21
+      supertest: ~6.3.3
+      ts-node: 10.9.1
+      typescript: 5.0.4
+    dependencies:
+      '@cats-cradle/base-nodejs': link:../../platform/rigs/base-nodejs
+      '@cats-cradle/constructs': link:../../platform/constructs
+      '@cats-cradle/validation-schemas': link:../../libraries/validation-schemas
+      '@nestjs/axios': 2.0.0_cbbftsyjcjyai6wfowpnelc6ty
+      '@nestjs/common': 9.4.0_allg6cauirbqzgqcmexy2wdnoq
+      '@nestjs/core': 9.2.1_uzys3jzqjtvgdhficpwno2724a
+      '@nestjs/platform-express': 9.3.9_y6p6j3rifj555tf7jyp42t652e
+      '@nestjs/terminus': 9.1.1_v5tzlebxkeoeqjjzp7mgbru5yi
+      '@nestjs/testing': 9.2.1_kt4v4dk7ty2exnm2jfestbdf5y
+      '@vendia/serverless-express': 4.10.1
+      aws-lambda: 1.0.7
+      aws-serverless-express: 3.4.0
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
+      eslint: 8.38.0
+      express: 4.18.2
+      node-cache: 5.1.2
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.6
+      source-map-support: 0.5.21
+    devDependencies:
+      '@cats-cradle/bundle-project': 1.1.1
+      '@cats-cradle/bundlers': 0.0.2_qxyne4ohdyrj7diwymmd23ltxq
+      '@cats-cradle/eslint-config': 1.0.6
+      '@types/aws-lambda': 8.10.114
+      '@types/express': 4.17.17
+      '@types/jest': 29.5.1
+      '@types/lodash': 4.14.194
+      '@types/node': 16.18.25
+      '@types/supertest': 2.0.12
+      '@types/uuid': 8.3.4
+      aws-cdk-lib: 2.47.0_constructs@10.2.13
+      constructs: 10.2.13
+      esbuild: 0.17.18
+      fs: 0.0.1-security
+      jest: 29.5.0_jspmqmihdmic4sql2gcn5dtpp4
+      lodash: 4.17.21
+      path: 0.12.7
+      supertest: 6.3.3
+      ts-node: 10.9.1_hfvbhfq6zuen3tifevmx3fwyui
+      typescript: 5.0.4
+
   ../../services/html-to-pdf:
     specifiers:
       '@cats-cradle/base-nodejs': workspace:*
@@ -13499,7 +13584,7 @@ packages:
     resolution: {integrity: sha512-xq+q3SRMOxGivLhBNaUdC64hDTQwejJ+H0T/NB1XMtTVEwNTrfFF3gAxiyW0Bu/xWEGhjVKgUcMhCrUy2+uCWg==}
     dependencies:
       base64-js: 1.5.1
-      ieee754: 1.1.13
+      ieee754: 1.2.1
       isarray: 1.0.0
     dev: false
 
