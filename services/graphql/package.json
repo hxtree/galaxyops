@@ -10,6 +10,8 @@
     "build:project": "bundle-project @cats-cradle/luck-by-dice",
     "build": "tsc",
     "build:all": "rush build -t .",
+    "test": "",
+    "test:cov": "",
     "lint": "eslint --format visualstudio \"./src/**/*.ts\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./src/**/*.ts\"  --fix-dry-run",
     "cdk": "cdk",
