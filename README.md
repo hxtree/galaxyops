@@ -11,9 +11,9 @@ This repo houses the newest game code, utilizing an enterprise architecture
 monorepo. It includes numerous microservices built on a PaaS with IaC for
 streamlined development, testing, and deployment.
 
-Although each package is maintained for the game, many are individually
-published to [NPM](https://www.npmjs.com/search?q=%40cats-cradle) and available
-under open-source software (OSS) license.
+Although each package is maintained primarily for the game, many are
+individually published to [NPM](https://www.npmjs.com/search?q=%40cats-cradle)
+and available under open-source software (OSS) license.
 
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
@@ -21,8 +21,9 @@ under open-source software (OSS) license.
 
 ## Getting Started
 
-Simply [fork the repo](https://github.com/hxtree/cats-cradle/fork) open in
-Github Codespaces for a turn-key development environment.
+For a turn-key development environment,
+[fork the repo](https://github.com/hxtree/cats-cradle/fork) and open in Github
+Codespaces.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
 
