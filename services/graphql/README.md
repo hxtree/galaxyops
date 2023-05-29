@@ -1,15 +1,17 @@
-# Appsync
+# @cats-cradle/graphql
 
-Moved prior used appsync code here for now as to decouple from other packages.
-It's harder to develop each service with graphql layer at this time. Rather it
-be single abstract, which is more inline with graphql concept.
+This is a GraphQL service used to query other microservices. Rather than each
+service having its own GraphQL service, this is a single abstract, which is more
+inline with graphql concept.
 
 ## TODO
 
 See if schema can automated be generated from other microservices open api
 <https://openapi-generator.tech/docs/generators/graphql-schema>
 
-## AWS, GraphQL, AppSync, etc
+## References
+
+AWS, GraphQL, AppSync, etc
 
 - <https://docs.aws.amazon.com/cdk/api/v1/docs/aws-appsync-readme.html>
 - <https://aws.amazon.com/blogs/architecture/things-to-consider-when-you-build-a-graphql-api-with-aws-appsync/>
