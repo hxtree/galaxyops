@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/bundle-project",
-  "version": "1.0.8",
+  "version": "1.1.1",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,6 +9,7 @@
     "bundle-project": "bin/bundle-project"
   },
   "scripts": {
+    "bundle-project": "bin/bundle-project",
     "build": "tsc && tsc-alias",
     "build:all": "rush build -t .",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix",
@@ -21,19 +22,20 @@
     "@pnpm/logger": "^4.0.0",
     "fs-extra": "^10.1.0",
     "yargs": "^17.5.1",
-    "archiver": "~5.3.1"
+    "archiver": "~5.3.1",
+    "@pnpm/find-workspace-dir": "~6.0.0"
   },
   "devDependencies": {
-    "@cats-cradle/eslint-config": "1.0.5",
+    "@cats-cradle/eslint-config": "1.0.6",
     "eslint": "8.38.0",
     "@pnpm/types": "^8.5.0",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^16.0.0",
     "@types/yargs": "^17.0.11",
     "tsc-alias": "^1.7.0",
-    "typescript": "5.0.2",
+    "typescript": "5.0.4",
     "@types/archiver": "~5.3.2",
-    "@types/jest": "28.1.8",
+    "@types/jest": "29.5.1",
     "jest": "29.5.0"
   }
 }
