@@ -1,15 +1,15 @@
 # Services
 
-This directory contains deployable organization services.
+This directory contains deployable organization services. Services within this
+directory SHOULD contain business logic.
 
-Services within this directory SHOULD contain the business logic. Each service
-MUST be independent of any other service project; a service should not have a
-dependencies on another service. Deleting or adding a service SHOULD only
+A service SHOULD NOT have a dependencies on another service. Each service MUST
+be independent of any other service. Deleting or adding a service SHOULD only
 involve changing the monorepo config `rush.json` file and the actual project
 folder.
 
-All folders within this directory contains a package consisting of the source
-code and the IaC used to deploy the package.
+Each sub folders in this directory contains MUST contain a package. The package
+should contain of the source code and the IaC used to deploy the package:
 
 ```graphql
 ./*
