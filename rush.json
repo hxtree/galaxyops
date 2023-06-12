@@ -173,10 +173,21 @@
       "tags": ["category-library", "owner-ux"],
       "shouldPublish": true
     },
-
     {
       "packageName": "@cats-cradle/graphql",
       "projectFolder": "services/graphql",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": [
+        "@cats-cradle/validation-schemas",
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/bundle-project",
+        "@cats-cradle/bundlers"
+      ],
+      "tags": []
+    },
+    {
+      "packageName": "@cats-cradle/billing-system",
+      "projectFolder": "services/billing-system",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/validation-schemas",
