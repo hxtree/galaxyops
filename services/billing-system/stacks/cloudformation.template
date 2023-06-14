@@ -1,0 +1,999 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >-
+  AWS CloudFormation Kill Bill: Kill Bill is the open-source subscription billing
+  and payments platform. This template installs a highly-available, scalable Kill Bill
+  deployment using a multi-az Amazon RDS database instance for storage.
+Parameters:
+  VpcId:
+    Type: 'AWS::EC2::VPC::Id'
+    Description: VpcId of your existing Virtual Private Cloud (VPC)
+    ConstraintDescription: must be the VPC Id of an existing Virtual Private Cloud.
+  Subnets:
+    Type: 'List<AWS::EC2::Subnet::Id>'
+    Description: The list of SubnetIds in your Virtual Private Cloud (VPC)
+    ConstraintDescription: >-
+      must be a list of at least two existing subnets associated with at least
+      two different availability zones. They should be residing in the selected
+      Virtual Private Cloud.
+  RDSSubnets:
+    Type: 'List<AWS::EC2::Subnet::Id>'
+    Description: The list of RDS SubnetIds in your Virtual Private Cloud (VPC)
+    ConstraintDescription: >-
+      must be a list of at least two existing subnets associated with at least
+      two different availability zones. They should be residing in the selected
+      Virtual Private Cloud. Should be different than the instances subnets.
+  KeyName:
+    Description: Name of an existing EC2 KeyPair to enable SSH access to the instances
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    ConstraintDescription: must be the name of an existing EC2 KeyPair.
+  InstanceType:
+    Description: Kill Bill EC2 instance type
+    Type: String
+    Default: t2.medium
+    AllowedValues:
+      - t2.medium
+      - t2.large
+      - t2.xlarge
+      - m5.large
+      - c5.xlarge
+      - c5.2xlarge
+      - c5.4xlarge
+    ConstraintDescription: must be a valid EC2 instance type.
+  HTTPLocation:
+    Description: The IP address range that can be used to call the load balancer (for example, set to 0.0.0.0/0 to allow all IP addresses access)
+    Type: String
+    MinLength: '9'
+    MaxLength: '18'
+    AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})'
+    ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
+  EnvType:
+    Description: Environment type
+    Default: test
+    Type: String
+    AllowedValues:
+      - prod
+      - test
+      - dev
+    ConstraintDescription: must specify prod, test or dev.
+  KBAdminPassword:
+    Description: Admin password to make api request against Kill Bill
+    Type: String
+    NoEcho: True
+  DBClass:
+    Description: Database instance class
+    Type: String
+    Default: db.t3.medium
+    AllowedValues:
+      - db.t3.small
+      - db.t3.medium
+      - db.r5.xlarge
+      - db.r5.2xlarge
+      - db.r5.4xlarge
+      - db.r5.8xlarge
+      - db.r5.16xlarge
+    ConstraintDescription: must select a valid database instance type.
+  DBName:
+    Default: killbill
+    Description: The Kill Bill database name
+    Type: String
+    MinLength: '1'
+    MaxLength: '64'
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
+    ConstraintDescription: must begin with a letter and contain only alphanumeric characters.
+  KauiDBName:
+    Default: kaui
+    Description: The Kaui database name
+    Type: String
+    MinLength: '1'
+    MaxLength: '64'
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
+    ConstraintDescription: must begin with a letter and contain only alphanumeric characters.
+  DBUser:
+    NoEcho: 'true'
+    Description: The Kill Bill database admin account username
+    Type: String
+    MinLength: '1'
+    MaxLength: '16'
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
+    ConstraintDescription: must begin with a letter and contain only alphanumeric characters.
+  DBPassword:
+    NoEcho: 'true'
+    Description: The Kill Bill database admin account password
+    Type: String
+    MinLength: '8'
+    MaxLength: '41'
+    AllowedPattern: '[a-zA-Z0-9]*'
+    ConstraintDescription: must contain only alphanumeric characters.
+  KillBillServerCapacity:
+    Default: '2'
+    Description: The initial number of Kill Bill instances
+    Type: Number
+    MinValue: '1'
+    MaxValue: '5'
+    ConstraintDescription: must be between 1 and 5 EC2 instances.
+  KauiServerCapacity:
+    Default: '2'
+    Description: The initial number of Kaui instances
+    Type: Number
+    MinValue: '1'
+    MaxValue: '5'
+    ConstraintDescription: must be between 1 and 5 EC2 instances.
+  EnableCloudWatchMetrics:
+    Description: Whether CloudWatch metrics reporting should be enabled
+    Default: true
+    Type: String
+    AllowedValues:
+      - true
+      - false
+    ConstraintDescription: must specify true or false.
+  CloudWatchMetricsLevel:
+    Description: CloudWatch metrics level
+    Default: 'MINIMAL'
+    Type: String
+    AllowedValues:
+      - 'NONE'
+      - 'MINIMAL'
+      - 'LARGE'
+      - 'ALL'
+    ConstraintDescription: must specify a valid level.
+  EnableNewRelic:
+    Description: Whether the New Relic integration should be enabled
+    Default: false
+    Type: String
+    AllowedValues:
+      - true
+      - false
+    ConstraintDescription: must specify true or false.
+  NewRelicApiKey:
+    NoEcho: 'true'
+    Default: ''
+    Description: New Relic API Key
+    Type: String
+  EnableDatadog:
+    Description: Whether the Datadog integration should be enabled
+    Default: false
+    Type: String
+    AllowedValues:
+      - true
+      - false
+    ConstraintDescription: must specify true or false.
+  DatadogApiKey:
+    NoEcho: 'true'
+    Default: ''
+    Description: Datadog API Key
+    Type: String
+  EnableSentry:
+    Description: Whether the Sentry integration should be enabled
+    Default: false
+    Type: String
+    AllowedValues:
+      - true
+      - false
+    ConstraintDescription: must specify true or false.
+  SentryDsn:
+    NoEcho: 'true'
+    Default: ''
+    Description: Sentry DSN
+    Type: String
+  EnableRollbar:
+    Description: Whether the Rollbar integration should be enabled
+    Default: false
+    Type: String
+    AllowedValues:
+      - true
+      - false
+    ConstraintDescription: must specify true or false.
+  RollbarAccessToken:
+    NoEcho: 'true'
+    Default: ''
+    Description: Rollbar Access Token
+    Type: String
+  SsmStorePath:
+    Default: ''
+    Description: SSM path for config properties.
+    Type: String
+  ELBListenerSSLCertARN:
+    NoEcho: 'true'
+    Description: The SSL certificate for ELB listeners.
+    Type: String
+  SetEnvironmentVariables:
+    Default: ''
+    Description: A comma-delimited list of environment variables to set.
+    Type: String
+Conditions:
+  CreateCloudWatchDashboard: !Equals [ !Ref EnableCloudWatchMetrics, true ]
+Mappings:
+  AWSRegionArch2KBAMI:
+    us-east-1:
+      HVM64: ami-0270da0c8d456900a
+    us-east-2:
+      HVM64: ami-0552e242a223fb9dd
+    us-west-1:
+      HVM64: ami-07840ebfba381584c
+    us-west-2:
+      HVM64: ami-0c273870e4be49c5a
+    ca-central-1:
+      HVM64: ami-043dbdd1c9269893c
+    eu-central-1:
+      HVM64: ami-0998600fea329c60c
+    eu-north-1:
+      HVM64: ami-0c42accee664c62f6
+    eu-west-1:
+      HVM64: ami-0c17a0d63fc9f5b71
+    eu-west-2:
+      HVM64: ami-0a3cb3bf7cff95708
+    eu-west-3:
+      HVM64: ami-04e564e1cdd5fa1ba
+    ap-southeast-1:
+      HVM64: ami-02cd15fb3f7559ff2
+    ap-southeast-2:
+      HVM64: ami-0a717266ba191c67a
+    ap-south-1:
+      HVM64: ami-04f55e5fa3c7d4de0
+    ap-northeast-1:
+      HVM64: ami-0ff04c03f1133d1d9
+    ap-northeast-2:
+      HVM64: ami-033d534d59a1c3f73
+    sa-east-1:
+      HVM64: ami-03c883015ba75e5e8
+    me-south-1: 
+      HVM64: ami-0ce1732744b0f338c
+    ap-east-1:
+      HVM64: ami-0be113b86024224fe
+  AWSRegionArch2KAUIAMI:
+    us-east-1:
+      HVM64: ami-0ad1f1d3fd2cf9ed3
+    us-east-2:
+      HVM64: ami-0884603d15ba66889
+    us-west-1:
+      HVM64: ami-069355b879cdfc8f2
+    us-west-2:
+      HVM64: ami-02156edd04aaf8ccb
+    ca-central-1:
+      HVM64: ami-07538bee660bc3665
+    eu-central-1:
+      HVM64: ami-098e8b9c780480ecf
+    eu-west-1:
+      HVM64: ami-00c28e2cda10d3834
+    eu-west-2:
+      HVM64: ami-01588bef4ea570f2e
+    eu-west-3:
+      HVM64: ami-080718dc427741464
+    ap-southeast-1:
+      HVM64: ami-076cd610c001f19fd
+    eu-north-1:
+      HVM64: ami-0bee44abed549480e  
+    ap-southeast-2:
+      HVM64: ami-0f710bc69303e276d
+    ap-south-1:
+      HVM64: ami-0fc7709b732c4f6de
+    ap-northeast-1:
+      HVM64: ami-0cb674be625bdef07
+    ap-northeast-2:
+      HVM64: ami-0136364ff499f7734
+    sa-east-1:
+      HVM64: ami-00b906099c8442edc
+    ap-east-1:
+      HVM64: ami-0146cfb40a8be01b7
+Resources:
+  LogRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: "/"
+      Policies:
+        - PolicyName: LogRolePolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - cloudwatch:PutMetricData
+                  - ec2:DescribeTags
+                  - ec2messages:AcknowledgeMessage
+                  - ec2messages:DeleteMessage
+                  - ec2messages:FailMessage
+                  - ec2messages:GetEndpoint
+                  - ec2messages:GetMessages
+                  - ec2messages:SendReply
+                  - logs:PutLogEvents
+                  - logs:DescribeLogStreams
+                  - logs:DescribeLogGroups
+                  - logs:CreateLogStream
+                  - logs:CreateLogGroup
+                  - ssm:GetParametersByPath
+                  - ssm:ListAssociations
+                  - ssm:ListInstanceAssociations
+                  - ssm:UpdateInstanceInformation
+                  - ssmmessages:CreateControlChannel
+                  - ssmmessages:CreateDataChannel
+                  - ssmmessages:OpenControlChannel
+                  - ssmmessages:OpenDataChannel
+                  - xray:PutTraceSegments
+                  - xray:PutTelemetryRecords
+                  - xray:GetSamplingRules
+                  - xray:GetSamplingTargets
+                  - xray:GetSamplingStatisticSummaries
+                Resource:
+                  - !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:*'
+                  - !Sub 'arn:aws:ec2:${AWS::Region}:${AWS::AccountId}:*'
+                  - !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:*'
+  KMSKey:
+    Type: 'AWS::KMS::Key'
+    Properties:
+      Description: A symmetric encryption KMS key
+      EnableKeyRotation: true
+      PendingWindowInDays: 20
+      KeyPolicy:
+        Version: 2012-10-17
+        Id: killbill-kms-key
+        Statement:
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+            Action: 'kms:*'
+            Resource: '*'
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              Service: !Sub 'logs.${AWS::Region}.amazonaws.com'
+            Action: 'kms:*'
+            Resource: '*'
+            Condition:
+              ArnLike:
+                kms:EncryptionContext:aws:logs:arn: !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:*'
+  CloudFormationLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      RetentionInDays: 1
+      KmsKeyId: !GetAtt 'KMSKey.Arn'
+
+  Bucket:
+    Type: 'AWS::S3::Bucket'
+    Metadata:
+      cfn_nag:
+        rules_to_suppress:
+          - id: W35
+            reason: "The same warning is thrown for a bucket configured for the access logging"
+    Properties:
+      BucketName: !Join
+        - '-'
+        - - 'kb-elb'
+          - !Select
+            - 0
+            - !Split
+              - "-"
+              - !Select
+                - 2
+                - !Split
+                  - "/"
+                  - !Ref "AWS::StackId"
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+  BucketPolicyElbAccessLogWrite:
+    Type: 'AWS::S3::BucketPolicy'
+    Properties:
+      Bucket: !Ref Bucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Principal:
+              AWS: # https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#access-logging-bucket-permissions
+                - 'arn:aws:iam::127311923021:root' # us-east-1
+                - 'arn:aws:iam::033677994240:root' # us-east-2
+                - 'arn:aws:iam::027434742980:root' # us-west-1
+                - 'arn:aws:iam::797873946194:root' # us-west-2
+                - 'arn:aws:iam::985666609251:root' # ca-central-1
+                - 'arn:aws:iam::054676820928:root' # eu-central-1
+                - 'arn:aws:iam::156460612806:root' # eu-west-1
+                - 'arn:aws:iam::652711504416:root' # eu-west-2
+                - 'arn:aws:iam::009996457667:root' # eu-west-3
+                - 'arn:aws:iam::897822967062:root' # eu-north-1
+                - 'arn:aws:iam::582318560864:root' # ap-northeast-1
+                - 'arn:aws:iam::600734575887:root' # ap-northeast-2
+                - 'arn:aws:iam::383597477331:root' # ap-northeast-3
+                - 'arn:aws:iam::114774131450:root' # ap-southeast-1
+                - 'arn:aws:iam::783225319266:root' # ap-southeast-2
+                - 'arn:aws:iam::718504428378:root' # ap-south-1
+                - 'arn:aws:iam::507241528517:root' # sa-east-1
+            Action: 's3:PutObject'
+            Effect: Allow
+            Resource: !Sub '${Bucket.Arn}/*AWSLogs/${AWS::AccountId}/*'
+          - Principal:
+              Service: 'delivery.logs.amazonaws.com' # https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-access-logs.html
+            Action: 's3:PutObject'
+            Effect: Allow
+            Resource: !Sub '${Bucket.Arn}/*AWSLogs/${AWS::AccountId}/*'
+            Condition:
+              StringEquals:
+                's3:x-amz-acl': 'bucket-owner-full-control'
+          - Principal:
+              Service: 'delivery.logs.amazonaws.com' # https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-access-logs.html
+            Action: 's3:GetBucketAcl'
+            Effect: Allow
+            Resource: !GetAtt 'Bucket.Arn'
+
+  LB:
+    Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
+    Properties:
+      LoadBalancerAttributes:
+        - Key: access_logs.s3.enabled
+          Value: 'true'
+        - Key: access_logs.s3.bucket
+          Value: !Ref Bucket
+      SecurityGroups:
+        - !Ref LBSecurityGroup
+      Subnets: !Ref Subnets
+  KBLBListener:
+    Type: 'AWS::ElasticLoadBalancingV2::Listener'
+    Properties:
+      Certificates:
+        - CertificateArn: !Ref ELBListenerSSLCertARN
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref KBLBTargetGroup
+      LoadBalancerArn: !Ref LB
+      Port: 443
+      Protocol: HTTPS
+      SslPolicy: 'ELBSecurityPolicy-TLS-1-2-2017-01'
+  KBLBTargetGroup:
+    Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
+    Properties:
+      HealthCheckPath: /1.0/healthcheck
+      HealthCheckIntervalSeconds: 10
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 2
+      Port: 8080
+      Protocol: HTTP
+      UnhealthyThresholdCount: 5
+      VpcId: !Ref VpcId
+  KauiLBListener:
+    Type: 'AWS::ElasticLoadBalancingV2::Listener'
+    Properties:
+      Certificates:
+        - CertificateArn: !Ref ELBListenerSSLCertARN
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref KauiLBTargetGroup
+      LoadBalancerArn: !Ref LB
+      Port: 9090
+      Protocol: HTTPS
+      SslPolicy: 'ELBSecurityPolicy-TLS-1-2-2017-01'
+  KauiLBTargetGroup:
+    Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
+    Properties:
+      HealthCheckPath: /users/sign_in
+      HealthCheckIntervalSeconds: 10
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 2
+      Port: 8080
+      Protocol: HTTP
+      UnhealthyThresholdCount: 5
+      VpcId: !Ref VpcId
+
+  KBSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: >-
+        Enable HTTP access via port 8080 locked down to the load balancer
+      VpcId: !Ref VpcId
+
+  KBSecurityGroupInboudRule:
+    Type: 'AWS::EC2::SecurityGroupIngress'
+    Properties:
+      GroupId: !GetAtt KBSecurityGroup.GroupId
+      IpProtocol: tcp
+      FromPort: 8080
+      ToPort: 8080
+      Description: "HTTP port for Tomcat"
+      SourceSecurityGroupId: !Select
+        - 0
+        - !GetAtt
+          - LB
+          - SecurityGroups
+
+  KBSecurityGroupDBOutboundRule:
+    Type: 'AWS::EC2::SecurityGroupEgress'
+    Properties:
+      GroupId: !GetAtt KBSecurityGroup.GroupId
+      IpProtocol: tcp
+      FromPort: 3306
+      ToPort: 3306
+      CidrIp: !Ref HTTPLocation
+      Description: "Outbound rule for the database connection"
+
+  KBSecurityGroupHttpOutboundRule:
+    Type: 'AWS::EC2::SecurityGroupEgress'
+    Properties:
+      GroupId: !GetAtt KBSecurityGroup.GroupId
+      IpProtocol: tcp
+      FromPort: 80
+      ToPort: 80
+      CidrIp: !Ref HTTPLocation
+      Description: "HTTP - open to world on egress"
+
+  KBSecurityGroupHttpsOutboundRule:
+    Type: 'AWS::EC2::SecurityGroupEgress'
+    Properties:
+      GroupId: !GetAtt KBSecurityGroup.GroupId
+      IpProtocol: tcp
+      FromPort: 443
+      ToPort: 443
+      CidrIp: !Ref HTTPLocation
+      Description: "HTTPS - open to world on egress"
+
+  DBSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Open database for access
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          CidrIp: !Ref HTTPLocation
+          Description: "Deny all outbound request"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          Description: "MySQL jdbc port"
+          SourceSecurityGroupId: !Ref KBSecurityGroup
+      VpcId: !Ref VpcId
+
+  LBSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: >-
+        Enable HTTP access via port 80
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          DestinationSecurityGroupId: !Ref KBSecurityGroup
+          Description: "Outbound traffic rule"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: !Ref HTTPLocation
+          Description: "HTTPS port for Kill Bill"
+        - IpProtocol: tcp
+          FromPort: 9090
+          ToPort: 9090
+          CidrIp: !Ref HTTPLocation
+          Description: "HTTPS port for Kaui"
+      VpcId: !Ref VpcId
+  KBInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Path: "/"
+      Roles:
+        - !Ref LogRole
+  KBAutoScalingGroup:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      VPCZoneIdentifier: !Ref Subnets
+      LaunchConfigurationName: !Ref KBLaunchConfiguration
+      MinSize: '1'
+      MaxSize: '5'
+      DesiredCapacity: !Ref KillBillServerCapacity
+      TargetGroupARNs:
+        - !Ref KBLBTargetGroup
+      Tags:
+        - Key: Environment
+          Value: !Sub ${EnvType}
+          PropagateAtLaunch: "true"
+        - Key: Name
+          Value: KillBill
+          PropagateAtLaunch: "true"
+    CreationPolicy:
+      ResourceSignal:
+        Timeout: PT15M
+    UpdatePolicy:
+      AutoScalingRollingUpdate:
+        MinInstancesInService: 1
+        MaxBatchSize: 1
+        PauseTime: PT5M
+        WaitOnResourceSignals: true
+  KBLaunchConfiguration:
+    Type: 'AWS::AutoScaling::LaunchConfiguration'
+    DependsOn: RDSMasterInstance
+    Metadata:
+      'AWS::CloudFormation::Init':
+        configSets:
+          killbill_install:
+            - install_logs
+            - install_xray
+            - install_cfn
+            - install_killbill
+        install_cfn:
+          files:
+            /etc/cfn/cfn-hup.conf:
+              content: !Sub |
+                [main]
+                stack=${AWS::StackId}
+                region=${AWS::Region}
+              group: root
+              mode: '000400'
+              owner: root
+            /etc/cfn/hooks.d/cfn-auto-reloader.conf:
+              content: !Sub |
+                [cfn-auto-reloader-hook]
+                triggers=post.update
+                path=Resources.KBLaunchConfiguration.Metadata.AWS::CloudFormation::Init
+                action=/usr/local/bin/cfn-init --region ${AWS::Region} --stack ${AWS::StackName} --resource KBLaunchConfiguration --configsets killbill_install
+              group: root
+              mode: '000400'
+              owner: root
+          commands:
+            01enable_cfn_hup:
+              command: systemctl enable cfn-hup.service
+            02start_cfn_hup:
+              command: systemctl start cfn-hup.service
+        install_logs:
+          commands:
+            01_setup_aws_log:
+              command: !Sub |
+                # The following copy operations are needed because of this bug: https://github.com/aws/amazon-cloudwatch-agent/issues/594
+                export CLOUD_FORMATION_LOGS=${CloudFormationLogs} \
+                && originalFile=/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent.json \
+                && cwAgentJson=/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json \
+                && cp -fr $originalFile $cwAgentJson \
+                && tmpFile=$(mktemp) && cp --attributes-only --preserve $cwAgentJson $tmpFile && cat $cwAgentJson | envsubst > $tmpFile && mv $tmpFile $cwAgentJson
+            02_restart_awslogs:
+              command: sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+        install_xray:
+          commands:
+            01_enable_xray_on_startup:
+              command: systemctl enable xray
+            02_start_xray:
+              command: systemctl start xray
+        install_killbill:
+          commands:
+            configure_killbill:
+              command: !Sub |
+                sh /var/lib/tomcat/bin/install_killbill.sh --rds-endpoint-addr '${RDSCluster.Endpoint.Address}' --db-name '${DBName}' \
+                --db-user '${DBUser}' --db-password '${DBPassword}' --queue-creator-name '$(ec2metadata --local-hostname)' --enable-new-relic '${EnableNewRelic}' \
+                --new-relic-api-key '${NewRelicApiKey}' --enable-datadog '${EnableDatadog}' --datadog-api-key '${DatadogApiKey}' --enable-sentry '${EnableSentry}' \
+                --sentry-dsn '${SentryDsn}' --enable-rollbar '${EnableRollbar}' --rollbar-access-token '${RollbarAccessToken}' --enable-cloudwatch-metrics '${EnableCloudWatchMetrics}' \
+                --cloudwatch-metrics-level '${CloudWatchMetricsLevel}' --ssm-store-path '${SsmStorePath}' --aws-region '${AWS::Region}' --env-type '${EnvType}' \
+                --kb-admin-password '${KBAdminPassword}' --custom-env-variables '${SetEnvironmentVariables}'
+    Properties:
+      ImageId: !FindInMap [AWSRegionArch2KBAMI, !Ref 'AWS::Region', HVM64]
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
+      SecurityGroups:
+        - !Ref KBSecurityGroup
+      IamInstanceProfile: !Ref KBInstanceProfile
+      AssociatePublicIpAddress: true
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash -xe
+          /usr/local/bin/cfn-init --region ${AWS::Region} --stack ${AWS::StackName} --resource KBLaunchConfiguration --configsets killbill_install
+          /usr/local/bin/cfn-signal -e $? --region ${AWS::Region} --stack ${AWS::StackName} --resource KBAutoScalingGroup
+
+  KauiInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Path: "/"
+      Roles:
+        - !Ref LogRole
+  KauiAutoScalingGroup:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      VPCZoneIdentifier: !Ref Subnets
+      LaunchConfigurationName: !Ref KauiLaunchConfiguration
+      MinSize: '1'
+      MaxSize: '5'
+      DesiredCapacity: !Ref KauiServerCapacity
+      TargetGroupARNs:
+        - !Ref KauiLBTargetGroup
+      Tags:
+        - Key: Environment
+          Value: !Sub ${EnvType}
+          PropagateAtLaunch: "true"
+        - Key: Name
+          Value: Kaui
+          PropagateAtLaunch: "true"
+    CreationPolicy:
+      ResourceSignal:
+        Timeout: PT15M
+    UpdatePolicy:
+      AutoScalingRollingUpdate:
+        MinInstancesInService: 1
+        MaxBatchSize: 1
+        PauseTime: PT5M
+        WaitOnResourceSignals: true
+  KauiLaunchConfiguration:
+    Type: 'AWS::AutoScaling::LaunchConfiguration'
+    DependsOn: RDSMasterInstance
+    Metadata:
+      'AWS::CloudFormation::Init':
+        configSets:
+          kaui_install:
+            - install_logs
+            - install_cfn
+            - install_kaui
+        install_cfn:
+          files:
+            /etc/cfn/cfn-hup.conf:
+              content: !Sub |
+                [main]
+                stack=${AWS::StackId}
+                region=${AWS::Region}
+              group: root
+              mode: '000400'
+              owner: root
+            /etc/cfn/hooks.d/cfn-auto-reloader.conf:
+              content: !Sub |
+                [cfn-auto-reloader-hook]
+                triggers=post.update
+                path=Resources.KauiLaunchConfiguration.Metadata.AWS::CloudFormation::Init
+                action=/usr/local/bin/cfn-init --region ${AWS::Region} --stack ${AWS::StackName} --resource KauiLaunchConfiguration --configsets kaui_install
+              group: root
+              mode: '000400'
+              owner: root
+          commands:
+            01enable_cfn_hup:
+              command: systemctl enable cfn-hup.service
+            02start_cfn_hup:
+              command: systemctl start cfn-hup.service
+        install_logs:
+          commands:
+            01_setup_aws_log:
+              command: !Sub |
+                # The following copy operations are needed because of this bug: https://github.com/aws/amazon-cloudwatch-agent/issues/594
+                export CLOUD_FORMATION_LOGS=${CloudFormationLogs} \
+                && originalFile=/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent.json \
+                && cwAgentJson=/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json \
+                && cp -fr $originalFile $cwAgentJson \
+                && tmpFile=$(mktemp) && cp --attributes-only --preserve $cwAgentJson $tmpFile && cat $cwAgentJson | envsubst > $tmpFile && mv $tmpFile $cwAgentJson
+            02_restart_awslogs:
+              command: /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+        install_kaui:
+          commands:
+            01_reconfigure_kaui:
+              command: !Sub |
+                su -l -c 'export KAUI_CONFIG_DAO_URL=jdbc:mysql://${RDSCluster.Endpoint.Address}:3306/${KauiDBName} KAUI_CONFIG_DAO_USER=${DBUser} KAUI_CONFIG_DAO_PASSWORD=${DBPassword} KAUI_KILLBILL_URL=https://${LB.DNSName}:443 originalfile=/var/lib/tomcat/bin/setenv2.sh && tmpfile=$(mktemp) && cp --attributes-only --preserve $originalfile $tmpfile && cat $originalfile | envsubst > $tmpfile && mv $tmpfile $originalfile' tomcat
+            02_wait_for_RDS:
+              command: !Sub |
+                /var/lib/tomcat/bin/rds_wait.sh ${RDSCluster.Endpoint.Address} ${DBUser} ${DBPassword}
+            03_setup_DDL:
+              command: !Sub |
+                /var/lib/tomcat/bin/kaui_ddl_setup.sh ${RDSCluster.Endpoint.Address} ${DBUser} ${DBPassword} ${KauiDBName}
+            04_enable_kaui:
+              command: systemctl enable kaui.service
+            05_start_kaui:
+              command: systemctl start kaui.service
+            06_wait_for_kaui:
+              command: /var/lib/tomcat/bin/wait_for_kaui.sh
+    Properties:
+      ImageId: !FindInMap [AWSRegionArch2KAUIAMI, !Ref 'AWS::Region', HVM64]
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
+      SecurityGroups:
+        - !Ref KBSecurityGroup
+      IamInstanceProfile: !Ref KauiInstanceProfile
+      AssociatePublicIpAddress: true
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash -xe
+          /usr/local/bin/cfn-init --region ${AWS::Region} --stack ${AWS::StackName} --resource KauiLaunchConfiguration --configsets kaui_install
+          /usr/local/bin/cfn-signal -e $? --region ${AWS::Region} --stack ${AWS::StackName} --resource KauiAutoScalingGroup
+
+  RDSSubnetGroup:
+    Type: "AWS::RDS::DBSubnetGroup"
+    Properties:
+      DBSubnetGroupDescription: "RDS subnet for Kill Bill"
+      SubnetIds: !Ref RDSSubnets
+  RDSDBClusterParameterGroup:
+    Type: "AWS::RDS::DBClusterParameterGroup"
+    Properties:
+      Description: "Aurora Cluster Parameter Group"
+      Family: aurora-mysql5.7
+      Parameters:
+        character_set_database: utf8
+  RDSCluster:
+    Type: "AWS::RDS::DBCluster"
+    Properties:
+      Engine: aurora-mysql
+      EngineMode: provisioned
+      StorageEncrypted: true
+      MasterUsername: !Ref DBUser
+      MasterUserPassword: !Ref DBPassword
+      DatabaseName: !Ref DBName
+      DBClusterParameterGroupName: !Ref RDSDBClusterParameterGroup
+      DBSubnetGroupName: !Ref RDSSubnetGroup
+      VpcSecurityGroupIds:
+        - !GetAtt DBSecurityGroup.GroupId
+      EnableCloudwatchLogsExports:
+        - general
+        - error
+        - slowquery
+        - audit
+  RDSParameterGroup:
+    Type: "AWS::RDS::DBParameterGroup"
+    Properties:
+      Description: "Aurora Parameter Group"
+      Family: aurora-mysql5.7
+      Parameters:
+        sql_mode: IGNORE_SPACE
+  RDSMasterInstance:
+    Type: "AWS::RDS::DBInstance"
+    Properties:
+      Engine: aurora-mysql
+      DBClusterIdentifier: !Ref RDSCluster
+      DBInstanceClass: !Ref DBClass
+      DBParameterGroupName: !Ref RDSParameterGroup
+      DBSubnetGroupName: !Ref RDSSubnetGroup
+      PubliclyAccessible: false
+
+  Dashboard:
+    Type: "AWS::CloudWatch::Dashboard"
+    Condition: CreateCloudWatchDashboard
+    Properties:
+      DashboardBody: !Sub |
+        {
+            "widgets": [
+                {
+                    "type": "metric",
+                    "x": 12,
+                    "y": 0,
+                    "width": 6,
+                    "height": 6,
+                    "properties": {
+                        "metrics": [
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"main.pool.ActiveConnections\"', 'Average', 300)", "id": "e1", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"shiro.pool.ActiveConnections\"', 'Average', 300)", "id": "e2", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"osgi.pool.ActiveConnections\"', 'Average', 300)", "id": "e3", "period": 300 } ]
+                        ],
+                        "view": "timeSeries",
+                        "stacked": false,
+                        "region": "${AWS::Region}",
+                        "start": "-P1D",
+                        "end": "P0D",
+                        "title": "Active database connections",
+                        "yAxis": {
+                            "left": {
+                                "label": "",
+                                "showUnits": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "metric",
+                    "x": 0,
+                    "y": 6,
+                    "width": 6,
+                    "height": 6,
+                    "properties": {
+                        "metrics": [
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"memory.pools.PS-Eden-Space.used\"', 'Average', 300)", "id": "e1", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"memory.pools.PS-Old-Gen.used\"', 'Average', 300)", "id": "e2", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"memory.pools.PS-Survivor-Space.used\"', 'Average', 300)", "id": "e3", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"memory.pools.Compressed-Class-Space.used\"', 'Average', 300)", "id": "e4", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"memory.pools.Code-Cache.used\"', 'Average', 300)", "id": "e5", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"memory.pools.Metaspace.used\"', 'Average', 300)", "id": "e6", "period": 300 } ]
+                        ],
+                        "view": "timeSeries",
+                        "stacked": true,
+                        "region": "${AWS::Region}",
+                        "title": "JVM memory",
+                        "yAxis": {
+                            "left": {
+                                "label": "",
+                                "showUnits": false
+                            }
+                        },
+                        "period": 300
+                    }
+                },
+                {
+                    "type": "metric",
+                    "x": 6,
+                    "y": 6,
+                    "width": 6,
+                    "height": 6,
+                    "properties": {
+                        "metrics": [
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"threads.waiting.count\"', 'Average', 300)", "id": "e1", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"threads.blocked.count\"', 'Average', 300)", "id": "e2", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"threads.daemon.count\"', 'Average', 300)", "id": "e3", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"threads.terminated.count\"', 'Average', 300)", "id": "e4", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"threads.timed_waiting.count\"', 'Average', 300)", "id": "e5", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"threads.runnable.count\"', 'Average', 300)", "id": "e6", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"threads.new.count\"', 'Average', 300)", "id": "e7", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"gauge\" MetricName=\"threads.deadlock.count\"', 'Average', 300)", "id": "e8", "period": 300 } ]
+                        ],
+                        "view": "timeSeries",
+                        "stacked": true,
+                        "region": "${AWS::Region}",
+                        "title": "JVM threads",
+                        "yAxis": {
+                            "left": {
+                                "label": "",
+                                "showUnits": false
+                            }
+                        },
+                        "period": 300
+                    }
+                },
+                {
+                    "type": "metric",
+                    "x": 6,
+                    "y": 0,
+                    "width": 6,
+                    "height": 6,
+                    "properties": {
+                        "metrics": [
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"ch.qos.logback.core.Appender.info\"', 'Average', 300)", "id": "e1", "period": 300, "color": "#2ca02c" } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"ch.qos.logback.core.Appender.warn\"', 'Average', 300)", "id": "e2", "period": 300 } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"ch.qos.logback.core.Appender.error\"', 'Average', 300)", "id": "e3", "period": 300, "color": "#d62728" } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"ch.qos.logback.core.Appender.debug\"', 'Average', 300)", "id": "e4", "period": 300, "color": "#98df8a" } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"ch.qos.logback.core.Appender.trace\"', 'Average', 300)", "id": "e5", "period": 300, "color": "#c7c7c7" } ]
+                        ],
+                        "view": "timeSeries",
+                        "stacked": true,
+                        "region": "${AWS::Region}",
+                        "title": "Log events",
+                        "yAxis": {
+                            "left": {
+                                "label": "Rate per second",
+                                "showUnits": false
+                            }
+                        },
+                        "period": 300
+                    }
+                },
+                {
+                    "type": "metric",
+                    "x": 0,
+                    "y": 0,
+                    "width": 6,
+                    "height": 6,
+                    "properties": {
+                        "metrics": [
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.badRequest\"', 'Average', 300)", "id": "e1", "period": 300, "color": "#ff7f0e" } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.created\"', 'Average', 300)", "id": "e2", "period": 300, "color": "#17becf" } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.noContent\"', 'Average', 300)", "id": "e3", "period": 300, "color": "#c5b0d5" } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.ok\"', 'Average', 300)", "id": "e4", "period": 300, "color": "#2ca02c" } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.other\"', 'Average', 300)", "id": "e5", "period": 300, "color": "#c49c94" } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.notFound\"', 'Average', 300)", "id": "e6", "period": 300, "color": "#ffbb78" } ],
+                            [ { "expression": "SEARCH('{KillBill,Instance,Region,Type} Type=\"1-min-mean-rate [per-second]\" MetricName=\"com.codahale.metrics.servlet.InstrumentedFilter.responseCodes.serverError\"', 'Average', 300)", "id": "e7", "period": 300, "color": "#d62728" } ]
+                        ],
+                        "view": "timeSeries",
+                        "stacked": false,
+                        "region": "${AWS::Region}",
+                        "title": "HTTP requests",
+                        "yAxis": {
+                            "left": {
+                                "label": "Rate per second",
+                                "showUnits": false
+                            }
+                        },
+                        "period": 300
+                    }
+                }
+            ]
+        }
+
+Outputs:
+  WebsiteURL:
+    Value: !Join
+      - ''
+      - - 'https://'
+        - !GetAtt
+          - LB
+          - DNSName
+    Description: Kill Bill status page
