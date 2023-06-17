@@ -239,6 +239,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@storybook/addon-interactions",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/addon-links",
       "allowedCategories": [ "apis" ]
     },
@@ -251,6 +255,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@storybook/blocks",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/cli",
       "allowedCategories": [ "apis" ]
     },
@@ -260,6 +268,10 @@
     },
     {
       "name": "@storybook/react-webpack5",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/testing-library",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -324,6 +336,10 @@
     },
     {
       "name": "babel-loader",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "babel-plugin-prismjs",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -501,6 +517,14 @@
     {
       "name": "prettier",
       "allowedCategories": [ "category-platform", "platform" ]
+    },
+    {
+      "name": "prismjs",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "prop-types",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "puppeteer",

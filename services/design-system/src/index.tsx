@@ -12,3 +12,4 @@ export * from './FileUpload';
 export * from './Typography';
 export * from './Gauge';
 export * from './Meter';
+export * from './Code';
