@@ -19,7 +19,8 @@ async function bootstrap() {
     );
 
     nestApp.enableVersioning({
-      type: VersioningType.URI,
+      type: VersioningType.HEADER,
+      header: 'Accept-Version',
       defaultVersion: '1',
     });
 

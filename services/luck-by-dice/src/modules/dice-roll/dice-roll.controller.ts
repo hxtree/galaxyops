@@ -1,9 +1,9 @@
-import { Controller, Body, Post } from '@nestjs/common';
+import { Controller, Body, Post, Get, VERSION_NEUTRAL } from '@nestjs/common';
 import { DiceRollService } from './dice-roll.service';
 import { QueryRollDto } from './query-roll.dto';
 import { ResponseRollDto } from './response-roll.dto';
 
-@Controller({ path: 'dice-roll', version: ['1'] })
+@Controller({ path: 'dice-roll', version: ['1', VERSION_NEUTRAL] })
 export class DiceRollController {
   private _rollService;
 
@@ -19,5 +19,10 @@ export class DiceRollController {
       param.luck,
       param.iterations || 1,
     );
+  }
+
+  @Get()
+  roll(): Promise<ResponseRollDto> {
+    return this._rollService.turn('1d6', 0, 1);
   }
 }
