@@ -34,7 +34,7 @@
     "istanbul-lib-report": "~3.0.0",
     "istanbul-reports": "~3.1.5",
     "@types/istanbul-reports": "~3.0.1",
-    "@microsoft/rush-lib": "5.97.1"
+    "@microsoft/rush-lib": "5.100.1"
   },
   "devDependencies": {
     "@types/jest": "29.5.1",

@@ -19,7 +19,8 @@
     "web-vitals": "^2.1.4",
     "@cats-cradle/design-system": "workspace:*",
     "styled-components": "~5.3.10",
-    "@types/styled-components": "~5.1.26"
+    "@types/styled-components": "~5.1.26",
+    "@babel/plugin-proposal-private-property-in-object": "~7.21.11"
   },
   "devDependencies": {
     "@cats-cradle/base-nodejs": "workspace:*"
