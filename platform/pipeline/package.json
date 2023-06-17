@@ -28,7 +28,7 @@
     "aws-lambda": "1.0.7",
     "eslint": "8.38.0",
     "@cats-cradle/base-nodejs": "workspace:*",
-    "@microsoft/rush-lib": "5.97.1",
+    "@microsoft/rush-lib": "5.100.1",
     "@rushstack/node-core-library": "~3.55.2"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/v1/dice-roll": {
+    "/dice-roll": {
       "post": {
         "operationId": "DiceRollController_create",
         "parameters": [],
@@ -14,6 +14,11 @@
           }
         },
         "responses": { "201": { "description": "" } }
+      },
+      "get": {
+        "operationId": "DiceRollController_roll",
+        "parameters": [],
+        "responses": { "200": { "description": "" } }
       }
     },
     "/health": {
@@ -123,7 +128,7 @@
   "info": {
     "title": "@cats-cradle/luck-by-dice",
     "description": "An API Simulating dice rolls that can be effected by luck from dice notation",
-    "version": "1.0.4",
+    "version": "1.0.8",
     "contact": {}
   },
   "tags": [],

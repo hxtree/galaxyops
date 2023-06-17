@@ -35,8 +35,8 @@ jobs:
 
       # need to install rush for mongodb-memory-server to download mongo bin
       - name: Install PNPM
-        run: npm install --global pnpm@7.32.2
-      - run: npm install --global @microsoft/rush@5.97.1
+        run: npm install --global pnpm@8.6.2
+      - run: npm install --global @microsoft/rush@5.100.1
 
       - name: Rush install
         run: rush install

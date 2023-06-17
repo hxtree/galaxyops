@@ -31,6 +31,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@babel/plugin-proposal-private-property-in-object",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@babel/preset-env",
       "allowedCategories": [ "apis" ]
     },
