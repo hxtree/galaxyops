@@ -1,18 +1,19 @@
 # @org-apis/html-to-pdf
 
-HTMLtoPDF is a service for generating PDFs from HTML. HTML can be rendered from
-request containing either HTML or URL.
+HTMLtoPDF is a service for generating PDFs from HTML. It support generating a
+PDF from either a request containing a HTML body or a URL.
 
 ## How it Works
 
-PDF are generated using a headless version of Chromium. The PDF rendered feature
-text recognition, images, hyperlinks, print media queries, table breaks, etc.
-All with relatively little code.
+PDF are generated using a headless version of Chromium. This form of PDF
+rendering supports text recognition, images, hyperlinks, print media queries,
+table breaks, and other features all this with relatively little code
+maintenance.
 
 ## TODO
 
-- [] Get working when deployed with lambda, must have deploy a layer containing
-  Chrome.
+- [] Get working when deployed with lambda, which requires deploy a layer
+  containing Chrome.
 
 ## References
 
