@@ -13,3 +13,5 @@ export * from './Typography';
 export * from './Gauge';
 export * from './Meter';
 export * from './Code';
+export * from './LoadingButton';
+export * from './NonInteractiveLink';
