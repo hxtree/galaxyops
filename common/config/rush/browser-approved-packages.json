@@ -127,6 +127,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@mui/lab",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@mui/material",
       "allowedCategories": [ "apis", "rigs" ]
     },

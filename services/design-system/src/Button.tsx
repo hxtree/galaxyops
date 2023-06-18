@@ -5,9 +5,5 @@ export type ButtonProps = {} & MUIButtonProps;
 
 export const Button = (props: ButtonProps) => {
   const { children, ...muiProps } = props;
-  return (
-    <MUIButton variant="outlined" {...muiProps}>
-      {children}
-    </MUIButton>
-  );
+  return <MUIButton {...muiProps}>{children}</MUIButton>;
 };
