@@ -1,4 +1,3 @@
-// import React from 'react';
 import { Typography as MuiTypography, TypographyProps } from '@mui/material';
 import { styled } from '@mui/system';
 
@@ -77,27 +76,27 @@ export const Typography = styled(MuiTypography)<TypographyProps>(() => ({
     },
   },
   '&.MuiTypography-h3': {
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: 'Helvetica,Arial,sans-serif',
     fontWeight: '400',
     fontSize: '1.05rem',
   },
   '&.MuiTypography-h4': {
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: 'Helvetica,Arial,sans-serif',
     fontWeight: '400',
     fontSize: '1rem',
   },
   '&.MuiTypography-h5': {
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: 'Helvetica,Arial,sans-serif',
     fontWeight: '400',
     fontSize: '1rem',
   },
   '&.MuiTypography-h6': {
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: 'Helvetica,Arial,sans-serif',
     fontWeight: '400',
     fontSize: '1rem',
   },
   '&.MuiTypography-body1': {
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: 'Helvetica,Arial,sans-serif',
     fontWeight: '400',
     fontSize: '1rem',
   },

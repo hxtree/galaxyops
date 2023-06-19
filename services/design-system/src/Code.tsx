@@ -14,9 +14,11 @@ export const Code = (props: CodeProps) => {
   const { language, code } = props;
 
   return (
-    <div className="Code">
+    <div className="Code" data-prismjs-copy-timeout="500">
       <pre>
-        <code className={`language-${language}`}>{code}</code>
+        <code className={`language-${language}`} data-prismjs-copy="Copy">
+          {code}
+        </code>
       </pre>
     </div>
   );

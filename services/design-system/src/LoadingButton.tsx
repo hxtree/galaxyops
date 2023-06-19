@@ -7,5 +7,15 @@ export type LoadingButtonProps = {} & MuiLoadingButtonProps;
 
 export const LoadingButton = (props: LoadingButtonProps) => {
   const { children, ...muiProps } = props;
-  return <MuiLoadingButton {...muiProps}>{children}</MuiLoadingButton>;
+  return (
+    <MuiLoadingButton
+      {...muiProps}
+      style={{
+        fontFamily: 'Helvetica, arial, sans-serif',
+        fontWeight: 'bold',
+      }}
+    >
+      {children}
+    </MuiLoadingButton>
+  );
 };
