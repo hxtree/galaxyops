@@ -1,0 +1,196 @@
+{
+  "ssrModuleMapping": {
+    "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/app-router.js": {
+      "*": {
+        "id": "(sc_client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/app-router.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/error-boundary.js": {
+      "*": {
+        "id": "(sc_client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/error-boundary.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/redirect-boundary.js": {
+      "*": {
+        "id": "(sc_client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/redirect-boundary.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": {
+      "*": {
+        "id": "(sc_client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/layout-router.js": {
+      "*": {
+        "id": "(sc_client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/layout-router.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/render-from-template-context.js": {
+      "*": {
+        "id": "(sc_client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/render-from-template-context.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+      "*": {
+        "id": "(sc_client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    }
+  },
+  "edgeSSRModuleMapping": {},
+  "clientModules": {
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/app-router.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/app-router.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/esm/client/components/app-router.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/app-router.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/error-boundary.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/error-boundary.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/esm/client/components/error-boundary.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/error-boundary.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/redirect-boundary.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/redirect-boundary.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/esm/client/components/redirect-boundary.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/redirect-boundary.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/shared/lib/app-router-context.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/shared/lib/app-router-context.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/esm/shared/lib/app-router-context.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/shared/lib/app-router-context.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/shared/lib/hooks-client-context.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/shared/lib/hooks-client-context.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/esm/shared/lib/hooks-client-context.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/shared/lib/hooks-client-context.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/shared/lib/server-inserted-html.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/shared/lib/server-inserted-html.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/esm/shared/lib/server-inserted-html.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/shared/lib/server-inserted-html.js",
+      "name": "*",
+      "chunks": ["webpack:static/chunks/webpack.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/layout-router.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/layout-router.js",
+      "name": "*",
+      "chunks": ["app-client-internals:static/chunks/app-client-internals.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/esm/client/components/layout-router.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/layout-router.js",
+      "name": "*",
+      "chunks": ["app-client-internals:static/chunks/app-client-internals.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/render-from-template-context.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/render-from-template-context.js",
+      "name": "*",
+      "chunks": ["app-client-internals:static/chunks/app-client-internals.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/render-from-template-context.js",
+      "name": "*",
+      "chunks": ["app-client-internals:static/chunks/app-client-internals.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+      "name": "*",
+      "chunks": ["app-client-internals:static/chunks/app-client-internals.js"],
+      "async": false
+    },
+    "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
+      "id": "(app-client)/../../common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+      "name": "*",
+      "chunks": ["app-client-internals:static/chunks/app-client-internals.js"],
+      "async": false
+    }
+  },
+  "entryCSSFiles": {
+    "/usr/src/app/services/admin-client/src/app/page": {
+      "modules": ["/usr/src/app/services/admin-client/src/app/page.module.css"],
+      "files": ["static/css/app/page.css"]
+    },
+    "/usr/src/app/services/admin-client/src/app/layout": {
+      "modules": [
+        "/usr/src/app/services/admin-client/src/app/globals.css",
+        "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}"
+      ],
+      "files": ["static/css/app/layout.css"]
+    }
+  }
+}

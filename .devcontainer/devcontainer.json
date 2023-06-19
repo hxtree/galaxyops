@@ -23,7 +23,8 @@
     "foxundermoon.shell-format",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "ms-vsliveshare.vsliveshare"
+    "ms-vsliveshare.vsliveshare",
+    "rangav.vscode-thunder-client"
   ],
   "workspaceFolder": "/usr/src/app",
   "remoteUser": "node",
