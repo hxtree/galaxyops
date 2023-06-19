@@ -1,9 +1,10 @@
 # @cats-cradle/design-system
 
-[Design system](https://storybook.js.org/tutorials/design-systems-for-developers/)
-containing common components for other front end applications.
+This
+[design system](https://storybook.js.org/tutorials/design-systems-for-developers/)
+contains common components for use in other front end applications.
 
-This should only contain pure and presentational components. This is not
+This package should only contain pure and presentational components. This is not
 superset of every component library in an organization. That would be a headache
 to keep track of. These are **reusable** components.
 
