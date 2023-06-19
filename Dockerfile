@@ -27,7 +27,7 @@ RUN apt-get update \
         npm \
         default-jre \
     && npm install --global npm@9.7.1  \
-    # https://pnpm.io/installation version 8 doesn't work currently with rush
+    # https://pnpm.io/
     && npm install --global pnpm@8.6.2 \
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.100.1 \

@@ -55,6 +55,30 @@
         "chunks": [],
         "async": false
       }
+    },
+    "(app-client)/./src/app/ApiClient.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/ApiClient.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/Code.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/Code.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
     }
   },
   "edgeSSRModuleMapping": {},
@@ -178,19 +202,42 @@
       "name": "*",
       "chunks": ["app-client-internals:static/chunks/app-client-internals.js"],
       "async": false
+    },
+    "/usr/src/app/services/admin-client/src/app/ApiClient.tsx": {
+      "id": "(app-client)/./src/app/ApiClient.tsx",
+      "name": "*",
+      "chunks": ["app/page:static/chunks/app/page.js"],
+      "async": false
+    },
+    "/usr/src/app/services/admin-client/src/app/Code.tsx": {
+      "id": "(app-client)/./src/app/Code.tsx",
+      "name": "*",
+      "chunks": ["app/page:static/chunks/app/page.js"],
+      "async": false
+    },
+    "/usr/src/app/services/admin-client/src/app/page.tsx": {
+      "id": "(app-client)/./src/app/page.tsx",
+      "name": "*",
+      "chunks": ["app/page:static/chunks/app/page.js"],
+      "async": false
     }
   },
   "entryCSSFiles": {
-    "/usr/src/app/services/admin-client/src/app/page": {
-      "modules": ["/usr/src/app/services/admin-client/src/app/page.module.css"],
-      "files": ["static/css/app/page.css"]
-    },
     "/usr/src/app/services/admin-client/src/app/layout": {
       "modules": [
         "/usr/src/app/services/admin-client/src/app/globals.css",
         "/usr/src/app/common/temp/node_modules/.pnpm/next@13.4.6_react-dom@18.2.0_react@18.2.0/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}"
       ],
       "files": ["static/css/app/layout.css"]
+    },
+    "/usr/src/app/services/admin-client/src/app/page": {
+      "modules": [
+        "/usr/src/app/common/temp/node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
+        "/usr/src/app/common/temp/node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs/plugins/toolbar/prism-toolbar.css",
+        "/usr/src/app/services/admin-client/src/app/styles/prism-custom.css",
+        "/usr/src/app/services/admin-client/src/app/page.module.css"
+      ],
+      "files": ["static/css/app/page.css"]
     }
   }
 }

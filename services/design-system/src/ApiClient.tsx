@@ -3,7 +3,7 @@ import React from 'react';
 import { CardContent, Card, Grid, Stack } from '@mui/material';
 import { Button } from './Button';
 import { NonInteractiveLink } from './NonInteractiveLink';
-import { Code } from './Code';
+import { Code } from './Code/Code';
 import { Typography } from './Typography';
 import { LoadingButton } from './LoadingButton';
 
