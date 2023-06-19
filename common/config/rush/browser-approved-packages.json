@@ -255,6 +255,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@storybook/addon-styling",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/addons",
       "allowedCategories": [ "apis" ]
     },

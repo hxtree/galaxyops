@@ -1,10 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { TextField } from '../src/TextField';
+import { TextField } from '../../../src/TextField';
 
 export default {
-  title: 'Components/TextField',
+  title: 'Molecules/TextField',
   component: TextField,
   argTypes: {},
 } as ComponentMeta<typeof TextField>;

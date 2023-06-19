@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { LoadingButton, LoadingButtonProps } from '../src/LoadingButton';
+import { LoadingButton, LoadingButtonProps } from '../../../src/LoadingButton';
 
 export default {
-  title: 'Components/LoadingButton',
+  title: 'Molecules/LoadingButton',
   component: LoadingButton,
 } as Meta<typeof LoadingButton>;
 

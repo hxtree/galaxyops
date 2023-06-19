@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Meter, OrientationType } from '../src';
+import { Meter, OrientationType } from '../../src';
 
 export default {
   title: 'HUD/Meter',

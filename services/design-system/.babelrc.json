@@ -17,8 +17,7 @@
       "prismjs",
       {
         "languages": ["javascript", "css", "markup", "json"],
-        "plugins": ["line-numbers"],
-        "theme": "tomorrow",
+        "plugins": ["line-numbers", "toolbar", "copy-to-clipboard"],
         "css": true
       }
     ]

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Paper, PaperProps } from '../src/Paper';
+import { Paper, PaperProps } from '../../../src/Paper';
 
 export default {
-  title: 'Components/Paper',
+  title: 'Atoms/Paper',
   component: Paper,
 } as Meta<typeof Paper>;
 

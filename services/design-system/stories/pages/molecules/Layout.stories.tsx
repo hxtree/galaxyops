@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Box, Stack, Item } from '../src/Layout';
+import { Box, Stack, Item } from '../../../src/Layout';
 
 export default {
-  title: 'Components/Layout',
+  title: 'Molecules/Layout',
   component: Stack,
 } as Meta<typeof Stack>;
 
