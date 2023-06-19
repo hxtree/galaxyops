@@ -205,6 +205,13 @@
       "tags": []
     },
     {
+      "packageName": "@cats-cradle/admin-client",
+      "projectFolder": "services/admin-client",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "tags": []
+    },
+    {
       "packageName": "@cats-cradle/dialogue-service",
       "projectFolder": "services/dialogue-service",
       "reviewCategory": "apis",

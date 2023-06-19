@@ -20,7 +20,8 @@ serverless microservices and a monorepo is believed to help streamline changes.
 
 ## Monorepo Manager
 
-Microsoft backed Rush was selected over Nx, Lerna, etc. for monorepo management.
+Microsoft backed Rush was selected over Nx, Lerna, Turbo, etc. for monorepo
+management.
 
 ## Typescript
 

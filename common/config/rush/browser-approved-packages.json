@@ -415,6 +415,10 @@
       "allowedCategories": [ "category-platform", "platform" ]
     },
     {
+      "name": "eslint-config-next",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "eslint-config-prettier",
       "allowedCategories": [ "category-platform", "platform" ]
     },
@@ -497,6 +501,10 @@
     {
       "name": "mongoose",
       "allowedCategories": [ "apis", "category-platform", "libraries", "platform", "rigs" ]
+    },
+    {
+      "name": "next",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "node-cache",

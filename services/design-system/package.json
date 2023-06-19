@@ -12,7 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "storybook dev -p 6006",
+    "dev": "storybook dev -p 6006",
     "build": "tsdx build",
     "build:all": "rush build -t .",
     "test": "",
@@ -75,18 +75,18 @@
     "@storybook/react": "^7.0.7",
     "@storybook/react-webpack5": "~7.0.7",
     "@storybook/testing-library": "^0.0.14-next.2",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.1",
+    "@types/react": "18.2.13",
+    "@types/react-dom": "18.2.6",
     "babel-loader": "^9.1.2",
     "husky": "^8.0.3",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-is": "^18.2.0",
     "size-limit": "^8.2.4",
     "storybook": "^7.0.22",
     "tsdx": "^0.14.1",
     "tslib": "^2.5.0",
-    "typescript": "5.0.4"
+    "typescript": "5.1.3"
   }
 }

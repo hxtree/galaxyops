@@ -26,33 +26,22 @@ RUN apt-get update \
         jq \
         npm \
         default-jre \
-    # install latest npm
-    # install latest npm
-    && npm install --global npm@9.2.0 \
+    && npm install --global npm@9.7.1  \
     # https://pnpm.io/installation version 8 doesn't work currently with rush
     && npm install --global pnpm@8.6.2 \
-    # install Microsoft Rush globally
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.100.1 \
-    # install AWS CDK globally
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
     && npm install --global aws-cdk@2.63.1 \
-    # install typescript globally (perhaps this should be moved for rush's package)
-    && npm install --global typescript@5.0.4 \
     # install typescript globally (perhaps this could be moved to local)
     && npm install --global typedocs \
-    # install AWS Organization Formation
     # https://github.com/org-formation/org-formation-cli
     && npm install --global aws-organization-formation \
-    # install dependency check
     # https://www.npmjs.com/package/depcheck
     && npm install --global depcheck \
     # install nestjs/cli globally (used to run nest services locally)
     # https://docs.nestjs.com/first-steps
     && npm install --global @nestjs/cli \
-    # install esbuild
-    # https://esbuild.github.io/getting-started/#install-esbuild
-    # && npm install --global esbuild \
     # install openapi generator for generating microservice contracts
     # https://openapi-generator.tech
     && npm install --global @openapitools/openapi-generator-cli \

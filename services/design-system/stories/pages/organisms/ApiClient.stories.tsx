@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Button } from '../../../src/Button';
-import { ApiClient } from '../../../src/ApiClient';
+import { ApiClient, ApiClientProps } from '../../../src/ApiClient';
 
 export default {
   title: 'Organisms/ApiClient',
