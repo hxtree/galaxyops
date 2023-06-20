@@ -15,10 +15,6 @@ import {
 } from '@cats-cradle/design-system';
 import { CodeSnippet, CodeSnippetLanguages } from './CodeSnippet';
 
-// import './styles/prism-custom.css';
-
-// require('prismjs/components/prism-json');
-
 export type ApiClientOptionProps = {
   label: string;
   displayUrl: string;

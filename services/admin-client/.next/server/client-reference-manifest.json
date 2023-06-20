@@ -220,7 +220,6 @@
       "modules": [
         "/usr/src/app/common/temp/node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
         "/usr/src/app/common/temp/node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs/plugins/toolbar/prism-toolbar.css",
-        "/usr/src/app/common/temp/node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs/themes/prism.css",
         "/usr/src/app/services/admin-client/src/app/page.module.css"
       ],
       "files": ["static/css/app/page.css"]

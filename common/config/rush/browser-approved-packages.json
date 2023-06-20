@@ -575,6 +575,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "react-syntax-highlighter",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "reflect-metadata",
       "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
