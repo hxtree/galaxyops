@@ -1,37 +1,6 @@
-// 'use client';
-// import { Code } from './Code';
-
-// export default function Home() {
-//   return <Code />;
-// }
-// 'use client';
-// import { useEffect } from 'react';
-
-// import Prism from 'prismjs';
-// import './styles/prism-custom.css';
-
-// require('prismjs/components/prism-json');
-
-// export function App() {
-//   useEffect(() => {
-//     Prism.highlightAll();
-//   }, []);
-
-//   const body = '      {"a": 2}  ';
-//   return (
-//     <pre>
-//       <code className={`language-json`}>{body}</code>
-//     </pre>
-//   );
-// }
-
-// export default function Home() {
-//   return <App></App>;
-// }
-
 'use client';
 import styles from './page.module.css';
-import { ApiClient } from './ApiClient';
+import { ApiClient } from '../../components/ApiClient';
 import { Container, Link } from '@cats-cradle/design-system';
 
 export default function Home() {

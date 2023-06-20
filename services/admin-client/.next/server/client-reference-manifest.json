@@ -56,9 +56,9 @@
         "async": false
       }
     },
-    "(app-client)/./src/app/ApiClient.tsx": {
+    "(app-client)/./components/ApiClient.tsx": {
       "*": {
-        "id": "(sc_client)/./src/app/ApiClient.tsx",
+        "id": "(sc_client)/./components/ApiClient.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -195,8 +195,8 @@
       "chunks": ["app-client-internals:static/chunks/app-client-internals.js"],
       "async": false
     },
-    "/usr/src/app/services/admin-client/src/app/ApiClient.tsx": {
-      "id": "(app-client)/./src/app/ApiClient.tsx",
+    "/usr/src/app/services/admin-client/components/ApiClient.tsx": {
+      "id": "(app-client)/./components/ApiClient.tsx",
       "name": "*",
       "chunks": ["app/page:static/chunks/app/page.js"],
       "async": false
