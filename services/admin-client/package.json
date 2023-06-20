@@ -22,7 +22,8 @@
     "@cats-cradle/design-system": "workspace:*",
     "prismjs": "~1.29.0",
     "@aerisweather/javascript-sdk": "~1.8.0",
-    "react-syntax-highlighter": "~15.5.0"
+    "react-syntax-highlighter": "~15.5.0",
+    "@types/react-syntax-highlighter": "~15.5.7"
   },
   "devDependencies": {
     "@types/prismjs": "~1.26.0"

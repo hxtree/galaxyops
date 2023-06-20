@@ -1058,6 +1058,9 @@ importers:
       '@types/react-dom':
         specifier: 18.2.6
         version: 18.2.6
+      '@types/react-syntax-highlighter':
+        specifier: ~15.5.7
+        version: 15.5.7
       eslint:
         specifier: 8.43.0
         version: 8.43.0
@@ -13880,6 +13883,12 @@ packages:
     dependencies:
       '@types/react': 18.2.13
     dev: true
+
+  /@types/react-syntax-highlighter@15.5.7:
+    resolution: {integrity: sha512-bo5fEO5toQeyCp0zVHBeggclqf5SQ/Z5blfFmjwO5dkMVGPgmiwZsJh9nu/Bo5L7IHTuGWrja6LxJVE2uB5ZrQ==}
+    dependencies:
+      '@types/react': 18.2.13
+    dev: false
 
   /@types/react-textarea-autosize@4.3.6:
     resolution: {integrity: sha512-cTf8tCem0c8A7CERYbTuF+bRFaqYu7N7HLCa6ZhUhDx8XnUsTpGx5udMWljt87JpciUKuUkImKPEsy6kcKhrcQ==}

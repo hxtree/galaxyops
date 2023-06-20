@@ -17,7 +17,8 @@ export const CodeSnippet = (props: CodeSnippetProps) => {
   return (
     <div>
       {data ? (
-        <SyntaxHighlighter language="json" style={hljsCustom}>
+        // @ts-nocheck
+        <SyntaxHighlighter language="json" style={hljsCustom as any}>
           {JSON.stringify(data, null, 2)}
         </SyntaxHighlighter>
       ) : (
