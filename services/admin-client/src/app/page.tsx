@@ -7,7 +7,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <Link href="https://github.com">Github Repository</Link>
+        <Link href="https://github.com/aerisapp/tech-challenge">
+          Github Repository
+        </Link>
         <Container>
           <h1>Demo Page</h1>
           <ApiClient
