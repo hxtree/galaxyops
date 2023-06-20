@@ -7,7 +7,13 @@
     "build": "next build",
     "build:all": "rush build -t .",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cdk:bootstrap": "cdk bootstrap",
+    "cdk:synth": "cdk synth",
+    "cdk:diff": "cdk diff",
+    "cdk:deploy": "next build && cdk deploy",
+    "cdk:hotswap": "cdk deploy --hotswap",
+    "cdk:destroy": "cdk destroy"
   },
   "dependencies": {
     "@types/node": "20.3.1",
@@ -26,6 +32,8 @@
     "@types/react-syntax-highlighter": "~15.5.7"
   },
   "devDependencies": {
-    "@types/prismjs": "~1.26.0"
+    "@types/prismjs": "~1.26.0",
+    "ts-node": "10.9.1",
+    "aws-cdk-lib": "2.47.0"
   }
 }
