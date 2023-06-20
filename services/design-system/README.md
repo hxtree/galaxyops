@@ -11,9 +11,9 @@ to keep track of. These are **reusable** components.
 The following properties are essential in allowing the component to be reusable:
 
 - These components deal with how UI appears.
-- They respond exclusively to `props`.
-- They do not contain app-specific business logic.
-- They are agnostic to how data loads.
+- They MUST respond exclusively to `props`.
+- They SHOULD NOT contain app-specific business logic.
+- They MUST be agnostic to how data loads.
 
 ## Guidelines
 
