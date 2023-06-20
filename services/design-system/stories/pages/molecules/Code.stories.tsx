@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Code, CodeProps } from '../../../src/Code';
+import { Code, CodeProps } from '../../../src';
 
 export default {
   title: 'Molecules/Code',

@@ -3,6 +3,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@aerisweather/javascript-sdk",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@anatine/esbuild-decorators",
       "allowedCategories": [ "apis", "rigs" ]
     },
@@ -571,12 +575,20 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "react-syntax-highlighter",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "reflect-metadata",
       "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
     {
       "name": "rimraf",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "rollup-plugin-postcss",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "rxjs",

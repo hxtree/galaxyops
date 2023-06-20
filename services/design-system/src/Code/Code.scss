@@ -1,0 +1,162 @@
+pre[class*='language-'],
+code[class*='language-'] {
+  color: #a2a3a4;
+  font-size: 13px;
+  text-shadow: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-weight: bold;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*='language-']::selection,
+code[class*='language-']::selection,
+pre[class*='language-']::mozselection,
+code[class*='language-']::mozselection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  pre[class*='language-'],
+  code[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  background: #102b40;
+}
+
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  color: #db4c69;
+  background: #f9f2f4;
+}
+
+/*********************************************************
+* Tokens
+*/
+
+.namespace {
+  opacity: 0.7;
+}
+
+.language-json .token {
+  &.string {
+    color: #fbc933;
+  }
+
+  &.boolean,
+  &.null {
+    color: #2ea2e2;
+  }
+
+  &.number {
+    color: #07b560;
+  }
+}
+
+.token {
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: #93a1a1;
+  }
+
+  &.punctuation {
+    color: #999999;
+  }
+
+  &.tag,
+  &.boolean,
+  &.number,
+  &.constant,
+  &.symbol,
+  &.deleted {
+    color: #b50760;
+  }
+
+  &.selector,
+  &.attr-name,
+  &.string,
+  &.char,
+  &.builtin,
+  &.inserted {
+    color: #07b560;
+  }
+
+  &.atrule,
+  &.attr-value,
+  &.keyword {
+    color: #0077aa;
+  }
+
+  &.function {
+    color: #dd4a68;
+  }
+
+  &.regex,
+  &.important,
+  &.variable {
+    color: #ee9900;
+  }
+
+  &.important,
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.entity {
+    cursor: help;
+  }
+}
+
+/*********************************************************
+* Line highlighting
+*/
+
+pre {
+  &[data-line] {
+    position: relative;
+  }
+
+  &[class*='language-'] > code[class*='language-'] {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: #203b50;
+  box-shadow: inset 5px 0 0 #2ea2e2;
+  z-index: 0;
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}

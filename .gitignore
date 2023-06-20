@@ -5,6 +5,9 @@ common/deploy-ci/**
 dist/**
 !dist/README.md
 
+# next.js build output
+.next
+
 # coverage
 clover.xml
 **/coverage/**
