@@ -1,5 +1,4 @@
 'use client';
-import Prism from 'prismjs';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import {
@@ -34,10 +33,6 @@ export const ApiClient = (props: ApiClientProps) => {
   const [displayUrl, setDisplayUrl] = useState(options[selection].displayUrl);
   const [data, setData] = useState('');
   const [isLoading, setLoading] = useState(false);
-
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
 
   const callApi = async () => {
     try {
