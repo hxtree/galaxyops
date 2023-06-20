@@ -39,9 +39,7 @@ export const ApiClient = (props: ApiClientProps) => {
       setLoading(true);
       const res = await fetch(options[selection].endpoint);
       const result = await res.json();
-
       setData(result);
-
       setLoading(false);
     } catch (err) {
       console.log(err);
