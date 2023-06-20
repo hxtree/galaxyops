@@ -1,27 +1,50 @@
 'use client';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+
 import Prism from 'prismjs';
 import './styles/prism-custom.css';
 
-export interface CodeProps {
-  code: string;
-  language: string;
-}
+require('prismjs/components/prism-json');
 
-export const Code = (props: CodeProps) => {
+export function Code() {
   useEffect(() => {
     Prism.highlightAll();
   }, []);
 
-  const { language, code } = props;
-
+  const body = '      {"a": 2}  ';
   return (
-    <div className="Code" data-prismjs-copy-timeout="500">
-      <pre>
-        <code className={`language-${language}`} data-prismjs-copy="Copy">
-          {code}
-        </code>
-      </pre>
-    </div>
+    <pre>
+      <code className={`language-json`}>{body}</code>
+    </pre>
   );
-};
+}
+
+// 'use client';
+// import { useEffect } from 'react';
+// import Prism from 'prismjs';
+// import './styles/prism-custom.css';
+
+// require('prismjs/components/prism-json');
+
+// export interface CodeProps {
+//   code: string;
+//   language: string;
+// }
+
+// export const Code = (props: CodeProps) => {
+//   const { language, code } = props;
+
+//   useEffect(() => {
+//     Prism.highlightAll();
+//   }, []);
+
+//   return (
+//     <div className="Code" data-prismjs-copy-timeout="500">
+//       <pre>
+//         <code className={`language-json`} data-prismjs-copy="Copy">
+//           {code}
+//         </code>
+//       </pre>
+//     </div>
+//   );
+// };

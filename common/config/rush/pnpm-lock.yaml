@@ -1043,6 +1043,9 @@ importers:
 
   ../../services/admin-client:
     dependencies:
+      '@aerisweather/javascript-sdk':
+        specifier: ~1.8.0
+        version: 1.8.0
       '@cats-cradle/design-system':
         specifier: workspace:*
         version: link:../design-system
@@ -2398,6 +2401,16 @@ packages:
 
   /@adobe/css-tools@4.2.0:
     resolution: {integrity: sha512-E09FiIft46CmH5Qnjb0wsW54/YQd69LsxeKUOWawmws1XWvyFGURnAChH0mlr7YPFR1ofwvUQfcL0J3lMxXqPA==}
+    dev: false
+
+  /@aerisweather/javascript-sdk@1.8.0:
+    resolution: {integrity: sha512-kRp9nwQzfp2q0upkork64t9baMriF3oH1ZV2wwCU3K5nuBqccuwqE5cDM7/xW2OVGYZlaxCIWN6qY5ijZ5BQlA==}
+    dependencies:
+      axios: 0.21.4
+      date-fns: 2.30.0
+      domtastic: 0.15.12
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /@alloc/quick-lru@5.2.0:
@@ -17576,6 +17589,13 @@ packages:
       whatwg-url: 8.7.0
     dev: false
 
+  /date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.22.5
+    dev: false
+
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     dependencies:
@@ -18071,6 +18091,10 @@ packages:
     engines: {node: '>= 4'}
     dependencies:
       domelementtype: 2.3.0
+    dev: false
+
+  /domtastic@0.15.12:
+    resolution: {integrity: sha512-znCwbb9ihRcIglgOgTmgsJIXkzVwEMdOC9AutZX2XjZz+rtW631BlDDd3BnmLY2aI5YCDzgwVak5i1ud25MIfw==}
     dev: false
 
   /domutils@1.7.0:

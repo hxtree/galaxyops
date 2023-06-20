@@ -9,4 +9,6 @@ export default {
 
 export const Default = args => <Link {...args}>Run Query</Link>;
 
-Default.args = {};
+Default.args = {
+  href: 'https://google.com',
+};

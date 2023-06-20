@@ -64,14 +64,6 @@
         "async": false
       }
     },
-    "(app-client)/./src/app/Code.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/app/Code.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./src/app/page.tsx": {
       "*": {
         "id": "(sc_client)/./src/app/page.tsx",
@@ -209,12 +201,6 @@
       "chunks": ["app/page:static/chunks/app/page.js"],
       "async": false
     },
-    "/usr/src/app/services/admin-client/src/app/Code.tsx": {
-      "id": "(app-client)/./src/app/Code.tsx",
-      "name": "*",
-      "chunks": ["app/page:static/chunks/app/page.js"],
-      "async": false
-    },
     "/usr/src/app/services/admin-client/src/app/page.tsx": {
       "id": "(app-client)/./src/app/page.tsx",
       "name": "*",
@@ -234,7 +220,7 @@
       "modules": [
         "/usr/src/app/common/temp/node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
         "/usr/src/app/common/temp/node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs/plugins/toolbar/prism-toolbar.css",
-        "/usr/src/app/services/admin-client/src/app/styles/prism-custom.css",
+        "/usr/src/app/common/temp/node_modules/.pnpm/prismjs@1.29.0/node_modules/prismjs/themes/prism.css",
         "/usr/src/app/services/admin-client/src/app/page.module.css"
       ],
       "files": ["static/css/app/page.css"]
