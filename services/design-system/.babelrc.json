@@ -12,14 +12,5 @@
     "@babel/preset-typescript",
     "@babel/preset-react"
   ],
-  "plugins": [
-    [
-      "prismjs",
-      {
-        "languages": ["javascript", "css", "markup", "json"],
-        "plugins": ["line-numbers", "toolbar", "copy-to-clipboard"],
-        "css": true
-      }
-    ]
-  ]
+  "plugins": []
 }
