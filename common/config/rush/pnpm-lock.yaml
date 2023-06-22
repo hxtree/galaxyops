@@ -1394,9 +1394,6 @@ importers:
       '@types/jest':
         specifier: 29.5.1
         version: 29.5.1
-      '@types/prismjs':
-        specifier: ~1.26.0
-        version: 1.26.0
       '@types/react-syntax-highlighter':
         specifier: ~15.5.7
         version: 15.5.7
@@ -1406,18 +1403,12 @@ importers:
       aws-cdk-lib:
         specifier: 2.47.0
         version: 2.47.0(constructs@10.2.52)
-      babel-plugin-prismjs:
-        specifier: ~2.1.0
-        version: 2.1.0(prismjs@1.29.0)
       constructs:
         specifier: ^10.2.36
         version: 10.2.52
       jest:
         specifier: 29.5.0
         version: 29.5.0(@types/node@20.3.1)(ts-node@10.9.1)
-      prismjs:
-        specifier: ~1.29.0
-        version: 1.29.0
       react-syntax-highlighter:
         specifier: ~15.5.0
         version: 15.5.0(react@18.2.0)
@@ -13871,6 +13862,7 @@ packages:
 
   /@types/prismjs@1.26.0:
     resolution: {integrity: sha512-ZTaqn/qSqUuAq1YwvOFQfVW1AR/oQJlLSZVustdjwI+GZ8kr0MSHBj0tsXPW1EqHubx50gtBEjbPGsdZwQwCjQ==}
+    dev: true
 
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
@@ -15968,14 +15960,6 @@ packages:
       '@babel/helper-define-polyfill-provider': 0.4.0(@babel/core@7.22.5)
     transitivePeerDependencies:
       - supports-color
-
-  /babel-plugin-prismjs@2.1.0(prismjs@1.29.0):
-    resolution: {integrity: sha512-ehzSKYfeAz4U78zi/sfwsjDPlq0LvDKxNefcZTJ/iKBu+plsHsLqZhUeGf1+82LAcA35UZGbU6ksEx2Utphc/g==}
-    peerDependencies:
-      prismjs: ^1.18.0
-    dependencies:
-      prismjs: 1.29.0
-    dev: false
 
   /babel-plugin-react-docgen@4.2.1:
     resolution: {integrity: sha512-UQ0NmGHj/HAqi5Bew8WvNfCk8wSsmdgNd8ZdMjBCICtyCJCq9LiqgqvjCYe570/Wg7AQArSq1VQ60Dd/CHN7mQ==}
