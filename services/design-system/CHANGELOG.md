@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/design-system
 
-This log was last generated on Tue, 20 Jun 2023 16:13:17 GMT and should not be manually modified.
+This log was last generated on Thu, 22 Jun 2023 18:43:15 GMT and should not be manually modified.
+
+## 0.3.0
+Thu, 22 Jun 2023 18:43:15 GMT
+
+### Minor changes
+
+- deploy design system to cloudfront
 
 ## 0.2.1
 Tue, 20 Jun 2023 16:13:17 GMT
