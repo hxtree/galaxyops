@@ -3,7 +3,7 @@ import React from 'react';
 import { CardContent, Card, Grid, Stack } from '@mui/material';
 import { Button } from './Button';
 import { NonInteractiveLink } from './NonInteractiveLink';
-import { Code } from './Code/Code';
+import { CodeSnippet, CodeSnippetLanguages } from './CodeSnippet/CodeSnippet';
 import { Typography } from './Typography';
 import { LoadingButton } from './LoadingButton';
 
@@ -87,7 +87,10 @@ export const ApiClient = (props: ApiClientProps) => (
       }}
     >
       {!props.loading && props.response.length > 0 && (
-        <Code code={props.response} language="json" />
+        <CodeSnippet
+          data={JSON.stringify(props.response, null, 2)}
+          language={CodeSnippetLanguages.JSON}
+        />
       )}
     </CardContent>
   </Card>
