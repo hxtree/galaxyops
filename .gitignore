@@ -8,6 +8,9 @@ dist/**
 # next.js build output
 .next
 
+# storybook build
+storybook-static
+
 # coverage
 clover.xml
 **/coverage/**

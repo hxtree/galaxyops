@@ -2,6 +2,18 @@
   "name": "@cats-cradle/design-system",
   "entries": [
     {
+      "version": "0.3.0",
+      "tag": "@cats-cradle/design-system_v0.3.0",
+      "date": "Thu, 22 Jun 2023 18:43:15 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "deploy design system to cloudfront"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.2.1",
       "tag": "@cats-cradle/design-system_v0.2.1",
       "date": "Tue, 20 Jun 2023 16:13:17 GMT",

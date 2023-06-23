@@ -88,7 +88,7 @@ export const ApiClient = (props: ApiClientProps) => (
     >
       {!props.loading && props.response.length > 0 && (
         <CodeSnippet
-          data={JSON.stringify(props.response, null, 2)}
+          data={props.response}
           language={CodeSnippetLanguages.JSON}
         />
       )}
