@@ -2,6 +2,18 @@
   "name": "@cats-cradle/design-system",
   "entries": [
     {
+      "version": "0.3.1",
+      "tag": "@cats-cradle/design-system_v0.3.1",
+      "date": "Fri, 23 Jun 2023 04:01:21 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix cdk synth required file"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.3.0",
       "tag": "@cats-cradle/design-system_v0.3.0",
       "date": "Thu, 22 Jun 2023 18:43:15 GMT",

@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/design-system
 
-This log was last generated on Thu, 22 Jun 2023 18:43:15 GMT and should not be manually modified.
+This log was last generated on Fri, 23 Jun 2023 04:01:21 GMT and should not be manually modified.
+
+## 0.3.1
+Fri, 23 Jun 2023 04:01:21 GMT
+
+### Patches
+
+- fix cdk synth required file
 
 ## 0.3.0
 Thu, 22 Jun 2023 18:43:15 GMT
