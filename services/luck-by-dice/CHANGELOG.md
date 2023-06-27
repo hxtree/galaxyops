@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/luck-by-dice
 
-This log was last generated on Sat, 17 Jun 2023 18:47:42 GMT and should not be manually modified.
+This log was last generated on Tue, 27 Jun 2023 18:44:40 GMT and should not be manually modified.
+
+## 2.0.1
+Tue, 27 Jun 2023 18:44:40 GMT
+
+### Patches
+
+- upgrade to node 18 lts
 
 ## 2.0.0
 Sat, 17 Jun 2023 18:47:42 GMT

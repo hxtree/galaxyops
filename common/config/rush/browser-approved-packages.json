@@ -523,6 +523,10 @@
       "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
+      "name": "node-fetch",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "node-sass",
       "allowedCategories": [ "libraries" ]
     },

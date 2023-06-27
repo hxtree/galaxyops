@@ -2,6 +2,18 @@
   "name": "@cats-cradle/design-system",
   "entries": [
     {
+      "version": "0.3.2",
+      "tag": "@cats-cradle/design-system_v0.3.2",
+      "date": "Tue, 27 Jun 2023 18:44:40 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "upgrade to node 18 lts"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.3.1",
       "tag": "@cats-cradle/design-system_v0.3.1",
       "date": "Fri, 23 Jun 2023 04:01:21 GMT",

@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/design-system",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -62,8 +62,9 @@
     "rollup-plugin-postcss": "~4.0.2",
     "react-syntax-highlighter": "~15.5.0",
     "@types/react-syntax-highlighter": "~15.5.7",
-    "aws-cdk-lib": "2.47.0",
-    "constructs": "^10.2.36"
+    "aws-cdk-lib": "2.85.0",
+    "constructs": "^10.2.61",
+    "node-fetch": "2.6.11"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",
@@ -85,6 +86,7 @@
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/react": "18.2.13",
     "@types/react-dom": "18.2.6",
+    "@types/node-fetch": "~2.6.4",
     "babel-loader": "^9.1.2",
     "husky": "^8.0.3",
     "prop-types": "^15.8.1",
