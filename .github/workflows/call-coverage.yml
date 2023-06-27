@@ -44,8 +44,15 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
-      - name: test cov
-        run: node common/scripts/install-run-rush.js test:cov
+      - uses: neofinancial/mongo-memory-server-action@v1.0.2
+        with:
+          db-connection-env-var: MONGO_DATABASE_URI
+          run-command: node common/scripts/install-run-rush.js test:cov
+          binary-version: 4.2.8
+          instance-dbName: validation
+          instance-port: 27017
+          instance-storageEngine: wiredTiger
+          mongoms-debug: 1
 
       - name: Merge coverage reports
         run: npx @cats-cradle/rush-coverage@1.2.0

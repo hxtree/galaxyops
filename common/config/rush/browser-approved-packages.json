@@ -232,7 +232,7 @@
     },
     {
       "name": "@shelf/jest-mongodb",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "@size-limit/preset-small-lib",
@@ -504,7 +504,7 @@
     },
     {
       "name": "mongodb",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "mongodb-memory-server",
