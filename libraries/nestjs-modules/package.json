@@ -50,7 +50,9 @@
     "@aws-sdk/client-sns": "3.289.0",
     "@cats-cradle/messaging-schemas": "workspace:*",
     "@types/uuid": "~8.3.4",
-    "luxon": "~3.3.0"
+    "luxon": "~3.3.0",
+    "@shelf/jest-mongodb": "~4.1.7",
+    "mongodb": "~5.6.0"
   },
   "devDependencies": {
     "@types/jest": "29.5.1",

@@ -68,8 +68,8 @@ describe('MongooseRepository', () => {
       expect.assertions(1);
 
       try {
-        await personsRepository.findOneOrFail({
-          firstName: 'Jane',
+        const result = await personsRepository.findOneOrFail({
+          firstName: 'Jon',
         });
       } catch (error) {
         const err = error as Error;

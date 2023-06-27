@@ -231,6 +231,10 @@
       "allowedCategories": [ "category-ci-cd", "cicd" ]
     },
     {
+      "name": "@shelf/jest-mongodb",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "@size-limit/preset-small-lib",
       "allowedCategories": [ "apis" ]
     },
@@ -497,6 +501,10 @@
     {
       "name": "luxon",
       "allowedCategories": [ "apis", "libraries" ]
+    },
+    {
+      "name": "mongodb",
+      "allowedCategories": [ "libraries" ]
     },
     {
       "name": "mongodb-memory-server",
