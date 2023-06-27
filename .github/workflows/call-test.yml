@@ -51,4 +51,12 @@ jobs:
         run: node common/scripts/install-run-rush.js build
 
       - name: Test
-        run: node common/scripts/install-run-rush.js test --impacted-by git:${{ secrets.IMPACTED_BY_SHA }}
+        uses: neofinancial/mongo-memory-server-action@v1.0.2
+        with:
+          db-connection-env-var: MONGO_DATABASE_URI
+          run-command: node common/scripts/install-run-rush.js test --impacted-by git:${{ secrets.IMPACTED_BY_SHA }}
+          binary-version: 4.2.8
+          instance-dbName: validation
+          instance-port: 27017
+          instance-storageEngine: wiredTiger
+          mongoms-debug: 1
