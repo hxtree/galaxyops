@@ -115,7 +115,7 @@ export const ApiClient = (props: ApiClientProps) => {
 
       <CardContent
         sx={{
-          backgroundColor: 'rgb(30, 30, 30)',
+          backgroundColor: 'rgb(16, 43, 64)',
           ml: -10,
           mb: -5,
           mr: -10,
