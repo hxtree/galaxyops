@@ -66,7 +66,7 @@ export class NestJs extends Construct {
       ).stringValue;
 
     this.nodeJsFunction = new lambda.Function(this, 'NodeJsLambda', {
-      runtime: lambda.Runtime.NODEJS_16_X,
+      runtime: lambda.Runtime.NODEJS_18_X,
       code: lambda.Code.fromAsset(path.join(props.projectRoot, 'dist')),
       handler: 'index.handler',
       layers: [nestJsAppLayer],

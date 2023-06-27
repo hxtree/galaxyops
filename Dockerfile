@@ -4,7 +4,7 @@
 ################################################################################
 # https://hub.docker.com/_/node
 # https://github.com/nodejs/release#nodejs-release-working-group
-FROM node:gallium-buster as base
+FROM node:hydrogen-bookworm as base
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
@@ -14,9 +14,8 @@ RUN mkdir /usr/src/app
 
 WORKDIR /usr/src/app
 
-# install tools
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+RUN apt update \
+    && apt install -y --no-install-recommends \
         tzdata \
         build-essential \
         curl \
@@ -25,14 +24,14 @@ RUN apt-get update \
         less \
         jq \
         npm \
-        default-jre \
+        # default-jre \
     && npm install --global npm@9.7.1  \
     # https://pnpm.io/
     && npm install --global pnpm@8.6.2 \
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.100.1 \
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
-    && npm install --global aws-cdk@2.63.1 \
+    && npm install --global aws-cdk@2.85.0 \
     # install typescript globally (perhaps this could be moved to local)
     && npm install --global typedocs \
     # https://github.com/org-formation/org-formation-cli
@@ -45,7 +44,6 @@ RUN apt-get update \
     # install openapi generator for generating microservice contracts
     # https://openapi-generator.tech
     && npm install --global @openapitools/openapi-generator-cli \
-    # install prettier globally
     # https://rushjs.io/pages/maintainer/enabling_prettier/
     && npm install --global prettier \
     && npm install --global pretty-quick \
@@ -53,13 +51,13 @@ RUN apt-get update \
     && npm install --global git-conventional-commits
 
 # install chrome for html-to-pdf generation, etc.
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+RUN apt update \
+    && apt install -y --no-install-recommends \
     wget gnupg \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
-    && apt-get update \
-    && apt-get install -y --no-install-recommends \
+    && apt update \
+    && apt install -y --no-install-recommends \
     google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1
 
 ################################################################################
@@ -93,7 +91,7 @@ ARG USER=node
 ENV AWS_SDK_LOAD_CONFIG=1
 ENV STAGE=default
 
-RUN apt-get install -y --no-install-recommends \
+RUN apt install -y --no-install-recommends \
     sudo \
     zsh \
     vim

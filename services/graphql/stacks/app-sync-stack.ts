@@ -68,7 +68,7 @@ export class AppSyncStack extends cdk.Stack {
     // TODO properly configure resolvers
 
     // const notesLambda = new lambda.Function(this, 'AppSyncNotesHandler', {
-    //   runtime: lambda.Runtime.NODEJS_16_X,
+    //   runtime: lambda.Runtime.NODEJS_18_X,
     //   handler: 'src/main.handler',
     //   code: lambda.Code.fromAsset('dist'),
     //   memorySize: 1024,
@@ -76,7 +76,7 @@ export class AppSyncStack extends cdk.Stack {
 
     // const notesLambda = new NodejsFunction(this, 'AppSyncNotesHandler', {
     //   timeout: cdk.Duration.seconds(5),
-    //   runtime: lambda.Runtime.NODEJS_16_X,
+    //   runtime: lambda.Runtime.NODEJS_18_X,
     //   handler: 'main',
     //   entry: '/../src/main.ts',
     // });

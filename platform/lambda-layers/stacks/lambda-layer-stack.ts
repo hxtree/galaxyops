@@ -29,7 +29,7 @@ export class LambdaLayerStack extends cdk.Stack {
       code: Code.fromAsset('.', {
         exclude: ['*', '!package.json'],
         bundling: {
-          image: Runtime.NODEJS_16_X.bundlingImage,
+          image: Runtime.NODEJS_18_X.bundlingImage,
           command: [],
           local: {
             tryBundle(outputDir: string) {

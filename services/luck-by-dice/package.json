@@ -51,8 +51,8 @@
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.6",
-    "aws-cdk-lib": "2.47.0",
-    "constructs": "^10.2.36",
+    "aws-cdk-lib": "2.85.0",
+    "constructs": "^10.2.61",
     "@types/jest": "29.5.1",
     "@types/node": "20.3.1",
     "@types/aws-lambda": "~8.10.114",
