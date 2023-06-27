@@ -1,7 +1,7 @@
 # @cats-cradle/nestjs-modules
 
 NestJsModules contains select reusable injectable NestJs modules for use in
-other packages maintainly perstaining to AWS workflows.
+other packages, mainly pertaining to AWS workflows.
 
 ## Modules
 
@@ -22,6 +22,7 @@ are as follows:
 
 ## Documentation
 
+- [Jest Using with MongoDB](https://jestjs.io/docs/mongodb)
 - [Mongodb-memory-server](https://github.com/nodkz/mongodb-memory-server)
 - [NestJS Mongoose Example](https://github.com/nestjs/nest/tree/master/sample/14-mongoose-base)
 - [NestJS Configuration](https://docs.nestjs.com/techniques/configuration#getting-started)

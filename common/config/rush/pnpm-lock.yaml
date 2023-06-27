@@ -252,6 +252,9 @@ importers:
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
+      '@shelf/jest-mongodb':
+        specifier: ~4.1.7
+        version: 4.1.7(jest-environment-node@29.5.0)(mongodb@5.6.0)
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -273,6 +276,9 @@ importers:
       luxon:
         specifier: ~3.3.0
         version: 3.3.0
+      mongodb:
+        specifier: ~5.6.0
+        version: 5.6.0
       mongodb-memory-server:
         specifier: 8.11.2
         version: 8.11.2
@@ -11498,6 +11504,22 @@ packages:
       selderee: 0.11.0
     dev: false
 
+  /@shelf/jest-mongodb@4.1.7(jest-environment-node@29.5.0)(mongodb@5.6.0):
+    resolution: {integrity: sha512-1sQXHmEirGL+apuOGEt6dkySsgq5SmIGj7uKWYZ6VWch7kg7imCn4CrbfHgotRoiS6QRRIIVBfMdpv7g3XoEMg==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      jest-environment-node: 27.x.x || 28.x || 29.x
+      mongodb: 3.x.x || 4.x || 5.x
+    dependencies:
+      debug: 4.3.4(supports-color@5.5.0)
+      jest-environment-node: 29.5.0
+      mongodb: 5.6.0
+      mongodb-memory-server: 8.11.5
+    transitivePeerDependencies:
+      - aws-crt
+      - supports-color
+    dev: false
+
   /@sinclair/typebox@0.24.51:
     resolution: {integrity: sha512-1P1OROm/rdubP5aFDSZQILU0vrLCJ4fvHt6EoqHEM+2D/G5MK3bIaymUKLit8Js9gbns5UyJnkP/TZROLw4tUA==}
     dev: false
@@ -16315,6 +16337,11 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       buffer: 5.7.1
+
+  /bson@5.3.0:
+    resolution: {integrity: sha512-ukmCZMneMlaC5ebPHXIkP8YJzNl5DC41N5MAIvKDqLggdao342t4McltoJBQfQya/nHBWAcSsYRqlXPoQkTJag==}
+    engines: {node: '>=14.20.1'}
+    dev: false
 
   /buffer-crc32@0.2.13:
     resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
@@ -24810,12 +24837,49 @@ packages:
       - supports-color
     dev: false
 
+  /mongodb-memory-server-core@8.11.5:
+    resolution: {integrity: sha512-bhptlOruCEYrLofCbjACMoClgP1rFkhSNDzI/bbG/pUAg41UB00eaDPerYVvRf2jvOJqKF4+U9xqXiSvkbMvXw==}
+    engines: {node: '>=12.22.0'}
+    dependencies:
+      '@types/tmp': 0.2.3
+      async-mutex: 0.3.2
+      camelcase: 6.3.0
+      debug: 4.3.4(supports-color@5.5.0)
+      find-cache-dir: 3.3.2
+      get-port: 5.1.1
+      https-proxy-agent: 5.0.1
+      md5-file: 5.0.0
+      mongodb: 4.16.0
+      new-find-package-json: 2.0.0
+      semver: 7.5.2
+      tar-stream: 2.2.0
+      tmp: 0.2.1
+      tslib: 2.5.3
+      uuid: 9.0.0
+      yauzl: 2.10.0
+    transitivePeerDependencies:
+      - aws-crt
+      - supports-color
+    dev: false
+
   /mongodb-memory-server@8.11.2:
     resolution: {integrity: sha512-fjNdN/kwgWnnUnPUT90311vC83sRKQ3C0mpbF5kcKS2CKYxRkWEZLOd0MuGKtQmFHryvnXOPDqAGKKx9G1cIrw==}
     engines: {node: '>=12.22.0'}
     requiresBuild: true
     dependencies:
       mongodb-memory-server-core: 8.11.2
+      tslib: 2.5.3
+    transitivePeerDependencies:
+      - aws-crt
+      - supports-color
+    dev: false
+
+  /mongodb-memory-server@8.11.5:
+    resolution: {integrity: sha512-/yiw3L2TIMpi9I6GXg379k6d+RG3k+9V9o24kK5h+NBTtYLNuWa5iEvtce/O3jqhg6yo31T5XG2e/Hm4UwBM1A==}
+    engines: {node: '>=12.22.0'}
+    requiresBuild: true
+    dependencies:
+      mongodb-memory-server-core: 8.11.5
       tslib: 2.5.3
     transitivePeerDependencies:
       - aws-crt
@@ -24847,6 +24911,28 @@ packages:
       saslprep: 1.0.3
     transitivePeerDependencies:
       - aws-crt
+    dev: false
+
+  /mongodb@5.6.0:
+    resolution: {integrity: sha512-z8qVs9NfobHJm6uzK56XBZF8XwM9H294iRnB7wNjF0SnY93si5HPziIJn+qqvUR5QOff/4L0gCD6SShdR/GtVQ==}
+    engines: {node: '>=14.20.1'}
+    peerDependencies:
+      '@aws-sdk/credential-providers': ^3.201.0
+      mongodb-client-encryption: '>=2.3.0 <3'
+      snappy: ^7.2.2
+    peerDependenciesMeta:
+      '@aws-sdk/credential-providers':
+        optional: true
+      mongodb-client-encryption:
+        optional: true
+      snappy:
+        optional: true
+    dependencies:
+      bson: 5.3.0
+      mongodb-connection-string-url: 2.6.0
+      socks: 2.7.1
+    optionalDependencies:
+      saslprep: 1.0.3
     dev: false
 
   /mongoose@6.9.3:
