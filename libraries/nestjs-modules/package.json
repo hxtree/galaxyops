@@ -53,7 +53,7 @@
     "@types/uuid": "~8.3.4",
     "luxon": "~3.3.0",
     "@shelf/jest-mongodb": "~4.1.7",
-    "mongodb": "~5.6.0"
+    "mongodb": "4.2.8"
   },
   "devDependencies": {
     "@types/jest": "29.5.1",
