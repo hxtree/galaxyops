@@ -46,7 +46,7 @@ jobs:
 
       - uses: neofinancial/mongo-memory-server-action@v1.0.2
         with:
-          db-connection-env-var: MONGODB_CONNECTION_STRING
+          db-connection-env-var: MONGO_DATABASE_URI
           run-command: node common/scripts/install-run-rush.js test:cov
           binary-version: 4.2.8
           instance-dbName: validation
