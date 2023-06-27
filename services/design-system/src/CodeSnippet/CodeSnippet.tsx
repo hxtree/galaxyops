@@ -20,7 +20,7 @@ export const CodeSnippet = (props: CodeSnippetProps) => {
   return (
     <div>
       {data ? (
-        <SyntaxHighlighter language={language} style={codeTheme}>
+        <SyntaxHighlighter language={language} style={codeTheme as any}>
           {data}
         </SyntaxHighlighter>
       ) : (
