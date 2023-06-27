@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/email-service
 
-This log was last generated on Mon, 24 Apr 2023 06:43:20 GMT and should not be manually modified.
+This log was last generated on Tue, 27 Jun 2023 18:44:40 GMT and should not be manually modified.
+
+## 0.0.8
+Tue, 27 Jun 2023 18:44:40 GMT
+
+### Patches
+
+- upgrade to node 18 lts
 
 ## 0.0.7
 Mon, 24 Apr 2023 06:43:20 GMT

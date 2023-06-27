@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/rush-coverage
 
-This log was last generated on Sat, 17 Jun 2023 18:47:42 GMT and should not be manually modified.
+This log was last generated on Tue, 27 Jun 2023 18:44:40 GMT and should not be manually modified.
+
+## 1.2.1
+Tue, 27 Jun 2023 18:44:40 GMT
+
+### Patches
+
+- upgrade to node 18 lts
 
 ## 1.2.0
 Sat, 17 Jun 2023 18:47:42 GMT

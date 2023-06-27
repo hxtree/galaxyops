@@ -1,0 +1,17 @@
+{
+  "name": "@cats-cradle/constructs",
+  "entries": [
+    {
+      "version": "0.0.2",
+      "tag": "@cats-cradle/constructs_v0.0.2",
+      "date": "Tue, 27 Jun 2023 18:44:40 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "upgrade to node 18 lts"
+          }
+        ]
+      }
+    }
+  ]
+}
