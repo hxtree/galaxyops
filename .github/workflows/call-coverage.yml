@@ -14,8 +14,18 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
+      - name: Check out code base
+        if: github.event_name == 'push'
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Check out code base
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ secrets.IMPACTED_BY_SHA }}
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -33,19 +43,17 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      # need to install rush for mongodb-memory-server to download mongo bin
       - name: Install PNPM
         run: npm install --global pnpm@8.6.2
-      - run: npm install --global @microsoft/rush@5.100.1
 
       - name: Rush install
-        run: rush install
+        run: node common/scripts/install-run-rush.js install -p
 
-      - name: Build
-        run: rush build
+      - name: rush build
+        run: node common/scripts/install-run-rush.js build
 
-      - name: Test coverage
-        run: rush test:cov
+      - name: test cov
+        run: node common/scripts/install-run-rush.js test:cov
 
       - name: Merge coverage reports
         run: npx @cats-cradle/rush-coverage@1.2.0
@@ -55,3 +63,4 @@ jobs:
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: coverage/lcov.info
+
