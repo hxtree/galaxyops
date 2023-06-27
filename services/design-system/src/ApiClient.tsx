@@ -1,8 +1,7 @@
 /* eslint-disable import/extensions */
 
 import fetch from 'node-fetch';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Box, CardContent, Card, Grid, Stack } from '@mui/material';
 import { CodeSnippet, CodeSnippetLanguages } from './CodeSnippet/CodeSnippet';
 import { LoadingButton } from './LoadingButton';
