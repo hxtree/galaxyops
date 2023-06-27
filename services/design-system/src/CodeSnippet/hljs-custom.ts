@@ -1,10 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true,
-});
-exports['default'] = void 0;
-var _default = {
+export const codeTheme = {
   hljs: {
     display: 'block',
     overflowX: 'auto',
@@ -105,4 +99,3 @@ var _default = {
     fontStyle: 'italic',
   },
 };
-exports['default'] = _default;
