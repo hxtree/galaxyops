@@ -1,6 +1,6 @@
 'use client';
 import styles from './page.module.css';
-import { ApiClient, Container, Link } from '@cats-cradle/design-system';
+import { Chart, ApiClient, Container, Link } from '@cats-cradle/design-system';
 
 export default function Home() {
   return (
