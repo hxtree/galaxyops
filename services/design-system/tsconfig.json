@@ -34,7 +34,6 @@
     "./package.json",
     "./src/*.{ts|tsx}",
     "./src/**/*.{ts|tsx}",
-    "./stacks/*.ts",
-    "./src/"
+    "./stacks/*.ts"
   ]
 }

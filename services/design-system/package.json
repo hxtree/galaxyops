@@ -64,7 +64,8 @@
     "@types/react-syntax-highlighter": "~15.5.7",
     "aws-cdk-lib": "2.85.0",
     "constructs": "^10.2.61",
-    "node-fetch": "2.6.11"
+    "node-fetch": "2.6.11",
+    "react-google-charts": "~4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

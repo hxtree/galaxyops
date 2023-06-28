@@ -575,6 +575,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "react-google-charts",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "react-is",
       "allowedCategories": [ "apis" ]
     },
