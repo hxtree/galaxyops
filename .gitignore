@@ -9,8 +9,8 @@ dist/**
 .next
 
 # storybook build
-storybook-static/**
-!storybook-static/.gitkeep
+**/storybook-static/**
+!**/storybook-static/.gitkeep
 
 # coverage
 clover.xml
