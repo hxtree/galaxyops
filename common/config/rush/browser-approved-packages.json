@@ -143,6 +143,10 @@
       "allowedCategories": [ "apis", "rigs" ]
     },
     {
+      "name": "@mui/x-charts",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@nestjs/axios",
       "allowedCategories": [ "apis" ]
     },
@@ -571,7 +575,15 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "react-charts",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "react-dom",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "react-google-charts",
       "allowedCategories": [ "apis" ]
     },
     {
