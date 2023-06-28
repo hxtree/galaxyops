@@ -25,7 +25,7 @@ RUN apt update \
         jq \
         npm \
         # default-jre \
-    && npm install --global npm@9.7.1  \
+    && npm install --global npm@9.7.2  \
     # https://pnpm.io/
     && npm install --global pnpm@8.6.2 \
     # https://rushjs.io/
