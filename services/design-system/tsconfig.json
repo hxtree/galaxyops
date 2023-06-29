@@ -30,10 +30,5 @@
     "typeRoots": ["./node_modules/@types", "./@types"]
   },
   "sourceMap": true,
-  "include": [
-    "./package.json",
-    "./src/*.{ts|tsx}",
-    "./src/**/*.{ts|tsx}",
-    "./stacks/*.ts"
-  ]
+  "include": ["./package.json", "./stacks/", "./src/"]
 }
