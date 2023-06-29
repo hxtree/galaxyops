@@ -1,15 +1,25 @@
 # Services
 
-This directory contains deployable organization services. Services within this
-directory SHOULD contain business logic.
+This directory contains deployable organization services. Here are some
+important guidelines:
 
-A service SHOULD NOT have a dependencies on another service. Each service MUST
-be independent of any other service. Deleting or adding a service SHOULD only
-involve changing the monorepo config `rush.json` file and the actual project
-folder.
+- **Dependency on Platform**: Services rely on platform projects located in the
+  `platform/` directory. Make sure to deploy platform projects before deploying
+  services.
 
-Each sub folders in this directory contains MUST contain a package. The package
-should contain of the source code and the IaC used to deploy the package:
+- **Business Logic**: Services in this directory should primarily focus on
+  business logic, as they are company-specific.
+
+- **Independence**: Each service must be independent and should not have
+  dependencies on other services. When adding a new service, one should only
+  need to modify the project folder and the monorepo configuration (`rush.json`)
+  file. If there are any interconnected platform components used by multiple
+  services, place them in appropriate directories like `/platform`,
+  `/libraries`, etc.
+
+- **Uniform Structure**: Each subfolder within this directory represents a
+  package that contains source code and Infrastructure as Code (IaC) used for
+  deployment. The structure should follow the pattern below:
 
 ```graphql
 ./*
@@ -19,18 +29,6 @@ should contain of the source code and the IaC used to deploy the package:
         ├─ src - # source code.
         └─ stack - # CDK deployment code.
 ```
-
-> **Note** `platform/` projects MUST be deployed prior to deploying `services/`
-> projects.
-
----
-
-> **Warning** As to prevent interservice dependencies, packages within this
-> folder MUST not contain any interconnected platform constructs that are used
-> as the fundamental bases to make multiple applications work. Instead, those
-> should be placed in either in `/platform`, `/libraries`, etc.
-
----
 
 ## References
 
