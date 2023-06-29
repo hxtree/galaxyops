@@ -319,6 +319,10 @@
       "allowedCategories": [ "rigs" ]
     },
     {
+      "name": "autoprefixer",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "aws-cdk",
       "allowedCategories": [ "apis" ]
     },

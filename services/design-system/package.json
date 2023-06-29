@@ -65,7 +65,8 @@
     "aws-cdk-lib": "2.85.0",
     "constructs": "^10.2.61",
     "node-fetch": "2.6.11",
-    "react-google-charts": "~4.0.0"
+    "react-google-charts": "~4.0.0",
+    "autoprefixer": "~10.4.14"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",
