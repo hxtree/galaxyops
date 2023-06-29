@@ -10,9 +10,9 @@ export default function Dice() {
         <Container>
           <h1>Dice Notation Analyzer</h1>
           <p>
-            This web tool determines the appropriate dice notation for skill set
-            rolls and visualizes the impact of luck. Gain valuable insights into
-            chance's influence on gameplay outcomes.
+            This web tool aids in determining the appropriate dice notation for
+            skill set rolls and visualizes the impact of luck. Gain valuable
+            insights into chance's influence on gameplay outcomes.
           </p>
           <DiceAnalyzer />
         </Container>
