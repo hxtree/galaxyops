@@ -8,12 +8,8 @@ export default function Dice() {
     <main className={styles.main}>
       <div className={styles.description}>
         <Container>
-          <h1>Dice Notation Analyzer</h1>
-          <p>
-            This web tool aids in determining the appropriate dice notation for
-            skill set rolls and visualizes the impact of luck. Gain valuable
-            insights into chance&apos;s influence on gameplay outcomes.
-          </p>
+          <h1>Character Sheets</h1>
+          <p>Placeholder</p>
           <DiceAnalyzer />
         </Container>
       </div>
