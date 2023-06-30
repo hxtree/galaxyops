@@ -1,3 +1,0 @@
-{
-  "extends": "./node_modules/@cats-cradle/base-nodejs/profiles/react-app/tsconfig-base.json"
-}

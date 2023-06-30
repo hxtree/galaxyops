@@ -198,13 +198,6 @@
       "tags": []
     },
     {
-      "packageName": "@cats-cradle/gm-client",
-      "projectFolder": "services/gm-client",
-      "reviewCategory": "apis",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": []
-    },
-    {
       "packageName": "@cats-cradle/admin-client",
       "projectFolder": "services/admin-client",
       "reviewCategory": "apis",
