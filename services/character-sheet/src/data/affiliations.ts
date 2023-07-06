@@ -114,10 +114,11 @@ export namespace Affiliation {
 
   export const VALLONS_SEVEN: Type = {
     name: "Vallon's Seven",
+    aliases: ['Seven Devils'],
     description:
-      'A group that has arisen that seeks an end to the world.' +
-      'They are the reincarnated sprites of the Original Seven' +
-      'The seven devils are lead by Vallon.',
+      'All members seek an end to all of existence. ' +
+      'They are the reincarnated sprites of the Original Seven. ' +
+      'They are lead by Vallon. ',
   };
 
   export const BROTHERHOOD: Type = {
@@ -127,6 +128,14 @@ export namespace Affiliation {
   export const SOLIDER_FORCES: Type = {
     name: 'Solider Forces',
     parentAffiliation: Affiliation.OCEANIA,
+  };
+
+  export const X_SOLIDER_FORCES: Type = {
+    name: 'X-Solider Forces',
+    description: 'Members are former Soldiers Forces who left on bad terms. ',
+    standings: [
+      { affiliation: Affiliation.SOLIDER_FORCES, reputation: Reputation.HATED },
+    ],
   };
 
   export const MAGI_ORDER: Type = {
