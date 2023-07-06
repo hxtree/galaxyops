@@ -245,7 +245,7 @@ importers:
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
       '@nestjs/mongoose':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.3)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
       '@nestjs/passport':
         specifier: 9.0.0
         version: 9.0.0(@nestjs/common@9.4.0)(passport@0.6.0)
@@ -273,12 +273,12 @@ importers:
       luxon:
         specifier: ~3.3.0
         version: 3.3.0
-      mongodb-memory-server:
-        specifier: 8.11.2
-        version: 8.11.2
+      mongodb-memory-server-global:
+        specifier: 8.13.0
+        version: 8.13.0
       mongoose:
-        specifier: ~6.9.1
-        version: 6.9.3
+        specifier: 6.9.1
+        version: 6.9.1
       reflect-metadata:
         specifier: 0.1.13
         version: 0.1.13
@@ -290,7 +290,7 @@ importers:
         version: 7.5.6
       ts-mongoose-pagination:
         specifier: ~1.1.2
-        version: 1.1.2(@types/mongoose@5.11.97)(mongoose@6.9.3)
+        version: 1.1.2(@types/mongoose@5.11.97)(mongoose@6.9.1)
       uuid:
         specifier: ~9.0.0
         version: 9.0.0
@@ -493,8 +493,8 @@ importers:
         specifier: 4.18.2
         version: 4.18.2
       mongoose:
-        specifier: ~6.9.1
-        version: 6.9.3
+        specifier: 6.9.1
+        version: 6.9.1
       node-cache:
         specifier: 5.1.2
         version: 5.1.2
@@ -697,8 +697,8 @@ importers:
         specifier: ~4.17.21
         version: 4.17.21
       mongoose:
-        specifier: ~6.9.1
-        version: 6.9.3
+        specifier: 6.9.1
+        version: 6.9.1
       node-cache:
         specifier: 5.1.2
         version: 5.1.2
@@ -845,8 +845,8 @@ importers:
         specifier: 4.18.2
         version: 4.18.2
       mongoose:
-        specifier: ~6.9.1
-        version: 6.9.3
+        specifier: 6.9.1
+        version: 6.9.1
       node-cache:
         specifier: 5.1.2
         version: 5.1.2
@@ -1251,7 +1251,7 @@ importers:
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
       '@nestjs/mongoose':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.3)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -1280,8 +1280,8 @@ importers:
         specifier: 4.18.2
         version: 4.18.2
       mongoose:
-        specifier: ~6.9.1
-        version: 6.9.3
+        specifier: 6.9.1
+        version: 6.9.1
       node-cache:
         specifier: 5.1.2
         version: 5.1.2
@@ -1355,9 +1355,6 @@ importers:
       jest:
         specifier: 29.5.0
         version: 29.5.0(@types/node@20.3.1)(ts-node@10.9.1)
-      mongodb:
-        specifier: 5.6.0
-        version: 5.6.0
       path:
         specifier: ~0.12.7
         version: 0.12.7
@@ -1581,7 +1578,7 @@ importers:
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
       '@nestjs/mongoose':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.3)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -1619,8 +1616,8 @@ importers:
         specifier: ~4.17.21
         version: 4.17.21
       mongoose:
-        specifier: ~6.9.1
-        version: 6.9.3
+        specifier: 6.9.1
+        version: 6.9.1
       node-cache:
         specifier: 5.1.2
         version: 5.1.2
@@ -8971,7 +8968,7 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/mongoose@9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.3)(reflect-metadata@0.1.13)(rxjs@7.5.6):
+  /@nestjs/mongoose@9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6):
     resolution: {integrity: sha512-tMK5kKFjQnNVhqJDw1wa352z+VsODOFznTn74xSzrziof03qS+O6rLU4q1kMx0B4AmFbADf03GOdpvBc9bMWqw==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0
@@ -8982,7 +8979,7 @@ packages:
     dependencies:
       '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
       '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
-      mongoose: 6.9.3
+      mongoose: 6.9.1
       reflect-metadata: 0.1.13
       rxjs: 7.5.6
     dev: false
@@ -13079,7 +13076,7 @@ packages:
     resolution: {integrity: sha512-cqwOVYT3qXyLiGw7ueU2kX9noE8DPGRY6z8eUxudhXY8NZ7DMKYAxyZkLSevGfhCX3dO/AoX5/SO9lAzfjon0Q==}
     deprecated: Mongoose publishes its own types, so you do not need to install this package.
     dependencies:
-      mongoose: 6.9.3
+      mongoose: 6.9.1
     transitivePeerDependencies:
       - aws-crt
       - supports-color
@@ -13283,6 +13280,7 @@ packages:
 
   /@types/tmp@0.2.3:
     resolution: {integrity: sha512-dDZH/tXzwjutnuk4UacGgFRwV+JSLaXL1ikvidfJprkb7L9Nx1njcRHHmi3Dsvt7pgqqTEeucQuOrWHPFgzVHA==}
+    dev: true
 
   /@types/treeify@1.0.0:
     resolution: {integrity: sha512-ONpcZAEYlbPx4EtJwfTyCDQJGUpKf4sEcuySdCVjK5Fj/3vHp5HII1fqa1/+qrsLnpYELCQTfVW/awsGJePoIg==}
@@ -22306,31 +22304,6 @@ packages:
       '@types/whatwg-url': 8.2.2
       whatwg-url: 11.0.0
 
-  /mongodb-memory-server-core@8.11.2:
-    resolution: {integrity: sha512-6ZdyaDNZFE9tktocBGWgzbPeS9X10SWOKdlMRRyVGWosLeIe6e9NQrK/wf7LryBoOWE7JuZC5f0dcM5K4RCwMQ==}
-    engines: {node: '>=12.22.0'}
-    dependencies:
-      '@types/tmp': 0.2.3
-      async-mutex: 0.3.2
-      camelcase: 6.3.0
-      debug: 4.3.4(supports-color@5.5.0)
-      find-cache-dir: 3.3.2
-      get-port: 5.1.1
-      https-proxy-agent: 5.0.1
-      md5-file: 5.0.0
-      mongodb: 4.16.0
-      new-find-package-json: 2.0.0
-      semver: 7.5.2
-      tar-stream: 2.2.0
-      tmp: 0.2.1
-      tslib: 2.5.3
-      uuid: 9.0.0
-      yauzl: 2.10.0
-    transitivePeerDependencies:
-      - aws-crt
-      - supports-color
-    dev: false
-
   /mongodb-memory-server-core@8.11.5:
     resolution: {integrity: sha512-bhptlOruCEYrLofCbjACMoClgP1rFkhSNDzI/bbG/pUAg41UB00eaDPerYVvRf2jvOJqKF4+U9xqXiSvkbMvXw==}
     engines: {node: '>=12.22.0'}
@@ -22356,12 +22329,35 @@ packages:
       - supports-color
     dev: true
 
-  /mongodb-memory-server@8.11.2:
-    resolution: {integrity: sha512-fjNdN/kwgWnnUnPUT90311vC83sRKQ3C0mpbF5kcKS2CKYxRkWEZLOd0MuGKtQmFHryvnXOPDqAGKKx9G1cIrw==}
+  /mongodb-memory-server-core@8.13.0:
+    resolution: {integrity: sha512-4NTOzYOlRUilwb8CxOKix/XbZmac4cLpmEU03eaHx90lgEp+ARZM2PQtIOEg3nhHo97r9THIEv6Gs4LECokp0Q==}
+    engines: {node: '>=12.22.0'}
+    dependencies:
+      async-mutex: 0.3.2
+      camelcase: 6.3.0
+      debug: 4.3.4(supports-color@5.5.0)
+      find-cache-dir: 3.3.2
+      get-port: 5.1.1
+      https-proxy-agent: 5.0.1
+      md5-file: 5.0.0
+      mongodb: 4.16.0
+      new-find-package-json: 2.0.0
+      semver: 7.5.2
+      tar-stream: 2.2.0
+      tslib: 2.5.3
+      uuid: 9.0.0
+      yauzl: 2.10.0
+    transitivePeerDependencies:
+      - aws-crt
+      - supports-color
+    dev: false
+
+  /mongodb-memory-server-global@8.13.0:
+    resolution: {integrity: sha512-uav9FYVu7uPoogDbB7VLa1u4mFuGnuzqdHk0kKADIiQca9Vx6u+QkU1rwPA8uqFDKJPv/VIy3rCTPCSJDXsW2w==}
     engines: {node: '>=12.22.0'}
     requiresBuild: true
     dependencies:
-      mongodb-memory-server-core: 8.11.2
+      mongodb-memory-server-core: 8.13.0
       tslib: 2.5.3
     transitivePeerDependencies:
       - aws-crt
@@ -22428,8 +22424,8 @@ packages:
       saslprep: 1.0.3
     dev: true
 
-  /mongoose@6.9.3:
-    resolution: {integrity: sha512-WiuqEXblyd6NLASmTsdgkA3hEndf8CJ8qEEVt7QjSvyImNATn5J7mbPbbZMgFz2MvkPHnpqSbfjyxFoYSdTZOg==}
+  /mongoose@6.9.1:
+    resolution: {integrity: sha512-hOz1ZWV0w6WEVLrj89Wpk7PXDYtDDF6k7/NX79lY5iKqeFtZsceBXW8xW59YFNcW5O3cH32hQ8IbDlhgyBsDMA==}
     engines: {node: '>=12.0.0'}
     dependencies:
       bson: 4.7.2
@@ -26801,6 +26797,7 @@ packages:
     engines: {node: '>=8.17.0'}
     dependencies:
       rimraf: 3.0.2
+    dev: true
 
   /tmpl@1.0.5:
     resolution: {integrity: sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==}
@@ -26974,14 +26971,14 @@ packages:
       typescript: 5.1.3
       yargs-parser: 21.1.1
 
-  /ts-mongoose-pagination@1.1.2(@types/mongoose@5.11.97)(mongoose@6.9.3):
+  /ts-mongoose-pagination@1.1.2(@types/mongoose@5.11.97)(mongoose@6.9.1):
     resolution: {integrity: sha512-KkhfTX5VmGy4WVVkoxxL+M3lx9gSjwjeP1svt4oT9vigPDquX99omH3sm0gvlN1c3JgyVEavtypsw8yl2WGyFA==}
     peerDependencies:
       '@types/mongoose': 5.x
       mongoose: 5.x
     dependencies:
       '@types/mongoose': 5.11.97
-      mongoose: 6.9.3
+      mongoose: 6.9.1
     dev: false
 
   /ts-node@10.9.1(@types/node@20.3.1)(typescript@5.1.3):

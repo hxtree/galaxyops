@@ -9,7 +9,8 @@ export default function Home() {
         <Container>
           <Stack>
             <Link href="/dice">Dice</Link>
-            <Link href="/character-sheet">Dice</Link>
+            <Link href="/character-sheet">Character Sheets</Link>
+            <Link href="/archetype">Archetypes</Link>
             <Link href="/weather">Weather</Link>
           </Stack>
         </Container>

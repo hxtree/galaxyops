@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/v1/health": {
+    "/health": {
       "get": {
         "operationId": "HealthController_check",
         "parameters": [],
@@ -104,7 +104,7 @@
         }
       }
     },
-    "/v1/archetypes/{id}": {
+    "/archetypes/{id}": {
       "get": {
         "operationId": "ArchetypeController_find",
         "parameters": [
@@ -151,21 +151,21 @@
         "responses": { "200": { "description": "" } }
       }
     },
-    "/v1/archetypes": {
+    "/archetypes": {
       "get": {
         "operationId": "ArchetypeController_list",
         "parameters": [],
         "responses": { "200": { "description": "" } }
       }
     },
-    "/v1/gears": {
+    "/gears": {
       "get": {
         "operationId": "GearController_list",
         "parameters": [],
         "responses": { "200": { "description": "" } }
       }
     },
-    "/v1/gears/{id}": {
+    "/gears/{id}": {
       "get": {
         "operationId": "GearController_find",
         "parameters": [
@@ -223,14 +223,14 @@
         "responses": { "200": { "description": "" } }
       }
     },
-    "/v1/skills": {
+    "/skills": {
       "get": {
         "operationId": "SkillController_list",
         "parameters": [],
         "responses": { "200": { "description": "" } }
       }
     },
-    "/v1/skills/{id}": {
+    "/skills/{id}": {
       "get": {
         "operationId": "SkillController_find",
         "parameters": [
@@ -359,7 +359,7 @@
         "responses": { "200": { "description": "" } }
       }
     },
-    "/v1/character-sheets": {
+    "/character-sheets": {
       "get": {
         "operationId": "CharacterSheetController_findAll",
         "parameters": [],
@@ -381,7 +381,7 @@
         "responses": { "201": { "description": "" } }
       }
     },
-    "/v1/character-sheets/{id}": {
+    "/character-sheets/{id}": {
       "get": {
         "operationId": "CharacterSheetController_findOne",
         "parameters": [

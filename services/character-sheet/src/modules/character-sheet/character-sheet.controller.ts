@@ -7,13 +7,14 @@ import {
   Param,
   Body,
   ParseUUIDPipe,
+  VERSION_NEUTRAL,
 } from '@nestjs/common';
 import { CharacterSheetRepository } from './character-sheet.repository';
 import { CharacterSheetService } from './character-sheet.service';
 import { CharacterSheet } from './character-sheet.schema';
 import { CreateCharacterSheetDto } from './create-character-sheet-dto';
 
-@Controller({ path: 'character-sheets', version: ['1'] })
+@Controller({ path: 'character-sheets', version: [VERSION_NEUTRAL, '1'] })
 export class CharacterSheetController {
   constructor(
     private _characterSheetService: CharacterSheetService,

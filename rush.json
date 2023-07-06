@@ -243,7 +243,6 @@
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
-        "@cats-cradle/nestjs-modules",
         "@cats-cradle/bundle-project",
         "@cats-cradle/bundlers"
       ],

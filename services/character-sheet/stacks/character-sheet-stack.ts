@@ -14,7 +14,7 @@ export class CharacterSheetStack extends cdk.Stack {
     });
 
     new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${microservice.getBaseUrl()}/v1/archetypes`,
+      value: `${microservice.getBaseUrl()}/archetypes`,
     });
   }
 }

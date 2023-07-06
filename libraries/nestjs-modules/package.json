@@ -33,14 +33,13 @@
     "@cats-cradle/base-nodejs": "workspace:*",
     "reflect-metadata": "0.1.13",
     "@types/validator": "~13.7.10",
-    "mongodb-memory-server": "8.11.2",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",
     "@nestjs/passport": "9.0.0",
     "@nestjs/platform-express": "9.3.9",
     "@nestjs/mongoose": "9.2.1",
-    "mongoose": "~6.9.1",
+    "mongoose": "6.9.1",
     "connection-string": "~4.3.6",
     "uuid": "~9.0.0",
     "ts-mongoose-pagination": "~1.1.2",
@@ -51,7 +50,8 @@
     "@aws-sdk/client-sns": "3.289.0",
     "@cats-cradle/messaging-schemas": "workspace:*",
     "@types/uuid": "~8.3.4",
-    "luxon": "~3.3.0"
+    "luxon": "~3.3.0",
+    "mongodb-memory-server-global": "8.13.0"
   },
   "devDependencies": {
     "@types/jest": "29.5.1",
@@ -77,7 +77,7 @@
     "mongodbMemoryServer": {
       "platform": "linux",
       "arch": "x64",
-      "version": "4.2.8",
+      "version": "4.4.5",
       "md5Check": "1"
     }
   }

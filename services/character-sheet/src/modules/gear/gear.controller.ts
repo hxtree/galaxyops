@@ -1,8 +1,8 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, VERSION_NEUTRAL } from '@nestjs/common';
 import { GearService } from './gear.service';
 import { QueryGearDto } from './query-gear.dto';
 
-@Controller({ path: 'gears', version: ['1'] })
+@Controller({ path: 'gears', version: [VERSION_NEUTRAL, '1'] })
 export class GearController {
   _gearService;
 
