@@ -8,7 +8,7 @@ export default function Archetype() {
     <main className={styles.main}>
       <div className={styles.description}>
         <Container>
-          <h1>Archetype</h1>
+          <h1>Archetypes</h1>
           <ArchetypeSelect />
         </Container>
       </div>
