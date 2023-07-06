@@ -1,16 +1,15 @@
 'use client';
 import styles from '../src/app/page.module.css';
 import { Container } from '@cats-cradle/design-system';
-import DiceAnalyzer from '../components/DiceAnalyzer';
+import CharacterViewer from '../components/CharacterViewer';
 
-export default function Dice() {
+export default function CharacterSheet() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <Container>
           <h1>Character Sheets</h1>
-          <p>Placeholder</p>
-          <DiceAnalyzer />
+          <CharacterViewer />
         </Container>
       </div>
     </main>

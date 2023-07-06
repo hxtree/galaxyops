@@ -18,7 +18,8 @@ async function bootstrap() {
       new ExpressAdapter(expressApp),
     );
     nestApp.enableVersioning({
-      type: VersioningType.URI,
+      type: VersioningType.HEADER,
+      header: 'Accept-Version',
       defaultVersion: '1',
     });
 

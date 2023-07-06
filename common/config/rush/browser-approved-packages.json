@@ -515,6 +515,10 @@
       "allowedCategories": [ "libraries", "rigs" ]
     },
     {
+      "name": "mongodb-memory-server-global",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "mongoose",
       "allowedCategories": [ "apis", "category-platform", "libraries", "platform", "rigs" ]
     },

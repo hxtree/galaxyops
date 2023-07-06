@@ -18,7 +18,7 @@ describe('/character-sheets', () => {
   let characterSheetService: CharacterSheetService;
   let characterSheetRepository: CharacterSheetRepository;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [
         rootMongooseTestModule(),
@@ -41,7 +41,7 @@ describe('/character-sheets', () => {
     await app.init();
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     await closeInMongodConnection();
     app.close();
   });

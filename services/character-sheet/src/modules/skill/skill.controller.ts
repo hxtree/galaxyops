@@ -1,8 +1,8 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, VERSION_NEUTRAL } from '@nestjs/common';
 import { SkillService } from './skill.service';
 import { QuerySkillDto } from './query-skill.dto';
 
-@Controller({ path: 'skills', version: ['1'] })
+@Controller({ path: 'skills', version: [VERSION_NEUTRAL, '1'] })
 export class SkillController {
   _skillService;
 
