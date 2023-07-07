@@ -66,7 +66,9 @@
     "constructs": "^10.2.61",
     "node-fetch": "2.6.11",
     "react-google-charts": "~4.0.0",
-    "autoprefixer": "~10.4.14"
+    "autoprefixer": "~10.4.14",
+    "@fortawesome/react-fontawesome": "~0.2.0",
+    "@fortawesome/free-solid-svg-icons": "~6.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

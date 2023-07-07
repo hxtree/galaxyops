@@ -119,6 +119,14 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@fortawesome/free-solid-svg-icons",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@fortawesome/react-fontawesome",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@microsoft/rush",
       "allowedCategories": [ "category-ci-cd" ]
     },

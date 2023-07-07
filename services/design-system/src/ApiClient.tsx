@@ -4,10 +4,10 @@ import fetch from 'node-fetch';
 import React, { useState } from 'react';
 import { Box, CardContent, Card, Grid, Stack } from '@mui/material';
 import { CodeSnippet, CodeSnippetLanguages } from './CodeSnippet/CodeSnippet';
-import { LoadingButton } from './LoadingButton';
-import { Button } from './Button';
+import { LoadingButton } from './Mui/LoadingButton';
+import { Button } from './Mui/Button';
 import { NonInteractiveLink } from './NonInteractiveLink';
-import { Typography } from './Typography';
+import { Typography } from './Mui/Typography';
 
 export type ApiClientOptionProps = {
   label: string;
