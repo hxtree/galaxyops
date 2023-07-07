@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+
 export * from './Button';
 export * from './Checkbox';
 export * from './Spinner';
