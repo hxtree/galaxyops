@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { FileUpload } from '../../../src/FileUpload';
+import { FileUpload } from '../../../src';
 
 export default {
   title: 'Molecules/FileUpload',
   component: FileUpload,
 } as Meta<typeof FileUpload>;
 
-export const Default = () => <FileUpload />;
+export const Default = () => <FileUpload setFile={() => {}} />;

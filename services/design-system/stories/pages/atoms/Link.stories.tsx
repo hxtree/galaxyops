@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Link, LinkProps } from '../../../src/Link';
+import { Link, LinkProps } from '../../../src';
 
 export default {
   title: 'Atoms/Link',

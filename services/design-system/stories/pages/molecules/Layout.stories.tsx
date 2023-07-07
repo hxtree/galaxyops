@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Box, Stack, Item } from '../../../src/Layout';
+import { Box, Stack, Item } from '../../../src';
 
 export default {
   title: 'Molecules/Layout',
