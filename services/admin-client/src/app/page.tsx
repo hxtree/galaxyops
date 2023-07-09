@@ -7,7 +7,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <Container>
-          <h1>Dice Notation Analyzer</h1>
+          <h1>Admin Portal</h1>
         </Container>
       </div>
     </main>
