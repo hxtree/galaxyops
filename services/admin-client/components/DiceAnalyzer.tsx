@@ -103,11 +103,14 @@ export default function DiceAnalyzer() {
         </Grid>
         <Grid item xs={4}>
           <Stack direction="row" spacing={2}>
-            <Button onClick={() => clear()}>Clear</Button>
+            <Button onClick={() => clear()} data-testid={`dice-analyzer-clear`}>
+              Clear
+            </Button>
             <LoadingButton
               variant="contained"
               loading={isLoading}
               onClick={() => callApi()}
+              data-testid={`dice-analyzer-roll`}
             >
               Roll
             </LoadingButton>

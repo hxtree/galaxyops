@@ -1,10 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import {
-  Stack,
-  Grid,
-  Box,
-  TextField,
   OutlinedInput,
   InputLabel,
   MenuItem,
@@ -13,13 +9,14 @@ import {
   SelectChangeEvent,
   CodeSnippet,
   CodeSnippetLanguages,
+  Spinner,
 } from '@cats-cradle/design-system';
 
 export default function ArchetypeSelect() {
   const [archetypes, setArchetypes] = useState<string[]>([]);
   const [archetypeId, setArchetypeId] = useState<string>();
   const [archetypeData, setArchetypeData] = useState<any>();
-  const [isLoading, setLoading] = useState<boolean>(false);
+  const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const archetypesFetch = async () => {
