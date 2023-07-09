@@ -119,6 +119,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@fortawesome/free-brands-svg-icons",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@fortawesome/free-solid-svg-icons",
       "allowedCategories": [ "apis" ]
     },

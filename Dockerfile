@@ -30,7 +30,7 @@ RUN apt update \
     && sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb \
     && npm install --global npm@9.7.2  \
     # https://pnpm.io/
-    && npm install --global pnpm@8.6.2 \
+    && npm install --global pnpm@8.6.6 \
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.100.1 \
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
