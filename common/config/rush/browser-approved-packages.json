@@ -503,6 +503,10 @@
       "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
+      "name": "jest-environment-jsdom",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "json-schema",
       "allowedCategories": [ "libraries" ]
     },
