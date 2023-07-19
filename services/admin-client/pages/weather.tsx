@@ -7,7 +7,7 @@ export default function Weather() {
     <main className={styles.main}>
       <div className={styles.description}>
         <Container>
-          <h1>Demo Page</h1>
+          <h1>Weather Forecast</h1>
           <ApiClient
             title="Try out the route action"
             description="Select an endpoint and run query to see an API response using a sample route request."
