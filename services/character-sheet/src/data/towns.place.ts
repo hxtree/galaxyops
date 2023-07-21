@@ -1,10 +1,17 @@
 import { Affiliation } from './affiliations';
 
-namespace Place {
+export namespace Place {
+  export type SpawnGuideline = {
+    level: number;
+    limit: number;
+    probability: number;
+  };
+
   export type Type = {
     name: string;
     description?: string;
     facts?: string[];
+    spawnGuidelines?: SpawnGuideline[];
   };
 
   export const HOSTIA: Type = {

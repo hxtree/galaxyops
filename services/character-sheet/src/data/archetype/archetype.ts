@@ -8,6 +8,8 @@ import { Outfit } from '../gear/outfit.gear';
 import { Slot } from '../gear/slot';
 import { Weapon } from '../gear/weapon.gear';
 import { Affiliation } from '../affiliations';
+import { SpawnArea } from './spawn-area';
+import { Place } from '../towns.place';
 
 /**
  * Base character information that does not change as the game progress
@@ -68,6 +70,7 @@ export namespace Archetype {
     // summon?: Summon[];
     // ]
 
+    spawnAreas?: SpawnArea[];
     // loot?: Gear.Item[];
   };
 
@@ -528,16 +531,25 @@ export namespace Archetype {
   export const SEA_HORSE: Type = {
     name: 'Sea Horse',
     description: 'A spider',
+    spawnAreas: [{ area: Place.FLOATING_ISLAND, rate: 0.2 }],
   };
 
   export const SENSITIVE_PLANT: Type = {
     name: 'Sensitive Plant',
     description: 'A plant that drops when touched',
+    spawnAreas: [
+      { area: Place.PORT, rate: 0.2 },
+      { area: Place.ENDERS_LAND, rate: 0.03 },
+    ],
   };
 
   export const DEEP_THINKER: Type = {
     name: 'Deep Thinker',
     description: 'A humanoid, fish, monster',
+    spawnAreas: [
+      { area: Place.ENDERS_LAND, rate: 0.01 },
+      { area: Place.HOSTIA, rate: 0.002 },
+    ],
   };
 
   // Bird of Fire - phoenix
