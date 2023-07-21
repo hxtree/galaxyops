@@ -531,15 +531,15 @@ export namespace Archetype {
   export const SEA_HORSE: Type = {
     name: 'Sea Horse',
     description: 'A spider',
-    spawnAreas: [{ area: Place.FLOATING_ISLAND, rate: 0.2 }],
+    spawnAreas: [{ area: Place.FLOATING_ISLAND, probability: 0.2 }],
   };
 
   export const SENSITIVE_PLANT: Type = {
     name: 'Sensitive Plant',
     description: 'A plant that drops when touched',
     spawnAreas: [
-      { area: Place.PORT, rate: 0.2 },
-      { area: Place.ENDERS_LAND, rate: 0.03 },
+      { area: Place.PORT, probability: 0.2 },
+      { area: Place.ENDERS_LAND, probability: 0.03 },
     ],
   };
 
@@ -547,8 +547,8 @@ export namespace Archetype {
     name: 'Deep Thinker',
     description: 'A humanoid, fish, monster',
     spawnAreas: [
-      { area: Place.ENDERS_LAND, rate: 0.01 },
-      { area: Place.HOSTIA, rate: 0.002 },
+      { area: Place.ENDERS_LAND, probability: 0.01 },
+      { area: Place.HOSTIA, probability: 0.002 },
     ],
   };
 
