@@ -1,13 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Archetype } from '../../data/archetype/archetype';
-import { ArchetypeType } from '../../data/archetype';
+import { ArchetypeId, ArchetypeIds } from '../../data/archetype';
 
 export class CreateCharacterSheetDto {
   @ApiProperty()
   public id?: string;
 
-  @ApiProperty({ enum: Object.keys(Archetype) })
-  public archetypeId!: string;
+  @ApiProperty({ enum: ArchetypeIds })
+  public archetypeId!: ArchetypeId;
 
   @ApiProperty()
   public name?: string;

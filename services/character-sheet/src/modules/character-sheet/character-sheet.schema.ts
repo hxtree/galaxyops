@@ -10,11 +10,10 @@ import {
 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
 import { CreateCharacterSheetDto } from './create-character-sheet-dto';
-import { ArchetypeType } from '../../data/archetype';
-import { Archetype } from '../../data/archetype/archetype';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
 import { EquipmentEmbeddable } from './equipment-embeddable.schema';
+import { ArchetypeId, ArchetypeIds } from '../../data/archetype';
 
 @Schema()
 export class CharacterSheet {
@@ -22,9 +21,13 @@ export class CharacterSheet {
   @Prop()
   public id!: string;
 
-  @IsString()
+  @IsUUID()
   @Prop()
-  public archetypeId!: string;
+  public instanceId!: string;
+
+  @IsEnum(ArchetypeIds)
+  @Prop()
+  public archetypeId!: ArchetypeId;
 
   @IsString()
   @IsOptional()

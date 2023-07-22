@@ -1,16 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { Archetype } from '../../data/archetype/archetype';
+import { Archetype, ArchetypeIds, ArchetypeId } from '../../data/archetype';
 
 @Injectable()
 export class ArchetypeService {
-  async find(id: string): Promise<any> {
+  async find(archetypeId: ArchetypeId): Promise<Archetype.Type> {
     try {
-      type ArchetypeKey = typeof Archetype;
-      type ArchetypeType = keyof ArchetypeKey;
-
-      const archetypeId: ArchetypeType = id as ArchetypeType;
-
-      return await Promise.resolve({ id, ...Archetype[archetypeId] });
+      return await Promise.resolve({
+        id: archetypeId,
+        ...Archetype[archetypeId],
+      });
     } catch (err) {
       return Promise.reject(new Error('Failed to get Archetype'));
     }
@@ -21,7 +19,7 @@ export class ArchetypeService {
       const archetypes = Object.keys(Archetype);
       return await Promise.resolve(archetypes);
     } catch (err) {
-      return Promise.reject(new Error('Failed to list Archetypes'));
+      return Promise.reject(new Error('Failed to list ArchetypeIds'));
     }
   }
 }

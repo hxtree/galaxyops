@@ -8,8 +8,6 @@ import { Outfit } from '../gear/outfit.gear';
 import { Slot } from '../gear/slot';
 import { Weapon } from '../gear/weapon.gear';
 import { Affiliation } from '../affiliations';
-import { SpawnArea } from './spawn-area';
-import { Place } from '../towns.place';
 
 /**
  * Base character information that does not change as the game progress
@@ -20,6 +18,7 @@ import { Place } from '../towns.place';
  */
 export namespace Archetype {
   export type Type = {
+    id?: string;
     name: string;
     surname?: string;
     age?: number;
@@ -70,7 +69,6 @@ export namespace Archetype {
     // summon?: Summon[];
     // ]
 
-    spawnAreas?: SpawnArea[];
     // loot?: Gear.Item[];
   };
 
@@ -531,30 +529,41 @@ export namespace Archetype {
   export const SEA_HORSE: Type = {
     name: 'Sea Horse',
     description: 'A spider',
-    spawnAreas: [{ area: Place.FLOATING_ISLAND, probability: 0.2 }],
   };
 
   export const SENSITIVE_PLANT: Type = {
     name: 'Sensitive Plant',
     description: 'A plant that drops when touched',
-    spawnAreas: [
-      { area: Place.PORT, probability: 0.2 },
-      { area: Place.ENDERS_LAND, probability: 0.03 },
-    ],
   };
 
   export const DEEP_THINKER: Type = {
     name: 'Deep Thinker',
     description: 'A humanoid, fish, monster',
-    spawnAreas: [
-      { area: Place.ENDERS_LAND, probability: 0.01 },
-      { area: Place.HOSTIA, probability: 0.002 },
-    ],
   };
 
-  // Bird of Fire - phoenix
+  export const PHOENIX: Type = {
+    name: 'Phoenix',
+    description: 'Bird of fire',
+  };
+
+  export const SNOW_LEOPARD: Type = {
+    name: 'Snow Leopard',
+    description: 'A create that lives far to the north',
+    // can be seen near Lawzon
+  };
+
+  // TODO add
   // Snake of Water – dragon
   // Chimera – a combination of two or more animals
   // A type of sloth like creature that lives around the maiden of the mist
-  // A snow leopard creature that lives up north (can be seen near Lawzon)
 }
+
+/**
+ * contains list of all supported ArchetypeIds
+ */
+export const ArchetypeIds = Object.keys(Archetype);
+
+/**
+ * type for each supported ArchetypeId
+ */
+export type ArchetypeId = keyof typeof Archetype;
