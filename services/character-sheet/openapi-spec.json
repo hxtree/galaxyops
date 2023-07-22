@@ -142,7 +142,9 @@
                 "WARLING",
                 "SEA_HORSE",
                 "SENSITIVE_PLANT",
-                "DEEP_THINKER"
+                "DEEP_THINKER",
+                "PHOENIX",
+                "SNOW_LEOPARD"
               ],
               "type": "string"
             }
@@ -406,6 +408,21 @@
         ],
         "responses": { "200": { "description": "" } }
       }
+    },
+    "/character-sheets/spawn": {
+      "post": {
+        "operationId": "CharacterSheetController_spawn",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateSpawnDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
     }
   },
   "info": {
@@ -453,13 +470,35 @@
               "WARLING",
               "SEA_HORSE",
               "SENSITIVE_PLANT",
-              "DEEP_THINKER"
+              "DEEP_THINKER",
+              "PHOENIX",
+              "SNOW_LEOPARD"
             ]
           },
           "name": { "type": "string" },
           "surname": { "type": "string" }
         },
         "required": ["id", "archetypeId", "name", "surname"]
+      },
+      "CreateSpawnDto": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "instanceId": { "type": "string" },
+          "place": {
+            "type": "string",
+            "enum": [
+              "HOSTIA",
+              "PORT",
+              "FORT",
+              "FLOATING_ISLAND",
+              "INFINITY_ISLAND",
+              "ENDERS_LAND"
+            ],
+            "description": "Generate a spawn for a designated area. Requestor is responsible for only making request for areas where party is presence to avoid computing irrelevant spawns."
+          }
+        },
+        "required": ["id", "instanceId", "place"]
       }
     }
   }

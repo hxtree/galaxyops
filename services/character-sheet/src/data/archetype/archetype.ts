@@ -18,6 +18,7 @@ import { Affiliation } from '../affiliations';
  */
 export namespace Archetype {
   export type Type = {
+    id?: string;
     name: string;
     surname?: string;
     age?: number;
@@ -437,13 +438,11 @@ export namespace Archetype {
     name: 'Lawzon',
     surname: 'Grey',
     description:
-      'wears sleep mask.' +
-      'wears a wolfs head. ' +
-      'Has horns. ' +
-      'barely stays standing. ' +
-      'A narcoleptic often found sleeping even when standing.',
+      'Wears wolfs head, with horns, and a sleep mask. ' +
+      'Barely stays standing. ',
     symbolizes: ['Sloth', 'Wolf'],
     history:
+      'A narcoleptic often found sleeping even when standing. ' +
       'Rumored to once of been the most powerful fighter from the north. ' +
       'He fought only to protect his village until it was wiped out from a great frost. ' +
       'He now wanders seemingly lifelessly in search of an end. ' +
@@ -540,9 +539,40 @@ export namespace Archetype {
     description: 'A humanoid, fish, monster',
   };
 
-  // Bird of Fire - phoenix
-  // Snake of Water – dragon
-  // Chimera – a combination of two or more animals
-  // A type of sloth like creature that lives around the maiden of the mist
-  // A snow leopard creature that lives up north (can be seen near Lawzon)
+  export const PHOENIX: Type = {
+    name: 'Phoenix',
+    description: 'A bird of fire.',
+  };
+
+  export const SNOW_LEOPARD: Type = {
+    name: 'Snow Leopard',
+    description: 'A creature that lives far to the north.',
+    // can be seen near Lawzon
+  };
+
+  export const CHIMERA: Type = {
+    name: 'Chimera',
+    description: 'A combination of two or more animals.',
+  };
+
+  export const SLOW_MOVER: Type = {
+    name: 'Slow Mover',
+    description: 'A type of sloth like creature.',
+    // that lives around the maiden of the mist
+  };
+
+  export const SNAKE_OF_WATER: Type = {
+    name: 'Snake of Water',
+    description: 'A type of dragon.',
+  };
 }
+
+/**
+ * contains list of all supported ArchetypeIds
+ */
+export const ArchetypeIds = Object.keys(Archetype);
+
+/**
+ * type for each supported ArchetypeId
+ */
+export type ArchetypeId = keyof typeof Archetype;
