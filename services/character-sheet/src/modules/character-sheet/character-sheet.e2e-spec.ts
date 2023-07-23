@@ -11,18 +11,13 @@ import { CharacterSheetService } from './character-sheet.service';
 import { CharacterSheetSchema, CharacterSheet } from './character-sheet.schema';
 import { CharacterSheetRepository } from './character-sheet.repository';
 import { CharacterSheetController } from './character-sheet.controller';
-import { Archetype } from '../../data/archetype/archetype';
 import { PlaceService } from '../place/place.service';
-import { CreateCharacterSheetDto } from './create-character-sheet-dto';
-import { CreateSpawnDto } from './create-spawn-dto';
-import { SpawnService } from './spawn.service';
 
 describe('/character-sheets', () => {
   let app: INestApplication;
   let characterSheetService: CharacterSheetService;
   let characterSheetRepository: CharacterSheetRepository;
   let placeService: PlaceService;
-  let spawnService: SpawnService;
 
   beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
@@ -36,7 +31,6 @@ describe('/character-sheets', () => {
         PlaceService,
         CharacterSheetRepository,
         CharacterSheetService,
-        SpawnService,
       ],
       controllers: [CharacterSheetController],
     }).compile();
@@ -50,7 +44,6 @@ describe('/character-sheets', () => {
     );
 
     placeService = moduleRef.get<PlaceService>(PlaceService);
-    spawnService = moduleRef.get<SpawnService>(SpawnService);
 
     await app.init();
   });
@@ -98,24 +91,6 @@ describe('/character-sheets', () => {
           deletedCount: 1,
         }),
       );
-    });
-  });
-
-  describe('POST /character-sheets/spawn', () => {
-    it('should create random spawn for given area', async () => {
-      const body = await FakerFactory.create<CreateSpawnDto>(CreateSpawnDto);
-
-      const result = await supertest(app.getHttpServer())
-        .post('/character-sheets/spawn')
-        .send(body)
-        .expect(201);
-
-      // expect(result.body).toEqual(
-      //   expect.objectContaining({
-      //     deleted: true,
-      //     deletedCount: 1,
-      //   }),
-      // );
     });
   });
 });
