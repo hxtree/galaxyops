@@ -144,7 +144,10 @@
                 "SENSITIVE_PLANT",
                 "DEEP_THINKER",
                 "PHOENIX",
-                "SNOW_LEOPARD"
+                "SNOW_LEOPARD",
+                "CHIMERA",
+                "SLOW_MOVER",
+                "SNAKE_OF_WATER"
               ],
               "type": "string"
             }
@@ -409,9 +412,9 @@
         "responses": { "200": { "description": "" } }
       }
     },
-    "/character-sheets/spawn": {
+    "/spawns": {
       "post": {
-        "operationId": "CharacterSheetController_spawn",
+        "operationId": "SpawnController_create",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -472,7 +475,10 @@
               "SENSITIVE_PLANT",
               "DEEP_THINKER",
               "PHOENIX",
-              "SNOW_LEOPARD"
+              "SNOW_LEOPARD",
+              "CHIMERA",
+              "SLOW_MOVER",
+              "SNAKE_OF_WATER"
             ]
           },
           "name": { "type": "string" },

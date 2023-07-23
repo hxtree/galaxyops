@@ -104,17 +104,12 @@ export namespace Place {
   };
 }
 
-export type PlaceKey = typeof Place;
-export type PlaceType = keyof PlaceKey;
-
-export type PlacesEnum = keyof typeof Place;
-
 /**
- * contains list of all supported ArchetypeIds
+ * contains list of all supported PlaceId
  */
 export const PlaceIds = Object.keys(Place);
 
 /**
- * type for each supported ArchetypeId
+ * type for each supported PlaceId
  */
 export type PlaceId = keyof typeof Place;

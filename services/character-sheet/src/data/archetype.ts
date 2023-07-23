@@ -1,13 +1,13 @@
-import { Drive, Life, Spirit } from '../gauges';
-import { Stats } from '../stats';
-import { Effect, Operator, Trait } from '../trait';
-import { Discipline } from '../discipline';
-import { EffectTag } from '../tag.effect';
-import { Summon } from '../skill/summon.skill';
-import { Outfit } from '../gear/outfit.gear';
-import { Slot } from '../gear/slot';
-import { Weapon } from '../gear/weapon.gear';
-import { Affiliation } from '../affiliations';
+import { Drive, Life, Spirit } from './gauges';
+import { Stats } from './stats';
+import { Effect, Operator, Trait } from './trait';
+import { Discipline } from './discipline';
+import { EffectTag } from './tag.effect';
+import { Summon } from './skill/summon.skill';
+import { Outfit } from './gear/outfit.gear';
+import { Slot } from './gear/slot';
+import { Weapon } from './gear/weapon.gear';
+import { Affiliation } from './affiliations';
 
 /**
  * Base character information that does not change as the game progress

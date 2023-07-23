@@ -5,6 +5,7 @@ import { CharacterSheetModule } from './modules/character-sheet/character-sheet.
 import { GearModule } from './modules/gear/gear.module';
 import { HealthModule } from './modules/health/health.module';
 import { SkillModule } from './modules/skill/skill.module';
+import { SpawnModule } from './modules/spawn/spawn.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { SkillModule } from './modules/skill/skill.module';
     GearModule,
     SkillModule,
     CharacterSheetModule,
+    SpawnModule,
   ],
   providers: [],
   exports: [],
