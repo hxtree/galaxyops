@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CharacterSheetRepository } from './character-sheet.repository';
+import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 
 @Injectable()
 export class CharacterSheetService {

@@ -5,9 +5,8 @@ import {
   VERSION_NEUTRAL,
   BadRequestException,
 } from '@nestjs/common';
-import { CharacterSheetRepository } from '../character-sheet/character-sheet.repository';
-import { CharacterSheetService } from '../character-sheet/character-sheet.service';
-import { CharacterSheet } from '../character-sheet/character-sheet.schema';
+import { CharacterSheetRepository } from '../../models/character-sheet.repository';
+import { CharacterSheet } from '../../models/character-sheet.schema';
 import { CreateSpawnDto } from './create-spawn-dto';
 import { PlaceService } from '../place/place.service';
 import { SpawnService } from './spawn.service';
@@ -15,7 +14,6 @@ import { SpawnService } from './spawn.service';
 @Controller({ path: 'spawns', version: [VERSION_NEUTRAL, '1'] })
 export class SpawnController {
   constructor(
-    private _characterSheetService: CharacterSheetService,
     private _characterSheetRepository: CharacterSheetRepository,
     private _placeService: PlaceService,
     private _spawnService: SpawnService,

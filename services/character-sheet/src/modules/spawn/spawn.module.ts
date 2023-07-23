@@ -6,8 +6,8 @@ import {
 } from '@cats-cradle/nestjs-modules';
 import { CharacterSheetService } from '../character-sheet/character-sheet.service';
 import { SpawnController } from './spawn.controller';
-import { CharacterSheetRepository } from '../character-sheet/character-sheet.repository';
-import { CharacterSheetSchema } from '../character-sheet/character-sheet.schema';
+import { CharacterSheetRepository } from '../../models/character-sheet.repository';
+import { CharacterSheetSchema } from '../../models/character-sheet.schema';
 import { PlaceService } from '../place/place.service';
 import { SpawnService } from './spawn.service';
 

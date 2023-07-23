@@ -8,8 +8,11 @@ import {
 } from '@cats-cradle/nestjs-modules';
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import { CharacterSheetService } from './character-sheet.service';
-import { CharacterSheetSchema, CharacterSheet } from './character-sheet.schema';
-import { CharacterSheetRepository } from './character-sheet.repository';
+import {
+  CharacterSheetSchema,
+  CharacterSheet,
+} from '../../models/character-sheet.schema';
+import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheetController } from './character-sheet.controller';
 import { PlaceService } from '../place/place.service';
 

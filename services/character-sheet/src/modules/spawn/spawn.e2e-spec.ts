@@ -7,9 +7,8 @@ import {
   closeInMongodConnection,
 } from '@cats-cradle/nestjs-modules';
 import { FakerFactory } from '@cats-cradle/faker-factory';
-import { CharacterSheetService } from '../character-sheet/character-sheet.service';
-import { CharacterSheetSchema } from '../character-sheet/character-sheet.schema';
-import { CharacterSheetRepository } from '../character-sheet/character-sheet.repository';
+import { CharacterSheetSchema } from '../../models/character-sheet.schema';
+import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { SpawnController } from './spawn.controller';
 import { PlaceService } from '../place/place.service';
 import { CreateSpawnDto } from './create-spawn-dto';
@@ -17,7 +16,6 @@ import { SpawnService } from './spawn.service';
 
 describe('/spawns', () => {
   let app: INestApplication;
-  let characterSheetService: CharacterSheetService;
   let characterSheetRepository: CharacterSheetRepository;
   let placeService: PlaceService;
   let spawnService: SpawnService;
@@ -30,21 +28,13 @@ describe('/spawns', () => {
           { name: 'CharacterSheet', schema: CharacterSheetSchema },
         ]),
       ],
-      providers: [
-        PlaceService,
-        CharacterSheetRepository,
-        CharacterSheetService,
-        SpawnService,
-      ],
+      providers: [PlaceService, CharacterSheetRepository, SpawnService],
       controllers: [SpawnController],
     }).compile();
 
     app = moduleRef.createNestApplication();
     characterSheetRepository = moduleRef.get<CharacterSheetRepository>(
       CharacterSheetRepository,
-    );
-    characterSheetService = moduleRef.get<CharacterSheetService>(
-      CharacterSheetService,
     );
 
     placeService = moduleRef.get<PlaceService>(PlaceService);
