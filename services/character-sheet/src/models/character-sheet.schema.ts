@@ -9,11 +9,11 @@ import {
   IsInstance,
 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
-import { CreateCharacterSheetDto } from './create-character-sheet-dto';
+import { CreateCharacterSheetDto } from '../modules/character-sheet/create-character-sheet-dto';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
 import { EquipmentEmbeddable } from './equipment-embeddable.schema';
-import { ArchetypeId, ArchetypeIds } from '../../data/archetype';
+import { ArchetypeId, ArchetypeIds } from '../data/archetype';
 
 @Schema()
 export class CharacterSheet {
