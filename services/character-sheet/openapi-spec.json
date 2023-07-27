@@ -412,9 +412,9 @@
         "responses": { "200": { "description": "" } }
       }
     },
-    "/spawns": {
+    "/npc": {
       "post": {
-        "operationId": "SpawnController_create",
+        "operationId": "NpcController_create",
         "parameters": [],
         "requestBody": {
           "required": true,

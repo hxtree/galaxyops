@@ -5,14 +5,14 @@ import {
   MongooseModule,
 } from '@cats-cradle/nestjs-modules';
 import { CharacterSheetService } from '../character-sheet/character-sheet.service';
-import { SpawnController } from './spawn.controller';
+import { NpcController } from './npc.controller';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheetSchema } from '../../models/character-sheet.schema';
 import { PlaceService } from '../place/place.service';
 import { SpawnService } from './spawn.service';
 
 @Module({
-  controllers: [SpawnController],
+  controllers: [NpcController],
   providers: [
     PlaceService,
     CharacterSheetService,
@@ -26,4 +26,4 @@ import { SpawnService } from './spawn.service';
     ]),
   ],
 })
-export class SpawnModule {}
+export class NpcModule {}

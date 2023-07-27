@@ -11,8 +11,8 @@ import { CreateSpawnDto } from './create-spawn-dto';
 import { PlaceService } from '../place/place.service';
 import { SpawnService } from './spawn.service';
 
-@Controller({ path: 'spawns', version: [VERSION_NEUTRAL, '1'] })
-export class SpawnController {
+@Controller({ path: 'npcs', version: [VERSION_NEUTRAL, '1'] })
+export class NpcController {
   constructor(
     private _characterSheetRepository: CharacterSheetRepository,
     private _placeService: PlaceService,

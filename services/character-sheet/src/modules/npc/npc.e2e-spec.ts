@@ -9,7 +9,7 @@ import {
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import { CharacterSheetSchema } from '../../models/character-sheet.schema';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
-import { SpawnController } from './spawn.controller';
+import { NpcController } from './npc.controller';
 import { PlaceService } from '../place/place.service';
 import { CreateSpawnDto } from './create-spawn-dto';
 import { SpawnService } from './spawn.service';
@@ -29,7 +29,7 @@ describe('/spawns', () => {
         ]),
       ],
       providers: [PlaceService, CharacterSheetRepository, SpawnService],
-      controllers: [SpawnController],
+      controllers: [NpcController],
     }).compile();
 
     app = moduleRef.createNestApplication();
@@ -48,12 +48,12 @@ describe('/spawns', () => {
     app.close();
   });
 
-  describe('POST /spawns', () => {
+  describe('POST /npc', () => {
     it('should create random spawn for given area', async () => {
       const body = await FakerFactory.create<CreateSpawnDto>(CreateSpawnDto);
 
       const result = await supertest(app.getHttpServer())
-        .post('/spawns')
+        .post('/npcs')
         .send(body)
         .expect(201);
 
