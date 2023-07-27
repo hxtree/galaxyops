@@ -412,7 +412,7 @@
         "responses": { "200": { "description": "" } }
       }
     },
-    "/npc": {
+    "/npcs": {
       "post": {
         "operationId": "NpcController_create",
         "parameters": [],
