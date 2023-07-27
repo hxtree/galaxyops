@@ -48,7 +48,7 @@ describe('/spawns', () => {
     app.close();
   });
 
-  describe('POST /npc', () => {
+  describe('POST /npcs', () => {
     it('should create random spawn for given area', async () => {
       const body = await FakerFactory.create<CreateSpawnDto>(CreateSpawnDto);
 
