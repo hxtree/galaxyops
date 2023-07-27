@@ -12,9 +12,11 @@ import {
   CharacterSheetSchema,
   CharacterSheet,
 } from '../../models/character-sheet.schema';
+import { CreateCharacterSheetDto } from '../../models/create-character-sheet-dto';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheetController } from './character-sheet.controller';
 import { PlaceService } from '../place/place.service';
+import { v4 } from 'uuid';
 
 describe('/character-sheets', () => {
   let app: INestApplication;
@@ -59,7 +61,7 @@ describe('/character-sheets', () => {
   describe('GET /character-sheets/:id', () => {
     it('should not find results that do not exists', async () => {
       const response = await supertest(app.getHttpServer())
-        .get('/character-sheets/1f251943-174c-4ee0-87e4-0a52ed2eebbc')
+        .get(`/character-sheets/${v4()}`)
         .expect(404);
       expect(response.body).toEqual({ message: 'Not Found', statusCode: 404 });
     });
@@ -67,20 +69,33 @@ describe('/character-sheets', () => {
     it('should find result if exists', async () => {
       const characterSheet = await FakerFactory.create<CharacterSheet>(
         CharacterSheet,
+        {},
+        { optionals: true },
       );
       await characterSheetRepository.create(characterSheet);
 
       const result = await supertest(app.getHttpServer())
         .get(`/character-sheets/${characterSheet.id}`)
         .expect(200);
-      // expect(result.body).toEqual(expect.objectContaining(characterSheet));
+
+      expect(result.body).toEqual(
+        expect.objectContaining({
+          // TODO fix issue with id: characterSheet.id,
+          instanceId: characterSheet.instanceId,
+          archetypeId: characterSheet.archetypeId,
+          name: characterSheet.name,
+          surname: characterSheet.surname,
+        }),
+      );
     });
   });
 
   describe('DELETE /character-sheets/:id', () => {
     it('should delete result if exists', async () => {
-      const characterSheet = await FakerFactory.create<CharacterSheet>(
-        CharacterSheet,
+      const characterSheet = await FakerFactory.create<CreateCharacterSheetDto>(
+        CreateCharacterSheetDto,
+        {},
+        { optionals: true },
       );
       await characterSheetRepository.create(characterSheet);
 

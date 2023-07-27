@@ -1,4 +1,4 @@
-import { Outfit } from '../data/gear/outfit.gear';
+import { Outfit } from './outfit.gear';
 
 describe('Outfit', () => {
   test('able to get outfit', () => {

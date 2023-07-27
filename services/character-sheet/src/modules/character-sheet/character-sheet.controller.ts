@@ -12,8 +12,12 @@ import {
 } from '@nestjs/common';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheetService } from './character-sheet.service';
-import { CharacterSheet } from '../../models/character-sheet.schema';
+import {
+  CharacterSheet,
+  TCharacterSheetDocument,
+} from '../../models/character-sheet.schema';
 import { CreateCharacterSheetDto } from './create-character-sheet-dto';
+import { v4 } from 'uuid';
 
 @Controller({ path: 'character-sheets', version: [VERSION_NEUTRAL, '1'] })
 export class CharacterSheetController {
@@ -37,7 +41,6 @@ export class CharacterSheetController {
     const result = await this._characterSheetRepository.findOne({
       id,
     });
-
     if (!result) {
       throw new NotFoundException();
     }
@@ -55,7 +58,13 @@ export class CharacterSheetController {
   async create(
     @Body() createCharacterSheetDto: CreateCharacterSheetDto,
   ): Promise<any> {
-    const characterSheet = new CharacterSheet(createCharacterSheetDto);
+    const characterSheet = new CharacterSheet();
+    // characterSheet.id = createCharacterSheetDto.id;
+    characterSheet.instanceId = createCharacterSheetDto.instanceId;
+    characterSheet.archetypeId = createCharacterSheetDto.archetypeId;
+    characterSheet.name = createCharacterSheetDto.name;
+    characterSheet.surname = createCharacterSheetDto.surname;
+
     return this._characterSheetRepository.create(characterSheet);
   }
 }

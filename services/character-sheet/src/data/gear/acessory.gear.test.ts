@@ -1,4 +1,4 @@
-import { Accessory } from '../data/gear/accessory.gear';
+import { Accessory } from './accessory.gear';
 
 describe('Accessory', () => {
   test('able to get Accessory', () => {

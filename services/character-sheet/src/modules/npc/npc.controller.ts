@@ -10,6 +10,7 @@ import { CharacterSheet } from '../../models/character-sheet.schema';
 import { CreateSpawnDto } from './create-spawn-dto';
 import { PlaceService } from '../place/place.service';
 import { SpawnService } from './spawn.service';
+import { v4 } from 'uuid';
 
 @Controller({ path: 'npcs', version: [VERSION_NEUTRAL, '1'] })
 export class NpcController {
@@ -33,9 +34,11 @@ export class NpcController {
     const createCharacterSheet = this._spawnService.calculateSpawn(
       place.spawnGuidelines,
     );
-    createCharacterSheet.id = createSpawnDto.id;
 
-    const characterSheet = new CharacterSheet(createCharacterSheet);
+    const characterSheet = new CharacterSheet();
+    characterSheet.id = createSpawnDto.id ?? v4();
+    characterSheet.instanceId = createSpawnDto.instanceId;
+    characterSheet.archetypeId = createCharacterSheet.archetypeId;
 
     // TODO persist character
 

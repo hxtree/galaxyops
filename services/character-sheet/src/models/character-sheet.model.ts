@@ -13,6 +13,7 @@ import { StatusEffect } from '../data/status.effect';
 // interface representing a document
 export interface ICharacterSheet {
   id: typeof uuidv4;
+  instanceId: typeof uuidv4;
   archetype: string;
   traits: Trait[];
   attributes: {
@@ -39,6 +40,11 @@ export interface ICharacterSheet {
 // Schema for document interface
 export const characterSheetSchema = new Schema<ICharacterSheet>({
   id: {
+    type: String,
+    default: uuidv4,
+    required: true,
+  },
+  instanceId: {
     type: String,
     required: true,
   },

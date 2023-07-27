@@ -51,18 +51,19 @@ describe('/spawns', () => {
   describe('POST /npcs', () => {
     it('should create random spawn for given area', async () => {
       const body = await FakerFactory.create<CreateSpawnDto>(CreateSpawnDto);
+      body.place = 'ENDERS_LAND';
 
       const result = await supertest(app.getHttpServer())
         .post('/npcs')
         .send(body)
         .expect(201);
 
-      // expect(result.body).toEqual(
-      //   expect.objectContaining({
-      //     deleted: true,
-      //     deletedCount: 1,
-      //   }),
-      // );
+      expect(result.body).toEqual(
+        expect.objectContaining({
+          id: body.id,
+          created: true,
+        }),
+      );
     });
   });
 });
