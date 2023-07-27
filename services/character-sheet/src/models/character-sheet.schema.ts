@@ -17,7 +17,7 @@ import { ArchetypeId, ArchetypeIds } from '../data/archetype';
 
 @Schema()
 export class CharacterSheet {
-  @IsUUID()
+  @IsUUID() // TODO fix decorator
   @Prop()
   public id!: string;
 
@@ -53,12 +53,13 @@ export class CharacterSheet {
   @Prop()
   public equipment: EquipmentEmbeddable[];
 
-  constructor(createCharacterSheetDto: CreateCharacterSheetDto) {
-    this.id = createCharacterSheetDto?.id ? createCharacterSheetDto.id : v4();
-    this.archetypeId = createCharacterSheetDto?.archetypeId;
-    this.name = createCharacterSheetDto?.name;
-    this.surname = createCharacterSheetDto?.surname;
-  }
+  // constructor(createCharacterSheetDto: CreateCharacterSheetDto) {
+  //   this.id = createCharacterSheetDto?.id ? createCharacterSheetDto.id : 'cany'; //v4();
+  //   this.instanceId = v4(); // TODO must not autogenerate
+  //   this.archetypeId = createCharacterSheetDto?.archetypeId;
+  //   this.name = createCharacterSheetDto?.name;
+  //   this.surname = createCharacterSheetDto?.surname;
+  // }
 }
 
 export type TCharacterSheetDocument = CharacterSheet & Document;
