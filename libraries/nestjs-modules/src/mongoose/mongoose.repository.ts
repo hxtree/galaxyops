@@ -21,20 +21,13 @@ export type DeleteModelResponse = {
   deleted: boolean;
 };
 
-export type CreateModelResponse = {
-  id: string;
-  created: boolean;
-};
-
 export class Repository<T extends Document> {
   constructor(private readonly model: Model<T>) {}
 
-  async create(doc: object): Promise<CreateModelResponse> {
+  async create(doc: object): Promise<T | null> {
     // eslint-disable-next-line new-cap
     const createdEntity = new this.model(doc);
-    const result = await createdEntity.save();
-
-    return { id: result.id, created: !!result.id };
+    return await createdEntity.save();
   }
 
   async findOne(

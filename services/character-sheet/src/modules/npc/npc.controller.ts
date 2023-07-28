@@ -36,12 +36,12 @@ export class NpcController {
     );
 
     const characterSheet = new CharacterSheet();
-    characterSheet.id = createSpawnDto.id ?? v4();
+    if (createSpawnDto.id !== undefined) {
+      characterSheet.id = createSpawnDto.id;
+    }
     characterSheet.instanceId = createSpawnDto.instanceId;
     characterSheet.archetypeId = createCharacterSheet.archetypeId;
 
-    // TODO persist character
-
-    return this._characterSheetRepository.create(characterSheet);
+    return await this._characterSheetRepository.create(characterSheet);
   }
 }

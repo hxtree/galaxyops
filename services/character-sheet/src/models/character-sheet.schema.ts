@@ -9,7 +9,6 @@ import {
   IsInstance,
 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
-import { CreateCharacterSheetDto } from '../modules/character-sheet/create-character-sheet-dto';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
 import { EquipmentEmbeddable } from './equipment-embeddable.schema';
@@ -52,14 +51,6 @@ export class CharacterSheet {
   @IsEnum(EquipmentEmbeddable)
   @Prop()
   public equipment: EquipmentEmbeddable[];
-
-  // constructor(createCharacterSheetDto: CreateCharacterSheetDto) {
-  //   this.id = createCharacterSheetDto?.id ? createCharacterSheetDto.id : 'cany'; //v4();
-  //   this.instanceId = v4(); // TODO must not autogenerate
-  //   this.archetypeId = createCharacterSheetDto?.archetypeId;
-  //   this.name = createCharacterSheetDto?.name;
-  //   this.surname = createCharacterSheetDto?.surname;
-  // }
 }
 
 export type TCharacterSheetDocument = CharacterSheet & Document;
