@@ -12,7 +12,7 @@ import {
   CharacterSheetSchema,
   CharacterSheet,
 } from '../../models/character-sheet.schema';
-import { CreateCharacterSheetDto } from '../../models/create-character-sheet-dto';
+import { CreateCharacterSheetDto } from './create-character-sheet-dto';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheetController } from './character-sheet.controller';
 import { PlaceService } from '../place/place.service';
@@ -53,6 +53,10 @@ describe('/character-sheets', () => {
     await app.init();
   });
 
+  afterEach(async () => {
+    await characterSheetRepository.deleteAll();
+  });
+
   afterAll(async () => {
     await closeInMongodConnection();
     app.close();
@@ -75,12 +79,44 @@ describe('/character-sheets', () => {
       await characterSheetRepository.create(characterSheet);
 
       const result = await supertest(app.getHttpServer())
-        .get(`/character-sheets/${characterSheet.id}`)
+        .get(`/character-sheets/${characterSheet._id}`)
         .expect(200);
 
       expect(result.body).toEqual(
         expect.objectContaining({
-          // TODO fix issue with id: characterSheet.id,
+          id: characterSheet._id,
+          instanceId: characterSheet.instanceId,
+          archetypeId: characterSheet.archetypeId,
+          name: characterSheet.name,
+          surname: characterSheet.surname,
+        }),
+      );
+    });
+  });
+
+  describe('GET /character-sheets/?name=MEEKU_ONI', () => {
+    it('should not find results that do not exists', async () => {
+      const response = await supertest(app.getHttpServer())
+        .get(`/character-sheets/?name=MEEKU_ONI`)
+        .expect(200);
+      expect(response.body).toEqual([]);
+    });
+
+    it('should find result if exists', async () => {
+      const characterSheet = await FakerFactory.create<CharacterSheet>(
+        CharacterSheet,
+        { name: 'JANE' },
+        { optionals: true },
+      );
+      await characterSheetRepository.create(characterSheet);
+
+      const result = await supertest(app.getHttpServer())
+        .get(`/character-sheets/?name=JANE`)
+        .expect(200);
+
+      expect(result.body[0]).toEqual(
+        expect.objectContaining({
+          id: characterSheet._id,
           instanceId: characterSheet.instanceId,
           archetypeId: characterSheet.archetypeId,
           name: characterSheet.name,
@@ -100,7 +136,7 @@ describe('/character-sheets', () => {
       await characterSheetRepository.create(characterSheet);
 
       const result = await supertest(app.getHttpServer())
-        .delete(`/character-sheets/${characterSheet.id}`)
+        .delete(`/character-sheets/${characterSheet._id}`)
         .expect(200);
 
       expect(result.body).toEqual(

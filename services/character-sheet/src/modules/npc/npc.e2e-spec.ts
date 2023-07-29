@@ -60,6 +60,7 @@ describe('/spawns', () => {
 
       expect(result.body).toEqual(
         expect.objectContaining({
+          id: body.id,
           instanceId: body.instanceId,
           archetypeId: 'SENSITIVE_PLANT',
         }),

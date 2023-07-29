@@ -2,6 +2,7 @@ import {
   NotFoundException,
   Controller,
   Delete,
+  Query,
   Get,
   Post,
   Param,
@@ -26,9 +27,22 @@ export class CharacterSheetController {
     private _characterSheetRepository: CharacterSheetRepository,
   ) {}
 
+  @Get(':id')
+  async findOne(@Param('id', new ParseUUIDPipe()) id: string): Promise<any> {
+    const result = await this._characterSheetRepository.findOne({
+      id,
+    });
+    if (!result) {
+      throw new NotFoundException();
+    }
+    return result;
+  }
+
   @Get()
-  async findAll(): Promise<any> {
-    const result = await this._characterSheetRepository.findAll();
+  async findByFilter(@Query() filterParams: any): Promise<any[]> {
+    const result = await this._characterSheetRepository.find({
+      filterParams,
+    });
 
     if (!result) {
       throw new NotFoundException();
@@ -36,11 +50,10 @@ export class CharacterSheetController {
     return result;
   }
 
-  @Get(':id')
-  async findOne(@Param('id', new ParseUUIDPipe()) id: string): Promise<any> {
-    const result = await this._characterSheetRepository.findOne({
-      id,
-    });
+  @Get()
+  async findAll(): Promise<any> {
+    const result = await this._characterSheetRepository.findAll();
+
     if (!result) {
       throw new NotFoundException();
     }
@@ -59,7 +72,9 @@ export class CharacterSheetController {
     @Body() createCharacterSheetDto: CreateCharacterSheetDto,
   ): Promise<any> {
     const characterSheet = new CharacterSheet();
-    // characterSheet.id = createCharacterSheetDto.id;
+    if (createCharacterSheetDto._id !== undefined) {
+      characterSheet._id = createCharacterSheetDto._id;
+    }
     characterSheet.instanceId = createCharacterSheetDto.instanceId;
     characterSheet.archetypeId = createCharacterSheetDto.archetypeId;
     characterSheet.name = createCharacterSheetDto.name;

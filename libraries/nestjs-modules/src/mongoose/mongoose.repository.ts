@@ -67,6 +67,11 @@ export class Repository<T extends Document> {
     return { deletedCount, deleted: !!deletedCount };
   }
 
+  async deleteAll(): Promise<DeleteModelResponse> {
+    const { deletedCount } = await this.model.deleteMany({});
+    return { deletedCount, deleted: !!deletedCount };
+  }
+
   async updateOne(
     filter: FilterQuery<T>,
     updated: UpdateWithAggregationPipeline | UpdateQuery<T>,
