@@ -21,20 +21,13 @@ export type DeleteModelResponse = {
   deleted: boolean;
 };
 
-export type CreateModelResponse = {
-  id: string;
-  created: boolean;
-};
-
 export class Repository<T extends Document> {
   constructor(private readonly model: Model<T>) {}
 
-  async create(doc: object): Promise<CreateModelResponse> {
+  async create(doc: object): Promise<T | null> {
     // eslint-disable-next-line new-cap
     const createdEntity = new this.model(doc);
-    const result = await createdEntity.save();
-
-    return { id: result.id, created: !!result.id };
+    return await createdEntity.save();
   }
 
   async findOne(
@@ -71,6 +64,11 @@ export class Repository<T extends Document> {
 
   async delete(filter: FilterQuery<T>): Promise<DeleteModelResponse> {
     const { deletedCount } = await this.model.deleteOne(filter);
+    return { deletedCount, deleted: !!deletedCount };
+  }
+
+  async deleteAll(): Promise<DeleteModelResponse> {
+    const { deletedCount } = await this.model.deleteMany({});
     return { deletedCount, deleted: !!deletedCount };
   }
 
