@@ -1,5 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { IsEnum, IsString } from '@cats-cradle/validation-schemas';
+import {
+  IsEnum,
+  ArrayUnique,
+  ArrayMinSize,
+  ArrayMaxSize,
+} from '@cats-cradle/validation-schemas';
 import { Slot } from '../data/gear/slot';
 import { EquipmentId, EquipmentIds } from '../data/gear/equipment.gear';
 
@@ -9,6 +14,9 @@ export class EquipmentEmbeddable {
   @Prop()
   public equipmentId!: EquipmentId;
 
+  @ArrayUnique()
+  @ArrayMinSize(1)
+  @ArrayMaxSize(3)
   @IsEnum(Slot, { each: true })
   @Prop()
   public gearSlots!: Slot[];

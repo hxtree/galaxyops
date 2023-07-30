@@ -8,18 +8,18 @@ import { Skill, SkillType } from './skill';
  * Progression in one discipline may unlock other disciplines, actions, and attributes bonuses.
  */
 
-export namespace Discipline {
-  export enum Category {
-    PROFESSION = 'Profession',
-    ARCHETYPE = 'Archetype',
-    // Combat Classes
-    // Specialty Classes
-    // Drive Classes
-    // Omega Classes
-    //  | Spirit Class | Drive Class | Omega Class
-  }
+export enum Category {
+  PROFESSION = 'Profession',
+  ARCHETYPE = 'Archetype',
+  // Combat Classes
+  // Specialty Classes
+  // Drive Classes
+  // Omega Classes
+  //  | Spirit Class | Drive Class | Omega Class
+}
 
-  interface SkillProgressionType {
+export namespace Discipline {
+  export interface SkillProgressionType {
     level: number;
     skill: SkillType;
   }

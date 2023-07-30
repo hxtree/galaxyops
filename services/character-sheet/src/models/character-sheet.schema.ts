@@ -9,6 +9,10 @@ import {
   IsOptional,
   IsInstance,
   ValidateNested,
+  ArrayUnique,
+  ArrayMinSize,
+  ArrayMaxSize,
+  IsArray,
 } from '@cats-cradle/validation-schemas';
 import { v4 as uuidv4 } from 'uuid';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
@@ -16,6 +20,7 @@ import { StatsEmbeddable } from './stats-embeddable.schema';
 import { EquipmentEmbeddable } from './equipment-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
 import { Archetype, ArchetypeId, ArchetypeIds } from '../data/archetype';
+import { Discipline, DisciplineId } from '../data/discipline';
 
 @Schema()
 export class CharacterSheet {
@@ -84,12 +89,19 @@ export class CharacterSheet {
   @IsOptional()
   @ValidateNested({ each: true })
   @Type(() => DisciplineEmbeddable)
+  @ArrayUnique()
+  @ArrayMinSize(0)
+  @ArrayMaxSize(5)
   @Prop()
   public disciplines: DisciplineEmbeddable[];
 
   @IsOptional()
   @ValidateNested({ each: true })
   @Type(() => EquipmentEmbeddable)
+  @IsArray()
+  @ArrayUnique()
+  @ArrayMinSize(0)
+  @ArrayMaxSize(12)
   @Prop()
   public equipment: EquipmentEmbeddable[];
 }
@@ -124,9 +136,33 @@ CharacterSheetSchema.virtual('traits').get(function () {
 });
 
 CharacterSheetSchema.virtual('skills').get(function () {
-  // TODO compute skills from disciplines skillProgression
-  // compute skills from gear / equipment / weapons
-  return [];
+  let skills: any = [];
+
+  this.disciplines.forEach((disciplineEmbeddable: DisciplineEmbeddable) => {
+    const discipline: Discipline.Type =
+      Discipline[disciplineEmbeddable.disciplineId];
+
+    if (discipline.skillProgression === undefined) {
+      return;
+    }
+
+    discipline.skillProgression.forEach(
+      (skill: Discipline.SkillProgressionType) => {
+        const disciplineLevel = Math.floor(
+          Math.sqrt(disciplineEmbeddable.experience / 100),
+        );
+
+        console.log(`${skill.level} >= ${disciplineLevel}`);
+        if (skill.level >= disciplineLevel) {
+          skills.push(skill.skill); // TODO rename skill.skill
+        }
+      },
+    );
+  });
+
+  // TODO compute skills from gear / equipment / weapons
+
+  return skills;
 });
 
 CharacterSheetSchema.index({
