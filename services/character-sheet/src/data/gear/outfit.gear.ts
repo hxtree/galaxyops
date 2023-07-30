@@ -6,7 +6,7 @@ import { Slot } from './slot';
  * A collection of garments that comprise a single a set of clothing that can be warn at once.
  * For simplicity the entire collection of clothing is consider a outfit.
  * Characters can change out between for example swimsuits into casual wear.
- * Characters cannot change out bottom and tops individuallly.
+ * Characters cannot change out bottom and tops individually.
  */
 export namespace Outfit {
   export type Type = {

@@ -1,12 +1,14 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import {
+  Type,
   IsUuidV4,
   IsString,
   IsUUID,
   IsEnum,
   IsOptional,
   IsInstance,
+  ValidateNested,
 } from '@cats-cradle/validation-schemas';
 import { v4 as uuidv4 } from 'uuid';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
@@ -84,8 +86,8 @@ export class CharacterSheet {
   @Prop()
   public disciplines: DisciplineEmbeddable[];
 
-  @IsOptional()
-  @IsEnum(EquipmentEmbeddable)
+  @ValidateNested({ each: true })
+  @Type(() => EquipmentEmbeddable)
   @Prop()
   public equipment: EquipmentEmbeddable[];
 }
@@ -117,6 +119,12 @@ CharacterSheetSchema.virtual('fullName').get(function () {
 CharacterSheetSchema.virtual('traits').get(function () {
   const archetype: Archetype.Type = Archetype[this.archetypeId];
   return archetype.traits ?? [];
+});
+
+CharacterSheetSchema.virtual('skills').get(function () {
+  // TODO compute skills from disciplines skillProgression
+  // compute skills from gear / equipment / weapons
+  return [];
 });
 
 CharacterSheetSchema.index({
