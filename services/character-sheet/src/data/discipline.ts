@@ -445,3 +445,7 @@ export namespace Discipline {
     skillProgression: [],
   };
 }
+
+export const DisciplineIds = Object.keys(Discipline);
+
+export type DisciplineId = keyof typeof Discipline;

@@ -1,22 +1,18 @@
 import { Prop, Schema } from '@nestjs/mongoose';
-import { IsString, IsInt, Min, Max } from '@cats-cradle/validation-schemas';
+import { IsEnum, IsInt, Min, Max } from '@cats-cradle/validation-schemas';
+import { DisciplineId, DisciplineIds } from '../data/discipline';
 
 @Schema()
 export class DisciplineEmbeddable {
-  @IsString()
+  @IsEnum(DisciplineIds)
   @Prop()
-  public name!: string;
+  public disciplineId!: DisciplineId;
 
   @IsInt()
   @Min(0)
   @Max(255000)
   @Prop()
   public experience!: number;
-
-  public constructor(name: string, experience: number = 0) {
-    this.name = name;
-    this.experience = experience;
-  }
 
   public get level(): number {
     return Math.floor(Math.sqrt(this.experience / 100));

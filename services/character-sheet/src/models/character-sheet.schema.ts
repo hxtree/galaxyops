@@ -82,10 +82,12 @@ export class CharacterSheet {
   public stats: StatsEmbeddable;
 
   @IsOptional()
-  @IsEnum(DisciplineEmbeddable)
+  @ValidateNested({ each: true })
+  @Type(() => DisciplineEmbeddable)
   @Prop()
   public disciplines: DisciplineEmbeddable[];
 
+  @IsOptional()
   @ValidateNested({ each: true })
   @Type(() => EquipmentEmbeddable)
   @Prop()
