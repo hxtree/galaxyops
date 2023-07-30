@@ -14,3 +14,7 @@ A microservice api for simulating luck based dice rolls from dice notaiton.
 ## Features
 
 - **Roll**: Simulates dice roll from notation using luck.
+
+## References
+
+- [Words of Estimate Probability](https://en.wikipedia.org/wiki/Words_of_estimative_probability)
