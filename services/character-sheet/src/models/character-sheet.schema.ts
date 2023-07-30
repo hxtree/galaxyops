@@ -1,17 +1,22 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import {
+  Type,
   IsUuidV4,
   IsString,
   IsUUID,
   IsEnum,
   IsOptional,
   IsInstance,
+  ValidateNested,
 } from '@cats-cradle/validation-schemas';
 import { v4 as uuidv4 } from 'uuid';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
-import { EquipmentEmbeddable } from './equipment-embeddable.schema';
+import {
+  // EquipmentSchema,
+  EquipmentEmbeddable,
+} from './equipment-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
 import { Archetype, ArchetypeId, ArchetypeIds } from '../data/archetype';
 
@@ -84,8 +89,8 @@ export class CharacterSheet {
   @Prop()
   public disciplines: DisciplineEmbeddable[];
 
-  @IsOptional()
-  @IsEnum(EquipmentEmbeddable)
+  @ValidateNested({ each: true })
+  @Type(() => EquipmentEmbeddable)
   @Prop()
   public equipment: EquipmentEmbeddable[];
 }

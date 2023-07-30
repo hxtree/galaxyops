@@ -1,14 +1,15 @@
-import { Prop, Schema } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { IsEnum, IsString } from '@cats-cradle/validation-schemas';
 import { Slot } from '../data/gear/slot';
+import { EquipmentId, EquipmentIds } from '../data/gear/equipment.gear';
 
-@Schema()
+@Schema({ _id: false })
 export class EquipmentEmbeddable {
-  @IsString()
+  @IsEnum(EquipmentIds)
   @Prop()
-  public name!: string;
+  public equipmentId!: EquipmentId;
 
-  @IsEnum(Slot)
+  @IsEnum(Slot, { each: true })
   @Prop()
   public gearSlots!: Slot[];
 }
