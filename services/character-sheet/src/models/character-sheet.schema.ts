@@ -13,10 +13,7 @@ import {
 import { v4 as uuidv4 } from 'uuid';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
-import {
-  // EquipmentSchema,
-  EquipmentEmbeddable,
-} from './equipment-embeddable.schema';
+import { EquipmentEmbeddable } from './equipment-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
 import { Archetype, ArchetypeId, ArchetypeIds } from '../data/archetype';
 
@@ -122,6 +119,12 @@ CharacterSheetSchema.virtual('fullName').get(function () {
 CharacterSheetSchema.virtual('traits').get(function () {
   const archetype: Archetype.Type = Archetype[this.archetypeId];
   return archetype.traits ?? [];
+});
+
+CharacterSheetSchema.virtual('skills').get(function () {
+  // TODO compute skills from disciplines skillProgression
+  // compute skills from gear / equipment / weapons
+  return [];
 });
 
 CharacterSheetSchema.index({
