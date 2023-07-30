@@ -43,6 +43,10 @@ describe('/spawns', () => {
     await app.init();
   });
 
+  afterEach(async () => {
+    await characterSheetRepository.deleteAll();
+  });
+
   afterAll(async () => {
     await closeInMongodConnection();
     app.close();

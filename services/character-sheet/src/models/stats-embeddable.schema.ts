@@ -5,7 +5,7 @@ import { IsInt, Min, Max } from '@cats-cradle/validation-schemas';
  * characters actual stats vary based on disciplines, afflictions, and equipment
  * the values actually stored in the database are the raw stats
  */
-@Schema()
+@Schema({ _id: false })
 export class StatsEmbeddable {
   /**
    * The ability to apply force to ones movements

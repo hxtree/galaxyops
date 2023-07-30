@@ -12,10 +12,14 @@ import { v4 as uuidv4 } from 'uuid';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
 import { EquipmentEmbeddable } from './equipment-embeddable.schema';
-import { ArchetypeId, ArchetypeIds } from '../data/archetype';
+import { GaugeEmbeddable } from './gauge-embeddable.schema';
+import { Archetype, ArchetypeId, ArchetypeIds } from '../data/archetype';
 
 @Schema()
 export class CharacterSheet {
+  // @Transform(({ value }) => value.toString())
+  // _id: ObjectId;
+
   @IsUUID()
   @Prop({
     type: String,
@@ -35,13 +39,41 @@ export class CharacterSheet {
 
   @IsString()
   @IsOptional()
-  @Prop()
+  @Prop({
+    set: (content: string) => {
+      return content.trim();
+    },
+  })
   public name?: string;
 
   @IsString()
   @IsOptional()
-  @Prop()
+  @Prop({
+    set: (content: string) => {
+      return content.trim();
+    },
+  })
   public surname?: string;
+
+  /**
+   * A measurement of ones ability to exist
+   */
+  @IsInstance(GaugeEmbeddable)
+  @Prop()
+  public life: GaugeEmbeddable;
+
+  @IsInstance(GaugeEmbeddable)
+  @Prop()
+  public drive: GaugeEmbeddable;
+
+  /**
+   * TODO
+   * when spirit reaches 0 Spirit addition points are taken from Life.
+   * This is the only way that some characters will have enough Spirit Points to perform certain actions.
+   */
+  @IsInstance(GaugeEmbeddable)
+  @Prop()
+  public spirit: GaugeEmbeddable;
 
   @IsInstance(StatsEmbeddable)
   @Prop()
@@ -80,6 +112,11 @@ export const CharacterSheetSchema = SchemaFactory.createForClass(CharacterSheet)
 
 CharacterSheetSchema.virtual('fullName').get(function () {
   return `${this.name} ${this.surname}`;
+});
+
+CharacterSheetSchema.virtual('traits').get(function () {
+  const archetype: Archetype.Type = Archetype[this.archetypeId];
+  return archetype.traits ?? [];
 });
 
 CharacterSheetSchema.index({

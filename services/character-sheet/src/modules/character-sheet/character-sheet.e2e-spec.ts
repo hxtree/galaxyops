@@ -17,6 +17,7 @@ import { CharacterSheetRepository } from '../../models/character-sheet.repositor
 import { CharacterSheetController } from './character-sheet.controller';
 import { PlaceService } from '../place/place.service';
 import { v4 } from 'uuid';
+import { Archetype } from '../../data/archetype';
 
 describe('/character-sheets', () => {
   let app: INestApplication;
@@ -73,7 +74,7 @@ describe('/character-sheets', () => {
     it('should find result if exists', async () => {
       const characterSheet = await FakerFactory.create<CharacterSheet>(
         CharacterSheet,
-        {},
+        { archetypeId: 'MEEKU_ONI' },
         { optionals: true },
       );
       await characterSheetRepository.create(characterSheet);
@@ -89,6 +90,7 @@ describe('/character-sheets', () => {
           archetypeId: characterSheet.archetypeId,
           name: characterSheet.name,
           surname: characterSheet.surname,
+          traits: Archetype['MEEKU_ONI'].traits,
         }),
       );
     });
