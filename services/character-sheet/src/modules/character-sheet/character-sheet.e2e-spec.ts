@@ -83,7 +83,8 @@ describe('/character-sheets', () => {
         .get(`/character-sheets/${characterSheet._id}`)
         .expect(200);
 
-      // console.log(JSON.stringify(result.body, null, 2));
+      console.log(JSON.stringify(result.body, null, 2));
+
       expect(result.body).toEqual(
         expect.objectContaining({
           id: characterSheet._id,
@@ -92,6 +93,7 @@ describe('/character-sheets', () => {
           name: characterSheet.name,
           surname: characterSheet.surname,
           traits: Archetype['MEEKU_ONI'].traits,
+          disciplines: characterSheet.disciplines,
           equipment: characterSheet.equipment,
         }),
       );
