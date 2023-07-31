@@ -21,6 +21,7 @@ import { EquipmentEmbeddable } from './equipment-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
 import { Archetype, ArchetypeId, ArchetypeIds } from '../data/archetype';
 import { Discipline, DisciplineId } from '../data/discipline';
+import { Equipment, EquipmentType } from '../data/gear';
 
 @Schema()
 export class CharacterSheet {
@@ -86,7 +87,6 @@ export class CharacterSheet {
   @Prop()
   public stats: StatsEmbeddable;
 
-  @IsOptional()
   @ValidateNested({ each: true })
   @Type(() => DisciplineEmbeddable)
   @ArrayUnique()
@@ -95,7 +95,6 @@ export class CharacterSheet {
   @Prop()
   public disciplines: DisciplineEmbeddable[];
 
-  @IsOptional()
   @ValidateNested({ each: true })
   @Type(() => EquipmentEmbeddable)
   @IsArray()
@@ -142,25 +141,37 @@ CharacterSheetSchema.virtual('skills').get(function () {
     const discipline: Discipline.Type =
       Discipline[disciplineEmbeddable.disciplineId];
 
-    if (discipline.skillProgression === undefined) {
+    if (discipline.progression === undefined) {
       return;
     }
 
-    discipline.skillProgression.forEach(
-      (skill: Discipline.SkillProgressionType) => {
+    discipline.progression.forEach(
+      (progression: Discipline.ProgressionType) => {
         const disciplineLevel = Math.floor(
           Math.sqrt(disciplineEmbeddable.experience / 100),
         );
 
-        console.log(`${skill.level} >= ${disciplineLevel}`);
-        if (skill.level >= disciplineLevel) {
-          skills.push(skill.skill); // TODO rename skill.skill
+        if (
+          progression.level >= disciplineLevel &&
+          skills.indexOf(progression.skill) === -1
+        ) {
+          skills.push(progression.skill);
         }
       },
     );
   });
 
-  // TODO compute skills from gear / equipment / weapons
+  this.equipment.forEach((equipmentEmbeddable: EquipmentEmbeddable) => {
+    const equipment: any = Equipment[equipmentEmbeddable.equipmentId];
+    if (equipment.actions === undefined) {
+      return;
+    }
+    equipment.actions.forEach((action: any) => {
+      if (skills.indexOf(action) === -1) {
+        skills.push(action);
+      }
+    });
+  });
 
   return skills;
 });

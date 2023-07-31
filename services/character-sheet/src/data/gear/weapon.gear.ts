@@ -1,4 +1,4 @@
-import * as Skill from '../skill/weapon.skill';
+import { Skill, SkillType } from '../skill';
 
 /**
  * Weapon is a tag applied to a weapon export const and is used to determine
@@ -25,7 +25,7 @@ export namespace Weapon {
     // the range of the attack
     // todo UOM? feet, yards, meters?
     area: number;
-    actions: Skill.Weapon.Type[]; // could also be Ward, Protect, etc. for Pendents :?
+    actions: SkillType[]; // could also be Ward, Protect, etc. for Pendents :?
   };
 
   // the category of the weapon, used to determine equability, weakness and resistance.
@@ -33,7 +33,7 @@ export namespace Weapon {
     ARROW = 'Arrow',
     BOW = 'Bow',
     BLADE = 'Blade',
-    BOOMERANG = 'Boomerange',
+    BOOMERANG = 'Boomerang',
     BROAD_SWORD = 'Broadsword',
     BLUNT = 'Blunt',
     CLAW = 'Claw',
@@ -74,7 +74,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.SLASH],
+    actions: [Skill.SLASH],
   };
 
   export const GREAT_WAIL: Type = {
@@ -85,7 +85,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.SLASH],
+    actions: [Skill.SLASH],
   };
 
   export const JUSTICE: Type = {
@@ -95,7 +95,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.SLASH],
+    actions: [Skill.SLASH],
   };
 
   export const KEYSTONE: Type = {
@@ -106,7 +106,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.SLASH],
+    actions: [Skill.SLASH],
   };
 
   /**
@@ -119,13 +119,13 @@ export namespace Weapon {
    * Gear Slots – Right Hand AND Left Hand
    */
 
-  export const ASSUALTER: Type = {
+  export const ASSAULTER: Type = {
     name: 'Assaulter',
     category: Category.BOOMERANG,
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STRIKE],
+    actions: [Skill.STRIKE],
   };
 
   export const STRIKER: Type = {
@@ -135,11 +135,11 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STRIKE],
+    actions: [Skill.STRIKE],
   };
 
   /**
-   * Shieldsword
+   * Shield-sword
    * They can also be used as a shield (Guard).
    *
    * Gear Slots – Right Hand AND Left Hand
@@ -152,7 +152,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STRIKE],
+    actions: [Skill.BLOCK, Skill.STRIKE],
     // SPEED_DECREASE 1d5
     // FIRE 2d5
   };
@@ -166,7 +166,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STRIKE],
+    actions: [Skill.BLOCK, Skill.STRIKE],
     // Increases wait time
     // Increases recovery time
     // Increases damage
@@ -182,7 +182,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STRIKE],
+    actions: [Skill.BLOCK, Skill.STRIKE],
   };
 
   /**
@@ -200,7 +200,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STRIKE],
+    actions: [Skill.STRIKE],
   };
 
   export const SWORD_OF_LAWZON: Type = {
@@ -210,7 +210,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STRIKE],
+    actions: [Skill.STRIKE],
   };
 
   /**
@@ -226,7 +226,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STRIKE],
+    actions: [Skill.STRIKE],
   };
 
   export const CADUCEUS: Type = {
@@ -238,18 +238,18 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STRIKE],
+    actions: [Skill.STRIKE],
   };
 
   export const ANTEDILUVIAN: Type = {
     name: 'Antediluvian',
     category: Category.STAFF,
-    description: 'An acient wooden staff',
+    description: 'An ancient wooden staff',
     history: 'An ancient weapon used to slay devils of the old world',
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STRIKE],
+    actions: [Skill.STRIKE],
   };
 
   /**
@@ -266,7 +266,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STAB],
+    actions: [Skill.STAB],
   };
 
   export const GOLD_RUSH: Type = {
@@ -277,7 +277,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STAB],
+    actions: [Skill.STAB],
   };
 
   export const KINGS_BLADE: Type = {
@@ -287,7 +287,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STAB],
+    actions: [Skill.STAB],
   };
 
   export const RUSTY_RAPIER: Type = {
@@ -297,7 +297,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.Weapon.STAB],
+    actions: [Skill.STAB],
   };
 
   /**
@@ -311,11 +311,10 @@ export namespace Weapon {
   export const MYSTERIOUS_PENDANT: Type = {
     name: 'Mysterious Pendant',
     category: Category.PENDANT,
-    // Grants Ward
     power: 100,
     speed: 30,
     area: 1,
-    actions: [],
+    actions: [Skill.WARD],
   };
 
   export const PEACEKEEPER: Type = {
@@ -324,7 +323,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [],
+    actions: [Skill.LULLABY],
   };
 
   export const TROUBLE_MAKER: Type = {
@@ -333,7 +332,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [],
+    actions: [Skill.BLOOD_LUST],
   };
 
   /**
@@ -429,5 +428,12 @@ export namespace Weapon {
   /**
    * Shields
    */
-  // Buckler
+  export const BUCKLER: Type = {
+    name: 'Buckler',
+    category: Category.SHIELD,
+    power: 100,
+    speed: 30,
+    area: 1,
+    actions: [Skill.BLOCK, Skill.PARRY],
+  };
 }
