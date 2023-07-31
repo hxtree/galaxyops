@@ -19,7 +19,7 @@ export enum Category {
 }
 
 export namespace Discipline {
-  export interface SkillProgressionType {
+  export interface ProgressionType {
     level: number;
     skill: SkillType;
   }
@@ -32,14 +32,14 @@ export namespace Discipline {
     prerequisites?: Type[]; // Discipline[];
     // could also be event like defeated Lawzon, but may be that's too
     // character specific?
-    skillProgression?: SkillProgressionType[];
+    progression?: ProgressionType[];
   };
 
   export const GYMNAST: Type = {
     name: 'Gymnast',
     description: 'Trains in gymnastics.',
     category: Category.PROFESSION,
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.BACK_FLIP },
       { level: 25, skill: Skill.DOUBLE_BACK_FLIP },
       { level: 50, skill: Skill.HIGH_JUMP },
@@ -51,7 +51,7 @@ export namespace Discipline {
     name: 'Wizard',
     description: 'Studies mysterious forces.',
     category: Category.PROFESSION,
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.GUST },
       { level: 25, skill: Skill.FLARE },
       { level: 50, skill: Skill.HEAL },
@@ -63,7 +63,7 @@ export namespace Discipline {
     name: 'Historian',
     description: 'Studies the world as it was.',
     category: Category.PROFESSION,
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.APPRAISE },
       { level: 25, skill: Skill.SCAN },
       { level: 50, skill: Skill.HERALDIC_LION },
@@ -73,7 +73,7 @@ export namespace Discipline {
     name: 'Body Builder',
     description: 'Do you even lift?',
     category: Category.PROFESSION,
-    skillProgression: [{ level: 50, skill: Skill.SCRIBBLES }],
+    progression: [{ level: 50, skill: Skill.SCRIBBLES }],
   };
 
   // may be anyone can become a cook?>
@@ -81,7 +81,7 @@ export namespace Discipline {
     name: 'Cook',
     description: 'Prepares and cooks food',
     category: Category.PROFESSION,
-    skillProgression: [{ level: 10, skill: Skill.PREPARE_FOOD }],
+    progression: [{ level: 10, skill: Skill.PREPARE_FOOD }],
     // todo prepare different food items
   };
 
@@ -89,7 +89,7 @@ export namespace Discipline {
     name: 'Cheerleader',
     description: 'Cheers their team as a form of encouragement.',
     category: Category.PROFESSION,
-    skillProgression: [
+    progression: [
       { level: 1, skill: Skill.CHEER },
       { level: 10, skill: Skill.SUPPORT },
       { level: 40, skill: Skill.INSPIRE },
@@ -101,7 +101,7 @@ export namespace Discipline {
     name: 'Commander',
     description: 'Specialize in giving orders to others.',
     category: Category.ARCHETYPE,
-    skillProgression: [
+    progression: [
       { level: 1, skill: Skill.BOAST },
       { level: 10, skill: Skill.FORMATIONS },
       { level: 50, skill: Skill.ORDER },
@@ -113,7 +113,7 @@ export namespace Discipline {
     description: 'Has a basic understanding of Magic',
     category: Category.ARCHETYPE,
     prerequisites: [],
-    skillProgression: [],
+    progression: [],
   };
 
   export const MAGI_BLACK: Type = {
@@ -122,7 +122,7 @@ export namespace Discipline {
     history: 'Harnessed from the power of Ouren',
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.DARKNESS },
       { level: 25, skill: Skill.DESOLATE },
     ],
@@ -134,7 +134,7 @@ export namespace Discipline {
     history: 'Harnessed from the power of Genki',
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.RAGE },
       { level: 15, skill: Skill.AQUA },
       { level: 25, skill: Skill.TSUNAMI },
@@ -147,7 +147,7 @@ export namespace Discipline {
     history: 'Harnessed from the power of Asmin',
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.QUAKE },
       { level: 15, skill: Skill.LANDSLIDE },
     ],
@@ -159,7 +159,7 @@ export namespace Discipline {
     history: 'Harnessed from the power of Void',
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.STOP },
       { level: 15, skill: Skill.SLOW },
       { level: 15, skill: Skill.HASTE },
@@ -172,7 +172,7 @@ export namespace Discipline {
     history: 'Harnessed from the power of Suyri',
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.CHARM },
       { level: 15, skill: Skill.CHILL },
     ],
@@ -184,7 +184,7 @@ export namespace Discipline {
     history: 'Harnessed from the power of Diag',
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
-    skillProgression: [{ level: 10, skill: Skill.QUAKE }],
+    progression: [{ level: 10, skill: Skill.QUAKE }],
     // TODO CHANGE may be instead of quake do tainted
   };
 
@@ -194,7 +194,7 @@ export namespace Discipline {
     history: 'Harnessed from the power of Lawzon',
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.BLIZZARD },
       { level: 10, skill: Skill.FROST },
       { level: 10, skill: Skill.CHILL },
@@ -207,7 +207,7 @@ export namespace Discipline {
     history: 'Harnessed from the power of Wisp',
     category: Category.ARCHETYPE,
     prerequisites: [Discipline.MAGI],
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.DRAIN },
       { level: 25, skill: Skill.LEECH },
       { level: 50, skill: Skill.DRAIN },
@@ -218,56 +218,56 @@ export namespace Discipline {
     name: 'Guard',
     description: 'Specialize in protection.',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const GUARDIAN: Type = {
     name: 'Guardian',
     description: 'Specialize in protection.',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const HERO: Type = {
     name: 'Hero',
     description: 'Specialize in saving others.',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const KNIGHT: Type = {
     name: 'Knight',
-    description: 'A honored fighter for protects the kingdom.',
+    description: 'A honored fighter who protects the kingdom.',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const MECHANIC: Type = {
     name: 'Mechanic',
     description: 'Specializes in electromechanical engineering',
     category: Category.ARCHETYPE,
-    skillProgression: [], // Actions: Tools
+    progression: [], // Actions: Tools
   };
 
   export const ROUGE: Type = {
     name: 'Rouge',
     description: 'Specializes sneak attacks and picking locks',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const ROYALTY: Type = {
     name: 'Royalty',
     description: 'Specializes in ruling others',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const REBEL: Type = {
     name: 'Rebel',
     description: 'Rebel',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const SCOUT: Type = {
@@ -275,7 +275,7 @@ export namespace Discipline {
     description:
       'Specialize in moving ahead of the party to gathering information and reconnaissance.',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const SOLIDER: Type = {
@@ -283,7 +283,7 @@ export namespace Discipline {
     description:
       'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.',
     category: Category.ARCHETYPE,
-    skillProgression: [{ level: 10, skill: Skill.CLEAVE }],
+    progression: [{ level: 10, skill: Skill.CLEAVE }],
   };
 
   export const SUMMONER: Type = {
@@ -291,7 +291,7 @@ export namespace Discipline {
     description:
       'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.',
     category: Category.ARCHETYPE,
-    skillProgression: [
+    progression: [
       { level: 10, skill: Skill.SUMMON },
       { level: 10, skill: Skill.DISMISS },
       { level: 10, skill: Skill.COMMAND },
@@ -302,14 +302,14 @@ export namespace Discipline {
     name: 'Thief',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const WARRIOR: Type = {
     name: 'Warrior',
     description: 'Specializes in combat on the battlefield.',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const XSOLIDER: Type = {
@@ -317,132 +317,132 @@ export namespace Discipline {
     description:
       'Soldiers that have gone against their teachings to gain new skills.',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const ASSASSIN: Type = {
     name: 'Assassin',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const HEALER: Type = {
     name: 'Healer',
     description: 'Specialize in healing.',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const BARD: Type = {
     name: 'Bard',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const DUELIST: Type = {
     name: 'Duelist',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const RUNE_KING: Type = {
     name: 'Rune King',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const MAIDEN: Type = {
     name: 'Maiden',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const Keeper: Type = {
     name: 'Keeper',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const SAGE: Type = {
     name: 'Sage',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const POSSESSED: Type = {
     name: 'Possessed',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const NINJA: Type = {
     name: 'Ninja',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const AMBER_ASSASSIN: Type = {
     name: 'Amber Assassin',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const ELITE_ASSASSIN: Type = {
     name: 'Elite Assassin',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
   export const ENGINEER: Type = {
     name: 'Engineer',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const BERSERKER: Type = {
     name: 'Berserker',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const ONI: Type = {
     name: 'Oni',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const KEEPER: Type = {
     name: 'Keeper',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const LIGHTENING_WARRIOR: Type = {
     name: 'Lightening Warrior',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 
   export const OUROBOROS: Type = {
     name: 'Ouroboros',
     description: '',
     category: Category.ARCHETYPE,
-    skillProgression: [],
+    progression: [],
   };
 }
 

@@ -18,6 +18,12 @@ export namespace Weapon {
     effect: EffectTable;
   };
 
+  export const BLOCK: Type = {
+    name: 'BLOCK',
+    description: 'Stop incoming attack.',
+    effect: [],
+  };
+
   export const PARRY: Type = {
     name: 'Parry',
     description: 'Ward off incoming attack with a countermove.',
