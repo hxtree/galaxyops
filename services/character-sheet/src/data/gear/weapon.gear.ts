@@ -22,10 +22,12 @@ export namespace Weapon {
 
     // dps could be calculated but would require character
     // but pendents don't do damage
+
     // the range of the attack
     // todo UOM? feet, yards, meters?
+    // TODO should area be based on skill or weapon?
     area: number;
-    actions: SkillType[]; // could also be Ward, Protect, etc. for Pendents :?
+    actions: SkillType[];
   };
 
   // the category of the weapon, used to determine equability, weakness and resistance.
@@ -314,7 +316,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.WARD],
+    actions: [Skill.WARD, Skill.CURE],
   };
 
   export const PEACEKEEPER: Type = {
@@ -323,7 +325,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.LULLABY],
+    actions: [Skill.LULLABY, Skill.PROTECT],
   };
 
   export const TROUBLE_MAKER: Type = {
@@ -332,7 +334,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [Skill.BLOOD_LUST],
+    actions: [Skill.BLOOD_LUST, Skill.DARKNESS],
   };
 
   /**
@@ -347,7 +349,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [],
+    actions: [Skill.STRIKE],
   };
 
   /**
@@ -367,7 +369,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [],
+    actions: [Skill.SLASH, Skill.ABSORB],
   };
 
   export const LIBERTY: Type = {
@@ -376,7 +378,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [],
+    actions: [Skill.SLASH, Skill.CLEAVE],
   };
 
   export const MONARCH: Type = {
@@ -387,7 +389,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [],
+    actions: [Skill.SLASH], // TODO may be poison slash or somehow add change of poison to action?
   };
 
   export const REGRET: Type = {
@@ -396,7 +398,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [],
+    actions: [Skill.SLASH],
   };
 
   export const VICEROY: Type = {
@@ -410,7 +412,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [],
+    actions: [Skill.SLASH],
   };
 
   export const VIOLATED: Type = {
@@ -422,7 +424,7 @@ export namespace Weapon {
     power: 100,
     speed: 30,
     area: 1,
-    actions: [],
+    actions: [Skill.SLASH],
   };
 
   /**
