@@ -237,7 +237,7 @@ export namespace Discipline {
 
   export const KNIGHT: Type = {
     name: 'Knight',
-    description: 'A honored fighter for protects the kingdom.',
+    description: 'A honored fighter who protects the kingdom.',
     category: Category.ARCHETYPE,
     progression: [],
   };
