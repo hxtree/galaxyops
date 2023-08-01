@@ -1,4 +1,3 @@
-import { Slot } from './gear';
 import { Skill, SkillType } from './skill';
 
 /**
@@ -11,12 +10,29 @@ import { Skill, SkillType } from './skill';
 export enum Category {
   PROFESSION = 'Profession',
   ARCHETYPE = 'Archetype',
+  OMEGA = 'Omega',
   // Combat Classes
   // Specialty Classes
   // Drive Classes
-  // Omega Classes
   //  | Spirit Class | Drive Class | Omega Class
 }
+
+export type GainSkillType = {
+  level: number;
+  skill: SkillType;
+};
+
+export type GainAttributeType = {
+  level: number;
+  power?: number;
+  speed?: number;
+  wisdom?: number;
+  intelligence?: number;
+  defense?: number;
+  accuracy?: number;
+  evasion?: number;
+  luck?: number;
+};
 
 export namespace Discipline {
   export interface ProgressionType {
@@ -29,7 +45,7 @@ export namespace Discipline {
     description: string;
     category: Category;
     history?: string;
-    prerequisites?: Type[]; // Discipline[];
+    prerequisites?: Type[]; // DisciplineId? After level etc?
     // could also be event like defeated Lawzon, but may be that's too
     // character specific?
     progression?: ProgressionType[];
@@ -218,7 +234,7 @@ export namespace Discipline {
     name: 'Guard',
     description: 'Specialize in protection.',
     category: Category.ARCHETYPE,
-    progression: [],
+    progression: [{ level: 10, skill: Skill.BLOCK }],
   };
 
   export const GUARDIAN: Type = {
@@ -246,14 +262,14 @@ export namespace Discipline {
     name: 'Mechanic',
     description: 'Specializes in electromechanical engineering',
     category: Category.ARCHETYPE,
-    progression: [], // Actions: Tools
+    progression: [{ level: 10, skill: Skill.SCAN }], // Actions: Tools
   };
 
   export const ROUGE: Type = {
     name: 'Rouge',
     description: 'Specializes sneak attacks and picking locks',
     category: Category.ARCHETYPE,
-    progression: [],
+    progression: [{ level: 10, skill: Skill.PICKPOCKET }],
   };
 
   export const ROYALTY: Type = {
@@ -267,7 +283,7 @@ export namespace Discipline {
     name: 'Rebel',
     description: 'Rebel',
     category: Category.ARCHETYPE,
-    progression: [],
+    progression: [{ level: 10, skill: Skill.STRIKE }],
   };
 
   export const SCOUT: Type = {
@@ -275,7 +291,7 @@ export namespace Discipline {
     description:
       'Specialize in moving ahead of the party to gathering information and reconnaissance.',
     category: Category.ARCHETYPE,
-    progression: [],
+    progression: [{ level: 10, skill: Skill.SCOUT }],
   };
 
   export const SOLIDER: Type = {
@@ -302,7 +318,7 @@ export namespace Discipline {
     name: 'Thief',
     description: '',
     category: Category.ARCHETYPE,
-    progression: [],
+    progression: [{ level: 10, skill: Skill.PICKPOCKET }],
   };
 
   export const WARRIOR: Type = {
@@ -345,14 +361,14 @@ export namespace Discipline {
     name: 'Duelist',
     description: '',
     category: Category.ARCHETYPE,
-    progression: [],
+    progression: [{ level: 10, skill: Skill.PARRY }],
   };
 
   export const RUNE_KING: Type = {
     name: 'Rune King',
     description: '',
     category: Category.ARCHETYPE,
-    progression: [],
+    progression: [{ level: 10, skill: Skill.BOAST }],
   };
 
   export const MAIDEN: Type = {
@@ -403,6 +419,7 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     progression: [],
   };
+
   export const ENGINEER: Type = {
     name: 'Engineer',
     description: '',
@@ -435,7 +452,10 @@ export namespace Discipline {
     name: 'Lightening Warrior',
     description: '',
     category: Category.ARCHETYPE,
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.STRIKE },
+      { level: 15, skill: Skill.SHOCK },
+    ],
   };
 
   export const OUROBOROS: Type = {
