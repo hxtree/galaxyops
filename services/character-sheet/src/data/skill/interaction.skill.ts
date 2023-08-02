@@ -1,17 +1,10 @@
 /**
  * InteractionSkills are actions that can only be used when a compatible object is present
+ * InteractionSkill Actions are a type of Command Menu actions,
  */
-export enum Interaction {
-  GRAB = 'Grab',
-  PUSH = 'Push',
-  PULL = 'Pull',
-  LIFT = 'Lift',
-  THROW = 'Throw',
-}
-
-export namespace InteractionSkill {
-  export type InteractionType = {
-    name: Interaction;
+export namespace Interaction {
+  export type Type = {
+    name: string;
     description: string;
     target: ObjectCategory;
   };
@@ -19,40 +12,45 @@ export namespace InteractionSkill {
   export enum ObjectCategory {
     MOVEABLE = 'Moveable',
     IMPENDING = 'Impending',
+    LOCKED = 'Locked',
   }
 
-  export const Grab: InteractionType = {
-    name: Interaction.GRAB,
+  export const GRAB: Type = {
+    name: 'Grab',
     description: 'Grab object',
     target: ObjectCategory.MOVEABLE,
   };
 
-  export const Push: InteractionType = {
-    name: Interaction.PUSH,
+  export const PUSH: Type = {
+    name: 'Push',
     description: 'Push object',
     target: ObjectCategory.MOVEABLE,
   };
 
-  export const Pull: InteractionType = {
-    name: Interaction.PULL,
+  export const PULL: Type = {
+    name: 'Pull',
     description: 'Pull object',
     target: ObjectCategory.MOVEABLE,
   };
 
-  export const Lift: InteractionType = {
-    name: Interaction.LIFT,
+  export const LIFT: Type = {
+    name: 'Lift',
     description: 'Lift object',
     target: ObjectCategory.MOVEABLE,
   };
 
-  export const Throw: InteractionType = {
-    name: Interaction.THROW,
+  export const THROW: Type = {
+    name: 'Throw',
     description: 'Throw object',
     target: ObjectCategory.MOVEABLE,
   };
 
-  // InteractionSkill Actions
-  // InteractionSkill Actions are a type of Command Menu actions,
+  export const PICK_LOCK: Type = {
+    name: 'Pick Lock',
+    description: 'Pick a lock',
+    target: ObjectCategory.LOCKED,
+  };
+
   // which essentially means that they take up a slot on the players Command
   // Menu. InteractionSkill Actions take up the InteractionSkill Slot on the
   //  Command Menu. What distinguishes InteractionSkill Actions from the rest

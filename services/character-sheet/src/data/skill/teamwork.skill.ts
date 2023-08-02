@@ -12,12 +12,12 @@ export namespace Teamwork {
 
   export const COMMAND: Type = {
     name: 'Command',
-    description: 'tell other party members what actions to use.',
+    description: 'Tell other party members what actions to use.',
   };
 
   export const FORMATIONS: Type = {
     name: 'Formations',
-    description: 'get part to move to certain areas.',
+    description: 'Get part to move to certain areas.',
   };
 
   export const ORDER: Type = {
