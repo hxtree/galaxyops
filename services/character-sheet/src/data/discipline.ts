@@ -269,7 +269,10 @@ export namespace Discipline {
     name: 'Rouge',
     description: 'Specializes sneak attacks and picking locks',
     category: Category.ARCHETYPE,
-    progression: [{ level: 10, skill: Skill.PICKPOCKET }],
+    progression: [
+      { level: 10, skill: Skill.DUAL_WELD },
+      { level: 10, skill: Skill.PICKPOCKET },
+    ],
   };
 
   export const ROYALTY: Type = {
@@ -304,8 +307,7 @@ export namespace Discipline {
 
   export const SUMMONER: Type = {
     name: 'Summoner',
-    description:
-      'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.',
+    description: 'Summons and commands magical beings.',
     category: Category.ARCHETYPE,
     progression: [
       { level: 10, skill: Skill.SUMMON },
@@ -316,9 +318,12 @@ export namespace Discipline {
 
   export const THIEF: Type = {
     name: 'Thief',
-    description: '',
+    description: 'Proficient at stealing and picking locks.',
     category: Category.ARCHETYPE,
-    progression: [{ level: 10, skill: Skill.PICKPOCKET }],
+    progression: [
+      { level: 10, skill: Skill.PICKPOCKET },
+      { level: 10, skill: Skill.PICK_LOCK },
+    ],
   };
 
   export const WARRIOR: Type = {
@@ -340,7 +345,7 @@ export namespace Discipline {
     name: 'Assassin',
     description: '',
     category: Category.ARCHETYPE,
-    progression: [],
+    progression: [{ level: 10, skill: Skill.DUAL_WELD }],
   };
 
   export const HEALER: Type = {

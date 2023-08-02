@@ -356,7 +356,7 @@ export namespace Archetype {
       },
     ],
     potentialOutfits: [Outfit.OFFICERS_UNIFORM],
-    summonCompatibility: [Summon.OURUBORUS, Summon.MISCHIEVOUS],
+    summonCompatibility: [Summon.OUROBOROS, Summon.MISCHIEVOUS],
     weaponCompatibility: [Weapon.Category.KNIFE, Weapon.Category.DAGGER],
   };
 

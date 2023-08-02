@@ -1,5 +1,5 @@
 /**
- * Summons are compainons that may be called into play in varying ways to aid party.
+ * Summons are companions that may be called into play in varying ways to aid party.
  * Summons can only be used with the Command action or through the Interaction Command.
  * Although they accept Commands they do not necessarily follow them.
  * Summons have different levels and stats just like characters.
@@ -76,8 +76,8 @@ export namespace Summon {
     backstory: '',
   };
 
-  export const OURUBORUS: Type = {
-    name: 'Ouruborus',
+  export const OUROBOROS: Type = {
+    name: 'Ouroboros',
     description: 'A demon that consumes itself',
     backstory: '',
   };
