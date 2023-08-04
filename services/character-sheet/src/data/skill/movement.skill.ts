@@ -1,4 +1,5 @@
 import { Attribute } from '../attribute';
+import { MenuSlot } from '../menu-slot';
 
 /**
  * MovementSkill
@@ -9,12 +10,14 @@ export namespace Movement {
     name: string;
     description: string;
     consumes?: Attribute;
+    menuSlot: MenuSlot;
   };
 
   export const WALK: Type = {
     name: 'Walk',
     description: 'Move slowly forward or backward side to side',
     // (Light press Direction Pad) Move slowly.
+    menuSlot: MenuSlot.MOVEMENT,
   };
 
   export const RUN: Type = {
@@ -24,32 +27,38 @@ export namespace Movement {
     // consumes stamina
     // (walk + Square)
     // (Hard press Direction Pad with Stamina)
+    menuSlot: MenuSlot.MOVEMENT,
   };
 
   export const SWIM: Type = {
     name: 'Swim',
     description: 'Move in deep water',
     // consumes stamina
+    menuSlot: MenuSlot.MOVEMENT,
   };
 
   export const BACK_FLIP: Type = {
     name: 'Back Flip',
     description: 'Quickly move backwards',
+    menuSlot: MenuSlot.MOVEMENT,
   };
 
   export const DOUBLE_BACK_FLIP: Type = {
     name: 'Double Back Flip',
     description: 'Quickly move backwards twice',
+    menuSlot: MenuSlot.MOVEMENT,
   };
 
   export const HIGH_JUMP: Type = {
     name: 'High Jump',
     description: 'Charged vertical jump',
+    menuSlot: MenuSlot.MOVEMENT,
   };
 
   export const CLIMB: Type = {
     name: 'Climb',
     description: 'Scale a wall',
+    menuSlot: MenuSlot.MOVEMENT,
   };
 
   // "83","Trek","Used to determine how steep an angled tile you can stand on.

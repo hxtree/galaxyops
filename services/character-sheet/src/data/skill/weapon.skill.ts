@@ -1,6 +1,7 @@
 import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
 import { EffectTable } from '../table.effect';
+import { MenuSlot } from '../menu-slot';
 
 /**
  * Weapon Skill
@@ -16,18 +17,21 @@ export namespace Weapon {
     name: string;
     description: string;
     effect: EffectTable;
+    menuSlot: MenuSlot;
   };
 
   export const BLOCK: Type = {
     name: 'BLOCK',
     description: 'Stop incoming attack.',
     effect: [],
+    menuSlot: MenuSlot.FIRST,
   };
 
   export const PARRY: Type = {
     name: 'Parry',
     description: 'Ward off incoming attack with a countermove.',
     effect: [],
+    menuSlot: MenuSlot.FIRST,
   };
 
   export const SLASH: Type = {
@@ -40,6 +44,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    menuSlot: MenuSlot.FIRST,
   };
 
   export const STRIKE: Type = {
@@ -52,6 +57,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    menuSlot: MenuSlot.FIRST,
   };
 
   export const STAB: Type = {
@@ -64,6 +70,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    menuSlot: MenuSlot.FIRST,
   };
 
   export const CHOP: Type = {
@@ -76,6 +83,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    menuSlot: MenuSlot.FIRST,
   };
 
   export const CLEAVE: Type = {
@@ -88,6 +96,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    menuSlot: MenuSlot.FIRST,
   };
 
   // "15","Cleave lv2",,"13",,"13"
@@ -102,8 +111,6 @@ export namespace Weapon {
   // "62","Cure",,"61",,"61"
   // "63","Heal","Restore life to one target","62",,"62"
   // "64","Heal All","Restore life to all nearby targets","63",,"63"
-
-  // "69","Strike",,"68",,"68"
 
   // "73","Bake","Create Consumables from Recipes","72",,"72"
   // "74","Improved Dodging",,"73",,"73"

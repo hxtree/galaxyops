@@ -1,3 +1,4 @@
+import { MenuSlot } from '../menu-slot';
 import { Weapon } from './weapon.skill';
 
 /**
@@ -14,11 +15,13 @@ export namespace Combo {
     name: string;
     description: string;
     prerequisite?: Weapon.Type[]; // todo figure our programmatic solution
+    menuSlot: MenuSlot;
   };
 
   export const BLITZ: Type = {
     name: 'Blitz',
     description: '',
     prerequisite: [Weapon.SLASH, Weapon.SLASH, Weapon.SLASH],
+    menuSlot: MenuSlot.FIRST,
   };
 }

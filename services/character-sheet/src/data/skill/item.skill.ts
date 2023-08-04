@@ -1,3 +1,5 @@
+import { MenuSlot } from '../menu-slot';
+
 /**
  * Item
  * Are quite simply actions that are related to the use of an item.
@@ -7,26 +9,31 @@ export namespace Item {
   export type Type = {
     name: string;
     description: string;
+    menuSlot: MenuSlot;
   };
 
   export const APPRAISE: Type = {
     name: 'Appraise',
     description: 'Determine the market value of an item',
+    menuSlot: MenuSlot.ITEM,
   };
 
   export const COMBINE: Type = {
     name: 'Combine',
     description: 'Turn two or more items into one item if compatible',
+    menuSlot: MenuSlot.ITEM,
   };
 
   export const THROW: Type = {
     name: 'Throw',
     description: 'Toss an item from stock away or to injure enemy.',
+    menuSlot: MenuSlot.ITEM,
   };
 
   export const PREPARE_FOOD: Type = {
     name: 'Prepare Food',
     description: 'Make a meal',
+    menuSlot: MenuSlot.ITEM,
   };
 
   // "42","Craft","Combined multiple items into one.","39",,"39"
