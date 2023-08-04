@@ -1,3 +1,5 @@
+import { MenuSlot } from '../menu-slot';
+
 /**
  * InteractionSkills are actions that can only be used when a compatible object is present
  * InteractionSkill Actions are a type of Command Menu actions,
@@ -7,6 +9,7 @@ export namespace Interaction {
     name: string;
     description: string;
     target: ObjectCategory;
+    menuSlot: MenuSlot;
   };
 
   export enum ObjectCategory {
@@ -19,36 +22,42 @@ export namespace Interaction {
     name: 'Grab',
     description: 'Grab object',
     target: ObjectCategory.MOVEABLE,
+    menuSlot: MenuSlot.INTERACTION,
   };
 
   export const PUSH: Type = {
     name: 'Push',
     description: 'Push object',
     target: ObjectCategory.MOVEABLE,
+    menuSlot: MenuSlot.INTERACTION,
   };
 
   export const PULL: Type = {
     name: 'Pull',
     description: 'Pull object',
     target: ObjectCategory.MOVEABLE,
+    menuSlot: MenuSlot.INTERACTION,
   };
 
   export const LIFT: Type = {
     name: 'Lift',
     description: 'Lift object',
     target: ObjectCategory.MOVEABLE,
+    menuSlot: MenuSlot.INTERACTION,
   };
 
   export const THROW: Type = {
     name: 'Throw',
     description: 'Throw object',
     target: ObjectCategory.MOVEABLE,
+    menuSlot: MenuSlot.INTERACTION,
   };
 
   export const PICK_LOCK: Type = {
     name: 'Pick Lock',
     description: 'Pick a lock',
     target: ObjectCategory.LOCKED,
+    menuSlot: MenuSlot.INTERACTION,
   };
 
   // which essentially means that they take up a slot on the players Command

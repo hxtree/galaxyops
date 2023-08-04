@@ -2,6 +2,7 @@ import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
 import { StatusEffect } from '../status.effect';
 import { EffectRecord } from '../table.effect';
+import { MenuSlot } from '../menu-slot';
 
 /**
  * Spells are actions that are casted by magic users.
@@ -26,6 +27,7 @@ export namespace Spell {
     description: string;
     targets?: number;
     effect?: EffectRecord[];
+    menuSlot: MenuSlot;
   };
 
   export const GRAVITY: Type = {
@@ -40,6 +42,7 @@ export namespace Spell {
         tags: [EffectTag.PHYSICAL, EffectTag.AERIAL],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const SHOCK: Type = {
@@ -50,6 +53,7 @@ export namespace Spell {
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.ELECTRIC] },
       { add: StatusEffect.STUNNED, chance: 0.2, tags: [EffectTag.ELECTRIC] },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const QUAKE: Type = {
@@ -64,6 +68,7 @@ export namespace Spell {
         tags: [EffectTag.EARTH, EffectTag.GROUND_LEVEL],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const LANDSLIDE: Type = {
@@ -75,6 +80,7 @@ export namespace Spell {
       { add: StatusEffect.DOWN, chance: 0.2, tags: [EffectTag.EARTH] },
       { add: StatusEffect.EXILED, chance: 0.3, tags: [EffectTag.EARTH] },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const BLIZZARD: Type = {
@@ -98,6 +104,7 @@ export namespace Spell {
         tags: [EffectTag.WATER, EffectTag.AIR],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const FIREBALL: Type = {
@@ -108,6 +115,7 @@ export namespace Spell {
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE] },
       { add: StatusEffect.BURNED, chance: 0.2, tags: [EffectTag.FIRE] },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const INFERNO: Type = {
@@ -118,6 +126,7 @@ export namespace Spell {
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE] },
       { add: StatusEffect.BURNED, chance: 0.2, tags: [EffectTag.FIRE] },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const TWISTER: Type = {
@@ -132,6 +141,7 @@ export namespace Spell {
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const GUST: Type = {
@@ -146,6 +156,7 @@ export namespace Spell {
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const GALE: Type = {
@@ -160,6 +171,7 @@ export namespace Spell {
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const CYCLONE: Type = {
@@ -174,6 +186,7 @@ export namespace Spell {
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const TSUNAMI: Type = {
@@ -188,6 +201,7 @@ export namespace Spell {
         tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const AQUA: Type = {
@@ -202,6 +216,7 @@ export namespace Spell {
         tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const HEAL: Type = {
@@ -211,13 +226,14 @@ export namespace Spell {
     effect: [
       { add: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
-
   export const REVIVE: Type = {
     name: 'Revive',
     description: 'Restore life to target',
     targets: 1,
     effect: [{ remove: StatusEffect.LIFELESS, chance: 0.9, tags: [] }],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const CURE: Type = {
@@ -230,6 +246,7 @@ export namespace Spell {
       { remove: StatusEffect.INFECTION, chance: 1 },
       { remove: StatusEffect.SILENCE, chance: 1 },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const BARRIER: Type = {
@@ -237,6 +254,7 @@ export namespace Spell {
     description: 'Barrier StatusEffects',
     targets: 1,
     effect: [{ add: StatusEffect.BARRIER, chance: 1, tags: [EffectTag.AIR] }],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const BOOM: Type = {
@@ -250,6 +268,7 @@ export namespace Spell {
         tags: [EffectTag.FIRE],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const REFLECT: Type = {
@@ -257,6 +276,7 @@ export namespace Spell {
     description: 'Cast Reflect on target',
     targets: 1,
     effect: [{ add: StatusEffect.REFLECT, chance: 1 }],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const FLARE: Type = {
@@ -275,6 +295,7 @@ export namespace Spell {
         tags: [EffectTag.LIGHT],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const METEOR: Type = {
@@ -293,6 +314,7 @@ export namespace Spell {
         tags: [EffectTag.EARTH],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const TELEPATHY: Type = {
@@ -306,6 +328,7 @@ export namespace Spell {
         tags: [EffectTag.PSYCHIC],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const LIGHT: Type = {
@@ -319,6 +342,7 @@ export namespace Spell {
         tags: [EffectTag.LIGHT],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const DESOLATE: Type = {
@@ -333,6 +357,7 @@ export namespace Spell {
         tags: [EffectTag.DARKNESS],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const DARKNESS: Type = {
@@ -346,6 +371,7 @@ export namespace Spell {
         tags: [EffectTag.DARKNESS],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const STOP: Type = {
@@ -358,6 +384,7 @@ export namespace Spell {
         tags: [EffectTag.TIME],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const SLOW: Type = {
@@ -370,6 +397,7 @@ export namespace Spell {
         tags: [EffectTag.TIME],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const HASTE: Type = {
@@ -382,41 +410,48 @@ export namespace Spell {
         tags: [EffectTag.TIME],
       },
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const CHILL: Type = {
     name: 'Chill',
     description: '',
     targets: 1,
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const CHARM: Type = {
     name: 'Charm',
     description: '',
     targets: 1,
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const FROST: Type = {
     name: 'Frost',
     description: '',
     targets: 1,
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const ABSORB: Type = {
     name: 'Frost',
     description: '',
     targets: 1,
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const LEECH: Type = {
     name: 'Leech',
     description: '',
     targets: 1,
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const DRAIN: Type = {
     name: 'Drain',
     description: '',
     targets: 1,
+    menuSlot: MenuSlot.SECOND,
   };
 }

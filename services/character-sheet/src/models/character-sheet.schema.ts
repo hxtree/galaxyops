@@ -22,6 +22,8 @@ import { GaugeEmbeddable } from './gauge-embeddable.schema';
 import { Archetype, ArchetypeId, ArchetypeIds } from '../data/archetype';
 import { Discipline, DisciplineId } from '../data/discipline';
 import { Equipment, EquipmentType } from '../data/gear';
+import { MenuSlot } from '../data/menu-slot';
+import { SkillType } from '../data/skill';
 
 @Schema()
 export class CharacterSheet {
@@ -132,6 +134,61 @@ CharacterSheetSchema.virtual('fullName').get(function () {
 CharacterSheetSchema.virtual('traits').get(function () {
   const archetype: Archetype.Type = Archetype[this.archetypeId];
   return archetype.traits ?? [];
+});
+
+CharacterSheetSchema.virtual('menu').get(function () {
+  let skills: any = [];
+
+  this.disciplines.forEach((disciplineEmbeddable: DisciplineEmbeddable) => {
+    const discipline: Discipline.Type =
+      Discipline[disciplineEmbeddable.disciplineId];
+
+    if (discipline.progression === undefined) {
+      return;
+    }
+
+    discipline.progression.forEach(
+      (progression: Discipline.ProgressionType) => {
+        const disciplineLevel = Math.floor(
+          Math.sqrt(disciplineEmbeddable.experience / 100),
+        );
+
+        if (
+          progression.level >= disciplineLevel &&
+          skills.indexOf(progression.skill) === -1
+        ) {
+          skills.push(progression.skill);
+        }
+      },
+    );
+  });
+
+  this.equipment.forEach((equipmentEmbeddable: EquipmentEmbeddable) => {
+    const equipment: any = Equipment[equipmentEmbeddable.equipmentId];
+    if (equipment.actions === undefined) {
+      return;
+    }
+    equipment.actions.forEach((action: any) => {
+      if (skills.indexOf(action) === -1) {
+        skills.push(action);
+      }
+    });
+  });
+
+  return {
+    1: skills.filter((skill: SkillType) => {
+      return skill.menuSlot == MenuSlot.FIRST;
+    }),
+    2: skills.filter((skill: SkillType) => {
+      return skill.menuSlot == MenuSlot.SECOND;
+    }),
+    3: skills.filter((skill: SkillType) => {
+      return skill.menuSlot == MenuSlot.THIRD;
+    }),
+    4: skills.filter((skill: SkillType) => {
+      return skill.menuSlot == MenuSlot.FOURTH;
+    }),
+  };
 });
 
 CharacterSheetSchema.virtual('skills').get(function () {

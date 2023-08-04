@@ -6,12 +6,15 @@
  * The more a Player uses them the more powerful they grow.
  */
 
+import { MenuSlot } from '../menu-slot';
+
 export namespace Summon {
   export type Type = {
     name: string;
     description: string;
     backstory?: string;
     commands?: string[]; // must be invoked by summoner through Command
+    menuSlot: MenuSlot;
   };
 
   export const VACHEL: Type = {
@@ -24,6 +27,7 @@ export namespace Summon {
       'Pull Cart', // *Can be upgraded with CART to accommodate large Party.
       // Can be used with Overdrive combinations
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const FELIX: Type = {
@@ -31,6 +35,7 @@ export namespace Summon {
     description: 'A white lop-eared dwarf rabbit',
     backstory:
       'Felix is a pet that Loomee adopts. He does not listen well. He likes to nibble on grass slowly.',
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const HERALDIC_LION: Type = {
@@ -43,24 +48,28 @@ export namespace Summon {
       'Issuant Stance', // focus
       'Guardant Stance', // guard
     ],
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const SUMMON: Type = {
     name: '???',
     description: '',
     backstory: '',
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const DISMISS: Type = {
     name: '???',
     description: '',
     backstory: '',
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const COMMAND: Type = {
     name: '???',
     description: '',
     backstory: '',
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const LYRE: Type = {
@@ -68,30 +77,35 @@ export namespace Summon {
     description:
       'A giant half Luna moth and lyrebird that Faye can summon at will',
     backstory: '',
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const SANDY: Type = {
     name: 'Sandy',
     description: 'A box turtle',
     backstory: '',
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const OUROBOROS: Type = {
     name: 'Ouroboros',
     description: 'A demon that consumes itself',
     backstory: '',
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const MISCHIEVOUS: Type = {
     name: 'Mischievous',
     description: 'A black and white cat',
     backstory: 'The Keeper of Law',
+    menuSlot: MenuSlot.SECOND,
   };
 
   export const SCRIBBLES: Type = {
     name: 'Scribble',
     description: 'A flying squirrel',
     backstory: '',
+    menuSlot: MenuSlot.SECOND,
   };
 
   // todo flesh out how these work with individual summons, seems like they'ed be individually based

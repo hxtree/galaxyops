@@ -8,18 +8,13 @@
  * character may have Command.
  */
 export const enum MenuSlot {
-  First = 1,
-  Second = 2,
-  Third = 3,
-  Fourth = 4,
-  Fifth = 5,
+  NONE = 0,
+  FIRST = 1,
+  SECOND = 2,
+  THIRD = 3,
+  FOURTH = 4,
+  FIFTH = 5,
+  INTERACTION = 6,
+  ITEM = 7,
+  MOVEMENT = 8,
 }
-
-// TODO interactions? Are they 0 slot?
-export const Slot: Record<string, string[]> = {
-  First: ['Basic', 'Combo', 'Weapon'],
-  Second: [],
-  Third: ['Drive'],
-  Fourth: ['Teamwork', 'Tools', 'Trap'],
-  Fifth: ['Item'],
-};
