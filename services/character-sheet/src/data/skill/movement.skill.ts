@@ -10,7 +10,7 @@ export namespace Movement {
     name: string;
     description: string;
     consumes?: Attribute;
-    buttonCombo?: ButtonCombo;
+    buttonCombos?: ButtonCombo[];
     menuSlot: MenuSlot;
   };
 
