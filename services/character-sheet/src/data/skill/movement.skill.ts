@@ -1,5 +1,5 @@
 import { Attribute } from '../attribute';
-import { Button, ButtonCombos } from '../buttons';
+import { Button, ButtonCombo } from '../buttons';
 import { MenuSlot } from '../menu-slot';
 
 /**
@@ -10,14 +10,14 @@ export namespace Movement {
     name: string;
     description: string;
     consumes?: Attribute;
-    buttonCombos?: ButtonCombos;
+    buttonCombo?: ButtonCombo;
     menuSlot: MenuSlot;
   };
 
   export const WALK: Type = {
     name: 'Walk',
     description: 'Move slowly forward or backward side to side',
-    buttonCombos: [[Button.UP], [Button.RIGHT], [Button.DOWN], [Button.LEFT]],
+    // buttonCombos: [[Button.UP], [Button.RIGHT], [Button.DOWN], [Button.LEFT]],
     menuSlot: MenuSlot.MOVEMENT,
   };
 
@@ -26,12 +26,7 @@ export namespace Movement {
     description: 'Move quickly using stamina',
     consumes: Attribute.SPIRIT,
     // consumes stamina
-    buttonCombos: [
-      [Button.UP + Button.SQUARE],
-      [Button.RIGHT + Button.SQUARE],
-      [Button.DOWN + Button.SQUARE],
-      [Button.LEFT + Button.SQUARE],
-    ],
+    // direction plus square
     menuSlot: MenuSlot.MOVEMENT,
   };
 
