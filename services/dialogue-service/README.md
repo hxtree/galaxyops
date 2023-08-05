@@ -26,7 +26,7 @@ contributors should ask for access.
   └─ en - # english language
     └─ acts
       └─ {act_name}
-        ├─ dialogues - # dialoguge (*.ink) files
+        ├─ dialogues - # dialogue (*.ink) files
         └─ audio - # audio (*.mp3) files
 ```
 
@@ -37,6 +37,8 @@ contributors should ask for access.
 
 ## References
 
+- [LangChain](https://js.langchain.com/docs/modules/chains/) Large Language
+  Models Chaining
 - [Audio Voiceover AI](https://replicastudios.com/)
 - [Real Time Voice Cloning](https://github.com/CorentinJ/Real-Time-Voice-Cloning)
 - [Directed graph](https://en.wikipedia.org/wiki/Directed_graph)
