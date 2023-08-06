@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ArchetypeId, ArchetypeIds } from '../../data/archetype';
 import { IsEnum, IsOptional, IsString, IsUUID } from 'class-validator';
+import { ArchetypeId, ArchetypeIds } from '../../data/archetype';
 
 export class CreateCharacterSheetDto {
   @ApiProperty()

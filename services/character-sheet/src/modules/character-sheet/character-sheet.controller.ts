@@ -11,6 +11,7 @@ import {
   VERSION_NEUTRAL,
   BadRequestException,
 } from '@nestjs/common';
+import { v4 } from 'uuid';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheetService } from './character-sheet.service';
 import {
@@ -18,7 +19,6 @@ import {
   TCharacterSheetDocument,
 } from '../../models/character-sheet.schema';
 import { CreateCharacterSheetDto } from './create-character-sheet-dto';
-import { v4 } from 'uuid';
 
 @Controller({ path: 'character-sheets', version: [VERSION_NEUTRAL, '1'] })
 export class CharacterSheetController {

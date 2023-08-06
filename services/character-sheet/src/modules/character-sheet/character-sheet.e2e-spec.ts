@@ -7,6 +7,7 @@ import {
   closeInMongodConnection,
 } from '@cats-cradle/nestjs-modules';
 import { FakerFactory } from '@cats-cradle/faker-factory';
+import { v4 } from 'uuid';
 import { CharacterSheetService } from './character-sheet.service';
 import {
   CharacterSheetSchema,
@@ -16,7 +17,6 @@ import { CreateCharacterSheetDto } from './create-character-sheet-dto';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheetController } from './character-sheet.controller';
 import { PlaceService } from '../place/place.service';
-import { v4 } from 'uuid';
 import { Archetype } from '../../data/archetype';
 
 describe('/character-sheets', () => {
@@ -92,7 +92,7 @@ describe('/character-sheets', () => {
           archetypeId: characterSheet.archetypeId,
           name: characterSheet.name,
           surname: characterSheet.surname,
-          traits: Archetype['MEEKU_ONI'].traits,
+          traits: Archetype.MEEKU_ONI.traits,
           disciplines: characterSheet.disciplines,
           equipment: characterSheet.equipment,
         }),
@@ -103,7 +103,7 @@ describe('/character-sheets', () => {
   describe('GET /character-sheets/?name=MEEKU_ONI', () => {
     it('should not find results that do not exists', async () => {
       const response = await supertest(app.getHttpServer())
-        .get(`/character-sheets/?name=MEEKU_ONI`)
+        .get('/character-sheets/?name=MEEKU_ONI')
         .expect(200);
       expect(response.body).toEqual([]);
     });
@@ -117,7 +117,7 @@ describe('/character-sheets', () => {
       await characterSheetRepository.create(characterSheet);
 
       const result = await supertest(app.getHttpServer())
-        .get(`/character-sheets/?name=JANE`)
+        .get('/character-sheets/?name=JANE')
         .expect(200);
 
       expect(result.body[0]).toEqual(

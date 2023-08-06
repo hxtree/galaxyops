@@ -41,6 +41,6 @@ export class NpcController {
     characterSheet.instanceId = createSpawnDto.instanceId;
     characterSheet.archetypeId = createCharacterSheet.archetypeId;
 
-    return await this._characterSheetRepository.create(characterSheet);
+    return this._characterSheetRepository.create(characterSheet);
   }
 }
