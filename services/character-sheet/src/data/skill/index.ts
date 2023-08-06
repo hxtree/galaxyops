@@ -15,7 +15,8 @@ import { Interaction } from './interaction.skill';
  * Skills are decoupled from the actor and target.
  * Skills refer to abilities that assigned to characters.
  * Each action SHOULD scale in computation based on actors and target stats.
- * Two vastly different skilled actors performing the same action may foreseeable yield vastly different effects.
+ * Two vastly different skilled actors performing the same action
+ * may foreseeable yield vastly different effects.
  */
 export const Skill = {
   ...Drive,

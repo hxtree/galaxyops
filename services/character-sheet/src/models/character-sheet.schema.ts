@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import {
@@ -50,18 +51,14 @@ export class CharacterSheet {
   @IsString()
   @IsOptional()
   @Prop({
-    set: (content: string) => {
-      return content.trim();
-    },
+    set: (content: string) => content.trim(),
   })
   public name?: string;
 
   @IsString()
   @IsOptional()
   @Prop({
-    set: (content: string) => {
-      return content.trim();
-    },
+    set: (content: string) => content.trim(),
   })
   public surname?: string;
 
@@ -79,7 +76,8 @@ export class CharacterSheet {
   /**
    * TODO
    * when spirit reaches 0 Spirit addition points are taken from Life.
-   * This is the only way that some characters will have enough Spirit Points to perform certain actions.
+   * This is the only way that some characters will have enough
+   * Spirit Points to perform certain actions.
    */
   @IsInstance(GaugeEmbeddable)
   @Prop()
@@ -137,7 +135,7 @@ CharacterSheetSchema.virtual('traits').get(function () {
 });
 
 CharacterSheetSchema.virtual('menu').get(function () {
-  let skills: any = [];
+  const skills: any = [];
 
   this.disciplines.forEach((disciplineEmbeddable: DisciplineEmbeddable) => {
     const discipline: Discipline.Type =
@@ -176,23 +174,15 @@ CharacterSheetSchema.virtual('menu').get(function () {
   });
 
   return {
-    1: skills.filter((skill: SkillType) => {
-      return skill.menuSlot == MenuSlot.FIRST;
-    }),
-    2: skills.filter((skill: SkillType) => {
-      return skill.menuSlot == MenuSlot.SECOND;
-    }),
-    3: skills.filter((skill: SkillType) => {
-      return skill.menuSlot == MenuSlot.THIRD;
-    }),
-    4: skills.filter((skill: SkillType) => {
-      return skill.menuSlot == MenuSlot.FOURTH;
-    }),
+    1: skills.filter((skill: SkillType) => skill.menuSlot === MenuSlot.FIRST),
+    2: skills.filter((skill: SkillType) => skill.menuSlot === MenuSlot.SECOND),
+    3: skills.filter((skill: SkillType) => skill.menuSlot === MenuSlot.THIRD),
+    4: skills.filter((skill: SkillType) => skill.menuSlot === MenuSlot.FOURTH),
   };
 });
 
 CharacterSheetSchema.virtual('skills').get(function () {
-  let skills: any = [];
+  const skills: any = [];
 
   this.disciplines.forEach((disciplineEmbeddable: DisciplineEmbeddable) => {
     const discipline: Discipline.Type =

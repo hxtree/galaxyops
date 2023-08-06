@@ -1,3 +1,5 @@
+import { GameContext } from './game-context';
+
 /**
  * use simultaneous button combination to invoke hard press values rather
  * than depending on system to support pressure sensitivity
@@ -29,7 +31,7 @@ export enum DefaultButtonMapping {
 }
 
 export type ButtonCombo = {
-  context?: string;
+  context?: GameContext;
   simultaneous?: Button[];
   inOrder?: Button[];
   // Maximum allowed time difference (in ms) between button presses for timing-based combos
@@ -72,14 +74,13 @@ export function checkButtonCombos(
             ) {
               return true; // Combo matches the timing and order
             }
-          } else {
-            if (
-              combo.simultaneous?.every(button =>
-                input.some(inputButton => inputButton.button === button),
-              )
-            ) {
-              return true; // Combo matches the timing and simultaneous press
-            }
+          } else if (
+            // eslint-disable-next-line max-len
+            combo.simultaneous?.every(button =>
+              input.some(inputButton => inputButton.button === button),
+            )
+          ) {
+            return true; // Combo matches the timing and simultaneous press
           }
         }
       }
@@ -105,6 +106,7 @@ export function checkButtonCombos(
 
     // If the combo is simultaneous, check if all the buttons are pressed together
     if (combo.simultaneous) {
+      // eslint-disable-next-line max-len
       const matchingButtons = combo.simultaneous.filter(button =>
         input.some(inputButton => inputButton.button === button),
       );
@@ -113,6 +115,7 @@ export function checkButtonCombos(
       }
     }
 
-    return combo.inOrder === undefined; // If the combo is neither simultaneous nor timing-based, it must be an ordered combo
+    // If the combo is neither simultaneous nor timing-based, it must be an ordered combo
+    return combo.inOrder === undefined;
   });
 }

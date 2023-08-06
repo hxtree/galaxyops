@@ -1,4 +1,5 @@
 import { checkButtonCombos, PlayerInput, Button, ButtonCombo } from './buttons';
+import { GameContext } from './game-context';
 
 describe('checkButtonCombos', () => {
   it('should correctly match a valid combo within the timing window and context', () => {
@@ -9,9 +10,9 @@ describe('checkButtonCombos', () => {
     const comboWithTiming: ButtonCombo = {
       simultaneous: [Button.ACTION, Button.JUMP],
       timingWindowMs: 300,
-      context: 'combat',
+      context: GameContext.TERRAIN,
     };
-    const currentGameContext = 'combat';
+    const currentGameContext = GameContext.TERRAIN;
     const combos: ButtonCombo[] = [comboWithTiming];
 
     const result = checkButtonCombos(currentGameContext, combos, playerInput);
@@ -26,7 +27,7 @@ describe('checkButtonCombos', () => {
 
     const combos: ButtonCombo[] = [comboInOrder];
 
-    const currentGameContext = 'combat';
+    const currentGameContext = GameContext.TERRAIN;
 
     // Update the playerInput array to include the required ordered combo
     const playerInput: PlayerInput[] = [
