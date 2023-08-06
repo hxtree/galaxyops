@@ -34,7 +34,7 @@ export interface AttributeRemoveEffectRecord {
 
 export interface SkillEffectRecord {
   skill: SkillType;
-  modifer: SkillEffectModifier;
+  modifier: SkillEffectModifier;
   tags?: Array<EffectTag>;
 }
 

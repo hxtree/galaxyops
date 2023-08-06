@@ -5,9 +5,8 @@ import { Skill } from '../skill';
 import { Slot } from './slot';
 
 /**
- * Accessory
- * Ares secondary items that can be equipped
- * An object or device that is not essential in itself but adds to the beauty, convenience, etc.
+ * Accessory is an object or device that is not essential in itself
+ * but adds to the beauty, convenience, or effects.
  */
 export namespace Accessory {
   export type Type = {
@@ -43,7 +42,7 @@ export namespace Accessory {
   export const RED_SCRAF: Type = {
     name: 'Red Scarf',
     description: 'A red scarf knitted.',
-    history: 'Knitted by Meeku’s mother to keep him warm',
+    history: 'Knitted by Mother to keep Meeku warm',
     gearSlots: [Slot.NECK],
     removable: false,
   };
@@ -57,31 +56,31 @@ export namespace Accessory {
         tags: [EffectTag.PHYSICAL],
       },
     ],
-    description: 'A brown protective vest made out of cow hide.',
+    description: 'A brown full-grain leather vest.',
     gearSlots: [Slot.TORSO],
   };
 
   export const FUNERAL_JAR: Type = {
     name: 'Funeral Jar',
-    description: 'A jar holding the ashes of the dead',
+    description: 'A home-made funeral urn.',
     gearSlots: [Slot.WAIST],
     removable: false,
   };
 
   export const SWORD_SHEATH: Type = {
     name: 'Sword Sheath',
-    description: 'A sheath meant to hold a broad sword.',
+    description: 'A sheath designed to hold a broad sword.',
     gearSlots: [Slot.BACK],
   };
 
-  export const MAGENETIC_GLOVES: Type = {
+  export const MAGNETIC_GLOVES: Type = {
     name: 'Magnetic Gloves',
     description: 'Helps catch metal objects.',
     // Particularly useful with regards to Traez’s boomerang
     effects: [
       {
         skill: Skill.CATCHER,
-        modifer: SkillEffectModifier.ADD,
+        modifier: SkillEffectModifier.ADD,
         tags: [EffectTag.METAL],
       },
     ],
@@ -94,10 +93,23 @@ export namespace Accessory {
     effects: [
       {
         skill: Skill.CATCHER,
-        modifer: SkillEffectModifier.ADD,
+        modifier: SkillEffectModifier.ADD,
         tags: [EffectTag.PHYSICAL],
       },
     ],
     gearSlots: [Slot.RIGHT_HAND, Slot.LEFT_HAND],
+  };
+
+  export const TURBAN: Type = {
+    name: 'Turban',
+    description: 'A cream colored silk turban',
+    effects: [
+      {
+        add: Attribute.SPIRIT,
+        quantity: '+5',
+        tags: [EffectTag.PHYSICAL],
+      },
+    ],
+    gearSlots: [Slot.HEAD],
   };
 }

@@ -10,10 +10,9 @@ export namespace Movement {
   export type Type = {
     name: string;
     description: string;
-    consumes?: Attribute;
+    consumes?: Attribute; // TODO UOM present but missing quantity and time
     buttonCombos?: ButtonCombo[];
     menuSlot: MenuSlot;
-    costs?: string; // TODO define
   };
 
   export const WALK: Type = {
@@ -48,7 +47,6 @@ export namespace Movement {
     name: 'Run',
     description: 'Move quickly using stamina',
     consumes: Attribute.SPIRIT,
-    costs: '1d6 stamina per/sec?',
     buttonCombos: [
       {
         simultaneous: [Button.UP, Button.ACTION],
@@ -74,11 +72,11 @@ export namespace Movement {
     menuSlot: MenuSlot.MOVEMENT,
   };
 
+  // party members should have to learn
   export const SWIM: Type = {
     name: 'Swim',
     description: 'Move in deep water',
-    // consumes stamina
-    // should be learned
+    consumes: Attribute.SPIRIT,
     buttonCombos: [
       {
         simultaneous: [Button.UP],
@@ -107,6 +105,7 @@ export namespace Movement {
   export const SWIM_FAST: Type = {
     name: 'Swim Fast',
     description: 'Move fast in deep water',
+    consumes: Attribute.SPIRIT,
     buttonCombos: [
       {
         simultaneous: [Button.UP, Button.ACTION],
@@ -135,21 +134,88 @@ export namespace Movement {
   export const BACK_FLIP: Type = {
     name: 'Back Flip',
     description: 'Quickly move backwards',
+    consumes: Attribute.SPIRIT,
     menuSlot: MenuSlot.MOVEMENT,
+    buttonCombos: [
+      {
+        inOrder: [Button.UP, Button.DOWN, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.RIGHT, Button.LEFT, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.DOWN, Button.UP, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.LEFT, Button.RIGHT, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+    ],
   };
 
   export const DOUBLE_BACK_FLIP: Type = {
     name: 'Double Back Flip',
     description: 'Quickly move backwards twice',
+    consumes: Attribute.SPIRIT,
     menuSlot: MenuSlot.MOVEMENT,
+    buttonCombos: [
+      {
+        inOrder: [Button.UP, Button.DOWN, Button.JUMP, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.RIGHT, Button.LEFT, Button.JUMP, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.DOWN, Button.UP, Button.JUMP, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.LEFT, Button.RIGHT, Button.JUMP, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+    ],
   };
 
   export const JUMP: Type = {
     name: 'Jump',
     description:
       'Use stamina to move vertically and reach otherwise unreachable places',
-    // jump straight up in the air using a stamina boost.
-    // Square
+    consumes: Attribute.SPIRIT,
+    buttonCombos: [
+      {
+        inOrder: [Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+    ],
     menuSlot: MenuSlot.MOVEMENT,
   };
 
@@ -160,7 +226,29 @@ export namespace Movement {
   export const HIGH_JUMP: Type = {
     name: 'High Jump',
     description: 'Charged vertical jump', // jump straight up in the air using a stamina boost.
-    // High – (Stamina Boost + Square)
+    consumes: Attribute.SPIRIT,
+    buttonCombos: [
+      {
+        inOrder: [Button.JUMP, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.JUMP, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.JUMP, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+      {
+        inOrder: [Button.JUMP, Button.JUMP],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+    ],
     menuSlot: MenuSlot.MOVEMENT,
   };
 
