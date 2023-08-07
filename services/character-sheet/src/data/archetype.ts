@@ -72,6 +72,7 @@ export namespace Archetype {
     // loot?: Gear.Item[];
   };
 
+  // there is only one mom in the whole game
   export const MOTHER: Type = {
     name: 'Mother',
     alias: ['Lady of the Vase', 'Ashes', 'Dust'],
