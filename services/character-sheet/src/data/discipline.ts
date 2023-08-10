@@ -6,15 +6,14 @@ import { Skill, SkillType } from './skill';
  * A character can have multiple disciplines and therefore multiple experience records.
  * Progression in one discipline may unlock other disciplines, actions, and attributes bonuses.
  */
-
 export enum Category {
-  PROFESSION = 'Profession',
-  ARCHETYPE = 'Archetype',
-  OMEGA = 'Omega',
-  // Combat Classes
   // Specialty Classes
+  PROFESSION = 'Profession',
+  // Combat Classes
+  ARCHETYPE = 'Archetype',
+  // Spirit Class
   // Drive Classes
-  //  | Spirit Class | Drive Class | Omega Class
+  OMEGA = 'Omega',
 }
 
 export type GainSkillType = {
