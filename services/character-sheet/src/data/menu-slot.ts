@@ -2,7 +2,7 @@
  * MenuSlot determines which Menu slot a Player can find a character's action
  *
  * One character's Slot 4 may have Traps whereas another character
- * may have Command because different types of Actions may occupy the same slot,
+ * may have Commands because different types of Actions may occupy the same slot,
  */
 export const enum MenuSlot {
   NONE = 0,
