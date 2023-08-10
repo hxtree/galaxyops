@@ -110,7 +110,7 @@ export namespace Archetype {
     name: 'Janus',
     surname: 'Persian',
     description: 'An orange old persian cat',
-    backstory: 'Governs the flow of time the one has been in this state',
+    backstory: 'Governs the flow of time the One has been in this state',
     alias: ['Keeper of Time', 'Wise-Kitty', 'Old Coat'],
     symbolizes: ['Time'],
     affiliation: [Affiliation.THE_CATS],
@@ -201,7 +201,7 @@ export namespace Archetype {
   export const MEEKU_ONI: Type = {
     name: 'Meeku',
     surname: 'Oni',
-    symbolizes: ['Destroyer of Law'],
+    symbolizes: ['The One', 'Destroyer of Law'],
     alias: ['Kid', 'Brother'],
     backstory: 'A boy who has lost his past',
     history:
@@ -364,7 +364,7 @@ export namespace Archetype {
   export const PENNY_KIBBUTZ: Type = {
     name: 'Penny',
     surname: 'Kibbutz',
-    alias: ['Crazy Chick'],
+    alias: ['Pen', 'Crazy Chick'],
     description: 'A red head girl',
     age: 22,
     height: '5ft 8',
@@ -517,6 +517,7 @@ export namespace Archetype {
   export const SPIDER: Type = {
     name: 'Spider',
     description: 'A spider',
+    weaponCompatibility: [],
   };
 
   export const WARLING: Type = {
@@ -528,11 +529,13 @@ export namespace Archetype {
   export const SEA_HORSE: Type = {
     name: 'Sea Horse',
     description: 'A spider',
+    weaponCompatibility: [],
   };
 
   export const SENSITIVE_PLANT: Type = {
     name: 'Sensitive Plant',
     description: 'A plant that drops when touched',
+    weaponCompatibility: [],
   };
 
   export const DEEP_THINKER: Type = {
@@ -543,6 +546,7 @@ export namespace Archetype {
   export const PHOENIX: Type = {
     name: 'Phoenix',
     description: 'A bird of fire.',
+    weaponCompatibility: [],
   };
 
   export const SNOW_LEOPARD: Type = {

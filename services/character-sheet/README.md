@@ -4,7 +4,7 @@
 
 Maintains in game characters, including whatever details, notes, game
 statistics, and background information a character needs during game play. This
-includes attributes, skills, disciplines, etc.
+includes attributes, skills, disciplines, and more.
 
 ## Stacks
 
