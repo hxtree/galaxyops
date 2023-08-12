@@ -105,9 +105,9 @@ export namespace Item {
   };
 }
 
-export const ItemIds = Object.keys(Item);
-
 export type ItemId = keyof typeof Item;
+
+export const ItemIds = <ItemId[]>Object.keys(Item);
 
 export type ItemType = Item.BaseType & { id: ItemId };
 

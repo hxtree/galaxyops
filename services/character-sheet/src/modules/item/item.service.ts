@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Item, ItemType, ItemId } from '../../data/item';
+import { Item, ItemIds, ItemType, ItemId } from '../../data/item';
 
 @Injectable()
 export class ItemService {
@@ -11,11 +11,11 @@ export class ItemService {
     }
   }
 
-  async list(): Promise<any> {
+  async list(): Promise<ItemId[]> {
     try {
-      const items: string[] = [];
+      const items: ItemId[] = [];
 
-      items.push(...Object.keys(Item));
+      items.push(...ItemIds);
       items.sort();
 
       return await Promise.resolve(items);
