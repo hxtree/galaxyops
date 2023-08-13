@@ -5,14 +5,21 @@ import { Discipline } from './discipline';
 import { EffectTag } from './tag.effect';
 import { Summon } from './skill/summon.skill';
 import { Outfit } from './gear/outfit.gear';
-import { Slot } from './gear/slot';
+import {
+  QuadrupedalCreatureGearSlots,
+  HumanoidCreatureGearSlots,
+  Slot,
+  AvianCreatureGearSlots,
+  SerpentineCreatureGearSlots,
+  AmorphousCreatureGearSlots,
+} from './gear/slot';
 import { Weapon } from './gear/weapon.gear';
 import { Affiliation } from './affiliations';
 
 /**
  * Base character information that does not change as the game progress
  * and therefore is not stored in database.
- * contains potentialGearSlots, potentialDisciplines, etc.
+ * contains gearSlots, potentialDisciplines, etc.
  *
  * only contains archetypes that can become character sheets; would not include a tree, etc.
  */
@@ -56,9 +63,10 @@ export namespace Archetype {
 
     traits?: Trait[];
 
+    gearSlots?: Slot[];
+
     potentialDisciplines?: Discipline.Type[];
     potentialOutfits?: Outfit.Type[];
-    potentialGearSlots?: Slot[];
     summonCompatibility?: Summon.Type[];
     weaponCompatibility?: Weapon.Category[];
 
@@ -83,6 +91,7 @@ export namespace Archetype {
       'Mother knits Meeku a red scarf. ' +
       'Mother dies and is turned to ashes during act one. ' +
       "Meeku carries Mother's ashes around his waist with him in a gourd. ",
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   /**
@@ -104,6 +113,7 @@ export namespace Archetype {
       'His tail is black. ',
     // a red colored thread can be used to control him
     potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
+    gearSlots: QuadrupedalCreatureGearSlots,
   };
 
   export const JANUS_PERSIAN: Type = {
@@ -115,6 +125,7 @@ export namespace Archetype {
     symbolizes: ['Time'],
     affiliation: [Affiliation.THE_CATS],
     potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
+    gearSlots: QuadrupedalCreatureGearSlots,
   };
 
   export const LOOMEE_ANGORA: Type = {
@@ -164,6 +175,7 @@ export namespace Archetype {
     affiliation: [Affiliation.THE_DESTROYERS, Affiliation.SOLIDER_FORCES],
     description: 'White hair. Has a prominent tattoo FTW',
     potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const VALLON_ONI: Type = {
@@ -196,6 +208,7 @@ export namespace Archetype {
       'The Devils love him because of the heartache he causes them. ',
     potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
     weaponCompatibility: [Weapon.Category.SWORD],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const MEEKU_ONI: Type = {
@@ -233,6 +246,7 @@ export namespace Archetype {
       Weapon.Category.SWORD,
       Weapon.Category.BROAD_SWORD,
     ],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   /**
@@ -246,6 +260,7 @@ export namespace Archetype {
     backstory: '',
     potentialDisciplines: [],
     weaponCompatibility: [Weapon.Category.STAFF],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const FAYE_IMAGO: Type = {
@@ -271,6 +286,7 @@ export namespace Archetype {
     ],
     summonCompatibility: [Summon.LYRE],
     weaponCompatibility: [Weapon.Category.STAFF],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const GAALI_RUNEWIN: Type = {
@@ -303,6 +319,7 @@ export namespace Archetype {
       },
     ],
     weaponCompatibility: [Weapon.Category.RAPIER],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const GUNTER_STONEWELL: Type = {
@@ -321,6 +338,7 @@ export namespace Archetype {
     ],
     summonCompatibility: [Summon.SCRIBBLES],
     weaponCompatibility: [Weapon.Category.TWO_HANDED_AXE],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const MALACE_TSIA: Type = {
@@ -359,6 +377,7 @@ export namespace Archetype {
     potentialOutfits: [Outfit.OFFICERS_UNIFORM],
     summonCompatibility: [Summon.OUROBOROS, Summon.MISCHIEVOUS],
     weaponCompatibility: [Weapon.Category.KNIFE, Weapon.Category.DAGGER],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const PENNY_KIBBUTZ: Type = {
@@ -396,6 +415,7 @@ export namespace Archetype {
     ],
     summonCompatibility: [Summon.HERALDIC_LION],
     weaponCompatibility: [Weapon.Category.DUAL_KYOKETSU_SHOGE],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const TRAEZ_UTHSHA: Type = {
@@ -412,6 +432,7 @@ export namespace Archetype {
     ],
     summonCompatibility: [Summon.SANDY],
     weaponCompatibility: [Weapon.Category.BOOMERANG],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   /**
@@ -425,6 +446,7 @@ export namespace Archetype {
       'He was killed before the story begins. ' +
       'His place is taken by Mahdi.',
     potentialDisciplines: [Discipline.MAGI_BLACK],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const GENKI: Type = {
@@ -433,6 +455,7 @@ export namespace Archetype {
     symbolizes: ['Wrath', 'Fish'],
     potentialDisciplines: [Discipline.MAGI_BLUE],
     weaponCompatibility: [Weapon.Category.HAND_SWORD],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const LAWZON_GREY: Type = {
@@ -451,6 +474,7 @@ export namespace Archetype {
     affiliation: [Affiliation.VALLONS_SEVEN],
     potentialDisciplines: [Discipline.MAGI_WHITE],
     weaponCompatibility: [Weapon.Category.BROAD_SWORD],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const MADHI_TSIA: Type = {
@@ -462,6 +486,7 @@ export namespace Archetype {
     affiliation: [Affiliation.VALLONS_SEVEN, Affiliation.CATCHERS],
     potentialDisciplines: [Discipline.POSSESSED, Discipline.MAGI_BLACK],
     weaponCompatibility: [Weapon.Category.KNIFE],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const SUYRI: Type = {
@@ -472,6 +497,7 @@ export namespace Archetype {
     affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Luxury (later lust)', 'Fox'],
     potentialDisciplines: [Discipline.WIZARD, Discipline.MAGI_PINK],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const WISP: Type = {
@@ -479,6 +505,7 @@ export namespace Archetype {
     affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Gluttony', 'Hyena'],
     potentialDisciplines: [Discipline.MAGI_YELLOW],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const ASMIN: Type = {
@@ -487,6 +514,7 @@ export namespace Archetype {
     symbolizes: ['Pride', 'Ox'],
     potentialDisciplines: [Discipline.MAGI_BROWN],
     weaponCompatibility: [Weapon.Category.TWO_HANDED_AXE],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const DIAG: Type = {
@@ -494,6 +522,7 @@ export namespace Archetype {
     affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Envy', 'Snake'],
     potentialDisciplines: [Discipline.MAGI_PURPLE],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   /**
@@ -503,12 +532,14 @@ export namespace Archetype {
     name: 'Monarch',
     alias: ['The Deadly One'],
     weaponCompatibility: [Weapon.Category.DAGGER],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const VICEROY: Type = {
     name: 'Viceroy',
     backstory: 'mimic monarch',
     weaponCompatibility: [Weapon.Category.DAGGER],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   /**
@@ -518,57 +549,73 @@ export namespace Archetype {
     name: 'Spider',
     description: 'A spider',
     weaponCompatibility: [],
+    gearSlots: [],
   };
 
   export const WARLING: Type = {
     name: 'Warling',
     description: 'The embodiment of a traveling cyclone',
     potentialDisciplines: [Discipline.WIZARD, Discipline.HISTORIAN],
+    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const SEA_HORSE: Type = {
     name: 'Sea Horse',
     description: 'A spider',
     weaponCompatibility: [],
+    gearSlots: [],
   };
 
   export const SENSITIVE_PLANT: Type = {
     name: 'Sensitive Plant',
     description: 'A plant that drops when touched',
     weaponCompatibility: [],
+    gearSlots: [],
   };
 
   export const DEEP_THINKER: Type = {
     name: 'Deep Thinker',
     description: 'A humanoid, fish, monster',
+    gearSlots: [],
+  };
+
+  export const GEL: Type = {
+    name: 'Gel',
+    description: 'A gel based creature',
+    gearSlots: AmorphousCreatureGearSlots,
   };
 
   export const PHOENIX: Type = {
     name: 'Phoenix',
     description: 'A bird of fire.',
     weaponCompatibility: [],
+    gearSlots: AvianCreatureGearSlots,
   };
 
   export const SNOW_LEOPARD: Type = {
     name: 'Snow Leopard',
     description: 'A creature that lives far to the north.',
     // can be seen near Lawzon
+    gearSlots: QuadrupedalCreatureGearSlots,
   };
 
   export const CHIMERA: Type = {
     name: 'Chimera',
     description: 'A combination of two or more animals.',
+    gearSlots: QuadrupedalCreatureGearSlots,
   };
 
   export const SLOW_MOVER: Type = {
     name: 'Slow Mover',
     description: 'A type of sloth like creature.',
     // that lives around the maiden of the mist
+    gearSlots: [],
   };
 
   export const SNAKE_OF_WATER: Type = {
     name: 'Snake of Water',
     description: 'A type of dragon.',
+    gearSlots: SerpentineCreatureGearSlots,
   };
 }
 
