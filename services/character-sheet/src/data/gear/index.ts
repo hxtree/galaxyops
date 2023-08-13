@@ -8,8 +8,8 @@ export { Equipment } from './equipment.gear';
 export { Slot } from './slot';
 
 /**
- * Gear are objects that are equipable
- * Not all characters can equip all gear.
+ * Objects termed as "Gear" are those that can be equipped.
+ * Archetypes can only equip compatible gear.
  */
 export const Gear = {
   ...Accessory,
