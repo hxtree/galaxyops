@@ -6,7 +6,6 @@ import { EffectTag } from './tag.effect';
 import { Summon } from './skill/summon.skill';
 import { Outfit } from './gear/outfit.gear';
 import {
-  // eslint-disable-next-line max-len
   QuadrupedalCreatureGearSlots,
   HumanoidCreatureGearSlots,
   Slot,
