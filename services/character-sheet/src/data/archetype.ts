@@ -101,8 +101,8 @@ export namespace Archetype {
     name: 'Mischievous',
     surname: 'Piebald',
     alias: ['Keeper of Law', 'Mischief'],
-    backstory: 'Governs the logical of this realm.',
     symbolizes: ['Law', 'Causality', 'Absolute'],
+    backstory: 'Governs the logical of this realm.',
     affiliation: [Affiliation.THE_CATS],
     description:
       'A black and white cat. ' +
@@ -119,10 +119,12 @@ export namespace Archetype {
   export const JANUS_PERSIAN: Type = {
     name: 'Janus',
     surname: 'Persian',
-    description: 'An orange old persian cat',
-    backstory: 'Governs the flow of time the One has been in this state',
     alias: ['Keeper of Time', 'Wise-Kitty', 'Old Coat'],
     symbolizes: ['Time'],
+    description: 'An orange old persian cat',
+    backstory:
+      'Governs the flow of time the One has been in this state.' +
+      'Has the ability to change the flow of time for different areas in the game.',
     affiliation: [Affiliation.THE_CATS],
     potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
     gearSlots: QuadrupedalCreatureGearSlots,
@@ -131,13 +133,13 @@ export namespace Archetype {
   export const LOOMEE_ANGORA: Type = {
     name: 'Loomee',
     surname: 'Angora',
+    alias: ['Keeper of Heart', 'Kind-Kitty', 'Song Maiden', 'Mom'],
     description:
       'A white angora cat. ' +
       'In human form a light blonde girl wearing white linen',
     backstory:
       'She governs and protects the ones heart to make sure it is not lost. ' +
       'A girl created when the Song Maiden left her post to become human.',
-    alias: ['Keeper of Heart', 'Song Maiden', 'Mom'],
     symbolizes: ['Chastity'],
     affiliation: [Affiliation.THE_CATS],
     potentialDisciplines: [
@@ -542,6 +544,13 @@ export namespace Archetype {
     gearSlots: HumanoidCreatureGearSlots,
   };
 
+  export const WARLING: Type = {
+    name: 'Warling',
+    description: 'The embodiment of a traveling cyclone',
+    potentialDisciplines: [Discipline.WIZARD, Discipline.HISTORIAN],
+    gearSlots: HumanoidCreatureGearSlots,
+  };
+
   /**
    * Battlers
    */
@@ -550,13 +559,6 @@ export namespace Archetype {
     description: 'A spider',
     weaponCompatibility: [],
     gearSlots: [],
-  };
-
-  export const WARLING: Type = {
-    name: 'Warling',
-    description: 'The embodiment of a traveling cyclone',
-    potentialDisciplines: [Discipline.WIZARD, Discipline.HISTORIAN],
-    gearSlots: HumanoidCreatureGearSlots,
   };
 
   export const SEA_HORSE: Type = {

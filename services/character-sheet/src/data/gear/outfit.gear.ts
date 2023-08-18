@@ -3,7 +3,7 @@ import { Slot } from './slot';
 /**
  * Outfit
  *
- * A collection of garments that comprise a single a set of clothing that can be warn at once.
+ * One or more garments that comprise a single a set of clothing that can be warn at once.
  * For simplicity the entire collection of clothing is consider a outfit.
  * Characters can change out between for example swimsuits into casual wear.
  * Characters cannot change out bottom and tops individually.
@@ -21,9 +21,23 @@ export namespace Outfit {
     gearSlots: [Slot.OUTFIT],
   };
 
+  export const SWIMSUIT: Type = {
+    name: 'Swimsuit',
+    description: 'Designed for swimming',
+    gearSlots: [Slot.OUTFIT],
+    // bonus to swimming?
+  };
+
   export const OFFICERS_UNIFORM: Type = {
     name: "Officer's Uniform",
     description: 'Black Embellished Tarry Coat',
+    gearSlots: [Slot.OUTFIT],
+  };
+
+  export const KIMONO: Type = {
+    name: 'Kimono',
+    description:
+      'A wrapped-front garment with square sleeves and a rectangular body.',
     gearSlots: [Slot.OUTFIT],
   };
 }
