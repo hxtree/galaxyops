@@ -1,6 +1,6 @@
 import { SkillType } from './skill';
 import { EffectTag } from './tag.effect';
-import { StatusEffect } from './status.effect';
+import { StatusEffectId } from './status-effect';
 import { Attribute } from './attribute';
 
 export enum Modifier {
@@ -39,13 +39,13 @@ export interface SkillEffectRecord {
 }
 
 export interface StatusEffectAddRecord {
-  add: StatusEffect;
+  add: StatusEffectId;
   chance?: number;
   tags?: Array<EffectTag>;
 }
 
 export interface StatusEffectRemoveRecord {
-  remove: StatusEffect;
+  remove: StatusEffectId;
   chance: number;
   tags?: Array<EffectTag>;
 }
