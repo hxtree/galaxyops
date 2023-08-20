@@ -1,6 +1,5 @@
 import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
-import { StatusEffect } from '../status.effect';
 import { EffectRecord } from '../table.effect';
 import { MenuSlot } from '../menu-slot';
 
@@ -51,7 +50,7 @@ export namespace Spell {
     targets: 1,
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.ELECTRIC] },
-      { add: StatusEffect.STUNNED, chance: 0.2, tags: [EffectTag.ELECTRIC] },
+      { add: 'STUNNED', chance: 0.2, tags: [EffectTag.ELECTRIC] },
     ],
     menuSlot: MenuSlot.SECOND,
   };
@@ -63,7 +62,7 @@ export namespace Spell {
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.EARTH] },
       {
-        add: StatusEffect.DOWN,
+        add: 'DOWN',
         chance: 0.2,
         tags: [EffectTag.EARTH, EffectTag.GROUND_LEVEL],
       },
@@ -77,8 +76,8 @@ export namespace Spell {
     targets: 1,
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.EARTH] },
-      { add: StatusEffect.DOWN, chance: 0.2, tags: [EffectTag.EARTH] },
-      { add: StatusEffect.EXILED, chance: 0.3, tags: [EffectTag.EARTH] },
+      { add: 'DOWN', chance: 0.2, tags: [EffectTag.EARTH] },
+      { add: 'EXILED', chance: 0.3, tags: [EffectTag.EARTH] },
     ],
     menuSlot: MenuSlot.SECOND,
   };
@@ -94,12 +93,12 @@ export namespace Spell {
         tags: [EffectTag.WATER, EffectTag.AIR],
       },
       {
-        add: StatusEffect.COLD,
+        add: 'COLD',
         chance: 0.2,
         tags: [EffectTag.WATER, EffectTag.AIR],
       },
       {
-        add: StatusEffect.EXILED,
+        add: 'EXILED',
         chance: 0.3,
         tags: [EffectTag.WATER, EffectTag.AIR],
       },
@@ -113,7 +112,7 @@ export namespace Spell {
     targets: 1,
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE] },
-      { add: StatusEffect.BURNED, chance: 0.2, tags: [EffectTag.FIRE] },
+      { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
     ],
     menuSlot: MenuSlot.SECOND,
   };
@@ -124,7 +123,7 @@ export namespace Spell {
     targets: 1,
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE] },
-      { add: StatusEffect.BURNED, chance: 0.2, tags: [EffectTag.FIRE] },
+      { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
     ],
     menuSlot: MenuSlot.SECOND,
   };
@@ -136,7 +135,7 @@ export namespace Spell {
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
       {
-        add: StatusEffect.BURNED,
+        add: 'BURNED',
         chance: 0.2,
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
@@ -151,7 +150,7 @@ export namespace Spell {
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
       {
-        add: StatusEffect.EXILED,
+        add: 'EXILED',
         chance: 0.2,
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
@@ -166,7 +165,7 @@ export namespace Spell {
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
       {
-        add: StatusEffect.EXILED,
+        add: 'EXILED',
         chance: 0.2,
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
@@ -181,7 +180,7 @@ export namespace Spell {
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
       {
-        add: StatusEffect.EXILED,
+        add: 'EXILED',
         chance: 0.2,
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
@@ -196,7 +195,7 @@ export namespace Spell {
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
       {
-        add: StatusEffect.EXILED,
+        add: 'EXILED',
         chance: 0.2,
         tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
       },
@@ -211,7 +210,7 @@ export namespace Spell {
     effect: [
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
       {
-        add: StatusEffect.EXILED,
+        add: 'EXILED',
         chance: 0.2,
         tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
       },
@@ -232,7 +231,7 @@ export namespace Spell {
     name: 'Revive',
     description: 'Restore life to target',
     targets: 1,
-    effect: [{ remove: StatusEffect.LIFELESS, chance: 0.9, tags: [] }],
+    effect: [{ remove: 'LIFELESS', chance: 0.9, tags: [] }],
     menuSlot: MenuSlot.SECOND,
   };
 
@@ -241,10 +240,10 @@ export namespace Spell {
     description: 'Cures StatusEffects',
     targets: 1,
     effect: [
-      { remove: StatusEffect.COLD, chance: 1 },
-      { remove: StatusEffect.DOOMED, chance: 1 },
-      { remove: StatusEffect.INFECTION, chance: 1 },
-      { remove: StatusEffect.SILENCE, chance: 1 },
+      { remove: 'COLD', chance: 1 },
+      { remove: 'DOOMED', chance: 1 },
+      { remove: 'INFECTION', chance: 1 },
+      { remove: 'SILENCE', chance: 1 },
     ],
     menuSlot: MenuSlot.SECOND,
   };
@@ -253,7 +252,7 @@ export namespace Spell {
     name: 'Barrier',
     description: 'Barrier StatusEffects',
     targets: 1,
-    effect: [{ add: StatusEffect.BARRIER, chance: 1, tags: [EffectTag.AIR] }],
+    effect: [{ add: 'BARRIER', chance: 1, tags: [EffectTag.AIR] }],
     menuSlot: MenuSlot.SECOND,
   };
 
@@ -275,7 +274,7 @@ export namespace Spell {
     name: 'Reflect',
     description: 'Cast Reflect on target',
     targets: 1,
-    effect: [{ add: StatusEffect.REFLECT, chance: 1 }],
+    effect: [{ add: 'REFLECT', chance: 1 }],
     menuSlot: MenuSlot.SECOND,
   };
 
@@ -380,7 +379,7 @@ export namespace Spell {
     targets: 1,
     effect: [
       {
-        add: StatusEffect.STOP,
+        add: 'STOP',
         tags: [EffectTag.TIME],
       },
     ],
@@ -393,7 +392,7 @@ export namespace Spell {
     targets: 1,
     effect: [
       {
-        add: StatusEffect.SLOW,
+        add: 'SLOW',
         tags: [EffectTag.TIME],
       },
     ],
@@ -406,7 +405,7 @@ export namespace Spell {
     targets: 1, // self
     effect: [
       {
-        add: StatusEffect.HASTE,
+        add: 'HASTE',
         tags: [EffectTag.TIME],
       },
     ],

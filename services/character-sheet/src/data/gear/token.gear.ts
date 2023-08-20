@@ -1,7 +1,7 @@
 /**
- * Tokens are coin shaped objects that a Player recieves
+ * Tokens are coin shaped objects that a Player receives
  * that represent characters currently in party.
- * These coins have six sides with an engraving of the character they represent.
+ * Each coin has six sides and an engraving of an Archetype's symbol.
  * How a player arranges tokens reflects how party will be arranged and visa versa.
  * Different types of tokens represents a player's ability to control that character.
  */
