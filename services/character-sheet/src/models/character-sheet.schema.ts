@@ -26,6 +26,9 @@ import { Equipment, EquipmentType } from '../data/gear';
 import { MenuSlot } from '../data/menu-slot';
 import { SkillType } from '../data/skill';
 
+/**
+ * A CharacterSheet (or Character for short) is a single instantiation of an Archetype.
+ */
 @Schema()
 export class CharacterSheet {
   // @Transform(({ value }) => value.toString())

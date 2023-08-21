@@ -1,3 +1,4 @@
+import { Attribute } from './attribute';
 import { EffectTable } from './table.effect';
 
 export enum StatusEffectCategory {
@@ -181,6 +182,12 @@ export namespace StatusEffect {
     name: 'Slow',
     description: 'speed reduced.',
     category: StatusEffectCategory.AFFLICTION,
+    effects: [
+      {
+        remove: Attribute.SPEED,
+        quantity: '2d6',
+      },
+    ],
   };
 
   export const BERSERK: BaseType = {
@@ -206,6 +213,12 @@ export namespace StatusEffect {
     name: 'Barrier',
     description: 'damage taken decreases',
     category: StatusEffectCategory.BUFF,
+    effects: [
+      {
+        add: Attribute.DEFENSE,
+        quantity: '2d6',
+      },
+    ],
   };
 
   export const REFLECT: BaseType = {
@@ -218,6 +231,12 @@ export namespace StatusEffect {
     name: 'Haste',
     description: 'Speed increased',
     category: StatusEffectCategory.BUFF,
+    effects: [
+      {
+        add: Attribute.SPEED,
+        quantity: '2d6',
+      },
+    ],
   };
 }
 
