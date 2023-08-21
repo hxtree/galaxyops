@@ -1,8 +1,9 @@
+import { Button, ButtonCombo } from '../buttons';
+import { GameContext } from '../game-context';
 import { MenuSlot } from '../menu-slot';
-import { Weapon } from './weapon.skill';
 
 /**
- * Combo Skills use is revoked unless character action history matches exactly
+ * Combo Skills can only be used when a character action history matches exactly
  * prerequisite of prior skills
  * Once prerequisite is matched the combination activation button (Square by default)
  * can be pressed to activate the action
@@ -11,17 +12,26 @@ import { Weapon } from './weapon.skill';
  * combo in order for quicker action selection.
  */
 export namespace Combo {
-  export type Type = {
+  export type BaseType = {
     name: string;
     description: string;
-    prerequisite?: Weapon.Type[]; // todo figure our programmatic solution
     menuSlot: MenuSlot;
+    buttonCombo: ButtonCombo;
   };
 
-  export const BLITZ: Type = {
+  export const BLITZ: BaseType = {
     name: 'Blitz',
     description: '',
-    prerequisite: [Weapon.SLASH, Weapon.SLASH, Weapon.SLASH],
     menuSlot: MenuSlot.FIRST,
+    buttonCombo: {
+      simultaneous: [
+        Button.ATTACK,
+        Button.ATTACK,
+        Button.ATTACK,
+        Button.ACTION,
+      ],
+      timingWindowMs: 300,
+      context: GameContext.TERRAIN,
+    },
   };
 }

@@ -44,7 +44,7 @@ export namespace Discipline {
     description: string;
     category: Category;
     history?: string;
-    prerequisites?: Type[]; // DisciplineId? After level etc?
+    prerequisites?: DisciplineId[]; // After level etc?
     // could also be event like defeated Lawzon, but may be that's too
     // character specific?
     progression?: ProgressionType[];
@@ -136,7 +136,7 @@ export namespace Discipline {
     description: 'Specialize destruction Magic',
     history: 'Harnessed from the power of Ouren',
     category: Category.ARCHETYPE,
-    prerequisites: [Discipline.MAGI],
+    prerequisites: ['MAGI'],
     progression: [
       { level: 10, skill: Skill.DARKNESS },
       { level: 25, skill: Skill.DESOLATE },
@@ -148,7 +148,7 @@ export namespace Discipline {
     description: 'Specialize water Magic',
     history: 'Harnessed from the power of Genki',
     category: Category.ARCHETYPE,
-    prerequisites: [Discipline.MAGI],
+    prerequisites: ['MAGI'],
     progression: [
       { level: 10, skill: Skill.RAGE },
       { level: 15, skill: Skill.AQUA },
@@ -161,7 +161,7 @@ export namespace Discipline {
     description: 'Specialize rock Magic',
     history: 'Harnessed from the power of Asmin',
     category: Category.ARCHETYPE,
-    prerequisites: [Discipline.MAGI],
+    prerequisites: ['MAGI'],
     progression: [
       { level: 10, skill: Skill.QUAKE },
       { level: 15, skill: Skill.LANDSLIDE },
@@ -173,7 +173,7 @@ export namespace Discipline {
     description: 'Specialize time Magic',
     history: 'Harnessed from the power of Void',
     category: Category.ARCHETYPE,
-    prerequisites: [Discipline.MAGI],
+    prerequisites: ['MAGI'],
     progression: [
       { level: 10, skill: Skill.STOP },
       { level: 15, skill: Skill.SLOW },
@@ -186,7 +186,7 @@ export namespace Discipline {
     description: 'Specialize charm Magic',
     history: 'Harnessed from the power of Suyri',
     category: Category.ARCHETYPE,
-    prerequisites: [Discipline.MAGI],
+    prerequisites: ['MAGI'],
     progression: [
       { level: 10, skill: Skill.CHARM },
       { level: 15, skill: Skill.CHILL },
@@ -198,7 +198,7 @@ export namespace Discipline {
     description: 'Specialize ??? Magic',
     history: 'Harnessed from the power of Diag',
     category: Category.ARCHETYPE,
-    prerequisites: [Discipline.MAGI],
+    prerequisites: ['MAGI'],
     progression: [{ level: 10, skill: Skill.QUAKE }],
     // TODO CHANGE may be instead of quake do tainted
   };
@@ -208,7 +208,7 @@ export namespace Discipline {
     description: 'Specialize snow Magic',
     history: 'Harnessed from the power of Lawzon',
     category: Category.ARCHETYPE,
-    prerequisites: [Discipline.MAGI],
+    prerequisites: ['MAGI'],
     progression: [
       { level: 10, skill: Skill.BLIZZARD },
       { level: 10, skill: Skill.FROST },
@@ -221,7 +221,7 @@ export namespace Discipline {
     description: 'Specialize absorption Magic',
     history: 'Harnessed from the power of Wisp',
     category: Category.ARCHETYPE,
-    prerequisites: [Discipline.MAGI],
+    prerequisites: ['MAGI'],
     progression: [
       { level: 10, skill: Skill.DRAIN },
       { level: 25, skill: Skill.LEECH },
@@ -473,3 +473,19 @@ export namespace Discipline {
 export const DisciplineIds = Object.keys(Discipline);
 
 export type DisciplineId = keyof typeof Discipline;
+
+export function canLearn(
+  disciplineId: DisciplineId,
+  currentDisciplines: DisciplineId[],
+): boolean {
+  const prerequisites = Discipline[disciplineId].prerequisites ?? [];
+  const currentDisciplinesSet = new Set(currentDisciplines);
+
+  for (const discipline of prerequisites) {
+    if (!currentDisciplinesSet.has(discipline)) {
+      return false;
+    }
+  }
+
+  return true;
+}
