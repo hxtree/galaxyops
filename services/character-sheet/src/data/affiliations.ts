@@ -223,4 +223,16 @@ export namespace Affiliation {
       { affiliation: Affiliation.DEVILS, reputation: Reputation.FRIENDLY },
     ],
   };
+
+  export const FLIPPING_PROFITEERS: Type = {
+    name: 'Flipping Profiteers',
+    description:
+      'A quirky guild where success starts at the bottom!' +
+      'Recruit pals below you, and watch your loot soar as the pyramid flips for fun and profit.' +
+      'No good doers allowed.',
+    // this is a pyramid scheme that takes advantage of uninformed bad actors
+    standings: [
+      { affiliation: Affiliation.OCEANIA, reputation: Reputation.HATED },
+    ],
+  };
 }

@@ -619,6 +619,37 @@ export namespace Archetype {
     description: 'A type of dragon.',
     gearSlots: SerpentineCreatureGearSlots,
   };
+
+  export const BANDIT: Type = {
+    name: 'Bandit',
+    description: 'Bandit.',
+    gearSlots: HumanoidCreatureGearSlots,
+    affiliation: [Affiliation.FLIPPING_PROFITEERS],
+  };
+
+  export const ROWAN: Type = {
+    name: 'Rowan',
+    alias: ['The Flame-Maned Bandit', 'Red-Haired Rogue'],
+    backstory:
+      'Rowan is a tall and daring bandit with a mane of fiery red hair that matches his audacious personality. ' +
+      'Known for his quick thinking and even quicker wit, Rowan is the mastermind behind their heists. ' +
+      'Despite his fearsome reputation, he has a soft spot for fluffy animals and collects vintage teacups. ' +
+      "Rowan's love for a well-brewed cup of tea is as legendary as his escapades.",
+    gearSlots: HumanoidCreatureGearSlots,
+    affiliation: [Affiliation.FLIPPING_PROFITEERS],
+  };
+
+  export const CHUBBS: Type = {
+    name: 'Chubbs',
+    alias: ['The Rotund Rascal', 'Pint-Sized Pilferer'],
+    backstory:
+      'Chubbs is a short and plump bandit with a knack for squeezing into unexpected places. ' +
+      'Known for their affinity for baked goods and ingenious contraptions, Chubbs is the comic relief ' +
+      'and has a good heart in the wrong place. Despite their penchant for thievery, they always leave ' +
+      'a thank-you note after their heists. Chubbs firmly believes that a well-baked pie can solve any problem.',
+    gearSlots: HumanoidCreatureGearSlots,
+    affiliation: [Affiliation.FLIPPING_PROFITEERS],
+  };
 }
 
 /**

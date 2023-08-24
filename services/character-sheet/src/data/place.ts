@@ -102,6 +102,18 @@ export namespace Place {
       },
     ],
   };
+
+  export const IFM_TRAIN: Type = {
+    name: 'IFM Train',
+    spawnGuidelines: [
+      {
+        archetype: 'BANDIT',
+        level: 2,
+        probability: 0.2,
+        limit: 20,
+      },
+    ],
+  };
 }
 
 /**
