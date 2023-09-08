@@ -48,24 +48,22 @@ export function checkButtonCombos(
   combos: ButtonCombo[],
   input: PlayerInput[],
 ): boolean {
-  return combos.some(combo => {
+  return combos.some((combo) => {
     if (combo.context && currentGameContext !== combo.context) {
       return false; // Combo requires a specific context that is not met
     }
 
     if (combo.timingWindowMs) {
-      const inputTimestamps = input.map(inputButton => inputButton.timestamp);
-      const comboLength =
-        combo.inOrder?.length || combo.simultaneous?.length || 0;
+      const inputTimestamps = input.map((inputButton) => inputButton.timestamp);
+      const comboLength = combo.inOrder?.length || combo.simultaneous?.length || 0;
 
       for (let i = 0; i <= inputTimestamps.length - comboLength; i++) {
-        const timeDifference =
-          inputTimestamps[i + comboLength - 1] -
-          inputTimestamps[i + comboLength - 2];
+        const timeDifference = inputTimestamps[i + comboLength - 1]
+          - inputTimestamps[i + comboLength - 2];
         if (timeDifference <= combo.timingWindowMs) {
           const matchingInputs = input
             .slice(i, i + comboLength)
-            .map(inputButton => inputButton.button);
+            .map((inputButton) => inputButton.button);
           if (combo.inOrder) {
             if (
               combo.inOrder.every(
@@ -76,9 +74,7 @@ export function checkButtonCombos(
             }
           } else if (
             // eslint-disable-next-line max-len
-            combo.simultaneous?.every(button =>
-              input.some(inputButton => inputButton.button === button),
-            )
+            combo.simultaneous?.every((button) => input.some((inputButton) => inputButton.button === button))
           ) {
             return true; // Combo matches the timing and simultaneous press
           }
@@ -107,9 +103,7 @@ export function checkButtonCombos(
     // If the combo is simultaneous, check if all the buttons are pressed together
     if (combo.simultaneous) {
       // eslint-disable-next-line max-len
-      const matchingButtons = combo.simultaneous.filter(button =>
-        input.some(inputButton => inputButton.button === button),
-      );
+      const matchingButtons = combo.simultaneous.filter((button) => input.some((inputButton) => inputButton.button === button));
       if (matchingButtons.length === combo.simultaneous.length) {
         return true; // Combo matches the simultaneous press
       }

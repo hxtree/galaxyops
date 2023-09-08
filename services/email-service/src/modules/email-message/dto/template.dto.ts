@@ -14,7 +14,7 @@ export abstract class TemplateDto {
     default: 'jane.doe@example.com',
   })
   @Expose()
-  recipient!: string;
+    recipient!: string;
 
   static get slug(): string {
     return kebabCase(this.name);

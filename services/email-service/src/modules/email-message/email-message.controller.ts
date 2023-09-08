@@ -1,4 +1,6 @@
-import { Get, Controller, Post, Body, Query } from '@nestjs/common';
+import {
+  Get, Controller, Post, Body, Query,
+} from '@nestjs/common';
 import { ApiBody, ApiQuery } from '@nestjs/swagger';
 import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dto';
 import {
@@ -21,7 +23,7 @@ export class EmailMessageController {
   @Post('user-account-created')
   async convert(
     @Body() data: UserAccountCreatedDto,
-    @Query('action') action: ActionType,
+      @Query('action') action: ActionType,
   ): Promise<any> {
     return this._engineService.process(
       action,
@@ -36,7 +38,7 @@ export class EmailMessageController {
   @Post('user-forgotten-password-reset')
   async convertUserForgottenPasswordReset(
     @Body() data: UserForgottenPasswordResetDto,
-    @Query('action') action: ActionType,
+      @Query('action') action: ActionType,
   ): Promise<any> {
     return this._engineService.process(
       action,

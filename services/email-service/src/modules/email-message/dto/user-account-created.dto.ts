@@ -14,5 +14,5 @@ export class UserAccountCreatedDto extends TemplateDto {
     default: 'Jane',
   })
   @Expose()
-  firstName!: string;
+    firstName!: string;
 }

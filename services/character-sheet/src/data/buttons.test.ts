@@ -1,4 +1,6 @@
-import { checkButtonCombos, PlayerInput, Button, ButtonCombo } from './buttons';
+import {
+  checkButtonCombos, PlayerInput, Button, ButtonCombo,
+} from './buttons';
 import { GameContext } from './game-context';
 
 describe('checkButtonCombos', () => {

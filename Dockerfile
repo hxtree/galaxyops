@@ -27,14 +27,14 @@ RUN apt update \
         # default-jre \
     # https://github.com/nodkz/mongodb-memory-server/issues/480#issuecomment-1488548395
     && wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb \
-    && sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb \
+    && dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb \
     && npm install --global npm@9.7.2  \
     # https://pnpm.io/
     && npm install --global pnpm@8.6.6 \
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.100.1 \
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
-    && npm install --global aws-cdk@2.85.0 \
+    && npm install --global aws-cdk@2.94.0 \
     # install typescript globally (perhaps this could be moved to local)
     && npm install --global typedocs \
     # https://github.com/org-formation/org-formation-cli
@@ -49,7 +49,7 @@ RUN apt update \
     && npm install --global @openapitools/openapi-generator-cli \
     # https://rushjs.io/pages/maintainer/enabling_prettier/
     && npm install --global prettier \
-    && npm install --global pretty-quick \
+    && npm install --global lint-staged \
     # install git-conventional-commits
     && npm install --global git-conventional-commits
 
@@ -94,7 +94,8 @@ ARG USER=node
 ENV AWS_SDK_LOAD_CONFIG=1
 ENV STAGE=default
 
-RUN apt install -y --no-install-recommends \
+RUN apt update \
+    && apt install -y --no-install-recommends \
     sudo \
     zsh \
     vim

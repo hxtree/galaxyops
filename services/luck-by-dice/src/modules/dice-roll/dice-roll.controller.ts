@@ -1,4 +1,6 @@
-import { Controller, Body, Post, Get, VERSION_NEUTRAL } from '@nestjs/common';
+import {
+  Controller, Body, Post, Get, VERSION_NEUTRAL,
+} from '@nestjs/common';
 import { DiceRollService } from './dice-roll.service';
 import { QueryRollDto } from './query-roll.dto';
 import { ResponseRollDto } from './response-roll.dto';

@@ -41,8 +41,8 @@
     "uuid": "~9.0.0",
     "@aws-cdk/core": "~1.182.0",
     "aws-cdk": "~2.55.1",
-    "constructs": "^10.2.69",
-    "aws-cdk-lib": "2.93.0",
+    "constructs": "^10.2.70",
+    "aws-cdk-lib": "2.95.0",
     "construct": "~1.0.0"
   },
   "devDependencies": {

@@ -3,7 +3,9 @@
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
-import { BundlingOutput, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
+import {
+  BundlingOutput, RemovalPolicy, Stack, StackProps,
+} from 'aws-cdk-lib';
 import {
   Architecture,
   Code,

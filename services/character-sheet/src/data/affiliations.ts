@@ -43,9 +43,9 @@ export namespace Affiliation {
   export const THE_CATS: Type = {
     name: 'The Cats',
     description:
-      'Each member usually takes form of a household cat. ' +
-      'They can take human form, but it drastically lowers their power due to the limits of the normal human potential. ' +
-      'The world is said to be their cradle',
+      'Each member usually takes form of a household cat. '
+      + 'They can take human form, but it drastically lowers their power due to the limits of the normal human potential. '
+      + 'The world is said to be their cradle',
     lore: [],
     history: ['Three beings who maintain the fundamental order in the world. '],
     standings: [
@@ -116,9 +116,9 @@ export namespace Affiliation {
     name: "Vallon's Seven",
     aliases: ['Seven Devils'],
     description:
-      'All members seek an end to all of existence. ' +
-      'They are the reincarnated sprites of the Original Seven. ' +
-      'They are lead by Vallon. ',
+      'All members seek an end to all of existence. '
+      + 'They are the reincarnated sprites of the Original Seven. '
+      + 'They are lead by Vallon. ',
   };
 
   export const BROTHERHOOD: Type = {
@@ -141,11 +141,11 @@ export namespace Affiliation {
   export const MAGI_ORDER: Type = {
     name: 'Magi Order',
     description:
-      'They were formed to keep the greater evils of the world at bay. ' +
-      'The Magi category of disciplines can only be learned by the Divine Race. ' +
-      'The Magi Order members are all divine people. ' +
-      'The Magi discipline enables followers to harness the power of the Eight Devils of the old world. ' +
-      "Faye's gem reacts with Eight Devils in combat to gain new Disciplines",
+      'They were formed to keep the greater evils of the world at bay. '
+      + 'The Magi category of disciplines can only be learned by the Divine Race. '
+      + 'The Magi Order members are all divine people. '
+      + 'The Magi discipline enables followers to harness the power of the Eight Devils of the old world. '
+      + "Faye's gem reacts with Eight Devils in combat to gain new Disciplines",
     standings: [
       { affiliation: Affiliation.DEVILS, reputation: Reputation.HATED },
     ],
@@ -154,8 +154,8 @@ export namespace Affiliation {
   export const MAGI_ORDER_ELDERS: Type = {
     name: 'Magi Order Elders',
     description:
-      'These are the Elders who run the Magi Order. ' +
-      'The Magi Order Elders keep secret that the Magi power comes from the Eight Devils. ',
+      'These are the Elders who run the Magi Order. '
+      + 'The Magi Order Elders keep secret that the Magi power comes from the Eight Devils. ',
     parentAffiliation: MAGI_ORDER,
     standings: [
       { affiliation: Affiliation.DEVILS, reputation: Reputation.HATED },
@@ -165,22 +165,22 @@ export namespace Affiliation {
   export const CATCHERS: Type = {
     name: 'Catchers',
     description:
-      'The Catchers wear mask when they fight to become warriors. ' +
-      'When they return home they can remove their masks to become civilians again. ' +
-      'Those who kill when not wearing a mask are said to always be warriors and cannot return home. ' +
-      'The Catchers specialize in summoning spirits. ' +
-      'A Catcher can often be identified by their tattoos. ' +
-      'The Catchers village uses the yin yang symbol. ' +
-      'The Yang being the purified village and the dark inside the yang being the body of the sacrifice. ' +
-      'The Yin being the demon world and the light inside the yang being the sacrificed soul' +
-      'It is later inferred the soul of the village has turned dark from performing ritual',
+      'The Catchers wear mask when they fight to become warriors. '
+      + 'When they return home they can remove their masks to become civilians again. '
+      + 'Those who kill when not wearing a mask are said to always be warriors and cannot return home. '
+      + 'The Catchers specialize in summoning spirits. '
+      + 'A Catcher can often be identified by their tattoos. '
+      + 'The Catchers village uses the yin yang symbol. '
+      + 'The Yang being the purified village and the dark inside the yang being the body of the sacrifice. '
+      + 'The Yin being the demon world and the light inside the yang being the sacrificed soul'
+      + 'It is later inferred the soul of the village has turned dark from performing ritual',
   };
 
   export const REBEL: Type = {
     name: 'Rebels',
     description:
-      'A group that has been formed of people opposing both sides of the conflict that only want peace. ' +
-      'They are focused around destroying the ancient technology discovered to prevent the war from escalation.',
+      'A group that has been formed of people opposing both sides of the conflict that only want peace. '
+      + 'They are focused around destroying the ancient technology discovered to prevent the war from escalation.',
   };
 
   export const ORIGINALS: Type = {
@@ -190,9 +190,9 @@ export namespace Affiliation {
   export const OCEANIA: Type = {
     name: 'Oceania',
     description:
-      'In order to save what they believe in those at the top of the organization have become corrupt. ' +
-      'They have started to resurrect ancient technology that can be used to destroy the other side.' +
-      'They are a peaceful nation that is always at war.',
+      'In order to save what they believe in those at the top of the organization have become corrupt. '
+      + 'They have started to resurrect ancient technology that can be used to destroy the other side.'
+      + 'They are a peaceful nation that is always at war.',
     standings: [
       { affiliation: Affiliation.EURASIA, reputation: Reputation.HATED },
     ],
@@ -208,8 +208,8 @@ export namespace Affiliation {
   export const BARBARIANS: Type = {
     name: 'Barbarians',
     description:
-      'They are a nearly extinct people as solider forces take over their land.' +
-      'They are a primitive but are by no means barbarians.',
+      'They are a nearly extinct people as solider forces take over their land.'
+      + 'They are a primitive but are by no means barbarians.',
   };
 
   export const NINJA: Type = {
@@ -227,9 +227,9 @@ export namespace Affiliation {
   export const FLIPPING_PROFITEERS: Type = {
     name: 'Flipping Profiteers',
     description:
-      'A quirky guild where success starts at the bottom!' +
-      'Recruit pals below you, and watch your loot soar as the pyramid flips for fun and profit.' +
-      'No good doers allowed.',
+      'A quirky guild where success starts at the bottom!'
+      + 'Recruit pals below you, and watch your loot soar as the pyramid flips for fun and profit.'
+      + 'No good doers allowed.',
     // this is a pyramid scheme that takes advantage of uninformed bad actors
     standings: [
       { affiliation: Affiliation.OCEANIA, reputation: Reputation.HATED },

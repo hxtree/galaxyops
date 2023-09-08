@@ -22,8 +22,7 @@ export async function generateFakeData(
       separator: '',
       decimal: '.',
       precision: 2,
-    }).format(),
-  );
+    }).format());
 
   JSONSchemaFaker.format('email', () => faker.internet.email().toLowerCase());
 

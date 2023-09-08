@@ -1,4 +1,6 @@
-import { Controller, Get, Param, VERSION_NEUTRAL } from '@nestjs/common';
+import {
+  Controller, Get, Param, VERSION_NEUTRAL,
+} from '@nestjs/common';
 import { SkillService } from './skill.service';
 import { QuerySkillDto } from './query-skill.dto';
 

@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { Item, ItemIds, ItemType, ItemId } from '../../data/item';
+import {
+  Item, ItemIds, ItemType, ItemId,
+} from '../../data/item';
 
 @Injectable()
 export class ItemService {
