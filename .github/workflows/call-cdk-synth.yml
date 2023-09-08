@@ -54,7 +54,7 @@ jobs:
           PROJECT_ROOT: ${{ github.workspace }}
 
       - name: install cdk
-        run: npm install --global aws-cdk@2.85.0
+        run: npm install --global aws-cdk@2.94.0
         env:
           PROJECT_ROOT: ${{ github.workspace }}
 
