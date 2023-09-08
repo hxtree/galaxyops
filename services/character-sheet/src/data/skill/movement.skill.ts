@@ -261,9 +261,9 @@ export namespace Movement {
   export const TREK: Type = {
     name: 'Trek',
     description:
-      'Walk up steep hill without falling down. ' +
-      'Used to determine how steep an angled tile you can stand on. ' +
-      'If your character fails to trek the tile then they will fall from it and will be to step onto it. ',
+      'Walk up steep hill without falling down. '
+      + 'Used to determine how steep an angled tile you can stand on. '
+      + 'If your character fails to trek the tile then they will fall from it and will be to step onto it. ',
     menuSlot: MenuSlot.MOVEMENT,
   };
 

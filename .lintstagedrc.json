@@ -1,0 +1,4 @@
+{
+  "*.ts": ["prettier --write", "eslint --format visualstudio--fix"],
+  "*.{json,md}": "prettier --write"
+}

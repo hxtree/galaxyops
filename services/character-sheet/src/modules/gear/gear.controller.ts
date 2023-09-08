@@ -1,4 +1,6 @@
-import { Controller, Get, Param, VERSION_NEUTRAL } from '@nestjs/common';
+import {
+  Controller, Get, Param, VERSION_NEUTRAL,
+} from '@nestjs/common';
 import { GearService } from './gear.service';
 import { QueryGearDto } from './query-gear.dto';
 

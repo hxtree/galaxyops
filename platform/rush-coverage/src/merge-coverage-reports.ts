@@ -13,8 +13,7 @@ export function mergeCoverageReports(coverageReports: CoverageReports) {
 
     Object.keys(coverage).forEach((filename: string) =>
       // eslint-disable-next-line implicit-arrow-linebreak
-      mergedMap.addFileCoverage(coverage[filename]),
-    );
+      mergedMap.addFileCoverage(coverage[filename]));
   });
 
   return mergedMap;

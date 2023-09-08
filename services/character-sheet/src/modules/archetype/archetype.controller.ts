@@ -1,4 +1,6 @@
-import { Controller, Get, Param, VERSION_NEUTRAL } from '@nestjs/common';
+import {
+  Controller, Get, Param, VERSION_NEUTRAL,
+} from '@nestjs/common';
 import { ArchetypeService } from './archetype.service';
 import { QueryArchetypeDto } from './query-archetype.dto';
 

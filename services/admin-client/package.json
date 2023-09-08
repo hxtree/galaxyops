@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/prismjs": "~1.26.0",
     "ts-node": "10.9.1",
-    "aws-cdk-lib": "2.93.0",
+    "aws-cdk-lib": "2.95.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "ts-jest": "29.1.1",

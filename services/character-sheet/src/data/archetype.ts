@@ -85,12 +85,12 @@ export namespace Archetype {
     name: 'Mother',
     alias: ['Lady of the Vase', 'Ashes', 'Dust'],
     backstory:
-      'She is known only as Mother. ' +
-      'She often can be found carrying things back and forth from the garden. ' +
-      'She is mother to both Vallon and Meeku. ' +
-      'Mother knits Meeku a red scarf. ' +
-      'Mother dies and is turned to ashes during act one. ' +
-      "Meeku carries Mother's ashes around his waist with him in a gourd. ",
+      'She is known only as Mother. '
+      + 'She often can be found carrying things back and forth from the garden. '
+      + 'She is mother to both Vallon and Meeku. '
+      + 'Mother knits Meeku a red scarf. '
+      + 'Mother dies and is turned to ashes during act one. '
+      + "Meeku carries Mother's ashes around his waist with him in a gourd. ",
     gearSlots: HumanoidCreatureGearSlots,
   };
 
@@ -105,12 +105,12 @@ export namespace Archetype {
     backstory: 'Governs the logical of this realm.',
     affiliation: [Affiliation.THE_CATS],
     description:
-      'A black and white cat. ' +
-      'His face is primarily white with a black noise. ' +
-      'He has emerald yellowish greenish eyes. ' +
-      'His ears are black. ' +
-      'His fur is short. ' +
-      'His tail is black. ',
+      'A black and white cat. '
+      + 'His face is primarily white with a black noise. '
+      + 'He has emerald yellowish greenish eyes. '
+      + 'His ears are black. '
+      + 'His fur is short. '
+      + 'His tail is black. ',
     // a red colored thread can be used to control him
     potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
     gearSlots: QuadrupedalCreatureGearSlots,
@@ -123,8 +123,8 @@ export namespace Archetype {
     symbolizes: ['Time'],
     description: 'An orange old persian cat',
     backstory:
-      'Governs the flow of time the One has been in this state.' +
-      'Has the ability to change the flow of time for different areas in the game.',
+      'Governs the flow of time the One has been in this state.'
+      + 'Has the ability to change the flow of time for different areas in the game.',
     affiliation: [Affiliation.THE_CATS],
     potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
     gearSlots: QuadrupedalCreatureGearSlots,
@@ -135,11 +135,11 @@ export namespace Archetype {
     surname: 'Angora',
     alias: ['Keeper of Heart', 'Kind-Kitty', 'Song Maiden', 'Mom'],
     description:
-      'A white angora cat. ' +
-      'In human form a light blonde girl wearing white linen',
+      'A white angora cat. '
+      + 'In human form a light blonde girl wearing white linen',
     backstory:
-      'She governs and protects the ones heart to make sure it is not lost. ' +
-      'A girl created when the Song Maiden left her post to become human.',
+      'She governs and protects the ones heart to make sure it is not lost. '
+      + 'A girl created when the Song Maiden left her post to become human.',
     symbolizes: ['Chastity'],
     affiliation: [Affiliation.THE_CATS],
     potentialDisciplines: [
@@ -166,14 +166,14 @@ export namespace Archetype {
     symbolizes: ['Destroyer of Time'],
     alias: ['The Black Plague', 'Skyfall', 'Timestopper', 'Standstill'],
     backstory:
-      'Often sang a song similar to Tumbalalaika to his sons when they were young. ' +
-      'Rumored to be end cause the end of all existence. ' +
-      'Whereabouts unknown. ',
+      'Often sang a song similar to Tumbalalaika to his sons when they were young. '
+      + 'Rumored to be end cause the end of all existence. '
+      + 'Whereabouts unknown. ',
     history:
-      'He went is sealed inside the Floating Island waiting for his sons' +
-      'When his eyes are open only greater beings can move the rest of the world stands still.' +
-      'He possess sight beyond sight; is able to preserve the world from afar' +
-      'He is responsible for battle his son win where time seems to stand still. ',
+      'He went is sealed inside the Floating Island waiting for his sons'
+      + 'When his eyes are open only greater beings can move the rest of the world stands still.'
+      + 'He possess sight beyond sight; is able to preserve the world from afar'
+      + 'He is responsible for battle his son win where time seems to stand still. ',
     affiliation: [Affiliation.THE_DESTROYERS, Affiliation.SOLIDER_FORCES],
     description: 'White hair. Has a prominent tattoo FTW',
     potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
@@ -196,18 +196,18 @@ export namespace Archetype {
       Affiliation.SOLIDER_FORCES,
     ],
     backstory:
-      'Grow up with Meeku. ' +
-      'Left to become a Solider. ' +
-      'Disappeared from Solider. ',
+      'Grow up with Meeku. '
+      + 'Left to become a Solider. '
+      + 'Disappeared from Solider. ',
     // 'Sets out in search of his father to freeze all time. ' +
     // 'Raises the floating island. ' +
     // 'Taints the Keeper of Heart. ' +
     // 'Unleashes Ouren. '
     history:
-      'Women easily fall in love with Vallon. ' +
-      'Vallon is not interested in love and those who love him have their heart painfully broken.' +
-      "It's not his fault; it's an effect he has on others. " +
-      'The Devils love him because of the heartache he causes them. ',
+      'Women easily fall in love with Vallon. '
+      + 'Vallon is not interested in love and those who love him have their heart painfully broken.'
+      + "It's not his fault; it's an effect he has on others. "
+      + 'The Devils love him because of the heartache he causes them. ',
     potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
     weaponCompatibility: [Weapon.Category.SWORD],
     gearSlots: HumanoidCreatureGearSlots,
@@ -220,10 +220,10 @@ export namespace Archetype {
     alias: ['Kid', 'Brother'],
     backstory: 'A boy who has lost his past',
     history:
-      'Has the ability to break the fundamental laws of the world. ' +
-      'Trapped by the observed logic. ' +
-      `He believes in the veil the ${Affiliation.THE_CATS} made is real. ` +
-      'As a Berserker he uses a mask to break the veil and tap into his limitless ability',
+      'Has the ability to break the fundamental laws of the world. '
+      + 'Trapped by the observed logic. '
+      + `He believes in the veil the ${Affiliation.THE_CATS} made is real. `
+      + 'As a Berserker he uses a mask to break the veil and tap into his limitless ability',
     affiliation: [Affiliation.THE_DESTROYERS, Affiliation.SOLIDER_FORCES],
     potentialDisciplines: [
       Discipline.SOLIDER,
@@ -329,8 +329,8 @@ export namespace Archetype {
     surname: 'Stonewell',
     symbolizes: ['Humility'],
     description:
-      'A large old man with grey hair. ' +
-      'Looks like they spend their entire life in battle. ',
+      'A large old man with grey hair. '
+      + 'Looks like they spend their entire life in battle. ',
     backstory: 'A solider for life',
     affiliation: [Affiliation.SOLIDER_FORCES],
     potentialDisciplines: [
@@ -355,9 +355,9 @@ export namespace Archetype {
     ],
     symbolizes: ['Despair'],
     backstory:
-      'As a child, his people sacrificed him to save themselves. ' +
-      'They sewed the demons plaguing the village into his skin. ' +
-      'The demons were drawn to his purity. ',
+      'As a child, his people sacrificed him to save themselves. '
+      + 'They sewed the demons plaguing the village into his skin. '
+      + 'The demons were drawn to his purity. ',
     affiliation: [Affiliation.CATCHERS],
     potentialDisciplines: [
       Discipline.GYMNAST,
@@ -394,8 +394,8 @@ export namespace Archetype {
     element: 'Fire',
     occupation: 'Mercenary',
     characteristics:
-      'Strong, defiant, kills without question. ' +
-      'Motivated primarily by money. ',
+      'Strong, defiant, kills without question. '
+      + 'Motivated primarily by money. ',
     backstory: '',
     symbolizes: ['Kindness', 'Independence'],
     affiliation: [Affiliation.NINJA],
@@ -444,9 +444,9 @@ export namespace Archetype {
     name: 'Void',
     affiliation: [Affiliation.DEVILS],
     backstory:
-      'Is one of the original seven demons.' +
-      'He was killed before the story begins. ' +
-      'His place is taken by Mahdi.',
+      'Is one of the original seven demons.'
+      + 'He was killed before the story begins. '
+      + 'His place is taken by Mahdi.',
     potentialDisciplines: [Discipline.MAGI_BLACK],
     gearSlots: HumanoidCreatureGearSlots,
   };
@@ -464,15 +464,15 @@ export namespace Archetype {
     name: 'Lawzon',
     surname: 'Grey',
     description:
-      'Wears wolfs head, with horns, and a sleep mask. ' +
-      'Barely stays standing. ',
+      'Wears wolfs head, with horns, and a sleep mask. '
+      + 'Barely stays standing. ',
     symbolizes: ['Sloth', 'Wolf'],
     history:
-      'A narcoleptic often found sleeping even when standing. ' +
-      'Rumored to once of been the most powerful fighter from the north. ' +
-      'He fought only to protect his village until it was wiped out from a great frost. ' +
-      'He now wanders seemingly lifelessly in search of an end. ' +
-      'He is by far the most strongest of the seven but has no will to fight.',
+      'A narcoleptic often found sleeping even when standing. '
+      + 'Rumored to once of been the most powerful fighter from the north. '
+      + 'He fought only to protect his village until it was wiped out from a great frost. '
+      + 'He now wanders seemingly lifelessly in search of an end. '
+      + 'He is by far the most strongest of the seven but has no will to fight.',
     affiliation: [Affiliation.VALLONS_SEVEN],
     potentialDisciplines: [Discipline.MAGI_WHITE],
     weaponCompatibility: [Weapon.Category.BROAD_SWORD],
@@ -494,8 +494,8 @@ export namespace Archetype {
   export const SUYRI: Type = {
     name: 'Suyri',
     description:
-      'Has and uses strong magical powers. ' +
-      'A female with pink colored hair. ',
+      'Has and uses strong magical powers. '
+      + 'A female with pink colored hair. ',
     affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Luxury (later lust)', 'Fox'],
     potentialDisciplines: [Discipline.WIZARD, Discipline.MAGI_PINK],
@@ -631,10 +631,10 @@ export namespace Archetype {
     name: 'Rowan',
     alias: ['The Flame-Maned Bandit', 'Red-Haired Rogue'],
     backstory:
-      'Rowan is a tall and daring bandit with a mane of fiery red hair that matches his audacious personality. ' +
-      'Known for his quick thinking and even quicker wit, Rowan is the mastermind behind their heists. ' +
-      'Despite his fearsome reputation, he has a soft spot for fluffy animals and collects vintage teacups. ' +
-      "Rowan's love for a well-brewed cup of tea is as legendary as his escapades.",
+      'Rowan is a tall and daring bandit with a mane of fiery red hair that matches his audacious personality. '
+      + 'Known for his quick thinking and even quicker wit, Rowan is the mastermind behind their heists. '
+      + 'Despite his fearsome reputation, he has a soft spot for fluffy animals and collects vintage teacups. '
+      + "Rowan's love for a well-brewed cup of tea is as legendary as his escapades.",
     gearSlots: HumanoidCreatureGearSlots,
     affiliation: [Affiliation.FLIPPING_PROFITEERS],
   };
@@ -643,10 +643,10 @@ export namespace Archetype {
     name: 'Chubbs',
     alias: ['The Rotund Rascal', 'Pint-Sized Pilferer'],
     backstory:
-      'Chubbs is a short and plump bandit with a knack for squeezing into unexpected places. ' +
-      'Known for their affinity for baked goods and ingenious contraptions, Chubbs is the comic relief ' +
-      'and has a good heart in the wrong place. Despite their penchant for thievery, they always leave ' +
-      'a thank-you note after their heists. Chubbs firmly believes that a well-baked pie can solve any problem.',
+      'Chubbs is a short and plump bandit with a knack for squeezing into unexpected places. '
+      + 'Known for their affinity for baked goods and ingenious contraptions, Chubbs is the comic relief '
+      + 'and has a good heart in the wrong place. Despite their penchant for thievery, they always leave '
+      + 'a thank-you note after their heists. Chubbs firmly believes that a well-baked pie can solve any problem.',
     gearSlots: HumanoidCreatureGearSlots,
     affiliation: [Affiliation.FLIPPING_PROFITEERS],
   };

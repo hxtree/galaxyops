@@ -1,4 +1,6 @@
-import { Controller, Post, Body, Res } from '@nestjs/common';
+import {
+  Controller, Post, Body, Res,
+} from '@nestjs/common';
 import { Response } from 'express';
 import { PdfService } from './pdf.service';
 import { CreateHtmlToPdfDto } from './create-html-to-pdf.dto';
@@ -10,7 +12,7 @@ export class PdfController {
 
   @Post('render-url')
   async postRenderFromUrl(
-    @Res() res: Response,
+  @Res() res: Response,
     @Body() body: CreateUrlToPdfDto,
   ) {
     const buffer = await this.pdfService.renderUrl(body.url);
@@ -19,7 +21,7 @@ export class PdfController {
 
   @Post('render-html')
   async postRenderFromHtml(
-    @Res() res: Response,
+  @Res() res: Response,
     @Body() body: CreateHtmlToPdfDto,
   ) {
     const buffer = await this.pdfService.renderHtml(body.html);
