@@ -27,7 +27,7 @@ if [ $(cat $1 | wc -w) -lt 3 ]; then
 fi
 
 # use git-conventional-commits, see https://github.com/qoomon/git-conventional-commits
-git-conventional-commits commit-msg-hook "$commit_message"
+echo "$commit_message" | commitlint
 
 # enforce DCO https://wiki.linuxfoundation.org/dco
 NAME=$(git config user.name)

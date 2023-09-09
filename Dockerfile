@@ -50,8 +50,9 @@ RUN apt update \
     # https://rushjs.io/pages/maintainer/enabling_prettier/
     && npm install --global prettier \
     && npm install --global lint-staged \
-    # install git-conventional-commits
-    && npm install --global git-conventional-commits
+    # install conventional commits
+    && npm install --global @commitlint/config-conventional \
+    && npm install --global @commitlint/cli
 
 # install chrome for html-to-pdf generation, etc.
 RUN apt update \
