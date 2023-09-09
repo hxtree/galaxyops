@@ -29,7 +29,7 @@ import { SkillType } from '../data/skill';
 /**
  * A CharacterSheet (or Character for short) is a single instantiation of an Archetype.
  */
-@Schema()
+@Schema({ collection: 'character-sheet' })
 export class CharacterSheet {
   // @Transform(({ value }) => value.toString())
   // _id: ObjectId;
