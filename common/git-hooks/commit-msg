@@ -18,16 +18,23 @@
 
 # This example enforces that commit message should contain a minimum amount of
 # description text.
-commit_message="$1"
 
-if [ $(cat $1 | wc -w) -lt 3 ]; then
+COMMIT_MESSAGE="$1"
+
+if [ $(cat $COMMIT_MESSAGE | wc -w) -lt 3 ]; then
   echo ""
   echo "Invalid commit message: The message must contain at least 3 words."
   exit 1
 fi
 
-# use git-conventional-commits, see https://github.com/qoomon/git-conventional-commits
-git-conventional-commits commit-msg-hook "$commit_message"
+commitlint --edit $1
+
+if [ $? -ne 0 ]; then
+  echo "commitlint failed. Exiting..."
+  exit 1
+else
+  echo "commitlint passed."
+fi
 
 # enforce DCO https://wiki.linuxfoundation.org/dco
 NAME=$(git config user.name)
