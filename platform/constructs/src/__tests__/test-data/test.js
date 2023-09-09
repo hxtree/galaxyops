@@ -1,5 +1,5 @@
-'use strict';
+"use strict";
 (() => {
   // src/__tests__/test-data/test.ts
-  console.log('test');
+  console.log("test");
 })();

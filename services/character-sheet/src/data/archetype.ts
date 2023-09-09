@@ -102,7 +102,13 @@ export namespace Archetype {
     surname: 'Piebald',
     alias: ['Keeper of Law', 'Mischief'],
     symbolizes: ['Law', 'Causality', 'Absolute'],
-    backstory: 'Governs the logical of this realm.',
+    backstory:
+      'Governs the logical of this realm. '
+      + 'He can choose whether a wall is hard or one can put their hand through it. '
+      + 'He can choose whether the rain falls downward or upward. '
+      + 'His power is based on speech, he must blink speak a rule and blink again in order to invoke it. '
+      + 'He can change the rules but is not able to control the runtime of those rules. '
+      + 'He is subspectable to time manipulation as it revert or deteriate his rule. ',
     affiliation: [Affiliation.THE_CATS],
     description:
       'A black and white cat. '

@@ -138,16 +138,20 @@
                 "DIAG",
                 "MONARCH",
                 "VICEROY",
-                "SPIDER",
                 "WARLING",
+                "SPIDER",
                 "SEA_HORSE",
                 "SENSITIVE_PLANT",
                 "DEEP_THINKER",
+                "GEL",
                 "PHOENIX",
                 "SNOW_LEOPARD",
                 "CHIMERA",
                 "SLOW_MOVER",
-                "SNAKE_OF_WATER"
+                "SNAKE_OF_WATER",
+                "BANDIT",
+                "ROWAN",
+                "CHUBBS"
               ],
               "type": "string"
             }
@@ -185,18 +189,19 @@
                 "COWHIDE_VEST",
                 "FUNERAL_JAR",
                 "SWORD_SHEATH",
-                "MAGENETIC_GLOVES",
+                "MAGNETIC_GLOVES",
                 "CATCHERS_MITT",
-                "COMPASS",
-                "GC",
+                "TURBAN",
                 "TSHIRT_AND_JEANS",
+                "SWIMSUIT",
                 "OFFICERS_UNIFORM",
+                "KIMONO",
                 "Category",
                 "ASMINS_AXE",
                 "GREAT_WAIL",
                 "JUSTICE",
                 "KEYSTONE",
-                "ASSUALTER",
+                "ASSAULTER",
                 "STRIKER",
                 "ENERGY_BREAKER",
                 "STONE_BREAKER",
@@ -219,7 +224,8 @@
                 "MONARCH",
                 "REGRET",
                 "VICEROY",
-                "VIOLATED"
+                "VIOLATED",
+                "BUCKLER"
               ],
               "type": "string"
             }
@@ -289,6 +295,7 @@
                 "LEECH",
                 "DRAIN",
                 "GRAPPLING_HOOK",
+                "BLOCK",
                 "PARRY",
                 "SLASH",
                 "STRIKE",
@@ -298,10 +305,13 @@
                 "WALK",
                 "RUN",
                 "SWIM",
+                "SWIM_FAST",
                 "BACK_FLIP",
                 "DOUBLE_BACK_FLIP",
+                "JUMP",
                 "HIGH_JUMP",
                 "CLIMB",
+                "TREK",
                 "DUAL_WELD",
                 "ESCAPE_ARTIST",
                 "INTIMIDATE",
@@ -324,7 +334,7 @@
                 "DISMISS",
                 "LYRE",
                 "SANDY",
-                "OURUBORUS",
+                "OUROBOROS",
                 "MISCHIEVOUS",
                 "SCRIBBLES",
                 "POISON_TRAP",
@@ -355,35 +365,19 @@
                 "SEARCH",
                 "STEAL",
                 "PROTECTION",
-                "RAGE"
+                "RAGE",
+                "ObjectCategory",
+                "GRAB",
+                "PUSH",
+                "PULL",
+                "LIFT",
+                "PICK_LOCK"
               ],
               "type": "string"
             }
           }
         ],
         "responses": { "200": { "description": "" } }
-      }
-    },
-    "/character-sheets": {
-      "get": {
-        "operationId": "CharacterSheetController_findAll",
-        "parameters": [],
-        "responses": { "200": { "description": "" } }
-      },
-      "post": {
-        "operationId": "CharacterSheetController_create",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCharacterSheetDto"
-              }
-            }
-          }
-        },
-        "responses": { "201": { "description": "" } }
       }
     },
     "/character-sheets/{id}": {
@@ -410,6 +404,28 @@
           }
         ],
         "responses": { "200": { "description": "" } }
+      }
+    },
+    "/character-sheets": {
+      "get": {
+        "operationId": "CharacterSheetController_findAll",
+        "parameters": [],
+        "responses": { "200": { "description": "" } }
+      },
+      "post": {
+        "operationId": "CharacterSheetController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCharacterSheetDto"
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
       }
     },
     "/npcs": {
@@ -441,7 +457,8 @@
       "CreateCharacterSheetDto": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
+          "_id": { "type": "string" },
+          "instanceId": { "type": "string" },
           "archetypeId": {
             "type": "string",
             "enum": [
@@ -469,22 +486,26 @@
               "DIAG",
               "MONARCH",
               "VICEROY",
-              "SPIDER",
               "WARLING",
+              "SPIDER",
               "SEA_HORSE",
               "SENSITIVE_PLANT",
               "DEEP_THINKER",
+              "GEL",
               "PHOENIX",
               "SNOW_LEOPARD",
               "CHIMERA",
               "SLOW_MOVER",
-              "SNAKE_OF_WATER"
+              "SNAKE_OF_WATER",
+              "BANDIT",
+              "ROWAN",
+              "CHUBBS"
             ]
           },
           "name": { "type": "string" },
           "surname": { "type": "string" }
         },
-        "required": ["id", "archetypeId", "name", "surname"]
+        "required": ["_id", "instanceId", "archetypeId", "name", "surname"]
       },
       "CreateSpawnDto": {
         "type": "object",
@@ -499,7 +520,8 @@
               "FORT",
               "FLOATING_ISLAND",
               "INFINITY_ISLAND",
-              "ENDERS_LAND"
+              "ENDERS_LAND",
+              "IFM_TRAIN"
             ],
             "description": "Generate a spawn for a designated area. Requestor is responsible for only making request for areas where party is presence to avoid computing irrelevant spawns."
           }
