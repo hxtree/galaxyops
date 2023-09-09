@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "github.vscode-github-actions",
+    "pflannery.vscode-versionlens",
+    "folke.vscode-monorepo-workspace",
+    "ryanluker.vscode-coverage-gutters",
+    "streetsidesoftware.code-spell-checker",
+    "DavidAnson.vscode-markdownlint",
+    "vivaxy.vscode-conventional-commits",
+    "yzhang.markdown-all-in-one",
+    "foxundermoon.shell-format",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-vsliveshare.vsliveshare",
+    "rangav.vscode-thunder-client"
+  ],
+  "unwantedRecommendations": ["ms-azuretools.vscode-docker", "GitHub.copilot"]
+}
