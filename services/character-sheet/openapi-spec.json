@@ -114,6 +114,7 @@
             "in": "path",
             "schema": {
               "enum": [
+                "DARUMA_NAKAMURA",
                 "MOTHER",
                 "MISCHIEVOUS_PIEBALD",
                 "JANUS_PERSIAN",
@@ -457,11 +458,18 @@
       "CreateCharacterSheetDto": {
         "type": "object",
         "properties": {
-          "_id": { "type": "string" },
-          "instanceId": { "type": "string" },
+          "_id": {
+            "type": "string",
+            "default": "be35b061-31af-4802-8a45-381f58169f8c"
+          },
+          "instanceId": {
+            "type": "string",
+            "default": "64690e30-78e2-49ac-9f8d-7ab0fb1904a4"
+          },
           "archetypeId": {
             "type": "string",
             "enum": [
+              "DARUMA_NAKAMURA",
               "MOTHER",
               "MISCHIEVOUS_PIEBALD",
               "JANUS_PERSIAN",
@@ -500,18 +508,25 @@
               "BANDIT",
               "ROWAN",
               "CHUBBS"
-            ]
+            ],
+            "default": "DARUMA_NAKAMURA"
           },
-          "name": { "type": "string" },
-          "surname": { "type": "string" }
+          "name": { "type": "string", "default": "Daruma" },
+          "surname": { "type": "string", "default": "Nakamura" }
         },
         "required": ["_id", "instanceId", "archetypeId", "name", "surname"]
       },
       "CreateSpawnDto": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
-          "instanceId": { "type": "string" },
+          "id": {
+            "type": "string",
+            "default": "f07ff1bb-1e46-4bf1-9cb0-5787254295a3"
+          },
+          "instanceId": {
+            "type": "string",
+            "default": "086a5a4a-d42f-45ea-b3b8-f97b0ea4f95f"
+          },
           "place": {
             "type": "string",
             "enum": [

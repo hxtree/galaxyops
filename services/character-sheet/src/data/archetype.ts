@@ -80,7 +80,12 @@ export namespace Archetype {
     // loot?: Gear.Item[];
   };
 
-  // there is only one mom in the whole game
+  export const DARUMA_NAKAMURA: Type = {
+    name: 'Daruma',
+    alias: ['Unknown', 'Wooden Doll'],
+    gearSlots: HumanoidCreatureGearSlots,
+  };
+
   export const MOTHER: Type = {
     name: 'Mother',
     alias: ['Lady of the Vase', 'Ashes', 'Dust'],
@@ -90,7 +95,8 @@ export namespace Archetype {
       + 'She is mother to both Vallon and Meeku. '
       + 'Mother knits Meeku a red scarf. '
       + 'Mother dies and is turned to ashes during act one. '
-      + "Meeku carries Mother's ashes around his waist with him in a gourd. ",
+      + "Meeku carries Mother's ashes around his waist with him in a gourd. "
+      + 'There is only one mother in the whole game. ',
     gearSlots: HumanoidCreatureGearSlots,
   };
 
