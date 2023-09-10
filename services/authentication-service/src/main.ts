@@ -16,7 +16,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('@cats-cradles/authentication-service')
-    .setDescription('An API for the character sheet service')
+    .setDescription('authentication service API')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
