@@ -177,7 +177,12 @@
       "packageName": "@cats-cradle/authentication-service",
       "projectFolder": "services/authentication-service",
       "reviewCategory": "apis",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "decoupledLocalDependencies": [
+        "@cats-cradle/validation-schemas",
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/bundle-project",
+        "@cats-cradle/bundlers"
+      ],
       "tags": [],
       "shouldPublish": true
     },
