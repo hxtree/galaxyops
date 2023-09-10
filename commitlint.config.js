@@ -7,6 +7,7 @@ module.exports = {
       [
         'character',
         'platform',
+        'user'
       ]
     ],
     "type-enum": [2, "always", ["feat", "fix", "docs", "chore", "wip", "style"]],

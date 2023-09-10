@@ -443,6 +443,100 @@
         },
         "responses": { "201": { "description": "" } }
       }
+    },
+    "/items": {
+      "get": {
+        "operationId": "ItemController_list",
+        "parameters": [],
+        "responses": { "200": { "description": "" } }
+      }
+    },
+    "/items/{id}": {
+      "get": {
+        "operationId": "ItemController_find",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "enum": [
+                "COMPASS",
+                "GC",
+                "FLOUR",
+                "CHICKEN_EGG",
+                "WATER",
+                "RICE",
+                "PORK",
+                "RICE_BALL",
+                "DANGO",
+                "RAMEN",
+                "PELMENI"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": { "200": { "description": "" } }
+      }
+    },
+    "/items/consume/{id}": {
+      "get": {
+        "operationId": "ItemController_consume",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "enum": [
+                "COMPASS",
+                "GC",
+                "FLOUR",
+                "CHICKEN_EGG",
+                "WATER",
+                "RICE",
+                "PORK",
+                "RICE_BALL",
+                "DANGO",
+                "RAMEN",
+                "PELMENI"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": { "200": { "description": "" } }
+      }
+    },
+    "/items/craft/{id}": {
+      "get": {
+        "operationId": "ItemController_craft",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "enum": [
+                "COMPASS",
+                "GC",
+                "FLOUR",
+                "CHICKEN_EGG",
+                "WATER",
+                "RICE",
+                "PORK",
+                "RICE_BALL",
+                "DANGO",
+                "RAMEN",
+                "PELMENI"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": { "200": { "description": "" } }
+      }
     }
   },
   "info": {
@@ -460,11 +554,11 @@
         "properties": {
           "_id": {
             "type": "string",
-            "default": "be35b061-31af-4802-8a45-381f58169f8c"
+            "default": "5e799b22-74c0-4f51-963c-9d402a9825e1"
           },
           "instanceId": {
             "type": "string",
-            "default": "64690e30-78e2-49ac-9f8d-7ab0fb1904a4"
+            "default": "43d7e427-4ba7-4f0e-9afc-d0dccd54a69a"
           },
           "archetypeId": {
             "type": "string",
@@ -521,11 +615,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "default": "f07ff1bb-1e46-4bf1-9cb0-5787254295a3"
+            "default": "62309dfb-d1e0-49e3-84c7-d9a86d43cf88"
           },
           "instanceId": {
             "type": "string",
-            "default": "086a5a4a-d42f-45ea-b3b8-f97b0ea4f95f"
+            "default": "903ce92d-a8fb-406f-a03f-5cee1effc3c4"
           },
           "place": {
             "type": "string",
