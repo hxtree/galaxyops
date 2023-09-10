@@ -1,0 +1,30 @@
+// used in development
+import { writeFileSync } from 'fs';
+import { NestFactory } from '@nestjs/core';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { VersioningType } from '@nestjs/common';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  app.enableVersioning({
+    type: VersioningType.HEADER,
+    header: 'Accept-Version',
+    defaultVersion: '1',
+  });
+
+  const config = new DocumentBuilder()
+    .setTitle('@cats-cradles/authentication-service')
+    .setDescription('authentication service API')
+    .setVersion('1.0')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
+
+  // update the openapi-spec
+  writeFileSync('./openapi-spec.json', JSON.stringify(document));
+
+  await app.listen(3000);
+}
+bootstrap();

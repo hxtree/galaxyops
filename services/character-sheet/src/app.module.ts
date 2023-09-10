@@ -6,6 +6,7 @@ import { GearModule } from './modules/gear/gear.module';
 import { HealthModule } from './modules/health/health.module';
 import { SkillModule } from './modules/skill/skill.module';
 import { NpcModule } from './modules/npc/npc.module';
+import { ItemModule } from './modules/item/item.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { NpcModule } from './modules/npc/npc.module';
     SkillModule,
     CharacterSheetModule,
     NpcModule,
+    ItemModule,
   ],
   providers: [],
   exports: [],
