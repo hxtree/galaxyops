@@ -3,6 +3,7 @@ import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import { StackProps } from 'aws-cdk-lib';
 import * as path from 'path';
+import { CognitoPool } from './cognito-pool';
 
 export class MainStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -12,13 +13,17 @@ export class MainStack extends cdk.Stack {
       this,
       'authentication-service-stack',
       {
-        path: 'character',
+        path: 'auth',
         projectRoot: path.join(__dirname, '..'),
       },
     );
 
     new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${microservice.getBaseUrl()}/archetypes`,
+      value: `${microservice.getBaseUrl()}/users`,
+    });
+
+    new CognitoPool(this, 'UserCognitoPool', {
+      stage: 'Beta',
     });
   }
 }

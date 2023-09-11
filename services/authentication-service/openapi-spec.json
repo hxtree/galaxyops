@@ -107,7 +107,7 @@
   },
   "info": {
     "title": "@cats-cradles/authentication-service",
-    "description": "An API for the character sheet service",
+    "description": "authentication service API",
     "version": "1.0",
     "contact": {}
   },
