@@ -171,12 +171,16 @@
       "allowedCategories": [ "apis", "category-platform", "libraries", "platform" ]
     },
     {
+      "name": "@nestjs/jwt",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@nestjs/mongoose",
       "allowedCategories": [ "apis", "libraries", "rigs" ]
     },
     {
       "name": "@nestjs/passport",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "@nestjs/platform-express",
@@ -561,6 +565,10 @@
     {
       "name": "openapi3-ts",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "passport",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "path",
