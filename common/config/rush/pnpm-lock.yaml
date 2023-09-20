@@ -1143,6 +1143,7 @@ importers:
       '@nestjs/core':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+<<<<<<< HEAD
       '@nestjs/jwt':
         specifier: ~10.1.1
         version: 10.1.1(@nestjs/common@9.4.0)
@@ -1152,6 +1153,11 @@ importers:
       '@nestjs/passport':
         specifier: 9.0.0
         version: 9.0.0(@nestjs/common@9.4.0)(passport@0.6.0)
+=======
+      '@nestjs/mongoose':
+        specifier: 9.2.1
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+>>>>>>> main
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -1167,9 +1173,12 @@ importers:
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
+<<<<<<< HEAD
       aws-sdk:
         specifier: ~2.1461.0
         version: 2.1461.0
+=======
+>>>>>>> main
       aws-serverless-express:
         specifier: ~3.4.0
         version: 3.4.0
