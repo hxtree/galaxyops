@@ -1143,9 +1143,15 @@ importers:
       '@nestjs/core':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/jwt':
+        specifier: ~10.1.1
+        version: 10.1.1(@nestjs/common@9.4.0)
       '@nestjs/mongoose':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/passport':
+        specifier: 9.0.0
+        version: 9.0.0(@nestjs/common@9.4.0)(passport@0.6.0)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -1161,6 +1167,9 @@ importers:
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
+      aws-sdk:
+        specifier: ~2.1461.0
+        version: 2.1461.0
       aws-serverless-express:
         specifier: ~3.4.0
         version: 3.4.0
@@ -1179,6 +1188,9 @@ importers:
       node-cache:
         specifier: 5.1.2
         version: 5.1.2
+      passport:
+        specifier: ~0.6.0
+        version: 0.6.0
       reflect-metadata:
         specifier: 0.1.13
         version: 0.1.13
@@ -1225,6 +1237,9 @@ importers:
       '@types/node':
         specifier: 20.5.6
         version: 20.5.6
+      '@types/passport':
+        specifier: ~1.0.12
+        version: 1.0.12
       '@types/supertest':
         specifier: ~2.0.12
         version: 2.0.12
@@ -9322,6 +9337,16 @@ packages:
     transitivePeerDependencies:
       - encoding
 
+  /@nestjs/jwt@10.1.1(@nestjs/common@9.4.0):
+    resolution: {integrity: sha512-sISYylg8y1Mb7saxPx5Zh11i7v9JOh70CEC/rN6g43MrbFlJ57c1eYFrffxip1YAx3DmV4K67yXob3syKZMOew==}
+    peerDependencies:
+      '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
+    dependencies:
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@types/jsonwebtoken': 9.0.2
+      jsonwebtoken: 9.0.0
+    dev: false
+
   /@nestjs/mapped-types@1.2.0(@nestjs/common@9.4.0)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13):
     resolution: {integrity: sha512-NTFwPZkQWsArQH8QSyFWGZvJ08gR+R4TofglqZoihn/vU+ktHEJjMqsIsADwb7XD97DhiD+TVv5ac+jG33BHrg==}
     peerDependencies:
@@ -13433,6 +13458,12 @@ packages:
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
+  /@types/jsonwebtoken@9.0.2:
+    resolution: {integrity: sha512-drE6uz7QBKq1fYqqoFKTDRdFCPHd5TCub75BM+D+cMx7NU9hUz7SESLfC2fSCXVFMO5Yj8sOWHuGqPgjc+fz0Q==}
+    dependencies:
+      '@types/node': 20.5.6
+    dev: false
+
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
@@ -13513,6 +13544,12 @@ packages:
 
   /@types/parse-json@4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
+
+  /@types/passport@1.0.12:
+    resolution: {integrity: sha512-QFdJ2TiAEoXfEQSNDISJR1Tm51I78CymqcBa8imbjo6dNNu+l2huDxxbDEIoFIwOSKMkOfHEikyDuZ38WwWsmw==}
+    dependencies:
+      '@types/express': 4.17.17
+    dev: true
 
   /@types/prettier@1.19.1:
     resolution: {integrity: sha512-5qOlnZscTn4xxM5MeGXAMOsIOIKIbh9e85zJWfBRVPlRMEVawzoPhINYbRGkBZCI8LxvBe7tJCdWiarA99OZfQ==}
@@ -15146,7 +15183,7 @@ packages:
     resolution: {integrity: sha512-9GNFMRrEMG5y3Jvv+V4azWvc+qNWdWLTjDdhf/zgMlz8haaaLWv0xeAIWxz9PuWUBawsVxy0zZotjCdR3Xq+2w==}
     hasBin: true
     dependencies:
-      aws-sdk: 2.1399.0
+      aws-sdk: 2.1461.0
       commander: 3.0.2
       js-yaml: 3.14.1
       watchpack: 2.4.0
@@ -15160,8 +15197,8 @@ packages:
       tslib: 2.5.3
     dev: true
 
-  /aws-sdk@2.1399.0:
-    resolution: {integrity: sha512-u9G78zs4vN/jl/AI+wNA0qnId2bUmXaCUrzRjTqN8/MWMda7igXmWHbcLmUC3BKmQPrp3EzgC+jBzFWoz5QL9A==}
+  /aws-sdk@2.1461.0:
+    resolution: {integrity: sha512-oRZqsSEx5jkXq8Xq4Nkhhwupnjzw0UuFyEKGLsEDFjiFGOzdJoYspGg/Oa4RfTpa8ITLGHIRkYeik/7fN8ccng==}
     engines: {node: '>= 10.0.0'}
     dependencies:
       buffer: 4.9.2
