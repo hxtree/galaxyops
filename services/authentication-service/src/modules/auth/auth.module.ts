@@ -17,4 +17,4 @@ import { AuthController } from './auth.controller';
   controllers: [AuthController],
   providers: [CognitoService, AuthService],
 })
-export class AppModule {}
+export class AuthModule {}

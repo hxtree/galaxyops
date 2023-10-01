@@ -1,11 +1,22 @@
 import {
-  Controller, Post, Body, UseGuards, Req,
+  Controller,
+  Post,
+  Body,
+  UseGuards,
+  Req,
+  VERSION_NEUTRAL,
 } from '@nestjs/common';
 import { CognitoService } from './cognito.service';
 import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './jwt-auth.guard';
+import { LoginDto } from './login-dto';
+import { ForgotPasswordDto } from './forgot-password-dto';
+import { ResetPasswordDto } from './reset-password-dto';
 
-@Controller('auth')
+@Controller({
+  version: VERSION_NEUTRAL,
+  path: 'auth',
+})
 export class AuthController {
   constructor(
     private readonly cognitoService: CognitoService,
@@ -13,7 +24,7 @@ export class AuthController {
   ) {}
 
   @Post('login')
-  async login(@Body() body: { username: string; password: string }) {
+  async login(@Body() body: LoginDto) {
     const { username, password } = body;
     const authResult = await this.cognitoService.authenticate(
       username,
@@ -24,16 +35,14 @@ export class AuthController {
   }
 
   @Post('forgot-password')
-  async forgotPassword(@Body() body: { username: string }) {
+  async forgotPassword(@Body() body: ForgotPasswordDto) {
     const { username } = body;
     await this.cognitoService.forgotPassword(username);
     return { message: 'Password reset instructions sent to your email.' };
   }
 
   @Post('reset-password')
-  async resetPassword(
-  @Body() body: { username: string; code: string; newPassword: string },
-  ) {
+  async resetPassword(@Body() body: ResetPasswordDto) {
     const { username, code, newPassword } = body;
     await this.cognitoService.resetPassword(username, code, newPassword);
     return { message: 'Password reset successful.' };
@@ -49,7 +58,7 @@ export class AuthController {
   }
 
   @Post('sign-up')
-  async signUp(@Body() body: { username: string; password: string }) {
+  async signUp(@Body() body: LoginDto) {
     const { username, password } = body;
     await this.cognitoService.signUp(username, password);
     return {

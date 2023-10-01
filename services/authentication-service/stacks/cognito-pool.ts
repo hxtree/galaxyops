@@ -1,16 +1,23 @@
 import { Duration, RemovalPolicy } from 'aws-cdk-lib';
 import * as cognito from 'aws-cdk-lib/aws-cognito';
 import { Construct } from 'constructs';
+import { exit } from 'process';
 
 export interface CognitoPoolProps {
   readonly stage: string;
 }
 
 export class CognitoPool extends Construct {
+  public cognitoPool: cognito.UserPool;
+
+  public client: cognito.UserPoolClient;
+
+  public userPoolId: string;
+
   constructor(scope: Construct, id: string, props: CognitoPoolProps) {
     super(scope, id);
 
-    const cognitoPool = new cognito.UserPool(this, 'CognitoPool', {
+    this.cognitoPool = new cognito.UserPool(this, 'CognitoPool', {
       userPoolName: `${props.stage}-CognitoPool`,
       selfSignUpEnabled: true,
       signInCaseSensitive: false,
@@ -50,7 +57,7 @@ export class CognitoPool extends Construct {
       removalPolicy: RemovalPolicy.RETAIN,
     });
 
-    const client = cognitoPool.addClient('AuthenticationClient', {
+    this.client = this.cognitoPool.addClient('AuthenticationClient', {
       userPoolClientName: 'AuthenticationClient',
       oAuth: {
         flows: { authorizationCodeGrant: true },
@@ -65,5 +72,7 @@ export class CognitoPool extends Construct {
       idTokenValidity: Duration.minutes(30),
       accessTokenValidity: Duration.minutes(30),
     });
+
+    this.userPoolId = this.cognitoPool.userPoolId;
   }
 }
