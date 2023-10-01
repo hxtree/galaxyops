@@ -103,6 +103,80 @@
           }
         }
       }
+    },
+    "/auth/login": {
+      "post": {
+        "operationId": "AuthController_login",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LoginDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/auth/forgot-password": {
+      "post": {
+        "operationId": "AuthController_forgotPassword",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ForgotPasswordDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/auth/reset-password": {
+      "post": {
+        "operationId": "AuthController_resetPassword",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ResetPasswordDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "operationId": "AuthController_logout",
+        "parameters": [],
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/auth/sign-up": {
+      "post": {
+        "operationId": "AuthController_signUp",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LoginDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/auth/delete": {
+      "post": {
+        "operationId": "AuthController_deleteUser",
+        "parameters": [],
+        "responses": { "201": { "description": "" } }
+      }
     }
   },
   "info": {
@@ -113,5 +187,33 @@
   },
   "tags": [],
   "servers": [],
-  "components": { "schemas": {} }
+  "components": {
+    "schemas": {
+      "LoginDto": {
+        "type": "object",
+        "properties": {
+          "username": { "type": "string", "default": "jdoe" },
+          "password": { "type": "string", "default": "password1234!" }
+        },
+        "required": ["username", "password"]
+      },
+      "ForgotPasswordDto": {
+        "type": "object",
+        "properties": {
+          "username": { "type": "string", "default": "jdoe" },
+          "password": { "type": "string", "default": "password1234!" }
+        },
+        "required": ["username", "password"]
+      },
+      "ResetPasswordDto": {
+        "type": "object",
+        "properties": {
+          "username": { "type": "string", "default": "jdoe" },
+          "code": { "type": "string", "default": "code1234!" },
+          "newPassword": { "type": "string", "default": "password1234!" }
+        },
+        "required": ["username", "code", "newPassword"]
+      }
+    }
+  }
 }
