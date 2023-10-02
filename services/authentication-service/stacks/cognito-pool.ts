@@ -1,6 +1,7 @@
 import { Duration, RemovalPolicy } from 'aws-cdk-lib';
 import * as cognito from 'aws-cdk-lib/aws-cognito';
 import { Construct } from 'constructs';
+import { exit } from 'process';
 
 export interface CognitoPoolProps {
   readonly stage: string;
@@ -71,5 +72,7 @@ export class CognitoPool extends Construct {
       idTokenValidity: Duration.minutes(30),
       accessTokenValidity: Duration.minutes(30),
     });
+
+    this.userPoolId = this.cognitoPool.userPoolId;
   }
 }
