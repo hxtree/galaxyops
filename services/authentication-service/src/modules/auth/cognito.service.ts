@@ -3,17 +3,47 @@ import * as AWS from 'aws-sdk';
 
 @Injectable()
 export class CognitoService {
+  private ssm: AWS.SSM;
+
   private readonly cognitoIdentityServiceProvider: AWS.CognitoIdentityServiceProvider;
 
   constructor() {
     AWS.config.region = process.env.AWS_REGION ?? 'us-east-2';
+    this.ssm = new AWS.SSM();
+
     this.cognitoIdentityServiceProvider = new AWS.CognitoIdentityServiceProvider();
+  }
+
+  async fetchUserPoolId(): Promise<string> {
+    const parameterName = 'cognito-user-pool-id';
+    const response = await this.ssm
+      .getParameter({ Name: parameterName })
+      .promise();
+
+    if (response && response.Parameter && response.Parameter.Value) {
+      return response.Parameter.Value;
+    }
+
+    return Promise.reject(new Error(`Failed to get ${parameterName}`));
+  }
+
+  async fetchUserPoolClientId(): Promise<string> {
+    const parameterName = 'cognito-user-pool-client-id';
+    const response = await this.ssm
+      .getParameter({ Name: parameterName })
+      .promise();
+
+    if (response && response.Parameter && response.Parameter.Value) {
+      return response.Parameter.Value;
+    }
+
+    return Promise.reject(new Error(`Failed to get ${parameterName}`));
   }
 
   async authenticate(username: string, password: string): Promise<any> {
     const params = {
       AuthFlow: 'USER_PASSWORD_AUTH',
-      ClientId: 'YOUR_CLIENT_ID',
+      ClientId: await this.fetchUserPoolClientId(),
       AuthParameters: {
         USERNAME: username,
         PASSWORD: password,
@@ -28,7 +58,7 @@ export class CognitoService {
 
   async forgotPassword(username: string): Promise<void> {
     const params = {
-      ClientId: 'YOUR_CLIENT_ID',
+      ClientId: await this.fetchUserPoolClientId(),
       Username: username,
     };
 
@@ -41,7 +71,7 @@ export class CognitoService {
     newPassword: string,
   ): Promise<void> {
     const params = {
-      ClientId: 'YOUR_CLIENT_ID',
+      ClientId: await this.fetchUserPoolClientId(),
       ConfirmationCode: code,
       Password: newPassword,
       Username: username,
@@ -54,7 +84,7 @@ export class CognitoService {
 
   async signUp(username: string, password: string): Promise<void> {
     const params = {
-      ClientId: 'YOUR_CLIENT_ID',
+      ClientId: await this.fetchUserPoolClientId(),
       Password: password,
       Username: username,
     };
@@ -64,7 +94,7 @@ export class CognitoService {
 
   async deleteUser(userId: string): Promise<void> {
     const params = {
-      UserPoolId: 'YOUR_USER_POOL_ID',
+      UserPoolId: await this.fetchUserPoolId(),
       Username: userId,
     };
 
