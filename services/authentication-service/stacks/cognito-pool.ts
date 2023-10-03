@@ -12,8 +12,6 @@ export class CognitoPool extends Construct {
 
   public client: cognito.UserPoolClient;
 
-  public userPoolId: string;
-
   constructor(scope: Construct, id: string, props: CognitoPoolProps) {
     super(scope, id);
 
@@ -60,7 +58,9 @@ export class CognitoPool extends Construct {
     this.client = this.cognitoPool.addClient('AuthenticationClient', {
       userPoolClientName: 'AuthenticationClient',
       oAuth: {
-        flows: { authorizationCodeGrant: true },
+        flows: {
+          authorizationCodeGrant: true,
+        },
         scopes: [cognito.OAuthScope.OPENID],
         // TODO pick domain name
         callbackUrls: ['https://catscradle.com/home'],

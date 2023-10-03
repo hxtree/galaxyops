@@ -12,6 +12,7 @@ import { JwtAuthGuard } from './jwt-auth.guard';
 import { LoginDto } from './login-dto';
 import { ForgotPasswordDto } from './forgot-password-dto';
 import { ResetPasswordDto } from './reset-password-dto';
+import { SignUpDto } from './sign-up-dto';
 
 @Controller({
   version: VERSION_NEUTRAL,
@@ -58,7 +59,7 @@ export class AuthController {
   }
 
   @Post('sign-up')
-  async signUp(@Body() body: LoginDto) {
+  async signUp(@Body() body: SignUpDto) {
     const { username, password } = body;
     await this.cognitoService.signUp(username, password);
     return {

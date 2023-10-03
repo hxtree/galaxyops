@@ -23,10 +23,25 @@ export class MainStack extends cdk.Stack {
       },
     );
 
+    /**
+     * A User Pool ID is a unique identifier for an Amazon Cognito User Pool.
+     *  A User Pool is a user directory that helps you manage and authenticate users.
+     * It stores user attributes such as username, email, and phone number.
+     */
     new ssm.StringParameter(this, `${id}-user-pool-id`, {
       description: 'Cognito User Pool ID',
       parameterName: 'cognito-user-pool-id',
-      stringValue: cognitoPool.userPoolId,
+      stringValue: cognitoPool.cognitoPool.userPoolId,
+    });
+
+    /**
+     * A Client ID is a unique identifier for a specific client application
+     * that interacts with your Amazon Cognito User Pool.
+     */
+    new ssm.StringParameter(this, `${id}-user-pool-client-id`, {
+      description: 'Cognito User Pool Client ID',
+      parameterName: 'cognito-user-pool-client-id',
+      stringValue: cognitoPool.client.userPoolClientId,
     });
 
     new cdk.CfnOutput(this, 'Localhost API Example', {
