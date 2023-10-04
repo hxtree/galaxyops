@@ -72,7 +72,5 @@ export class CognitoPool extends Construct {
       idTokenValidity: Duration.minutes(30),
       accessTokenValidity: Duration.minutes(30),
     });
-
-    this.userPoolId = this.cognitoPool.userPoolId;
   }
 }
