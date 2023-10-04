@@ -571,6 +571,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "passport-jwt",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "path",
       "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform" ]
     },
