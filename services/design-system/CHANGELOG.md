@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/design-system
 
-This log was last generated on Tue, 27 Jun 2023 18:44:40 GMT and should not be manually modified.
+This log was last generated on Wed, 04 Oct 2023 03:44:49 GMT and should not be manually modified.
+
+## 0.3.3
+Wed, 04 Oct 2023 03:44:49 GMT
+
+### Patches
+
+- bump packages
 
 ## 0.3.2
 Tue, 27 Jun 2023 18:44:40 GMT

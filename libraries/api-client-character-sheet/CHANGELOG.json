@@ -2,6 +2,18 @@
   "name": "@cats-cradle/api-client-character-sheet",
   "entries": [
     {
+      "version": "1.0.5",
+      "tag": "@cats-cradle/api-client-character-sheet_v1.0.5",
+      "date": "Wed, 04 Oct 2023 03:44:49 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "bump packages"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.4",
       "tag": "@cats-cradle/api-client-character-sheet_v1.0.4",
       "date": "Fri, 24 Feb 2023 05:33:02 GMT",

@@ -18,8 +18,8 @@ importers:
         version: 0.5.6(react@17.0.2)
     devDependencies:
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -34,8 +34,8 @@ importers:
         version: 0.5.6(react@17.0.2)
     devDependencies:
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -50,8 +50,8 @@ importers:
         version: 0.5.6(react@17.0.2)
     devDependencies:
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -98,21 +98,21 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/json-schema':
         specifier: ~7.0.11
         version: 7.0.11
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -123,14 +123,14 @@ importers:
         specifier: 8.44.0
         version: 8.44.0
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -183,21 +183,21 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/json-schema':
         specifier: ~7.0.11
         version: 7.0.11
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -208,14 +208,14 @@ importers:
         specifier: 8.44.0
         version: 8.44.0
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -236,16 +236,16 @@ importers:
         version: link:../messaging-schemas
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/config':
         specifier: 2.2.0
-        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/mongoose':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/passport':
         specifier: 9.0.0
         version: 9.0.0(@nestjs/common@9.4.0)(passport@0.6.0)
@@ -286,14 +286,14 @@ importers:
         specifier: ~4.1.2
         version: 4.1.2
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       ts-mongoose-pagination:
         specifier: ~1.1.2
         version: 1.1.2(@types/mongoose@5.11.97)(mongoose@6.9.1)
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@aws-sdk/types':
         specifier: 3.289.0
@@ -314,8 +314,8 @@ importers:
         specifier: ~4.1.7
         version: 4.1.7(jest-environment-node@29.7.0)(mongodb@6.0.0)
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/luxon':
         specifier: ~3.2.0
         version: 3.2.0
@@ -323,8 +323,8 @@ importers:
         specifier: ~5.11.97
         version: 5.11.97
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       aws-sdk-client-mock:
         specifier: ~2.1.0
         version: 2.1.0
@@ -335,17 +335,17 @@ importers:
         specifier: 8.44.0
         version: 8.44.0
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       mongodb:
         specifier: 6.0.0
         version: 6.0.0
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -402,8 +402,8 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
@@ -412,14 +412,14 @@ importers:
         specifier: workspace:*
         version: link:../faker-factory
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/json-schema':
         specifier: ~7.0.11
         version: 7.0.11
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -430,14 +430,14 @@ importers:
         specifier: 8.44.0
         version: 8.44.0
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -449,10 +449,10 @@ importers:
         version: 1.182.0(@aws-cdk/cloud-assembly-schema@1.182.0)(@aws-cdk/cx-api@1.182.0)(@aws-cdk/region-info@1.182.0)(constructs@10.2.70)
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -461,10 +461,10 @@ importers:
         version: 6.1.3(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-cdk:
         specifier: ~2.55.1
         version: 2.55.1
@@ -502,14 +502,14 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/base-nodejs':
         specifier: workspace:*
@@ -521,17 +521,17 @@ importers:
         specifier: 1.0.6
         version: 1.0.6
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -545,17 +545,17 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       path:
         specifier: ~0.12.7
         version: 0.12.7
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -594,11 +594,11 @@ importers:
         specifier: ^9.0.13
         version: 9.0.13
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/yargs':
         specifier: ^17.0.11
         version: 17.0.11
@@ -606,8 +606,8 @@ importers:
         specifier: 8.44.0
         version: 8.44.0
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       tsc-alias:
         specifier: ^1.7.0
         version: 1.7.0
@@ -634,23 +634,23 @@ importers:
         specifier: 1.0.6
         version: 1.0.6
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       eslint:
         specifier: 8.44.0
         version: 8.44.0
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -659,10 +659,10 @@ importers:
     dependencies:
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -671,13 +671,13 @@ importers:
         version: 6.1.3(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@types/lodash':
         specifier: ~4.14.191
         version: 4.14.191
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -706,30 +706,30 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -749,17 +749,17 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       path:
         specifier: ~0.12.7
         version: 0.12.7
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -813,10 +813,10 @@ importers:
     dependencies:
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -825,10 +825,10 @@ importers:
         version: 6.1.3(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -854,14 +854,14 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/base-nodejs':
         specifier: workspace:*
@@ -870,17 +870,17 @@ importers:
         specifier: 1.0.6
         version: 1.0.6
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -900,17 +900,17 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       path:
         specifier: ~0.12.7
         version: 0.12.7
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -925,10 +925,10 @@ importers:
         version: link:../constructs
       '@microsoft/rush-lib':
         specifier: 5.100.1
-        version: 5.100.1(@types/node@20.5.6)
+        version: 5.100.1(@types/node@20.8.2)
       '@rushstack/node-core-library':
         specifier: ~3.55.2
-        version: 3.55.2(@types/node@20.5.6)
+        version: 3.55.2(@types/node@20.8.2)
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -940,17 +940,17 @@ importers:
         specifier: 1.0.6
         version: 1.0.6
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/lodash':
         specifier: ~4.14.191
         version: 4.14.191
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       aws-cdk-lib:
         specifier: 2.95.0
         version: 2.95.0(constructs@10.2.70)
@@ -961,8 +961,8 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       lodash:
         specifier: ~4.17.21
         version: 4.17.21
@@ -971,7 +971,7 @@ importers:
         version: 0.12.7
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -979,11 +979,11 @@ importers:
   ../../platform/rigs/base-nodejs:
     dependencies:
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
     devDependencies:
       '@rushstack/heft':
         specifier: ~0.44.0
@@ -995,8 +995,8 @@ importers:
         specifier: 1.0.2
         version: 1.0.2
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -1008,7 +1008,7 @@ importers:
         version: link:../rigs/base-nodejs
       '@microsoft/rush-lib':
         specifier: 5.100.1
-        version: 5.100.1(@types/node@20.5.6)
+        version: 5.100.1(@types/node@20.8.2)
       '@types/istanbul-reports':
         specifier: ~3.0.1
         version: 3.0.1
@@ -1026,23 +1026,23 @@ importers:
         specifier: 1.0.6
         version: 1.0.6
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       eslint:
         specifier: 8.44.0
         version: 8.44.0
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -1056,8 +1056,8 @@ importers:
         specifier: workspace:*
         version: link:../design-system
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/react':
         specifier: 18.2.13
         version: 18.2.13
@@ -1099,8 +1099,8 @@ importers:
         specifier: ^14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/prismjs':
         specifier: ~1.26.0
         version: 1.26.0
@@ -1108,17 +1108,17 @@ importers:
         specifier: 2.95.0
         version: 2.95.0(constructs@10.2.70)
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       jest-environment-jsdom:
         specifier: ~29.6.1
         version: 29.6.1
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
 
   ../../services/authentication-service:
     dependencies:
@@ -1136,19 +1136,19 @@ importers:
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/config':
         specifier: 2.2.0
-        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/jwt':
         specifier: ~10.1.1
         version: 10.1.1(@nestjs/common@9.4.0)
       '@nestjs/mongoose':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/passport':
         specifier: 9.0.0
         version: 9.0.0(@nestjs/common@9.4.0)(passport@0.6.0)
@@ -1160,16 +1160,16 @@ importers:
         version: 6.1.3(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
       aws-sdk:
-        specifier: ~2.1461.0
-        version: 2.1461.0
+        specifier: ~2.1469.0
+        version: 2.1469.0
       aws-serverless-express:
         specifier: ~3.4.0
         version: 3.4.0
@@ -1195,21 +1195,21 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/bundle-project':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
-        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.5.6)(ts-node@10.9.1)(typescript@5.1.3)
+        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -1226,23 +1226,23 @@ importers:
         specifier: ~4.1.7
         version: 4.1.7(jest-environment-node@29.7.0)(mongodb@5.9.0)
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/passport':
-        specifier: ~1.0.12
-        version: 1.0.12
+        specifier: ~1.0.13
+        version: 1.0.13
       '@types/supertest':
-        specifier: ~2.0.12
-        version: 2.0.12
+        specifier: ~2.0.14
+        version: 2.0.14
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -1262,8 +1262,8 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       path:
         specifier: ~0.12.7
         version: 0.12.7
@@ -1272,10 +1272,10 @@ importers:
         version: 6.3.3
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -1293,25 +1293,25 @@ importers:
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
-        version: 2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/testing':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(@nestjs/platform-express@9.3.9)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -1337,8 +1337,8 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
@@ -1348,28 +1348,28 @@ importers:
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
-        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.5.6)(ts-node@10.9.1)(typescript@5.1.3)
+        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/lodash':
         specifier: ~4.14.191
         version: 4.14.191
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/supertest':
-        specifier: ~2.0.12
-        version: 2.0.12
+        specifier: ~2.0.14
+        version: 2.0.14
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -1386,8 +1386,8 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       lodash:
         specifier: ~4.17.21
         version: 4.17.21
@@ -1399,7 +1399,7 @@ importers:
         version: 6.3.3
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -1420,16 +1420,16 @@ importers:
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/config':
         specifier: 2.2.0
-        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/mongoose':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -1438,10 +1438,10 @@ importers:
         version: 6.1.3(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -1467,21 +1467,21 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/bundle-project':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
-        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.5.6)(ts-node@10.9.1)(typescript@5.1.3)
+        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -1498,20 +1498,20 @@ importers:
         specifier: ~4.1.7
         version: 4.1.7(jest-environment-node@29.7.0)(mongodb@5.9.0)
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/supertest':
-        specifier: ~2.0.12
-        version: 2.0.12
+        specifier: ~2.0.14
+        version: 2.0.14
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -1531,8 +1531,8 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       path:
         specifier: ~0.12.7
         version: 0.12.7
@@ -1541,10 +1541,10 @@ importers:
         version: 6.3.3
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -1588,8 +1588,8 @@ importers:
         specifier: ^14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/react-syntax-highlighter':
         specifier: ~15.5.7
         version: 15.5.7
@@ -1606,8 +1606,8 @@ importers:
         specifier: ^10.2.70
         version: 10.2.70
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       node-fetch:
         specifier: 2.6.11
         version: 2.6.11
@@ -1625,7 +1625,7 @@ importers:
         version: 5.3.10(@babel/core@7.21.4)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.21.4)(esbuild@0.18.20)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.21.4)(esbuild@0.18.20)(jest@29.7.0)(typescript@5.1.3)
     devDependencies:
       '@babel/core':
         specifier: ^7.21.4
@@ -1676,8 +1676,8 @@ importers:
         specifier: ^0.2.1
         version: 0.2.1
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/node-fetch':
         specifier: ~2.6.4
         version: 2.6.4
@@ -1710,10 +1710,10 @@ importers:
         version: 7.4.5
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       tsdx:
         specifier: ^0.14.1
-        version: 0.14.1(@types/node@20.5.6)
+        version: 0.14.1(@types/node@20.8.2)
       tslib:
         specifier: ^2.5.0
         version: 2.5.0
@@ -1756,16 +1756,16 @@ importers:
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/config':
         specifier: 2.2.0
-        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/mongoose':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -1774,10 +1774,10 @@ importers:
         version: 6.1.3(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -1812,14 +1812,14 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/bundle-project':
         specifier: 1.1.1
@@ -1840,26 +1840,26 @@ importers:
         specifier: ~4.1.7
         version: 4.1.7(jest-environment-node@29.7.0)(mongodb@6.0.0)
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/html-to-text':
         specifier: ~9.0.0
         version: 9.0.0
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/lodash':
         specifier: ~4.14.191
         version: 4.14.191
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/supertest':
-        specifier: ~2.0.12
-        version: 2.0.12
+        specifier: ~2.0.14
+        version: 2.0.14
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -1879,8 +1879,8 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       mongodb:
         specifier: 6.0.0
         version: 6.0.0
@@ -1892,10 +1892,10 @@ importers:
         version: 6.3.3
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -1913,25 +1913,25 @@ importers:
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
-        version: 2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/testing':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(@nestjs/platform-express@9.3.9)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -1957,8 +1957,8 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
@@ -1968,28 +1968,28 @@ importers:
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
-        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.5.6)(ts-node@10.9.1)(typescript@5.1.3)
+        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/lodash':
         specifier: ~4.14.191
         version: 4.14.191
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/supertest':
-        specifier: ~2.0.12
-        version: 2.0.12
+        specifier: ~2.0.14
+        version: 2.0.14
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -2006,8 +2006,8 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       lodash:
         specifier: ~4.17.21
         version: 4.17.21
@@ -2019,7 +2019,7 @@ importers:
         version: 6.3.3
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -2037,13 +2037,13 @@ importers:
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
-        version: 2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -2052,13 +2052,13 @@ importers:
         version: 6.1.3(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/testing':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(@nestjs/platform-express@9.3.9)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -2096,8 +2096,8 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
@@ -2109,23 +2109,23 @@ importers:
         specifier: workspace:*
         version: link:../../libraries/faker-factory
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/lodash':
         specifier: ~4.14.191
         version: 4.14.191
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/supertest':
-        specifier: ~2.0.12
-        version: 2.0.12
+        specifier: ~2.0.14
+        version: 2.0.14
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -2142,8 +2142,8 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       lodash:
         specifier: ~4.17.21
         version: 4.17.21
@@ -2155,7 +2155,7 @@ importers:
         version: 6.3.3
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -2176,13 +2176,13 @@ importers:
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/config':
         specifier: 2.2.0
-        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -2194,10 +2194,10 @@ importers:
         version: 6.1.3(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -2220,21 +2220,21 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/bundle-project':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
-        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.5.6)(ts-node@10.9.1)(typescript@5.1.3)
+        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -2251,20 +2251,20 @@ importers:
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(@nestjs/platform-express@9.3.9)
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/supertest':
-        specifier: ~2.0.12
-        version: 2.0.12
+        specifier: ~2.0.14
+        version: 2.0.14
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -2284,8 +2284,8 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       path:
         specifier: ~0.12.7
         version: 0.12.7
@@ -2294,10 +2294,10 @@ importers:
         version: 6.3.3
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -2315,13 +2315,13 @@ importers:
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
-        version: 2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -2330,13 +2330,13 @@ importers:
         version: 6.1.3(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/testing':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(@nestjs/platform-express@9.3.9)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -2362,8 +2362,8 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
@@ -2373,28 +2373,28 @@ importers:
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
-        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.5.6)(ts-node@10.9.1)(typescript@5.1.3)
+        version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/lodash':
         specifier: ~4.14.191
         version: 4.14.191
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/supertest':
-        specifier: ~2.0.12
-        version: 2.0.12
+        specifier: ~2.0.14
+        version: 2.0.14
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -2411,8 +2411,8 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       lodash:
         specifier: ~4.17.21
         version: 4.17.21
@@ -2424,7 +2424,7 @@ importers:
         version: 6.3.3
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -2445,13 +2445,13 @@ importers:
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
-        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/config':
         specifier: 2.2.0
-        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
-        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
@@ -2463,10 +2463,10 @@ importers:
         version: 6.1.3(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
-        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+        version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@vendia/serverless-express':
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.4
+        version: 4.10.4
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
@@ -2489,14 +2489,14 @@ importers:
         specifier: 0.1.13
         version: 0.1.13
       rxjs:
-        specifier: 7.5.6
-        version: 7.5.6
+        specifier: 7.8.1
+        version: 7.8.1
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
       uuid:
-        specifier: ~9.0.0
-        version: 9.0.0
+        specifier: ~9.0.1
+        version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
@@ -2514,20 +2514,20 @@ importers:
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(@nestjs/platform-express@9.3.9)
       '@types/aws-lambda':
-        specifier: ~8.10.114
-        version: 8.10.114
+        specifier: ~8.10.123
+        version: 8.10.123
       '@types/express':
-        specifier: ~4.17.14
-        version: 4.17.14
+        specifier: ~4.17.18
+        version: 4.17.18
       '@types/jest':
-        specifier: 29.5.1
-        version: 29.5.1
+        specifier: 29.5.5
+        version: 29.5.5
       '@types/node':
-        specifier: 20.5.6
-        version: 20.5.6
+        specifier: 20.8.2
+        version: 20.8.2
       '@types/supertest':
-        specifier: ~2.0.12
-        version: 2.0.12
+        specifier: ~2.0.14
+        version: 2.0.14
       '@types/uuid':
         specifier: ~8.3.4
         version: 8.3.4
@@ -2547,8 +2547,8 @@ importers:
         specifier: ~0.0.1-security
         version: 0.0.1-security
       jest:
-        specifier: 29.6.4
-        version: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       path:
         specifier: ~0.12.7
         version: 0.12.7
@@ -2557,10 +2557,10 @@ importers:
         version: 6.3.3
       ts-jest:
         specifier: 29.1.1
-        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3)
+        version: 29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+        version: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       typescript:
         specifier: 5.1.3
         version: 5.1.3
@@ -7274,10 +7274,10 @@ packages:
   /@bcoe/v8-coverage@0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  /@cats-cradle/base-nodejs@1.0.3(@babel/core@7.22.20)(@types/node@20.5.6)(esbuild@0.17.5)(ts-node@10.9.1)(typescript@5.1.3):
+  /@cats-cradle/base-nodejs@1.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(esbuild@0.17.5)(ts-node@10.9.1)(typescript@5.1.3):
     resolution: {integrity: sha512-t/dwRt45XCOFNU84HBIy200Y7avUKwycQDSJXXB7Yi5AHAmZJnsrbKFpbbllpE3s79D7uZCQxywWFoiKSi/PqQ==}
     dependencies:
-      jest: 29.5.0(@types/node@20.5.6)(ts-node@10.9.1)
+      jest: 29.5.0(@types/node@20.8.2)(ts-node@10.9.1)
       ts-jest: 29.1.0(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.5.0)(typescript@5.1.3)
     transitivePeerDependencies:
       - '@babel/core'
@@ -7309,12 +7309,12 @@ packages:
       - typanion
     dev: true
 
-  /@cats-cradle/bundlers@0.0.3(@babel/core@7.22.20)(@types/node@20.5.6)(ts-node@10.9.1)(typescript@5.1.3):
+  /@cats-cradle/bundlers@0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3):
     resolution: {integrity: sha512-DREu86GTzX+ZY0VXg9zZVMQ0xqeRUb6jBGnoyNE8Ndu3OOiUbsIHQqqAvcs6x5XOy8uaMyuO8As1TPyVFO0xlg==}
     hasBin: true
     dependencies:
       '@anatine/esbuild-decorators': 0.2.19(esbuild@0.17.5)
-      '@cats-cradle/base-nodejs': 1.0.3(@babel/core@7.22.20)(@types/node@20.5.6)(esbuild@0.17.5)(ts-node@10.9.1)(typescript@5.1.3)
+      '@cats-cradle/base-nodejs': 1.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(esbuild@0.17.5)(ts-node@10.9.1)(typescript@5.1.3)
       commander: 10.0.1
       esbuild: 0.17.5
     transitivePeerDependencies:
@@ -8446,7 +8446,7 @@ packages:
     engines: {node: '>= 8.3'}
     dependencies:
       '@jest/console': 25.5.0
-      '@jest/reporters': 25.4.0
+      '@jest/reporters': 25.5.1
       '@jest/test-result': 25.5.0
       '@jest/transform': 25.5.1
       '@jest/types': 25.5.0
@@ -8463,7 +8463,7 @@ packages:
       jest-resolve-dependencies: 25.5.4
       jest-runner: 25.5.4
       jest-runtime: 25.5.4
-      jest-snapshot: 25.4.0
+      jest-snapshot: 25.5.1
       jest-util: 25.5.0
       jest-validate: 25.5.0
       jest-watcher: 25.5.0
@@ -8992,21 +8992,21 @@ packages:
       typescript: 4.3.5
     dev: true
 
-  /@microsoft/rush-lib@5.100.1(@types/node@20.5.6):
+  /@microsoft/rush-lib@5.100.1(@types/node@20.8.2):
     resolution: {integrity: sha512-UFn1vKLy7Iv4LmqcCSnizf0V0/Cn/pGcpne3J1m1oeFuc0QqfYOgzSqD6zNrFut6S1Tf4BCFLxlJph0XjbAYmA==}
     engines: {node: '>=5.6.0'}
     dependencies:
       '@pnpm/dependency-path': 2.1.3
       '@pnpm/link-bins': 5.3.25
-      '@rushstack/heft-config-file': 0.12.4(@types/node@20.5.6)
-      '@rushstack/node-core-library': 3.59.3(@types/node@20.5.6)
-      '@rushstack/package-deps-hash': 4.0.30(@types/node@20.5.6)
-      '@rushstack/package-extractor': 0.2.17(@types/node@20.5.6)
+      '@rushstack/heft-config-file': 0.12.4(@types/node@20.8.2)
+      '@rushstack/node-core-library': 3.59.3(@types/node@20.8.2)
+      '@rushstack/package-deps-hash': 4.0.30(@types/node@20.8.2)
+      '@rushstack/package-extractor': 0.2.17(@types/node@20.8.2)
       '@rushstack/rig-package': 0.3.20
-      '@rushstack/rush-amazon-s3-build-cache-plugin': 5.100.1(@types/node@20.5.6)
-      '@rushstack/rush-azure-storage-build-cache-plugin': 5.100.1(@types/node@20.5.6)
-      '@rushstack/stream-collator': 4.0.248(@types/node@20.5.6)
-      '@rushstack/terminal': 0.5.23(@types/node@20.5.6)
+      '@rushstack/rush-amazon-s3-build-cache-plugin': 5.100.1(@types/node@20.8.2)
+      '@rushstack/rush-azure-storage-build-cache-plugin': 5.100.1(@types/node@20.8.2)
+      '@rushstack/stream-collator': 4.0.248(@types/node@20.8.2)
+      '@rushstack/terminal': 0.5.23(@types/node@20.8.2)
       '@rushstack/ts-command-line': 4.15.0
       '@types/node-fetch': 2.6.2
       '@yarnpkg/lockfile': 1.0.2
@@ -9326,7 +9326,7 @@ packages:
       tar-fs: 2.1.1
     dev: true
 
-  /@nestjs/axios@2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.5.6):
+  /@nestjs/axios@2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.8.1):
     resolution: {integrity: sha512-F6oceoQLEn031uun8NiommeMkRIojQqVryxQy/mK7fx0CI0KbgkJL3SloCQcsOD+agoEnqKJKXZpEvL6FNswJg==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -9334,13 +9334,13 @@ packages:
       reflect-metadata: ^0.1.12
       rxjs: ^6.0.0 || ^7.0.0
     dependencies:
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       axios: 1.5.0
       reflect-metadata: 0.1.13
-      rxjs: 7.5.6
+      rxjs: 7.8.1
     dev: false
 
-  /@nestjs/common@9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6):
+  /@nestjs/common@9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1):
     resolution: {integrity: sha512-RUcVAQsEF4WPrmzFXEOUfZnPwrLTe1UVlzXTlSyfqfqbdWDPKDGlIPVelBLfc5/+RRUQ0I5iE4+CQvpCmkqldw==}
     peerDependencies:
       cache-manager: <=5
@@ -9360,27 +9360,27 @@ packages:
       class-validator: 0.13.2
       iterare: 1.2.1
       reflect-metadata: 0.1.13
-      rxjs: 7.5.6
+      rxjs: 7.8.1
       tslib: 2.5.0
       uid: 2.0.2
 
-  /@nestjs/config@2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.5.6):
+  /@nestjs/config@2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.1):
     resolution: {integrity: sha512-78Eg6oMbCy3D/YvqeiGBTOWei1Jwi3f2pSIZcZ1QxY67kYsJzTRTkwRT8Iv30DbK0sGKc1mcloDLD5UXgZAZtg==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0
       reflect-metadata: ^0.1.13
       rxjs: ^6.0.0 || ^7.2.0
     dependencies:
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       dotenv: 16.0.1
       dotenv-expand: 8.0.3
       lodash: 4.17.21
       reflect-metadata: 0.1.13
-      rxjs: 7.5.6
+      rxjs: 7.8.1
       uuid: 8.3.2
     dev: false
 
-  /@nestjs/core@9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6):
+  /@nestjs/core@9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1):
     resolution: {integrity: sha512-a9GkXuu8uXgNgCVW+17iI8kLCltO+HwHpU2IhR+32JKnN2WEQ1YEWU4t3GJ2MNq44YkjIw9zrKvFkjJBlYrNbQ==}
     requiresBuild: true
     peerDependencies:
@@ -9398,7 +9398,7 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express': 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.1.1
@@ -9406,7 +9406,7 @@ packages:
       object-hash: 3.0.0
       path-to-regexp: 3.2.0
       reflect-metadata: 0.1.13
-      rxjs: 7.5.6
+      rxjs: 7.8.1
       tslib: 2.4.1
       uuid: 9.0.0
     transitivePeerDependencies:
@@ -9417,7 +9417,7 @@ packages:
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
     dependencies:
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@types/jsonwebtoken': 9.0.2
       jsonwebtoken: 9.0.0
     dev: false
@@ -9435,13 +9435,13 @@ packages:
       class-validator:
         optional: true
     dependencies:
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       class-transformer: 0.5.1
       class-validator: 0.13.2
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/mongoose@9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.5.6):
+  /@nestjs/mongoose@9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.9.1)(reflect-metadata@0.1.13)(rxjs@7.8.1):
     resolution: {integrity: sha512-tMK5kKFjQnNVhqJDw1wa352z+VsODOFznTn74xSzrziof03qS+O6rLU4q1kMx0B4AmFbADf03GOdpvBc9bMWqw==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0
@@ -9450,11 +9450,11 @@ packages:
       reflect-metadata: ^0.1.12
       rxjs: ^7.0.0
     dependencies:
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
-      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       mongoose: 6.9.1
       reflect-metadata: 0.1.13
-      rxjs: 7.5.6
+      rxjs: 7.8.1
     dev: false
 
   /@nestjs/passport@9.0.0(@nestjs/common@9.4.0)(passport@0.6.0):
@@ -9463,7 +9463,7 @@ packages:
       '@nestjs/common': ^8.0.0 || ^9.0.0
       passport: ^0.4.0 || ^0.5.0 || ^0.6.0
     dependencies:
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       passport: 0.6.0
     dev: false
 
@@ -9473,8 +9473,8 @@ packages:
       '@nestjs/common': ^9.0.0
       '@nestjs/core': ^9.0.0
     dependencies:
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
-      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       body-parser: 1.20.1
       cors: 2.8.5
       express: 4.18.2
@@ -9513,8 +9513,8 @@ packages:
         optional: true
     dependencies:
       '@fastify/static': 6.9.0
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
-      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       express: 4.18.2
       path-to-regexp: 0.2.5
     dev: false
@@ -9531,8 +9531,8 @@ packages:
         optional: true
     dependencies:
       '@fastify/static': 6.9.0
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
-      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/mapped-types': 1.2.0(@nestjs/common@9.4.0)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       js-yaml: 4.1.0
       lodash: 4.17.21
@@ -9544,7 +9544,7 @@ packages:
       - class-validator
     dev: false
 
-  /@nestjs/terminus@9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.5.6):
+  /@nestjs/terminus@9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1):
     resolution: {integrity: sha512-8XrXOTseUO8eQZYm/JZbRnznpyS1sVvMkHLW8BOi02s7Bzxw3UPiFOOF34ueKp4ONUjUCoKq36BmwY00dpjofA==}
     peerDependencies:
       '@nestjs/common': 9.x
@@ -9552,12 +9552,12 @@ packages:
       reflect-metadata: 0.1.x
       rxjs: 7.x
     dependencies:
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
-      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       boxen: 5.1.2
       check-disk-space: 3.3.1
       reflect-metadata: 0.1.13
-      rxjs: 7.5.6
+      rxjs: 7.8.1
     dev: false
 
   /@nestjs/testing@9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(@nestjs/platform-express@9.3.9):
@@ -9573,8 +9573,8 @@ packages:
       '@nestjs/platform-express':
         optional: true
     dependencies:
-      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.5.6)
-      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.5.6)
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express': 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       tslib: 2.4.1
 
@@ -11913,11 +11913,11 @@ packages:
       - typescript
     dev: false
 
-  /@rushstack/heft-config-file@0.12.4(@types/node@20.5.6):
+  /@rushstack/heft-config-file@0.12.4(@types/node@20.8.2):
     resolution: {integrity: sha512-tqH5RZH0FyULMUcAlKyU0VgdIRgX8ggCfWbfFwzmMXvPT88X0+GMspNT1QXKSXWYa7WbQ0VuNqfKGwFN5PcEwA==}
     engines: {node: '>=10.13.0'}
     dependencies:
-      '@rushstack/node-core-library': 3.59.3(@types/node@20.5.6)
+      '@rushstack/node-core-library': 3.59.3(@types/node@20.8.2)
       '@rushstack/rig-package': 0.3.20
       jsonpath-plus: 4.0.0
     transitivePeerDependencies:
@@ -12028,7 +12028,7 @@ packages:
       z-schema: 5.0.5
     dev: true
 
-  /@rushstack/node-core-library@3.55.2(@types/node@20.5.6):
+  /@rushstack/node-core-library@3.55.2(@types/node@20.8.2):
     resolution: {integrity: sha512-SaLe/x/Q/uBVdNFK5V1xXvsVps0y7h1sN7aSJllQyFbugyOaxhNRF25bwEDnicARNEjJw0pk0lYnJQ9Kr6ev0A==}
     peerDependencies:
       '@types/node': '*'
@@ -12036,7 +12036,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 20.5.6
+      '@types/node': 20.8.2
       colors: 1.2.5
       fs-extra: 7.0.1
       import-lazy: 4.0.0
@@ -12046,7 +12046,7 @@ packages:
       z-schema: 5.0.5
     dev: false
 
-  /@rushstack/node-core-library@3.59.3(@types/node@20.5.6):
+  /@rushstack/node-core-library@3.59.3(@types/node@20.8.2):
     resolution: {integrity: sha512-OGk0nQc+SvDkn+IQN16co691A/96gPoRIoWdIlpUds+sYPAGWdTcNVjKMwFOAsCSASqOeF2lh1GdPtWoWJCkPQ==}
     peerDependencies:
       '@types/node': '*'
@@ -12054,7 +12054,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 20.5.6
+      '@types/node': 20.8.2
       colors: 1.2.5
       fs-extra: 7.0.1
       import-lazy: 4.0.0
@@ -12064,20 +12064,20 @@ packages:
       z-schema: 5.0.5
     dev: false
 
-  /@rushstack/package-deps-hash@4.0.30(@types/node@20.5.6):
+  /@rushstack/package-deps-hash@4.0.30(@types/node@20.8.2):
     resolution: {integrity: sha512-MoINJZMdaLsvolB3StW006+C0CnD0ngncG+7ojnTh16zo8jU28izg/unC4fbqEAWxVws9gieJkUWG3R8nh/BXQ==}
     dependencies:
-      '@rushstack/node-core-library': 3.59.3(@types/node@20.5.6)
+      '@rushstack/node-core-library': 3.59.3(@types/node@20.8.2)
     transitivePeerDependencies:
       - '@types/node'
     dev: false
 
-  /@rushstack/package-extractor@0.2.17(@types/node@20.5.6):
+  /@rushstack/package-extractor@0.2.17(@types/node@20.8.2):
     resolution: {integrity: sha512-SpL4ACND0d8vqYV8UROSJuABbQCkWYQ2q0JXJYZH3C9orypIRPMnmJvpcDPAVZAh+PL/+HYqDxJ8BzHdluh+jA==}
     dependencies:
       '@pnpm/link-bins': 5.3.25
-      '@rushstack/node-core-library': 3.59.3(@types/node@20.5.6)
-      '@rushstack/terminal': 0.5.23(@types/node@20.5.6)
+      '@rushstack/node-core-library': 3.59.3(@types/node@20.8.2)
+      '@rushstack/terminal': 0.5.23(@types/node@20.8.2)
       ignore: 5.1.9
       jszip: 3.8.0
       npm-packlist: 2.1.5
@@ -12106,11 +12106,11 @@ packages:
       strip-json-comments: 3.1.1
     dev: true
 
-  /@rushstack/rush-amazon-s3-build-cache-plugin@5.100.1(@types/node@20.5.6):
+  /@rushstack/rush-amazon-s3-build-cache-plugin@5.100.1(@types/node@20.8.2):
     resolution: {integrity: sha512-/Ss+MOHd6Oyi+9No6pMyQ1e8o3DX678VO4m/066hZJyHVDNI3ffoJ2ZNxF7yNkxYPAAbnY3lj6JYOQnIjZTAGQ==}
     dependencies:
-      '@rushstack/node-core-library': 3.59.3(@types/node@20.5.6)
-      '@rushstack/rush-sdk': 5.100.1(@types/node@20.5.6)
+      '@rushstack/node-core-library': 3.59.3(@types/node@20.8.2)
+      '@rushstack/rush-sdk': 5.100.1(@types/node@20.8.2)
       https-proxy-agent: 5.0.1
       node-fetch: 2.6.7
     transitivePeerDependencies:
@@ -12119,40 +12119,40 @@ packages:
       - supports-color
     dev: false
 
-  /@rushstack/rush-azure-storage-build-cache-plugin@5.100.1(@types/node@20.5.6):
+  /@rushstack/rush-azure-storage-build-cache-plugin@5.100.1(@types/node@20.8.2):
     resolution: {integrity: sha512-9zkRzH/YX2IWRHV/ZHJ6uYYwRVKBlw9JD0mn/bOMvND/MiUmhZpUADXA5Q9Vmx9cxXvtoc2wc//RQa44Zlq0cw==}
     dependencies:
       '@azure/identity': 2.1.0
       '@azure/storage-blob': 12.11.0
-      '@rushstack/node-core-library': 3.59.3(@types/node@20.5.6)
-      '@rushstack/rush-sdk': 5.100.1(@types/node@20.5.6)
-      '@rushstack/terminal': 0.5.23(@types/node@20.5.6)
+      '@rushstack/node-core-library': 3.59.3(@types/node@20.8.2)
+      '@rushstack/rush-sdk': 5.100.1(@types/node@20.8.2)
+      '@rushstack/terminal': 0.5.23(@types/node@20.8.2)
     transitivePeerDependencies:
       - '@types/node'
       - encoding
       - supports-color
     dev: false
 
-  /@rushstack/rush-sdk@5.100.1(@types/node@20.5.6):
+  /@rushstack/rush-sdk@5.100.1(@types/node@20.8.2):
     resolution: {integrity: sha512-71/451koP0bF1Y7/nI8i+5ECUMCHyLtwg+8mxccAQwvQGZF5iFV0KNRtLk/UtjZT8oOBVEiRJZtg4YQP25Y6Og==}
     dependencies:
-      '@rushstack/node-core-library': 3.59.3(@types/node@20.5.6)
+      '@rushstack/node-core-library': 3.59.3(@types/node@20.8.2)
       '@types/node-fetch': 2.6.2
       tapable: 2.2.1
     transitivePeerDependencies:
       - '@types/node'
     dev: false
 
-  /@rushstack/stream-collator@4.0.248(@types/node@20.5.6):
+  /@rushstack/stream-collator@4.0.248(@types/node@20.8.2):
     resolution: {integrity: sha512-Ce/N1iftgFU57uHT6TojCPt4I+igZG2p7Zs9Hk41HFjQo2OuX2OSsAAjNBHfMmUiH5NwACwS2eFxlQvRk/0I4g==}
     dependencies:
-      '@rushstack/node-core-library': 3.59.3(@types/node@20.5.6)
-      '@rushstack/terminal': 0.5.23(@types/node@20.5.6)
+      '@rushstack/node-core-library': 3.59.3(@types/node@20.8.2)
+      '@rushstack/terminal': 0.5.23(@types/node@20.8.2)
     transitivePeerDependencies:
       - '@types/node'
     dev: false
 
-  /@rushstack/terminal@0.5.23(@types/node@20.5.6):
+  /@rushstack/terminal@0.5.23(@types/node@20.8.2):
     resolution: {integrity: sha512-2HRzUKw5X77ls93i7DtiWXTIekvU4cMRtjf7bcap2bh8ryhAL1kTiNioMqY+6gNG8CI8co9GFrLns+UrGPxirQ==}
     peerDependencies:
       '@types/node': '*'
@@ -12160,8 +12160,8 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@rushstack/node-core-library': 3.59.3(@types/node@20.5.6)
-      '@types/node': 20.5.6
+      '@rushstack/node-core-library': 3.59.3(@types/node@20.8.2)
+      '@types/node': 20.8.2
       wordwrap: 1.0.0
     dev: false
 
@@ -14150,7 +14150,7 @@ packages:
     dependencies:
       '@storybook/channels': 7.4.2
       '@types/babel__core': 7.20.2
-      '@types/express': 4.17.17
+      '@types/express': 4.17.18
       file-system-cache: 2.3.0
     dev: false
 
@@ -14159,7 +14159,7 @@ packages:
     dependencies:
       '@storybook/channels': 7.4.5
       '@types/babel__core': 7.20.2
-      '@types/express': 4.17.17
+      '@types/express': 4.17.18
       file-system-cache: 2.3.0
     dev: true
 
@@ -14379,8 +14379,8 @@ packages:
   /@types/aria-query@5.0.1:
     resolution: {integrity: sha512-XTIieEY+gvJ39ChLcB4If5zHtPxt3Syj5rgZR+e1ctpmK8NjPf0zFqsz4JpLJT0xla9GFDKjy8Cpu331nrmE1Q==}
 
-  /@types/aws-lambda@8.10.114:
-    resolution: {integrity: sha512-M8WpEGfC9iQ6V2Ccq6nGIXoQgeVc6z0Ngk8yCOL5V/TYIxshvb0MWQYLFFTZDesL0zmsoBc4OBjG9DB/4rei6w==}
+  /@types/aws-lambda@8.10.123:
+    resolution: {integrity: sha512-YBxxrA5fZzt1UFslJFBXH4AJUjkxu5ePv9RPjrpq5Tif5Xi2YhG3P8RAJfXXWL5/M6wPrlzlAMqaMM5ysci/EQ==}
     dev: true
 
   /@types/babel__core@7.20.2:
@@ -14493,17 +14493,8 @@ packages:
       '@types/range-parser': 1.2.4
       '@types/send': 0.17.1
 
-  /@types/express@4.17.14:
-    resolution: {integrity: sha512-TEbt+vaPFQ+xpxFLFssxUDXj5cWCxZJjIcB7Yg0k0GMHGtgtQgpvx/MUQUeAkNbA9AAGrwkAsoeItdTgS7FMyg==}
-    dependencies:
-      '@types/body-parser': 1.19.3
-      '@types/express-serve-static-core': 4.17.36
-      '@types/qs': 6.9.8
-      '@types/serve-static': 1.15.2
-    dev: true
-
-  /@types/express@4.17.17:
-    resolution: {integrity: sha512-Q4FmmuLGBG58btUnfS1c1r/NQdlp3DMfGDGig8WhfpA2YRUtEkxAjkZb0yvplJGYdF1fsQ81iMDcH24sSCNC/Q==}
+  /@types/express@4.17.18:
+    resolution: {integrity: sha512-Sxv8BSLLgsBYmcnGdGjjEjqET2U+AKAdCRODmMiq02FgjwuV75Ut85DRpvFjyw/Mk0vgUOliGRU0UUmuuZHByQ==}
     dependencies:
       '@types/body-parser': 1.19.3
       '@types/express-serve-static-core': 4.17.36
@@ -14591,6 +14582,12 @@ packages:
 
   /@types/jest@29.5.1:
     resolution: {integrity: sha512-tEuVcHrpaixS36w7hpsfLBLpjtMRJUE09/MHXn923LOVojDwyC14cWcfc0rDs0VEfUyYmt/+iX1kxxp+gZMcaQ==}
+    dependencies:
+      expect: 29.7.0
+      pretty-format: 29.7.0
+
+  /@types/jest@29.5.5:
+    resolution: {integrity: sha512-ebylz2hnsWR9mYvmBFbXJXr+33UPc4+ZdxyDXh5w0FlPBTfCVN3wPL+kuOiQt3xvrK419v7XWeAs+AeOksafXg==}
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
@@ -14704,16 +14701,19 @@ packages:
   /@types/node@20.5.6:
     resolution: {integrity: sha512-Gi5wRGPbbyOTX+4Y2iULQ27oUPrefaB0PxGQJnfyWN3kvEDGM3mIB5M/gQLmitZf7A9FmLeaqxD3L1CXpm3VKQ==}
 
+  /@types/node@20.8.2:
+    resolution: {integrity: sha512-Vvycsc9FQdwhxE3y3DzeIxuEJbWGDsnrxvMADzTDF/lcdR9/K+AQIeAghTQsHtotg/q0j3WEOYS/jQgSdWue3w==}
+
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
 
   /@types/parse-json@4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
 
-  /@types/passport@1.0.12:
-    resolution: {integrity: sha512-QFdJ2TiAEoXfEQSNDISJR1Tm51I78CymqcBa8imbjo6dNNu+l2huDxxbDEIoFIwOSKMkOfHEikyDuZ38WwWsmw==}
+  /@types/passport@1.0.13:
+    resolution: {integrity: sha512-XXURryL+EZAWtbQFOHX1eNB+RJwz5XMPPz1xrGpEKr2xUZCXM4NCPkHMtZQ3B2tTSG/1IRaAcTHjczRA4sSFCw==}
     dependencies:
-      '@types/express': 4.17.14
+      '@types/express': 4.17.18
     dev: true
 
   /@types/prettier@1.19.1:
@@ -14856,8 +14856,8 @@ packages:
       '@types/node': 20.5.6
     dev: true
 
-  /@types/supertest@2.0.12:
-    resolution: {integrity: sha512-X3HPWTwXRerBZS7Mo1k6vMVR1Z6zmJcDVn5O/31whe0tnjE4te6ZJSJGq1RiqHPjzPdMTfjCFogDJmwng9xHaQ==}
+  /@types/supertest@2.0.14:
+    resolution: {integrity: sha512-Q900DeeHNFF3ZYYepf/EyJfZDA2JrnWLaSQ0YNV7+2GTo8IlJzauEnDGhya+hauncpBYTYGpVHwGdssJeAQ7eA==}
     dependencies:
       '@types/superagent': 4.1.18
     dev: true
@@ -15399,8 +15399,8 @@ packages:
       type-is: 1.6.18
     dev: false
 
-  /@vendia/serverless-express@4.10.1:
-    resolution: {integrity: sha512-8FM/GnQ8bbp1fynAWLGzNIy3Hyhoevixwh2Aj8qBPpw7rkbWZ1I7RC2XhZZaTZo/1JTDlff4cDDmkgY0CzUV7g==}
+  /@vendia/serverless-express@4.10.4:
+    resolution: {integrity: sha512-OH2cX+LqtrayCIkHAkShiLnvrgqGDvwIQEex5dHc/uJitBQjIz3q7dZtfU7cZ5vcR9Vkide5xJQDBEMbXoWLeA==}
     engines: {node: '>=12'}
     dev: false
 
@@ -16463,6 +16463,22 @@ packages:
       xml2js: 0.5.0
     dev: false
 
+  /aws-sdk@2.1469.0:
+    resolution: {integrity: sha512-17X0v34mHxqfz+HhIkH1I6p0BCWsvGVSZf1KHVlVZdrzYEHFrdhpLHayYvpzq26FrbL1FvfN6sYGqrxZyvxRGg==}
+    engines: {node: '>= 10.0.0'}
+    dependencies:
+      buffer: 4.9.2
+      events: 1.1.1
+      ieee754: 1.1.13
+      jmespath: 0.16.0
+      querystring: 0.2.0
+      sax: 1.2.1
+      url: 0.10.3
+      util: 0.12.5
+      uuid: 8.0.0
+      xml2js: 0.5.0
+    dev: false
+
   /aws-serverless-express@3.4.0:
     resolution: {integrity: sha512-YG9ZjAOI9OpwqDDWzkRc3kKJYJuR7gTMjLa3kAWopO17myoprxskCUyCEee+RKe34tcR4UNrVtgAwW5yDe74bw==}
     engines: {node: '>=6'}
@@ -17090,7 +17106,7 @@ packages:
     resolution: {integrity: sha512-xq+q3SRMOxGivLhBNaUdC64hDTQwejJ+H0T/NB1XMtTVEwNTrfFF3gAxiyW0Bu/xWEGhjVKgUcMhCrUy2+uCWg==}
     dependencies:
       base64-js: 1.5.1
-      ieee754: 1.1.13
+      ieee754: 1.2.1
       isarray: 1.0.0
     dev: false
 
@@ -18041,7 +18057,7 @@ packages:
       crc-32: 1.2.2
       readable-stream: 3.6.2
 
-  /create-jest@29.7.0(@types/node@20.5.6)(ts-node@10.9.1):
+  /create-jest@29.7.0(@types/node@20.8.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-Adz2bdH0Vq3F53KEMJOoftQFutWCukm6J24wbPWRO4k1kMY7gS7ds/uoJkNuV8wDCtWWnuwGcJwpWcih+zEW1Q==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -18050,7 +18066,7 @@ packages:
       chalk: 4.1.2
       exit: 0.1.2
       graceful-fs: 4.2.11
-      jest-config: 29.7.0(@types/node@20.5.6)(ts-node@10.9.1)
+      jest-config: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       jest-util: 29.7.0
       prompts: 2.4.2
     transitivePeerDependencies:
@@ -22378,7 +22394,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /jest-cli@29.7.0(@types/node@20.5.6)(ts-node@10.9.1):
+  /jest-cli@29.7.0(@types/node@20.8.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-OVVobw2IubN/GSYsxETi+gOe7Ka59EFMR/twOU3Jb2GnKKeMGJB5SGUUrEz3SFVmJASUdZUzy83sLNNQ2gZslg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -22392,10 +22408,10 @@ packages:
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
       chalk: 4.1.2
-      create-jest: 29.7.0(@types/node@20.5.6)(ts-node@10.9.1)
+      create-jest: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       exit: 0.1.2
       import-local: 3.1.0
-      jest-config: 29.7.0(@types/node@20.5.6)(ts-node@10.9.1)
+      jest-config: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       jest-util: 29.7.0
       jest-validate: 29.7.0
       yargs: 17.7.2
@@ -22470,7 +22486,47 @@ packages:
       pretty-format: 29.7.0
       slash: 3.0.0
       strip-json-comments: 3.1.1
-      ts-node: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+      ts-node: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
+    transitivePeerDependencies:
+      - babel-plugin-macros
+      - supports-color
+
+  /jest-config@29.7.0(@types/node@20.8.2)(ts-node@10.9.1):
+    resolution: {integrity: sha512-uXbpfeQ7R6TZBqI3/TxCU4q4ttk3u0PJeC+E0zbfSoSjq6bJ7buBPxzQPL0ifrkY4DNu4JUdk0ImlBUYi840eQ==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    peerDependencies:
+      '@types/node': '*'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      '@babel/core': 7.22.20
+      '@jest/test-sequencer': 29.7.0
+      '@jest/types': 29.6.3
+      '@types/node': 20.8.2
+      babel-jest: 29.7.0(@babel/core@7.22.20)
+      chalk: 4.1.2
+      ci-info: 3.8.0
+      deepmerge: 4.3.1
+      glob: 7.2.3
+      graceful-fs: 4.2.11
+      jest-circus: 29.7.0
+      jest-environment-node: 29.7.0
+      jest-get-type: 29.6.3
+      jest-regex-util: 29.6.3
+      jest-resolve: 29.7.0
+      jest-runner: 29.7.0
+      jest-util: 29.7.0
+      jest-validate: 29.7.0
+      micromatch: 4.0.5
+      parse-json: 5.2.0
+      pretty-format: 29.7.0
+      slash: 3.0.0
+      strip-json-comments: 3.1.1
+      ts-node: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
@@ -23159,7 +23215,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /jest@29.5.0(@types/node@20.5.6)(ts-node@10.9.1):
+  /jest@29.5.0(@types/node@20.8.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-juMg3he2uru1QoXX078zTa7pO85QyB9xajZc6bU+d9yEGwrKX6+vGmJQ3UdVZsvTEUARIdObzH68QItim6OSSQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -23172,7 +23228,7 @@ packages:
       '@jest/core': 29.7.0(ts-node@10.9.1)
       '@jest/types': 29.6.3
       import-local: 3.1.0
-      jest-cli: 29.7.0(@types/node@20.5.6)(ts-node@10.9.1)
+      jest-cli: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -23180,8 +23236,8 @@ packages:
       - ts-node
     dev: true
 
-  /jest@29.6.4(@types/node@20.5.6)(ts-node@10.9.1):
-    resolution: {integrity: sha512-tEFhVQFF/bzoYV1YuGyzLPZ6vlPrdfvDmmAxudA1dLEuiztqg2Rkx20vkKY32xiDROcD2KXlgZ7Cu8RPeEHRKw==}
+  /jest@29.7.0(@types/node@20.8.2)(ts-node@10.9.1):
+    resolution: {integrity: sha512-NIy3oAFp9shda19hy4HK0HRTWKtPJmGdnvywu01nOqNC2vZg+Z+fvJDxpMQA88eb2I9EcafcdjYgsDthnYTvGw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
     peerDependencies:
@@ -23193,7 +23249,7 @@ packages:
       '@jest/core': 29.7.0(ts-node@10.9.1)
       '@jest/types': 29.6.3
       import-local: 3.1.0
-      jest-cli: 29.7.0(@types/node@20.5.6)(ts-node@10.9.1)
+      jest-cli: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -24470,7 +24526,7 @@ packages:
       semver: 7.5.4
       tar-stream: 2.2.0
       tslib: 2.6.2
-      uuid: 9.0.0
+      uuid: 9.0.1
       yauzl: 2.10.0
     transitivePeerDependencies:
       - aws-crt
@@ -25603,7 +25659,7 @@ packages:
     resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.0
+      tslib: 2.6.2
     dev: true
 
   /pascalcase@0.1.1:
@@ -25947,7 +26003,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.30
-      ts-node: 10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3)
+      ts-node: 10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3)
       yaml: 1.10.2
     dev: false
 
@@ -27593,7 +27649,7 @@ packages:
       - ts-node
     dev: false
 
-  /rollup-plugin-sourcemaps@0.6.3(@types/node@20.5.6)(rollup@1.32.1):
+  /rollup-plugin-sourcemaps@0.6.3(@types/node@20.8.2)(rollup@1.32.1):
     resolution: {integrity: sha512-paFu+nT1xvuO1tPFYXGe+XnQvg4Hjqv/eIhG8i5EspfYYPBKL57X7iVbfv55aNVASg3dzWvES9dmWsL2KhfByw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
@@ -27604,7 +27660,7 @@ packages:
         optional: true
     dependencies:
       '@rollup/pluginutils': 3.1.0(rollup@1.32.1)
-      '@types/node': 20.5.6
+      '@types/node': 20.8.2
       rollup: 1.32.1
       source-map-resolve: 0.6.0
     dev: true
@@ -27683,12 +27739,12 @@ packages:
     resolution: {integrity: sha512-dnyv2/YsXhnm461G+R/Pe5bWP41Nm6LBXEYWI6eiFP4fiwx6WRI/CD0zbdVAudd9xwLEF2IDcKXLHit0FYjUzw==}
     dependencies:
       tslib: 2.6.2
+    dev: false
 
   /rxjs@7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
     dependencies:
       tslib: 2.6.2
-    dev: true
 
   /sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
@@ -27827,7 +27883,6 @@ packages:
   /sax@1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
     dev: false
-    optional: true
 
   /saxes@3.1.11:
     resolution: {integrity: sha512-Ydydq3zC+WYDJK1+gRxRapLIED9PWeSuuS41wqyoRmzvhhh9nc+QQrVMKJYzJFULazeGhzSV0QleN2wD3boh2g==}
@@ -29272,7 +29327,7 @@ packages:
       bs-logger: 0.2.6
       esbuild: 0.17.5
       fast-json-stable-stringify: 2.1.0
-      jest: 29.5.0(@types/node@20.5.6)(ts-node@10.9.1)
+      jest: 29.5.0(@types/node@20.8.2)(ts-node@10.9.1)
       jest-util: 29.7.0
       json5: 2.2.3
       lodash.memoize: 4.1.2
@@ -29282,7 +29337,7 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  /ts-jest@29.1.1(@babel/core@7.21.4)(esbuild@0.18.20)(jest@29.6.4)(typescript@5.1.3):
+  /ts-jest@29.1.1(@babel/core@7.21.4)(esbuild@0.18.20)(jest@29.7.0)(typescript@5.1.3):
     resolution: {integrity: sha512-D6xjnnbP17cC85nliwGiL+tpoKN0StpgE0TeOjXQTU6MVCfsB4v7aW05CgQ/1OywGb0x/oy9hHFnN+sczTiRaA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -29307,7 +29362,7 @@ packages:
       bs-logger: 0.2.6
       esbuild: 0.18.20
       fast-json-stable-stringify: 2.1.0
-      jest: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+      jest: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       jest-util: 29.7.0
       json5: 2.2.3
       lodash.memoize: 4.1.2
@@ -29317,7 +29372,7 @@ packages:
       yargs-parser: 21.1.1
     dev: false
 
-  /ts-jest@29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.6.4)(typescript@5.1.3):
+  /ts-jest@29.1.1(@babel/core@7.22.20)(esbuild@0.17.5)(jest@29.7.0)(typescript@5.1.3):
     resolution: {integrity: sha512-D6xjnnbP17cC85nliwGiL+tpoKN0StpgE0TeOjXQTU6MVCfsB4v7aW05CgQ/1OywGb0x/oy9hHFnN+sczTiRaA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -29342,7 +29397,7 @@ packages:
       bs-logger: 0.2.6
       esbuild: 0.17.5
       fast-json-stable-stringify: 2.1.0
-      jest: 29.6.4(@types/node@20.5.6)(ts-node@10.9.1)
+      jest: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
       jest-util: 29.7.0
       json5: 2.2.3
       lodash.memoize: 4.1.2
@@ -29361,7 +29416,7 @@ packages:
       mongoose: 6.9.1
     dev: false
 
-  /ts-node@10.9.1(@swc/core@1.3.89)(@types/node@20.5.6)(typescript@5.1.3):
+  /ts-node@10.9.1(@swc/core@1.3.89)(@types/node@20.8.2)(typescript@5.1.3):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -29381,7 +29436,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.5.6
+      '@types/node': 20.8.2
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -29412,7 +29467,7 @@ packages:
       minimist: 1.2.8
       strip-bom: 3.0.0
 
-  /tsdx@0.14.1(@types/node@20.5.6):
+  /tsdx@0.14.1(@types/node@20.8.2):
     resolution: {integrity: sha512-keHmFdCL2kx5nYFlBdbE3639HQ2v9iGedAFAajobrUTH2wfX0nLPdDhbHv+GHLQZqf0c5ur1XteE8ek/+Eyj5w==}
     engines: {node: '>=10'}
     hasBin: true
@@ -29463,7 +29518,7 @@ packages:
       progress-estimator: 0.2.2
       regenerator-runtime: 0.13.11
       rollup: 1.32.1
-      rollup-plugin-sourcemaps: 0.6.3(@types/node@20.5.6)(rollup@1.32.1)
+      rollup-plugin-sourcemaps: 0.6.3(@types/node@20.8.2)(rollup@1.32.1)
       rollup-plugin-terser: 5.3.1(rollup@1.32.1)
       rollup-plugin-typescript2: 0.27.3(rollup@1.32.1)(typescript@3.9.10)
       sade: 1.8.1
@@ -29993,7 +30048,6 @@ packages:
   /uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
-    dev: true
 
   /v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
@@ -30449,7 +30503,7 @@ packages:
     resolution: {integrity: sha512-drPFnkQJik/O+uPKpqSgr22mpuFHqKdbS835iAQrUC73L2F5WkboIRd63ai/2Yg6I1jzifPFKH2NTK+cfglkIA==}
     engines: {node: '>=4.0.0'}
     dependencies:
-      sax: 1.2.1
+      sax: 1.2.4
       xmlbuilder: 11.0.1
     dev: false
 
