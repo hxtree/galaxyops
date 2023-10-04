@@ -1,4 +1,3 @@
-// src/app.module.ts
 import { Module } from '@nestjs/common';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
@@ -10,8 +9,8 @@ import { AuthController } from './auth.controller';
   imports: [
     PassportModule,
     JwtModule.register({
-      secret: 'YOUR_SECRET_KEY',
-      signOptions: { expiresIn: '1h' }, // Adjust token expiration as needed
+      secret: 'YOUR_SECRET_KEY', // TODO set
+      signOptions: { expiresIn: '1h' },
     }),
   ],
   controllers: [AuthController],
