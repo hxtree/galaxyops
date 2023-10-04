@@ -91,10 +91,13 @@ describe('/auth', () => {
       jest
         .spyOn(cognitoService, 'authenticate')
         .mockImplementation((username: string, password: string) => Promise.resolve({
-          AccessToken: '',
-          IdToken: '',
-          RefreshToken: '',
-          TokenType: '',
+          AuthenticationResult: {
+            IdToken: '',
+            RefreshToken: '',
+            ExpiresIn: '',
+            AccessToken: '',
+            TokenType: '',
+          },
         }));
 
       const body = await FakerFactory.create<LoginDto>(LoginDto);

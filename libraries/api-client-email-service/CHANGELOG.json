@@ -1,0 +1,17 @@
+{
+  "name": "@cats-cradle/api-client-email-service",
+  "entries": [
+    {
+      "version": "0.0.2",
+      "tag": "@cats-cradle/api-client-email-service_v0.0.2",
+      "date": "Wed, 04 Oct 2023 03:44:49 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "bump packages"
+          }
+        ]
+      }
+    }
+  ]
+}

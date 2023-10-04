@@ -2,6 +2,23 @@
   "name": "@cats-cradle/bundlers",
   "entries": [
     {
+      "version": "0.0.4",
+      "tag": "@cats-cradle/bundlers_v0.0.4",
+      "date": "Wed, 04 Oct 2023 03:44:49 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "bump packages"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.4`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.3",
       "tag": "@cats-cradle/bundlers_v0.0.3",
       "date": "Mon, 24 Apr 2023 06:43:20 GMT",

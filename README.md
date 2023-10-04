@@ -1,5 +1,3 @@
-![](docs/assets/images/malace-tsia.jpg)
-
 <h1 align="center">Cats Cradle :yarn:</h1>
 
 Get ready to embark on an adventure with **Cats Cradle** - the upcoming co-op
@@ -29,6 +27,8 @@ Codespaces.
 
 Alternatively, build, test, and deploy apps locally using the
 [devcontainer](docs/devcontainer.md).
+
+![](docs/assets/images/malace-tsia.jpg)
 
 ### Pull Request Lifecycle (~5 mins)
 

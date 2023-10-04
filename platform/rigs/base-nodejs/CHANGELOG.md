@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/base-nodejs
 
-This log was last generated on Mon, 24 Apr 2023 06:43:20 GMT and should not be manually modified.
+This log was last generated on Wed, 04 Oct 2023 03:44:49 GMT and should not be manually modified.
+
+## 1.0.4
+Wed, 04 Oct 2023 03:44:49 GMT
+
+### Patches
+
+- bump packages
 
 ## 1.0.3
 Mon, 24 Apr 2023 06:43:20 GMT

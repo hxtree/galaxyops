@@ -1,0 +1,31 @@
+{
+  "name": "@cats-cradle/authentication-service",
+  "entries": [
+    {
+      "version": "1.0.3",
+      "tag": "@cats-cradle/authentication-service_v1.0.3",
+      "date": "Wed, 04 Oct 2023 03:44:49 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "bump packages"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.4`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/constructs\" to `0.0.3`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/nestjs-modules\" to `0.2.4`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/faker-factory\" to `1.0.4`"
+          }
+        ]
+      }
+    }
+  ]
+}

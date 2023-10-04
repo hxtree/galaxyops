@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/api-client-character-sheet
 
-This log was last generated on Fri, 24 Feb 2023 05:33:02 GMT and should not be manually modified.
+This log was last generated on Wed, 04 Oct 2023 03:44:49 GMT and should not be manually modified.
+
+## 1.0.5
+Wed, 04 Oct 2023 03:44:49 GMT
+
+### Patches
+
+- bump packages
 
 ## 1.0.4
 Fri, 24 Feb 2023 05:33:02 GMT
