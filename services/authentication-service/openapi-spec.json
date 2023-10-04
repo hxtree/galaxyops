@@ -164,7 +164,7 @@
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/LoginDto" }
+              "schema": { "$ref": "#/components/schemas/SignUpDto" }
             }
           }
         },
@@ -213,6 +213,14 @@
           "newPassword": { "type": "string", "default": "password1234!" }
         },
         "required": ["username", "code", "newPassword"]
+      },
+      "SignUpDto": {
+        "type": "object",
+        "properties": {
+          "username": { "type": "string", "default": "jdoe" },
+          "password": { "type": "string", "default": "password1234!" }
+        },
+        "required": ["username", "password"]
       }
     }
   }
