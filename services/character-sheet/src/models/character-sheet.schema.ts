@@ -17,6 +17,7 @@ import {
 } from '@cats-cradle/validation-schemas';
 import { v4 as uuidv4 } from 'uuid';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
+import { AffiliationEmbeddable } from './affiliation-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
 import { EquipmentEmbeddable } from './equipment-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
@@ -106,6 +107,13 @@ export class CharacterSheet {
   @ArrayMaxSize(12)
   @Prop()
   public equipment: EquipmentEmbeddable[];
+
+  @ValidateNested({ each: true })
+  @Type(() => AffiliationEmbeddable)
+  @IsArray()
+  @ArrayUnique()
+  @Prop()
+  public affiliation: AffiliationEmbeddable[];
 }
 
 export type TCharacterSheetDocument = CharacterSheet & Document;
