@@ -236,3 +236,7 @@ export namespace Affiliation {
     ],
   };
 }
+
+export const AffiliationIds = Object.keys(Affiliation);
+
+export type AffiliationId = keyof typeof Affiliation;
