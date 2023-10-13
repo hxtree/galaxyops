@@ -10,14 +10,18 @@ import {
 import { AffiliationController } from './affiliation.controller';
 import { AffiliationService } from './affiliation.service';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
-import { CharacterSheet, CharacterSheetSchema } from '../../models/character-sheet.schema';
+import {
+  CharacterSheet,
+  CharacterSheetSchema,
+} from '../../models/character-sheet.schema';
+import { Operation, UpdateAffiliationDto } from './update-affiliation.dto';
 
 describe('/affiliations', () => {
   let app: INestApplication;
   let affiliationService: AffiliationService;
   let characterSheetRepository: CharacterSheetRepository;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [
         rootMongooseTestModule(),
@@ -58,5 +62,39 @@ describe('/affiliations', () => {
       .expect(200);
 
     expect(response.body).toEqual(characterSheet.affiliation);
+  });
+
+  it('/POST /affiliations/:id', async () => {
+    const characterSheet = await FakerFactory.create<CharacterSheet>(
+      CharacterSheet,
+      {
+        archetypeId: 'MEEKU_ONI',
+        affiliation: [{ affiliationId: 'THE_CATS', amount: 10 }],
+      },
+    );
+    await characterSheetRepository.create(characterSheet);
+
+    const body = await FakerFactory.create<UpdateAffiliationDto>(
+      UpdateAffiliationDto,
+      {
+        characterSheetId: characterSheet._id,
+        affiliationId: 'THE_CATS',
+        value: 10,
+        operation: Operation.ADD,
+      },
+    );
+
+    const response = await supertest(app.getHttpServer())
+      .post('/affiliations')
+      .send(body)
+      .expect(201);
+
+    expect(response.body).toEqual({
+      acknowledged: true,
+      matchedCount: 1,
+      modifiedCount: 1,
+      upsertedCount: 0,
+      upsertedId: null,
+    });
   });
 });
