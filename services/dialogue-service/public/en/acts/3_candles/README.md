@@ -18,9 +18,20 @@
 3. They head to the military capital to go look through the military records to
    see what happened to Vallon. They spend much time researching through the
    books, which isn't their strong suite. They have been using their real
-   identities. ???. Faye joins party.
+   identities.
 
-4. ???
+4. Malace and Meeku run into Faye in the library who is a exceptional study.
+   Faye has read and impressive number of books in the monastery. She is trying
+   to solve the mystery of villagers that have gone missing.
+
+5. They learn that by blowing out all the candles in the monastery they can
+   reveal the creature who has been taking the villagers. The creature is only
+   visible in darkness under green light, it becomes transparent under forms of
+   red and blue light. It has been slumbering above. They narrowly defeat the
+   creature and Faye agrees to join their party.
+
+6. The military finds out who they are. The city is filled with wanted posted.
+   The party departs.
 
 ## Notes
 

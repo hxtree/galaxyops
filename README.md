@@ -80,8 +80,8 @@ See [Documentation](docs/index.md).
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-Join us in building the future of gaming! Contribute to this repo and help shape
-the next generation of immersive entertainment.
+Join us in the build! Contribute to help shape the next generation of immersive
+entertainment.
 
 Pull requests and bug reports are welcome on GitHub at
 <https://github.com/hxtree/cats-cradle>. This project is intended to be a safe,
