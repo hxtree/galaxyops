@@ -22,6 +22,40 @@ export class LambdaLayerStack extends cdk.Stack {
     const awsAccountId = Stack.of(this).account;
     const awsAccountRegion = Stack.of(this).region;
 
+    // chromium
+    const chromiumLayer = new LayerVersion(this, 'ChromiumLayer', {
+      layerVersionName: `arn:aws:lambda:${awsAccountRegion}:${awsAccountId}:layer:ChromiumLayer`,
+      compatibleArchitectures: [Architecture.X86_64, Architecture.ARM_64],
+      removalPolicy: RemovalPolicy.DESTROY,
+      code: Code.fromAsset('.', {
+        exclude: ['*'],
+        bundling: {
+          image: Runtime.NODEJS_18_X.bundlingImage,
+          command: [],
+          local: {
+            tryBundle(outputDir: string) {
+              const commands = [
+                'git clone --depth=1 https://github.com/alixaxel/chrome-aws-lambda.git',
+                'cd chrome-aws-lambda',
+                'make chrome_aws_lambda.zip',
+                `cp chrome_aws_lambda.zip ${outputDir}`,
+              ];
+
+              child.execSync(commands.join(' && '));
+              return true;
+            },
+          },
+          outputType: BundlingOutput.ARCHIVED,
+        },
+      }),
+    });
+
+    new ssm.StringParameter(this, 'lambda-layer-chromium-latest-version', {
+      description: 'Chromium Lambda Layer Latest Version',
+      parameterName: 'lambda-layer-chromium-latest-version',
+      stringValue: chromiumLayer.layerVersionArn,
+    });
+
     // include in layer packages that are common or do not bundle well
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.BundlingOutput.html
     const nestJsAppLayer = new LayerVersion(this, 'NestJsAppLayer', {
@@ -67,8 +101,12 @@ export class LambdaLayerStack extends cdk.Stack {
       stringValue: nestJsAppLayer.layerVersionArn,
     });
 
-    new cdk.CfnOutput(this, 'layerVersionArn', {
+    new cdk.CfnOutput(this, 'NestJSLayerVersionArn', {
       value: `${nestJsAppLayer.layerVersionArn}`,
+    });
+
+    new cdk.CfnOutput(this, 'ChromiumLayerVersionArn', {
+      value: `${chromiumLayer.layerVersionArn}`,
     });
   }
 }
