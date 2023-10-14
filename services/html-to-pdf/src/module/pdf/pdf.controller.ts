@@ -1,12 +1,17 @@
 import {
-  Controller, Post, Body, Res, Get,
+  Controller,
+  Post,
+  Body,
+  Res,
+  Get,
+  VERSION_NEUTRAL,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { PdfService } from './pdf.service';
 import { CreateHtmlToPdfDto } from './create-html-to-pdf.dto';
 import { CreateUrlToPdfDto } from './create-url-to-pdf.dto';
 
-@Controller({ path: 'pdf', version: ['1'] })
+@Controller({ path: 'pdf', version: ['1', VERSION_NEUTRAL] })
 export class PdfController {
   constructor(private readonly pdfService: PdfService) {}
 

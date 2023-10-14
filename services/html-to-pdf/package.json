@@ -48,9 +48,8 @@
     "@cats-cradle/validation-schemas": "workspace:*",
     "@nestjs/testing": "9.2.1",
     "@nestjs/axios": "~2.0.0",
-    "@sparticuz/chromium": "~117.0.0",
-    "puppeteer": "~21.3.8",
     "@cats-cradle/faker-factory": "workspace:*",
+    "puppeteer": "~21.3.8",
     "chrome-aws-lambda": "~10.1.0"
   },
   "devDependencies": {

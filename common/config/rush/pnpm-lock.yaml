@@ -2065,9 +2065,6 @@ importers:
       '@nestjs/testing':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(@nestjs/platform-express@9.3.9)
-      '@sparticuz/chromium':
-        specifier: ~117.0.0
-        version: 117.0.0
       '@vendia/serverless-express':
         specifier: 4.10.4
         version: 4.10.4
@@ -12691,16 +12688,6 @@ packages:
       '@smithy/util-buffer-from': 2.0.0
       tslib: 2.6.2
     optional: true
-
-  /@sparticuz/chromium@117.0.0:
-    resolution: {integrity: sha512-MXvxLgGt7e1bjOu6AwpemRnhrF+wxLxsHpkiOuJOLsfHAtT0VNlsnhAULQZ7hNXGhr37cTM2sCifUHwgrVH+sA==}
-    engines: {node: '>= 16'}
-    dependencies:
-      follow-redirects: 1.15.3
-      tar-fs: 3.0.4
-    transitivePeerDependencies:
-      - debug
-    dev: false
 
   /@storybook/addon-a11y@7.4.5(@types/react-dom@18.2.6)(@types/react@18.2.13)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-7W8fjCdmwX4zlDM4jpzVKNgelWSqbYr3cH834pqOFAkyiyNVIsNRPQBgSwkkljgz0uAsz8nFCRFK3Oo1btl6Yg==}
