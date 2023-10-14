@@ -1,29 +1,39 @@
 import {
-  Controller, Post, Body, Res,
+  Controller,
+  Post,
+  Body,
+  Res,
+  Get,
+  VERSION_NEUTRAL,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { PdfService } from './pdf.service';
 import { CreateHtmlToPdfDto } from './create-html-to-pdf.dto';
 import { CreateUrlToPdfDto } from './create-url-to-pdf.dto';
 
-@Controller({ path: 'pdf', version: ['1'] })
+@Controller({ path: 'pdf', version: ['1', VERSION_NEUTRAL] })
 export class PdfController {
   constructor(private readonly pdfService: PdfService) {}
 
+  @Get('test')
+  async test(@Res() res: Response) {
+    const buffer = await this.pdfService.renderUrl('http://example.com');
+    this.responseAsPdf(false, buffer, res, 'file.pdf');
+  }
+
   @Post('render-url')
-  async postRenderFromUrl(
-  @Res() res: Response,
-    @Body() body: CreateUrlToPdfDto,
-  ) {
+  async renderUrl(@Res() res: Response, @Body() body: CreateUrlToPdfDto) {
     const buffer = await this.pdfService.renderUrl(body.url);
     this.responseAsPdf(false, buffer, res, body.filename);
   }
 
+  @Post('data-url')
+  async fetchPageData(@Body() body: CreateUrlToPdfDto) {
+    return this.pdfService.fetchPageData(body.url);
+  }
+
   @Post('render-html')
-  async postRenderFromHtml(
-  @Res() res: Response,
-    @Body() body: CreateHtmlToPdfDto,
-  ) {
+  async renderHtml(@Res() res: Response, @Body() body: CreateHtmlToPdfDto) {
     const buffer = await this.pdfService.renderHtml(body.html);
     this.responseAsPdf(false, buffer, res, body.filename);
   }

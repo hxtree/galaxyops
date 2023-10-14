@@ -17,6 +17,7 @@ export async function nestJsBundler(options: NestJsBundlerOptions) {
 
   try {
     const externalModules = [
+      // nestjs
       'express',
       'reflect-metadata',
       'rxjs',
@@ -32,6 +33,9 @@ export async function nestJsBundler(options: NestJsBundlerOptions) {
       'node-cache',
       'reflect-metadata',
       'rxjs',
+      // chromium
+      'puppeteer',
+      'chrome-aws-lambda',
     ];
 
     await build({

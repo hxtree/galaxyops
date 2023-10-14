@@ -3,6 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import { PdfModule } from './pdf.module';
+import { UrlToDataDto } from './url-to-data.dto';
 
 describe('/pdf', () => {
   let app: INestApplication;
@@ -23,10 +24,18 @@ describe('/pdf', () => {
     app.close();
   });
 
-  describe('GET /pdf/:id', () => {
+  describe('POST /pdf/url-to-data', () => {
     it('todo add unit test', async () => {
-      const response = '1';
-      expect(response).toEqual('1');
+      const result = await supertest(app.getHttpServer())
+        .post('/pdf/data-url')
+        .send({ url: 'http://example.com' })
+        .expect(201);
+
+      expect(result.body).toEqual(
+        expect.objectContaining({
+          title: 'Example Domain',
+        }),
+      );
     });
   });
 });

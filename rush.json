@@ -235,7 +235,12 @@
       "packageName": "@cats-cradle/html-to-pdf",
       "projectFolder": "services/html-to-pdf",
       "reviewCategory": "apis",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "decoupledLocalDependencies": [
+        "@cats-cradle/validation-schemas",
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/bundle-project",
+        "@cats-cradle/bundlers"
+      ],
       "tags": ["deploy-app"]
     },
     {

@@ -14,7 +14,7 @@ export class PdfService {
 
   async renderHtml(html: string): Promise<any> {
     const browser = await launch({
-      headless: true,
+      headless: 'new',
       userDataDir: '/dev/null',
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
@@ -33,7 +33,7 @@ export class PdfService {
 
   async renderUrl(url: string) {
     const browser = await launch({
-      headless: true,
+      headless: 'new',
       userDataDir: '/dev/null',
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
@@ -46,5 +46,23 @@ export class PdfService {
     });
     await browser.close();
     return buffer;
+  }
+
+  async fetchPageData(url: string) {
+    const browser = await launch({
+      headless: 'new',
+      userDataDir: '/dev/null',
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+    });
+    const page = await browser.newPage();
+    await page.goto(url);
+    const pageTitle = await page.title();
+    await browser.close();
+
+    return {
+      title: pageTitle,
+    };
   }
 }
