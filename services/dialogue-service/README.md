@@ -1,8 +1,8 @@
 # @cats-cradle/dialogue-service
 
 This services manages the dialogue for the game. Dialogue files are stored in
-Ink format. This allows for conditional choices between messages and for tags to
-be passed to game engine.
+Ink format. The Ink format allows for conditional choices between messages and
+for tags to be passed to game engine.
 
 Ink tags can be used for actorId, actorExpression/actorSprite, or other meta
 data.
@@ -14,8 +14,8 @@ Dialogue files can be viewed and edited using
 
 ## Ideas
 
-The following private repo raw ideas related to the game. Established
-contributors should ask for access.
+The following private repo contains rough ideas for the game. Established
+contributors can request for access.
 
 - [Rough Ideas](https://github.com/hxtree/cats-cradle-ideas)
 
