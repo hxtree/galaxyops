@@ -26,8 +26,4 @@ export class AffiliationService {
 
     return Reputation.NEUTRAL;
   }
-
-  async find(instanceId: string, characterId: string): Promise<any> {
-    // get from mongo
-  }
 }

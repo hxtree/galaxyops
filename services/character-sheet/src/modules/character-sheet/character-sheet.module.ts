@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
-import {
-  rootMongooseModule,
-  MongooseModule,
-} from '@cats-cradle/nestjs-modules';
+import { MongooseModule } from '@cats-cradle/nestjs-modules';
+import { databaseModule } from '../../database.module';
 import { CharacterSheetService } from './character-sheet.service';
 import { CharacterSheetController } from './character-sheet.controller';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
@@ -13,7 +11,7 @@ import { PlaceService } from '../place/place.service';
   controllers: [CharacterSheetController],
   providers: [PlaceService, CharacterSheetService, CharacterSheetRepository],
   imports: [
-    rootMongooseModule(),
+    databaseModule(),
     MongooseModule.forFeature([
       { name: 'CharacterSheet', schema: CharacterSheetSchema },
     ]),

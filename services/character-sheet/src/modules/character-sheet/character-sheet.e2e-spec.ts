@@ -83,8 +83,6 @@ describe('/character-sheets', () => {
         .get(`/character-sheets/${characterSheet._id}`)
         .expect(200);
 
-      console.log(JSON.stringify(result.body, null, 2));
-
       expect(result.body).toEqual(
         expect.objectContaining({
           id: characterSheet._id,

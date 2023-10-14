@@ -381,69 +381,6 @@
         "responses": { "200": { "description": "" } }
       }
     },
-    "/character-sheets/{id}": {
-      "get": {
-        "operationId": "CharacterSheetController_findOne",
-        "parameters": [
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": { "200": { "description": "" } }
-      },
-      "delete": {
-        "operationId": "CharacterSheetController_delete",
-        "parameters": [
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": { "200": { "description": "" } }
-      }
-    },
-    "/character-sheets": {
-      "get": {
-        "operationId": "CharacterSheetController_findAll",
-        "parameters": [],
-        "responses": { "200": { "description": "" } }
-      },
-      "post": {
-        "operationId": "CharacterSheetController_create",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCharacterSheetDto"
-              }
-            }
-          }
-        },
-        "responses": { "201": { "description": "" } }
-      }
-    },
-    "/npcs": {
-      "post": {
-        "operationId": "NpcController_create",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateSpawnDto" }
-            }
-          }
-        },
-        "responses": { "201": { "description": "" } }
-      }
-    },
     "/items": {
       "get": {
         "operationId": "ItemController_list",
@@ -537,6 +474,101 @@
         ],
         "responses": { "200": { "description": "" } }
       }
+    },
+    "/character-sheets/{id}": {
+      "get": {
+        "operationId": "CharacterSheetController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } }
+      },
+      "delete": {
+        "operationId": "CharacterSheetController_delete",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } }
+      }
+    },
+    "/character-sheets": {
+      "get": {
+        "operationId": "CharacterSheetController_findAll",
+        "parameters": [],
+        "responses": { "200": { "description": "" } }
+      },
+      "post": {
+        "operationId": "CharacterSheetController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCharacterSheetDto"
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/npcs": {
+      "post": {
+        "operationId": "NpcController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateSpawnDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/affiliations/{id}": {
+      "get": {
+        "operationId": "AffiliationController_find",
+        "parameters": [
+          {
+            "name": "characterSheetId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "default": "c63bd3b9-02a2-4f32-b836-9aac1665cc96",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": { "200": { "description": "" } }
+      }
+    },
+    "/affiliations": {
+      "post": {
+        "operationId": "AffiliationController_update",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateAffiliationDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
     }
   },
   "info": {
@@ -554,11 +586,11 @@
         "properties": {
           "_id": {
             "type": "string",
-            "default": "5e799b22-74c0-4f51-963c-9d402a9825e1"
+            "default": "d8fba7e1-3bb2-4715-986e-1846209627a0"
           },
           "instanceId": {
             "type": "string",
-            "default": "43d7e427-4ba7-4f0e-9afc-d0dccd54a69a"
+            "default": "05f888f0-07ad-484f-9f73-33b828abc09e"
           },
           "archetypeId": {
             "type": "string",
@@ -615,11 +647,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "default": "62309dfb-d1e0-49e3-84c7-d9a86d43cf88"
+            "default": "712756ed-6b55-42c1-ba6d-2568729b2403"
           },
           "instanceId": {
             "type": "string",
-            "default": "903ce92d-a8fb-406f-a03f-5cee1effc3c4"
+            "default": "8445ffd3-4e7f-4d58-b2a9-620b0d3c4847"
           },
           "place": {
             "type": "string",
@@ -636,6 +668,49 @@
           }
         },
         "required": ["id", "instanceId", "place"]
+      },
+      "UpdateAffiliationDto": {
+        "type": "object",
+        "properties": {
+          "characterSheetId": {
+            "type": "string",
+            "default": "ebfe4388-5a84-494a-9e55-b806b9719689"
+          },
+          "affiliationId": {
+            "type": "string",
+            "enum": [
+              "Reputation",
+              "THE_DESTROYERS",
+              "THE_CATS",
+              "ARCHANGELS",
+              "DEVILS",
+              "GUARDIANS",
+              "VALLONS_SEVEN",
+              "BROTHERHOOD",
+              "SOLIDER_FORCES",
+              "X_SOLIDER_FORCES",
+              "MAGI_ORDER",
+              "MAGI_ORDER_ELDERS",
+              "CATCHERS",
+              "REBEL",
+              "ORIGINALS",
+              "OCEANIA",
+              "EURASIA",
+              "BARBARIANS",
+              "NINJA",
+              "LEGION_SEE",
+              "FLIPPING_PROFITEERS"
+            ],
+            "default": "THE_CATS"
+          },
+          "value": { "type": "number" },
+          "operation": {
+            "type": "string",
+            "enum": ["ADD", "REMOVE"],
+            "default": "ADD"
+          }
+        },
+        "required": ["characterSheetId", "affiliationId", "value", "operation"]
       }
     }
   }
