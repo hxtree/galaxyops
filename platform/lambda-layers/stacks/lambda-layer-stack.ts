@@ -39,6 +39,8 @@ export class LambdaLayerStack extends cdk.Stack {
                 'cd chrome-aws-lambda',
                 'make chrome_aws_lambda.zip',
                 `cp chrome_aws_lambda.zip ${outputDir}`,
+                'cd ..',
+                'rm -rf chrome-aws-lambda',
               ];
 
               child.execSync(commands.join(' && '));
