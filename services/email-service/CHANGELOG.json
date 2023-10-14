@@ -2,6 +2,18 @@
   "name": "@cats-cradle/email-service",
   "entries": [
     {
+      "version": "0.0.10",
+      "tag": "@cats-cradle/email-service_v0.0.10",
+      "date": "Sat, 14 Oct 2023 22:49:51 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/constructs\" to `0.0.4`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.9",
       "tag": "@cats-cradle/email-service_v0.0.9",
       "date": "Wed, 04 Oct 2023 03:44:49 GMT",

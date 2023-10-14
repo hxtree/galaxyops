@@ -2,6 +2,18 @@
   "name": "@cats-cradle/constructs",
   "entries": [
     {
+      "version": "0.0.4",
+      "tag": "@cats-cradle/constructs_v0.0.4",
+      "date": "Sat, 14 Oct 2023 22:49:51 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add layers prop"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.3",
       "tag": "@cats-cradle/constructs_v0.0.3",
       "date": "Wed, 04 Oct 2023 03:44:49 GMT",

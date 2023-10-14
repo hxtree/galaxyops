@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/api-client-luck-by-dice
 
-This log was last generated on Fri, 24 Feb 2023 04:55:39 GMT and should not be manually modified.
+This log was last generated on Sat, 14 Oct 2023 22:49:51 GMT and should not be manually modified.
+
+## 1.0.4
+Sat, 14 Oct 2023 22:49:51 GMT
+
+### Patches
+
+- bump packages
 
 ## 1.0.2
 Fri, 24 Feb 2023 04:55:39 GMT
