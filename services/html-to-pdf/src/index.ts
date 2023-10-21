@@ -18,6 +18,27 @@ async function bootstrap() {
       new ExpressAdapter(expressApp),
     );
 
+    const binaryMimeTypes = [
+      'application/pdf',
+      'application/javascript',
+      'application/json',
+      'application/octet-stream',
+      'application/xml',
+      'font/eot',
+      'font/opentype',
+      'font/otf',
+      'image/jpeg',
+      'image/png',
+      'image/svg+xml',
+      'text/comma-separated-values',
+      'text/css',
+      'text/html',
+      'text/javascript',
+      'text/plain',
+      'text/text',
+      'text/xml',
+    ];
+
     nestApp.enableVersioning({
       type: VersioningType.HEADER,
       header: 'Accept-Version',
@@ -28,7 +49,10 @@ async function bootstrap() {
 
     await nestApp.init();
 
-    cachedServer = serverlessExpress({ app: expressApp });
+    cachedServer = serverlessExpress({
+      app: expressApp,
+      binaryMimeTypes,
+    });
   }
 
   return cachedServer;

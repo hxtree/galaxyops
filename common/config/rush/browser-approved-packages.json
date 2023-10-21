@@ -259,6 +259,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@sparticuz/chromium-min",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/addon-a11y",
       "allowedCategories": [ "apis" ]
     },
