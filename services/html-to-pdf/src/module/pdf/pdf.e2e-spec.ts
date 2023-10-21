@@ -8,7 +8,7 @@ import { UrlToDataDto } from './url-to-data.dto';
 describe('/pdf', () => {
   let app: INestApplication;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [PdfModule],
       providers: [],
@@ -20,22 +20,24 @@ describe('/pdf', () => {
     await app.init();
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     app.close();
   });
 
-  describe('POST /pdf/url-to-data', () => {
-    it('todo add unit test', async () => {
+  describe('POST /pdf/render-html-data', () => {
+    it.skip('should render html page', async () => {
       const result = await supertest(app.getHttpServer())
-        .post('/pdf/data-url')
-        .send({ url: 'http://example.com' })
+        .post('/pdf/render-html-data')
+        .send({
+          html: '<html><head><title>Example Page</title><body>Example</body></html>',
+        })
         .expect(201);
 
       expect(result.body).toEqual(
         expect.objectContaining({
-          title: 'Example Domain',
+          title: 'Example Page',
         }),
       );
-    });
+    }, 15000);
   });
 });

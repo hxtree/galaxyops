@@ -21,22 +21,33 @@ export class HtmlToPdfStack extends cdk.Stack {
       },
     ).stringValue;
 
-    const chromiumLambdaLayer = LayerVersion.fromLayerVersionAttributes(
-      this,
-      'ChromiumLayer',
-      {
-        layerVersionArn: lambdaLayerChromiumLatestVersion,
-      },
-    );
+    // const chromiumLambdaLayer = LayerVersion.fromLayerVersionAttributes(
+    //   this,
+    //   'ChromiumLayer',
+    //   {
+    //     layerVersionArn: lambdaLayerChromiumLatestVersion,
+    //   },
+    // );
+
+    // const chromiumLambdaLayer = LayerVersion.fromLayerVersionArn(
+    //   this,
+    //   'chromium-lambda-layer',
+    //   'arn:aws:lambda:us-east-2:764866452798:layer:chrome-aws-lambda:38',
+    // );
 
     const microservice = new Microservice(this, 'html-to-pdf-stack', {
       path: 'html-to-pdf',
       projectRoot: path.join(__dirname, '..'),
-      layers: [chromiumLambdaLayer],
+      memorySize: 1600,
+      // layers: [chromiumLambdaLayer],
     });
 
-    new cdk.CfnOutput(this, 'Localhost API Example', {
+    new cdk.CfnOutput(this, 'health check endpoint', {
       value: `${microservice.getBaseUrl()}/health`,
+    });
+
+    new cdk.CfnOutput(this, 'test endpoint', {
+      value: `${microservice.getBaseUrl()}/pdf/example-pdf`,
     });
   }
 }

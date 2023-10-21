@@ -22,7 +22,7 @@
     "cdk:synth": "cdk synth",
     "cdk:diff": "cdk diff",
     "cdk:deploy": "nestjs-bundler && cdk deploy",
-    "cdk:hotswap": "cdk deploy --hotswap",
+    "cdk:hotswap": "nestjs-bundler && cdk deploy --hotswap",
     "cdk:destroy": "cdk destroy",
     "depcheck": "npx depcheck"
   },
@@ -49,8 +49,9 @@
     "@nestjs/testing": "9.2.1",
     "@nestjs/axios": "~2.0.0",
     "@cats-cradle/faker-factory": "workspace:*",
-    "puppeteer": "~21.3.8",
-    "chrome-aws-lambda": "~10.1.0"
+    "@sparticuz/chromium": "112.0.0",
+    "puppeteer-core": "19.8.0",
+    "uuid": "~9.0.1"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.6",
