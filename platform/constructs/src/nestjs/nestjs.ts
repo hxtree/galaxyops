@@ -11,6 +11,7 @@ export interface NestJsProps {
   apiId: string;
   region: string;
   stageName: string;
+  memorySize?: number;
   layers?: lambda.ILayerVersion[];
 }
 
@@ -51,7 +52,7 @@ export class NestJs extends Construct {
       code: lambda.Code.fromAsset(path.join(props.projectRoot, 'dist')),
       handler: 'index.handler',
       layers: props.layers,
-      memorySize: 1024, // 128 -- TODO reduce
+      memorySize: props.memorySize ?? 1024, // 128 -- TODO reduce
       environment: {
         /**
          * Environmental variables

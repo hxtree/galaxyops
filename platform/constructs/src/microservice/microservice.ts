@@ -10,6 +10,7 @@ import { NestJs } from '../nestjs/nestjs';
 export interface MicroserviceProps {
   path: string;
   projectRoot: string;
+  memorySize?: number;
   layers?: lambda.ILayerVersion[];
 }
 
@@ -59,6 +60,7 @@ export class Microservice extends Construct {
       apiId,
       region,
       stageName,
+      memorySize: props.memorySize,
       layers: lambdaLayers,
     });
 

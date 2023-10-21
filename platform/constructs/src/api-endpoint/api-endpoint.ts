@@ -1,11 +1,11 @@
-import {Construct} from 'constructs';
-import {NodejsFunction} from 'aws-cdk-lib/aws-lambda-nodejs';
-import {Stack} from 'aws-cdk-lib';
-import {kebabCase} from 'lodash';
-import {IRestApi} from 'aws-cdk-lib/aws-apigateway';
+import { Construct } from 'constructs';
+import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
+import { Stack } from 'aws-cdk-lib';
+import { kebabCase } from 'lodash';
+import { IRestApi } from 'aws-cdk-lib/aws-apigateway';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import * as apigw from 'aws-cdk-lib/aws-apigateway';
-import {getBaseUrl} from './get-base-url';
+import { getBaseUrl } from './get-base-url';
 
 export interface ApiEndpointProps {
   stageName: string;
@@ -15,10 +15,15 @@ export interface ApiEndpointProps {
 
 export class ApiEndpoint extends Construct {
   private nodeJsFunction: NodejsFunction;
+
   private region: string;
+
   private restApi: IRestApi;
+
   private restApiId: string;
+
   private path: string;
+
   private stageName: string;
 
   constructor(scope: Construct, id: string, props: ApiEndpointProps) {
@@ -32,8 +37,8 @@ export class ApiEndpoint extends Construct {
     this.restApiId = restApiId;
 
     this.restApi = apigw.RestApi.fromRestApiAttributes(this, `${id}-main-api`, {
-      restApiId: restApiId,
-      rootResourceId: rootResourceId,
+      restApiId,
+      rootResourceId,
     });
 
     const v1Resource = apigw.Resource.fromResourceAttributes(
@@ -58,13 +63,13 @@ export class ApiEndpoint extends Construct {
 
     const deployment = new apigw.Deployment(
       this,
-      `${id}-deployment` + new Date().toISOString(),
-      {api: this.restApi, retainDeployments: false},
+      `${id}-deployment${new Date().toISOString()}`,
+      { api: this.restApi, retainDeployments: false },
     );
 
     const stage = apigw.Stage.fromStageAttributes(
       this,
-      `${id}-stage` + new Date().toISOString(),
+      `${id}-stage${new Date().toISOString()}`,
       {
         restApi: this.restApi,
         stageName: props.stageName,
@@ -90,7 +95,7 @@ export class ApiEndpoint extends Construct {
   getSsm() {
     const restApiId = ssm.StringParameter.fromStringParameterAttributes(
       this,
-      `rest-api-id-ssm`,
+      'rest-api-id-ssm',
       {
         parameterName: 'web-api-gateway-rest-api-id',
       },
@@ -98,7 +103,7 @@ export class ApiEndpoint extends Construct {
 
     const rootResourceId = ssm.StringParameter.fromStringParameterAttributes(
       this,
-      `root-resource-id-ssm`,
+      'root-resource-id-ssm',
       {
         parameterName: 'web-api-gateway-root-resource-id',
       },
@@ -106,7 +111,7 @@ export class ApiEndpoint extends Construct {
 
     const v1ResourceId = ssm.StringParameter.fromStringParameterAttributes(
       this,
-      `v1-resource-id-ssm`,
+      'v1-resource-id-ssm',
       {
         parameterName: 'web-api-gateway-v1-resource-id',
       },

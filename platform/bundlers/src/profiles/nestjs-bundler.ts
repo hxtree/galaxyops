@@ -35,7 +35,9 @@ export async function nestJsBundler(options: NestJsBundlerOptions) {
       'rxjs',
       // chromium
       'puppeteer',
-      'chrome-aws-lambda',
+      // 'chrome-aws-lambda',
+      '@sparticuz/chromium',
+      'puppeteer-core',
     ];
 
     await build({
