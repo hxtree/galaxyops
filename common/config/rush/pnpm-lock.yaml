@@ -2046,7 +2046,7 @@ importers:
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
-        version: 2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+        version: 2.0.0(@nestjs/common@9.4.0)(axios@0.21.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/common':
         specifier: 9.4.0
         version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -2065,7 +2065,7 @@ importers:
       '@nestjs/testing':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(@nestjs/platform-express@9.3.9)
-      '@sparticuz/chromium':
+      '@sparticuz/chromium-min':
         specifier: 112.0.0
         version: 112.0.0
       '@vendia/serverless-express':
@@ -2077,6 +2077,9 @@ importers:
       aws-serverless-express:
         specifier: ~3.4.0
         version: 3.4.0
+      axios:
+        specifier: ^0.21.1
+        version: 0.21.1
       class-transformer:
         specifier: 0.5.1
         version: 0.5.1
@@ -9335,6 +9338,20 @@ packages:
       tar-fs: 2.1.1
     dev: true
 
+  /@nestjs/axios@2.0.0(@nestjs/common@9.4.0)(axios@0.21.1)(reflect-metadata@0.1.13)(rxjs@7.8.1):
+    resolution: {integrity: sha512-F6oceoQLEn031uun8NiommeMkRIojQqVryxQy/mK7fx0CI0KbgkJL3SloCQcsOD+agoEnqKJKXZpEvL6FNswJg==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0
+      axios: ^1.3.1
+      reflect-metadata: ^0.1.12
+      rxjs: ^6.0.0 || ^7.0.0
+    dependencies:
+      '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      axios: 0.21.1
+      reflect-metadata: 0.1.13
+      rxjs: 7.8.1
+    dev: false
+
   /@nestjs/axios@2.0.0(@nestjs/common@9.4.0)(axios@1.5.0)(reflect-metadata@0.1.13)(rxjs@7.8.1):
     resolution: {integrity: sha512-F6oceoQLEn031uun8NiommeMkRIojQqVryxQy/mK7fx0CI0KbgkJL3SloCQcsOD+agoEnqKJKXZpEvL6FNswJg==}
     peerDependencies:
@@ -12676,8 +12693,8 @@ packages:
       tslib: 2.6.2
     optional: true
 
-  /@sparticuz/chromium@112.0.0:
-    resolution: {integrity: sha512-7C0XQTmd0s3xU0CyHMYxNwpcOUqjv2G9fBx1n+Y9w1AfdH1EqYzvtKiiFlagH9vr/KLikcrWpr1t+2lgG/NB9w==}
+  /@sparticuz/chromium-min@112.0.0:
+    resolution: {integrity: sha512-TGAm7qEDbINvhXfRoRzU1gl4v3NIVE74/9Hd5A84Til4MSmkMlQewgyzIKMkUxjYrPjMZ8Qh2KUoXy6Pe8EU/g==}
     engines: {node: '>= 14.18.0'}
     dependencies:
       follow-redirects: 1.15.3
@@ -16552,7 +16569,7 @@ packages:
       '@babel/core': 7.22.20
     dev: true
 
-  /babel-eslint@10.1.0(eslint@8.44.0):
+  /babel-eslint@10.1.0(eslint@8.38.0):
     resolution: {integrity: sha512-ifWaTHQ0ce+448CYop8AdrQiBsGrnC+bMgfyKFdi6EsPLTAWG+QfyDeM6OH+FmWnKvEq5NnBMLvlBUPKQZoDSg==}
     engines: {node: '>=6'}
     deprecated: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
@@ -16563,7 +16580,7 @@ packages:
       '@babel/parser': 7.22.16
       '@babel/traverse': 7.22.20(supports-color@5.5.0)
       '@babel/types': 7.22.19
-      eslint: 8.44.0
+      eslint: 8.38.0
       eslint-visitor-keys: 1.3.0
       resolve: 1.22.6
     transitivePeerDependencies:
@@ -19400,10 +19417,10 @@ packages:
     dependencies:
       '@typescript-eslint/eslint-plugin': 2.34.0(@typescript-eslint/parser@2.34.0)(eslint@6.8.0)(typescript@3.9.10)
       '@typescript-eslint/parser': 2.34.0(eslint@6.8.0)(typescript@3.9.10)
-      babel-eslint: 10.1.0(eslint@8.44.0)
+      babel-eslint: 10.1.0(eslint@8.38.0)
       confusing-browser-globals: 1.0.11
       eslint: 6.8.0
-      eslint-plugin-flowtype: 3.13.0(eslint@8.44.0)
+      eslint-plugin-flowtype: 3.13.0(eslint@8.38.0)
       eslint-plugin-import: 2.27.5(eslint@6.8.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@6.8.0)
       eslint-plugin-react: 7.32.2(eslint@6.8.0)
@@ -19462,13 +19479,13 @@ packages:
       debug: 3.2.7
       eslint: 8.44.0
 
-  /eslint-plugin-flowtype@3.13.0(eslint@8.44.0):
+  /eslint-plugin-flowtype@3.13.0(eslint@8.38.0):
     resolution: {integrity: sha512-bhewp36P+t7cEV0b6OdmoRWJCBYRiHFlqPZAG1oS3SF+Y0LQkeDvFSM4oxoxvczD1OdONCXMlJfQFiWLcV9urw==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: '>=5.0.0'
     dependencies:
-      eslint: 8.44.0
+      eslint: 8.38.0
       lodash: 4.17.21
     dev: true
 
@@ -29387,7 +29404,7 @@ packages:
       '@typescript-eslint/parser': 2.34.0(eslint@6.8.0)(typescript@3.9.10)
       ansi-escapes: 4.3.2
       asyncro: 3.0.0
-      babel-eslint: 10.1.0(eslint@8.44.0)
+      babel-eslint: 10.1.0(eslint@8.38.0)
       babel-plugin-annotate-pure-calls: 0.4.0(@babel/core@7.21.4)
       babel-plugin-dev-expression: 0.2.3(@babel/core@7.21.4)
       babel-plugin-macros: 2.8.0
@@ -29399,7 +29416,7 @@ packages:
       eslint: 6.8.0
       eslint-config-prettier: 6.15.0(eslint@6.8.0)
       eslint-config-react-app: 5.2.1(@typescript-eslint/eslint-plugin@2.34.0)(@typescript-eslint/parser@2.34.0)(babel-eslint@10.1.0)(eslint-plugin-flowtype@3.13.0)(eslint-plugin-import@2.27.5)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-react-hooks@2.5.1)(eslint-plugin-react@7.32.2)(eslint@6.8.0)
-      eslint-plugin-flowtype: 3.13.0(eslint@8.44.0)
+      eslint-plugin-flowtype: 3.13.0(eslint@8.38.0)
       eslint-plugin-import: 2.27.5(eslint@6.8.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@6.8.0)
       eslint-plugin-prettier: 3.4.1(eslint-config-prettier@6.15.0)(eslint@6.8.0)(prettier@1.19.1)

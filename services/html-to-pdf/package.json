@@ -49,9 +49,10 @@
     "@nestjs/testing": "9.2.1",
     "@nestjs/axios": "~2.0.0",
     "@cats-cradle/faker-factory": "workspace:*",
-    "@sparticuz/chromium": "112.0.0",
+    "@sparticuz/chromium-min": "112.0.0",
     "puppeteer-core": "19.8.0",
-    "uuid": "~9.0.1"
+    "uuid": "~9.0.1",
+    "axios": "^0.21.1"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.6",
@@ -73,6 +74,7 @@
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.14",
     "@cats-cradle/bundlers": "0.0.3",
-    "@cats-cradle/bundle-project": "1.1.1"
+    "@cats-cradle/bundle-project": "1.1.1",
+    "axios": "^0.21.1"
   }
 }

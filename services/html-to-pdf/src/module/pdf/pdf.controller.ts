@@ -5,6 +5,7 @@ import {
   Res,
   Get,
   VERSION_NEUTRAL,
+  Query,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { v4 } from 'uuid';
@@ -26,8 +27,8 @@ export class PdfController {
   }
 
   @Get('example-pdf')
-  async test(@Res() res: Response) {
-    const buffer = await this.pdfService.renderUrl('http://example.com');
+  async test(@Res() res: Response, @Query('url') url?: string) {
+    const buffer = await this.pdfService.renderUrl(url ?? 'http://example.com');
     this.responseAsPdf(false, buffer, res, `${v4()}.pdf`);
   }
 
