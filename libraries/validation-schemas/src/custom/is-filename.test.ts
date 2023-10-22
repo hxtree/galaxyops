@@ -26,12 +26,17 @@ describe('IsFilename', () => {
     expect(errors.length).toBe(0);
   });
 
-  it.each([[''], ['../filename.csv'], ['//'], [undefined], [0], [null]])(
-    'should determine "%i" invalid',
-    (value: any) => {
-      testClass.property = value;
-      const errors: ValidationError[] = validateSync(testClass);
-      expect(errors.length).toBe(1);
-    },
-  );
+  it.each([
+    [''],
+    ['../filename.csv'],
+    ['//'],
+    [undefined],
+    [0],
+    [null],
+    ['/etc/shadowpassword'],
+  ])('should determine "%i" invalid', (value: any) => {
+    testClass.property = value;
+    const errors: ValidationError[] = validateSync(testClass);
+    expect(errors.length).toBe(1);
+  });
 });

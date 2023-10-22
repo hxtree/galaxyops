@@ -1,6 +1,5 @@
 import { registerDecorator, ValidationOptions } from 'class-validator';
 
-// TODO should a path be a valid filename? File name vs filepath?
 export function IsFilenameValidator(value: any): boolean {
   if (!value || value.length < 1 || value.length > 255) {
     return false;
