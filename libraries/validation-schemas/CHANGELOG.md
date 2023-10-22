@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/validation-schemas
 
-This log was last generated on Wed, 04 Oct 2023 03:44:49 GMT and should not be manually modified.
+This log was last generated on Sun, 22 Oct 2023 15:17:07 GMT and should not be manually modified.
+
+## 0.3.0
+Sun, 22 Oct 2023 15:17:07 GMT
+
+### Minor changes
+
+- Add IsFilename validator
 
 ## 0.2.5
 Wed, 04 Oct 2023 03:44:49 GMT
