@@ -1,9 +1,9 @@
 import { validateSync, ValidationError } from 'class-validator';
-import { IsUuidV4 } from '../custom/is-uuidv4';
+import { IsMoney } from './is-money';
 
 describe('IsMoney', () => {
   class TestClass {
-    @IsUuidV4()
+    @IsMoney()
     public property: string;
   }
 
@@ -13,7 +13,7 @@ describe('IsMoney', () => {
     testClass = new TestClass();
   });
 
-  it.each([['3112b3db-c1ef-4cc2-994b-306d75834277']])(
+  it.each([['0.22'], ['100.00'], ['9999.00'], ['0.00']])(
     'should determine "%i" valid',
     (notation: string) => {
       testClass.property = notation;
@@ -22,7 +22,7 @@ describe('IsMoney', () => {
     },
   );
 
-  it.each([['rawawadad-sada-2']])(
+  it.each([['0.2'], ['00'], ['$9999.00'], ['0'], [0], ['']])(
     'should determine "%i" invalid',
     (notation: any) => {
       testClass.property = notation;

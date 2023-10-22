@@ -2,6 +2,18 @@
   "name": "@cats-cradle/validation-schemas",
   "entries": [
     {
+      "version": "0.3.0",
+      "tag": "@cats-cradle/validation-schemas_v0.3.0",
+      "date": "Sun, 22 Oct 2023 15:17:07 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add IsFilename validator"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.2.5",
       "tag": "@cats-cradle/validation-schemas_v0.2.5",
       "date": "Wed, 04 Oct 2023 03:44:49 GMT",

@@ -1,3 +1,12 @@
+// supported custom
+export {
+  IsDiceNotation,
+  IsDiceNotationValidator,
+} from './custom/is-dice-notation';
+export { IsMoney, isMoneyValidator } from './custom/is-money';
+export { IsUuidV4, IsUuidV4Validator } from './custom/is-uuidv4';
+export { IsFilename, IsFilenameValidator } from './custom/is-filename';
+
 // supported class-validator export
 export {
   validateSync,
@@ -63,8 +72,3 @@ export {
 // work around for validating nested types
 // https://stackoverflow.com/questions/53786383/validate-nested-objects-using-class-validator-and-nestjs
 export { Type } from 'class-transformer';
-
-// supported custom
-export * from './custom/is-dice-notation';
-export * from './custom/is-money';
-export * from './custom/is-uuidv4';

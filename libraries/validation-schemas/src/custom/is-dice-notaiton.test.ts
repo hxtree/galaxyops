@@ -1,5 +1,5 @@
 import { validateSync, ValidationError } from 'class-validator';
-import { IsDiceNotation } from '../custom/is-dice-notation';
+import { IsDiceNotation } from './is-dice-notation';
 
 describe('IsDiceNotation', () => {
   let testClass: TestClass;
