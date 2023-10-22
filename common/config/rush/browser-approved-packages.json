@@ -372,7 +372,7 @@
     },
     {
       "name": "axios",
-      "allowedCategories": [ "api-client" ]
+      "allowedCategories": [ "api-client", "apis" ]
     },
     {
       "name": "babel-jest",

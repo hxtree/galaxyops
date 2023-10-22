@@ -1,12 +1,9 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { Readable } from 'stream';
-// import * as puppeteer from 'puppeteer-core';
-// import chromium from '@sparticuz/chromium';
 
 const puppeteer = require('puppeteer-core');
-const chromium = require('@sparticuz/chromium');
-// const chromium = require('@sparticuz/chromium-min');
+const chromium = require('@sparticuz/chromium-min');
 
 @Injectable()
 export class PdfService {
@@ -75,8 +72,11 @@ export class PdfService {
   }
 
   private async getBrowser() {
-    chromium.setHeadlessMode = true;
+    const CHROMIUM_EXECUTABLE_PATH = process.env.AWS_EXECUTION_ENV
+      ? '/opt/nodejs/node_modules/@sparticuz/chromium/bin'
+      : undefined;
 
+    chromium.setHeadlessMode = true;
     chromium.setGraphicsMode = true;
 
     await chromium.font(
@@ -86,9 +86,7 @@ export class PdfService {
     return puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath(
-        'https://github.com/Sparticuz/chromium/releases/download/v112.0.0/chromium-v112.0.0-pack.tar',
-      ),
+      executablePath: await chromium.executablePath(CHROMIUM_EXECUTABLE_PATH),
       headless: 'new', // chromium.headless,
       ignoreHTTPSErrors: true,
     });
