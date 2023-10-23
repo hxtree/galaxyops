@@ -99,19 +99,14 @@ export class PdfController {
       res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
-      // stream.pipe(res);
       return new StreamableFile(stream);
     }
     /**
-       * base64 can be responses can be checked using the following
-       * https://base64.guru/converter/decode/pdf
-       */
+     * base64 can be responses can be checked using the following
+     * https://base64.guru/converter/decode/pdf
+     */
     res.setHeader('Content-Type', 'application/json;charset=UTF-8');
-    // res.status(200).send({
-    //   content: buffer.toString('base64'),
-    //   filename,
-    //   mimeType: 'application/pdf',
-    // });
+
     return {
       content: buffer.toString('base64'),
       filename,
