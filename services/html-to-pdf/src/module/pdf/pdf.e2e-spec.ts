@@ -1,7 +1,6 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, Injectable } from '@nestjs/common';
-import { FakerFactory } from '@cats-cradle/faker-factory';
 import { OperationInput, OperationOutput } from './operation.dto';
 import { PdfService } from './pdf.service';
 import { PdfController } from './pdf.controller';
@@ -30,10 +29,13 @@ describe('/pdf', () => {
 
   describe('GET /pdf', () => {
     it('should render url page to pdf', async () => {
-      jest.spyOn(pdfService, 'urlToPdf').mockImplementation((url: string) => Promise.resolve(Buffer.from('Test', 'utf-8')));
+      jest
+        .spyOn(pdfService, 'urlToPdf')
+        .mockImplementation((url: string) => Promise.resolve(Buffer.from('Test', 'utf-8')));
 
-      const response = await supertest(app.getHttpServer()).get('/pdf');
-      // .expect(200);
+      const response = await supertest(app.getHttpServer())
+        .get('/pdf')
+        .expect(200);
 
       expect(response.header['content-type']).toEqual('application/pdf');
       expect(response.body).toEqual(Buffer.from('Test', 'utf-8'));
@@ -42,7 +44,9 @@ describe('/pdf', () => {
 
   describe('POST /pdf', () => {
     it('should render url page to pdf', async () => {
-      jest.spyOn(pdfService, 'urlToPdf').mockImplementation((url: string) => Promise.resolve(Buffer.from('Test', 'utf-8')));
+      jest
+        .spyOn(pdfService, 'urlToPdf')
+        .mockImplementation((url: string) => Promise.resolve(Buffer.from('Test', 'utf-8')));
 
       const response = await supertest(app.getHttpServer())
         .post('/pdf')
@@ -58,7 +62,9 @@ describe('/pdf', () => {
     });
 
     it('should render url page to json', async () => {
-      jest.spyOn(pdfService, 'urlToPdf').mockImplementation((url: string) => Promise.resolve(Buffer.from('Test', 'utf-8')));
+      jest
+        .spyOn(pdfService, 'urlToPdf')
+        .mockImplementation((url: string) => Promise.resolve(Buffer.from('Test', 'utf-8')));
 
       const response = await supertest(app.getHttpServer())
         .post('/pdf')
@@ -106,7 +112,9 @@ describe('/pdf', () => {
     });
 
     it('should render url page to pdf', async () => {
-      jest.spyOn(pdfService, 'htmlToPdf').mockImplementation((url: string) => Promise.resolve(Buffer.from('Test', 'utf-8')));
+      jest
+        .spyOn(pdfService, 'htmlToPdf')
+        .mockImplementation((url: string) => Promise.resolve(Buffer.from('Test', 'utf-8')));
 
       const response = await supertest(app.getHttpServer())
         .post('/pdf')
@@ -123,7 +131,9 @@ describe('/pdf', () => {
     });
 
     it('should render url page to json', async () => {
-      jest.spyOn(pdfService, 'htmlToPdf').mockImplementation((url: string) => Promise.resolve(Buffer.from('Test', 'utf-8')));
+      jest
+        .spyOn(pdfService, 'htmlToPdf')
+        .mockImplementation((url: string) => Promise.resolve(Buffer.from('Test', 'utf-8')));
 
       const response = await supertest(app.getHttpServer())
         .post('/pdf')
@@ -148,11 +158,9 @@ describe('/pdf', () => {
     });
 
     it('should render html page to data', async () => {
-      jest
-        .spyOn(pdfService, 'htmlToData')
-        .mockImplementation((html: string) => Promise.resolve({
-          title: 'Example Page',
-        }));
+      jest.spyOn(pdfService, 'htmlToData').mockImplementation((html: string) => Promise.resolve({
+        title: 'Example Page',
+      }));
 
       const response = await supertest(app.getHttpServer())
         .post('/pdf')
