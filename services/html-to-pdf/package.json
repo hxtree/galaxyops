@@ -1,9 +1,16 @@
 {
   "name": "@cats-cradle/html-to-pdf",
   "module": "commonjs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "description": "Your Go-To Solution for PDF Generation from HTML.",
+  "bugs": {
+    "url": "https://github.com/hxtree/cats-cradle/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxtree/cats-cradle.git"
+  },
   "bin": {
     "app": "bin/app.js"
   },
