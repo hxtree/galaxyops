@@ -1,37 +1,56 @@
-# @org-apis/html-to-pdf
+# @cats-cradle/html-to-pdf
 
-HTMLtoPDF is a turn-key microservice that generates PDFs from HTML. It support
-both URL and HTML based requests.
+[![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-## Usage Example
+**Your Go-To Solution for PDF Generation from HTML.**
+
+HTMLtoPDF is a high-performance microservice built to empower web developers
+with a streamlined way to generate professional PDFs from HTML content. We
+firmly believe that HTML, a language that's approachable for web development
+beginners, should also be the preferred choice for PDF generation.
+
+Tired of complex PDF libraries and clunky alternatives like FPDF or TCPDF?
+HTMLtoPDF simplifies the entire process, making PDF generation a breeze. Say
+goodbye to intricate code to exactly mimic browsers rendering of the page and
+embrace a brighter future for PDF creation.
+
+## Quick Start
+
+Generating PDFs with HTMLtoPDF is as easy as pie. Just run cdk:deploy and send a
+URL or HTML input request to the API endpoint:
 
 ```bash
 curl -X POST https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/html-to-pdf/pdf -H "Content-Type: application/json" -d '{"input": "URL", "output": "PDF", "url": "https://google.com"}' -o example.pdf
 ```
 
+Example Output:
+
 ![Example Image](./example.png)
 
 ## How it Works
 
-PDF are generated using a headless version of Chromium running in a lambda. This
-form of PDF rendering supports text recognition, images, hyperlinks, print media
-queries, table breaks, and other features all this with relatively little code
-maintenance.
+HTMLtoPDF employs a headless version of Chromium within an AWS Lambda
+environment to seamlessly generate PDFs. This method supports a wide range of
+features, including text recognition, images, hyperlinks, print media queries,
+and table breaks, all with minimal code maintenance.
 
-This service address many finicky obstacles with making a request through API
-gateway to a Lambda running Chromium to generate a PDF.
+**Key Features**:
 
-- NodeJS Lambda Layers do include default fonts files (\*.tff) like a standard
-  OS does.
-- Performance is essential and Lambda deploys are small. A compressed version of
-  Chromium must be deployed independently as Lambda layer and for performance.
-- API gateway if not properly configured to handle binary responses can cause a
-  blank PDF.
-- Serverless Express has to be configured to support the binary mime type.
+- **Default Fonts**: NodeJS Lambda Layers include default font files (\*.tff),
+  ensuring compatibility similar to a standard OS.
+- **Optimized Performance**: A compressed Chromium version is deployed as a
+  separate Lambda layer for superior performance.
+- **Binary Response Handling**: Our API gateway is meticulously configured to
+  handle binary responses, eliminating the headache of blank PDFs.
+- **Serverless Express Support**: Serverless Express is pre-configured to
+  support binary mime types seamlessly.
 
 ## References
 
-- [Generating PDF AWS Lambda](https://wavelop.com/en/story/generate-pdf-with-aws-lambda/)
+To dive deeper into HTMLtoPDF problem space, explore the following resources:
+
+- [Generating PDF with AWS Lambda](https://wavelop.com/en/story/generate-pdf-with-aws-lambda/)
 - [Puppeteer Layers](https://github.com/RafalWilinski/serverless-puppeteer-layers/tree/master/layer)
-- [Binary Lambda Responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings-configure-with-console.html)
-- [Serverless Express Binary](https://github.com/vendia/serverless-express/blob/master/examples/basic-starter/lambda.js)
+- [Configuring Binary Lambda Responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings-configure-with-console.html)
+- [Serverless Express Binary Configuration](https://github.com/vendia/serverless-express/blob/master/examples/basic-starter/lambda.js)
