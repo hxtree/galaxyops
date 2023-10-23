@@ -8,7 +8,8 @@
 HTMLtoPDF is a high-performance microservice built to empower web developers
 with a streamlined way to generate professional PDFs from HTML content. We
 firmly believe that HTML, a language that's approachable for web development
-beginners, should also be the preferred choice for PDF generation.
+beginners, should also be the preferred choice for most programmatic PDF
+generation.
 
 Tired of complex PDF libraries and clunky alternatives like FPDF or TCPDF?
 HTMLtoPDF simplifies the entire process, making PDF generation a breeze. Say
@@ -17,16 +18,20 @@ embrace a brighter future for PDF creation.
 
 ## Quick Start
 
-Generating PDFs with HTMLtoPDF is as easy as pie. Just run cdk:deploy and send a
-URL or HTML input request to the API endpoint:
+Generating PDFs with HTMLtoPDF is as easy as pie. Just deploy service to AWS by
+running command `cdk:deploy` and send request containing either a URL or HTML to
+the API Gateway endpoint:
 
 ```bash
-curl -X POST https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/html-to-pdf/pdf -H "Content-Type: application/json" -d '{"input": "URL", "output": "PDF", "url": "https://google.com"}' -o example.pdf
+curl -X POST https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/html-to-pdf/pdf \
+ -H "Content-Type: application/json" \
+-d '{"input": "URL", "output": "PDF", "url": "https://google.com"}' \
+-o example.pdf
 ```
 
-Example Output:
+Output:
 
-![Example Image](./example.png)
+![Example Image](https://github.com/hxtree/cats-cradle/raw/main/services/html-to-pdf/example.png)
 
 ## How it Works
 

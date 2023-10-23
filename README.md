@@ -1,15 +1,16 @@
 <h1 align="center">Cats Cradle :yarn:</h1>
 
-Get ready to embark on an adventure with **Cats Cradle** - the upcoming co-op RPG that will transport you to a nostalgic world filled with wonder. Join
-us on this exciting journey as we continue to develop and bring this game to
-life.
+Get ready to embark on an adventure with **Cats Cradle** - the upcoming co-op
+RPG that will transport you to a nostalgic world filled with wonder. Join us on
+this exciting journey as we continue to develop and bring this game to life.
 
 This repo houses the game's code. This enterprise architecture monorepo includes
 numerous microservices built on a PaaS with IaC for streamlined DevOps CI/CD.
 
-Although each package is maintained primarily for the game, most are
-individually published to [NPM](https://www.npmjs.com/search?q=%40cats-cradle)
-and available under open-source software license.
+Although each package is maintained primarily for the game, most stable packages
+are individually published to
+[NPM](https://www.npmjs.com/search?q=%40cats-cradle) and available under
+open-source software license.
 
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
