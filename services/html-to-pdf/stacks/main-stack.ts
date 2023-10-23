@@ -29,7 +29,7 @@ export class HtmlToPdfStack extends cdk.Stack {
     });
 
     new cdk.CfnOutput(this, 'test endpoint', {
-      value: `${microservice.getBaseUrl()}/pdf/example-pdf`,
+      value: `${microservice.getBaseUrl()}/pdf?url=https://google.com`,
     });
   }
 }

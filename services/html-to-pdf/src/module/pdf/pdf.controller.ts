@@ -6,47 +6,85 @@ import {
   Get,
   VERSION_NEUTRAL,
   Query,
+  BadRequestException,
+  StreamableFile,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { v4 } from 'uuid';
 import { PdfService } from './pdf.service';
-import { CreateHtmlToPdfDto } from './create-html-to-pdf.dto';
-import { CreateUrlToPdfDto } from './create-url-to-pdf.dto';
+import { OperationDto, OperationInput, OperationOutput } from './operation.dto';
 
 @Controller({ path: 'pdf', version: ['1', VERSION_NEUTRAL] })
 export class PdfController {
   constructor(private readonly pdfService: PdfService) {}
 
-  @Get('example-data')
-  async exampleData(@Res() res: Response) {
-    const data = await this.pdfService.renderPageData(
-      '<!doctype><html><head><title>Demo Page</title></head><body><h1>Demo</h1></body></html>',
-    );
-
-    res.status(200).send(data);
+  @Get()
+  async url(
+  @Res({ passthrough: true }) res: Response,
+    @Query('url') url?: string,
+  ) {
+    const buffer = await this.pdfService.urlToPdf(url ?? 'http://example.com');
+    return this.responseAsPdf(false, buffer, res, `${v4()}.pdf`);
   }
 
-  @Get('example-pdf')
-  async test(@Res() res: Response, @Query('url') url?: string) {
-    const buffer = await this.pdfService.renderUrl(url ?? 'http://example.com');
-    this.responseAsPdf(false, buffer, res, `${v4()}.pdf`);
-  }
+  @Post()
+  async operation(
+    @Res({ passthrough: true }) res: Response,
+      @Body() body: OperationDto,
+  ): Promise<any> {
+    let buffer;
 
-  @Post('render-url')
-  async renderUrl(@Res() res: Response, @Body() body: CreateUrlToPdfDto) {
-    const buffer = await this.pdfService.renderUrl(body.url);
-    this.responseAsPdf(false, buffer, res, body.filename);
-  }
-
-  @Post('render-html-data')
-  async renderHtmlData(@Res() res: Response, @Body() body: CreateHtmlToPdfDto) {
-    return this.pdfService.renderPageData(body.html);
-  }
-
-  @Post('render-html')
-  async renderHtml(@Res() res: Response, @Body() body: CreateHtmlToPdfDto) {
-    const buffer = await this.pdfService.renderHtml(body.html);
-    this.responseAsPdf(false, buffer, res, body.filename);
+    try {
+      switch (true) {
+        case body.input === OperationInput.HTML
+          && body.output === OperationOutput.DATA:
+          return await this.pdfService.htmlToData(body.content ?? '');
+        case body.input === OperationInput.HTML
+          && body.output === OperationOutput.JSON:
+          buffer = await this.pdfService.htmlToPdf(body.content ?? '');
+          return this.responseAsPdf(
+            true,
+            buffer,
+            res,
+            body.filename ?? `${v4()}.pdf`,
+          );
+        case body.input === OperationInput.HTML
+          && body.output === OperationOutput.PDF:
+          buffer = await this.pdfService.htmlToPdf(body.content ?? '');
+          return this.responseAsPdf(
+            false,
+            buffer,
+            res,
+            body.filename ?? `${v4()}.pdf`,
+          );
+        case body.input === OperationInput.URL
+          && body.output === OperationOutput.DATA:
+          return await this.pdfService.urlToData(body.url ?? '');
+        case body.input === OperationInput.URL
+          && body.output === OperationOutput.JSON:
+          buffer = await this.pdfService.urlToPdf(body.url ?? '');
+          return this.responseAsPdf(
+            true,
+            buffer,
+            res,
+            body.filename ?? `${v4()}.pdf`,
+          );
+        case body.input === OperationInput.URL
+          && body.output === OperationOutput.PDF:
+          buffer = await this.pdfService.urlToPdf(body.url ?? '');
+          return this.responseAsPdf(
+            false,
+            buffer,
+            res,
+            body.filename ?? `${v4()}.pdf`,
+          );
+        default:
+          return new BadRequestException('Invalid request');
+      }
+    } catch (err) {
+      const error = err as Error;
+      return new BadRequestException(`Failed to render pdf: ${error.message}`);
+    }
   }
 
   private responseAsPdf(
@@ -61,18 +99,23 @@ export class PdfController {
       res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
-      stream.pipe(res);
-    } else {
-      /**
+      // stream.pipe(res);
+      return new StreamableFile(stream);
+    }
+    /**
        * base64 can be responses can be checked using the following
        * https://base64.guru/converter/decode/pdf
        */
-      res.setHeader('Content-Type', 'application/json;charset=UTF-8');
-      res.status(200).send({
-        content: buffer.toString('base64'),
-        filename,
-        mimeType: 'application/pdf',
-      });
-    }
+    res.setHeader('Content-Type', 'application/json;charset=UTF-8');
+    // res.status(200).send({
+    //   content: buffer.toString('base64'),
+    //   filename,
+    //   mimeType: 'application/pdf',
+    // });
+    return {
+      content: buffer.toString('base64'),
+      filename,
+      mimeType: 'application/pdf',
+    };
   }
 }
