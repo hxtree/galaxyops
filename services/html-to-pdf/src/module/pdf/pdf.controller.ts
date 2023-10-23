@@ -24,7 +24,11 @@ export class PdfController {
     @Query('url') url?: string,
   ) {
     const buffer = await this.pdfService.urlToPdf(url ?? 'http://example.com');
-    return this.responseAsPdf(buffer, res, `${v4()}.pdf`);
+    const filename = `${v4()}.pdf`;
+    res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
+    return new StreamableFile(this.pdfService.createReadableStream(buffer));
   }
 
   @Post()
@@ -33,6 +37,7 @@ export class PdfController {
       @Body() body: OperationDto,
   ): Promise<any> {
     let buffer;
+    const filename = body.filename ?? `${v4()}.pdf`;
 
     try {
       switch (true) {
@@ -50,11 +55,16 @@ export class PdfController {
         case body.input === OperationInput.HTML
           && body.output === OperationOutput.PDF:
           buffer = await this.pdfService.htmlToPdf(body.content ?? '');
-          return this.responseAsPdf(
-            buffer,
-            res,
-            body.filename ?? `${v4()}.pdf`,
+          res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
+          res.setHeader('Content-Type', 'application/pdf');
+          res.setHeader(
+            'Content-Disposition',
+            `attachment; filename=${filename}`,
           );
+          return new StreamableFile(
+            this.pdfService.createReadableStream(buffer),
+          );
+
         case body.input === OperationInput.URL
           && body.output === OperationOutput.DATA:
           return await this.pdfService.urlToData(body.url ?? '');
@@ -69,10 +79,14 @@ export class PdfController {
         case body.input === OperationInput.URL
           && body.output === OperationOutput.PDF:
           buffer = await this.pdfService.urlToPdf(body.url ?? '');
-          return this.responseAsPdf(
-            buffer,
-            res,
-            body.filename ?? `${v4()}.pdf`,
+          res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
+          res.setHeader('Content-Type', 'application/pdf');
+          res.setHeader(
+            'Content-Disposition',
+            `attachment; filename=${filename}`,
+          );
+          return new StreamableFile(
+            this.pdfService.createReadableStream(buffer),
           );
         default:
           return new BadRequestException('Invalid request');
@@ -81,13 +95,5 @@ export class PdfController {
       const error = err as Error;
       return new BadRequestException(`Failed to render pdf: ${error.message}`);
     }
-  }
-
-  private responseAsPdf(buffer: Buffer, res: Response, filename: string) {
-    const stream = this.pdfService.createReadableStream(buffer);
-    res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
-    return new StreamableFile(stream);
   }
 }
