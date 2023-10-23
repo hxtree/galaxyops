@@ -24,7 +24,7 @@ export class PdfController {
     @Query('url') url?: string,
   ) {
     const buffer = await this.pdfService.urlToPdf(url ?? 'http://example.com');
-    return this.responseAsPdf(false, buffer, res, `${v4()}.pdf`);
+    return this.responseAsPdf(buffer, res, `${v4()}.pdf`);
   }
 
   @Post()
@@ -42,17 +42,15 @@ export class PdfController {
         case body.input === OperationInput.HTML
           && body.output === OperationOutput.JSON:
           buffer = await this.pdfService.htmlToPdf(body.content ?? '');
-          return this.responseAsPdf(
-            true,
-            buffer,
-            res,
-            body.filename ?? `${v4()}.pdf`,
-          );
+          return {
+            content: buffer.toString('base64'),
+            filename: body.filename ?? `${v4()}.pdf`,
+            mimeType: 'application/pdf',
+          };
         case body.input === OperationInput.HTML
           && body.output === OperationOutput.PDF:
           buffer = await this.pdfService.htmlToPdf(body.content ?? '');
           return this.responseAsPdf(
-            false,
             buffer,
             res,
             body.filename ?? `${v4()}.pdf`,
@@ -63,17 +61,15 @@ export class PdfController {
         case body.input === OperationInput.URL
           && body.output === OperationOutput.JSON:
           buffer = await this.pdfService.urlToPdf(body.url ?? '');
-          return this.responseAsPdf(
-            true,
-            buffer,
-            res,
-            body.filename ?? `${v4()}.pdf`,
-          );
+          return {
+            content: buffer.toString('base64'),
+            filename: body.filename ?? `${v4()}.pdf`,
+            mimeType: 'application/pdf',
+          };
         case body.input === OperationInput.URL
           && body.output === OperationOutput.PDF:
           buffer = await this.pdfService.urlToPdf(body.url ?? '');
           return this.responseAsPdf(
-            false,
             buffer,
             res,
             body.filename ?? `${v4()}.pdf`,
@@ -87,30 +83,11 @@ export class PdfController {
     }
   }
 
-  private responseAsPdf(
-    json: boolean,
-    buffer: Buffer,
-    res: Response,
-    filename: string,
-  ) {
-    if (!json) {
-      const stream = this.pdfService.createReadableStream(buffer);
-
-      res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
-      res.setHeader('Content-Type', 'application/pdf');
-      res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
-      return new StreamableFile(stream);
-    }
-    /**
-     * base64 can be responses can be checked using the following
-     * https://base64.guru/converter/decode/pdf
-     */
-    res.setHeader('Content-Type', 'application/json;charset=UTF-8');
-
-    return {
-      content: buffer.toString('base64'),
-      filename,
-      mimeType: 'application/pdf',
-    };
+  private responseAsPdf(buffer: Buffer, res: Response, filename: string) {
+    const stream = this.pdfService.createReadableStream(buffer);
+    res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
+    return new StreamableFile(stream);
   }
 }
