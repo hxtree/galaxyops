@@ -24,7 +24,7 @@ the API Gateway endpoint:
 
 ```bash
 curl -X POST https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/html-to-pdf/pdf \
- -H "Content-Type: application/json" \
+-H "Content-Type: application/json" \
 -d '{"input": "URL", "output": "PDF", "url": "https://google.com"}' \
 -o example.pdf
 ```
