@@ -241,7 +241,8 @@
         "@cats-cradle/bundle-project",
         "@cats-cradle/bundlers"
       ],
-      "tags": ["deploy-app"]
+      "tags": ["deploy-app"],
+      "shouldPublish": true
     },
     {
       "packageName": "@cats-cradle/jukebox",
