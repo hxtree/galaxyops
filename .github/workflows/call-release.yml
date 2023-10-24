@@ -8,6 +8,8 @@ jobs:
     name: release
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
 
       - name: checkout repository
