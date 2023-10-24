@@ -15,14 +15,6 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v3
 
-      - uses: chrnorm/deployment-action@releases/v1
-        name: Create GitHub deployment
-        id: step-deployment-action
-        with:
-          token: ${{ secrets.GITHUB_TOKEN}}
-          description: 'Upload AWS S3'
-          environment: AWS CodePipeline
-
       - name: setup Node
         uses: actions/setup-node@v3
         with:
