@@ -1,0 +1,75 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: release
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: step-deployment-action
+        with:
+          token: ${{ secrets.GITHUB_TOKEN}}
+          description: 'Upload AWS S3'
+          environment: AWS CodePipeline
+
+      - name: setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.12.0'
+
+      - name: cache rush
+        id: cache
+        uses: actions/cache@v3.2.2
+        with:
+          path: common/temp
+          key: ${{ runner.os }}-build-branch-${{ hashFiles('common/config/rush/repo-state.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-pr-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Setup git
+        run: |
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+
+      - name: install pnpm needed for cdk NodeJsFunction esbuild
+        run: npm install --global pnpm@8.6.6
+
+      - name: rush install
+        run: node common/scripts/install-run-rush.js install -p
+
+      - name: rush build
+        run: node common/scripts/install-run-rush.js build
+
+      - name: rush build:project
+        run: node common/scripts/install-run-rush.js build:project
+
+      - name: Upload items to Github Release
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          tag: ${{ github.ref_name }}
+          body: |
+            # New Release: [@cats-cradle ${{ github.ref_name }}](https://www.npmjs.com/search?q=%40cats-cradle),
+
+            We're pleased to share our latest release, which comprises multiple zip files, each housing a distinct, deploy-ready project from @cats-cradle. Within each package, you'll find the project's code and Infrastructure as Code (IaC) authored in AWS CDK v2 for streamlined deployment.
+
+            We warmly invite you to delve into the contents of this release, offer your valuable feedback, and actively engage in our project on GitHub. Your contributions and active participation are fundamental to our ongoing efforts to enhance and refine our offerings.
+
+            We extend my gratitude for choosing @cats-cradle and anticipate your invaluable involvement in our expanding community.
+          artifacts: 'common/temp/dist/*.zip'
+          prerelease: false
+          draft: true
+          generateReleaseNotes: true
+          token: ${{ github.token }}
+          owner: hxtee
+          repo: cats-cradle
