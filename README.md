@@ -27,7 +27,7 @@ Codespaces.
 Alternatively, build, test, and deploy apps locally using the
 [devcontainer](docs/devcontainer.md).
 
-![](docs/assets/images/malace-tsia.jpg)
+![](docs/architecture.png)
 
 ### Pull Request Lifecycle (~5 mins)
 
