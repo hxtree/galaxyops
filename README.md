@@ -27,7 +27,7 @@ Codespaces.
 Alternatively, build, test, and deploy apps locally using the
 [devcontainer](docs/devcontainer.md).
 
-![](docs/architecture.png)
+![](docs/architecture-diagram.png)
 
 ### Pull Request Lifecycle (~5 mins)
 
@@ -42,7 +42,7 @@ Alternatively, build, test, and deploy apps locally using the
 
    ```bash
    rush build
-   rush lint
+   rush linthttps://github.com/hxtree/cats-cradle
    rush test
    ```
 
