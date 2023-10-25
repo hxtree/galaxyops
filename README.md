@@ -27,7 +27,7 @@ Codespaces.
 Alternatively, build, test, and deploy apps locally using the
 [devcontainer](docs/devcontainer.md).
 
-![](docs/flowchart.drawio.png)
+![Flow Chart](docs/flow-chart-dark.drawio.svg)
 
 ### Pull Request Lifecycle (~5 mins)
 
