@@ -24,11 +24,11 @@ export class WorkspaceDecouple {
       }
 
       const matchingWorkspaceProject = workspaceProjects.find(
-        project => project.manifest.name === pkgName,
+        (project) => project.manifest.name === pkgName,
       );
       if (
-        !matchingWorkspaceProject ||
-        !matchingWorkspaceProject.manifest.version
+        !matchingWorkspaceProject
+        || !matchingWorkspaceProject.manifest.version
       ) {
         throw new Error(
           `Fail to replace workspace with package ${pkgName} make sure it's published`,

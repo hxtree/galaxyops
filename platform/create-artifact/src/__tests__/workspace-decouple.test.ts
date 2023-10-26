@@ -13,12 +13,12 @@ describe('WorkspaceDecouple', () => {
 
       const workspaceDecouple = new WorkspaceDecouple();
       await workspaceDecouple.convertFilename(sourceFilepath, outputFilepath);
-      let result = await fs.promises.readFile(outputFilepath, 'utf-8');
-      let resultJson = JSON.parse(result);
+      const result = await fs.promises.readFile(outputFilepath, 'utf-8');
+      const resultJson = JSON.parse(result);
 
       expect(resultJson).toEqual(
         expect.objectContaining({
-          name: '@cats-cradle/bundle-project',
+          name: '@cats-cradle/create-artifact',
           devDependencies: expect.objectContaining({
             '@cats-cradle/eslint-config':
               expect.not.stringContaining('workspace:*'),

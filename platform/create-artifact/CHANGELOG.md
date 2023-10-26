@@ -1,4 +1,4 @@
-# Change Log - @cats-cradle/bundle-project
+# Change Log - @cats-cradle/create-artifact
 
 This log was last generated on Wed, 04 Oct 2023 03:44:49 GMT and should not be manually modified.
 

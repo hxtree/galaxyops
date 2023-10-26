@@ -684,7 +684,7 @@ importers:
         specifier: 5.1.3
         version: 5.1.3
 
-  platform/bundle-project:
+  platform/create-artifact:
     dependencies:
       '@pnpm/find-workspace-dir':
         specifier: ~6.0.0
@@ -1604,9 +1604,9 @@ importers:
         specifier: ~9.0.0
         version: 9.0.0
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../platform/bundle-project
+        version: link:../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../platform/bundlers
@@ -1764,9 +1764,9 @@ importers:
         specifier: ~9.0.0
         version: 9.0.0
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../../platform/bundle-project
+        version: link:../../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../../platform/bundlers
@@ -1903,9 +1903,9 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../platform/bundle-project
+        version: link:../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../platform/bundlers
@@ -2027,9 +2027,9 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../../platform/bundle-project
+        version: link:../../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../../platform/bundlers
@@ -2160,9 +2160,9 @@ importers:
         specifier: ~9.0.0
         version: 9.0.0
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../platform/bundle-project
+        version: link:../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../platform/bundlers
@@ -2305,9 +2305,9 @@ importers:
         specifier: ~9.0.0
         version: 9.0.0
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../../platform/bundle-project
+        version: link:../../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../../platform/bundlers
@@ -2650,9 +2650,9 @@ importers:
         specifier: ~9.0.0
         version: 9.0.0
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../platform/bundle-project
+        version: link:../../platform/create-artifact
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: link:../../platform/eslint-config
@@ -2816,9 +2816,9 @@ importers:
         specifier: ~9.0.0
         version: 9.0.0
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../../platform/bundle-project
+        version: link:../../../platform/create-artifact
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: link:../../../platform/eslint-config
@@ -2958,9 +2958,9 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../platform/bundle-project
+        version: link:../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../platform/bundlers
@@ -3082,9 +3082,9 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../../platform/bundle-project
+        version: link:../../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../../platform/bundlers
@@ -3484,9 +3484,9 @@ importers:
         specifier: ~9.0.0
         version: 9.0.0
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../platform/bundle-project
+        version: link:../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../platform/bundlers
@@ -3626,9 +3626,9 @@ importers:
         specifier: ~9.0.0
         version: 9.0.0
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../../platform/bundle-project
+        version: link:../../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../../platform/bundlers
@@ -3765,9 +3765,9 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../platform/bundle-project
+        version: link:../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../platform/bundlers
@@ -3892,9 +3892,9 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
-        version: link:../../../platform/bundle-project
+        version: link:../../../platform/create-artifact
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: link:../../../platform/bundlers

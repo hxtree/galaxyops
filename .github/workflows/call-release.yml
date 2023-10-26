@@ -47,8 +47,8 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
-      - name: rush build:project
-        run: node common/scripts/install-run-rush.js build:project
+      - name: rush artifact
+        run: node common/scripts/install-run-rush.js artifact
 
       - name: Upload items to Github Release
         uses: ncipollo/release-action@v1

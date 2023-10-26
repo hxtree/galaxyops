@@ -1,24 +1,27 @@
-# @cats-cradle/bundle-project
+# @cats-cradle/create-artifact
 
-BundleProject is a tool for bundling a single PNPM workspace. It creates a copy
-of the workspace, replaces the package.json `workspace:*` with the actual
-versions, and compresses the project as a ZIP file.
+create-artifact is a tool for bundling a single package into an artifact. It was
+designed to help create small fast deployable projects.
 
-It was designed for a monorepo that uses PNPM to help create small fast
-deployable projects using AWS CDK in AWS CodePipelines.
+## How it Works
 
-In order for this to work properly each `workspace` dependency must be published
-prior to services that use it being deployed.
+create-artifact creates a copy of the workspace, replaces any dynamic
+package.json `workspace:*` references with the actual versions, and compresses
+the project as a ZIP file.
+
+> **Note** In CI/CD pipelines make sure to publish each `workspace` dependency
+> prior to services that use it being deployed.
 
 ## Usage
 
 ### Example in RushJS
 
-For each project that will be compressed, add BundleProject as a dev dependency:
+For each project that needs an artifact, add create-artifact as a dev
+dependency:
 
 ```bash
 # example of how to add dev dependency in RushJS
-rush add --package @cats-cradle/bundle-project --dev
+rush add --package @cats-cradle/create-artifact --dev
 ```
 
 Add a script command to bundle your package to the project's package.json. Make
@@ -28,7 +31,7 @@ sure to replace `my-package-name` with the name of your package.
 {
   "name": "my-package-name",
   "scripts": {
-    "build:project": "bundle-project my-package-name"
+    "artifact": "create-artifact my-package-name"
   }
 }
 ```
@@ -36,7 +39,7 @@ sure to replace `my-package-name` with the name of your package.
 Run the script to bundle the project.
 
 ```bash
-rushx build:project
+rushx artifact
 ```
 
 ## Opinions
@@ -55,12 +58,12 @@ approach had several costly drawbacks:
   required.
 - It exponentially increases the amount of downloading and processing that needs
   to be done within a CodePipeline. This in turn can create prolonged contract
-  varations between microservices when deploying multi service changes, which
+  variations between microservices when deploying multi service changes, which
   can cause system errors.
-- This expoententially increases disaster recovery time, as pipelines take
-  longer to ship code.
+- This exponentially increases disaster recovery time, as pipelines take longer
+  to ship code.
 
-Instead BundleProject was favored. It enables for a single dedicated Github CI
+Instead create-artifact was favored. It enables for a single dedicated Github CI
 build stage to individually bundle, compress each project changed (along with
 workspace and non-workspace dependencies), and put the compress object in a S3
 bucket. A CodePipeline is then triggered on each object put to deploy the

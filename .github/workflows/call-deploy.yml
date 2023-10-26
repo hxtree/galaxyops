@@ -77,8 +77,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # deploy project for pipeline
-      - name: rush build:project
-        run: node common/scripts/install-run-rush.js build:project
+      - name: rush artifact
+        run: node common/scripts/install-run-rush.js artifact
 
       - uses: shallwefootball/s3-upload-action@master
         name: Upload S3

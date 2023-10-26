@@ -3,7 +3,9 @@ import { Workspace } from './workspace';
 
 export class TargetPackage {
   pkg: Project;
+
   workspace: Workspace;
+
   workspaceDependencies: Project[];
 
   constructor(pkg: Project, workspace: Workspace) {
@@ -32,19 +34,18 @@ export class TargetPackage {
     pkg: Project,
   ): Project[] {
     const targetPackageDependencies: Project[] = [];
-    const recursive = (pkg: Project) => {
-      const packageDependenciesList =
-        TargetPackage.getPackageDependenciesList(pkg);
+    const recursive = (rpkg: Project) => {
+      const packageDependenciesList = TargetPackage.getPackageDependenciesList(rpkg);
       if (!packageDependenciesList.length) {
         return;
       }
 
-      packageDependenciesList.forEach(dependencyName => {
+      packageDependenciesList.forEach((dependencyName) => {
         const workspacePackage = workspace.getPackageByName(dependencyName);
 
         if (
-          workspacePackage &&
-          !targetPackageDependencies.includes(workspacePackage)
+          workspacePackage
+          && !targetPackageDependencies.includes(workspacePackage)
         ) {
           targetPackageDependencies.push(workspacePackage);
           recursive(workspacePackage);

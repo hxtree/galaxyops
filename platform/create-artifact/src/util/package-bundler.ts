@@ -10,7 +10,9 @@ import { WorkspaceDecouple } from './workspace-decouple.js';
 
 export class PackageBundler {
   workspace: Workspace;
+
   targetPackage: TargetPackage;
+
   workspaceDecouple: WorkspaceDecouple;
 
   config: Config;
@@ -38,9 +40,8 @@ export class PackageBundler {
     relativePath: string,
   ): Project {
     if (pkg.manifest.dependencies) {
-      Object.keys(pkg.manifest.dependencies).forEach(dependencyName => {
-        const workspacePackage =
-          this.workspace.getPackageByName(dependencyName);
+      Object.keys(pkg.manifest.dependencies).forEach((dependencyName) => {
+        const workspacePackage = this.workspace.getPackageByName(dependencyName);
         if (workspacePackage && pkg.manifest.dependencies) {
           const directoryName = path.basename(workspacePackage.dir);
           pkg.manifest.dependencies[
@@ -60,11 +61,11 @@ export class PackageBundler {
       'package.json',
       this.config?.outDir,
     ];
-    return !ignorePatterns.some(pattern => src.includes(pattern));
+    return !ignorePatterns.some((pattern) => src.includes(pattern));
   }
 
   copyTargetPackageWorkspaceDependencies() {
-    this.targetPackage.workspaceDependencies.forEach(dependency => {
+    this.targetPackage.workspaceDependencies.forEach((dependency) => {
       const directoryName = path.basename(dependency.dir);
       const distPath = path.join(
         this.config.outDir,
@@ -82,11 +83,11 @@ export class PackageBundler {
   }
 
   copyPackageFiles() {
-    let targetPackage = this.targetPackage.pkg;
+    const targetPackage = this.targetPackage.pkg;
 
     const filesToCopy = fs.readdirSync(targetPackage.dir);
 
-    filesToCopy.forEach(file => {
+    filesToCopy.forEach((file) => {
       if (file !== this.config.outDir) {
         fse.copySync(
           path.join(targetPackage.dir, file),
@@ -104,7 +105,7 @@ export class PackageBundler {
 
     const filesToCopy = fs.readdirSync(targetPackage.dir);
 
-    filesToCopy.forEach(file => {
+    filesToCopy.forEach((file) => {
       if (file !== this.config.outDir) {
         fse.copySync(
           path.join(targetPackage.dir, file),
