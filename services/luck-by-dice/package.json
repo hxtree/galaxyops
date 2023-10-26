@@ -7,7 +7,7 @@
     "app": "bin/app.js"
   },
   "scripts": {
-    "build:project": "bundle-project @cats-cradle/luck-by-dice",
+    "artifact": "create-artifact @cats-cradle/luck-by-dice",
     "dev": "nest start --debug --watch",
     "build": "tsc",
     "build:all": "rush build -t .",
@@ -69,6 +69,6 @@
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.14",
     "@cats-cradle/bundlers": "0.0.3",
-    "@cats-cradle/bundle-project": "1.1.1"
+    "@cats-cradle/create-artifact": "1.1.2"
   }
 }

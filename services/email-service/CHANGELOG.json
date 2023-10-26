@@ -93,7 +93,7 @@
       "comments": {
         "dependency": [
           {
-            "comment": "Updating dependency \"@cats-cradle/bundle-project\" to `1.0.6`"
+            "comment": "Updating dependency \"@cats-cradle/create-artifact\" to `1.0.6`"
           }
         ]
       }
@@ -105,7 +105,7 @@
       "comments": {
         "dependency": [
           {
-            "comment": "Updating dependency \"@cats-cradle/bundle-project\" to `1.0.4`"
+            "comment": "Updating dependency \"@cats-cradle/create-artifact\" to `1.0.4`"
           }
         ]
       }

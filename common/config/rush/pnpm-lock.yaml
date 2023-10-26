@@ -1210,7 +1210,7 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
@@ -1349,7 +1349,7 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
@@ -1482,7 +1482,7 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
@@ -1827,7 +1827,7 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
@@ -1969,7 +1969,7 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
@@ -2111,7 +2111,7 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
@@ -2241,7 +2241,7 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
@@ -2380,7 +2380,7 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
+      '@cats-cradle/create-artifact':
         specifier: 1.1.1
         version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
@@ -7304,7 +7304,7 @@ packages:
       - typescript
     dev: true
 
-  /@cats-cradle/bundle-project@1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0):
+  /@cats-cradle/create-artifact@1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0):
     resolution: {integrity: sha512-LZ7R63zW5ItStAiW5WPLn7F/m6jTLBOzTDbGgeMNOrrNvSBolX6wkNa+VOj8R++quzEaDyoQBwxfAY++Npxe0w==}
     hasBin: true
     dependencies:
