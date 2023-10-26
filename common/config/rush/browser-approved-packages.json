@@ -55,10 +55,6 @@
       "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "rigs" ]
     },
     {
-      "name": "@cats-cradle/bundle-project",
-      "allowedCategories": [ "apis" ]
-    },
-    {
       "name": "@cats-cradle/bundlers",
       "allowedCategories": [ "apis", "category-platform" ]
     },

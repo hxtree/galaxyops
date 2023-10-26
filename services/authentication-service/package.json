@@ -6,7 +6,7 @@
     "dev": "nest start --debug --watch",
     "build": "tsc",
     "build:all": "rush build -t .",
-    "build:project": "bundle-project @cats-cradle/authentication-service",
+    "artifact": "create-artifact @cats-cradle/authentication-service",
     "watch": "tsc -w",
     "test": "jest --logHeapUsage",
     "test:cov": "jest --coverage",
@@ -55,7 +55,7 @@
     "@types/passport-jwt": "~3.0.10"
   },
   "devDependencies": {
-    "@cats-cradle/bundle-project": "1.1.1",
+    "@cats-cradle/create-artifact": "1.1.2",
     "@cats-cradle/eslint-config": "1.0.6",
     "@cats-cradle/faker-factory": "workspace:*",
     "@microsoft/tsdoc": "~0.13.2",

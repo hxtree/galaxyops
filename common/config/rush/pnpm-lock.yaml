@@ -1210,12 +1210,12 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/bundle-project':
-        specifier: 1.1.1
-        version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
+      '@cats-cradle/create-artifact':
+        specifier: 1.1.2
+        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -1349,12 +1349,12 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
-        specifier: 1.1.1
-        version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
+      '@cats-cradle/create-artifact':
+        specifier: 1.1.2
+        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -1482,12 +1482,12 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/bundle-project':
-        specifier: 1.1.1
-        version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
+      '@cats-cradle/create-artifact':
+        specifier: 1.1.2
+        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -1827,9 +1827,9 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/bundle-project':
-        specifier: 1.1.1
-        version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+      '@cats-cradle/create-artifact':
+        specifier: 1.1.2
+        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -1969,12 +1969,12 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
-        specifier: 1.1.1
-        version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
+      '@cats-cradle/create-artifact':
+        specifier: 1.1.2
+        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -2111,12 +2111,12 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/bundle-project':
-        specifier: 1.1.1
-        version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
+      '@cats-cradle/create-artifact':
+        specifier: 1.1.2
+        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -2241,12 +2241,12 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/bundle-project':
-        specifier: 1.1.1
-        version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
+      '@cats-cradle/create-artifact':
+        specifier: 1.1.2
+        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -2380,12 +2380,12 @@ importers:
         specifier: ~0.5.21
         version: 0.5.21
     devDependencies:
-      '@cats-cradle/bundle-project':
-        specifier: 1.1.1
-        version: 1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/bundlers':
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
+      '@cats-cradle/create-artifact':
+        specifier: 1.1.2
+        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -7304,23 +7304,6 @@ packages:
       - typescript
     dev: true
 
-  /@cats-cradle/bundle-project@1.1.1(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0):
-    resolution: {integrity: sha512-LZ7R63zW5ItStAiW5WPLn7F/m6jTLBOzTDbGgeMNOrrNvSBolX6wkNa+VOj8R++quzEaDyoQBwxfAY++Npxe0w==}
-    hasBin: true
-    dependencies:
-      '@pnpm/find-workspace-dir': 6.0.2
-      '@pnpm/find-workspace-packages': 4.0.43(@pnpm/logger@4.0.0)(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
-      '@pnpm/logger': 4.0.0
-      archiver: 5.3.2
-      fs-extra: 10.1.0
-      yargs: 17.7.2
-    transitivePeerDependencies:
-      - '@yarnpkg/core'
-      - domexception
-      - supports-color
-      - typanion
-    dev: true
-
   /@cats-cradle/bundlers@0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3):
     resolution: {integrity: sha512-DREu86GTzX+ZY0VXg9zZVMQ0xqeRUb6jBGnoyNE8Ndu3OOiUbsIHQqqAvcs6x5XOy8uaMyuO8As1TPyVFO0xlg==}
     hasBin: true
@@ -7339,6 +7322,23 @@ packages:
       - supports-color
       - ts-node
       - typescript
+    dev: true
+
+  /@cats-cradle/create-artifact@1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0):
+    resolution: {integrity: sha512-zZGeAXl/EZuEZDwcPx4fp60auwDkqUca+dRiF6akrxemq8T0wGymrudxcm3h8KG4RKOlMQRev8jhq3ZAoZZB/w==}
+    hasBin: true
+    dependencies:
+      '@pnpm/find-workspace-dir': 6.0.2
+      '@pnpm/find-workspace-packages': 4.0.43(@pnpm/logger@4.0.0)(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+      '@pnpm/logger': 4.0.0
+      archiver: 5.3.2
+      fs-extra: 10.1.0
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - '@yarnpkg/core'
+      - domexception
+      - supports-color
+      - typanion
     dev: true
 
   /@cats-cradle/eslint-config@1.0.6:
