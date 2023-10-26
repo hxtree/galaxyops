@@ -1,17 +1,15 @@
 {
-  "name": "@cats-cradle/bundle-project",
-  "version": "1.1.2",
+  "name": "@cats-cradle/create-artifact",
+  "version": "1.1.1",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "bin": {
-    "bundle-project": "bin/bundle-project"
+    "create-artifact": "bin/create-artifact"
   },
   "scripts": {
-    "bundle-project": "bin/bundle-project",
+    "create-artifact": "bin/create-artifact",
     "build": "tsc && tsc-alias",
     "build:all": "rush build -t .",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix",

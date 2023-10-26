@@ -1,9 +1,9 @@
 {
-  "name": "@cats-cradle/bundle-project",
+  "name": "@cats-cradle/create-artifact",
   "entries": [
     {
       "version": "1.1.2",
-      "tag": "@cats-cradle/bundle-project_v1.1.2",
+      "tag": "@cats-cradle/create-artifact_v1.1.2",
       "date": "Wed, 04 Oct 2023 03:44:49 GMT",
       "comments": {
         "patch": [
@@ -15,7 +15,7 @@
     },
     {
       "version": "1.1.1",
-      "tag": "@cats-cradle/bundle-project_v1.1.1",
+      "tag": "@cats-cradle/create-artifact_v1.1.1",
       "date": "Mon, 24 Apr 2023 03:48:09 GMT",
       "comments": {
         "patch": [
@@ -27,7 +27,7 @@
     },
     {
       "version": "1.1.0",
-      "tag": "@cats-cradle/bundle-project_v1.1.0",
+      "tag": "@cats-cradle/create-artifact_v1.1.0",
       "date": "Mon, 24 Apr 2023 02:39:45 GMT",
       "comments": {
         "minor": [
@@ -39,7 +39,7 @@
     },
     {
       "version": "1.0.8",
-      "tag": "@cats-cradle/bundle-project_v1.0.8",
+      "tag": "@cats-cradle/create-artifact_v1.0.8",
       "date": "Thu, 20 Apr 2023 15:41:51 GMT",
       "comments": {
         "patch": [
@@ -51,7 +51,7 @@
     },
     {
       "version": "1.0.7",
-      "tag": "@cats-cradle/bundle-project_v1.0.7",
+      "tag": "@cats-cradle/create-artifact_v1.0.7",
       "date": "Thu, 20 Apr 2023 03:22:16 GMT",
       "comments": {
         "patch": [
@@ -63,7 +63,7 @@
     },
     {
       "version": "1.0.6",
-      "tag": "@cats-cradle/bundle-project_v1.0.6",
+      "tag": "@cats-cradle/create-artifact_v1.0.6",
       "date": "Thu, 13 Apr 2023 13:12:14 GMT",
       "comments": {
         "patch": [
@@ -75,7 +75,7 @@
     },
     {
       "version": "1.0.4",
-      "tag": "@cats-cradle/bundle-project_v1.0.4",
+      "tag": "@cats-cradle/create-artifact_v1.0.4",
       "date": "Thu, 13 Apr 2023 05:30:55 GMT",
       "comments": {
         "patch": [

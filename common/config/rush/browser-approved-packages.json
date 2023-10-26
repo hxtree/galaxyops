@@ -67,6 +67,10 @@
       "allowedCategories": [ "apis", "category-ci-cd", "cicd", "rigs" ]
     },
     {
+      "name": "@cats-cradle/create-artifact",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@cats-cradle/design-system",
       "allowedCategories": [ "apis" ]
     },

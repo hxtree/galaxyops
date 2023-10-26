@@ -63,10 +63,10 @@
       "allowWarningsInSuccessfulBuild": true
     },
     {
-      "name": "build:project",
+      "name": "artifact",
       "commandKind": "bulk",
-      "summary": "Run build:project",
-      "description": "Run build:project to build all projects as individual dist separate from monorepo",
+      "summary": "Run artifact",
+      "description": "Run artifact to build all projects as individual dist separate from monorepo",
       "safeForSimultaneousRushProcesses": false,
       "ignoreMissingScript": true,
       "ignoreDependencyOrder": true,

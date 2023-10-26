@@ -6,6 +6,7 @@ import { Project } from '@pnpm/types';
 
 export class Workspace {
   public rootDir: string;
+
   public packages: Project[];
 
   constructor(rootDir: string, packages: Project[]) {
@@ -32,11 +33,11 @@ export class Workspace {
   }
 
   getPackageByName(packageName: string): Project | null {
-    return this.packages.find(pkg => pkg.manifest.name === packageName) ?? null;
+    return this.packages.find((pkg) => pkg.manifest.name === packageName) ?? null;
   }
 
   getPackageByPath(packagePath: string): Project | null {
-    return this.packages.find(pkg => pkg.dir === packagePath) ?? null;
+    return this.packages.find((pkg) => pkg.dir === packagePath) ?? null;
   }
 
   tryToResolvePackage(packageNameOrPath: string): Project | null {
@@ -51,6 +52,6 @@ export class Workspace {
     }
 
     const packageByPath = this.getPackageByPath(packagePath);
-    return packageByPath ? packageByPath : null;
+    return packageByPath || null;
   }
 }
