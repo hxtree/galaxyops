@@ -18,7 +18,7 @@ async function bootstrap() {
       new ExpressAdapter(expressApp),
     );
 
-    const binaryMimeTypes = [
+    const contentTypes = [
       'application/pdf',
       'application/javascript',
       'application/json',
@@ -51,7 +51,7 @@ async function bootstrap() {
 
     cachedServer = serverlessExpress({
       app: expressApp,
-      binaryMimeTypes,
+      binarySettings: { contentTypes },
     });
   }
 

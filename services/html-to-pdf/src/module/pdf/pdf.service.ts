@@ -1,11 +1,19 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
 import { Injectable } from '@nestjs/common';
 import { Readable } from 'stream';
-import puppeteer from 'puppeteer-core';
+import puppeteer, { PDFOptions } from 'puppeteer-core';
 import chromium from '@sparticuz/chromium-min';
 
 @Injectable()
 export class PdfService {
+  pageSettings: PDFOptions = {
+    format: 'A4',
+    landscape: false,
+    printBackground: true,
+    margin: { top: '0px' },
+    scale: 0.97,
+  };
+
   async htmlToPdf(html: string): Promise<any> {
     const browser = await this.getBrowser();
     const page = await browser.newPage();
@@ -14,7 +22,7 @@ export class PdfService {
       waitUntil: ['networkidle0', 'domcontentloaded'],
     });
 
-    const buffer = await page.pdf({ format: 'a4', printBackground: true });
+    const buffer = await page.pdf(this.pageSettings);
 
     await browser.close();
     return buffer;
@@ -25,13 +33,7 @@ export class PdfService {
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: ['networkidle2', 'domcontentloaded'] });
 
-    const buffer = await page.pdf({
-      format: 'A4',
-      landscape: false,
-      printBackground: true,
-      margin: { top: '30px' },
-      scale: 0.98,
-    });
+    const buffer = await page.pdf(this.pageSettings);
 
     await browser.close();
 
@@ -49,6 +51,7 @@ export class PdfService {
     };
 
     await browser.close();
+
     return data;
   }
 
