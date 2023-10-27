@@ -49,7 +49,7 @@
     "mongoose": "6.9.1"
   },
   "devDependencies": {
-    "@cats-cradle/create-artifact": "2.0.0",
+    "@cats-cradle/create-artifact": "1.1.2",
     "@cats-cradle/eslint-config": "1.0.6",
     "@cats-cradle/faker-factory": "workspace:*",
     "@microsoft/tsdoc": "~0.13.2",
