@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/create-artifact
 
-This log was last generated on Wed, 04 Oct 2023 03:44:49 GMT and should not be manually modified.
+This log was last generated on Fri, 27 Oct 2023 01:39:39 GMT and should not be manually modified.
+
+## 2.0.0
+Fri, 27 Oct 2023 01:39:39 GMT
+
+### Breaking changes
+
+- change name of bin executable
 
 ## 1.1.2
 Wed, 04 Oct 2023 03:44:49 GMT
