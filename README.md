@@ -70,6 +70,14 @@ Alternatively, build, test, and deploy apps locally using the
    git push
    ```
 
+> **Note** Monorepo Package Versioning: It is essential to adhere to a
+> structured release process when dealing with packages that serve as
+> dependencies for other packages within a monorepo. Begin by creating a single
+> pull request or change to update the library or platform package. After that
+> change has been published, create a separate change to increment the versions
+> of packages dependent on the updated one. This approach ensures clear and
+> organized version management within the monorepo.
+
 ## Documentation
 
 See [Documentation](docs/index.md).

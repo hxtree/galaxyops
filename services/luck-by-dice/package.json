@@ -69,6 +69,6 @@
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.14",
     "@cats-cradle/bundlers": "0.0.3",
-    "@cats-cradle/create-artifact": "2.0.0"
+    "@cats-cradle/create-artifact": "1.1.2"
   }
 }
