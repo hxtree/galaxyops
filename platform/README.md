@@ -14,6 +14,13 @@ laying the foundations for other services.
      └─ lambda-layers - # serverless lambda layers.
 ```
 
+> **Note**: It is essential to adhere to a structured release process with
+> packages that serve as dependencies for other packages within this monorepo.
+> Begin by creating a single pull request to update the platform package. Only
+> after this change has been published, should a separate change that increment
+> the versions of packages that depend on the updated one be made. This approach
+> ensures clear and organized version management within the monorepo.
+
 ## Curated List of Recommend Packages
 
 At a base level a platform can be a curated list of preferred packages such as

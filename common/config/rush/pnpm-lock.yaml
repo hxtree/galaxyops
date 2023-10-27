@@ -1214,8 +1214,8 @@ importers:
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/create-artifact':
-        specifier: 1.1.2
-        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+        specifier: 2.0.0
+        version: 2.0.0(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -1353,8 +1353,8 @@ importers:
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/create-artifact':
-        specifier: 1.1.2
-        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+        specifier: 2.0.0
+        version: 2.0.0(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -1486,8 +1486,8 @@ importers:
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/create-artifact':
-        specifier: 1.1.2
-        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+        specifier: 2.0.0
+        version: 2.0.0(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -1828,8 +1828,8 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 1.1.2
-        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+        specifier: 2.0.0
+        version: 2.0.0(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -1973,8 +1973,8 @@ importers:
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/create-artifact':
-        specifier: 1.1.2
-        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+        specifier: 2.0.0
+        version: 2.0.0(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -2115,8 +2115,8 @@ importers:
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/create-artifact':
-        specifier: 1.1.2
-        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+        specifier: 2.0.0
+        version: 2.0.0(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -2245,8 +2245,8 @@ importers:
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/create-artifact':
-        specifier: 1.1.2
-        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+        specifier: 2.0.0
+        version: 2.0.0(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -2384,8 +2384,8 @@ importers:
         specifier: 0.0.3
         version: 0.0.3(@babel/core@7.22.20)(@types/node@20.8.2)(ts-node@10.9.1)(typescript@5.1.3)
       '@cats-cradle/create-artifact':
-        specifier: 1.1.2
-        version: 1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+        specifier: 2.0.0
+        version: 2.0.0(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.6
         version: 1.0.6
@@ -7324,8 +7324,8 @@ packages:
       - typescript
     dev: true
 
-  /@cats-cradle/create-artifact@1.1.2(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0):
-    resolution: {integrity: sha512-zZGeAXl/EZuEZDwcPx4fp60auwDkqUca+dRiF6akrxemq8T0wGymrudxcm3h8KG4RKOlMQRev8jhq3ZAoZZB/w==}
+  /@cats-cradle/create-artifact@2.0.0(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0):
+    resolution: {integrity: sha512-t6A3D/T36EER3mGnHn7//RthBFxHI2oegzKVtD5Soh4Apgfgl1Jp3/8H3IaOoOdRkAfMyDecPjE7qm9RkRDl1A==}
     hasBin: true
     dependencies:
       '@pnpm/find-workspace-dir': 6.0.2
@@ -16569,7 +16569,7 @@ packages:
       '@babel/core': 7.22.20
     dev: true
 
-  /babel-eslint@10.1.0(eslint@8.38.0):
+  /babel-eslint@10.1.0(eslint@8.44.0):
     resolution: {integrity: sha512-ifWaTHQ0ce+448CYop8AdrQiBsGrnC+bMgfyKFdi6EsPLTAWG+QfyDeM6OH+FmWnKvEq5NnBMLvlBUPKQZoDSg==}
     engines: {node: '>=6'}
     deprecated: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
@@ -16580,7 +16580,7 @@ packages:
       '@babel/parser': 7.22.16
       '@babel/traverse': 7.22.20(supports-color@5.5.0)
       '@babel/types': 7.22.19
-      eslint: 8.38.0
+      eslint: 8.44.0
       eslint-visitor-keys: 1.3.0
       resolve: 1.22.6
     transitivePeerDependencies:
@@ -19417,10 +19417,10 @@ packages:
     dependencies:
       '@typescript-eslint/eslint-plugin': 2.34.0(@typescript-eslint/parser@2.34.0)(eslint@6.8.0)(typescript@3.9.10)
       '@typescript-eslint/parser': 2.34.0(eslint@6.8.0)(typescript@3.9.10)
-      babel-eslint: 10.1.0(eslint@8.38.0)
+      babel-eslint: 10.1.0(eslint@8.44.0)
       confusing-browser-globals: 1.0.11
       eslint: 6.8.0
-      eslint-plugin-flowtype: 3.13.0(eslint@8.38.0)
+      eslint-plugin-flowtype: 3.13.0(eslint@8.44.0)
       eslint-plugin-import: 2.27.5(eslint@6.8.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@6.8.0)
       eslint-plugin-react: 7.32.2(eslint@6.8.0)
@@ -19479,13 +19479,13 @@ packages:
       debug: 3.2.7
       eslint: 8.44.0
 
-  /eslint-plugin-flowtype@3.13.0(eslint@8.38.0):
+  /eslint-plugin-flowtype@3.13.0(eslint@8.44.0):
     resolution: {integrity: sha512-bhewp36P+t7cEV0b6OdmoRWJCBYRiHFlqPZAG1oS3SF+Y0LQkeDvFSM4oxoxvczD1OdONCXMlJfQFiWLcV9urw==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: '>=5.0.0'
     dependencies:
-      eslint: 8.38.0
+      eslint: 8.44.0
       lodash: 4.17.21
     dev: true
 
@@ -29404,7 +29404,7 @@ packages:
       '@typescript-eslint/parser': 2.34.0(eslint@6.8.0)(typescript@3.9.10)
       ansi-escapes: 4.3.2
       asyncro: 3.0.0
-      babel-eslint: 10.1.0(eslint@8.38.0)
+      babel-eslint: 10.1.0(eslint@8.44.0)
       babel-plugin-annotate-pure-calls: 0.4.0(@babel/core@7.21.4)
       babel-plugin-dev-expression: 0.2.3(@babel/core@7.21.4)
       babel-plugin-macros: 2.8.0
@@ -29416,7 +29416,7 @@ packages:
       eslint: 6.8.0
       eslint-config-prettier: 6.15.0(eslint@6.8.0)
       eslint-config-react-app: 5.2.1(@typescript-eslint/eslint-plugin@2.34.0)(@typescript-eslint/parser@2.34.0)(babel-eslint@10.1.0)(eslint-plugin-flowtype@3.13.0)(eslint-plugin-import@2.27.5)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-react-hooks@2.5.1)(eslint-plugin-react@7.32.2)(eslint@6.8.0)
-      eslint-plugin-flowtype: 3.13.0(eslint@8.38.0)
+      eslint-plugin-flowtype: 3.13.0(eslint@8.44.0)
       eslint-plugin-import: 2.27.5(eslint@6.8.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@6.8.0)
       eslint-plugin-prettier: 3.4.1(eslint-config-prettier@6.15.0)(eslint@6.8.0)(prettier@1.19.1)
