@@ -11,6 +11,11 @@ export const CHROMIUM_ZIP_FILEPATH = path.resolve(
 );
 
 export async function downloadChromiumZip(): Promise<any> {
+  if (fs.existsSync(CHROMIUM_ZIP_FILEPATH)) {
+    console.log(`Cached ${CHROMIUM_ZIP_URL}`);
+    return;
+  }
+
   console.log(`Downloading ${CHROMIUM_ZIP_URL}`);
 
   await axios({

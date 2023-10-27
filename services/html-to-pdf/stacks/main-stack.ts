@@ -28,7 +28,7 @@ export class HtmlToPdfStack extends cdk.Stack {
       value: `${microservice.getBaseUrl()}/health`,
     });
 
-    new cdk.CfnOutput(this, 'test endpoint', {
+    new cdk.CfnOutput(this, 'example test endpoint', {
       value: `${microservice.getBaseUrl()}/pdf?url=https://google.com`,
     });
   }
