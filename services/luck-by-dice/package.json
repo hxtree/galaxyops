@@ -70,7 +70,7 @@
     "@types/lodash": "~4.14.200",
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.14",
-    "@cats-cradle/create-bundle": "1.0.0",
+    "@cats-cradle/create-bundle": "1.0.2",
     "@cats-cradle/create-artifact": "2.0.0"
   }
 }

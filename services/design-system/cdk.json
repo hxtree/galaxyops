@@ -1,5 +1,5 @@
 {
-  "app": "create-bundle && npx ts-node --prefer-ts-exts --esm bin/app.ts",
+  "app": "npx ts-node --prefer-ts-exts --esm bin/app.ts",
   "watch": {
     "include": ["src/", "stacks/", "pages/", "components/"],
     "exclude": ["__tests__", "*.test.ts", "*.e2e-spec.ts"]
