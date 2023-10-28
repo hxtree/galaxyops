@@ -2,7 +2,7 @@
   "name": "@cats-cradle/create-bundle",
   "license": "MIT",
   "bin": {
-    "create-bundle": "./dist/create-bundle-bin.js"
+    "create-bundle": "bin/create-bundle"
   },
   "main": "./dist/index.js",
   "version": "1.0.0",

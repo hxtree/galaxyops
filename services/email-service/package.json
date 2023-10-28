@@ -19,6 +19,7 @@
     "cdk:synth": "cdk synth",
     "cdk:hotswap": "cdk deploy --hotswap",
     "cdk:deploy": "cdk deploy",
+    "cdk:watch": "cdk watch",
     "cdk:destroy": "cdk destroy",
     "depcheck": "npx depcheck"
   },

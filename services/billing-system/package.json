@@ -20,6 +20,7 @@
     "cdk:diff": "cdk diff",
     "cdk:deploy": "cdk deploy",
     "cdk:hotswap": "cdk deploy --hotswap",
+    "cdk:watch": "cdk watch",
     "cdk:destroy": "cdk destroy",
     "depcheck": "npx depcheck"
   },

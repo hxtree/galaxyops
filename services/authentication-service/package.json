@@ -18,7 +18,8 @@
     "cdk:diff": "cdk diff",
     "cdk:synth": "cdk synth",
     "cdk:hotswap": "cdk deploy --hotswap",
-    "cdk:deploy": "create-bundle && cdk deploy",
+    "cdk:deploy": "cdk deploy",
+    "cdk:watch": "cdk watch",
     "cdk:destroy": "cdk destroy",
     "depcheck": "npx depcheck",
     "typecheck": "tsc --noEmit"
