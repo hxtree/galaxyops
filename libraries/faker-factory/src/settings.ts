@@ -8,6 +8,12 @@ export interface Settings {
   optionals?: boolean | undefined;
 
   /**
+   * whether to return a plain old javascript object
+   * which is helpful when comparing rest request
+   */
+  pojo?: boolean | undefined;
+
+  /**
    * whether optional properties are shown
    */
   probability?: number;

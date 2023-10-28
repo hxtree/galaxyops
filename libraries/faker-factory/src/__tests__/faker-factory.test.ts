@@ -5,8 +5,17 @@ describe('FakerFactory', () => {
   describe('create', () => {
     let faker: SampleClass;
 
-    beforeAll(async () => {
+    beforeEach(async () => {
       faker = await FakerFactory.create<SampleClass>(SampleClass);
+    });
+
+    it('should create a pojo faker object', async () => {
+      faker = await FakerFactory.create<SampleClass>(
+        SampleClass,
+        {},
+        { pojo: true },
+      );
+      expect(typeof faker).toBe('object');
     });
 
     it('should create a faker object', () => {

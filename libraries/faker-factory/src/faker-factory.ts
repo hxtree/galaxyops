@@ -3,6 +3,7 @@ import { cloneDeep } from 'lodash';
 import { Settings } from './settings';
 import { generateFakeData } from './generate-fake-data';
 import { getSchemas } from './schemas';
+import { toPojo } from './pojo';
 
 export class FakerFactory {
   public static create<T>(
@@ -29,6 +30,10 @@ export class FakerFactory {
       ...randomFixture,
       ...partialClone,
     });
+
+    if (settings?.pojo === true) {
+      return toPojo(objectInstance);
+    }
 
     return objectInstance as T;
   }
