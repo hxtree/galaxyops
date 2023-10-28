@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/create-artifact",
+      "comment": "",
+      "type": "none"
+    }
+  ],
+  "packageName": "@cats-cradle/create-artifact"
+}

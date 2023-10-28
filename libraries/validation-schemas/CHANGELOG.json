@@ -2,6 +2,18 @@
   "name": "@cats-cradle/validation-schemas",
   "entries": [
     {
+      "version": "0.3.1",
+      "tag": "@cats-cradle/validation-schemas_v0.3.1",
+      "date": "Sat, 28 Oct 2023 21:42:52 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/faker-factory\" to `1.1.0`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.3.0",
       "tag": "@cats-cradle/validation-schemas_v0.3.0",
       "date": "Sun, 22 Oct 2023 15:17:07 GMT",
