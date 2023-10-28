@@ -57,7 +57,8 @@ jobs:
           body: |
             # New Release: [@cats-cradle ${{ github.ref_name }}](https://www.npmjs.com/search?q=%40cats-cradle),
 
-            We're pleased to share our latest release, which comprises multiple zip files, each housing a distinct, deploy-ready project from @cats-cradle. Within each package, you'll find the project's code and Infrastructure as Code (IaC) authored in AWS CDK v2 for streamlined deployment.
+            We're pleased to share our latest services release, which comprises multiple zip files, each housing a distinct, deploy-ready project from @cats-cradle. Within each package, you'll find the project's code and Infrastructure as Code (IaC) authored in AWS CDK v2 for streamlined deployment. Although each package is maintained primarily for the game, most stable packages
+            We release a multitude of packages independently of our services. Each package is individually published on [NPM](https://www.npmjs.com/search?q=%40cats-cradle) when any changes are made.
 
             We warmly invite you to delve into the contents of this release, offer your valuable feedback, and actively engage in our project on GitHub. Your contributions and active participation are fundamental to our ongoing efforts to enhance and refine our offerings.
           artifacts: 'common/temp/dist/*.zip'
