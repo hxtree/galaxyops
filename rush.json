@@ -41,6 +41,13 @@
   ],
   "projects": [
     {
+      "packageName": "@cats-cradle/api-gateway",
+      "projectFolder": "platform/api-gateway",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "tags": ["deploy-platform"]
+    },
+    {
       "packageName": "@cats-cradle/create-bundle",
       "projectFolder": "platform/create-bundle",
       "reviewCategory": "rigs",
@@ -169,7 +176,10 @@
       "packageName": "@cats-cradle/design-system",
       "projectFolder": "services/design-system",
       "reviewCategory": "apis",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/create-bundle"
+      ],
       "tags": ["category-library", "owner-ux"],
       "shouldPublish": true
     },
@@ -180,7 +190,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/validation-schemas",
         "@cats-cradle/eslint-config",
-        "@cats-cradle/create-artifact"
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
       ],
       "tags": [],
       "shouldPublish": true
@@ -192,7 +203,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/validation-schemas",
         "@cats-cradle/eslint-config",
-        "@cats-cradle/create-artifact"
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
       ],
       "tags": []
     },
@@ -203,7 +215,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/validation-schemas",
         "@cats-cradle/eslint-config",
-        "@cats-cradle/create-artifact"
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
       ],
       "tags": []
     },
@@ -222,20 +235,14 @@
       "tags": []
     },
     {
-      "packageName": "@cats-cradle/api-gateway",
-      "projectFolder": "platform/api-gateway",
-      "reviewCategory": "apis",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["deploy-platform"]
-    },
-    {
       "packageName": "@cats-cradle/html-to-pdf",
       "projectFolder": "services/html-to-pdf",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/validation-schemas",
         "@cats-cradle/eslint-config",
-        "@cats-cradle/create-artifact"
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
       ],
       "tags": ["deploy-app"],
       "shouldPublish": true
@@ -247,7 +254,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
         "@cats-cradle/nestjs-modules",
-        "@cats-cradle/create-artifact"
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
       ],
       "tags": ["deploy-app"]
     },
@@ -257,7 +265,8 @@
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
-        "@cats-cradle/create-artifact"
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
       ],
       "tags": ["deploy-app"]
     },
@@ -268,7 +277,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/validation-schemas",
         "@cats-cradle/eslint-config",
-        "@cats-cradle/create-artifact"
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
       ],
       "tags": ["deploy-app"],
       "shouldPublish": true
@@ -280,7 +290,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
         "@cats-cradle/nestjs-modules",
-        "@cats-cradle/create-artifact"
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
       ],
       "tags": ["deploy-app"],
       "shouldPublish": true
@@ -292,7 +303,8 @@
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
         "@cats-cradle/nestjs-modules",
-        "@cats-cradle/create-artifact"
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
       ],
       "tags": ["deploy-app"]
     }

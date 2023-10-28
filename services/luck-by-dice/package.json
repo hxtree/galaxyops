@@ -21,7 +21,7 @@
     "cdk:bootstrap": "cdk bootstrap",
     "cdk:synth": "cdk synth",
     "cdk:diff": "cdk diff",
-    "cdk:deploy": "nestjs-bundler && cdk deploy",
+    "cdk:deploy": "create-bundle && cdk deploy",
     "cdk:hotswap": "cdk deploy --hotswap",
     "cdk:destroy": "cdk destroy",
     "depcheck": "npx depcheck"
@@ -68,7 +68,7 @@
     "@types/lodash": "~4.14.191",
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.14",
-    "@cats-cradle/bundlers": "0.0.3",
+    "@cats-cradle/create-bundle": "1.0.0",
     "@cats-cradle/create-artifact": "2.0.0"
   }
 }

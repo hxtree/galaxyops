@@ -18,7 +18,7 @@
     "cdk:diff": "cdk diff",
     "cdk:synth": "cdk synth",
     "cdk:hotswap": "cdk deploy --hotswap",
-    "cdk:deploy": "nestjs-bundler && cdk deploy",
+    "cdk:deploy": "create-bundle && cdk deploy",
     "cdk:destroy": "cdk destroy",
     "depcheck": "npx depcheck",
     "typecheck": "tsc --noEmit"
@@ -71,7 +71,7 @@
     "ts-jest": "29.1.1",
     "ts-node": "10.9.1",
     "typescript": "5.1.3",
-    "@cats-cradle/bundlers": "0.0.3",
+    "@cats-cradle/create-bundle": "1.0.0",
     "@shelf/jest-mongodb": "~4.1.7"
   }
 }

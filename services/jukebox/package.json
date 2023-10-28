@@ -17,7 +17,7 @@
     "cdk:diff": "cdk diff",
     "cdk:synth": "cdk synth",
     "cdk:hotswap": "cdk deploy --hotswap",
-    "cdk:deploy": "nestjs-bundler && cdk deploy",
+    "cdk:deploy": "create-bundle && cdk deploy",
     "cdk:destroy": "cdk destroy",
     "depcheck": "npx depcheck"
   },
@@ -68,7 +68,7 @@
     "@types/supertest": "~2.0.14",
     "@cats-cradle/faker-factory": "workspace:*",
     "@fastify/static": "~6.9.0",
-    "@cats-cradle/bundlers": "0.0.3",
+    "@cats-cradle/create-bundle": "1.0.0",
     "@cats-cradle/create-artifact": "2.0.0"
   }
 }
