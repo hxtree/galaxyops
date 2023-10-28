@@ -1,6 +1,11 @@
 # Change Log - @cats-cradle/validation-schemas
 
-This log was last generated on Sun, 22 Oct 2023 15:17:07 GMT and should not be manually modified.
+This log was last generated on Sat, 28 Oct 2023 21:42:52 GMT and should not be manually modified.
+
+## 0.3.1
+Sat, 28 Oct 2023 21:42:52 GMT
+
+_Version update only_
 
 ## 0.3.0
 Sun, 22 Oct 2023 15:17:07 GMT
