@@ -2,6 +2,18 @@
   "name": "@cats-cradle/html-to-pdf",
   "entries": [
     {
+      "version": "1.0.6",
+      "tag": "@cats-cradle/html-to-pdf_v1.0.6",
+      "date": "Sat, 28 Oct 2023 04:52:47 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "change ci"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.5",
       "tag": "@cats-cradle/html-to-pdf_v1.0.5",
       "date": "Mon, 23 Oct 2023 12:23:42 GMT",
