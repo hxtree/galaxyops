@@ -1,13 +1,14 @@
 {
   "name": "@cats-cradle/luck-by-dice",
   "module": "commonjs",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "An API Simulating dice rolls that can be effected by luck from dice notation",
   "bin": {
     "app": "bin/app.js"
   },
   "scripts": {
     "artifact": "create-artifact @cats-cradle/luck-by-dice",
+    "bundle": "create-bundle --watch",
     "dev": "nest start --debug --watch",
     "build": "tsc",
     "build:all": "rush build -t .",
@@ -21,8 +22,9 @@
     "cdk:bootstrap": "cdk bootstrap",
     "cdk:synth": "cdk synth",
     "cdk:diff": "cdk diff",
-    "cdk:deploy": "create-bundle && cdk deploy",
     "cdk:hotswap": "cdk deploy --hotswap",
+    "cdk:deploy": "cdk deploy",
+    "cdk:watch": "cdk watch",
     "cdk:destroy": "cdk destroy",
     "depcheck": "npx depcheck"
   },

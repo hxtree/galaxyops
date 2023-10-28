@@ -2,10 +2,10 @@
   "name": "@cats-cradle/create-bundle",
   "license": "MIT",
   "bin": {
-    "create-bundle": "./dist/create-bundle-bin.js"
+    "create-bundle": "bin/create-bundle"
   },
   "main": "./dist/index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"

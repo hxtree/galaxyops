@@ -1,17 +1,8 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/app.ts",
+  "app": "create-bundle && npx ts-node --prefer-ts-exts bin/app.ts",
   "watch": {
-    "include": ["dist/"],
-    "exclude": [
-      "README.md",
-      "cdk*.json",
-      "**/*.d.ts",
-      "**/*.js",
-      "tsconfig.json",
-      "package*.json",
-      "node_modules",
-      "__tests__"
-    ]
+    "include": ["src/", "stacks/"],
+    "exclude": ["__tests__", "*.test.ts", "*.e2e-spec.ts"]
   },
   "context": {
     "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": true,

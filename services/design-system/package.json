@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/design-system",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -28,6 +28,7 @@
     "cdk:synth": "cdk synth",
     "cdk:hotswap": "cdk deploy --hotswap",
     "cdk:deploy": "storybook build && cdk deploy",
+    "cdk:watch": "cdk watch",
     "cdk:destroy": "cdk destroy",
     "depcheck": "npx depcheck"
   },
