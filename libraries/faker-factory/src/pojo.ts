@@ -1,3 +1,5 @@
+/* eslint-disable no-prototype-builtins */
+
 /**
  * toPojo
  * @param obj
