@@ -11,7 +11,7 @@ export class PdfService {
     landscape: false,
     printBackground: true,
     margin: { top: '0px' },
-    scale: 0.97,
+    scale: 0.973,
   };
 
   async htmlToPdf(html: string): Promise<any> {

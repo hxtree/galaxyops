@@ -71,6 +71,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@cats-cradle/create-bundler",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@cats-cradle/design-system",
       "allowedCategories": [ "apis" ]
     },
