@@ -22,7 +22,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.3",
-    "@cats-cradle/design-system": "workspace:*",
+    "@cats-cradle/design-system": "0.3.4",
     "prismjs": "~1.29.0",
     "@aerisweather/javascript-sdk": "~1.8.0",
     "react-syntax-highlighter": "~15.5.0",

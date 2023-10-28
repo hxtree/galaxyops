@@ -58,7 +58,7 @@
   "devDependencies": {
     "@cats-cradle/create-artifact": "2.0.0",
     "@cats-cradle/eslint-config": "1.0.6",
-    "@cats-cradle/faker-factory": "workspace:*",
+    "@cats-cradle/faker-factory": "1.1.0",
     "@microsoft/tsdoc": "~0.13.2",
     "@nestjs/testing": "9.2.1",
     "@types/aws-lambda": "~8.10.123",

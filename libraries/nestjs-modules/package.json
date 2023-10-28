@@ -68,7 +68,7 @@
     "@types/mongoose": "~5.11.97",
     "aws-sdk-client-mock": "~2.1.0",
     "@aws-sdk/types": "3.289.0",
-    "@cats-cradle/faker-factory": "workspace:*",
+    "@cats-cradle/faker-factory": "1.1.0",
     "@types/luxon": "~3.2.0",
     "@shelf/jest-mongodb": "~4.1.7",
     "mongodb": "6.0.0"

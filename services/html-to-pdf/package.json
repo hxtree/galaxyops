@@ -57,7 +57,7 @@
     "@cats-cradle/validation-schemas": "workspace:*",
     "@nestjs/testing": "9.2.1",
     "@nestjs/axios": "~2.0.0",
-    "@cats-cradle/faker-factory": "workspace:*",
+    "@cats-cradle/faker-factory": "1.1.0",
     "@sparticuz/chromium-min": "112.0.0",
     "puppeteer-core": "19.8.0",
     "uuid": "~9.0.1",
