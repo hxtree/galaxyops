@@ -568,6 +568,9 @@ importers:
       '@cats-cradle/base-nodejs':
         specifier: workspace:*
         version: link:../rigs/base-nodejs
+      chokidar:
+        specifier: ~3.5.3
+        version: 3.5.3
       commander:
         specifier: ~10.0.0
         version: 10.0.0

@@ -1,1 +1,1 @@
-export { nestJsBundler } from './profiles/nestjs-bundler';
+export { NestJsBundler } from './profiles/nestjs-bundler';

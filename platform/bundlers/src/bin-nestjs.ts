@@ -1,7 +1,10 @@
 #!/usr/bin/env node
-import { join } from 'path';
-import { nestJsBundler } from './profiles/nestjs-bundler';
+import { NestJsBundler } from './profiles/nestjs-bundler';
 
 const projectRoot = process.cwd();
+const watchMode = process.argv.includes('--watch');
 
-nestJsBundler({ projectRoot });
+new NestJsBundler({
+  projectRoot,
+  watch: !!watchMode,
+});
