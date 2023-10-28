@@ -6,7 +6,15 @@ const watchMode = process.argv.includes('--watch');
 
 // TODO add support for other bundle profiles based on flags as necessary
 
-new NestJsBundler({
-  projectRoot,
-  watch: !!watchMode,
-});
+if (watchMode) {
+  new NestJsBundler({
+    projectRoot,
+    watch: true,
+  });
+} else {
+  const bundler = new NestJsBundler({
+    projectRoot,
+    watch: false,
+  });
+  bundler.build();
+}

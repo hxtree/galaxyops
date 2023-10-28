@@ -44,6 +44,6 @@
     "fs": "~0.0.1-security",
     "path": "~0.12.7",
     "lodash": "~4.17.21",
-    "@types/lodash": "~4.14.191"
+    "@types/lodash": "~4.14.200"
   }
 }

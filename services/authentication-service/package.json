@@ -66,7 +66,7 @@
     "@types/jest": "29.5.5",
     "@types/node": "20.8.2",
     "@types/supertest": "~2.0.14",
-    "@types/uuid": "~9.0.4",
+    "@types/uuid": "~9.0.6",
     "aws-cdk-lib": "2.95.0",
     "constructs": "^10.2.70",
     "esbuild": "~0.17.5",

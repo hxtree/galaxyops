@@ -61,7 +61,7 @@
     "fs": "~0.0.1-security",
     "path": "~0.12.7",
     "@types/express": "~4.17.18",
-    "@types/uuid": "~9.0.4",
+    "@types/uuid": "~9.0.6",
     "eslint": "8.44.0",
     "@cats-cradle/eslint-config": "1.0.6",
     "@nestjs/testing": "9.2.1",
