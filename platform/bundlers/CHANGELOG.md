@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/bundlers
 
-This log was last generated on Sat, 14 Oct 2023 22:49:51 GMT and should not be manually modified.
+This log was last generated on Sat, 28 Oct 2023 02:49:38 GMT and should not be manually modified.
+
+## 0.1.0
+Sat, 28 Oct 2023 02:49:38 GMT
+
+### Minor changes
+
+- Add support for --watch flag
 
 ## 0.0.5
 Sat, 14 Oct 2023 22:49:51 GMT
