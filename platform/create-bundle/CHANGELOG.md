@@ -1,6 +1,17 @@
-# Change Log - @cats-cradle/bundlers
+# Change Log - @cats-cradle/create-bundle
 
-This log was last generated on Sat, 28 Oct 2023 02:49:38 GMT and should not be manually modified.
+This log was last generated on Sat, 28 Oct 2023 03:02:33 GMT and should not be manually modified.
+
+## 1.0.0
+Sat, 28 Oct 2023 03:02:33 GMT
+
+### Breaking changes
+
+- rename package from bundlers to create-bundle
+
+### Patches
+
+- rename package from bundlers to create-bundle
 
 ## 0.1.0
 Sat, 28 Oct 2023 02:49:38 GMT
