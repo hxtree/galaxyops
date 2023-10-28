@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/constructs",
+      "comment": "",
+      "type": "none"
+    }
+  ],
+  "packageName": "@cats-cradle/constructs"
+}
