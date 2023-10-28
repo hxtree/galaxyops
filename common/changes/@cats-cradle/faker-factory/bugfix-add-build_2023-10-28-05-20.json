@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/faker-factory",
+      "comment": "",
+      "type": "none"
+    }
+  ],
+  "packageName": "@cats-cradle/faker-factory"
+}
