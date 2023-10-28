@@ -1,14 +1,14 @@
-# @cats-cradle/bundlers
+# @cats-cradle/create-bundle
 
 This package contains various bundler profiles. The bundlers bundle another
-projects source code to make it ready for deployment.
+projects source code to make it ready for distribution.
 
 ## Usage
 
 Install bundler as devDependency:
 
 ```bash
-npm install @cats-cradle/bundlers --dev
+npm install @cats-cradle/create-bundle --dev
 ```
 
 Call the binary from within your package.json
@@ -17,8 +17,9 @@ Call the binary from within your package.json
 {
   "name": "your-package",
   "scripts": {
-    "build": "nestjs-bundler",
-    "cdk:deploy": "nestjs-bundler && cdk deploy"
+    "build": "create-bundle",
+    "build:watch": "create-bundle --watch",
+    "cdk:deploy": "create-bundle && cdk deploy"
   }
 }
 ```

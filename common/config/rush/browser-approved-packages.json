@@ -387,6 +387,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "chokidar",
+      "allowedCategories": [ "rigs" ]
+    },
+    {
       "name": "chrome-aws-lambda",
       "allowedCategories": [ "apis" ]
     },

@@ -1,6 +1,35 @@
 {
-  "name": "@cats-cradle/bundlers",
+  "name": "@cats-cradle/create-bundle",
   "entries": [
+    {
+      "version": "1.0.0",
+      "tag": "@cats-cradle/create-bundle_v1.0.0",
+      "date": "Sat, 28 Oct 2023 03:02:33 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "rename package from bundlers to create-bundle"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "rename package from bundlers to create-bundle"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.0",
+      "tag": "@cats-cradle/bundlers_v0.1.0",
+      "date": "Sat, 28 Oct 2023 02:49:38 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add support for --watch flag"
+          }
+        ]
+      }
+    },
     {
       "version": "0.0.5",
       "tag": "@cats-cradle/bundlers_v0.0.5",

@@ -1,11 +1,11 @@
 {
-  "name": "@cats-cradle/bundlers",
+  "name": "@cats-cradle/create-bundle",
   "license": "MIT",
   "bin": {
-    "nestjs-bundler": "./dist/bin-nestjs.js"
+    "create-bundle": "./dist/create-bundle-bin.js"
   },
   "main": "./dist/index.js",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"
@@ -34,7 +34,8 @@
     "@cats-cradle/base-nodejs": "workspace:*",
     "@anatine/esbuild-decorators": "~0.2.19",
     "commander": "~10.0.0",
-    "esbuild": "~0.17.5"
+    "esbuild": "~0.17.5",
+    "chokidar": "~3.5.3"
   },
   "devDependencies": {
     "@types/jest": "29.5.5",
