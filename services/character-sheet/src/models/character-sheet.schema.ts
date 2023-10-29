@@ -49,7 +49,11 @@ export class CharacterSheet {
   public instanceId!: string;
 
   @IsEnum(ArchetypeIds)
-  @Prop()
+  @Prop({
+    type: String,
+    required: true,
+    enum: ArchetypeIds,
+  })
   public archetypeId!: ArchetypeId;
 
   @IsString()
@@ -96,7 +100,7 @@ export class CharacterSheet {
   @ArrayUnique()
   @ArrayMinSize(0)
   @ArrayMaxSize(5)
-  @Prop()
+  @Prop([])
   public disciplines: DisciplineEmbeddable[];
 
   @ValidateNested({ each: true })
@@ -105,14 +109,14 @@ export class CharacterSheet {
   @ArrayUnique()
   @ArrayMinSize(0)
   @ArrayMaxSize(12)
-  @Prop()
+  @Prop([])
   public equipment: EquipmentEmbeddable[];
 
   @ValidateNested({ each: true })
   @Type(() => AffiliationEmbeddable)
   @IsArray()
   @ArrayUnique()
-  @Prop()
+  @Prop([])
   public affiliation: AffiliationEmbeddable[];
 }
 

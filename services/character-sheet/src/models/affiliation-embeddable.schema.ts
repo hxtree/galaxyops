@@ -7,7 +7,11 @@ import { AffiliationId, AffiliationIds } from '../data/affiliations';
 @Schema({ _id: false })
 export class AffiliationEmbeddable {
   @IsEnum(AffiliationIds)
-  @Prop()
+  @Prop({
+    type: String,
+    required: true,
+    enum: AffiliationIds,
+  })
   public affiliationId!: AffiliationId;
 
   @IsInt()
