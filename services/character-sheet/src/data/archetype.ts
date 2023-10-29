@@ -106,7 +106,7 @@ export namespace Archetype {
   export const MISCHIEVOUS_PIEBALD: Type = {
     name: 'Mischievous',
     surname: 'Piebald',
-    alias: ['Keeper of Law', 'Mischief'],
+    alias: ['Keeper of Law', 'Mischief', 'Tux'],
     symbolizes: ['Law', 'Causality', 'Absolute'],
     backstory:
       'Governs the logical of this realm. '
@@ -114,7 +114,7 @@ export namespace Archetype {
       + 'He can choose whether the rain falls downward or upward. '
       + 'His power is based on speech, he must blink speak a rule and blink again in order to invoke it. '
       + 'He can change the rules but is not able to control the runtime of those rules. '
-      + 'He is subspectable to time manipulation as it revert or deteriate his rule. ',
+      + 'He is suspectable to time manipulation as it revert or deteriorate his rule. ',
     affiliation: [Affiliation.THE_CATS],
     description:
       'A black and white cat. '
@@ -175,7 +175,7 @@ export namespace Archetype {
   export const OUERN_ONI: Type = {
     name: 'Ouren',
     surname: 'Oni',
-    symbolizes: ['Destroyer of Time'],
+    symbolizes: ['Dad', 'Father', 'Destroyer of Time'],
     alias: ['The Black Plague', 'Skyfall', 'Timestopper', 'Standstill'],
     backstory:
       'Often sang a song similar to Tumbalalaika to his sons when they were young. '
@@ -195,12 +195,8 @@ export namespace Archetype {
   export const VALLON_ONI: Type = {
     name: 'Vallon',
     surname: 'Oni',
-    symbolizes: [
-      'Destroyer of Heart',
-      'Loveless Lover',
-      'Heartache',
-      'Heart Wrench',
-    ],
+    alias: ['Boss', 'Heartache'],
+    symbolizes: ['Destroyer of Heart', 'Loveless Lover', 'Heart Wrench'],
     description: 'White hair',
     affiliation: [
       Affiliation.THE_DESTROYERS,
@@ -270,6 +266,7 @@ export namespace Archetype {
     name: 'Arinoth',
     surname: 'Diyath',
     symbolizes: ['Patience'],
+    alias: ['Tree'],
     affiliation: [],
     backstory: '',
     potentialDisciplines: [],
@@ -454,6 +451,7 @@ export namespace Archetype {
    */
   export const VOID: Type = {
     name: 'Void',
+    alias: ['Empty'],
     affiliation: [Affiliation.DEVILS],
     backstory:
       'Is one of the original seven demons.'
@@ -493,6 +491,7 @@ export namespace Archetype {
 
   export const MADHI_TSIA: Type = {
     name: 'Mahdi',
+    alias: ['Brother'],
     surname: 'Tsia',
     description: "Malace's brother",
     backstory: 'When the world is about to end he is its savor',
@@ -516,6 +515,7 @@ export namespace Archetype {
 
   export const WISP: Type = {
     name: 'Wisp',
+    alias: ['Crackles'],
     affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Gluttony', 'Hyena'],
     potentialDisciplines: [Discipline.MAGI_YELLOW],
@@ -524,6 +524,7 @@ export namespace Archetype {
 
   export const ASMIN: Type = {
     name: 'Asmin',
+    alias: ['Big Guy'],
     affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Pride', 'Ox'],
     potentialDisciplines: [Discipline.MAGI_BROWN],
@@ -533,6 +534,7 @@ export namespace Archetype {
 
   export const DIAG: Type = {
     name: 'Diag',
+    alias: ['Poisonous Snake'],
     affiliation: [Affiliation.VALLONS_SEVEN],
     symbolizes: ['Envy', 'Snake'],
     potentialDisciplines: [Discipline.MAGI_PURPLE],
@@ -558,6 +560,7 @@ export namespace Archetype {
 
   export const WARLING: Type = {
     name: 'Warling',
+    alias: ['Wind Bag'],
     description: 'The embodiment of a traveling cyclone',
     potentialDisciplines: [Discipline.WIZARD, Discipline.HISTORIAN],
     gearSlots: HumanoidCreatureGearSlots,
@@ -568,6 +571,7 @@ export namespace Archetype {
    */
   export const SPIDER: Type = {
     name: 'Spider',
+    alias: ['Creepy Crawlers'],
     description: 'A spider',
     weaponCompatibility: [],
     gearSlots: [],
@@ -575,6 +579,7 @@ export namespace Archetype {
 
   export const SEA_HORSE: Type = {
     name: 'Sea Horse',
+    alias: ['Legless Horse'],
     description: 'A spider',
     weaponCompatibility: [],
     gearSlots: [],
@@ -582,6 +587,7 @@ export namespace Archetype {
 
   export const SENSITIVE_PLANT: Type = {
     name: 'Sensitive Plant',
+    alias: ['Weepers'],
     description: 'A plant that drops when touched',
     weaponCompatibility: [],
     gearSlots: [],
@@ -589,12 +595,14 @@ export namespace Archetype {
 
   export const DEEP_THINKER: Type = {
     name: 'Deep Thinker',
+    alias: ['Fish Brains'],
     description: 'A humanoid, fish, monster',
     gearSlots: [],
   };
 
   export const GEL: Type = {
     name: 'Gel',
+    alias: ['Blob', 'Jello', 'Squishy'],
     description: 'A gel based creature',
     gearSlots: AmorphousCreatureGearSlots,
   };
@@ -626,8 +634,8 @@ export namespace Archetype {
     gearSlots: [],
   };
 
-  export const SNAKE_OF_WATER: Type = {
-    name: 'Snake of Water',
+  export const SNAKE_OF_THE_WATER: Type = {
+    name: 'Snake of the Water',
     description: 'A type of dragon.',
     gearSlots: SerpentineCreatureGearSlots,
   };

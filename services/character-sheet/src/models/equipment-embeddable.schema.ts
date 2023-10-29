@@ -11,7 +11,11 @@ import { EquipmentId, EquipmentIds } from '../data/gear/equipment.gear';
 @Schema({ _id: false })
 export class EquipmentEmbeddable {
   @IsEnum(EquipmentIds)
-  @Prop()
+  @Prop({
+    type: String,
+    required: true,
+    enum: EquipmentIds,
+  })
   public equipmentId!: EquipmentId;
 
   @ArrayUnique()

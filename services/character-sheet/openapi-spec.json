@@ -547,7 +547,7 @@
             "required": true,
             "in": "path",
             "schema": {
-              "default": "c63bd3b9-02a2-4f32-b836-9aac1665cc96",
+              "default": "1f0fb038-21f8-47ff-9de1-010502a010d3",
               "type": "string"
             }
           }
@@ -586,11 +586,11 @@
         "properties": {
           "_id": {
             "type": "string",
-            "default": "d8fba7e1-3bb2-4715-986e-1846209627a0"
+            "default": "de2e5e17-70ee-4c27-b01a-c38bc6c3e4e2"
           },
           "instanceId": {
             "type": "string",
-            "default": "05f888f0-07ad-484f-9f73-33b828abc09e"
+            "default": "26be8bd5-5d6f-4bbd-8878-b14675fc8dd5"
           },
           "archetypeId": {
             "type": "string",
@@ -647,11 +647,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "default": "712756ed-6b55-42c1-ba6d-2568729b2403"
+            "default": "be51385e-9c08-40ba-b92c-d6b3790db555"
           },
           "instanceId": {
             "type": "string",
-            "default": "8445ffd3-4e7f-4d58-b2a9-620b0d3c4847"
+            "default": "2e308a56-a26d-4513-ba79-2a412f5c113b"
           },
           "place": {
             "type": "string",
@@ -674,7 +674,7 @@
         "properties": {
           "characterSheetId": {
             "type": "string",
-            "default": "ebfe4388-5a84-494a-9e55-b806b9719689"
+            "default": "8eddefd6-612c-421b-a033-ac5234a330e4"
           },
           "affiliationId": {
             "type": "string",

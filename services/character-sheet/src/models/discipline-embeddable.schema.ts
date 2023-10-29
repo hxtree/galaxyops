@@ -7,7 +7,11 @@ import { DisciplineId, DisciplineIds } from '../data/discipline';
 @Schema()
 export class DisciplineEmbeddable {
   @IsEnum(DisciplineIds)
-  @Prop()
+  @Prop({
+    type: String,
+    required: true,
+    enum: DisciplineIds,
+  })
   public disciplineId!: DisciplineId;
 
   @IsInt()

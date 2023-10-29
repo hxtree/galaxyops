@@ -8,7 +8,6 @@ import {
 } from '@cats-cradle/nestjs-modules';
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import { v4 } from 'uuid';
-import { CharacterSheetService } from './character-sheet.service';
 import {
   CharacterSheetSchema,
   CharacterSheet,
@@ -21,7 +20,6 @@ import { Archetype } from '../../data/archetype';
 
 describe('/character-sheets', () => {
   let app: INestApplication;
-  let characterSheetService: CharacterSheetService;
   let characterSheetRepository: CharacterSheetRepository;
   let placeService: PlaceService;
 
@@ -33,20 +31,13 @@ describe('/character-sheets', () => {
           { name: 'CharacterSheet', schema: CharacterSheetSchema },
         ]),
       ],
-      providers: [
-        PlaceService,
-        CharacterSheetRepository,
-        CharacterSheetService,
-      ],
+      providers: [PlaceService, CharacterSheetRepository],
       controllers: [CharacterSheetController],
     }).compile();
 
     app = moduleRef.createNestApplication();
     characterSheetRepository = moduleRef.get<CharacterSheetRepository>(
       CharacterSheetRepository,
-    );
-    characterSheetService = moduleRef.get<CharacterSheetService>(
-      CharacterSheetService,
     );
 
     placeService = moduleRef.get<PlaceService>(PlaceService);
@@ -75,7 +66,7 @@ describe('/character-sheets', () => {
       const characterSheet = await FakerFactory.create<CharacterSheet>(
         CharacterSheet,
         { archetypeId: 'MEEKU_ONI' },
-        { optionals: false },
+        { optionals: false, pojo: true },
       );
       await characterSheetRepository.create(characterSheet);
 
