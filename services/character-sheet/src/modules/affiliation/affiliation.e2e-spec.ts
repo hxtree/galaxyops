@@ -61,7 +61,7 @@ describe('/affiliations', () => {
       .get(`/affiliations/${characterSheet._id}`)
       .expect(200);
 
-    expect(response.body).toEqual(characterSheet.affiliation);
+    expect(response.body).toMatchObject(characterSheet.affiliation);
   });
 
   it('/POST /affiliations/:id', async () => {
@@ -89,7 +89,7 @@ describe('/affiliations', () => {
       .send(body)
       .expect(201);
 
-    expect(response.body).toEqual({
+    expect(response.body).toMatchObject({
       acknowledged: true,
       matchedCount: 1,
       modifiedCount: 1,

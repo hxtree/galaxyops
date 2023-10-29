@@ -106,7 +106,8 @@ describe('/auth', () => {
         .post('/auth/login')
         .send(body)
         .expect(201);
-      expect(response.body).toEqual(
+
+      expect(response.body).toMatchObject(
         expect.objectContaining({
           token: expect.any(String),
         }),

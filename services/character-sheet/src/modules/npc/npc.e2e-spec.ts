@@ -62,7 +62,7 @@ describe('/spawns', () => {
         .send(body)
         .expect(201);
 
-      expect(result.body).toEqual(
+      expect(result.body).toMatchObject(
         expect.objectContaining({
           id: body.id,
           instanceId: body.instanceId,
