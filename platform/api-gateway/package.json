@@ -7,19 +7,22 @@
   },
   "scripts": {
     "dev": "nest start --debug --watch",
+    "artifact": "create-artifact @cats-cradle/api-gateway",
     "build": "tsc",
     "watch": "tsc -w",
     "test": "",
-    "cdk": "cdk",
-    "hotswap": "cdk deploy --hotswap",
+    "test:cov": "",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.{ts,tsx}\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.{ts,tsx}\"  --fix-dry-run",
+    "cdk:bootstrap": "cdk bootstrap",
+    "cdk:diff": "cdk diff",
+    "cdk:synth": "cdk synth",
+    "cdk:hotswap": "cdk deploy --hotswap",
     "cdk:deploy": "cdk deploy",
+    "cdk:watch": "cdk watch",
     "cdk:destroy": "cdk destroy",
-    "diff": "cdk diff",
-    "synth": "cdk synth",
-    "bootstrap": "cdk bootstrap",
-    "depcheck": "npx depcheck"
+    "depcheck": "npx depcheck",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "aws-lambda": "1.0.7",
@@ -40,10 +43,10 @@
     "@nestjs/swagger": "~7.1.13",
     "uuid": "~9.0.1",
     "@aws-cdk/core": "~1.182.0",
-    "aws-cdk": "~2.55.1",
     "constructs": "^10.2.70",
     "aws-cdk-lib": "2.95.0",
-    "construct": "~1.0.0"
+    "construct": "~1.0.0",
+    "@cats-cradle/create-artifact": "2.0.0"
   },
   "devDependencies": {
     "@cats-cradle/constructs": "workspace:*",
