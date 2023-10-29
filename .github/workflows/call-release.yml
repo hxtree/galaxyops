@@ -55,7 +55,7 @@ jobs:
         with:
           tag: ${{ github.ref_name }}
           body: |
-            # New Release: [@cats-cradle ${{ github.ref_name }}](https://www.npmjs.com/search?q=%40cats-cradle),
+            # New Release: [cats-cradle ${{ github.ref_name }}](https://www.npmjs.com/search?q=%40cats-cradle),
 
             We're pleased to share our latest release of service packages. This release is comprised of multiple zip files. Each zip file housing a distinct, deploy-ready project from @cats-cradle including source code and the Infrastructure as Code.
 
