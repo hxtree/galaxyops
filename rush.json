@@ -44,7 +44,10 @@
       "packageName": "@cats-cradle/api-gateway",
       "projectFolder": "platform/api-gateway",
       "reviewCategory": "apis",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/create-artifact"
+      ],
       "tags": ["deploy-platform"]
     },
     {
