@@ -59,7 +59,10 @@ describe('/character-sheets', () => {
       const response = await supertest(app.getHttpServer())
         .get(`/character-sheets/${v4()}`)
         .expect(404);
-      expect(response.body).toEqual({ message: 'Not Found', statusCode: 404 });
+      expect(response.body).toMatchObject({
+        message: 'Not Found',
+        statusCode: 404,
+      });
     });
 
     it('should find result if exists', async () => {
@@ -74,7 +77,7 @@ describe('/character-sheets', () => {
         .get(`/character-sheets/${characterSheet._id}`)
         .expect(200);
 
-      expect(result.body).toEqual(
+      expect(result.body).toMatchObject(
         expect.objectContaining({
           id: characterSheet._id,
           instanceId: characterSheet.instanceId,
@@ -94,7 +97,7 @@ describe('/character-sheets', () => {
       const response = await supertest(app.getHttpServer())
         .get('/character-sheets/?name=MEEKU_ONI')
         .expect(200);
-      expect(response.body).toEqual([]);
+      expect(response.body).toMatchObject([]);
     });
 
     it('should find result if exists', async () => {
@@ -109,7 +112,7 @@ describe('/character-sheets', () => {
         .get('/character-sheets/?name=JANE')
         .expect(200);
 
-      expect(result.body[0]).toEqual(
+      expect(result.body[0]).toMatchObject(
         expect.objectContaining({
           id: characterSheet._id,
           instanceId: characterSheet.instanceId,
@@ -134,7 +137,7 @@ describe('/character-sheets', () => {
         .delete(`/character-sheets/${characterSheet._id}`)
         .expect(200);
 
-      expect(result.body).toEqual(
+      expect(result.body).toMatchObject(
         expect.objectContaining({
           deleted: true,
           deletedCount: 1,

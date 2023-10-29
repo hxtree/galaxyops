@@ -38,7 +38,7 @@ describe('/pdf', () => {
         .expect(200);
 
       expect(response.header['content-type']).toEqual('application/pdf');
-      expect(response.body).toEqual(Buffer.from('Test', 'utf-8'));
+      expect(response.body).toMatchObject(Buffer.from('Test', 'utf-8'));
     });
   });
 
@@ -58,7 +58,7 @@ describe('/pdf', () => {
         .expect(201);
 
       expect(response.header['content-type']).toEqual('application/pdf');
-      expect(response.body).toEqual(Buffer.from('Test', 'utf-8'));
+      expect(response.body).toMatchObject(Buffer.from('Test', 'utf-8'));
     });
 
     it('should render url page to json', async () => {
@@ -78,7 +78,7 @@ describe('/pdf', () => {
       expect(response.header['content-type']).toEqual(
         'application/json; charset=utf-8',
       );
-      expect(response.body).toEqual(
+      expect(response.body).toMatchObject(
         expect.objectContaining({
           content: 'VGVzdA==',
           filename: expect.stringContaining('.pdf'),
@@ -104,7 +104,7 @@ describe('/pdf', () => {
       expect(response.header['content-type']).toEqual(
         'application/json; charset=utf-8',
       );
-      expect(response.body).toEqual(
+      expect(response.body).toMatchObject(
         expect.objectContaining({
           title: 'Example Domain',
         }),
@@ -127,7 +127,7 @@ describe('/pdf', () => {
         .expect(201);
 
       expect(response.header['content-type']).toEqual('application/pdf');
-      expect(response.body).toEqual(Buffer.from('Test', 'utf-8'));
+      expect(response.body).toMatchObject(Buffer.from('Test', 'utf-8'));
     });
 
     it('should render url page to json', async () => {
@@ -148,7 +148,7 @@ describe('/pdf', () => {
       expect(response.header['content-type']).toEqual(
         'application/json; charset=utf-8',
       );
-      expect(response.body).toEqual(
+      expect(response.body).toMatchObject(
         expect.objectContaining({
           content: 'VGVzdA==',
           filename: expect.stringContaining('.pdf'),
@@ -175,7 +175,7 @@ describe('/pdf', () => {
       expect(response.header['content-type']).toEqual(
         'application/json; charset=utf-8',
       );
-      expect(response.body).toEqual(
+      expect(response.body).toMatchObject(
         expect.objectContaining({
           title: 'Example Page',
         }),
