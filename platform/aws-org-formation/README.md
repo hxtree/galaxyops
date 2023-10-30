@@ -7,12 +7,12 @@ The AWS Organization is initialized, managed, and synced using
 
 1. Login to the AWS Management Console. Go to Org Formations and create an Org.
 
-2. Use an existing adequately permissioned IAM user or create an
+2. Use an existing IAM user with adequately permissions or create an
    [Administrator IAM user](https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up-create-iam-user.html).
    Set user or Administrator `aws_access_key_id` and `aws_secret_access_key`
    credentials in ~/.aws/credentials if missing.
 
-3. Initialize the organization using an adequately permissioned user or
+3. Initialize the organization using a user with adequate permission or the
    Administrator profile recently added. This pulls changes for the AWS
    Organization to the Org template file.
 
@@ -26,7 +26,7 @@ The AWS Organization is initialized, managed, and synced using
    Org Formation does not delete accounts. Accounts must be deleted from within
    AWS.
 
-2. Update the Organization resources using an adequately permissioned user.
+2. Update the Organization resources using a user with adequate permissions.
 
    ```bash
    org-formation update organization.yml --profile=Administrator

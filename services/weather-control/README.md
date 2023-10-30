@@ -41,3 +41,7 @@ Some areas to the north should snow mostly while warmer areas should stay warm.
 There are also other global forces that influence the weather:
 
 - There is a traveling tornado that manifest itself.
+
+## References
+
+<https://www.metoffice.gov.uk/weather/climate/climate-explained/climate-zones>
