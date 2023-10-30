@@ -57,7 +57,7 @@ jobs:
           body: |
             # New Release: [cats-cradle ${{ github.ref_name }}](https://www.npmjs.com/search?q=%40cats-cradle),
 
-            We're pleased to share our latest release of service packages. This release is comprised of multiple zip files. Each zip file housing a distinct, deploy-ready project from @cats-cradle including source code and the Infrastructure as Code.
+            We're pleased to share our latest release of service packages. This release is comprised of multiple zip files. Each zip file housing a distinct, deploy-ready project from cats-cradle including source code and the Infrastructure as Code.
 
             We warmly invite you to delve into the contents of this release, offer your valuable feedback, and actively engage in our project on GitHub. Your contributions and active participation are fundamental to our ongoing efforts to enhance and refine our offerings.
 
