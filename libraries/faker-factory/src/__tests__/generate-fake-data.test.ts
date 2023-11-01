@@ -1,10 +1,10 @@
 import { generateFakeData } from '../generate-fake-data';
 import { SampleClass } from './sample-class';
-import { getSchemas } from '../schemas';
+import { getJsonSchemas } from '../get-json-schemas';
 
 describe('generateFakeData', () => {
   it('should change to schema and back again correctly', async () => {
-    const schemas = getSchemas();
+    const schemas = getJsonSchemas();
 
     const fakeData = await generateFakeData(schemas[SampleClass.name], schemas);
 
@@ -19,7 +19,7 @@ describe('generateFakeData', () => {
   });
 
   it('should generate optional fields when probability 1', async () => {
-    const schemas = getSchemas();
+    const schemas = getJsonSchemas();
 
     const fakeData = await generateFakeData(
       schemas[SampleClass.name],
@@ -33,7 +33,7 @@ describe('generateFakeData', () => {
   });
 
   it('should not generate optional fields when probability 0', async () => {
-    const schemas = getSchemas();
+    const schemas = getJsonSchemas();
 
     const fakeData = await generateFakeData(
       schemas[SampleClass.name],

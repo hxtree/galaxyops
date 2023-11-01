@@ -2,7 +2,7 @@ import { ClassConstructor, plainToInstance } from 'class-transformer';
 import { cloneDeep } from 'lodash';
 import { Settings } from './settings';
 import { generateFakeData } from './generate-fake-data';
-import { getSchemas } from './schemas';
+import { getJsonSchemas } from './get-json-schemas';
 import { toPojo } from './pojo';
 
 export class FakerFactory {
@@ -19,7 +19,8 @@ export class FakerFactory {
     partial: Partial<T> = {},
     settings?: Settings,
   ): Promise<T> {
-    const schemas = getSchemas();
+    const schemas = getJsonSchemas();
+
     const randomFixture = await generateFakeData(
       schemas[constructor.name],
       schemas,
