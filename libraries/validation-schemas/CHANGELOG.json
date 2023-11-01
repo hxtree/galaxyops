@@ -2,6 +2,18 @@
   "name": "@cats-cradle/validation-schemas",
   "entries": [
     {
+      "version": "0.4.0",
+      "tag": "@cats-cradle/validation-schemas_v0.4.0",
+      "date": "Wed, 01 Nov 2023 04:48:36 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "add support for lat and long"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.3.1",
       "tag": "@cats-cradle/validation-schemas_v0.3.1",
       "date": "Sat, 28 Oct 2023 21:42:52 GMT",

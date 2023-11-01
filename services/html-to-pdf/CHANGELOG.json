@@ -2,6 +2,18 @@
   "name": "@cats-cradle/html-to-pdf",
   "entries": [
     {
+      "version": "1.0.8",
+      "tag": "@cats-cradle/html-to-pdf_v1.0.8",
+      "date": "Wed, 01 Nov 2023 04:48:36 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/faker-factory\" to `1.2.0`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.7",
       "tag": "@cats-cradle/html-to-pdf_v1.0.7",
       "date": "Sat, 28 Oct 2023 21:42:52 GMT",
