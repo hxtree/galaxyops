@@ -1,7 +1,7 @@
 import { registerDecorator, ValidationOptions } from 'class-validator';
 import currency from 'currency.js';
 
-export function isMoneyValidator(value: any): boolean {
+export function IsMoneyValidator(value: any): boolean {
   const formatted = currency(value, {
     symbol: '',
     separator: '',
@@ -29,7 +29,7 @@ export function IsMoney(validationOptions?: ValidationOptions) {
       constraints: [],
       options: validationOptions,
       validator: {
-        validate: isMoneyValidator,
+        validate: IsMoneyValidator,
       },
     });
   };

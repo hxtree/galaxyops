@@ -42,10 +42,6 @@ describe('FakerFactory', () => {
       expect(typeof faker.uuid).toBe('string');
     });
 
-    it('should create currency based on decorators', () => {
-      expect(typeof faker.currency).toBe('string');
-    });
-
     it('should create email based on decorators', () => {
       expect(typeof faker.email).toContain('string');
       expect(faker.email).toContain('@');
@@ -54,10 +50,6 @@ describe('FakerFactory', () => {
     it('should create site based on decorators', () => {
       expect(typeof faker.site).toContain('string');
       expect(faker.site).toContain('.');
-    });
-
-    it('should create date on decorators', () => {
-      expect(typeof faker.date).toContain('string');
     });
 
     it('should create enum of defined type', () => {

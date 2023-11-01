@@ -11,14 +11,12 @@ import {
   Min,
   IsEmail,
   IsFQDN,
-  IsDate,
   Length,
-  IsCurrency,
   IsInstance,
   ValidateNested,
   IsOptional,
-} from 'class-validator';
-import { Type } from 'class-transformer';
+  Type,
+} from '@cats-cradle/validation-schemas';
 
 export enum SampleEnum {
   RED = 'red',
@@ -49,17 +47,11 @@ export class SampleClass {
   @IsUUID()
   public uuid: string;
 
-  @IsCurrency()
-  public currency: string;
-
   @IsEmail()
   public email: string;
 
   @IsFQDN()
   public site: string;
-
-  @IsDate()
-  public date: Date;
 
   @IsString()
   @Length(1, 10)

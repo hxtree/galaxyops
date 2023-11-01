@@ -14,7 +14,6 @@ describe('generateFakeData', () => {
     expect(typeof result.number).toBe('number');
     expect(typeof result.string).toBe('string');
     expect(typeof result.uuid).toBe('string');
-    expect(typeof result.currency).toBe('string');
     expect(typeof result.email).toBe('string');
     expect(typeof result.site).toBe('string');
   });
