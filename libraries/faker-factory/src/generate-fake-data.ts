@@ -33,6 +33,9 @@ export async function generateFakeData(
   JSONSchemaFaker.format('hostname', () => faker.internet.url());
   JSONSchemaFaker.format('string', () => faker.internet.url());
 
+  JSONSchemaFaker.format('latitude', () => faker.address.latitude());
+  JSONSchemaFaker.format('longitude', () => faker.address.longitude());
+
   if (settings.optionals === true || settings.probability === 1) {
     JSONSchemaFaker.option('alwaysFakeOptionals', true);
   }

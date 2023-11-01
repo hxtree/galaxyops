@@ -1,9 +1,10 @@
 // supported custom
 export {
+  DICE_NOTATION_REGEX,
   IsDiceNotation,
   IsDiceNotationValidator,
 } from './custom/is-dice-notation';
-export { IsMoney, isMoneyValidator } from './custom/is-money';
+export { IsMoney, IsMoneyValidator } from './custom/is-money';
 export { IsUuidV4, IsUuidV4Validator } from './custom/is-uuidv4';
 export { IsFilename, IsFilenameValidator } from './custom/is-filename';
 
@@ -67,6 +68,8 @@ export {
   ArrayMaxSize,
   ArrayUnique,
   IsInstance,
+  IsLatitude,
+  IsLongitude,
 } from 'class-validator';
 
 // work around for validating nested types

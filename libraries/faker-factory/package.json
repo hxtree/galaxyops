@@ -42,7 +42,8 @@
     "class-validator-jsonschema": "3.1.1",
     "json-schema-faker": "~0.5.0-rcv.46",
     "json-schema": "~0.4.0",
-    "openapi3-ts": "~3.1.2"
+    "openapi3-ts": "~3.1.2",
+    "@cats-cradle/validation-schemas": "workspace:*"
   },
   "devDependencies": {
     "@types/jest": "29.5.5",
