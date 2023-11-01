@@ -2,6 +2,23 @@
   "name": "@cats-cradle/faker-factory",
   "entries": [
     {
+      "version": "1.2.0",
+      "tag": "@cats-cradle/faker-factory_v1.2.0",
+      "date": "Wed, 01 Nov 2023 04:48:36 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "add support for additional decorator based fakes"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/validation-schemas\" to `0.4.0`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.1.0",
       "tag": "@cats-cradle/faker-factory_v1.1.0",
       "date": "Sat, 28 Oct 2023 21:42:52 GMT",

@@ -70,6 +70,7 @@ export {
   IsInstance,
   IsLatitude,
   IsLongitude,
+  ValidationTypes,
 } from 'class-validator';
 
 // work around for validating nested types

@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/validation-schemas
 
-This log was last generated on Sat, 28 Oct 2023 21:42:52 GMT and should not be manually modified.
+This log was last generated on Wed, 01 Nov 2023 04:48:36 GMT and should not be manually modified.
+
+## 0.4.0
+Wed, 01 Nov 2023 04:48:36 GMT
+
+### Minor changes
+
+- add support for lat and long
 
 ## 0.3.1
 Sat, 28 Oct 2023 21:42:52 GMT

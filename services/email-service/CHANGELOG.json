@@ -2,6 +2,21 @@
   "name": "@cats-cradle/email-service",
   "entries": [
     {
+      "version": "0.0.14",
+      "tag": "@cats-cradle/email-service_v0.0.14",
+      "date": "Wed, 01 Nov 2023 04:48:36 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/validation-schemas\" to `0.4.0`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/faker-factory\" to `1.2.0`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.13",
       "tag": "@cats-cradle/email-service_v0.0.13",
       "date": "Sat, 28 Oct 2023 21:42:52 GMT",
