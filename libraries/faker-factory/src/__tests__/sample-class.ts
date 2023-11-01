@@ -16,6 +16,7 @@ import {
   ValidateNested,
   IsOptional,
   Type,
+  IsLongitude,
 } from '@cats-cradle/validation-schemas';
 
 export enum SampleEnum {
@@ -52,6 +53,9 @@ export class SampleClass {
 
   @IsFQDN()
   public site: string;
+
+  @IsLongitude()
+  public longitude: string;
 
   @IsString()
   @Length(1, 10)

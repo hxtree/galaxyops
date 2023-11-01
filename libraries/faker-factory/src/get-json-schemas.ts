@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import { ValidationTypes } from '@cats-cradle/validation-schemas';
 import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
 import { defaultMetadataStorage } from 'class-transformer/cjs/storage';
 import { SchemasObject } from 'openapi3-ts';
@@ -14,10 +15,14 @@ export function getJsonSchemas(): SchemasObject {
      * {@link} https://www.npmjs.com/package/class-validator-jsonschema
      */
     additionalConverters: {
-      // [ValidationTypes.IS_STRING]: {
-      //   description: 'A string value',
-      //   type: 'string',
-      // },
+      isLongitude: {
+        format: 'longitude',
+        type: 'string',
+      },
+      isLatitude: {
+        format: 'latitude',
+        type: 'string',
+      },
     },
   });
 }
