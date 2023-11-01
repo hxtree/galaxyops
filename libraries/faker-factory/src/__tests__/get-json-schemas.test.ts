@@ -39,7 +39,6 @@ describe('getJsonSchemas', () => {
       @IsDiceNotation()
       public property: string;
     }
-
     const schemas = getJsonSchemas();
 
     expect(schemas).toMatchObject({
