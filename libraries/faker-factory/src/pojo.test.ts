@@ -22,14 +22,12 @@ describe('isPojo', () => {
     const sut = new TestClass();
     sut.a = 'Test';
 
-    expect(isPojo(sut)).toBeFalsy();
+    expect(isPojo(sut)).toBe(false);
   });
 
   it('should return true for pojo', () => {
-    const sut = new TestClass();
-    sut.a = 'Test';
-    const pojo = sut;
+    const sut = { a: 'Test' };
 
-    expect(isPojo(pojo)).toBeFalsy();
+    expect(isPojo(sut)).toBe(true);
   });
 });
