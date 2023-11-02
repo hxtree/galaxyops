@@ -3,7 +3,7 @@ import { cloneDeep } from 'lodash';
 import { JSONSchemaFaker } from 'json-schema-faker';
 import currency from 'currency.js';
 import { faker } from '@faker-js/faker';
-import { Settings, defaultSettings } from './settings';
+import { Settings, defaultSettings } from './settings.type';
 
 /**
  * Determines how JSONSchema is faked based on format, pattern, etc.

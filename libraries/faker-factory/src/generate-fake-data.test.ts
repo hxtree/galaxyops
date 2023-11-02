@@ -1,6 +1,6 @@
-import { generateFakeData } from '../generate-fake-data';
-import { SampleClass } from './sample-class';
-import { getJsonSchemas } from '../get-json-schemas';
+import { generateFakeData } from './generate-fake-data';
+import { SampleClass } from './__tests__/sample-class';
+import { getJsonSchemas } from './get-json-schemas';
 
 describe('generateFakeData', () => {
   it('should change to schema and back again correctly', async () => {

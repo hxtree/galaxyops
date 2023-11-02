@@ -5,5 +5,7 @@ module.exports = {
   },
   rules: {
     'no-prototype-builtins': 'off',
+    'global-require': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
   },
 };

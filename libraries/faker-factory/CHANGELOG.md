@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/faker-factory
 
-This log was last generated on Wed, 01 Nov 2023 04:48:36 GMT and should not be manually modified.
+This log was last generated on Thu, 02 Nov 2023 12:35:11 GMT and should not be manually modified.
+
+## 1.2.1
+Thu, 02 Nov 2023 12:35:11 GMT
+
+### Patches
+
+- refactor tests
 
 ## 1.2.0
 Wed, 01 Nov 2023 04:48:36 GMT

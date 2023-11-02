@@ -1,6 +1,6 @@
 import { ClassConstructor, plainToInstance } from 'class-transformer';
 import { cloneDeep } from 'lodash';
-import { Settings } from './settings';
+import { Settings } from './settings.type';
 import { generateFakeData } from './generate-fake-data';
 import { getJsonSchemas } from './get-json-schemas';
 import { toPojo } from './pojo';
