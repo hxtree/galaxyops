@@ -5,6 +5,14 @@ import currency from 'currency.js';
 import { faker } from '@faker-js/faker';
 import { Settings, defaultSettings } from './settings';
 
+/**
+ * Determines how JSONSchema is faked based on format, pattern, etc.
+ *
+ * @param inputSchema
+ * @param fakerRefs
+ * @param inputSettings
+ * @returns
+ */
 export async function generateFakeData(
   inputSchema: any,
   fakerRefs: any,
@@ -16,6 +24,15 @@ export async function generateFakeData(
   // custom types
 
   JSONSchemaFaker.format('currency', () =>
+    // eslint-disable-next-line implicit-arrow-linebreak
+    currency(faker.finance.amount(), {
+      symbol: '',
+      separator: '',
+      decimal: '.',
+      precision: 2,
+    }).format());
+
+  JSONSchemaFaker.format('money', () =>
     // eslint-disable-next-line implicit-arrow-linebreak
     currency(faker.finance.amount(), {
       symbol: '',

@@ -1,12 +1,9 @@
-import { registerDecorator, ValidationOptions } from 'class-validator';
+import { Matches, matches, ValidationOptions } from 'class-validator';
 
-export function IsUuidV4Validator(value: any): boolean {
-  return (
-    typeof value === 'string' &&
-    /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[4][0-9a-fA-F]{3}-[89AB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$/i.test(
-      value,
-    )
-  );
+export const UUID_V4_REGEX = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[4][0-9a-fA-F]{3}-[89AB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$/;
+
+export function IsUuidV4Validator(value: string) {
+  return matches(value, UUID_V4_REGEX);
 }
 
 /**
@@ -18,17 +15,8 @@ export function IsUuidV4Validator(value: any): boolean {
  * @param validationOptions
  * @returns
  */
-export function IsUuidV4(validationOptions?: ValidationOptions) {
-  return function (object: Object, propertyName: string) {
-    registerDecorator({
-      name: 'isUuidV4',
-      target: object.constructor,
-      propertyName,
-      constraints: [],
-      options: validationOptions,
-      validator: {
-        validate: IsUuidV4Validator,
-      },
-    });
-  };
+export function IsUuidV4(
+  validationOptions?: ValidationOptions,
+): PropertyDecorator {
+  return Matches(UUID_V4_REGEX, validationOptions);
 }

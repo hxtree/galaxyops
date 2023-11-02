@@ -1,11 +1,48 @@
 // eslint-disable-next-line max-classes-per-file
 import { Type } from 'class-transformer';
-import { IsLongitude, IsString, ValidateNested } from 'class-validator';
-import { IsDiceNotation } from '@cats-cradle/validation-schemas';
+import { IsString, ValidateNested } from 'class-validator';
 import { getJsonSchemas } from '../get-json-schemas';
 
 describe('getJsonSchemas', () => {
-  it('should get all schemas', () => {
+  it.each([
+    ['longitude', 'longitude'],
+    ['latitude', 'latitude'],
+    ['money', 'money'],
+  ])(
+    'should determine "%s" property to have JSONSchema format "%s"',
+    async (property: string, value: any) => {
+      const { SampleClass } = require('./sample-class');
+      const schemas = getJsonSchemas();
+      expect(schemas.SampleClass.properties).toHaveProperty(
+        property,
+        expect.objectContaining({ format: value, type: 'string' }),
+      );
+    },
+  );
+
+  it.each([
+    ['diceNotation', '(\\d+)?d(\\d+)([+-]\\d+)?'],
+    [
+      'uuidV4',
+      '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[4][0-9a-fA-F]{3}-[89AB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$',
+    ],
+  ])(
+    'should determine "%s" property to have JSONSchema pattern "%s"',
+    async (property: string, value: string) => {
+      const { SampleClass } = require('./sample-class');
+      const schemas = getJsonSchemas();
+      expect(schemas.SampleClass.properties).toHaveProperty(property);
+      expect(schemas.SampleClass.properties).toHaveProperty(
+        property,
+        expect.objectContaining({
+          pattern: value,
+          type: 'string',
+        }),
+      );
+    },
+  );
+
+  it('should ref ValidateNested schemas', () => {
     class BlogPost {
       @IsString()
       public words: string;
@@ -17,8 +54,7 @@ describe('getJsonSchemas', () => {
       public blogPosts: BlogPost[];
     }
 
-    const schemas = getJsonSchemas();
-    expect(schemas).toEqual({
+    expect(getJsonSchemas()).toMatchObject({
       BlogPost: {
         properties: { words: { type: 'string' } },
         required: ['words'],
@@ -30,49 +66,6 @@ describe('getJsonSchemas', () => {
         },
         required: ['blogPosts'],
         type: 'object',
-      },
-    });
-  });
-
-  it('should get accurate pattern for schemas', async () => {
-    class TestClass {
-      @IsDiceNotation()
-      public property: string;
-    }
-    const schemas = getJsonSchemas();
-
-    expect(schemas).toMatchObject({
-      TestClass: {
-        properties: {
-          property: {
-            pattern: /(\d+)?d(\d+)([+-]\d+)?/,
-            type: 'string',
-          },
-        },
-        type: 'object',
-        required: ['property'],
-      },
-    });
-  });
-
-  it('should get accurate pattern for schemas', async () => {
-    class Place {
-      @IsLongitude()
-      public property: string;
-    }
-
-    const schemas = getJsonSchemas();
-
-    expect(schemas).toMatchObject({
-      Place: {
-        properties: {
-          property: {
-            format: 'longitude',
-            type: 'string',
-          },
-        },
-        type: 'object',
-        required: ['property'],
       },
     });
   });
