@@ -1,4 +1,4 @@
-export interface Settings {
+export type Settings = {
   /**
    * whether optional properties are faked:
    * true for always generate
@@ -23,7 +23,7 @@ export interface Settings {
   additionalProperties?: boolean | undefined;
 
   ignoreProperties?: boolean | undefined;
-}
+};
 
 export const defaultSettings: Settings = {
   probability: 0.5,

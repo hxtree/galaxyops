@@ -1,7 +1,10 @@
 // eslint-disable-next-line max-classes-per-file
-import { Type } from 'class-transformer';
-import { IsString, ValidateNested } from 'class-validator';
-import { getJsonSchemas } from '../get-json-schemas';
+import {
+  Type,
+  IsString,
+  ValidateNested,
+} from '@cats-cradle/validation-schemas';
+import { getJsonSchemas } from './get-json-schemas';
 
 describe('getJsonSchemas', () => {
   it.each([
@@ -11,7 +14,7 @@ describe('getJsonSchemas', () => {
   ])(
     'should determine "%s" property to have JSONSchema format "%s"',
     async (property: string, value: any) => {
-      const { SampleClass } = require('./sample-class');
+      const { SampleClass } = require('./__tests__/sample-class');
       const schemas = getJsonSchemas();
       expect(schemas.SampleClass.properties).toHaveProperty(
         property,
@@ -29,7 +32,7 @@ describe('getJsonSchemas', () => {
   ])(
     'should determine "%s" property to have JSONSchema pattern "%s"',
     async (property: string, value: string) => {
-      const { SampleClass } = require('./sample-class');
+      const { SampleClass } = require('./__tests__/sample-class');
       const schemas = getJsonSchemas();
       expect(schemas.SampleClass.properties).toHaveProperty(property);
       expect(schemas.SampleClass.properties).toHaveProperty(

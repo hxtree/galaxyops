@@ -1,4 +1,4 @@
-import { isPojo, toPojo } from '../pojo';
+import { isPojo, toPojo } from './pojo';
 
 class TestClass {
   a: string;

@@ -1,5 +1,9 @@
-import { FakerFactory } from '../faker-factory';
-import { SampleClass, SampleChildClass, SampleEnum } from './sample-class';
+import { FakerFactory } from './faker-factory';
+import {
+  SampleClass,
+  SampleChildClass,
+  SampleEnum,
+} from './__tests__/sample-class';
 
 describe('FakerFactory', () => {
   describe('create', () => {
