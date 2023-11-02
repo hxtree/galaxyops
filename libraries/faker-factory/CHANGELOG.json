@@ -2,6 +2,18 @@
   "name": "@cats-cradle/faker-factory",
   "entries": [
     {
+      "version": "1.2.2",
+      "tag": "@cats-cradle/faker-factory_v1.2.2",
+      "date": "Thu, 02 Nov 2023 22:51:17 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix to pojo false check"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.2.1",
       "tag": "@cats-cradle/faker-factory_v1.2.1",
       "date": "Thu, 02 Nov 2023 12:35:11 GMT",

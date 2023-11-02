@@ -27,8 +27,5 @@ export function isPojo(obj: any): boolean {
     return false;
   }
 
-  const prototype = Object.getPrototypeOf(obj);
-
-  // If the prototype is null, it's a plain object
-  return prototype === null;
+  return Object.getPrototypeOf(obj) === Object.prototype;
 }

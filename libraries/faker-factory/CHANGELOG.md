@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/faker-factory
 
-This log was last generated on Thu, 02 Nov 2023 12:35:11 GMT and should not be manually modified.
+This log was last generated on Thu, 02 Nov 2023 22:51:17 GMT and should not be manually modified.
+
+## 1.2.2
+Thu, 02 Nov 2023 22:51:17 GMT
+
+### Patches
+
+- fix to pojo false check
 
 ## 1.2.1
 Thu, 02 Nov 2023 12:35:11 GMT
