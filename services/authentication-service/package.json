@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/authentication-service",
   "module": "commonjs",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "scripts": {
     "dev": "nest start --debug --watch",
     "build": "tsc",
