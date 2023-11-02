@@ -17,6 +17,10 @@ import {
   IsOptional,
   Type,
   IsLongitude,
+  IsMoney,
+  IsDiceNotation,
+  IsLatitude,
+  IsUuidV4,
 } from '@cats-cradle/validation-schemas';
 
 export enum SampleEnum {
@@ -42,8 +46,14 @@ export class SampleClass {
   @IsNumber()
   public number: number;
 
+  @IsMoney()
+  public money: string;
+
   @IsString()
   public string: string;
+
+  @IsUuidV4()
+  public uuidV4: string;
 
   @IsUUID()
   public uuid: string;
@@ -56,6 +66,12 @@ export class SampleClass {
 
   @IsLongitude()
   public longitude: string;
+
+  @IsLatitude()
+  public latitude: string;
+
+  @IsDiceNotation()
+  public diceNotation: string;
 
   @IsString()
   @Length(1, 10)

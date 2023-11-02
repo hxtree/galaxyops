@@ -1,7 +1,7 @@
 # @cats-cradle/validation-schemas
 
 Contains standard class-validator decorators and custom decorators for use
-primarly in defining and validating data used in game design.
+primarily in defining and validating data used in game design.
 
 ```typescript
 import {
@@ -24,10 +24,11 @@ const errors: ValidationError[] = validateSync(testClass);
 console.log(errors.length);
 ```
 
-All validation decorators should be supported by `@cats-cradle/FakerFactory`
+All validation decorators should be supported by
+[@cats-cradle/faker-factory](https://www.npmjs.com/package/@cats-cradle/faker-factory)
 enabling automatic generation of fakes.
 
-## Documentation
+## References
 
 - [validatorjs](https://validatejs.org/)
 - [class-validator](https://github.com/typestack/class-validator)

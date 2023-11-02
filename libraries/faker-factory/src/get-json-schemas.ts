@@ -1,9 +1,12 @@
 import 'reflect-metadata';
-import { ValidationTypes } from '@cats-cradle/validation-schemas';
 import { validationMetadatasToSchemas } from 'class-validator-jsonschema';
 import { defaultMetadataStorage } from 'class-transformer/cjs/storage';
 import { SchemasObject } from 'openapi3-ts';
 
+/**
+ * Determines how JSONSchema is created from validation schema decorators
+ * @returns
+ */
 export function getJsonSchemas(): SchemasObject {
   return validationMetadatasToSchemas({
     refPointerPrefix: '',
@@ -15,6 +18,10 @@ export function getJsonSchemas(): SchemasObject {
      * {@link} https://www.npmjs.com/package/class-validator-jsonschema
      */
     additionalConverters: {
+      isMoney: {
+        format: 'money',
+        type: 'string',
+      },
       isLongitude: {
         format: 'longitude',
         type: 'string',
