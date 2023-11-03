@@ -1,11 +1,12 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication, Injectable } from '@nestjs/common';
+import { INestApplication } from '@nestjs/common';
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import { WeatherService } from './weather.service';
 import { WeatherController } from './weather.controller';
 import { ClimateType } from './climates.type';
 import { QueryDto } from './query.dto';
+import { TimeOfDayType } from './time-of-day.type';
 
 describe('/weather', () => {
   let app: INestApplication;
@@ -30,21 +31,63 @@ describe('/weather', () => {
   });
 
   describe('POST /weather', () => {
-    it('should determine climate', async () => {
-      const body = await FakerFactory.create<QueryDto>(QueryDto, {
-        // longitude: '0',
-      });
-      console.log(body);
-      console.log(body);
+    it.each([
+      [0, TimeOfDayType.MIDNIGHT],
+      [2, TimeOfDayType.MIDNIGHT],
+      [5, TimeOfDayType.DAWN],
+      [8, TimeOfDayType.MORNING],
+      [12, TimeOfDayType.NOON],
+      [17, TimeOfDayType.EVENING],
+      [20, TimeOfDayType.DUSK],
+      [23, TimeOfDayType.MIDNIGHT],
+    ])(
+      'should determine hour %i as %s',
+      async (hour: number, timeOfDay: TimeOfDayType) => {
+        const now = new Date();
+        now.setHours(hour);
 
-      const response = await supertest(app.getHttpServer())
-        .post('/weather')
-        .send(body)
-        .expect(201);
+        const body = await FakerFactory.create<QueryDto>(QueryDto, {
+          date: now.toISOString(),
+        });
 
-      expect(response.body).toMatchObject({
-        climate: ClimateType.POLAR,
-      });
-    });
+        const response = await supertest(app.getHttpServer())
+          .post('/weather')
+          .send(body)
+          .expect(201);
+
+        expect(response.body).toMatchObject({
+          timeOfDay,
+        });
+      },
+    );
+
+    it.each([
+      [60, ClimateType.POLAR],
+      [40, ClimateType.CONTINENTAL],
+      [25, ClimateType.TEMPERATE],
+      [20, ClimateType.DRY],
+      [-15, ClimateType.TROPICAL],
+      [-20, ClimateType.DRY],
+      [-25, ClimateType.TEMPERATE],
+      [-40, ClimateType.CONTINENTAL],
+      [-60, ClimateType.POLAR],
+      [-90, ClimateType.POLAR],
+    ])(
+      'should determine climate %i as %s',
+      async (latitude: number, climate: ClimateType) => {
+        const body = await FakerFactory.create<QueryDto>(QueryDto, {
+          latitude: latitude.toString(),
+        });
+
+        const response = await supertest(app.getHttpServer())
+          .post('/weather')
+          .send(body)
+          .expect(201);
+
+        expect(response.body).toMatchObject({
+          climate,
+        });
+      },
+    );
   });
 });

@@ -1,7 +1,16 @@
 import { IsLongitude, IsLatitude } from '@cats-cradle/validation-schemas';
 import { ApiProperty } from '@nestjs/swagger';
+import { IsDate } from 'class-validator';
 
 export class QueryDto {
+  @IsDate()
+  @ApiProperty({
+    description: 'Date',
+    default: new Date(),
+    type: String,
+  })
+    date: string;
+
   @IsLatitude()
   @ApiProperty({
     description: 'Latitude',

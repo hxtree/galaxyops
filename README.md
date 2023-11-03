@@ -1,14 +1,15 @@
 <h1 align="center">Cats Cradle :yarn:</h1>
 
-Get ready to embark on an adventure with **Cats Cradle** - the upcoming co-op
-RPG that will transport you to a nostalgic world filled with wonder. Join us on
-this exciting journey as we continue to develop and bring this game to life.
+Embark on an nostalgic adventure with **Cats Cradle** - the upcoming co-op RPG
+that will transport you to a world filled with wonder. Join us on this journey
+as we flesh in the game and bring it to life.
 
-This repo houses the game's code. This enterprise architecture monorepo includes
-numerous microservices built on a PaaS with IaC for streamlined DevOps CI/CD.
+This repo houses the game's code in a enterprise architecture monorepo. It
+includes numerous microservices built on a PaaS with IaC for streamlined DevOps
+CI/CD.
 
-Although each package is maintained primarily for the game, most stable packages
-are individually published to
+Although each package is maintained primarily for the game, most of the stable
+packages are individually published to
 [NPM](https://www.npmjs.com/search?q=%40cats-cradle) and available under
 open-source software license.
 

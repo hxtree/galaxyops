@@ -149,7 +149,7 @@
                 "SNOW_LEOPARD",
                 "CHIMERA",
                 "SLOW_MOVER",
-                "SNAKE_OF_WATER",
+                "SNAKE_OF_THE_WATER",
                 "BANDIT",
                 "ROWAN",
                 "CHUBBS"
@@ -547,7 +547,7 @@
             "required": true,
             "in": "path",
             "schema": {
-              "default": "1f0fb038-21f8-47ff-9de1-010502a010d3",
+              "default": "9201a8eb-e105-4760-938f-0afc6166834c",
               "type": "string"
             }
           }
@@ -586,11 +586,11 @@
         "properties": {
           "_id": {
             "type": "string",
-            "default": "de2e5e17-70ee-4c27-b01a-c38bc6c3e4e2"
+            "default": "afdd27df-e56f-42b5-a76b-668bb791375b"
           },
           "instanceId": {
             "type": "string",
-            "default": "26be8bd5-5d6f-4bbd-8878-b14675fc8dd5"
+            "default": "f1641d0f-9595-4677-9949-b29dbceaf3e7"
           },
           "archetypeId": {
             "type": "string",
@@ -630,7 +630,7 @@
               "SNOW_LEOPARD",
               "CHIMERA",
               "SLOW_MOVER",
-              "SNAKE_OF_WATER",
+              "SNAKE_OF_THE_WATER",
               "BANDIT",
               "ROWAN",
               "CHUBBS"
@@ -647,11 +647,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "default": "be51385e-9c08-40ba-b92c-d6b3790db555"
+            "default": "1077d648-a6aa-468b-86f7-788e42421f90"
           },
           "instanceId": {
             "type": "string",
-            "default": "2e308a56-a26d-4513-ba79-2a412f5c113b"
+            "default": "7b6744b0-f364-4833-9c5d-2273361f32b1"
           },
           "place": {
             "type": "string",
@@ -674,7 +674,7 @@
         "properties": {
           "characterSheetId": {
             "type": "string",
-            "default": "8eddefd6-612c-421b-a033-ac5234a330e4"
+            "default": "88623540-0638-4e3d-8e15-a86792290835"
           },
           "affiliationId": {
             "type": "string",
