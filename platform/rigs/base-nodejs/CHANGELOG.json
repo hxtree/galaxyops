@@ -2,6 +2,18 @@
   "name": "@cats-cradle/base-nodejs",
   "entries": [
     {
+      "version": "1.0.5",
+      "tag": "@cats-cradle/base-nodejs_v1.0.5",
+      "date": "Fri, 03 Nov 2023 04:39:27 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "change coverage collection from"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.4",
       "tag": "@cats-cradle/base-nodejs_v1.0.4",
       "date": "Wed, 04 Oct 2023 03:44:49 GMT",
