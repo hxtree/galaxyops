@@ -2,7 +2,12 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  collectCoverageFrom: ['**/*.{ts,tsx}', '!**/node_modules/**'],
+  collectCoverageFrom: [
+    'src/*.{ts,tsx}',
+    'stacks/*.{ts}',
+    '!**/node_modules/**',
+    '!src/index.ts',
+  ],
   coverageReporters: [
     'clover',
     'json',
@@ -10,6 +15,6 @@ module.exports = {
     'html',
     ['text', { skipFull: true }],
   ],
-  testMatch: ['<rootDir>/src/**/*.test.ts'],
+  testMatch: ['<rootDir>/src/**/*.test.ts', '<rootDir>/stacks/**/*.test.ts'],
   coverageDirectory: '<rootDir>/coverage',
 };
