@@ -1,7 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
-  IsEnum, IsOptional, IsString, IsUUID,
-} from 'class-validator';
+  IsEnum,
+  IsOptional,
+  IsString,
+  IsUuidV4,
+} from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
 import { ArchetypeId, ArchetypeIds } from '../../data/archetype';
 
@@ -9,14 +12,14 @@ export class CreateCharacterSheetDto {
   @ApiProperty({
     default: v4(),
   })
-  @IsUUID()
+  @IsUuidV4()
   @IsOptional()
   public _id?: string;
 
   @ApiProperty({
     default: v4(),
   })
-  @IsUUID()
+  @IsUuidV4()
   public instanceId!: string;
 
   @ApiProperty({ enum: ArchetypeIds, default: 'DARUMA_NAKAMURA' })
