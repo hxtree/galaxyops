@@ -1,6 +1,11 @@
 # Change Log - @cats-cradle/create-bundle
 
-This log was last generated on Sat, 28 Oct 2023 05:20:40 GMT and should not be manually modified.
+This log was last generated on Fri, 03 Nov 2023 04:39:27 GMT and should not be manually modified.
+
+## 1.0.3
+Fri, 03 Nov 2023 04:39:27 GMT
+
+_Version update only_
 
 ## 1.0.2
 Sat, 28 Oct 2023 05:20:40 GMT

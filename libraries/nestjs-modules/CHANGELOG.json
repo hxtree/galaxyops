@@ -2,6 +2,21 @@
   "name": "@cats-cradle/nestjs-modules",
   "entries": [
     {
+      "version": "0.2.9",
+      "tag": "@cats-cradle/nestjs-modules_v0.2.9",
+      "date": "Fri, 03 Nov 2023 04:39:27 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.5`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/faker-factory\" to `1.2.3`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.2.8",
       "tag": "@cats-cradle/nestjs-modules_v0.2.8",
       "date": "Thu, 02 Nov 2023 22:51:17 GMT",

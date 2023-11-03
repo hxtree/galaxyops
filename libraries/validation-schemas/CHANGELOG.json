@@ -2,6 +2,18 @@
   "name": "@cats-cradle/validation-schemas",
   "entries": [
     {
+      "version": "0.4.1",
+      "tag": "@cats-cradle/validation-schemas_v0.4.1",
+      "date": "Fri, 03 Nov 2023 04:39:27 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.5`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.4.0",
       "tag": "@cats-cradle/validation-schemas_v0.4.0",
       "date": "Wed, 01 Nov 2023 04:48:36 GMT",
