@@ -5,7 +5,6 @@ import {
   Type,
   IsUuidV4,
   IsString,
-  IsUUID,
   IsEnum,
   IsOptional,
   IsInstance,
@@ -35,7 +34,7 @@ export class CharacterSheet {
   // @Transform(({ value }) => value.toString())
   // _id: ObjectId;
 
-  @IsUUID()
+  @IsUuidV4()
   @Prop({
     type: String,
     default: function genUUID() {
@@ -44,7 +43,7 @@ export class CharacterSheet {
   })
   public _id!: string;
 
-  @IsUUID()
+  @IsUuidV4()
   @Prop()
   public instanceId!: string;
 

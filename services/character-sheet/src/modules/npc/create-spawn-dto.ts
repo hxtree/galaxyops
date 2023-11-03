@@ -1,16 +1,16 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsUUID, IsEnum } from '@cats-cradle/validation-schemas';
+import { IsUuidV4, IsEnum } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
 import { PlaceIds, PlaceId } from '../../data/place';
 
 export class CreateSpawnDto {
-  @IsUUID()
+  @IsUuidV4()
   @ApiProperty({
     default: v4(),
   })
   public id?: string;
 
-  @IsUUID()
+  @IsUuidV4()
   @ApiProperty({
     default: v4(),
   })

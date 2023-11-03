@@ -68,7 +68,7 @@ describe('/character-sheets', () => {
     it('should find result if exists', async () => {
       const characterSheet = await FakerFactory.create<CharacterSheet>(
         CharacterSheet,
-        { archetypeId: 'MEEKU_ONI' },
+        { archetypeId: 'MEEKU_ONI', name: 'Meeku', surname: 'Oni' },
         { optionals: false, pojo: true },
       );
       await characterSheetRepository.create(characterSheet);
