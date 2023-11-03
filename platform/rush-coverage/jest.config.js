@@ -4,7 +4,6 @@ module.exports = {
   testEnvironment: 'node',
   collectCoverageFrom: [
     'src/*.{ts,tsx}',
-    'stacks/*.{ts}',
     '!**/node_modules/**',
     '!src/index.ts',
   ],
@@ -15,6 +14,6 @@ module.exports = {
     'html',
     ['text', { skipFull: true }],
   ],
-  testMatch: ['<rootDir>/src/**/*.test.ts', '<rootDir>/stacks/**/*.test.ts'],
+  testMatch: ['<rootDir>/src/**/*.test.ts'],
   coverageDirectory: '<rootDir>/coverage',
 };

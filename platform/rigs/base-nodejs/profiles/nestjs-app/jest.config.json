@@ -8,7 +8,11 @@
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
-  "collectCoverageFrom": ["<rootDir>/**/*.ts"],
+  "collectCoverageFrom": [
+    "<rootDir>/src/*.ts",
+    "<rootDir>/stacks/*.ts",
+    "!<rootDir>/src/index.ts"
+  ],
   "coverageReporters": ["json", "text-summary"],
   "coveragePathIgnorePattern": ["/node_modules/", "/cdk.out/", "/dist/"],
   "coverageDirectory": "<rootDir>/coverage"
