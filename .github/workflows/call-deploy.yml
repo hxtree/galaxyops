@@ -1,6 +1,7 @@
-# prior to services being deployed to S3 dependencies are published to npm services to ensure dependencies are avaliable
+# libray and platform dependencies MUST be published to npm
+# prior to services being deployed to S3 dependencies to ensure dependencies are avaliable
 
-name: Deploy
+name: Deploy Artifacts
 
 on:
   workflow_call:
