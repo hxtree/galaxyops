@@ -9,17 +9,26 @@
 *.txt text eol=lf
 *.xml text eol=lf
 
-# JSON
-*.json text eol=lf
-*.json linguist-language=JSON-with-Comments
-
-# Stylesheet
-*.css text eol=lf
-*.less text eol=lf
-*.scss text eol=lf
-
 # TypeScript source file
 *.ts text eol=lf
 *.ts linguist-detectable=true
 *.ts linguist-documentation=false
 *.ts linguist-language=TypeScript
+*.tsx linguist-detectable=true
+*.tsx linguist-documentation=false
+*.tsx linguist-language=TypeScript
+
+# JSON (JavaScript Object Notation) source file
+*.json text eol=lf
+*.json linguist-detectable=false
+*.json linguist-documentation=false
+*.json linguist-language=JSON-with-Comments
+
+# CSS (Cascade Styling Sheets) stylesheet file
+*.css text eol=lf
+*.css linguist-detectable=true
+*.css linguist-documentation=false
+*.css linguist-language=CSS
+
+*.less text eol=lf
+*.scss text eol=lf
