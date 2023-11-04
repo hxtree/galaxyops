@@ -77,7 +77,7 @@ exports[`EmailServiceStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 1039a174afbf09cd27e3b215f53b9e80b1bd66df24547e5746f0e5bcb9204cf3.zip,
+          S3Key: UNIQUE_HASH.zip,
         },
         Handler: index.handler,
         Role: {
@@ -310,7 +310,7 @@ exports[`EmailServiceStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 164e8d107306e385b549a7cf0ae8452adeca17cafece3c61c0801e24dfe0c6c3.zip,
+          S3Key: UNIQUE_HASH.zip,
         },
         Environment: {
           Variables: {

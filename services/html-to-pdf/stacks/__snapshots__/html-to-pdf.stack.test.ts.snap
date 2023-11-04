@@ -89,7 +89,7 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: a7b55b3c8dfe9a6baf4baa4deffa79c9d46abecbe50d181c1e4bdfe13cc32abb.zip,
+          S3Key: UNIQUE_HASH.zip,
         },
         Description: Chromium layer for Lambda,
         LayerName: ChromiumLayer,
@@ -106,7 +106,7 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 1039a174afbf09cd27e3b215f53b9e80b1bd66df24547e5746f0e5bcb9204cf3.zip,
+          S3Key: UNIQUE_HASH.zip,
         },
         Handler: index.handler,
         Role: {
@@ -331,7 +331,7 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 36d973743c811e1ce3711abdc9da3d58c8098fc75298d41e175079179cc31537.zip,
+          S3Key: UNIQUE_HASH.zip,
         },
         Environment: {
           Variables: {

@@ -72,7 +72,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 1039a174afbf09cd27e3b215f53b9e80b1bd66df24547e5746f0e5bcb9204cf3.zip,
+          S3Key: UNIQUE_HASH.zip,
         },
         Handler: index.handler,
         Role: {
@@ -297,7 +297,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 2986b098abca319561d6cd748799f8de3d78ec8bf97104bf02f416886f93d3bc.zip,
+          S3Key: UNIQUE_HASH.zip,
         },
         Environment: {
           Variables: {

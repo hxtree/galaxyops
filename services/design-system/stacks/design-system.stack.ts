@@ -12,7 +12,7 @@ import { S3Origin } from 'aws-cdk-lib/aws-cloudfront-origins';
 // import * as s3 from 'aws-cdk-lib/aws-s3';
 // import * as route53 from 'aws-cdk-lib/aws-route53';
 
-export class MainStack extends cdk.Stack {
+export class DesignSystemStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 

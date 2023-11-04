@@ -72,7 +72,7 @@ exports[`CharacterSheetStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 1039a174afbf09cd27e3b215f53b9e80b1bd66df24547e5746f0e5bcb9204cf3.zip,
+          S3Key: UNIQUE_HASH.zip,
         },
         Handler: index.handler,
         Role: {
@@ -297,7 +297,7 @@ exports[`CharacterSheetStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: eaad25922b40465eb41c0864d74c5f7f7c3f937019ce0365b01d9074f09c1f93.zip,
+          S3Key: UNIQUE_HASH.zip,
         },
         Environment: {
           Variables: {
