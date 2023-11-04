@@ -7,6 +7,7 @@ describe('DefaultPipelineStack', () => {
     const app = new cdk.App();
     const stack = new DefaultPipelineStack(app, 'MyTestStack');
     const template = Template.fromStack(stack);
+
     expect(template).toMatchSnapshot();
   });
 });

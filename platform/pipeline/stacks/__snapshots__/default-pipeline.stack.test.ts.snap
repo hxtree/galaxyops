@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MainStack should match snapshot test 1`] = `
+exports[`DefaultPipelineStack should match snapshot test 1`] = `
 {
   "Outputs": {
     "AWSACCESSKEY": {
