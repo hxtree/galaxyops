@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/constructs
 
-This log was last generated on Sat, 14 Oct 2023 22:49:51 GMT and should not be manually modified.
+This log was last generated on Sat, 04 Nov 2023 19:40:56 GMT and should not be manually modified.
+
+## 0.0.5
+Sat, 04 Nov 2023 19:40:56 GMT
+
+### Patches
+
+- unify unit tests
 
 ## 0.0.4
 Sat, 14 Oct 2023 22:49:51 GMT

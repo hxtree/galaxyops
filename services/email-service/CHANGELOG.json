@@ -2,6 +2,32 @@
   "name": "@cats-cradle/email-service",
   "entries": [
     {
+      "version": "0.0.18",
+      "tag": "@cats-cradle/email-service_v0.0.18",
+      "date": "Sat, 04 Nov 2023 19:40:56 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add stack snapshot tests"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/constructs\" to `0.0.5`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.7`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/validation-schemas\" to `0.4.2`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/faker-factory\" to `1.2.4`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.17",
       "tag": "@cats-cradle/email-service_v0.0.17",
       "date": "Fri, 03 Nov 2023 04:39:27 GMT",

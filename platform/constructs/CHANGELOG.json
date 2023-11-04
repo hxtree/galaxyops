@@ -2,6 +2,23 @@
   "name": "@cats-cradle/constructs",
   "entries": [
     {
+      "version": "0.0.5",
+      "tag": "@cats-cradle/constructs_v0.0.5",
+      "date": "Sat, 04 Nov 2023 19:40:56 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "unify unit tests"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.7`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.4",
       "tag": "@cats-cradle/constructs_v0.0.4",
       "date": "Sat, 14 Oct 2023 22:49:51 GMT",
