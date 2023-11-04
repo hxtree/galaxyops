@@ -1,8 +1,13 @@
 import * as cdk from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import { HtmlToPdfStack } from './html-to-pdf.stack';
+import { downloadChromiumZip } from './download-lambda-layer';
 
 describe('HtmlToPdfStack', () => {
+  beforeAll(async () => {
+    await downloadChromiumZip();
+  });
+
   it('should match snapshot test', () => {
     const app = new cdk.App();
     const stack = new HtmlToPdfStack(app, 'MyTestStack');
