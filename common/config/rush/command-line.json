@@ -163,6 +163,13 @@
   ],
   "parameters": [
     {
+      "parameterKind": "flag",
+      "longName": "--update-snapshot",
+      "shortName": "-u",
+      "description": "Whether to update the snapshots",
+      "associatedCommands": ["test:cov", "test"]
+    },
+    {
       "parameterKind": "choice",
       "longName": "--profile",
       "shortName": "-p",

@@ -14,11 +14,9 @@ jobs:
     timeout-minutes: 25
     runs-on: ubuntu-latest
     steps:
+      # pipeline get changed projects requires deep clone
       - name: Check out code base
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          ref: ${{ secrets.IMPACTED_BY_SHA }}
 
       - name: Setup Node
         uses: actions/setup-node@v3

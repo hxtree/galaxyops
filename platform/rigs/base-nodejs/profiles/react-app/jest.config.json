@@ -8,6 +8,6 @@
   "collectCoverage": true,
   "collectCoverageFrom": ["<rootDir>/src/**/*.{ts,tsx}"],
   "coverageReporters": ["text-summary", "clover"],
-  "coveragePathIgnorePattern": ["/node_modules/", "/cdk.out/", "/dist/"],
+  "coveragePathIgnorePatterns": ["/node_modules/", "/cdk.out/", "/dist/"],
   "coverageDirectory": "<rootDir>/src/__tests__/coverage"
 }

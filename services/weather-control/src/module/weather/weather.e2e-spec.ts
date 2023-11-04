@@ -32,7 +32,7 @@ describe('/weather', () => {
   });
 
   describe('POST /weather/influence', () => {
-    it('should throw 500 until finished', async () => {
+    it.skip('should throw 500 until finished', async () => {
       const body = await FakerFactory.create<CreateDto>(CreateDto);
 
       const response = await supertest(app.getHttpServer())

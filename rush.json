@@ -12,7 +12,7 @@
       "api-client",
       "clients",
       "libraries",
-      "rigs",
+      "platform",
       "category-platform",
       "category-ci-cd"
     ],
@@ -37,7 +37,9 @@
     "owner-ux",
     "deploy-tools",
     "deploy-platform",
-    "deploy-app"
+    "deploy-app",
+    "rigs",
+    "cli-tools"
   ],
   "projects": [
     {
@@ -51,30 +53,6 @@
       "tags": ["deploy-platform"]
     },
     {
-      "packageName": "@cats-cradle/create-bundle",
-      "projectFolder": "platform/create-bundle",
-      "reviewCategory": "rigs",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": [],
-      "shouldPublish": true
-    },
-    {
-      "packageName": "@cats-cradle/create-artifact",
-      "projectFolder": "platform/create-artifact",
-      "reviewCategory": "rigs",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": [],
-      "shouldPublish": true
-    },
-    {
-      "packageName": "@cats-cradle/base-nodejs",
-      "projectFolder": "platform/rigs/base-nodejs",
-      "reviewCategory": "rigs",
-      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": [],
-      "shouldPublish": true
-    },
-    {
       "packageName": "@cats-cradle/pipeline",
       "projectFolder": "platform/pipeline",
       "reviewCategory": "category-ci-cd",
@@ -82,11 +60,27 @@
       "tags": ["deploy-tools"]
     },
     {
+      "packageName": "@cats-cradle/create-bundle",
+      "projectFolder": "platform/cli-tools/create-bundle",
+      "reviewCategory": "platform",
+      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "tags": ["cli-tools"],
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@cats-cradle/create-artifact",
+      "projectFolder": "platform/cli-tools/create-artifact",
+      "reviewCategory": "platform",
+      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "tags": ["cli-tools"],
+      "shouldPublish": true
+    },
+    {
       "packageName": "@cats-cradle/rush-coverage",
-      "projectFolder": "platform/rush-coverage",
+      "projectFolder": "platform/cli-tools/rush-coverage",
       "reviewCategory": "category-ci-cd",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": [],
+      "tags": ["cli-tools"],
       "shouldPublish": true
     },
     {
@@ -105,11 +99,19 @@
       "tags": ["deploy-platform"]
     },
     {
-      "packageName": "@cats-cradle/eslint-config",
-      "projectFolder": "platform/eslint-config",
-      "reviewCategory": "category-platform",
+      "packageName": "@cats-cradle/base-nodejs",
+      "projectFolder": "platform/rigs/base-nodejs",
+      "reviewCategory": "platform",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": [],
+      "tags": ["category-platform", "rigs"],
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@cats-cradle/eslint-config",
+      "projectFolder": "platform/rigs/eslint-config",
+      "reviewCategory": "platform",
+      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "tags": ["category-platform", "rigs"],
       "shouldPublish": true
     },
     {

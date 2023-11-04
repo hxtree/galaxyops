@@ -1,7 +1,8 @@
 import { getChangedProjects } from '../get-changed-projects';
 
 describe('getChangedProjects', () => {
-  it('should return a list of projects changed between current and main', async () => {
+  // needs deep clone to run
+  it.skip('should return a list of projects changed between current and main', async () => {
     const projects = await getChangedProjects('main', 'platform-team');
 
     console.log(projects);

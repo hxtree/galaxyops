@@ -1,0 +1,473 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HtmlToPdfStack should match snapshot test 1`] = `
+{
+  Outputs: {
+    exampletestendpoint: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+            },
+            .execute-api.,
+            {
+              Ref: AWS::Region,
+            },
+            .amazonaws.com/default/v1/html-to-pdf/pdf?url=https://google.com,
+          ],
+        ],
+      },
+    },
+    healthcheckendpoint: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+            },
+            .execute-api.,
+            {
+              Ref: AWS::Region,
+            },
+            .amazonaws.com/default/v1/html-to-pdf/health,
+          ],
+        ],
+      },
+    },
+  },
+  Parameters: {
+    BootstrapVersion: {
+      Default: /cdk-bootstrap/hnb659fds/version,
+      Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464: {
+      Default: web-api-gateway-rest-api-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointrootresourceidssmParameterFD89F781: {
+      Default: web-api-gateway-root-resource-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointv1resourceidssmParameterA4B24FFB: {
+      Default: web-api-gateway-v1-resource-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    lambdalayernestjslatestversionssmParameter: {
+      Default: lambda-layer-nestjs-latest-version,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    mongodatabasepasswordssmParameter: {
+      Default: MONGO_DATABASE_PASSWORD,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    mongodatabaseurissmParameter: {
+      Default: MONGO_DATABASE_URI,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    mongodatabaseuserssmParameter: {
+      Default: MONGO_DATABASE_USER,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    restapiidssmParameter: {
+      Default: web-api-gateway-rest-api-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+  },
+  Resources: {
+    ChromiumLayer505381F6: {
+      Properties: {
+        CompatibleRuntimes: [
+          nodejs18.x,
+        ],
+        Content: {
+          S3Bucket: {
+            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
+          },
+          S3Key: UNIQUE_HASH.zip,
+        },
+        Description: Chromium layer for Lambda,
+        LayerName: ChromiumLayer,
+      },
+      Type: AWS::Lambda::LayerVersion,
+    },
+    LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A: {
+      DependsOn: [
+        LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB,
+        LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB,
+      ],
+      Properties: {
+        Code: {
+          S3Bucket: {
+            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
+          },
+          S3Key: UNIQUE_HASH.zip,
+        },
+        Handler: index.handler,
+        Role: {
+          Fn::GetAtt: [
+            LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB,
+            Arn,
+          ],
+        },
+        Runtime: nodejs18.x,
+        Timeout: 900,
+      },
+      Type: AWS::Lambda::Function,
+    },
+    LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB: {
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: lambda.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+    },
+    LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB: {
+      Properties: {
+        PolicyDocument: {
+          Statement: [
+            {
+              Action: [
+                logs:PutRetentionPolicy,
+                logs:DeleteRetentionPolicy,
+              ],
+              Effect: Allow,
+              Resource: *,
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        PolicyName: LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB,
+        Roles: [
+          {
+            Ref: LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB,
+          },
+        ],
+      },
+      Type: AWS::IAM::Policy,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceC8097A05: {
+      Properties: {
+        ParentId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointv1resourceidssmParameterA4B24FFB,
+        },
+        PathPart: html-to-pdf,
+        RestApiId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceproxy6F40A6EF: {
+      Properties: {
+        ParentId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceC8097A05,
+        },
+        PathPart: {proxy+},
+        RestApiId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceproxyANY12B27A35: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    htmltopdfstacknestjsNodeJsLambda82EBD38C,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceproxy6F40A6EF,
+        },
+        RestApiId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceproxyANYApiPermissionMyTestStackhtmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointmainapi36CFB382ANYv1htmltopdfproxy2BBC4E29: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            htmltopdfstacknestjsNodeJsLambda82EBD38C,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+              },
+              /*/*/v1/html-to-pdf/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceproxyANYApiPermissionTestMyTestStackhtmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointmainapi36CFB382ANYv1htmltopdfproxyA22824A3: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            htmltopdfstacknestjsNodeJsLambda82EBD38C,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+              },
+              /test-invoke-stage/*/v1/html-to-pdf/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointdeployment_UNIQUE_HASH: {
+      Properties: {
+        RestApiId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+        },
+        StageName: default,
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    htmltopdfstacknestjsNodeJsLambda82EBD38C: {
+      DependsOn: [
+        htmltopdfstacknestjsNodeJsLambdaServiceRole59DBD5B4,
+      ],
+      Properties: {
+        Code: {
+          S3Bucket: {
+            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
+          },
+          S3Key: UNIQUE_HASH.zip,
+        },
+        Environment: {
+          Variables: {
+            AWS_ACCOUNT_ID: {
+              Ref: AWS::AccountId,
+            },
+            BASE_URL: {
+              Fn::Join: [
+                ,
+                [
+                  https://,
+                  {
+                    Ref: restapiidssmParameter,
+                  },
+                  .execute-api.,
+                  {
+                    Ref: AWS::Region,
+                  },
+                  .amazonaws.com/default/v1,
+                ],
+              ],
+            },
+            MONGO_DATABASE_PASSWORD: {
+              Ref: mongodatabasepasswordssmParameter,
+            },
+            MONGO_DATABASE_URI: {
+              Ref: mongodatabaseurissmParameter,
+            },
+            MONGO_DATABASE_USER: {
+              Ref: mongodatabaseuserssmParameter,
+            },
+            STAGE_NAME: default,
+          },
+        },
+        Handler: index.handler,
+        Layers: [
+          {
+            Ref: ChromiumLayer505381F6,
+          },
+          {
+            Ref: lambdalayernestjslatestversionssmParameter,
+          },
+        ],
+        MemorySize: 1600,
+        Role: {
+          Fn::GetAtt: [
+            htmltopdfstacknestjsNodeJsLambdaServiceRole59DBD5B4,
+            Arn,
+          ],
+        },
+        Runtime: nodejs18.x,
+        Timeout: 30,
+      },
+      Type: AWS::Lambda::Function,
+    },
+    htmltopdfstacknestjsNodeJsLambdaLogRetention0C09778D: {
+      Properties: {
+        LogGroupName: {
+          Fn::Join: [
+            ,
+            [
+              /aws/lambda/,
+              {
+                Ref: htmltopdfstacknestjsNodeJsLambda82EBD38C,
+              },
+            ],
+          ],
+        },
+        RetentionInDays: 1,
+        ServiceToken: {
+          Fn::GetAtt: [
+            LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A,
+            Arn,
+          ],
+        },
+      },
+      Type: Custom::LogRetention,
+    },
+    htmltopdfstacknestjsNodeJsLambdaServiceRole59DBD5B4: {
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: lambda.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+    },
+  },
+  Rules: {
+    CheckBootstrapVersion: {
+      Assertions: [
+        {
+          Assert: {
+            Fn::Not: [
+              {
+                Fn::Contains: [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                  ],
+                  {
+                    Ref: BootstrapVersion,
+                  },
+                ],
+              },
+            ],
+          },
+          AssertDescription: CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.,
+        },
+      ],
+    },
+  },
+}
+`;

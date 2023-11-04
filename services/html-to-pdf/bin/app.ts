@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { HtmlToPdfStack } from '../stacks/main-stack';
+import { HtmlToPdfStack } from '../stacks/html-to-pdf.stack';
 import { downloadChromiumZip } from '../stacks/download-lambda-layer';
 
 downloadChromiumZip().then(() => {

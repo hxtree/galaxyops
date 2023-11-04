@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { MainStack } from '../stacks/main-stack';
+import { AuthServiceStack } from '../stacks/auth-service.stack';
 
 const app = new cdk.App();
-new MainStack(app, 'MainStack');
+new AuthServiceStack(app, 'AuthServiceStack');
