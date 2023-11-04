@@ -1,16 +1,25 @@
 * text=auto
 
 .* text eol=lf
-*.css text eol=lf
 *.html text eol=lf
 *.jade text eol=lf
 *.js text eol=lf
-*.ts text eol=lf
-*.json text eol=lf
-*.less text eol=lf
-*.scss text eol=lf
 *.md text eol=lf
 *.sh text eol=lf
 *.txt text eol=lf
 *.xml text eol=lf
+
+# JSON
+*.json text eol=lf
 *.json linguist-language=JSON-with-Comments
+
+# Stylesheet
+*.css text eol=lf
+*.less text eol=lf
+*.scss text eol=lf
+
+# TypeScript source file
+*.ts text eol=lf
+*.ts linguist-detectable=true
+*.ts linguist-documentation=false
+*.ts linguist-language=TypeScript
