@@ -2,229 +2,229 @@
 
 exports[`ApiGatewayStack should match snapshot test 1`] = `
 {
-  "Parameters": {
-    "BootstrapVersion": {
-      "Default": "/cdk-bootstrap/hnb659fds/version",
-      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
-      "Type": "AWS::SSM::Parameter::Value<String>",
+  Parameters: {
+    BootstrapVersion: {
+      Default: /cdk-bootstrap/hnb659fds/version,
+      Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
+      Type: AWS::SSM::Parameter::Value<String>,
     },
   },
-  "Resources": {
-    "MyTestStackdeployment20231104T201122864ZA68E6059e232b3d2184b04059f9cbf7c5430efc7": {
-      "DependsOn": [
-        "MyTestStackwebapigatewaymockANY084D1838",
+  Resources: {
+    MyTestStackdeployment_UNIQUE_HASH: {
+      DependsOn: [
+        MyTestStackwebapigatewaymockANY084D1838,
       ],
-      "Properties": {
-        "RestApiId": {
-          "Ref": "MyTestStackwebapigateway11D00362",
+      Properties: {
+        RestApiId: {
+          Ref: MyTestStackwebapigateway11D00362,
         },
       },
-      "Type": "AWS::ApiGateway::Deployment",
+      Type: AWS::ApiGateway::Deployment,
     },
-    "MyTestStackstageA41D5650": {
-      "DependsOn": [
-        "MyTestStackwebapigatewayAccountF9D6F084",
+    MyTestStackstageA41D5650: {
+      DependsOn: [
+        MyTestStackwebapigatewayAccountF9D6F084,
       ],
-      "Properties": {
-        "DeploymentId": {
-          "Ref": "MyTestStackdeployment20231104T201122864ZA68E6059e232b3d2184b04059f9cbf7c5430efc7",
+      Properties: {
+        DeploymentId: {
+          Ref: MyTestStackdeployment_UNIQUE_HASH,
         },
-        "RestApiId": {
-          "Ref": "MyTestStackwebapigateway11D00362",
+        RestApiId: {
+          Ref: MyTestStackwebapigateway11D00362,
         },
-        "StageName": "default",
+        StageName: default,
       },
-      "Type": "AWS::ApiGateway::Stage",
+      Type: AWS::ApiGateway::Stage,
     },
-    "MyTestStackwebapigateway11D00362": {
-      "Properties": {
-        "Name": "web-api-gateway",
+    MyTestStackwebapigateway11D00362: {
+      Properties: {
+        Name: web-api-gateway,
       },
-      "Type": "AWS::ApiGateway::RestApi",
+      Type: AWS::ApiGateway::RestApi,
     },
-    "MyTestStackwebapigatewayAccountF9D6F084": {
-      "DeletionPolicy": "Retain",
-      "DependsOn": [
-        "MyTestStackwebapigateway11D00362",
+    MyTestStackwebapigatewayAccountF9D6F084: {
+      DeletionPolicy: Retain,
+      DependsOn: [
+        MyTestStackwebapigateway11D00362,
       ],
-      "Properties": {
-        "CloudWatchRoleArn": {
-          "Fn::GetAtt": [
-            "MyTestStackwebapigatewayCloudWatchRole3A2B89EF",
-            "Arn",
+      Properties: {
+        CloudWatchRoleArn: {
+          Fn::GetAtt: [
+            MyTestStackwebapigatewayCloudWatchRole3A2B89EF,
+            Arn,
           ],
         },
       },
-      "Type": "AWS::ApiGateway::Account",
-      "UpdateReplacePolicy": "Retain",
+      Type: AWS::ApiGateway::Account,
+      UpdateReplacePolicy: Retain,
     },
-    "MyTestStackwebapigatewayCloudWatchRole3A2B89EF": {
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "AssumeRolePolicyDocument": {
-          "Statement": [
+    MyTestStackwebapigatewayCloudWatchRole3A2B89EF: {
+      DeletionPolicy: Retain,
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
             {
-              "Action": "sts:AssumeRole",
-              "Effect": "Allow",
-              "Principal": {
-                "Service": "apigateway.amazonaws.com",
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: apigateway.amazonaws.com,
               },
             },
           ],
-          "Version": "2012-10-17",
+          Version: 2012-10-17,
         },
-        "ManagedPolicyArns": [
+        ManagedPolicyArns: [
           {
-            "Fn::Join": [
-              "",
+            Fn::Join: [
+              ,
               [
-                "arn:",
+                arn:,
                 {
-                  "Ref": "AWS::Partition",
+                  Ref: AWS::Partition,
                 },
-                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs",
+                :iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs,
               ],
             ],
           },
         ],
       },
-      "Type": "AWS::IAM::Role",
-      "UpdateReplacePolicy": "Retain",
+      Type: AWS::IAM::Role,
+      UpdateReplacePolicy: Retain,
     },
-    "MyTestStackwebapigatewayid2F65D424": {
-      "Properties": {
-        "Description": "Web API Gateway Rest API ID",
-        "Name": "web-api-gateway-rest-api-id",
-        "Type": "String",
-        "Value": {
-          "Ref": "MyTestStackwebapigateway11D00362",
+    MyTestStackwebapigatewayid2F65D424: {
+      Properties: {
+        Description: Web API Gateway Rest API ID,
+        Name: web-api-gateway-rest-api-id,
+        Type: String,
+        Value: {
+          Ref: MyTestStackwebapigateway11D00362,
         },
       },
-      "Type": "AWS::SSM::Parameter",
+      Type: AWS::SSM::Parameter,
     },
-    "MyTestStackwebapigatewaymock96E57734": {
-      "Properties": {
-        "ParentId": {
-          "Fn::GetAtt": [
-            "MyTestStackwebapigateway11D00362",
-            "RootResourceId",
+    MyTestStackwebapigatewaymock96E57734: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            MyTestStackwebapigateway11D00362,
+            RootResourceId,
           ],
         },
-        "PathPart": "mock",
-        "RestApiId": {
-          "Ref": "MyTestStackwebapigateway11D00362",
+        PathPart: mock,
+        RestApiId: {
+          Ref: MyTestStackwebapigateway11D00362,
         },
       },
-      "Type": "AWS::ApiGateway::Resource",
+      Type: AWS::ApiGateway::Resource,
     },
-    "MyTestStackwebapigatewaymockANY084D1838": {
-      "Properties": {
-        "AuthorizationType": "NONE",
-        "HttpMethod": "ANY",
-        "Integration": {
-          "IntegrationResponses": [
+    MyTestStackwebapigatewaymockANY084D1838: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationResponses: [
             {
-              "StatusCode": "200",
+              StatusCode: 200,
             },
           ],
-          "PassthroughBehavior": "NEVER",
-          "RequestTemplates": {
-            "application/json": "{ "statusCode": 200 }",
+          PassthroughBehavior: NEVER,
+          RequestTemplates: {
+            application/json: { "statusCode": 200 },
           },
-          "Type": "MOCK",
+          Type: MOCK,
         },
-        "MethodResponses": [
+        MethodResponses: [
           {
-            "StatusCode": "200",
+            StatusCode: 200,
           },
         ],
-        "ResourceId": {
-          "Ref": "MyTestStackwebapigatewaymock96E57734",
+        ResourceId: {
+          Ref: MyTestStackwebapigatewaymock96E57734,
         },
-        "RestApiId": {
-          "Ref": "MyTestStackwebapigateway11D00362",
+        RestApiId: {
+          Ref: MyTestStackwebapigateway11D00362,
         },
       },
-      "Type": "AWS::ApiGateway::Method",
+      Type: AWS::ApiGateway::Method,
     },
-    "MyTestStackwebapigatewayresourceid87DDADFE": {
-      "Properties": {
-        "Description": "Web Gateway Resource ID",
-        "Name": "web-api-gateway-root-resource-id",
-        "Type": "String",
-        "Value": {
-          "Fn::GetAtt": [
-            "MyTestStackwebapigateway11D00362",
-            "RootResourceId",
+    MyTestStackwebapigatewayresourceid87DDADFE: {
+      Properties: {
+        Description: Web Gateway Resource ID,
+        Name: web-api-gateway-root-resource-id,
+        Type: String,
+        Value: {
+          Fn::GetAtt: [
+            MyTestStackwebapigateway11D00362,
+            RootResourceId,
           ],
         },
       },
-      "Type": "AWS::SSM::Parameter",
+      Type: AWS::SSM::Parameter,
     },
-    "MyTestStackwebapigatewayv1resourceFF514C41": {
-      "Properties": {
-        "ParentId": {
-          "Fn::GetAtt": [
-            "MyTestStackwebapigateway11D00362",
-            "RootResourceId",
+    MyTestStackwebapigatewayv1resourceFF514C41: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            MyTestStackwebapigateway11D00362,
+            RootResourceId,
           ],
         },
-        "PathPart": "v1",
-        "RestApiId": {
-          "Ref": "MyTestStackwebapigateway11D00362",
+        PathPart: v1,
+        RestApiId: {
+          Ref: MyTestStackwebapigateway11D00362,
         },
       },
-      "Type": "AWS::ApiGateway::Resource",
+      Type: AWS::ApiGateway::Resource,
     },
-    "MyTestStackwebapigatewayv1resourceid8E5650DB": {
-      "Properties": {
-        "Description": "Web API Gateway V1 Resource ID",
-        "Name": "web-api-gateway-v1-resource-id",
-        "Type": "String",
-        "Value": {
-          "Ref": "MyTestStackwebapigatewayv1resourceFF514C41",
+    MyTestStackwebapigatewayv1resourceid8E5650DB: {
+      Properties: {
+        Description: Web API Gateway V1 Resource ID,
+        Name: web-api-gateway-v1-resource-id,
+        Type: String,
+        Value: {
+          Ref: MyTestStackwebapigatewayv1resourceFF514C41,
         },
       },
-      "Type": "AWS::SSM::Parameter",
+      Type: AWS::SSM::Parameter,
     },
-    "MyTestStackwebmockresourceid87D417E8": {
-      "Properties": {
-        "Description": "Web Mock Resource ID",
-        "Name": "web-mockapi-gateway-root-resource-id",
-        "Type": "String",
-        "Value": {
-          "Fn::GetAtt": [
-            "MyTestStackwebapigateway11D00362",
-            "RootResourceId",
+    MyTestStackwebmockresourceid87D417E8: {
+      Properties: {
+        Description: Web Mock Resource ID,
+        Name: web-mockapi-gateway-root-resource-id,
+        Type: String,
+        Value: {
+          Fn::GetAtt: [
+            MyTestStackwebapigateway11D00362,
+            RootResourceId,
           ],
         },
       },
-      "Type": "AWS::SSM::Parameter",
+      Type: AWS::SSM::Parameter,
     },
   },
-  "Rules": {
-    "CheckBootstrapVersion": {
-      "Assertions": [
+  Rules: {
+    CheckBootstrapVersion: {
+      Assertions: [
         {
-          "Assert": {
-            "Fn::Not": [
+          Assert: {
+            Fn::Not: [
               {
-                "Fn::Contains": [
+                Fn::Contains: [
                   [
-                    "1",
-                    "2",
-                    "3",
-                    "4",
-                    "5",
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
                   ],
                   {
-                    "Ref": "BootstrapVersion",
+                    Ref: BootstrapVersion,
                   },
                 ],
               },
             ],
           },
-          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+          AssertDescription: CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.,
         },
       ],
     },
