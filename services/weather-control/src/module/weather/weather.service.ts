@@ -2,14 +2,20 @@
 import { Injectable } from '@nestjs/common';
 import { ClimateType } from './climates.type';
 import { TimeOfDayType } from './time-of-day.type';
+import { HappinessType } from './happiness.type';
+import { ResponseDto } from './response.dto';
 
 @Injectable()
 export class WeatherService {
-  async get(
+  async create(mood: HappinessType, latitude: string, longitude: string) {
+    throw new Error('Method not implemented.');
+  }
+
+  async query(
     date: Date,
     latitude: number | string,
     longitude: number | string,
-  ): Promise<any> {
+  ): Promise<ResponseDto> {
     return {
       timeOfDay: this.getTimeOfDay(date),
       climate: this.getClimate(latitude),
@@ -42,11 +48,11 @@ export class WeatherService {
     }
   }
 
-  // ranges from 90, -90 angle (180 degrees mirrored on both sides of world)
-  // pattern is generally polar climate, temperate and continental, dry climates, tropical climate
   getClimate(latitude: number | string): ClimateType {
     const value = Number(latitude);
 
+    // ranges from 90, -90 angle (180 degrees mirrored on both sides of world)
+    // pattern is generally polar climate, temperate and continental, dry climates, tropical climate
     switch (true) {
       case value >= 60:
         return ClimateType.POLAR;

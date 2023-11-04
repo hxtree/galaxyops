@@ -7,6 +7,7 @@ import { WeatherController } from './weather.controller';
 import { ClimateType } from './climates.type';
 import { QueryDto } from './query.dto';
 import { TimeOfDayType } from './time-of-day.type';
+import { CreateDto } from './create.dto';
 
 describe('/weather', () => {
   let app: INestApplication;
@@ -28,6 +29,21 @@ describe('/weather', () => {
 
   afterAll(async () => {
     app.close();
+  });
+
+  describe('POST /weather/influence', () => {
+    it('should throw 500 until finished', async () => {
+      const body = await FakerFactory.create<CreateDto>(CreateDto);
+
+      const response = await supertest(app.getHttpServer())
+        .post('/weather/influence')
+        .send(body)
+        .expect(500);
+
+      expect(response.body).toMatchObject({});
+
+      // TODO add logic to cause influencing to work
+    });
   });
 
   describe('POST /weather', () => {
