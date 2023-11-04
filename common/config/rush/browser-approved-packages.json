@@ -8,7 +8,7 @@
     },
     {
       "name": "@anatine/esbuild-decorators",
-      "allowedCategories": [ "apis", "rigs" ]
+      "allowedCategories": [ "apis", "platform", "rigs" ]
     },
     {
       "name": "@aws-cdk/core",
@@ -216,19 +216,19 @@
     },
     {
       "name": "@pnpm/find-workspace-dir",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "@pnpm/find-workspace-packages",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "@pnpm/logger",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "@pnpm/types",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "@reduxjs/toolkit",
@@ -244,11 +244,11 @@
     },
     {
       "name": "@rushstack/heft",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "@rushstack/heft-node-rig",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "@rushstack/node-core-library",
@@ -348,7 +348,7 @@
     },
     {
       "name": "archiver",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "autoprefixer",
@@ -396,7 +396,7 @@
     },
     {
       "name": "chokidar",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "chrome-aws-lambda",
@@ -420,7 +420,7 @@
     },
     {
       "name": "commander",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "connection-string",
@@ -496,7 +496,7 @@
     },
     {
       "name": "fs-extra",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "handlebars",
@@ -708,7 +708,7 @@
     },
     {
       "name": "tsc-alias",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     },
     {
       "name": "tsdx",
@@ -732,7 +732,7 @@
     },
     {
       "name": "yargs",
-      "allowedCategories": [ "rigs" ]
+      "allowedCategories": [ "platform", "rigs" ]
     }
   ]
 }

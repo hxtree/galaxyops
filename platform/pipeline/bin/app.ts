@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { DefaultPipelineStack } from '../stacks/pipeline.stack';
+import { DefaultPipelineStack } from '../stacks/default-pipeline.stack';
 import { awsAccounts } from '@cats-cradle/constructs';
 
 // TODO only deploy if in tools account

@@ -5,8 +5,10 @@
   "main": "./dist/src/index.js",
   "scripts": {
     "build": "tsc",
+    "build:all": "rush build -t .",
     "watch": "tsc -w",
     "test": "jest",
+    "test:cov": "jest --coverage",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix-dry-run",
     "depcheck": "npx depcheck"
@@ -48,7 +50,8 @@
     "@types/express": "~4.17.18",
     "@types/uuid": "~9.0.6",
     "eslint": "8.44.0",
-    "@cats-cradle/eslint-config": "1.0.6"
+    "@cats-cradle/eslint-config": "1.0.6",
+    "@cats-cradle/base-nodejs": "workspace:*"
   },
   "exports": {
     ".": "./dist/src/index.js",

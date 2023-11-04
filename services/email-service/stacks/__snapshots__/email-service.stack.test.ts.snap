@@ -1,0 +1,520 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailServiceStack should match snapshot test 1`] = `
+{
+  Outputs: {
+    LocalhostAPIExample: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: emailservicestackemailservicestackapiendpointrestapiidssmParameter2AA3C49E,
+            },
+            .execute-api.,
+            {
+              Ref: AWS::Region,
+            },
+            .amazonaws.com/default/v1/email-message/,
+          ],
+        ],
+      },
+    },
+    endEmailCommandTopicARN: {
+      Value: {
+        Ref: emailsendcommandtopic9C148582,
+      },
+    },
+  },
+  Parameters: {
+    BootstrapVersion: {
+      Default: /cdk-bootstrap/hnb659fds/version,
+      Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    emailservicestackemailservicestackapiendpointrestapiidssmParameter2AA3C49E: {
+      Default: web-api-gateway-rest-api-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    emailservicestackemailservicestackapiendpointrootresourceidssmParameterC9D307E0: {
+      Default: web-api-gateway-root-resource-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    emailservicestackemailservicestackapiendpointv1resourceidssmParameter26206A24: {
+      Default: web-api-gateway-v1-resource-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    lambdalayernestjslatestversionssmParameter: {
+      Default: lambda-layer-nestjs-latest-version,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    mongodatabasepasswordssmParameter: {
+      Default: MONGO_DATABASE_PASSWORD,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    mongodatabaseurissmParameter: {
+      Default: MONGO_DATABASE_URI,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    mongodatabaseuserssmParameter: {
+      Default: MONGO_DATABASE_USER,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    restapiidssmParameter: {
+      Default: web-api-gateway-rest-api-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+  },
+  Resources: {
+    LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A: {
+      DependsOn: [
+        LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB,
+        LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB,
+      ],
+      Properties: {
+        Code: {
+          S3Bucket: {
+            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
+          },
+          S3Key: 1039a174afbf09cd27e3b215f53b9e80b1bd66df24547e5746f0e5bcb9204cf3.zip,
+        },
+        Handler: index.handler,
+        Role: {
+          Fn::GetAtt: [
+            LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB,
+            Arn,
+          ],
+        },
+        Runtime: nodejs18.x,
+        Timeout: 900,
+      },
+      Type: AWS::Lambda::Function,
+    },
+    LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB: {
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: lambda.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+    },
+    LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB: {
+      Properties: {
+        PolicyDocument: {
+          Statement: [
+            {
+              Action: [
+                logs:PutRetentionPolicy,
+                logs:DeleteRetentionPolicy,
+              ],
+              Effect: Allow,
+              Resource: *,
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        PolicyName: LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB,
+        Roles: [
+          {
+            Ref: LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB,
+          },
+        ],
+      },
+      Type: AWS::IAM::Policy,
+    },
+    emailsendcommandtopic9C148582: {
+      Properties: {
+        DisplayName: default-email-send-command-topic,
+        TopicName: default-email-send-command-topic,
+      },
+      Type: AWS::SNS::Topic,
+    },
+    emailservicestackemailservicestackapiendpointemailservicestackapiendpointapigwresource91001160: {
+      Properties: {
+        ParentId: {
+          Ref: emailservicestackemailservicestackapiendpointv1resourceidssmParameter26206A24,
+        },
+        PathPart: email-message,
+        RestApiId: {
+          Ref: emailservicestackemailservicestackapiendpointrestapiidssmParameter2AA3C49E,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
+    },
+    emailservicestackemailservicestackapiendpointemailservicestackapiendpointapigwresourceproxy710BB26B: {
+      Properties: {
+        ParentId: {
+          Ref: emailservicestackemailservicestackapiendpointemailservicestackapiendpointapigwresource91001160,
+        },
+        PathPart: {proxy+},
+        RestApiId: {
+          Ref: emailservicestackemailservicestackapiendpointrestapiidssmParameter2AA3C49E,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
+    },
+    emailservicestackemailservicestackapiendpointemailservicestackapiendpointapigwresourceproxyANYApiPermissionMyTestStackemailservicestackemailservicestackapiendpointemailservicestackapiendpointmainapi87D71987ANYv1emailmessageproxy52342AFC: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            emailservicestacknestjsNodeJsLambda2E7BD2F0,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: emailservicestackemailservicestackapiendpointrestapiidssmParameter2AA3C49E,
+              },
+              /*/*/v1/email-message/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    emailservicestackemailservicestackapiendpointemailservicestackapiendpointapigwresourceproxyANYApiPermissionTestMyTestStackemailservicestackemailservicestackapiendpointemailservicestackapiendpointmainapi87D71987ANYv1emailmessageproxy3DD9E49E: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            emailservicestacknestjsNodeJsLambda2E7BD2F0,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: emailservicestackemailservicestackapiendpointrestapiidssmParameter2AA3C49E,
+              },
+              /test-invoke-stage/*/v1/email-message/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    emailservicestackemailservicestackapiendpointemailservicestackapiendpointapigwresourceproxyANYD46D497E: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    emailservicestacknestjsNodeJsLambda2E7BD2F0,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Ref: emailservicestackemailservicestackapiendpointemailservicestackapiendpointapigwresourceproxy710BB26B,
+        },
+        RestApiId: {
+          Ref: emailservicestackemailservicestackapiendpointrestapiidssmParameter2AA3C49E,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    emailservicestackemailservicestackapiendpointemailservicestackapiendpointdeployment_UNIQUE_HASH: {
+      Properties: {
+        RestApiId: {
+          Ref: emailservicestackemailservicestackapiendpointrestapiidssmParameter2AA3C49E,
+        },
+        StageName: default,
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    emailservicestacknestjsNodeJsLambda2E7BD2F0: {
+      DependsOn: [
+        emailservicestacknestjsNodeJsLambdaServiceRoleDefaultPolicyBB097E87,
+        emailservicestacknestjsNodeJsLambdaServiceRole5649574F,
+      ],
+      Properties: {
+        Code: {
+          S3Bucket: {
+            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
+          },
+          S3Key: 9b1d6bec79e217b9c547632c84d9275521500476c07b940a065acf59bea4bf1e.zip,
+        },
+        Environment: {
+          Variables: {
+            AWS_ACCOUNT_ID: {
+              Ref: AWS::AccountId,
+            },
+            BASE_URL: {
+              Fn::Join: [
+                ,
+                [
+                  https://,
+                  {
+                    Ref: restapiidssmParameter,
+                  },
+                  .execute-api.,
+                  {
+                    Ref: AWS::Region,
+                  },
+                  .amazonaws.com/default/v1,
+                ],
+              ],
+            },
+            MONGO_DATABASE_PASSWORD: {
+              Ref: mongodatabasepasswordssmParameter,
+            },
+            MONGO_DATABASE_URI: {
+              Ref: mongodatabaseurissmParameter,
+            },
+            MONGO_DATABASE_USER: {
+              Ref: mongodatabaseuserssmParameter,
+            },
+            STAGE_NAME: default,
+          },
+        },
+        Handler: index.handler,
+        Layers: [
+          {
+            Ref: lambdalayernestjslatestversionssmParameter,
+          },
+        ],
+        MemorySize: 1024,
+        Role: {
+          Fn::GetAtt: [
+            emailservicestacknestjsNodeJsLambdaServiceRole5649574F,
+            Arn,
+          ],
+        },
+        Runtime: nodejs18.x,
+        Timeout: 30,
+      },
+      Type: AWS::Lambda::Function,
+    },
+    emailservicestacknestjsNodeJsLambdaAllowInvokeMyTestStackemailsendcommandtopicAE07477B01259F51: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            emailservicestacknestjsNodeJsLambda2E7BD2F0,
+            Arn,
+          ],
+        },
+        Principal: sns.amazonaws.com,
+        SourceArn: {
+          Ref: emailsendcommandtopic9C148582,
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    emailservicestacknestjsNodeJsLambdaLogRetentionB4D4A106: {
+      Properties: {
+        LogGroupName: {
+          Fn::Join: [
+            ,
+            [
+              /aws/lambda/,
+              {
+                Ref: emailservicestacknestjsNodeJsLambda2E7BD2F0,
+              },
+            ],
+          ],
+        },
+        RetentionInDays: 1,
+        ServiceToken: {
+          Fn::GetAtt: [
+            LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A,
+            Arn,
+          ],
+        },
+      },
+      Type: Custom::LogRetention,
+    },
+    emailservicestacknestjsNodeJsLambdaServiceRole5649574F: {
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: lambda.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+    },
+    emailservicestacknestjsNodeJsLambdaServiceRoleDefaultPolicyBB097E87: {
+      Properties: {
+        PolicyDocument: {
+          Statement: [
+            {
+              Action: [
+                ses:SendEmail,
+                ses:SendRawEmail,
+                ses:SendTemplatedEmail,
+              ],
+              Effect: Allow,
+              Resource: {
+                Fn::Join: [
+                  ,
+                  [
+                    arn:aws:ses:,
+                    {
+                      Ref: AWS::Region,
+                    },
+                    :,
+                    {
+                      Ref: AWS::AccountId,
+                    },
+                    :identity/contact@ouxsoft.com,
+                  ],
+                ],
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        PolicyName: emailservicestacknestjsNodeJsLambdaServiceRoleDefaultPolicyBB097E87,
+        Roles: [
+          {
+            Ref: emailservicestacknestjsNodeJsLambdaServiceRole5649574F,
+          },
+        ],
+      },
+      Type: AWS::IAM::Policy,
+    },
+    emailservicestacknestjsNodeJsLambdaemailsendcommandtopic8C2A045E: {
+      Properties: {
+        Endpoint: {
+          Fn::GetAtt: [
+            emailservicestacknestjsNodeJsLambda2E7BD2F0,
+            Arn,
+          ],
+        },
+        Protocol: lambda,
+        TopicArn: {
+          Ref: emailsendcommandtopic9C148582,
+        },
+      },
+      Type: AWS::SNS::Subscription,
+    },
+  },
+  Rules: {
+    CheckBootstrapVersion: {
+      Assertions: [
+        {
+          Assert: {
+            Fn::Not: [
+              {
+                Fn::Contains: [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                  ],
+                  {
+                    Ref: BootstrapVersion,
+                  },
+                ],
+              },
+            ],
+          },
+          AssertDescription: CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.,
+        },
+      ],
+    },
+  },
+}
+`;
