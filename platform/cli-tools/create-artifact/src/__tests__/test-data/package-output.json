@@ -12,8 +12,8 @@
     "create-artifact": "bin/create-artifact",
     "build": "tsc && tsc-alias",
     "build:all": "rush build -t .",
-    "test": "jest",
-    "test:cov": "jest --coverage",
+    "test": "jest --runInBand",
+    "test:cov": "jest --coverage --runInBand",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix-dry-run"
   },

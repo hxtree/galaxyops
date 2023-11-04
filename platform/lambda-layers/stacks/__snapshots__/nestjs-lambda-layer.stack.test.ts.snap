@@ -28,7 +28,7 @@ exports[`MainStack should match snapshot test 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "2640a05f1ab7f3b50acbdb9b4601513df930c8841534d0432bf112cb1b9f61e5.zip",
+          "S3Key": "d0e77b5284fa811b7fc42506a6483aee48ea22d0d0a8764c40f412b17e4fd4e2.zip",
         },
         "LayerName": {
           "Fn::Join": [

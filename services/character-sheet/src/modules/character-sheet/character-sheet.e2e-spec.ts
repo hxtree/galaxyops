@@ -59,6 +59,7 @@ describe('/character-sheets', () => {
       const response = await supertest(app.getHttpServer())
         .get(`/character-sheets/${v4()}`)
         .expect(404);
+
       expect(response.body).toMatchObject({
         message: 'Not Found',
         statusCode: 404,
