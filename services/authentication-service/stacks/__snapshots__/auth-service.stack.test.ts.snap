@@ -462,7 +462,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 8578903a34e6d35954be1b053511139aab9de4d1aee32f1b5729683e167d88ad.zip,
+          S3Key: 2ebbdeccf5c82ac842a5fe9f06c193dcd680b9b59ecff5478de8544b21dc3d12.zip,
         },
         Environment: {
           Variables: {

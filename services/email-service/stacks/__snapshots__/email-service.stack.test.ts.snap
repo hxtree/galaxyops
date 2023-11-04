@@ -310,7 +310,7 @@ exports[`EmailServiceStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 9b1d6bec79e217b9c547632c84d9275521500476c07b940a065acf59bea4bf1e.zip,
+          S3Key: 164e8d107306e385b549a7cf0ae8452adeca17cafece3c61c0801e24dfe0c6c3.zip,
         },
         Environment: {
           Variables: {

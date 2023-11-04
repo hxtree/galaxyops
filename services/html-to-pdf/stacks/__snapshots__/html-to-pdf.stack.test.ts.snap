@@ -331,7 +331,7 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 3f60bc2153b17bfcfe3b2fd10d77ff7969ddc0a091c1e9433e56e51202c58b51.zip,
+          S3Key: 36d973743c811e1ce3711abdc9da3d58c8098fc75298d41e175079179cc31537.zip,
         },
         Environment: {
           Variables: {

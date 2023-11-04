@@ -10,7 +10,7 @@ exports[`ApiGatewayStack should match snapshot test 1`] = `
     },
   },
   "Resources": {
-    "MyTestStackdeployment20231104T184805042ZBF4BEBA6e232b3d2184b04059f9cbf7c5430efc7": {
+    "MyTestStackdeployment20231104T201122864ZA68E6059e232b3d2184b04059f9cbf7c5430efc7": {
       "DependsOn": [
         "MyTestStackwebapigatewaymockANY084D1838",
       ],
@@ -27,7 +27,7 @@ exports[`ApiGatewayStack should match snapshot test 1`] = `
       ],
       "Properties": {
         "DeploymentId": {
-          "Ref": "MyTestStackdeployment20231104T184805042ZBF4BEBA6e232b3d2184b04059f9cbf7c5430efc7",
+          "Ref": "MyTestStackdeployment20231104T201122864ZA68E6059e232b3d2184b04059f9cbf7c5430efc7",
         },
         "RestApiId": {
           "Ref": "MyTestStackwebapigateway11D00362",
