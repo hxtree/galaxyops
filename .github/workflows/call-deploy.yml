@@ -75,7 +75,7 @@ jobs:
       - name: rush publish to npmjs.org
         run: node common/scripts/install-run-rush.js publish --apply --publish --include-all --target-branch main --npm-auth-token ${NPM_TOKEN} --add-commit-details --set-access-level public
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       # deploy project for pipeline
       - name: rush artifact
