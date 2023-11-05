@@ -103,6 +103,66 @@
           }
         }
       }
+    },
+    "/v1/weather": {
+      "post": {
+        "operationId": "WeatherController_query",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/QueryDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/weather": {
+      "post": {
+        "operationId": "WeatherController_query",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/QueryDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/v1/weather/influence": {
+      "post": {
+        "operationId": "WeatherController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
+    "/weather/influence": {
+      "post": {
+        "operationId": "WeatherController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
     }
   },
   "info": {
@@ -113,5 +173,50 @@
   },
   "tags": [],
   "servers": [],
-  "components": { "schemas": {} }
+  "components": {
+    "schemas": {
+      "QueryDto": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date",
+            "default": "2023-11-05T02:50:15.067Z"
+          },
+          "latitude": {
+            "type": "string",
+            "description": "Latitude",
+            "default": "38.2942"
+          },
+          "longitude": {
+            "type": "string",
+            "description": "Longitude",
+            "default": "141.4164"
+          }
+        },
+        "required": ["date", "latitude", "longitude"]
+      },
+      "CreateDto": {
+        "type": "object",
+        "properties": {
+          "mood": {
+            "type": "string",
+            "description": "Mood of the one who influences the in-game weather",
+            "default": "JOYFUL"
+          },
+          "latitude": {
+            "type": "string",
+            "description": "Latitude",
+            "default": "38.2942"
+          },
+          "longitude": {
+            "type": "string",
+            "description": "Longitude",
+            "default": "141.4164"
+          }
+        },
+        "required": ["mood", "latitude", "longitude"]
+      }
+    }
+  }
 }

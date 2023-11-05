@@ -72,15 +72,10 @@ jobs:
       - name: bump version
         run: node common/scripts/install-run-rush.js version --bump
 
-      # - name: rush publish to npmjs.org
-      #   run: node common/scripts/install-run-rush.js publish --apply --publish --include-all --target-branch main --npm-auth-token ${NPM_TOKEN} --add-commit-details --set-access-level public
-      #   env:
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: rush publish to npm.pkg.github.com
-        run: node common/scripts/install-run-rush.js publish --apply --publish --include-all --registry https://npm.pkg.github.com/ --target-branch main --npm-auth-token ${NPM_TOKEN} --add-commit-details --set-access-level public
+      - name: rush publish to npmjs.org
+        run: node common/scripts/install-run-rush.js publish --apply --publish --include-all --target-branch main --npm-auth-token ${NPM_TOKEN} --add-commit-details --set-access-level public
         env:
-          NPM_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # deploy project for pipeline
       - name: rush artifact
