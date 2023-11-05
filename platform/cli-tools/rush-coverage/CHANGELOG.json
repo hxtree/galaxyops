@@ -2,6 +2,18 @@
   "name": "@cats-cradle/rush-coverage",
   "entries": [
     {
+      "version": "1.2.5",
+      "tag": "@cats-cradle/rush-coverage_v1.2.5",
+      "date": "Sun, 05 Nov 2023 05:26:39 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add badge to readme"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.2.4",
       "tag": "@cats-cradle/rush-coverage_v1.2.4",
       "date": "Sat, 04 Nov 2023 19:40:56 GMT",
