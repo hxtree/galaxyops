@@ -1,7 +1,7 @@
 import { IsDateString, IsString } from '@cats-cradle/validation-schemas';
-import { BaseMessageDto } from '../base';
+import { BaseCommandDto } from './base-command.dto';
 
-export class EmailSendCommand extends BaseMessageDto {
+export class EmailSendCommand extends BaseCommandDto {
   @IsString()
   public template!: string;
 

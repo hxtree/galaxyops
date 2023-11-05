@@ -1,21 +1,29 @@
 {
-  "name": "@cats-cradle/lambda-layers",
+  "name": "@cats-cradle/message-bus",
   "module": "commonjs",
   "version": "0.1.2",
+  "bin": {
+    "app": "bin/app.js"
+  },
   "scripts": {
+    "dev": "nest start --debug --watch",
+    "artifact": "create-artifact @cats-cradle/message-bus",
     "build": "tsc",
     "build:all": "rush build -t .",
     "watch": "tsc -w",
     "test": "jest --runInBand",
     "test:cov": "jest --coverage --runInBand",
-    "lint": "eslint --format visualstudio \"./{stacks,src}/*.{js,ts}\"  --fix",
-    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.{js,ts}\"  --fix-dry-run",
-    "cdk:deploy": "cdk deploy",
-    "cdk:destroy": "cdk destroy",
+    "lint": "eslint --format visualstudio \"./{stacks,src}/*.{ts,tsx}\"  --fix",
+    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.{ts,tsx}\"  --fix-dry-run",
+    "cdk:bootstrap": "cdk bootstrap",
     "cdk:diff": "cdk diff",
     "cdk:synth": "cdk synth",
-    "cdk:bootstrap": "cdk bootstrap",
-    "depcheck": "npx depcheck"
+    "cdk:hotswap": "cdk deploy --hotswap",
+    "cdk:deploy": "cdk deploy",
+    "cdk:watch": "cdk watch",
+    "cdk:destroy": "cdk destroy",
+    "depcheck": "npx depcheck",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "aws-lambda": "1.0.7",
@@ -34,12 +42,17 @@
     "mongoose": "6.9.1",
     "source-map-support": "~0.5.21",
     "@nestjs/swagger": "~7.1.13",
-    "uuid": "~9.0.1"
+    "uuid": "~9.0.1",
+    "@aws-cdk/core": "~1.182.0",
+    "constructs": "^10.2.70",
+    "aws-cdk-lib": "2.95.0",
+    "construct": "~1.0.0",
+    "@cats-cradle/messaging-schemas": "workspace:*"
   },
   "devDependencies": {
+    "@cats-cradle/create-artifact": "2.0.0",
+    "@cats-cradle/constructs": "workspace:*",
     "@cats-cradle/base-nodejs": "workspace:*",
-    "aws-cdk-lib": "2.95.0",
-    "constructs": "^10.2.70",
     "@types/jest": "29.5.5",
     "@types/node": "20.8.2",
     "@types/aws-lambda": "~8.10.123",

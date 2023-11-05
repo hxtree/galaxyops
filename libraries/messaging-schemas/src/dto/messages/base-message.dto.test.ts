@@ -3,7 +3,8 @@
 /* eslint-disable-next-line max-classes-per-file */
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import { IsMoney } from '@cats-cradle/validation-schemas';
-import { BaseMessageDto, BaseEventDto } from '../base';
+import { BaseMessageDto } from './base-message.dto';
+import { BaseEventDto } from '../events/base-event.dto';
 
 describe('BaseMessageDto', () => {
   let event: BaseMessageDto;
@@ -31,6 +32,22 @@ describe('BaseMessageDto', () => {
       await FakerFactory.create<TheQuickBrownFoxJumpsOverALazyDogAndCreateALongTopicNameThatMustBeShortenedForAws>(
         TheQuickBrownFoxJumpsOverALazyDogAndCreateALongTopicNameThatMustBeShortenedForAws,
       );
+  });
+
+  describe('displayName', () => {
+    it('should make topic name based on class name prefix with STAGE, kebab case, ending in topic', async () => {
+      expect(PlayerCreateEvent.displayName()).toEqual(
+        'DefaultPlayerCreateEventTopic',
+      );
+    });
+
+    it('should truncate long class names', async () => {
+      expect(
+        TheQuickBrownFoxJumpsOverALazyDogAndCreateALongTopicNameThatMustBeShortenedForAws.displayName(),
+      ).toEqual(
+        'DefaultTheQuickBrownFoxJumpsOverALazyDogAndCreateALongTopicNameThatMustBeShortenedForAwsTopic',
+      );
+    });
   });
 
   describe('topicName', () => {

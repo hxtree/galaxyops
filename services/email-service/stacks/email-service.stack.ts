@@ -39,22 +39,23 @@ export class EmailServiceStack extends cdk.Stack {
       }),
     );
 
+    // TODO should be a queue to already existing topic
     // SendEmailCommandTopic
-    const sendEmailCommandTopic = new sns.Topic(
-      this,
-      'email-send-command-topic',
-      {
-        topicName: EmailSendCommand.topicName(),
-        displayName: EmailSendCommand.topicName(),
-      },
-    );
-    sendEmailCommandTopic.addSubscription(
-      new subscriptions.LambdaSubscription(nodeJsFunction),
-    );
+    // const sendEmailCommandTopic = new sns.Topic(
+    //   this,
+    //   'email-send-command-topic',
+    //   {
+    //     topicName: EmailSendCommand.topicName(),
+    //     displayName: EmailSendCommand.topicName(),
+    //   },
+    // );
+    // sendEmailCommandTopic.addSubscription(
+    //   new subscriptions.LambdaSubscription(nodeJsFunction),cd .
+    // );
 
-    new cdk.CfnOutput(this, 'endEmailCommandTopicARN', {
-      value: sendEmailCommandTopic.topicArn,
-    });
+    // new cdk.CfnOutput(this, 'endEmailCommandTopicARN', {
+    //   value: sendEmailCommandTopic.topicArn,
+    // });
 
     new cdk.CfnOutput(this, 'Localhost API Example', {
       value: `${microservice.getBaseUrl()}/`,
