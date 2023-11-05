@@ -53,6 +53,16 @@
       "tags": ["deploy-platform"]
     },
     {
+      "packageName": "@cats-cradle/message-bus",
+      "projectFolder": "platform/message-bus",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/create-artifact"
+      ],
+      "tags": ["deploy-platform"]
+    },
+    {
       "packageName": "@cats-cradle/pipeline",
       "projectFolder": "platform/pipeline",
       "reviewCategory": "category-ci-cd",

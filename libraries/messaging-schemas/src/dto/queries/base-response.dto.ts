@@ -1,3 +1,3 @@
-import { BaseMessageDto } from './base-message.dto';
+import { BaseMessageDto } from '../messages/base-message.dto';
 
 export abstract class BaseResponseDto extends BaseMessageDto {}

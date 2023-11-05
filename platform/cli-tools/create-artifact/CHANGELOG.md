@@ -1,6 +1,11 @@
 # Change Log - @cats-cradle/create-artifact
 
-This log was last generated on Sun, 05 Nov 2023 05:26:39 GMT and should not be manually modified.
+This log was last generated on Sun, 05 Nov 2023 18:41:09 GMT and should not be manually modified.
+
+## 2.0.3
+Sun, 05 Nov 2023 18:41:09 GMT
+
+_Version update only_
 
 ## 2.0.2
 Sun, 05 Nov 2023 05:26:39 GMT

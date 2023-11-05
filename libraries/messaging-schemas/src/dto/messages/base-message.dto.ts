@@ -1,8 +1,9 @@
 import { kebabCase, truncate } from 'lodash';
-import { IsUUID, IsDateString } from '@cats-cradle/validation-schemas';
+import { IsUuidV4, IsDateString } from '@cats-cradle/validation-schemas';
+import { pascalCase } from './pascalCase';
 
 export abstract class BaseMessageDto {
-  @IsUUID()
+  @IsUuidV4()
   public messageId: string;
 
   @IsDateString()
@@ -16,9 +17,9 @@ export abstract class BaseMessageDto {
    * {@link https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-queues.html}
    */
   static topicName(): string {
-    const stageName = (process.env.STAGE_NAME ?? 'default').toLowerCase();
     const className = this.name;
     const classNameKebabCase = kebabCase(className);
+    const stageName = (process.env.STAGE_NAME ?? 'default').toLowerCase();
     let topicName = truncate(`${stageName}-${classNameKebabCase}`, {
       length: 256 - '-topic'.length,
       omission: '-topic',
@@ -31,6 +32,21 @@ export abstract class BaseMessageDto {
     return topicName;
   }
 
+  static displayName(): string {
+    const className = this.name;
+    const classNamePascalCase = pascalCase(className);
+    const stageName = pascalCase(process.env.STAGE_NAME ?? 'default');
+    let displayName = truncate(`${stageName}${classNamePascalCase}`, {
+      length: 256 - 'Topic'.length,
+      omission: 'Topic',
+      separator: '',
+    });
+    if (!/Topic$/.test(displayName)) {
+      displayName += 'Topic';
+    }
+    return displayName;
+  }
+
   /**
    * Get auto generated SQS queue name
    * Prefixed by STAGE_NAME and APP_NAME followed by the message name with a queue suffix
@@ -38,10 +54,10 @@ export abstract class BaseMessageDto {
    * {@link https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-queues.html}
    */
   get queueName(): string {
-    const stageName = (process.env.STAGE_NAME ?? 'default').toLowerCase();
     const appName = (process.env.APP_NAME ?? 'undefined').toLowerCase();
     const className = this.constructor.name;
     const classNameKebabCase = kebabCase(className);
+    const stageName = (process.env.STAGE_NAME ?? 'default').toLowerCase();
     let queueName = truncate(`${stageName}-${appName}-${classNameKebabCase}`, {
       length: 80 - '-queue'.length,
       omission: '-queue',

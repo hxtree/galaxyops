@@ -2,6 +2,18 @@
   "name": "@cats-cradle/base-nodejs",
   "entries": [
     {
+      "version": "1.0.8",
+      "tag": "@cats-cradle/base-nodejs_v1.0.8",
+      "date": "Sun, 05 Nov 2023 18:41:09 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add bin/app.ts to includes"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.7",
       "tag": "@cats-cradle/base-nodejs_v1.0.7",
       "date": "Sat, 04 Nov 2023 19:40:56 GMT",

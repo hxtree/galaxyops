@@ -5,7 +5,7 @@
     "create-bundle": "bin/create-bundle"
   },
   "main": "./dist/index.js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"
