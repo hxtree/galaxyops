@@ -58,8 +58,6 @@ export class MessageBusStack extends cdk.Stack {
       // });
     }
 
-    // structure data lake for analysis
-    // https://www.youtube.com/watch?v=4xjckHvapFk
     // const file = `${projectFolder}${year}/${month}/${day}/${folder}/${file}`
 
     // TODO add firehose to save message to data lake
