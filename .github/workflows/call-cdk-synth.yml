@@ -8,7 +8,7 @@ on:
 
 jobs:
   cdk-synth:
-    name: cdk synth
+    name: rush cdk:synth
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
