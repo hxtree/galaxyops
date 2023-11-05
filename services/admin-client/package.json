@@ -9,8 +9,8 @@
     "start": "next start",
     "lint": "next lint --fix",
     "lint:ci": "next lint",
-    "test": "jest --logHeapUsage",
-    "test:cov": "jest --coverage"
+    "test": "jest --runInBand",
+    "test:cov": "jest --coverage --runInBand"
   },
   "dependencies": {
     "@types/node": "20.8.2",

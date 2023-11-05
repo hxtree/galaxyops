@@ -5,8 +5,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest",
-    "test:cov": "jest --coverage",
+    "test": "jest --runInBand",
+    "test:cov": "jest --coverage --runInBand",
     "lint": "eslint --format visualstudio \"./{stacks,src}/*.{js,ts}\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.{js,ts}\"  --fix-dry-run",
     "cdk:deploy": "cdk deploy",

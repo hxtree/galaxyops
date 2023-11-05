@@ -11,8 +11,8 @@
     "build": "tsc",
     "build:all": "rush build -t .",
     "watch": "tsc -w",
-    "test": "jest",
-    "test:cov": "jest --coverage",
+    "test": "jest --runInBand",
+    "test:cov": "jest --coverage --runInBand",
     "lint": "eslint --format visualstudio \"./src/*.ts\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./src/*.ts\"  --fix-dry-run",
     "depcheck": "npx depcheck"

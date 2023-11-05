@@ -1,90 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MainStack should match snapshot test 1`] = `
+exports[`NestJsLambdaLayerStack should match snapshot test 1`] = `
 {
-  "Outputs": {
-    "NestJSLayerVersionArn": {
-      "Value": {
-        "Ref": "NestJsAppLayerF9ACDB87",
+  Outputs: {
+    NestJSLayerVersionArn: {
+      Value: {
+        Ref: NestJsAppLayerF9ACDB87,
       },
     },
   },
-  "Parameters": {
-    "BootstrapVersion": {
-      "Default": "/cdk-bootstrap/hnb659fds/version",
-      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
-      "Type": "AWS::SSM::Parameter::Value<String>",
+  Parameters: {
+    BootstrapVersion: {
+      Default: /cdk-bootstrap/hnb659fds/version,
+      Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
+      Type: AWS::SSM::Parameter::Value<String>,
     },
   },
-  "Resources": {
-    "NestJsAppLayerF9ACDB87": {
-      "DeletionPolicy": "Delete",
-      "Properties": {
-        "CompatibleArchitectures": [
-          "x86_64",
-          "arm64",
+  Resources: {
+    NestJsAppLayerF9ACDB87: {
+      DeletionPolicy: Delete,
+      Properties: {
+        CompatibleArchitectures: [
+          x86_64,
+          arm64,
         ],
-        "Content": {
-          "S3Bucket": {
-            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+        Content: {
+          S3Bucket: {
+            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          "S3Key": "2640a05f1ab7f3b50acbdb9b4601513df930c8841534d0432bf112cb1b9f61e5.zip",
+          S3Key: UNIQUE_HASH.zip,
         },
-        "LayerName": {
-          "Fn::Join": [
-            "",
+        LayerName: {
+          Fn::Join: [
+            ,
             [
-              "arn:aws:lambda:",
+              arn:aws:lambda:,
               {
-                "Ref": "AWS::Region",
+                Ref: AWS::Region,
               },
-              ":",
+              :,
               {
-                "Ref": "AWS::AccountId",
+                Ref: AWS::AccountId,
               },
-              ":layer:NestJsAppLayer",
+              :layer:NestJsAppLayer,
             ],
           ],
         },
       },
-      "Type": "AWS::Lambda::LayerVersion",
-      "UpdateReplacePolicy": "Delete",
+      Type: AWS::Lambda::LayerVersion,
+      UpdateReplacePolicy: Delete,
     },
-    "lambdalayernestjslatestversionB188CF78": {
-      "Properties": {
-        "Description": "NestJS Lambda Layer Latest Version",
-        "Name": "lambda-layer-nestjs-latest-version",
-        "Type": "String",
-        "Value": {
-          "Ref": "NestJsAppLayerF9ACDB87",
+    lambdalayernestjslatestversionB188CF78: {
+      Properties: {
+        Description: NestJS Lambda Layer Latest Version,
+        Name: lambda-layer-nestjs-latest-version,
+        Type: String,
+        Value: {
+          Ref: NestJsAppLayerF9ACDB87,
         },
       },
-      "Type": "AWS::SSM::Parameter",
+      Type: AWS::SSM::Parameter,
     },
   },
-  "Rules": {
-    "CheckBootstrapVersion": {
-      "Assertions": [
+  Rules: {
+    CheckBootstrapVersion: {
+      Assertions: [
         {
-          "Assert": {
-            "Fn::Not": [
+          Assert: {
+            Fn::Not: [
               {
-                "Fn::Contains": [
+                Fn::Contains: [
                   [
-                    "1",
-                    "2",
-                    "3",
-                    "4",
-                    "5",
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
                   ],
                   {
-                    "Ref": "BootstrapVersion",
+                    Ref: BootstrapVersion,
                   },
                 ],
               },
             ],
           },
-          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+          AssertDescription: CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.,
         },
       ],
     },
