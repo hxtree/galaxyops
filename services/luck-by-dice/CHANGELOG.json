@@ -2,6 +2,18 @@
   "name": "@cats-cradle/luck-by-dice",
   "entries": [
     {
+      "version": "2.0.7",
+      "tag": "@cats-cradle/luck-by-dice_v2.0.7",
+      "date": "Sun, 05 Nov 2023 05:26:39 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add badge to readme"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.0.6",
       "tag": "@cats-cradle/luck-by-dice_v2.0.6",
       "date": "Sat, 04 Nov 2023 19:40:56 GMT",
