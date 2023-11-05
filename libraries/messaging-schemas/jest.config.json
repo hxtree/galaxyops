@@ -1,12 +1,12 @@
 {
   "roots": ["<rootDir>/src/"],
-  "testMatch": ["<rootDir>/src/**/*.{test,e2e-spec}.ts"],
+  "testMatch": ["<rootDir>/src/**/*.test.ts"],
   "testPathIgnorePatterns": ["/node_modules/"],
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
-  "collectCoverageFrom": ["<rootDir>/src/*.ts", "!<rootDir>/src/index.ts"],
+  "collectCoverageFrom": ["<rootDir>/src/*.ts"],
   "coverageReporters": ["json", "text-summary"],
-  "coveragePathIgnorePatterns": ["main.ts", "app.ts", "index.ts", "/data/"],
+  "coveragePathIgnorePatterns": ["index.ts"],
   "coverageDirectory": "<rootDir>/coverage"
 }

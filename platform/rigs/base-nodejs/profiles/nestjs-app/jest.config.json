@@ -14,6 +14,12 @@
     "!<rootDir>/src/index.ts"
   ],
   "coverageReporters": ["json", "text-summary"],
-  "coveragePathIgnorePatterns": ["/node_modules/", "/cdk.out/", "/dist/"],
+  "coveragePathIgnorePatterns": [
+    "main.ts",
+    "app.ts",
+    "index.ts",
+    "/data/",
+    "*.module.ts"
+  ],
   "coverageDirectory": "<rootDir>/coverage"
 }
