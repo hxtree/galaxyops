@@ -1,5 +1,9 @@
 # @cats-cradle/create-artifact
 
+[![npm version](https://badge.fury.io/js/@cats-cradle%2Fcreate-artifact.svg)](https://badge.fury.io/js/@cats-cradle%2Fcreate-artifact)
+[![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
+
 create-artifact is a tool for bundling a single package into an artifact. It was
 designed to help create small fast deployable projects.
 
