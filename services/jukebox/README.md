@@ -1,5 +1,8 @@
 # @cats-cradle/jukebox
 
+![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
+
 This services plays only retro music -- so turn up the volume to 11. We're
 talking Impulse Tracker (\*.it) files.
 

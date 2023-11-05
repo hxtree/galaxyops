@@ -1,5 +1,9 @@
 # @cats-cradle/create-bundle
 
+[![npm version](https://badge.fury.io/js/@cats-cradle%2Fcreate-bundle.svg)](https://badge.fury.io/js/@cats-cradle%2Fcreate-bundle)
+[![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
+
 This package contains various bundler profiles. The bundlers bundle another
 projects source code to make it ready for distribution.
 
