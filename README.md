@@ -1,21 +1,17 @@
 <h1 align="center">Cats Cradle :yarn:</h1>
 
-Embark on an nostalgic adventure with **Cats Cradle** - the upcoming co-op RPG
-that will transport you to a world filled with wonder. Join us on this journey
-as we flesh in the game and bring it to life.
-
-This repo houses the game's code in a enterprise architecture monorepo. It
-includes numerous microservices built on a PaaS with IaC for streamlined DevOps
-CI/CD.
-
-Although each package is maintained primarily for the game, most of the stable
-packages are individually published to
-[NPM](https://www.npmjs.com/search?q=%40cats-cradle) and available under
-open-source software license.
-
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/cats-cradle)
+
+Embark on a nostalgic adventure with **Cats Cradle**, the upcoming co-op RPG
+that immerses you in a wondrous world. Join us on this journey as we develop and
+bring the game to life.
+
+This repo houses the game's code in a enterprise architecture monorepo. It
+includes numerous microservices built on a PaaS with IaC for streamlined DevOps
+CI/CD. While we maintain some packages primarily for the game, most we
+individually publish to [NPM](https://www.npmjs.com/search?q=%40cats-cradle).
 
 ## Getting Started
 
@@ -27,6 +23,8 @@ Codespaces.
 
 Alternatively, build, test, and deploy apps locally using the
 [devcontainer](docs/devcontainer.md).
+
+## Architecture
 
 ![Flow Chart](docs/flow-chart-dark.drawio.svg)
 
@@ -93,6 +91,12 @@ the [code of conduct](docs/CODE_OF_CONDUCT.md).
 <a href="https://github.com/hxtree/cats-cradle/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=hxtree/cats-cradle" />
 </a>
+
+## License
+
+Packages available on [NPM](https://www.npmjs.com/search?q=%40cats-cradle) are
+MIT licensed. Packages without a specific license have not yet been developed
+with reuse in mind and are primarily maintained for the game.
 
 <p align="center">
 :white_heart: / :hourglass: / :infinity:
