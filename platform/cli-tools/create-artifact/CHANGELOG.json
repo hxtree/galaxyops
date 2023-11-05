@@ -2,6 +2,18 @@
   "name": "@cats-cradle/create-artifact",
   "entries": [
     {
+      "version": "2.0.2",
+      "tag": "@cats-cradle/create-artifact_v2.0.2",
+      "date": "Sun, 05 Nov 2023 05:26:39 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add badges to readme"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.0.1",
       "tag": "@cats-cradle/create-artifact_v2.0.1",
       "date": "Sat, 04 Nov 2023 19:40:56 GMT",

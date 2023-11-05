@@ -1,5 +1,9 @@
 # @cats-cradle/rush-coverage
 
+[![npm version](https://badge.fury.io/js/@cats-cradle%2Frush-coverage.svg)](https://badge.fury.io/js/@cats-cradle%2Frush-coverage)
+[![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
+
 RushCoverage is a code coverage consolidation tool for RushJs based monorepos.
 
 It consolidates code coverage reports from multiple projects into one report.

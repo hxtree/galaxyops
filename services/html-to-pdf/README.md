@@ -1,5 +1,6 @@
 # @cats-cradle/html-to-pdf
 
+[![npm version](https://badge.fury.io/js/@cats-cradle%2Fhtml-to-pdf.svg)](https://badge.fury.io/js/@cats-cradle%2Fhtml-to-pdf)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
