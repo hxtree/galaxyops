@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/email-service",
   "module": "commonjs",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "scripts": {
     "dev": "nest start --debug --watch",
     "build": "tsc",

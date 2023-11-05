@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/email-service
 
-This log was last generated on Sat, 04 Nov 2023 19:40:56 GMT and should not be manually modified.
+This log was last generated on Sun, 05 Nov 2023 18:41:09 GMT and should not be manually modified.
+
+## 0.0.19
+Sun, 05 Nov 2023 18:41:09 GMT
+
+### Patches
+
+- remove sns topic from deployment
 
 ## 0.0.18
 Sat, 04 Nov 2023 19:40:56 GMT

@@ -2,6 +2,18 @@
   "name": "@cats-cradle/create-artifact",
   "entries": [
     {
+      "version": "2.0.3",
+      "tag": "@cats-cradle/create-artifact_v2.0.3",
+      "date": "Sun, 05 Nov 2023 18:41:09 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.8`"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.0.2",
       "tag": "@cats-cradle/create-artifact_v2.0.2",
       "date": "Sun, 05 Nov 2023 05:26:39 GMT",
