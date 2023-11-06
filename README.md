@@ -37,13 +37,12 @@ Alternatively, build, test, and deploy apps locally using the
    git checkout -b feature/improve-readme
    ```
 
-2. Work on changes (e.g. fix a bug or add a new feature). Build, lint, and unit
-   test projects.
+2. Work on changes (e.g. fix a bug or add a new feature). Test-driven
+   development encouraged.
 
-   ```bashProd Environment
-   rush build
-   rush linthttps://github.com/hxtree/cats-cradle
-   rush test
+   ```bash
+   rushx dev
+   rushx test
    ```
 
 3. Stage and commit changes using
