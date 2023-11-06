@@ -37,10 +37,10 @@ Alternatively, build, test, and deploy apps locally using the
    git checkout -b feature/improve-readme
    ```
 
-2. Work on changes (e.g. fix a bug or add a new feature). Test-driven develop
-   projects.
+2. Work on changes (e.g. fix a bug or add a new feature). Test-driven
+   development encouraged.
 
-   ```bashProd Environment
+   ```bash
    rushx dev
    rushx test
    ```
