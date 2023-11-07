@@ -58,5 +58,5 @@ jobs:
           binary-version: 4.2.8
           instance-dbName: validation
           instance-port: 27017
-          instance-storageEngine: wiredTiger
+          instance-storageEngine: "ephemeralForTest"
           mongoms-debug: 1

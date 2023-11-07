@@ -43,16 +43,32 @@ jobs:
       - name: rush build
         run: node common/scripts/install-run-rush.js build
 
-      - name: rush test:cov
+      - name: rush test:cov platform-package
         uses: neofinancial/mongo-memory-server-action@v1.0.2
         with:
           db-connection-env-var: MONGO_DATABASE_URI
-          run-command: node common/scripts/install-run-rush.js test:cov
+          run-command: node common/scripts/install-run-rush.js test:cov --to tag:platform-package
           binary-version: 4.2.8
-          instance-dbName: validation
           instance-port: 27017
-          instance-storageEngine: wiredTiger
-          mongoms-debug: 1
+          instance-storageEngine: "ephemeralForTest"
+
+      - name: rush test:cov library-package
+        uses: neofinancial/mongo-memory-server-action@v1.0.2
+        with:
+          db-connection-env-var: MONGO_DATABASE_URI
+          run-command: node common/scripts/install-run-rush.js test:cov --to tag:library-package
+          binary-version: 4.2.8
+          instance-port: 27017
+          instance-storageEngine: "ephemeralForTest"
+
+      - name: rush test:cov service-package
+        uses: neofinancial/mongo-memory-server-action@v1.0.2
+        with:
+          db-connection-env-var: MONGO_DATABASE_URI
+          run-command: node common/scripts/install-run-rush.js test:cov --to tag:service-package
+          binary-version: 4.2.8
+          instance-port: 27017
+          instance-storageEngine: "ephemeralForTest"
 
       - name: Merge coverage reports
         run: npx @cats-cradle/rush-coverage@1.2.0
