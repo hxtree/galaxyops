@@ -10,9 +10,10 @@ that immerses you in a wondrous world. Join us on this journey as we develop and
 bring the game to life.
 
 This repo houses the game's code in a enterprise architecture monorepo. It
-includes numerous microservices built on a PaaS with IaC for streamlined DevOps
-CI/CD. While we maintain some packages primarily for the game, most we
-individually publish to [NPM](https://www.npmjs.com/search?q=%40cats-cradle).
+includes numerous event-driven microservices built on a PaaS with IaC for
+streamlined DevOps CI/CD. While we maintain some packages primarily for the
+game, most we individually publish to
+[NPM](https://www.npmjs.com/search?q=%40cats-cradle).
 
 ## Getting Started
 
