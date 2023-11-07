@@ -21,11 +21,6 @@ exports[`EmailServiceStack should match snapshot test 1`] = `
         ],
       },
     },
-    endEmailCommandTopicARN: {
-      Value: {
-        Ref: emailsendcommandtopic9C148582,
-      },
-    },
   },
   Parameters: {
     BootstrapVersion: {
@@ -145,13 +140,6 @@ exports[`EmailServiceStack should match snapshot test 1`] = `
         ],
       },
       Type: AWS::IAM::Policy,
-    },
-    emailsendcommandtopic9C148582: {
-      Properties: {
-        DisplayName: default-email-send-command-topic,
-        TopicName: default-email-send-command-topic,
-      },
-      Type: AWS::SNS::Topic,
     },
     emailservicestackemailservicestackapiendpointemailservicestackapiendpointapigwresource91001160: {
       Properties: {
@@ -363,22 +351,6 @@ exports[`EmailServiceStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Function,
     },
-    emailservicestacknestjsNodeJsLambdaAllowInvokeMyTestStackemailsendcommandtopicAE07477B01259F51: {
-      Properties: {
-        Action: lambda:InvokeFunction,
-        FunctionName: {
-          Fn::GetAtt: [
-            emailservicestacknestjsNodeJsLambda2E7BD2F0,
-            Arn,
-          ],
-        },
-        Principal: sns.amazonaws.com,
-        SourceArn: {
-          Ref: emailsendcommandtopic9C148582,
-        },
-      },
-      Type: AWS::Lambda::Permission,
-    },
     emailservicestacknestjsNodeJsLambdaLogRetentionB4D4A106: {
       Properties: {
         LogGroupName: {
@@ -472,21 +444,6 @@ exports[`EmailServiceStack should match snapshot test 1`] = `
         ],
       },
       Type: AWS::IAM::Policy,
-    },
-    emailservicestacknestjsNodeJsLambdaemailsendcommandtopic8C2A045E: {
-      Properties: {
-        Endpoint: {
-          Fn::GetAtt: [
-            emailservicestacknestjsNodeJsLambda2E7BD2F0,
-            Arn,
-          ],
-        },
-        Protocol: lambda,
-        TopicArn: {
-          Ref: emailsendcommandtopic9C148582,
-        },
-      },
-      Type: AWS::SNS::Subscription,
     },
   },
   Rules: {
