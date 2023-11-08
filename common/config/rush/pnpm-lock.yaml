@@ -149,9 +149,6 @@ importers:
       '@cats-cradle/validation-schemas':
         specifier: workspace:*
         version: link:../validation-schemas
-      '@faker-js/faker':
-        specifier: ~7.6.0
-        version: 7.6.0
       '@types/lodash':
         specifier: ~4.14.200
         version: 4.14.200
@@ -161,30 +158,9 @@ importers:
       class-transformer:
         specifier: 0.5.1
         version: 0.5.1
-      class-validator:
-        specifier: 0.13.2
-        version: 0.13.2
-      class-validator-jsonschema:
-        specifier: 3.1.1
-        version: 3.1.1(class-transformer@0.5.1)(class-validator@0.13.2)
-      currency.js:
-        specifier: ~2.0.4
-        version: 2.0.4
-      json-schema:
-        specifier: ~0.4.0
-        version: 0.4.0
-      json-schema-faker:
-        specifier: ~0.5.0-rcv.46
-        version: 0.5.0-rcv.46
       lodash:
         specifier: ~4.17.21
         version: 4.17.21
-      openapi3-ts:
-        specifier: ~3.1.2
-        version: 3.1.2
-      reflect-metadata:
-        specifier: 0.1.13
-        version: 0.1.13
       uuid:
         specifier: ~9.0.1
         version: 9.0.1

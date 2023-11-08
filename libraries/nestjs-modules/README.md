@@ -20,6 +20,10 @@ are as follows:
   each test or after all test within a file depending on need to clear test
   data.
 
+## TODO
+
+- Add a feature to make it easy to subscribe to events.
+
 ## Documentation
 
 - [Jest Using with MongoDB](https://jestjs.io/docs/mongodb)

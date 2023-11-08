@@ -1,8 +1,11 @@
-import { Min, IsInt, IsUUID } from '@cats-cradle/validation-schemas';
+import { Min, IsInt, IsUuidV4 } from '@cats-cradle/validation-schemas';
 import { BaseEventDto } from './base-event.dto';
 
 export class CharacterLevelUpEvent extends BaseEventDto {
-  @IsUUID()
+  @IsUuidV4()
+  public instanceId: string;
+
+  @IsUuidV4()
   public characterId: string;
 
   @IsInt()

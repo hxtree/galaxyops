@@ -44,15 +44,6 @@ request.
 
 > (Publisher -> SQS) -> Consumer -> SQS -> Publisher
 
-## TODO
-
-- Add a feature to make it easy to subscribe to events.
-- Provision S3 bucket and place all history of all events into.
-- Save all messages received to bucket.
-- Indicate whether message was sent only for testing / debugging purposes and
-  should not contaminate history.
-- Hydration that ties into api-client query might be nifty.
-
 ## References
 
 - [Pub/Sub Messaging Schema](https://cloud.google.com/pubsub/docs/schemas)
