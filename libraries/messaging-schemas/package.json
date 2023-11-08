@@ -20,22 +20,14 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "class-transformer": "0.5.1",
-    "class-validator": "0.13.2",
     "uuid": "~9.0.1",
     "lodash": "~4.17.21",
     "@types/lodash": "~4.14.200",
     "@cats-cradle/base-nodejs": "workspace:*",
-    "@faker-js/faker": "~7.6.0",
-    "reflect-metadata": "0.1.13",
     "@types/validator": "~13.7.10",
-    "currency.js": "~2.0.4",
-    "class-validator-jsonschema": "3.1.1",
-    "json-schema-faker": "~0.5.0-rcv.46",
-    "json-schema": "~0.4.0",
-    "openapi3-ts": "~3.1.2",
     "@cats-cradle/faker-factory": "workspace:*",
-    "@cats-cradle/validation-schemas": "workspace:*"
+    "@cats-cradle/validation-schemas": "workspace:*",
+    "class-transformer": "0.5.1"
   },
   "devDependencies": {
     "@types/jest": "29.5.5",

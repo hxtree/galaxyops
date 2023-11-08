@@ -6,6 +6,9 @@ import { SnsClientService } from './sns-client.service';
 export class SnsService {
   constructor(private snsClientService: SnsClientService) {}
 
+  // TODO use message-schema instead and MessageFactory
+  // async publish(message: ClassConstructor, partial: any) {}
+
   async publish(message: string, topicArn: string): Promise<boolean> {
     try {
       /**
