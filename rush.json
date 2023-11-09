@@ -323,6 +323,18 @@
         "@cats-cradle/create-bundle"
       ],
       "tags": ["service-package", "deploy-app"]
+    },
+    {
+      "packageName": "@cats-cradle/instances",
+      "projectFolder": "services/instances",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/nestjs-modules",
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
+      ],
+      "tags": ["service-package", "deploy-app"]
     }
   ]
 }
