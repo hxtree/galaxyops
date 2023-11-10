@@ -12,7 +12,7 @@ import { InstanceRepository } from '../../models/instance.repository';
 import { InstanceController } from './instance.controller';
 import { CreateDto } from './create.dto';
 
-describe('/character-sheets', () => {
+describe('/instances', () => {
   let app: INestApplication;
   let instanceRepository: InstanceRepository;
 
@@ -60,7 +60,7 @@ describe('/character-sheets', () => {
         id: body.id,
       });
 
-      expect(instance?._id).toEqual(body.id);
+      expect(instance?.id).toEqual(body.id);
       expect(instance?.createdAt).toBeDefined();
     });
   });
