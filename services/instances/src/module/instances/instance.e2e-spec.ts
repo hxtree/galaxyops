@@ -116,7 +116,6 @@ describe('/instances', () => {
         id: body.id,
       });
 
-      // expect(response.id)
       expect(instance?.id).toEqual(body.id);
       expect(instance?.createdAt).toBeDefined();
     });
