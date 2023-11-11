@@ -1,5 +1,5 @@
-import { Collection } from '../Collection';
-import { Cup } from '../Cup';
+import { Collection } from './Collection';
+import { Cup } from './Cup';
 
 describe('Cup', () => {
   test('.roll()', () => {

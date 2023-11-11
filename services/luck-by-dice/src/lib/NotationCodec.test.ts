@@ -1,7 +1,7 @@
-import { Collection } from '../Collection';
-import { Cup } from '../Cup';
-import { Dice } from '../Dice';
-import { NotationCodec } from '../NotationCodec';
+import { Collection } from './Collection';
+import { Cup } from './Cup';
+import { Dice } from './Dice';
+import { NotationCodec } from './NotationCodec';
 
 describe('NotationCodec', () => {
   // decode - notation to object
