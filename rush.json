@@ -134,6 +134,14 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@cats-cradle/pseudo-random",
+      "projectFolder": "libraries/pseudo-random",
+      "reviewCategory": "libraries",
+      "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
+      "tags": ["library-package"],
+      "shouldPublish": true
+    },
+    {
       "packageName": "@cats-cradle/messaging-schemas",
       "projectFolder": "libraries/messaging-schemas",
       "reviewCategory": "libraries",

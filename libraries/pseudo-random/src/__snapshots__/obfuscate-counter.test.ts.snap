@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ObfuscateCounter Run 0: should encrypt and increment correctly 1`] = `"00050000"`;
+
+exports[`ObfuscateCounter Run 55279: should encrypt and increment correctly 1`] = `"00025279"`;
+
+exports[`ObfuscateCounter Run 110558: should encrypt and increment correctly 1`] = `"00130558"`;
+
+exports[`ObfuscateCounter Run 165837: should encrypt and increment correctly 1`] = `"00185837"`;
+
+exports[`ObfuscateCounter Run 221116: should encrypt and increment correctly 1`] = `"00211116"`;
+
+exports[`ObfuscateCounter Run 276395: should encrypt and increment correctly 1`] = `"00266395"`;
+
+exports[`ObfuscateCounter Run 331674: should encrypt and increment correctly 1`] = `"00391674"`;
+
+exports[`ObfuscateCounter Run 386953: should encrypt and increment correctly 1`] = `"00306953"`;
+
+exports[`ObfuscateCounter Run 442232: should encrypt and increment correctly 1`] = `"00472232"`;
+
+exports[`ObfuscateCounter Run 497511: should encrypt and increment correctly 1`] = `"00747511"`;
+
+exports[`ObfuscateCounter Run 552790: should encrypt and increment correctly 1`] = `"00522790"`;
+
+exports[`ObfuscateCounter Run 608069: should encrypt and increment correctly 1`] = `"00658069"`;
+
+exports[`ObfuscateCounter Run 663348: should encrypt and increment correctly 1`] = `"00683348"`;
+
+exports[`ObfuscateCounter Run 718627: should encrypt and increment correctly 1`] = `"00738627"`;
+
+exports[`ObfuscateCounter Run 773906: should encrypt and increment correctly 1`] = `"00763906"`;
+
+exports[`ObfuscateCounter Run 829185: should encrypt and increment correctly 1`] = `"00819185"`;
+
+exports[`ObfuscateCounter Run 884464: should encrypt and increment correctly 1`] = `"00804464"`;
+
+exports[`ObfuscateCounter Run 939743: should encrypt and increment correctly 1`] = `"00999743"`;
+
+exports[`ObfuscateCounter Run 995022: should encrypt and increment correctly 1`] = `"05445022"`;
+
+exports[`ObfuscateCounter Run 1050301: should encrypt and increment correctly 1`] = `"01020301"`;
+
+exports[`ObfuscateCounter Run 1105580: should encrypt and increment correctly 1`] = `"01155580"`;
+
+exports[`ObfuscateCounter Run 1160859: should encrypt and increment correctly 1`] = `"01180859"`;
+
+exports[`ObfuscateCounter Run 1216138: should encrypt and increment correctly 1`] = `"01236138"`;
+
+exports[`ObfuscateCounter Run 1271417: should encrypt and increment correctly 1`] = `"01261417"`;
+
+exports[`ObfuscateCounter Run 1326696: should encrypt and increment correctly 1`] = `"01316696"`;
+
+exports[`ObfuscateCounter Run 1381975: should encrypt and increment correctly 1`] = `"01301975"`;
+
+exports[`ObfuscateCounter Run 1437254: should encrypt and increment correctly 1`] = `"01497254"`;
+
+exports[`ObfuscateCounter Run 1492533: should encrypt and increment correctly 1`] = `"01742533"`;
+
+exports[`ObfuscateCounter Run 1547812: should encrypt and increment correctly 1`] = `"01577812"`;
+
+exports[`ObfuscateCounter Run 1603091: should encrypt and increment correctly 1`] = `"01653091"`;
+
+exports[`ObfuscateCounter Run 1658370: should encrypt and increment correctly 1`] = `"01628370"`;
+
+exports[`ObfuscateCounter Run 1713649: should encrypt and increment correctly 1`] = `"01733649"`;
+
+exports[`ObfuscateCounter Run 1768928: should encrypt and increment correctly 1`] = `"01788928"`;
+
+exports[`ObfuscateCounter Run 1824207: should encrypt and increment correctly 1`] = `"01814207"`;
+
+exports[`ObfuscateCounter Run 1879486: should encrypt and increment correctly 1`] = `"01869486"`;
+
+exports[`ObfuscateCounter Run 1934765: should encrypt and increment correctly 1`] = `"01994765"`;
+
+exports[`ObfuscateCounter Run 1990044: should encrypt and increment correctly 1`] = `"03440044"`;
+
+exports[`ObfuscateCounter Run 2045323: should encrypt and increment correctly 1`] = `"02075323"`;
+
+exports[`ObfuscateCounter Run 2100602: should encrypt and increment correctly 1`] = `"02150602"`;
+
+exports[`ObfuscateCounter Run 2155881: should encrypt and increment correctly 1`] = `"02125881"`;
+
+exports[`ObfuscateCounter Run 2211160: should encrypt and increment correctly 1`] = `"02231160"`;
+
+exports[`ObfuscateCounter Run 2266439: should encrypt and increment correctly 1`] = `"02286439"`;
+
+exports[`ObfuscateCounter Run 2321718: should encrypt and increment correctly 1`] = `"02311718"`;
+
+exports[`ObfuscateCounter Run 2376997: should encrypt and increment correctly 1`] = `"02366997"`;
+
+exports[`ObfuscateCounter Run 2432276: should encrypt and increment correctly 1`] = `"02492276"`;
+
+exports[`ObfuscateCounter Run 2487555: should encrypt and increment correctly 1`] = `"02407555"`;
+
+exports[`ObfuscateCounter Run 2542834: should encrypt and increment correctly 1`] = `"02572834"`;
+
+exports[`ObfuscateCounter Run 2598113: should encrypt and increment correctly 1`] = `"02248113"`;
+
+exports[`ObfuscateCounter Run 2653392: should encrypt and increment correctly 1`] = `"02623392"`;
+
+exports[`ObfuscateCounter Run 2708671: should encrypt and increment correctly 1`] = `"02758671"`;
+
+exports[`ObfuscateCounter Run 2763950: should encrypt and increment correctly 1`] = `"02783950"`;
+
+exports[`ObfuscateCounter Run 2819229: should encrypt and increment correctly 1`] = `"02839229"`;
+
+exports[`ObfuscateCounter Run 2874508: should encrypt and increment correctly 1`] = `"02864508"`;
+
+exports[`ObfuscateCounter Run 2929787: should encrypt and increment correctly 1`] = `"02919787"`;
+
+exports[`ObfuscateCounter Run 2985066: should encrypt and increment correctly 1`] = `"02905066"`;
+
+exports[`ObfuscateCounter Run 3040345: should encrypt and increment correctly 1`] = `"03070345"`;
+
+exports[`ObfuscateCounter Run 3095624: should encrypt and increment correctly 1`] = `"03545624"`;
+
+exports[`ObfuscateCounter Run 3150903: should encrypt and increment correctly 1`] = `"03120903"`;
+
+exports[`ObfuscateCounter Run 3206182: should encrypt and increment correctly 1`] = `"03256182"`;
+
+exports[`ObfuscateCounter Run 3261461: should encrypt and increment correctly 1`] = `"03281461"`;
+
+exports[`ObfuscateCounter Run 3316740: should encrypt and increment correctly 1`] = `"03336740"`;
+
+exports[`ObfuscateCounter Run 3372019: should encrypt and increment correctly 1`] = `"03362019"`;
+
+exports[`ObfuscateCounter Run 3427298: should encrypt and increment correctly 1`] = `"03417298"`;
+
+exports[`ObfuscateCounter Run 3482577: should encrypt and increment correctly 1`] = `"03402577"`;
+
+exports[`ObfuscateCounter Run 3537856: should encrypt and increment correctly 1`] = `"03597856"`;
+
+exports[`ObfuscateCounter Run 3593135: should encrypt and increment correctly 1`] = `"03243135"`;
+
+exports[`ObfuscateCounter Run 3648414: should encrypt and increment correctly 1`] = `"03678414"`;
+
+exports[`ObfuscateCounter Run 3703693: should encrypt and increment correctly 1`] = `"03753693"`;
+
+exports[`ObfuscateCounter Run 3758972: should encrypt and increment correctly 1`] = `"03728972"`;
+
+exports[`ObfuscateCounter Run 3814251: should encrypt and increment correctly 1`] = `"03834251"`;
+
+exports[`ObfuscateCounter Run 3869530: should encrypt and increment correctly 1`] = `"03889530"`;
+
+exports[`ObfuscateCounter Run 3924809: should encrypt and increment correctly 1`] = `"03914809"`;
+
+exports[`ObfuscateCounter Run 3980088: should encrypt and increment correctly 1`] = `"03900088"`;
+
+exports[`ObfuscateCounter Run 4035367: should encrypt and increment correctly 1`] = `"04095367"`;
+
+exports[`ObfuscateCounter Run 4090646: should encrypt and increment correctly 1`] = `"04540646"`;
+
+exports[`ObfuscateCounter Run 4145925: should encrypt and increment correctly 1`] = `"04175925"`;
+
+exports[`ObfuscateCounter Run 4201204: should encrypt and increment correctly 1`] = `"04251204"`;
+
+exports[`ObfuscateCounter Run 4256483: should encrypt and increment correctly 1`] = `"04226483"`;
+
+exports[`ObfuscateCounter Run 4311762: should encrypt and increment correctly 1`] = `"04331762"`;
+
+exports[`ObfuscateCounter Run 4367041: should encrypt and increment correctly 1`] = `"04387041"`;
+
+exports[`ObfuscateCounter Run 4422320: should encrypt and increment correctly 1`] = `"04412320"`;
+
+exports[`ObfuscateCounter Run 4477599: should encrypt and increment correctly 1`] = `"04467599"`;
+
+exports[`ObfuscateCounter Run 4532878: should encrypt and increment correctly 1`] = `"04592878"`;
+
+exports[`ObfuscateCounter Run 4588157: should encrypt and increment correctly 1`] = `"04508157"`;
+
+exports[`ObfuscateCounter Run 4643436: should encrypt and increment correctly 1`] = `"04673436"`;
+
+exports[`ObfuscateCounter Run 4698715: should encrypt and increment correctly 1`] = `"04848715"`;
+
+exports[`ObfuscateCounter Run 4753994: should encrypt and increment correctly 1`] = `"04723994"`;
+
+exports[`ObfuscateCounter Run 4809273: should encrypt and increment correctly 1`] = `"04859273"`;
+
+exports[`ObfuscateCounter Run 4864552: should encrypt and increment correctly 1`] = `"04884552"`;
+
+exports[`ObfuscateCounter Run 4919831: should encrypt and increment correctly 1`] = `"04939831"`;
+
+exports[`ObfuscateCounter Run 4975110: should encrypt and increment correctly 1`] = `"04965110"`;
+
+exports[`ObfuscateCounter Run 5030389: should encrypt and increment correctly 1`] = `"05090389"`;
+
+exports[`ObfuscateCounter Run 5085668: should encrypt and increment correctly 1`] = `"05005668"`;
+
+exports[`ObfuscateCounter Run 5140947: should encrypt and increment correctly 1`] = `"05170947"`;
+
+exports[`ObfuscateCounter Run 5196226: should encrypt and increment correctly 1`] = `"05346226"`;
+
+exports[`ObfuscateCounter Run 5251505: should encrypt and increment correctly 1`] = `"05221505"`;
+
+exports[`ObfuscateCounter Run 5306784: should encrypt and increment correctly 1`] = `"05356784"`;
+
+exports[`ObfuscateCounter Run 5362063: should encrypt and increment correctly 1`] = `"05382063"`;
+
+exports[`ObfuscateCounter Run 5417342: should encrypt and increment correctly 1`] = `"05437342"`;
+
+exports[`ObfuscateCounter Run 5472621: should encrypt and increment correctly 1`] = `"05462621"`;
