@@ -1,18 +1,43 @@
 import {
   Controller,
   Post,
+  Get,
   Body,
   VERSION_NEUTRAL,
   Delete,
+  NotFoundException,
+  Query,
 } from '@nestjs/common';
 import { CreateDto } from './create.dto';
 import { InstanceRepository } from '../../models/instance.repository';
 import { Instance } from '../../models/instance.schema';
 import { DeleteDto } from './delete.dto';
+import { QueryDto } from './query.dto';
 
 @Controller({ path: 'instances', version: ['1', VERSION_NEUTRAL] })
 export class InstanceController {
   constructor(private readonly _instanceRepository: InstanceRepository) {}
+
+  @Get()
+  async findByFilter(@Query() filterParams: QueryDto): Promise<any[]> {
+    const result = await this._instanceRepository.find({
+      filterParams,
+    });
+
+    if (!result) {
+      throw new NotFoundException();
+    }
+    return result;
+  }
+
+  @Get()
+  async findAll(): Promise<any> {
+    const result = await this._instanceRepository.findAll();
+    if (!result) {
+      throw new NotFoundException();
+    }
+    return result;
+  }
 
   @Post()
   async create(@Body() body: CreateDto) {

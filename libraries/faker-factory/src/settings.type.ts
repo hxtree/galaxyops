@@ -1,4 +1,4 @@
-export type Settings = {
+export type CreateSettings = {
   /**
    * whether optional properties are faked:
    * true for always generate
@@ -25,7 +25,12 @@ export type Settings = {
   ignoreProperties?: boolean | undefined;
 };
 
-export const defaultSettings: Settings = {
+export type CreateManySettings = CreateSettings & {
+  min?: number;
+  max?: number;
+};
+
+export const defaultSettings: CreateSettings = {
   probability: 0.5,
   additionalItem: false,
   additionalProperties: false,

@@ -5,22 +5,57 @@
   "version": "2.0.0",
   "configurations": [
     {
-      "name": "Rushx Test",
+      "name": "Test Package",
       "type": "node",
       "request": "launch",
       "cwd": "${fileDirname}",
       "runtimeExecutable": "rushx",
       "runtimeArgs": ["test"],
-      "console": "integratedTerminal"
+      "console": "integratedTerminal",
+      "args": ["--no-cache", "--runInBand", "--verbose"]
     },
     {
-      "name": "NPM Test File",
+      "name": "Test Package Watch",
       "type": "node",
       "request": "launch",
       "cwd": "${fileDirname}",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["test", "-t", "${fileBasenameNoExtension}.test.ts"],
-      "console": "integratedTerminal"
+      "runtimeExecutable": "rushx",
+      "runtimeArgs": ["test"],
+      "console": "integratedTerminal",
+      "args": ["--watchAll", "--no-cache", "--runInBand", "--verbose"]
+    },
+    {
+      "name": "Test File Watch",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${fileDirname}",
+      "runtimeArgs": ["test"],
+      "console": "integratedTerminal",
+      "runtimeExecutable": "rushx",
+      "internalConsoleOptions": "neverOpen",
+      "args": [
+        "${fileBasenameNoExtension}",
+        "--watchAll",
+        "--no-cache",
+        "--runInBand",
+        "--verbose"
+      ]
+    },
+    {
+      "name": "Test File",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${fileDirname}",
+      "runtimeArgs": ["test"],
+      "console": "integratedTerminal",
+      "runtimeExecutable": "rushx",
+      "internalConsoleOptions": "neverOpen",
+      "args": [
+        "${fileBasenameNoExtension}",
+        "--no-cache",
+        "--runInBand",
+        "--verbose"
+      ]
     }
   ]
 }
