@@ -5,26 +5,6 @@
   "version": "2.0.0",
   "configurations": [
     {
-      "name": "Test Package",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${fileDirname}",
-      "runtimeExecutable": "rushx",
-      "runtimeArgs": ["test"],
-      "console": "integratedTerminal",
-      "args": ["--no-cache", "--runInBand", "--verbose"]
-    },
-    {
-      "name": "Test Package Watch",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${fileDirname}",
-      "runtimeExecutable": "rushx",
-      "runtimeArgs": ["test"],
-      "console": "integratedTerminal",
-      "args": ["--watchAll", "--no-cache", "--runInBand", "--verbose"]
-    },
-    {
       "name": "Test File Watch",
       "type": "node",
       "request": "launch",
@@ -56,6 +36,26 @@
         "--runInBand",
         "--verbose"
       ]
+    },
+    {
+      "name": "Test Package Watch",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${fileDirname}",
+      "runtimeExecutable": "rushx",
+      "runtimeArgs": ["test"],
+      "console": "integratedTerminal",
+      "args": ["--watchAll", "--no-cache", "--runInBand", "--verbose"]
+    },
+    {
+      "name": "Test Package",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${fileDirname}",
+      "runtimeExecutable": "rushx",
+      "runtimeArgs": ["test"],
+      "console": "integratedTerminal",
+      "args": ["--no-cache", "--runInBand", "--verbose"]
     }
   ]
 }

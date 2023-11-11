@@ -1,9 +1,7 @@
 * text=auto
 
 .* text eol=lf
-*.html text eol=lf
 *.jade text eol=lf
-*.js text eol=lf
 *.md text eol=lf
 *.sh text eol=lf
 *.txt text eol=lf
@@ -17,6 +15,12 @@
 *.tsx linguist-detectable=true
 *.tsx linguist-documentation=false
 *.tsx linguist-language=TypeScript
+
+# Javascript source file
+*.js text eol=lf
+*.js linguist-detectable=false
+*.js linguist-documentation=false
+*.js linguist-language=JavaScript
 
 # JSON (JavaScript Object Notation) source file
 *.json text eol=lf
@@ -32,3 +36,7 @@
 
 *.less text eol=lf
 *.scss text eol=lf
+
+# HTML
+*.html text eol=lf
+*.html linguist-detectable=false
