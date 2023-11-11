@@ -1,5 +1,5 @@
-import { Active, Luck } from '../Luck';
-import { FickleLuckAdjustment } from '../LuckAdjustment/FickleLuckAdjustment';
+import { Active, Luck } from './Luck';
+import { FickleLuckAdjustment } from './LuckAdjustment/FickleLuckAdjustment';
 
 describe('Luck', () => {
   test.each([[Active.enable], [Active.disable]])('status()', (status) => {

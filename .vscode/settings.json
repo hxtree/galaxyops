@@ -18,6 +18,17 @@
     "**/test-apps/**/build": true
   },
   "files.trimTrailingWhitespace": true,
+  "editor.rulers": [
+    {
+      "column": 80,
+      "color": "#ff00FF"
+    },
+    100,
+    {
+      "column": 120,
+      "color": "#ff0000"
+    }
+  ],
   "eslint.validate": [
     "javascript",
     "javascriptreact",

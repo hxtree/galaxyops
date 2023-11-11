@@ -1,4 +1,4 @@
-import { Collection } from '../Collection';
+import { Collection } from './Collection';
 
 describe('Collection', () => {
   test('Notation returns correct values', () => {

@@ -13,7 +13,7 @@ export abstract class AbstractLuckAdjustment implements ILuckAdjustment {
   private _max: number = 2147483647;
 
   public set max(max: number) {
-    this.max = max;
+    this._max = max;
   }
 
   public get max(): number {
@@ -28,24 +28,28 @@ export abstract class AbstractLuckAdjustment implements ILuckAdjustment {
     return this._min;
   }
 
+  /**
+   * Given a current luck, modify it based on whether the rollPercentage was
+   * favorable or unfavorable without exceeding min and maximum
+   */
   public run(currentLuck: number, rollPercent: number = 0.5): number {
     const adjustment = this.adjustment(rollPercent);
 
     const adjustedLuck = currentLuck + adjustment;
 
     if (adjustedLuck < this._min) {
-      // Return the amount of adjustment it would take for currentLuck
-      // to equal min
-      return this._min - currentLuck;
+      return this._min;
     }
-    if (adjustedLuck > this.max) {
-      // Return the amount of adjustment it would take for currentLuck
-      // to equal max
-      return this._max - currentLuck;
+    if (adjustedLuck > this._max) {
+      return this._max;
     }
 
-    return adjustment;
+    return adjustedLuck;
   }
 
+  /**
+   * The amount of change based on the rollPercent that should occur
+   * @param rollPercent
+   */
   public abstract adjustment(rollPercent: number): number;
 }

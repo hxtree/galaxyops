@@ -4,7 +4,7 @@ module.exports = {
     'scope-enum': [
       2,
       'always',
-      ['character', 'platform', 'user', 'library', 'deps'],
+      ['character', 'platform', 'user', 'library', 'deps', 'release'],
     ],
     'type-enum': [
       2,

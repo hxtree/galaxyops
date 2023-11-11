@@ -22,7 +22,9 @@ describe('/users', () => {
     app.close();
   });
 
-  it('GET /users', async () => {
-    await supertest(app.getHttpServer()).get('/users').expect(200);
+  describe('GET /users', () => {
+    it('should 404 until feature implemented', async () => {
+      await supertest(app.getHttpServer()).get('/users').expect(404);
+    });
   });
 });

@@ -8,11 +8,11 @@ export class FickleLuckAdjustment extends AbstractLuckAdjustment {
     if (rollPercent <= 0.2) {
       return -1;
     }
-    if (rollPercent >= 0.8) {
-      return 1;
-    }
     if (rollPercent >= 0.9) {
       return 2;
+    }
+    if (rollPercent >= 0.8) {
+      return 1;
     }
 
     return 0;

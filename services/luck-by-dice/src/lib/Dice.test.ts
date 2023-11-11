@@ -1,4 +1,4 @@
-import { Dice } from '../Dice';
+import { Dice } from './Dice';
 
 describe('Dice', () => {
   const testFaces = [
