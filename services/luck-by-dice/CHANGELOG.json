@@ -2,6 +2,18 @@
   "name": "@cats-cradle/luck-by-dice",
   "entries": [
     {
+      "version": "2.0.9",
+      "tag": "@cats-cradle/luck-by-dice_v2.0.9",
+      "date": "Sat, 11 Nov 2023 16:59:02 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add test coverage and fix adjustment min and max enforcement"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.0.8",
       "tag": "@cats-cradle/luck-by-dice_v2.0.8",
       "date": "Sun, 05 Nov 2023 18:41:09 GMT",
