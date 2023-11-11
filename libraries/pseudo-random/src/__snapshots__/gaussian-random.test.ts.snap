@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GaussianRandom Run 1: should generate numbers with a Gaussian distribution 1`] = `-1.072299188672187`;
+
+exports[`GaussianRandom Run 2: should generate numbers with a Gaussian distribution 1`] = `-2.4037439588450296`;
+
+exports[`GaussianRandom Run 3: should generate numbers with a Gaussian distribution 1`] = `0.39907072835124674`;
+
+exports[`GaussianRandom Run 4: should generate numbers with a Gaussian distribution 1`] = `-0.4239321011067561`;
+
+exports[`GaussianRandom Run 5: should generate numbers with a Gaussian distribution 1`] = `0.9549224649140143`;
+
+exports[`GaussianRandom Run 6: should generate numbers with a Gaussian distribution 1`] = `0.4428343404184962`;
+
+exports[`GaussianRandom Run 7: should generate numbers with a Gaussian distribution 1`] = `-0.8179580585026885`;
+
+exports[`GaussianRandom Run 8: should generate numbers with a Gaussian distribution 1`] = `-0.12375111005632294`;
+
+exports[`GaussianRandom Run 9: should generate numbers with a Gaussian distribution 1`] = `1.0471866021500873`;
+
+exports[`GaussianRandom Run 10: should generate numbers with a Gaussian distribution 1`] = `-0.7210983523044849`;
+
+exports[`GaussianRandom Run 11: should generate numbers with a Gaussian distribution 1`] = `0.8881116803450466`;
+
+exports[`GaussianRandom Run 12: should generate numbers with a Gaussian distribution 1`] = `-0.9120675597855836`;
+
+exports[`GaussianRandom Run 13: should generate numbers with a Gaussian distribution 1`] = `0.6383194603783435`;
+
+exports[`GaussianRandom Run 14: should generate numbers with a Gaussian distribution 1`] = `-0.7270245404013558`;
+
+exports[`GaussianRandom Run 15: should generate numbers with a Gaussian distribution 1`] = `0.7573792761057275`;
+
+exports[`GaussianRandom Run 16: should generate numbers with a Gaussian distribution 1`] = `0.17648924545045327`;
+
+exports[`GaussianRandom Run 17: should generate numbers with a Gaussian distribution 1`] = `1.343651743364563`;
+
+exports[`GaussianRandom Run 18: should generate numbers with a Gaussian distribution 1`] = `0.02711296450326979`;
+
+exports[`GaussianRandom Run 19: should generate numbers with a Gaussian distribution 1`] = `0.497204015155039`;
+
+exports[`GaussianRandom Run 20: should generate numbers with a Gaussian distribution 1`] = `-1.6972500698211035`;
+
+exports[`GaussianRandom Run 21: should generate numbers with a Gaussian distribution 1`] = `-0.0320198207515289`;
+
+exports[`GaussianRandom Run 22: should generate numbers with a Gaussian distribution 1`] = `1.0301998119996265`;
+
+exports[`GaussianRandom Run 23: should generate numbers with a Gaussian distribution 1`] = `0.4372438447000408`;
+
+exports[`GaussianRandom Run 24: should generate numbers with a Gaussian distribution 1`] = `0.12222776205157997`;
+
+exports[`GaussianRandom Run 25: should generate numbers with a Gaussian distribution 1`] = `1.9853325386225602`;
+
+exports[`GaussianRandom Run 26: should generate numbers with a Gaussian distribution 1`] = `1.9298720927856692`;
+
+exports[`GaussianRandom Run 27: should generate numbers with a Gaussian distribution 1`] = `-1.3154762563975377`;
+
+exports[`GaussianRandom Run 28: should generate numbers with a Gaussian distribution 1`] = `0.7431738477356803`;
+
+exports[`GaussianRandom Run 29: should generate numbers with a Gaussian distribution 1`] = `0.6446073039401035`;
+
+exports[`GaussianRandom Run 30: should generate numbers with a Gaussian distribution 1`] = `0.922239473837773`;
+
+exports[`GaussianRandom Run 31: should generate numbers with a Gaussian distribution 1`] = `-0.19064215646634258`;
+
+exports[`GaussianRandom Run 32: should generate numbers with a Gaussian distribution 1`] = `-0.8057293171600682`;
+
+exports[`GaussianRandom Run 33: should generate numbers with a Gaussian distribution 1`] = `0.5361059638497626`;
+
+exports[`GaussianRandom Run 34: should generate numbers with a Gaussian distribution 1`] = `-1.2906846532829266`;
+
+exports[`GaussianRandom Run 35: should generate numbers with a Gaussian distribution 1`] = `1.1838912129128532`;
+
+exports[`GaussianRandom Run 36: should generate numbers with a Gaussian distribution 1`] = `0.2885066451770559`;
+
+exports[`GaussianRandom Run 37: should generate numbers with a Gaussian distribution 1`] = `0.5184471667079127`;
+
+exports[`GaussianRandom Run 38: should generate numbers with a Gaussian distribution 1`] = `-0.891594429457236`;
+
+exports[`GaussianRandom Run 39: should generate numbers with a Gaussian distribution 1`] = `-1.4587176859508537`;
+
+exports[`GaussianRandom Run 40: should generate numbers with a Gaussian distribution 1`] = `1.9705454166424723`;
+
+exports[`GaussianRandom Run 41: should generate numbers with a Gaussian distribution 1`] = `-0.319570059919529`;
+
+exports[`GaussianRandom Run 42: should generate numbers with a Gaussian distribution 1`] = `-0.27404632186694`;
+
+exports[`GaussianRandom Run 43: should generate numbers with a Gaussian distribution 1`] = `0.976604310757489`;
+
+exports[`GaussianRandom Run 44: should generate numbers with a Gaussian distribution 1`] = `-0.27403131911581735`;
+
+exports[`GaussianRandom Run 45: should generate numbers with a Gaussian distribution 1`] = `0.39458601777567043`;
+
+exports[`GaussianRandom Run 46: should generate numbers with a Gaussian distribution 1`] = `-1.3075258446501485`;
+
+exports[`GaussianRandom Run 47: should generate numbers with a Gaussian distribution 1`] = `-0.13176649511978542`;
+
+exports[`GaussianRandom Run 48: should generate numbers with a Gaussian distribution 1`] = `0.014663055615774032`;
+
+exports[`GaussianRandom Run 49: should generate numbers with a Gaussian distribution 1`] = `-0.9882460957507962`;
+
+exports[`GaussianRandom Run 50: should generate numbers with a Gaussian distribution 1`] = `-1.1981045647907507`;
+
+exports[`GaussianRandom Run 51: should generate numbers with a Gaussian distribution 1`] = `1.2435199544502324`;
+
+exports[`GaussianRandom Run 52: should generate numbers with a Gaussian distribution 1`] = `-0.5879308285725182`;
+
+exports[`GaussianRandom Run 53: should generate numbers with a Gaussian distribution 1`] = `0.42184803350234085`;
+
+exports[`GaussianRandom Run 54: should generate numbers with a Gaussian distribution 1`] = `-2.052049342495032`;
+
+exports[`GaussianRandom Run 55: should generate numbers with a Gaussian distribution 1`] = `-0.15040119932322782`;
+
+exports[`GaussianRandom Run 56: should generate numbers with a Gaussian distribution 1`] = `0.15686633074272816`;
+
+exports[`GaussianRandom Run 57: should generate numbers with a Gaussian distribution 1`] = `-0.8385198843812759`;
+
+exports[`GaussianRandom Run 58: should generate numbers with a Gaussian distribution 1`] = `1.0789936914908587`;
+
+exports[`GaussianRandom Run 59: should generate numbers with a Gaussian distribution 1`] = `-0.1069468798649623`;
+
+exports[`GaussianRandom Run 60: should generate numbers with a Gaussian distribution 1`] = `-0.058438175369842096`;
+
+exports[`GaussianRandom Run 61: should generate numbers with a Gaussian distribution 1`] = `-0.11990023832831224`;
+
+exports[`GaussianRandom Run 62: should generate numbers with a Gaussian distribution 1`] = `0.24315178329039794`;
+
+exports[`GaussianRandom Run 63: should generate numbers with a Gaussian distribution 1`] = `-0.13196963714135562`;
+
+exports[`GaussianRandom Run 64: should generate numbers with a Gaussian distribution 1`] = `-0.5931614463964824`;
+
+exports[`GaussianRandom Run 65: should generate numbers with a Gaussian distribution 1`] = `-0.8025017203559998`;
+
+exports[`GaussianRandom Run 66: should generate numbers with a Gaussian distribution 1`] = `-2.121751990545608`;
+
+exports[`GaussianRandom Run 67: should generate numbers with a Gaussian distribution 1`] = `-0.20442779378170647`;
+
+exports[`GaussianRandom Run 68: should generate numbers with a Gaussian distribution 1`] = `0.23643546206627158`;
+
+exports[`GaussianRandom Run 69: should generate numbers with a Gaussian distribution 1`] = `0.28899296103363564`;
+
+exports[`GaussianRandom Run 70: should generate numbers with a Gaussian distribution 1`] = `0.4602198676617359`;
+
+exports[`GaussianRandom Run 71: should generate numbers with a Gaussian distribution 1`] = `0.11849575987623218`;
+
+exports[`GaussianRandom Run 72: should generate numbers with a Gaussian distribution 1`] = `-1.3243235011529206`;
+
+exports[`GaussianRandom Run 73: should generate numbers with a Gaussian distribution 1`] = `-0.36952196395703873`;
+
+exports[`GaussianRandom Run 74: should generate numbers with a Gaussian distribution 1`] = `-0.7818373720787267`;
+
+exports[`GaussianRandom Run 75: should generate numbers with a Gaussian distribution 1`] = `-0.635300685427112`;
+
+exports[`GaussianRandom Run 76: should generate numbers with a Gaussian distribution 1`] = `-0.6186434642012579`;
+
+exports[`GaussianRandom Run 77: should generate numbers with a Gaussian distribution 1`] = `-0.5637334315366495`;
+
+exports[`GaussianRandom Run 78: should generate numbers with a Gaussian distribution 1`] = `-0.35133000088096666`;
+
+exports[`GaussianRandom Run 79: should generate numbers with a Gaussian distribution 1`] = `0.5933651066530825`;
+
+exports[`GaussianRandom Run 80: should generate numbers with a Gaussian distribution 1`] = `1.0544403894380487`;
+
+exports[`GaussianRandom Run 81: should generate numbers with a Gaussian distribution 1`] = `-2.5488586807357305`;
+
+exports[`GaussianRandom Run 82: should generate numbers with a Gaussian distribution 1`] = `-0.9823176429351131`;
+
+exports[`GaussianRandom Run 83: should generate numbers with a Gaussian distribution 1`] = `0.9508381433511108`;
+
+exports[`GaussianRandom Run 84: should generate numbers with a Gaussian distribution 1`] = `-1.3573732790478008`;
+
+exports[`GaussianRandom Run 85: should generate numbers with a Gaussian distribution 1`] = `-0.18283147315147985`;
+
+exports[`GaussianRandom Run 86: should generate numbers with a Gaussian distribution 1`] = `0.003748914510964604`;
+
+exports[`GaussianRandom Run 87: should generate numbers with a Gaussian distribution 1`] = `0.008459421427994402`;
+
+exports[`GaussianRandom Run 88: should generate numbers with a Gaussian distribution 1`] = `1.7872852563885724`;
+
+exports[`GaussianRandom Run 89: should generate numbers with a Gaussian distribution 1`] = `-0.16281865077343868`;
+
+exports[`GaussianRandom Run 90: should generate numbers with a Gaussian distribution 1`] = `1.0126772957831305`;
+
+exports[`GaussianRandom Run 91: should generate numbers with a Gaussian distribution 1`] = `-0.08726181757293172`;
+
+exports[`GaussianRandom Run 92: should generate numbers with a Gaussian distribution 1`] = `-0.5176503143558103`;
+
+exports[`GaussianRandom Run 93: should generate numbers with a Gaussian distribution 1`] = `0.8105099799105264`;
+
+exports[`GaussianRandom Run 94: should generate numbers with a Gaussian distribution 1`] = `2.331871043151413`;
+
+exports[`GaussianRandom Run 95: should generate numbers with a Gaussian distribution 1`] = `0.6297912399410112`;
+
+exports[`GaussianRandom Run 96: should generate numbers with a Gaussian distribution 1`] = `-0.2117506997448116`;
+
+exports[`GaussianRandom Run 97: should generate numbers with a Gaussian distribution 1`] = `0.7151520764607058`;
+
+exports[`GaussianRandom Run 98: should generate numbers with a Gaussian distribution 1`] = `-0.4854702139203289`;
+
+exports[`GaussianRandom Run 99: should generate numbers with a Gaussian distribution 1`] = `-2.3118439558325874`;
+
+exports[`GaussianRandom Run 100: should generate numbers with a Gaussian distribution 1`] = `0.1646907364091097`;
