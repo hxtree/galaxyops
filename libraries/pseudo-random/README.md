@@ -17,10 +17,6 @@ a predictable sequence.
 randomize elements in a sequence, suitable for scenarios like ticket numbers or
 any situation where order randomness is desired.
 
-**GaussianRandom**: Generate numbers with a Gaussian (normal) distribution,
-useful for applications involving statistical simulations or scenarios where a
-natural distribution is required.
-
 ## Installation
 
 Install the library using npm:
@@ -55,17 +51,6 @@ console.log('Randomized Ticket Number:', randomizedTicketNumber);
 // Example Output: Randomized Ticket Number: KJHFVXMBWTZQNGLOAUSYCDPIRE
 ```
 
-### GaussianRandom
-
-```typescript
-import { GaussianRandom } from 'pseudo-random-library';
-
-const gaussianRandom = new GaussianRandom(0, 1);
-const randomValue = gaussianRandom.generate();
-console.log('Random Value with Gaussian Distribution:', randomValue);
-// Example Output: Random Value with Gaussian Distribution: -0.124567892
-```
-
 ## Use Cases
 
 **Invoice Numbers**: Generate obfuscated invoice numbers to protect sensitive
@@ -73,9 +58,6 @@ information and avoid revealing the total count.
 
 **Ticket Numbers**: Randomize ticket numbers to prevent predicting sales or
 determining the order of placement.
-
-**Statistical Simulations**: Use GaussianRandom for simulations and scenarios
-requiring a natural distribution of random values.
 
 ## Contribution
 
