@@ -3,7 +3,7 @@ import { cloneDeep } from 'lodash';
 import { JSONSchemaFaker } from 'json-schema-faker';
 import currency from 'currency.js';
 import { faker } from '@faker-js/faker';
-import { Settings, defaultSettings } from './settings.type';
+import { CreateSettings, defaultSettings } from './settings.type';
 
 /**
  * Determines how JSONSchema is faked based on format, pattern, etc.
@@ -16,7 +16,7 @@ import { Settings, defaultSettings } from './settings.type';
 export async function generateFakeData(
   inputSchema: any,
   fakerRefs: any,
-  inputSettings?: Settings,
+  inputSettings?: CreateSettings,
 ): Promise<any> {
   const settings = { ...defaultSettings, ...inputSettings };
   const fakerSchema = cloneDeep(inputSchema);

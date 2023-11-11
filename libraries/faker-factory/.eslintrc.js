@@ -7,5 +7,6 @@ module.exports = {
     'no-prototype-builtins': 'off',
     'global-require': 'off',
     '@typescript-eslint/no-var-requires': 'off',
+    'no-await-in-loop': 'off',
   },
 };

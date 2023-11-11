@@ -20,7 +20,7 @@ export class Instance {
   @IsDateString()
   @Prop({
     type: String,
-    default: () => new Date().toISOString,
+    default: () => new Date().toISOString(),
   })
   public createdAt: string;
 }

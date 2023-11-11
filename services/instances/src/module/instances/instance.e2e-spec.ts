@@ -5,8 +5,10 @@ import {
   rootMongooseTestModule,
   MongooseModule,
   closeInMongodConnection,
+  asyncForEach,
 } from '@cats-cradle/nestjs-modules';
 import { FakerFactory } from '@cats-cradle/faker-factory';
+import { v4 } from 'uuid';
 import { InstanceSchema, Instance } from '../../models/instance.schema';
 import { InstanceRepository } from '../../models/instance.repository';
 import { InstanceController } from './instance.controller';
@@ -41,6 +43,60 @@ describe('/instances', () => {
   afterAll(async () => {
     await closeInMongodConnection();
     app.close();
+  });
+
+  describe('GET /instances', () => {
+    it('should find same amount of results as there are', async () => {
+      const instances = await FakerFactory.createMany<Instance>(
+        Instance,
+        { createdAt: new Date().toISOString() },
+        { min: 1, max: 4, optionals: false },
+      );
+
+      await asyncForEach(instances, async (instance: Instance) => {
+        await instanceRepository.create(instance);
+      });
+
+      const result = await supertest(app.getHttpServer())
+        .get('/instances')
+        .expect(200);
+
+      expect(result.body).toHaveLength(instances.length);
+    });
+  });
+
+  describe('GET /instances/?id=', () => {
+    it('should have no results when none exist', async () => {
+      const id = v4();
+      const response = await supertest(app.getHttpServer())
+        .get(`/instance/?id=${id}`)
+        .expect(404);
+      expect(response.body).toMatchObject({
+        error: 'Not Found',
+        message: expect.stringContaining(`Cannot GET /instance/?id=${id}`),
+        statusCode: 404,
+      });
+    });
+
+    it('should find result if exists', async () => {
+      const instance = await FakerFactory.create<Instance>(
+        Instance,
+        {},
+        { optionals: false },
+      );
+      await instanceRepository.create(instance);
+
+      const result = await supertest(app.getHttpServer())
+        .get(`/instances/?id=${instance._id}`)
+        .expect(200);
+
+      expect(result.body[0]).toMatchObject(
+        expect.objectContaining({
+          id: instance._id,
+          createdAt: instance.createdAt,
+        }),
+      );
+    });
   });
 
   describe('POST /instances', () => {
