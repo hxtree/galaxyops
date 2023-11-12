@@ -39,7 +39,7 @@
     "node-cache": "5.1.2",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.8.1",
-    "mongoose": "6.9.1",
+    "mongoose": "6.12.1",
     "source-map-support": "~0.5.21",
     "@nestjs/swagger": "~7.1.13",
     "uuid": "~9.0.1",
