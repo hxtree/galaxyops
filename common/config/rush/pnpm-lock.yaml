@@ -1600,9 +1600,6 @@ importers:
       express:
         specifier: 4.18.2
         version: 4.18.2
-      mongoose:
-        specifier: 6.9.1
-        version: 6.9.1
       node-cache:
         specifier: 5.1.2
         version: 5.1.2
@@ -1676,6 +1673,12 @@ importers:
       jest:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.8.2)(ts-node@10.9.1)
+      mongodb-memory-server-global:
+        specifier: 8.13.0
+        version: 8.13.0
+      mongoose:
+        specifier: 6.9.1
+        version: 6.9.1
       path:
         specifier: ~0.12.7
         version: 0.12.7
@@ -24766,7 +24769,6 @@ packages:
     transitivePeerDependencies:
       - aws-crt
       - supports-color
-    dev: false
 
   /mongodb-memory-server-global@8.13.0:
     resolution: {integrity: sha512-uav9FYVu7uPoogDbB7VLa1u4mFuGnuzqdHk0kKADIiQca9Vx6u+QkU1rwPA8uqFDKJPv/VIy3rCTPCSJDXsW2w==}
@@ -24778,7 +24780,6 @@ packages:
     transitivePeerDependencies:
       - aws-crt
       - supports-color
-    dev: false
 
   /mongodb-memory-server@8.11.5:
     resolution: {integrity: sha512-/yiw3L2TIMpi9I6GXg379k6d+RG3k+9V9o24kK5h+NBTtYLNuWa5iEvtce/O3jqhg6yo31T5XG2e/Hm4UwBM1A==}

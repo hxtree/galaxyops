@@ -552,11 +552,11 @@
     },
     {
       "name": "mongodb-memory-server",
-      "allowedCategories": [ "libraries", "rigs" ]
+      "allowedCategories": [ "apis", "libraries", "rigs" ]
     },
     {
       "name": "mongodb-memory-server-global",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "mongoose",
