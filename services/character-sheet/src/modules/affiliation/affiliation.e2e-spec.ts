@@ -2,11 +2,10 @@ import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import { FakerFactory } from '@cats-cradle/faker-factory';
-import {
-  closeInMongodConnection,
-  rootMongooseTestModule,
-  MongooseModule,
-} from '@cats-cradle/nestjs-modules';
+import { MongooseModule } from '@cats-cradle/nestjs-modules';
+import { v4 } from 'uuid';
+import { MongoMemoryServer } from 'mongodb-memory-server-global';
+import mongoose from 'mongoose';
 import { AffiliationController } from './affiliation.controller';
 import { AffiliationService } from './affiliation.service';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
@@ -17,40 +16,51 @@ import {
 import { Operation, UpdateAffiliationDto } from './update-affiliation.dto';
 
 describe('/affiliations', () => {
-  let app: INestApplication;
-  let affiliationService: AffiliationService;
-  let characterSheetRepository: CharacterSheetRepository;
+  let mongod: MongoMemoryServer;
 
   beforeAll(async () => {
+    mongod = await MongoMemoryServer.create();
+  });
+
+  afterAll(async () => {
+    await mongoose.disconnect();
+    if (mongod) await mongod.stop();
+  });
+
+  async function createTestingModule() {
+    const uri = mongod.getUri();
+
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [
-        rootMongooseTestModule(),
+        MongooseModule.forRootAsync({
+          useFactory: async () => ({
+            uri,
+          }),
+        }),
         MongooseModule.forFeature([
-          { name: 'CharacterSheet', schema: CharacterSheetSchema },
+          {
+            name: 'CharacterSheet',
+            schema: CharacterSheetSchema,
+            collection: `test-${v4()}`,
+          },
         ]),
       ],
       providers: [CharacterSheetRepository, AffiliationService],
       controllers: [AffiliationController],
     }).compile();
 
-    app = moduleRef.createNestApplication();
-    affiliationService = moduleRef.get<AffiliationService>(AffiliationService);
-    characterSheetRepository = moduleRef.get<CharacterSheetRepository>(
-      CharacterSheetRepository,
-    );
+    const app: INestApplication = moduleRef.createNestApplication();
     await app.init();
-  });
 
-  afterEach(async () => {
-    await characterSheetRepository.deleteAll();
-  });
-
-  afterAll(async () => {
-    await closeInMongodConnection();
-    await app.close();
-  });
+    return { app, moduleRef } as const;
+  }
 
   it('/GET /affiliations/:id', async () => {
+    const { app, moduleRef } = await createTestingModule();
+    const characterSheetRepository = moduleRef.get<CharacterSheetRepository>(
+      CharacterSheetRepository,
+    );
+
     const characterSheet = await FakerFactory.create<CharacterSheet>(
       CharacterSheet,
       { archetypeId: 'MEEKU_ONI' },
@@ -62,9 +72,16 @@ describe('/affiliations', () => {
       .expect(200);
 
     expect(response.body).toMatchObject(characterSheet.affiliation);
+
+    await app.close();
   });
 
   it('/POST /affiliations/:id', async () => {
+    const { app, moduleRef } = await createTestingModule();
+    const characterSheetRepository = moduleRef.get<CharacterSheetRepository>(
+      CharacterSheetRepository,
+    );
+
     const characterSheet = await FakerFactory.create<CharacterSheet>(
       CharacterSheet,
       {
@@ -96,5 +113,7 @@ describe('/affiliations', () => {
       upsertedCount: 0,
       upsertedId: null,
     });
+
+    await app.close();
   });
 });
