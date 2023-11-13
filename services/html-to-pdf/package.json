@@ -59,7 +59,7 @@
     "@nestjs/axios": "~2.0.0",
     "@cats-cradle/faker-factory": "workspace:*",
     "@sparticuz/chromium-min": "112.0.0",
-    "puppeteer-core": "19.8.0",
+    "puppeteer-core": "19.11.1",
     "uuid": "~9.0.1",
     "axios": "^0.21.1"
   },
