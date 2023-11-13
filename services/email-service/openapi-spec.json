@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/v1/health": {
+    "/health": {
       "get": {
         "operationId": "HealthController_check",
         "parameters": [],
@@ -104,7 +104,7 @@
         }
       }
     },
-    "/v1/email-message/user-account-created": {
+    "/email-message/user-account-created": {
       "post": {
         "operationId": "EmailMessageController_convert",
         "parameters": [
@@ -135,7 +135,7 @@
         "responses": { "201": { "description": "" } }
       }
     },
-    "/v1/email-message/user-forgotten-password-reset": {
+    "/email-message/user-forgotten-password-reset": {
       "post": {
         "operationId": "EmailMessageController_convertUserForgottenPasswordReset",
         "parameters": [
@@ -168,7 +168,7 @@
         "responses": { "201": { "description": "" } }
       }
     },
-    "/v1/email-message/stats": {
+    "/email-message/stats": {
       "get": {
         "operationId": "EmailMessageController_stats",
         "parameters": [],
@@ -183,7 +183,13 @@
     "contact": {}
   },
   "tags": [],
-  "servers": [],
+  "servers": [
+    { "url": "http://localhost:3000", "description": "Local" },
+    {
+      "url": "https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/email-message/",
+      "description": "Sandbox"
+    }
+  ],
   "components": {
     "schemas": {
       "UserAccountCreatedDto": {

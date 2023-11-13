@@ -1,20 +1,19 @@
 import { Microservice } from '@cats-cradle/constructs';
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
-import { StackProps } from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as sns from 'aws-cdk-lib/aws-sns';
 import * as subscriptions from 'aws-cdk-lib/aws-sns-subscriptions';
 import { EmailSendCommand } from '@cats-cradle/messaging-schemas';
 import * as path from 'path';
 
-export class EmailServiceStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: StackProps) {
+export class EmailServiceStack extends cdk.NestedStack {
+  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     // setup ses
     const SES_ACCOUNT = this.account;
-    const SES_EMAIL_FROM = 'contact@ouxsoft.com';
+    const SES_RECIPIENTS_ALLOWED = '*';
     const SES_REGION = this.region;
 
     // deploy lambda
@@ -34,31 +33,31 @@ export class EmailServiceStack extends cdk.Stack {
           'ses:SendTemplatedEmail',
         ],
         resources: [
-          `arn:aws:ses:${SES_REGION}:${SES_ACCOUNT}:identity/${SES_EMAIL_FROM}`,
+          `arn:aws:ses:${SES_REGION}:${SES_ACCOUNT}:identity/${SES_RECIPIENTS_ALLOWED}`,
         ],
       }),
     );
-
-    // TODO should be a queue to already existing topic
-    // SendEmailCommandTopic
-    // const sendEmailCommandTopic = new sns.Topic(
-    //   this,
-    //   'email-send-command-topic',
-    //   {
-    //     topicName: EmailSendCommand.topicName(),
-    //     displayName: EmailSendCommand.topicName(),
-    //   },
-    // );
-    // sendEmailCommandTopic.addSubscription(
-    //   new subscriptions.LambdaSubscription(nodeJsFunction),cd .
-    // );
-
-    // new cdk.CfnOutput(this, 'endEmailCommandTopicARN', {
-    //   value: sendEmailCommandTopic.topicArn,
-    // });
 
     new cdk.CfnOutput(this, 'Localhost API Example', {
       value: `${microservice.getBaseUrl()}/`,
     });
   }
 }
+
+// TODO should be a queue to already existing topic
+// SendEmailCommandTopic
+// const sendEmailCommandTopic = new sns.Topic(
+//   this,
+//   'email-send-command-topic',
+//   {
+//     topicName: EmailSendCommand.topicName(),
+//     displayName: EmailSendCommand.topicName(),
+//   },
+// );
+// sendEmailCommandTopic.addSubscription(
+//   new subscriptions.LambdaSubscription(nodeJsFunction),cd .
+// );
+
+// new cdk.CfnOutput(this, 'endEmailCommandTopicARN', {
+//   value: sendEmailCommandTopic.topicArn,
+// });

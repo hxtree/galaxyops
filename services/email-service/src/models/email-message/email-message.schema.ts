@@ -23,7 +23,11 @@ export class EmailMessage {
   public data?: string;
 
   @IsEnum(StatusType)
-  @Prop()
+  @Prop({
+    type: String,
+    enum: Object.values(StatusType),
+    default: StatusType.OPEN,
+  }) // Use the enum
   public status: StatusType;
 
   @IsDateString()

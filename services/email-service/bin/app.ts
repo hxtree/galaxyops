@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { EmailServiceStack } from '../stacks/email-service.stack';
+import { MainStack } from '../stacks/main.stack';
 
 const app = new cdk.App();
-new EmailServiceStack(app, 'EmailServiceStack');
+new MainStack(app, 'EmailServiceMainStack');

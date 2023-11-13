@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import serverlessExpress from '@vendia/serverless-express';
-import { ValidationPipe } from '@nestjs/common';
+import { ValidationPipe, VersioningType } from '@nestjs/common';
 import { Context, Handler } from 'aws-lambda';
 import express from 'express';
 
@@ -17,6 +17,11 @@ async function bootstrap() {
       new ExpressAdapter(expressApp),
     );
     app.enableCors();
+    app.enableVersioning({
+      type: VersioningType.HEADER,
+      header: 'Accept-Version',
+      defaultVersion: '1',
+    });
     app.useGlobalPipes(
       new ValidationPipe({
         transform: true,

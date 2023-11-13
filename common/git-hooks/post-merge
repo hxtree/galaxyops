@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Check if the merge was successful
 if [ "$1" -eq 0 ]; then
