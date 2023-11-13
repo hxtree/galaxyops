@@ -30,7 +30,7 @@
     "eslint": "8.44.0",
     "@cats-cradle/base-nodejs": "workspace:*",
     "@microsoft/rush-lib": "5.100.1",
-    "@rushstack/node-core-library": "~3.55.2"
+    "@rushstack/node-core-library": "~3.61.0"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.6",
