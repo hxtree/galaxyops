@@ -66,6 +66,7 @@
       "summary": "Run build",
       "description": "Run build",
       "safeForSimultaneousRushProcesses": false,
+      "enableParallelism": false,
       "ignoreMissingScript": true,
       "allowWarningsInSuccessfulBuild": true
     },
