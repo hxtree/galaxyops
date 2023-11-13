@@ -61,7 +61,7 @@
     "@sparticuz/chromium-min": "112.0.0",
     "puppeteer-core": "19.8.0",
     "uuid": "~9.0.1",
-    "axios": "^0.21.1"
+    "axios": "^0.27.2"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.6",
@@ -84,6 +84,6 @@
     "@types/supertest": "~2.0.14",
     "@cats-cradle/create-bundle": "1.0.2",
     "@cats-cradle/create-artifact": "2.0.0",
-    "axios": "^0.21.1"
+    "axios": "^0.27.2"
   }
 }
