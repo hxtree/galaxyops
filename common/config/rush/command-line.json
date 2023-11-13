@@ -19,6 +19,13 @@
       "shellCommand": "lint-staged"
     },
     {
+      "name": "dotenv-setup",
+      "commandKind": "global",
+      "summary": "Setup env file for local development",
+      "shellCommand": "common/scripts/dotenv/setup.sh",
+      "safeForSimultaneousRushProcesses": true
+    },
+    {
       "name": "branch-naming-policy",
       "commandKind": "global",
       "summary": "Check git branch name against git flow policy",
