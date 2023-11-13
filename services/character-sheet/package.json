@@ -62,7 +62,7 @@
     "aws-cdk-lib": "2.95.0",
     "constructs": "^10.2.70",
     "esbuild": "~0.17.5",
-    "eslint": "8.44.0",
+    "eslint": "8.52.0",
     "fs": "~0.0.1-security",
     "jest": "29.7.0",
     "path": "~0.12.7",

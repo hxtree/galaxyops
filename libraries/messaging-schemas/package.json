@@ -38,7 +38,7 @@
     "ts-node": "10.9.1",
     "esbuild": "~0.17.5",
     "@types/uuid": "~9.0.6",
-    "eslint": "8.44.0",
+    "eslint": "8.52.0",
     "@cats-cradle/eslint-config": "1.0.6",
     "@types/json-schema": "~7.0.11"
   }

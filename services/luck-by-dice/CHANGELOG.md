@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/luck-by-dice
 
-This log was last generated on Sat, 11 Nov 2023 16:59:02 GMT and should not be manually modified.
+This log was last generated on Mon, 13 Nov 2023 02:11:53 GMT and should not be manually modified.
+
+## 2.0.10
+Mon, 13 Nov 2023 02:11:53 GMT
+
+### Patches
+
+- update packages
 
 ## 2.0.9
 Sat, 11 Nov 2023 16:59:02 GMT
