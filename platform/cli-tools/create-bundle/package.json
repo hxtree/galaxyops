@@ -34,7 +34,7 @@
     "@cats-cradle/base-nodejs": "workspace:*",
     "@anatine/esbuild-decorators": "~0.2.19",
     "commander": "~10.0.0",
-    "esbuild": "~0.17.5",
+    "esbuild": "~0.19.5",
     "chokidar": "~3.5.3"
   },
   "devDependencies": {
