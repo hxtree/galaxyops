@@ -101,6 +101,7 @@ describe('/character-sheets', () => {
           equipment: characterSheet.equipment,
         }),
       );
+
       await app.close();
     });
   });
