@@ -10,7 +10,7 @@
     "@cats-cradle/base-nodejs": "workspace:*"
   },
   "devDependencies": {
-    "eslint": "8.44.0",
+    "eslint": "8.52.0",
     "@cats-cradle/eslint-config": "1.0.6"
   }
 }

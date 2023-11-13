@@ -2,6 +2,18 @@
   "name": "@cats-cradle/validation-schemas",
   "entries": [
     {
+      "version": "0.4.4",
+      "tag": "@cats-cradle/validation-schemas_v0.4.4",
+      "date": "Mon, 13 Nov 2023 02:11:53 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "update packages"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.4.3",
       "tag": "@cats-cradle/validation-schemas_v0.4.3",
       "date": "Sun, 05 Nov 2023 18:41:09 GMT",
