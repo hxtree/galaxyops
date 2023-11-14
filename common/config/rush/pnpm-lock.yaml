@@ -2359,6 +2359,9 @@ importers:
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@shelf/jest-mongodb':
+        specifier: ~4.1.7
+        version: 4.1.7(jest-environment-node@29.7.0)(mongodb@5.9.0)
       '@vendia/serverless-express':
         specifier: 4.10.4
         version: 4.10.4
@@ -12187,7 +12190,6 @@ packages:
     transitivePeerDependencies:
       - aws-crt
       - supports-color
-    dev: true
 
   /@shelf/jest-mongodb@4.1.7(jest-environment-node@29.7.0)(mongodb@6.0.0):
     resolution: {integrity: sha512-1sQXHmEirGL+apuOGEt6dkySsgq5SmIGj7uKWYZ6VWch7kg7imCn4CrbfHgotRoiS6QRRIIVBfMdpv7g3XoEMg==}
@@ -15196,7 +15198,6 @@ packages:
 
   /@types/tmp@0.2.4:
     resolution: {integrity: sha512-Vq3rwM+2KgiLacq68EjTJD9cuJ/ne5pXntWn8B8Rxj25SLkGAhCgooCZ1lhcIcV5OFveJ+s5Cqpi+XKfFM/xZA==}
-    dev: true
 
   /@types/tough-cookie@4.0.3:
     resolution: {integrity: sha512-THo502dA5PzG/sfQH+42Lw3fvmYkceefOspdCwpHRul8ik2Jv1K8I5OZz1AT3/rs46kwgMCe9bSBmDLYkkOMGg==}
@@ -17269,7 +17270,6 @@ packages:
   /bson@5.5.0:
     resolution: {integrity: sha512-B+QB4YmDx9RStKv8LLSl/aVIEV3nYJc3cJNNTK2Cd1TL+7P+cNpw9mAPeCgc5K+j01Dv6sxUzcITXDx7ZU3F0w==}
     engines: {node: '>=14.20.1'}
-    dev: true
 
   /bson@6.1.0:
     resolution: {integrity: sha512-yiQ3KxvpVoRpx1oD1uPz4Jit9tAVTJgjdmjDKtUErkOoL9VNoF8Dd58qtAOL5E40exx2jvAT9sqdRSK/r+SHlA==}
@@ -24443,7 +24443,6 @@ packages:
     transitivePeerDependencies:
       - aws-crt
       - supports-color
-    dev: true
 
   /mongodb-memory-server-core@8.13.0:
     resolution: {integrity: sha512-4NTOzYOlRUilwb8CxOKix/XbZmac4cLpmEU03eaHx90lgEp+ARZM2PQtIOEg3nhHo97r9THIEv6Gs4LECokp0Q==}
@@ -24488,7 +24487,6 @@ packages:
     transitivePeerDependencies:
       - aws-crt
       - supports-color
-    dev: true
 
   /mongodb@4.13.0:
     resolution: {integrity: sha512-+taZ/bV8d1pYuHL4U+gSwkhmDrwkWbH1l4aah4YpmpscMwgFBkufIKxgP/G7m87/NUuQzc2Z75ZTI7ZOyqZLbw==}
@@ -24542,7 +24540,6 @@ packages:
       socks: 2.7.1
     optionalDependencies:
       '@mongodb-js/saslprep': 1.1.0
-    dev: true
 
   /mongodb@6.0.0:
     resolution: {integrity: sha512-wUIYesF4DTyDccm0noE5TwGi9ISdXUAi9T2cQ4xPc+EUBZG44bfMVt2ecOG5Ypca7eCz3oRpJm6YI6c7jAnuNw==}
@@ -29092,7 +29089,6 @@ packages:
     engines: {node: '>=8.17.0'}
     dependencies:
       rimraf: 3.0.2
-    dev: true
 
   /tmpl@1.0.5:
     resolution: {integrity: sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==}

@@ -2,7 +2,6 @@ import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import {
-  rootMongooseTestModule,
   MongooseModule,
   closeInMongodConnection,
   asyncForEach,
@@ -21,7 +20,11 @@ describe('/instances', () => {
   beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [
-        rootMongooseTestModule(),
+        MongooseModule.forRootAsync({
+          useFactory: async () => ({
+            uri: process.env.MONGO_DATABASE_URI,
+          }),
+        }),
         MongooseModule.forFeature([
           { name: 'Instance', schema: InstanceSchema },
         ]),
