@@ -43,7 +43,7 @@
     "uuid": "~9.0.1",
     "@cats-cradle/nestjs-modules": "workspace:*",
     "@cats-cradle/validation-schemas": "workspace:*",
-    "@nestjs/config": "2.2.0",
+    "@nestjs/config": "2.3.4",
     "@cats-cradle/create-bundle": "1.0.7",
     "@nestjs/mongoose": "9.2.1",
     "mongoose": "6.9.1"
