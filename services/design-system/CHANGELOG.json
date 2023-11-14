@@ -2,6 +2,18 @@
   "name": "@cats-cradle/design-system",
   "entries": [
     {
+      "version": "0.3.6",
+      "tag": "@cats-cradle/design-system_v0.3.6",
+      "date": "Tue, 14 Nov 2023 04:01:09 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "update dependencies"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.3.5",
       "tag": "@cats-cradle/design-system_v0.3.5",
       "date": "Sat, 04 Nov 2023 19:40:56 GMT",
