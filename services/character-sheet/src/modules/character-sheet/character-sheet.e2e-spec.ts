@@ -4,8 +4,6 @@ import { INestApplication } from '@nestjs/common';
 import { MongooseModule } from '@cats-cradle/nestjs-modules';
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import { v4 } from 'uuid';
-import { MongoMemoryServer } from 'mongodb-memory-server-global';
-import mongoose from 'mongoose';
 import {
   CharacterSheetSchema,
   CharacterSheet,
@@ -17,25 +15,12 @@ import { PlaceService } from '../place/place.service';
 import { Archetype } from '../../data/archetype';
 
 describe('/character-sheets', () => {
-  let mongod: MongoMemoryServer;
-
-  beforeAll(async () => {
-    mongod = await MongoMemoryServer.create();
-  });
-
-  afterAll(async () => {
-    await mongoose.disconnect();
-    if (mongod) await mongod.stop();
-  });
-
   async function createTestingModule() {
-    const uri = mongod.getUri();
-
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [
         MongooseModule.forRootAsync({
           useFactory: async () => ({
-            uri,
+            uri: process.env.MONGO_DATABASE_URI,
           }),
         }),
         MongooseModule.forFeature([
