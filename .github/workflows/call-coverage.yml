@@ -61,14 +61,17 @@ jobs:
           instance-port: 27017
           instance-storageEngine: "ephemeralForTest"
 
-      - name: rush test:cov service-package
+      - name: rush test:cov service-package mongo old
         uses: neofinancial/mongo-memory-server-action@v1.0.2
         with:
           db-connection-env-var: MONGO_DATABASE_URI
-          run-command: node common/scripts/install-run-rush.js test:cov --to tag:service-package
+          run-command: node common/scripts/install-run-rush.js test:cov --to tag:mongo-old
           binary-version: 4.2.8
           instance-port: 27017
           instance-storageEngine: "ephemeralForTest"
+
+      - name: rush test:cov service-package mongo-new
+        run: node common/scripts/install-run-rush.js test:cov --to tag:mongo-new
 
       - name: Merge coverage reports
         run: npx @cats-cradle/rush-coverage@1.2.0
