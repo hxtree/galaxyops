@@ -45,7 +45,7 @@
     "@cats-cradle/validation-schemas": "workspace:*",
     "@nestjs/config": "2.2.0",
     "@cats-cradle/create-bundle": "1.0.7",
-    "@nestjs/mongoose": "9.2.1",
+    "@nestjs/mongoose": "9.2.2",
     "mongoose": "6.9.1"
   },
   "devDependencies": {
