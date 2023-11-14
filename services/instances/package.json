@@ -46,7 +46,7 @@
     "@nestjs/config": "2.2.0",
     "@cats-cradle/create-bundle": "1.0.7",
     "@nestjs/mongoose": "9.2.1",
-    "mongoose": "6.9.1"
+    "mongoose": "6.12.1"
   },
   "devDependencies": {
     "aws-cdk-lib": "2.95.0",
