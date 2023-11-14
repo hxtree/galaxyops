@@ -1,3 +1,25 @@
 {
-  "preset": "./node_modules/@cats-cradle/base-nodejs/profiles/nestjs-app/jest.config.json"
+  "preset": "@shelf/jest-mongodb",
+  "roots": ["<rootDir>/src/", "<rootDir>/stacks/"],
+  "testMatch": [
+    "<rootDir>/src/**/*.{test,e2e-spec}.ts",
+    "<rootDir>/src/__tests__/**/*.test.ts",
+    "<rootDir>/stacks/**/*.test.ts"
+  ],
+  "testPathIgnorePatterns": ["/node_modules/"],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "collectCoverageFrom": [
+    "<rootDir>/src/**/*.ts",
+    "<rootDir>/stacks/**/*.ts",
+    "!<rootDir>/src/index.ts",
+    "!<rootDir>/src/**/*.module.ts",
+    "!<rootDir>/src/main.ts",
+    "!<rootDir>/src/app.ts",
+    "!<rootDir>/src/**/index.ts",
+    "!<rootDir>/src/**/data/**"
+  ],
+  "coverageReporters": ["json", "text-summary"],
+  "coverageDirectory": "<rootDir>/coverage"
 }
