@@ -2,6 +2,18 @@
   "name": "@cats-cradle/authentication-service",
   "entries": [
     {
+      "version": "1.0.14",
+      "tag": "@cats-cradle/authentication-service_v1.0.14",
+      "date": "Tue, 14 Nov 2023 04:01:09 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/nestjs-modules\" to `0.2.13`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.13",
       "tag": "@cats-cradle/authentication-service_v1.0.13",
       "date": "Mon, 13 Nov 2023 02:11:53 GMT",
