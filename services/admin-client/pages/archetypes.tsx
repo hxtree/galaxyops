@@ -1,4 +1,5 @@
 'use client';
+
 import styles from '../src/app/page.module.css';
 import { Container } from '@cats-cradle/design-system';
 import ArchetypeSelect from '../components/ArchetypeSelect';

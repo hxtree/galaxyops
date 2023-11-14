@@ -1,4 +1,5 @@
 'use client';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {
   OutlinedInput,
@@ -21,16 +22,12 @@ export default function ArchetypeSelect() {
   useEffect(() => {
     const archetypesFetch = async () => {
       setLoading(true);
-      const result = await (
-        await fetch(
-          'https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/character/archetypes',
-          {
-            method: 'GET',
-          },
-        )
-      ).json();
 
-      setArchetypes(result);
+      const res = await axios.get(
+        'https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/character/archetypes',
+      );
+
+      setArchetypes(res.data);
       setLoading(false);
     };
     archetypesFetch();
@@ -40,13 +37,11 @@ export default function ArchetypeSelect() {
     try {
       setLoading(true);
 
-      const res = await fetch(
+      const res = await axios.get(
         `https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/character/archetypes/${archetypeId}`,
-        {
-          method: 'GET',
-        },
       );
-      const result = await res.json();
+
+      const result = await res.data.json;
       setArchetypeData(result);
       setLoading(false);
     } catch (err) {
