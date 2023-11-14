@@ -9,6 +9,7 @@ import {
   Button,
   LoadingButton,
 } from '@cats-cradle/design-system';
+import axios from 'axios';
 
 export default function DiceAnalyzer() {
   const [iterations, setIterations] = useState<number>(100);
@@ -29,21 +30,20 @@ export default function DiceAnalyzer() {
     try {
       setLoading(true);
 
-      const res = await fetch(
+      // Make a request for a user with a given ID
+      const res = await axios.post(
         'https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/luck-by-dice/dice-roll',
         {
-          body: JSON.stringify({
-            notation: notation,
-            luck: luck,
-            iterations: iterations,
-          }),
+          notation: notation,
+          luck: luck,
+          iterations: iterations,
           headers: {
             'Content-Type': 'application/json',
           },
-          method: 'POST',
         },
       );
-      const result = await res.json();
+
+      const result = res.data.json;
       const newData: any[] = data;
       let newTotal = 0;
 
