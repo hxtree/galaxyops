@@ -39,7 +39,7 @@
     "@nestjs/passport": "9.0.0",
     "@nestjs/platform-express": "9.3.9",
     "@nestjs/mongoose": "9.2.1",
-    "mongoose": "6.9.1",
+    "mongoose": "6.12.1",
     "connection-string": "~4.3.6",
     "uuid": "~9.0.1",
     "ts-mongoose-pagination": "~1.1.2",
