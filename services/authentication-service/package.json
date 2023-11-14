@@ -49,7 +49,7 @@
     "uuid": "~9.0.1",
     "mongoose": "6.9.1",
     "@nestjs/passport": "9.0.0",
-    "aws-sdk": "~2.1469.0",
+    "aws-sdk": "~2.1479.0",
     "@nestjs/jwt": "~10.1.1",
     "passport": "~0.6.0",
     "passport-jwt": "~4.0.1",
