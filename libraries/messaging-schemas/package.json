@@ -24,7 +24,7 @@
     "lodash": "~4.17.21",
     "@types/lodash": "~4.14.200",
     "@cats-cradle/base-nodejs": "workspace:*",
-    "@types/validator": "~13.7.10",
+    "@types/validator": "~13.11.5",
     "@cats-cradle/faker-factory": "workspace:*",
     "@cats-cradle/validation-schemas": "workspace:*",
     "class-transformer": "0.5.1"
