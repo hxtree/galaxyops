@@ -40,7 +40,9 @@
     "deploy-platform",
     "deploy-app",
     "rigs",
-    "cli-tools"
+    "cli-tools",
+    "cimongo",
+    "mongoshelf"
   ],
   "projects": [
     {
@@ -204,7 +206,7 @@
         "@cats-cradle/eslint-config",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package", "owner-ux"],
+      "tags": ["service-package", "owner-ux", "cimongo"],
       "shouldPublish": true
     },
     {
@@ -217,7 +219,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package"],
+      "tags": ["service-package", "cimongo"],
       "shouldPublish": true
     },
     {
@@ -230,7 +232,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package"]
+      "tags": ["service-package", "cimongo"]
     },
     {
       "packageName": "@cats-cradle/billing-system",
@@ -242,21 +244,21 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package"]
+      "tags": ["service-package", "cimongo"]
     },
     {
       "packageName": "@cats-cradle/admin-client",
       "projectFolder": "services/admin-client",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["service-package"]
+      "tags": ["service-package", "cimongo"]
     },
     {
       "packageName": "@cats-cradle/dialogue-service",
       "projectFolder": "services/dialogue-service",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
-      "tags": ["service-package"]
+      "tags": ["service-package", "cimongo"]
     },
     {
       "packageName": "@cats-cradle/html-to-pdf",
@@ -268,7 +270,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package", "deploy-app"],
+      "tags": ["service-package", "deploy-app", "cimongo"],
       "shouldPublish": true
     },
     {
@@ -281,7 +283,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package", "deploy-app"]
+      "tags": ["service-package", "deploy-app", "cimongo"]
     },
     {
       "packageName": "@cats-cradle/character-sheet",
@@ -292,7 +294,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package", "deploy-app"]
+      "tags": ["service-package", "deploy-app", "mongoshelf"]
     },
     {
       "packageName": "@cats-cradle/luck-by-dice",
@@ -304,7 +306,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package", "deploy-app"],
+      "tags": ["service-package", "deploy-app", "cimongo"],
       "shouldPublish": true
     },
     {
@@ -317,7 +319,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package", "deploy-app"],
+      "tags": ["service-package", "deploy-app", "cimongo"],
       "shouldPublish": true
     },
     {
@@ -330,7 +332,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package", "deploy-app"]
+      "tags": ["service-package", "deploy-app", "cimongo"]
     },
     {
       "packageName": "@cats-cradle/instances",
@@ -342,7 +344,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package", "deploy-app"]
+      "tags": ["service-package", "deploy-app", "mongoshelf"]
     }
   ]
 }
