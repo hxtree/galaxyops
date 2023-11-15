@@ -6,7 +6,7 @@ import {
   closeInMongodConnection,
   asyncForEach,
 } from '@cats-cradle/nestjs-modules';
-import { FakerFactory } from '@cats-cradle/faker-factory';
+import { FakerFactory, toPojo } from '@cats-cradle/faker-factory';
 import { v4 } from 'uuid';
 import { InstanceSchema, Instance } from '../../models/instance.schema';
 import { InstanceRepository } from '../../models/instance.repository';
@@ -49,7 +49,7 @@ describe('/instances', () => {
   });
 
   describe('GET /instances', () => {
-    it('should find same amount of results as there are', async () => {
+    it('should find same amount of results as exists', async () => {
       const instances = await FakerFactory.createMany<Instance>(
         Instance,
         { createdAt: new Date().toISOString() },
@@ -69,7 +69,7 @@ describe('/instances', () => {
   });
 
   describe('GET /instances/?id=', () => {
-    it('should have no results when none exist', async () => {
+    it('should not found when no results exists', async () => {
       const id = v4();
       const response = await supertest(app.getHttpServer())
         .get(`/instance/?id=${id}`)
@@ -119,6 +119,8 @@ describe('/instances', () => {
         id: body.id,
       });
 
+      expect(response.body.id).toEqual(body.id);
+      expect(response.body.id).toEqual(instance!.id);
       expect(instance?.id).toEqual(body.id);
       expect(instance?.createdAt).toBeDefined();
     });
@@ -126,27 +128,24 @@ describe('/instances', () => {
 
   describe('DELETE /instances', () => {
     it('should remove the specified instance only', async () => {
-      const instance = await FakerFactory.create<Instance>(
+      const instances = await FakerFactory.createMany<Instance>(
         Instance,
         {},
-        { optionals: false },
+        { min: 2, optionals: false },
       );
-      await instanceRepository.create(instance);
-      const instance2 = await FakerFactory.create<Instance>(
-        Instance,
-        {},
-        { optionals: false },
-      );
-      await instanceRepository.create(instance2);
+
+      await asyncForEach(instances, async (instance: Instance) => {
+        await instanceRepository.create(instance);
+      });
 
       const response = await supertest(app.getHttpServer())
         .delete('/instances')
-        .send({ id: instance._id })
+        .send({ id: instances[0]._id })
         .expect(200);
 
       const results = await instanceRepository.findAll();
 
-      expect(results).toHaveLength(1);
+      expect(results).toHaveLength(instances.length - 1);
 
       expect(response.body).toMatchObject({
         deletedCount: 1,

@@ -7,8 +7,8 @@
     "build": "tsc",
     "build:all": "rush build -t .",
     "watch": "tsc -w",
-    "test": "jest --runInBand",
-    "test:cov": "jest --coverage --runInBand",
+    "test": "jest",
+    "test:cov": "jest --coverage",
     "lint": "eslint --format visualstudio \"./{stacks,src}/**/*.ts\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix-dry-run",
     "docs": "typedoc --entryPointStrategy expand ./src",
@@ -46,10 +46,10 @@
     "@nestjs/config": "2.2.0",
     "@cats-cradle/create-bundle": "1.0.7",
     "@nestjs/mongoose": "9.2.1",
-    "mongoose": "6.9.1",
-    "@shelf/jest-mongodb": "~4.1.7"
+    "mongoose": "6.9.1"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "~4.1.7",
     "aws-cdk-lib": "2.95.0",
     "constructs": "^10.2.70",
     "@types/jest": "29.5.8",

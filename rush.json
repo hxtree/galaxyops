@@ -319,7 +319,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["service-package", "deploy-app", "cimongo"],
+      "tags": ["service-package", "deploy-app", "mongoshelf"],
       "shouldPublish": true
     },
     {

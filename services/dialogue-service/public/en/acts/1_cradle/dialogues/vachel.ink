@@ -10,7 +10,7 @@ Bleat! # actorId:VACHEL
 * [Tell a story] -> tell_a_story
 
 == give_water ==
-Someone is thirsty. Tee hee hee. #MEEKU_ONI
+Someone is thirsty. Tee hee hee. #actorId: MEEKU_ONI
 -> END
 
 == pet_back ==

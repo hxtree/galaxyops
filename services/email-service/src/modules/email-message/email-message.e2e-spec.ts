@@ -4,7 +4,6 @@ import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import {
   closeInMongodConnection,
-  rootMongooseTestModule,
   MongooseModule,
 } from '@cats-cradle/nestjs-modules';
 import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dto';
@@ -18,14 +17,21 @@ import { EmailMessageController } from './email-message.controller';
 import { QueueService } from './queue.service';
 import { EngineService } from './engine.service';
 import { MailerService } from './mailer.service';
+import { ActionType } from '../../models/email-message/action.type';
+import { StatusType } from '../../models/email-message/status.type';
 
 describe('/email-message', () => {
   let app: INestApplication;
+  let emailMessageRepository: EmailMessageRepository;
 
   beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [
-        rootMongooseTestModule(),
+        MongooseModule.forRootAsync({
+          useFactory: async () => ({
+            uri: process.env.MONGO_DATABASE_URI,
+          }),
+        }),
         MongooseModule.forFeature([
           { name: EmailMessage.name, schema: EmailMessageSchema },
         ]),
@@ -42,6 +48,10 @@ describe('/email-message', () => {
     }).compile();
 
     app = moduleRef.createNestApplication();
+    emailMessageRepository = moduleRef.get<EmailMessageRepository>(
+      EmailMessageRepository,
+    );
+
     app.useGlobalPipes(
       new ValidationPipe({
         transform: true,
@@ -52,8 +62,36 @@ describe('/email-message', () => {
   });
 
   afterAll(async () => {
-    await closeInMongodConnection();
+    // await closeInMongodConnection();
     app.close();
+  });
+
+  describe(`POST /email-message/user-forgotten-password-reset?action=${ActionType.QUEUE}`, () => {
+    it('should save email to database', async () => {
+      const body = await FakerFactory.create<UserForgottenPasswordResetDto>(
+        UserForgottenPasswordResetDto,
+      );
+
+      const response = await supertest(app.getHttpServer())
+        .post(
+          `/email-message/user-forgotten-password-reset?action=${ActionType.QUEUE}`,
+        )
+        .send(body)
+        .expect(201);
+
+      const emailMessage: EmailMessage | null = await emailMessageRepository.findOneOrFail({
+        recipient: body.recipient,
+      });
+
+      expect(emailMessage!.status).toEqual(StatusType.OPEN);
+      expect(emailMessage!.template).toEqual(
+        'user-forgotten-password-reset-dto',
+      );
+
+      // TODO validate data
+
+      expect(response.text).toEqual('');
+    });
   });
 
   describe('POST /email-message/user-account-created', () => {
