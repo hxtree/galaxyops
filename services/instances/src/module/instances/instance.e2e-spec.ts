@@ -120,8 +120,8 @@ describe('/instances', () => {
       });
 
       expect(response.body.id).toEqual(body.id);
-      expect(response.body.id).toEqual(instance!.id);
-      expect(instance?.id).toEqual(body.id);
+      expect(response.body.id).toEqual(instance?._id);
+      expect(instance?._id).toEqual(body.id);
       expect(instance?.createdAt).toBeDefined();
     });
   });
