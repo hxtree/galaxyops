@@ -6,7 +6,8 @@ dist/**
 !dist/README.md
 
 # next.js build output
-.next
+.next/
+out/
 
 # storybook build
 **/storybook-static/**
