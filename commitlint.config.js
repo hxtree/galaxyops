@@ -13,6 +13,7 @@ module.exports = {
         'release',
         'ci',
         'cd',
+        'test',
       ],
     ],
     'type-enum': [

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import {
+  Alert,
   Stack,
   Grid,
   Box,
@@ -11,23 +12,32 @@ import {
 } from '@cats-cradle/design-system';
 import axios from 'axios';
 
-export default function DiceAnalyzer() {
-  const [iterations, setIterations] = useState<number>(100);
-  const [notation, setNotation] = useState<string>('1d6');
+export type DiceAnalyzerProps = {
+  notation?: string;
+  luck?: number;
+  iterations?: number;
+};
+
+export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
+  const [iterations, setIterations] = useState<number>(props.iterations ?? 100);
+  const [notation, setNotation] = useState<string>(props.notation ?? '1d6');
+  const [luck, setLuck] = useState<any>(props.luck ?? 0);
   const [data, setData] = useState<any[]>([]);
   const [average, setAverage] = useState<number>(0);
   const [runningTotal, setRunningTotal] = useState<number>(0);
-  const [luck, setLuck] = useState<any>(0);
   const [isLoading, setLoading] = useState<boolean>(false);
+  const [errorMsg, setErrorMsg] = useState<string | undefined>();
 
   const clear = async () => {
     setData([]);
     setRunningTotal(0);
     setAverage(0);
+    setErrorMsg(undefined);
   };
 
   const callApi = async () => {
     try {
+      setErrorMsg(undefined);
       setLoading(true);
 
       // Make a request for a user with a given ID
@@ -40,10 +50,11 @@ export default function DiceAnalyzer() {
           headers: {
             'Content-Type': 'application/json',
           },
+          setTimeout: 1,
         },
       );
 
-      const result = res.data.json;
+      const result = res.data;
       const newData: any[] = data;
       let newTotal = 0;
 
@@ -63,10 +74,10 @@ export default function DiceAnalyzer() {
       setAverage((runningTotal + newTotal) / newData.length);
       setRunningTotal(runningTotal + newTotal);
       setData(newData);
-      setLoading(false);
     } catch (err) {
       const error = err as Error;
-      console.log(error.message);
+      setErrorMsg('Failed to process request please try again later.');
+    } finally {
       setLoading(false);
     }
   };
@@ -74,6 +85,12 @@ export default function DiceAnalyzer() {
   return (
     <>
       <Grid container spacing={2}>
+        {errorMsg && errorMsg?.length > 0 && (
+          <Alert role="alert" severity="error">
+            {errorMsg}
+          </Alert>
+        )}
+
         <Grid item>
           <Stack>
             <Box component="form" noValidate autoComplete="off">
@@ -145,4 +162,4 @@ export default function DiceAnalyzer() {
       )}
     </>
   );
-}
+};
