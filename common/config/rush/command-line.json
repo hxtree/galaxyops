@@ -26,6 +26,13 @@
       "safeForSimultaneousRushProcesses": true
     },
     {
+      "name": "rm-branches",
+      "commandKind": "global",
+      "summary": "Remove local branches",
+      "shellCommand": "common/scripts/git-scm/rm-branches.sh",
+      "safeForSimultaneousRushProcesses": true
+    },
+    {
       "name": "branch-naming-policy",
       "commandKind": "global",
       "summary": "Check git branch name against git flow policy",
