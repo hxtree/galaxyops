@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
 import {
   MongooseModule,
   closeInMongodConnection,
@@ -34,6 +34,13 @@ describe('/instances', () => {
     }).compile();
 
     app = moduleRef.createNestApplication();
+    app.useGlobalPipes(
+      new ValidationPipe({
+        transform: true,
+        transformOptions: { enableImplicitConversion: true },
+      }),
+    );
+
     instanceRepository = moduleRef.get<InstanceRepository>(InstanceRepository);
 
     await app.init();
@@ -103,11 +110,31 @@ describe('/instances', () => {
   });
 
   describe('POST /instances', () => {
-    it('should create an instance', async () => {
+    it('should create an instance when id not supplied', async () => {
       const body = await FakerFactory.create<CreateDto>(
         CreateDto,
         {},
         { optionals: false, pojo: true },
+      );
+
+      const response = await supertest(app.getHttpServer())
+        .post('/instances')
+        .send(body)
+        .expect(201);
+
+      const instance = await instanceRepository.findOneOrFail({
+        id: body.id,
+      });
+
+      expect(response.body.id).toEqual(instance?._id);
+      expect(instance?.createdAt).toBeDefined();
+    });
+
+    it('should create an instance when id supplied', async () => {
+      const body = await FakerFactory.create<CreateDto>(
+        CreateDto,
+        {},
+        { optionals: true, pojo: true },
       );
 
       const response = await supertest(app.getHttpServer())

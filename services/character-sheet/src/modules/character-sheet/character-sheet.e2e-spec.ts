@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { MongooseModule } from '@cats-cradle/nestjs-modules';
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import { v4 } from 'uuid';
@@ -36,6 +36,13 @@ describe('/character-sheets', () => {
     }).compile();
 
     const app: INestApplication = moduleRef.createNestApplication();
+    app.useGlobalPipes(
+      new ValidationPipe({
+        transform: true,
+        transformOptions: { enableImplicitConversion: true },
+      }),
+    );
+
     await app.init();
 
     return { app, moduleRef } as const;

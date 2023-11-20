@@ -13,6 +13,11 @@ for file in $env_files; do
   sed -i "s/MONGO_DATABASE_USER=/MONGO_DATABASE_USER=test-user/g" "${file%.dist}"
   sed -i "s/MONGO_DATABASE_PASSWORD=/MONGO_DATABASE_PASSWORD=TpCg4mbwzk93B7tc/g" "${file%.dist}"
 
+  # uncomment to remove DB
+  # sed -i "s/MONGO_DATABASE_URI=//g" "${file%.dist}"
+  # sed -i "s/MONGO_DATABASE_USER=//g" "${file%.dist}"
+  # sed -i "s/MONGO_DATABASE_PASSWORD=//g" "${file%.dist}"
+
   echo "Created and updated ${file%.dist}"
 done
 

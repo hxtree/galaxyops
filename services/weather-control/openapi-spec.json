@@ -181,7 +181,7 @@
           "date": {
             "type": "string",
             "description": "Date",
-            "default": "2023-11-05T02:50:15.067Z"
+            "default": "2023-11-20T03:28:08.392Z"
           },
           "latitude": {
             "type": "string",

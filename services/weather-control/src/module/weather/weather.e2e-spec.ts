@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { FakerFactory } from '@cats-cradle/faker-factory';
 import { WeatherService } from './weather.service';
 import { WeatherController } from './weather.controller';
@@ -21,7 +21,12 @@ describe('/weather', () => {
     }).compile();
 
     app = moduleRef.createNestApplication();
-
+    app.useGlobalPipes(
+      new ValidationPipe({
+        transform: true,
+        transformOptions: { enableImplicitConversion: true },
+      }),
+    );
     weatherService = moduleRef.get<WeatherService>(WeatherService);
 
     await app.init();
@@ -92,6 +97,7 @@ describe('/weather', () => {
       'should determine climate %i as %s',
       async (latitude: number, climate: ClimateType) => {
         const body = await FakerFactory.create<QueryDto>(QueryDto, {
+          date: new Date().toISOString(),
           latitude: latitude.toString(),
         });
 

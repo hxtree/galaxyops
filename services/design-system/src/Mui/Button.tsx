@@ -18,6 +18,8 @@ export const Button = (props: ButtonProps) => {
         ...(props.selected && { backgroundColor: '#616366', color: '#FFF' }),
         fontFamily: 'Helvetica, arial, sans-serif',
         fontWeight: 'bold',
+        borderRadius: '36px',
+        padding: '15px 30px 10px 30px',
       }}
     >
       {children}
