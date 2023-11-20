@@ -53,6 +53,7 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
           setTimeout: 1,
         },
       );
+      console.log(res);
 
       const result = res.data;
       const newData: any[] = data;
@@ -76,6 +77,7 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
       setData(newData);
     } catch (err) {
       const error = err as Error;
+      console.log(error.message);
       setErrorMsg('Failed to process request please try again later.');
     } finally {
       setLoading(false);
@@ -136,7 +138,7 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
       </Grid>
 
       {data.length > 0 && (
-        <>
+        <div role="figure" aria-labelledby="caption">
           <Chart
             chartType="LineChart"
             height="500px"
@@ -158,7 +160,7 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
               },
             }}
           />
-        </>
+        </div>
       )}
     </>
   );

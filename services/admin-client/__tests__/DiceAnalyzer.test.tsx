@@ -5,6 +5,9 @@ import { DiceAnalyzer } from '../components/DiceAnalyzer';
 import axios from 'axios';
 import { act } from 'react-dom/test-utils';
 
+jest.mock('axios');
+const mockedAxios = axios as jest.Mocked<typeof axios>;
+
 describe('DiceAnalyzer', () => {
   it('should render expected fields and buttons', async () => {
     render(<DiceAnalyzer />);
@@ -37,33 +40,46 @@ describe('DiceAnalyzer', () => {
     );
   });
 
-  // it('should show error on failed data fetch', async () => {
-  //   jest.spyOn(axios, 'post').mockImplementation(() => {
-  //     return Promise.resolve({
-  //       data: {
-  //         data: [
-  //           {
-  //             min: 1,
-  //             max: 6,
-  //             total: 5,
-  //             luck: 1,
-  //             bonus: 2,
-  //           },
-  //         ],
-  //       },
-  //     });
-  //   });
+  it('should show error on failed data fetch', async () => {
+    mockedAxios.post.mockResolvedValue({
+      data: {
+        data: [
+          {
+            min: 1,
+            max: 6,
+            total: 5,
+            luck: 1,
+            bonus: 2,
+          },
+        ],
+      },
+    });
 
-  //   render(<DiceAnalyzer iterations={1} notation="1d6" luck={0} />);
+    render(<DiceAnalyzer iterations={1} notation="1d6" luck={0} />);
 
-  //   act(() => {
-  //     fireEvent.click(screen.getByTestId('dice-analyzer-roll'));
-  //   });
+    act(() => {
+      fireEvent.click(screen.getByTestId('dice-analyzer-roll'));
+    });
 
-  //   sleep(3000);
-  //   expect(screen.getByText('Iterations22')).toBe('ss');
-  // });
+    await waitFor(() => {
+      expect(screen.getByRole('figure')).toBeTruthy();
+    });
+  });
 
-  // TODO add test for alert
-  // expect(screen.getByRole('alert')).toEqual('Failed..');
+  it('should show error on failed data fetch', async () => {
+    mockedAxios.post.mockResolvedValue({
+      data: {},
+    });
+
+    render(<DiceAnalyzer iterations={1} notation="1d6" luck={0} />);
+
+    act(() => {
+      fireEvent.click(screen.getByTestId('dice-analyzer-roll'));
+    });
+
+    await waitFor(() => {
+      const alert = screen.getByRole('alert');
+      expect(alert).toMatchSnapshot();
+    });
+  });
 });
