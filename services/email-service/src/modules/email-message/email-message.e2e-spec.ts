@@ -48,16 +48,17 @@ describe('/email-message', () => {
     }).compile();
 
     app = moduleRef.createNestApplication();
-    emailMessageRepository = moduleRef.get<EmailMessageRepository>(
-      EmailMessageRepository,
-    );
-
     app.useGlobalPipes(
       new ValidationPipe({
         transform: true,
         transformOptions: { enableImplicitConversion: true },
       }),
     );
+
+    emailMessageRepository = moduleRef.get<EmailMessageRepository>(
+      EmailMessageRepository,
+    );
+
     await app.init();
   });
 

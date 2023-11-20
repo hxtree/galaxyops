@@ -53,7 +53,6 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
           setTimeout: 1,
         },
       );
-      console.log(res);
 
       const result = res.data;
       const newData: any[] = data;

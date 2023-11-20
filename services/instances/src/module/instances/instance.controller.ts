@@ -8,6 +8,7 @@ import {
   VERSION_NEUTRAL,
   Delete,
 } from '@nestjs/common';
+import { IsUuidV4Validator } from '@cats-cradle/validation-schemas';
 import { CreateDto } from './create.dto';
 import { InstanceRepository } from '../../models/instance.repository';
 import { Instance } from '../../models/instance.schema';
@@ -42,9 +43,10 @@ export class InstanceController {
   @Post()
   async create(@Body() body: CreateDto) {
     const instance = new Instance();
-    if (body.id !== undefined) {
+    if (IsUuidV4Validator(body.id)) {
       instance._id = body.id;
     }
+
     instance.createdAt = new Date().toISOString();
 
     // TODO publish event
