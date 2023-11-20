@@ -77,7 +77,6 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
       setData(newData);
     } catch (err) {
       const error = err as Error;
-      console.log(error.message);
       setErrorMsg('Failed to process request please try again later.');
     } finally {
       setLoading(false);
