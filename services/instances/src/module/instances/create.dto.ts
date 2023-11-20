@@ -4,7 +4,6 @@ import { v4 } from 'uuid';
 
 export class CreateDto {
   @IsUuidV4()
-  @IsOptional()
   @ApiProperty({
     description: 'The instance id',
     default: v4(),
