@@ -8,6 +8,7 @@ export * from './Typography';
 export * from './LoadingButton';
 export * from './Link';
 export * from './Layout';
+export * from './Alert';
 
 export {
   Drawer,
