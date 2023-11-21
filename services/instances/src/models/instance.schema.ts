@@ -7,6 +7,7 @@ import {
   IsUuidV4,
 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
+import { getHadeanTime } from './get-hadean-time';
 
 @Schema({ collection: 'instance' })
 export class Instance {
@@ -24,6 +25,7 @@ export class Instance {
   /**
    * Duration always increases when a player is logged into an instance.
    * It stops when all players log out of an instance.
+   * the unit of measurement for the value stored is minutes
    */
   @IsNumber()
   @Prop({
@@ -60,19 +62,8 @@ export const InstanceSchema = SchemaFactory.createForClass(Instance)
     },
   });
 
-/**
- * HT stands for Hadean Time which is the time period in which the universe began,
- * Time progresses in reverse. The "-" before the time period indicates that it is
- * a count down until our universe begins, 5 billion years ago.
- * Time is displayed to the User using a HT format.
- * Time Format: -00E-053-0125HT
- *
- * use duration property for computation; not time.
- */
 InstanceSchema.virtual('time').get(function () {
-  const baseTime = -530125;
-  const hadeanTime: string = String(baseTime + this.duration).padStart(2, '0');
-  return `${hadeanTime} HT`;
+  return getHadeanTime(this.duration);
 });
 
 InstanceSchema.index({
