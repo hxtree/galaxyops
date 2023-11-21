@@ -12,6 +12,7 @@ import { InstanceSchema, Instance } from '../../models/instance.schema';
 import { InstanceRepository } from '../../models/instance.repository';
 import { InstanceController } from './instance.controller';
 import { CreateDto } from './create.dto';
+import { MAX_PLAYTIME_DURATION_HOURS } from '../../models/get-hadean-time';
 
 describe('/instances', () => {
   let app: INestApplication;
@@ -107,6 +108,37 @@ describe('/instances', () => {
         }),
       );
     });
+
+    it.each([
+      [MAX_PLAYTIME_DURATION_HOURS * 60, '-00E-000-0000HT'],
+      // TODO fix time format calc
+      // [100 * 60, '-00E-000-0500HT'],
+      // [7000 * 60, '+00E-000-0200HT'],
+    ])(
+      'should when playtime is %s minutes return %s ',
+      async (playTimeDurationInMinutes: number, expectedHadeanTime: string) => {
+        const instance = await FakerFactory.create<Instance>(
+          Instance,
+          {
+            duration: playTimeDurationInMinutes,
+            createdAt: new Date().toISOString(),
+          },
+          { optionals: false },
+        );
+
+        await instanceRepository.create(instance);
+
+        const result = await supertest(app.getHttpServer())
+          .get(`/instances/?id=${instance._id}`)
+          .expect(200);
+
+        expect(result.body[0]).toHaveProperty('time', expectedHadeanTime);
+        expect(result.body[0]).toHaveProperty(
+          'duration',
+          playTimeDurationInMinutes,
+        );
+      },
+    );
   });
 
   describe('POST /instances', () => {

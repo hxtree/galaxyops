@@ -1,8 +1,13 @@
 /* eslint-disable func-names */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { IsDateString, IsUuidV4 } from '@cats-cradle/validation-schemas';
+import {
+  IsDateString,
+  IsNumber,
+  IsUuidV4,
+} from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
+import { getHadeanTime } from './get-hadean-time';
 
 @Schema({ collection: 'instance' })
 export class Instance {
@@ -16,6 +21,18 @@ export class Instance {
     default: () => v4(),
   })
   public _id!: string;
+
+  /**
+   * Duration always increases when a player is logged into an instance.
+   * It stops when all players log out of an instance.
+   * the unit of measurement for the value stored is minutes
+   */
+  @IsNumber()
+  @Prop({
+    type: Number,
+    default: () => 0,
+  })
+  public duration: number;
 
   @IsDateString()
   @Prop({
@@ -44,6 +61,10 @@ export const InstanceSchema = SchemaFactory.createForClass(Instance)
       delete ret.id;
     },
   });
+
+InstanceSchema.virtual('time').get(function () {
+  return getHadeanTime(this.duration);
+});
 
 InstanceSchema.index({
   id: 1,
