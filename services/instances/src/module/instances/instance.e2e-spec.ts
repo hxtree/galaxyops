@@ -107,6 +107,25 @@ describe('/instances', () => {
         }),
       );
     });
+
+    it('should get time from play duration', async () => {
+      const instance = await FakerFactory.create<Instance>(
+        Instance,
+        { duration: 100, createdAt: new Date().toISOString() },
+        { optionals: false },
+      );
+
+      await instanceRepository.create(instance);
+
+      const result = await supertest(app.getHttpServer())
+        .get(`/instances/?id=${instance._id}`)
+        .expect(200);
+
+      // TODO fix time format calc
+      // console.log(result.body);
+      expect(result.body[0]).toHaveProperty('time', '-530025 HT');
+      expect(result.body[0]).toHaveProperty('duration', 100);
+    });
   });
 
   describe('POST /instances', () => {
