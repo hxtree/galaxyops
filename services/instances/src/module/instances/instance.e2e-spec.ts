@@ -12,7 +12,7 @@ import { InstanceSchema, Instance } from '../../models/instance.schema';
 import { InstanceRepository } from '../../models/instance.repository';
 import { InstanceController } from './instance.controller';
 import { CreateDto } from './create.dto';
-import { MAX_PLAYTIME_DURATION_HOURS } from '../../models/get-hadean-time';
+import { PLAY_HOURS_HADEAN_ZERO_POINT } from '../../models/get-hadean-time';
 
 describe('/instances', () => {
   let app: INestApplication;
@@ -110,13 +110,20 @@ describe('/instances', () => {
     });
 
     it.each([
-      [MAX_PLAYTIME_DURATION_HOURS * 60, '-00E-000-0000HT'],
-      // TODO fix time format calc
-      // [100 * 60, '-00E-000-0500HT'],
-      // [7000 * 60, '+00E-000-0200HT'],
+      ['-01E-000-0000HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60 - 48000],
+      ['-00E-037-0400HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60 - 6000],
+      ['-00E-000-0603HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60 - 121],
+      ['-00E-000-0303HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60 - 61],
+      ['-00E-000-0003HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60 - 1],
+      ['00E-000-0000HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60],
+      ['+00E-000-0003HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60 + 1],
+      ['+00E-000-0303HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60 + 61],
+      ['+00E-000-0603HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60 + 121],
+      ['+00E-037-0400HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60 + 6000],
+      ['+01E-000-0000HT', PLAY_HOURS_HADEAN_ZERO_POINT * 60 + 48000],
     ])(
-      'should when playtime is %s minutes return %s ',
-      async (playTimeDurationInMinutes: number, expectedHadeanTime: string) => {
+      'should return %s for %s minutes of playtime',
+      async (expectedHadeanTime: string, playTimeDurationInMinutes: number) => {
         const instance = await FakerFactory.create<Instance>(
           Instance,
           {
