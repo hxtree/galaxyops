@@ -29,13 +29,11 @@ export function convertPlayTimeToGameTime(realMinutes: number): GameDateTime {
 }
 
 /**
- * Converts playtime duration into Hadean Time (HT) format, e.g.
+ * Converts playtime duration into Hadean Time (HT) format, -00E-053-0125HT
  *
  * Hadean Time (HT) is the time period in which the universe began.
  * Within the game, time progresses in reverse based on playtime duration.
  * Time is displayed to the User using a HT format.
- *
- * Hadean Time Format: -00E-053-0125HT
  *
  * The first part, the sign ('-' or '+'), indicates whether the game is
  * counting down ('-') or counting up ('+') to when the universe begins,
