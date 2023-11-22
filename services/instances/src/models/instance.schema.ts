@@ -62,6 +62,8 @@ export const InstanceSchema = SchemaFactory.createForClass(Instance)
     },
   });
 
+// TODO: make duration update based on last login date
+
 InstanceSchema.virtual('time').get(function () {
   return getHadeanTime(this.duration);
 });
