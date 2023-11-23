@@ -47,7 +47,7 @@
     "@nestjs/config": "2.2.0",
     "@cats-cradle/create-bundle": "1.0.7",
     "@nestjs/mongoose": "9.2.1",
-    "mongoose": "6.9.1"
+    "mongoose": "6.11.3"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "~4.1.7",
