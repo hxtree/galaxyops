@@ -1,5 +1,6 @@
 {
   "name": "@cats-cradle/jukebox",
+  "description": "An API for the audio service",
   "module": "commonjs",
   "version": "0.0.2",
   "scripts": {

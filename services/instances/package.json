@@ -1,5 +1,6 @@
 {
   "name": "@cats-cradle/instances",
+  "description": "An API for maintaining game instances",
   "module": "commonjs",
   "version": "0.0.1",
   "scripts": {

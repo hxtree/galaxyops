@@ -1,5 +1,6 @@
 {
   "name": "@cats-cradle/weather-control",
+  "description": "A service for managing the weather",
   "module": "commonjs",
   "version": "0.0.2",
   "scripts": {
