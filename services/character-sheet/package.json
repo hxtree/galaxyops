@@ -1,5 +1,6 @@
 {
   "name": "@cats-cradle/character-sheet",
+  "description": "A service for maintaining character sheets",
   "module": "commonjs",
   "version": "1.0.2",
   "scripts": {

@@ -345,6 +345,18 @@
         "@cats-cradle/create-bundle"
       ],
       "tags": ["service-package", "deploy-app", "mongoshelf"]
+    },
+    {
+      "packageName": "@cats-cradle/player-achievements",
+      "projectFolder": "services/player-achievements",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/nestjs-modules",
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
+      ],
+      "tags": ["service-package", "deploy-app", "mongoshelf"]
     }
   ]
 }

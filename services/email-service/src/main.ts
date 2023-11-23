@@ -4,6 +4,7 @@ import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { ValidationPipe, VersioningType } from '@nestjs/common';
 import { AppModule } from './app.module';
+import packageJson from '../package.json';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -14,17 +15,10 @@ async function bootstrap() {
     defaultVersion: '1',
   });
 
-  app.useGlobalPipes(
-    new ValidationPipe({
-      transform: true,
-      transformOptions: { enableImplicitConversion: true },
-    }),
-  );
-
   const config = new DocumentBuilder()
-    .setTitle('@cats-cradles/email-service')
-    .setDescription('An API for the email service')
-    .setVersion('1.0')
+    .setTitle(packageJson.name)
+    .setDescription(packageJson.description)
+    .setVersion(packageJson.version)
     .addServer('http://localhost:3000', 'Local')
     .addServer(
       'https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/email-message/',
@@ -36,6 +30,13 @@ async function bootstrap() {
 
   // update the openapi-spec
   writeFileSync('./openapi-spec.json', JSON.stringify(document));
+
+  app.useGlobalPipes(
+    new ValidationPipe({
+      transform: true,
+      transformOptions: { enableImplicitConversion: true },
+    }),
+  );
 
   await app.listen(3000);
 }

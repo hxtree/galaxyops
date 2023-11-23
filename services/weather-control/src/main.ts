@@ -4,19 +4,21 @@ import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { ValidationPipe, VersioningType } from '@nestjs/common';
 import { AppModule } from './app.module';
+import packageJson from '../package.json';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableVersioning({
-    type: VersioningType.URI,
+    type: VersioningType.HEADER,
+    header: 'Accept-Version',
     defaultVersion: '1',
   });
 
   const config = new DocumentBuilder()
-    .setTitle('@cats-cradles/audio-service')
-    .setDescription('An API for the audio service')
-    .setVersion('1.0')
+    .setTitle(packageJson.name)
+    .setDescription(packageJson.description)
+    .setVersion(packageJson.version)
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
