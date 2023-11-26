@@ -51,6 +51,7 @@ jobs:
       - name: push changes
         run: |
           npm install --global lint-staged
+          npm install --global prettier
           git config --global user.email "support@github.com"
           git config --global user.name "dependabot[bot]"
           git add .
