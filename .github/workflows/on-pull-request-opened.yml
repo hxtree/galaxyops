@@ -9,7 +9,7 @@ jobs:
   Codegen:
     uses: ./.github/workflows/call-codegen.yml
     with:
-      PR_NUMBER: "${{ github.event.pull_request.number }}"
+      PR_NUMBER: ${{ github.event.pull_request.number }}
     secrets:
       USER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
