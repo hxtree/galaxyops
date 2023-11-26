@@ -6,7 +6,6 @@ import { v4 } from 'uuid';
 
 @Schema({ collection: 'trophy' })
 export class Trophy {
-  //  extends Document {
   // @Transform(({ value }) => value.toString())
   // _id: ObjectId;
 
