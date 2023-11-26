@@ -1,0 +1,50 @@
+name: Codegen
+
+on:
+  workflow_call:
+    secrets:
+      PR_NUMBER:
+        required: true
+      GITHUB_TOKEN:
+        required: true
+jobs:
+  rush-update:
+    name: rush update
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.12.0'
+
+      - name: checkout code base
+        run: gh pr checkout ${{ secrets.PR_NUMBER }}
+
+      - name: cache rush
+        id: cache
+        uses: actions/cache@v3.2.2
+        with:
+          path: common/temp
+          key: ${{ runner.os }}-build-branch-${{ hashFiles('common/config/rush/repo-state.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-pr-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: rush install
+        run: node common/scripts/install-run-rush.js install
+
+      - name: rush build
+        run: node common/scripts/install-run-rush.js build
+
+      - name: rush update
+        run: node common/scripts/install-run-rush.js update
+
+      - name: push changes
+        run: |
+          git add .
+          git commit -m 'chore(deps): update shrinkwrap'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
