@@ -1,6 +1,6 @@
 import { Matches, matches, ValidationOptions } from 'class-validator';
 
-export const UUID_V4_REGEX = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[4][0-9a-fA-F]{3}-[89AB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$/;
+export const UUID_V4_REGEX = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[4][0-9a-fA-F]{3}-[89AB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$/i;
 
 export function IsUuidV4Validator(value: string) {
   return matches(value, UUID_V4_REGEX);

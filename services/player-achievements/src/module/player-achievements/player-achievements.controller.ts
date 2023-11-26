@@ -9,6 +9,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { IsUuidV4Validator } from '@cats-cradle/validation-schemas';
+import { v4 } from 'uuid';
 import { CreateDto } from './create.dto';
 import { PlayerAchievementsRepository } from '../../models/player-achievements.repository';
 import { PlayerAchievements } from '../../models/player-achievements.schema';
@@ -47,7 +48,11 @@ export class PlayerAchievementsController {
     const playerAchievements = new PlayerAchievements();
     if (IsUuidV4Validator(body.id)) {
       playerAchievements._id = body.id;
+    } else {
+      playerAchievements._id = v4();
     }
+    playerAchievements.playerId = body.playerId;
+    playerAchievements.achievementId = body.achievementId;
 
     playerAchievements.createdAt = new Date().toISOString();
 

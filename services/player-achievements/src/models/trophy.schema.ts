@@ -4,8 +4,9 @@ import { Document } from 'mongoose';
 import { IsDateString, IsUuidV4 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
 
-@Schema({ collection: 'player-achievements' })
-export class PlayerAchievements {
+@Schema({ collection: 'trophy' })
+export class Trophy {
+  //  extends Document {
   // @Transform(({ value }) => value.toString())
   // _id: ObjectId;
 
@@ -21,14 +22,14 @@ export class PlayerAchievements {
     type: String,
     default: () => v4(),
   })
-  public playerId: string;
+  public title: string;
 
   @IsUuidV4()
   @Prop({
     type: String,
     default: () => v4(),
   })
-  public achievementId: string;
+  public description: string;
 
   @IsDateString()
   @Prop({
@@ -38,11 +39,9 @@ export class PlayerAchievements {
   public createdAt: string;
 }
 
-export type TPlayerAchievementsDocument = PlayerAchievements & Document;
+export type TTrophyDocument = Trophy & Document;
 
-export const PlayerAchievementsSchema = SchemaFactory.createForClass(
-  PlayerAchievements,
-)
+export const TrophySchema = SchemaFactory.createForClass(Trophy)
   .set('toJSON', {
     virtuals: true,
     versionKey: false,
@@ -60,6 +59,6 @@ export const PlayerAchievementsSchema = SchemaFactory.createForClass(
     },
   });
 
-PlayerAchievementsSchema.index({
+TrophySchema.index({
   id: 1,
 });

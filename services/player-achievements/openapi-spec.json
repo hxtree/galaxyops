@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/v1/health": {
+    "/health": {
       "get": {
         "operationId": "HealthController_check",
         "parameters": [],
@@ -104,39 +104,6 @@
         }
       }
     },
-    "/v1/player-achievements": {
-      "get": {
-        "operationId": "PlayerAchievementsController_findAll",
-        "parameters": [],
-        "responses": { "200": { "description": "" } }
-      },
-      "post": {
-        "operationId": "PlayerAchievementsController_create",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateDto" }
-            }
-          }
-        },
-        "responses": { "201": { "description": "" } }
-      },
-      "delete": {
-        "operationId": "PlayerAchievementsController_delete",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": { "$ref": "#/components/schemas/DeleteDto" }
-            }
-          }
-        },
-        "responses": { "200": { "description": "" } }
-      }
-    },
     "/player-achievements": {
       "get": {
         "operationId": "PlayerAchievementsController_findAll",
@@ -187,10 +154,20 @@
           "id": {
             "type": "string",
             "description": "The playerAchievementId",
-            "default": "5024bd48-fa97-4b4d-b2a4-d9e79451d4cc"
+            "default": "87bb5169-c32b-4098-9d88-3f813b24dbdf"
+          },
+          "playerId": {
+            "type": "string",
+            "description": "The playerId",
+            "default": "6af0d69f-4b2c-454a-89e4-79f951a5fc26"
+          },
+          "achievementId": {
+            "type": "string",
+            "description": "The achievementId",
+            "default": "2c59062f-7e5e-41a0-9f62-c7ab65fb78ed"
           }
         },
-        "required": ["id"]
+        "required": ["id", "playerId", "achievementId"]
       },
       "DeleteDto": {
         "type": "object",
@@ -198,7 +175,7 @@
           "id": {
             "type": "string",
             "description": "The playerAchievementId",
-            "default": "894b20ba-bb75-4dc0-adf4-21c78a2fbb5f"
+            "default": "29348277-586a-46ec-8415-ab983ea5e69b"
           }
         },
         "required": ["id"]
