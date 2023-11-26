@@ -2,9 +2,11 @@ name: Codegen
 
 on:
   workflow_call:
-    secrets:
+    inputs:
       PR_NUMBER:
         required: true
+        type: number
+    secrets:
       USER_GITHUB_TOKEN:
         required: true
 jobs:
@@ -19,7 +21,7 @@ jobs:
           node-version: '18.12.0'
 
       - name: checkout code base
-        run: gh pr checkout ${{ secrets.PR_NUMBER }}
+        run: gh pr checkout ${{ inputs.PR_NUMBER }}
 
       - name: cache rush
         id: cache

@@ -8,9 +8,10 @@ on:
 jobs:
   Codegen:
     uses: ./.github/workflows/call-codegen.yml
-    secrets:
-      USER_GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    with:
       PR_NUMBER: "${{ github.event.pull_request.number }}"
+    secrets:
+      USER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   detect-branch:
     name: 'detect ticket'
