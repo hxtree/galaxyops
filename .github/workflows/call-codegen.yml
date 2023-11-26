@@ -5,7 +5,7 @@ on:
     secrets:
       PR_NUMBER:
         required: true
-      GITHUB_TOKEN:
+      USER_GITHUB_TOKEN:
         required: true
 jobs:
   rush-update:
@@ -47,4 +47,4 @@ jobs:
           git commit -m 'chore(deps): update shrinkwrap'
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.USER_GITHUB_TOKEN }}
