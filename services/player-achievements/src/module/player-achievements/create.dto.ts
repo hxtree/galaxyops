@@ -11,4 +11,20 @@ export class CreateDto {
     type: String,
   })
     id: string;
+
+  @IsUuidV4()
+  @ApiProperty({
+    description: 'The playerId',
+    default: v4(),
+    type: String,
+  })
+    playerId: string;
+
+  @IsUuidV4()
+  @ApiProperty({
+    description: 'The achievementId',
+    default: v4(),
+    type: String,
+  })
+    achievementId: string;
 }
