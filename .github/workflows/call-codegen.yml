@@ -22,6 +22,8 @@ jobs:
 
       - name: checkout code base
         run: gh pr checkout ${{ inputs.PR_NUMBER }}
+        env:
+          GH_TOKEN: ${{ secrets.USER_GITHUB_TOKEN }}
 
       - name: cache rush
         id: cache
@@ -49,4 +51,5 @@ jobs:
           git commit -m 'chore(deps): update shrinkwrap'
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.USER_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.USER_GITHUB_TOKEN }}
+
