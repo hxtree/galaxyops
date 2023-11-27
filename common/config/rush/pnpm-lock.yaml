@@ -467,8 +467,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -729,8 +729,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -841,8 +841,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -953,8 +953,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -1296,8 +1296,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -1580,8 +1580,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -1919,8 +1919,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -2203,8 +2203,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -2351,8 +2351,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -2490,8 +2490,8 @@ importers:
         specifier: ~3.0.1
         version: 3.0.1(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(express@4.18.2)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -2626,8 +2626,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -2762,8 +2762,8 @@ importers:
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -2904,8 +2904,8 @@ importers:
         specifier: ~3.0.1
         version: 3.0.1(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(express@4.18.2)
       '@nestjs/swagger':
-        specifier: ~7.1.13
-        version: 7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        specifier: ~7.1.16
+        version: 7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -9540,8 +9540,8 @@ packages:
       jsonwebtoken: 9.0.0
     dev: false
 
-  /@nestjs/mapped-types@2.0.2(@nestjs/common@9.4.0)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13):
-    resolution: {integrity: sha512-V0izw6tWs6fTp9+KiiPUbGHWALy563Frn8X6Bm87ANLRuE46iuBMD5acKBDP5lKL/75QFvrzSJT7HkCbB0jTpg==}
+  /@nestjs/mapped-types@2.0.3(@nestjs/common@9.4.0)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13):
+    resolution: {integrity: sha512-40Zdqg98lqoF0+7ThWIZFStxgzisK6GG22+1ABO4kZiGF/Tu2FE+DYLw+Q9D94vcFWizJ+MSjNN4ns9r6hIGxw==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
       class-transformer: ^0.4.0 || ^0.5.0
@@ -9637,8 +9637,8 @@ packages:
       path-to-regexp: 0.2.5
     dev: false
 
-  /@nestjs/swagger@7.1.13(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13):
-    resolution: {integrity: sha512-aHfW0rDZZKTuPVSkxutBCB16lBy5vrsHVoRF5RvPtH7U2cm4Vf+OnfhxKKuG2g2Xocn9sDL+JAyVlY2VN3ytTw==}
+  /@nestjs/swagger@7.1.16(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13):
+    resolution: {integrity: sha512-f9KBk/BX9MUKPTj7tQNYJ124wV/jP5W2lwWHLGwe/4qQXixuDOo39zP55HIJ44LE7S04B7BOeUOo9GBJD/vRcw==}
     peerDependencies:
       '@fastify/static': ^6.0.0
       '@nestjs/common': ^9.0.0 || ^10.0.0
@@ -9657,18 +9657,18 @@ packages:
       '@fastify/static': 6.9.0
       '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/mapped-types': 2.0.2(@nestjs/common@9.4.0)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+      '@nestjs/mapped-types': 2.0.3(@nestjs/common@9.4.0)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       class-transformer: 0.5.1
       class-validator: 0.13.2
       js-yaml: 4.1.0
       lodash: 4.17.21
       path-to-regexp: 3.2.0
       reflect-metadata: 0.1.13
-      swagger-ui-dist: 5.9.0
+      swagger-ui-dist: 5.9.1
     dev: false
 
-  /@nestjs/swagger@7.1.13(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(reflect-metadata@0.1.13):
-    resolution: {integrity: sha512-aHfW0rDZZKTuPVSkxutBCB16lBy5vrsHVoRF5RvPtH7U2cm4Vf+OnfhxKKuG2g2Xocn9sDL+JAyVlY2VN3ytTw==}
+  /@nestjs/swagger@7.1.16(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(reflect-metadata@0.1.13):
+    resolution: {integrity: sha512-f9KBk/BX9MUKPTj7tQNYJ124wV/jP5W2lwWHLGwe/4qQXixuDOo39zP55HIJ44LE7S04B7BOeUOo9GBJD/vRcw==}
     peerDependencies:
       '@fastify/static': ^6.0.0
       '@nestjs/common': ^9.0.0 || ^10.0.0
@@ -9686,13 +9686,13 @@ packages:
     dependencies:
       '@nestjs/common': 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/mapped-types': 2.0.2(@nestjs/common@9.4.0)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+      '@nestjs/mapped-types': 2.0.3(@nestjs/common@9.4.0)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
       class-transformer: 0.5.1
       js-yaml: 4.1.0
       lodash: 4.17.21
       path-to-regexp: 3.2.0
       reflect-metadata: 0.1.13
-      swagger-ui-dist: 5.9.0
+      swagger-ui-dist: 5.9.1
     dev: false
 
   /@nestjs/terminus@9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1):
@@ -9876,7 +9876,7 @@ packages:
     dependencies:
       chalk: 4.1.2
       consola: 2.15.3
-      node-fetch: 2.6.11
+      node-fetch: 2.7.0
     transitivePeerDependencies:
       - encoding
 
@@ -24930,17 +24930,6 @@ packages:
       is-stream: 1.1.0
     dev: true
 
-  /node-fetch@2.6.11:
-    resolution: {integrity: sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
-      whatwg-url: 5.0.0
-
   /node-fetch@2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
     engines: {node: 4.x || >=6.0.0}
@@ -28902,8 +28891,8 @@ packages:
       stable: 0.1.8
     dev: false
 
-  /swagger-ui-dist@5.9.0:
-    resolution: {integrity: sha512-NUHSYoe5XRTk/Are8jPJ6phzBh3l9l33nEyXosM17QInoV95/jng8+PuSGtbD407QoPf93MH3Bkh773OgesJpA==}
+  /swagger-ui-dist@5.9.1:
+    resolution: {integrity: sha512-5zAx+hUwJb9T3EAntc7TqYkV716CMqG6sZpNlAAMOMWkNXRYxGkN8ADIvD55dQZ10LxN90ZM/TQmN7y1gpICnw==}
     dev: false
 
   /swc-loader@0.2.3(@swc/core@1.3.89)(webpack@5.88.2):
