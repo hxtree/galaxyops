@@ -42,7 +42,7 @@
     "rxjs": "7.8.1",
     "mongoose": "6.9.1",
     "source-map-support": "~0.5.21",
-    "@nestjs/swagger": "~7.1.13",
+    "@nestjs/swagger": "~7.1.16",
     "uuid": "~9.0.1",
     "@cats-cradle/nestjs-modules": "workspace:*",
     "@nestjs/mongoose": "9.2.1",
