@@ -11,6 +11,7 @@ export class Trophy {
 
   @IsUuidV4()
   @Prop({
+    required: true,
     type: String,
     default: () => v4(),
   })
@@ -18,6 +19,7 @@ export class Trophy {
 
   @IsUuidV4()
   @Prop({
+    required: true,
     type: String,
     default: () => v4(),
   })
@@ -25,6 +27,7 @@ export class Trophy {
 
   @IsUuidV4()
   @Prop({
+    required: true,
     type: String,
     default: () => v4(),
   })
@@ -32,6 +35,7 @@ export class Trophy {
 
   @IsDateString()
   @Prop({
+    required: true,
     type: String,
     default: () => new Date().toISOString(),
   })

@@ -3,8 +3,16 @@ name: 'PR / Opened'
 on:
   pull_request:
     types: [opened]
+  workflow_dispatch:
 
 jobs:
+  Codegen:
+    uses: ./.github/workflows/call-codegen.yml
+    with:
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+    secrets:
+      USER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   detect-branch:
     name: 'detect ticket'
     timeout-minutes: 5
