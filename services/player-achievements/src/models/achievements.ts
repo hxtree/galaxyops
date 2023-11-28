@@ -1,31 +1,35 @@
-// export type AchievementType {
-//   title: string;
-//   description: string;
-//   trophy: Trophy;
-//   progress?: number;
-// }
+import { Trophy } from './trophy.enum';
 
-// export const Achievements: AchievementType[] = [
-//   {
-//     title: 'Beat the Wind',
-//     description: 'Defeated the world Tornado',
-//     trophy: Trophy.GOLD
-//   },
-//   {
-//     title: 'Scarfless',
-//     description: 'Lost Mother\'s scarf',
-//     trophy: Trophy.GOLD
-//   },
-//   {
-//     title: 'Catch A Kitty By The Toe',
-//     description: '',
-//     trophy: Trophy.GOLD
-//   },
-//   {
-//     title: 'Scholar',
-//     description: 'Read X books',
-//     trophy: Trophy.GOLD
-//   },
+export type AchievementType = {
+  title: string;
+  description: string;
+  trophy: Trophy;
+  progress?: number;
+};
+
+export const Achievements: AchievementType[] = [
+  {
+    title: 'Beat the Wind',
+    description: 'Defeated the world Tornado',
+    trophy: Trophy.GOLD,
+  },
+  {
+    title: 'Scarfless',
+    description: "Lost Mother's scarf",
+    trophy: Trophy.GOLD,
+  },
+  {
+    title: 'Catch A Kitty By The Toe',
+    description: '',
+    trophy: Trophy.GOLD,
+  },
+  {
+    title: 'Scholar',
+    description: 'Read X books',
+    trophy: Trophy.GOLD,
+  },
+];
+
 //   // TODO how to handle gold and platinum versions of same trophy
 //   {
 //     title: 'Chicken And Rice',

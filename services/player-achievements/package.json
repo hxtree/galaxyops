@@ -12,6 +12,9 @@
     "test:cov": "jest --coverage",
     "lint": "eslint --format visualstudio \"./{stacks,src}/**/*.ts\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix-dry-run",
+    "migrate:create": "migrate create --template-file ./src/migrations-utils/template.ts --migrations-dir=\"./src/migrations\" --compiler=\"ts:./src/migrations-utils/ts-compiler.js\"",
+    "migrate:up": "migrate --migrations-dir=\"./src/migrations\" --compiler=\"ts:./src/migrations-utils/ts-compiler.js\" up",
+    "migrate:down": "migrate --migrations-dir=\"./src/migrations\" --compiler=\"ts:./src/migrations-utils/ts-compiler.js\" down",
     "docs": "typedoc --entryPointStrategy expand ./src",
     "cdk": "cdk",
     "cdk:bootstrap": "cdk bootstrap",
@@ -47,7 +50,11 @@
     "@nestjs/config": "2.2.0",
     "@cats-cradle/create-bundle": "1.0.7",
     "@nestjs/mongoose": "9.2.1",
-    "mongoose": "6.9.1"
+    "mongoose": "6.9.1",
+    "migrate": "~2.0.1",
+    "mongodb": "6.0.0",
+    "tsconfig-paths": "~4.2.0",
+    "dotenv": "~16.0.3"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "~4.1.7",

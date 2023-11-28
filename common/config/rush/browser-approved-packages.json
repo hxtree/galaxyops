@@ -440,7 +440,7 @@
     },
     {
       "name": "dotenv",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "esbuild",
@@ -544,6 +544,10 @@
     },
     {
       "name": "luxon",
+      "allowedCategories": [ "apis", "libraries" ]
+    },
+    {
+      "name": "migrate",
       "allowedCategories": [ "apis", "libraries" ]
     },
     {
@@ -709,6 +713,10 @@
     {
       "name": "tsc-alias",
       "allowedCategories": [ "platform", "rigs" ]
+    },
+    {
+      "name": "tsconfig-paths",
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "tsdx",
