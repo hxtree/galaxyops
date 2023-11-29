@@ -395,6 +395,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "bson",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "chokidar",
       "allowedCategories": [ "platform", "rigs" ]
     },

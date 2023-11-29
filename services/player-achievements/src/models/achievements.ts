@@ -10,22 +10,27 @@ export type AchievementType = {
 export const Achievements: AchievementType[] = [
   {
     title: 'Beat the Wind',
-    description: 'Defeated the world Tornado',
+    description: 'Defeated the World Tornado',
     trophy: Trophy.GOLD,
   },
   {
-    title: 'Scarfless',
+    title: 'Scarf-less',
     description: "Lost Mother's scarf",
     trophy: Trophy.GOLD,
   },
   {
     title: 'Catch A Kitty By The Toe',
-    description: '',
+    description: 'How the heck did you earn this?',
     trophy: Trophy.GOLD,
   },
   {
     title: 'Scholar',
-    description: 'Read X books',
+    description: 'Read 10 books',
+    trophy: Trophy.SILVER,
+  },
+  {
+    title: 'Scholar',
+    description: 'Read 100 books',
     trophy: Trophy.GOLD,
   },
 ];
