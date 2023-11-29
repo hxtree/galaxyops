@@ -14,7 +14,7 @@ export const Achievements: AchievementType[] = [
     trophy: Trophy.GOLD,
   },
   {
-    title: 'Scarfless',
+    title: 'Scarf-less',
     description: "Lost Mother's scarf",
     trophy: Trophy.GOLD,
   },
