@@ -555,6 +555,10 @@
       "allowedCategories": [ "apis", "libraries" ]
     },
     {
+      "name": "mongo-migrate-ts",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "mongodb",
       "allowedCategories": [ "apis", "libraries" ]
     },

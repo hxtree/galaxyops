@@ -2791,9 +2791,9 @@ importers:
       express:
         specifier: 4.18.2
         version: 4.18.2
-      migrate:
-        specifier: ~2.0.1
-        version: 2.0.1
+      mongo-migrate-ts:
+        specifier: ~1.3.1
+        version: 1.3.1(mongodb@6.0.0)
       mongodb:
         specifier: 6.0.0
         version: 6.0.0
@@ -2812,9 +2812,6 @@ importers:
       source-map-support:
         specifier: ~0.5.21
         version: 0.5.21
-      tsconfig-paths:
-        specifier: ~4.2.0
-        version: 4.2.0
       uuid:
         specifier: ~9.0.1
         version: 9.0.1
@@ -17388,14 +17385,9 @@ packages:
     engines: {node: '>=14.20.1'}
     dev: true
 
-  /bson@6.1.0:
-    resolution: {integrity: sha512-yiQ3KxvpVoRpx1oD1uPz4Jit9tAVTJgjdmjDKtUErkOoL9VNoF8Dd58qtAOL5E40exx2jvAT9sqdRSK/r+SHlA==}
-    engines: {node: '>=16.20.1'}
-
   /bson@6.2.0:
     resolution: {integrity: sha512-ID1cI+7bazPDyL9wYy9GaQ8gEEohWvcUl/Yf0dIdutJxnmInEEyCsb4awy/OiBfall7zBA179Pahi3vCdFze3Q==}
     engines: {node: '>=16.20.1'}
-    dev: false
 
   /buffer-crc32@0.2.13:
     resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
@@ -18603,10 +18595,6 @@ packages:
       whatwg-mimetype: 3.0.0
       whatwg-url: 11.0.0
     dev: true
-
-  /dateformat@4.6.3:
-    resolution: {integrity: sha512-2P0p0pFGzHS5EMnhdxQi7aJN+iMheud0UhG4dlE1DLAlvL8JHjJJTX/CSm4JXwV0Ka5nGk3zC5mcb5bUQUxxMA==}
-    dev: false
 
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -24334,21 +24322,6 @@ packages:
       braces: 3.0.2
       picomatch: 2.3.1
 
-  /migrate@2.0.1:
-    resolution: {integrity: sha512-t9yzYd4kPdx+soNL/Cc4YQoVYOgPK28LNEmkW7kn0x9duVBNsV+cDaETby8nZ9Dm+LsQTB4SPJ586i8WQgjM5g==}
-    engines: {node: '>= 14.0.0'}
-    hasBin: true
-    dependencies:
-      chalk: 4.1.2
-      commander: 2.20.3
-      dateformat: 4.6.3
-      dotenv: 16.0.3
-      inherits: 2.0.4
-      minimatch: 9.0.3
-      mkdirp: 3.0.1
-      slug: 8.2.3
-    dev: false
-
   /mime-db@1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
     engines: {node: '>= 0.6'}
@@ -24543,10 +24516,17 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  /mkdirp@3.0.1:
-    resolution: {integrity: sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==}
-    engines: {node: '>=10'}
+  /mongo-migrate-ts@1.3.1(mongodb@6.0.0):
+    resolution: {integrity: sha512-5dvOTG/UA0IW7WE98kSh+n3usUhvSrqbfZX15kWrrKLjwqi7IRANhRtlQ8o4by6UZoYCKVCfveuOeyKtilLyBQ==}
     hasBin: true
+    peerDependencies:
+      mongodb: 4.x.x || 5.x.x
+    dependencies:
+      cli-table: 0.3.11
+      commander: 9.5.0
+      connection-string: 4.3.6
+      mongodb: 6.0.0
+      ora: 5.4.1
     dev: false
 
   /mongodb-connection-string-url@2.6.0:
@@ -24707,7 +24687,7 @@ packages:
         optional: true
     dependencies:
       '@mongodb-js/saslprep': 1.1.0
-      bson: 6.1.0
+      bson: 6.2.0
       mongodb-connection-string-url: 2.6.0
 
   /mongoose@6.9.1:
@@ -28303,11 +28283,6 @@ packages:
     resolution: {integrity: sha512-NwrtjCg+lZoqhFU8fOwl4ay2ei8PaqCBOUV3/ektPY9trO1yQ1oXEfmHAhKArUVUr/hOHvy5f6AdP17dCM0zMw==}
     dev: true
 
-  /slug@8.2.3:
-    resolution: {integrity: sha512-fXjhAZszNecz855GUNIwW0+sFPi9WV4bMiEKDOCA4wcq1ts1UnUVNy/F78B0Aat7/W3rA+se//33ILKNMrbeYQ==}
-    hasBin: true
-    dev: false
-
   /smart-buffer@4.2.0:
     resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
@@ -29574,15 +29549,6 @@ packages:
       json5: 1.0.2
       minimist: 1.2.8
       strip-bom: 3.0.0
-
-  /tsconfig-paths@4.2.0:
-    resolution: {integrity: sha512-NoZ4roiN7LnbKn9QqE1amc9DJfzvZXxF4xDavcOWt1BPkdx+m+0gJuPM+S0vCe7zTJMYUP0R8pO2XMr+Y8oLIg==}
-    engines: {node: '>=6'}
-    dependencies:
-      json5: 2.2.3
-      minimist: 1.2.8
-      strip-bom: 3.0.0
-    dev: false
 
   /tsdx@0.14.1(@types/node@20.9.0):
     resolution: {integrity: sha512-keHmFdCL2kx5nYFlBdbE3639HQ2v9iGedAFAajobrUTH2wfX0nLPdDhbHv+GHLQZqf0c5ur1XteE8ek/+Eyj5w==}
