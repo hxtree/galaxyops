@@ -1,9 +1,9 @@
 {
-  "lastRun": null,
+  "lastRun": "1701140634237-trophy.ts",
   "migrations": [
     {
       "title": "1701140634237-trophy.ts",
-      "timestamp": null
+      "timestamp": 1701219844642
     }
   ]
 }
