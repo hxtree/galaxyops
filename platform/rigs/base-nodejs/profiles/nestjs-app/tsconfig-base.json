@@ -35,6 +35,7 @@
   },
   "sourceMap": true,
   "include": [
+    "../../../../../migrations/*.ts",
     "../../../../../package.json",
     "../../../../../src/*.{ts|tsx}",
     "../../../../../src/**/*.{ts|tsx}",
