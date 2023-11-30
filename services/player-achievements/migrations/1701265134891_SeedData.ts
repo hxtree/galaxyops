@@ -37,7 +37,7 @@ export const Achievements: AchievementInfo[] = [
     ],
   },
   {
-    title: 'Scholar',
+    title: 'Chicken And Rice',
     description: 'Consume %n bowls of Chicken and Rice',
     eventListener: 'ItemConsumedEvent',
     trophyCriteria: [
