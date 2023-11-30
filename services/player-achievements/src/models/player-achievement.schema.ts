@@ -52,6 +52,10 @@ export class PlayerAchievement {
     default: () => new Date().toISOString(),
   })
   public createdAt: string;
+
+  constructor(partial: NonNullable<PlayerAchievement>) {
+    Object.assign(this, partial);
+  }
 }
 
 export type TPlayerAchievementDocument = PlayerAchievement & Document;

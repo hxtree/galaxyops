@@ -69,6 +69,10 @@ export class Achievement {
     default: () => new Date().toISOString(),
   })
   public createdAt: string;
+
+  constructor(partial: NonNullable<Achievement>) {
+    Object.assign(this, partial);
+  }
 }
 
 export type AchievementInfo = Omit<Achievement, '_id' | 'createdAt'>;

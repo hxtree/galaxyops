@@ -443,6 +443,10 @@
       "allowedCategories": [ "libraries" ]
     },
     {
+      "name": "dayjs",
+      "allowedCategories": [ "libraries" ]
+    },
+    {
       "name": "dotenv",
       "allowedCategories": [ "apis", "libraries" ]
     },

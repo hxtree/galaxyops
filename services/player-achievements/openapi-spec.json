@@ -161,17 +161,17 @@
           "id": {
             "type": "string",
             "description": "The playerAchievementId",
-            "default": "30906a4f-0c7c-497a-8df2-c594910a4d06"
+            "default": "f6e6b4e9-7ec5-43d3-b1c5-cba89c56d95f"
           },
           "playerId": {
             "type": "string",
             "description": "The playerId",
-            "default": "4243999c-fac6-4706-a0fc-005323269a48"
+            "default": "8aa32101-437f-40d2-aefd-3c6c7bebd728"
           },
           "achievementId": {
             "type": "string",
             "description": "The achievementId",
-            "default": "587e3271-e8a6-4539-813c-b527af2ddf8b"
+            "default": "b1d247c8-ddbe-4a01-824b-bc86df0c3173"
           },
           "progress": {
             "type": "number",
@@ -187,7 +187,7 @@
           "id": {
             "type": "string",
             "description": "The playerAchievementId",
-            "default": "29380d9e-0e36-469c-8df9-e5120bb424db"
+            "default": "4639bce8-d40a-4ea6-b5bc-7f5866e439d6"
           }
         },
         "required": ["id"]

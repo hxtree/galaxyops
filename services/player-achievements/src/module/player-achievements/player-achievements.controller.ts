@@ -42,25 +42,24 @@ export class PlayerAchievementController {
 
   @Post()
   async create(@Body() body: CreateDto) {
-    const playerAchievement = new PlayerAchievement();
-
     const achievement = await this._achievementRepository.findOneOrFail({
       id: body.achievementId,
     });
 
-    if (IsUuidV4Validator(body.id)) {
-      playerAchievement._id = body.id;
-    } else {
-      playerAchievement._id = v4();
-    }
-    playerAchievement.playerId = body.playerId;
-    playerAchievement.achievementId = achievement!._id;
-    playerAchievement.updatedAt = new Date().toISOString();
-    playerAchievement.createdAt = new Date().toISOString();
+    const playerAchievement = this._playerAchievementRepository.create(
+      new PlayerAchievement({
+        _id: IsUuidV4Validator(body.id) ? body.id : v4(),
+        playerId: body.playerId,
+        achievementId: achievement!._id,
+        progress: body.progress,
+        updatedAt: new Date().toISOString(),
+        createdAt: new Date().toISOString(),
+      }),
+    );
 
     // TODO publish event
 
-    return this._playerAchievementRepository.create(playerAchievement);
+    return playerAchievement;
   }
 
   @Delete()
