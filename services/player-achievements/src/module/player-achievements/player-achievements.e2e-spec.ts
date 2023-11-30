@@ -9,16 +9,22 @@ import {
 import { FakerFactory, toPojo } from '@cats-cradle/faker-factory';
 import { v4 } from 'uuid';
 import {
-  PlayerAchievementsSchema,
-  PlayerAchievements,
-} from '../../models/player-achievements.schema';
-import { PlayerAchievementsRepository } from '../../models/player-achievements.repository';
-import { PlayerAchievementsController } from './player-achievements.controller';
+  PlayerAchievementSchema,
+  PlayerAchievement,
+} from '../../models/player-achievement.schema';
+import { PlayerAchievementRepository } from '../../models/player-achievement.repository';
+import { PlayerAchievementController } from './player-achievements.controller';
 import { CreateDto } from './create.dto';
+import { AchievementRepository } from '../../models/achievement.repository';
+import {
+  Achievement,
+  AchievementSchema,
+} from '../../models/achievement.schema';
 
 describe('/player-achievements', () => {
   let app: INestApplication;
-  let playerAchievementsRepository: PlayerAchievementsRepository;
+  let achievementRepository: AchievementRepository;
+  let playerAchievementRepository: PlayerAchievementRepository;
 
   beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
@@ -29,11 +35,12 @@ describe('/player-achievements', () => {
           }),
         }),
         MongooseModule.forFeature([
-          { name: 'PlayerAchievements', schema: PlayerAchievementsSchema },
+          { name: 'PlayerAchievement', schema: PlayerAchievementSchema },
+          { name: 'Achievement', schema: AchievementSchema },
         ]),
       ],
-      providers: [PlayerAchievementsRepository],
-      controllers: [PlayerAchievementsController],
+      providers: [PlayerAchievementRepository, AchievementRepository],
+      controllers: [PlayerAchievementController],
     }).compile();
 
     app = moduleRef.createNestApplication();
@@ -44,15 +51,18 @@ describe('/player-achievements', () => {
       }),
     );
 
-    playerAchievementsRepository = moduleRef.get<PlayerAchievementsRepository>(
-      PlayerAchievementsRepository,
+    achievementRepository = moduleRef.get<AchievementRepository>(
+      AchievementRepository,
+    );
+    playerAchievementRepository = moduleRef.get<PlayerAchievementRepository>(
+      PlayerAchievementRepository,
     );
 
     await app.init();
   });
 
   afterEach(async () => {
-    await playerAchievementsRepository.deleteAll();
+    await playerAchievementRepository.deleteAll();
   });
 
   afterAll(async () => {
@@ -62,16 +72,27 @@ describe('/player-achievements', () => {
 
   describe('GET /player-achievements', () => {
     it('should find same amount of results as exists', async () => {
-      const records = await FakerFactory.createMany<PlayerAchievements>(
-        PlayerAchievements,
-        { createdAt: new Date().toISOString() },
+      const achievement = await achievementRepository.create(
+        await FakerFactory.create<Achievement>(
+          Achievement,
+          { createdAt: new Date().toISOString() },
+          { optionals: false },
+        ),
+      );
+
+      const records = await FakerFactory.createMany<PlayerAchievement>(
+        PlayerAchievement,
+        {
+          achievementId: achievement!._id,
+          createdAt: new Date().toISOString(),
+        },
         { min: 1, max: 4, optionals: false },
       );
 
       await asyncForEach(
         records,
-        async (playerAchievements: PlayerAchievements) => {
-          await playerAchievementsRepository.create(playerAchievements);
+        async (playerAchievement: PlayerAchievement) => {
+          await playerAchievementRepository.create(playerAchievement);
         },
       );
 
@@ -84,36 +105,31 @@ describe('/player-achievements', () => {
   });
 
   describe('GET /player-achievements/?id=', () => {
-    it.skip('should not found when no results exists', async () => {
+    it('should return empty array when no results exists', async () => {
       const id = v4();
       const response = await supertest(app.getHttpServer())
         .get(`/player-achievements/?id=${id}`)
-        .expect(404);
-      expect(response.body).toMatchObject({
-        error: 'Not Found',
-        message: expect.stringContaining(
-          `Cannot GET /player-achievements/?id=${id}`,
-        ),
-        statusCode: 404,
-      });
+        .expect(200);
+
+      expect(response.body).toEqual([]);
     });
 
     it('should find result if exists', async () => {
-      const playerAchievements = await FakerFactory.create<PlayerAchievements>(
-        PlayerAchievements,
+      const playerAchievement = await FakerFactory.create<PlayerAchievement>(
+        PlayerAchievement,
         {},
         { optionals: false },
       );
-      await playerAchievementsRepository.create(playerAchievements);
+      await playerAchievementRepository.create(playerAchievement);
 
       const result = await supertest(app.getHttpServer())
-        .get(`/player-achievements/?id=${playerAchievements._id}`)
+        .get(`/player-achievements/?id=${playerAchievement._id}`)
         .expect(200);
 
       expect(result.body[0]).toMatchObject(
         expect.objectContaining({
-          id: playerAchievements._id,
-          createdAt: playerAchievements.createdAt,
+          id: playerAchievement._id,
+          createdAt: playerAchievement.createdAt,
         }),
       );
     });
@@ -132,15 +148,17 @@ describe('/player-achievements', () => {
         .send(body)
         .expect(201);
 
-      const playerAchievements = await playerAchievementsRepository.findOneOrFail({
-        id: body.id,
-      });
+      const playerAchievement = await playerAchievementRepository.findOneOrFail(
+        {
+          id: body.id,
+        },
+      );
 
-      expect(response.body.id).toEqual(playerAchievements?._id);
-      expect(playerAchievements?.createdAt).toBeDefined();
+      expect(response.body.id).toEqual(playerAchievement?._id);
+      expect(playerAchievement?.createdAt).toBeDefined();
     });
 
-    it('should create an playerAchievements when id supplied', async () => {
+    it('should create an playerAchievement when id supplied', async () => {
       const body = await FakerFactory.create<CreateDto>(
         CreateDto,
         {},
@@ -152,40 +170,42 @@ describe('/player-achievements', () => {
         .send(body)
         .expect(201);
 
-      const playerAchievements = await playerAchievementsRepository.findOneOrFail({
-        id: body.id,
-      });
+      const playerAchievement = await playerAchievementRepository.findOneOrFail(
+        {
+          id: body.id,
+        },
+      );
 
       expect(response.body.id).toEqual(body.id);
-      expect(response.body.id).toEqual(playerAchievements?._id);
-      expect(playerAchievements?._id).toEqual(body.id);
-      expect(playerAchievements?.createdAt).toBeDefined();
+      expect(response.body.id).toEqual(playerAchievement?._id);
+      expect(playerAchievement?._id).toEqual(body.id);
+      expect(playerAchievement?.createdAt).toBeDefined();
     });
   });
 
   describe('DELETE /player-achievements', () => {
-    it.skip('should remove the specified player-achievements only', async () => {
-      const record = await FakerFactory.createMany<PlayerAchievements>(
-        PlayerAchievements,
+    it('should remove the specified player-achievements only', async () => {
+      const records = await FakerFactory.createMany<PlayerAchievement>(
+        PlayerAchievement,
         {},
         { min: 2, optionals: false },
       );
 
       await asyncForEach(
-        record,
-        async (playerAchievements: PlayerAchievements) => {
-          await playerAchievementsRepository.create(playerAchievements);
+        records,
+        async (playerAchievement: PlayerAchievement) => {
+          await playerAchievementRepository.create(playerAchievement);
         },
       );
 
       const response = await supertest(app.getHttpServer())
-        .delete('/playerAchievements')
-        .send({ id: record[0]._id })
+        .delete('/player-achievements')
+        .send({ id: records[0]._id })
         .expect(200);
 
-      const results = await playerAchievementsRepository.findAll();
+      const results = await playerAchievementRepository.findAll();
 
-      expect(results).toHaveLength(record.length - 1);
+      expect(results).toHaveLength(records.length - 1);
 
       expect(response.body).toMatchObject({
         deletedCount: 1,

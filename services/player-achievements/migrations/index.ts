@@ -14,5 +14,5 @@ mongoMigrateCli({
   uri,
   database: db,
   migrationsDir: __dirname,
-  migrationsCollection: 'migration_versions',
+  migrationsCollection: 'migration-versions',
 });

@@ -177,9 +177,9 @@
     }
   },
   "info": {
-    "title": "@cats-cradles/email-service",
-    "description": "An API for the email service",
-    "version": "1.0",
+    "title": "@cats-cradle/email-service",
+    "description": "A service for sending emails",
+    "version": "0.0.20",
     "contact": {}
   },
   "tags": [],

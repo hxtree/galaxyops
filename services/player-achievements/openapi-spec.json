@@ -104,14 +104,21 @@
         }
       }
     },
+    "/achievements": {
+      "get": {
+        "operationId": "AchievementController_findAll",
+        "parameters": [],
+        "responses": { "200": { "description": "" } }
+      }
+    },
     "/player-achievements": {
       "get": {
-        "operationId": "PlayerAchievementsController_findAll",
+        "operationId": "PlayerAchievementController_findAll",
         "parameters": [],
         "responses": { "200": { "description": "" } }
       },
       "post": {
-        "operationId": "PlayerAchievementsController_create",
+        "operationId": "PlayerAchievementController_create",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -124,7 +131,7 @@
         "responses": { "201": { "description": "" } }
       },
       "delete": {
-        "operationId": "PlayerAchievementsController_delete",
+        "operationId": "PlayerAchievementController_delete",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -154,20 +161,25 @@
           "id": {
             "type": "string",
             "description": "The playerAchievementId",
-            "default": "87bb5169-c32b-4098-9d88-3f813b24dbdf"
+            "default": "f6e6b4e9-7ec5-43d3-b1c5-cba89c56d95f"
           },
           "playerId": {
             "type": "string",
             "description": "The playerId",
-            "default": "6af0d69f-4b2c-454a-89e4-79f951a5fc26"
+            "default": "8aa32101-437f-40d2-aefd-3c6c7bebd728"
           },
           "achievementId": {
             "type": "string",
             "description": "The achievementId",
-            "default": "2c59062f-7e5e-41a0-9f62-c7ab65fb78ed"
+            "default": "b1d247c8-ddbe-4a01-824b-bc86df0c3173"
+          },
+          "progress": {
+            "type": "number",
+            "description": "The progress",
+            "default": 0
           }
         },
-        "required": ["id", "playerId", "achievementId"]
+        "required": ["id", "playerId", "achievementId", "progress"]
       },
       "DeleteDto": {
         "type": "object",
@@ -175,7 +187,7 @@
           "id": {
             "type": "string",
             "description": "The playerAchievementId",
-            "default": "29348277-586a-46ec-8415-ab983ea5e69b"
+            "default": "4639bce8-d40a-4ea6-b5bc-7f5866e439d6"
           }
         },
         "required": ["id"]
