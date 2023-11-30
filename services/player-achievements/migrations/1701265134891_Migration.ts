@@ -10,13 +10,15 @@ export class Migration1701265134891 implements MigrationInterface {
     await asyncForEach(Achievements, async (achievement: object) => {
       const record = { _id: new UUID(v4()) as any as ObjectId };
 
-      await db.collection('trophies').insertOne({ ...record, ...achievement });
+      await db
+        .collection('achievements')
+        .insertOne({ ...record, ...achievement });
     });
   }
 
   public async down(db: Db): Promise<any> {
     await asyncForEach(Achievements, async (achievement) => {
-      await db.collection('trophies').deleteOne(achievement);
+      await db.collection('achievements').deleteOne(achievement);
     });
   }
 }

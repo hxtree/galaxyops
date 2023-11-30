@@ -7,11 +7,9 @@ import {
   Body,
   VERSION_NEUTRAL,
   Delete,
-  BadRequestException,
 } from '@nestjs/common';
 import { IsUuidV4Validator } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
-import { ObjectId } from 'mongoose';
 import { CreateDto } from './create.dto';
 import { PlayerAchievementRepository } from '../../models/player-achievement.repository';
 import { PlayerAchievement } from '../../models/player-achievement.schema';
