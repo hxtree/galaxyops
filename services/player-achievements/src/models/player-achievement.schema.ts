@@ -1,14 +1,16 @@
 /* eslint-disable func-names */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
-import { IsDateString, IsUuidV4 } from '@cats-cradle/validation-schemas';
+import { Document, Schema as MongooseSchema } from 'mongoose';
+import {
+  IsDateString,
+  IsNumber,
+  IsUuidV4,
+} from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
+import { Achievement } from './achievement.schema';
 
 @Schema({ collection: 'player-achievements' })
-export class PlayerAchievements {
-  // @Transform(({ value }) => value.toString())
-  // _id: ObjectId;
-
+export class PlayerAchievement {
   @IsUuidV4()
   @Prop({
     type: String,
@@ -26,9 +28,23 @@ export class PlayerAchievements {
   @IsUuidV4()
   @Prop({
     type: String,
-    default: () => v4(),
+    ref: 'Achievement',
   })
-  public achievementId: string;
+  public achievementId: Achievement;
+
+  @IsNumber()
+  @Prop({
+    type: Number,
+    default: () => 0,
+  })
+  public progress: number;
+
+  @IsDateString()
+  @Prop({
+    type: String,
+    default: () => new Date().toISOString(),
+  })
+  public updatedAt: string;
 
   @IsDateString()
   @Prop({
@@ -38,10 +54,10 @@ export class PlayerAchievements {
   public createdAt: string;
 }
 
-export type TPlayerAchievementsDocument = PlayerAchievements & Document;
+export type TPlayerAchievementDocument = PlayerAchievement & Document;
 
-export const PlayerAchievementsSchema = SchemaFactory.createForClass(
-  PlayerAchievements,
+export const PlayerAchievementSchema = SchemaFactory.createForClass(
+  PlayerAchievement,
 )
   .set('toJSON', {
     virtuals: true,
@@ -60,6 +76,6 @@ export const PlayerAchievementsSchema = SchemaFactory.createForClass(
     },
   });
 
-PlayerAchievementsSchema.index({
+PlayerAchievementSchema.index({
   id: 1,
 });

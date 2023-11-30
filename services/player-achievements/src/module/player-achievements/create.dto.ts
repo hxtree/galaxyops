@@ -1,4 +1,8 @@
-import { IsOptional, IsUuidV4 } from '@cats-cradle/validation-schemas';
+import {
+  IsNumber,
+  IsOptional,
+  IsUuidV4,
+} from '@cats-cradle/validation-schemas';
 import { ApiProperty } from '@nestjs/swagger';
 import { v4 } from 'uuid';
 
@@ -27,4 +31,12 @@ export class CreateDto {
     type: String,
   })
     achievementId: string;
+
+  @IsNumber()
+  @ApiProperty({
+    description: 'The progress',
+    default: 0,
+    type: Number,
+  })
+    progress: number;
 }

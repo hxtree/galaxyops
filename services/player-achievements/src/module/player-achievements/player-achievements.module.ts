@@ -1,18 +1,18 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@cats-cradle/nestjs-modules';
-import { PlayerAchievementsController } from './player-achievements.controller';
-import { PlayerAchievementsRepository } from '../../models/player-achievements.repository';
+import { PlayerAchievementController } from './player-achievements.controller';
+import { PlayerAchievementRepository } from '../../models/player-achievement.repository';
 import { databaseModule } from '../../database.module';
-import { PlayerAchievementsSchema } from '../../models/player-achievements.schema';
+import { PlayerAchievementSchema } from '../../models/player-achievement.schema';
 
 @Module({
   imports: [
     databaseModule(),
     MongooseModule.forFeature([
-      { name: 'PlayerAchievements', schema: PlayerAchievementsSchema },
+      { name: 'PlayerAchievement', schema: PlayerAchievementSchema },
     ]),
   ],
-  controllers: [PlayerAchievementsController],
-  providers: [PlayerAchievementsRepository],
+  controllers: [PlayerAchievementController],
+  providers: [PlayerAchievementRepository],
 })
-export class PlayerAchievementsModule {}
+export class PlayerAchievementModule {}
