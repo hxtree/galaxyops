@@ -9,15 +9,12 @@ import {
   Body,
   ParseUUIDPipe,
   VERSION_NEUTRAL,
-  BadRequestException,
 } from '@nestjs/common';
 import { v4 } from 'uuid';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
-import {
-  CharacterSheet,
-  TCharacterSheetDocument,
-} from '../../models/character-sheet.schema';
+import { CharacterSheet } from '../../models/character-sheet.schema';
 import { CreateCharacterSheetDto } from './create-character-sheet-dto';
+import { GaugeEmbeddable } from '../../models/gauge-embeddable.schema';
 
 @Controller({ path: 'character-sheets', version: [VERSION_NEUTRAL, '1'] })
 export class CharacterSheetController {
@@ -67,14 +64,34 @@ export class CharacterSheetController {
   async create(
     @Body() createCharacterSheetDto: CreateCharacterSheetDto,
   ): Promise<any> {
-    const characterSheet = new CharacterSheet();
-    if (createCharacterSheetDto._id !== undefined) {
-      characterSheet._id = createCharacterSheetDto._id;
-    }
-    characterSheet.instanceId = createCharacterSheetDto.instanceId;
-    characterSheet.archetypeId = createCharacterSheetDto.archetypeId;
-    characterSheet.name = createCharacterSheetDto.name;
-    characterSheet.surname = createCharacterSheetDto.surname;
+    const characterSheet = new CharacterSheet({
+      _id:
+        createCharacterSheetDto._id !== undefined
+          ? createCharacterSheetDto._id
+          : v4(),
+      instanceId: createCharacterSheetDto.instanceId,
+      name: createCharacterSheetDto.name,
+      surname: createCharacterSheetDto.surname,
+      archetypeId: createCharacterSheetDto.archetypeId,
+      life: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
+      drive: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
+      spirit: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
+      disciplines: [],
+      stats: {
+        power: 10,
+        wisdom: 10,
+        accuracy: 10,
+        luck: 10,
+        defense: 10,
+        evasion: 10,
+        intelligence: 10,
+        speed: 10,
+      },
+      equipment: [],
+      affiliation: [],
+      updatedAt: new Date().toISOString(),
+      createdAt: new Date().toISOString(),
+    });
 
     return this._characterSheetRepository.create(characterSheet);
   }

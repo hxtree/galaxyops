@@ -1,4 +1,5 @@
 /* eslint-disable func-names */
+import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
 import {
   Prop, Schema, SchemaFactory, raw,
 } from '@nestjs/mongoose';
@@ -8,25 +9,16 @@ import {
   ArrayMinSize,
   ArrayUnique,
   IsArray,
-  IsDateString,
   IsString,
-  IsUuidV4,
   Type,
   ValidateNested,
 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
 import { TrophyCriteriaEmbeddable } from './trophy-criteria-embeddable.schema';
+// import { ObjectId, UUID } from 'bson';
 
 @Schema({ collection: 'achievements' })
-export class Achievement {
-  @IsUuidV4()
-  @Prop({
-    required: true,
-    type: String,
-    default: () => v4(),
-  })
-  public _id!: string;
-
+export class Achievement extends BaseEntity {
   @IsString()
   @Prop({
     required: true,
@@ -62,20 +54,13 @@ export class Achievement {
   @Prop([])
   public trophyCriteria: TrophyCriteriaEmbeddable[];
 
-  @IsDateString()
-  @Prop({
-    required: true,
-    type: String,
-    default: () => new Date().toISOString(),
-  })
-  public createdAt: string;
-
   constructor(partial: NonNullable<Achievement>) {
+    super(partial);
     Object.assign(this, partial);
   }
 }
 
-export type AchievementInfo = Omit<Achievement, '_id' | 'createdAt'>;
+export type AchievementInfo = Omit<Achievement, BaseEntityProps>;
 
 export type TAchievementDocument = Achievement & Document;
 
@@ -100,3 +85,8 @@ export const AchievementSchema = SchemaFactory.createForClass(Achievement)
 AchievementSchema.index({
   id: 1,
 });
+
+// TODO on what layer to handle this?
+// if (partial._id) {
+//   partial._id = new UUID(partial._id) as unknown as ObjectId;
+// }

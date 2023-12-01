@@ -41,4 +41,10 @@ export class GaugeEmbeddable {
   public sub(amount: number) {
     this.add(-amount);
   }
+
+  constructor(
+    partial: NonNullable<Omit<GaugeEmbeddable, 'isDepleted' | 'add' | 'sub'>>,
+  ) {
+    Object.assign(this, partial);
+  }
 }
