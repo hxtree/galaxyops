@@ -2,10 +2,8 @@ import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { FakerFactory } from '@cats-cradle/faker-factory';
-import {
-  closeInMongodConnection,
-  MongooseModule,
-} from '@cats-cradle/nestjs-modules';
+import { MongooseModule } from '@cats-cradle/nestjs-modules';
+import { v4 } from 'uuid';
 import { UserAccountCreatedDto, UserForgottenPasswordResetDto } from './dto';
 import { TemplateService } from './template.service';
 import {
@@ -21,10 +19,7 @@ import { ActionType } from '../../models/email-message/action.type';
 import { StatusType } from '../../models/email-message/status.type';
 
 describe('/email-message', () => {
-  let app: INestApplication;
-  let emailMessageRepository: EmailMessageRepository;
-
-  beforeAll(async () => {
+  async function createTestingModule() {
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [
         MongooseModule.forRootAsync({
@@ -33,21 +28,24 @@ describe('/email-message', () => {
           }),
         }),
         MongooseModule.forFeature([
-          { name: EmailMessage.name, schema: EmailMessageSchema },
+          {
+            name: EmailMessage.name,
+            schema: EmailMessageSchema,
+            collection: `test-${v4()}`,
+          },
         ]),
       ],
-      controllers: [EmailMessageController],
       providers: [
         TemplateService,
         EmailMessageRepository,
         QueueService,
         EngineService,
         MailerService,
-        EmailMessage,
       ],
+      controllers: [EmailMessageController],
     }).compile();
 
-    app = moduleRef.createNestApplication();
+    const app: INestApplication = moduleRef.createNestApplication();
     app.useGlobalPipes(
       new ValidationPipe({
         transform: true,
@@ -55,20 +53,18 @@ describe('/email-message', () => {
       }),
     );
 
-    emailMessageRepository = moduleRef.get<EmailMessageRepository>(
-      EmailMessageRepository,
-    );
-
     await app.init();
-  });
 
-  afterAll(async () => {
-    // await closeInMongodConnection();
-    app.close();
-  });
+    return { app, moduleRef } as const;
+  }
 
   describe(`POST /email-message/user-forgotten-password-reset?action=${ActionType.QUEUE}`, () => {
     it('should save email to database', async () => {
+      const { app, moduleRef } = await createTestingModule();
+      const emailMessageRepository = moduleRef.get<EmailMessageRepository>(
+        EmailMessageRepository,
+      );
+
       const body = await FakerFactory.create<UserForgottenPasswordResetDto>(
         UserForgottenPasswordResetDto,
       );
@@ -92,11 +88,15 @@ describe('/email-message', () => {
       // TODO validate data
 
       expect(response.text).toEqual('');
+
+      app.close();
     });
   });
 
   describe('POST /email-message/user-account-created', () => {
     it('should interpolate template with dto', async () => {
+      const { app, moduleRef } = await createTestingModule();
+
       const body = await FakerFactory.create<UserAccountCreatedDto>(
         UserAccountCreatedDto,
       );
@@ -107,11 +107,15 @@ describe('/email-message', () => {
         .expect(201);
 
       expect(response.text).toEqual(expect.stringContaining(body.firstName));
+
+      app.close();
     });
   });
 
   describe('POST /email-message/user-forgotten-password-reset?action=VIEW_HTML', () => {
     it('should return html', async () => {
+      const { app, moduleRef } = await createTestingModule();
+
       const body = await FakerFactory.create<UserForgottenPasswordResetDto>(
         UserForgottenPasswordResetDto,
       );
@@ -122,6 +126,8 @@ describe('/email-message', () => {
         .expect(201);
 
       expect(response.text).toEqual(expect.stringContaining('html'));
+
+      app.close();
     });
   });
 });

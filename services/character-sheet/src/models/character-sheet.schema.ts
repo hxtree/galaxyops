@@ -15,6 +15,7 @@ import {
   IsArray,
 } from '@cats-cradle/validation-schemas';
 import { v4 as uuidv4 } from 'uuid';
+import { BaseEntity } from '@cats-cradle/nestjs-modules';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { AffiliationEmbeddable } from './affiliation-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
@@ -30,19 +31,7 @@ import { SkillType } from '../data/skill';
  * A CharacterSheet (or Character for short) is a single instantiation of an Archetype.
  */
 @Schema({ collection: 'character-sheet' })
-export class CharacterSheet {
-  // @Transform(({ value }) => value.toString())
-  // _id: ObjectId;
-
-  @IsUuidV4()
-  @Prop({
-    type: String,
-    default: function genUUID() {
-      return uuidv4();
-    },
-  })
-  public _id!: string;
-
+export class CharacterSheet extends BaseEntity {
   @IsUuidV4()
   @Prop()
   public instanceId!: string;
@@ -117,6 +106,11 @@ export class CharacterSheet {
   @ArrayUnique()
   @Prop([])
   public affiliation: AffiliationEmbeddable[];
+
+  constructor(partial: NonNullable<CharacterSheet>) {
+    super(partial);
+    Object.assign(this, partial);
+  }
 }
 
 export type TCharacterSheetDocument = CharacterSheet & Document;

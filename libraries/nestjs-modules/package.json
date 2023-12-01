@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/nestjs-modules",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
@@ -10,7 +10,8 @@
     "nestjs",
     "aws",
     "s3",
-    "mongo",
+    "mongodb",
+    "mongoose",
     "sns",
     "sqs"
   ],
@@ -51,7 +52,8 @@
     "@cats-cradle/messaging-schemas": "workspace:*",
     "@types/uuid": "~9.0.6",
     "luxon": "~3.3.0",
-    "mongodb-memory-server-global": "8.13.0"
+    "mongodb-memory-server-global": "8.13.0",
+    "@cats-cradle/validation-schemas": "workspace:*"
   },
   "devDependencies": {
     "@types/jest": "29.5.8",

@@ -5,11 +5,13 @@ import {
   VERSION_NEUTRAL,
   BadRequestException,
 } from '@nestjs/common';
+import { v4 } from 'uuid';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheet } from '../../models/character-sheet.schema';
 import { CreateSpawnDto } from './create-spawn-dto';
 import { PlaceService } from '../place/place.service';
 import { SpawnService } from './spawn.service';
+import { GaugeEmbeddable } from '../../models/gauge-embeddable.schema';
 
 @Controller({ path: 'npcs', version: [VERSION_NEUTRAL, '1'] })
 export class NpcController {
@@ -34,12 +36,29 @@ export class NpcController {
       place.spawnGuidelines,
     );
 
-    const characterSheet = new CharacterSheet();
-    if (createSpawnDto.id !== undefined) {
-      characterSheet._id = createSpawnDto.id;
-    }
-    characterSheet.instanceId = createSpawnDto.instanceId;
-    characterSheet.archetypeId = createCharacterSheet.archetypeId;
+    const characterSheet = new CharacterSheet({
+      _id: createSpawnDto.id !== undefined ? createSpawnDto.id : v4(),
+      instanceId: createSpawnDto.instanceId,
+      archetypeId: createCharacterSheet.archetypeId,
+      life: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
+      drive: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
+      spirit: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
+      disciplines: [],
+      stats: {
+        power: 10,
+        wisdom: 10,
+        accuracy: 10,
+        luck: 10,
+        defense: 10,
+        evasion: 10,
+        intelligence: 10,
+        speed: 10,
+      },
+      equipment: [],
+      affiliation: [],
+      updatedAt: new Date().toISOString(),
+      createdAt: new Date().toISOString(),
+    });
 
     return this._characterSheetRepository.create(characterSheet);
   }

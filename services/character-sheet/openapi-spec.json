@@ -547,7 +547,7 @@
             "required": true,
             "in": "path",
             "schema": {
-              "default": "9201a8eb-e105-4760-938f-0afc6166834c",
+              "default": "c91ad7cb-0655-48b1-ae00-011fb5491d84",
               "type": "string"
             }
           }
@@ -572,9 +572,9 @@
     }
   },
   "info": {
-    "title": "@cats-cradles/character-sheet",
-    "description": "An API for the character sheet service",
-    "version": "1.0",
+    "title": "@cats-cradle/character-sheet",
+    "description": "A service for maintaining character sheets",
+    "version": "1.0.2",
     "contact": {}
   },
   "tags": [],
@@ -586,11 +586,11 @@
         "properties": {
           "_id": {
             "type": "string",
-            "default": "afdd27df-e56f-42b5-a76b-668bb791375b"
+            "default": "db9ea5b6-44b4-4b1b-84c5-e236284661ec"
           },
           "instanceId": {
             "type": "string",
-            "default": "f1641d0f-9595-4677-9949-b29dbceaf3e7"
+            "default": "be4b7bd0-3825-4ff2-b8d1-ecbe89611d29"
           },
           "archetypeId": {
             "type": "string",
@@ -647,11 +647,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "default": "1077d648-a6aa-468b-86f7-788e42421f90"
+            "default": "968a7989-3d80-417e-b4ca-1e20fbdf96ca"
           },
           "instanceId": {
             "type": "string",
-            "default": "7b6744b0-f364-4833-9c5d-2273361f32b1"
+            "default": "46336cc6-1e24-4e02-ae9e-f28613d64419"
           },
           "place": {
             "type": "string",
@@ -674,7 +674,7 @@
         "properties": {
           "characterSheetId": {
             "type": "string",
-            "default": "88623540-0638-4e3d-8e15-a86792290835"
+            "default": "bbf279b5-10ca-4f44-9f58-ba42df0ab810"
           },
           "affiliationId": {
             "type": "string",

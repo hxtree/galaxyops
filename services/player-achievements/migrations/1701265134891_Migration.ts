@@ -8,7 +8,7 @@ import { Achievements } from './1701265134891_SeedData';
 export class Migration1701265134891 implements MigrationInterface {
   public async up(db: Db): Promise<any> {
     await asyncForEach(Achievements, async (achievement: object) => {
-      const record = { _id: new UUID(v4()) as any as ObjectId };
+      const record = { _id: new UUID(v4()) as unknown as ObjectId };
 
       await db
         .collection('achievements')

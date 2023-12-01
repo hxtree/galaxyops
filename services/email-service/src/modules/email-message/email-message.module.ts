@@ -1,8 +1,5 @@
 import { Module } from '@nestjs/common';
-import {
-  rootMongooseModule,
-  MongooseModule,
-} from '@cats-cradle/nestjs-modules';
+import { MongooseModule } from '@cats-cradle/nestjs-modules';
 import { TemplateService } from './template.service';
 import {
   EmailMessageSchema,
@@ -13,8 +10,15 @@ import { EmailMessageController } from './email-message.controller';
 import { QueueService } from './queue.service';
 import { EngineService } from './engine.service';
 import { MailerService } from './mailer.service';
+import { databaseModule } from '../../database.module';
 
 @Module({
+  imports: [
+    databaseModule(),
+    MongooseModule.forFeature([
+      { name: EmailMessage.name, schema: EmailMessageSchema },
+    ]),
+  ],
   controllers: [EmailMessageController],
   providers: [
     TemplateService,
@@ -22,12 +26,6 @@ import { MailerService } from './mailer.service';
     QueueService,
     EngineService,
     MailerService,
-  ],
-  imports: [
-    rootMongooseModule(),
-    MongooseModule.forFeature([
-      { name: EmailMessage.name, schema: EmailMessageSchema },
-    ]),
   ],
 })
 export class EmailMessageModule {}

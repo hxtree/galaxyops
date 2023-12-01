@@ -12,23 +12,27 @@ export class QueueService {
   constructor(private _emailMessageRepository: EmailMessageRepository) {}
 
   public async addOpen(template: string, data: any): Promise<any> {
-    const emailRequest = new EmailMessage();
-    emailRequest.id = v4();
-    emailRequest.data = JSON.stringify(data);
-    emailRequest.template = template;
-    emailRequest.status = StatusType.OPEN;
-    emailRequest.updatedAt = Date.now().toString();
+    const emailRequest = new EmailMessage({
+      _id: v4(),
+      data: JSON.stringify(data),
+      template,
+      status: StatusType.OPEN,
+      updatedAt: new Date().toISOString(),
+      createdAt: new Date().toISOString(),
+    });
 
     return this._emailMessageRepository.create(emailRequest);
   }
 
   public async addCompleted(template: string, data: any): Promise<any> {
-    const emailRequest = new EmailMessage();
-    emailRequest.id = v4();
-    emailRequest.data = JSON.stringify(data);
-    emailRequest.template = template;
-    emailRequest.status = StatusType.COMPLETED;
-    emailRequest.updatedAt = Date.now().toString();
+    const emailRequest = new EmailMessage({
+      _id: v4(),
+      data: JSON.stringify(data),
+      template,
+      status: StatusType.COMPLETED,
+      updatedAt: new Date().toISOString(),
+      createdAt: new Date().toISOString(),
+    });
 
     return this._emailMessageRepository.create(emailRequest);
   }
