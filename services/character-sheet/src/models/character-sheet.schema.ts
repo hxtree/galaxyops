@@ -15,7 +15,7 @@ import {
   IsArray,
 } from '@cats-cradle/validation-schemas';
 import { v4 as uuidv4 } from 'uuid';
-import { BaseEntity } from '@cats-cradle/nestjs-modules';
+import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { AffiliationEmbeddable } from './affiliation-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
@@ -107,8 +107,8 @@ export class CharacterSheet extends BaseEntity {
   @Prop([])
   public affiliation: AffiliationEmbeddable[];
 
-  constructor(partial: NonNullable<CharacterSheet>) {
-    super(partial);
+  constructor(partial: NonNullable<Omit<CharacterSheet, BaseEntityProps>>) {
+    super();
     Object.assign(this, partial);
   }
 }
@@ -120,7 +120,6 @@ export const CharacterSheetSchema = SchemaFactory.createForClass(CharacterSheet)
     virtuals: true,
     versionKey: false,
     transform(doc, ret) {
-      ret.id = ret._id;
       delete ret._id;
     },
   })
@@ -146,7 +145,8 @@ CharacterSheetSchema.virtual('menu').get(function () {
   const skills: any = [];
 
   this.disciplines.forEach((disciplineEmbeddable: DisciplineEmbeddable) => {
-    const discipline: Discipline.Type = Discipline[disciplineEmbeddable.disciplineId];
+    const discipline: Discipline.Type =
+      Discipline[disciplineEmbeddable.disciplineId];
 
     if (discipline.progression === undefined) {
       return;
@@ -159,8 +159,8 @@ CharacterSheetSchema.virtual('menu').get(function () {
         );
 
         if (
-          progression.level >= disciplineLevel
-          && skills.indexOf(progression.skill) === -1
+          progression.level >= disciplineLevel &&
+          skills.indexOf(progression.skill) === -1
         ) {
           skills.push(progression.skill);
         }
@@ -192,7 +192,8 @@ CharacterSheetSchema.virtual('skills').get(function () {
   const skills: any = [];
 
   this.disciplines.forEach((disciplineEmbeddable: DisciplineEmbeddable) => {
-    const discipline: Discipline.Type = Discipline[disciplineEmbeddable.disciplineId];
+    const discipline: Discipline.Type =
+      Discipline[disciplineEmbeddable.disciplineId];
 
     if (discipline.progression === undefined) {
       return;
@@ -205,8 +206,8 @@ CharacterSheetSchema.virtual('skills').get(function () {
         );
 
         if (
-          progression.level >= disciplineLevel
-          && skills.indexOf(progression.skill) === -1
+          progression.level >= disciplineLevel &&
+          skills.indexOf(progression.skill) === -1
         ) {
           skills.push(progression.skill);
         }

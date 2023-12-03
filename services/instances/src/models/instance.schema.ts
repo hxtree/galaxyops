@@ -7,21 +7,11 @@ import {
   IsUuidV4,
 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
+import { BaseEntity } from '@cats-cradle/nestjs-modules';
 import { getHadeanTime } from './get-hadean-time';
 
 @Schema({ collection: 'instance' })
-export class Instance {
-  // extends Document {
-  // @Transform(({ value }) => value.toString())
-  // _id: ObjectId;
-
-  @IsUuidV4()
-  @Prop({
-    type: String,
-    default: () => v4(),
-  })
-  public _id!: string;
-
+export class Instance extends BaseEntity {
   /**
    * Duration always increases when a player is logged into an instance.
    * It stops when all players log out of an instance.
@@ -33,13 +23,6 @@ export class Instance {
     default: () => 0,
   })
   public duration: number;
-
-  @IsDateString()
-  @Prop({
-    type: String,
-    default: () => new Date().toISOString(),
-  })
-  public createdAt: string;
 }
 
 export type TInstanceDocument = Instance & Document;
@@ -49,7 +32,6 @@ export const InstanceSchema = SchemaFactory.createForClass(Instance)
     virtuals: true,
     versionKey: false,
     transform(doc: any, ret: any) {
-      ret.id = ret._id;
       delete ret._id;
     },
   })

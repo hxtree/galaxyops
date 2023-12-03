@@ -5,8 +5,12 @@ import {
   closeInMongodConnection,
   rootMongooseTestModule,
 } from '../mongoose/mongoose.module';
-import { PersonSchema } from './persons/person.schema';
-import { PersonRepository } from './persons/person.repository';
+import { PersonSchema } from '../__tests__/persons/person.schema';
+import { PersonRepository } from '../__tests__/persons/person.repository';
+import {
+  IsDateString,
+  IsUuidV4Validator,
+} from '@cats-cradle/validation-schemas';
 
 describe('MongooseRepository', () => {
   let app: INestApplication;
@@ -31,10 +35,38 @@ describe('MongooseRepository', () => {
     app.close();
   });
 
+  describe('create', () => {
+    it('should create item', async () => {
+      const person = await personsRepository.create({
+        firstName: 'Jane',
+        lastName: 'Doe',
+      });
+
+      const date = new Date();
+      expect(IsUuidV4Validator(person!.id)).toBe(true);
+      expect(IsUuidV4Validator(person!._id)).toBe(true);
+      expect(person?.createdAt).toContain(date.getFullYear().toString());
+      expect(person?.updatedAt).toContain(date.getFullYear().toString());
+    });
+  });
+
   describe('findOne', () => {
-    it('should find item in repository', async () => {
-      await personsRepository.create({
-        id: 'sss',
+    it('should find item in repository by id', async () => {
+      const person = await personsRepository.create({
+        firstName: 'Jane',
+        lastName: 'Doe',
+      });
+
+      const result = await personsRepository.findOne({
+        id: person!.id,
+      });
+
+      expect(result?.firstName).toBe(person?.firstName);
+      expect(result?.lastName).toBe(person?.lastName);
+    });
+
+    it('should find item in repository by property', async () => {
+      const person = await personsRepository.create({
         firstName: 'Jane',
         lastName: 'Doe',
       });
@@ -43,15 +75,14 @@ describe('MongooseRepository', () => {
         firstName: 'Jane',
       });
 
-      expect(result?.firstName).toBe('Jane');
-      expect(result?.lastName).toBe('Doe');
+      expect(result?.firstName).toBe(person?.firstName);
+      expect(result?.lastName).toBe(person?.lastName);
     });
   });
 
   describe('findOneOrFail', () => {
     it('should find item in repository', async () => {
       await personsRepository.create({
-        id: 'sss',
         firstName: 'Jane',
         lastName: 'Doe',
       });

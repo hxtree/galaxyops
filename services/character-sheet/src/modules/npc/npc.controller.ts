@@ -5,7 +5,6 @@ import {
   VERSION_NEUTRAL,
   BadRequestException,
 } from '@nestjs/common';
-import { v4 } from 'uuid';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheet } from '../../models/character-sheet.schema';
 import { CreateSpawnDto } from './create-spawn-dto';
@@ -37,7 +36,6 @@ export class NpcController {
     );
 
     const characterSheet = new CharacterSheet({
-      _id: createSpawnDto.id !== undefined ? createSpawnDto.id : v4(),
       instanceId: createSpawnDto.instanceId,
       archetypeId: createCharacterSheet.archetypeId,
       life: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
@@ -56,10 +54,11 @@ export class NpcController {
       },
       equipment: [],
       affiliation: [],
-      updatedAt: new Date().toISOString(),
-      createdAt: new Date().toISOString(),
     });
 
-    return this._characterSheetRepository.create(characterSheet);
+    const character =
+      await this._characterSheetRepository.create(characterSheet);
+
+    return character!.toJSON();
   }
 }

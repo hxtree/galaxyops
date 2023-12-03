@@ -158,20 +158,15 @@
       "CreateDto": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "description": "The playerAchievementId",
-            "default": "f2dcfcdc-96ad-4680-8098-d8f36f6e2204"
-          },
           "playerId": {
             "type": "string",
             "description": "The playerId",
-            "default": "05b38ba6-fafa-4160-8953-9b706d5d5e74"
+            "default": "1f03f1ff-c00f-41df-8ea4-74d417b0c93b"
           },
           "achievementId": {
             "type": "string",
             "description": "The achievementId",
-            "default": "a500a00a-4872-42f1-9d7a-e03158089ffc"
+            "default": "22dd9506-6368-4db6-b7e4-098c37146dcd"
           },
           "progress": {
             "type": "number",
@@ -179,7 +174,7 @@
             "default": 0
           }
         },
-        "required": ["id", "playerId", "achievementId", "progress"]
+        "required": ["playerId", "achievementId", "progress"]
       },
       "DeleteDto": {
         "type": "object",
@@ -187,7 +182,7 @@
           "id": {
             "type": "string",
             "description": "The playerAchievementId",
-            "default": "2d366850-ec38-441c-a3aa-36105e825091"
+            "default": "a336088b-56b9-4f13-8a78-76e610c12c35"
           }
         },
         "required": ["id"]

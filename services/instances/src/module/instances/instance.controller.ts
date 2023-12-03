@@ -42,16 +42,8 @@ export class InstanceController {
 
   @Post()
   async create(@Body() body: CreateDto) {
-    const instance = new Instance();
-    if (IsUuidV4Validator(body.id)) {
-      instance._id = body.id;
-    }
-
-    instance.createdAt = new Date().toISOString();
-
-    // TODO publish event
-
-    return this._instanceRepository.create(instance);
+    const instance = await this._instanceRepository.create(new Instance());
+    return instance;
   }
 
   @Delete()

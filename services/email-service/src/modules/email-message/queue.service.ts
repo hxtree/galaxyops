@@ -13,12 +13,9 @@ export class QueueService {
 
   public async addOpen(template: string, data: any): Promise<any> {
     const emailRequest = new EmailMessage({
-      _id: v4(),
       data: JSON.stringify(data),
       template,
       status: StatusType.OPEN,
-      updatedAt: new Date().toISOString(),
-      createdAt: new Date().toISOString(),
     });
 
     return this._emailMessageRepository.create(emailRequest);
@@ -26,12 +23,9 @@ export class QueueService {
 
   public async addCompleted(template: string, data: any): Promise<any> {
     const emailRequest = new EmailMessage({
-      _id: v4(),
       data: JSON.stringify(data),
       template,
       status: StatusType.COMPLETED,
-      updatedAt: new Date().toISOString(),
-      createdAt: new Date().toISOString(),
     });
 
     return this._emailMessageRepository.create(emailRequest);

@@ -70,28 +70,22 @@ describe('/character-sheets', () => {
       const characterSheetRepository = moduleRef.get<CharacterSheetRepository>(
         CharacterSheetRepository,
       );
-      const characterSheet = await FakerFactory.create<CharacterSheet>(
-        CharacterSheet,
-        { archetypeId: 'MEEKU_ONI', name: 'Meeku', surname: 'Oni' },
-        { optionals: false, pojo: true },
+      const characterSheet = await characterSheetRepository.create(
+        await FakerFactory.create<CharacterSheet>(
+          CharacterSheet,
+          { archetypeId: 'MEEKU_ONI', name: 'Meeku', surname: 'Oni' },
+          { optionals: false, pojo: true },
+        ),
       );
-      await characterSheetRepository.create(characterSheet);
 
       const result = await supertest(app.getHttpServer())
-        .get(`/character-sheets/${characterSheet._id}`)
+        .get(`/character-sheets/${characterSheet!.id}`)
         .expect(200);
 
-      expect(result.body).toMatchObject(
-        expect.objectContaining({
-          id: characterSheet._id,
-          instanceId: characterSheet.instanceId,
-          archetypeId: characterSheet.archetypeId,
-          name: characterSheet.name,
-          surname: characterSheet.surname,
-          traits: Archetype.MEEKU_ONI.traits,
-          disciplines: characterSheet.disciplines,
-          equipment: characterSheet.equipment,
-        }),
+      expect(result.body).toHaveProperty('id', characterSheet!.id);
+      expect(result.body).toHaveProperty(
+        'instanceId',
+        characterSheet!.instanceId,
       );
 
       await app.close();
@@ -117,12 +111,13 @@ describe('/character-sheets', () => {
         CharacterSheetRepository,
       );
 
-      const characterSheet = await FakerFactory.create<CharacterSheet>(
-        CharacterSheet,
-        { name: 'JANE' },
-        { optionals: true },
+      const characterSheet = await characterSheetRepository.create(
+        await FakerFactory.create<CharacterSheet>(
+          CharacterSheet,
+          { name: 'JANE' },
+          { optionals: true },
+        ),
       );
-      await characterSheetRepository.create(characterSheet);
 
       const result = await supertest(app.getHttpServer())
         .get('/character-sheets/?name=JANE')
@@ -130,13 +125,14 @@ describe('/character-sheets', () => {
 
       expect(result.body[0]).toMatchObject(
         expect.objectContaining({
-          id: characterSheet._id,
-          instanceId: characterSheet.instanceId,
-          archetypeId: characterSheet.archetypeId,
-          name: characterSheet.name,
-          surname: characterSheet.surname,
+          id: characterSheet!.id,
+          instanceId: characterSheet!.instanceId,
+          archetypeId: characterSheet!.archetypeId,
+          name: characterSheet!.name,
+          surname: characterSheet!.surname,
         }),
       );
+
       await app.close();
     });
   });

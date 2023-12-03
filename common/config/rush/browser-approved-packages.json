@@ -396,7 +396,7 @@
     },
     {
       "name": "bson",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "chokidar",

@@ -2,7 +2,7 @@ import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { MongooseModule, asyncForEach } from '@cats-cradle/nestjs-modules';
-import { FakerFactory } from '@cats-cradle/faker-factory';
+import { FakerFactory, toPojo } from '@cats-cradle/faker-factory';
 import { v4 } from 'uuid';
 import {
   AchievementSchema,
@@ -94,22 +94,20 @@ describe('/achievements', () => {
         AchievementRepository,
       );
 
-      const achievement = await FakerFactory.create<Achievement>(
-        Achievement,
-        {},
-        { optionals: false },
+      const achievement = await achievementRepository.create(
+        await FakerFactory.create<Achievement>(
+          Achievement,
+          {},
+          { optionals: false },
+        ),
       );
-      await achievementRepository.create(achievement);
 
       const result = await supertest(app.getHttpServer())
-        .get(`/achievements/?id=${achievement._id}`)
+        .get(`/achievements/?id=${achievement!.id}`)
         .expect(200);
 
       expect(result.body[0]).toMatchObject(
-        expect.objectContaining({
-          id: achievement._id,
-          createdAt: achievement.createdAt,
-        }),
+        expect.objectContaining(achievement?.toJSON()),
       );
 
       await app.close();

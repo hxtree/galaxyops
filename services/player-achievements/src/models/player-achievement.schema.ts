@@ -1,15 +1,9 @@
 /* eslint-disable func-names */
 import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Schema as MongooseSchema, Types } from 'mongoose';
-import {
-  IsDateString,
-  IsNumber,
-  IsUuidV4,
-} from '@cats-cradle/validation-schemas';
+import { Document } from 'mongoose';
+import { IsNumber, IsUuidV4 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
-import { Transform } from 'class-transformer';
-import { UUID } from 'mongodb';
 import { Achievement } from './achievement.schema';
 
 @Schema({ collection: 'player-achievements' })
@@ -34,8 +28,8 @@ export class PlayerAchievement extends BaseEntity {
   })
   public progress: number;
 
-  constructor(partial: NonNullable<PlayerAchievement>) {
-    super(partial);
+  constructor(partial: NonNullable<Omit<PlayerAchievement, BaseEntityProps>>) {
+    super();
     Object.assign(this, partial);
   }
 }
@@ -49,7 +43,6 @@ export const PlayerAchievementSchema = SchemaFactory.createForClass(
     virtuals: true,
     versionKey: false,
     transform(doc: any, ret: any) {
-      ret.id = ret._id;
       delete ret._id;
     },
   })

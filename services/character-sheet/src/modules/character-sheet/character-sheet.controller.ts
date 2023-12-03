@@ -10,7 +10,6 @@ import {
   ParseUUIDPipe,
   VERSION_NEUTRAL,
 } from '@nestjs/common';
-import { v4 } from 'uuid';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheet } from '../../models/character-sheet.schema';
 import { CreateCharacterSheetDto } from './create-character-sheet-dto';
@@ -65,10 +64,6 @@ export class CharacterSheetController {
     @Body() createCharacterSheetDto: CreateCharacterSheetDto,
   ): Promise<any> {
     const characterSheet = new CharacterSheet({
-      _id:
-        createCharacterSheetDto._id !== undefined
-          ? createCharacterSheetDto._id
-          : v4(),
       instanceId: createCharacterSheetDto.instanceId,
       name: createCharacterSheetDto.name,
       surname: createCharacterSheetDto.surname,
@@ -89,10 +84,11 @@ export class CharacterSheetController {
       },
       equipment: [],
       affiliation: [],
-      updatedAt: new Date().toISOString(),
-      createdAt: new Date().toISOString(),
     });
 
-    return this._characterSheetRepository.create(characterSheet);
+    const character =
+      await this._characterSheetRepository.create(characterSheet);
+
+    return character!.toJSON();
   }
 }

@@ -5,9 +5,9 @@ import {
   closeInMongodConnection,
   rootMongooseTestModule,
 } from '../mongoose/mongoose.module';
-import { BookSchema } from './books/book.schema';
-import { BooksRepository } from './books/book.repository';
-import { CreateBookDto } from './books/create-book.dto';
+import { BookSchema } from '../__tests__/books/book.schema';
+import { BooksRepository } from '../__tests__/books/book.repository';
+import { CreateBookDto } from '../__tests__/books/create-book.dto';
 
 describe('MongooseModule', () => {
   let app: INestApplication;

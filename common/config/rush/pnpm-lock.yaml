@@ -240,6 +240,9 @@ importers:
       '@types/validator':
         specifier: ~13.7.10
         version: 13.7.10
+      bson:
+        specifier: ~6.2.0
+        version: 6.2.0
       class-transformer:
         specifier: 0.5.1
         version: 0.5.1

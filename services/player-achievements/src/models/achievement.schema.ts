@@ -1,8 +1,6 @@
 /* eslint-disable func-names */
-import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
-import {
-  Prop, Schema, SchemaFactory, raw,
-} from '@nestjs/mongoose';
+// import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
+import { Prop, Schema, SchemaFactory, raw } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import {
   ArrayMaxSize,
@@ -14,8 +12,8 @@ import {
   ValidateNested,
 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
+import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
 import { TrophyCriteriaEmbeddable } from './trophy-criteria-embeddable.schema';
-// import { ObjectId, UUID } from 'bson';
 
 @Schema({ collection: 'achievements' })
 export class Achievement extends BaseEntity {
@@ -54,8 +52,8 @@ export class Achievement extends BaseEntity {
   @Prop([])
   public trophyCriteria: TrophyCriteriaEmbeddable[];
 
-  constructor(partial: NonNullable<Achievement>) {
-    super(partial);
+  constructor(partial: NonNullable<Omit<Achievement, BaseEntityProps>>) {
+    super();
     Object.assign(this, partial);
   }
 }
@@ -69,7 +67,6 @@ export const AchievementSchema = SchemaFactory.createForClass(Achievement)
     virtuals: true,
     versionKey: false,
     transform(doc: any, ret: any) {
-      ret.id = ret._id;
       delete ret._id;
     },
   })
@@ -85,8 +82,3 @@ export const AchievementSchema = SchemaFactory.createForClass(Achievement)
 AchievementSchema.index({
   id: 1,
 });
-
-// TODO on what layer to handle this?
-// if (partial._id) {
-//   partial._id = new UUID(partial._id) as unknown as ObjectId;
-// }

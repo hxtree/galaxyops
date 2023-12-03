@@ -5,8 +5,9 @@ import {
   UpdateQuery,
   UpdateWithAggregationPipeline,
   Document,
-  ObjectId,
 } from 'mongoose';
+import { UUID, ObjectId } from 'bson';
+import { v4 } from 'uuid';
 
 export type UpdateModelResponse = {
   matchedCount: number;
@@ -21,13 +22,14 @@ export type DeleteModelResponse = {
   deleted: boolean;
 };
 
-export class Repository<T extends Document> {
+export class BaseRepository<T extends Document> {
   constructor(private readonly model: Model<T>) {}
 
   async create(doc: object): Promise<T | null> {
-    // eslint-disable-next-line new-cap
-    const createdEntity = new this.model(doc);
-    return await createdEntity.save();
+    const createdEntity = new this.model({ ...doc });
+    await createdEntity.save();
+
+    return createdEntity;
   }
 
   async findOne(

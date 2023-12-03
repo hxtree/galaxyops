@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Repository } from '@cats-cradle/nestjs-modules';
+import { BaseRepository } from '@cats-cradle/nestjs-modules';
 import { TInstanceDocument, Instance } from './instance.schema';
 
 @Injectable()
-export class InstanceRepository extends Repository<TInstanceDocument> {
+export class InstanceRepository extends BaseRepository<TInstanceDocument> {
   constructor(
     // @ts-ignore
     @InjectModel(Instance.name)

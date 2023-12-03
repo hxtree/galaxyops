@@ -8,8 +8,6 @@ import {
   VERSION_NEUTRAL,
   Delete,
 } from '@nestjs/common';
-import { IsUuidV4Validator } from '@cats-cradle/validation-schemas';
-import { v4 } from 'uuid';
 import { CreateDto } from './create.dto';
 import { PlayerAchievementRepository } from '../../models/player-achievement.repository';
 import { PlayerAchievement } from '../../models/player-achievement.schema';
@@ -46,20 +44,17 @@ export class PlayerAchievementController {
       id: body.achievementId,
     });
 
-    const playerAchievement = this._playerAchievementRepository.create(
+    const playerAchievement = await this._playerAchievementRepository.create(
       new PlayerAchievement({
-        _id: IsUuidV4Validator(body.id) ? body.id : v4(),
         playerId: body.playerId,
         achievementId: achievement!._id,
         progress: body.progress,
-        updatedAt: new Date().toISOString(),
-        createdAt: new Date().toISOString(),
       }),
     );
 
     // TODO publish event
 
-    return playerAchievement;
+    return playerAchievement?.toJSON();
   }
 
   @Delete()
