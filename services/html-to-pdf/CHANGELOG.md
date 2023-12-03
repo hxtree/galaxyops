@@ -1,6 +1,11 @@
 # Change Log - @cats-cradle/html-to-pdf
 
-This log was last generated on Mon, 13 Nov 2023 02:11:53 GMT and should not be manually modified.
+This log was last generated on Sun, 03 Dec 2023 08:29:38 GMT and should not be manually modified.
+
+## 1.0.16
+Sun, 03 Dec 2023 08:29:38 GMT
+
+_Version update only_
 
 ## 1.0.15
 Mon, 13 Nov 2023 02:11:53 GMT
