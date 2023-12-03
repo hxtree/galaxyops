@@ -1,5 +1,6 @@
 /* eslint-disable func-names */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { BaseEntity } from '@cats-cradle/nestjs-modules';
 import { Document } from 'mongoose';
 import {
   Type,
@@ -15,7 +16,6 @@ import {
   ArrayMaxSize,
   IsArray,
 } from '@cats-cradle/validation-schemas';
-import { v4 as uuidv4 } from 'uuid';
 
 // instance_id, used in other services to ensure
 // one player can only make calls to a single instance.
@@ -27,19 +27,7 @@ import { v4 as uuidv4 } from 'uuid';
 // 2 | c
 
 @Schema({ collection: 'authentication-service' })
-export class User {
-  // @Transform(({ value }) => value.toString())
-  // _id: ObjectId;
-
-  @IsUUID()
-  @Prop({
-    type: String,
-    default: function genUUID() {
-      return uuidv4();
-    },
-  })
-  public _id!: string;
-
+export class User extends BaseEntity {
   @IsUUID()
   @Prop()
   public instanceId!: string;
@@ -66,7 +54,6 @@ export const UserSchema = SchemaFactory.createForClass(User)
     virtuals: true,
     versionKey: false,
     transform(doc, ret) {
-      ret.id = ret._id;
       delete ret._id;
     },
   })

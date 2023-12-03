@@ -1,28 +1,15 @@
-import {
-  IsNumber,
-  IsOptional,
-  IsUuidV4,
-} from '@cats-cradle/validation-schemas';
+import { IsNumber, IsUuidV4 } from '@cats-cradle/validation-schemas';
 import { ApiProperty } from '@nestjs/swagger';
 import { v4 } from 'uuid';
 
 export class CreateDto {
-  @IsUuidV4()
-  @IsOptional()
-  @ApiProperty({
-    description: 'The playerAchievementId',
-    default: v4(),
-    type: String,
-  })
-    id: string;
-
   @IsUuidV4()
   @ApiProperty({
     description: 'The playerId',
     default: v4(),
     type: String,
   })
-    playerId: string;
+  playerId: string;
 
   @IsUuidV4()
   @ApiProperty({
@@ -30,7 +17,7 @@ export class CreateDto {
     default: v4(),
     type: String,
   })
-    achievementId: string;
+  achievementId: string;
 
   @IsNumber()
   @ApiProperty({
@@ -38,5 +25,5 @@ export class CreateDto {
     default: 0,
     type: Number,
   })
-    progress: number;
+  progress: number;
 }

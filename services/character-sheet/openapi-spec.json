@@ -547,7 +547,7 @@
             "required": true,
             "in": "path",
             "schema": {
-              "default": "c91ad7cb-0655-48b1-ae00-011fb5491d84",
+              "default": "a281ad2d-f1b1-4004-918f-704609287eb0",
               "type": "string"
             }
           }
@@ -586,11 +586,11 @@
         "properties": {
           "_id": {
             "type": "string",
-            "default": "db9ea5b6-44b4-4b1b-84c5-e236284661ec"
+            "default": "d24cbb2e-a137-48c8-b485-62d082578a7b"
           },
           "instanceId": {
             "type": "string",
-            "default": "be4b7bd0-3825-4ff2-b8d1-ecbe89611d29"
+            "default": "a345f379-b55e-4da1-973c-f8127b2292e7"
           },
           "archetypeId": {
             "type": "string",
@@ -645,13 +645,9 @@
       "CreateSpawnDto": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "default": "968a7989-3d80-417e-b4ca-1e20fbdf96ca"
-          },
           "instanceId": {
             "type": "string",
-            "default": "46336cc6-1e24-4e02-ae9e-f28613d64419"
+            "default": "c39a6a2a-1321-4447-b8a9-3d4b4a4fc90e"
           },
           "place": {
             "type": "string",
@@ -667,14 +663,14 @@
             "description": "Generate a spawn for a designated area. Requestor is responsible for only making request for areas where party is presence to avoid computing irrelevant spawns."
           }
         },
-        "required": ["id", "instanceId", "place"]
+        "required": ["instanceId", "place"]
       },
       "UpdateAffiliationDto": {
         "type": "object",
         "properties": {
           "characterSheetId": {
             "type": "string",
-            "default": "bbf279b5-10ca-4f44-9f58-ba42df0ab810"
+            "default": "acf77073-0249-4077-8c3f-e06e05f78191"
           },
           "affiliationId": {
             "type": "string",

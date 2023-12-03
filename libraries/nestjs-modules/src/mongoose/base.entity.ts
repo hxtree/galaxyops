@@ -1,18 +1,21 @@
 /* eslint-disable func-names */
 import { Prop } from '@nestjs/mongoose';
+import { Schema } from 'mongoose';
 import { IsDateString, IsUuidV4 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
+import { UUID } from 'bson';
 
 export type BaseEntityProps = '_id' | 'updatedAt' | 'createdAt';
 
 export class BaseEntity {
+  // @Transform(({ value }) => value.toString())
+  // _id: ObjectId;
   @IsUuidV4()
   @Prop({
-    required: true,
-    type: String,
-    default: () => v4(),
+    type: Schema.Types.UUID,
+    default: () => new UUID(),
   })
-  public _id!: string; // TODO can this be id: ?
+  _id!: string;
 
   @IsDateString()
   @Prop({
@@ -28,8 +31,4 @@ export class BaseEntity {
     default: () => new Date().toISOString(),
   })
   public createdAt: string;
-
-  constructor(partial: NonNullable<BaseEntity>) {
-    Object.assign(this, partial);
-  }
 }

@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Repository } from '@cats-cradle/nestjs-modules';
+import { BaseRepository } from '@cats-cradle/nestjs-modules';
 import {
   TCharacterSheetDocument,
   CharacterSheet,
 } from './character-sheet.schema';
 
 @Injectable()
-export class CharacterSheetRepository extends Repository<TCharacterSheetDocument> {
+export class CharacterSheetRepository extends BaseRepository<TCharacterSheetDocument> {
   constructor(
     // @ts-ignore
     @InjectModel(CharacterSheet.name)

@@ -90,21 +90,18 @@ describe('/instances', () => {
     });
 
     it('should find result if exists', async () => {
-      const instance = await FakerFactory.create<Instance>(
-        Instance,
-        {},
-        { optionals: false },
+      const instance = await instanceRepository.create(
+        await FakerFactory.create<Instance>(Instance, {}, { optionals: false }),
       );
-      await instanceRepository.create(instance);
 
       const result = await supertest(app.getHttpServer())
-        .get(`/instances/?id=${instance._id}`)
+        .get(`/instances/?id=${instance!.id}`)
         .expect(200);
 
       expect(result.body[0]).toMatchObject(
         expect.objectContaining({
-          id: instance._id,
-          createdAt: instance.createdAt,
+          id: instance!.id,
+          createdAt: instance!.createdAt,
         }),
       );
     });
@@ -149,7 +146,7 @@ describe('/instances', () => {
   });
 
   describe('POST /instances', () => {
-    it('should create an instance when id not supplied', async () => {
+    it('should create an instance', async () => {
       const body = await FakerFactory.create<CreateDto>(
         CreateDto,
         {},
@@ -162,32 +159,10 @@ describe('/instances', () => {
         .expect(201);
 
       const instance = await instanceRepository.findOneOrFail({
-        id: body.id,
+        id: response.body.id,
       });
 
       expect(response.body.id).toEqual(instance?._id);
-      expect(instance?.createdAt).toBeDefined();
-    });
-
-    it('should create an instance when id supplied', async () => {
-      const body = await FakerFactory.create<CreateDto>(
-        CreateDto,
-        {},
-        { optionals: true, pojo: true },
-      );
-
-      const response = await supertest(app.getHttpServer())
-        .post('/instances')
-        .send(body)
-        .expect(201);
-
-      const instance = await instanceRepository.findOneOrFail({
-        id: body.id,
-      });
-
-      expect(response.body.id).toEqual(body.id);
-      expect(response.body.id).toEqual(instance?._id);
-      expect(instance?._id).toEqual(body.id);
       expect(instance?.createdAt).toBeDefined();
     });
   });

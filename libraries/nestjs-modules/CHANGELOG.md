@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/nestjs-modules
 
-This log was last generated on Tue, 14 Nov 2023 04:01:09 GMT and should not be manually modified.
+This log was last generated on Sun, 03 Dec 2023 08:29:38 GMT and should not be manually modified.
+
+## 0.2.15
+Sun, 03 Dec 2023 08:29:38 GMT
+
+### Patches
+
+- add base entity
 
 ## 0.2.13
 Tue, 14 Nov 2023 04:01:09 GMT

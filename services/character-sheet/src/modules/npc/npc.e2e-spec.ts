@@ -42,21 +42,18 @@ describe('/spawns', () => {
     it('should create random spawn for given area', async () => {
       const { app } = await createTestingModule();
 
-      const body = await FakerFactory.create<CreateSpawnDto>(CreateSpawnDto);
-      body.place = 'ENDERS_LAND';
+      const body = await FakerFactory.create<CreateSpawnDto>(CreateSpawnDto, {
+        place: 'ENDERS_LAND',
+      });
 
       const result = await supertest(app.getHttpServer())
         .post('/npcs')
         .send(body)
         .expect(201);
 
-      expect(result.body).toMatchObject(
-        expect.objectContaining({
-          id: body.id,
-          instanceId: body.instanceId,
-          archetypeId: 'SENSITIVE_PLANT',
-        }),
-      );
+      expect(result.body).toHaveProperty('id');
+      expect(result.body).toHaveProperty('instanceId', body.instanceId);
+      expect(result.body).toHaveProperty('archetypeId', 'SENSITIVE_PLANT');
 
       await app.close();
     });

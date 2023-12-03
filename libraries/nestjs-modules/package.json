@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/nestjs-modules",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
@@ -53,7 +53,8 @@
     "@types/uuid": "~9.0.6",
     "luxon": "~3.3.0",
     "mongodb-memory-server-global": "8.13.0",
-    "@cats-cradle/validation-schemas": "workspace:*"
+    "@cats-cradle/validation-schemas": "workspace:*",
+    "bson": "~6.2.0"
   },
   "devDependencies": {
     "@types/jest": "29.5.8",

@@ -105,6 +105,11 @@
       }
     },
     "/v1/instances": {
+      "get": {
+        "operationId": "InstanceController_findAll",
+        "parameters": [],
+        "responses": { "200": { "description": "" } }
+      },
       "post": {
         "operationId": "InstanceController_create",
         "parameters": [],
@@ -133,6 +138,11 @@
       }
     },
     "/instances": {
+      "get": {
+        "operationId": "InstanceController_findAll",
+        "parameters": [],
+        "responses": { "200": { "description": "" } }
+      },
       "post": {
         "operationId": "InstanceController_create",
         "parameters": [],
@@ -162,9 +172,9 @@
     }
   },
   "info": {
-    "title": "@cats-cradles/audio-service",
-    "description": "An API for the audio service",
-    "version": "1.0",
+    "title": "@cats-cradle/instances",
+    "description": "An API for maintaining game instances",
+    "version": "0.0.1",
     "contact": {}
   },
   "tags": [],
@@ -174,13 +184,13 @@
       "CreateDto": {
         "type": "object",
         "properties": {
-          "id": {
+          "playerId": {
             "type": "string",
             "description": "The instance id",
-            "default": "91873547-65db-4a72-8cd0-ce3307b59afa"
+            "default": "849b2e22-a525-4924-9d61-7e880a82575f"
           }
         },
-        "required": ["id"]
+        "required": ["playerId"]
       },
       "DeleteDto": {
         "type": "object",
@@ -188,7 +198,7 @@
           "id": {
             "type": "string",
             "description": "The instance id",
-            "default": "7b83c2cc-80b4-408f-a11a-6453d2ff1d56"
+            "default": "6dc929d8-7ab5-489d-ab68-70d241a02fcd"
           }
         },
         "required": ["id"]

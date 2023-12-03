@@ -2,7 +2,7 @@
   "name": "@cats-cradle/email-service",
   "description": "A service for sending emails",
   "module": "commonjs",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "scripts": {
     "dev": "nest start --debug --watch",
     "build": "tsc",

@@ -8,12 +8,6 @@ export class CreateSpawnDto {
   @ApiProperty({
     default: v4(),
   })
-  public id?: string;
-
-  @IsUuidV4()
-  @ApiProperty({
-    default: v4(),
-  })
   public instanceId: string;
 
   @IsEnum(PlaceIds)
