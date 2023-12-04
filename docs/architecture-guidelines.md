@@ -1,42 +1,58 @@
 # Architecture Guidelines
 
-The guide below describes guidelines applicable to repository.
+In the realm of architecture, it's not merely about constructing individual
+buildings; it's about designing the city. Similarly, our architecture guidelines
+go beyond the confines of a single project; they lay the groundwork for the
+entire landscape.
+
+The guide below outlines principles and standards applicable to this repository,
+ensuring that each piece contributes harmoniously to the overall cityscape we're
+constructing.
 
 ## MACH Architecture
 
 Overall this repository adheres to a Microservices-based, API-first,
 Cloud-native, and Headless architecture.
 
-## Infrastructure as a Service
+## Language
 
-AWS was selected a single IaaS provider. This project assumes it will fail
-before AWS does. Vendor lock-in/buy-in allows leveraging numerous
-undifferentiated services. For this project that outweighs being cloud agnostic.
-
-## Monorepo
-
-The project is designed as a monorepo instead of polyrepo. Apps will be mostly
-serverless microservices and a monorepo is believed to help streamline changes.
-
-## Monorepo Manager
-
-Microsoft backed Rush was selected over Nx, Lerna, Turbo, etc. for monorepo
-management.
-
-## Typescript
+### Typescript
 
 Javascript was selected as a base language for microservices due to its
 performance and omnipresence. Microsoft backed Typescript compiling is used for
 Javascript. Typescript offers typehinting, easies in maintenance, and code
 readability.
 
-## File Structure
+## Monorepo
+
+The project is designed as a monorepo instead of polyrepo. Apps will be mostly
+serverless microservices and a monorepo is believed to help streamline changes.
+
+### Monorepo Manager
+
+Microsoft backed Rush was selected over Nx, Lerna, Turbo, etc. for monorepo
+management.
+
+## Database
+
+Within our architecture, every service employing a database maintains its
+dedicated database instance. Specifically, we rely on MongoDB, leveraging the
+Mongoose library for interaction. In the context of microservices, we
+consciously avoid the use of an Object-Relational Mapping (ORM) layer,
+considering it an unnecessary abstraction. Instead of utilizing ObjectId for
+identification, we opt for UUID type 4. This choice not only enhances security
+but also mitigates the exposure of details such as when the ID was generated and
+processor-related information.
+
+## Folder & File Structure
 
 Parent project folder structure mimics that of Microsoft Rushstack. As for
 individual package files, generally files that change together should stay
 together. Structure code by feature.
 
-## Package Manager
+## Package Management
+
+### Package Manager
 
 PNPM was selected for as the Javascript package manager over Yarn and NPM. Yarn
 workspaces are not supported in Rush, which would be the primary motivation
@@ -49,7 +65,15 @@ Rush Heft was selected to build Typescript projects mainly because it
 accompanies Rush. Heft Node Rig was selected as many projects will have same
 configuration.
 
-## AWS CDK
+## Infrastructure
+
+### Infrastructure as a Service
+
+AWS was selected a single IaaS provider. This project assumes it will fail
+before AWS does. Vendor lock-in/buy-in allows leveraging numerous
+undifferentiated services. For this project that outweighs being cloud agnostic.
+
+### IaC / AWS CDK
 
 AWS CDK was selected instead of
 [Serverless Framework](https://github.com/serverless-stack/serverless-stack).
@@ -58,7 +82,7 @@ layer. SST live lambda development works using serverless website. There does
 not appear to be a need to add a reliance on SST. SST future plans, incentives,
 and kickback are questionable.
 
-## AWS SSO
+### AWS SSO
 
 AWS SSO was selected for authentication over hard coded credentials for easy of
 maintenance and security.
@@ -103,7 +127,7 @@ with partially everything needed for a 3D game. Building a for Android is much
 easier using Unity but Unreal can do it too. As to increase velocity but
 avoiding the need to write indifferent 3D code, Unreal was selected.
 
-## 3D
+### 3D
 
 The original tech demo engine was built as an isometric game engine. However
 creating a isometric sprite map for each object becomes time consuming and
