@@ -9,7 +9,7 @@ export class CreateDto {
     default: v4(),
     type: String,
   })
-  playerId: string;
+    playerId: string;
 
   @IsUuidV4()
   @ApiProperty({
@@ -17,7 +17,7 @@ export class CreateDto {
     default: v4(),
     type: String,
   })
-  achievementId: string;
+    achievementId: string;
 
   @IsNumber()
   @ApiProperty({
@@ -25,5 +25,5 @@ export class CreateDto {
     default: 0,
     type: Number,
   })
-  progress: number;
+    progress: number;
 }

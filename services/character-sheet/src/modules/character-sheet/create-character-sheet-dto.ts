@@ -13,13 +13,6 @@ export class CreateCharacterSheetDto {
     default: v4(),
   })
   @IsUuidV4()
-  @IsOptional()
-  public _id?: string;
-
-  @ApiProperty({
-    default: v4(),
-  })
-  @IsUuidV4()
   public instanceId!: string;
 
   @ApiProperty({ enum: ArchetypeIds, default: 'DARUMA_NAKAMURA' })

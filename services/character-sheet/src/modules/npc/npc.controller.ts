@@ -56,8 +56,7 @@ export class NpcController {
       affiliation: [],
     });
 
-    const character =
-      await this._characterSheetRepository.create(characterSheet);
+    const character = await this._characterSheetRepository.create(characterSheet);
 
     return character!.toJSON();
   }

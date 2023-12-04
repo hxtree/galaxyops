@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@cats-cradle/create-artifact": "2.0.0",
-    "@cats-cradle/eslint-config": "1.0.7",
+    "@cats-cradle/eslint-config": "1.0.8",
     "@cats-cradle/faker-factory": "workspace:*",
     "@microsoft/tsdoc": "~0.13.2",
     "@nestjs/testing": "9.2.1",
@@ -74,6 +74,6 @@
     "@cats-cradle/create-bundle": "1.0.7",
     "@shelf/jest-mongodb": "~4.1.7",
     "mongodb-memory-server-global": "8.13.0",
-    "mongoose": "6.9.1"
+    "mongoose": "6.11.3"
   }
 }

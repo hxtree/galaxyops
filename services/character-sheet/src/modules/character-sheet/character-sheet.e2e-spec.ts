@@ -145,15 +145,16 @@ describe('/character-sheets', () => {
         CharacterSheetRepository,
       );
 
-      const characterSheet = await FakerFactory.create<CreateCharacterSheetDto>(
-        CreateCharacterSheetDto,
-        {},
-        { optionals: true },
+      const characterSheet = await characterSheetRepository.create(
+        await FakerFactory.create<CreateCharacterSheetDto>(
+          CreateCharacterSheetDto,
+          {},
+          { optionals: true },
+        ),
       );
-      await characterSheetRepository.create(characterSheet);
 
       const result = await supertest(app.getHttpServer())
-        .delete(`/character-sheets/${characterSheet._id}`)
+        .delete(`/character-sheets/${characterSheet!._id}`)
         .expect(200);
 
       expect(result.body).toMatchObject(

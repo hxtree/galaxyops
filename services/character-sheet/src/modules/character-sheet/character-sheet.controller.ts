@@ -20,10 +20,8 @@ export class CharacterSheetController {
   constructor(private _characterSheetRepository: CharacterSheetRepository) {}
 
   @Get(':id')
-  async findOne(@Param('id', new ParseUUIDPipe()) id: string): Promise<any> {
-    const result = await this._characterSheetRepository.findOne({
-      id,
-    });
+  async findById(@Param('id', new ParseUUIDPipe()) id: string): Promise<any> {
+    const result = await this._characterSheetRepository.findById(id);
     if (!result) {
       throw new NotFoundException();
     }
@@ -86,8 +84,7 @@ export class CharacterSheetController {
       affiliation: [],
     });
 
-    const character =
-      await this._characterSheetRepository.create(characterSheet);
+    const character = await this._characterSheetRepository.create(characterSheet);
 
     return character!.toJSON();
   }

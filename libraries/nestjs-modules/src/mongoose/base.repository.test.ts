@@ -1,32 +1,34 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MongooseModule } from '@nestjs/mongoose';
 import { INestApplication } from '@nestjs/common';
+import { IsUuidV4Validator } from '@cats-cradle/validation-schemas';
 import {
   closeInMongodConnection,
   rootMongooseTestModule,
-} from '../mongoose/mongoose.module';
-import { PersonSchema } from '../__tests__/persons/person.schema';
+} from './mongoose.module';
+import { Person, PersonSchema } from '../__tests__/persons/person.schema';
 import { PersonRepository } from '../__tests__/persons/person.repository';
-import {
-  IsDateString,
-  IsUuidV4Validator,
-} from '@cats-cradle/validation-schemas';
+import { StudentRepository } from '../__tests__/persons/student.repository';
+import { Student, StudentSchema } from '../__tests__/persons/student.schema';
 
 describe('MongooseRepository', () => {
   let app: INestApplication;
-  let personsRepository: PersonRepository;
+  let personRepository: PersonRepository;
+  let studentRepository: StudentRepository;
 
   beforeEach(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [
         rootMongooseTestModule(),
         MongooseModule.forFeature([{ name: 'Person', schema: PersonSchema }]),
+        MongooseModule.forFeature([{ name: 'Student', schema: StudentSchema }]),
       ],
-      providers: [PersonRepository],
+      providers: [PersonRepository, StudentRepository],
     }).compile();
 
     app = moduleRef.createNestApplication();
-    personsRepository = await moduleRef.get<PersonRepository>(PersonRepository);
+    personRepository = await moduleRef.get<PersonRepository>(PersonRepository);
+    studentRepository = await moduleRef.get<StudentRepository>(StudentRepository);
     await app.init();
   });
 
@@ -37,7 +39,7 @@ describe('MongooseRepository', () => {
 
   describe('create', () => {
     it('should create item', async () => {
-      const person = await personsRepository.create({
+      const person = await personRepository.create({
         firstName: 'Jane',
         lastName: 'Doe',
       });
@@ -50,14 +52,81 @@ describe('MongooseRepository', () => {
     });
   });
 
+  describe('findById', () => {
+    it('should populate given props', async () => {
+      const person = await personRepository.create(
+        new Person({
+          firstName: 'Jane',
+          lastName: 'Doe',
+        }),
+      );
+
+      const student = await studentRepository.create(
+        new Student({
+          studentNo: 'M-44993',
+          person: person!.id,
+        }),
+      );
+
+      const result = await studentRepository.findById(student!._id, {
+        populate: 'person',
+      });
+
+      const date = new Date();
+      expect(result).toBeTruthy();
+      expect(IsUuidV4Validator(result!._id)).toBe(true);
+      expect(result?.createdAt).toContain(date.getFullYear().toString());
+      expect(result?.updatedAt).toContain(date.getFullYear().toString());
+      expect(result.person).toBeTruthy();
+      expect(IsUuidV4Validator(result.person!._id)).toBe(true);
+      expect(result.person?.firstName).toBe('Jane');
+      expect(result.person?.lastName).toBe('Doe');
+      expect(result.person?.createdAt).toContain(date.getFullYear().toString());
+      expect(result.person?.updatedAt).toContain(date.getFullYear().toString());
+    });
+  });
+
   describe('findOne', () => {
+    it('should populate given props', async () => {
+      const person = await personRepository.create(
+        new Person({
+          firstName: 'Jane',
+          lastName: 'Doe',
+        }),
+      );
+
+      const student = await studentRepository.create(
+        new Student({
+          studentNo: 'M-44993',
+          person: person!.id,
+        }),
+      );
+
+      const result = await studentRepository.findOne(
+        { id: student!._id },
+        { populate: 'person' },
+      );
+
+      const date = new Date();
+      expect(result).toBeTruthy();
+      expect(IsUuidV4Validator(result!._id)).toBe(true);
+      expect(result?.createdAt).toContain(date.getFullYear().toString());
+      expect(result?.updatedAt).toContain(date.getFullYear().toString());
+      expect(result.person).toBeTruthy();
+      expect(IsUuidV4Validator(result.person!._id)).toBe(true);
+      expect(result.person?.firstName).toBe('Jane');
+      expect(result.person?.lastName).toBe('Doe');
+      expect(result.person?.createdAt).toContain(date.getFullYear().toString());
+      expect(result.person?.updatedAt).toContain(date.getFullYear().toString());
+    });
+
     it('should find item in repository by id', async () => {
-      const person = await personsRepository.create({
+      const person = await personRepository.create({
         firstName: 'Jane',
         lastName: 'Doe',
       });
 
-      const result = await personsRepository.findOne({
+      const result = await personRepository.findOne({
         id: person!.id,
       });
 
@@ -66,12 +135,12 @@ describe('MongooseRepository', () => {
     });
 
     it('should find item in repository by property', async () => {
-      const person = await personsRepository.create({
+      const person = await personRepository.create({
         firstName: 'Jane',
         lastName: 'Doe',
       });
 
-      const result = await personsRepository.findOne({
+      const result = await personRepository.findOne({
         firstName: 'Jane',
       });
 
@@ -82,12 +151,12 @@ describe('MongooseRepository', () => {
 
   describe('findOneOrFail', () => {
     it('should find item in repository', async () => {
-      await personsRepository.create({
+      await personRepository.create({
         firstName: 'Jane',
         lastName: 'Doe',
       });
 
-      const result = await personsRepository.findOneOrFail({
+      const result = await personRepository.findOneOrFail({
         firstName: 'Jane',
       });
 
@@ -99,7 +168,7 @@ describe('MongooseRepository', () => {
       expect.assertions(1);
 
       try {
-        const result = await personsRepository.findOneOrFail({
+        const result = await personRepository.findOneOrFail({
           firstName: 'Jon',
         });
       } catch (error) {

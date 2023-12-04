@@ -10,7 +10,7 @@ export function toPojoInternal(obj: any, visited: Set<any>): any {
   visited.add(obj);
 
   if (Array.isArray(obj)) {
-    const resultArray = obj.map(item => toPojoInternal(item, visited));
+    const resultArray = obj.map((item) => toPojoInternal(item, visited));
     visited.delete(obj);
     return resultArray;
   }

@@ -28,7 +28,7 @@
     "@pnpm/find-workspace-dir": "~6.0.0"
   },
   "devDependencies": {
-    "@cats-cradle/eslint-config": "1.0.7",
+    "@cats-cradle/eslint-config": "1.0.8",
     "eslint": "8.52.0",
     "@pnpm/types": "^8.5.0",
     "@types/fs-extra": "^9.0.13",
