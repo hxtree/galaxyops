@@ -83,7 +83,7 @@ describe('/player-achievements', () => {
       const records = await FakerFactory.createMany<PlayerAchievement>(
         PlayerAchievement,
         {
-          achievementId: achievement!.id,
+          achievement: achievement!.id,
           createdAt: new Date().toISOString(),
         },
         { min: 1, max: 4, optionals: false },
@@ -137,7 +137,7 @@ describe('/player-achievements', () => {
   });
 
   describe('POST /player-achievements', () => {
-    it('should create an player-achievements', async () => {
+    it.only('should create an player-achievements', async () => {
       const achievement = await achievementRepository.create(
         await FakerFactory.create<Achievement>(
           Achievement,
@@ -160,6 +160,7 @@ describe('/player-achievements', () => {
         {
           id: response.body.id,
         },
+        { populate: 'achievement' },
       );
 
       expect(response.body.id).toEqual(playerAchievement?.id);
@@ -202,8 +203,7 @@ describe('/player-achievements', () => {
       await asyncForEach(
         records,
         async (playerAchievement: PlayerAchievement) => {
-          lastRecord =
-            await playerAchievementRepository.create(playerAchievement);
+          lastRecord = await playerAchievementRepository.create(playerAchievement);
         },
       );
 

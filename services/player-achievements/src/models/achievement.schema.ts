@@ -1,6 +1,7 @@
 /* eslint-disable func-names */
-// import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
-import { Prop, Schema, SchemaFactory, raw } from '@nestjs/mongoose';
+import {
+  Prop, Schema, SchemaFactory, raw,
+} from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import {
   ArrayMaxSize,

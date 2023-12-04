@@ -477,7 +477,7 @@
     },
     "/character-sheets/{id}": {
       "get": {
-        "operationId": "CharacterSheetController_findOne",
+        "operationId": "CharacterSheetController_findById",
         "parameters": [
           {
             "name": "id",
@@ -547,7 +547,7 @@
             "required": true,
             "in": "path",
             "schema": {
-              "default": "a281ad2d-f1b1-4004-918f-704609287eb0",
+              "default": "ac44e16d-2fd7-40eb-95f9-3ff3137021b5",
               "type": "string"
             }
           }
@@ -584,13 +584,9 @@
       "CreateCharacterSheetDto": {
         "type": "object",
         "properties": {
-          "_id": {
-            "type": "string",
-            "default": "d24cbb2e-a137-48c8-b485-62d082578a7b"
-          },
           "instanceId": {
             "type": "string",
-            "default": "a345f379-b55e-4da1-973c-f8127b2292e7"
+            "default": "6a6be6f8-da87-45e2-9ecc-35e04b70cfd0"
           },
           "archetypeId": {
             "type": "string",
@@ -640,14 +636,14 @@
           "name": { "type": "string", "default": "Daruma" },
           "surname": { "type": "string", "default": "Nakamura" }
         },
-        "required": ["_id", "instanceId", "archetypeId", "name", "surname"]
+        "required": ["instanceId", "archetypeId", "name", "surname"]
       },
       "CreateSpawnDto": {
         "type": "object",
         "properties": {
           "instanceId": {
             "type": "string",
-            "default": "c39a6a2a-1321-4447-b8a9-3d4b4a4fc90e"
+            "default": "7ee7ef85-4a8c-4578-aeae-9129c5d6882f"
           },
           "place": {
             "type": "string",
@@ -670,7 +666,7 @@
         "properties": {
           "characterSheetId": {
             "type": "string",
-            "default": "acf77073-0249-4077-8c3f-e06e05f78191"
+            "default": "fb463bac-5232-410f-a026-fa1e90ea826b"
           },
           "affiliationId": {
             "type": "string",

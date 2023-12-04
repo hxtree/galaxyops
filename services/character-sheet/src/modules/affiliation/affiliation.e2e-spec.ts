@@ -82,19 +82,17 @@ describe('/affiliations', () => {
       CharacterSheetRepository,
     );
 
-    const characterSheet = await FakerFactory.create<CharacterSheet>(
-      CharacterSheet,
-      {
+    const characterSheet = await characterSheetRepository.create(
+      await FakerFactory.create<CharacterSheet>(CharacterSheet, {
         archetypeId: 'MEEKU_ONI',
         affiliation: [{ affiliationId: 'THE_CATS', amount: 10 }],
-      },
+      }),
     );
-    await characterSheetRepository.create(characterSheet);
 
     const body = await FakerFactory.create<UpdateAffiliationDto>(
       UpdateAffiliationDto,
       {
-        characterSheetId: characterSheet._id,
+        characterSheetId: characterSheet!.id,
         affiliationId: 'THE_CATS',
         value: 10,
         operation: Operation.ADD,

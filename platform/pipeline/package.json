@@ -33,7 +33,7 @@
     "@rushstack/node-core-library": "~3.55.2"
   },
   "devDependencies": {
-    "@cats-cradle/eslint-config": "1.0.7",
+    "@cats-cradle/eslint-config": "1.0.8",
     "aws-cdk-lib": "2.95.0",
     "constructs": "^10.2.70",
     "@types/jest": "29.5.8",

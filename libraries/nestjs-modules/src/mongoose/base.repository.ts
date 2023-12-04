@@ -6,14 +6,13 @@ import {
   UpdateWithAggregationPipeline,
   Document,
 } from 'mongoose';
-import { UUID, ObjectId } from 'bson';
-import { v4 } from 'uuid';
+import { UUID } from 'bson';
 
 export type UpdateModelResponse = {
   matchedCount: number;
   modifiedCount: number;
   acknowledged: boolean;
-  upsertedId: unknown | ObjectId;
+  upsertedId: unknown | UUID;
   upsertedCount: number;
 };
 
@@ -22,10 +21,25 @@ export type DeleteModelResponse = {
   deleted: boolean;
 };
 
+export type FindOptions = {
+  skip?: number;
+  limit?: number;
+  populate?: string[] | string;
+};
+
 export class BaseRepository<T extends Document> {
   constructor(private readonly model: Model<T>) {}
 
+  async populate(result: T[], option: any) {
+    return this.model.populate(result, option);
+  }
+
+  async aggregate(option: any) {
+    return this.model.aggregate(option);
+  }
+
   async create(doc: object): Promise<T | null> {
+    // eslint-disable-next-line new-cap
     const createdEntity = new this.model({ ...doc });
     await createdEntity.save();
 
@@ -34,16 +48,20 @@ export class BaseRepository<T extends Document> {
 
   async findOne(
     filter: FilterQuery<T>,
-    options?: QueryOptions,
-  ): Promise<T | null> {
-    return this.model.findOne(filter, options);
+    options?: FindOptions,
+  ): Promise<T | null | any> {
+    if (options?.populate) {
+      return this.model.findOne(filter).populate(options.populate).exec();
+    }
+
+    return this.model.findOne(filter);
   }
 
   async findOneOrFail(
     filter: FilterQuery<T>,
-    options?: QueryOptions,
-  ): Promise<T | null> {
-    const result = await this.model.findOne(filter, options);
+    options?: FindOptions,
+  ): Promise<T | null | any> {
+    const result = await this.findOne(filter, options);
 
     if (result === null) {
       return Promise.reject(new Error('No results found'));
@@ -53,10 +71,18 @@ export class BaseRepository<T extends Document> {
   }
 
   async find(filter: FilterQuery<T>, options?: QueryOptions): Promise<T[]> {
+    // TODO add
+    // .skip(skip)
+    // .limit(limit)
+
     return this.model.find(filter, null, options);
   }
 
-  async findById(id: string): Promise<T | null> {
+  async findById(id: string, options?: FindOptions): Promise<T | null | any> {
+    if (options?.populate) {
+      return this.model.findById(id).populate(options.populate).exec();
+    }
+
     return this.model.findById(id);
   }
 

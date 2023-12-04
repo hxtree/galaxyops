@@ -145,8 +145,7 @@ CharacterSheetSchema.virtual('menu').get(function () {
   const skills: any = [];
 
   this.disciplines.forEach((disciplineEmbeddable: DisciplineEmbeddable) => {
-    const discipline: Discipline.Type =
-      Discipline[disciplineEmbeddable.disciplineId];
+    const discipline: Discipline.Type = Discipline[disciplineEmbeddable.disciplineId];
 
     if (discipline.progression === undefined) {
       return;
@@ -159,8 +158,8 @@ CharacterSheetSchema.virtual('menu').get(function () {
         );
 
         if (
-          progression.level >= disciplineLevel &&
-          skills.indexOf(progression.skill) === -1
+          progression.level >= disciplineLevel
+          && skills.indexOf(progression.skill) === -1
         ) {
           skills.push(progression.skill);
         }
@@ -192,8 +191,7 @@ CharacterSheetSchema.virtual('skills').get(function () {
   const skills: any = [];
 
   this.disciplines.forEach((disciplineEmbeddable: DisciplineEmbeddable) => {
-    const discipline: Discipline.Type =
-      Discipline[disciplineEmbeddable.disciplineId];
+    const discipline: Discipline.Type = Discipline[disciplineEmbeddable.disciplineId];
 
     if (discipline.progression === undefined) {
       return;
@@ -206,8 +204,8 @@ CharacterSheetSchema.virtual('skills').get(function () {
         );
 
         if (
-          progression.level >= disciplineLevel &&
-          skills.indexOf(progression.skill) === -1
+          progression.level >= disciplineLevel
+          && skills.indexOf(progression.skill) === -1
         ) {
           skills.push(progression.skill);
         }

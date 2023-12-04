@@ -46,7 +46,7 @@
     }
   ],
   "dependencies": {
-    "@cats-cradle/eslint-config": "1.0.7",
+    "@cats-cradle/eslint-config": "1.0.8",
     "@emotion/react": "~11.11.1",
     "@emotion/styled": "11.11.0",
     "@mui/material": "~5.12.2",

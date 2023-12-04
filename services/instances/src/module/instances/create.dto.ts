@@ -10,5 +10,5 @@ export class CreateDto {
     default: v4(),
     type: String,
   })
-  playerId: string;
+    playerId: string;
 }

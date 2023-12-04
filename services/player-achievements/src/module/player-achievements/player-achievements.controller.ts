@@ -47,7 +47,7 @@ export class PlayerAchievementController {
     const playerAchievement = await this._playerAchievementRepository.create(
       new PlayerAchievement({
         playerId: body.playerId,
-        achievementId: achievement!._id,
+        achievement: achievement!._id,
         progress: body.progress,
       }),
     );

@@ -1,7 +1,7 @@
 /* eslint-disable func-names */
 import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Schema as MongooseSchema } from 'mongoose';
 import { IsNumber, IsUuidV4 } from '@cats-cradle/validation-schemas';
 import { v4 } from 'uuid';
 import { Achievement } from './achievement.schema';
@@ -16,10 +16,11 @@ export class PlayerAchievement extends BaseEntity {
   public playerId: string;
 
   @IsUuidV4()
-  // @Transform(({ value }) => new UUID(value) as unknown as MongooseSchema.Types.ObjectId)
-  // @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'Achievement' })
-  @Prop({ type: String, ref: 'Achievement' })
-  public achievementId: Achievement;
+  @Prop({
+    type: MongooseSchema.Types.UUID,
+    ref: 'Achievement',
+  })
+  public achievement: MongooseSchema.Types.UUID | Achievement;
 
   @IsNumber()
   @Prop({

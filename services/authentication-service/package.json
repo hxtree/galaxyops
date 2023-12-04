@@ -47,7 +47,7 @@
     "rxjs": "7.8.1",
     "source-map-support": "~0.5.21",
     "uuid": "~9.0.1",
-    "mongoose": "6.9.1",
+    "mongoose": "6.11.3",
     "@nestjs/passport": "9.0.0",
     "aws-sdk": "~2.1469.0",
     "@nestjs/jwt": "~10.1.1",
@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@cats-cradle/create-artifact": "2.0.0",
-    "@cats-cradle/eslint-config": "1.0.7",
+    "@cats-cradle/eslint-config": "1.0.8",
     "@cats-cradle/faker-factory": "workspace:*",
     "@microsoft/tsdoc": "~0.13.2",
     "@nestjs/testing": "9.2.1",
