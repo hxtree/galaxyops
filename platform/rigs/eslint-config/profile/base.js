@@ -13,6 +13,7 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   root: true,
   rules: {
+    '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-inferrable-types': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
