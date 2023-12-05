@@ -2,7 +2,7 @@
   "changes": [
     {
       "packageName": "@cats-cradle/eslint-config",
-      "comment": "turn off null assert",
+      "comment": "adjust settings",
       "type": "patch"
     }
   ],

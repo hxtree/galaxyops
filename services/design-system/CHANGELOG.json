@@ -2,6 +2,18 @@
   "name": "@cats-cradle/design-system",
   "entries": [
     {
+      "version": "0.4.0",
+      "tag": "@cats-cradle/design-system_v0.4.0",
+      "date": "Tue, 05 Dec 2023 05:58:32 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "switch from tsdx/webpack/rollup to vite"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.3.6",
       "tag": "@cats-cradle/design-system_v0.3.6",
       "date": "Tue, 14 Nov 2023 04:01:09 GMT",

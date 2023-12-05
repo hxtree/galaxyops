@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/design-system
 
-This log was last generated on Tue, 14 Nov 2023 04:01:09 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Dec 2023 05:58:32 GMT and should not be manually modified.
+
+## 0.4.0
+Tue, 05 Dec 2023 05:58:32 GMT
+
+### Minor changes
+
+- switch from tsdx/webpack/rollup to vite
 
 ## 0.3.6
 Tue, 14 Nov 2023 04:01:09 GMT

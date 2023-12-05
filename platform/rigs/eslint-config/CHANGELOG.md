@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/eslint-config
 
-This log was last generated on Mon, 13 Nov 2023 02:11:53 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Dec 2023 05:58:32 GMT and should not be manually modified.
+
+## 1.0.9
+Tue, 05 Dec 2023 05:58:32 GMT
+
+### Patches
+
+- turn off null assert
 
 ## 1.0.7
 Mon, 13 Nov 2023 02:11:53 GMT

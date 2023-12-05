@@ -23,7 +23,6 @@ import {
   faDice,
   faAddressCard,
   IconButton,
-  AppBarProps as MuiAppBarProps,
   AppBar as MuiAppBar,
   useTheme,
   faChevronCircleRight,
@@ -51,7 +50,8 @@ const Main = styled('main', { shouldForwardProp: prop => prop !== 'open' })<{
   }),
 }));
 
-interface AppBarProps extends MuiAppBarProps {
+// TODO extend MuiAppBarProps
+interface AppBarProps {
   open?: boolean;
 }
 

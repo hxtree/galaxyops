@@ -1,7 +1,7 @@
 import { Typography as MuiTypography, TypographyProps } from '@mui/material';
 import { styled } from '@mui/system';
 
-export const Typography = styled(MuiTypography)<TypographyProps>(() => ({
+export const Typography: any = styled(MuiTypography)<TypographyProps>(() => ({
   '&.center': {
     textAlign: 'center',
   },

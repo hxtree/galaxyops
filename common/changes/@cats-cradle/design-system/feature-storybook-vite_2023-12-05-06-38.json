@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/design-system",
+      "comment": "add mui components",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/design-system"
+}

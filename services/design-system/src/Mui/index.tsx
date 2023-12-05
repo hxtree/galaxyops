@@ -10,6 +10,15 @@ export * from './Link';
 export * from './Layout';
 export * from './Alert';
 
+export type SelectChangeEvent<T = string> =
+  | (Event & {
+      target: {
+        value: T;
+        name: string;
+      };
+    })
+  | React.ChangeEvent<HTMLInputElement>;
+
 export {
   Drawer,
   CssBaseline,
@@ -28,13 +37,12 @@ export {
   Grid,
   Stack,
   Container,
-  SelectChangeEvent,
   OutlinedInput,
   MenuItem,
   ListItemIcon,
   ListItemText,
   styled,
   AppBar,
-  AppBarProps,
+  // AppBarProps,
   useTheme,
 } from '@mui/material';

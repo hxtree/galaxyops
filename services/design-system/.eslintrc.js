@@ -3,4 +3,5 @@ module.exports = {
   parserOptions: {
     tsconfigRootDir: __dirname,
   },
+  ignorePatterns: ['<tsconfigRootDir>/.storybook/main.ts', './vite.config.ts'],
 };
