@@ -1,5 +1,4 @@
 import type { StorybookConfig } from '@storybook/react-vite';
-import path, { join, dirname } from 'path';
 
 const config: StorybookConfig = {
   stories: ['../stories/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -9,11 +8,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     {
       name: '@storybook/addon-styling',
-      options: {
-        sass: {
-          implementation: require('sass'),
-        },
-      },
+      options: {},
     },
   ],
   typescript: {

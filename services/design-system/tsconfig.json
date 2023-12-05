@@ -26,8 +26,10 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "allowJs": true,
+    "declarationMap": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
+    "baseUrl": ".",
     "typeRoots": ["./node_modules/@types"]
   },
   "sourceMap": true,
