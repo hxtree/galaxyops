@@ -10,4 +10,3 @@ export * from './FileUpload';
 export * from './Gauge/Gauge';
 export * from './Meter';
 export * from './NonInteractiveLink';
-export * from './ApiClient';

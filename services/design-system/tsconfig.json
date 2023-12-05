@@ -5,7 +5,7 @@
     "outDir": "./dist",
     "rootDir": ".",
     "target": "es2020",
-    "lib": ["es2020"],
+    "lib": ["es2020", "dom"],
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
@@ -14,6 +14,7 @@
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
+    "skipLibCheck": true,
     "strictNullChecks": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
@@ -27,8 +28,15 @@
     "allowJs": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["./node_modules/@types", "./@types"]
+    "typeRoots": ["./node_modules/@types"]
   },
   "sourceMap": true,
-  "include": ["./package.json", "./stacks/", "./src/", "./bin"]
+  "include": [
+    "./package.json",
+    "./stacks/",
+    "./src/",
+    "./bin",
+    "./vite.config.ts",
+    "./.storybook/main.ts"
+  ]
 }

@@ -127,6 +127,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@fortawesome/fontawesome-svg-core",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@fortawesome/free-brands-svg-icons",
       "allowedCategories": [ "apis" ]
     },
@@ -275,6 +279,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@storybook/addon-actions",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/addon-essentials",
       "allowedCategories": [ "apis" ]
     },
@@ -295,6 +303,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@storybook/addon-onboarding",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/addon-styling",
       "allowedCategories": [ "apis" ]
     },
@@ -307,11 +319,23 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@storybook/builder-vite",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/cli",
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@storybook/node-logger",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@storybook/react",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@storybook/react-vite",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -320,6 +344,10 @@
     },
     {
       "name": "@storybook/testing-library",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@testing-library/dom",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -345,6 +373,10 @@
     {
       "name": "@vendia/serverless-express",
       "allowedCategories": [ "apis", "category-platform", "platform", "platform-package" ]
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "archiver",
@@ -439,12 +471,16 @@
       "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform", "platform-package" ]
     },
     {
+      "name": "copyfiles",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "currency.js",
       "allowedCategories": [ "libraries" ]
     },
     {
       "name": "dayjs",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "dotenv",
@@ -495,6 +531,10 @@
       "allowedCategories": [ "category-platform", "platform" ]
     },
     {
+      "name": "eslint-plugin-storybook",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "express",
       "allowedCategories": [ "apis", "category-platform", "libraries", "platform", "platform-package" ]
     },
@@ -516,6 +556,10 @@
     },
     {
       "name": "husky",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "intl",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -643,6 +687,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "react-day-picker",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "react-dom",
       "allowedCategories": [ "apis" ]
     },
@@ -651,11 +699,19 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "react-intl",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "react-is",
       "allowedCategories": [ "apis" ]
     },
     {
       "name": "react-redux",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "react-router-dom",
       "allowedCategories": [ "apis" ]
     },
     {
@@ -684,7 +740,7 @@
     },
     {
       "name": "sass",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "size-limit",
@@ -745,6 +801,14 @@
     {
       "name": "uuid",
       "allowedCategories": [ "apis", "category-platform", "libraries", "platform", "platform-package" ]
+    },
+    {
+      "name": "vite",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "vite-plugin-checker",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "web-vitals",

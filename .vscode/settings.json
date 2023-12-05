@@ -99,5 +99,5 @@
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "livePreview.defaultPreviewPath": "/services/weather-control/public/index.html"
+  "livePreview.defaultPreviewPath": "/services/design-system/storybook-static/index.html"
 }
