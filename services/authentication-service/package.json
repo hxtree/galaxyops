@@ -54,7 +54,8 @@
     "passport-jwt": "~4.0.1",
     "@types/passport-jwt": "~3.0.10",
     "@aws-sdk/client-ssm": "3.10.0",
-    "@aws-sdk/client-cognito-identity-provider": "3.10.0"
+    "@aws-sdk/client-cognito-identity-provider": "3.10.0",
+    "@aws-sdk/types": "3.10.0"
   },
   "devDependencies": {
     "@cats-cradle/create-artifact": "2.0.0",
