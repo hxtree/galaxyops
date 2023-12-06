@@ -9,6 +9,7 @@ export * from './LoadingButton';
 export * from './Link';
 export * from './Layout';
 export * from './Alert';
+export * from './AppBar';
 
 export type SelectChangeEvent<T = string> =
   | (Event & {
@@ -42,7 +43,5 @@ export {
   ListItemIcon,
   ListItemText,
   styled,
-  AppBar,
-  // AppBarProps,
   useTheme,
 } from '@mui/material';
