@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/luck-by-dice",
+      "comment": "add diagram",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/luck-by-dice"
+}

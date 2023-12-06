@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/authentication-service",
+      "comment": "upgrade aws sdk v2 to v3",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@cats-cradle/authentication-service"
+}

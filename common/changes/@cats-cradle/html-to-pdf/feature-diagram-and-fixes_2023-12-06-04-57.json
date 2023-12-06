@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/html-to-pdf",
+      "comment": "add diagram",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/html-to-pdf"
+}
