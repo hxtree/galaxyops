@@ -39,14 +39,11 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: rush install
-        run: node common/scripts/install-run-rush.js install
+      - name: rush update
+        run: node common/scripts/install-run-rush.js update
 
       - name: rush build
         run: node common/scripts/install-run-rush.js build
-
-      - name: rush update
-        run: node common/scripts/install-run-rush.js update
 
       - name: push changes
         run: |
