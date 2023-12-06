@@ -13,8 +13,7 @@
   },
   "scripts": {
     "deploy": "gh-pages -d build",
-    "storybook": "storybook dev -p 6006 -s public",
-    "dev": "storybook dev -p 6006",
+    "dev": "storybook dev -p 6006 -s public",
     "build": "tsc && storybook build",
     "build:all": "rush build -t .",
     "test": "",
