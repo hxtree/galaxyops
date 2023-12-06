@@ -15,6 +15,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "@aws-sdk/client-cognito-identity-provider",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@aws-sdk/client-s3",
       "allowedCategories": [ "apis", "libraries" ]
     },
@@ -25,6 +29,10 @@
     {
       "name": "@aws-sdk/client-sns",
       "allowedCategories": [ "apis", "libraries" ]
+    },
+    {
+      "name": "@aws-sdk/client-ssm",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "@aws-sdk/types",

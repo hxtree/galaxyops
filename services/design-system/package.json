@@ -11,13 +11,35 @@
   "engines": {
     "node": ">=10"
   },
+  "scripts": {
+    "deploy": "gh-pages -d build",
+    "storybook": "storybook dev -p 6006 -s public",
+    "dev": "storybook dev -p 6006",
+    "build": "tsc",
+    "build:sb": "storybook build",
+    "build:all": "rush build -t .",
+    "test": "",
+    "watch": "tsc -w",
+    "lint": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix",
+    "lint:ci": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix-dry-run",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "cdk:bootstrap": "cdk bootstrap",
+    "cdk:diff": "cdk diff",
+    "cdk:synth": "cdk synth",
+    "cdk:hotswap": "cdk deploy --hotswap",
+    "cdk:deploy": "storybook build && cdk deploy",
+    "cdk:watch": "cdk watch",
+    "cdk:destroy": "cdk destroy",
+    "depcheck": "npx depcheck"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "~6.4.2",
-    "@fortawesome/free-solid-svg-icons": "~6.4.2",
-    "ts-node": "10.9.1"
+    "@fortawesome/free-solid-svg-icons": "~6.4.2"
   },
   "devDependencies": {
+    "ts-node": "10.9.1",
     "@fortawesome/react-fontawesome": "~0.2.0",
     "react-google-charts": "~4.0.1",
     "@cats-cradle/eslint-config": "1.0.8",
@@ -91,27 +113,5 @@
       "path": "dist/design-system.esm.js",
       "limit": "10 KB"
     }
-  ],
-  "scripts": {
-    "deploy": "gh-pages -d build",
-    "storybook": "storybook dev -p 6006 -s public",
-    "dev": "storybook dev -p 6006",
-    "build": "tsc",
-    "build:sb": "storybook build",
-    "build:all": "rush build -t .",
-    "test": "",
-    "watch": "tsc -w",
-    "lint": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix",
-    "lint:ci": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix-dry-run",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "cdk:bootstrap": "cdk bootstrap",
-    "cdk:diff": "cdk diff",
-    "cdk:synth": "cdk synth",
-    "cdk:hotswap": "cdk deploy --hotswap",
-    "cdk:deploy": "storybook build && cdk deploy",
-    "cdk:watch": "cdk watch",
-    "cdk:destroy": "cdk destroy",
-    "depcheck": "npx depcheck"
-  }
+  ]
 }
