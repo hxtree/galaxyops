@@ -1,24 +1,33 @@
 import { Injectable } from '@nestjs/common';
-import * as AWS from 'aws-sdk';
+import { SSM } from '@aws-sdk/client-ssm';
+import {
+  CognitoIdentityProviderClient,
+  SignUpCommand,
+  ConfirmForgotPasswordCommand,
+  ForgotPasswordCommand,
+  InitiateAuthCommand,
+  AdminDeleteUserCommand,
+} from '@aws-sdk/client-cognito-identity-provider';
 
 @Injectable()
 export class CognitoService {
-  private ssm: AWS.SSM;
+  private ssm: SSM;
 
-  private readonly cognitoIdentityServiceProvider: AWS.CognitoIdentityServiceProvider;
+  private region: string;
+
+  private cognitoClient: CognitoIdentityProviderClient;
 
   constructor() {
-    AWS.config.region = process.env.AWS_REGION ?? 'us-east-2';
-    this.ssm = new AWS.SSM();
-
-    this.cognitoIdentityServiceProvider = new AWS.CognitoIdentityServiceProvider();
+    this.region = process.env.AWS_REGION ?? 'us-east-2';
+    this.ssm = new SSM({ region: this.region });
+    this.cognitoClient = new CognitoIdentityProviderClient({
+      region: this.region,
+    });
   }
 
   async fetchUserPoolId(): Promise<string> {
     const parameterName = 'cognito-user-pool-id';
-    const response = await this.ssm
-      .getParameter({ Name: parameterName })
-      .promise();
+    const response = await this.ssm.getParameter({ Name: parameterName });
 
     if (response && response.Parameter && response.Parameter.Value) {
       return response.Parameter.Value;
@@ -29,9 +38,7 @@ export class CognitoService {
 
   async fetchUserPoolClientId(): Promise<string> {
     const parameterName = 'cognito-user-pool-client-id';
-    const response = await this.ssm
-      .getParameter({ Name: parameterName })
-      .promise();
+    const response = await this.ssm.getParameter({ Name: parameterName });
 
     if (response && response.Parameter && response.Parameter.Value) {
       return response.Parameter.Value;
@@ -41,28 +48,26 @@ export class CognitoService {
   }
 
   async authenticate(username: string, password: string): Promise<any> {
-    const params = {
+    const command = new InitiateAuthCommand({
       AuthFlow: 'USER_PASSWORD_AUTH',
       ClientId: await this.fetchUserPoolClientId(),
       AuthParameters: {
         USERNAME: username,
         PASSWORD: password,
       },
-    };
+    });
 
-    const response = await this.cognitoIdentityServiceProvider
-      .initiateAuth(params)
-      .promise();
+    const response = await this.cognitoClient.send(command);
     return response.AuthenticationResult;
   }
 
   async forgotPassword(username: string): Promise<void> {
-    const params = {
+    const command = new ForgotPasswordCommand({
       ClientId: await this.fetchUserPoolClientId(),
       Username: username,
-    };
+    });
 
-    await this.cognitoIdentityServiceProvider.forgotPassword(params).promise();
+    await this.cognitoClient.send(command);
   }
 
   async resetPassword(
@@ -70,34 +75,40 @@ export class CognitoService {
     code: string,
     newPassword: string,
   ): Promise<void> {
-    const params = {
+    const command = new ConfirmForgotPasswordCommand({
       ClientId: await this.fetchUserPoolClientId(),
       ConfirmationCode: code,
       Password: newPassword,
       Username: username,
-    };
-
-    await this.cognitoIdentityServiceProvider
-      .confirmForgotPassword(params)
-      .promise();
+    });
+    await this.cognitoClient.send(command);
   }
 
   async signUp(username: string, password: string): Promise<void> {
-    const params = {
-      ClientId: await this.fetchUserPoolClientId(),
-      Password: password,
-      Username: username,
-    };
+    const email = '';
+    const nickname = '';
+    const phoneNumber = '';
 
-    await this.cognitoIdentityServiceProvider.signUp(params).promise();
+    const command = new SignUpCommand({
+      ClientId: await this.fetchUserPoolClientId(),
+      Username: username,
+      Password: password,
+      UserAttributes: [
+        { Name: 'email', Value: email },
+        { Name: 'nickname', Value: nickname },
+        { Name: 'phone_number', Value: phoneNumber },
+      ],
+    });
+
+    await this.cognitoClient.send(command);
   }
 
   async deleteUser(userId: string): Promise<void> {
-    const params = {
+    const command = new AdminDeleteUserCommand({
       UserPoolId: await this.fetchUserPoolId(),
       Username: userId,
-    };
+    });
 
-    await this.cognitoIdentityServiceProvider.adminDeleteUser(params).promise();
+    await this.cognitoClient.send(command);
   }
 }

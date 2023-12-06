@@ -18,6 +18,9 @@
    * After modifying this field, it's recommended to run "rush update --full" so that the package manager
    * will recalculate all version selections.
    */
+   "allowedAlternativeVersions": {
+    "@aws-sdk/types": ["3.10.0","3.433.0"]
+   },
   "preferredVersions": {
     /**
      * When someone asks for "^1.0.0" make sure they get "1.2.3" when working in this repo,

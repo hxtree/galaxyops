@@ -1,5 +1,7 @@
 # @cats-cradle/design-system
 
+![CloudFormation Diagram](tree-designer.png)
+
 This
 [design system](https://storybook.js.org/tutorials/design-systems-for-developers/)
 contains common components for use in other front end applications. It contains
@@ -28,6 +30,4 @@ The following properties are essential in allowing the component to be reusable:
 
 - [Material UI](https://mui.com/material-ui/)
 - [Design System For Developers Architecture](https://storybook.js.org/tutorials/design-systems-for-developers/react/en/architecture/)
-- [TSDX](https://tsdx.io/)
-- [TSDX Repo](https://github.com/jaredpalmer/tsdx#optimization)
 - [Create Design System](https://www.youtube.com/watch?v=qSkHRVLcj6U)
