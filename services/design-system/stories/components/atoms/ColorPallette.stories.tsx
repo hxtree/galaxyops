@@ -14,6 +14,10 @@ export const Default = () => (
     divider={<Divider orientation="vertical" flexItem />}
     spacing={2}
   >
-    <div style={{ background: '#000' }}></div>
+    <div className="bgBrandDark" style={{ width: '3rem', height:'3em' }}></div>
+    <div className="bgBrandLight" style={{ width: '3rem', height:'3em' }}></div>
+    <div className="bgBrandPrimary" style={{ width: '3rem', height:'3em' }}></div>
+    <div className="bgBrandSecondary" style={{ width: '3rem', height:'3em' }}></div>
+    <div className="bgBrandTertiary" style={{ width: '3rem', height:'3em' }}></div>
   </Stack>
 );

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Paper } from '../../src';
+import './page-footer.scss';
 
 export type PageFooterProps = {
   siteOwner: string;
   links: string[];
-}
+};
 
 export const PageFooter = (props: PageFooterProps) => {
   const { links, siteOwner, ...otherProps } = props;
@@ -12,8 +12,10 @@ export const PageFooter = (props: PageFooterProps) => {
   const year = new Date().getFullYear();
 
   return (
-    <Paper>
-      <p>&copy; {year} {siteOwner} . All Rights Reserved.</p>
-    </Paper>
+    <footer className='page-footer'>
+
+      <hr/>
+      <p>&copy; {year} {siteOwner}. All Rights Reserved.</p>
+    </footer>
   );
 };

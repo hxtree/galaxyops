@@ -1,11 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import MUIBox, { BoxProps as MUIBoxProps } from '@mui/material/Box';
 import MUIStack, { StackProps as MUIStackProps } from '@mui/material/Stack';
 import MUIGrid, { GridProps as MUIGridProps } from '@mui/material/Grid';
-import MUIPaper, { PaperProps as MUIPaperProps } from '@mui/material/Paper';
 import styled from 'styled-components';
+import MUIPaper, { PaperProps as MUIPaperProps } from '@mui/material/Paper';
 
-// import { styled } from '@mui/material/styles';
+export type PaperProps = {} & MUIPaperProps;
+
+export const Paper = (props: PaperProps) => {
+  const { children, ...muiProps } = props;
+  return <MUIPaper {...muiProps}>{children}</MUIPaper>;
+};
 
 export type StackProps = {} & MUIStackProps;
 export const Stack = (props: StackProps) => {
@@ -25,13 +30,7 @@ export const Grid = (props: GridProps) => {
   return <MUIGrid {...muiProps}>{children}</MUIGrid>;
 };
 
-export type PaperProps = {} & MUIPaperProps;
-export const Paper = (props: PaperProps) => {
-  const { children, ...muiProps } = props;
-  return <MUIPaper {...muiProps}>{children}</MUIPaper>;
-};
-
-export type ItemProps = {} & MUIPaperProps;
+export type ItemProps = {} & PaperProps;
 // export const Item = (props: PaperProps) => {
 //   const { children, ...muiProps } = props;
 //   return <MUIPaper {...muiProps}>{children}</MUIPaper>;

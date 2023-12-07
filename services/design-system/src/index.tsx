@@ -11,3 +11,5 @@ export * from './Gauge/Gauge';
 export * from './Meter';
 export * from './PageFooter/PageFooter';
 export * from './NonInteractiveLink';
+
+export * from './ColorPallete';
