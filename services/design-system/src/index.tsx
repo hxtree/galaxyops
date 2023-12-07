@@ -9,4 +9,5 @@ export * from './CodeSnippet/CodeSnippet';
 export * from './FileUpload';
 export * from './Gauge/Gauge';
 export * from './Meter';
+export * from './PageFooter/PageFooter';
 export * from './NonInteractiveLink';
