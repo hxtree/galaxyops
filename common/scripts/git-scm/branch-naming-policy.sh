@@ -3,7 +3,7 @@ LC_ALL=C
 
 LOCAL_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
-VALID_BRANCH_REGEX="^(feature|bugfix|improvement|hotfix)\/[a-z0-9._-]+$"
+VALID_BRANCH_REGEX="^(feature|bugfix|improvement|hotfix|dependabot)\/[a-z0-9.\/_-]+$"
 
 message="Branch name does not adhere to : $VALID_BRANCH_REGEX. Rename branch to a valid name and try again."
 
