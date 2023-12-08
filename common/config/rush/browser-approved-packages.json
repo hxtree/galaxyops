@@ -648,7 +648,7 @@
     },
     {
       "name": "npm-run-all",
-      "allowedCategories": [ "libraries" ]
+      "allowedCategories": [ "apis", "libraries" ]
     },
     {
       "name": "openapi3-ts",
@@ -803,6 +803,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "tsup",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "typescript",
       "allowedCategories": [ "api-client", "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "platform-package", "rigs" ]
     },
@@ -816,6 +820,10 @@
     },
     {
       "name": "vite-plugin-checker",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "vite-plugin-dts",
       "allowedCategories": [ "apis" ]
     },
     {
