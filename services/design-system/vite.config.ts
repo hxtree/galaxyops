@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import Checker from 'vite-plugin-checker';
 import * as path from 'path';
 import dts from 'vite-plugin-dts';
+import packageJson from './package.json';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,6 +25,7 @@ export default defineConfig({
     rollupOptions: {
       external: ['react', 'react-dom', 'styled-components'],
       output: {
+        interop: 'compat',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
