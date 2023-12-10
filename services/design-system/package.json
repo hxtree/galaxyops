@@ -1,8 +1,8 @@
 {
   "name": "@cats-cradle/design-system",
   "private": false,
-  "version": "0.0.1",
-  "type": "module",
+  "version": "0.5.0",
+  "module": "commonjs",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "files": [
@@ -11,10 +11,13 @@
   "sideEffects": [
     "**/*.css"
   ],
+  "bin": {
+    "app": "bin/app.js"
+  },
   "scripts": {
-    "dev": "storybook dev -p 6006",
-    "build": "tsc --p ./tsconfig-build.json && vite build",
-    "build:storybook": "storybook build",
+    "dev": "storybook dev -p 6006 -s public",
+    "build": "tsc --build ./tsconfig-build.json && vite build",
+    "build:storybook": "tsc --p ./tsconfig-build.json && storybook build",
     "build:all": "rush build -t .",
     "test": "",
     "watch": "tsc -w",
@@ -39,9 +42,16 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "~6.4.2",
-    "@fortawesome/free-solid-svg-icons": "~6.4.2"
+    "@fortawesome/free-solid-svg-icons": "~6.4.2",
+    "@cats-cradle/base-nodejs": "workspace:*"
   },
   "devDependencies": {
+    "vite-plugin-checker": "0.6.2",
+    "react-day-picker": "8.9.1",
+    "react-intl": "6.5.5",
+    "react-router-dom": "6.20.1",
+    "@types/react-modal": "3.16.3",
+    "@types/styled-components": "~5.1.30",
     "react-google-charts": "~4.0.1",
     "@types/node": "20.9.0",
     "@types/react": "18.2.37",

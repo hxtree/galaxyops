@@ -1,6 +1,6 @@
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
-import { StackProps } from 'aws-cdk-lib';
+import { RemovalPolicy, StackProps } from 'aws-cdk-lib';
 import { Bucket, BucketAccessControl } from 'aws-cdk-lib/aws-s3';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import {
@@ -18,7 +18,9 @@ export class DesignSystemStack extends cdk.Stack {
 
     // s3 bucket
     const bucket = new Bucket(this, 'Bucket', {
+      bucketName: 'design-system',
       accessControl: BucketAccessControl.PRIVATE,
+      removalPolicy: RemovalPolicy.DESTROY,
     });
 
     const originAccessIdentity = new OriginAccessIdentity(
@@ -40,10 +42,10 @@ export class DesignSystemStack extends cdk.Stack {
     });
 
     // bucket resource
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const awsBucketResource = new BucketDeployment(this, 'BucketDeployment', {
+    new BucketDeployment(this, 'BucketDeployment', {
       destinationBucket: bucket,
       sources: [Source.asset('./storybook-static')],
+      retainOnDelete: false,
     });
 
     new cdk.CfnOutput(this, 'Domain Name', {
@@ -51,23 +53,23 @@ export class DesignSystemStack extends cdk.Stack {
     });
 
     // TODO assign to url
-    //     // const recordName = 'monitor';
-    //     // const domainName = 'ouxsoft.com';
+    // const recordName = 'monitor';
+    // const domainName = 'ouxsoft.com';
 
-    //     // const bucketWebsite = new s3.Bucket(this, 'BucketWebsite', {
-    //     //   bucketName: [recordName, domainName].join('.'), // www.example.com
-    //     //   publicReadAccess: true,
-    //     //   websiteIndexDocument: 'index.html',
-    //     // });
+    // const bucketWebsite = new s3.Bucket(this, 'BucketWebsite', {
+    //   bucketName: [recordName, domainName].join('.'), // www.example.com
+    //   publicReadAccess: true,
+    //   websiteIndexDocument: 'index.html',
+    // });
 
-    //     // const zone = route53.HostedZone.fromLookup(this, 'Zone', {domainName}); // example.com
+    // const zone = route53.HostedZone.fromLookup(this, 'Zone', {domainName}); // example.com
 
-    //     // new route53.ARecord(this, 'AliasRecord', {
-    //     //   zone,
-    //     //   recordName, // www
-    //     //   target: route53.RecordTarget.fromAlias(
-    //     //     new targets.BucketWebsiteTarget(bucketWebsite),
-    //     //   ),
-    //     // });
+    // new route53.ARecord(this, 'AliasRecord', {
+    //   zone,
+    //   recordName, // www
+    //   target: route53.RecordTarget.fromAlias(
+    //     new targets.BucketWebsiteTarget(bucketWebsite),
+    //   ),
+    // });
   }
 }

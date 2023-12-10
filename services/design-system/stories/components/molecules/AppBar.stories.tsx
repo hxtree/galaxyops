@@ -31,9 +31,7 @@ export const AppBarLight = (args: AppBarProps) =>
 
 AppBarLight.args = {
   position:"fixed",
-  style: {
-    backgroundColor: ''
-  }
+  theme: 'light',
 };
 
 export const AppBarDark = (args: AppBarProps) =>
@@ -60,7 +58,5 @@ export const AppBarDark = (args: AppBarProps) =>
 
 AppBarDark.args = {
   position:"fixed",
-  style: {
-    backgroundColor: '#000'
-  }
+  theme: 'dark',
 };

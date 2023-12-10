@@ -1,4 +1,5 @@
 export * from './components/Mui';
+export * from './components/AppBar/AppBar';
 export * from './components/Charts/GoogleChart';
 export * from './components/Icons/Icons';
 export * from './components/CodeSnippet/CodeSnippet';
@@ -7,4 +8,4 @@ export * from './components/Gauge/Gauge';
 export * from './components/Meter/Meter';
 export * from './components/PageFooter/PageFooter';
 export * from './components/NonInteractiveLink/NonInteractiveLink';
-export * from './components/ColorPallete';
+export * from './components/ColorPallette';

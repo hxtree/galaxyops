@@ -1,5 +1,8 @@
 # @cats-cradle/design-system
 
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](link
+to site)
+
 ![CloudFormation Diagram](tree-designer.png)
 
 This
@@ -8,8 +11,11 @@ contains common components for use in other front end applications. It contains
 a Storybook service that is deployed to empower designers. It also builds and
 publishes a package of those designs for use in other applications.
 
-**Features**: Builds dist library containing UI components. Aids in local
-development of UI components. Deploys a static design system website.
+**Features**:
+
+- Aids in local development of UI components.
+- Deploys a static design system website.
+- Front-end library containing UI components.
 
 ## Components
 

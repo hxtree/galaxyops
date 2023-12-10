@@ -1,20 +1,25 @@
+import Checker from 'vite-plugin-checker';
 import { defineConfig } from 'vite';
 import { extname, relative, resolve } from 'path';
 import { fileURLToPath } from 'node:url';
 import { glob } from 'glob';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
-import { libInjectCss } from 'vite-plugin-lib-inject-css';
-import packageJson from './package.json';
+import { peerDependencies } from './package.json';
+
+const externalPackages: string[] = [
+  'react/jsx-runtime',
+  ...Object.keys(peerDependencies || {}),
+];
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    libInjectCss(),
+    Checker({ typescript: true }),
     dts({
-      // insertTypesEntry: true,
-      // rollupTypes: true,
+      insertTypesEntry: true,
+      rollupTypes: true,
       include: ['src'],
     }),
   ],
@@ -26,17 +31,19 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime', '@emotion/react'],
+      external: externalPackages,
       input: Object.fromEntries(
         // https://rollupjs.org/configuration-options/#input
-        glob.sync('src/**/*.{ts,tsx}').map(file => [
-          // 1. The name of the entry point
-          // lib/nested/foo.js becomes nested/foo
-          relative('src', file.slice(0, file.length - extname(file).length)),
-          // 2. The absolute path to the entry file
-          // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
-          fileURLToPath(new URL(file, import.meta.url)),
-        ]),
+        // First the name of the entry point
+        // src/foo/bar.js becomes foo/bar
+        // Second the absolute path to the entry file
+        // src/foo/bar.ts becomes /project/src/foo/bar.ts
+        glob
+          .sync('src/**/*.{ts,tsx}')
+          .map(file => [
+            relative('src', file.slice(0, file.length - extname(file).length)),
+            fileURLToPath(new URL(file, import.meta.url)),
+          ]),
       ),
       output: {
         assetFileNames: 'assets/[name][extname]',
