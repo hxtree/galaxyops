@@ -1,4 +1,3 @@
-import React from 'react';
 import MUIBox, { BoxProps as MUIBoxProps } from '@mui/material/Box';
 import MUIStack, { StackProps as MUIStackProps } from '@mui/material/Stack';
 import MUIGrid, { GridProps as MUIGridProps } from '@mui/material/Grid';

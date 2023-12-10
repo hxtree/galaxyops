@@ -101,3 +101,5 @@ export const Typography: any = styled(MuiTypography)<TypographyProps>(() => ({
     fontSize: '1rem',
   },
 }));
+
+export default Typography;

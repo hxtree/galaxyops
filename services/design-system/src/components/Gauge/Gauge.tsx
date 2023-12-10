@@ -1,5 +1,3 @@
-import React from 'react';
-
 export enum OrientationType {
   RIGHT = 'RIGHT',
   LEFT = 'LEFT',

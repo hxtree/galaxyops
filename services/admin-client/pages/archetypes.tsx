@@ -6,8 +6,9 @@ import ArchetypeSelect from '../components/ArchetypeSelect';
 
 export default function Archetype() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <>
+     <main className={styles.main}>
+       <div className={styles.description}>
         <Container>
           <h1>Archetypes</h1>
           <p>
@@ -20,7 +21,8 @@ export default function Archetype() {
           </p>
           <ArchetypeSelect />
         </Container>
-      </div>
+       </div>
     </main>
+    </>
   );
 }

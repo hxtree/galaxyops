@@ -1,5 +1,3 @@
-import React from 'react';
-
 export type MeterProps = {
   percent: number;
   width: number;
@@ -43,3 +41,5 @@ export const Meter = (props: MeterProps) => {
     </svg>
   );
 };
+
+export default Meter;

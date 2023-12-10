@@ -1,10 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { AppBar, AppBarProps } from '../../../src';
-import {Toolbar} from '../../../src';
-import { FontAwesomeIcon, faBars, faGithub } from '../../../src';
-import { IconButton } from '../../../src';
-import { Typography } from '../../../src';
+import { AppBar, AppBarProps, Toolbar,FontAwesomeIcon, faBars, faGithub,IconButton, Typography } from '../../../src/main';
 
 export default {
   title: 'Molecules/AppBar',

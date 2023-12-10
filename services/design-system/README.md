@@ -8,6 +8,11 @@ contains common components for use in other front end applications. It contains
 a Storybook service that is deployed to empower designers. It also builds and
 publishes a package of those designs for use in other applications.
 
+**Features**: Builds dist library containing UI components. Aids in local
+development of UI components. Deploys a static design system website.
+
+## Components
+
 This package should only contain pure and presentational components. This is not
 superset of every component library in an organization. That would be a headache
 to keep track of. These are **reusable** components.

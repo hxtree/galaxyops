@@ -372,11 +372,11 @@
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [ "category-platform", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [ "category-platform", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
       "name": "@vendia/serverless-express",
@@ -520,7 +520,7 @@
     },
     {
       "name": "eslint-config-prettier",
-      "allowedCategories": [ "category-platform", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
       "name": "eslint-plugin-import",
@@ -531,12 +531,20 @@
       "allowedCategories": [ "category-platform", "platform" ]
     },
     {
+      "name": "eslint-plugin-prettier",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "eslint-plugin-react",
-      "allowedCategories": [ "category-platform", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
     },
     {
       "name": "eslint-plugin-react-hooks",
-      "allowedCategories": [ "category-platform", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "platform" ]
+    },
+    {
+      "name": "eslint-plugin-react-refresh",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "eslint-plugin-storybook",
@@ -553,6 +561,10 @@
     {
       "name": "fs-extra",
       "allowedCategories": [ "platform", "rigs" ]
+    },
+    {
+      "name": "glob",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "handlebars",
@@ -591,12 +603,20 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "jsdom",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "json-schema",
       "allowedCategories": [ "libraries" ]
     },
     {
       "name": "json-schema-faker",
       "allowedCategories": [ "libraries" ]
+    },
+    {
+      "name": "lint-staged",
+      "allowedCategories": [ "apis" ]
     },
     {
       "name": "lodash",
@@ -824,6 +844,14 @@
     },
     {
       "name": "vite-plugin-dts",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "vite-plugin-lib-inject-css",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "vitest",
       "allowedCategories": [ "apis" ]
     },
     {

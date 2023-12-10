@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Alert, AlertProps } from '../../../src';
+import { Alert, AlertProps } from '../../../src/main';
 
 export default {
   title: 'Molecules/Alert',

@@ -1,4 +1,3 @@
-import React from 'react';
 import MuiLoadingButton, {
   LoadingButtonProps as MuiLoadingButtonProps,
 } from '@mui/lab/LoadingButton';
@@ -19,3 +18,5 @@ export const LoadingButton = (props: LoadingButtonProps) => {
     </MuiLoadingButton>
   );
 };
+
+export default LoadingButton;

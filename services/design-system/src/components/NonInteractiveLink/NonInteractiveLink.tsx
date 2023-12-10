@@ -1,4 +1,3 @@
-import React from 'react';
 import MUILink, { LinkProps as MUILinkProps } from '@mui/material/Link';
 
 export type NonInteractiveLinkProps = {} & MUILinkProps;
@@ -37,3 +36,5 @@ export const NonInteractiveLink = (props: NonInteractiveLinkProps) => {
     </div>
   );
 };
+
+export default NonInteractiveLink;

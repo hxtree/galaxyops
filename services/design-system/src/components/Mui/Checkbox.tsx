@@ -1,4 +1,3 @@
-import React from 'react';
 import MUICheckbox, {
   CheckboxProps as MUICheckboxProps,
 } from '@mui/material/Checkbox';
@@ -9,3 +8,5 @@ export const Checkbox = (props: CheckboxProps) => {
   const { ...muiProps } = props;
   return <MUICheckbox {...muiProps} />;
 };
+
+export default Checkbox;

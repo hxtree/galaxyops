@@ -1,44 +1,25 @@
 {
-  "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "jsx": "react",
-    "outDir": "./dist",
-    "rootDir": ".",
-    "target": "es2020",
-    "lib": ["es2020", "dom"],
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowUnreachableCode": false,
-    "declaration": true,
-    "strict": true,
-    "noImplicitAny": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
-    "strictNullChecks": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": false,
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "experimentalDecorators": true,
-    "allowJs": true,
-    "declarationMap": true,
-    "emitDecoratorMetadata": true,
-    "strictPropertyInitialization": false,
-    "baseUrl": ".",
-    "typeRoots": ["./node_modules/@types"]
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "sourceMap": true,
-  "include": [
-    "./package.json",
-    "./stacks/",
-    "./src/",
-    "./bin",
-    "./vite.config.ts",
-    "./.storybook/main.ts"
-  ]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import MUITextField, {
   TextFieldProps as MUITextFieldProps,
 } from '@mui/material/TextField';
@@ -9,3 +8,5 @@ export const TextField = (props: TextFieldProps) => {
   const { ...muiProps } = props;
   return <MUITextField {...muiProps} />;
 };
+
+export default TextField;

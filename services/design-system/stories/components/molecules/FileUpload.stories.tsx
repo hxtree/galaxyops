@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { FileUpload } from '../../../src';
+import { FileUpload } from '../../../src/main';
 
 export default {
   title: 'Molecules/FileUpload',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { CodeSnippet, CodeSnippetLanguages } from '../../../src';
+import { CodeSnippet, CodeSnippetLanguages } from '../../../src/main';
 
 export default {
   title: 'Molecules/CodeSnippet',

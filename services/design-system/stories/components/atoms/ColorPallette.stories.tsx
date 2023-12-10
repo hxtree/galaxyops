@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { FontAwesomeIcon, Stack, Divider, Paper } from '../../../src';
+import { FontAwesomeIcon, Stack, Divider, Paper } from '../../../src/main';
 
 export default {
   title: 'Atoms/ColorPallette',

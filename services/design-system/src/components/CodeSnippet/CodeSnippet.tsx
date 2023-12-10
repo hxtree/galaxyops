@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { codeTheme } from './hljs-custom';
 

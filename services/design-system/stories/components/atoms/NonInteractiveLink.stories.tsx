@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import {
   NonInteractiveLink,
   NonInteractiveLinkProps,
-} from '../../../src/NonInteractiveLink';
+} from '../../../src/main';
 
 export default {
   title: 'Atoms/NonInteractiveLink',
