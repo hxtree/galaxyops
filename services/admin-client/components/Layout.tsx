@@ -183,4 +183,5 @@ const Layout = ({ children }: PropsWithChildren) => {
     </Box>
   );
 };
+
 export default Layout;

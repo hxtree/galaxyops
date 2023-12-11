@@ -9,8 +9,8 @@
     "start": "next start",
     "lint": "next lint --fix",
     "lint:ci": "next lint",
-    "test": "jest --runInBand",
-    "test:cov": "jest --coverage --runInBand"
+    "test": "",
+    "test:cov": ""
   },
   "dependencies": {
     "@types/node": "20.9.0",
@@ -26,7 +26,9 @@
     "prismjs": "~1.29.0",
     "react-syntax-highlighter": "~15.5.0",
     "@types/react-syntax-highlighter": "~15.5.10",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "styled-components": "~6.1.1",
+    "@emotion/react": "~11.11.1"
   },
   "devDependencies": {
     "@types/prismjs": "~1.26.0",

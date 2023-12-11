@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Chart } from '../../../src/Charts/GoogleChart';
+import { Chart } from '../../../src/main';
 
 export default {
   title: 'Molecules/Chart',

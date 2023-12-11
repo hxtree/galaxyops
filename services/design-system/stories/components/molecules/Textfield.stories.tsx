@@ -1,18 +1,13 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { TextField } from '../../../src';
+import { Meta } from '@storybook/react';
+import { TextField } from '../../../src/main';
 
 export default {
   title: 'Molecules/TextField',
   component: TextField,
   argTypes: {},
-} as ComponentMeta<typeof TextField>;
+} as Meta<typeof TextField>;
 
-type StoryTemplateType = ComponentStory<typeof StoryTemplate>;
 
-function StoryTemplate() {
-  return <TextField />;
-}
 
-export const Default = StoryTemplate.bind({}) as StoryTemplateType;
+export const Default = () => <TextField/>;

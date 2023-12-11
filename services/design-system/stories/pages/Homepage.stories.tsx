@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { AppBar, Button, Typography, Alert, Toolbar, IconButton, FontAwesomeIcon, faBars, faGithub, PageFooter } from '../../src';
+import { AppBar, Button, Typography, Alert, Toolbar, IconButton, FontAwesomeIcon, faBars, faGithub, PageFooter } from '../../src/main';
 
 export default {
   title: 'Pages/Homepage',

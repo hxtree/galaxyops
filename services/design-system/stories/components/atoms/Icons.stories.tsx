@@ -9,7 +9,7 @@ import {
   faGithub,
   Stack,
   Divider,
-} from '../../../src';
+} from '../../../src/main';
 
 export default {
   title: 'Atoms/Icons',

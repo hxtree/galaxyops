@@ -1,0 +1,9 @@
+@import '../ColorPallette/color-pallette.scss';
+
+.app-bar-light {
+  background-color: #FFF !important;
+}
+
+.app-bar-dark {
+  background-color: $berkeley-blue !important;
+}

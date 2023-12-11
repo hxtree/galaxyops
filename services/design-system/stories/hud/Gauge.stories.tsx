@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Gauge, OrientationType } from '../../src';
+import { Gauge, OrientationType } from '../../src/main';
 
 export default {
   title: 'HUD/Gauge',
