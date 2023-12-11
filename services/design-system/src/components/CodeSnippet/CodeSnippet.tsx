@@ -3,7 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { codeTheme } from './hljs-custom';
 import { CodeSnippetProps } from './CodeSnippetProps';
 
-const CodeSnippet = (props: CodeSnippetProps) => {
+export const CodeSnippet = (props: CodeSnippetProps) => {
   const { data, language } = props;
 
   return (

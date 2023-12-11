@@ -3,6 +3,7 @@ export * from './components/AppBar/AppBar';
 export * from './components/Charts/GoogleChart';
 export * from './components/Icons/Icons';
 export * from './components/CodeSnippet/CodeSnippet';
+export * from './components/CodeSnippet/CodeSnippetProps';
 export * from './components/FileUpload/FileUpload';
 export * from './components/Gauge/Gauge';
 export * from './components/Meter/Meter';
