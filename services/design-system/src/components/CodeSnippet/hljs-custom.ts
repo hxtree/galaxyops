@@ -1,4 +1,6 @@
-export const codeTheme = {
+import { CSSProperties } from 'react';
+
+export const codeTheme: { [key: string]: CSSProperties } = {
   hljs: {
     display: 'block',
     overflowX: 'auto',

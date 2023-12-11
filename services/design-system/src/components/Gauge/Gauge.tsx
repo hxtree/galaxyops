@@ -1,18 +1,4 @@
-export enum OrientationType {
-  RIGHT = 'RIGHT',
-  LEFT = 'LEFT',
-}
-
-export type GaugeProps = {
-  width: number;
-  height: number;
-  color?: string;
-  strokeWidth?: number;
-  orientation?: OrientationType;
-  current?: number;
-  max?: number;
-  boundingBox: boolean;
-};
+import { GaugeProps, OrientationType } from "./GaugeProps";
 
 export const Gauge = (props: GaugeProps) => {
   const width = props.width ?? 150;
