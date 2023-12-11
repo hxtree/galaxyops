@@ -6,6 +6,7 @@ export * from './components/CodeSnippet/CodeSnippet';
 export * from './components/CodeSnippet/CodeSnippetProps';
 export * from './components/FileUpload/FileUpload';
 export * from './components/Gauge/Gauge';
+export * from './components/Gauge/GaugeProps';
 export * from './components/Meter/Meter';
 export * from './components/PageFooter/PageFooter';
 export * from './components/Link/NonInteractiveLink';
