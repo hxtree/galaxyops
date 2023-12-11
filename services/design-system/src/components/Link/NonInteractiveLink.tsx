@@ -1,6 +1,6 @@
 import MUILink, { LinkProps as MUILinkProps } from '@mui/material/Link';
 
-export type NonInteractiveLinkProps = {} & MUILinkProps;
+export type NonInteractiveLinkProps = MUILinkProps;
 
 export const NonInteractiveLink = (props: NonInteractiveLinkProps) => {
   const { children, ...muiProps } = props;

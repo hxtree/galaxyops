@@ -2,7 +2,7 @@ import MUITextField, {
   TextFieldProps as MUITextFieldProps,
 } from '@mui/material/TextField';
 
-export type TextFieldProps = {} & MUITextFieldProps;
+export type TextFieldProps = MUITextFieldProps;
 
 export const TextField = (props: TextFieldProps) => {
   const { ...muiProps } = props;

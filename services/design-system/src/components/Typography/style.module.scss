@@ -1,0 +1,105 @@
+.center {
+  text-align: center;
+};
+
+.MuiTypography-h1 {
+  font-family: "Eczar", serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--primary);
+  padding: 12px 0;
+  &.fill {
+    border-radius: 5px;
+    padding: 13px;
+    color: var(--primary);
+  };
+  &.border {
+    font-size: 4rem;
+    width: 100%;
+    position: relative;
+    // padding: { xs 5px 0; sm 10px 0 };
+    padding-left: 15px;
+    font-weight: 600;
+    vertical-align: center;
+    border-bottom: none;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
+      border-radius: 3px;
+    }
+  }
+}
+
+.MuiTypography-h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: bold;
+  padding: 12px 0;
+  &.border {
+    font-size: 1.4rem;
+    width: 100%;
+    position: relative;
+    // padding: { xs 5px 0; sm 10px 0 };
+    padding-left: 15px;
+    font-weight: 600;
+    vertical-align: center;
+    border-bottom: none;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
+      border-radius: 3px;
+    };
+  };
+  &.fill {
+    border-radius: 5px;
+    padding: 20px 13px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size:  1.2rem;
+    border-bottom: none;
+  };
+};
+
+.MuiTypography-h3 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size:  1.05rem;
+};
+
+.MuiTypography-h4 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size:  1rem;
+};
+
+.MuiTypography-h5 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size:  1rem;
+};
+
+.MuiTypography-h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size:  1rem;
+}
+
+.MuiTypography-body1 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size:  1rem;
+}

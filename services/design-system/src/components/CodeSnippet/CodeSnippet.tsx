@@ -1,26 +1,15 @@
 // import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { codeTheme } from './hljs-custom';
+import { CodeSnippetProps } from './CodeSnippetProps';
 
-export enum CodeSnippetLanguages {
-  JSON = 'json',
-  HTML = 'html',
-  CSS = 'css',
-  JAVASCRIPT = 'javascript',
-}
-
-export type CodeSnippetProps = {
-  data: string;
-  language: CodeSnippetLanguages;
-};
-
-export const CodeSnippet = (props: CodeSnippetProps) => {
+const CodeSnippet = (props: CodeSnippetProps) => {
   const { data, language } = props;
 
   return (
     <div>
       {data ? (
-        <SyntaxHighlighter language={language} style={codeTheme as any}>
+        <SyntaxHighlighter language={language} style={codeTheme}>
           {data}
         </SyntaxHighlighter>
       ) : (
@@ -29,3 +18,5 @@ export const CodeSnippet = (props: CodeSnippetProps) => {
     </div>
   );
 };
+
+export default CodeSnippet;
