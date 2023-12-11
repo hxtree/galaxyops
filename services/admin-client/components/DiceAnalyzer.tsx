@@ -94,7 +94,7 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
 
         <Grid item>
           <Stack>
-            <Box component="form" noValidate autoComplete="off">
+            <Box component="form" autoComplete="off">
               <TextField
                 label="Dice Notation"
                 value={notation}
