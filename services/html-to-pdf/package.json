@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/html-to-pdf",
   "module": "commonjs",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "license": "MIT",
   "description": "Your Go-To Solution for PDF Generation from HTML.",
   "bugs": {

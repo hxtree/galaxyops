@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/authentication-service
 
-This log was last generated on Sun, 03 Dec 2023 08:29:38 GMT and should not be manually modified.
+This log was last generated on Tue, 12 Dec 2023 03:15:41 GMT and should not be manually modified.
+
+## 1.1.0
+Tue, 12 Dec 2023 03:15:41 GMT
+
+### Minor changes
+
+- upgrade aws sdk v2 to v3
 
 ## 1.0.15
 Sun, 03 Dec 2023 08:29:38 GMT

@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/nestjs-modules
 
-This log was last generated on Sun, 03 Dec 2023 08:29:38 GMT and should not be manually modified.
+This log was last generated on Tue, 12 Dec 2023 03:15:41 GMT and should not be manually modified.
+
+## 0.2.16
+Tue, 12 Dec 2023 03:15:41 GMT
+
+### Patches
+
+- upgrade aws s3 mock version
 
 ## 0.2.15
 Sun, 03 Dec 2023 08:29:38 GMT

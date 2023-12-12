@@ -2,6 +2,18 @@
   "name": "@cats-cradle/eslint-config",
   "entries": [
     {
+      "version": "1.0.10",
+      "tag": "@cats-cradle/eslint-config_v1.0.10",
+      "date": "Tue, 12 Dec 2023 03:15:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "adjust settings"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.9",
       "tag": "@cats-cradle/eslint-config_v1.0.9",
       "date": "Tue, 05 Dec 2023 05:58:32 GMT",

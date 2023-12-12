@@ -1,6 +1,16 @@
 # Change Log - @cats-cradle/design-system
 
-This log was last generated on Tue, 05 Dec 2023 05:58:32 GMT and should not be manually modified.
+This log was last generated on Tue, 12 Dec 2023 03:15:41 GMT and should not be manually modified.
+
+## 0.5.1
+Tue, 12 Dec 2023 03:15:41 GMT
+
+### Patches
+
+- fix cdk synth regression bug
+- fix cdk synth
+- fix build regression bug
+- add mui components
 
 ## 0.4.0
 Tue, 05 Dec 2023 05:58:32 GMT

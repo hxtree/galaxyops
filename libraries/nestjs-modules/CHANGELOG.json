@@ -2,6 +2,29 @@
   "name": "@cats-cradle/nestjs-modules",
   "entries": [
     {
+      "version": "0.2.16",
+      "tag": "@cats-cradle/nestjs-modules_v0.2.16",
+      "date": "Tue, 12 Dec 2023 03:15:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "upgrade aws s3 mock version"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.9`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/validation-schemas\" to `0.4.5`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/faker-factory\" to `1.2.8`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.2.15",
       "tag": "@cats-cradle/nestjs-modules_v0.2.15",
       "date": "Sun, 03 Dec 2023 08:29:38 GMT",
