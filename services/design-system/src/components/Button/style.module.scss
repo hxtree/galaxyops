@@ -1,0 +1,17 @@
+.button {
+  &.select {
+    background-color: #616366 !important;
+    color: #FFF !important;
+  };
+  font-family: Helvetica, arial, sans-serif !important;
+  font-weight: bold !important;
+  border-radius: 36px !important;
+  padding: 15px 30px 10px 30px !important;
+  &:focus {
+    outline-style: solid !important;
+    outline: #F00;
+    outline-color: #FFF !important;
+    outline-offset: -10px !important;
+    outline-width: 4px !important;
+  }
+}
