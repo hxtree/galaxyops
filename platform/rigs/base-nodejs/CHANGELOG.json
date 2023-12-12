@@ -2,6 +2,18 @@
   "name": "@cats-cradle/base-nodejs",
   "entries": [
     {
+      "version": "1.0.9",
+      "tag": "@cats-cradle/base-nodejs_v1.0.9",
+      "date": "Tue, 12 Dec 2023 03:15:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "update react js tsconfig"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.8",
       "tag": "@cats-cradle/base-nodejs_v1.0.8",
       "date": "Sun, 05 Nov 2023 18:41:09 GMT",

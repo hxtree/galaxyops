@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/constructs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "module": "commonjs",
   "main": "./dist/src/index.js",
   "scripts": {

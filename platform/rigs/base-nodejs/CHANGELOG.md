@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/base-nodejs
 
-This log was last generated on Sun, 05 Nov 2023 18:41:09 GMT and should not be manually modified.
+This log was last generated on Tue, 12 Dec 2023 03:15:41 GMT and should not be manually modified.
+
+## 1.0.9
+Tue, 12 Dec 2023 03:15:41 GMT
+
+### Patches
+
+- update react js tsconfig
 
 ## 1.0.8
 Sun, 05 Nov 2023 18:41:09 GMT
