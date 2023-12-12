@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/base-nodejs",
+      "comment": "update react js tsconfig",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/base-nodejs"
+}

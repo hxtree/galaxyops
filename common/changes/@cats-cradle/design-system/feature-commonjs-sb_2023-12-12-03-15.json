@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@cats-cradle/design-system",
+      "comment": "fix cdk synth",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@cats-cradle/design-system"
+}
