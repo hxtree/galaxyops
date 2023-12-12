@@ -51,9 +51,9 @@
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
   "editor.codeActionsOnSave": {
-    "editor.action.fixAll": true,
-    "source.fixAll.eslint": true,
-    "source.fixAll.markdownlint": true
+    "editor.action.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.markdownlint": "explicit"
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
