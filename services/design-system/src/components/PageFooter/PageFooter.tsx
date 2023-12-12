@@ -1,4 +1,4 @@
-// import './page-footer.scss';
+import './style.module.scss';
 
 export type PageFooterLink = {
   label: string;

@@ -13,9 +13,11 @@ publishes a package of those designs for use in other applications.
 
 **Features**:
 
-- Aids in local development of UI components.
-- Deploys a static design system website.
-- Front-end library containing UI components.
+- **UI Component Development**: Allows for the local development of UI
+  components in isolation.
+- **UI Component Library**: This is library containing UI components that
+  front-ends can use to ensure consistently in design.
+- **UI Design System**: Deploys a static design system website.
 
 ## Components
 

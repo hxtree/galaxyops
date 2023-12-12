@@ -1,4 +1,5 @@
 import MUIButton, { ButtonProps as MUIButtonProps } from '@mui/material/Button';
+import './style.module.scss';
 
 export type ButtonProps = {
   selected?: boolean;
@@ -13,13 +14,7 @@ export const Button = (props: ButtonProps) => {
   return (
     <MUIButton
       {...muiProps}
-      style={{
-        ...(props.selected && { backgroundColor: '#616366', color: '#FFF' }),
-        fontFamily: 'Helvetica, arial, sans-serif',
-        fontWeight: 'bold',
-        borderRadius: '36px',
-        padding: '15px 30px 10px 30px',
-      }}
+      className='button'
     >
       {children}
     </MUIButton>
