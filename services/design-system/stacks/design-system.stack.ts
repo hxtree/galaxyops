@@ -16,9 +16,10 @@ export class DesignSystemStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // s3 bucket
-    const bucket = new Bucket(this, 'Bucket', {
-      bucketName: 'design-system',
+    const awsAccountId = cdk.Stack.of(this).account;
+    const stageName = process.env.STAGE_NAME ?? 'default';
+    const bucket = new Bucket(this, `${stageName}-design-system`, {
+      bucketName: `${awsAccountId}-${stageName}-design-system-bucket`,
       accessControl: BucketAccessControl.PRIVATE,
       removalPolicy: RemovalPolicy.DESTROY,
     });
