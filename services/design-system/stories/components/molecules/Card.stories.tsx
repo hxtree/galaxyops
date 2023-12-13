@@ -11,4 +11,6 @@ export const Default = (args: BasicCardProps) =>
   <BasicCard {...args}/>;
 
 Default.args = {
+  title: 'Welcome To Day',
+  cta: 'Learn More'
 }
