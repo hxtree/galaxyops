@@ -107,9 +107,7 @@ const Layout = ({ children }: PropsWithChildren) => {
           >
             <FontAwesomeIcon icon={faBars} />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             Cats Cradle
-          </Typography>
           <IconButton
             href="https://github.com/hxtree/cats-cradle"
             color="inherit"

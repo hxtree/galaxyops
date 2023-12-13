@@ -1,4 +1,5 @@
-@forward '../components/ColorPallette/color-pallette';
-@forward '../components/Typography/style.module.scss';
-@forward '../components/PageFooter/style.module.scss';
-@forward '../components/Button/style.module.scss';
+@import './utils/color-pallette';
+@import './utils/bg-color';
+@import '../components/Typography/style.module.scss';
+@import '../components/PageFooter/style.module.scss';
+@import '../components/Button/style.module.scss';
