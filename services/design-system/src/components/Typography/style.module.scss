@@ -1,17 +1,20 @@
+@import '../../styles/utils/color-pallette';
+
 .center {
   text-align: center;
 };
 
-.MuiTypography-h1 {
+h1 {
   font-family: "Eczar", serif;
   font-weight: 800;
-  font-size: 2rem;
-  // color: var(--primary);
+  font-size: 3rem;
+  color: $berkeley-blue;
   padding: 12px 0;
   &.fill {
     border-radius: 5px;
     padding: 13px;
-    // color: var(--primary);
+    background-color: $berkeley-blue;
+    color: $white;
   };
   &.border {
     font-size: 4rem;
@@ -37,13 +40,13 @@
   }
 }
 
-.MuiTypography-h2 {
+h2 {
   font-size: 2rem;
-  color: var(--primary);
+  color: $berkeley-blue;
   font-weight: bold;
   padding: 12px 0;
   &.border {
-    font-size: 1.4rem;
+    font-size:  2rem;
     width: 100%;
     position: relative;
     // padding: { xs 5px 0; sm 10px 0 };
@@ -67,38 +70,38 @@
   &.fill {
     border-radius: 5px;
     padding: 20px 13px;
-    color: var(--primary);
+    background-color: $berkeley-blue;
+    color: $white;
     font-weight: bold;
-    font-size:  1.2rem;
     border-bottom: none;
   };
 };
 
-.MuiTypography-h3 {
+h3 {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size:  1.05rem;
+  font-size:  1.8rem;
 };
 
-.MuiTypography-h4 {
+h4 {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size:  1rem;
+  font-size:  1.6rem;
 };
 
-.MuiTypography-h5 {
+h5 {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size:  1rem;
+  font-size:  1.4rem;
 };
 
-.MuiTypography-h6 {
+h6 {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size:  1rem;
+  font-size:  1.2rem;
 }
 
-.MuiTypography-body1 {
+p.body1 {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size:  1rem;

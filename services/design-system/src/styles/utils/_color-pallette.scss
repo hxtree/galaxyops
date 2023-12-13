@@ -6,6 +6,8 @@
   --color-murrey: #990f4bff;
   --color-white: #fff;
   --color-black: #000;
+  --color-primary: var(--color-berkeley-blue)
+  --color-secondary: var(--color-murrey)
 }
 
 $berkeley-blue: #003366ff;
@@ -13,23 +15,6 @@ $gold: #ffd700ff;
 $sky-blue: #87ceebff;
 $sgbus-green: #71cd2fff;
 $murrey: #990f4bff;
+$white: #FFF;
+$black: #000;
 
-.bgBrandDark {
-  background-color: var(--color-berkeley-blue);
-}
-
-.bgBrandLight {
-  background-color: var(--color-gold);
-}
-
-.bgBrandPrimary {
-  background-color: var(--color-murrey);
-}
-
-.bgBrandSecondary {
-  background-color: var(--color-sgbus-green);
-}
-
-.bgBrandTertiary {
-  background-color: var(--color-sky-blue);
-}
