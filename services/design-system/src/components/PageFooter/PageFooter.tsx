@@ -1,3 +1,4 @@
+import SocialMediaBar from '../SocialMediaBar/SocialMediaBar';
 import { Typography } from '../Typography/Typography';
 import './style.module.scss';
 
@@ -18,10 +19,11 @@ export const PageFooter = (props: PageFooterProps) => {
 
   return (
     <footer className='page-footer'>
-      {links && <ul>
+      <SocialMediaBar/>
+      {links && <Typography variant="body"><ul>
         {links.map((link: PageFooterLink) => (
           <li><a href={link.url}>{link.label}</a></li>
-        ))}</ul>
+        ))}</ul></Typography>
       }
       <hr/>
       <Typography variant="body">
