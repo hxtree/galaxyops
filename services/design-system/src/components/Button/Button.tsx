@@ -20,17 +20,18 @@ export enum ButtonVariant {
 }
 
 export type ButtonProps = {
-  isLoading?: boolean;
+  loading?: boolean;
   children: React.ReactNode;
   color?: keyof typeof ButtonColor;
   variant?:  keyof typeof ButtonVariant;
   selected?: boolean;
-  size: keyof typeof ButtonSize;
+  size?: keyof typeof ButtonSize;
+  href?: string; // TODO add support
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button = (props: ButtonProps) => {
-  const { isLoading, color, children, variant, selected, size, onClick } = props;
+  const { loading, color, children, variant, selected, size, onClick } = props;
 
   let classNames: string[] = ['button'];
 
@@ -42,7 +43,7 @@ export const Button = (props: ButtonProps) => {
     classNames.push('button-selected')
   }
 
-  if(isLoading){
+  if(loading){
     classNames.push('button-loading')
   }
 
@@ -72,7 +73,7 @@ export const Button = (props: ButtonProps) => {
       className={classNames.join(' ')}
       onClick={(event) => clickHandler(event) }
     >
-      {isLoading && <CircularProgress className="spinner" size="1rem"/>}
+      {loading && <CircularProgress className="spinner" size="1rem"/>}
       {children}
     </button>
   );

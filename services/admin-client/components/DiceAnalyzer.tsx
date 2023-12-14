@@ -8,7 +8,6 @@ import {
   Chart,
   TextField,
   Button,
-  LoadingButton,
 } from '@cats-cradle/design-system';
 import axios from 'axios';
 
@@ -124,14 +123,14 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
             <Button onClick={() => clear()} data-testid={`dice-analyzer-clear`}>
               Clear
             </Button>
-            <LoadingButton
+            <Button
               variant="contained"
               loading={isLoading}
               onClick={() => callApi()}
               data-testid={`dice-analyzer-roll`}
             >
               Roll
-            </LoadingButton>
+            </Button>
           </Stack>
         </Grid>
       </Grid>

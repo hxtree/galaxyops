@@ -20,3 +20,11 @@ Secondary.args = {
   color: 'secondary',
   variant: 'contained',
 } as ButtonProps;
+
+export const Loading = (args: ButtonProps) => <Button {...args}>Run Query</Button>;
+
+Loading.args = {
+  loading: true,
+  color: 'secondary',
+  variant: 'contained',
+} as ButtonProps;
