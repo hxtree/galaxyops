@@ -1,3 +1,4 @@
+import { Typography } from '../Typography/Typography';
 import './style.module.scss';
 
 export type PageFooterLink = {
@@ -22,9 +23,10 @@ export const PageFooter = (props: PageFooterProps) => {
           <li><a href={link.url}>{link.label}</a></li>
         ))}</ul>
       }
-
       <hr/>
-      <p>&copy; {year} {siteOwner}. All Rights Reserved.</p>
+      <Typography variant="body">
+        &copy; {year} {siteOwner}. All Rights Reserved.
+      </Typography>
     </footer>
   );
 };

@@ -1,20 +1,27 @@
+/* base color pallette */
+$color-berkeley-blue: #003366;
+$color-gold: #ffd700;
+$color-sky-blue: #87ceeb;
+$color-sgbus-green: #71cd2f;
+$color-murrey: #b3105c;
+$color-white: #FFF;
+$color-black: #000;
+$color-gray: #939699;
+
+/* common color abstractions */
+$color-primary: $color-berkeley-blue;
+$color-secondary: $color-murrey;
+$color-inherit: $color-gray;
+
 :root {
-  --color-berkeley-blue: #003366ff;
-  --color-gold: #ffd700ff;
-  --color-sky-blue: #87ceebff;
-  --color-sgbus-green: #71cd2fff;
-  --color-murrey: #990f4bff;
-  --color-white: #fff;
-  --color-black: #000;
-  --color-primary: var(--color-berkeley-blue)
-  --color-secondary: var(--color-murrey)
+  --color-berkeley-blue: $color-berkeley-blue:
+  --color-gold: $color-gold;
+  --color-sky-blue: $color-sky-blue;
+  --color-sgbus-green: $color-sgbus-green;
+  --color-murrey: $color-murrey;
+  --color-white: $color-white;
+  --color-black: $color-black;
+  --color-primary:  $color-berkeley-blue:
+  --color-secondary: $color-murrey;
+  --color-gray: $color-gray;
 }
-
-$berkeley-blue: #003366ff;
-$gold: #ffd700ff;
-$sky-blue: #87ceebff;
-$sgbus-green: #71cd2fff;
-$murrey: #990f4bff;
-$white: #FFF;
-$black: #000;
-
