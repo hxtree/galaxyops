@@ -1,23 +1,81 @@
-import MUIButton, { ButtonProps as MUIButtonProps } from '@mui/material/Button';
+import React from 'react';
 import './style.module.scss';
+import { CircularProgress } from '@mui/material';
+
+export enum ButtonColor {
+  'primary' = 'primary',
+  'secondary' = 'secondary',
+  'inherit' = 'inherit'
+};
+
+export enum ButtonSize {
+  'small' = 'small',
+  'medium' = 'medium',
+  'large' = 'large',
+}
+
+export enum ButtonVariant {
+  'default' = 'default',
+  'contained' = 'contained',
+}
 
 export type ButtonProps = {
+  loading?: boolean;
+  children: React.ReactNode;
+  color?: keyof typeof ButtonColor;
+  variant?:  keyof typeof ButtonVariant;
   selected?: boolean;
-} & MUIButtonProps;
+  size?: keyof typeof ButtonSize;
+  href?: string; // TODO add support
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
 
 export const Button = (props: ButtonProps) => {
-  const { children, ...muiProps } = props;
+  const { loading, color, children, variant, selected, size, onClick } = props;
 
-  muiProps.variant = muiProps.variant ?? 'contained';
-  muiProps.color = muiProps.color ?? 'inherit';
+  let classNames: string[] = ['button'];
+
+  if(color){
+    classNames.push(`button-${color}`);
+  }
+
+  if(selected){
+    classNames.push('button-selected')
+  }
+
+  if(loading){
+    classNames.push('button-loading')
+  }
+
+  if(selected){
+    classNames.push('button-selected')
+  }
+
+  if(variant){
+    classNames.push(`button-${variant}`)
+  }
+
+  if(size){
+    classNames.push(`button-${size}`)
+  } else {
+    classNames.push(`button-medium`)
+  }
+
+  const clickHandler = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if(onClick === undefined){
+      return;
+    }
+    onClick(event);
+  }
 
   return (
-    <MUIButton
-      {...muiProps}
-      className='button'
+    <button
+      className={classNames.join(' ')}
+      onClick={(event) => clickHandler(event) }
     >
+      {loading && <CircularProgress className="spinner" size="1rem"/>}
       {children}
-    </MUIButton>
+    </button>
   );
 };
 

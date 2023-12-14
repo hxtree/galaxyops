@@ -1,16 +1,76 @@
+@import '../../styles/utils/color-pallette';
+
 .button {
-  &.select {
-    background-color: #616366 !important;
-    color: #FFF !important;
-  };
-  font-family: Helvetica, arial, sans-serif !important;
-  font-weight: bold !important;
-  border-radius: 36px !important;
-  padding: 15px 30px 10px 30px !important;
-  &:focus {
-    outline-style: solid !important;
-    outline-color: #F00 !important;
-    outline-offset: -10px !important;
-    outline-width: 4px !important;
+  cursor: pointer;
+  background-color: $color-inherit;
+  color: $color-black;
+  font-size: 1rem;
+  font-family: Helvetica, arial, sans-serif;
+  font-weight: bold;
+  border-radius: 36px;
+	border: none;
+  margin: 8px;
+  box-shadow: none;
+
+  &.button-primary {
+    border: 3px solid $color-primary;
+    background-color: $color-primary;
+    color: $color-white;
+    &:focus, &.button-selected {
+      outline-color: $color-berkeley-blue;
+    }
+  }
+  &.button-secondary {
+    border: 3px solid $color-secondary;
+    background-color: $color-white;
+    color: $color-secondary;
+    &:focus, &.button-selected {
+      outline-color: $color-secondary;
+    }
+  }
+  &.button-inherit, &.button-loading {
+    border: 3px solid $color-primary;
+    background-color: $color-white;
+    color: $color-primary;
+    &:focus, &.button-selected {
+      outline-color: $color-berkeley-blue;
+    }
+  }
+
+  &.button-loading {
+    border: 3px solid $color-gray;
+    background-color: $color-gray;
+    color: transparent;
+    position: relative;
+    &:focus, &.button-selected {
+      outline-color: $color-gray;
+    }
+    > .spinner {
+      position: absolute;
+      top: calc(50% - 0.5rem);
+      left: calc(50% - 0.5rem);
+      color: $color-white;
+    }
+  }
+  &:focus, &.button-selected {
+    outline-style: solid;
+    outline-offset: 3px;
+    outline-width: 3px;
+  }
+  &.button-contained {
+    width: 100%;
+    text-align: center;
+  }
+  &.button-small {
+    font-size: 0.8rem;
+    padding: 5px 20px 5px 20px;
+  }
+  &.button-normal, &.button-medium {
+    font-size: 1rem;
+    padding: 15px 30px 10px 30px;
+  }
+  &.button-large {
+    font-size: 1.4rem;
+    padding: 15px 30px 10px 30px;
   }
 }

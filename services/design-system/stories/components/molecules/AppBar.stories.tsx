@@ -17,9 +17,7 @@ export const AppBarLight = (args: AppBarProps) =>
     >
       <FontAwesomeIcon icon={faBars} />
     </IconButton>
-    <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
       LOGO
-    </Typography>
     <IconButton
       href="https://github.com/hxtree/cats-cradle"
       color="inherit"
@@ -44,9 +42,7 @@ export const AppBarDark = (args: AppBarProps) =>
     >
       <FontAwesomeIcon icon={faBars} />
     </IconButton>
-    <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
       LOGO
-    </Typography>
     <IconButton
       href="https://github.com/hxtree/cats-cradle"
       color="inherit"

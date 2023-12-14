@@ -1,7 +1,6 @@
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 export type BasicCardProps = {
@@ -36,7 +35,7 @@ export const BasicCard = (props: BasicCardProps): JSX.Element => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">{cta || defaultCta}</Button>
+        {cta || defaultCta}
       </CardActions>
     </Card>
   );

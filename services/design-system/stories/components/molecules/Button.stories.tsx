@@ -7,16 +7,24 @@ export default {
   component: Button,
 } as Meta<typeof Button>;
 
-export const Primary = args => <Button {...args}>Run Query</Button>;
+export const Primary =  (args: ButtonProps) => <Button {...args}>Run Query</Button>;
 
 Primary.args = {
   color: 'primary',
   variant: 'contained',
-};
+} as ButtonProps;
 
-export const Inherit = args => <Button {...args}>Run Query</Button>;
+export const Secondary = (args: ButtonProps) => <Button {...args}>Run Query</Button>;
 
-Inherit.args = {
-  color: 'inherit',
+Secondary.args = {
+  color: 'secondary',
   variant: 'contained',
-};
+} as ButtonProps;
+
+export const Loading = (args: ButtonProps) => <Button {...args}>Run Query</Button>;
+
+Loading.args = {
+  loading: true,
+  color: 'secondary',
+  variant: 'contained',
+} as ButtonProps;
