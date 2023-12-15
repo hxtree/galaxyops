@@ -106,7 +106,7 @@ export namespace Archetype {
   export const MISCHIEVOUS_PIEBALD: Type = {
     name: 'Mischievous',
     surname: 'Piebald',
-    alias: ['Keeper of Law', 'Mischief', 'Tux'],
+    alias: ['Keeper of Law', 'Mischief', 'Tux', "Schrodinger's cat"],
     symbolizes: ['Law', 'Causality', 'Absolute'],
     backstory:
       'Governs the logical of this realm. '
