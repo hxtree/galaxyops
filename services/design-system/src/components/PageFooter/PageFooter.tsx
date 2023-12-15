@@ -18,8 +18,9 @@ export const PageFooter = (props: PageFooterProps) => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='page-footer'>
+    <>
       <SocialMediaBar/>
+      <footer className='page-footer'>
       {links && <Typography variant="body"><ul>
         {links.map((link: PageFooterLink) => (
           <li><a href={link.url}>{link.label}</a></li>
@@ -30,6 +31,7 @@ export const PageFooter = (props: PageFooterProps) => {
         &copy; {year} {siteOwner}. All Rights Reserved.
       </Typography>
     </footer>
+    </>
   );
 };
 
