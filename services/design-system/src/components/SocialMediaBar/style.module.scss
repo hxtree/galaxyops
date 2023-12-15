@@ -1,33 +1,19 @@
 @import '../../styles/utils/color-pallette';
 
 .social-media-bar {
-  background-color: $color-gray;
-  color: $color-white;
+  background-color: $color-primary;
+  opacity: 0.8;
   margin: 0;
-  margin-top: 3rem;
-  padding: 3rem;
+  margin-top: 4rem;
+  padding: 0.2rem 3rem;
+  text-align: right;
   a {
-    opacity: 0.9;
     text-decoration: none;
     color: $color-white;
     &:hover {
       color: $color-white;
       opacity: 1;
       font-weight: bold;
-    }
-  }
-  ul {
-    display: block;
-    margin: 0;
-    padding: 0;
-    li {
-      width: 33%;
-      margin: 0;
-      display: inline-block;
-      a {
-        padding: 0.2rem;
-        display: block;
-      }
     }
   }
 }
