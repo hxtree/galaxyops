@@ -100,5 +100,5 @@ MIT licensed. Packages without a specific license have not yet been developed
 with reuse in mind and are primarily maintained for the game.
 
 <p align="center">
-:white_heart: / :hourglass: / :infinity:
+🤍 / ⌛ / ♾️
 </p>
