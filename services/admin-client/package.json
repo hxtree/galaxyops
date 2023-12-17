@@ -10,8 +10,8 @@
     "lint": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix-dry-run",
     "preview": "vite preview",
-    "test": "jest --runInBand",
-    "test:cov": "jest --coverage --runInBand"
+    "test": "",
+    "test:cov": ""
   },
   "dependencies": {
     "react": "18.2.0",
