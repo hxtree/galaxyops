@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './style.module.scss';
 import { CircularProgress } from '@mui/material';
 
@@ -21,7 +21,6 @@ export enum ButtonVariant {
 
 export type ButtonProps = {
   loading?: boolean;
-  analyticTag?: string;
   children: React.ReactNode;
   color?: keyof typeof ButtonColor;
   variant?:  keyof typeof ButtonVariant;
