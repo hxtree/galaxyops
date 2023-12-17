@@ -1,12 +1,12 @@
 import { kebabCase } from 'lodash';
 
-/**
- * Analytics class for managing analytic properties on HTML elements.
- */
 type AnalyticProps = {
   [key: string]: string;
 };
 
+/**
+ * Analytics class for managing analytic properties on HTML elements.
+ */
 export class Analytics {
   public DATA_ANALYTICS_ATTRIBUTE = 'data-analytics';
   public DEFAULT_DELIMITER = '-';
