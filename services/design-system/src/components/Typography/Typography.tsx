@@ -7,15 +7,14 @@ export enum TypographyVariants {
   'h4' = 'h4',
   'h5' = 'h5',
   'h6' = 'h6',
-  'body' = 'body'
+  'body' = 'body',
+  'intro' = 'intro'
 }
 
 export enum TypographyAlign {
   'center' = 'center',
   'left' = 'left',
 }
-
-
 
 export type TypographyProps = {
   children: React.ReactNode;
@@ -55,6 +54,9 @@ export const Typography = (props: TypographyProps): JSX.Element => {
       return (<h5 className={classNames.join(" ")}>{children}</h5>)
     case 'h6':
       return (<h6 className={classNames.join(" ")}>{children}</h6>)
+    case 'intro':
+      classNames.push('intro')
+      return (<p  className={classNames.join(" ")}>{children}</p>)
     case 'body':
     default:
       classNames.push('body1')
