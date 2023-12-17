@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style.module.scss';
+import './style.module.scss';
 
 export type LinkProps = {
   href?: string;
