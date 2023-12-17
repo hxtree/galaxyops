@@ -1,4 +1,3 @@
-'use client';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {
@@ -10,13 +9,12 @@ import {
   SelectChangeEvent,
   CodeSnippet,
   CodeSnippetLanguages,
-  Spinner,
-} from '@cats-cradle/design-system';
+} from '@cats-cradle/design-system/dist/main';
 
 export default function ArchetypeSelect() {
   const [archetypes, setArchetypes] = useState<string[]>([]);
   const [archetypeId, setArchetypeId] = useState<string>();
-  const [archetypeData, setArchetypeData] = useState<any>();
+  const [archetypeData, setArchetypeData] = useState<object>();
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -83,6 +81,7 @@ export default function ArchetypeSelect() {
           language={CodeSnippetLanguages.JSON}
         />
       )}
+      {isLoading && 'loading'}
     </>
   );
 }

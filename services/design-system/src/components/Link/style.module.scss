@@ -1,5 +1,7 @@
 @import '../../styles/utils/color-pallette';
 
-a {
-  color: $color-berkeley-blue;
+:global {
+  a {
+    color: $color-berkeley-blue;
+  }
 }

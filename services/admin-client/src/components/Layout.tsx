@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useState, PropsWithChildren } from 'react';
+import { useState, PropsWithChildren } from 'react';
 import {
   styled,
   Box,
@@ -9,7 +7,6 @@ import {
   ListItemText,
   CssBaseline,
   Toolbar,
-  Typography,
   Divider,
   List,
   ListItem,
@@ -27,7 +24,7 @@ import {
   useTheme,
   faChevronCircleRight,
   faChevronCircleLeft,
-} from '@cats-cradle/design-system';
+} from '@cats-cradle/design-system/dist/main';
 
 const drawerWidth = 240;
 

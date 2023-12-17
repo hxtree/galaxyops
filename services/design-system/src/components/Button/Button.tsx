@@ -1,6 +1,6 @@
 import React from 'react';
-import './style.module.scss';
 import { CircularProgress } from '@mui/material';
+import './style.module.scss';
 
 export enum ButtonColor {
   'primary' = 'primary',

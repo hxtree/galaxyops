@@ -1,116 +1,118 @@
 @import '../../styles/utils/color-pallette';
 
-.center {
-  text-align: center;
-};
-
-h1 {
-  font-family: "Eczar", serif;
-  font-weight: 800;
-  font-size: 3rem;
-  color: $color-berkeley-blue;
-  padding: 12px 0;
-  &.fill {
-    border-radius: 5px;
-    padding: 13px;
-    background-color: $color-berkeley-blue;
-    color: $color-white;
+:global {
+  .center {
+    text-align: center;
   };
-  &.border {
-    font-size: 4rem;
-    width: 100%;
-    position: relative;
-    // padding: { xs 5px 0; sm 10px 0 };
-    padding-left: 15px;
-    font-weight: 600;
-    vertical-align: center;
-    border-bottom: none;
-    &:before {
-      content: "";
-      position: absolute;
-      width: 2px;
-      height: 100%;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
-      border-radius: 3px;
+
+  h1 {
+    font-family: "Eczar", serif;
+    font-weight: 800;
+    font-size: 3rem;
+    color: $color-berkeley-blue;
+    padding: 12px 0;
+    &.fill {
+      border-radius: 5px;
+      padding: 13px;
+      background-color: $color-berkeley-blue;
+      color: $color-white;
+    };
+    &.border {
+      font-size: 4rem;
+      width: 100%;
+      position: relative;
+      // padding: { xs 5px 0; sm 10px 0 };
+      padding-left: 15px;
+      font-weight: 600;
+      vertical-align: center;
+      border-bottom: none;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
+        border-radius: 3px;
+      }
     }
   }
-}
 
-h2 {
-  font-size: 2rem;
-  color: $color-berkeley-blue;
-  font-weight: bold;
-  padding: 12px 0;
-  &.border {
-    font-size:  2rem;
-    width: 100%;
-    position: relative;
-    // padding: { xs 5px 0; sm 10px 0 };
-    padding-left: 15px;
-    font-weight: 600;
-    vertical-align: center;
-    border-bottom: none;
-    &:before {
-      content: "";
-      position: absolute;
-      width: 2px;
-      height: 100%;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
-      border-radius: 3px;
+  h2 {
+    font-size: 2rem;
+    color: $color-berkeley-blue;
+    font-weight: bold;
+    padding: 12px 0;
+    &.border {
+      font-size:  2rem;
+      width: 100%;
+      position: relative;
+      // padding: { xs 5px 0; sm 10px 0 };
+      padding-left: 15px;
+      font-weight: 600;
+      vertical-align: center;
+      border-bottom: none;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
+        border-radius: 3px;
+      };
+    };
+    &.fill {
+      border-radius: 5px;
+      padding: 20px 13px;
+      background-color: $color-berkeley-blue;
+      color: $color-white;
+      font-weight: bold;
+      border-bottom: none;
     };
   };
-  &.fill {
-    border-radius: 5px;
-    padding: 20px 13px;
-    background-color: $color-berkeley-blue;
-    color: $color-white;
-    font-weight: bold;
-    border-bottom: none;
+
+  h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size:  1.8rem;
   };
-};
 
-h3 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size:  1.8rem;
-};
+  h4 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size:  1.6rem;
+  };
 
-h4 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size:  1.6rem;
-};
+  h5 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size:  1.4rem;
+  };
 
-h5 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size:  1.4rem;
-};
+  h6 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size:  1.2rem;
+  }
 
-h6 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size:  1.2rem;
-}
+  p.body1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size:  1rem;
+    line-height: 1.8rem;
+  }
 
-p.body1 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size:  1rem;
-  line-height: 1.8rem;
-}
-
-p.intro {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size:  1.6rem;
-  line-height: 2rem;
+  p.intro {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size:  1.6rem;
+    line-height: 2rem;
+  }
 }

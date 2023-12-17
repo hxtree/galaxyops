@@ -1,12 +1,12 @@
 import '@testing-library/jest-dom';
-import * as React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
-import { DiceAnalyzer } from '../components/DiceAnalyzer';
-import axios from 'axios';
+import { DiceAnalyzer } from './DiceAnalyzer';
+import axios from "axios";
 import { act } from 'react-dom/test-utils';
 
-jest.mock('axios');
-const mockedAxios = axios as jest.Mocked<typeof axios>;
+const mockedAxios = jest.createMockFromModule("axios") as jest.Mocked<
+  typeof axios
+>;
 
 describe('DiceAnalyzer', () => {
   it('should render expected fields and buttons', async () => {

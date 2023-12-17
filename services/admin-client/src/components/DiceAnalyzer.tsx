@@ -1,6 +1,6 @@
-'use client';
 import { useState } from 'react';
 import {
+  Analytics,
   Alert,
   Stack,
   Grid,
@@ -8,7 +8,7 @@ import {
   Chart,
   TextField,
   Button,
-} from '@cats-cradle/design-system';
+} from '@cats-cradle/design-system/dist/main';
 import axios from 'axios';
 
 export type DiceAnalyzerProps = {
@@ -20,12 +20,14 @@ export type DiceAnalyzerProps = {
 export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
   const [iterations, setIterations] = useState<number>(props.iterations ?? 100);
   const [notation, setNotation] = useState<string>(props.notation ?? '1d6');
-  const [luck, setLuck] = useState<any>(props.luck ?? 0);
+  const [luck, setLuck] = useState<number | string>(props.luck ?? 0);
   const [data, setData] = useState<any[]>([]);
   const [average, setAverage] = useState<number>(0);
   const [runningTotal, setRunningTotal] = useState<number>(0);
   const [isLoading, setLoading] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState<string | undefined>();
+
+  const analytics = new Analytics('DiceAnalyzer');
 
   const clear = async () => {
     setData([]);
@@ -76,6 +78,7 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
       setData(newData);
     } catch (err) {
       const error = err as Error;
+      console.log(error.message);
       setErrorMsg('Failed to process request please try again later.');
     } finally {
       setLoading(false);
@@ -118,21 +121,25 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
             </Box>
           </Stack>
         </Grid>
-        <Grid item xs={4}>
-          <Stack direction="row" spacing={2}>
-            <Button onClick={() => clear()} data-testid={`dice-analyzer-clear`}>
-              Clear
-            </Button>
-            <Button
-              variant="contained"
-              loading={isLoading}
-              onClick={() => callApi()}
-              data-testid={`dice-analyzer-roll`}
-            >
-              Roll
-            </Button>
-          </Stack>
-        </Grid>
+        <div>
+        <Button
+      color="secondary"
+      onClick={() => clear()}
+      testId={`dice-analyzer-clear`}
+      ref={(ref: any) => analytics.set(ref, 'Clear')}>
+      Clear
+      </Button>
+      <Button
+      color="primary"
+      loading={isLoading}
+      onClick={() => callApi()}
+      testId={`dice-analyzer-roll`}
+      ref={(ref: any) => analytics.set(ref, 'Roll')}>
+      Roll
+      </Button>
+
+
+        </div>
       </Grid>
 
       {data.length > 0 && (

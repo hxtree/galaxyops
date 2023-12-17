@@ -1,14 +1,11 @@
-'use client';
-
-import styles from '../src/app/page.module.css';
-import { Container } from '@cats-cradle/design-system';
+import { Container } from '@cats-cradle/design-system/dist/main';
 import ArchetypeSelect from '../components/ArchetypeSelect';
 
-export default function Archetype() {
+export default function ArchetypePage() {
   return (
     <>
-     <main className={styles.main}>
-       <div className={styles.description}>
+     <main>
+       <div>
         <Container>
           <h1>Archetypes</h1>
           <p>
