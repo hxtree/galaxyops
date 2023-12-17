@@ -579,6 +579,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "identity-obj-proxy",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "intl",
       "allowedCategories": [ "apis" ]
     },
