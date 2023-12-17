@@ -1,21 +1,29 @@
 {
   "roots": ["<rootDir>/src/", "<rootDir>/stacks/"],
-  "testMatch": ["<rootDir>/src/**/*.test.ts", "<rootDir>/stacks/**/*.test.ts"],
+  "testMatch": [
+    "<rootDir>/src/**/*.{test,e2e-spec}.{ts,tsx}",
+    "<rootDir>/src/__tests__/**/*.test.{ts,tsx}",
+    "<rootDir>/stacks/**/*.test.{ts,tsx}"
+  ],
   "testPathIgnorePatterns": ["/node_modules/"],
   "transform": {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.scss$": "<rootDir>/__mocks__/scss-transformer.js"
   },
-  "collectCoverage": true,
-  "collectCoverageFrom": ["<rootDir>/src/**/*.{ts,tsx}"],
-  "coverageReporters": ["text-summary", "clover"],
-  "coveragePathIgnorePatterns": [
-    "/**/main.ts",
-    "/**/app.ts",
-    "/**/index.ts",
-    "/**/data/",
-    "/node_modules/",
-    "/cdk.out/",
-    "/dist/"
+  "moduleNameMapper": {
+    "\\.scss$": "identity-obj-proxy"
+  },
+  "collectCoverageFrom": [
+    "<rootDir>/src/**/*.ts",
+    "<rootDir>/stacks/**/*.ts",
+    "!<rootDir>/src/index.ts",
+    "!<rootDir>/src/**/*.module.ts",
+    "!<rootDir>/src/main.ts",
+    "!<rootDir>/src/app.ts",
+    "!<rootDir>/src/**/index.ts",
+    "!<rootDir>/src/**/data/**"
   ],
-  "coverageDirectory": "<rootDir>/src/__tests__/coverage"
+  "coverageReporters": ["json", "text-summary"],
+  "coverageDirectory": "<rootDir>/coverage",
+  "testEnvironment": "jsdom"
 }

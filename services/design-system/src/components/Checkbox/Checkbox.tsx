@@ -1,12 +1,15 @@
-import MUICheckbox, {
-  CheckboxProps as MUICheckboxProps,
-} from '@mui/material/Checkbox';
+import React from 'react';
+import { useRef } from 'react';
 
-export type CheckboxProps = MUICheckboxProps;
+export type CheckboxProps = {
+  checked?: boolean;
+  testId?: string;
+}
 
-export const Checkbox = (props: CheckboxProps) => {
-  const { ...muiProps } = props;
-  return <MUICheckbox {...muiProps} />;
-};
+export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props: CheckboxProps, ref) => {
+  const { checked, testId } = props;
+
+  return <input type="checkbox" data-testid={testId} ref={ref} checked={checked}/>;
+});
 
 export default Checkbox;

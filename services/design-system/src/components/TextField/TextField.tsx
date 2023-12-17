@@ -6,7 +6,8 @@ export type TextFieldProps = MUITextFieldProps;
 
 export const TextField = (props: TextFieldProps) => {
   const { ...muiProps } = props;
-  return <MUITextField {...muiProps} />;
+
+  return <MUITextField {...muiProps}/>;
 };
 
 export default TextField;

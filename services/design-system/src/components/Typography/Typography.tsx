@@ -28,7 +28,7 @@ export type TypographyProps = {
 export const Typography = (props: TypographyProps): JSX.Element => {
   const { children, variant } = props;
 
-  let classNames = []
+  const classNames = []
 
   if(props.fill){
     classNames.push('fill')

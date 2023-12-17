@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './style.module.scss';
 import { CircularProgress } from '@mui/material';
 
@@ -6,7 +6,7 @@ export enum ButtonColor {
   'primary' = 'primary',
   'secondary' = 'secondary',
   'inherit' = 'inherit'
-};
+}
 
 export enum ButtonSize {
   'small' = 'small',
@@ -21,6 +21,7 @@ export enum ButtonVariant {
 
 export type ButtonProps = {
   loading?: boolean;
+  analyticTag?: string;
   children: React.ReactNode;
   color?: keyof typeof ButtonColor;
   variant?:  keyof typeof ButtonVariant;
@@ -28,12 +29,13 @@ export type ButtonProps = {
   size?: keyof typeof ButtonSize;
   href?: string; // TODO add support
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  testId?: string;
 }
 
-export const Button = (props: ButtonProps) => {
-  const { loading, color, children, variant, selected, size, onClick } = props;
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
+  const { testId, loading, color, children, variant, selected, size, onClick } = props;
 
-  let classNames: string[] = ['button'];
+  const classNames: string[] = ['button'];
 
   if(color){
     classNames.push(`button-${color}`);
@@ -61,6 +63,7 @@ export const Button = (props: ButtonProps) => {
     classNames.push(`button-medium`)
   }
 
+
   const clickHandler = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if(onClick === undefined){
       return;
@@ -72,11 +75,13 @@ export const Button = (props: ButtonProps) => {
     <button
       className={classNames.join(' ')}
       onClick={(event) => clickHandler(event) }
+      ref={ref}
+      data-testid={testId}
     >
       {loading && <CircularProgress className="spinner" size="1rem"/>}
       {children}
     </button>
   );
-};
+});
 
 export default Button;
