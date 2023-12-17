@@ -1,12 +1,10 @@
-'use client';
-import styles from '../src/app/page.module.css';
-import { Container } from '@cats-cradle/design-system';
+import { Container } from '@cats-cradle/design-system/dist/main';
 import { DiceAnalyzer } from '../components/DiceAnalyzer';
 
-export default function Dice() {
+export default function DicePage() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <main>
+      <div>
         <Container>
           <h1>Dice Notation Analyzer</h1>
           <p>

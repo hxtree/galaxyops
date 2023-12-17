@@ -1,4 +1,6 @@
 @import '../../styles/utils/color-pallette';
+
+:global {
 .page-footer {
   background-color: $color-primary;
   color: $color-white;
@@ -34,4 +36,5 @@
       }
     }
   }
+}
 }

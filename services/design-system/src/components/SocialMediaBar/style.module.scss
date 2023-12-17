@@ -1,19 +1,21 @@
 @import '../../styles/utils/color-pallette';
 
-.social-media-bar {
-  background-color: $color-primary;
-  opacity: 0.8;
-  margin: 0;
-  margin-top: 4rem;
-  padding: 0.2rem 3rem;
-  text-align: right;
-  a {
-    text-decoration: none;
-    color: $color-white;
-    &:hover {
+:global {
+  .social-media-bar {
+    background-color: $color-primary;
+    opacity: 0.8;
+    margin: 0;
+    margin-top: 4rem;
+    padding: 0.2rem 3rem;
+    text-align: right;
+    a {
+      text-decoration: none;
       color: $color-white;
-      opacity: 1;
-      font-weight: bold;
+      &:hover {
+        color: $color-white;
+        opacity: 1;
+        font-weight: bold;
+      }
     }
   }
 }

@@ -26,6 +26,11 @@ laying the foundations for other services.
 At a base level a platform can be a curated list of preferred packages such as
 the one below.
 
+### Vite
+
+We have moved off of Webpack and NextJs. Vercel packages should be avoided. Vite
+is the prefered due to speed and developer experience.
+
 ### Database
 
 MongoDB Atlas. [Register](https://www.mongodb.com/cloud/atlas/register)
