@@ -15,7 +15,7 @@
     "app": "bin/app.js"
   },
   "scripts": {
-    "dev": "storybook dev -p 6006 -s public",
+    "dev": "storybook dev -p 3000 -s public",
     "build": "tsc --build ./tsconfig-build.json && vite build",
     "build:storybook": "tsc --p ./tsconfig-build.json && storybook build",
     "build:all": "rush build -t .",
@@ -46,7 +46,8 @@
     "@fortawesome/free-solid-svg-icons": "~6.4.2",
     "@cats-cradle/base-nodejs": "workspace:*",
     "jsdom": "~23.0.1",
-    "lodash": "~4.17.21"
+    "lodash": "~4.17.21",
+    "bootstrap": "~5.3.2"
   },
   "devDependencies": {
     "vite-plugin-checker": "0.6.2",

@@ -25,12 +25,19 @@ export const SocialMediaBar = (props: SocialMediaBarProps) => {
 
   return (
     <div className="social-media-bar">
-      <div>
-        {socialMedias && <Typography variant="body"><ul>
-        {socialMedias.map((socialMedia: SocialMediaBarLink) => (
-            <IconButton><FontAwesomeIcon icon={socialMedia.icon} color="white" size="xl"/></IconButton>
-        ))}</ul></Typography>
-      }
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className='logo'></div>
+          </div>
+          <div className="social-links col align-middle p-3 text-end">
+              {socialMedias &&
+              socialMedias.map((socialMedia: SocialMediaBarLink) => (
+                  <IconButton><FontAwesomeIcon icon={socialMedia.icon} color="white" size="xl"/></IconButton>
+              ))
+              }
+          </div>
+        </div>
       </div>
     </div>
   );
