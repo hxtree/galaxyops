@@ -1,12 +1,18 @@
 import './style.module.scss';
 
+export type NavMenuItem = {
+  link: string;
+  title: string;
+}
+
 export type AppBarProps = {
+  menuItems?: NavMenuItem[];
   siteTitle?: string;
   theme?: 'dark' | 'light';
 }
 
 export const AppBar = (props: AppBarProps) => {
-  const { siteTitle, theme } = props;
+  const { siteTitle, menuItems, theme } = props;
 
   return (
     <>
@@ -23,18 +29,12 @@ export const AppBar = (props: AppBarProps) => {
     <div className="container">
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav me-auto">
+          {menuItems && menuItems.map((menuItem: NavMenuItem) => (
           <li className="nav-item">
-            <a className="nav-link" href="#">Home</a>
+            <a className="nav-link" href={menuItem.link}>{menuItem.title}</a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">About Us</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Services</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Contact</a>
-          </li>
+          ))
+          }
         </ul>
         </div>
       </div>
