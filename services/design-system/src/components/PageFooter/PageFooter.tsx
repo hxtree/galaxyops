@@ -22,15 +22,22 @@ export const PageFooter = (props: PageFooterProps) => {
     <>
       <SocialMediaBar/>
       <footer className='page-footer'>
-      {links && <Typography variant="body"><ul>
-        {links.map((link: PageFooterLink) => (
-          <li><Link href={link.url}>{link.label}</Link></li>
-        ))}</ul></Typography>
-      }
-      <hr/>
-      <Typography variant="body">
-        &copy; {year} {siteOwner}. All Rights Reserved.
-      </Typography>
+        <div className="container">
+          <div className="row">
+              {links && links.map((link: PageFooterLink) => (
+
+              <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <Typography variant="body">
+                    <Link href={link.url}>{link.label}</Link>
+                    </Typography>
+                </div>
+              ))}
+          </div>
+          <hr/>
+        <Typography variant="body">
+          &copy; {year} {siteOwner}. All Rights Reserved.
+        </Typography>
+      </div>
     </footer>
     </>
   );

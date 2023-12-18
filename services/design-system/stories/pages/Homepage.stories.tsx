@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { AppBar, Button, Typography, Alert, Toolbar, IconButton, FontAwesomeIcon, faBars, faGithub, PageFooter, Container, Link } from '../../src/main';
+import { AppBar, Button, Typography, Alert, PageFooter, Container, Link } from '../../src/main';
+// IconButton, FontAwesomeIcon, faBars, faGithub,
 
 export default {
   title: 'Pages/Homepage',
@@ -10,24 +11,11 @@ export default {
 
 export const Default = () => (
   <>
-    <AppBar>
-      <Toolbar>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="start"
-        >
-          <FontAwesomeIcon icon={faBars} />
-        </IconButton>
-        <Typography>Morbi Quis</Typography>
-        <IconButton
-          href="https://github.com/hxtree/cats-cradle"
-          color="inherit"
-        >
-          <FontAwesomeIcon icon={faGithub} />
-        </IconButton>
-      </Toolbar>
-    </AppBar>
+    <AppBar menuItems={[
+      {link: 'https://example.com', 'title': 'Home'},
+      {link: 'https://example.com', 'title': 'About'},
+      {link: 'https://example.com', 'title': 'Products'}
+    ]}/>
     <Alert severity="info">
     Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
     </Alert>

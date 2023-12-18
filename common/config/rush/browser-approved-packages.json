@@ -435,6 +435,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "bootstrap",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "bson",
       "allowedCategories": [ "apis", "libraries" ]
     },
