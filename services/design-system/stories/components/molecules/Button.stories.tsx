@@ -7,18 +7,24 @@ export default {
   component: Button,
 } as Meta<typeof Button>;
 
-export const Primary =  (args: ButtonProps) => <Button {...args}>Run Query</Button>;
+export const Primary =  (args: ButtonProps) => <Button {...args}></Button>;
 
 Primary.args = {
   color: 'primary',
-  variant: 'contained',
+  loading: false,
+  // argTypes: { onClick: { action: 'clicked' } },
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => {
+    console.log('Another button clicked');
+  },
+  selected: false,
+  children: 'Run Query'
 } as ButtonProps;
 
 export const Secondary = (args: ButtonProps) => <Button {...args}>Run Query</Button>;
 
 Secondary.args = {
   color: 'secondary',
-  variant: 'contained',
+  href: "http://example.com"
 } as ButtonProps;
 
 export const Loading = (args: ButtonProps) => <Button {...args}>Run Query</Button>;
