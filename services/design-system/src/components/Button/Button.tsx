@@ -27,7 +27,7 @@ export type ButtonProps = {
   selected?: boolean;
   size?: keyof typeof ButtonSize;
   href?: string; // TODO add support
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   testId?: string;
 }
 
@@ -62,18 +62,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
     classNames.push(`button-medium`)
   }
 
-
-  const clickHandler = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if(onClick === undefined){
-      return;
-    }
-    onClick(event);
-  }
-
   return (
     <button
       className={classNames.join(' ')}
-      onClick={(event) => clickHandler(event) }
+      onClick={onClick}
       ref={ref}
       data-testid={testId}
     >
