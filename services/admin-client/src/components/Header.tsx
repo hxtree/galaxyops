@@ -1,7 +1,7 @@
 // import { Button } from '@cats-cradle/design-system';
 // import { SetStateAction, useState } from 'react';
 import { AppBar, Button } from '@cats-cradle/design-system/dist/main';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 
 
 const Header = () => {
@@ -11,17 +11,31 @@ const Header = () => {
   //   setCurrent(e.key);
   // };
 
+  type NavMenuItem = {
+    link: string;
+    title: string;
+  }
+  const menuItems: NavMenuItem[] = [
+    {link: '/', title: 'Home'},
+    {link: '/dice-analyzer', title: 'Dice analyzer'},
+    {link: '/archetypes', title: 'Archetypes'}
+  ];
+
   return (
     <>
-    <AppBar/>
-      <Button href="/login" color="inherit" size="small">Login</Button>
-       <Link to="/">Home</Link>
-        <Link to="/dice-analyzer">Dice Analyzer`</Link>
-        <Link to="/archetypes">Archetypes</Link>
-        <Outlet/>
-
+      <AppBar>
+        <Button href="/login" color="inherit" size="small">Login</Button>
+        <ul className="navbar-nav me-auto">
+          {menuItems && menuItems.map(
+            (menuItem: NavMenuItem) => (
+            <li className="nav-item">
+              <NavLink to={menuItem.link}>{menuItem.title}</NavLink>
+            </li>
+          ))}
+        </ul>
+      </AppBar>
+      <Outlet/>
     </>
-
   )
 };
 export default Header;

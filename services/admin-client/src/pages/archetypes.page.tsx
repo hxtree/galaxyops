@@ -9,13 +9,7 @@ export default function ArchetypePage() {
         <Container>
           <h1>Archetypes</h1>
           <p>
-            Archetypes act as the foundation and recipe for character sheets,
-            shaping their capabilities and limitations. Each character sheet
-            inherits traits from a specific archetype, determining their
-            potential and defining what they can and cannot learn. Archetype
-            information is not stored in the database, but it serves as a
-            crucial guide for player and non-player character creation.
-          </p>
+          Archetypes serve as the fundamental blueprint for character sheets. They outline a character's abilities, potential, and constraints. Each character sheet draws inspiration from a designated archetype, shaping their possibilities and outlining the skills they can or cannot acquire. While an archetype does not detail everything, it plays a vital role in guiding both player and non-player character creation.</p>
           <ArchetypeSelect />
         </Container>
        </div>
