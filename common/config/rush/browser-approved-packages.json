@@ -243,7 +243,15 @@
       "allowedCategories": [ "platform", "rigs" ]
     },
     {
+      "name": "@popperjs/core",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "@reduxjs/toolkit",
+      "allowedCategories": [ "apis" ]
+    },
+    {
+      "name": "@rollup/plugin-multi-entry",
       "allowedCategories": [ "apis" ]
     },
     {
