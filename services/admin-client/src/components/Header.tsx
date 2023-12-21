@@ -23,13 +23,17 @@ const Header = () => {
 
   return (
     <>
-      <AppBar>
-        <Button href="/login" color="inherit" size="small">Login</Button>
+      <AppBar
+        topRightSlot={<>Customer Service | <Button href="/login" color="inherit" size="small">Login</Button></>}
+      >
         <ul className="navbar-nav me-auto">
           {menuItems && menuItems.map(
             (menuItem: NavMenuItem) => (
             <li className="nav-item">
-              <NavLink to={menuItem.link}>{menuItem.title}</NavLink>
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  (isPending ? "pending" : isActive ? "active" : "") +
+                  " nav-link"} to={menuItem.link}>{menuItem.title}</NavLink>
             </li>
           ))}
         </ul>

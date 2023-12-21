@@ -125,6 +125,8 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
         <Button
       color="secondary"
       onClick={() => clear()}
+      // TODO clear should be disabled when already cleared
+      // disabled="true"
       testId={`dice-analyzer-clear`}
       ref={(ref: any) => analytics.set(ref, 'Clear')}>
       Clear
