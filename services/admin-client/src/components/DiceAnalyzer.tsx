@@ -122,14 +122,6 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
           </Stack>
         </Grid>
         <div>
-        <Button
-        color="secondary"
-        onClick={() => clear()}
-        disabled={data.length < 1}
-        testId={`dice-analyzer-clear`}
-        ref={(ref: any) => analytics.set(ref, 'Clear')}>
-        Clear
-      </Button>
       <Button
         color="primary"
         loading={isLoading}
@@ -137,6 +129,14 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
         testId={`dice-analyzer-roll`}
         ref={(ref: any) => analytics.set(ref, 'Roll')}>
         Roll
+      </Button>
+      <Button
+        color="secondary"
+        onClick={() => clear()}
+        disabled={data.length < 1}
+        testId={`dice-analyzer-clear`}
+        ref={(ref: any) => analytics.set(ref, 'Clear')}>
+        Clear
       </Button>
 
 
