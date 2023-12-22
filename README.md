@@ -1,19 +1,54 @@
 <h1 align="center">Cats Cradle :yarn:</h1>
 
+**AWS Enterprise Monorepo**
+
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/cats-cradle)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-Embark on a nostalgic adventure with **Cats Cradle**, the upcoming co-op RPG
-that immerses you in a wondrous world. Join us on this journey as we develop and
-bring the game to life.
+Welcome to the open-source platform for enterprise architecture! This repository
+houses a collection of event-driven microservices, built on a powerful Platform
+as a Service (PaaS) foundation. The integration of Infrastructure as Code (IaC)
+ensures a streamlined DevOps pipeline for continuous integration and continuous
+deployment (CI/CD) leverage the power of AWS.
 
-This repo houses the game's code in a enterprise architecture monorepo. It
-includes numerous event-driven microservices built on a PaaS with IaC for
-streamlined DevOps CI/CD. While we maintain some packages primarily for the
-game, most we individually publish to
-[NPM](https://www.npmjs.com/search?q=%40cats-cradle).
+## Overview
+
+This monorepo is designed to provide a modular and scalable architecture for
+enterprises looking to embrace modern software development practices. The use of
+event-driven microservices enables flexibility, scalability, and responsiveness
+to changing business needs.
+
+## Key Features
+
+- **Microservices Architecture:** The repository is organized into modular
+  microservices, each focusing on specific business functionalities. This design
+  promotes maintainability, scalability, and ease of deployment.
+
+- **Platform as a Service (PaaS):** Leveraging a PaaS foundation simplifies
+  infrastructure management and allows developers to focus on writing code
+  without worrying about the underlying infrastructure.
+
+- **Event-Driven Design:** The microservices communicate through events,
+  allowing for loosely coupled components and enabling efficient handling of
+  business processes.
+
+- **Infrastructure as Code (IaC):** The entire infrastructure is defined as
+  code, allowing for version control, easy replication, and consistent
+  environments across different stages of the development lifecycle.
+
+- **DevOps CI/CD:** The repository includes a robust DevOps pipeline for
+  continuous integration and continuous deployment. Automated testing, build,
+  and deployment processes ensure a smooth and reliable software delivery
+  lifecycle.
+
+---
+
+While specific services and packages are actively maintained for the development
+of Cats Cradle, a nostalgic co-op RPG, the repository functions as a foundation
+for architecting monorepos. Services are individually released. Libraries are
+published on [NPM](https://www.npmjs.com/search?q=%40cats-cradle).
 
 ## Getting Started
 
@@ -80,7 +115,8 @@ See [Documentation](docs/index.md).
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-Join us in the build. Contribute to help shape any part of the monorepo.
+Join us on this development journey as we develop and bring the game to life.
+Contribute to any part of the monorepo to help shape the game.
 
 Pull requests and bug reports are welcome on GitHub at
 <https://github.com/hxtree/cats-cradle>. This project is intended to be a safe,
