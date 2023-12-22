@@ -27,12 +27,13 @@ export type ButtonProps = {
   selected?: boolean;
   size?: keyof typeof ButtonSize;
   href?: string; // TODO add support
+  disabled?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   testId?: string;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
-  const { testId, href, loading, color, children, variant, selected, size, onClick } = props;
+  const { disabled, testId, href, loading, color, children, variant, selected, size, onClick } = props;
 
   const classNames: string[] = ['button'];
 
@@ -63,7 +64,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
   }
 
   let onClickHandler;
-  if (onClick !== undefined) {
+  let isButtonDisabled = false;
+
+  if(disabled){
+    isButtonDisabled = true;
+    classNames.push(`button-disabled`)
+  } else if (onClick !== undefined) {
     onClickHandler = onClick;
   } else if(href){
     onClickHandler = () => { window.location.href = href};
@@ -71,6 +77,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
 
   return (
     <button
+      disabled={isButtonDisabled}
       className={classNames.join(' ')}
       onClick={ onClickHandler }
       ref={ref}

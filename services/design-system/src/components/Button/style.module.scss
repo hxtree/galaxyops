@@ -12,7 +12,13 @@
     border: none;
     margin: 8px;
     box-shadow: none;
-
+    &.button-disabled {
+      opacity: 0.5;
+      border: 3px solid $color-white !important;
+      background-color: $color-gray !important;
+      color: $color-black !important;
+      cursor: not-allowed;
+    }
     &.button-primary {
       border: 3px solid $color-primary;
       background-color: $color-primary;

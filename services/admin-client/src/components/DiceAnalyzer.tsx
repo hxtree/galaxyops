@@ -123,21 +123,20 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
         </Grid>
         <div>
         <Button
-      color="secondary"
-      onClick={() => clear()}
-      // TODO clear should be disabled when already cleared
-      // disabled="true"
-      testId={`dice-analyzer-clear`}
-      ref={(ref: any) => analytics.set(ref, 'Clear')}>
-      Clear
+        color="secondary"
+        onClick={() => clear()}
+        disabled={data.length < 1}
+        testId={`dice-analyzer-clear`}
+        ref={(ref: any) => analytics.set(ref, 'Clear')}>
+        Clear
       </Button>
       <Button
-      color="primary"
-      loading={isLoading}
-      onClick={() => callApi()}
-      testId={`dice-analyzer-roll`}
-      ref={(ref: any) => analytics.set(ref, 'Roll')}>
-      Roll
+        color="primary"
+        loading={isLoading}
+        onClick={() => callApi()}
+        testId={`dice-analyzer-roll`}
+        ref={(ref: any) => analytics.set(ref, 'Roll')}>
+        Roll
       </Button>
 
 
