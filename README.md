@@ -60,7 +60,7 @@ Infrastructure as Code (IaC) ensures a streamlined DevOps pipeline for
 continuous integration and continuous deployment (CI/CD) leveraging the power of
 AWS.
 
-![Flow Chart](docs/flow-chart-dark.drawio.svg)
+![Flow Chart](docs/flow-chart.drawio.svg)
 
 ### Pull Request Lifecycle (~5 mins)
 
