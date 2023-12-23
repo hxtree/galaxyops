@@ -8,53 +8,59 @@ import {
   Select,
   SelectChangeEvent,
   CodeSnippet,
-  CodeSnippetLanguages,
+  CodeSnippetLanguages
 } from '@cats-cradle/design-system/dist/main';
+
+// ... (imports remain the same)
 
 export default function ArchetypeSelect() {
   const [archetypes, setArchetypes] = useState<string[]>([]);
-  const [archetypeId, setArchetypeId] = useState<string>();
-  const [archetypeData, setArchetypeData] = useState<object>();
+  const [archetypeId, setArchetypeId] = useState<string>("");
+  const [archetypeData, setArchetypeData] = useState<object>({});
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const archetypesFetch = async () => {
       setLoading(true);
 
-      const res = await axios.get(
-        'https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/character/archetypes',
-      );
+      try {
+        const res = await axios.get(
+          'https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/character/archetypes',
+        );
 
-      setArchetypes(res.data);
-      setLoading(false);
+        setArchetypes(res.data);
+      } catch (err) {
+        console.error("Error fetching archetypes:", err.message);
+      } finally {
+        setLoading(false);
+      }
     };
+
     archetypesFetch();
   }, []);
 
   const fetchArchetypeData = async (archetypeId: string) => {
+    setLoading(true);
     try {
-      setLoading(true);
-
       const res = await axios.get(
         `https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/character/archetypes/${archetypeId}`,
       );
 
-      const result = await res.data.json;
-      setArchetypeData(result);
-      setLoading(false);
+      setArchetypeData(res.data);
     } catch (err) {
       const error = err as Error;
-      console.log(error.message);
+      console.error("Error fetching archetype data:", error.message);
+    } finally {
       setLoading(false);
     }
   };
 
-  const handleChange = (event: SelectChangeEvent) => {
+  const handleChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
     const {
       target: { value },
     } = event;
-    setArchetypeId(value);
-    fetchArchetypeData(value);
+    setArchetypeId(value as string);
+    await fetchArchetypeData(value as string);
   };
 
   return (
@@ -64,24 +70,26 @@ export default function ArchetypeSelect() {
         <Select
           labelId="archetype-id-label"
           id="archetype-id"
-          value={archetypeId}
-          onChange={handleChange}
+          onChange={(event) => handleChange(event)}
           input={<OutlinedInput label="Archetype" />}
         >
-          {archetypes.map(archetype => (
+          {archetypes && archetypes.map(archetype => (
             <MenuItem key={archetype} value={archetype}>
               {archetype}
             </MenuItem>
           ))}
         </Select>
       </FormControl>
-      {archetypeData && (
-        <CodeSnippet
-          data={JSON.stringify(archetypeData, null, 2)}
-          language={CodeSnippetLanguages.JSON}
-        />
+      {archetypeData && Object.keys(archetypeData).length > 0 && (
+        <>
+          <CodeSnippet
+            data={JSON.stringify(archetypeData, null, 2)}
+            language={CodeSnippetLanguages.JSON}
+          />
+        </>
       )}
       {isLoading && 'loading'}
     </>
   );
 }
+
