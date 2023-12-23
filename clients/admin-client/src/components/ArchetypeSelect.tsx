@@ -30,7 +30,8 @@ export default function ArchetypeSelect() {
 
         setArchetypes(res.data);
       } catch (err) {
-        console.error("Error fetching archetypes:", err.message);
+        const error = err as unknown as Error;
+        console.error("Error fetching archetypes:", error.message);
       } finally {
         setLoading(false);
       }
@@ -48,14 +49,14 @@ export default function ArchetypeSelect() {
 
       setArchetypeData(res.data);
     } catch (err) {
-      const error = err as Error;
+      const error = err as unknown as Error;
       console.error("Error fetching archetype data:", error.message);
     } finally {
       setLoading(false);
     }
   };
 
-  const handleChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleChange = async (event: SelectChangeEvent<unknown>) => {
     const {
       target: { value },
     } = event;
@@ -82,6 +83,7 @@ export default function ArchetypeSelect() {
       </FormControl>
       {archetypeData && Object.keys(archetypeData).length > 0 && (
         <>
+          <h2>{archetypeId}</h2>
           <CodeSnippet
             data={JSON.stringify(archetypeData, null, 2)}
             language={CodeSnippetLanguages.JSON}
