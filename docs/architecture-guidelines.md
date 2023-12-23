@@ -133,3 +133,9 @@ The original tech demo engine was built as an isometric game engine. However
 creating a isometric sprite map for each object becomes time consuming and
 difficult to manage changes. It is easier to generate frames using 3D.
 Performance of 3D on mobile has drastically improved in the last 20 years.
+
+## Recommend Reading
+
+- Accelerate: The Science of Lean Software and DevOps: Building and Scaling High
+  Performing Technology Organizations Paperback by Nicole Forsgren PhD (Author),
+  Jez Humble (Author), Gene Kim (Author).

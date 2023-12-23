@@ -248,7 +248,7 @@
     },
     {
       "packageName": "@cats-cradle/admin-client",
-      "projectFolder": "services/admin-client",
+      "projectFolder": "clients/admin-client",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
       "tags": ["service-package", "cimongo"]
