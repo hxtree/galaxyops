@@ -12,4 +12,3 @@
 - [Coding Standards](./CODING_STANDARDS.md)
 - [Important Third Party Docs](./third-party-docs.md)
 - [Init AWS Deploment](./init-aws-deployment.md)
-- [VSCode Devcontainer](./devcontainer.md)
