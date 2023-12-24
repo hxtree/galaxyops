@@ -1,6 +1,7 @@
 import React from 'react';
 import { CircularProgress } from '@mui/material';
 import './style.module.scss';
+import Spinner from '../Spinner/Spinner';
 
 export enum ButtonColor {
   'primary' = 'primary',
@@ -83,7 +84,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
       ref={ref}
       data-testid={testId}
     >
-      {loading && <CircularProgress className="spinner" size="1rem"/>}
+      {loading && <Spinner color="light" size="small"/>}
       {children}
     </button>
   );
