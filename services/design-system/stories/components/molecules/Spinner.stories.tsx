@@ -7,4 +7,8 @@ export default {
   component: Spinner,
 } as Meta<typeof Spinner>;
 
-export const Default = () => <Spinner />;
+export const Default = args => <Spinner {...args}/>;
+
+Default.args = {
+  color: "primary",
+};
