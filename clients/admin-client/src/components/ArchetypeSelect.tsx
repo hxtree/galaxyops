@@ -11,8 +11,6 @@ import {
   CodeSnippetLanguages
 } from '@cats-cradle/design-system/dist/main';
 
-// ... (imports remain the same)
-
 export default function ArchetypeSelect() {
   const [archetypes, setArchetypes] = useState<string[]>([]);
   const [archetypeId, setArchetypeId] = useState<string>("");

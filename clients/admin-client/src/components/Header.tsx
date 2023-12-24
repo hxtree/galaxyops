@@ -18,7 +18,8 @@ const Header = () => {
   const menuItems: NavMenuItem[] = [
     {link: '/', title: 'Home'},
     {link: '/dice-analyzer', title: 'Dice analyzer'},
-    {link: '/archetypes', title: 'Archetypes'}
+    {link: '/archetypes', title: 'Archetypes'},
+    {link: '/character-sheets', title: 'Character Sheets'}
   ];
 
   return (
