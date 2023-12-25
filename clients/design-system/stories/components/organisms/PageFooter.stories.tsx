@@ -12,3 +12,11 @@ export const Default = (args: PageFooterProps) => <PageFooter {...args}></PageFo
 Default.args = {
   siteOwner: 'Cat\'s Cradle',
 };
+
+import { faGithub, faYoutube, faXTwitter, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+
+const socialMedias = [
+  {icon: faGithub, label: 'Github', url: 'https://github.com/hxtree/cats-cradle'},
+  {icon: faYoutube, label: 'Youtbe',  url: 'https://github.com/hxtree/cats-cradle'},
+  {icon: faXTwitter, label: 'XTwitter',  url: 'https://github.com/hxtree/cats-cradle'}
+]

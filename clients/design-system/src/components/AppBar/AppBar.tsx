@@ -29,7 +29,7 @@ export const AppBar = (props: AppBarProps) => {
         </div>
       </nav>
 
-      <nav className="navbar navbar-expand-lg navbar-dark app-bar-dark">
+      <nav className="navbar navbar-expand-lg navbar-light app-bar-light">
         <div className="container">
           <div className="collapse navbar-collapse" id="navbarNav">
             {children}
