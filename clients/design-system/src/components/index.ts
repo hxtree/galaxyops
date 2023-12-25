@@ -9,6 +9,7 @@ export * from './Gauge/Gauge';
 export * from './Gauge/GaugeProps';
 export * from './Meter/Meter';
 export * from './PageFooter/PageFooter';
+export * from './SocialMediaBar/SocialMediaBar';
 export * from './Link/NonInteractiveLink';
 export * from './Typography/Typography';
 export * from './Alert/Alert';

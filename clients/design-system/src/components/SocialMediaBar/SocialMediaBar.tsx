@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faYoutube, faXTwitter, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+
 import { IconButton } from '@mui/material';
 import './style.module.scss';
 
@@ -10,17 +11,11 @@ export type SocialMediaBarLink = {
 }
 
 export type SocialMediaBarProps = {
-  links?: SocialMediaBarLink[];
+  socialMedias?: SocialMediaBarLink[];
 };
 
 export const SocialMediaBar = (props: SocialMediaBarProps) => {
-  const { links } = props;
-
-  const socialMedias = [
-    {icon: faGithub, label: 'Github', url: 'https://github.com/hxtree/cats-cradle'},
-    {icon: faYoutube, label: 'Youtbe',  url: 'https://github.com/hxtree/cats-cradle'},
-    {icon: faXTwitter, label: 'XTwitter',  url: 'https://github.com/hxtree/cats-cradle'}
-  ]
+  const { socialMedias } = props;
 
   return (
     <div className="social-media-bar">

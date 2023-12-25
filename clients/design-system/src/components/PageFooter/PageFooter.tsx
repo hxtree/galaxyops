@@ -1,5 +1,5 @@
 import Link from '../Link/Link';
-import SocialMediaBar from '../SocialMediaBar/SocialMediaBar';
+import SocialMediaBar, { SocialMediaBarLink } from '../SocialMediaBar/SocialMediaBar';
 import { Typography } from '../Typography/Typography';
 import './style.module.scss';
 
@@ -11,25 +11,26 @@ export type PageFooterLink = {
 export type PageFooterProps = {
   siteOwner: string;
   links: PageFooterLink[];
+  socialMedias?: SocialMediaBarLink[]
 };
 
 export const PageFooter = (props: PageFooterProps) => {
-  const { links, siteOwner } = props;
+  const { socialMedias, links, siteOwner } = props;
 
   const year = new Date().getFullYear();
 
   return (
     <>
-      <SocialMediaBar/>
+      <SocialMediaBar socialMedias={socialMedias}/>
       <footer className='page-footer'>
         <div className="container">
           <div className="row">
               {links && links.map((link: PageFooterLink) => (
 
               <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <Typography variant="body">
+                  <Typography variant="body">
                     <Link href={link.url}>{link.label}</Link>
-                    </Typography>
+                  </Typography>
                 </div>
               ))}
           </div>
