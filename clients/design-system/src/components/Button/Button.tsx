@@ -16,7 +16,7 @@ export enum ButtonVariant {
 export type ButtonProps = {
   loading?: boolean;
   children: React.ReactNode;
-  color:'primary'|'secondary'|'success'|'danger'|'warning'|'info'|'light'|'dark';
+  color?:'primary'|'secondary'|'success'|'danger'|'warning'|'info'|'light'|'dark';
   variant?:  keyof typeof ButtonVariant;
   selected?: boolean;
   size?: keyof typeof ButtonSize;
@@ -26,7 +26,7 @@ export type ButtonProps = {
   testId?: string;
 }
 
-export const Button = React.forwardRef((props: ButtonProps, ref): JSX.Element => {
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref): JSX.Element => {
   const { disabled, testId, href, loading, color, children, variant, selected, size, onClick } = props;
 
   const classNames: string[] = ['button'];

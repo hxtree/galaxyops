@@ -200,8 +200,8 @@
     },
     {
       "packageName": "@cats-cradle/design-system",
-      "projectFolder": "services/design-system",
-      "reviewCategory": "apis",
+      "projectFolder": "clients/design-system",
+      "reviewCategory": "clients",
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
         "@cats-cradle/create-bundle"
@@ -249,7 +249,7 @@
     {
       "packageName": "@cats-cradle/admin-client",
       "projectFolder": "clients/admin-client",
-      "reviewCategory": "apis",
+      "reviewCategory": "clients",
       "decoupledLocalDependencies": ["@cats-cradle/eslint-config"],
       "tags": ["service-package", "cimongo"]
     },
