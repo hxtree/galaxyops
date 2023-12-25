@@ -1,10 +1,10 @@
 import '@cats-cradle/design-system/dist/assets/style.css';
 import { Link, Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
-import Header from "../components/Header";
 import DicePage from "../pages/dice.page";
 import ArchetypesPage from "../pages/archetypes.page";
 import CharacterSheetsPage from '../pages/character-sheets.page';
 import HomePage from '../pages/home.page';
+import Header from "../components/Header";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -49,6 +49,8 @@ export const router = createBrowserRouter(
 
 export const Router = () => {
   return (
+    <>
     <RouterProvider router={router}/>
+    </>
   );
 }
