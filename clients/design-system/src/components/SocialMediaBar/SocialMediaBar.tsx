@@ -1,4 +1,3 @@
-import { Typography } from '../Typography/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faYoutube, faXTwitter, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { IconButton } from '@mui/material';

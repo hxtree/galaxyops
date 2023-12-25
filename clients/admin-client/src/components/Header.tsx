@@ -1,7 +1,7 @@
 // import { Button } from '@cats-cradle/design-system';
 // import { SetStateAction, useState } from 'react';
 import { AppBar, Button } from '@cats-cradle/design-system/dist/main';
-import { Outlet, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const Header = () => {
@@ -25,7 +25,8 @@ const Header = () => {
   return (
     <>
       <AppBar
-        topRightSlot={<>Customer Service | <Button href="/login" color="inherit" size="small">Login</Button></>}
+        siteTitle='Game Masters Portal'
+        topRightSlot={<><Button href="/login" color="secondary" size="small">Login</Button></>}
       >
         <ul className="navbar-nav me-auto">
           {menuItems && menuItems.map(
@@ -39,7 +40,6 @@ const Header = () => {
           ))}
         </ul>
       </AppBar>
-      <Outlet/>
     </>
   )
 };

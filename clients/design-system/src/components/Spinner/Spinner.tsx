@@ -1,6 +1,6 @@
 export type SpinnerProps = {
-  color:'primary'|'secondary'|'success'|'danger'|'warning'|'info'|'light'|'dark'
-  size?: 'small'
+  color:'primary'|'secondary'|'success'|'danger'|'warning'|'info'|'light'|'dark';
+  size?: 'small'|'medium'|'large';
 }
 
 export const Spinner = (props: SpinnerProps): JSX.Element => {

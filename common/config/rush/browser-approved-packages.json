@@ -40,7 +40,7 @@
     },
     {
       "name": "@babel/core",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@babel/plugin-proposal-private-property-in-object",
@@ -48,19 +48,19 @@
     },
     {
       "name": "@babel/preset-env",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@babel/preset-react",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@babel/preset-typescript",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@cats-cradle/base-nodejs",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "platform-package", "rigs" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "clients", "libraries", "platform", "platform-package", "rigs" ]
     },
     {
       "name": "@cats-cradle/bundlers",
@@ -84,11 +84,11 @@
     },
     {
       "name": "@cats-cradle/design-system",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@cats-cradle/eslint-config",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "platform-package", "rigs" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "clients", "libraries", "platform", "platform-package", "rigs" ]
     },
     {
       "name": "@cats-cradle/faker-factory",
@@ -120,11 +120,11 @@
     },
     {
       "name": "@emotion/react",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@emotion/styled",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@faker-js/faker",
@@ -136,19 +136,19 @@
     },
     {
       "name": "@fortawesome/fontawesome-svg-core",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@fortawesome/free-brands-svg-icons",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@fortawesome/free-solid-svg-icons",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@fortawesome/react-fontawesome",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@microsoft/rush",
@@ -164,15 +164,15 @@
     },
     {
       "name": "@mui/lab",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@mui/material",
-      "allowedCategories": [ "apis", "rigs" ]
+      "allowedCategories": [ "apis", "clients", "rigs" ]
     },
     {
       "name": "@mui/system",
-      "allowedCategories": [ "apis", "rigs" ]
+      "allowedCategories": [ "apis", "clients", "rigs" ]
     },
     {
       "name": "@nestjs/axios",
@@ -244,7 +244,7 @@
     },
     {
       "name": "@popperjs/core",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@reduxjs/toolkit",
@@ -252,7 +252,7 @@
     },
     {
       "name": "@rollup/plugin-multi-entry",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@rushstack/eslint-config",
@@ -292,15 +292,15 @@
     },
     {
       "name": "@storybook/addon-a11y",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@storybook/addon-actions",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@storybook/addon-essentials",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@storybook/addon-info",
@@ -308,11 +308,11 @@
     },
     {
       "name": "@storybook/addon-interactions",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@storybook/addon-links",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@storybook/addon-mdx-gfm",
@@ -324,7 +324,7 @@
     },
     {
       "name": "@storybook/addon-styling",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@storybook/addons",
@@ -336,7 +336,7 @@
     },
     {
       "name": "@storybook/builder-vite",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@storybook/cli",
@@ -344,15 +344,15 @@
     },
     {
       "name": "@storybook/node-logger",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@storybook/react",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@storybook/react-vite",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@storybook/react-webpack5",
@@ -360,31 +360,31 @@
     },
     {
       "name": "@storybook/testing-library",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@testing-library/dom",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@testing-library/jest-dom",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@testing-library/react",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@testing-library/user-event",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "allowedCategories": [ "apis", "category-platform", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "clients", "platform" ]
     },
     {
       "name": "@typescript-eslint/parser",
-      "allowedCategories": [ "apis", "category-platform", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "clients", "platform" ]
     },
     {
       "name": "@vendia/serverless-express",
@@ -392,7 +392,7 @@
     },
     {
       "name": "@vitejs/plugin-react",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "archiver",
@@ -400,7 +400,7 @@
     },
     {
       "name": "autoprefixer",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "aws-cdk",
@@ -408,7 +408,7 @@
     },
     {
       "name": "aws-cdk-lib",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform", "platform-package" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "clients", "platform", "platform-package" ]
     },
     {
       "name": "aws-lambda",
@@ -428,7 +428,7 @@
     },
     {
       "name": "axios",
-      "allowedCategories": [ "api-client", "apis" ]
+      "allowedCategories": [ "api-client", "apis", "clients" ]
     },
     {
       "name": "babel-jest",
@@ -444,7 +444,7 @@
     },
     {
       "name": "bootstrap",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "bson",
@@ -488,7 +488,7 @@
     },
     {
       "name": "constructs",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "platform", "platform-package" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "clients", "platform", "platform-package" ]
     },
     {
       "name": "copyfiles",
@@ -512,7 +512,7 @@
     },
     {
       "name": "eslint",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "platform-package", "rigs" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "clients", "libraries", "platform", "platform-package", "rigs" ]
     },
     {
       "name": "eslint-config-airbnb",
@@ -552,11 +552,11 @@
     },
     {
       "name": "eslint-plugin-react-hooks",
-      "allowedCategories": [ "apis", "category-platform", "platform" ]
+      "allowedCategories": [ "apis", "category-platform", "clients", "platform" ]
     },
     {
       "name": "eslint-plugin-react-refresh",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "eslint-plugin-storybook",
@@ -576,7 +576,7 @@
     },
     {
       "name": "glob",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "handlebars",
@@ -592,7 +592,7 @@
     },
     {
       "name": "identity-obj-proxy",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "intl",
@@ -612,15 +612,15 @@
     },
     {
       "name": "jest",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "platform-package", "rigs" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "clients", "libraries", "platform", "platform-package", "rigs" ]
     },
     {
       "name": "jest-environment-jsdom",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "jsdom",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "json-schema",
@@ -636,7 +636,7 @@
     },
     {
       "name": "lodash",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "platform-package" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "clients", "libraries", "platform", "platform-package" ]
     },
     {
       "name": "luxon",
@@ -728,23 +728,23 @@
     },
     {
       "name": "react",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "react-day-picker",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "react-dom",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "react-google-charts",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "react-intl",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "react-is",
@@ -756,7 +756,7 @@
     },
     {
       "name": "react-router-dom",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "react-scripts",
@@ -764,7 +764,7 @@
     },
     {
       "name": "react-syntax-highlighter",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "reflect-metadata",
@@ -784,7 +784,7 @@
     },
     {
       "name": "sass",
-      "allowedCategories": [ "apis", "libraries" ]
+      "allowedCategories": [ "apis", "clients", "libraries" ]
     },
     {
       "name": "size-limit",
@@ -796,7 +796,7 @@
     },
     {
       "name": "storybook",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "styled-components",
@@ -812,7 +812,7 @@
     },
     {
       "name": "ts-jest",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "platform-package", "rigs" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "clients", "libraries", "platform", "platform-package", "rigs" ]
     },
     {
       "name": "ts-mongoose-pagination",
@@ -820,7 +820,7 @@
     },
     {
       "name": "ts-node",
-      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "platform-package", "rigs" ]
+      "allowedCategories": [ "apis", "category-ci-cd", "category-platform", "cicd", "clients", "libraries", "platform", "platform-package", "rigs" ]
     },
     {
       "name": "tsc-alias",
@@ -844,27 +844,27 @@
     },
     {
       "name": "typescript",
-      "allowedCategories": [ "api-client", "apis", "category-ci-cd", "category-platform", "cicd", "libraries", "platform", "platform-package", "rigs" ]
+      "allowedCategories": [ "api-client", "apis", "category-ci-cd", "category-platform", "cicd", "clients", "libraries", "platform", "platform-package", "rigs" ]
     },
     {
       "name": "uuid",
-      "allowedCategories": [ "apis", "category-platform", "libraries", "platform", "platform-package" ]
+      "allowedCategories": [ "apis", "category-platform", "clients", "libraries", "platform", "platform-package" ]
     },
     {
       "name": "vite",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "vite-plugin-checker",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "vite-plugin-dts",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "vite-plugin-lib-inject-css",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "vitest",

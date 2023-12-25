@@ -11,26 +11,39 @@ export const Primary =  (args: ButtonProps) => <Button {...args}></Button>;
 
 Primary.args = {
   color: 'primary',
+  selected: false,
+  disabled: false,
   loading: false,
-  // argTypes: { onClick: { action: 'clicked' } },
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => {
     console.log('Another button clicked');
   },
-  selected: false,
   children: 'Run Query'
-} as ButtonProps;
+};
 
 export const Secondary = (args: ButtonProps) => <Button {...args}>Run Query</Button>;
 
 Secondary.args = {
+  selected: false,
+  disabled: false,
+  loading: false,
   color: 'secondary',
   href: "http://example.com"
-} as ButtonProps;
+};
 
 export const Loading = (args: ButtonProps) => <Button {...args}>Run Query</Button>;
 
 Loading.args = {
+  selected: false,
+  disabled: false,
   loading: true,
   color: 'secondary',
-  variant: 'contained',
-} as ButtonProps;
+};
+
+export const Disabled = (args: ButtonProps) => <Button {...args}>Run Query</Button>;
+
+Disabled.args = {
+  selected: false,
+  disabled: true,
+  loading: false,
+  color: 'primary',
+};
