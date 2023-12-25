@@ -14,9 +14,6 @@
     box-shadow: none;
     &.button-disabled {
       opacity: 0.5;
-      border: 3px solid $color-white !important;
-      background-color: $color-gray !important;
-      color: $color-black !important;
       cursor: not-allowed;
     }
     &.button-primary {
@@ -24,39 +21,49 @@
       background-color: $color-primary;
       color: $color-white;
       &:focus, &.button-selected {
-        outline-color: $color-berkeley-blue;
+        outline-color: $color-primary;
+      }
+      &.button-loading {
+        color: transparent;
+        > .spinner-border {
+          color: $color-white;
+        }
       }
     }
     &.button-secondary {
-      border: 3px solid $color-secondary;
-      background-color: $color-white;
-      color: $color-secondary;
-      &:focus, &.button-selected {
-        outline-color: $color-secondary;
-      }
-    }
-    &.button-inherit, &.button-loading {
       border: 3px solid $color-primary;
       background-color: $color-white;
       color: $color-primary;
       &:focus, &.button-selected {
-        outline-color: $color-berkeley-blue;
+        outline-color: $color-primary;
+      }
+      &.button-loading {
+        color: transparent;
+        > .spinner-border {
+          color: $color-primary !important;
+        }
       }
     }
-
-    &.button-loading {
-      border: 3px solid $color-gray;
-      background-color: $color-gray;
-      color: transparent;
-      position: relative;
+    &.button-inherit {
+      border: 3px solid $color-primary;
+      background-color: $color-white;
+      color: $color-primary;
       &:focus, &.button-selected {
-        outline-color: $color-gray;
+        outline-color: $color-primary;
       }
-      > .spinner {
+      &.button-loading {
+        color: transparent;
+        > .spinner-border {
+          color: $color-primary;
+        }
+      }
+    }
+    &.button-loading {
+      position: relative;
+      > .spinner-border {
         position: absolute;
         top: calc(50% - 0.5rem);
         left: calc(50% - 0.5rem);
-        color: $color-white;
       }
     }
     &:focus, &.button-selected {
@@ -74,7 +81,7 @@
     }
     &.button-normal, &.button-medium {
       font-size: 1rem;
-      padding: 15px 30px 10px 30px;
+      padding: 15px 25px 10px 25px;
     }
     &.button-large {
       font-size: 1.4rem;

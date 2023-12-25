@@ -2,6 +2,7 @@
 // import { SetStateAction, useState } from 'react';
 import { AppBar, Button } from '@cats-cradle/design-system/dist/main';
 import { Outlet, NavLink } from 'react-router-dom';
+import { BreadCrumbs } from './Breadcrumbs';
 
 
 const Header = () => {
@@ -39,6 +40,9 @@ const Header = () => {
           ))}
         </ul>
       </AppBar>
+      <div className="container mt-2 mb-2">
+        <BreadCrumbs/>
+      </div>
       <Outlet/>
     </>
   )

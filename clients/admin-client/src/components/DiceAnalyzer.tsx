@@ -87,13 +87,13 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
 
   return (
     <>
-      <Grid container spacing={2}>
-        {errorMsg && errorMsg?.length > 0 && (
-          <Alert role="alert" severity="error">
-            {errorMsg}
-          </Alert>
-        )}
+      {errorMsg && errorMsg?.length > 0 && (
+        <Alert className="mb-5" role="alert" severity="error">
+          {errorMsg}
+        </Alert>
+      )}
 
+      <Grid container spacing={2}>
         <Grid item>
           <Stack>
             <Box component="form">
