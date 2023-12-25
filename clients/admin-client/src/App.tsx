@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Router/>
-      <PageFooter siteOwner="Cats Cradle" links={[{label: 'Example', url: 'okay'}]}/>
+      <PageFooter siteOwner="Cats Cradle" links={[]}/>
     </>
   );
 }

@@ -9,8 +9,13 @@ type TBreadCrumbs = {
 export const BreadCrumbs: FC<TBreadCrumbs> = ({ title }) => {
   const crumbs = useBreadcrumbs();
 
+  const lastCrumb = crumbs[crumbs.length - 1];
+  if(lastCrumb.url === "/"){
+    return;
+  }
+
   return (
-    <nav aria-label="breadcrumb">
+    <nav className="container mt-2 mb-2" aria-label="breadcrumb">
      <ol className="breadcrumb">
         {crumbs.map((crumb, index) =>
           index !== crumbs.length - 1 ? (
