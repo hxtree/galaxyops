@@ -26,7 +26,7 @@ const Header = () => {
     <>
       <AppBar
         siteTitle='Game Masters Portal'
-        topRightSlot={<><Button href="/login" color="inherit" size="small">Login</Button></>}
+        topRightSlot={<><Button href="/login" color="secondary" size="small">Login</Button></>}
       >
         <ul className="navbar-nav me-auto">
           {menuItems && menuItems.map(
