@@ -20,3 +20,4 @@ export * from './Button/Button';
 export * from './Link/Link';
 export * from './Layout/Layout';
 export * from './Card/BasicCard';
+export * from './Paper/Paper';

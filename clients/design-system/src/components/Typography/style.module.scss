@@ -9,13 +9,12 @@
     font-family: "Eczar", serif;
     font-weight: 800;
     font-size: 3rem;
-    color: $color-berkeley-blue;
+    color: $color-primary;
     padding: 12px 0;
-    margin-top: 3rem;
     &.fill {
       border-radius: 5px;
       padding: 13px;
-      background-color: $color-berkeley-blue;
+      background-color: $color-primary;
       color: $color-white;
     };
     &.border {
@@ -44,7 +43,7 @@
 
   h2 {
     font-size: 2rem;
-    color: $color-berkeley-blue;
+    color: $color-primary;
     font-weight: bold;
     padding: 12px 0;
     &.border {
@@ -72,7 +71,7 @@
     &.fill {
       border-radius: 5px;
       padding: 20px 13px;
-      background-color: $color-berkeley-blue;
+      background-color: $color-primary;
       color: $color-white;
       font-weight: bold;
       border-bottom: none;

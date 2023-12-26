@@ -12,6 +12,7 @@
     border: none;
     margin: 8px;
     box-shadow: none;
+    transition: background-color 0.3s ease;
     &.button-disabled {
       opacity: 0.5;
       cursor: not-allowed;
@@ -29,10 +30,14 @@
           color: $color-white;
         }
       }
+      &:hover {
+        border-color:  lighten($color-primary, 5%);
+        background-color: lighten($color-primary, 5%);
+      }
     }
     &.button-secondary {
       border: 3px solid $color-primary;
-      background-color: $color-white;
+      background-color: transparent;
       color: $color-primary;
       &:focus, &.button-selected {
         outline-color: $color-primary;
@@ -43,10 +48,14 @@
           color: $color-primary !important;
         }
       }
+      &:hover {
+        border-color:  lighten($color-primary, 5%);
+        color: lighten($color-primary, 5%);
+      }
     }
     &.button-inherit {
       border: 3px solid $color-primary;
-      background-color: $color-white;
+      background-color: transparent;
       color: $color-primary;
       &:focus, &.button-selected {
         outline-color: $color-primary;
