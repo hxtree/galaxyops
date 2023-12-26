@@ -5,11 +5,10 @@ export default function LoginPage() {
     <main className="container">
       <Paper elevation="1">
         <h1>Log In</h1>
-        Email Address
-        <TextField/>
-        Password
-        <Link to="/forgot-password">Forgot Password</Link>
-        <TextField/>
+        <TextField id="email-address" label="Email Address" type="text"/>
+
+        <Link href="/forgot-password">Forgot Password</Link>
+        <TextField id="password" label="Password" type="password"/>
         <Button onClick={()=>{}} color="primary">Log In <FontAwesomeIcon icon={faArrowRight}/></Button>
       </Paper>
     </main>
