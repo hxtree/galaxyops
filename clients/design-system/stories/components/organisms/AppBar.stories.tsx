@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import { AppBar, AppBarProps, Toolbar,FontAwesomeIcon, faBars, faGithub,IconButton, Typography } from '../../../src/main';
 
 export default {
-  title: 'Molecules/AppBar',
+  title: 'organisms/AppBar',
   component: AppBar,
 } as Meta<typeof AppBar>;
 

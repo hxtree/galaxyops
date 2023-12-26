@@ -10,7 +10,7 @@ export type AppBarProps = {
   menuItems?: NavMenuItem[];
   siteTitle?: string;
   theme?: 'dark' | 'light';
-  children?: any;
+  children?: React.ReactNode;
   topRightSlot: ReactNode;
 }
 
@@ -29,7 +29,7 @@ export const AppBar = (props: AppBarProps) => {
         </div>
       </nav>
 
-      <nav className="navbar navbar-expand-lg navbar-light app-bar-light">
+      <nav className="navbar navbar-expand-lg navbar-light shadow-sm app-bar-light">
         <div className="container">
           <div className="collapse navbar-collapse" id="navbarNav">
             {children}

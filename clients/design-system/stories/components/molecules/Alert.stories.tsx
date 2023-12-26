@@ -7,12 +7,6 @@ export default {
   component: Alert,
 } as Meta<typeof Alert>;
 
-export const Error = args => <Alert {...args}>This is an alert.</Alert>;
-
-Error.args = {
-  severity: 'error',
-};
-
 export const Warning = args => <Alert {...args}>This is an alert.</Alert>;
 
 Warning.args = {
@@ -29,4 +23,10 @@ export const Success = args => <Alert {...args}>This is an alert.</Alert>;
 
 Success.args = {
   severity: 'success',
+};
+
+export const Danger = args => <Alert {...args}>This is an alert.</Alert>;
+
+Danger.args = {
+  severity: 'danger',
 };
