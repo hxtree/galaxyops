@@ -1,0 +1,8 @@
+@import '../../styles/utils/color-pallette';
+
+.paper {
+  background-color: $color-white;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 4px 30px 0px;
+  padding: 4rem 4.5rem;
+  border-radius: 2.25rem;
+}
