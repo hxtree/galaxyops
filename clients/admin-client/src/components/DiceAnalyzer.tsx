@@ -88,7 +88,7 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
   return (
     <>
       {errorMsg && errorMsg?.length > 0 && (
-        <Alert className="mb-5" role="alert" severity="danger">
+        <Alert severity="danger">
           {errorMsg}
         </Alert>
       )}
