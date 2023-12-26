@@ -7,6 +7,7 @@ import HomePage from '../pages/home.page';
 import { Outlet} from 'react-router-dom';
 import { BreadCrumbs } from '../components/Breadcrumbs';
 import Header from "../components/Header";
+import LoginPage from '../pages/login.page';
 
 const Root = () => {
   return (
@@ -31,6 +32,24 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+        handle: {
+          title: 'Log In',
+          url: '/login',
+          crumb: () => <Link to="/login">Log In</Link>,
+        }
+      },
+      {
+        path: "/forgot-password",
+        element: <LoginPage />,
+        handle: {
+          title: 'Forgot Password',
+          url: '/forgot-password',
+          crumb: () => <Link to="/forgot-password">Forgot Password</Link>,
+        }
       },
       {
         path: "/character-sheets",

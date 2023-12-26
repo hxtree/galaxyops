@@ -100,23 +100,23 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
               <TextField
                 label="Dice Notation"
                 value={notation}
-                onChange={e => setNotation(e.target.value)}
-                helperText="Example 1d6*2+2"
+                onChange={(e: any) => setNotation(e.target.value)}
+                helpBlock="Example 1d6*2+2"
                 variant="standard"
               />
               <TextField
                 label="Iterations"
                 value={iterations}
-                onChange={e => setIterations(Number(e.target.value))}
+                onChange={(e: any) => setIterations(Number(e.target.value))}
                 variant="standard"
-                sx={{ width: '5ch', ml: 1 }}
+                // sx={{ width: '5ch', ml: 1 }}
               />
               <TextField
                 label="Luck"
                 value={luck}
-                onChange={e => setLuck(e.target.value)}
+                onChange={(e: any) => setLuck(e.target.value)}
                 variant="standard"
-                sx={{ width: '5ch', ml: 1 }}
+                // sx={{ width: '5ch', ml: 1 }}
               />
             </Box>
           </Stack>

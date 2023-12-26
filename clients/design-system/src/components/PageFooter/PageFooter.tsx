@@ -36,7 +36,7 @@ export const PageFooter = (props: PageFooterProps) => {
           </div>
           <hr/>
         <Typography variant="body">
-          &copy; {year} {siteOwner}. All Rights Reserved.
+          &copy; {siteOwner}. {year}. All Rights Reserved.
         </Typography>
       </div>
     </footer>

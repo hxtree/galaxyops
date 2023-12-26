@@ -50,7 +50,7 @@
       }
       &:hover {
         border-color:  lighten($color-primary, 5%);
-        color: lighten($color-primary, 5%);
+        color: $color-black;
       }
     }
     &.button-inherit {
@@ -90,7 +90,7 @@
     }
     &.button-normal, &.button-medium {
       font-size: 1rem;
-      padding: 15px 25px 10px 25px;
+      padding: 15px 46px 10px 46px;
     }
     &.button-large {
       font-size: 1.4rem;
