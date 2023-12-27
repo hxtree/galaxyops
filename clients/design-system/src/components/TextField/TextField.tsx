@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.scss';
 
 export type TextFieldProps = {
   id?: string;
@@ -10,11 +11,12 @@ export type TextFieldProps = {
   invalid?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   variant?: string;
+  placeholder?: string;
 }
 
 // https://getbootstrap.com/docs/5.0/forms/validation/
 export const TextField = (props: TextFieldProps): JSX.Element => {
-  const { id, label, type, helpBlock, value, size, invalid, onChange } = props;
+  const { id, label, type, helpBlock, value, size, invalid, onChange, placeholder } = props;
 
   const classNames = [];
   classNames.push('form-control');
@@ -36,15 +38,15 @@ export const TextField = (props: TextFieldProps): JSX.Element => {
   if(helpBlock){
     return (<>
       {label && <label htmlFor={ id } className="form-label">{ label }</label>}
-      <input id={ id } type={ type } value={value} onChange={ onChange } className={classNames.join(' ')} aria-describedby={ `${id}HelpBlock` }/>
-      { helpBlock && <div id={ `${id}HelpBlock` } className="form-text">{ helpBlock }</div> }
+      <input id={ id } type={ type } value={value} onChange={ onChange } className={classNames.join(' ')} placeholder={placeholder} aria-describedby={ `${id}HelpBlock` }/>
+      { helpBlock && <div id={ `${id}HelpBlock` } className="form-text" >{ helpBlock }</div> }
       { invalid && <div className="invalid-feedback">{ invalid }</div>}
     </>)
   }
 
   return (<>
     {label && <label htmlFor={ id } className="form-label">{ label }</label>}
-    <input id={ id } type={ type } value={ value } onChange={ onChange  }className={classNames.join(' ')}/>
+    <input id={ id } type={ type } value={ value } onChange={ onChange  } className={classNames.join(' ')}  placeholder={placeholder}/>
     { invalid && <div className="invalid-feedback">{ invalid }</div>}
   </>)
 };
