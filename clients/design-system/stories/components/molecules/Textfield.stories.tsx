@@ -8,6 +8,4 @@ export default {
   argTypes: {},
 } as Meta<typeof TextField>;
 
-
-
-export const Default = () => <TextField/>;
+export const Default = () => <TextField id="email-address" placeholder="Enter Your Email" label="Email Address" type="text"/>

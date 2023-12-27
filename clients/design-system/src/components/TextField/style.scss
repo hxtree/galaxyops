@@ -1,0 +1,12 @@
+@import '../../styles/utils/color-pallette';
+
+.form-label {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 	0.875rem;
+  color: lighten($color-off-black, 30%);
+}
+
+.form-control {
+  letter-spacing: 0.1rem;
+}

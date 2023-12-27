@@ -3,7 +3,7 @@
 :global {
   .social-media-bar {
     background-color: $color-primary;
-    background: linear-gradient(to top left, $color-primary, darken($color-primary, 20%));
+    box-shadow: inset 0px 0px 30px 10px rgba(0, 0,0, 0.14);
     margin: 0;
     margin-top: 4rem;
     // padding: 0.2rem 3rem;
