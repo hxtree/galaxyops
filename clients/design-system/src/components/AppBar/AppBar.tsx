@@ -15,7 +15,7 @@ export type AppBarProps = {
 }
 
 export const AppBar = (props: AppBarProps) => {
-  const { topRightSlot, children, siteTitle, menuItems, theme } = props;
+  const { topRightSlot, children, siteTitle } = props;
 
   return (
     <>

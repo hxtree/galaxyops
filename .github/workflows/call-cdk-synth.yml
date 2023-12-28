@@ -42,7 +42,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: install pnpm needed for cdk NodeJsFunction esbuild
-        run: npm install --global pnpm@8.6.6
+        run: npm install --global pnpm@8.13.1
 
       - name: rush install
         # if: steps.cache.outputs.cache-hit != 'true'
