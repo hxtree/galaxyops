@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/create-artifact
 
-This log was last generated on Tue, 12 Dec 2023 03:15:41 GMT and should not be manually modified.
+This log was last generated on Thu, 28 Dec 2023 16:54:41 GMT and should not be manually modified.
+
+## 2.0.6
+Thu, 28 Dec 2023 16:54:41 GMT
+
+### Patches
+
+- upgrade typescript 5.3.3
 
 ## 2.0.5
 Tue, 12 Dec 2023 03:15:41 GMT

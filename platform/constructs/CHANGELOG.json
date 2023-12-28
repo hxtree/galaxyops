@@ -2,6 +2,23 @@
   "name": "@cats-cradle/constructs",
   "entries": [
     {
+      "version": "0.0.9",
+      "tag": "@cats-cradle/constructs_v0.0.9",
+      "date": "Thu, 28 Dec 2023 16:54:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "upgrade typescript 5.3.3"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.10`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.8",
       "tag": "@cats-cradle/constructs_v0.0.8",
       "date": "Tue, 12 Dec 2023 03:15:41 GMT",

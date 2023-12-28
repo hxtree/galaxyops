@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/eslint-config",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Eslint rules by profile",
   "license": "MIT",
   "repository": {
@@ -14,19 +14,19 @@
     "lint:ci": ""
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "~5.62.0",
-    "eslint-config-airbnb-typescript": "~17.0.0",
+    "@typescript-eslint/eslint-plugin": "~6.16.0",
+    "eslint-config-airbnb-typescript": "~17.1.0",
     "eslint-config-airbnb": "~19.0.4",
-    "prettier": "~2.8.1",
-    "eslint-config-prettier": "~8.8.0",
-    "eslint": "8.52.0",
-    "@typescript-eslint/parser": "~5.62.0",
-    "typescript": "5.1.3",
+    "prettier": "~3.1.1",
+    "eslint-config-prettier": "~9.1.0",
+    "eslint": "8.56.0",
+    "@typescript-eslint/parser": "~6.16.0",
+    "typescript": "5.3.3",
     "eslint-config-airbnb-base": "~15.0.0",
-    "eslint-plugin-import": "~2.27.5",
-    "eslint-plugin-jsx-a11y": "~6.7.1",
-    "eslint-plugin-react": "~7.32.2",
+    "eslint-plugin-import": "~2.29.1",
+    "eslint-plugin-jsx-a11y": "~6.8.0",
+    "eslint-plugin-react": "~7.33.2",
     "eslint-plugin-react-hooks": "~4.6.0",
-    "@rushstack/eslint-config": "~3.2.0"
+    "@rushstack/eslint-config": "~3.5.1"
   }
 }

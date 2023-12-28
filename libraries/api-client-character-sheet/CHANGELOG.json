@@ -2,6 +2,18 @@
   "name": "@cats-cradle/api-client-character-sheet",
   "entries": [
     {
+      "version": "1.0.6",
+      "tag": "@cats-cradle/api-client-character-sheet_v1.0.6",
+      "date": "Thu, 28 Dec 2023 16:54:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "upgrade typescript 5.3.3"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.5",
       "tag": "@cats-cradle/api-client-character-sheet_v1.0.5",
       "date": "Wed, 04 Oct 2023 03:44:49 GMT",

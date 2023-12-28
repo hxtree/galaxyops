@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/api-client-character-sheet
 
-This log was last generated on Wed, 04 Oct 2023 03:44:49 GMT and should not be manually modified.
+This log was last generated on Thu, 28 Dec 2023 16:54:41 GMT and should not be manually modified.
+
+## 1.0.6
+Thu, 28 Dec 2023 16:54:41 GMT
+
+### Patches
+
+- upgrade typescript 5.3.3
 
 ## 1.0.5
 Wed, 04 Oct 2023 03:44:49 GMT

@@ -2,6 +2,23 @@
   "name": "@cats-cradle/create-artifact",
   "entries": [
     {
+      "version": "2.0.6",
+      "tag": "@cats-cradle/create-artifact_v2.0.6",
+      "date": "Thu, 28 Dec 2023 16:54:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "upgrade typescript 5.3.3"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.10`"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.0.5",
       "tag": "@cats-cradle/create-artifact_v2.0.5",
       "date": "Tue, 12 Dec 2023 03:15:41 GMT",

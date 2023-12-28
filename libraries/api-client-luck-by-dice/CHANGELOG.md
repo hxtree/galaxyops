@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/api-client-luck-by-dice
 
-This log was last generated on Sat, 14 Oct 2023 22:49:51 GMT and should not be manually modified.
+This log was last generated on Thu, 28 Dec 2023 16:54:41 GMT and should not be manually modified.
+
+## 1.0.5
+Thu, 28 Dec 2023 16:54:41 GMT
+
+### Patches
+
+- upgrade typescript 5.3.3
 
 ## 1.0.4
 Sat, 14 Oct 2023 22:49:51 GMT
