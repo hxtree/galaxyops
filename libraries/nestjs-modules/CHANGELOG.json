@@ -2,6 +2,29 @@
   "name": "@cats-cradle/nestjs-modules",
   "entries": [
     {
+      "version": "0.2.17",
+      "tag": "@cats-cradle/nestjs-modules_v0.2.17",
+      "date": "Thu, 28 Dec 2023 16:54:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "upgrade typescript 5.3.3"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.10`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/validation-schemas\" to `0.4.6`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/faker-factory\" to `1.2.9`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.2.16",
       "tag": "@cats-cradle/nestjs-modules_v0.2.16",
       "date": "Tue, 12 Dec 2023 03:15:41 GMT",

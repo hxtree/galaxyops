@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/api-client-email-service",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "OpenAPI client for @cats-cradle/api-client-email-service",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [

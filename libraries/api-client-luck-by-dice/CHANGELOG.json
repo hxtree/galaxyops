@@ -2,6 +2,18 @@
   "name": "@cats-cradle/api-client-luck-by-dice",
   "entries": [
     {
+      "version": "1.0.5",
+      "tag": "@cats-cradle/api-client-luck-by-dice_v1.0.5",
+      "date": "Thu, 28 Dec 2023 16:54:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "upgrade typescript 5.3.3"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.4",
       "tag": "@cats-cradle/api-client-luck-by-dice_v1.0.4",
       "date": "Sat, 14 Oct 2023 22:49:51 GMT",
