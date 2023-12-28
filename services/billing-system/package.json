@@ -35,7 +35,7 @@
     "@nestjs/terminus": "9.1.1",
     "@nestjs/platform-express": "9.3.9",
     "aws-serverless-express": "~3.4.0",
-    "@vendia/serverless-express": "4.10.4",
+    "@vendia/serverless-express": "4.12.6",
     "express": "4.18.2",
     "node-cache": "5.1.2",
     "reflect-metadata": "0.1.13",
@@ -47,11 +47,11 @@
     "@nestjs/axios": "~2.0.0"
   },
   "devDependencies": {
-    "@cats-cradle/eslint-config": "1.0.8",
+    "@cats-cradle/eslint-config": "1.0.11",
     "aws-cdk-lib": "2.95.0",
     "constructs": "^10.2.70",
     "@types/jest": "29.5.11",
-    "@types/node": "20.9.0",
+    "@types/node": "20.10.5",
     "@types/aws-lambda": "~8.10.130",
     "jest": "29.7.0",
     "typescript": "5.3.3",
@@ -65,7 +65,7 @@
     "@types/lodash": "~4.14.202",
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.16",
-    "@cats-cradle/create-bundle": "1.0.7",
-    "@cats-cradle/create-artifact": "2.0.0"
+    "@cats-cradle/create-bundle": "1.0.9",
+    "@cats-cradle/create-artifact": "2.0.6"
   }
 }
