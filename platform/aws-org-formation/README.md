@@ -12,6 +12,11 @@ formation will create one.
 After running `./bin/sync.sh` get the name servers for the hosted zone in master
 account and use them to update the Registered domain's nameservers in Route 53.
 
+## Domain Registration
+
+Domain registration is done manually via Route 53. Populate domainName. Delete
+any hostedZone in master account as org formation will create one.
+
 ## Getting Started
 
 1. Login to the AWS Management Console. Go to Org Formations and create an Org.
