@@ -3,6 +3,11 @@
 The AWS Organization is initialized, managed, and synced using
 [AWS Organization Formation](https://github.com/org-formation/org-formation-cli).
 
+## Domain Registration
+
+Domain registration is done manually via Route 53. Populate domainName. Delete
+any hostedZone in master account as org formation will create one.
+
 ## Getting Started
 
 1. Login to the AWS Management Console. Go to Org Formations and create an Org.

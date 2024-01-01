@@ -2,10 +2,11 @@ AWSTemplateFormatVersion: '2010-09-09-OC'
 Description: default template generated for organization with master account 124653296725
 
 Organization:
-  ManagementAccount:
+
+  MasterAccount:
     Type: OC::ORG::MasterAccount
     Properties:
-      AccountName: Matt Heroux
+      AccountName: root
       AccountId: '124653296725'
       RootEmail: hooplessws@gmail.com
 
@@ -17,21 +18,25 @@ Organization:
         - !Ref DenyChangeOfOrgRoleSCP
         - !Ref RestrictUnusedRegionsSCP
 
-  SandboxAccount:
+  ToolsAccount:
     Type: OC::ORG::Account
     Properties:
       AccountName: tools
       AccountId: '760440398296'
-      RootEmail: matthew.heroux+1@gmail.com
+      RootEmail: matthew.heroux+tools@gmail.com
       Alias: tools-1
+      Tags:
+        subdomain: tools
 
   SandboxAccount:
     Type: OC::ORG::Account
     Properties:
-      AccountName: Sandbox
+      AccountName: sandbox
       AccountId: '298217020330'
-      RootEmail: matthew.heroux@gmail.com
-      Alias: dev-1
+      RootEmail: matthew.heroux+sandbox@gmail.com
+      # Alias: sandbox-1
+      Tags:
+        subdomain: sandbox
 
   RestrictUnusedRegionsSCP:
     Type: OC::ORG::ServiceControlPolicy
