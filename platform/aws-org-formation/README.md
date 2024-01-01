@@ -1,12 +1,16 @@
 # AWS Org Formation
 
 The AWS Organization is initialized, managed, and synced using
-[AWS Organization Formation](https://github.com/org-formation/org-formation-cli).
+[org-formation-cli](https://github.com/org-formation/org-formation-cli).
 
 ## Domain Registration
 
-Domain registration is done manually via Route 53. Populate domainName. Delete
-any hostedZone in master account as org formation will create one.
+Register a domain name through Route 53 in AWS master organization. In this
+case, `nekosgate.com` was used. Delete the hostedZone in master account as org
+formation will create one.
+
+After running `./bin/sync.sh` get the name servers for the hosted zone in master
+account and use them to update the Registered domain's nameservers in Route 53.
 
 ## Getting Started
 
@@ -36,6 +40,12 @@ any hostedZone in master account as org formation will create one.
    ```bash
    org-formation update organization.yml --profile=Administrator
    ```
+
+## ACM WildCart Certs
+
+For ACM cert verification it is important to have email setup for the domain as
+to verify the domain. AWS WorkMail or other can be used for this purpose. This
+allows for the wild card certs to be verified.
 
 ## Need help?
 
