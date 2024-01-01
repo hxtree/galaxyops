@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: '2010-09-09-OC'
+
+Organization: !Include ../organization.yml
+
+OrganizationBindings:
+
+  CertificateBinding:
+    Region:
+      - us-east-2
+    AccountsWithTag: subdomain
+
+Parameters:
+
+  resourcePrefix:
+    Type: String
+
+  rootHostedZoneName:
+    Type: String
+
+Resources:
+
+  LocalCert1:
+    Type: AWS::CertificateManager::Certificate
+    OrganizationBinding: !Ref CertificateBinding
+    Properties:
+      DomainName: !Sub '*.${AWSAccount.Tags.subdomain}.${rootHostedZoneName}'
+      SubjectAlternativeNames:
+        - !Sub '${AWSAccount.Tags.subdomain}.${rootHostedZoneName}'
+      ValidationMethod: DNS
+      DomainValidationOptions:
+        - DomainName: !Sub '${AWSAccount.Tags.subdomain}.${rootHostedZoneName}'
+          ValidationDomain: !Ref rootHostedZoneName
+        - DomainName: !Sub '*.${AWSAccount.Tags.subdomain}.${rootHostedZoneName}'
+          ValidationDomain: !Ref rootHostedZoneName
+
+  LocalCert1ArnParam:
+    Type: AWS::SSM::Parameter
+    OrganizationBinding: !Ref CertificateBinding
+    Properties:
+      Name: !Sub '${resourcePrefix}-certs-wildcard-cert1-arn'
+      Type: String
+      Value: !Ref LocalCert1
