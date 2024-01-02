@@ -2,8 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09-OC'
 Description: default template generated for organization with master account 124653296725
 
 Organization:
-
-  MasterAccount:
+  ManagementAccount:
     Type: OC::ORG::MasterAccount
     Properties:
       AccountName: root
@@ -18,25 +17,44 @@ Organization:
         - !Ref DenyChangeOfOrgRoleSCP
         - !Ref RestrictUnusedRegionsSCP
 
+  SandboxAccount:
+    Type: OC::ORG::Account
+    Properties:
+      AccountName: Sandbox
+      AccountId: '298217020330'
+      RootEmail: matthew.heroux@gmail.com
+      Tags:
+        subdomain: sandbox
+
   ToolsAccount:
     Type: OC::ORG::Account
     Properties:
       AccountName: tools
       AccountId: '760440398296'
-      RootEmail: matthew.heroux+tools@gmail.com
+      RootEmail: matthew.heroux+1@gmail.com
       Alias: tools-1
       Tags:
         subdomain: tools
 
-  SandboxAccount:
-    Type: OC::ORG::Account
+  DenyChangeOfOrgRoleSCP:
+    Type: OC::ORG::ServiceControlPolicy
     Properties:
-      AccountName: sandbox
-      AccountId: '298217020330'
-      RootEmail: matthew.heroux+sandbox@gmail.com
-      # Alias: sandbox-1
-      Tags:
-        subdomain: sandbox
+      PolicyName: DenyChangeOfOrgRole
+      Description: Deny changing the IAM role used for organization access
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: DenyChangeOfOrgRole
+            Effect: Deny
+            Action:
+              - 'iam:Attach*'
+              - 'iam:Create*'
+              - 'iam:Delete*'
+              - 'iam:Detach*'
+              - 'iam:PutRole*'
+              - 'iam:Update*'
+            Resource:
+              - 'arn:aws:iam::*:role/OrganizationAccountAccessRole'
 
   RestrictUnusedRegionsSCP:
     Type: OC::ORG::ServiceControlPolicy
@@ -61,32 +79,3 @@ Organization:
                   - us-east-2
                   - us-east-1
 
-  DenyChangeOfOrgRoleSCP:
-    Type: OC::ORG::ServiceControlPolicy
-    Properties:
-      PolicyName: DenyChangeOfOrgRole
-      Description: Deny changing the IAM role used for organization access
-      PolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Sid: DenyChangeOfOrgRole
-            Effect: Deny
-            Action:
-              - 'iam:Attach*'
-              - 'iam:Create*'
-              - 'iam:Delete*'
-              - 'iam:Detach*'
-              - 'iam:PutRole*'
-              - 'iam:Update*'
-            Resource:
-              - 'arn:aws:iam::*:role/OrganizationAccountAccessRole'
-
-  PasswordPolicy:
-    Type: OC::ORG::PasswordPolicy
-    Properties:
-      MinimumPasswordLength: 12
-      RequireLowercaseCharacters: true
-      RequireNumbers: true
-      RequireSymbols: true
-      RequireUppercaseCharacters: true
-      AllowUsersToChangePassword: true

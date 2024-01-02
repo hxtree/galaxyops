@@ -191,6 +191,10 @@
       "description": "Select a AWS SSO profile",
       "alternatives": [
         {
+          "name": "Administrator",
+          "description": "Root access"
+        },
+        {
           "name": "DeveloperSandbox",
           "description": "Developer sandbox access"
         },

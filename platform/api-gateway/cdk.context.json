@@ -1,0 +1,10 @@
+{
+  "hosted-zone:account=298217020330:domainName=nekosgate.com:privateZone=true:region=us-east-2": {
+    "Id": "/hostedzone/Z0863218CE40W7W2A5C",
+    "Name": "nekosgate.com."
+  },
+  "hosted-zone:account=298217020330:domainName=sandbox.nekosgate.com:region=us-east-2": {
+    "Id": "/hostedzone/Z10133492FTNMCV9Q95CP",
+    "Name": "sandbox.nekosgate.com."
+  }
+}

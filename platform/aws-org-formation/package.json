@@ -1,0 +1,22 @@
+{
+  "name": "@cats-cradle/aws-org-formation",
+  "version": "0.0.2",
+  "description": "multiple aws account provisioning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxtree/cats-cradle.git"
+  },
+  "keywords": [
+    "org-formation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hxtree/cats-cradle/issues"
+  },
+  "homepage": "https://github.com/hxtree/cats-cradle#readme"
+}

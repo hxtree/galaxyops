@@ -6,7 +6,7 @@ Organization: !Include ../organization.yml
 
 # Any Binding that does not explicitly specify a region will default to this.
 # Value can be either string or list
-DefaultOrganizationBindingRegion: us-east-2
+DefaultOrganizationBindingRegion: us-east-1
 
 Parameters:
   resourcePrefix:

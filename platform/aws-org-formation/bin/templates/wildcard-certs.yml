@@ -6,7 +6,7 @@ OrganizationBindings:
 
   CertificateBinding:
     Region:
-      - us-east-2
+      - us-east-1
     AccountsWithTag: subdomain
 
 Parameters:
