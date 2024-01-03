@@ -55,7 +55,7 @@ Organization:
               - 'iam:Update*'
             Resource:
               - 'arn:aws:iam::*:role/OrganizationAccountAccessRole'
-
+        
   RestrictUnusedRegionsSCP:
     Type: OC::ORG::ServiceControlPolicy
     Properties:
@@ -78,4 +78,5 @@ Organization:
                 'aws:RequestedRegion':
                   - us-east-2
                   - us-east-1
+        
 

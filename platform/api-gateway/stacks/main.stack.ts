@@ -135,7 +135,7 @@ export class ApiGatewayStack extends cdk.Stack {
 
     new route53.ARecord(this, `${id}-api-gateway-alias-record`, {
       zone: hostedZone,
-      recordName: fqdn,
+      recordName: 'api',
       target: route53.RecordTarget.fromAlias(
         new targets.ApiGateway(apiGateway),
       ),
