@@ -5,15 +5,23 @@ wide-eyed, emotionally fragile, skinny, and meek, and remains motionless as
 other children converse in the distance. Their words seem garbled and
 disconnected, as if uttered by someone with a mental illness. Despite the
 passage of time, the boy lingers there unmoved even as the other children depart
-from the playground. Suddenly, three cats approach him and a white one rub
+from the playground.
+
+Three cats approach him. The white one rub
 against his leg. Initially ignoring them, the boy eventually lifts his chin up
 and nods in response to one of the cats asking him if he wants to see his
 mother. In the next moment, the boy collapses.
 */
 
 /*
-name should show ??? not Loomee.
+name should show ??? not Loomee, etc
 */
+
+# actorId:MISCHEIVOUS_TABID
+Not much makes sense any more.
+
+# actorId:JANUS_PERSON
+The time is slipping away, boy.
 
 # actorId:LOOMEE_ANGORA
 Do you want to be with mother?

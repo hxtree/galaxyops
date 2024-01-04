@@ -79,7 +79,18 @@ export class ApiGatewayStack extends cdk.Stack {
     const apiGateway = new apigw.RestApi(this, `${id}-web-api-gateway`, {
       restApiName: 'web-api-gateway',
       deploy: false,
+      domainName: {
+        domainName: fqdn,
+        certificate: acmCertificate,
+      },
     });
+
+    // apiGateway.addDomainName('ApiDomain', {
+    //   domainName: fqdn,
+    //   certificate: acmCertificate,
+    //   endpointType: apigw.EndpointType.EDGE,
+    //   securityPolicy: apigw.SecurityPolicy.TLS_1_2,
+    // });
 
     const mock = apiGateway.root.addResource('mock').addMethod(
       'ANY',
@@ -119,23 +130,29 @@ export class ApiGatewayStack extends cdk.Stack {
       deployment,
     });
 
-    // const customDomain = new apigw.DomainName(this, `${id}-custom-domain`, {
-    //   domainName: fqdn,
-    //   certificate: acmCertificate,
-    //   endpointType: apigw.EndpointType.EDGE,
-    //   securityPolicy: apigw.SecurityPolicy.TLS_1_2,
-    // });
-
-    apiGateway.addDomainName('ApiDomain', {
+    const customDomain = new apigw.DomainName(this, `${id}-custom-domain`, {
       domainName: fqdn,
       certificate: acmCertificate,
       endpointType: apigw.EndpointType.EDGE,
       securityPolicy: apigw.SecurityPolicy.TLS_1_2,
     });
 
+    // api.addDomainName("IHEAPIDomain", {
+    //   domainName: iheApiUrl,
+    //   certificate: certificate,
+    //   securityPolicy: apig.SecurityPolicy.TLS_1_2,
+    // });
+    // new r53.ARecord(this, "IHEAPIDomainRecord", {
+    //   recordName: iheApiUrl,
+    //   zone: publicZone,
+    //   target: r53.RecordTarget.fromAlias(new r53_targets.ApiGateway(api)),
+    // });
+
+    console.log('Hosted Zone Name:', hostedZone.zoneName);
+
     new route53.ARecord(this, `${id}-api-gateway-alias-record`, {
+      recordName: 'api', // Assuming hostedZone.zoneName already includes the necessary domain part
       zone: hostedZone,
-      recordName: 'api',
       target: route53.RecordTarget.fromAlias(
         new targets.ApiGateway(apiGateway),
       ),
