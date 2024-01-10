@@ -451,6 +451,10 @@
       "allowedCategories": [ "apis", "libraries" ]
     },
     {
+      "name": "cheerio",
+      "allowedCategories": [ "apis" ]
+    },
+    {
       "name": "chokidar",
       "allowedCategories": [ "platform", "rigs" ]
     },
