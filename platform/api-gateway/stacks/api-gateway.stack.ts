@@ -4,7 +4,7 @@
 // import * as ssm from 'aws-cdk-lib/aws-ssm';
 // import * as apigw from 'aws-cdk-lib/aws-apigateway';
 // import * as acm from 'aws-cdk-lib/aws-certificatemanager';
-
+// import * as route53 from 'route'
 // /**
 //  * each api is broken up by client
 //  * backends for front ends
@@ -37,8 +37,17 @@
 //     const customDomain = new apigw.DomainName(this, `${id}-custom-domain`, {
 //       domainName: `api.${domainName}`,
 //       certificate: certificate,
-//       endpointType: apigw.EndpointType.EDGE,
-//       securityPolicy: apigw.SecurityPolicy.TLS_1_2,
+//       // endpointType: apigw.EndpointType.EDGE,
+//       // securityPolicy: apigw.SecurityPolicy.TLS_1_2,
+//     });
+
+//     // Add a DNS record to map the custom domain to the API Gateway
+//     new route53.ARecord(this, 'ApiARecord', {
+//       recordName: domainName,
+//       zone,
+//       target: route53.RecordTarget.fromAlias(
+//         new route53targets.ApiGatewayDomain(customDomain)
+//       ),
 //     });
 
 //     this.apiGateway = new apigw.RestApi(this, `${id}-web-api-gateway`, {
