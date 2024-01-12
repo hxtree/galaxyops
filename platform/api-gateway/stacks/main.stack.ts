@@ -12,14 +12,29 @@ import * as certificatemanager from 'aws-cdk-lib/aws-certificatemanager';
 import * as route53 from 'aws-cdk-lib/aws-route53';
 import path from 'path';
 
+import * as iam from 'aws-cdk-lib/aws-iam';
+
 export class ApiGatewayStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
+
+    const logs = new LogGroup(this, `${id}-LogGroup`);
 
     // Define the API Gateway
     const api = new apigateway.RestApi(this, 'MyApi', {
       restApiName: 'MyApi',
       description: 'My API Gateway',
+      defaultCorsPreflightOptions: {
+        allowOrigins: apigateway.Cors.ALL_ORIGINS,
+        allowMethods: apigateway.Cors.ALL_METHODS,
+        allowHeaders: apigateway.Cors.DEFAULT_HEADERS,
+      },
+      // apiKeySourceType: apigateway.ApiKeySourceType.HEADER,
+      deployOptions: {
+        throttlingBurstLimit: 10,
+        throttlingRateLimit: 10,
+        accessLogDestination: new apigw.LogGroupLogDestination(logs),
+      },
     });
 
     // Define the Lambda function
@@ -39,7 +54,9 @@ export class ApiGatewayStack extends cdk.Stack {
     // Create integration between API Gateway and Lambda
     const integration = new apigateway.LambdaIntegration(myLambda);
     const resource = api.root.addResource('hello');
-    resource.addMethod('GET', integration);
+    resource.addMethod('GET', integration, {
+      apiKeyRequired: false,
+    });
 
     // Define the custom domain
     const domainName = 'api.sandbox.nekosgate.com';
@@ -66,7 +83,7 @@ export class ApiGatewayStack extends cdk.Stack {
         parameterName: 'my-domains-hosted-zone-id',
       },
     ).stringValue;
-    // const zone = route53.HostedZone.fromHostedZoneId(this, 'MyHostedZone', hostedZoneId);
+
     const zone = route53.PublicHostedZone.fromHostedZoneAttributes(
       this,
       `${id}-hosted-zone`,
@@ -79,7 +96,11 @@ export class ApiGatewayStack extends cdk.Stack {
     const customDomain = new apigateway.DomainName(this, 'MyCustomDomain', {
       domainName,
       certificate,
+      securityPolicy: apigateway.SecurityPolicy.TLS_1_2,
     });
+
+    // Connect custom domain to rest api
+    customDomain.addBasePathMapping(api);
 
     // Add a DNS record to map the custom domain to the API Gateway
     new route53.ARecord(this, 'ApiARecord', {
@@ -102,11 +123,8 @@ export class ApiGatewayStack extends cdk.Stack {
       stageName,
     });
 
-    // Set the custom domain's base path mapping to the stage
-    new apigateway.BasePathMapping(this, 'MyApiBasePathMapping', {
-      domainName: customDomain,
-      restApi: api,
-      stage,
+    new cdk.CfnOutput(this, 'Endpoint', {
+      value: `https://${customDomain.domainName}/hello`,
     });
   }
 }
