@@ -25,6 +25,9 @@ Organization:
       RootEmail: matthew.heroux@gmail.com
       Tags:
         subdomain: sandbox
+        mongoDatabaseUri: mongodb+srv://cluster0.z1bwvgb.mongodb.net
+        mongoDatabaseUser: test-user
+        mongoDatabasePassword: TpCg4mbwzk93B7tc
 
   ToolsAccount:
     Type: OC::ORG::Account
@@ -55,7 +58,7 @@ Organization:
               - 'iam:Update*'
             Resource:
               - 'arn:aws:iam::*:role/OrganizationAccountAccessRole'
-        
+
   RestrictUnusedRegionsSCP:
     Type: OC::ORG::ServiceControlPolicy
     Properties:
@@ -78,5 +81,5 @@ Organization:
                 'aws:RequestedRegion':
                   - us-east-2
                   - us-east-1
-        
+
 

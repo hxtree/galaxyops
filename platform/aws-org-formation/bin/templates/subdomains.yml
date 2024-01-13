@@ -59,6 +59,14 @@ Resources:
       Type: String
       Value: !Sub '${AWSAccount.Tags.subdomain}.${rootHostedZoneName}.'
 
+  AccountDomainNameParam:
+    Type: AWS::SSM::Parameter
+    OrganizationBinding: !Ref HostedZoneBinding
+    Properties:
+      Name: !Sub 'DOMAIN_NAME'
+      Type: String
+      Value: !Sub '${AWSAccount.Tags.subdomain}.${rootHostedZoneName}'
+
   #=========================================#
   # Parent Record
   #=========================================#

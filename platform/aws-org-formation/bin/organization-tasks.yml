@@ -11,6 +11,13 @@ SubDomains:
   MaxConcurrentStacks: 10
   FailedStackTolerance: 10
 
+MongoDb:
+  Type: update-stacks
+  Template: ./templates/mongodb.yml
+  StackName: MongoDB
+  MaxConcurrentStacks: 10
+  FailedStackTolerance: 10
+
 WildCardCerts:
   Type: update-stacks
   Template: ./templates/wildcard-certs.yml

@@ -1,0 +1,54 @@
+AWSTemplateFormatVersion: '2010-09-09-OC'
+
+# Include file that contains Organization Section.
+# The Organization Section describes Accounts, Organizational Units, etc.
+Organization: !Include ../organization.yml
+
+# Any Binding that does not explicitly specify a region will default to this.
+# Value can be either string or list
+DefaultOrganizationBindingRegion: us-east-1
+
+# Section contains a named set of Bindings.
+# Bindings determine what resources are deployed where
+# These bindings can be !Ref'd from the Resources in the resource section
+OrganizationBindings:
+
+  # binding for HostedZone, HostedZoneIdParam, HostedZoneNameParam
+  MongoDbBinding:
+    AccountsWithTag: mongoDatabaseUri
+
+  # binding for RootHostedZone, ParentNsRecord
+  RootMongoDbBinding:
+    IncludeMasterAccount: false
+
+Resources:
+
+  #=========================================#
+  # MONGODB PARAMETERS
+  #=========================================#
+
+  MongoDatabaseUriParam:
+    Type: AWS::SSM::Parameter
+    OrganizationBinding: !Ref MongoDbBinding
+    Properties:
+      Name: !Sub 'MONGO_DATABASE_URI'
+      Type: String
+      Value: !Sub '${AWSAccount.Tags.mongoDatabaseUri}'
+
+  MongoDatabaseUserParam:
+    Type: AWS::SSM::Parameter
+    OrganizationBinding: !Ref MongoDbBinding
+    Properties:
+      Name: !Sub 'MONGO_DATABASE_USER'
+      Type: String
+      Value: !Sub '${AWSAccount.Tags.mongoDatabaseUser}'
+
+  MongoDatabasePasswordParam:
+    Type: AWS::SSM::Parameter
+    OrganizationBinding: !Ref MongoDbBinding
+    Properties:
+      Name: !Sub 'MONGO_DATABASE_PASSWORD'
+      Type: String
+      Value: !Sub '${AWSAccount.Tags.mongoDatabasePassword}'
+
+

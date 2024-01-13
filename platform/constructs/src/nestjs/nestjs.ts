@@ -8,7 +8,7 @@ import { getBaseUrl } from '../api-endpoint/get-base-url';
 
 export interface NestJsProps {
   projectRoot: string;
-  apiId: string;
+  // apiId: string;
   region: string;
   stageName: string;
   memorySize?: number;
@@ -64,7 +64,7 @@ export class NestJs extends Construct {
          */
         AWS_ACCOUNT_ID: awsAccountId,
         STAGE_NAME: props.stageName,
-        BASE_URL: getBaseUrl(props.apiId, props.region, props.stageName),
+        // BASE_URL: getBaseUrl(props.apiId, props.region, props.stageName),
         MONGO_DATABASE_URI: mongoDatabaseUri,
         MONGO_DATABASE_USER: mongoDatabaseUser,
         MONGO_DATABASE_PASSWORD: mongoDatabasePassword,
