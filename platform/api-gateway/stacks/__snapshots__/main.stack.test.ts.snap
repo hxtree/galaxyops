@@ -1,0 +1,757 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApiGatewayStack should match snapshot test 1`] = `
+{
+  Outputs: {
+    HealthCheckEndpoint: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackcustomdomain006406BF,
+            },
+            /health,
+          ],
+        ],
+      },
+    },
+    MyTestStackrestapiEndpointE6F4701C: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackrestapiE610E146,
+            },
+            .execute-api.,
+            {
+              Ref: AWS::Region,
+            },
+            .,
+            {
+              Ref: AWS::URLSuffix,
+            },
+            /,
+            {
+              Ref: MyTestStackrestapiDeploymentStageprod0C2550F2,
+            },
+            /,
+          ],
+        ],
+      },
+    },
+  },
+  Parameters: {
+    BootstrapVersion: {
+      Default: /cdk-bootstrap/hnb659fds/version,
+      Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackhostedzoneidParameter: {
+      Default: my-domains-hosted-zone-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackorgformationcertswildcardcert1arnParameter: {
+      Default: orgformation-certs-wildcard-cert1-arn,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+  },
+  Resources: {
+    MyTestStackapigatewayaliasrecord47D13EE5: {
+      Properties: {
+        AliasTarget: {
+          DNSName: {
+            Fn::GetAtt: [
+              MyTestStackcustomdomain006406BF,
+              RegionalDomainName,
+            ],
+          },
+          HostedZoneId: {
+            Fn::GetAtt: [
+              MyTestStackcustomdomain006406BF,
+              RegionalHostedZoneId,
+            ],
+          },
+        },
+        HostedZoneId: {
+          Ref: MyTestStackhostedzoneidParameter,
+        },
+        Name: api.sandbox.nekosgate.com.,
+        Type: A,
+      },
+      Type: AWS::Route53::RecordSet,
+    },
+    MyTestStackapistage19E44170: {
+      DependsOn: [
+        MyTestStackrestapiAccount8BFE83D8,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: MyTestStackdeployment_UNIQUE_HASH,
+        },
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+        StageName: default,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    MyTestStackcustomdomain006406BF: {
+      Properties: {
+        DomainName: api.sandbox.nekosgate.com,
+        EndpointConfiguration: {
+          Types: [
+            REGIONAL,
+          ],
+        },
+        RegionalCertificateArn: {
+          Ref: MyTestStackorgformationcertswildcardcert1arnParameter,
+        },
+        SecurityPolicy: TLS_1_2,
+      },
+      Type: AWS::ApiGateway::DomainName,
+    },
+    MyTestStackcustomdomainMapMyTestStackMyTestStackrestapiA9DDEC70EAD0A4FA: {
+      Properties: {
+        DomainName: {
+          Ref: MyTestStackcustomdomain006406BF,
+        },
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+        Stage: {
+          Ref: MyTestStackrestapiDeploymentStageprod0C2550F2,
+        },
+      },
+      Type: AWS::ApiGateway::BasePathMapping,
+    },
+    MyTestStackdeployment_UNIQUE_HASH: {
+      DependsOn: [
+        MyTestStackrestapihealthGETA8D98FC4,
+        MyTestStackrestapihealthOPTIONS6B071AFF,
+        MyTestStackrestapimockANY0EAD3007,
+        MyTestStackrestapimockOPTIONS7915A954,
+        MyTestStackrestapiOPTIONSAD5F49CC,
+        MyTestStackwebapigatewayv1resourceOPTIONS09A10DBC,
+      ],
+      Properties: {
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    MyTestStackhealthchecklambdaEF425DCA: {
+      DependsOn: [
+        MyTestStackhealthchecklambdaServiceRole7400FC6B,
+      ],
+      Properties: {
+        Code: {
+          ZipFile: 
+        exports.handler = async (event) => {
+          return {
+            statusCode: 200,
+            body: JSON.stringify({"status": "ok","info": {"api": {"status": "up"}}}),
+          };
+        };
+      ,
+        },
+        Handler: index.handler,
+        Role: {
+          Fn::GetAtt: [
+            MyTestStackhealthchecklambdaServiceRole7400FC6B,
+            Arn,
+          ],
+        },
+        Runtime: nodejs16.x,
+      },
+      Type: AWS::Lambda::Function,
+    },
+    MyTestStackhealthchecklambdaServiceRole7400FC6B: {
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: lambda.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+    },
+    MyTestStackloggroup49900BE9: {
+      DeletionPolicy: Retain,
+      Properties: {
+        RetentionInDays: 731,
+      },
+      Type: AWS::Logs::LogGroup,
+      UpdateReplacePolicy: Retain,
+    },
+    MyTestStackrestapiAccount8BFE83D8: {
+      DeletionPolicy: Retain,
+      DependsOn: [
+        MyTestStackrestapiE610E146,
+      ],
+      Properties: {
+        CloudWatchRoleArn: {
+          Fn::GetAtt: [
+            MyTestStackrestapiCloudWatchRole533ABCD0,
+            Arn,
+          ],
+        },
+      },
+      Type: AWS::ApiGateway::Account,
+      UpdateReplacePolicy: Retain,
+    },
+    MyTestStackrestapiCloudWatchRole533ABCD0: {
+      DeletionPolicy: Retain,
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: apigateway.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+      UpdateReplacePolicy: Retain,
+    },
+    MyTestStackrestapiDeployment448E9471031a1dd7c941315294ac0b4b221196f7: {
+      DependsOn: [
+        MyTestStackrestapihealthGETA8D98FC4,
+        MyTestStackrestapihealthOPTIONS6B071AFF,
+        MyTestStackrestapihealth67605213,
+        MyTestStackrestapimockANY0EAD3007,
+        MyTestStackrestapimockOPTIONS7915A954,
+        MyTestStackrestapimock54A06E57,
+        MyTestStackrestapiOPTIONSAD5F49CC,
+        MyTestStackwebapigatewayv1resourceOPTIONS09A10DBC,
+        MyTestStackwebapigatewayv1resourceFF514C41,
+      ],
+      Properties: {
+        Description: Services API Gateway,
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    MyTestStackrestapiDeploymentStageprod0C2550F2: {
+      DependsOn: [
+        MyTestStackrestapiAccount8BFE83D8,
+      ],
+      Properties: {
+        AccessLogSetting: {
+          DestinationArn: {
+            Fn::GetAtt: [
+              MyTestStackloggroup49900BE9,
+              Arn,
+            ],
+          },
+          Format: $context.identity.sourceIp $context.identity.caller $context.identity.user [$context.requestTime] "$context.httpMethod $context.resourcePath $context.protocol" $context.status $context.responseLength $context.requestId,
+        },
+        DeploymentId: {
+          Ref: MyTestStackrestapiDeployment448E9471031a1dd7c941315294ac0b4b221196f7,
+        },
+        MethodSettings: [
+          {
+            DataTraceEnabled: false,
+            HttpMethod: *,
+            ResourcePath: /*,
+            ThrottlingBurstLimit: 10,
+            ThrottlingRateLimit: 10,
+          },
+        ],
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+        StageName: prod,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    MyTestStackrestapiE610E146: {
+      Properties: {
+        Description: Services API Gateway,
+        Name: ServicesRestAPI,
+      },
+      Type: AWS::ApiGateway::RestApi,
+    },
+    MyTestStackrestapiOPTIONSAD5F49CC: {
+      Properties: {
+        ApiKeyRequired: false,
+        AuthorizationType: NONE,
+        HttpMethod: OPTIONS,
+        Integration: {
+          IntegrationResponses: [
+            {
+              ResponseParameters: {
+                method.response.header.Access-Control-Allow-Headers: 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent',
+                method.response.header.Access-Control-Allow-Methods: 'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD',
+                method.response.header.Access-Control-Allow-Origin: '*',
+              },
+              StatusCode: 204,
+            },
+          ],
+          RequestTemplates: {
+            application/json: { statusCode: 200 },
+          },
+          Type: MOCK,
+        },
+        MethodResponses: [
+          {
+            ResponseParameters: {
+              method.response.header.Access-Control-Allow-Headers: true,
+              method.response.header.Access-Control-Allow-Methods: true,
+              method.response.header.Access-Control-Allow-Origin: true,
+            },
+            StatusCode: 204,
+          },
+        ],
+        ResourceId: {
+          Fn::GetAtt: [
+            MyTestStackrestapiE610E146,
+            RootResourceId,
+          ],
+        },
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackrestapihealth67605213: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            MyTestStackrestapiE610E146,
+            RootResourceId,
+          ],
+        },
+        PathPart: health,
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
+    },
+    MyTestStackrestapihealthGETA8D98FC4: {
+      Properties: {
+        ApiKeyRequired: false,
+        AuthorizationType: NONE,
+        HttpMethod: GET,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    MyTestStackhealthchecklambdaEF425DCA,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Ref: MyTestStackrestapihealth67605213,
+        },
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackrestapihealthGETApiPermissionMyTestStackMyTestStackrestapiA9DDEC70GEThealth3BFB9C27: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            MyTestStackhealthchecklambdaEF425DCA,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackrestapiE610E146,
+              },
+              /,
+              {
+                Ref: MyTestStackrestapiDeploymentStageprod0C2550F2,
+              },
+              /GET/health,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackrestapihealthGETApiPermissionTestMyTestStackMyTestStackrestapiA9DDEC70GEThealth5C31E4D6: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            MyTestStackhealthchecklambdaEF425DCA,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackrestapiE610E146,
+              },
+              /test-invoke-stage/GET/health,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackrestapihealthOPTIONS6B071AFF: {
+      Properties: {
+        ApiKeyRequired: false,
+        AuthorizationType: NONE,
+        HttpMethod: OPTIONS,
+        Integration: {
+          IntegrationResponses: [
+            {
+              ResponseParameters: {
+                method.response.header.Access-Control-Allow-Headers: 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent',
+                method.response.header.Access-Control-Allow-Methods: 'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD',
+                method.response.header.Access-Control-Allow-Origin: '*',
+              },
+              StatusCode: 204,
+            },
+          ],
+          RequestTemplates: {
+            application/json: { statusCode: 200 },
+          },
+          Type: MOCK,
+        },
+        MethodResponses: [
+          {
+            ResponseParameters: {
+              method.response.header.Access-Control-Allow-Headers: true,
+              method.response.header.Access-Control-Allow-Methods: true,
+              method.response.header.Access-Control-Allow-Origin: true,
+            },
+            StatusCode: 204,
+          },
+        ],
+        ResourceId: {
+          Ref: MyTestStackrestapihealth67605213,
+        },
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackrestapimock54A06E57: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            MyTestStackrestapiE610E146,
+            RootResourceId,
+          ],
+        },
+        PathPart: mock,
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
+    },
+    MyTestStackrestapimockANY0EAD3007: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationResponses: [
+            {
+              StatusCode: 200,
+            },
+          ],
+          PassthroughBehavior: NEVER,
+          RequestTemplates: {
+            application/json: { "statusCode": 200 },
+          },
+          Type: MOCK,
+        },
+        MethodResponses: [
+          {
+            StatusCode: 200,
+          },
+        ],
+        ResourceId: {
+          Ref: MyTestStackrestapimock54A06E57,
+        },
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackrestapimockOPTIONS7915A954: {
+      Properties: {
+        ApiKeyRequired: false,
+        AuthorizationType: NONE,
+        HttpMethod: OPTIONS,
+        Integration: {
+          IntegrationResponses: [
+            {
+              ResponseParameters: {
+                method.response.header.Access-Control-Allow-Headers: 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent',
+                method.response.header.Access-Control-Allow-Methods: 'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD',
+                method.response.header.Access-Control-Allow-Origin: '*',
+              },
+              StatusCode: 204,
+            },
+          ],
+          RequestTemplates: {
+            application/json: { statusCode: 200 },
+          },
+          Type: MOCK,
+        },
+        MethodResponses: [
+          {
+            ResponseParameters: {
+              method.response.header.Access-Control-Allow-Headers: true,
+              method.response.header.Access-Control-Allow-Methods: true,
+              method.response.header.Access-Control-Allow-Origin: true,
+            },
+            StatusCode: 204,
+          },
+        ],
+        ResourceId: {
+          Ref: MyTestStackrestapimock54A06E57,
+        },
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackwebapigatewayid2F65D424: {
+      Properties: {
+        Description: Web API Gateway Rest API ID,
+        Name: web-api-gateway-rest-api-id,
+        Type: String,
+        Value: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::SSM::Parameter,
+    },
+    MyTestStackwebapigatewayresourceid87DDADFE: {
+      Properties: {
+        Description: Web Gateway Resource ID,
+        Name: web-api-gateway-root-resource-id,
+        Type: String,
+        Value: {
+          Fn::GetAtt: [
+            MyTestStackrestapiE610E146,
+            RootResourceId,
+          ],
+        },
+      },
+      Type: AWS::SSM::Parameter,
+    },
+    MyTestStackwebapigatewayv1resourceFF514C41: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            MyTestStackrestapiE610E146,
+            RootResourceId,
+          ],
+        },
+        PathPart: v1,
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
+    },
+    MyTestStackwebapigatewayv1resourceOPTIONS09A10DBC: {
+      Properties: {
+        ApiKeyRequired: false,
+        AuthorizationType: NONE,
+        HttpMethod: OPTIONS,
+        Integration: {
+          IntegrationResponses: [
+            {
+              ResponseParameters: {
+                method.response.header.Access-Control-Allow-Headers: 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent',
+                method.response.header.Access-Control-Allow-Methods: 'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD',
+                method.response.header.Access-Control-Allow-Origin: '*',
+              },
+              StatusCode: 204,
+            },
+          ],
+          RequestTemplates: {
+            application/json: { statusCode: 200 },
+          },
+          Type: MOCK,
+        },
+        MethodResponses: [
+          {
+            ResponseParameters: {
+              method.response.header.Access-Control-Allow-Headers: true,
+              method.response.header.Access-Control-Allow-Methods: true,
+              method.response.header.Access-Control-Allow-Origin: true,
+            },
+            StatusCode: 204,
+          },
+        ],
+        ResourceId: {
+          Ref: MyTestStackwebapigatewayv1resourceFF514C41,
+        },
+        RestApiId: {
+          Ref: MyTestStackrestapiE610E146,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackwebapigatewayv1resourceid8E5650DB: {
+      Properties: {
+        Description: Web API Gateway V1 Resource ID,
+        Name: web-api-gateway-v1-resource-id,
+        Type: String,
+        Value: {
+          Ref: MyTestStackwebapigatewayv1resourceFF514C41,
+        },
+      },
+      Type: AWS::SSM::Parameter,
+    },
+    MyTestStackwebmockresourceid87D417E8: {
+      Properties: {
+        Description: Web Mock Resource ID,
+        Name: web-mockapi-gateway-root-resource-id,
+        Type: String,
+        Value: {
+          Fn::GetAtt: [
+            MyTestStackrestapiE610E146,
+            RootResourceId,
+          ],
+        },
+      },
+      Type: AWS::SSM::Parameter,
+    },
+  },
+  Rules: {
+    CheckBootstrapVersion: {
+      Assertions: [
+        {
+          Assert: {
+            Fn::Not: [
+              {
+                Fn::Contains: [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                  ],
+                  {
+                    Ref: BootstrapVersion,
+                  },
+                ],
+              },
+            ],
+          },
+          AssertDescription: CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.,
+        },
+      ],
+    },
+  },
+}
+`;

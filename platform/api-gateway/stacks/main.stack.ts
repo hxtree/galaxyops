@@ -11,12 +11,16 @@ import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import * as route53 from 'aws-cdk-lib/aws-route53';
 
 export class ApiGatewayStack extends cdk.Stack {
+  public apiGateway: apigw.RestApi;
+
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    // TODO compute this based on account
+    const parentDomainName = 'sandbox.nekosgate.com';
+
     // Define the custom domain
     const subdomainName = 'api';
-    const parentDomainName = 'sandbox.nekosgate.com';
     const stageName = 'default';
 
     const logs = new LogGroup(this, `${id}-log-group`);
@@ -24,7 +28,7 @@ export class ApiGatewayStack extends cdk.Stack {
     const domainName = `${subdomainName}.${parentDomainName}`;
 
     // Define the API Gateway
-    const api = new apigateway.RestApi(this, `${id}-rest-api`, {
+    this.apiGateway = new apigateway.RestApi(this, `${id}-rest-api`, {
       restApiName: 'ServicesRestAPI',
       description: 'Services API Gateway',
       defaultCorsPreflightOptions: {
@@ -32,22 +36,17 @@ export class ApiGatewayStack extends cdk.Stack {
         allowMethods: apigateway.Cors.ALL_METHODS,
         allowHeaders: apigateway.Cors.DEFAULT_HEADERS,
       },
-      // apiKeySourceType: apigateway.ApiKeySourceType.HEADER,
       deployOptions: {
         throttlingBurstLimit: 10,
         throttlingRateLimit: 10,
         accessLogDestination: new apigw.LogGroupLogDestination(logs),
-        // stageName: 'default', // Default stage name
+        // stageName, // Default stage name
       },
-      // domainName: {
-      //   domainName: 'api-test.sandbox.nekosgate.com', //fqdn,
-      //   certificate: acmCertificate,
-      //   endpointType: apigw.EndpointType.EDGE,
-      //   securityPolicy: apigw.SecurityPolicy.TLS_1_2,
-      // },
+      // TODO consider API key
+      // apiKeySourceType: apigateway.ApiKeySourceType.HEADER,
     });
 
-    const mock = api.root.addResource('mock').addMethod(
+    const mock = this.apiGateway.root.addResource('mock').addMethod(
       'ANY',
       new apigw.MockIntegration({
         integrationResponses: [{ statusCode: '200' }],
@@ -61,11 +60,13 @@ export class ApiGatewayStack extends cdk.Stack {
       },
     );
 
-    // Define the Lambda function
-    const myLambda = new lambda.Function(this, `${id}-health-check-lambda`, {
-      runtime: lambda.Runtime.NODEJS_16_X,
-      handler: 'index.handler',
-      code: lambda.Code.fromInline(`
+    const healthCheckLambda = new lambda.Function(
+      this,
+      `${id}-health-check-lambda`,
+      {
+        runtime: lambda.Runtime.NODEJS_16_X,
+        handler: 'index.handler',
+        code: lambda.Code.fromInline(`
         exports.handler = async (event) => {
           return {
             statusCode: 200,
@@ -73,11 +74,12 @@ export class ApiGatewayStack extends cdk.Stack {
           };
         };
       `),
-    });
+      },
+    );
 
     // Create integration between API Gateway and Lambda
-    const integration = new apigateway.LambdaIntegration(myLambda);
-    const resource = api.root.addResource('hello');
+    const integration = new apigateway.LambdaIntegration(healthCheckLambda);
+    const resource = this.apiGateway.root.addResource('health');
     resource.addMethod('GET', integration, {
       apiKeyRequired: false,
     });
@@ -126,14 +128,14 @@ export class ApiGatewayStack extends cdk.Stack {
     );
 
     // Connect custom domain to rest api
-    customDomain.addBasePathMapping(api);
+    customDomain.addBasePathMapping(this.apiGateway);
 
-    // placeholder resource to add services to
+    // Placeholder resource to add services to
     const webApiGatewayV1Resource = new apigw.Resource(
       this,
       `${id}-web-api-gateway-v1-resource`,
       {
-        parent: api.root,
+        parent: this.apiGateway.root,
         pathPart: 'v1',
       },
     );
@@ -152,7 +154,7 @@ export class ApiGatewayStack extends cdk.Stack {
       this,
       `${id}-deployment${new Date().toISOString()}`,
       {
-        api,
+        api: this.apiGateway,
         retainDeployments: false,
       },
     );
@@ -163,8 +165,36 @@ export class ApiGatewayStack extends cdk.Stack {
       deployment,
     });
 
-    new cdk.CfnOutput(this, 'Endpoint', {
-      value: `https://${customDomain.domainName}/hello`,
+    // eslint-disable-next-line no-new
+    new ssm.StringParameter(this, `${id}-web-api-gateway-id`, {
+      description: 'Web API Gateway Rest API ID',
+      parameterName: 'web-api-gateway-rest-api-id',
+      stringValue: this.apiGateway.restApiId,
+    });
+
+    // eslint-disable-next-line no-new
+    new ssm.StringParameter(this, `${id}-web-api-gateway-resource-id`, {
+      description: 'Web Gateway Resource ID',
+      parameterName: 'web-api-gateway-root-resource-id',
+      stringValue: this.apiGateway.restApiRootResourceId,
+    });
+
+    // eslint-disable-next-line no-new
+    new ssm.StringParameter(this, `${id}-web-api-gateway-v1-resource-id`, {
+      description: 'Web API Gateway V1 Resource ID',
+      parameterName: 'web-api-gateway-v1-resource-id',
+      stringValue: webApiGatewayV1Resource.resourceId,
+    });
+
+    // eslint-disable-next-line no-new
+    new ssm.StringParameter(this, `${id}-web-mock-resource-id`, {
+      description: 'Web Mock Resource ID',
+      parameterName: 'web-mockapi-gateway-root-resource-id',
+      stringValue: this.apiGateway.restApiRootResourceId,
+    });
+
+    new cdk.CfnOutput(this, 'HealthCheck Endpoint', {
+      value: `https://${customDomain.domainName}/health`,
     });
   }
 }
