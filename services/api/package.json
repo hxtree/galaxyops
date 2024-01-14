@@ -1,6 +1,7 @@
 {
   "name": "@cats-cradle/api",
   "module": "commonjs",
+  "description": "routes request to other endpoints",
   "version": "0.1.2",
   "bin": {
     "app": "bin/app.js"
@@ -65,6 +66,9 @@
     "@types/express": "~4.17.21",
     "@types/uuid": "~9.0.7",
     "eslint": "8.56.0",
-    "@cats-cradle/eslint-config": "1.0.11"
+    "@cats-cradle/eslint-config": "1.0.11",
+    "supertest": "~6.3.3",
+    "@nestjs/testing": "9.2.1",
+    "@types/supertest": "~2.0.16"
   }
 }

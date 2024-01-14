@@ -3,6 +3,19 @@
 exports[`MainStack should match snapshot test 1`] = `
 {
   Outputs: {
+    Endpoint: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackdnsdomainMyTestStackdnsdomaincustomdomainB25EDAC1,
+            },
+          ],
+        ],
+      },
+    },
     MyTestStackdnsdomainMyTestStackdnsdomainrestapiEndpointF2D9559A: {
       Value: {
         Fn::Join: [
@@ -25,19 +38,6 @@ exports[`MainStack should match snapshot test 1`] = `
               Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeploymentStageprod1A061321,
             },
             /,
-          ],
-        ],
-      },
-    },
-    dd: {
-      Value: {
-        Fn::Join: [
-          ,
-          [
-            https://,
-            {
-              Ref: MyTestStackdnsdomainMyTestStackdnsdomaincustomdomainB25EDAC1,
-            },
           ],
         ],
       },
@@ -530,13 +530,24 @@ exports[`MainStack should match snapshot test 1`] = `
       Properties: {
         Code: {
           ZipFile: 
-        exports.handler = async (event) => {
-          return {
-            statusCode: 200,
-            body: JSON.stringify({"status": "ok","info": {"api": {"status": "up"}}}),
+          exports.handler = async (event) => {
+            // Respond with all environment variables
+            return {
+              statusCode: 200,
+              body: JSON.stringify({"environment": process.env}),
+            };
           };
-        };
-      ,
+        ,
+        },
+        Environment: {
+          Variables: {
+            CHARACTER_SVC_DOMAIN_NAME: {{resolve:ssm:/CHARACTER_SVC_DOMAIN_NAME}},
+            EMAIL_MESSAGE_SVC_DOMAIN_NAME: {{resolve:ssm:/EMAIL_MESSAGE_SVC_DOMAIN_NAME}},
+            HTML_TO_PDF_SVC_DOMAIN_NAME: {{resolve:ssm:/HTML_TO_PDF_SVC_DOMAIN_NAME}},
+            INSTANCES_SVC_DOMAIN_NAME: {{resolve:ssm:/INSTANCES_SVC_DOMAIN_NAME}},
+            LUCK_BY_DICE_SVC_DOMAIN_NAME: {{resolve:ssm:/LUCK_BY_DICE_SVC_DOMAIN_NAME}},
+            PLAYER_ACHIEVEMENTS_SVC_DOMAIN_NAME: {{resolve:ssm:/PLAYER_ACHIEVEMENTS_SVC_DOMAIN_NAME}},
+          },
         },
         Handler: index.handler,
         Role: {
