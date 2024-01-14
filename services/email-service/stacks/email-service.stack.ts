@@ -8,6 +8,8 @@ import { EmailSendCommand } from '@cats-cradle/messaging-schemas';
 import * as path from 'path';
 
 export class EmailServiceStack extends cdk.NestedStack {
+  microservice: Microservice;
+
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
@@ -17,13 +19,13 @@ export class EmailServiceStack extends cdk.NestedStack {
     const SES_REGION = this.region;
 
     // deploy lambda
-    const microservice = new Microservice(this, 'email-service-stack', {
+    this.microservice = new Microservice(this, 'email-service-stack', {
       path: 'email-message',
       projectRoot: path.join(__dirname, '..'),
     });
 
     // add permissions to send emails
-    const nodeJsFunction = microservice.getNodeJsFunction();
+    const nodeJsFunction = this.microservice.getNodeJsFunction();
     nodeJsFunction.addToRolePolicy(
       new iam.PolicyStatement({
         effect: iam.Effect.ALLOW,
@@ -37,10 +39,6 @@ export class EmailServiceStack extends cdk.NestedStack {
         ],
       }),
     );
-
-    new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${microservice.getBaseUrl()}/`,
-    });
   }
 }
 

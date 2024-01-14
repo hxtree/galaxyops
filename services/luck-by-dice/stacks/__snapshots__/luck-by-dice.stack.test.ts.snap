@@ -10,13 +10,35 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
           [
             https://,
             {
-              Ref: charactersheetstackcharactersheetstackapiendpointrestapiidssmParameter565289F3,
+              Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F,
+            },
+            /dice-roll,
+          ],
+        ],
+      },
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiEndpoint3B9A3C73: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
             },
             .execute-api.,
             {
               Ref: AWS::Region,
             },
-            .amazonaws.com/default/v1/luck-by-dice/dice-roll,
+            .,
+            {
+              Ref: AWS::URLSuffix,
+            },
+            /,
+            {
+              Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentStageprod9E68E6CC,
+            },
+            /,
           ],
         ],
       },
@@ -28,16 +50,16 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    charactersheetstackcharactersheetstackapiendpointrestapiidssmParameter565289F3: {
-      Default: web-api-gateway-rest-api-id,
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointhostedzoneidParameterFBA7ADEC: {
+      Default: my-domains-hosted-zone-id,
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    charactersheetstackcharactersheetstackapiendpointrootresourceidssmParameter23C26ADE: {
-      Default: web-api-gateway-root-resource-id,
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointorgformationcertswildcardcert1arnParameter3665C413: {
+      Default: orgformation-certs-wildcard-cert1-arn,
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    charactersheetstackcharactersheetstackapiendpointv1resourceidssmParameterB4D269AA: {
-      Default: web-api-gateway-v1-resource-id,
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointssmdomainnameParameter84D42107: {
+      Default: DOMAIN_NAME,
       Type: AWS::SSM::Parameter::Value<String>,
     },
     lambdalayernestjslatestversionssmParameter: {
@@ -54,10 +76,6 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
     },
     mongodatabaseuserssmParameter: {
       Default: MONGO_DATABASE_USER,
-      Type: AWS::SSM::Parameter::Value<String>,
-    },
-    restapiidssmParameter: {
-      Default: web-api-gateway-rest-api-id,
       Type: AWS::SSM::Parameter::Value<String>,
     },
   },
@@ -141,19 +159,119 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: AWS::IAM::Policy,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapigwresource8242EE37: {
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapigatewayaliasrecord5C30FB5D: {
       Properties: {
-        ParentId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointv1resourceidssmParameterB4D269AA,
+        AliasTarget: {
+          DNSName: {
+            Fn::GetAtt: [
+              charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F,
+              RegionalDomainName,
+            ],
+          },
+          HostedZoneId: {
+            Fn::GetAtt: [
+              charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F,
+              RegionalHostedZoneId,
+            ],
+          },
         },
-        PathPart: luck-by-dice,
+        HostedZoneId: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointhostedzoneidParameterFBA7ADEC,
+        },
+        Name: {
+          Fn::Join: [
+            ,
+            [
+              luck-by-dice.,
+              {
+                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointssmdomainnameParameter84D42107,
+              },
+              .,
+            ],
+          ],
+        },
+        Type: A,
+      },
+      Type: AWS::Route53::RecordSet,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapistage95BA0454: {
+      DependsOn: [
+        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiAccount8E6C23F9,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointdeployment_UNIQUE_HASH,
+        },
         RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointrestapiidssmParameter565289F3,
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+        },
+        StageName: default,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F: {
+      Properties: {
+        DomainName: {
+          Fn::Join: [
+            ,
+            [
+              luck-by-dice.,
+              {
+                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointssmdomainnameParameter84D42107,
+              },
+            ],
+          ],
+        },
+        EndpointConfiguration: {
+          Types: [
+            REGIONAL,
+          ],
+        },
+        RegionalCertificateArn: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointorgformationcertswildcardcert1arnParameter3665C413,
+        },
+        SecurityPolicy: TLS_1_2,
+      },
+      Type: AWS::ApiGateway::DomainName,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomainMapMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiE6C6138742AE4898: {
+      Properties: {
+        DomainName: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F,
+        },
+        RestApiId: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+        },
+        Stage: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentStageprod9E68E6CC,
         },
       },
-      Type: AWS::ApiGateway::Resource,
+      Type: AWS::ApiGateway::BasePathMapping,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapigwresourceproxyANY9E17AC34: {
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointdeployment_UNIQUE_HASH: {
+      DependsOn: [
+        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxyANY76BC55C9,
+        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiANY619078BC,
+      ],
+      Properties: {
+        RestApiId: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointluckbydicesvcdomainname23516050: {
+      Properties: {
+        Description: luck-by-dice service domain name,
+        Name: LUCK_BY_DICE_SVC_DOMAIN_NAME,
+        Type: String,
+        Value: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F,
+        },
+      },
+      Type: AWS::SSM::Parameter,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiANY619078BC: {
       Properties: {
         AuthorizationType: NONE,
         HttpMethod: ANY,
@@ -185,15 +303,18 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
           },
         },
         ResourceId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapigwresourceproxyDD2ADD2F,
+          Fn::GetAtt: [
+            charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+            RootResourceId,
+          ],
         },
         RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointrestapiidssmParameter565289F3,
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
         },
       },
       Type: AWS::ApiGateway::Method,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapigwresourceproxyANYApiPermissionMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointmainapi233367A6ANYv1luckbydiceproxyAA9F4B4D: {
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiANYApiPermissionMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiE6C61387ANYA17AA2F9: {
       Properties: {
         Action: lambda:InvokeFunction,
         FunctionName: {
@@ -221,16 +342,20 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
               },
               :,
               {
-                Ref: charactersheetstackcharactersheetstackapiendpointrestapiidssmParameter565289F3,
+                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
               },
-              /*/*/v1/luck-by-dice/*,
+              /,
+              {
+                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentStageprod9E68E6CC,
+              },
+              /*/,
             ],
           ],
         },
       },
       Type: AWS::Lambda::Permission,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapigwresourceproxyANYApiPermissionTestMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointmainapi233367A6ANYv1luckbydiceproBA03FC76: {
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiANYApiPermissionTestMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiE6C61387ANYDC9E1D70: {
       Properties: {
         Action: lambda:InvokeFunction,
         FunctionName: {
@@ -258,35 +383,241 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
               },
               :,
               {
-                Ref: charactersheetstackcharactersheetstackapiendpointrestapiidssmParameter565289F3,
+                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
               },
-              /test-invoke-stage/*/v1/luck-by-dice/*,
+              /test-invoke-stage/*/,
             ],
           ],
         },
       },
       Type: AWS::Lambda::Permission,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapigwresourceproxyDD2ADD2F: {
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiAccount8E6C23F9: {
+      DeletionPolicy: Retain,
+      DependsOn: [
+        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+      ],
+      Properties: {
+        CloudWatchRoleArn: {
+          Fn::GetAtt: [
+            charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiCloudWatchRole399F6E2A,
+            Arn,
+          ],
+        },
+      },
+      Type: AWS::ApiGateway::Account,
+      UpdateReplacePolicy: Retain,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C: {
+      Properties: {
+        Description: luck-by-dice Service API Gateway,
+        Name: luck-by-dice RestAPI,
+      },
+      Type: AWS::ApiGateway::RestApi,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiCloudWatchRole399F6E2A: {
+      DeletionPolicy: Retain,
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: apigateway.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+      UpdateReplacePolicy: Retain,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentE6A271A1fcdb4a62a85e0879b8b7c7f3a52212c3: {
+      DependsOn: [
+        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxyANY76BC55C9,
+        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxy2BDDD74D,
+        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiANY619078BC,
+      ],
+      Properties: {
+        Description: luck-by-dice Service API Gateway,
+        RestApiId: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentStageprod9E68E6CC: {
+      DependsOn: [
+        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiAccount8E6C23F9,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentE6A271A1fcdb4a62a85e0879b8b7c7f3a52212c3,
+        },
+        MethodSettings: [
+          {
+            DataTraceEnabled: false,
+            HttpMethod: *,
+            ResourcePath: /*,
+            ThrottlingBurstLimit: 10,
+            ThrottlingRateLimit: 10,
+          },
+        ],
+        RestApiId: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+        },
+        StageName: prod,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxy2BDDD74D: {
       Properties: {
         ParentId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapigwresource8242EE37,
+          Fn::GetAtt: [
+            charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+            RootResourceId,
+          ],
         },
         PathPart: {proxy+},
         RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointrestapiidssmParameter565289F3,
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
         },
       },
       Type: AWS::ApiGateway::Resource,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointdeployment_UNIQUE_HASH: {
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxyANY76BC55C9: {
       Properties: {
-        RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointrestapiidssmParameter565289F3,
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
         },
-        StageName: default,
+        ResourceId: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxy2BDDD74D,
+        },
+        RestApiId: {
+          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+        },
       },
-      Type: AWS::ApiGateway::Deployment,
+      Type: AWS::ApiGateway::Method,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxyANYApiPermissionMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiE6C61387ANYproxy61746117: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+              },
+              /,
+              {
+                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentStageprod9E68E6CC,
+              },
+              /*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxyANYApiPermissionTestMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiE6C61387ANYproxy7288B15F: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+              },
+              /test-invoke-stage/*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
     },
     charactersheetstacknestjsNodeJsLambda5D2C9C5F: {
       DependsOn: [
@@ -303,22 +634,6 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
           Variables: {
             AWS_ACCOUNT_ID: {
               Ref: AWS::AccountId,
-            },
-            BASE_URL: {
-              Fn::Join: [
-                ,
-                [
-                  https://,
-                  {
-                    Ref: restapiidssmParameter,
-                  },
-                  .execute-api.,
-                  {
-                    Ref: AWS::Region,
-                  },
-                  .amazonaws.com/default/v1,
-                ],
-              ],
             },
             MONGO_DATABASE_PASSWORD: {
               Ref: mongodatabasepasswordssmParameter,

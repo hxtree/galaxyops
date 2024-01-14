@@ -10,13 +10,35 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
           [
             https://,
             {
-              Ref: authenticationservicestackauthenticationservicestackapiendpointrestapiidssmParameter6CDA0275,
+              Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointcustomdomain596DD07D,
+            },
+            /users,
+          ],
+        ],
+      },
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiEndpointDF5445A2: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
             },
             .execute-api.,
             {
               Ref: AWS::Region,
             },
-            .amazonaws.com/default/v1/auth/users,
+            .,
+            {
+              Ref: AWS::URLSuffix,
+            },
+            /,
+            {
+              Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiDeploymentStageprodE345D379,
+            },
+            /,
           ],
         ],
       },
@@ -28,16 +50,16 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
       Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    authenticationservicestackauthenticationservicestackapiendpointrestapiidssmParameter6CDA0275: {
-      Default: web-api-gateway-rest-api-id,
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointhostedzoneidParameter42306E6D: {
+      Default: my-domains-hosted-zone-id,
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    authenticationservicestackauthenticationservicestackapiendpointrootresourceidssmParameterECA15536: {
-      Default: web-api-gateway-root-resource-id,
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointorgformationcertswildcardcert1arnParameterA03B9C7C: {
+      Default: orgformation-certs-wildcard-cert1-arn,
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    authenticationservicestackauthenticationservicestackapiendpointv1resourceidssmParameterEDD599EF: {
-      Default: web-api-gateway-v1-resource-id,
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointssmdomainnameParameterE03E64AA: {
+      Default: DOMAIN_NAME,
       Type: AWS::SSM::Parameter::Value<String>,
     },
     lambdalayernestjslatestversionssmParameter: {
@@ -54,10 +76,6 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
     },
     mongodatabaseuserssmParameter: {
       Default: MONGO_DATABASE_USER,
-      Type: AWS::SSM::Parameter::Value<String>,
-    },
-    restapiidssmParameter: {
-      Default: web-api-gateway-rest-api-id,
       Type: AWS::SSM::Parameter::Value<String>,
     },
   },
@@ -306,105 +324,126 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
       },
       Type: AWS::IAM::Role,
     },
-    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointapigwresourceF3D64238: {
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointapigatewayaliasrecord8C7D024D: {
       Properties: {
-        ParentId: {
-          Ref: authenticationservicestackauthenticationservicestackapiendpointv1resourceidssmParameterEDD599EF,
+        AliasTarget: {
+          DNSName: {
+            Fn::GetAtt: [
+              authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointcustomdomain596DD07D,
+              RegionalDomainName,
+            ],
+          },
+          HostedZoneId: {
+            Fn::GetAtt: [
+              authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointcustomdomain596DD07D,
+              RegionalHostedZoneId,
+            ],
+          },
         },
-        PathPart: auth,
-        RestApiId: {
-          Ref: authenticationservicestackauthenticationservicestackapiendpointrestapiidssmParameter6CDA0275,
+        HostedZoneId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointhostedzoneidParameter42306E6D,
         },
-      },
-      Type: AWS::ApiGateway::Resource,
-    },
-    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointapigwresourceproxy51CD2FA9: {
-      Properties: {
-        ParentId: {
-          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointapigwresourceF3D64238,
-        },
-        PathPart: {proxy+},
-        RestApiId: {
-          Ref: authenticationservicestackauthenticationservicestackapiendpointrestapiidssmParameter6CDA0275,
-        },
-      },
-      Type: AWS::ApiGateway::Resource,
-    },
-    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointapigwresourceproxyANYApiPermissionMyTestStackauthenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendC9E40474: {
-      Properties: {
-        Action: lambda:InvokeFunction,
-        FunctionName: {
-          Fn::GetAtt: [
-            authenticationservicestacknestjsNodeJsLambdaC49C5643,
-            Arn,
-          ],
-        },
-        Principal: apigateway.amazonaws.com,
-        SourceArn: {
+        Name: {
           Fn::Join: [
             ,
             [
-              arn:,
+              auth.,
               {
-                Ref: AWS::Partition,
+                Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointssmdomainnameParameterE03E64AA,
               },
-              :execute-api:,
-              {
-                Ref: AWS::Region,
-              },
-              :,
-              {
-                Ref: AWS::AccountId,
-              },
-              :,
-              {
-                Ref: authenticationservicestackauthenticationservicestackapiendpointrestapiidssmParameter6CDA0275,
-              },
-              /*/*/v1/auth/*,
+              .,
             ],
           ],
         },
+        Type: A,
       },
-      Type: AWS::Lambda::Permission,
+      Type: AWS::Route53::RecordSet,
     },
-    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointapigwresourceproxyANYApiPermissionTestMyTestStackauthenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackap0720CCBC: {
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointapistage8B74069E: {
+      DependsOn: [
+        authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiAccountAD8F9203,
+      ],
       Properties: {
-        Action: lambda:InvokeFunction,
-        FunctionName: {
-          Fn::GetAtt: [
-            authenticationservicestacknestjsNodeJsLambdaC49C5643,
-            Arn,
-          ],
+        DeploymentId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointdeployment_UNIQUE_HASH,
         },
-        Principal: apigateway.amazonaws.com,
-        SourceArn: {
+        RestApiId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+        },
+        StageName: default,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointauthsvcdomainname5FE82E73: {
+      Properties: {
+        Description: auth service domain name,
+        Name: AUTH_SVC_DOMAIN_NAME,
+        Type: String,
+        Value: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointcustomdomain596DD07D,
+        },
+      },
+      Type: AWS::SSM::Parameter,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointcustomdomain596DD07D: {
+      Properties: {
+        DomainName: {
           Fn::Join: [
             ,
             [
-              arn:,
+              auth.,
               {
-                Ref: AWS::Partition,
+                Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointssmdomainnameParameterE03E64AA,
               },
-              :execute-api:,
-              {
-                Ref: AWS::Region,
-              },
-              :,
-              {
-                Ref: AWS::AccountId,
-              },
-              :,
-              {
-                Ref: authenticationservicestackauthenticationservicestackapiendpointrestapiidssmParameter6CDA0275,
-              },
-              /test-invoke-stage/*/v1/auth/*,
             ],
           ],
         },
+        EndpointConfiguration: {
+          Types: [
+            REGIONAL,
+          ],
+        },
+        RegionalCertificateArn: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointorgformationcertswildcardcert1arnParameterA03B9C7C,
+        },
+        SecurityPolicy: TLS_1_2,
       },
-      Type: AWS::Lambda::Permission,
+      Type: AWS::ApiGateway::DomainName,
     },
-    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointapigwresourceproxyANYE1B0E188: {
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointcustomdomainMapMyTestStackauthenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi15F08B2F3DF4631: {
+      Properties: {
+        DomainName: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointcustomdomain596DD07D,
+        },
+        RestApiId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+        },
+        Stage: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiDeploymentStageprodE345D379,
+        },
+      },
+      Type: AWS::ApiGateway::BasePathMapping,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointdeployment_UNIQUE_HASH: {
+      DependsOn: [
+        authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiproxyANY763FA957,
+        authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiANY6B17C367,
+      ],
+      Properties: {
+        RestApiId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6: {
+      Properties: {
+        Description: auth Service API Gateway,
+        Name: auth RestAPI,
+      },
+      Type: AWS::ApiGateway::RestApi,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiANY6B17C367: {
       Properties: {
         AuthorizationType: NONE,
         HttpMethod: ANY,
@@ -436,22 +475,314 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
           },
         },
         ResourceId: {
-          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointapigwresourceproxy51CD2FA9,
+          Fn::GetAtt: [
+            authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+            RootResourceId,
+          ],
         },
         RestApiId: {
-          Ref: authenticationservicestackauthenticationservicestackapiendpointrestapiidssmParameter6CDA0275,
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
         },
       },
       Type: AWS::ApiGateway::Method,
     },
-    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointdeployment_UNIQUE_HASH: {
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiANYApiPermissionMyTestStackauthenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestap7653EB01: {
       Properties: {
-        RestApiId: {
-          Ref: authenticationservicestackauthenticationservicestackapiendpointrestapiidssmParameter6CDA0275,
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            authenticationservicestacknestjsNodeJsLambdaC49C5643,
+            Arn,
+          ],
         },
-        StageName: default,
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+              },
+              /,
+              {
+                Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiDeploymentStageprodE345D379,
+              },
+              /*/,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiANYApiPermissionTestMyTestStackauthenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointre34365428: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            authenticationservicestacknestjsNodeJsLambdaC49C5643,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+              },
+              /test-invoke-stage/*/,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiAccountAD8F9203: {
+      DeletionPolicy: Retain,
+      DependsOn: [
+        authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+      ],
+      Properties: {
+        CloudWatchRoleArn: {
+          Fn::GetAtt: [
+            authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiCloudWatchRoleA4CFBE5D,
+            Arn,
+          ],
+        },
+      },
+      Type: AWS::ApiGateway::Account,
+      UpdateReplacePolicy: Retain,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiCloudWatchRoleA4CFBE5D: {
+      DeletionPolicy: Retain,
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: apigateway.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+      UpdateReplacePolicy: Retain,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiDeployment8CEE4A17d632db4ff35c07238b7f614709883121: {
+      DependsOn: [
+        authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiproxyANY763FA957,
+        authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiproxyB81A031B,
+        authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiANY6B17C367,
+      ],
+      Properties: {
+        Description: auth Service API Gateway,
+        RestApiId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+        },
       },
       Type: AWS::ApiGateway::Deployment,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiDeploymentStageprodE345D379: {
+      DependsOn: [
+        authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiAccountAD8F9203,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiDeployment8CEE4A17d632db4ff35c07238b7f614709883121,
+        },
+        MethodSettings: [
+          {
+            DataTraceEnabled: false,
+            HttpMethod: *,
+            ResourcePath: /*,
+            ThrottlingBurstLimit: 10,
+            ThrottlingRateLimit: 10,
+          },
+        ],
+        RestApiId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+        },
+        StageName: prod,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiproxyANY763FA957: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    authenticationservicestacknestjsNodeJsLambdaC49C5643,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiproxyB81A031B,
+        },
+        RestApiId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiproxyANYApiPermissionMyTestStackauthenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrDFD761FE: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            authenticationservicestacknestjsNodeJsLambdaC49C5643,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+              },
+              /,
+              {
+                Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiDeploymentStageprodE345D379,
+              },
+              /*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiproxyANYApiPermissionTestMyTestStackauthenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpo2778904F: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            authenticationservicestacknestjsNodeJsLambdaC49C5643,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+              },
+              /test-invoke-stage/*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapiproxyB81A031B: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+            RootResourceId,
+          ],
+        },
+        PathPart: {proxy+},
+        RestApiId: {
+          Ref: authenticationservicestackauthenticationservicestackapiendpointauthenticationservicestackapiendpointrestapi5C700DF6,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
     },
     authenticationservicestacknestjsNodeJsLambdaC49C5643: {
       DependsOn: [
@@ -468,22 +799,6 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
           Variables: {
             AWS_ACCOUNT_ID: {
               Ref: AWS::AccountId,
-            },
-            BASE_URL: {
-              Fn::Join: [
-                ,
-                [
-                  https://,
-                  {
-                    Ref: restapiidssmParameter,
-                  },
-                  .execute-api.,
-                  {
-                    Ref: AWS::Region,
-                  },
-                  .amazonaws.com/default/v1,
-                ],
-              ],
             },
             MONGO_DATABASE_PASSWORD: {
               Ref: mongodatabasepasswordssmParameter,

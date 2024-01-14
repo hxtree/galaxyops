@@ -46,8 +46,18 @@
   ],
   "projects": [
     {
-      "packageName": "@cats-cradle/api-gateway",
-      "projectFolder": "platform/api-gateway",
+      "packageName": "@cats-cradle/aws-org-formation",
+      "projectFolder": "platform/aws-org-formation",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/create-artifact"
+      ],
+      "tags": ["platform-package"]
+    },
+    {
+      "packageName": "@cats-cradle/api",
+      "projectFolder": "services/api",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",

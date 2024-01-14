@@ -6,6 +6,7 @@ import { LayerVersion } from 'aws-cdk-lib/aws-lambda';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import { ApiEndpoint } from '../api-endpoint/api-endpoint';
 import { NestJs } from '../nestjs/nestjs';
+import { LambdaDomainName } from '../dns/lambda-domain-name';
 
 export interface MicroserviceProps {
   path: string;
@@ -17,20 +18,20 @@ export interface MicroserviceProps {
 export class Microservice extends Construct {
   private nestJs: NestJs;
 
-  private apiEndpoint: ApiEndpoint;
+  private apiEndpoint: LambdaDomainName;
 
   constructor(scope: Construct, id: string, props: MicroserviceProps) {
     super(scope, id);
 
     const { region } = Stack.of(this);
     const stageName = 'default';
-    const apiId = ssm.StringParameter.fromStringParameterAttributes(
-      scope,
-      'rest-api-id-ssm',
-      {
-        parameterName: 'web-api-gateway-rest-api-id',
-      },
-    ).stringValue;
+    // const apiId = ssm.StringParameter.fromStringParameterAttributes(
+    //   scope,
+    //   'rest-api-id-ssm',
+    //   {
+    //     parameterName: 'web-api-gateway-rest-api-id',
+    //   },
+    // ).stringValue;
 
     const lambdaLayerNestJsLatestVersion = ssm.StringParameter.fromStringParameterAttributes(
       scope,
@@ -57,17 +58,23 @@ export class Microservice extends Construct {
 
     this.nestJs = new NestJs(scope, `${id}-nestjs`, {
       projectRoot: props.projectRoot,
-      apiId,
+      // apiId,
       region,
       stageName,
       memorySize: props.memorySize,
       layers: lambdaLayers,
     });
 
-    this.apiEndpoint = new ApiEndpoint(this, `${id}-api-endpoint`, {
+    // this.apiEndpoint = new ApiEndpoint(this, `${id}-api-endpoint`, {
+    //   stageName,
+    //   path: props.path,
+    //   nodeJsFunction: this.nestJs.getNodeJsFunction(),
+    // });
+
+    this.apiEndpoint = new LambdaDomainName(this, `${id}-api-endpoint`, {
       stageName,
-      path: props.path,
-      nodeJsFunction: this.nestJs.getNodeJsFunction(),
+      subdomainName: props.path,
+      proxyLambda: this.nestJs.getNodeJsFunction(),
     });
   }
 
