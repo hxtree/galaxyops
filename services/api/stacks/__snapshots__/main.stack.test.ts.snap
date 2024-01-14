@@ -1,0 +1,612 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainStack should match snapshot test 1`] = `
+{
+  Outputs: {
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiEndpointF2D9559A: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+            },
+            .execute-api.,
+            {
+              Ref: AWS::Region,
+            },
+            .,
+            {
+              Ref: AWS::URLSuffix,
+            },
+            /,
+            {
+              Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeploymentStageprod1A061321,
+            },
+            /,
+          ],
+        ],
+      },
+    },
+    dd: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackdnsdomainMyTestStackdnsdomaincustomdomainB25EDAC1,
+            },
+          ],
+        ],
+      },
+    },
+  },
+  Parameters: {
+    BootstrapVersion: {
+      Default: /cdk-bootstrap/hnb659fds/version,
+      Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainhostedzoneidParameter6C99EE2E: {
+      Default: my-domains-hosted-zone-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainorgformationcertswildcardcert1arnParameter1B552984: {
+      Default: orgformation-certs-wildcard-cert1-arn,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainssmdomainnameParameter504B2E51: {
+      Default: DOMAIN_NAME,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+  },
+  Resources: {
+    MyTestStackdnsdomainMyTestStackdnsdomainapigatewayaliasrecord1E646064: {
+      Properties: {
+        AliasTarget: {
+          DNSName: {
+            Fn::GetAtt: [
+              MyTestStackdnsdomainMyTestStackdnsdomaincustomdomainB25EDAC1,
+              RegionalDomainName,
+            ],
+          },
+          HostedZoneId: {
+            Fn::GetAtt: [
+              MyTestStackdnsdomainMyTestStackdnsdomaincustomdomainB25EDAC1,
+              RegionalHostedZoneId,
+            ],
+          },
+        },
+        HostedZoneId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainhostedzoneidParameter6C99EE2E,
+        },
+        Name: {
+          Fn::Join: [
+            ,
+            [
+              api.,
+              {
+                Ref: MyTestStackdnsdomainMyTestStackdnsdomainssmdomainnameParameter504B2E51,
+              },
+              .,
+            ],
+          ],
+        },
+        Type: A,
+      },
+      Type: AWS::Route53::RecordSet,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainapistageC0477553: {
+      DependsOn: [
+        MyTestStackdnsdomainMyTestStackdnsdomainrestapiAccount8D836574,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomaindeployment_UNIQUE_HASH,
+        },
+        RestApiId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+        },
+        StageName: default,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainapisvcdomainname27A6A141: {
+      Properties: {
+        Description: api service domain name,
+        Name: API_SVC_DOMAIN_NAME,
+        Type: String,
+        Value: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomaincustomdomainB25EDAC1,
+        },
+      },
+      Type: AWS::SSM::Parameter,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomaincustomdomainB25EDAC1: {
+      Properties: {
+        DomainName: {
+          Fn::Join: [
+            ,
+            [
+              api.,
+              {
+                Ref: MyTestStackdnsdomainMyTestStackdnsdomainssmdomainnameParameter504B2E51,
+              },
+            ],
+          ],
+        },
+        EndpointConfiguration: {
+          Types: [
+            REGIONAL,
+          ],
+        },
+        RegionalCertificateArn: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainorgformationcertswildcardcert1arnParameter1B552984,
+        },
+        SecurityPolicy: TLS_1_2,
+      },
+      Type: AWS::ApiGateway::DomainName,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomaincustomdomainMapMyTestStackMyTestStackdnsdomainMyTestStackdnsdomainrestapiE6EBAD2957CC8CE6: {
+      Properties: {
+        DomainName: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomaincustomdomainB25EDAC1,
+        },
+        RestApiId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+        },
+        Stage: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeploymentStageprod1A061321,
+        },
+      },
+      Type: AWS::ApiGateway::BasePathMapping,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomaindeployment_UNIQUE_HASH: {
+      DependsOn: [
+        MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxyANY74B2D563,
+        MyTestStackdnsdomainMyTestStackdnsdomainrestapiANY413B061D,
+      ],
+      Properties: {
+        RestApiId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiANY413B061D: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    MyTestStackhealthchecklambdaEF425DCA,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Fn::GetAtt: [
+            MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+            RootResourceId,
+          ],
+        },
+        RestApiId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiANYApiPermissionMyTestStackMyTestStackdnsdomainMyTestStackdnsdomainrestapiE6EBAD29ANYB678C578: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            MyTestStackhealthchecklambdaEF425DCA,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+              },
+              /,
+              {
+                Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeploymentStageprod1A061321,
+              },
+              /*/,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiANYApiPermissionTestMyTestStackMyTestStackdnsdomainMyTestStackdnsdomainrestapiE6EBAD29ANY7EC26F97: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            MyTestStackhealthchecklambdaEF425DCA,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+              },
+              /test-invoke-stage/*/,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiAccount8D836574: {
+      DeletionPolicy: Retain,
+      DependsOn: [
+        MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+      ],
+      Properties: {
+        CloudWatchRoleArn: {
+          Fn::GetAtt: [
+            MyTestStackdnsdomainMyTestStackdnsdomainrestapiCloudWatchRole576320DC,
+            Arn,
+          ],
+        },
+      },
+      Type: AWS::ApiGateway::Account,
+      UpdateReplacePolicy: Retain,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiCloudWatchRole576320DC: {
+      DeletionPolicy: Retain,
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: apigateway.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+      UpdateReplacePolicy: Retain,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeployment2879F3812b9afdc8500cdc15bd4003a12a7be48a: {
+      DependsOn: [
+        MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxyANY74B2D563,
+        MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxy3260E5C6,
+        MyTestStackdnsdomainMyTestStackdnsdomainrestapiANY413B061D,
+      ],
+      Properties: {
+        Description: api Service API Gateway,
+        RestApiId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeploymentStageprod1A061321: {
+      DependsOn: [
+        MyTestStackdnsdomainMyTestStackdnsdomainrestapiAccount8D836574,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeployment2879F3812b9afdc8500cdc15bd4003a12a7be48a,
+        },
+        MethodSettings: [
+          {
+            DataTraceEnabled: false,
+            HttpMethod: *,
+            ResourcePath: /*,
+            ThrottlingBurstLimit: 10,
+            ThrottlingRateLimit: 10,
+          },
+        ],
+        RestApiId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+        },
+        StageName: prod,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3: {
+      Properties: {
+        Description: api Service API Gateway,
+        Name: api RestAPI,
+      },
+      Type: AWS::ApiGateway::RestApi,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxy3260E5C6: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+            RootResourceId,
+          ],
+        },
+        PathPart: {proxy+},
+        RestApiId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxyANY74B2D563: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    MyTestStackhealthchecklambdaEF425DCA,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxy3260E5C6,
+        },
+        RestApiId: {
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxyANYApiPermissionMyTestStackMyTestStackdnsdomainMyTestStackdnsdomainrestapiE6EBAD29ANYproxyD28F0389: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            MyTestStackhealthchecklambdaEF425DCA,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+              },
+              /,
+              {
+                Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeploymentStageprod1A061321,
+              },
+              /*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxyANYApiPermissionTestMyTestStackMyTestStackdnsdomainMyTestStackdnsdomainrestapiE6EBAD29ANYproxy132638AB: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            MyTestStackhealthchecklambdaEF425DCA,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
+              },
+              /test-invoke-stage/*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackhealthchecklambdaEF425DCA: {
+      DependsOn: [
+        MyTestStackhealthchecklambdaServiceRole7400FC6B,
+      ],
+      Properties: {
+        Code: {
+          ZipFile: 
+        exports.handler = async (event) => {
+          return {
+            statusCode: 200,
+            body: JSON.stringify({"status": "ok","info": {"api": {"status": "up"}}}),
+          };
+        };
+      ,
+        },
+        Handler: index.handler,
+        Role: {
+          Fn::GetAtt: [
+            MyTestStackhealthchecklambdaServiceRole7400FC6B,
+            Arn,
+          ],
+        },
+        Runtime: nodejs16.x,
+      },
+      Type: AWS::Lambda::Function,
+    },
+    MyTestStackhealthchecklambdaServiceRole7400FC6B: {
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: lambda.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+    },
+  },
+  Rules: {
+    CheckBootstrapVersion: {
+      Assertions: [
+        {
+          Assert: {
+            Fn::Not: [
+              {
+                Fn::Contains: [
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                  ],
+                  {
+                    Ref: BootstrapVersion,
+                  },
+                ],
+              },
+            ],
+          },
+          AssertDescription: CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.,
+        },
+      ],
+    },
+  },
+}
+`;

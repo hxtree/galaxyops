@@ -8,6 +8,12 @@ export class MainStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    // TODO set SSM set as env during deployment
+    const routes = {
+      '/roll': 'LUCK_BY_DICE_SVC_DOMAIN_NAME',
+    };
+
+    // TODO
     const healthCheckLambda = new lambda.Function(
       this,
       `${id}-health-check-lambda`,

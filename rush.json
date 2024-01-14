@@ -56,8 +56,8 @@
       "tags": ["platform-package"]
     },
     {
-      "packageName": "@cats-cradle/api-gateway",
-      "projectFolder": "platform/api-gateway",
+      "packageName": "@cats-cradle/api",
+      "projectFolder": "services/api",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",

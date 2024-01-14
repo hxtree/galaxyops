@@ -10,13 +10,9 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
           [
             https://,
             {
-              Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+              Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointcustomdomain808804C4,
             },
-            .execute-api.,
-            {
-              Ref: AWS::Region,
-            },
-            .amazonaws.com/default/v1/html-to-pdf/pdf?url=https://google.com,
+            /pdf?url=https://google.com,
           ],
         ],
       },
@@ -28,13 +24,35 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
           [
             https://,
             {
-              Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+              Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointcustomdomain808804C4,
+            },
+            /health,
+          ],
+        ],
+      },
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiEndpoint26E247D6: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
             },
             .execute-api.,
             {
               Ref: AWS::Region,
             },
-            .amazonaws.com/default/v1/html-to-pdf/health,
+            .,
+            {
+              Ref: AWS::URLSuffix,
+            },
+            /,
+            {
+              Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiDeploymentStageprod256692E7,
+            },
+            /,
           ],
         ],
       },
@@ -46,16 +64,16 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
       Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464: {
-      Default: web-api-gateway-rest-api-id,
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointhostedzoneidParameter400E20C0: {
+      Default: my-domains-hosted-zone-id,
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    htmltopdfstackhtmltopdfstackapiendpointrootresourceidssmParameterFD89F781: {
-      Default: web-api-gateway-root-resource-id,
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointorgformationcertswildcardcert1arnParameter1AF8E75E: {
+      Default: orgformation-certs-wildcard-cert1-arn,
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    htmltopdfstackhtmltopdfstackapiendpointv1resourceidssmParameterA4B24FFB: {
-      Default: web-api-gateway-v1-resource-id,
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointssmdomainnameParameterD95B813B: {
+      Default: DOMAIN_NAME,
       Type: AWS::SSM::Parameter::Value<String>,
     },
     lambdalayernestjslatestversionssmParameter: {
@@ -72,10 +90,6 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
     },
     mongodatabaseuserssmParameter: {
       Default: MONGO_DATABASE_USER,
-      Type: AWS::SSM::Parameter::Value<String>,
-    },
-    restapiidssmParameter: {
-      Default: web-api-gateway-rest-api-id,
       Type: AWS::SSM::Parameter::Value<String>,
     },
   },
@@ -175,31 +189,126 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
       },
       Type: AWS::IAM::Policy,
     },
-    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceC8097A05: {
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigatewayaliasrecord366F7DAC: {
       Properties: {
-        ParentId: {
-          Ref: htmltopdfstackhtmltopdfstackapiendpointv1resourceidssmParameterA4B24FFB,
+        AliasTarget: {
+          DNSName: {
+            Fn::GetAtt: [
+              htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointcustomdomain808804C4,
+              RegionalDomainName,
+            ],
+          },
+          HostedZoneId: {
+            Fn::GetAtt: [
+              htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointcustomdomain808804C4,
+              RegionalHostedZoneId,
+            ],
+          },
         },
-        PathPart: html-to-pdf,
+        HostedZoneId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointhostedzoneidParameter400E20C0,
+        },
+        Name: {
+          Fn::Join: [
+            ,
+            [
+              html-to-pdf.,
+              {
+                Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointssmdomainnameParameterD95B813B,
+              },
+              .,
+            ],
+          ],
+        },
+        Type: A,
+      },
+      Type: AWS::Route53::RecordSet,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapistage8C7F5C96: {
+      DependsOn: [
+        htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiAccountED1DC265,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointdeployment_UNIQUE_HASH,
+        },
         RestApiId: {
-          Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
+        },
+        StageName: default,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointcustomdomain808804C4: {
+      Properties: {
+        DomainName: {
+          Fn::Join: [
+            ,
+            [
+              html-to-pdf.,
+              {
+                Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointssmdomainnameParameterD95B813B,
+              },
+            ],
+          ],
+        },
+        EndpointConfiguration: {
+          Types: [
+            REGIONAL,
+          ],
+        },
+        RegionalCertificateArn: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointorgformationcertswildcardcert1arnParameter1AF8E75E,
+        },
+        SecurityPolicy: TLS_1_2,
+      },
+      Type: AWS::ApiGateway::DomainName,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointcustomdomainMapMyTestStackhtmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi730DB893D68EDB9C: {
+      Properties: {
+        DomainName: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointcustomdomain808804C4,
+        },
+        RestApiId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
+        },
+        Stage: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiDeploymentStageprod256692E7,
         },
       },
-      Type: AWS::ApiGateway::Resource,
+      Type: AWS::ApiGateway::BasePathMapping,
     },
-    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceproxy6F40A6EF: {
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointdeployment_UNIQUE_HASH: {
+      DependsOn: [
+        htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiproxyANY05444A22,
+        htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiANY4A812312,
+      ],
       Properties: {
-        ParentId: {
-          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceC8097A05,
-        },
-        PathPart: {proxy+},
         RestApiId: {
-          Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
         },
       },
-      Type: AWS::ApiGateway::Resource,
+      Type: AWS::ApiGateway::Deployment,
     },
-    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceproxyANY12B27A35: {
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointhtmltopdfsvcdomainnameEB41BF7D: {
+      Properties: {
+        Description: html-to-pdf service domain name,
+        Name: HTML_TO_PDF_SVC_DOMAIN_NAME,
+        Type: String,
+        Value: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointcustomdomain808804C4,
+        },
+      },
+      Type: AWS::SSM::Parameter,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203: {
+      Properties: {
+        Description: html-to-pdf Service API Gateway,
+        Name: html-to-pdf RestAPI,
+      },
+      Type: AWS::ApiGateway::RestApi,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiANY4A812312: {
       Properties: {
         AuthorizationType: NONE,
         HttpMethod: ANY,
@@ -231,15 +340,18 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
           },
         },
         ResourceId: {
-          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceproxy6F40A6EF,
+          Fn::GetAtt: [
+            htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
+            RootResourceId,
+          ],
         },
         RestApiId: {
-          Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
         },
       },
       Type: AWS::ApiGateway::Method,
     },
-    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceproxyANYApiPermissionMyTestStackhtmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointmainapi36CFB382ANYv1htmltopdfproxy2BBC4E29: {
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiANYApiPermissionMyTestStackhtmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi730DB893ANYCDC44113: {
       Properties: {
         Action: lambda:InvokeFunction,
         FunctionName: {
@@ -267,16 +379,20 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
               },
               :,
               {
-                Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+                Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
               },
-              /*/*/v1/html-to-pdf/*,
+              /,
+              {
+                Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiDeploymentStageprod256692E7,
+              },
+              /*/,
             ],
           ],
         },
       },
       Type: AWS::Lambda::Permission,
     },
-    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigwresourceproxyANYApiPermissionTestMyTestStackhtmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointmainapi36CFB382ANYv1htmltopdfproxyA22824A3: {
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiANYApiPermissionTestMyTestStackhtmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi730DB893ANY1A7339A0: {
       Properties: {
         Action: lambda:InvokeFunction,
         FunctionName: {
@@ -304,23 +420,234 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
               },
               :,
               {
-                Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+                Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
               },
-              /test-invoke-stage/*/v1/html-to-pdf/*,
+              /test-invoke-stage/*/,
             ],
           ],
         },
       },
       Type: AWS::Lambda::Permission,
     },
-    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointdeployment_UNIQUE_HASH: {
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiAccountED1DC265: {
+      DeletionPolicy: Retain,
+      DependsOn: [
+        htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
+      ],
       Properties: {
+        CloudWatchRoleArn: {
+          Fn::GetAtt: [
+            htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiCloudWatchRole36037177,
+            Arn,
+          ],
+        },
+      },
+      Type: AWS::ApiGateway::Account,
+      UpdateReplacePolicy: Retain,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiCloudWatchRole36037177: {
+      DeletionPolicy: Retain,
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: apigateway.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+      UpdateReplacePolicy: Retain,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiDeploymentDAC5D5D3bb7a2011d30d6d63955698ae6b66043e: {
+      DependsOn: [
+        htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiproxyANY05444A22,
+        htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiproxyB06587AE,
+        htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiANY4A812312,
+      ],
+      Properties: {
+        Description: html-to-pdf Service API Gateway,
         RestApiId: {
-          Ref: htmltopdfstackhtmltopdfstackapiendpointrestapiidssmParameterF5508464,
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
         },
-        StageName: default,
       },
       Type: AWS::ApiGateway::Deployment,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiDeploymentStageprod256692E7: {
+      DependsOn: [
+        htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiAccountED1DC265,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiDeploymentDAC5D5D3bb7a2011d30d6d63955698ae6b66043e,
+        },
+        MethodSettings: [
+          {
+            DataTraceEnabled: false,
+            HttpMethod: *,
+            ResourcePath: /*,
+            ThrottlingBurstLimit: 10,
+            ThrottlingRateLimit: 10,
+          },
+        ],
+        RestApiId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
+        },
+        StageName: prod,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiproxyANY05444A22: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    htmltopdfstacknestjsNodeJsLambda82EBD38C,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiproxyB06587AE,
+        },
+        RestApiId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiproxyANYApiPermissionMyTestStackhtmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi730DB893ANYproxyEEAA420F: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            htmltopdfstacknestjsNodeJsLambda82EBD38C,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
+              },
+              /,
+              {
+                Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiDeploymentStageprod256692E7,
+              },
+              /*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiproxyANYApiPermissionTestMyTestStackhtmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi730DB893ANYproxyEA6B4324: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            htmltopdfstacknestjsNodeJsLambda82EBD38C,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
+              },
+              /test-invoke-stage/*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapiproxyB06587AE: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
+            RootResourceId,
+          ],
+        },
+        PathPart: {proxy+},
+        RestApiId: {
+          Ref: htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointrestapi1B430203,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
     },
     htmltopdfstacknestjsNodeJsLambda82EBD38C: {
       DependsOn: [
@@ -337,22 +664,6 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
           Variables: {
             AWS_ACCOUNT_ID: {
               Ref: AWS::AccountId,
-            },
-            BASE_URL: {
-              Fn::Join: [
-                ,
-                [
-                  https://,
-                  {
-                    Ref: restapiidssmParameter,
-                  },
-                  .execute-api.,
-                  {
-                    Ref: AWS::Region,
-                  },
-                  .amazonaws.com/default/v1,
-                ],
-              ],
             },
             MONGO_DATABASE_PASSWORD: {
               Ref: mongodatabasepasswordssmParameter,

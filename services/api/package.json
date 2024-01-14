@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/api-gateway",
+  "name": "@cats-cradle/api",
   "module": "commonjs",
   "version": "0.1.2",
   "bin": {
