@@ -11,6 +11,13 @@ SubDomains:
   MaxConcurrentStacks: 10
   FailedStackTolerance: 10
 
+SendEmail:
+  Type: update-stacks
+  Template: ./templates/send-email.yml
+  StackName: SendEmail
+  MaxConcurrentStacks: 10
+  FailedStackTolerance: 10
+
 MongoDb:
   Type: update-stacks
   Template: ./templates/mongodb.yml

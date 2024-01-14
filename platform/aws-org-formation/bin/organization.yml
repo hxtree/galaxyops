@@ -28,6 +28,7 @@ Organization:
         mongoDatabaseUri: mongodb+srv://cluster0.z1bwvgb.mongodb.net
         mongoDatabaseUser: test-user
         mongoDatabasePassword: TpCg4mbwzk93B7tc
+        senderEmailAddress: admin@nekosgate.com
 
   ToolsAccount:
     Type: OC::ORG::Account
