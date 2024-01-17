@@ -2,6 +2,18 @@
   "name": "@cats-cradle/create-bundle",
   "entries": [
     {
+      "version": "1.0.10",
+      "tag": "@cats-cradle/create-bundle_v1.0.10",
+      "date": "Wed, 17 Jan 2024 03:35:52 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "remove puppeteer-core"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.9",
       "tag": "@cats-cradle/create-bundle_v1.0.9",
       "date": "Thu, 28 Dec 2023 16:54:41 GMT",
