@@ -1600,8 +1600,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.11
         version: 1.0.11
@@ -1739,8 +1739,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.11
         version: 1.0.11
@@ -1866,8 +1866,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.11
         version: 1.0.11
@@ -2045,8 +2045,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.11
         version: 1.0.11
@@ -2190,8 +2190,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.11
         version: 1.0.11
@@ -2329,8 +2329,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.11
         version: 1.0.11
@@ -2398,8 +2398,8 @@ importers:
         specifier: workspace:*
         version: link:../../platform/constructs
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/nestjs-modules':
         specifier: workspace:*
         version: link:../../libraries/nestjs-modules
@@ -2604,8 +2604,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.11
         version: 1.0.11
@@ -2743,8 +2743,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.11
         version: 1.0.11
@@ -2809,8 +2809,8 @@ importers:
         specifier: workspace:*
         version: link:../../platform/constructs
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/nestjs-modules':
         specifier: workspace:*
         version: link:../../libraries/nestjs-modules
@@ -2963,8 +2963,8 @@ importers:
         specifier: workspace:*
         version: link:../../platform/constructs
       '@cats-cradle/create-bundle':
-        specifier: 1.0.9
-        version: 1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
+        specifier: 1.0.10
+        version: 1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/nestjs-modules':
         specifier: workspace:*
         version: link:../../libraries/nestjs-modules
@@ -7075,8 +7075,8 @@ packages:
       - typanion
     dev: true
 
-  /@cats-cradle/create-bundle@1.0.9(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3):
-    resolution: {integrity: sha512-i5UWC0blikaNRYk4rUESqTYQ6bVctHpqzklt0wT7SI6amczHGTyI/p6RGG2ua9g1mT9u1e1rxzCUGp3DWZqLVA==}
+  /@cats-cradle/create-bundle@1.0.10(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3):
+    resolution: {integrity: sha512-F7mAymsKuAxkPuklSZH6lip5M5iYSEvyhWHRcvswl9InnVA7rkdl6R+GWQwl6IfhJ53aK/i90oErlPT8bi4E7Q==}
     hasBin: true
     dependencies:
       '@anatine/esbuild-decorators': 0.2.19(esbuild@0.17.19)
