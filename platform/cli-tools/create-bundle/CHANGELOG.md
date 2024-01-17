@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/create-bundle
 
-This log was last generated on Thu, 28 Dec 2023 16:54:41 GMT and should not be manually modified.
+This log was last generated on Wed, 17 Jan 2024 03:35:52 GMT and should not be manually modified.
+
+## 1.0.10
+Wed, 17 Jan 2024 03:35:52 GMT
+
+### Patches
+
+- remove puppeteer-core
 
 ## 1.0.9
 Thu, 28 Dec 2023 16:54:41 GMT
