@@ -276,9 +276,7 @@
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/validation-schemas",
-        "@cats-cradle/eslint-config",
-        "@cats-cradle/create-artifact",
-        "@cats-cradle/create-bundle"
+        "@cats-cradle/eslint-config"
       ],
       "tags": ["service-package", "deploy-app", "cimongo"],
       "shouldPublish": true

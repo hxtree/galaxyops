@@ -60,9 +60,7 @@
     "@cats-cradle/faker-factory": "workspace:*",
     "@sparticuz/chromium-min": "112.0.0",
     "puppeteer-core": "19.8.0",
-    "uuid": "~9.0.1",
-    "axios": "^0.21.1",
-    "cheerio": "~1.0.0-rc.12"
+    "uuid": "~9.0.1"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.11",
