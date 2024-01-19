@@ -65,7 +65,7 @@
     "@types/lodash": "~4.14.202",
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.16",
-    "@cats-cradle/create-bundle": "1.0.10",
+    "@cats-cradle/create-bundle": "1.0.9",
     "@cats-cradle/create-artifact": "2.0.6"
   }
 }
