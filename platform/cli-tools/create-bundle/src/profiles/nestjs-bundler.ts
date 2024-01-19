@@ -49,7 +49,7 @@ export class NestJsBundler {
       // chromium
       // 'puppeteer',
       // 'chrome-aws-lambda',
-      '@sparticuz/chromium',
+      '@sparticuz/chromium-min',
       // 'puppeteer-core',
     ];
 
