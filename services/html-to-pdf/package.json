@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/html-to-pdf",
   "module": "commonjs",
-  "version": "1.0.19",
+  "version": "1.0.18",
   "license": "MIT",
   "description": "Your Go-To Solution for PDF Generation from HTML.",
   "bugs": {
@@ -60,7 +60,8 @@
     "@cats-cradle/faker-factory": "workspace:*",
     "@sparticuz/chromium-min": "112.0.0",
     "puppeteer-core": "19.8.0",
-    "uuid": "~9.0.1"
+    "uuid": "~9.0.1",
+    "axios": "^0.21.1"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.11",
@@ -81,7 +82,7 @@
     "@types/lodash": "~4.14.202",
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.16",
-    "@cats-cradle/create-bundle": "1.0.10",
+    "@cats-cradle/create-bundle": "1.0.9",
     "@cats-cradle/create-artifact": "2.0.6",
     "axios": "^0.21.1"
   }

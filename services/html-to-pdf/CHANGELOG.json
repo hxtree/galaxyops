@@ -2,23 +2,6 @@
   "name": "@cats-cradle/html-to-pdf",
   "entries": [
     {
-      "version": "1.0.19",
-      "tag": "@cats-cradle/html-to-pdf_v1.0.19",
-      "date": "Wed, 17 Jan 2024 03:35:52 GMT",
-      "comments": {
-        "patch": [
-          {
-            "comment": "remove meta tag feature"
-          }
-        ],
-        "dependency": [
-          {
-            "comment": "Updating dependency \"@cats-cradle/create-bundle\" from `1.0.9` to `1.0.10`"
-          }
-        ]
-      }
-    },
-    {
       "version": "1.0.18",
       "tag": "@cats-cradle/html-to-pdf_v1.0.18",
       "date": "Thu, 28 Dec 2023 16:54:41 GMT",
