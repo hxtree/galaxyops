@@ -47,10 +47,7 @@ export class NestJsBundler {
       'reflect-metadata',
       'rxjs',
       // chromium
-      // 'puppeteer',
-      // 'chrome-aws-lambda',
       '@sparticuz/chromium',
-      // 'puppeteer-core',
     ];
 
     rmSync(this.outDir, { recursive: true, force: true });
