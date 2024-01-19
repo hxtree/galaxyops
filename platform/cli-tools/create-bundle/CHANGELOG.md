@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/create-bundle
 
-This log was last generated on Wed, 17 Jan 2024 03:35:52 GMT and should not be manually modified.
+This log was last generated on Fri, 19 Jan 2024 01:36:23 GMT and should not be manually modified.
+
+## 1.0.11
+Fri, 19 Jan 2024 01:36:23 GMT
+
+### Patches
+
+- change exclude chromium to chromium-min
 
 ## 1.0.10
 Wed, 17 Jan 2024 03:35:52 GMT
