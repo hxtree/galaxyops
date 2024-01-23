@@ -2,6 +2,9 @@
 import { Injectable } from '@nestjs/common';
 import { Readable } from 'stream';
 import puppeteer, { PDFOptions } from 'puppeteer-core';
+
+// TOGGLE for local development
+// import chromium from '@sparticuz/chromium';
 import chromium from '@sparticuz/chromium-min';
 
 @Injectable()
@@ -68,9 +71,11 @@ export class PdfService {
   }
 
   private async getBrowser() {
-    const CHROMIUM_EXECUTABLE_PATH = process.env.AWS_EXECUTION_ENV
-      ? '/opt/nodejs/node_modules/@sparticuz/chromium/bin'
-      : undefined;
+    let CHROMIUM_EXECUTABLE_PATH: string | undefined;
+
+    if (process.env.AWS_EXECUTION_ENV) {
+      CHROMIUM_EXECUTABLE_PATH = '/opt/nodejs/node_modules/@sparticuz/chromium/bin';
+    }
 
     await chromium.font(
       'http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3aCWcynf_cDxXwCLxiixG1c.ttf',
