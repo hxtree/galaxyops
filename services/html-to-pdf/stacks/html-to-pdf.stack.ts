@@ -17,7 +17,7 @@ export class HtmlToPdfStack extends cdk.Stack {
 
     // create a bucket to put the pdf generated in
 
-    const pdfBucket = new s3.Bucket(scope, `${id}-s3-bucket`, {
+    const pdfBucket = new s3.Bucket(this, `${id}-s3-bucket`, {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       bucketName: `${awsAccountId}-${stageName}-html-to-pdf-bucket`,
       encryption: s3.BucketEncryption.S3_MANAGED,
@@ -26,7 +26,7 @@ export class HtmlToPdfStack extends cdk.Stack {
       removalPolicy: RemovalPolicy.DESTROY,
     });
 
-    const pdfBucketBotRole = new iam.Role(scope, `${id}-pdf-bucket-bot-role`, {
+    const pdfBucketBotRole = new iam.Role(this, `${id}-pdf-bucket-bot-role`, {
       assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
     });
 
