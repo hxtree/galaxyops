@@ -94,22 +94,6 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
     },
   },
   Resources: {
-    ChromiumLayer505381F6: {
-      Properties: {
-        CompatibleRuntimes: [
-          nodejs18.x,
-        ],
-        Content: {
-          S3Bucket: {
-            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
-          },
-          S3Key: UNIQUE_HASH.zip,
-        },
-        Description: Chromium layer for Lambda,
-        LayerName: ChromiumLayer,
-      },
-      Type: AWS::Lambda::LayerVersion,
-    },
     LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A: {
       DependsOn: [
         LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB,
@@ -188,6 +172,172 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
         ],
       },
       Type: AWS::IAM::Policy,
+    },
+    MyTestStackchromiumlayer08B9B7A7: {
+      Properties: {
+        CompatibleRuntimes: [
+          nodejs18.x,
+        ],
+        Content: {
+          S3Bucket: {
+            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
+          },
+          S3Key: UNIQUE_HASH.zip,
+        },
+        Description: Chromium layer for Lambda,
+        LayerName: ChromiumLayer,
+      },
+      Type: AWS::Lambda::LayerVersion,
+    },
+    MyTestStackpdfbucketbotroleDefaultPolicy90C2D1A4: {
+      Properties: {
+        PolicyDocument: {
+          Statement: [
+            {
+              Action: [
+                s3:DeleteObject*,
+                s3:PutObject,
+                s3:PutObjectLegalHold,
+                s3:PutObjectRetention,
+                s3:PutObjectTagging,
+                s3:PutObjectVersionTagging,
+                s3:Abort*,
+              ],
+              Effect: Allow,
+              Resource: [
+                {
+                  Fn::GetAtt: [
+                    MyTestStacks3bucketE42B0863,
+                    Arn,
+                  ],
+                },
+                {
+                  Fn::Join: [
+                    ,
+                    [
+                      {
+                        Fn::GetAtt: [
+                          MyTestStacks3bucketE42B0863,
+                          Arn,
+                        ],
+                      },
+                      /uploads/*,
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        PolicyName: MyTestStackpdfbucketbotroleDefaultPolicy90C2D1A4,
+        Roles: [
+          {
+            Ref: MyTestStackpdfbucketbotroleEB9529D7,
+          },
+        ],
+      },
+      Type: AWS::IAM::Policy,
+    },
+    MyTestStackpdfbucketbotroleEB9529D7: {
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: lambda.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+      },
+      Type: AWS::IAM::Role,
+    },
+    MyTestStacks3bucketE42B0863: {
+      DeletionPolicy: Delete,
+      Properties: {
+        BucketEncryption: {
+          ServerSideEncryptionConfiguration: [
+            {
+              ServerSideEncryptionByDefault: {
+                SSEAlgorithm: AES256,
+              },
+            },
+          ],
+        },
+        BucketName: {
+          Fn::Join: [
+            ,
+            [
+              {
+                Ref: AWS::AccountId,
+              },
+              -default-html-to-pdf-bucket,
+            ],
+          ],
+        },
+        PublicAccessBlockConfiguration: {
+          BlockPublicAcls: true,
+          BlockPublicPolicy: true,
+          IgnorePublicAcls: true,
+          RestrictPublicBuckets: true,
+        },
+        VersioningConfiguration: {
+          Status: Enabled,
+        },
+      },
+      Type: AWS::S3::Bucket,
+      UpdateReplacePolicy: Delete,
+    },
+    MyTestStacks3bucketPolicyC29CB7B2: {
+      Properties: {
+        Bucket: {
+          Ref: MyTestStacks3bucketE42B0863,
+        },
+        PolicyDocument: {
+          Statement: [
+            {
+              Action: s3:*,
+              Condition: {
+                Bool: {
+                  aws:SecureTransport: false,
+                },
+              },
+              Effect: Deny,
+              Principal: {
+                AWS: *,
+              },
+              Resource: [
+                {
+                  Fn::GetAtt: [
+                    MyTestStacks3bucketE42B0863,
+                    Arn,
+                  ],
+                },
+                {
+                  Fn::Join: [
+                    ,
+                    [
+                      {
+                        Fn::GetAtt: [
+                          MyTestStacks3bucketE42B0863,
+                          Arn,
+                        ],
+                      },
+                      /*,
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          Version: 2012-10-17,
+        },
+      },
+      Type: AWS::S3::BucketPolicy,
     },
     htmltopdfstackhtmltopdfstackapiendpointhtmltopdfstackapiendpointapigatewayaliasrecord366F7DAC: {
       Properties: {
@@ -680,7 +830,7 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
         Handler: index.handler,
         Layers: [
           {
-            Ref: ChromiumLayer505381F6,
+            Ref: MyTestStackchromiumlayer08B9B7A7,
           },
           {
             Ref: lambdalayernestjslatestversionssmParameter,

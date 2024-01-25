@@ -49,6 +49,9 @@ export class HtmlToPdfStack extends cdk.Stack {
       // role: pdfBucketBotRole
     });
 
+    // TODO prefer dns routing being outside of microservice
+    // TODO check if gw change caused regression bug
+
     // TODO Add or remove media types that contain binary data.
     // https://repost.aws/knowledge-center/api-gateway-binary-data-lambda
     // Media type
