@@ -49,7 +49,7 @@
     "@cats-cradle/nestjs-modules": "workspace:*",
     "@cats-cradle/validation-schemas": "workspace:*",
     "@nestjs/config": "2.2.0",
-    "@cats-cradle/create-bundle": "1.0.9",
+    "@cats-cradle/create-bundle": "1.0.12",
     "@nestjs/mongoose": "9.2.1",
     "mongoose": "6.11.3",
     "mongodb": "6.0.0",
@@ -79,7 +79,7 @@
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.16",
     "@cats-cradle/faker-factory": "workspace:*",
-    "@cats-cradle/create-bundle": "1.0.9",
+    "@cats-cradle/create-bundle": "1.0.12",
     "@fastify/static": "~6.9.0"
   }
 }

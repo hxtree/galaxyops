@@ -79,7 +79,7 @@
     "@types/html-to-text": "~9.0.0",
     "@types/lodash": "~4.14.202",
     "@cats-cradle/create-artifact": "2.0.6",
-    "@cats-cradle/create-bundle": "1.0.9",
+    "@cats-cradle/create-bundle": "1.0.12",
     "@shelf/jest-mongodb": "~4.1.7",
     "mongodb": "6.0.0"
   }
