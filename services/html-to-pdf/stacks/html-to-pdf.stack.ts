@@ -1,7 +1,8 @@
-import { Microservice } from '@cats-cradle/constructs';
+import { Microservice, LambdaDomainName } from '@cats-cradle/constructs';
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import * as s3 from 'aws-cdk-lib/aws-s3';
+import * as ssm from 'aws-cdk-lib/aws-ssm';
 import { StackProps, RemovalPolicy } from 'aws-cdk-lib';
 import * as path from 'path';
 import { Code, LayerVersion, Runtime } from 'aws-cdk-lib/aws-lambda';
@@ -15,6 +16,13 @@ export class HtmlToPdfStack extends cdk.Stack {
     const awsAccountId = cdk.Stack.of(this).account;
     const stageName = process.env.STAGE_NAME ?? 'default';
 
+    // create lambda role for uploading to bucket
+
+    const pdfBucketBotRole = new iam.Role(this, `${id}-pdf-bucket-bot-role`, {
+      roleName: 'PdfBucketBotUploadRole',
+      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
+    });
+
     // create a bucket to put the pdf generated in
 
     const pdfBucket = new s3.Bucket(this, `${id}-s3-bucket`, {
@@ -26,11 +34,39 @@ export class HtmlToPdfStack extends cdk.Stack {
       removalPolicy: RemovalPolicy.DESTROY,
     });
 
-    const pdfBucketBotRole = new iam.Role(this, `${id}-pdf-bucket-bot-role`, {
-      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
+    pdfBucket.grantWrite(pdfBucketBotRole, 'uploads/*');
+
+    // create a remote access credientals for uploading to bucket
+
+    const policy = new iam.Policy(this, `${id}-cdk-policy`, {
+      statements: [
+        new iam.PolicyStatement({
+          actions: ['s3:Put*', 's3:Get*', 's3:List*'],
+          resources: [`arn:aws:s3:::${pdfBucket.bucketName}/*`],
+        }),
+      ],
     });
 
-    pdfBucket.grantWrite(pdfBucketBotRole, 'uploads/*');
+    const user = new iam.User(this, `${id}-pdf-bucket-user`);
+
+    const accessKey = new iam.CfnAccessKey(
+      this,
+      `${id}-pdf-bucket-bot-access-key`,
+      {
+        userName: user.userName,
+      },
+    );
+    policy.attachToUser(user);
+
+    new ssm.StringParameter(this, `${id}-pdf-bucket-bot-access-key-id`, {
+      parameterName: 'HTML_TO_PDF_AWS_ACCESS_KEY_ID',
+      stringValue: accessKey.ref,
+    });
+
+    new ssm.StringParameter(this, `${id}-pdf-bucket-bot-secret-access-key`, {
+      parameterName: 'HTML_TO_PDF_AWS_SECRET_ACCESS_KEY',
+      stringValue: accessKey.attrSecretAccessKey,
+    });
 
     // create a lambda capable of creating pdf from html
 
@@ -41,15 +77,24 @@ export class HtmlToPdfStack extends cdk.Stack {
       description: 'Chromium layer for Lambda',
     });
 
-    const microservice = new Microservice(this, 'html-to-pdf-stack', {
-      path: 'html-to-pdf',
+    const microservice = new Microservice(this, `${id}-html-to-pdf-stack`, {
       projectRoot: path.join(__dirname, '..'),
       memorySize: 1600,
+      environment: {
+        AWS_BUCKET: pdfBucket.bucketName,
+      },
       layers: [chromiumLambdaLayer],
-      // role: pdfBucketBotRole
+      role: pdfBucketBotRole,
     });
 
-    // TODO prefer dns routing being outside of microservice
+    // create an api endpoint
+
+    const apiEndpoint = new LambdaDomainName(this, `${id}-api-endpoint`, {
+      stageName,
+      subdomainName: 'html-to-pdf',
+      proxyLambda: microservice.getNodeJsFunction(),
+    });
+
     // TODO check if gw change caused regression bug
 
     // TODO Add or remove media types that contain binary data.
@@ -58,11 +103,23 @@ export class HtmlToPdfStack extends cdk.Stack {
     // application/pdf
 
     new cdk.CfnOutput(this, 'health check endpoint', {
-      value: `${microservice.getBaseUrl()}/health`,
+      value: `${apiEndpoint.getBaseUrl()}/health`,
     });
 
     new cdk.CfnOutput(this, 'example test endpoint', {
-      value: `${microservice.getBaseUrl()}/pdf?url=https://google.com`,
+      value: `${apiEndpoint.getBaseUrl()}/pdf?url=https://google.com`,
+    });
+
+    new cdk.CfnOutput(this, 'AWS_BUCKET', {
+      value: pdfBucket.bucketName,
+    });
+
+    new cdk.CfnOutput(this, 'AWS_ACCESS_KEY_ID', {
+      value: accessKey.ref,
+    });
+
+    new cdk.CfnOutput(this, 'AWS_SECRET_ACCESS_KEY', {
+      value: accessKey.attrSecretAccessKey,
     });
   }
 }

@@ -4,15 +4,18 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import * as path from 'path';
-import { getBaseUrl } from '../api-endpoint/get-base-url';
+import { IRole } from 'aws-cdk-lib/aws-iam';
+import { EnvironmentType } from './environment.type';
 
 export interface NestJsProps {
   projectRoot: string;
   // apiId: string;
   region: string;
   stageName: string;
+  environment?: EnvironmentType;
   memorySize?: number;
   layers?: lambda.ILayerVersion[];
+  role?: IRole;
 }
 
 export class NestJs extends Construct {
@@ -47,6 +50,25 @@ export class NestJs extends Construct {
 
     const awsAccountId = Stack.of(this).account;
 
+    /**
+     * Environmental variables
+     */
+    const defaultEnvironment = {
+      /**
+       * The following ENV are reserved by AWS, set by default AWS, and used
+       * They are not visible in AWS Management Console under Lambda Environment
+       * {@link https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html }
+       *
+       * AWS_REGION
+       */
+      AWS_ACCOUNT_ID: awsAccountId,
+      STAGE_NAME: props.stageName,
+      MONGO_DATABASE_URI: mongoDatabaseUri,
+      MONGO_DATABASE_USER: mongoDatabaseUser,
+      MONGO_DATABASE_PASSWORD: mongoDatabasePassword,
+      // BASE_URL: getBaseUrl(props.apiId, props.region, props.stageName),
+    };
+
     this.nodeJsFunction = new lambda.Function(this, 'NodeJsLambda', {
       runtime: lambda.Runtime.NODEJS_18_X,
       code: lambda.Code.fromAsset(path.join(props.projectRoot, 'dist')),
@@ -54,23 +76,12 @@ export class NestJs extends Construct {
       layers: props.layers,
       memorySize: props.memorySize ?? 1024, // 128 -- TODO reduce
       environment: {
-        /**
-         * Environmental variables
-         * The following ENV are reserved by AWS, set by default AWS, and used
-         * They are not visible in AWS Management Console under Lambda Environment
-         * {@link https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html }
-         *
-         * AWS_REGION
-         */
-        AWS_ACCOUNT_ID: awsAccountId,
-        STAGE_NAME: props.stageName,
-        // BASE_URL: getBaseUrl(props.apiId, props.region, props.stageName),
-        MONGO_DATABASE_URI: mongoDatabaseUri,
-        MONGO_DATABASE_USER: mongoDatabaseUser,
-        MONGO_DATABASE_PASSWORD: mongoDatabasePassword,
+        ...defaultEnvironment,
+        ...props.environment,
       },
       logRetention: RetentionDays.ONE_DAY,
       timeout: Duration.seconds(30),
+      role: props.role,
     });
   }
 

@@ -4,21 +4,20 @@ import * as ssm from 'aws-cdk-lib/aws-ssm';
 import { Stack } from 'aws-cdk-lib';
 import { LayerVersion } from 'aws-cdk-lib/aws-lambda';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
-import { ApiEndpoint } from '../api-endpoint/api-endpoint';
+import { IRole } from 'aws-cdk-lib/aws-iam';
 import { NestJs } from '../nestjs/nestjs';
-import { LambdaDomainName } from '../dns/lambda-domain-name';
+import { EnvironmentType } from '../nestjs/environment.type';
 
 export interface MicroserviceProps {
-  path: string;
   projectRoot: string;
   memorySize?: number;
   layers?: lambda.ILayerVersion[];
+  role?: IRole;
+  environment?: EnvironmentType;
 }
 
 export class Microservice extends Construct {
   private nestJs: NestJs;
-
-  private apiEndpoint: LambdaDomainName;
 
   constructor(scope: Construct, id: string, props: MicroserviceProps) {
     super(scope, id);
@@ -58,28 +57,13 @@ export class Microservice extends Construct {
 
     this.nestJs = new NestJs(scope, `${id}-nestjs`, {
       projectRoot: props.projectRoot,
-      // apiId,
       region,
       stageName,
       memorySize: props.memorySize,
+      environment: props.environment,
       layers: lambdaLayers,
+      role: props.role,
     });
-
-    // this.apiEndpoint = new ApiEndpoint(this, `${id}-api-endpoint`, {
-    //   stageName,
-    //   path: props.path,
-    //   nodeJsFunction: this.nestJs.getNodeJsFunction(),
-    // });
-
-    this.apiEndpoint = new LambdaDomainName(this, `${id}-api-endpoint`, {
-      stageName,
-      subdomainName: props.path,
-      proxyLambda: this.nestJs.getNodeJsFunction(),
-    });
-  }
-
-  getBaseUrl(): string {
-    return this.apiEndpoint.getBaseUrl();
   }
 
   getNodeJsFunction(): NodejsFunction {

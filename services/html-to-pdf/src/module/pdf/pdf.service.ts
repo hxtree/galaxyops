@@ -1,5 +1,6 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
 import { Injectable } from '@nestjs/common';
+import { S3Service } from '@cats-cradle/nestjs-modules';
 import { Readable } from 'stream';
 import puppeteer, { PDFOptions } from 'puppeteer-core';
 
@@ -9,13 +10,29 @@ import chromium from '@sparticuz/chromium-min';
 
 @Injectable()
 export class PdfService {
-  pageSettings: PDFOptions = {
+  public uploadBucket: string;
+
+  public pageSettings: PDFOptions = {
     format: 'A4',
     landscape: false,
     printBackground: true,
     margin: { top: '0px' },
     scale: 0.973,
   };
+
+  constructor(public s3Service: S3Service) {
+    this.uploadBucket = process.env.AWS_BUCKET ?? '';
+    console.log(this.uploadBucket);
+  }
+
+  async objectPut(key: string, fileContent: string | Buffer) {
+    const result = await this.s3Service.putObject(
+      this.uploadBucket,
+      `uploads/${key}`,
+      fileContent,
+    );
+    return result;
+  }
 
   async htmlToPdf(html: string): Promise<any> {
     const browser = await this.getBrowser();

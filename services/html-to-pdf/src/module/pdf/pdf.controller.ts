@@ -18,6 +18,21 @@ import { OperationDto, OperationInput, OperationOutput } from './operation.dto';
 export class PdfController {
   constructor(private readonly pdfService: PdfService) {}
 
+  @Get('test')
+  async saveUrlToPdfInS3(): Promise<any> {
+    const key = 'test.pdf';
+
+    const buffer = await this.pdfService.urlToPdf('http://example.com');
+
+    await this.pdfService.objectPut(key, buffer);
+
+    return Promise.resolve({
+      msg: 'Success',
+      bucket: process.env.AWS_BUCKET,
+      key: `uploads/${key}`,
+    });
+  }
+
   @Get()
   async url(
   @Res({ passthrough: true }) res: Response,

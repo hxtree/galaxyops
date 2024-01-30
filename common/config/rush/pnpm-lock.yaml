@@ -2258,6 +2258,9 @@ importers:
       '@cats-cradle/faker-factory':
         specifier: workspace:*
         version: link:../../libraries/faker-factory
+      '@cats-cradle/nestjs-modules':
+        specifier: workspace:*
+        version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
         specifier: workspace:*
         version: link:../../libraries/validation-schemas
@@ -2267,6 +2270,9 @@ importers:
       '@nestjs/common':
         specifier: 9.4.0
         version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/config':
+        specifier: 2.2.0
+        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
