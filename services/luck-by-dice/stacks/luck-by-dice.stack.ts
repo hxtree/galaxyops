@@ -9,12 +9,12 @@ export class LuckByDiceStack extends cdk.Stack {
     super(scope, id, props);
 
     const microservice = new Microservice(this, 'character-sheet-stack', {
-      path: 'luck-by-dice',
+      // path: 'luck-by-dice',
       projectRoot: path.join(__dirname, '..'),
     });
 
-    new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${microservice.getBaseUrl()}/dice-roll`,
-    });
+    // new cdk.CfnOutput(this, 'Localhost API Example', {
+    //   value: `${microservice.getBaseUrl()}/dice-roll`,
+    // });
   }
 }

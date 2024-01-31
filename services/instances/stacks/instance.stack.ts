@@ -9,12 +9,12 @@ export class InstanceStack extends cdk.Stack {
     super(scope, id, props);
 
     const microservice = new Microservice(this, 'instance-stack', {
-      path: 'instances',
+      // path: 'instances',
       projectRoot: path.join(__dirname, '..'),
     });
 
-    new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${microservice.getBaseUrl()}`,
-    });
+    // new cdk.CfnOutput(this, 'Localhost API Example', {
+    //   value: `${microservice.getBaseUrl()}`,
+    // });
   }
 }
