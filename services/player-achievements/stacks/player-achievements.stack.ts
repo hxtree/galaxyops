@@ -9,12 +9,12 @@ export class PlayerAchievementsStack extends cdk.Stack {
     super(scope, id, props);
 
     const microservice = new Microservice(this, 'player-achievements', {
-      path: 'player-achievements',
+      // path: 'player-achievements',
       projectRoot: path.join(__dirname, '..'),
     });
 
-    new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${microservice.getBaseUrl()}`,
-    });
+    // new cdk.CfnOutput(this, 'Localhost API Example', {
+    //   value: `${microservice.getBaseUrl()}`,
+    // });
   }
 }

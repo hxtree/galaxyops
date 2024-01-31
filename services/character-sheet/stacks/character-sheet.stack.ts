@@ -9,12 +9,12 @@ export class CharacterSheetStack extends cdk.Stack {
     super(scope, id, props);
 
     const microservice = new Microservice(this, 'character-sheet-stack', {
-      path: 'character',
+      // path: 'character',
       projectRoot: path.join(__dirname, '..'),
     });
 
-    new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${microservice.getBaseUrl()}/archetypes`,
-    });
+    // new cdk.CfnOutput(this, 'Localhost API Example', {
+    //   value: `${microservice.getBaseUrl()}/archetypes`,
+    // });
   }
 }
