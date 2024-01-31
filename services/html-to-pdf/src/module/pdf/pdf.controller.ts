@@ -20,26 +20,26 @@ export class PdfController {
 
   @Get('test')
   async saveUrlToPdfInS3(): Promise<any> {
-    const key = 'test.pdf';
-
+    const id = v4();
+    const key = `uploads/${id}.pdf`;
     const buffer = await this.pdfService.urlToPdf('http://example.com');
-
     await this.pdfService.objectPut(key, buffer);
-
     return Promise.resolve({
       msg: 'Success',
+      url: `https://${process.env.AWS_BUCKET}.s3.amazonaws.com/${key}`,
       bucket: process.env.AWS_BUCKET,
-      key: `uploads/${key}`,
+      key: `${key}`,
     });
   }
 
   @Get()
   async url(
-  @Res({ passthrough: true }) res: Response,
-    @Query('url') url?: string,
-  ) {
+    @Res({ passthrough: true }) res: Response,
+      @Query('url') url?: string,
+  ): Promise<any> {
     const buffer = await this.pdfService.urlToPdf(url ?? 'http://example.com');
     const filename = `${v4()}.pdf`;
+
     res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
@@ -52,7 +52,9 @@ export class PdfController {
       @Body() body: OperationDto,
   ): Promise<any> {
     let buffer;
-    const filename = body.filename ?? `${v4()}.pdf`;
+    const id = v4();
+    const filename = body.filename ?? `${id}.pdf`;
+    const key = `uploads/${id}.pdf`;
 
     try {
       switch (true) {
@@ -94,6 +96,7 @@ export class PdfController {
         case body.input === OperationInput.URL
           && body.output === OperationOutput.PDF:
           buffer = await this.pdfService.urlToPdf(body.url ?? '');
+
           res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
           res.setHeader('Content-Type', 'application/pdf');
           res.setHeader(
@@ -103,6 +106,16 @@ export class PdfController {
           return new StreamableFile(
             this.pdfService.createReadableStream(buffer),
           );
+        case body.input === OperationInput.URL
+          && body.output === OperationOutput.S3:
+          buffer = await this.pdfService.urlToPdf(body.url ?? '');
+          await this.pdfService.objectPut(key, buffer);
+          return await Promise.resolve({
+            msg: 'Success',
+            url: `https://${process.env.AWS_BUCKET}.s3.amazonaws.com/${key}`,
+            bucket: process.env.AWS_BUCKET,
+            key: `${key}`,
+          });
         default:
           return new BadRequestException('Invalid request');
       }

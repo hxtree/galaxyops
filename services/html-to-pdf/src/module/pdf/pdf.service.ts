@@ -28,7 +28,7 @@ export class PdfService {
   async objectPut(key: string, fileContent: string | Buffer) {
     const result = await this.s3Service.putObject(
       this.uploadBucket,
-      `uploads/${key}`,
+      key,
       fileContent,
     );
     return result;

@@ -1,6 +1,9 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, Injectable } from '@nestjs/common';
+import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { S3ClientService, S3Service } from '@cats-cradle/nestjs-modules';
+import { mockClient } from 'aws-sdk-client-mock';
 import { OperationInput, OperationOutput } from './operation.dto';
 import { PdfService } from './pdf.service';
 import { PdfController } from './pdf.controller';
@@ -8,12 +11,19 @@ import { PdfController } from './pdf.controller';
 describe('/pdf', () => {
   let app: INestApplication;
   let pdfService: PdfService;
+  let s3Service: S3Service;
+
+  const s3Mock = mockClient(S3Client);
 
   beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
       imports: [],
       controllers: [PdfController],
-      providers: [PdfService],
+      providers: [
+        PdfService,
+        S3Service,
+        { provide: S3ClientService, useValue: s3Mock },
+      ],
     }).compile();
 
     app = moduleRef.createNestApplication();

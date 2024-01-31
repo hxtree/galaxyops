@@ -32,6 +32,7 @@ export class HtmlToPdfStack extends cdk.Stack {
       enforceSSL: true,
       versioned: true,
       removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
 
     pdfBucket.grantWrite(pdfBucketBotRole, 'uploads/*');
