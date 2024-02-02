@@ -1,5 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
+import { LambdaDomainName } from '@cats-cradle/constructs';
 import { EmailVerificationStack } from './email-verification.stack';
 import { EmailServiceStack } from './email-service.stack';
 
@@ -9,10 +10,18 @@ export class MainStack extends cdk.Stack {
 
     new EmailVerificationStack(this, 'EmailVerificationStack');
 
+    const stageName = process.env.STAGE_NAME ?? 'default';
+
     const emailServiceStack = new EmailServiceStack(this, 'EmailServiceStack');
 
-    new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${emailServiceStack.microservice.getBaseUrl()}/`,
+    const apiEndpoint = new LambdaDomainName(this, `${id}-api-endpoint`, {
+      stageName,
+      subdomainName: 'email-service',
+      proxyLambda: emailServiceStack.microservice.getNodeJsFunction(),
+    });
+
+    new cdk.CfnOutput(this, 'health check endpoint', {
+      value: `${apiEndpoint.getBaseUrl()}/health`,
     });
   }
 }

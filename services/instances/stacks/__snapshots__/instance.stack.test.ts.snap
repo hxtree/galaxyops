@@ -3,27 +3,14 @@
 exports[`InstanceStack should match snapshot test 1`] = `
 {
   Outputs: {
-    LocalhostAPIExample: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiEndpointFAADCB08: {
       Value: {
         Fn::Join: [
           ,
           [
             https://,
             {
-              Ref: instancestackinstancestackapiendpointinstancestackapiendpointcustomdomain3639C899,
-            },
-          ],
-        ],
-      },
-    },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiEndpoint0852123B: {
-      Value: {
-        Fn::Join: [
-          ,
-          [
-            https://,
-            {
-              Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+              Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
             },
             .execute-api.,
             {
@@ -35,9 +22,23 @@ exports[`InstanceStack should match snapshot test 1`] = `
             },
             /,
             {
-              Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiDeploymentStageprodA4D25F5C,
+              Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
             },
             /,
+          ],
+        ],
+      },
+    },
+    healthcheckendpoint: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+            },
+            /health,
           ],
         ],
       },
@@ -49,15 +50,15 @@ exports[`InstanceStack should match snapshot test 1`] = `
       Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointhostedzoneidParameter0FFBAFAA: {
+    MyTestStackapiendpointMyTestStackapiendpointhostedzoneidParameterA2808C2D: {
       Default: my-domains-hosted-zone-id,
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointorgformationcertswildcardcert1arnParameterDD749129: {
+    MyTestStackapiendpointMyTestStackapiendpointorgformationcertswildcardcert1arnParameter2E2B88D5: {
       Default: orgformation-certs-wildcard-cert1-arn,
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointssmdomainnameParameterF3F6FD50: {
+    MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA: {
       Default: DOMAIN_NAME,
       Type: AWS::SSM::Parameter::Value<String>,
     },
@@ -158,24 +159,24 @@ exports[`InstanceStack should match snapshot test 1`] = `
       },
       Type: AWS::IAM::Policy,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointapigatewayaliasrecord32B51D09: {
+    MyTestStackapiendpointMyTestStackapiendpointapigatewayaliasrecord2742C3A3: {
       Properties: {
         AliasTarget: {
           DNSName: {
             Fn::GetAtt: [
-              instancestackinstancestackapiendpointinstancestackapiendpointcustomdomain3639C899,
+              MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
               RegionalDomainName,
             ],
           },
           HostedZoneId: {
             Fn::GetAtt: [
-              instancestackinstancestackapiendpointinstancestackapiendpointcustomdomain3639C899,
+              MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
               RegionalHostedZoneId,
             ],
           },
         },
         HostedZoneId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointhostedzoneidParameter0FFBAFAA,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointhostedzoneidParameterA2808C2D,
         },
         Name: {
           Fn::Join: [
@@ -183,7 +184,7 @@ exports[`InstanceStack should match snapshot test 1`] = `
             [
               instances.,
               {
-                Ref: instancestackinstancestackapiendpointinstancestackapiendpointssmdomainnameParameterF3F6FD50,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA,
               },
               .,
             ],
@@ -193,22 +194,22 @@ exports[`InstanceStack should match snapshot test 1`] = `
       },
       Type: AWS::Route53::RecordSet,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointapistage3CA5A597: {
+    MyTestStackapiendpointMyTestStackapiendpointapistage0356EFC3: {
       DependsOn: [
-        instancestackinstancestackapiendpointinstancestackapiendpointrestapiAccount853DC85E,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51,
       ],
       Properties: {
         DeploymentId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointdeployment_UNIQUE_HASH,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointdeployment_UNIQUE_HASH,
         },
         RestApiId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
         StageName: default,
       },
       Type: AWS::ApiGateway::Stage,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointcustomdomain3639C899: {
+    MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53: {
       Properties: {
         DomainName: {
           Fn::Join: [
@@ -216,7 +217,7 @@ exports[`InstanceStack should match snapshot test 1`] = `
             [
               instances.,
               {
-                Ref: instancestackinstancestackapiendpointinstancestackapiendpointssmdomainnameParameterF3F6FD50,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA,
               },
             ],
           ],
@@ -227,50 +228,57 @@ exports[`InstanceStack should match snapshot test 1`] = `
           ],
         },
         RegionalCertificateArn: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointorgformationcertswildcardcert1arnParameterDD749129,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointorgformationcertswildcardcert1arnParameter2E2B88D5,
         },
         SecurityPolicy: TLS_1_2,
       },
       Type: AWS::ApiGateway::DomainName,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointcustomdomainMapMyTestStackinstancestackinstancestackapiendpointinstancestackapiendpointrestapi4550B3C4D40D2F6D: {
+    MyTestStackapiendpointMyTestStackapiendpointcustomdomainMapMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D612F9D1189: {
       Properties: {
         DomainName: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointcustomdomain3639C899,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
         },
         RestApiId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
         Stage: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiDeploymentStageprodA4D25F5C,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
         },
       },
       Type: AWS::ApiGateway::BasePathMapping,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointdeployment_UNIQUE_HASH: {
+    MyTestStackapiendpointMyTestStackapiendpointdeployment_UNIQUE_HASH: {
       DependsOn: [
-        instancestackinstancestackapiendpointinstancestackapiendpointrestapiproxyANYB3513FBE,
-        instancestackinstancestackapiendpointinstancestackapiendpointrestapiANY0433D101,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
       ],
       Properties: {
         RestApiId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
       },
       Type: AWS::ApiGateway::Deployment,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointinstancessvcdomainname1A7DA7E9: {
+    MyTestStackapiendpointMyTestStackapiendpointinstancessvcdomainname31AA7009: {
       Properties: {
         Description: instances service domain name,
         Name: INSTANCES_SVC_DOMAIN_NAME,
         Type: String,
         Value: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointcustomdomain3639C899,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
         },
       },
       Type: AWS::SSM::Parameter,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiANY0433D101: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35: {
+      Properties: {
+        Description: instances Service API Gateway,
+        Name: instances RestAPI,
+      },
+      Type: AWS::ApiGateway::RestApi,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9: {
       Properties: {
         AuthorizationType: NONE,
         HttpMethod: ANY,
@@ -303,17 +311,17 @@ exports[`InstanceStack should match snapshot test 1`] = `
         },
         ResourceId: {
           Fn::GetAtt: [
-            instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+            MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
             RootResourceId,
           ],
         },
         RestApiId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
       },
       Type: AWS::ApiGateway::Method,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiANYApiPermissionMyTestStackinstancestackinstancestackapiendpointinstancestackapiendpointrestapi4550B3C4ANYC2AE62C2: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANYApiPermissionMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYEDA96B0C: {
       Properties: {
         Action: lambda:InvokeFunction,
         FunctionName: {
@@ -341,11 +349,11 @@ exports[`InstanceStack should match snapshot test 1`] = `
               },
               :,
               {
-                Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
               },
               /,
               {
-                Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiDeploymentStageprodA4D25F5C,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
               },
               /*/,
             ],
@@ -354,7 +362,7 @@ exports[`InstanceStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Permission,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiANYApiPermissionTestMyTestStackinstancestackinstancestackapiendpointinstancestackapiendpointrestapi4550B3C4ANYDD181A80: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANYApiPermissionTestMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANY17823219: {
       Properties: {
         Action: lambda:InvokeFunction,
         FunctionName: {
@@ -382,7 +390,7 @@ exports[`InstanceStack should match snapshot test 1`] = `
               },
               :,
               {
-                Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
               },
               /test-invoke-stage/*/,
             ],
@@ -391,15 +399,15 @@ exports[`InstanceStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Permission,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiAccount853DC85E: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51: {
       DeletionPolicy: Retain,
       DependsOn: [
-        instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+        MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
       ],
       Properties: {
         CloudWatchRoleArn: {
           Fn::GetAtt: [
-            instancestackinstancestackapiendpointinstancestackapiendpointrestapiCloudWatchRoleFBBED4F3,
+            MyTestStackapiendpointMyTestStackapiendpointrestapiCloudWatchRole01D91636,
             Arn,
           ],
         },
@@ -407,7 +415,7 @@ exports[`InstanceStack should match snapshot test 1`] = `
       Type: AWS::ApiGateway::Account,
       UpdateReplacePolicy: Retain,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiCloudWatchRoleFBBED4F3: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiCloudWatchRole01D91636: {
       DeletionPolicy: Retain,
       Properties: {
         AssumeRolePolicyDocument: {
@@ -440,27 +448,27 @@ exports[`InstanceStack should match snapshot test 1`] = `
       Type: AWS::IAM::Role,
       UpdateReplacePolicy: Retain,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiDeploymentDB662E2C5d75c7e49f34bf7b2ae85ef08fe8ca0a: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBD0f172e714db17a1f9149a99c9bbd61b2: {
       DependsOn: [
-        instancestackinstancestackapiendpointinstancestackapiendpointrestapiproxyANYB3513FBE,
-        instancestackinstancestackapiendpointinstancestackapiendpointrestapiproxyBC22C481,
-        instancestackinstancestackapiendpointinstancestackapiendpointrestapiANY0433D101,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
       ],
       Properties: {
         Description: instances Service API Gateway,
         RestApiId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
       },
       Type: AWS::ApiGateway::Deployment,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiDeploymentStageprodA4D25F5C: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55: {
       DependsOn: [
-        instancestackinstancestackapiendpointinstancestackapiendpointrestapiAccount853DC85E,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51,
       ],
       Properties: {
         DeploymentId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiDeploymentDB662E2C5d75c7e49f34bf7b2ae85ef08fe8ca0a,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBD0f172e714db17a1f9149a99c9bbd61b2,
         },
         MethodSettings: [
           {
@@ -472,98 +480,13 @@ exports[`InstanceStack should match snapshot test 1`] = `
           },
         ],
         RestApiId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
         StageName: prod,
       },
       Type: AWS::ApiGateway::Stage,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E: {
-      Properties: {
-        Description: instances Service API Gateway,
-        Name: instances RestAPI,
-      },
-      Type: AWS::ApiGateway::RestApi,
-    },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiproxyANYApiPermissionMyTestStackinstancestackinstancestackapiendpointinstancestackapiendpointrestapi4550B3C4ANYproxyF16C52DE: {
-      Properties: {
-        Action: lambda:InvokeFunction,
-        FunctionName: {
-          Fn::GetAtt: [
-            instancestacknestjsNodeJsLambdaC70E8859,
-            Arn,
-          ],
-        },
-        Principal: apigateway.amazonaws.com,
-        SourceArn: {
-          Fn::Join: [
-            ,
-            [
-              arn:,
-              {
-                Ref: AWS::Partition,
-              },
-              :execute-api:,
-              {
-                Ref: AWS::Region,
-              },
-              :,
-              {
-                Ref: AWS::AccountId,
-              },
-              :,
-              {
-                Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
-              },
-              /,
-              {
-                Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiDeploymentStageprodA4D25F5C,
-              },
-              /*/*,
-            ],
-          ],
-        },
-      },
-      Type: AWS::Lambda::Permission,
-    },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiproxyANYApiPermissionTestMyTestStackinstancestackinstancestackapiendpointinstancestackapiendpointrestapi4550B3C4ANYproxy1AA850E2: {
-      Properties: {
-        Action: lambda:InvokeFunction,
-        FunctionName: {
-          Fn::GetAtt: [
-            instancestacknestjsNodeJsLambdaC70E8859,
-            Arn,
-          ],
-        },
-        Principal: apigateway.amazonaws.com,
-        SourceArn: {
-          Fn::Join: [
-            ,
-            [
-              arn:,
-              {
-                Ref: AWS::Partition,
-              },
-              :execute-api:,
-              {
-                Ref: AWS::Region,
-              },
-              :,
-              {
-                Ref: AWS::AccountId,
-              },
-              :,
-              {
-                Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
-              },
-              /test-invoke-stage/*/*,
-            ],
-          ],
-        },
-      },
-      Type: AWS::Lambda::Permission,
-    },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiproxyANYB3513FBE: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11: {
       Properties: {
         AuthorizationType: NONE,
         HttpMethod: ANY,
@@ -595,25 +518,103 @@ exports[`InstanceStack should match snapshot test 1`] = `
           },
         },
         ResourceId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiproxyBC22C481,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
         },
         RestApiId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
       },
       Type: AWS::ApiGateway::Method,
     },
-    instancestackinstancestackapiendpointinstancestackapiendpointrestapiproxyBC22C481: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANYApiPermissionMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYproxyA92EC9DE: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            instancestacknestjsNodeJsLambdaC70E8859,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+              },
+              /,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
+              },
+              /*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANYApiPermissionTestMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYproxyA0FDB9CA: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            instancestacknestjsNodeJsLambdaC70E8859,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+              },
+              /test-invoke-stage/*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298: {
       Properties: {
         ParentId: {
           Fn::GetAtt: [
-            instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+            MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
             RootResourceId,
           ],
         },
         PathPart: {proxy+},
         RestApiId: {
-          Ref: instancestackinstancestackapiendpointinstancestackapiendpointrestapiE912579E,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
       },
       Type: AWS::ApiGateway::Resource,

@@ -3,28 +3,14 @@
 exports[`LuckByDiceStack should match snapshot test 1`] = `
 {
   Outputs: {
-    LocalhostAPIExample: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiEndpointFAADCB08: {
       Value: {
         Fn::Join: [
           ,
           [
             https://,
             {
-              Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F,
-            },
-            /dice-roll,
-          ],
-        ],
-      },
-    },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiEndpoint3B9A3C73: {
-      Value: {
-        Fn::Join: [
-          ,
-          [
-            https://,
-            {
-              Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+              Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
             },
             .execute-api.,
             {
@@ -36,9 +22,37 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
             },
             /,
             {
-              Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentStageprod9E68E6CC,
+              Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
             },
             /,
+          ],
+        ],
+      },
+    },
+    healthcheckendpoint: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+            },
+            /health,
+          ],
+        ],
+      },
+    },
+    testcheckendpoint: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+            },
+            /dice-roll,
           ],
         ],
       },
@@ -50,15 +64,15 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointhostedzoneidParameterFBA7ADEC: {
+    MyTestStackapiendpointMyTestStackapiendpointhostedzoneidParameterA2808C2D: {
       Default: my-domains-hosted-zone-id,
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointorgformationcertswildcardcert1arnParameter3665C413: {
+    MyTestStackapiendpointMyTestStackapiendpointorgformationcertswildcardcert1arnParameter2E2B88D5: {
       Default: orgformation-certs-wildcard-cert1-arn,
       Type: AWS::SSM::Parameter::Value<String>,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointssmdomainnameParameter84D42107: {
+    MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA: {
       Default: DOMAIN_NAME,
       Type: AWS::SSM::Parameter::Value<String>,
     },
@@ -159,24 +173,24 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: AWS::IAM::Policy,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapigatewayaliasrecord5C30FB5D: {
+    MyTestStackapiendpointMyTestStackapiendpointapigatewayaliasrecord2742C3A3: {
       Properties: {
         AliasTarget: {
           DNSName: {
             Fn::GetAtt: [
-              charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F,
+              MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
               RegionalDomainName,
             ],
           },
           HostedZoneId: {
             Fn::GetAtt: [
-              charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F,
+              MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
               RegionalHostedZoneId,
             ],
           },
         },
         HostedZoneId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointhostedzoneidParameterFBA7ADEC,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointhostedzoneidParameterA2808C2D,
         },
         Name: {
           Fn::Join: [
@@ -184,7 +198,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
             [
               luck-by-dice.,
               {
-                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointssmdomainnameParameter84D42107,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA,
               },
               .,
             ],
@@ -194,22 +208,22 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: AWS::Route53::RecordSet,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointapistage95BA0454: {
+    MyTestStackapiendpointMyTestStackapiendpointapistage0356EFC3: {
       DependsOn: [
-        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiAccount8E6C23F9,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51,
       ],
       Properties: {
         DeploymentId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointdeployment_UNIQUE_HASH,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointdeployment_UNIQUE_HASH,
         },
         RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
         StageName: default,
       },
       Type: AWS::ApiGateway::Stage,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F: {
+    MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53: {
       Properties: {
         DomainName: {
           Fn::Join: [
@@ -217,7 +231,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
             [
               luck-by-dice.,
               {
-                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointssmdomainnameParameter84D42107,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA,
               },
             ],
           ],
@@ -228,50 +242,57 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
           ],
         },
         RegionalCertificateArn: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointorgformationcertswildcardcert1arnParameter3665C413,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointorgformationcertswildcardcert1arnParameter2E2B88D5,
         },
         SecurityPolicy: TLS_1_2,
       },
       Type: AWS::ApiGateway::DomainName,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomainMapMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiE6C6138742AE4898: {
+    MyTestStackapiendpointMyTestStackapiendpointcustomdomainMapMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D612F9D1189: {
       Properties: {
         DomainName: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
         },
         RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
         Stage: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentStageprod9E68E6CC,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
         },
       },
       Type: AWS::ApiGateway::BasePathMapping,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointdeployment_UNIQUE_HASH: {
+    MyTestStackapiendpointMyTestStackapiendpointdeployment_UNIQUE_HASH: {
       DependsOn: [
-        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxyANY76BC55C9,
-        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiANY619078BC,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
       ],
       Properties: {
         RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
       },
       Type: AWS::ApiGateway::Deployment,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointluckbydicesvcdomainname23516050: {
+    MyTestStackapiendpointMyTestStackapiendpointluckbydicesvcdomainname32828A29: {
       Properties: {
         Description: luck-by-dice service domain name,
         Name: LUCK_BY_DICE_SVC_DOMAIN_NAME,
         Type: String,
         Value: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointcustomdomain8A48D75F,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
         },
       },
       Type: AWS::SSM::Parameter,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiANY619078BC: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35: {
+      Properties: {
+        Description: luck-by-dice Service API Gateway,
+        Name: luck-by-dice RestAPI,
+      },
+      Type: AWS::ApiGateway::RestApi,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9: {
       Properties: {
         AuthorizationType: NONE,
         HttpMethod: ANY,
@@ -293,7 +314,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
                 :lambda:path/2015-03-31/functions/,
                 {
                   Fn::GetAtt: [
-                    charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+                    luckbydicestacknestjsNodeJsLambda636E08AE,
                     Arn,
                   ],
                 },
@@ -304,22 +325,22 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
         },
         ResourceId: {
           Fn::GetAtt: [
-            charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+            MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
             RootResourceId,
           ],
         },
         RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
       },
       Type: AWS::ApiGateway::Method,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiANYApiPermissionMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiE6C61387ANYA17AA2F9: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANYApiPermissionMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYEDA96B0C: {
       Properties: {
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+            luckbydicestacknestjsNodeJsLambda636E08AE,
             Arn,
           ],
         },
@@ -342,11 +363,11 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
               },
               :,
               {
-                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
               },
               /,
               {
-                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentStageprod9E68E6CC,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
               },
               /*/,
             ],
@@ -355,12 +376,12 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Permission,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiANYApiPermissionTestMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiE6C61387ANYDC9E1D70: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANYApiPermissionTestMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANY17823219: {
       Properties: {
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+            luckbydicestacknestjsNodeJsLambda636E08AE,
             Arn,
           ],
         },
@@ -383,7 +404,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
               },
               :,
               {
-                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
               },
               /test-invoke-stage/*/,
             ],
@@ -392,15 +413,15 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Permission,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiAccount8E6C23F9: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51: {
       DeletionPolicy: Retain,
       DependsOn: [
-        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+        MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
       ],
       Properties: {
         CloudWatchRoleArn: {
           Fn::GetAtt: [
-            charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiCloudWatchRole399F6E2A,
+            MyTestStackapiendpointMyTestStackapiendpointrestapiCloudWatchRole01D91636,
             Arn,
           ],
         },
@@ -408,14 +429,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       Type: AWS::ApiGateway::Account,
       UpdateReplacePolicy: Retain,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C: {
-      Properties: {
-        Description: luck-by-dice Service API Gateway,
-        Name: luck-by-dice RestAPI,
-      },
-      Type: AWS::ApiGateway::RestApi,
-    },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiCloudWatchRole399F6E2A: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiCloudWatchRole01D91636: {
       DeletionPolicy: Retain,
       Properties: {
         AssumeRolePolicyDocument: {
@@ -448,27 +462,27 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       Type: AWS::IAM::Role,
       UpdateReplacePolicy: Retain,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentE6A271A1fcdb4a62a85e0879b8b7c7f3a52212c3: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBDdcd01203dfec14ff4ed6d4cd73505e35: {
       DependsOn: [
-        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxyANY76BC55C9,
-        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxy2BDDD74D,
-        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiANY619078BC,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
       ],
       Properties: {
         Description: luck-by-dice Service API Gateway,
         RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
       },
       Type: AWS::ApiGateway::Deployment,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentStageprod9E68E6CC: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55: {
       DependsOn: [
-        charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiAccount8E6C23F9,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51,
       ],
       Properties: {
         DeploymentId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentE6A271A1fcdb4a62a85e0879b8b7c7f3a52212c3,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBDdcd01203dfec14ff4ed6d4cd73505e35,
         },
         MethodSettings: [
           {
@@ -480,28 +494,13 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
           },
         ],
         RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
         StageName: prod,
       },
       Type: AWS::ApiGateway::Stage,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxy2BDDD74D: {
-      Properties: {
-        ParentId: {
-          Fn::GetAtt: [
-            charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
-            RootResourceId,
-          ],
-        },
-        PathPart: {proxy+},
-        RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
-        },
-      },
-      Type: AWS::ApiGateway::Resource,
-    },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxyANY76BC55C9: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11: {
       Properties: {
         AuthorizationType: NONE,
         HttpMethod: ANY,
@@ -523,7 +522,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
                 :lambda:path/2015-03-31/functions/,
                 {
                   Fn::GetAtt: [
-                    charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+                    luckbydicestacknestjsNodeJsLambda636E08AE,
                     Arn,
                   ],
                 },
@@ -533,20 +532,20 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
           },
         },
         ResourceId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxy2BDDD74D,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
         },
         RestApiId: {
-          Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
       },
       Type: AWS::ApiGateway::Method,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxyANYApiPermissionMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiE6C61387ANYproxy61746117: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANYApiPermissionMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYproxyA92EC9DE: {
       Properties: {
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+            luckbydicestacknestjsNodeJsLambda636E08AE,
             Arn,
           ],
         },
@@ -569,11 +568,11 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
               },
               :,
               {
-                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
               },
               /,
               {
-                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiDeploymentStageprod9E68E6CC,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
               },
               /*/*,
             ],
@@ -582,12 +581,12 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Permission,
     },
-    charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiproxyANYApiPermissionTestMyTestStackcharactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiE6C61387ANYproxy7288B15F: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANYApiPermissionTestMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYproxyA0FDB9CA: {
       Properties: {
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+            luckbydicestacknestjsNodeJsLambda636E08AE,
             Arn,
           ],
         },
@@ -610,7 +609,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
               },
               :,
               {
-                Ref: charactersheetstackcharactersheetstackapiendpointcharactersheetstackapiendpointrestapiBBFD856C,
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
               },
               /test-invoke-stage/*/*,
             ],
@@ -619,9 +618,24 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Permission,
     },
-    charactersheetstacknestjsNodeJsLambda5D2C9C5F: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+            RootResourceId,
+          ],
+        },
+        PathPart: {proxy+},
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
+    },
+    luckbydicestacknestjsNodeJsLambda636E08AE: {
       DependsOn: [
-        charactersheetstacknestjsNodeJsLambdaServiceRoleF23E6E16,
+        luckbydicestacknestjsNodeJsLambdaServiceRole0FD986C1,
       ],
       Properties: {
         Code: {
@@ -656,7 +670,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
         MemorySize: 1024,
         Role: {
           Fn::GetAtt: [
-            charactersheetstacknestjsNodeJsLambdaServiceRoleF23E6E16,
+            luckbydicestacknestjsNodeJsLambdaServiceRole0FD986C1,
             Arn,
           ],
         },
@@ -665,7 +679,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Function,
     },
-    charactersheetstacknestjsNodeJsLambdaLogRetentionBC02AD54: {
+    luckbydicestacknestjsNodeJsLambdaLogRetention45B99637: {
       Properties: {
         LogGroupName: {
           Fn::Join: [
@@ -673,7 +687,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
             [
               /aws/lambda/,
               {
-                Ref: charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+                Ref: luckbydicestacknestjsNodeJsLambda636E08AE,
               },
             ],
           ],
@@ -688,7 +702,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: Custom::LogRetention,
     },
-    charactersheetstacknestjsNodeJsLambdaServiceRoleF23E6E16: {
+    luckbydicestacknestjsNodeJsLambdaServiceRole0FD986C1: {
       Properties: {
         AssumeRolePolicyDocument: {
           Statement: [

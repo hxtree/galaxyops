@@ -17,6 +17,7 @@ export enum OperationOutput {
   DATA = 'DATA',
   PDF = 'PDF',
   JSON = 'JSON',
+  S3 = 'S3',
 }
 
 export class OperationDto {

@@ -18,7 +18,7 @@ export class AuthServiceStack extends cdk.Stack {
       this,
       'authentication-service-stack',
       {
-        path: 'auth',
+        // path: 'auth',
         projectRoot: path.join(__dirname, '..'),
       },
     );
@@ -44,8 +44,8 @@ export class AuthServiceStack extends cdk.Stack {
       stringValue: cognitoPool.client.userPoolClientId,
     });
 
-    new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${microservice.getBaseUrl()}/users`,
-    });
+    // new cdk.CfnOutput(this, 'Localhost API Example', {
+    //   value: `${microservice.getBaseUrl()}/users`,
+    // });
   }
 }

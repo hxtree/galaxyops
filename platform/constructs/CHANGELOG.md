@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/constructs
 
-This log was last generated on Thu, 28 Dec 2023 16:54:41 GMT and should not be manually modified.
+This log was last generated on Fri, 02 Feb 2024 05:50:03 GMT and should not be manually modified.
+
+## 0.0.10
+Fri, 02 Feb 2024 05:50:03 GMT
+
+### Patches
+
+- add dns api endpoint
 
 ## 0.0.9
 Thu, 28 Dec 2023 16:54:41 GMT

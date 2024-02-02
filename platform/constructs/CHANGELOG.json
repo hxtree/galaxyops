@@ -2,6 +2,18 @@
   "name": "@cats-cradle/constructs",
   "entries": [
     {
+      "version": "0.0.10",
+      "tag": "@cats-cradle/constructs_v0.0.10",
+      "date": "Fri, 02 Feb 2024 05:50:03 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add dns api endpoint"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.9",
       "tag": "@cats-cradle/constructs_v0.0.9",
       "date": "Thu, 28 Dec 2023 16:54:41 GMT",

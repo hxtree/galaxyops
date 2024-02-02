@@ -9,6 +9,14 @@ The guide below outlines principles and standards applicable to this repository,
 ensuring that each piece contributes harmoniously to the overall cityscape we're
 constructing.
 
+## Twelve Factor App
+
+Applications are designed to run as a service. To avoid common systemic problems
+in modern application develop, layers are constructed around twelve factor app
+principles.
+
+[https://12factor.net/](https://12factor.net/)
+
 ## MACH Architecture
 
 Overall this repository adheres to a Microservices-based, API-first,
@@ -63,7 +71,7 @@ symlinks which helps minimize dependency storage.
 
 Rush Heft was selected to build Typescript projects mainly because it
 accompanies Rush. Heft Node Rig was selected as many projects will have same
-configuration.
+configuration. The need for heft has been gradually decreasing.
 
 ## Infrastructure
 

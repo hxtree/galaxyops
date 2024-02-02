@@ -2,6 +2,23 @@
   "name": "@cats-cradle/luck-by-dice",
   "entries": [
     {
+      "version": "2.0.13",
+      "tag": "@cats-cradle/luck-by-dice_v2.0.13",
+      "date": "Fri, 02 Feb 2024 05:50:03 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "decouple api endpoint"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/constructs\" to `0.0.10`"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.0.12",
       "tag": "@cats-cradle/luck-by-dice_v2.0.12",
       "date": "Thu, 28 Dec 2023 16:54:41 GMT",

@@ -3,7 +3,9 @@
   "version": "0.0.2",
   "description": "multiple aws account provisioning",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": ""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"

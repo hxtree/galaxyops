@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/html-to-pdf",
   "module": "commonjs",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "license": "MIT",
   "description": "Your Go-To Solution for PDF Generation from HTML.",
   "bugs": {
@@ -62,7 +62,9 @@
     "@sparticuz/chromium": "112.0.0",
     "puppeteer-core": "19.8.0",
     "uuid": "~9.0.1",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "@cats-cradle/nestjs-modules": "workspace:*",
+    "@nestjs/config": "2.2.0"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.11",
@@ -85,6 +87,8 @@
     "@types/supertest": "~2.0.16",
     "@cats-cradle/create-bundle": "1.0.12",
     "@cats-cradle/create-artifact": "2.0.6",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "aws-sdk-client-mock": "3.0.0",
+    "@aws-sdk/client-s3": "3.433.0"
   }
 }
