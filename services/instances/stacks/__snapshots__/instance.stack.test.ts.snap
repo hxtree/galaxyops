@@ -2,10 +2,64 @@
 
 exports[`InstanceStack should match snapshot test 1`] = `
 {
+  Outputs: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiEndpointFAADCB08: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+            },
+            .execute-api.,
+            {
+              Ref: AWS::Region,
+            },
+            .,
+            {
+              Ref: AWS::URLSuffix,
+            },
+            /,
+            {
+              Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
+            },
+            /,
+          ],
+        ],
+      },
+    },
+    healthcheckendpoint: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+            },
+            /health,
+          ],
+        ],
+      },
+    },
+  },
   Parameters: {
     BootstrapVersion: {
       Default: /cdk-bootstrap/hnb659fds/version,
       Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointhostedzoneidParameterA2808C2D: {
+      Default: my-domains-hosted-zone-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointorgformationcertswildcardcert1arnParameter2E2B88D5: {
+      Default: orgformation-certs-wildcard-cert1-arn,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA: {
+      Default: DOMAIN_NAME,
       Type: AWS::SSM::Parameter::Value<String>,
     },
     lambdalayernestjslatestversionssmParameter: {
@@ -104,6 +158,466 @@ exports[`InstanceStack should match snapshot test 1`] = `
         ],
       },
       Type: AWS::IAM::Policy,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointapigatewayaliasrecord2742C3A3: {
+      Properties: {
+        AliasTarget: {
+          DNSName: {
+            Fn::GetAtt: [
+              MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+              RegionalDomainName,
+            ],
+          },
+          HostedZoneId: {
+            Fn::GetAtt: [
+              MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+              RegionalHostedZoneId,
+            ],
+          },
+        },
+        HostedZoneId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointhostedzoneidParameterA2808C2D,
+        },
+        Name: {
+          Fn::Join: [
+            ,
+            [
+              instances.,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA,
+              },
+              .,
+            ],
+          ],
+        },
+        Type: A,
+      },
+      Type: AWS::Route53::RecordSet,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointapistage0356EFC3: {
+      DependsOn: [
+        MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointdeployment_UNIQUE_HASH,
+        },
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+        StageName: default,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53: {
+      Properties: {
+        DomainName: {
+          Fn::Join: [
+            ,
+            [
+              instances.,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA,
+              },
+            ],
+          ],
+        },
+        EndpointConfiguration: {
+          Types: [
+            REGIONAL,
+          ],
+        },
+        RegionalCertificateArn: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointorgformationcertswildcardcert1arnParameter2E2B88D5,
+        },
+        SecurityPolicy: TLS_1_2,
+      },
+      Type: AWS::ApiGateway::DomainName,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointcustomdomainMapMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D612F9D1189: {
+      Properties: {
+        DomainName: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+        },
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+        Stage: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
+        },
+      },
+      Type: AWS::ApiGateway::BasePathMapping,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointdeployment_UNIQUE_HASH: {
+      DependsOn: [
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
+      ],
+      Properties: {
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointinstancessvcdomainname31AA7009: {
+      Properties: {
+        Description: instances service domain name,
+        Name: INSTANCES_SVC_DOMAIN_NAME,
+        Type: String,
+        Value: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+        },
+      },
+      Type: AWS::SSM::Parameter,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35: {
+      Properties: {
+        Description: instances Service API Gateway,
+        Name: instances RestAPI,
+      },
+      Type: AWS::ApiGateway::RestApi,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    instancestacknestjsNodeJsLambdaC70E8859,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Fn::GetAtt: [
+            MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+            RootResourceId,
+          ],
+        },
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANYApiPermissionMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYEDA96B0C: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            instancestacknestjsNodeJsLambdaC70E8859,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+              },
+              /,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
+              },
+              /*/,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANYApiPermissionTestMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANY17823219: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            instancestacknestjsNodeJsLambdaC70E8859,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+              },
+              /test-invoke-stage/*/,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51: {
+      DeletionPolicy: Retain,
+      DependsOn: [
+        MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+      ],
+      Properties: {
+        CloudWatchRoleArn: {
+          Fn::GetAtt: [
+            MyTestStackapiendpointMyTestStackapiendpointrestapiCloudWatchRole01D91636,
+            Arn,
+          ],
+        },
+      },
+      Type: AWS::ApiGateway::Account,
+      UpdateReplacePolicy: Retain,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiCloudWatchRole01D91636: {
+      DeletionPolicy: Retain,
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: apigateway.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+      UpdateReplacePolicy: Retain,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBD0f172e714db17a1f9149a99c9bbd61b2: {
+      DependsOn: [
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
+      ],
+      Properties: {
+        Description: instances Service API Gateway,
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55: {
+      DependsOn: [
+        MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBD0f172e714db17a1f9149a99c9bbd61b2,
+        },
+        MethodSettings: [
+          {
+            DataTraceEnabled: false,
+            HttpMethod: *,
+            ResourcePath: /*,
+            ThrottlingBurstLimit: 10,
+            ThrottlingRateLimit: 10,
+          },
+        ],
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+        StageName: prod,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    instancestacknestjsNodeJsLambdaC70E8859,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
+        },
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANYApiPermissionMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYproxyA92EC9DE: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            instancestacknestjsNodeJsLambdaC70E8859,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+              },
+              /,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
+              },
+              /*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANYApiPermissionTestMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYproxyA0FDB9CA: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            instancestacknestjsNodeJsLambdaC70E8859,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+              },
+              /test-invoke-stage/*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+            RootResourceId,
+          ],
+        },
+        PathPart: {proxy+},
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
     },
     instancestacknestjsNodeJsLambdaC70E8859: {
       DependsOn: [

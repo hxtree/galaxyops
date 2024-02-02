@@ -2,10 +2,78 @@
 
 exports[`LuckByDiceStack should match snapshot test 1`] = `
 {
+  Outputs: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiEndpointFAADCB08: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+            },
+            .execute-api.,
+            {
+              Ref: AWS::Region,
+            },
+            .,
+            {
+              Ref: AWS::URLSuffix,
+            },
+            /,
+            {
+              Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
+            },
+            /,
+          ],
+        ],
+      },
+    },
+    healthcheckendpoint: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+            },
+            /health,
+          ],
+        ],
+      },
+    },
+    testcheckendpoint: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://,
+            {
+              Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+            },
+            /dice-roll,
+          ],
+        ],
+      },
+    },
+  },
   Parameters: {
     BootstrapVersion: {
       Default: /cdk-bootstrap/hnb659fds/version,
       Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointhostedzoneidParameterA2808C2D: {
+      Default: my-domains-hosted-zone-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointorgformationcertswildcardcert1arnParameter2E2B88D5: {
+      Default: orgformation-certs-wildcard-cert1-arn,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA: {
+      Default: DOMAIN_NAME,
       Type: AWS::SSM::Parameter::Value<String>,
     },
     lambdalayernestjslatestversionssmParameter: {
@@ -105,9 +173,469 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: AWS::IAM::Policy,
     },
-    charactersheetstacknestjsNodeJsLambda5D2C9C5F: {
+    MyTestStackapiendpointMyTestStackapiendpointapigatewayaliasrecord2742C3A3: {
+      Properties: {
+        AliasTarget: {
+          DNSName: {
+            Fn::GetAtt: [
+              MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+              RegionalDomainName,
+            ],
+          },
+          HostedZoneId: {
+            Fn::GetAtt: [
+              MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+              RegionalHostedZoneId,
+            ],
+          },
+        },
+        HostedZoneId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointhostedzoneidParameterA2808C2D,
+        },
+        Name: {
+          Fn::Join: [
+            ,
+            [
+              luck-by-dice.,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA,
+              },
+              .,
+            ],
+          ],
+        },
+        Type: A,
+      },
+      Type: AWS::Route53::RecordSet,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointapistage0356EFC3: {
       DependsOn: [
-        charactersheetstacknestjsNodeJsLambdaServiceRoleF23E6E16,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointdeployment_UNIQUE_HASH,
+        },
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+        StageName: default,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53: {
+      Properties: {
+        DomainName: {
+          Fn::Join: [
+            ,
+            [
+              luck-by-dice.,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA,
+              },
+            ],
+          ],
+        },
+        EndpointConfiguration: {
+          Types: [
+            REGIONAL,
+          ],
+        },
+        RegionalCertificateArn: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointorgformationcertswildcardcert1arnParameter2E2B88D5,
+        },
+        SecurityPolicy: TLS_1_2,
+      },
+      Type: AWS::ApiGateway::DomainName,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointcustomdomainMapMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D612F9D1189: {
+      Properties: {
+        DomainName: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+        },
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+        Stage: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
+        },
+      },
+      Type: AWS::ApiGateway::BasePathMapping,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointdeployment_UNIQUE_HASH: {
+      DependsOn: [
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
+      ],
+      Properties: {
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointluckbydicesvcdomainname32828A29: {
+      Properties: {
+        Description: luck-by-dice service domain name,
+        Name: LUCK_BY_DICE_SVC_DOMAIN_NAME,
+        Type: String,
+        Value: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+        },
+      },
+      Type: AWS::SSM::Parameter,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35: {
+      Properties: {
+        Description: luck-by-dice Service API Gateway,
+        Name: luck-by-dice RestAPI,
+      },
+      Type: AWS::ApiGateway::RestApi,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    luckbydicestacknestjsNodeJsLambda636E08AE,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Fn::GetAtt: [
+            MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+            RootResourceId,
+          ],
+        },
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANYApiPermissionMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYEDA96B0C: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            luckbydicestacknestjsNodeJsLambda636E08AE,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+              },
+              /,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
+              },
+              /*/,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiANYApiPermissionTestMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANY17823219: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            luckbydicestacknestjsNodeJsLambda636E08AE,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+              },
+              /test-invoke-stage/*/,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51: {
+      DeletionPolicy: Retain,
+      DependsOn: [
+        MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+      ],
+      Properties: {
+        CloudWatchRoleArn: {
+          Fn::GetAtt: [
+            MyTestStackapiendpointMyTestStackapiendpointrestapiCloudWatchRole01D91636,
+            Arn,
+          ],
+        },
+      },
+      Type: AWS::ApiGateway::Account,
+      UpdateReplacePolicy: Retain,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiCloudWatchRole01D91636: {
+      DeletionPolicy: Retain,
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: apigateway.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+      UpdateReplacePolicy: Retain,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBDdcd01203dfec14ff4ed6d4cd73505e35: {
+      DependsOn: [
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
+        MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
+      ],
+      Properties: {
+        Description: luck-by-dice Service API Gateway,
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Deployment,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55: {
+      DependsOn: [
+        MyTestStackapiendpointMyTestStackapiendpointrestapiAccountCD108E51,
+      ],
+      Properties: {
+        DeploymentId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBDdcd01203dfec14ff4ed6d4cd73505e35,
+        },
+        MethodSettings: [
+          {
+            DataTraceEnabled: false,
+            HttpMethod: *,
+            ResourcePath: /*,
+            ThrottlingBurstLimit: 10,
+            ThrottlingRateLimit: 10,
+          },
+        ],
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+        StageName: prod,
+      },
+      Type: AWS::ApiGateway::Stage,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11: {
+      Properties: {
+        AuthorizationType: NONE,
+        HttpMethod: ANY,
+        Integration: {
+          IntegrationHttpMethod: POST,
+          Type: AWS_PROXY,
+          Uri: {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :apigateway:,
+                {
+                  Ref: AWS::Region,
+                },
+                :lambda:path/2015-03-31/functions/,
+                {
+                  Fn::GetAtt: [
+                    luckbydicestacknestjsNodeJsLambda636E08AE,
+                    Arn,
+                  ],
+                },
+                /invocations,
+              ],
+            ],
+          },
+        },
+        ResourceId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
+        },
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Method,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANYApiPermissionMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYproxyA92EC9DE: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            luckbydicestacknestjsNodeJsLambda636E08AE,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+              },
+              /,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentStageprodC1386A55,
+              },
+              /*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANYApiPermissionTestMyTestStackMyTestStackapiendpointMyTestStackapiendpointrestapiEFEE3D61ANYproxyA0FDB9CA: {
+      Properties: {
+        Action: lambda:InvokeFunction,
+        FunctionName: {
+          Fn::GetAtt: [
+            luckbydicestacknestjsNodeJsLambda636E08AE,
+            Arn,
+          ],
+        },
+        Principal: apigateway.amazonaws.com,
+        SourceArn: {
+          Fn::Join: [
+            ,
+            [
+              arn:,
+              {
+                Ref: AWS::Partition,
+              },
+              :execute-api:,
+              {
+                Ref: AWS::Region,
+              },
+              :,
+              {
+                Ref: AWS::AccountId,
+              },
+              :,
+              {
+                Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+              },
+              /test-invoke-stage/*/*,
+            ],
+          ],
+        },
+      },
+      Type: AWS::Lambda::Permission,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298: {
+      Properties: {
+        ParentId: {
+          Fn::GetAtt: [
+            MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+            RootResourceId,
+          ],
+        },
+        PathPart: {proxy+},
+        RestApiId: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
+        },
+      },
+      Type: AWS::ApiGateway::Resource,
+    },
+    luckbydicestacknestjsNodeJsLambda636E08AE: {
+      DependsOn: [
+        luckbydicestacknestjsNodeJsLambdaServiceRole0FD986C1,
       ],
       Properties: {
         Code: {
@@ -142,7 +670,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
         MemorySize: 1024,
         Role: {
           Fn::GetAtt: [
-            charactersheetstacknestjsNodeJsLambdaServiceRoleF23E6E16,
+            luckbydicestacknestjsNodeJsLambdaServiceRole0FD986C1,
             Arn,
           ],
         },
@@ -151,7 +679,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Function,
     },
-    charactersheetstacknestjsNodeJsLambdaLogRetentionBC02AD54: {
+    luckbydicestacknestjsNodeJsLambdaLogRetention45B99637: {
       Properties: {
         LogGroupName: {
           Fn::Join: [
@@ -159,7 +687,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
             [
               /aws/lambda/,
               {
-                Ref: charactersheetstacknestjsNodeJsLambda5D2C9C5F,
+                Ref: luckbydicestacknestjsNodeJsLambda636E08AE,
               },
             ],
           ],
@@ -174,7 +702,7 @@ exports[`LuckByDiceStack should match snapshot test 1`] = `
       },
       Type: Custom::LogRetention,
     },
-    charactersheetstacknestjsNodeJsLambdaServiceRoleF23E6E16: {
+    luckbydicestacknestjsNodeJsLambdaServiceRole0FD986C1: {
       Properties: {
         AssumeRolePolicyDocument: {
           Statement: [
