@@ -11,8 +11,8 @@ export class MainStack extends cdk.Stack {
 
     const emailServiceStack = new EmailServiceStack(this, 'EmailServiceStack');
 
-    new cdk.CfnOutput(this, 'Localhost API Example', {
-      value: `${emailServiceStack.microservice.getBaseUrl()}/`,
-    });
+    // new cdk.CfnOutput(this, 'Localhost API Example', {
+    //   value: `${emailServiceStack.microservice.getBaseUrl()}/`,
+    // });
   }
 }

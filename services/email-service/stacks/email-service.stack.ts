@@ -20,7 +20,7 @@ export class EmailServiceStack extends cdk.NestedStack {
 
     // deploy lambda
     this.microservice = new Microservice(this, 'email-service-stack', {
-      path: 'email-message',
+      // path: 'email-message',
       projectRoot: path.join(__dirname, '..'),
     });
 
