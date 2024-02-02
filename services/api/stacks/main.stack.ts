@@ -33,6 +33,7 @@ export class MainStack extends cdk.Stack {
       value: lambdaDomainName.getBaseUrl(),
     });
   }
+
   setupLambda(lambdaId: string): lambda.Function {
     const environment: { [key: string]: string } = {};
 
