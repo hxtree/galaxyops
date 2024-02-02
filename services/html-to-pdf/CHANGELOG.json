@@ -2,6 +2,23 @@
   "name": "@cats-cradle/html-to-pdf",
   "entries": [
     {
+      "version": "1.0.19",
+      "tag": "@cats-cradle/html-to-pdf_v1.0.19",
+      "date": "Fri, 02 Feb 2024 05:50:03 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "decouple api endpoint"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/constructs\" to `0.0.10`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.18",
       "tag": "@cats-cradle/html-to-pdf_v1.0.18",
       "date": "Thu, 28 Dec 2023 16:54:41 GMT",

@@ -2,6 +2,23 @@
   "name": "@cats-cradle/email-service",
   "entries": [
     {
+      "version": "0.0.24",
+      "tag": "@cats-cradle/email-service_v0.0.24",
+      "date": "Fri, 02 Feb 2024 05:50:03 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "decouple api endpoint"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/constructs\" to `0.0.10`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.23",
       "tag": "@cats-cradle/email-service_v0.0.23",
       "date": "Thu, 28 Dec 2023 16:54:41 GMT",
