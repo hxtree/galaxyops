@@ -9,7 +9,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
       Type: AWS::SSM::Parameter::Value<String>,
     },
     lambdalayernestjslatestversionssmParameter: {
-      Default: lambda-layer-nestjs-latest-version,
+      Default: LAMBDA_LAYER_VERSION_NESTJS,
       Type: AWS::SSM::Parameter::Value<String>,
     },
     mongodatabasepasswordssmParameter: {

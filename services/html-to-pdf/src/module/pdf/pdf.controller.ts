@@ -8,6 +8,7 @@ import {
   Query,
   BadRequestException,
   StreamableFile,
+  NotFoundException,
 } from '@nestjs/common';
 import { Response } from 'express';
 import { v4 } from 'uuid';
@@ -37,13 +38,19 @@ export class PdfController {
     @Res({ passthrough: true }) res: Response,
       @Query('url') url?: string,
   ): Promise<any> {
-    const buffer = await this.pdfService.urlToPdf(url ?? 'http://example.com');
-    const filename = `${v4()}.pdf`;
-
-    res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
-    return new StreamableFile(this.pdfService.createReadableStream(buffer));
+    try {
+      const filename = `${v4()}.pdf`;
+      const buffer = await this.pdfService.urlToPdf(
+        url ?? 'http://example.com',
+      );
+      res.setHeader('Content-Length', Buffer.byteLength(buffer, 'utf-8'));
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
+      return new StreamableFile(this.pdfService.createReadableStream(buffer));
+    } catch (err) {
+      const error = err as Error;
+      throw new NotFoundException(error.message, { cause: error });
+    }
   }
 
   @Post()

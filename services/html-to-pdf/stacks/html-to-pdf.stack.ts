@@ -5,9 +5,8 @@ import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import { StackProps, RemovalPolicy } from 'aws-cdk-lib';
 import * as path from 'path';
-import { Code, LayerVersion, Runtime } from 'aws-cdk-lib/aws-lambda';
+import { LayerVersion } from 'aws-cdk-lib/aws-lambda';
 import * as iam from 'aws-cdk-lib/aws-iam';
-import { CHROMIUM_ZIP_FILEPATH } from './download-lambda-layer';
 
 export class HtmlToPdfStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -69,18 +68,27 @@ export class HtmlToPdfStack extends cdk.Stack {
       stringValue: accessKey.attrSecretAccessKey,
     });
 
-    // create a lambda capable of creating pdf from html
+    // get lambda capable of creating pdf from html
 
-    const chromiumLambdaLayer = new LayerVersion(this, `${id}-chromium-layer`, {
-      layerVersionName: 'ChromiumLayer',
-      code: Code.fromAsset(CHROMIUM_ZIP_FILEPATH),
-      compatibleRuntimes: [Runtime.NODEJS_18_X],
-      description: 'Chromium layer for Lambda',
-    });
+    const lambdaLayerVersion = ssm.StringParameter.fromStringParameterAttributes(
+      this,
+      'lambda-layer-version-ssm',
+      {
+        parameterName: 'LAMBDA_LAYER_VERSION_CHROMIUM',
+      },
+    ).stringValue;
+
+    const chromiumLambdaLayer = LayerVersion.fromLayerVersionAttributes(
+      this,
+      'chromium-lambda-layer',
+      {
+        layerVersionArn: lambdaLayerVersion,
+      },
+    );
 
     const microservice = new Microservice(this, `${id}-html-to-pdf-stack`, {
       projectRoot: path.join(__dirname, '..'),
-      memorySize: 1600,
+      memorySize: 1600, // max 10240
       environment: {
         AWS_BUCKET: pdfBucket.bucketName,
       },
@@ -89,19 +97,13 @@ export class HtmlToPdfStack extends cdk.Stack {
     });
 
     // create an api endpoint
-
+    // https://repost.aws/knowledge-center/api-gateway-binary-data-lambda
     const apiEndpoint = new LambdaDomainName(this, `${id}-api-endpoint`, {
       stageName,
       subdomainName: 'html-to-pdf',
       proxyLambda: microservice.getNodeJsFunction(),
+      binaryMediaTypes: ['application/pdf'],
     });
-
-    // TODO check if gw change caused regression bug
-
-    // TODO Add or remove media types that contain binary data.
-    // https://repost.aws/knowledge-center/api-gateway-binary-data-lambda
-    // Media type
-    // application/pdf
 
     new cdk.CfnOutput(this, 'health check endpoint', {
       value: `${apiEndpoint.getBaseUrl()}/health`,

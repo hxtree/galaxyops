@@ -1,21 +1,20 @@
 /* eslint no-template-curly-in-string: 0 */
-
 import { Construct } from 'constructs';
-import * as cdk from 'aws-cdk-lib';
-import * as ssm from 'aws-cdk-lib/aws-ssm';
 import {
-  BundlingOutput, RemovalPolicy, Stack, StackProps,
+  NestedStack, BundlingOutput, RemovalPolicy, Stack, StackProps,
 } from 'aws-cdk-lib';
+import * as ssm from 'aws-cdk-lib/aws-ssm';
 import {
   Architecture,
   Code,
   LayerVersion,
   Runtime,
 } from 'aws-cdk-lib/aws-lambda';
-
 import * as child from 'child_process';
 
-export class NestJsLambdaLayerStack extends cdk.Stack {
+export class NestJsLayerStack extends NestedStack {
+  public layerVersion: LayerVersion;
+
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
@@ -24,8 +23,8 @@ export class NestJsLambdaLayerStack extends cdk.Stack {
 
     // include in layer packages that are common or do not bundle well
     // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.BundlingOutput.html
-    const nestJsAppLayer = new LayerVersion(this, 'NestJsAppLayer', {
-      layerVersionName: `arn:aws:lambda:${awsAccountRegion}:${awsAccountId}:layer:NestJsAppLayer`,
+    this.layerVersion = new LayerVersion(this, 'NestJs', {
+      layerVersionName: `arn:aws:lambda:${awsAccountRegion}:${awsAccountId}:layer:NestJs`,
       compatibleArchitectures: [Architecture.X86_64, Architecture.ARM_64],
       removalPolicy: RemovalPolicy.DESTROY,
       code: Code.fromAsset('.', {
@@ -63,12 +62,8 @@ export class NestJsLambdaLayerStack extends cdk.Stack {
 
     new ssm.StringParameter(this, 'lambda-layer-nestjs-latest-version', {
       description: 'NestJS Lambda Layer Latest Version',
-      parameterName: 'lambda-layer-nestjs-latest-version',
-      stringValue: nestJsAppLayer.layerVersionArn,
-    });
-
-    new cdk.CfnOutput(this, 'NestJSLayerVersionArn', {
-      value: `${nestJsAppLayer.layerVersionArn}`,
+      parameterName: 'LAMBDA_LAYER_VERSION_NESTJS',
+      stringValue: this.layerVersion.layerVersionArn,
     });
   }
 }

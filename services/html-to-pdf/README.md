@@ -54,6 +54,10 @@ and table breaks, all with minimal code maintenance.
 - **Serverless Express Support**: Serverless Express is pre-configured to
   support binary mime types seamlessly.
 
+## Troubleshooting
+
+Needed to set Binary response in API Gateway and deploy the api
+
 ## References
 
 To dive deeper into HTMLtoPDF problem space, explore the following resources:
@@ -62,3 +66,4 @@ To dive deeper into HTMLtoPDF problem space, explore the following resources:
 - [Puppeteer Layers](https://github.com/RafalWilinski/serverless-puppeteer-layers/tree/master/layer)
 - [Configuring Binary Lambda Responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings-configure-with-console.html)
 - [Serverless Express Binary Configuration](https://github.com/vendia/serverless-express/blob/master/examples/basic-starter/lambda.js)
+- [Base64 to PDF Converter](https://base64.guru/)

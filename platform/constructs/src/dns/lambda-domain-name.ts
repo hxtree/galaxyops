@@ -13,6 +13,7 @@ export type LambdaDomainNameProps = {
   stageName: string;
   subdomainName: string;
   proxyLambda: lambda.Function;
+  binaryMediaTypes?: string[];
 };
 
 export class LambdaDomainName extends Construct {
@@ -26,7 +27,7 @@ export class LambdaDomainName extends Construct {
 
   constructor(scope: Construct, id: string, props: LambdaDomainNameProps) {
     super(scope, id);
-    const { subdomainName, proxyLambda, stageName } = props;
+    const { subdomainName, proxyLambda, stageName, binaryMediaTypes } = props;
 
     this.id = id;
     this.init();
@@ -57,6 +58,7 @@ export class LambdaDomainName extends Construct {
         throttlingBurstLimit: 10,
         throttlingRateLimit: 10,
       },
+      binaryMediaTypes,
       // TODO consider API key
       // apiKeySourceType: apigateway.ApiKeySourceType.HEADER,
     });

@@ -104,38 +104,90 @@
         }
       }
     },
-    "/pdf/render-url": {
-      "post": {
-        "operationId": "PdfController_postRenderFromUrl",
+    "/pdf/test": {
+      "get": {
+        "operationId": "PdfController_saveUrlToPdfInS3",
         "parameters": [],
-        "responses": { "201": { "description": "" } }
+        "responses": { "200": { "description": "" } }
       }
     },
-    "/pdf/render-html": {
+    "/pdf": {
+      "get": {
+        "operationId": "PdfController_url",
+        "parameters": [
+          {
+            "name": "url",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } }
+      },
       "post": {
-        "operationId": "PdfController_postRenderFromHtml",
+        "operationId": "PdfController_operation",
         "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/OperationDto" }
+            }
+          }
+        },
         "responses": { "201": { "description": "" } }
       }
     }
   },
   "info": {
     "title": "@cats-cradle/html-to-pdf",
-    "description": "An API Simulating dice rolls that can be effected by luck from dice notation",
-    "version": "1.0.4",
+    "description": "Your Go-To Solution for PDF Generation from HTML.",
+    "version": "1.0.19",
     "contact": {}
   },
   "tags": [],
-  "servers": [],
+  "servers": [
+    { "url": "http://localhost:3000", "description": "Local" },
+    {
+      "url": "https://ahmasn0q65.execute-api.us-east-1.amazonaws.com/prod/",
+      "description": "Sandbox"
+    }
+  ],
   "components": {
-    "securitySchemes": {
-      "lambda": {
-        "type": "apiKey",
-        "in": "header",
-        "name": "x-lambda-token",
-        "description": "The API key for lambda request."
+    "schemas": {
+      "OperationDto": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "input format",
+            "default": "HTML",
+            "enum": ["DATA", "PDF", "JSON", "S3"]
+          },
+          "output": {
+            "type": "string",
+            "description": "output format",
+            "default": "PDF",
+            "enum": ["DATA", "PDF", "JSON", "S3"]
+          },
+          "url": {
+            "type": "string",
+            "description": "url",
+            "default": "https://google.com"
+          },
+          "content": {
+            "type": "string",
+            "description": "HTML",
+            "default": "<!doctype><html><head><title>Example</title></head><body>Hello, World</body></html>"
+          },
+          "filename": {
+            "type": "string",
+            "description": "Filename",
+            "default": "16b90e8a-f91f-4ebc-afef-63eea48ce517.pdf"
+          }
+        },
+        "required": ["input", "output", "url", "content", "filename"]
       }
-    },
-    "schemas": {}
+    }
   }
 }

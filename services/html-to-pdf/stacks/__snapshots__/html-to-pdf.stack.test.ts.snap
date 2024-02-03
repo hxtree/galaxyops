@@ -95,7 +95,11 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
       Type: AWS::SSM::Parameter::Value<String>,
     },
     lambdalayernestjslatestversionssmParameter: {
-      Default: lambda-layer-nestjs-latest-version,
+      Default: LAMBDA_LAYER_VERSION_NESTJS,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    lambdalayerversionssmParameter: {
+      Default: LAMBDA_LAYER_VERSION_CHROMIUM,
       Type: AWS::SSM::Parameter::Value<String>,
     },
     mongodatabasepasswordssmParameter: {
@@ -363,6 +367,9 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
     },
     MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35: {
       Properties: {
+        BinaryMediaTypes: [
+          application/pdf,
+        ],
         Description: html-to-pdf Service API Gateway,
         Name: html-to-pdf RestAPI,
       },
@@ -538,7 +545,7 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
       Type: AWS::IAM::Role,
       UpdateReplacePolicy: Retain,
     },
-    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBD2feaee04778471ecb3dd753a76e60b6f: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBD78394f2124fba5724641ffc740313862: {
       DependsOn: [
         MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
         MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
@@ -558,7 +565,7 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
       ],
       Properties: {
         DeploymentId: {
-          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBD2feaee04778471ecb3dd753a76e60b6f,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBD78394f2124fba5724641ffc740313862,
         },
         MethodSettings: [
           {
@@ -745,22 +752,6 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
       },
       Type: AWS::IAM::Policy,
     },
-    MyTestStackchromiumlayer08B9B7A7: {
-      Properties: {
-        CompatibleRuntimes: [
-          nodejs18.x,
-        ],
-        Content: {
-          S3Bucket: {
-            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
-          },
-          S3Key: UNIQUE_HASH.zip,
-        },
-        Description: Chromium layer for Lambda,
-        LayerName: ChromiumLayer,
-      },
-      Type: AWS::Lambda::LayerVersion,
-    },
     MyTestStackhtmltopdfstacknestjsNodeJsLambda5657F2F1: {
       DependsOn: [
         MyTestStackpdfbucketbotroleDefaultPolicy90C2D1A4,
@@ -796,7 +787,7 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
         Handler: index.handler,
         Layers: [
           {
-            Ref: MyTestStackchromiumlayer08B9B7A7,
+            Ref: lambdalayerversionssmParameter,
           },
           {
             Ref: lambdalayernestjslatestversionssmParameter,

@@ -20,20 +20,7 @@ async function bootstrap() {
     .setVersion(pkg.version)
     .setDescription(pkg.description)
     .addServer('http://localhost:3000', 'Local')
-    .addServer(
-      'https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/luck-by-dice/',
-      'Sandbox',
-    )
-    .addApiKey(
-      {
-        type: 'apiKey',
-        name: 'x-lambda-token',
-        in: 'header',
-        description: 'The API key for lambda request.',
-      },
-      'lambda',
-    )
-    // .addServer()) // TODO add varies endpoints
+    .addServer('https://html-to-pdf.sandbox.nekosgate.com/', 'Sandbox')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

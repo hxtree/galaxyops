@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { NestJsLambdaLayerStack } from '../stacks/nestjs-lambda-layer.stack';
+import { downloadChromiumZip } from '../stacks/download-lambda-layer';
+import { MainStack } from '../stacks/main.stack';
 
-const app = new cdk.App();
-new NestJsLambdaLayerStack(app, 'MainStack');
+downloadChromiumZip().then(() => {
+  const app = new cdk.App();
+  new MainStack(app, 'LambdaLayerMainStack', {});
+});
