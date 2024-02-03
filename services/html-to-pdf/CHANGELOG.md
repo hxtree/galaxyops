@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/html-to-pdf
 
-This log was last generated on Fri, 02 Feb 2024 05:50:03 GMT and should not be manually modified.
+This log was last generated on Sat, 03 Feb 2024 08:29:12 GMT and should not be manually modified.
+
+## 1.0.20
+Sat, 03 Feb 2024 08:29:12 GMT
+
+### Patches
+
+- automatically allow binary media response
 
 ## 1.0.19
 Fri, 02 Feb 2024 05:50:03 GMT

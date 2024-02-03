@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/authentication-service
 
-This log was last generated on Fri, 02 Feb 2024 05:50:03 GMT and should not be manually modified.
+This log was last generated on Sat, 03 Feb 2024 08:29:12 GMT and should not be manually modified.
+
+## 1.1.3
+Sat, 03 Feb 2024 08:29:12 GMT
+
+### Patches
+
+- api gateway construct update
 
 ## 1.1.2
 Fri, 02 Feb 2024 05:50:03 GMT
