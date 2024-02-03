@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "nest start --debug --watch",
-    "artifact": "create-artifact @cats-cradle/api-gateway",
+    "artifact": "create-artifact @cats-cradle/api",
     "build": "tsc",
     "build:all": "rush build -t .",
     "watch": "tsc -w",
