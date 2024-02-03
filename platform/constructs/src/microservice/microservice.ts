@@ -36,7 +36,7 @@ export class Microservice extends Construct {
       scope,
       'lambda-layer-nestjs-latest-version-ssm',
       {
-        parameterName: 'lambda-layer-nestjs-latest-version',
+        parameterName: 'LAMBDA_LAYER_VERSION_NESTJS',
       },
     ).stringValue;
 

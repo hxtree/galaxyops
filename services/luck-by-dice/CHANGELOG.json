@@ -2,6 +2,23 @@
   "name": "@cats-cradle/luck-by-dice",
   "entries": [
     {
+      "version": "2.0.14",
+      "tag": "@cats-cradle/luck-by-dice_v2.0.14",
+      "date": "Sat, 03 Feb 2024 08:29:12 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "api gateway construct update"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/constructs\" to `0.0.11`"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.0.13",
       "tag": "@cats-cradle/luck-by-dice_v2.0.13",
       "date": "Fri, 02 Feb 2024 05:50:03 GMT",

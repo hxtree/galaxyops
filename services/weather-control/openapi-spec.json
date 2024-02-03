@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "paths": {
-    "/v1/health": {
+    "/health": {
       "get": {
         "operationId": "HealthController_check",
         "parameters": [],
@@ -104,21 +104,6 @@
         }
       }
     },
-    "/v1/weather": {
-      "post": {
-        "operationId": "WeatherController_query",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": { "$ref": "#/components/schemas/QueryDto" }
-            }
-          }
-        },
-        "responses": { "201": { "description": "" } }
-      }
-    },
     "/weather": {
       "post": {
         "operationId": "WeatherController_query",
@@ -128,21 +113,6 @@
           "content": {
             "application/json": {
               "schema": { "$ref": "#/components/schemas/QueryDto" }
-            }
-          }
-        },
-        "responses": { "201": { "description": "" } }
-      }
-    },
-    "/v1/weather/influence": {
-      "post": {
-        "operationId": "WeatherController_create",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": { "$ref": "#/components/schemas/CreateDto" }
             }
           }
         },
@@ -166,9 +136,9 @@
     }
   },
   "info": {
-    "title": "@cats-cradles/audio-service",
-    "description": "An API for the audio service",
-    "version": "1.0",
+    "title": "@cats-cradle/weather-control",
+    "description": "A service for managing the weather",
+    "version": "0.0.2",
     "contact": {}
   },
   "tags": [],
@@ -181,7 +151,7 @@
           "date": {
             "type": "string",
             "description": "Date",
-            "default": "2023-11-20T03:28:08.392Z"
+            "default": "2024-02-03T05:45:21.080Z"
           },
           "latitude": {
             "type": "string",

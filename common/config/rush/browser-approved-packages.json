@@ -428,7 +428,7 @@
     },
     {
       "name": "axios",
-      "allowedCategories": [ "api-client", "apis", "clients" ]
+      "allowedCategories": [ "api-client", "apis", "clients", "platform-package" ]
     },
     {
       "name": "babel-jest",

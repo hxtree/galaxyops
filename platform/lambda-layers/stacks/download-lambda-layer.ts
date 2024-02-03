@@ -23,7 +23,7 @@ export async function downloadChromiumZip(): Promise<any> {
     url: CHROMIUM_ZIP_URL,
     responseType: 'stream',
   })
-    .then((response) => {
+    .then((response: any) => {
       const writer = fs.createWriteStream(CHROMIUM_ZIP_FILEPATH);
 
       response.data.pipe(writer);
@@ -36,7 +36,7 @@ export async function downloadChromiumZip(): Promise<any> {
     .then(() => {
       console.log('File downloaded successfully.');
     })
-    .catch((error) => {
+    .catch((error: any) => {
       console.error('An error occurred:', error);
     });
 }
