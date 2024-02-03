@@ -13,12 +13,12 @@ export class MainStack extends cdk.Stack {
       `${id}-chromium-layer-stack`,
     );
 
-    // new cdk.CfnOutput(this, 'NestJsLayerVersionArn', {
-    //   value: `${nestJsAppLayer.layerVersion.layerVersionArn}`,
-    // });
+    new cdk.CfnOutput(this, 'NestJsLayerVersionArn', {
+      value: `${nestJsLayer.layerVersion.layerVersionArn}`,
+    });
 
-    // new cdk.CfnOutput(this, 'ChromiumLayerVersionArn', {
-    //   value: `${chromiumLayer.layerVersion.layerVersionArn}`,
-    // });
+    new cdk.CfnOutput(this, 'ChromiumLayerVersionArn', {
+      value: `${chromiumLayer.layerVersion.layerVersionArn}`,
+    });
   }
 }
