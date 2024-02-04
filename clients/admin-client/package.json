@@ -7,11 +7,20 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "build:all": "rush build -t .",
+    "artifact": "create-artifact @cats-cradle/admin-client",
     "lint": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix-dry-run",
     "preview": "vite preview",
     "test": "",
-    "test:cov": ""
+    "test:cov": "",
+    "cdk:bootstrap": "cdk bootstrap",
+    "cdk:diff": "cdk diff",
+    "cdk:synth": "cdk synth",
+    "cdk:hotswap": "cdk deploy --hotswap",
+    "cdk:deploy": "cdk deploy",
+    "cdk:watch": "cdk watch",
+    "cdk:destroy": "cdk destroy",
+    "depcheck": "npx depcheck"
   },
   "dependencies": {
     "react": "18.2.0",
@@ -39,6 +48,7 @@
     "@types/jest": "29.5.11",
     "jest": "29.7.0",
     "jest-environment-jsdom": "~29.6.1",
-    "@cats-cradle/base-nodejs": "workspace:*"
+    "@cats-cradle/base-nodejs": "workspace:*",
+    "constructs": "^10.2.70"
   }
 }

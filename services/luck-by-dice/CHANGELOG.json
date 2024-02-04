@@ -2,6 +2,21 @@
   "name": "@cats-cradle/luck-by-dice",
   "entries": [
     {
+      "version": "2.0.15",
+      "tag": "@cats-cradle/luck-by-dice_v2.0.15",
+      "date": "Sun, 04 Feb 2024 05:29:40 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/constructs\" to `0.0.12`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.11`"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.0.14",
       "tag": "@cats-cradle/luck-by-dice_v2.0.14",
       "date": "Sat, 03 Feb 2024 08:29:12 GMT",

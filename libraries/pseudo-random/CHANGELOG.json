@@ -2,6 +2,18 @@
   "name": "@cats-cradle/pseudo-random",
   "entries": [
     {
+      "version": "0.0.6",
+      "tag": "@cats-cradle/pseudo-random_v0.0.6",
+      "date": "Sun, 04 Feb 2024 05:29:40 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.11`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.5",
       "tag": "@cats-cradle/pseudo-random_v0.0.5",
       "date": "Thu, 28 Dec 2023 16:54:41 GMT",

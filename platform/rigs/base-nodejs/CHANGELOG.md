@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/base-nodejs
 
-This log was last generated on Thu, 28 Dec 2023 16:54:41 GMT and should not be manually modified.
+This log was last generated on Sun, 04 Feb 2024 05:29:40 GMT and should not be manually modified.
+
+## 1.0.11
+Sun, 04 Feb 2024 05:29:40 GMT
+
+### Patches
+
+- add app.ts to build include
 
 ## 1.0.10
 Thu, 28 Dec 2023 16:54:41 GMT
