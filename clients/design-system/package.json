@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/design-system",
   "private": false,
-  "version": "0.5.2",
+  "version": "0.5.3",
   "module": "commonjs",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
