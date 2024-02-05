@@ -72,11 +72,11 @@
     },
     {
       "name": "@cats-cradle/create-artifact",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@cats-cradle/create-bundle",
-      "allowedCategories": [ "apis" ]
+      "allowedCategories": [ "apis", "clients" ]
     },
     {
       "name": "@cats-cradle/create-bundler",

@@ -1,5 +1,5 @@
 {
-  "app": "rushx build &&  npx ts-node --esm --prefer-ts-exts bin/app.ts",
+  "app": "tsc --build ./tsconfig-build.json && vite build && npx ts-node --prefer-ts-exts bin/app.ts",
   "watch": {
     "include": ["src/", "stacks/", "pages/", "components/"],
     "exclude": ["__tests__", "*.test.ts", "*.e2e-spec.ts"]

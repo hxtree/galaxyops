@@ -1,7 +1,7 @@
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
-import { StackProps } from 'aws-cdk-lib';
+import { RemovalPolicy, StackProps } from 'aws-cdk-lib';
 import { Bucket, BucketAccessControl } from 'aws-cdk-lib/aws-s3';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import {
@@ -23,8 +23,12 @@ export class AdminClientStack extends cdk.Stack {
     super(scope, id, props);
 
     // s3 bucket
-    const bucket = new Bucket(this, 'Bucket', {
+    const awsAccountId = cdk.Stack.of(this).account;
+    const stageName = process.env.STAGE_NAME ?? 'default';
+    const bucket = new Bucket(this, `${stageName}-admin-client`, {
+      bucketName: `${awsAccountId}-${stageName}-admin-client-bucket`,
       accessControl: BucketAccessControl.PRIVATE,
+      removalPolicy: RemovalPolicy.DESTROY,
     });
 
     const originAccessIdentity = new OriginAccessIdentity(
@@ -86,8 +90,7 @@ export class AdminClientStack extends cdk.Stack {
     });
 
     // bucket resource
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const awsBucketResource = new BucketDeployment(this, 'BucketDeployment', {
+    new BucketDeployment(this, 'BucketDeployment', {
       destinationBucket: bucket,
       sources: [Source.asset('./dist')],
     });

@@ -1,11 +1,11 @@
 {
   "name": "@cats-cradle/admin-client",
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "version": "0.3.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc --build ./tsconfig-build.json && vite build",
     "build:all": "rush build -t .",
     "artifact": "create-artifact @cats-cradle/admin-client",
     "lint": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix",
