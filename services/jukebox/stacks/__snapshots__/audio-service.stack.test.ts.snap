@@ -2,12 +2,35 @@
 
 exports[`AudioServiceStack should match snapshot test 1`] = `
 {
+  Mappings: {
+    AWSCloudFrontPartitionHostedZoneIdMap: {
+      aws: {
+        zoneId: Z2FDTNDATAQYW2,
+      },
+      aws-cn: {
+        zoneId: Z3RFFRIM2A3IF5,
+      },
+    },
+  },
   Outputs: {
-    DomainName: {
+    CloudFrontDistribution: {
       Value: {
         Fn::GetAtt: [
           Distribution830FAC52,
           DomainName,
+        ],
+      },
+    },
+    DomainName: {
+      Value: {
+        Fn::Join: [
+          ,
+          [
+            https://jukebox.,
+            {
+              Ref: MyTestStackssmdomainnameParameter,
+            },
+          ],
         ],
       },
     },
@@ -18,8 +41,58 @@ exports[`AudioServiceStack should match snapshot test 1`] = `
       Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip],
       Type: AWS::SSM::Parameter::Value<String>,
     },
+    MyTestStackhostedzoneidParameter: {
+      Default: my-domains-hosted-zone-id,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackorgformationcertswildcardcert1arnParameter: {
+      Default: orgformation-certs-wildcard-cert1-arn,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    MyTestStackssmdomainnameParameter: {
+      Default: DOMAIN_NAME,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
   },
   Resources: {
+    AliasRecord851000D2: {
+      Properties: {
+        AliasTarget: {
+          DNSName: {
+            Fn::GetAtt: [
+              Distribution830FAC52,
+              DomainName,
+            ],
+          },
+          HostedZoneId: {
+            Fn::FindInMap: [
+              AWSCloudFrontPartitionHostedZoneIdMap,
+              {
+                Ref: AWS::Partition,
+              },
+              zoneId,
+            ],
+          },
+        },
+        HostedZoneId: {
+          Ref: MyTestStackhostedzoneidParameter,
+        },
+        Name: {
+          Fn::Join: [
+            ,
+            [
+              jukebox.,
+              {
+                Ref: MyTestStackssmdomainnameParameter,
+              },
+              .,
+            ],
+          ],
+        },
+        Type: A,
+      },
+      Type: AWS::Route53::RecordSet,
+    },
     Bucket83908E77: {
       DeletionPolicy: Retain,
       Properties: {
@@ -310,6 +383,19 @@ exports[`AudioServiceStack should match snapshot test 1`] = `
     Distribution830FAC52: {
       Properties: {
         DistributionConfig: {
+          Aliases: [
+            {
+              Fn::Join: [
+                ,
+                [
+                  jukebox.,
+                  {
+                    Ref: MyTestStackssmdomainnameParameter,
+                  },
+                ],
+              ],
+            },
+          ],
           DefaultCacheBehavior: {
             CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6,
             Compress: true,
@@ -345,6 +431,13 @@ exports[`AudioServiceStack should match snapshot test 1`] = `
               },
             },
           ],
+          ViewerCertificate: {
+            AcmCertificateArn: {
+              Ref: MyTestStackorgformationcertswildcardcert1arnParameter,
+            },
+            MinimumProtocolVersion: TLSv1.2_2021,
+            SslSupportMethod: sni-only,
+          },
         },
       },
       Type: AWS::CloudFront::Distribution,
