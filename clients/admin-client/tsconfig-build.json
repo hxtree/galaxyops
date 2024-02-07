@@ -1,4 +1,10 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src", "bin", "stacks"]
+  "include": ["src", "bin", "stacks"],
+  "compilerOptions": {
+    "lib": ["dom"],
+
+    "module": "es2022",
+    "moduleResolution": "Node"
+  }
 }

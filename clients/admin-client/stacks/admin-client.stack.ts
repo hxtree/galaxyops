@@ -29,6 +29,7 @@ export class AdminClientStack extends cdk.Stack {
       bucketName: `${awsAccountId}-${stageName}-admin-client-bucket`,
       accessControl: BucketAccessControl.PRIVATE,
       removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
 
     const originAccessIdentity = new OriginAccessIdentity(
@@ -93,6 +94,7 @@ export class AdminClientStack extends cdk.Stack {
     new BucketDeployment(this, 'BucketDeployment', {
       destinationBucket: bucket,
       sources: [Source.asset('./dist')],
+      retainOnDelete: false,
     });
 
     const hostedZone = route53.PublicHostedZone.fromHostedZoneAttributes(

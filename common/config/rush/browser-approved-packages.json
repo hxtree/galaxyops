@@ -867,6 +867,10 @@
       "allowedCategories": [ "apis", "clients" ]
     },
     {
+      "name": "vite-plugin-environment",
+      "allowedCategories": [ "clients" ]
+    },
+    {
       "name": "vite-plugin-lib-inject-css",
       "allowedCategories": [ "apis", "clients" ]
     },
