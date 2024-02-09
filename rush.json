@@ -214,6 +214,7 @@
       "reviewCategory": "clients",
       "decoupledLocalDependencies": [
         "@cats-cradle/eslint-config",
+        "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
       "tags": ["service-package", "owner-ux", "cimongo"],

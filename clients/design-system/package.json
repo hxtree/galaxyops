@@ -19,6 +19,7 @@
     "build": "tsc --build ./tsconfig-build.json && vite build",
     "build:storybook": "tsc --p ./tsconfig-build.json && storybook build",
     "build:all": "rush build -t .",
+    "artifact": "create-artifact @cats-cradle/design-system",
     "test": "jest --runInBand",
     "test:cov": "jest --coverage --runInBand",
     "watch": "tsc -w",
@@ -115,7 +116,8 @@
     "uuid": "~9.0.1",
     "@storybook/addon-styling": "~1.3.7",
     "@types/lodash": "~4.14.202",
-    "identity-obj-proxy": "~3.0.0"
+    "identity-obj-proxy": "~3.0.0",
+    "@cats-cradle/create-artifact": "2.0.6"
   },
   "watch": {
     "copy-files": {
