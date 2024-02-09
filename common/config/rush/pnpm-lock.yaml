@@ -29,6 +29,9 @@ importers:
       '@cats-cradle/base-nodejs':
         specifier: workspace:*
         version: link:../../platform/rigs/base-nodejs
+      '@cats-cradle/create-artifact':
+        specifier: 2.0.6
+        version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@testing-library/jest-dom':
         specifier: ^5.16.5
         version: 5.16.5
@@ -129,6 +132,9 @@ importers:
       '@babel/preset-typescript':
         specifier: 7.23.3
         version: 7.23.3(@babel/core@7.23.5)
+      '@cats-cradle/create-artifact':
+        specifier: 2.0.6
+        version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
         specifier: 1.0.11
         version: 1.0.11
