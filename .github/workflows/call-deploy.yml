@@ -1,5 +1,5 @@
-# libray and platform dependencies MUST be published to npm
-# prior to services being deployed to S3 dependencies to ensure dependencies are avaliable
+# all library and platform dependencies MUST be published to npm BEFORE deploying
+# services to S3 to ensure that dependencies are available.
 
 name: Deploy Artifacts
 
