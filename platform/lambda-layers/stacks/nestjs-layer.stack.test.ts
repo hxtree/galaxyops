@@ -1,11 +1,20 @@
 import * as cdk from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { MainStack } from './main.stack';
+import { Construct } from 'constructs';
+import { NestJsLayerStack } from './nestjs-layer.stack';
 
 describe('NestJsLambdaLayerStack', () => {
   it('should match snapshot test', () => {
+    class TestStack extends cdk.Stack {
+      constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+        super(scope, id, props);
+
+        new NestJsLayerStack(this, 'test-stack');
+      }
+    }
+
     const app = new cdk.App();
-    const stack = new MainStack(app, 'MyTestStack');
+    const stack = new TestStack(app, 'TestStack');
     const template = Template.fromStack(stack);
 
     // TODO consider reworking to use DNS instead of incrementing and deploying each time

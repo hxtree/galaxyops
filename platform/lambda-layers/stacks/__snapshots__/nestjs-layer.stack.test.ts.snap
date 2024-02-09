@@ -2,24 +2,6 @@
 
 exports[`NestJsLambdaLayerStack should match snapshot test 1`] = `
 {
-  Outputs: {
-    ChromiumLayerVersionArn: {
-      Value: {
-        Fn::GetAtt: [
-          MyTestStackchromiumlayerstackNestedStackMyTestStackchromiumlayerstackNestedStackResourceADA67C69,
-          Outputs.MyTestStackMyTestStackchromiumlayerstackChromium4E7D9452Ref,
-        ],
-      },
-    },
-    NestJsLayerVersionArn: {
-      Value: {
-        Fn::GetAtt: [
-          MyTestStacknestjslayerstackNestedStackMyTestStacknestjslayerstackNestedStackResource8670C304,
-          Outputs.MyTestStackMyTestStacknestjslayerstackNestJsF992C2BARef,
-        ],
-      },
-    },
-  },
   Parameters: {
     BootstrapVersion: {
       Default: /cdk-bootstrap/hnb659fds/version,
@@ -28,7 +10,7 @@ exports[`NestJsLambdaLayerStack should match snapshot test 1`] = `
     },
   },
   Resources: {
-    MyTestStackchromiumlayerstackNestedStackMyTestStackchromiumlayerstackNestedStackResourceADA67C69: {
+    teststackNestedStackteststackNestedStackResourceFBD69DE9: {
       DeletionPolicy: Delete,
       Properties: {
         TemplateURL: {
@@ -47,34 +29,7 @@ exports[`NestJsLambdaLayerStack should match snapshot test 1`] = `
               {
                 Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
               },
-              /5351ead3c4752fe7511dd7ecc6b24a9e69b6cce33f75f2752d1114dd729fc079.json,
-            ],
-          ],
-        },
-      },
-      Type: AWS::CloudFormation::Stack,
-      UpdateReplacePolicy: Delete,
-    },
-    MyTestStacknestjslayerstackNestedStackMyTestStacknestjslayerstackNestedStackResource8670C304: {
-      DeletionPolicy: Delete,
-      Properties: {
-        TemplateURL: {
-          Fn::Join: [
-            ,
-            [
-              https://s3.,
-              {
-                Ref: AWS::Region,
-              },
-              .,
-              {
-                Ref: AWS::URLSuffix,
-              },
-              /,
-              {
-                Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
-              },
-              /4e6cff4ffc01649a70887077bffd2ab6c2668291d5f8bf702674952a23ea9de8.json,
+              /e7eeb387c90b4be85bf1c274ff0fe966cecdaba690f40a22c0bba97bf7fc0a75.json,
             ],
           ],
         },
