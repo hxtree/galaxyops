@@ -7,7 +7,7 @@ on:
 
 jobs:
   Deploy:
-s    if: |
+    if: |
       github.event.label.name == 'sandbox'
     uses: ./.github/workflows/call-deploy.yml
     secrets:
