@@ -2,8 +2,6 @@
 
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-![CloudFormation Diagram](tree-designer.png)
-
 A player achievement is a meta-goal defined outside a game's parameters. It is a
 digital reward that signifies a player's mastery of a specific task or challenge
 within a video game.

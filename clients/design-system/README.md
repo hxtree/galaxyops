@@ -3,8 +3,6 @@
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](link
 to site)
 
-![CloudFormation Diagram](tree-designer.png)
-
 This
 [design system](https://storybook.js.org/tutorials/design-systems-for-developers/)
 contains common components for use in other front end applications. It contains

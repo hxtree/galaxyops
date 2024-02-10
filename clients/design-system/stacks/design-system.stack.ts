@@ -29,6 +29,7 @@ export class DesignSystemStack extends cdk.Stack {
       bucketName: `${awsAccountId}-${stageName}-design-system-bucket`,
       accessControl: BucketAccessControl.PRIVATE,
       removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
 
     const originAccessIdentity = new OriginAccessIdentity(

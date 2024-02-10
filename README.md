@@ -92,7 +92,7 @@ the [devcontainer](.devcontainer/README.md).
    git push
    ```
 
-## AWS
+## Infrastructure
 
 ### Architecture
 
@@ -104,7 +104,7 @@ AWS.
 
 ![Flow Chart](docs/flow-chart.drawio.svg)
 
-## Provision Environments
+## Provisioning
 
 1. Setup [AWS Org Formation](/platform/aws-org-formation/README.md).
 
