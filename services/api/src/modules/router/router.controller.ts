@@ -1,28 +1,55 @@
 import {
-  Controller, Body, Post, Get, VERSION_NEUTRAL,
+  Controller,
+  Body,
+  Post,
+  Get,
+  Delete,
+  Put,
+  Patch,
+  Param,
+  Req,
+  VERSION_NEUTRAL,
 } from '@nestjs/common';
 import { RouterService } from './router.service';
 
-@Controller({ path: 'router', version: ['1', VERSION_NEUTRAL] })
+@Controller({ path: '', version: ['1', VERSION_NEUTRAL] })
 export class RouterController {
-  private _rollService;
+  constructor(private readonly routerService: RouterService) {}
 
-  // DI not working, probably due to esbuild
-  constructor() {
-    this._rollService = new RouterService();
+  @Get('routes')
+  getRoutes(): { path: string; endpoint: string }[] {
+    return this.routerService.getRoutes();
   }
 
-  @Post()
-  routePost(@Body() param: any): Promise<any> {
-    return Promise.resolve({
-      message: 'not yet implemented',
-    });
+  @Get('*')
+  async getRoute(@Req() req: any): Promise<any> {
+    const { path, query } = req;
+    const queryParams = new URLSearchParams(query).toString();
+    const fullPath = queryParams ? `${path}?${queryParams}` : path;
+    return this.routerService.routeRequest(fullPath, null, 'GET');
   }
 
-  @Get()
-  routeGet(): Promise<any> {
-    return Promise.resolve({
-      message: 'not yet implemented',
-    });
+  @Post('*')
+  async postRoute(@Body() body: any, @Req() req: any): Promise<any> {
+    const { path } = req;
+    return this.routerService.routeRequest(path, body, 'POST');
+  }
+
+  @Put('*')
+  async putRoute(@Body() body: any, @Req() req: any): Promise<any> {
+    const { path } = req;
+    return this.routerService.routeRequest(path, body, 'PUT');
+  }
+
+  @Delete('*')
+  async deleteRoute(@Body() body: any, @Req() req: any): Promise<any> {
+    const { path } = req;
+    return this.routerService.routeRequest(path, body, 'DELETE');
+  }
+
+  @Patch('*')
+  async patchRoute(@Body() body: any, @Req() req: any): Promise<any> {
+    const { path } = req;
+    return this.routerService.routeRequest(path, body, 'PATCH');
   }
 }

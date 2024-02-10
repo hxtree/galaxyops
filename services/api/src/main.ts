@@ -19,11 +19,8 @@ async function bootstrap() {
     .setTitle(pkg.name)
     .setVersion(pkg.version)
     .setDescription(pkg.description)
-    .addServer('http://localhost:3000', 'Local')
-    .addServer(
-      'https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/luck-by-dice/',
-      'Sandbox',
-    )
+    .addServer('http://localhost:3000', 'Localhost')
+    .addServer('https://api.sandbox.nekosgate.com/', 'Sandbox')
     .addApiKey(
       {
         type: 'apiKey',
@@ -33,7 +30,6 @@ async function bootstrap() {
       },
       'lambda',
     )
-    // .addServer()) // TODO add varies endpoints
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

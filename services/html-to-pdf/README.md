@@ -4,8 +4,6 @@
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-![CloudFormation Diagram](tree-designer.png)
-
 **Your Go-To Solution for PDF Generation from HTML.**
 
 HTMLtoPDF is a high-performance microservice built to empower web developers

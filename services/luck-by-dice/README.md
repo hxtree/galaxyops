@@ -5,8 +5,6 @@
 ![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-![CloudFormation Diagram](tree-designer.png)
-
 A microservice api for simulating luck based dice rolls from dice notation.
 
 ## Stacks

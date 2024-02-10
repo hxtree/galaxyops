@@ -1,14 +1,5 @@
 # Git Setup
 
-## Conventional Commits
-
-Commits to source control MUST adhere to the
-[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standard.
-
-The Conventional Commits extension, which is installed by default, allows for
-conventional commits from the Source Control panel in VSCode by selecting the
-circular button.
-
 ## DCO Sign All Commits
 
 All commits must be DCO signed.

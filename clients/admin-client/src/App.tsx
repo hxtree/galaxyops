@@ -17,6 +17,7 @@ function App() {
           {url: `https://jukebox.${parentDomainName}`, label: 'Jukebox'},
           {url: `https://design.${parentDomainName}`, label: 'Design System'},
           {url: `https://api.${parentDomainName}`, label: 'Developer API'},
+          {url: 'https://nekosgate.awsapps.com/mail', 'label': 'WorkMail'}
       ]}/>
     </>
   );

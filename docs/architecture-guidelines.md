@@ -13,7 +13,7 @@ constructing.
 
 Applications are designed to run as a service. To avoid common systemic problems
 in modern application develop, layers are constructed around twelve factor app
-principles.
+principles. Code is agnostic of environment.
 
 [https://12factor.net/](https://12factor.net/)
 

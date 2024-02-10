@@ -25,6 +25,6 @@ export class DiceRollController {
 
   @Get()
   roll(): Promise<ResponseRollDto> {
-    return this._rollService.turn('6d6', 0, 1);
+    return this._rollService.turn('1d6', 0, 1);
   }
 }

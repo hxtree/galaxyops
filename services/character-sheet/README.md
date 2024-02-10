@@ -2,8 +2,6 @@
 
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 
-![CloudFormation Diagram](tree-designer.png)
-
 Maintains in game characters, including whatever details, notes, game
 statistics, and background information a character needs during game play. This
 includes attributes, skills, disciplines, and more.

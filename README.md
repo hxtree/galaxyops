@@ -52,16 +52,6 @@ Github Codespaces.
 Alternatively, git clone the repo and build, test, and deploy apps locally using
 the [devcontainer](.devcontainer/README.md).
 
-## Architecture
-
-This repository houses a collection of event-driven microservices, built on a
-powerful Platform as a Service (PaaS) foundation. The integration of
-Infrastructure as Code (IaC) ensures a streamlined DevOps pipeline for
-continuous integration and continuous deployment (CI/CD) leveraging the power of
-AWS.
-
-![Flow Chart](docs/flow-chart.drawio.svg)
-
 ### Pull Request Lifecycle (~5 mins)
 
 1. Checkout a new branch from main using git.
@@ -102,11 +92,55 @@ AWS.
    git push
    ```
 
+## Infrastructure
+
+### Architecture
+
+This repository houses a collection of event-driven microservices, built on a
+powerful Platform as a Service (PaaS) foundation. The integration of
+Infrastructure as Code (IaC) ensures a streamlined DevOps pipeline for
+continuous integration and continuous deployment (CI/CD) leveraging the power of
+AWS.
+
+![Flow Chart](docs/flow-chart.drawio.svg)
+
+## Provisioning
+
+1. Setup [AWS Org Formation](/platform/aws-org-formation/README.md).
+
+2. Login via SSO, bootstrap deployments, deploy platform, deploy services, and
+   then deploy clients.
+
+   ```bash
+   rush sso
+   rush cdk:bootstrap
+   rush cdk:deploy --to tag:deploy-platform
+   rush cdk:deploy --to tag:services
+   rush cdk:deploy --to tag:clients
+   ```
+
+3. Login via SSO to tools account and then deploy tools.
+
+   ```bash
+   rush sso -p tools
+   rush cdk:bootstrap
+   rush cdk:deploy --to tag:deploy-tools
+   ```
+
 ## Documentation
 
 See [Documentation](docs/index.md).
 
 > **Note** Use `rush help` for information on builtin commands.
+
+### Third Party Documentation
+
+- [AWS CLI](https://docs.aws.amazon.com/cdk/v2/guide/cli.html)
+- [Typescript](https://www.typescriptlang.org/docs/)
+- [Jest](https://jestjs.io/)
+- [RushJS](https://rushjs.io)
+  - [Selecting Subsets](https://rushjs.io/pages/developer/selecting_subsets/)
+- [Rushstack](https://github.com/microsoft/rushstack)
 
 ## Contributing
 
