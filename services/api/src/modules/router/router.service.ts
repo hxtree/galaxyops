@@ -79,9 +79,11 @@ export class RouterService {
         const fullPath = queryString
           ? `${decodedBasePath}?${queryString}`
           : decodedBasePath;
-        return fullPath;
-      // response = await axios.get(this.constructUrl(route.endpoint, fullPath), { headers });
-      // break;
+        response = await axios.get(
+          this.constructUrl(route.endpoint, fullPath),
+          { headers },
+        );
+        break;
       default:
         throw new Error(`Unsupported HTTP method: ${method}`);
     }
