@@ -2,7 +2,8 @@
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
-import { LambdaDomainName } from '@cats-cradle/constructs';
+import { LambdaDomainName, Microservice } from '@cats-cradle/constructs';
+import path from 'path';
 
 interface Secret {
   key: string;
@@ -10,8 +11,8 @@ interface Secret {
 
 export class MainStack extends cdk.Stack {
   secrets: Secret[] = [
-    { key: 'CHARACTER_SVC_DOMAIN_NAME' },
-    { key: 'EMAIL_MESSAGE_SVC_DOMAIN_NAME' },
+    // { key: 'CHARACTER_SVC_DOMAIN_NAME' },
+    // { key: 'EMAIL_MESSAGE_SVC_DOMAIN_NAME' },
     { key: 'HTML_TO_PDF_SVC_DOMAIN_NAME' },
     { key: 'INSTANCES_SVC_DOMAIN_NAME' },
     { key: 'LUCK_BY_DICE_SVC_DOMAIN_NAME' },
@@ -41,23 +42,12 @@ export class MainStack extends cdk.Stack {
       environment[secret.key] = `{{resolve:ssm:/${secret.key}}}`;
     }
 
-    // TODO have lambda handle cognito auth
-    // TODO have lambda actually fetch from resources
-    const lambdaFunction = new lambda.Function(this, lambdaId, {
-      runtime: lambda.Runtime.NODEJS_16_X,
-      handler: 'index.handler',
-      code: lambda.Code.fromInline(`
-          exports.handler = async (event) => {
-            // Respond with all environment variables
-            return {
-              statusCode: 200,
-              body: JSON.stringify({"environment": process.env}),
-            };
-          };
-        `),
-      environment,
+    // TODO add abilitiy for lambda to handle cognito auth
+    const lambdaFunction = new Microservice(this, `api-service-stack`, {
+      projectRoot: path.join(__dirname, '..'),
+      environment: environment,
     });
 
-    return lambdaFunction;
+    return lambdaFunction.getNodeJsFunction();
   }
 }

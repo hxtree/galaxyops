@@ -1387,54 +1387,57 @@ importers:
 
   ../../services/api:
     dependencies:
-      '@aws-cdk/core':
-        specifier: ~1.182.0
-        version: 1.182.0(@aws-cdk/cloud-assembly-schema@1.182.0)(@aws-cdk/cx-api@1.182.0)(@aws-cdk/region-info@1.182.0)(constructs@10.2.70)
+      '@cats-cradle/base-nodejs':
+        specifier: workspace:*
+        version: link:../../platform/rigs/base-nodejs
+      '@cats-cradle/constructs':
+        specifier: workspace:*
+        version: link:../../platform/constructs
+      '@cats-cradle/nestjs-modules':
+        specifier: workspace:*
+        version: link:../../libraries/nestjs-modules
+      '@cats-cradle/validation-schemas':
+        specifier: workspace:*
+        version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
         version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/config':
+        specifier: 2.2.0
+        version: 2.2.0(@nestjs/common@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: 9.2.1
         version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/platform-express@9.3.9)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/mongoose':
+        specifier: 9.2.1
+        version: 9.2.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(mongoose@6.11.3)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/platform-express':
         specifier: 9.3.9
         version: 9.3.9(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)
       '@nestjs/swagger':
         specifier: ~7.1.17
-        version: 7.1.17(@fastify/static@6.9.0)(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)
+        version: 7.1.17(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(class-transformer@0.5.1)(reflect-metadata@0.1.13)
       '@nestjs/terminus':
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@vendia/serverless-express':
         specifier: 4.12.6
         version: 4.12.6
-      aws-cdk-lib:
-        specifier: 2.95.0
-        version: 2.95.0(constructs@10.2.70)
       aws-lambda:
         specifier: 1.0.7
         version: 1.0.7
       aws-serverless-express:
         specifier: ~3.4.0
         version: 3.4.0
+      axios:
+        specifier: ^0.21.1
+        version: 0.21.1
       class-transformer:
         specifier: 0.5.1
         version: 0.5.1
-      class-validator:
-        specifier: 0.13.2
-        version: 0.13.2
-      construct:
-        specifier: ~1.0.0
-        version: 1.0.0
-      constructs:
-        specifier: ^10.2.70
-        version: 10.2.70
       express:
         specifier: 4.18.2
         version: 4.18.2
-      mongoose:
-        specifier: 6.11.3
-        version: 6.11.3
       node-cache:
         specifier: 5.1.2
         version: 5.1.2
@@ -1451,15 +1454,12 @@ importers:
         specifier: ~9.0.1
         version: 9.0.1
     devDependencies:
-      '@cats-cradle/base-nodejs':
-        specifier: workspace:*
-        version: link:../../platform/rigs/base-nodejs
-      '@cats-cradle/constructs':
-        specifier: workspace:*
-        version: link:../../platform/constructs
       '@cats-cradle/create-artifact':
         specifier: 2.0.6
         version: 2.0.6(@yarnpkg/core@4.0.0-rc.51)(typanion@3.14.0)
+      '@cats-cradle/create-bundle':
+        specifier: 1.0.12
+        version: 1.0.12(@babel/core@7.23.5)(@types/node@20.10.5)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
         specifier: 1.0.11
         version: 1.0.11
@@ -1484,6 +1484,12 @@ importers:
       '@types/uuid':
         specifier: ~9.0.7
         version: 9.0.7
+      aws-cdk-lib:
+        specifier: 2.95.0
+        version: 2.95.0(constructs@10.2.70)
+      constructs:
+        specifier: ^10.2.70
+        version: 10.2.70
       esbuild:
         specifier: ~0.17.5
         version: 0.17.5
