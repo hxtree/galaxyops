@@ -2,11 +2,13 @@ name: Labeled
 
 on:
   pull_request:
-    types: [ labeled ]
+    types:
+      - labeled
 
 jobs:
   Deploy:
-    if: "contains(github.event.pull_request.labels.*.name, 'sandbox')"
+    if: |
+      github.event.label.name == 'sandbox'
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
