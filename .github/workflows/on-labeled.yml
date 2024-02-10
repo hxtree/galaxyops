@@ -7,15 +7,12 @@ on:
 
 jobs:
   Deploy:
-    if: |
+s    if: |
       github.event.label.name == 'sandbox'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        uses: ./.github/workflows/call-deploy.yml
-        secrets:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+    uses: ./.github/workflows/call-deploy.yml
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
