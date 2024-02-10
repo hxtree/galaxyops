@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 export class RouterService {
   private readonly routes: { path: string; endpoint: string }[] = [
     {
-      path: '/character-sheet',
+      path: '/character-sheets',
       endpoint: process.env.CHARACTER_SVC_DOMAIN_NAME || '',
     },
     {
