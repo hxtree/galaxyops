@@ -19,6 +19,3 @@ coordination within the application architecture.
   middleware service, modifications should be confined to the project folder and
   configuration files within this directory.
 
-- **Uniform Structure**: Each subfolder within this directory represents a
-  middleware service package, containing source code and any necessary
-  infrastructure configurations. The structure adheres to the following pattern:
