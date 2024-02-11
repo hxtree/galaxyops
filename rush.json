@@ -38,6 +38,7 @@
     "owner-ux",
     "deploy-tools",
     "deploy-platform",
+    "middleware",
     "clients",
     "rigs",
     "cli-tools",
@@ -200,7 +201,7 @@
     },
     {
       "packageName": "@cats-cradle/api",
-      "projectFolder": "services/api",
+      "projectFolder": "middleware/api",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/validation-schemas",
@@ -208,7 +209,7 @@
         "@cats-cradle/create-artifact",
         "@cats-cradle/create-bundle"
       ],
-      "tags": ["services"]
+      "tags": ["middleware"]
     },
     {
       "packageName": "@cats-cradle/authentication-service",
