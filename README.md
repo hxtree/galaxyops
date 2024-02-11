@@ -5,20 +5,20 @@
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/cats-cradle)
+[![Docs](https://github.com/hxtree/cats-cradle/actions/workflows/pages/pages-build-deployment/badge.svg)](https://hxtree.github.io/cats-cradle/)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-Welcome to our open-source enterprise monorepo! Designed to provide a modular
-and scalable architecture, this repository is ideal for enterprises aiming to
-accelerate their adoption of modern software DevOps practices. It serves as a
-foundation for architecting monorepos and features numerous example packages
-actively used in the development of a nostalgic cooperative RPG. Whether you're
-starting a new project or looking to optimize your existing architecture, this
-repository offers comprehensive guidance for fostering innovation and efficiency
-in software development.
+Starting afresh or tweaking configurations, this repository embodies an
+opinionated approach to organizing layers within an enterprise application. It
+delineates the fundamentals for accelerated software development, engineered to
+scale and evolve, demonstrating how enterprises can embrace modern DevOps
+practices with AWS. Acting as a robust foundation for monorepo architecture, it
+houses a range of example packages used in crafting a cooperative RPG, employing
+an "eating our own dog food" approach to illustrate its practical application.
 
 ## Getting Started
 
-Start up an instant turn-key development environment by
+Instantly start a turn-key development environment by
 [forking the repo](https://github.com/hxtree/cats-cradle/fork) and open in
 Github Codespaces.
 
@@ -27,7 +27,8 @@ Github Codespaces.
 Alternatively, git clone the repo and build, test, and deploy apps locally using
 the [devcontainer](.devcontainer/README.md).
 
-### Pull Request Lifecycle (~5 mins)
+<details>
+  <summary>Pull Request Lifecycle (~5 mins)</summary>
 
 1. Checkout a new branch from main using git.
 
@@ -67,6 +68,8 @@ the [devcontainer](.devcontainer/README.md).
    git push
    ```
 
+</details>
+
 ## Infrastructure
 
 ### Architecture
@@ -79,7 +82,8 @@ AWS.
 
 ![Flow Chart](docs/flow-chart.drawio.svg)
 
-## Provisioning
+<details>
+  <summary>Provisioning</summary>
 
 1. Setup [AWS Org Formation](/platform/aws-org-formation/README.md).
 
@@ -103,13 +107,16 @@ AWS.
    rush cdk:deploy --to tag:deploy-tools
    ```
 
+   </details>
+
 ## Documentation
 
 See [Documentation](docs/index.md).
 
 > **Note** Use `rush help` for information on builtin commands.
 
-### Third Party Documentation
+<details>
+  <summary>Third Party Documentation</summary>
 
 - [AWS CLI](https://docs.aws.amazon.com/cdk/v2/guide/cli.html)
 - [Typescript](https://www.typescriptlang.org/docs/)
@@ -117,6 +124,7 @@ See [Documentation](docs/index.md).
 - [RushJS](https://rushjs.io)
   - [Selecting Subsets](https://rushjs.io/pages/developer/selecting_subsets/)
 - [Rushstack](https://github.com/microsoft/rushstack)
+</details>
 
 ## Contributing
 
