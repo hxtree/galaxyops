@@ -35,6 +35,11 @@ CDK_NEW_BOOTSTRAP=1 cdk bootstrap
    aws://298217020330/us-east-2 \
 ```
 
+- **DevOps CI/CD:** The repository includes a robust DevOps pipeline for
+  continuous integration and continuous deployment. Automated testing, build,
+  and deployment processes ensure a smooth and reliable software delivery
+  lifecycle.
+
 ## Documentation
 
 - [CDK Pipeline](https://docs.aws.amazon.com/cdk/v2/guide/cdk_pipeline.html)

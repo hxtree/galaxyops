@@ -20,6 +20,11 @@ directory or platform away from source code as to keep code clean and readable.
 > the versions of packages that depend on the updated one be made. This approach
 > ensures clear and organized version management within the monorepo.
 
+## Release
+
+Reusable libraries are published on
+[NPM](https://www.npmjs.com/search?q=%40cats-cradle).
+
 ## Documentation
 
 - [Rule of three](<https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)>)
