@@ -16,10 +16,3 @@ MongoDB Atlas. [Register](https://www.mongodb.com/cloud/atlas/register)
   than [1 month of AWS DocumentDB](https://aws.amazon.com/documentdb/pricing/).
 - MongoDB can be ran locally, if needed.
 - MongoDB is scalable and used in high-performance video games.
-
-## Object Modeling
-
-Mongoose
-
-- TypeORM has poor support for MongoDB; it's more for RDMS.
-- Using an ORM is a bit too lambdalith.

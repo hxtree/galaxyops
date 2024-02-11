@@ -41,6 +41,11 @@ important guidelines:
         └─ stack - # CDK deployment code.
 ```
 
+## Release
+
+Services are released on
+[Github](https://github.com/hxtree/cats-cradle/releases).
+
 ## References
 
 - [Structuring Monorepos](https://danoncoding.com/monorepos-for-microservices-part-2-code-structure-e2bddac3474d)

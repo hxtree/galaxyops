@@ -13,6 +13,11 @@ are as follows:
 - **MessageService**: A service that uses a schema abstraction layer on top of
   SnsService to make publishing, subscribing, and testing events that adhere to
   a schema even easier.
+- **MongooseModule** In terms of object modeling, Mongoose is preferred over
+  TypeORM due to TypeORM's limited support for MongoDB, which is more suited for
+  relational database management systems (RDMS), making it somewhat cumbersome
+  for MongoDB usage. Additionally, employing an ORM like TypeORM may introduce
+  unnecessary complexity, aligning with the lambdalith architectural style.
 - **rootMongooseModule**: Makes interacting and testing with persistent data in
   MongoDB using Mongoose easier. Do not use this inside tests.
 - **rootMongooseTestModule**: Makes testing Mongoose easier using a
