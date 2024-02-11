@@ -61,8 +61,103 @@ exports[`MainStack should match snapshot test 1`] = `
       Default: DOMAIN_NAME,
       Type: AWS::SSM::Parameter::Value<String>,
     },
+    lambdalayernestjslatestversionssmParameter: {
+      Default: LAMBDA_LAYER_VERSION_NESTJS,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    mongodatabasepasswordssmParameter: {
+      Default: MONGO_DATABASE_PASSWORD,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    mongodatabaseurissmParameter: {
+      Default: MONGO_DATABASE_URI,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
+    mongodatabaseuserssmParameter: {
+      Default: MONGO_DATABASE_USER,
+      Type: AWS::SSM::Parameter::Value<String>,
+    },
   },
   Resources: {
+    LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A: {
+      DependsOn: [
+        LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB,
+        LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB,
+      ],
+      Properties: {
+        Code: {
+          S3Bucket: {
+            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
+          },
+          S3Key: 1039a174afbf09cd27e3b215f53b9e80b1bd66df24547e5746f0e5bcb9204cf3.zip,
+        },
+        Handler: index.handler,
+        Role: {
+          Fn::GetAtt: [
+            LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB,
+            Arn,
+          ],
+        },
+        Runtime: nodejs18.x,
+        Timeout: 900,
+      },
+      Type: AWS::Lambda::Function,
+    },
+    LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB: {
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: lambda.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
+    },
+    LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB: {
+      Properties: {
+        PolicyDocument: {
+          Statement: [
+            {
+              Action: [
+                logs:PutRetentionPolicy,
+                logs:DeleteRetentionPolicy,
+              ],
+              Effect: Allow,
+              Resource: *,
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        PolicyName: LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB,
+        Roles: [
+          {
+            Ref: LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB,
+          },
+        ],
+      },
+      Type: AWS::IAM::Policy,
+    },
     MyTestStackdnsdomainMyTestStackdnsdomainapigatewayaliasrecord1E646064: {
       Properties: {
         AliasTarget: {
@@ -197,7 +292,7 @@ exports[`MainStack should match snapshot test 1`] = `
                 :lambda:path/2015-03-31/functions/,
                 {
                   Fn::GetAtt: [
-                    MyTestStackhealthchecklambdaEF425DCA,
+                    apiservicestacknestjsNodeJsLambdaA2C684BA,
                     Arn,
                   ],
                 },
@@ -223,7 +318,7 @@ exports[`MainStack should match snapshot test 1`] = `
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            MyTestStackhealthchecklambdaEF425DCA,
+            apiservicestacknestjsNodeJsLambdaA2C684BA,
             Arn,
           ],
         },
@@ -264,7 +359,7 @@ exports[`MainStack should match snapshot test 1`] = `
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            MyTestStackhealthchecklambdaEF425DCA,
+            apiservicestacknestjsNodeJsLambdaA2C684BA,
             Arn,
           ],
         },
@@ -345,7 +440,7 @@ exports[`MainStack should match snapshot test 1`] = `
       Type: AWS::IAM::Role,
       UpdateReplacePolicy: Retain,
     },
-    MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeployment2879F3812b9afdc8500cdc15bd4003a12a7be48a: {
+    MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeployment2879F381befc6bceb2ba77e261b13d1c0830c668: {
       DependsOn: [
         MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxyANY74B2D563,
         MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxy3260E5C6,
@@ -365,7 +460,7 @@ exports[`MainStack should match snapshot test 1`] = `
       ],
       Properties: {
         DeploymentId: {
-          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeployment2879F3812b9afdc8500cdc15bd4003a12a7be48a,
+          Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiDeployment2879F381befc6bceb2ba77e261b13d1c0830c668,
         },
         MethodSettings: [
           {
@@ -427,7 +522,7 @@ exports[`MainStack should match snapshot test 1`] = `
                 :lambda:path/2015-03-31/functions/,
                 {
                   Fn::GetAtt: [
-                    MyTestStackhealthchecklambdaEF425DCA,
+                    apiservicestacknestjsNodeJsLambdaA2C684BA,
                     Arn,
                   ],
                 },
@@ -450,7 +545,7 @@ exports[`MainStack should match snapshot test 1`] = `
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            MyTestStackhealthchecklambdaEF425DCA,
+            apiservicestacknestjsNodeJsLambdaA2C684BA,
             Arn,
           ],
         },
@@ -491,7 +586,7 @@ exports[`MainStack should match snapshot test 1`] = `
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            MyTestStackhealthchecklambdaEF425DCA,
+            apiservicestacknestjsNodeJsLambdaA2C684BA,
             Arn,
           ],
         },
@@ -523,44 +618,82 @@ exports[`MainStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Permission,
     },
-    MyTestStackhealthchecklambdaEF425DCA: {
+    apiservicestacknestjsNodeJsLambdaA2C684BA: {
       DependsOn: [
-        MyTestStackhealthchecklambdaServiceRole7400FC6B,
+        apiservicestacknestjsNodeJsLambdaServiceRole7CC8341F,
       ],
       Properties: {
         Code: {
-          ZipFile: 
-          exports.handler = async (event) => {
-            // Respond with all environment variables
-            return {
-              statusCode: 200,
-              body: JSON.stringify({"environment": process.env}),
-            };
-          };
-        ,
+          S3Bucket: {
+            Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
+          },
+          S3Key: 2f176b4c2b4c22ff11e633b8a637c7bc82e4f420266df007f7df4993a4fa08f8.zip,
         },
         Environment: {
           Variables: {
-            CHARACTER_SVC_DOMAIN_NAME: {{resolve:ssm:/CHARACTER_SVC_DOMAIN_NAME}},
-            EMAIL_MESSAGE_SVC_DOMAIN_NAME: {{resolve:ssm:/EMAIL_MESSAGE_SVC_DOMAIN_NAME}},
+            AWS_ACCOUNT_ID: {
+              Ref: AWS::AccountId,
+            },
+            CHARACTER_SHEETS_SVC_DOMAIN_NAME: {{resolve:ssm:/CHARACTER_SHEETS_SVC_DOMAIN_NAME}},
+            EMAIL_SERVICE_SVC_DOMAIN_NAME: {{resolve:ssm:/EMAIL_SERVICE_SVC_DOMAIN_NAME}},
             HTML_TO_PDF_SVC_DOMAIN_NAME: {{resolve:ssm:/HTML_TO_PDF_SVC_DOMAIN_NAME}},
             INSTANCES_SVC_DOMAIN_NAME: {{resolve:ssm:/INSTANCES_SVC_DOMAIN_NAME}},
             LUCK_BY_DICE_SVC_DOMAIN_NAME: {{resolve:ssm:/LUCK_BY_DICE_SVC_DOMAIN_NAME}},
+            MONGO_DATABASE_PASSWORD: {
+              Ref: mongodatabasepasswordssmParameter,
+            },
+            MONGO_DATABASE_URI: {
+              Ref: mongodatabaseurissmParameter,
+            },
+            MONGO_DATABASE_USER: {
+              Ref: mongodatabaseuserssmParameter,
+            },
             PLAYER_ACHIEVEMENTS_SVC_DOMAIN_NAME: {{resolve:ssm:/PLAYER_ACHIEVEMENTS_SVC_DOMAIN_NAME}},
+            STAGE_NAME: default,
           },
         },
         Handler: index.handler,
+        Layers: [
+          {
+            Ref: lambdalayernestjslatestversionssmParameter,
+          },
+        ],
+        MemorySize: 1024,
         Role: {
           Fn::GetAtt: [
-            MyTestStackhealthchecklambdaServiceRole7400FC6B,
+            apiservicestacknestjsNodeJsLambdaServiceRole7CC8341F,
             Arn,
           ],
         },
-        Runtime: nodejs16.x,
+        Runtime: nodejs18.x,
+        Timeout: 30,
       },
       Type: AWS::Lambda::Function,
     },
-    MyTestStackhealthchecklambdaServiceRole7400FC6B: {
+    apiservicestacknestjsNodeJsLambdaLogRetention0873DFB6: {
+      Properties: {
+        LogGroupName: {
+          Fn::Join: [
+            ,
+            [
+              /aws/lambda/,
+              {
+                Ref: apiservicestacknestjsNodeJsLambdaA2C684BA,
+              },
+            ],
+          ],
+        },
+        RetentionInDays: 1,
+        ServiceToken: {
+          Fn::GetAtt: [
+            LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A,
+            Arn,
+          ],
+        },
+      },
+      Type: Custom::LogRetention,
+    },
+    apiservicestacknestjsNodeJsLambdaServiceRole7CC8341F: {
       Properties: {
         AssumeRolePolicyDocument: {
           Statement: [

@@ -7,39 +7,14 @@
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/cats-cradle)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-An **open-souce enterprise monorepo** designed to provide a modular and scalable
-architecture for enterprises looking to **accelerate** using modern software
-devops practices.
-
-## Key Features
-
-- **Microservices Architecture:** The repository is organized into modular
-  microservices, each focusing on specific business functionalities. This design
-  promotes maintainability, scalability, and ease of deployment.
-
-- **Event-Driven Design:** The microservices communicate through events,
-  allowing for loosely coupled components and enabling efficient handling of
-  business processes. The use of event-driven microservices enables flexibility,
-  scalability, and responsiveness to changing business needs.
-
-- **DevOps CI/CD:** The repository includes a robust DevOps pipeline for
-  continuous integration and continuous deployment. Automated testing, build,
-  and deployment processes ensure a smooth and reliable software delivery
-  lifecycle. Services are released on
-  [Github](https://github.com/hxtree/cats-cradle/releases). Reusable libraries
-  are published on [NPM](https://www.npmjs.com/search?q=%40cats-cradle).
-
-- **Platform as a Service (PaaS):** Leveraging a PaaS foundation simplifies
-  infrastructure management and allows developers to focus on writing code
-  without worrying about the underlying infrastructure.
-
-- **Infrastructure as Code (IaC):** The entire infrastructure is defined as
-  code, allowing for version control, easy replication, and consistent
-  environments across different stages of the development lifecycle.
-
-This repository functions as a foundation for architecting monorepos. In
-addition, many example packages are actively used in the development of a
-nostalgic co-op RPG.
+Welcome to our open-source enterprise monorepo! Designed to provide a modular
+and scalable architecture, this repository is ideal for enterprises aiming to
+accelerate their adoption of modern software DevOps practices. It serves as a
+foundation for architecting monorepos and features numerous example packages
+actively used in the development of a nostalgic cooperative RPG. Whether you're
+starting a new project or looking to optimize your existing architecture, this
+repository offers comprehensive guidance for fostering innovation and efficiency
+in software development.
 
 ## Getting Started
 
@@ -116,6 +91,7 @@ AWS.
    rush cdk:bootstrap
    rush cdk:deploy --to tag:deploy-platform
    rush cdk:deploy --to tag:services
+   rush cdk:deploy --to tag:middleware
    rush cdk:deploy --to tag:clients
    ```
 

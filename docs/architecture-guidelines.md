@@ -81,6 +81,10 @@ AWS was selected a single IaaS provider. This project assumes it will fail
 before AWS does. Vendor lock-in/buy-in allows leveraging numerous
 undifferentiated services. For this project that outweighs being cloud agnostic.
 
+- **Infrastructure as Code (IaC):** The entire infrastructure is defined as
+  code, allowing for version control, easy replication, and consistent
+  environments across different stages of the development lifecycle.
+
 ### IaC / AWS CDK
 
 AWS CDK was selected instead of
