@@ -212,6 +212,18 @@
       "tags": ["middleware"]
     },
     {
+      "packageName": "@cats-cradle/graphql",
+      "projectFolder": "middleware/graphql",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": [
+        "@cats-cradle/validation-schemas",
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
+      ],
+      "tags": ["middleware", "cimongo"]
+    },
+    {
       "packageName": "@cats-cradle/authentication-service",
       "projectFolder": "services/authentication-service",
       "reviewCategory": "apis",
@@ -223,18 +235,6 @@
       ],
       "tags": ["services", "cimongo"],
       "shouldPublish": true
-    },
-    {
-      "packageName": "@cats-cradle/graphql",
-      "projectFolder": "services/graphql",
-      "reviewCategory": "apis",
-      "decoupledLocalDependencies": [
-        "@cats-cradle/validation-schemas",
-        "@cats-cradle/eslint-config",
-        "@cats-cradle/create-artifact",
-        "@cats-cradle/create-bundle"
-      ],
-      "tags": ["services", "cimongo"]
     },
     {
       "packageName": "@cats-cradle/billing-system",
