@@ -12,8 +12,8 @@ requirements and recommendations presented herein.
 
 ## Architecture Guidelines
 
-In the realm of architecture, it's not merely about constructing individual
-buildings; it's about designing the city. Similarly, our architecture guidelines
+Outlining the stuff that is hard to change. In the realm of architecture, it's not merely about constructing individual
+buildings; it's about designing the city. Smilarly, our architecture guidelines
 go beyond the confines of a single project; they lay the groundwork for the
 entire landscape.
 
