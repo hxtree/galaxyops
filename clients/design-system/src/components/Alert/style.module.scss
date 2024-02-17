@@ -1,0 +1,29 @@
+.alert {
+ box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 30px 0px;
+ border-radius: 3px;
+ border: none;
+ &.alert-success {
+  background-color: #f9fef9  !important;
+  svg {
+      color: #59ca97;
+   }
+  }
+ &.alert-warning {
+  background-color: #fefbf9 !important;
+  svg {
+    color: #f1963b;
+   }
+  }
+ &.alert-info {
+  background-color: #fafdff !important;
+  svg {
+    color: #1174ff;
+  }
+ }
+ &.alert-danger {
+  background-color: #fffafb !important;
+  svg {
+    color: #bf1722;
+  }
+ }
+}

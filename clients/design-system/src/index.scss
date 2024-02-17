@@ -82,6 +82,7 @@ $success: #7952b3;
 @import './styles/utils/color-pallette';
 @import './styles/utils/bg-color';
 
+@import './components/Alert/style.module.scss';
 @import './components/Typography/style.module.scss';
 @import './components/AppBar/style.scss';
 @import './components/Button/style.module.scss';

@@ -17,15 +17,23 @@ export default {
 } as Meta<typeof FontAwesomeIcon>;
 
 export const Default = () => (
-  <Stack
-    direction="row"
-    divider={<Divider orientation="vertical" flexItem />}
-    spacing={2}
-  >
-    <FontAwesomeIcon icon={faGithub} />
-    <FontAwesomeIcon icon={faCog} />
-    <FontAwesomeIcon icon={faBook} />
-    <FontAwesomeIcon icon={faDice} />
-    <FontAwesomeIcon icon={faAddressCard} />
-  </Stack>
+  <>
+    <Stack
+      direction="row"
+      divider={<Divider orientation="vertical" flexItem />}
+      spacing={2}
+    >
+      <FontAwesomeIcon icon={faGithub} />
+      <FontAwesomeIcon icon={faCog} />
+      <FontAwesomeIcon icon={faBook} />
+      <FontAwesomeIcon icon={faDice} />
+      <FontAwesomeIcon icon={faAddressCard} />
+    </Stack>
+    <hr/>
+    <p>
+      <a href="https://fontawesome.com/v6/icons?o=r&m=free">
+        FontAwesome Complete Library
+      </a>
+    </p>
+  </>
 );

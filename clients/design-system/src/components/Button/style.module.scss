@@ -8,11 +8,15 @@
     font-size: 1rem;
     font-family: Helvetica, arial, sans-serif;
     font-weight: bold;
-    border-radius: 36px;
+    border-radius: 50px;
+    height: 40px;
+    line-height: 1rem;
     border: none;
     margin: 8px;
     box-shadow: none;
     transition: background-color 0.3s ease;
+    justify-content: center;
+    box-sizing: border-box;
     &.button-disabled {
       opacity: 0.5;
       cursor: not-allowed;
@@ -50,7 +54,7 @@
         outline-color: $color-primary;
       }
       &.button-loading {
-        color: transparent;
+        color: transparent !important;
         > .spinner-border {
           color: $color-primary !important;
         }
@@ -97,11 +101,11 @@
     }
     &.button-normal, &.button-medium {
       font-size: 1rem;
-      padding: 15px 46px 10px 46px;
+      padding: 10px 24px;
     }
     &.button-large {
       font-size: 1.4rem;
-      padding: 15px 30px 10px 30px;
+      padding: 14px 30px;
     }
   }
 }
