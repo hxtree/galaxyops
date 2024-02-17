@@ -18,7 +18,7 @@ import * as targets from 'aws-cdk-lib/aws-route53-targets';
 import * as acm from 'aws-cdk-lib/aws-certificatemanager';
 import * as route53 from 'aws-cdk-lib/aws-route53';
 
-export class AdminClientStack extends cdk.Stack {
+export class MainStack extends cdk.Stack {
   public parentDomainName: string;
   public acmCertificateArn: string;
   public hostedZoneId: string;
@@ -46,7 +46,7 @@ export class AdminClientStack extends cdk.Stack {
       },
     ).stringValue;
 
-    const subdomainName = 'admin';
+    const subdomainName = 'design';
 
     const domainName = `${subdomainName}.${this.parentDomainName}`;
 
@@ -58,8 +58,8 @@ export class AdminClientStack extends cdk.Stack {
       { from: 'authentication/', to: 'features/authentication/' },
     ];
 
-    const bucket = new Bucket(this, `${stageName}-admin-client`, {
-      bucketName: `${awsAccountId}-${stageName}-admin-client-bucket`,
+    const bucket = new Bucket(this, `${stageName}-design-system`, {
+      bucketName: `${awsAccountId}-${stageName}-design-bucket`,
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: '404.html',
       publicReadAccess: true,
@@ -108,7 +108,7 @@ export class AdminClientStack extends cdk.Stack {
 
     const cloudFrontDistribution = new CloudFrontWebDistribution(
       this,
-      `${id}-admin-client-distribution`,
+      `${id}-design-system-distribution`,
       {
         defaultRootObject: 'index.html',
         originConfigs: [
@@ -145,9 +145,9 @@ export class AdminClientStack extends cdk.Stack {
     cloudFrontDistribution.applyRemovalPolicy(RemovalPolicy.DESTROY);
 
     // bucket resource
-    new BucketDeployment(this, `${id}-bucket-deployment`, {
+    new BucketDeployment(this, 'BucketDeployment', {
       destinationBucket: bucket,
-      sources: [Source.asset('./dist')],
+      sources: [Source.asset('./storybook-static')],
       retainOnDelete: false,
     });
 
