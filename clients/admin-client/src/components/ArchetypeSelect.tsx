@@ -17,14 +17,14 @@ export default function ArchetypeSelect() {
   const [archetypeData, setArchetypeData] = useState<object>({});
   const [isLoading, setLoading] = useState<boolean>(true);
 
+  const parentDomainName = import.meta.env.VITE_PARENT_DOMAIN_NAME ?? 'sandbox.nekosgate.com';
+
   useEffect(() => {
     const archetypesFetch = async () => {
       setLoading(true);
 
       try {
-        const res = await axios.get(
-          'https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/character/archetypes',
-        );
+        const res = await axios.get(`https://api.${parentDomainName}/character-sheets/archetypes`);
 
         setArchetypes(res.data);
       } catch (err) {
@@ -42,7 +42,7 @@ export default function ArchetypeSelect() {
     setLoading(true);
     try {
       const res = await axios.get(
-        `https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/character/archetypes/${archetypeId}`,
+        `https://api.${parentDomainName}/character-sheets/archetypes/${archetypeId}`,
       );
 
       setArchetypeData(res.data);

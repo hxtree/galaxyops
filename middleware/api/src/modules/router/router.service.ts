@@ -8,7 +8,7 @@ export class RouterService {
   private readonly routes: { path: string; endpoint: string }[] = [
     {
       path: '/character-sheets',
-      endpoint: process.env.CHARACTER_SVC_DOMAIN_NAME || '',
+      endpoint: process.env.CHARACTER_SHEETS_SVC_DOMAIN_NAME || '',
     },
     {
       path: '/email-message',
