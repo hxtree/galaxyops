@@ -19,6 +19,83 @@ export namespace Accessory {
     removable?: boolean; // whether player can remove via menus
   };
 
+  /**
+   * Represents the concept of the "seven selves" in Kahlil Gibran's "The Madman."
+   * These selves symbolize facets of human experience and consciousness:
+   * - Physical: Body, sensations, desires.
+   * - Egoic: Identity, validation.
+   * - Rational: Reason, logic, understanding.
+   * - Emotional: Feelings, intuition, decision-making.
+   * - Spiritual: Transcendence, connection.
+   * - Creative: Imagination, expression.
+   * - Integrated: Balanced, holistic alignment.
+   */
+
+  export const MASK_OF_POWER: Type = {
+    name: 'Mask of Power',
+    description:
+      'This mask reflects a desire for control, dominance, and authority in interactions.',
+    purpose: 'To seek influence and superiority.',
+    gearSlots: [Slot.HEAD],
+    removable: true,
+  };
+
+  export const MASK_OF_SUBMISSION: Type = {
+    name: 'Mask of Submission',
+    description:
+      'This mask reflects a tendency to comply with the expectations and demands of others, often sacrificing personal desires.',
+    purpose: 'To prioritize harmony and avoid conflict.',
+    gearSlots: [Slot.HEAD],
+    removable: true,
+  };
+
+  export const MASK_OF_WISDOM: Type = {
+    name: 'Mask of Wisdom',
+    description:
+      'This mask embodies knowledge, insight, and intellect, sometimes leading to pretense or arrogance.',
+    purpose: 'To appear wise and knowledgeable.',
+    gearSlots: [Slot.HEAD],
+    removable: true,
+  };
+
+  export const MASK_OF_PLEASURE: Type = {
+    name: 'Mask of Pleasure',
+    description:
+      'This mask reflects a pursuit of hedonistic pleasures and indulgence in sensory experiences.',
+    purpose: 'To seek immediate gratification.',
+    gearSlots: [Slot.HEAD],
+    removable: true,
+  };
+
+  export const MASK_OF_SINCERITY: Type = {
+    name: 'Mask of Sincerity',
+    description:
+      'This mask represents genuineness and honesty, even if it means concealing certain truths or feelings.',
+    purpose: 'To be perceived as trustworthy and authentic.',
+    gearSlots: [Slot.HEAD],
+    removable: true,
+  };
+
+  export const MASK_OF_LOVE: Type = {
+    name: 'Mask of Love',
+    description:
+      'This mask embodies affection, compassion, and empathy towards others.',
+    purpose: 'To establish meaningful emotional connections.',
+    gearSlots: [Slot.HEAD],
+    removable: true,
+  };
+
+  export const MASK_OF_MISERY: Type = {
+    name: 'Mask of Misery',
+    description:
+      'This mask reflects a dwelling in negativity, suffering, and despair.',
+    purpose: 'To embrace victimhood and hopelessness.',
+    gearSlots: [Slot.HEAD],
+    removable: true,
+  };
+
+  // Misc
+
   export const GOLD_BRACELETS: Type = {
     name: 'Gold Bracelets',
     description: 'Weighted gold bracelets that occupy both wrists meant',
@@ -76,7 +153,7 @@ export namespace Accessory {
   export const MAGNETIC_GLOVES: Type = {
     name: 'Magnetic Gloves',
     description: 'Helps catch metal objects.',
-    // Particularly useful with regards to Traez’s boomerang
+    purpose: "Particularly useful with regards to Traez's boomerang",
     effects: [
       {
         skill: Skill.CATCHER,
