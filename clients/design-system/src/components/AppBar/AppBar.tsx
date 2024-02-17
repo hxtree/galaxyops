@@ -21,15 +21,17 @@ export const AppBar = (props: AppBarProps) => {
     <>
       <nav className={`navbar navbar-expand-lg navbar-light`}>
         <div className="container">
-          <a className="navbar-brand" href="#">{siteTitle || 'Your Brand'}</a>
-          {topRightSlot}
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
+          <a className="navbar-brand" href="#">{siteTitle || 'Your Brand'}</a>
+          <div className="d-none d-sm-block">
+          {topRightSlot}
+          </div>
         </div>
       </nav>
 
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light app-bar-light d-none d-lg-block">
         <div className="container">
           <div className="collapse navbar-collapse" id="navbarNav">
             {children}
