@@ -2,17 +2,21 @@ import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import { RemovalPolicy, StackProps } from 'aws-cdk-lib';
-import { Bucket, BucketAccessControl } from 'aws-cdk-lib/aws-s3';
+import {
+  Bucket,
+  RedirectProtocol,
+  ObjectOwnership,
+  BucketAccessControl,
+} from 'aws-cdk-lib/aws-s3';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import {
-  Distribution,
+  CloudFrontWebDistribution,
   OriginAccessIdentity,
-  ResponseHeadersPolicy,
+  ViewerProtocolPolicy,
 } from 'aws-cdk-lib/aws-cloudfront';
-import { S3Origin } from 'aws-cdk-lib/aws-cloudfront-origins';
-import * as route53 from 'aws-cdk-lib/aws-route53';
 import * as targets from 'aws-cdk-lib/aws-route53-targets';
 import * as acm from 'aws-cdk-lib/aws-certificatemanager';
+import * as route53 from 'aws-cdk-lib/aws-route53';
 
 export class AdminClientStack extends cdk.Stack {
   public parentDomainName: string;
@@ -21,36 +25,6 @@ export class AdminClientStack extends cdk.Stack {
 
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
-
-    // s3 bucket
-    const awsAccountId = cdk.Stack.of(this).account;
-    const stageName = process.env.STAGE_NAME ?? 'default';
-    const bucket = new Bucket(this, `${stageName}-admin-client`, {
-      bucketName: `${awsAccountId}-${stageName}-admin-client-bucket`,
-      accessControl: BucketAccessControl.PRIVATE,
-      removalPolicy: RemovalPolicy.DESTROY,
-      autoDeleteObjects: true,
-    });
-
-    const originAccessIdentity = new OriginAccessIdentity(
-      this,
-      'OriginAccessIdentity',
-    );
-    bucket.grantRead(originAccessIdentity);
-
-    this.acmCertificateArn = ssm.StringParameter.fromStringParameterAttributes(
-      this,
-      `${id}-orgformation-certs-wildcard-cert1-arn`,
-      {
-        parameterName: 'orgformation-certs-wildcard-cert1-arn',
-      },
-    ).stringValue;
-
-    const certificate = acm.Certificate.fromCertificateArn(
-      this,
-      `${id}-acm-certificate`,
-      this.acmCertificateArn,
-    );
 
     // DNS
 
@@ -76,22 +50,102 @@ export class AdminClientStack extends cdk.Stack {
 
     const domainName = `${subdomainName}.${this.parentDomainName}`;
 
-    // cloudfront distribution
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const cloudFrontDistribution = new Distribution(this, 'Distribution', {
-      defaultRootObject: 'index.html',
-      defaultBehavior: {
-        origin: new S3Origin(bucket, { originAccessIdentity }),
-        // todo lock down CORS later
-        responseHeadersPolicy:
-          ResponseHeadersPolicy.CORS_ALLOW_ALL_ORIGINS_WITH_PREFLIGHT,
+    // s3 bucket
+    const awsAccountId = cdk.Stack.of(this).account;
+    const stageName = process.env.STAGE_NAME ?? 'default';
+
+    const redirects = [
+      { from: 'authentication/', to: 'features/authentication/' },
+    ];
+
+    const bucket = new Bucket(this, `${stageName}-admin-client`, {
+      bucketName: `${awsAccountId}-${stageName}-admin-client-bucket`,
+      websiteIndexDocument: 'index.html',
+      websiteErrorDocument: '404.html',
+      publicReadAccess: true,
+      blockPublicAccess: {
+        blockPublicAcls: false,
+        blockPublicPolicy: false,
+        ignorePublicAcls: false,
+        restrictPublicBuckets: false,
       },
-      domainNames: [domainName],
-      certificate,
+      objectOwnership: ObjectOwnership.OBJECT_WRITER,
+      accessControl: BucketAccessControl.PUBLIC_READ,
+      removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
+      websiteRoutingRules: redirects.map(({ from, to }) => ({
+        condition: {
+          keyPrefixEquals: from,
+        },
+        httpRedirectCode: '301',
+        hostName: domainName,
+        protocol: RedirectProtocol.HTTPS,
+        replaceKey: {
+          withKey: to,
+        },
+      })),
     });
 
+    const originAccessIdentity = new OriginAccessIdentity(
+      this,
+      'OriginAccessIdentity',
+    );
+    bucket.grantRead(originAccessIdentity);
+
+    this.acmCertificateArn = ssm.StringParameter.fromStringParameterAttributes(
+      this,
+      `${id}-orgformation-certs-wildcard-cert1-arn`,
+      {
+        parameterName: 'orgformation-certs-wildcard-cert1-arn',
+      },
+    ).stringValue;
+
+    const certificate = acm.Certificate.fromCertificateArn(
+      this,
+      `${id}-acm-certificate`,
+      this.acmCertificateArn,
+    );
+
+    const cloudFrontDistribution = new CloudFrontWebDistribution(
+      this,
+      `${id}-admin-client-distribution`,
+      {
+        defaultRootObject: 'index.html',
+        originConfigs: [
+          {
+            s3OriginSource: {
+              s3BucketSource: bucket,
+            },
+            behaviors: [
+              {
+                isDefaultBehavior: true,
+                defaultTtl: cdk.Duration.seconds(0),
+                viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+              },
+            ],
+          },
+        ],
+        errorConfigurations: [
+          {
+            errorCode: 404,
+            responseCode: 200,
+            responsePagePath: '/index.html', // Redirect to index.html for all 404 errors
+            errorCachingMinTtl: 60,
+          },
+        ],
+        viewerCertificate: {
+          aliases: [domainName],
+          props: {
+            acmCertificateArn: certificate.certificateArn,
+            sslSupportMethod: 'sni-only',
+          },
+        },
+      },
+    );
+    cloudFrontDistribution.applyRemovalPolicy(RemovalPolicy.DESTROY);
+
     // bucket resource
-    new BucketDeployment(this, 'BucketDeployment', {
+    new BucketDeployment(this, `${id}-bucket-deployment`, {
       destinationBucket: bucket,
       sources: [Source.asset('./dist')],
       retainOnDelete: false,
@@ -116,7 +170,7 @@ export class AdminClientStack extends cdk.Stack {
     });
 
     new cdk.CfnOutput(this, 'Cloud Front Distribution', {
-      value: cloudFrontDistribution.domainName,
+      value: cloudFrontDistribution.distributionDomainName,
     });
 
     new cdk.CfnOutput(this, 'Domain Name', {

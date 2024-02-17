@@ -29,6 +29,8 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
 
   const analytics = new Analytics('DiceAnalyzer');
 
+  const parentDomainName = import.meta.env.VITE_PARENT_DOMAIN_NAME ?? 'sandbox.nekosgate.com';
+
   const clear = async () => {
     setData([]);
     setRunningTotal(0);
@@ -43,7 +45,7 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
 
       // Make a request for a user with a given ID
       const res = await axios.post(
-        'https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/luck-by-dice/dice-roll',
+        `https://api.${parentDomainName}/dice/dice-roll`,
         {
           notation: notation,
           luck: luck,
