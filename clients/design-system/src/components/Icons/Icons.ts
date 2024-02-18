@@ -12,6 +12,10 @@ export {
   faBars,
   faArrowRight,
   faCheck,
+  faPlay,
+  faStop,
+  faPause,
+  faRepeat,
 } from '@fortawesome/free-solid-svg-icons';
 
 export { faGithub } from '@fortawesome/free-brands-svg-icons';

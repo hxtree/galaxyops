@@ -9,7 +9,7 @@ export default function LoginPage() {
 
   return (
     <main className="container">
-      <Paper elevation="1">
+      <Paper elevation="1" className='p-5'>
         <h1>Log In</h1>
         <div className="mb-3">
           <TextField id="email-address" label="Email Address" type="text"/>

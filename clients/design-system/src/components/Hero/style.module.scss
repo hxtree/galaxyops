@@ -1,0 +1,25 @@
+@import '../../styles/utils/color-pallette';
+
+.hero {
+  min-height: 50vh;
+  background-color: $color-blue;
+  background-color: linear-gradient(to right, lighten($color-gray, 10%), darken($color-gray, 10%)) !important; /* Adjust colors as needed */
+  background-size: cover;
+  background-position: top center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+
+  h1 {
+    font-weight: bold;
+    background: linear-gradient(to right, $color-primary, darken($color-primary, 5%)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important ;
+  }
+  p {
+    font-weight: bold;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}

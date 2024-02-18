@@ -4,7 +4,7 @@ import { DiceAnalyzer } from '../components/DiceAnalyzer';
 export default function DicePage() {
   return (
     <main className="container">
-      <Paper elevation="1">
+      <Paper elevation="1" className='p-5'>
         <h1>Dice Notation Analyzer</h1>
         <p>
           Determine the appropriate dice notation for skill set rolls and
