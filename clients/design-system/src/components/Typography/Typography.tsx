@@ -1,20 +1,6 @@
+import { TypographyAlign, TypographyVariants} from './Typography.type';
 import './style.module.scss'
 
-export enum TypographyVariants {
-  'h1' = 'h1',
-  'h2' = 'h2',
-  'h3' = 'h3',
-  'h4' = 'h4',
-  'h5' = 'h5',
-  'h6' = 'h6',
-  'body' = 'body',
-  'intro' = 'intro'
-}
-
-export enum TypographyAlign {
-  'center' = 'center',
-  'left' = 'left',
-}
 
 export type TypographyProps = {
   children: React.ReactNode;

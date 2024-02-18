@@ -1,17 +1,7 @@
 import React from 'react';
 import Spinner from '../Spinner/Spinner';
 import './style.module.scss';
-
-export enum ButtonSize {
-  'small' = 'small',
-  'medium' = 'medium',
-  'large' = 'large',
-}
-
-export enum ButtonVariant {
-  'default' = 'default',
-  'contained' = 'contained',
-}
+import { ButtonSize, ButtonVariant }from './Button.type';
 
 export type ButtonProps = {
   loading?: boolean;
