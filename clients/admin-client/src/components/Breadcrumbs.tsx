@@ -15,7 +15,7 @@ export const BreadCrumbs: FC<TBreadCrumbs> = ({ title }) => {
   }
 
   return (
-    <nav className="container mt-2 mb-2" aria-label="breadcrumb">
+    <nav className="container my-4" aria-label="breadcrumb">
      <ol className="breadcrumb">
         {crumbs.map((crumb, index) =>
           index !== crumbs.length - 1 ? (
