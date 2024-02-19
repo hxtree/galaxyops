@@ -1,4 +1,4 @@
-import { Microservice } from '@cats-cradle/constructs';
+import { LambdaDomainName, Microservice } from '@cats-cradle/constructs';
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import { StackProps } from 'aws-cdk-lib';
@@ -10,42 +10,59 @@ export class AuthServiceStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const cognitoPool = new CognitoPool(this, 'UserCognitoPool', {
-      stage: 'Beta',
+    const stageName = process.env.STAGE_NAME ?? 'default';
+
+    // User Pool
+    const cognitoPool = new CognitoPool(this, `${id}-user-cognito-pool`, {
+      stage: stageName,
     });
+
+    new ssm.StringParameter(this, `${id}-user-pool-id`, {
+      parameterName: 'USER_POOL_ID',
+      description: 'A unique identifier for an Amazon Cognito User Pool.',
+      stringValue: cognitoPool.cognitoPool.userPoolId,
+    });
+
+    new ssm.StringParameter(this, `${id}-user-pool-client-id`, {
+      parameterName: 'USER_POOL_CLIENT_ID',
+      description:
+        'A unique identifier for a specific client application that interacts with your Amazon Cognito User Pool.',
+      stringValue: cognitoPool.client.userPoolClientId,
+    });
+
+    // Function
+
+    const environment: { [key: string]: string } = {};
+    environment.USER_POOL_ID = cognitoPool.cognitoPool.userPoolId;
+    environment.USER_POOL_CLIENT_ID = cognitoPool.client.userPoolClientId;
 
     const microservice = new Microservice(
       this,
       'authentication-service-stack',
       {
-        // path: 'auth',
         projectRoot: path.join(__dirname, '..'),
+        environment,
       },
     );
 
-    /**
-     * A User Pool ID is a unique identifier for an Amazon Cognito User Pool.
-     *  A User Pool is a user directory that helps you manage and authenticate users.
-     * It stores user attributes such as username, email, and phone number.
-     */
-    new ssm.StringParameter(this, `${id}-user-pool-id`, {
-      description: 'Cognito User Pool ID',
-      parameterName: 'cognito-user-pool-id',
-      stringValue: cognitoPool.cognitoPool.userPoolId,
+    // API
+
+    const apiEndpoint = new LambdaDomainName(this, `${id}-api-endpoint`, {
+      stageName,
+      subdomainName: 'auth',
+      proxyLambda: microservice.getNodeJsFunction(),
     });
 
-    /**
-     * A Client ID is a unique identifier for a specific client application
-     * that interacts with your Amazon Cognito User Pool.
-     */
-    new ssm.StringParameter(this, `${id}-user-pool-client-id`, {
-      description: 'Cognito User Pool Client ID',
-      parameterName: 'cognito-user-pool-client-id',
-      stringValue: cognitoPool.client.userPoolClientId,
+    new cdk.CfnOutput(this, 'health check endpoint', {
+      value: `${apiEndpoint.getBaseUrl()}/health`,
     });
 
-    // new cdk.CfnOutput(this, 'Localhost API Example', {
-    //   value: `${microservice.getBaseUrl()}/users`,
-    // });
+    new cdk.CfnOutput(this, 'USER_POOL_ID', {
+      value: cognitoPool.cognitoPool.userPoolId,
+    });
+
+    new cdk.CfnOutput(this, 'USER_POOL_CLIENT_ID', {
+      value: cognitoPool.client.userPoolClientId,
+    });
   }
 }

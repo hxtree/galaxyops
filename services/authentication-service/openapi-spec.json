@@ -180,13 +180,16 @@
     }
   },
   "info": {
-    "title": "@cats-cradles/authentication-service",
-    "description": "authentication service API",
-    "version": "1.0",
+    "title": "@cats-cradle/authentication-service",
+    "description": "authentication service",
+    "version": "1.1.4",
     "contact": {}
   },
   "tags": [],
-  "servers": [],
+  "servers": [
+    { "url": "http://localhost:3000", "description": "Local" },
+    { "url": "https://auth.sandbox.nekosgate.com/", "description": "Sandbox" }
+  ],
   "components": {
     "schemas": {
       "LoginDto": {

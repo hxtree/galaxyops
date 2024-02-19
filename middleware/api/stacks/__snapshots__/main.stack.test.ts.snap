@@ -627,7 +627,7 @@ exports[`MainStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 2f176b4c2b4c22ff11e633b8a637c7bc82e4f420266df007f7df4993a4fa08f8.zip,
+          S3Key: 8b09b3678df3d161862dbb5019405aac57973c5acd68cb442e19b9b7a1669e4f.zip,
         },
         Environment: {
           Variables: {
