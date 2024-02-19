@@ -34,3 +34,8 @@ it live with while the majority of the screen is visible.
 
 A pause feature may be used but would freeze all players menu in a game
 instance.
+
+## World Story
+
+The world itself has a story line that progress independently of individual
+questions. When world story line progresses all players are notified.

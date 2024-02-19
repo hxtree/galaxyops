@@ -18,7 +18,7 @@ export class CognitoService {
   private cognitoClient: CognitoIdentityProviderClient;
 
   constructor() {
-    this.region = process.env.AWS_REGION ?? 'us-east-2';
+    this.region = process.env.AWS_REGION ?? 'us-east-1';
     this.ssm = new SSM({ region: this.region });
     this.cognitoClient = new CognitoIdentityProviderClient({
       region: this.region,
@@ -26,7 +26,11 @@ export class CognitoService {
   }
 
   async fetchUserPoolId(): Promise<string> {
-    const parameterName = 'cognito-user-pool-id';
+    if (process.env.USER_POOL_ID) {
+      return process.env.USER_POOL_ID;
+    }
+
+    const parameterName = 'USER_POOL_ID';
     const response = await this.ssm.getParameter({ Name: parameterName });
 
     if (response && response.Parameter && response.Parameter.Value) {
@@ -37,7 +41,12 @@ export class CognitoService {
   }
 
   async fetchUserPoolClientId(): Promise<string> {
-    const parameterName = 'cognito-user-pool-client-id';
+    if (process.env.USER_POOL_CLIENT_ID) {
+      return process.env.USER_POOL_CLIENT_ID;
+    }
+
+    const parameterName = 'USER_POOL_CLIENT_ID';
+
     const response = await this.ssm.getParameter({ Name: parameterName });
 
     if (response && response.Parameter && response.Parameter.Value) {

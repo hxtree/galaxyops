@@ -4,6 +4,7 @@ import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { VersioningType } from '@nestjs/common';
 import { AppModule } from './app.module';
+import packageJson from '../package.json';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -15,10 +16,13 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder()
-    .setTitle('@cats-cradles/authentication-service')
-    .setDescription('authentication service API')
-    .setVersion('1.0')
+    .setTitle(packageJson.name)
+    .setVersion(packageJson.version)
+    .setDescription(packageJson.description)
+    .addServer('http://localhost:3000', 'Local')
+    .addServer('https://auth.sandbox.nekosgate.com/', 'Sandbox')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 

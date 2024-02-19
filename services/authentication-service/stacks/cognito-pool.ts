@@ -7,6 +7,10 @@ export interface CognitoPoolProps {
   readonly stage: string;
 }
 
+/**
+ * A User Pool is a user directory that helps you manage and authenticate users.
+ * It stores user attributes such as username, email, and phone number.
+ */
 export class CognitoPool extends Construct {
   public cognitoPool: cognito.UserPool;
 
