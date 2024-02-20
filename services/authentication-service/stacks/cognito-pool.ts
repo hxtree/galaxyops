@@ -1,7 +1,6 @@
 import { Duration, RemovalPolicy } from 'aws-cdk-lib';
 import * as cognito from 'aws-cdk-lib/aws-cognito';
 import { Construct } from 'constructs';
-import { exit } from 'process';
 
 export interface CognitoPoolProps {
   readonly stage: string;
@@ -25,22 +24,17 @@ export class CognitoPool extends Construct {
       signInCaseSensitive: false,
       signInAliases: {
         email: true,
-        phone: true,
       },
       autoVerify: {
         email: true,
       },
       userVerification: {
-        emailSubject: 'Cats Cradle User Verification',
+        emailSubject: 'NekosGate User Verification',
         emailBody:
           'Hello, Thanks for registering! Verification code is {####}.',
         emailStyle: cognito.VerificationEmailStyle.CODE,
       },
       standardAttributes: {
-        fullname: {
-          required: true,
-          mutable: true,
-        },
         email: {
           required: true,
           mutable: true,
@@ -56,17 +50,21 @@ export class CognitoPool extends Construct {
         requireSymbols: true,
       },
       accountRecovery: cognito.AccountRecovery.EMAIL_AND_PHONE_WITHOUT_MFA,
-      removalPolicy: RemovalPolicy.RETAIN,
+      deletionProtection: false,
+      removalPolicy: RemovalPolicy.DESTROY,
     });
 
     this.client = this.cognitoPool.addClient('AuthenticationClient', {
       userPoolClientName: 'AuthenticationClient',
+      authFlows: {
+        // Enable USER_PASSWORD_AUTH flow
+        userPassword: true,
+      },
       oAuth: {
         flows: {
           authorizationCodeGrant: true,
         },
         scopes: [cognito.OAuthScope.OPENID],
-        // TODO pick domain name
         callbackUrls: ['https://catscradle.com/home'],
       },
       supportedIdentityProviders: [

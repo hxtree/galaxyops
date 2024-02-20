@@ -93,20 +93,12 @@ export class CognitoService {
     await this.cognitoClient.send(command);
   }
 
-  async signUp(username: string, password: string): Promise<void> {
-    const email = '';
-    const nickname = '';
-    const phoneNumber = '';
-
+  async signUp(email: string, password: string): Promise<void> {
     const command = new SignUpCommand({
       ClientId: await this.fetchUserPoolClientId(),
-      Username: username,
+      Username: email,
       Password: password,
-      UserAttributes: [
-        { Name: 'email', Value: email },
-        { Name: 'nickname', Value: nickname },
-        { Name: 'phone_number', Value: phoneNumber },
-      ],
+      UserAttributes: [{ Name: 'email', Value: email }],
     });
 
     await this.cognitoClient.send(command);

@@ -38,7 +38,7 @@ describe('/auth', () => {
 
       const body = await FakerFactory.create<SignUpDto>(
         SignUpDto,
-        { username: 'jdoe' },
+        { email: 'jdoe@example.com' },
         { optionals: false },
       );
 
