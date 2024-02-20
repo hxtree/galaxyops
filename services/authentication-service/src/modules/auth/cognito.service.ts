@@ -7,6 +7,7 @@ import {
   ForgotPasswordCommand,
   InitiateAuthCommand,
   AdminDeleteUserCommand,
+  ConfirmSignUpCommand,
 } from '@aws-sdk/client-cognito-identity-provider';
 
 @Injectable()
@@ -99,6 +100,16 @@ export class CognitoService {
       Username: email,
       Password: password,
       UserAttributes: [{ Name: 'email', Value: email }],
+    });
+
+    await this.cognitoClient.send(command);
+  }
+
+  async confirmSignUp(email: string, code: string): Promise<void> {
+    const command = new ConfirmSignUpCommand({
+      ClientId: await this.fetchUserPoolClientId(),
+      Username: email,
+      ConfirmationCode: code,
     });
 
     await this.cognitoClient.send(command);
