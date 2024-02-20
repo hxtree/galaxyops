@@ -171,6 +171,21 @@
         "responses": { "201": { "description": "" } }
       }
     },
+    "/auth/confirm-sign-up": {
+      "post": {
+        "operationId": "AuthController_verifyCode",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ConfirmSignUpDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
     "/auth/delete": {
       "post": {
         "operationId": "AuthController_deleteUser",
@@ -224,6 +239,14 @@
           "password": { "type": "string", "default": "password1234!" }
         },
         "required": ["email", "password"]
+      },
+      "ConfirmSignUpDto": {
+        "type": "object",
+        "properties": {
+          "email": { "type": "string", "default": "jdoe@gmail.com" },
+          "code": { "type": "string", "default": "1234567" }
+        },
+        "required": ["email", "code"]
       }
     }
   }
