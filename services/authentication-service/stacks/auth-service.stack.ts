@@ -17,18 +17,22 @@ export class AuthServiceStack extends cdk.Stack {
       stage: stageName,
     });
 
-    new ssm.StringParameter(this, `${id}-user-pool-id`, {
+    const userPoolId = new ssm.StringParameter(this, `${id}-user-pool-id`, {
       parameterName: 'USER_POOL_ID',
       description: 'A unique identifier for an Amazon Cognito User Pool.',
       stringValue: cognitoPool.cognitoPool.userPoolId,
     });
 
-    new ssm.StringParameter(this, `${id}-user-pool-client-id`, {
-      parameterName: 'USER_POOL_CLIENT_ID',
-      description:
-        'A unique identifier for a specific client application that interacts with your Amazon Cognito User Pool.',
-      stringValue: cognitoPool.client.userPoolClientId,
-    });
+    const userPoolClientId = new ssm.StringParameter(
+      this,
+      `${id}-user-pool-client-id`,
+      {
+        parameterName: 'USER_POOL_CLIENT_ID',
+        description:
+          'A unique identifier for a specific client application that interacts with your Amazon Cognito User Pool.',
+        stringValue: cognitoPool.client.userPoolClientId,
+      },
+    );
 
     // Function
 
@@ -44,6 +48,9 @@ export class AuthServiceStack extends cdk.Stack {
         environment,
       },
     );
+
+    userPoolId.grantRead(microservice.getNodeJsFunction());
+    userPoolClientId.grantRead(microservice.getNodeJsFunction());
 
     // API
 

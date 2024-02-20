@@ -195,10 +195,10 @@
       "LoginDto": {
         "type": "object",
         "properties": {
-          "username": { "type": "string", "default": "jdoe" },
+          "email": { "type": "string", "default": "jdoe@example.com" },
           "password": { "type": "string", "default": "password1234!" }
         },
-        "required": ["username", "password"]
+        "required": ["email", "password"]
       },
       "ForgotPasswordDto": {
         "type": "object",
@@ -220,10 +220,10 @@
       "SignUpDto": {
         "type": "object",
         "properties": {
-          "username": { "type": "string", "default": "jdoe" },
+          "email": { "type": "string", "default": "jdoe@gmail.com" },
           "password": { "type": "string", "default": "password1234!" }
         },
-        "required": ["username", "password"]
+        "required": ["email", "password"]
       }
     }
   }
