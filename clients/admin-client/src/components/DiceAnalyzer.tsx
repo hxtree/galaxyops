@@ -8,6 +8,7 @@ import {
   Chart,
   TextField,
   Button,
+  Paper
 } from '@cats-cradle/design-system/dist/main';
 import axios from 'axios';
 
@@ -95,81 +96,84 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
         </Alert>
       )}
 
-      <Grid container spacing={2}>
-        <Grid item>
-          <Stack>
-            <Box component="form">
-              <TextField
-                label="Dice Notation"
-                value={notation}
-                onChange={(e: any) => setNotation(e.target.value)}
-                helpBlock="Example 1d6*2+2"
-                variant="standard"
-              />
-              <TextField
-                label="Iterations"
-                value={iterations}
-                onChange={(e: any) => setIterations(Number(e.target.value))}
-                variant="standard"
-                // sx={{ width: '5ch', ml: 1 }}
-              />
-              <TextField
-                label="Luck"
-                value={luck}
-                onChange={(e: any) => setLuck(e.target.value)}
-                variant="standard"
-                // sx={{ width: '5ch', ml: 1 }}
-              />
-            </Box>
-          </Stack>
-        </Grid>
-        <div>
-      <Button
-        color="primary"
-        loading={isLoading}
-        onClick={() => callApi()}
-        testId={`dice-analyzer-roll`}
-        ref={(ref: any) => analytics.set(ref, 'Roll')}>
-        Roll
-      </Button>
-      <Button
-        color="secondary"
-        onClick={() => clear()}
-        disabled={data.length < 1}
-        testId={`dice-analyzer-clear`}
-        ref={(ref: any) => analytics.set(ref, 'Clear')}>
-        Clear
-      </Button>
-
-
+      <div className='row'>
+        <div className='col-lg-3 col-sm-12'>
+          <Paper elevation="1" className='p-4'>
+          <Grid container spacing={2}>
+            <Grid item>
+              <Stack>
+                <Box component="form">
+                  <TextField
+                    label="Dice Notation"
+                    value={notation}
+                    onChange={(e: any) => setNotation(e.target.value)}
+                    helpBlock="Example 1d6*2+2"
+                    variant="standard"
+                  />
+                  <TextField
+                    label="Iterations"
+                    value={iterations}
+                    onChange={(e: any) => setIterations(Number(e.target.value))}
+                    variant="standard"
+                    // sx={{ width: '5ch', ml: 1 }}
+                  />
+                  <TextField
+                    label="Luck"
+                    value={luck}
+                    onChange={(e: any) => setLuck(e.target.value)}
+                    variant="standard"
+                    // sx={{ width: '5ch', ml: 1 }}
+                  />
+                </Box>
+              </Stack>
+            </Grid>
+          </Grid>
+          <Button
+            color="primary"
+            loading={isLoading}
+            onClick={() => callApi()}
+            testId={`dice-analyzer-roll`}
+            ref={(ref: any) => analytics.set(ref, 'Roll')}>
+            Roll
+          </Button>
+          <Button
+            color="secondary"
+            onClick={() => clear()}
+            disabled={data.length < 1}
+            testId={`dice-analyzer-clear`}
+            ref={(ref: any) => analytics.set(ref, 'Clear')}>
+            Clear
+          </Button>
+        </Paper>
         </div>
-      </Grid>
-
-      {data.length > 0 && (
-        <div role="figure" aria-labelledby="caption">
-          <Chart
-            chartType="LineChart"
-            height="500px"
-            width="100%"
-            data={[['Roll', 'Min', 'Max', 'Total', 'Luck', 'Bonus'], ...data]}
-            options={{
-              title: `Average ${average}`,
-              curveType: 'function',
-              legend: { position: 'bottom' },
-              responsive: true,
-              scales: {
-                yAxes: [
-                  {
-                    ticks: {
-                      beginAtZero: true,
-                    },
+        <div className='col-lg-9 col-md-12 col-sm-12'>
+            {data.length > 0 && (
+            <div role="figure" aria-labelledby="caption">
+              <Chart
+                chartType="LineChart"
+                height="500px"
+                width="100%"
+                data={[['Roll', 'Min', 'Max', 'Total', 'Luck', 'Bonus'], ...data]}
+                options={{
+                  title: `Average ${average}`,
+                  curveType: 'function',
+                  legend: { position: 'bottom' },
+                  responsive: true,
+                  scales: {
+                    yAxes: [
+                      {
+                        ticks: {
+                          beginAtZero: true,
+                        },
+                      },
+                    ],
                   },
-                ],
-              },
-            }}
-          />
+                }}
+              />
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </>
   );
 };
