@@ -11,6 +11,7 @@ interface Secret {
 
 export class MainStack extends cdk.Stack {
   secrets: Secret[] = [
+    { key: 'AUTH_SVC_DOMAIN_NAME' },
     { key: 'CHARACTER_SHEETS_SVC_DOMAIN_NAME' },
     { key: 'EMAIL_SERVICE_SVC_DOMAIN_NAME' },
     { key: 'HTML_TO_PDF_SVC_DOMAIN_NAME' },
