@@ -25,8 +25,11 @@ const Header = () => {
   return (
     <>
       <AppBar
-        siteTitle='Game Masters Portal'
-        topRightSlot={<><Button href="/login" color="secondary" size="small">Login</Button></>}
+        siteTitle='NekosGate'
+        topRightSlot={<>
+          <Button href="/signup" color="secondary" size="small">Sign Up</Button>
+          <Button href="/login" color="primary" size="small">Login</Button>
+        </>}
       >
         <ul className="navbar-nav me-auto">
           {menuItems && menuItems.map(

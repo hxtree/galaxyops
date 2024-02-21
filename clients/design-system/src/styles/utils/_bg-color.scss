@@ -1,21 +1,25 @@
 @import './color-pallette';
 
 .bgBrandDark {
-  background-color: $color-berkeley-blue;
+  background-color: $color-berkeley-blue !important;
 }
 
 .bgBrandLight {
-  background-color: $color-gold;
+  background-color: $color-gold !important;
 }
 
 .bgBrandPrimary {
-  background-color: $color-murrey;
+  background-color: $color-murrey !important;
 }
 
 .bgBrandSecondary {
-  background-color: $color-sgbus-green;
+  background-color: $color-sgbus-green !important;
 }
 
 .bgBrandTertiary {
-  background-color: $color-sky-blue;
+  background-color: $color-sky-blue !important;
+}
+
+.text-white {
+  color: $color-white !important
 }
