@@ -40,14 +40,10 @@ export class AuthServiceStack extends cdk.Stack {
     environment.USER_POOL_ID = cognitoPool.cognitoPool.userPoolId;
     environment.USER_POOL_CLIENT_ID = cognitoPool.client.userPoolClientId;
 
-    const microservice = new Microservice(
-      this,
-      'authentication-service-stack',
-      {
-        projectRoot: path.join(__dirname, '..'),
-        environment,
-      },
-    );
+    const microservice = new Microservice(this, 'user-service-stack', {
+      projectRoot: path.join(__dirname, '..'),
+      environment,
+    });
 
     userPoolId.grantRead(microservice.getNodeJsFunction());
     userPoolClientId.grantRead(microservice.getNodeJsFunction());
@@ -56,7 +52,7 @@ export class AuthServiceStack extends cdk.Stack {
 
     const apiEndpoint = new LambdaDomainName(this, `${id}-api-endpoint`, {
       stageName,
-      subdomainName: 'auth',
+      subdomainName: 'user',
       proxyLambda: microservice.getNodeJsFunction(),
     });
 

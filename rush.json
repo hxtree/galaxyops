@@ -224,8 +224,8 @@
       "tags": ["middleware", "cimongo"]
     },
     {
-      "packageName": "@cats-cradle/authentication-service",
-      "projectFolder": "services/authentication-service",
+      "packageName": "@cats-cradle/user-service",
+      "projectFolder": "services/user-service",
       "reviewCategory": "apis",
       "decoupledLocalDependencies": [
         "@cats-cradle/validation-schemas",

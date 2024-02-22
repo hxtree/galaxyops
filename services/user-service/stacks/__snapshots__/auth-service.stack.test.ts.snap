@@ -192,7 +192,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
           Fn::Join: [
             ,
             [
-              auth.,
+              user.,
               {
                 Ref: MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA,
               },
@@ -219,24 +219,13 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
       },
       Type: AWS::ApiGateway::Stage,
     },
-    MyTestStackapiendpointMyTestStackapiendpointauthsvcdomainname9BBC596F: {
-      Properties: {
-        Description: auth service domain name,
-        Name: AUTH_SVC_DOMAIN_NAME,
-        Type: String,
-        Value: {
-          Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
-        },
-      },
-      Type: AWS::SSM::Parameter,
-    },
     MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53: {
       Properties: {
         DomainName: {
           Fn::Join: [
             ,
             [
-              auth.,
+              user.,
               {
                 Ref: MyTestStackapiendpointMyTestStackapiendpointssmdomainnameParameter7CDF0FAA,
               },
@@ -283,8 +272,8 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
     },
     MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35: {
       Properties: {
-        Description: auth Service API Gateway,
-        Name: auth RestAPI,
+        Description: user Service API Gateway,
+        Name: user RestAPI,
       },
       Type: AWS::ApiGateway::RestApi,
     },
@@ -310,7 +299,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
                 :lambda:path/2015-03-31/functions/,
                 {
                   Fn::GetAtt: [
-                    authenticationservicestacknestjsNodeJsLambdaC49C5643,
+                    userservicestacknestjsNodeJsLambda13B2A918,
                     Arn,
                   ],
                 },
@@ -336,7 +325,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            authenticationservicestacknestjsNodeJsLambdaC49C5643,
+            userservicestacknestjsNodeJsLambda13B2A918,
             Arn,
           ],
         },
@@ -377,7 +366,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            authenticationservicestacknestjsNodeJsLambdaC49C5643,
+            userservicestacknestjsNodeJsLambda13B2A918,
             Arn,
           ],
         },
@@ -458,14 +447,14 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
       Type: AWS::IAM::Role,
       UpdateReplacePolicy: Retain,
     },
-    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBD8d3facdd370d544c040a541e88e8bbe2: {
+    MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBDe90f25a847143f3df42f873e2e4640eb: {
       DependsOn: [
         MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
         MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
         MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
       ],
       Properties: {
-        Description: auth Service API Gateway,
+        Description: user Service API Gateway,
         RestApiId: {
           Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
         },
@@ -478,7 +467,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
       ],
       Properties: {
         DeploymentId: {
-          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBD8d3facdd370d544c040a541e88e8bbe2,
+          Ref: MyTestStackapiendpointMyTestStackapiendpointrestapiDeploymentAD663FBDe90f25a847143f3df42f873e2e4640eb,
         },
         MethodSettings: [
           {
@@ -518,7 +507,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
                 :lambda:path/2015-03-31/functions/,
                 {
                   Fn::GetAtt: [
-                    authenticationservicestacknestjsNodeJsLambdaC49C5643,
+                    userservicestacknestjsNodeJsLambda13B2A918,
                     Arn,
                   ],
                 },
@@ -541,7 +530,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            authenticationservicestacknestjsNodeJsLambdaC49C5643,
+            userservicestacknestjsNodeJsLambda13B2A918,
             Arn,
           ],
         },
@@ -582,7 +571,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
         Action: lambda:InvokeFunction,
         FunctionName: {
           Fn::GetAtt: [
-            authenticationservicestacknestjsNodeJsLambdaC49C5643,
+            userservicestacknestjsNodeJsLambda13B2A918,
             Arn,
           ],
         },
@@ -628,6 +617,17 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
         },
       },
       Type: AWS::ApiGateway::Resource,
+    },
+    MyTestStackapiendpointMyTestStackapiendpointusersvcdomainname2C8902B4: {
+      Properties: {
+        Description: user service domain name,
+        Name: USER_SVC_DOMAIN_NAME,
+        Type: String,
+        Value: {
+          Ref: MyTestStackapiendpointMyTestStackapiendpointcustomdomain02611C53,
+        },
+      },
+      Type: AWS::SSM::Parameter,
     },
     MyTestStackusercognitopoolCognitoPool8A729BFB: {
       DeletionPolicy: Delete,
@@ -747,10 +747,10 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
       },
       Type: AWS::SSM::Parameter,
     },
-    authenticationservicestacknestjsNodeJsLambdaC49C5643: {
+    userservicestacknestjsNodeJsLambda13B2A918: {
       DependsOn: [
-        authenticationservicestacknestjsNodeJsLambdaServiceRoleDefaultPolicy52727D7B,
-        authenticationservicestacknestjsNodeJsLambdaServiceRole0E28D4E1,
+        userservicestacknestjsNodeJsLambdaServiceRoleDefaultPolicyCC145D01,
+        userservicestacknestjsNodeJsLambdaServiceRoleF3A12BEB,
       ],
       Properties: {
         Code: {
@@ -791,7 +791,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
         MemorySize: 1024,
         Role: {
           Fn::GetAtt: [
-            authenticationservicestacknestjsNodeJsLambdaServiceRole0E28D4E1,
+            userservicestacknestjsNodeJsLambdaServiceRoleF3A12BEB,
             Arn,
           ],
         },
@@ -800,7 +800,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
       },
       Type: AWS::Lambda::Function,
     },
-    authenticationservicestacknestjsNodeJsLambdaLogRetention1F9A7FDE: {
+    userservicestacknestjsNodeJsLambdaLogRetentionE0424A97: {
       Properties: {
         LogGroupName: {
           Fn::Join: [
@@ -808,7 +808,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
             [
               /aws/lambda/,
               {
-                Ref: authenticationservicestacknestjsNodeJsLambdaC49C5643,
+                Ref: userservicestacknestjsNodeJsLambda13B2A918,
               },
             ],
           ],
@@ -823,38 +823,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
       },
       Type: Custom::LogRetention,
     },
-    authenticationservicestacknestjsNodeJsLambdaServiceRole0E28D4E1: {
-      Properties: {
-        AssumeRolePolicyDocument: {
-          Statement: [
-            {
-              Action: sts:AssumeRole,
-              Effect: Allow,
-              Principal: {
-                Service: lambda.amazonaws.com,
-              },
-            },
-          ],
-          Version: 2012-10-17,
-        },
-        ManagedPolicyArns: [
-          {
-            Fn::Join: [
-              ,
-              [
-                arn:,
-                {
-                  Ref: AWS::Partition,
-                },
-                :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole,
-              ],
-            ],
-          },
-        ],
-      },
-      Type: AWS::IAM::Role,
-    },
-    authenticationservicestacknestjsNodeJsLambdaServiceRoleDefaultPolicy52727D7B: {
+    userservicestacknestjsNodeJsLambdaServiceRoleDefaultPolicyCC145D01: {
       Properties: {
         PolicyDocument: {
           Statement: [
@@ -925,14 +894,45 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
           ],
           Version: 2012-10-17,
         },
-        PolicyName: authenticationservicestacknestjsNodeJsLambdaServiceRoleDefaultPolicy52727D7B,
+        PolicyName: userservicestacknestjsNodeJsLambdaServiceRoleDefaultPolicyCC145D01,
         Roles: [
           {
-            Ref: authenticationservicestacknestjsNodeJsLambdaServiceRole0E28D4E1,
+            Ref: userservicestacknestjsNodeJsLambdaServiceRoleF3A12BEB,
           },
         ],
       },
       Type: AWS::IAM::Policy,
+    },
+    userservicestacknestjsNodeJsLambdaServiceRoleF3A12BEB: {
+      Properties: {
+        AssumeRolePolicyDocument: {
+          Statement: [
+            {
+              Action: sts:AssumeRole,
+              Effect: Allow,
+              Principal: {
+                Service: lambda.amazonaws.com,
+              },
+            },
+          ],
+          Version: 2012-10-17,
+        },
+        ManagedPolicyArns: [
+          {
+            Fn::Join: [
+              ,
+              [
+                arn:,
+                {
+                  Ref: AWS::Partition,
+                },
+                :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole,
+              ],
+            ],
+          },
+        ],
+      },
+      Type: AWS::IAM::Role,
     },
   },
   Rules: {

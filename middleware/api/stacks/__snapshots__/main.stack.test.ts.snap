@@ -627,7 +627,7 @@ exports[`MainStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 8b09b3678df3d161862dbb5019405aac57973c5acd68cb442e19b9b7a1669e4f.zip,
+          S3Key: 84733bfcc0860a158020056aeea6de14f9009718cf2a83659cde3585250b04a6.zip,
         },
         Environment: {
           Variables: {
@@ -650,6 +650,7 @@ exports[`MainStack should match snapshot test 1`] = `
             },
             PLAYER_ACHIEVEMENTS_SVC_DOMAIN_NAME: {{resolve:ssm:/PLAYER_ACHIEVEMENTS_SVC_DOMAIN_NAME}},
             STAGE_NAME: default,
+            USER_SVC_DOMAIN_NAME: {{resolve:ssm:/USER_SVC_DOMAIN_NAME}},
           },
         },
         Handler: index.handler,
