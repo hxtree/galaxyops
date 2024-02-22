@@ -1034,6 +1034,7 @@ exports[`HtmlToPdfStack should match snapshot test 1`] = `
             },
             {
               Action: [
+                s3:PutBucketPolicy,
                 s3:GetBucket*,
                 s3:List*,
                 s3:DeleteObject*,
