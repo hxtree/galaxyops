@@ -34,7 +34,7 @@ RUN apt update \
     # https://rushjs.io/
     && npm install --global @microsoft/rush@5.100.1 \
     # https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-typescript.html
-    && npm install --global aws-cdk@2.94.0 \
+    && npm install --global aws-cdk@2.129.0 \
     # install typescript globally (perhaps this could be moved to local)
     && npm install --global typedocs \
     # https://github.com/org-formation/org-formation-cli

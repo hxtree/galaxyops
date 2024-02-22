@@ -115,14 +115,12 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
                     value={iterations}
                     onChange={(e: any) => setIterations(Number(e.target.value))}
                     variant="standard"
-                    // sx={{ width: '5ch', ml: 1 }}
                   />
                   <TextField
                     label="Luck"
                     value={luck}
                     onChange={(e: any) => setLuck(e.target.value)}
                     variant="standard"
-                    // sx={{ width: '5ch', ml: 1 }}
                   />
                 </Box>
               </Stack>
