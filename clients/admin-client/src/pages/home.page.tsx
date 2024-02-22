@@ -19,7 +19,6 @@ export default function HomePage() {
           No-frills, just a straightforward way to look at the data. Raise a <Link href='https://github.com/hxtree/cats-cradle/pulls'>pull request</Link> to suggest changes.
           </p>
           <Button href="/archetypes" color="secondary">Try It <FontAwesomeIcon icon={faArrowRight}/></Button>
-
         </Paper>
       </main>
     </>

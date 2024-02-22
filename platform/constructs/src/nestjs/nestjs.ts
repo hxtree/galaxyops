@@ -8,8 +8,8 @@ import { IRole } from 'aws-cdk-lib/aws-iam';
 import { EnvironmentType } from './environment.type';
 
 export interface NestJsProps {
+  functionName?: string;
   projectRoot: string;
-  // apiId: string;
   region: string;
   stageName: string;
   environment?: EnvironmentType;
@@ -70,6 +70,7 @@ export class NestJs extends Construct {
     };
 
     this.nodeJsFunction = new lambda.Function(this, 'NodeJsLambda', {
+      // functionName: `${awsAccountId}-${props.stageName}-${props.functionName}-function`,
       runtime: lambda.Runtime.NODEJS_18_X,
       code: lambda.Code.fromAsset(path.join(props.projectRoot, 'dist')),
       handler: 'index.handler',

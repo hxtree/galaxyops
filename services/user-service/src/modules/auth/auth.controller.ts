@@ -7,6 +7,7 @@ import {
   VERSION_NEUTRAL,
   Res,
   NotFoundException,
+  BadRequestException,
 } from '@nestjs/common';
 import { CognitoService } from './cognito.service';
 import { AuthService } from './auth.service';
@@ -71,12 +72,20 @@ export class AuthController {
 
   @Post('sign-up')
   async signUp(@Body() body: SignUpDto) {
-    const { email, password } = body;
-    await this.cognitoService.signUp(email, password);
-    return {
-      message:
-        'Sign-up successful. Please check your email for verification instructions.',
-    };
+    try {
+      const { email, password } = body;
+      await this.cognitoService.signUp(email, password);
+      return {
+        message:
+          'Sign-up successful. Please check your email for verification instructions.',
+      };
+    } catch (err) {
+      const error = err as Error;
+      throw new BadRequestException('Failed to sign up', {
+        cause: error,
+        description: error.message,
+      });
+    }
   }
 
   @Post('confirm-sign-up')
