@@ -11,6 +11,8 @@ interface Secret {
 
 export class MainStack extends cdk.Stack {
   secrets: Secret[] = [
+    { key: 'API_SVC_DOMAIN_NAME' },
+    { key: 'USER_SVC_DOMAIN_NAME' },
     { key: 'CHARACTER_SHEETS_SVC_DOMAIN_NAME' },
     { key: 'EMAIL_SERVICE_SVC_DOMAIN_NAME' },
     { key: 'HTML_TO_PDF_SVC_DOMAIN_NAME' },
@@ -22,20 +24,6 @@ export class MainStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const healthCheckLambda = this.setupLambda(`${id}-health-check-lambda`);
-
-    const lambdaDomainName = new LambdaDomainName(this, `${id}-dns-domain`, {
-      subdomainName: 'api',
-      proxyLambda: healthCheckLambda,
-      stageName: 'default',
-    });
-
-    new cdk.CfnOutput(this, 'Endpoint', {
-      value: lambdaDomainName.getBaseUrl(),
-    });
-  }
-
-  setupLambda(lambdaId: string): lambda.Function {
     const environment: { [key: string]: string } = {};
 
     for (const secret of this.secrets) {
@@ -48,6 +36,16 @@ export class MainStack extends cdk.Stack {
       environment: environment,
     });
 
-    return lambdaFunction.getNodeJsFunction();
+    const lambdaDomainName = new LambdaDomainName(this, `${id}-dns-domain`, {
+      subdomainName: 'api',
+      proxyLambda: lambdaFunction.getNodeJsFunction(),
+      stageName: 'default',
+    });
+
+    lambdaDomainName.domainName;
+
+    new cdk.CfnOutput(this, 'Endpoint', {
+      value: lambdaDomainName.getBaseUrl(),
+    });
   }
 }

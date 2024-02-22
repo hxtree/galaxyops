@@ -5,14 +5,17 @@ import {
   UseGuards,
   Req,
   VERSION_NEUTRAL,
+  Res,
+  NotFoundException,
 } from '@nestjs/common';
 import { CognitoService } from './cognito.service';
 import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './jwt-auth.guard';
-import { LoginDto } from './login-dto';
-import { ForgotPasswordDto } from './forgot-password-dto';
-import { ResetPasswordDto } from './reset-password-dto';
-import { SignUpDto } from './sign-up-dto';
+import { LoginDto } from './login.dto';
+import { ForgotPasswordDto } from './forgot-password.dto';
+import { ResetPasswordDto } from './reset-password.dto';
+import { SignUpDto } from './sign-up.dto';
+import { ConfirmSignUpDto } from './confirm-sign-up.dto';
 
 @Controller({
   version: VERSION_NEUTRAL,
@@ -26,13 +29,21 @@ export class AuthController {
 
   @Post('login')
   async login(@Body() body: LoginDto) {
-    const { username, password } = body;
-    const authResult = await this.cognitoService.authenticate(
-      username,
-      password,
-    );
-    const token = await this.authService.generateToken(authResult);
-    return { token };
+    const { email, password } = body;
+    try {
+      const authResult = await this.cognitoService.authenticate(
+        email,
+        password,
+      );
+      const token = await this.authService.generateToken(authResult);
+      return { token };
+    } catch (err) {
+      const error = err as Error;
+      throw new NotFoundException('User not found', {
+        cause: error,
+        description: error.message,
+      });
+    }
   }
 
   @Post('forgot-password')
@@ -60,12 +71,29 @@ export class AuthController {
 
   @Post('sign-up')
   async signUp(@Body() body: SignUpDto) {
-    const { username, password } = body;
-    await this.cognitoService.signUp(username, password);
+    const { email, password } = body;
+    await this.cognitoService.signUp(email, password);
     return {
       message:
         'Sign-up successful. Please check your email for verification instructions.',
     };
+  }
+
+  @Post('confirm-sign-up')
+  async verifyCode(@Body() body: ConfirmSignUpDto) {
+    try {
+      const { email, code } = body;
+      await this.cognitoService.confirmSignUp(email, code);
+      return {
+        message: 'Code verified. Sign-up complete.',
+      };
+    } catch (err) {
+      const error = err as Error;
+      throw new NotFoundException('Failed to confirm sign up', {
+        cause: error,
+        description: error.message,
+      });
+    }
   }
 
   @Post('delete')

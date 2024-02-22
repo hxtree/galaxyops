@@ -3,11 +3,11 @@ import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import { AuthModule } from './auth.module';
-import { LoginDto } from './login-dto';
-import { SignUpDto } from './sign-up-dto';
+import { LoginDto } from './login.dto';
+import { SignUpDto } from './sign-up.dto';
 import { CognitoService } from './cognito.service';
-import { ResetPasswordDto } from './reset-password-dto';
-import { ForgotPasswordDto } from './forgot-password-dto';
+import { ResetPasswordDto } from './reset-password.dto';
+import { ForgotPasswordDto } from './forgot-password.dto';
 
 describe('/auth', () => {
   let app: INestApplication;
@@ -38,7 +38,7 @@ describe('/auth', () => {
 
       const body = await FakerFactory.create<SignUpDto>(
         SignUpDto,
-        { username: 'jdoe' },
+        { email: 'jdoe@example.com' },
         { optionals: false },
       );
 

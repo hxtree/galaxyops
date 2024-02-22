@@ -8,6 +8,7 @@ import { Outlet} from 'react-router-dom';
 import { BreadCrumbs } from '../components/Breadcrumbs';
 import Header from "../components/Header";
 import LoginPage from '../pages/login.page';
+import SignupPage from '../pages/signup.page';
 
 const Root = () => {
   return (
@@ -32,6 +33,15 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "/signup",
+        element: <SignupPage />,
+        handle: {
+          title: 'Signup',
+          url: '/signup',
+          crumb: () => <Link to="/signup">Signup</Link>,
+        }
       },
       {
         path: "/login",

@@ -11,14 +11,20 @@ import {
   VERSION_NEUTRAL,
 } from '@nestjs/common';
 import { RouterService } from './router.service';
+import { RouteUrlsDto } from './route-url.dto';
 
 @Controller({ path: '', version: ['1', VERSION_NEUTRAL] })
 export class RouterController {
   constructor(private readonly routerService: RouterService) {}
 
-  @Get('routes')
-  getRoutes(): { path: string; endpoint: string }[] {
+  @Get('')
+  getRoutes(): RouteUrlsDto {
     return this.routerService.getRoutes();
+  }
+
+  @Get('debug')
+  getConfig(): { [key: string]: { path: string; endpoint: string } } {
+    return this.routerService.getConfig();
   }
 
   @Get('*')

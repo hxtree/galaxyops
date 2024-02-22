@@ -2,12 +2,7 @@ import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import { RemovalPolicy, StackProps } from 'aws-cdk-lib';
-import {
-  Bucket,
-  RedirectProtocol,
-  ObjectOwnership,
-  BucketAccessControl,
-} from 'aws-cdk-lib/aws-s3';
+import { Bucket, RedirectProtocol, ObjectOwnership } from 'aws-cdk-lib/aws-s3';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import {
   CloudFrontWebDistribution,
@@ -58,21 +53,17 @@ export class AdminClientStack extends cdk.Stack {
       { from: 'authentication/', to: 'features/authentication/' },
     ];
 
-    const bucket = new Bucket(this, `${stageName}-admin-client`, {
-      bucketName: `${awsAccountId}-${stageName}-admin-client-bucket`,
-      websiteIndexDocument: 'index.html',
-      websiteErrorDocument: '404.html',
-      publicReadAccess: true,
-      blockPublicAccess: {
-        blockPublicAcls: false,
-        blockPublicPolicy: false,
-        ignorePublicAcls: false,
-        restrictPublicBuckets: false,
-      },
+    // Addresses notable issues with L2 construct
+    // https://github.com/rupe120/cdk-cloudfront-test/blob/main/lib/s3.stack.ts
+    // https://github.com/aws/aws-cdk/issues/25288
+    // https://github.com/aws/aws-cdk/issues/26559
+    const bucket = new Bucket(this, `${stageName}-${subdomainName}-system`, {
+      bucketName: `${awsAccountId}-${stageName}-${subdomainName}-bucket`,
       objectOwnership: ObjectOwnership.OBJECT_WRITER,
-      accessControl: BucketAccessControl.PUBLIC_READ,
       removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
+      websiteIndexDocument: 'index.html',
+      websiteErrorDocument: '404.html',
       websiteRoutingRules: redirects.map(({ from, to }) => ({
         condition: {
           keyPrefixEquals: from,
@@ -108,13 +99,14 @@ export class AdminClientStack extends cdk.Stack {
 
     const cloudFrontDistribution = new CloudFrontWebDistribution(
       this,
-      `${id}-admin-client-distribution`,
+      `${id}-${subdomainName}-distribution`,
       {
         defaultRootObject: 'index.html',
         originConfigs: [
           {
             s3OriginSource: {
               s3BucketSource: bucket,
+              originAccessIdentity: originAccessIdentity,
             },
             behaviors: [
               {
@@ -129,7 +121,7 @@ export class AdminClientStack extends cdk.Stack {
           {
             errorCode: 404,
             responseCode: 200,
-            responsePagePath: '/index.html', // Redirect to index.html for all 404 errors
+            responsePagePath: '/index.html',
             errorCachingMinTtl: 60,
           },
         ],
@@ -161,12 +153,13 @@ export class AdminClientStack extends cdk.Stack {
     );
 
     // Create a record set for the custom domain pointing to the CloudFront distribution
-    new route53.ARecord(this, 'AliasRecord', {
+    new route53.ARecord(this, `${id}-alias-record`, {
       recordName: domainName,
       target: route53.RecordTarget.fromAlias(
         new targets.CloudFrontTarget(cloudFrontDistribution),
       ),
       zone: hostedZone,
+      deleteExisting: true,
     });
 
     new cdk.CfnOutput(this, 'Cloud Front Distribution', {

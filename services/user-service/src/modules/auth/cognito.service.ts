@@ -7,6 +7,7 @@ import {
   ForgotPasswordCommand,
   InitiateAuthCommand,
   AdminDeleteUserCommand,
+  ConfirmSignUpCommand,
 } from '@aws-sdk/client-cognito-identity-provider';
 
 @Injectable()
@@ -18,7 +19,7 @@ export class CognitoService {
   private cognitoClient: CognitoIdentityProviderClient;
 
   constructor() {
-    this.region = process.env.AWS_REGION ?? 'us-east-2';
+    this.region = process.env.AWS_REGION ?? 'us-east-1';
     this.ssm = new SSM({ region: this.region });
     this.cognitoClient = new CognitoIdentityProviderClient({
       region: this.region,
@@ -26,7 +27,11 @@ export class CognitoService {
   }
 
   async fetchUserPoolId(): Promise<string> {
-    const parameterName = 'cognito-user-pool-id';
+    if (process.env.USER_POOL_ID) {
+      return process.env.USER_POOL_ID;
+    }
+
+    const parameterName = 'USER_POOL_ID';
     const response = await this.ssm.getParameter({ Name: parameterName });
 
     if (response && response.Parameter && response.Parameter.Value) {
@@ -37,7 +42,12 @@ export class CognitoService {
   }
 
   async fetchUserPoolClientId(): Promise<string> {
-    const parameterName = 'cognito-user-pool-client-id';
+    if (process.env.USER_POOL_CLIENT_ID) {
+      return process.env.USER_POOL_CLIENT_ID;
+    }
+
+    const parameterName = 'USER_POOL_CLIENT_ID';
+
     const response = await this.ssm.getParameter({ Name: parameterName });
 
     if (response && response.Parameter && response.Parameter.Value) {
@@ -84,20 +94,22 @@ export class CognitoService {
     await this.cognitoClient.send(command);
   }
 
-  async signUp(username: string, password: string): Promise<void> {
-    const email = '';
-    const nickname = '';
-    const phoneNumber = '';
-
+  async signUp(email: string, password: string): Promise<void> {
     const command = new SignUpCommand({
       ClientId: await this.fetchUserPoolClientId(),
-      Username: username,
+      Username: email,
       Password: password,
-      UserAttributes: [
-        { Name: 'email', Value: email },
-        { Name: 'nickname', Value: nickname },
-        { Name: 'phone_number', Value: phoneNumber },
-      ],
+      UserAttributes: [{ Name: 'email', Value: email }],
+    });
+
+    await this.cognitoClient.send(command);
+  }
+
+  async confirmSignUp(email: string, code: string): Promise<void> {
+    const command = new ConfirmSignUpCommand({
+      ClientId: await this.fetchUserPoolClientId(),
+      Username: email,
+      ConfirmationCode: code,
     });
 
     await this.cognitoClient.send(command);

@@ -1,20 +1,16 @@
 # @cats-cradle
 
-**AWS Enterprise Monorepo**
-
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/cats-cradle)
 [![Docs](https://github.com/hxtree/cats-cradle/actions/workflows/pages/pages-build-deployment/badge.svg)](https://hxtree.github.io/cats-cradle/)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-Starting afresh or tweaking configurations, this repository embodies an
-opinionated approach to organizing layers within an enterprise application. It
-delineates the fundamentals for accelerated software development, engineered to
-scale and evolve, demonstrating how enterprises can embrace modern DevOps
-practices with AWS. Acting as a robust foundation for monorepo architecture, it
-houses a range of example packages used in crafting a cooperative RPG, employing
-an "eating our own dog food" approach to illustrate its practical application.
+Explore this opinionated approach to jumpstart your enterprise application
+development. Adopt modern DevOps practices on AWS with a monorepo architecture
+like this one to expedite your software pipeline. This repository goes beyond
+theory—it's a hands-on showcase, containing diverse placeholder packages
+actively employed in developing a cooperative RPG.
 
 ## Getting Started
 

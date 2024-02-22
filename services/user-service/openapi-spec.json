@@ -171,6 +171,21 @@
         "responses": { "201": { "description": "" } }
       }
     },
+    "/auth/confirm-sign-up": {
+      "post": {
+        "operationId": "AuthController_verifyCode",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ConfirmSignUpDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } }
+      }
+    },
     "/auth/delete": {
       "post": {
         "operationId": "AuthController_deleteUser",
@@ -180,22 +195,25 @@
     }
   },
   "info": {
-    "title": "@cats-cradles/authentication-service",
-    "description": "authentication service API",
-    "version": "1.0",
+    "title": "@cats-cradle/authentication-service",
+    "description": "authentication service",
+    "version": "1.1.4",
     "contact": {}
   },
   "tags": [],
-  "servers": [],
+  "servers": [
+    { "url": "http://localhost:3000", "description": "Local" },
+    { "url": "https://auth.sandbox.nekosgate.com/", "description": "Sandbox" }
+  ],
   "components": {
     "schemas": {
       "LoginDto": {
         "type": "object",
         "properties": {
-          "username": { "type": "string", "default": "jdoe" },
+          "email": { "type": "string", "default": "jdoe@example.com" },
           "password": { "type": "string", "default": "password1234!" }
         },
-        "required": ["username", "password"]
+        "required": ["email", "password"]
       },
       "ForgotPasswordDto": {
         "type": "object",
@@ -217,10 +235,18 @@
       "SignUpDto": {
         "type": "object",
         "properties": {
-          "username": { "type": "string", "default": "jdoe" },
+          "email": { "type": "string", "default": "jdoe@gmail.com" },
           "password": { "type": "string", "default": "password1234!" }
         },
-        "required": ["username", "password"]
+        "required": ["email", "password"]
+      },
+      "ConfirmSignUpDto": {
+        "type": "object",
+        "properties": {
+          "email": { "type": "string", "default": "jdoe@gmail.com" },
+          "code": { "type": "string", "default": "1234567" }
+        },
+        "required": ["email", "code"]
       }
     }
   }

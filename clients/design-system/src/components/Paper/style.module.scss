@@ -2,15 +2,13 @@
 
 .paper {
   background-color: $color-white;
-  padding: 4rem 4.5rem;
   background-color: rgb(255, 255, 255);
   color: rgb(29, 29, 31);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 30px 0px;
 
-  $elevations: 1, 2, 3, 4, 5, 6,7,8,9,10;
-
+  $elevations: 1,2,3,4,5, 6,7,8,9,10;
   @each $elevation in $elevations {
     &.paper-elevation-#{$elevation} {
       box-shadow: rgba(0, 0, 0, calc($elevation * 0.1)) 0px 4px 30px 0px;
