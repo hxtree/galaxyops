@@ -5,6 +5,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { RouteUrlsDto } from './route-url.dto';
 import { routes, RouteDefinition } from './routes.config';
 
+type TRoute = {
+  path: string;
+  name: string;
+  endpoint: string;
+};
+
 @Injectable()
 export class RouterService {
   async routeRequest(path: string, body: any, method: string): Promise<any> {
