@@ -17,7 +17,7 @@ export class RouterController {
   constructor(private readonly routerService: RouterService) {}
 
   @Get('routes')
-  getRoutes(): { path: string; endpoint: string }[] {
+  getRoutes(): { [key: string]: { path: string; endpoint: string } } {
     return this.routerService.getRoutes();
   }
 
