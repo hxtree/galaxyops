@@ -87,7 +87,7 @@
     "@cats-cradle/eslint-config": "1.0.11",
     "autoprefixer": "~10.4.16",
     "constructs": "^10.2.70",
-    "aws-cdk-lib": "2.95.0",
+    "aws-cdk-lib": "2.129.0",
     "@types/react-syntax-highlighter": "~15.5.10",
     "@babel/core": "7.23.5",
     "@babel/preset-env": "7.23.5",

@@ -45,7 +45,7 @@
     "uuid": "~9.0.1",
     "@aws-cdk/core": "~1.182.0",
     "constructs": "^10.2.70",
-    "aws-cdk-lib": "2.95.0",
+    "aws-cdk-lib": "2.129.0",
     "construct": "~1.0.0",
     "@cats-cradle/messaging-schemas": "workspace:*"
   },
