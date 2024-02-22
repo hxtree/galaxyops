@@ -41,7 +41,7 @@
     "typescript": "5.3.3",
     "vite": "^4.5.0",
     "ts-node": "10.9.2",
-    "aws-cdk-lib": "2.95.0",
+    "aws-cdk-lib": "2.129.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "ts-jest": "29.1.1",

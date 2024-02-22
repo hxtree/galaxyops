@@ -60,7 +60,7 @@
     "@types/node": "20.10.5",
     "@types/supertest": "~2.0.16",
     "@types/uuid": "~9.0.7",
-    "aws-cdk-lib": "2.95.0",
+    "aws-cdk-lib": "2.129.0",
     "constructs": "^10.2.70",
     "esbuild": "~0.17.5",
     "eslint": "8.56.0",
