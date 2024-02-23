@@ -883,6 +883,10 @@
       "allowedCategories": [ "apis" ]
     },
     {
+      "name": "xss",
+      "allowedCategories": [ "clients" ]
+    },
+    {
       "name": "yargs",
       "allowedCategories": [ "platform", "rigs" ]
     }

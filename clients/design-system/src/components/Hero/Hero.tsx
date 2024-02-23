@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.module.scss';
+import xss from 'xss';
 
 export interface HeroProps {
   heading: string;
@@ -15,8 +16,8 @@ export const Hero = ({ image, heading, lead, children }: HeroProps) => {
         <div className='container p-sm-1 p-md-3 p-lg-5'>
           <div className="row">
             <div className='col-lg-7 col-sm-12'>
-              <h1 className='display-3 text-primary'>{heading}</h1>
-              <p className="lead text-white">{lead}</p>
+              <h1 className='display-3 text-primary' dangerouslySetInnerHTML={{ __html: xss(heading) }}></h1>
+              <p className="lead text-white" dangerouslySetInnerHTML={{ __html: xss(lead) }}></p>
               {children}
             </div>
           </div>
