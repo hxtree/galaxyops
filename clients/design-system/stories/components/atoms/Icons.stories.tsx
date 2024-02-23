@@ -52,7 +52,7 @@ export const Default = () => {
       <div className="d-flex flex-wrap">
         {icons.map(({ icon, name }, index) => (
           <div className="mx-4 mb-5" key={index}>
-            <Paper elevation="6" className="d-flex flex-column justify-content-center align-items-center rounded position-relative" style={{ width: '100px', height: '100px', padding: '4px' }} elevation='2'>
+            <Paper elevation="6" className="d-flex flex-column justify-content-center align-items-center rounded position-relative" style={{ width: '100px', height: '100px', padding: '4px' }}>
               <FontAwesomeIcon size='2x' icon={icon} className="position-absolute top-50 start-50 translate-middle" />
               <div className="text-muted position-absolute start-50 bottom-0 translate-middle" style={{ fontSize: "0.6rem", marginBottom: "1px" }}>{name}</div>
             </Paper>

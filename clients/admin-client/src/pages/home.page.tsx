@@ -5,7 +5,7 @@ export default function HomePage() {
     <>
       <Hero
         image="/assets/clouds.jpg"
-        heading="Attention, Game Masters!"
+        heading="Attention,<br/> Game Masters!"
         lead="Introducing our latest tool designed exclusively for you."
       >
       </Hero>

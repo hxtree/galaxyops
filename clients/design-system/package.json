@@ -50,7 +50,8 @@
     "lodash": "~4.17.21",
     "bootstrap": "~5.3.2",
     "@popperjs/core": "2.11.8",
-    "@rollup/plugin-multi-entry": "~6.0.1"
+    "@rollup/plugin-multi-entry": "~6.0.1",
+    "xss": "~1.0.14"
   },
   "devDependencies": {
     "vite-plugin-checker": "0.6.2",

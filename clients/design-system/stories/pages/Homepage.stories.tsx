@@ -39,7 +39,7 @@ export const Default = () => (
           Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
         </Alert>
 
-        <Paper>
+        <Paper elevation='2'>
           <Typography variant="h1">Et malesuada fames ac turpis.</Typography>
           <Typography variant="intro">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula metus quis sagittis malesuada. Nulla facilisi. Duis feugiat tellus eu justo hendrerit, nec congue odio congue.
