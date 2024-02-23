@@ -670,6 +670,11 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
           {
             AttributeDataType: String,
             Mutable: true,
+            Name: userId,
+          },
+          {
+            AttributeDataType: String,
+            Mutable: true,
             Name: company,
           },
         ],
