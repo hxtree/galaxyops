@@ -41,6 +41,7 @@ export class CognitoPool extends Construct {
         },
       },
       customAttributes: {
+        userId: new cognito.StringAttribute({ mutable: true }),
         company: new cognito.StringAttribute({ mutable: true }),
       },
       passwordPolicy: {

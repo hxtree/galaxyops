@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { SSM } from '@aws-sdk/client-ssm';
+import { v4 } from 'uuid';
 import {
   CognitoIdentityProviderClient,
   SignUpCommand,
@@ -95,11 +96,16 @@ export class CognitoService {
   }
 
   async signUp(email: string, password: string): Promise<void> {
+    const userId = v4();
+
     const command = new SignUpCommand({
       ClientId: await this.fetchUserPoolClientId(),
       Username: email,
       Password: password,
-      UserAttributes: [{ Name: 'email', Value: email }],
+      UserAttributes: [
+        { Name: 'email', Value: email },
+        { Name: 'user_id', Value: userId },
+      ],
     });
 
     await this.cognitoClient.send(command);
