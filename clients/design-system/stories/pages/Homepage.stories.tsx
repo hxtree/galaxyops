@@ -22,7 +22,7 @@ export default {
 export const Default = () => (
     <>
       <AppBar
-        siteTitle='Game Masters Portal'
+        siteTitle='NekosGate'
         topRightSlot={<><Button href="/login" color="secondary" size="small">Login</Button></>}
       >
         <ul className="navbar-nav me-auto">
@@ -39,7 +39,7 @@ export const Default = () => (
           Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
         </Alert>
 
-        <Paper elevation='2'>
+        <Paper elevation='2' className='p-5'>
           <Typography variant="h1">Et malesuada fames ac turpis.</Typography>
           <Typography variant="intro">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula metus quis sagittis malesuada. Nulla facilisi. Duis feugiat tellus eu justo hendrerit, nec congue odio congue.

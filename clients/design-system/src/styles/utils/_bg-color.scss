@@ -1,5 +1,9 @@
 @import './color-pallette';
 
+.bgOffWhite {
+  background-color: $color-off-white !important;
+}
+
 .bgBrandDark {
   background-color: $color-berkeley-blue !important;
 }

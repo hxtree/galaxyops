@@ -12,10 +12,15 @@
   }
 }
 
+.app-bar{
+  background-color: $color-white;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 30px 0px;
+}
+
 .app-bar-light {
   padding: 0;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 30px 0px;
+  background-color: rgb(255, 253, 251);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 2px 0px, rgba(0, 0, 0, 0.14) 0px 1.008px 2px 0px;
   ul {
     padding: 0;
     margin: 0;
@@ -23,7 +28,7 @@
       margin-right: 2rem;
       padding: 0;
       a {
-        color: $color-off-black;
+        color: $color-blue;
         display: inline-block;
         text-decoration: none;
         padding-top: 1rem;

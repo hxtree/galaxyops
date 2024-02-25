@@ -18,7 +18,7 @@ export const AppBar = (props: AppBarProps) => {
   const { topRightSlot, children, siteTitle } = props;
 
   return (
-    <>
+    <div className="app-bar">
       <nav className={`navbar navbar-expand-lg navbar-light`}>
         <div className="container">
 
@@ -41,7 +41,7 @@ export const AppBar = (props: AppBarProps) => {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 
