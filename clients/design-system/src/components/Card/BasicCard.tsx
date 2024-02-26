@@ -1,42 +1,42 @@
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import './style.module.scss';
 
 export type BasicCardProps = {
   title?: string;
   body?: string;
   url?: string;
   cta?: string;
+  children?: React.ReactNode;
 };
 
 // TODO finish fleshing in basic card props
-
 export const BasicCard = (props: BasicCardProps): JSX.Element => {
-  const { cta, title } = props;
+  const { cta, body, title, children } = props;
   const defaultCta = 'Learn More';
 
+  const callOut = "Save 10% Off";
+  const callOutColor = "primary";
+
   return (
-    <Card sx={{ minWidth: 275, borderRadius: 6 }}>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {title}
-        </Typography>
-        <Typography variant="h5" component="div">
-          Lorem ipsum
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        {cta || defaultCta}
-      </CardActions>
-    </Card>
-  );
+    <div className="card">
+      <div className='card-thumbnail'>
+        <div className='card-call-out px-4'>{callOut}</div>
+        <svg className="bd-placeholder-img card-img-top"
+          width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img"
+          aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice"
+          focusable="false"><title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96"></rect>
+          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Sample Image</text>
+        </svg>
+      </div>
+      <div className="card-body">
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text">
+          {body}
+        </p>
+        <p>
+          {children}
+        </p>
+      </div>
+    </div>
+  )
 }
