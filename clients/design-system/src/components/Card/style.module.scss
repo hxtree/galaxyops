@@ -1,0 +1,35 @@
+@import '../../styles/utils/color-pallette';
+
+$card-color: $color-murrey;
+$card-call-out-offset: 16px;
+.card {
+  .card-thumbnail {
+    margin:0;
+    position: relative;
+    .card-call-out {
+      text-transform: uppercase;
+      font-weight: bold;
+      top: 25px;
+      position: absolute;
+      margin-left: -$card-call-out-offset;
+      background-color: $card-color;
+      color: $color-white;
+      text-align: center;
+      line-height: 50px;
+      border-top: 1px solid lighten($card-color, 10%);
+      border-right: 1px solid lighten($card-color, 10%);
+      border-bottom: 1px solid darken($card-color, 10%);
+      box-shadow:  0.7rem 0.7rem .75rem rgba(0, 0, 0, 0.2);
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: calc($card-call-out-offset/2);
+        transform: translateX(-50%);
+        border-left: $card-call-out-offset solid transparent;
+        border-right: 0px solid transparent;
+        border-top: $card-call-out-offset solid darken($card-color, 10%);
+      }
+    }
+  }
+}
