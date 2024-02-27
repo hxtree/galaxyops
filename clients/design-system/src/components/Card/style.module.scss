@@ -3,9 +3,29 @@
 $card-color: $color-murrey;
 $card-call-out-offset: 16px;
 .card {
+  border-radius: 1rem;
+  &:hover {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    .card-img-top {
+      transform: scale(1.02);
+      transition: transform .2s;
+    }
+  }
   .card-thumbnail {
     margin:0;
     position: relative;
+    .card-img-top-wrapper {
+      overflow: hidden;
+      height: 180px;
+      .card-img-top {
+        height: 180px;
+        background-color: $color-gray !important;
+        background-size: 100% 100% !important;
+        background-position: center center;
+      }
+    }
+
     .card-call-out {
       text-transform: uppercase;
       font-weight: bold;

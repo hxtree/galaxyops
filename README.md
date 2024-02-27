@@ -18,7 +18,7 @@ actively employed in developing a cooperative RPG.
 
 - Turn-key development environment with Github Codespaces
 - Infrastructure as Code (IaC) for streamlined DevOps pipeline
-- Event-driven microservices architecture
+- Event-driven microservices architecture with data lake
 - Continuous integration and continuous deployment (CI/CD) leveraging AWS
 
 ## Getting Started

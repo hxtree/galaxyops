@@ -4,31 +4,25 @@ export type BasicCardProps = {
   title?: string;
   body?: string;
   url?: string;
-  cta?: string;
+  imageSrc?: string;
+  ribbonText?: string;
+  ribbonColor?: string;
   children?: React.ReactNode;
 };
 
 // TODO finish fleshing in basic card props
 export const BasicCard = (props: BasicCardProps): JSX.Element => {
-  const { cta, body, title, children } = props;
-  const defaultCta = 'Learn More';
-
-  const callOut = "Save 10% Off";
-  const callOutColor = "primary";
+  const { ribbonText, body, title, imageSrc, children } = props;
 
   return (
-    <div className="card">
+    <div className="card h-100 border-radius-4">
       <div className='card-thumbnail'>
-        <div className='card-call-out px-4'>{callOut}</div>
-        <svg className="bd-placeholder-img card-img-top"
-          width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img"
-          aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice"
-          focusable="false"><title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Sample Image</text>
-        </svg>
+        <div className="card-img-top-wrapper">
+          <div className="card-img-top" style={{background: `url(${imageSrc})`}}/>
+        </div>
+        {ribbonText && <div className='card-call-out px-4'>{ribbonText}</div>}
       </div>
-      <div className="card-body">
+      <div className="card-body p-4">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">
           {body}
