@@ -62,7 +62,7 @@
     "@sparticuz/chromium": "112.0.0",
     "puppeteer-core": "19.8.0",
     "uuid": "~9.0.1",
-    "axios": "^0.21.1",
+    "axios": "^1.6.7",
     "@cats-cradle/nestjs-modules": "workspace:*",
     "@nestjs/config": "2.2.0"
   },
@@ -86,8 +86,8 @@
     "supertest": "~6.3.3",
     "@types/supertest": "~2.0.16",
     "@cats-cradle/create-bundle": "1.0.12",
-    "@cats-cradle/create-artifact": "2.0.6",
-    "axios": "^0.21.1",
+    "@cats-cradle/create-artifact": "2.0.7",
+    "axios": "^1.6.7",
     "aws-sdk-client-mock": "3.0.0",
     "@aws-sdk/client-s3": "3.433.0"
   }

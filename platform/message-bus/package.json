@@ -50,7 +50,7 @@
     "@cats-cradle/messaging-schemas": "workspace:*"
   },
   "devDependencies": {
-    "@cats-cradle/create-artifact": "2.0.6",
+    "@cats-cradle/create-artifact": "2.0.7",
     "@cats-cradle/constructs": "workspace:*",
     "@cats-cradle/base-nodejs": "workspace:*",
     "@types/jest": "29.5.11",

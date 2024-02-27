@@ -59,7 +59,7 @@
     "@aws-sdk/types": "3.10.0"
   },
   "devDependencies": {
-    "@cats-cradle/create-artifact": "2.0.6",
+    "@cats-cradle/create-artifact": "2.0.7",
     "@cats-cradle/eslint-config": "1.0.11",
     "@cats-cradle/faker-factory": "workspace:*",
     "@microsoft/tsdoc": "~0.13.2",

@@ -48,11 +48,11 @@
     "rxjs": "7.8.1",
     "source-map-support": "~0.5.21",
     "uuid": "~9.0.1",
-    "axios": "^0.21.1"
+    "axios": "^1.6.7"
   },
   "devDependencies": {
     "@nestjs/swagger": "~7.1.17",
-    "@cats-cradle/create-artifact": "2.0.6",
+    "@cats-cradle/create-artifact": "2.0.7",
     "@cats-cradle/constructs": "workspace:*",
     "@cats-cradle/base-nodejs": "workspace:*",
     "@types/jest": "29.5.11",

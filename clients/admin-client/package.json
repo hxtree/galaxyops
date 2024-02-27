@@ -26,12 +26,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "@cats-cradle/design-system": "workspace:*",
-    "react-router-dom": "6.21.1",
-    "axios": "^0.21.1"
+    "react-router-dom": "6.22.1",
+    "axios": "^1.6.7"
   },
   "devDependencies": {
-    "@types/react": "18.2.46",
-    "@types/react-dom": "18.2.18",
+    "@types/react": "18.2.59",
+    "@types/react-dom": "18.2.19",
     "@typescript-eslint/eslint-plugin": "~6.16.0",
     "@typescript-eslint/parser": "~6.16.0",
     "@vitejs/plugin-react": "^4.2.1",
@@ -50,6 +50,6 @@
     "jest-environment-jsdom": "~29.6.1",
     "@cats-cradle/base-nodejs": "workspace:*",
     "constructs": "^10.2.70",
-    "@cats-cradle/create-artifact": "2.0.6"
+    "@cats-cradle/create-artifact": "2.0.7"
   }
 }
