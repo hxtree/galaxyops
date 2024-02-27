@@ -8,9 +8,24 @@ export default {
 } as Meta<typeof BasicCard>;
 
 export const Default = (args: BasicCardProps) =>
-  <BasicCard {...args}/>;
+  <div className="row row-cols-1 row-cols-md-3 row-cols-md-4">
+    <div className="col mb-3">
+      <BasicCard {...args}>
+        Welcome to Day
+      </BasicCard>
+    </div>
+    <div className="col mb-3">
+      <BasicCard {...args} title="What, Why, When, Where" imageSrc="/sample.jpg">
+        Seven out of Ten Cats
+      </BasicCard>
+    </div>
+    <div className="col mb-3">
+      <BasicCard {...args} title="Turn-key Property Management" ribbonText='Learn More'>
+        How goes property management?
+      </BasicCard>
+    </div>
+  </div>
 
 Default.args = {
   title: 'Welcome To Day',
-  cta: 'Learn More'
-}
+} as BasicCardProps;

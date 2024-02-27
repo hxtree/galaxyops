@@ -22,3 +22,4 @@ export * from './Layout/Layout';
 export * from './Card/BasicCard';
 export * from './Paper/Paper';
 export * from './Hero/Hero';
+export * from './Images/Images';
