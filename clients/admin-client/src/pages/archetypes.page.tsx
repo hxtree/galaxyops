@@ -1,9 +1,11 @@
 import { Paper } from '@cats-cradle/design-system/dist/main';
 import ArchetypeSelect from '../components/ArchetypeSelect';
+import { BreadCrumbs } from '../components/Breadcrumbs';
 
 export default function ArchetypePage() {
   return (
     <main className="container">
+      <BreadCrumbs/>
       <Paper elevation="1" className='p-5'>
         <h1>Archetypes</h1>
         <p>
