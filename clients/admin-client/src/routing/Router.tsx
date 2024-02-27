@@ -5,7 +5,6 @@ import ArchetypesPage from "../pages/archetypes.page";
 import CharacterSheetsPage from '../pages/character-sheets.page';
 import HomePage from '../pages/home.page';
 import { Outlet} from 'react-router-dom';
-import { BreadCrumbs } from '../components/Breadcrumbs';
 import Header from "../components/Header";
 import LoginPage from '../pages/login.page';
 import SignupPage from '../pages/signup.page';
@@ -14,7 +13,6 @@ const Root = () => {
   return (
     <>
       <Header/>
-      <BreadCrumbs/>
       <Outlet/>
     </>
   )
