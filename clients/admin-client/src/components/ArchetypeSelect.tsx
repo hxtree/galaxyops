@@ -36,7 +36,7 @@ export default function ArchetypeSelect() {
     };
 
     archetypesFetch();
-  }, []);
+  }, [parentDomainName]);
 
   const fetchArchetypeData = async (archetypeId: string) => {
     setLoading(true);
