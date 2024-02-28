@@ -1,4 +1,4 @@
-import { Paper, Hero } from '@cats-cradle/design-system/dist/main';
+import { Hero } from '@cats-cradle/design-system/dist/main';
 import { DiceAnalyzer } from '../components/DiceAnalyzer';
 import { BreadCrumbs } from '../components/Breadcrumbs';
 

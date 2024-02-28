@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon } from '../../src/main';
+import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon, Blurb } from '../../src/main';
+import { Badge } from '@mui/material';
 // IconButton, FontAwesomeIcon, faBars, faGithub,
 
 type NavMenuItem = {
@@ -39,6 +40,7 @@ export const Default = () => (
           Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
         </Alert>
 
+        <Blurb iconRight={faArrowRight} textRight="This is a blurb about stuff and things." iconLeft={faArrowRight} textLeft="This is a blurb about stuff and things."/>
         <Paper elevation='2' className='p-5'>
           <Typography variant="h1">Et malesuada fames ac turpis.</Typography>
           <Typography variant="intro">

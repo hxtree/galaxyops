@@ -53,6 +53,7 @@ export const SignupForm: FC<TSignupFormProps> = ({ title }) => {
   }
 
   function onClickHandler(event: React.MouseEvent) {
+    console.log(event)
     if (currentForm === TSignupFormType.SignUp) {
       createUser();
     } else {
@@ -64,6 +65,7 @@ export const SignupForm: FC<TSignupFormProps> = ({ title }) => {
     <div>
       {currentForm === TSignupFormType.SignUp && (
         <div>
+          {title && <h1>{title}</h1>}
           <h2>Create an account</h2>
           <div className="mb-3">
             <TextField id="email-address" label="Email Address" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />

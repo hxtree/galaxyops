@@ -1,4 +1,4 @@
-import { Hero, Paper, Button, Link, FontAwesomeIcon, faArrowRight, BasicCard } from '@cats-cradle/design-system/dist/main';
+import { Hero, Paper, Button, Link, FontAwesomeIcon, faArrowRight, BasicCard, Blurb, faCheck, faGithub } from '@cats-cradle/design-system/dist/main';
 
 export default function HomePage() {
   return (
@@ -9,6 +9,13 @@ export default function HomePage() {
         lead="Introducing our latest tool designed exclusively for you."
       >
       </Hero>
+      <div className='m-5'>
+      <Blurb
+      iconLeft={faCheck} textLeft="Checkout our latest features."
+      iconRight={faGithub} textRight="PR Welcome."
+        />
+
+      </div>
       <main className="container-fluid mt-5">
         <Paper elevation="1" className='p-5'>
         <div className="container">
