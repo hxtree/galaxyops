@@ -26,6 +26,14 @@ React **SHOULD** be selected as a framework for clients.
   application should be confined to its project folder and configuration files
   within this directory.
 
+- **Twelve Factor App:** Applications **MUST** be designed to run as a service.
+  To avoid common systemic problems in modern application development, layers
+  **MUST** be constructed around twelve factor app principles Code **MUST** be
+  agnostic of environment. [https://12factor.net/](https://12factor.net/)
+
+- **MACH Architecture:** Overall this repository adheres to a
+  Microservices-based, API-first, Cloud-native, and Headless architecture.
+
 ### Vite
 
 We have moved off of Webpack and NextJs. Vercel packages should be avoided. Vite

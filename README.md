@@ -1,5 +1,7 @@
 # @cats-cradle
 
+Crafting Out-of-the-Box Enterprise Architecture on AWS for DevOps
+
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/cats-cradle)
@@ -8,18 +10,25 @@
 
 ## Description
 
-Explore this opinionated approach to jumpstart your enterprise application
-development. Adopt modern DevOps practices on AWS with a monorepo architecture
-like this one to expedite your software pipeline. This repository goes beyond
-theory—it's a hands-on showcase, containing diverse placeholder packages
-actively employed in developing a cooperative RPG.
+Architecture outlines the stuff that is hard to change. In the realm of
+architecture, it's not merely about constructing individual buildings; it's
+about designing the city. Similarly, our opinionated approach to running
+enterprise architecture on AWS go beyond the confines of a single project; it
+lay the groundwork for the entire landscape.
 
-### Features
+Explore to jumpstart your enterprise application development. Adopt modern
+DevOps practices on AWS with a monorepo architecture like this one to expedite
+your software pipeline. This repository goes beyond theory—it's a hands-on
+showcase, containing diverse working placeholder packages actively employed in
+developing a cooperative RPG.
 
-- Turn-key development environment with Github Codespaces
-- Infrastructure as Code (IaC) for streamlined DevOps pipeline
-- Event-driven microservices architecture with data lake
-- Continuous integration and continuous deployment (CI/CD) leveraging AWS
+### Key Features
+
+- Turn-key development environment with Github Codespaces.
+- Event-driven microservices architecture with data lake.
+- Infrastructure as Code (IaC) for streamlined DevOps pipeline.
+- Continuous integration and continuous deployment (CI/CD) leveraging AWS.
+- Happy Engineers.
 
 ## Getting Started
 
@@ -36,6 +45,10 @@ the [devcontainer](.devcontainer/README.md).
 
 ### Architecture Guidelines
 
+The guide below outlines principles and standards applicable to this repository,
+ensuring that each piece contributes harmoniously to the overall cityscape we're
+constructing.
+
 This document adheres to the guidelines outlined in
 [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt), which defines the standard
 interpretations of key words used in IETF documents. These key words include
@@ -44,31 +57,7 @@ interpretations of key words used in IETF documents. These key words include
 specifications set forth in RFC 2119, ensuring clarity and consistency in the
 requirements and recommendations presented herein.
 
-#### What is Architecture?
-
-Outlining the stuff that is hard to change. In the realm of architecture, it's
-not merely about constructing individual buildings; it's about designing the
-city. Similarly, our architecture guidelines go beyond the confines of a single
-project; they lay the groundwork for the entire landscape.
-
-The guide below outlines principles and standards applicable to this repository,
-ensuring that each piece contributes harmoniously to the overall cityscape we're
-constructing.
-
 ![Flow Chart](docs/flow-chart.drawio.svg)
-
-#### Twelve Factor App
-
-Applications **MUST** be designed to run as a service. To avoid common systemic
-problems in modern application development, layers **MUST** be constructed
-around twelve factor app principles. Code **MUST** be agnostic of environment.
-
-[https://12factor.net/](https://12factor.net/)
-
-#### MACH Architecture
-
-Overall this repository adheres to a Microservices-based, API-first,
-Cloud-native, and Headless architecture.
 
 #### Code Structure
 
@@ -96,40 +85,6 @@ Javascript. Typescript brings the advantage of type hinting, which aids in
 maintenance and improves the readability of code. As a guideline, Typescript
 **SHOULD** be the default language for the majority of application code, unless
 there's a substantial reason to opt for a different language.
-
-#### Persistent Storage
-
-##### S3
-
-For persistent file storage S3 **SHOULD** be used. Buckets are a simple
-abstraction layer for persistent file storage.
-
-AWS S3 buckets **SHOULD** be provisioned following the principle of least
-privilege. This principle implies that each user or service should have the
-minimal permissions necessary to perform their specific tasks, and no more. This
-approach minimizes the potential damage that can result from error, malicious
-activity, or compromise of a specific user or service.
-
-##### Database
-
-Every service employing a database **MUST** maintain its dedicated database
-instance within our architecture.
-
-Specifically, code **SHOULD** rely on MongoDB, leveraging the Mongoose library
-for interaction for persistent storage. In the context of microservices, we
-consciously avoid the use of an Object-Relational Mapping (ORM) layer,
-considering it an unnecessary abstraction.
-
-Instead of utilizing ObjectId for identification, services **SHOULD** opt for
-UUID type 4 IDs. This choice not only enhances security but also mitigates the
-exposure of details such as when the ID was generated and processor-related
-information.
-
-##### Data Lake
-
-Messages sent between services **SHOULD** adhere to a contract and persist in a
-data lake. Because services communicate via queues and queues publish messages
-this **SHOULD** occur automatically.
 
 #### Infrastructure
 
@@ -164,11 +119,10 @@ A README.md file **SHOULD** be added to explain each project and important
 folder structures. Any code that isn't self-documenting **MUST** be accompanied
 by documentation.
 
-Documentation as code is desired. Documentation **SHOULD** be maintained where
-it will be looked for.
-
-Tsdoc **MAY** be selected as a standard for writing Typescript documentation.
-Typedoc **MAY** be selected to compile documentation as code.
+Documentation **SHOULD** be maintained where it will be looked for.
+Documentation as code is desired. Tsdoc **MAY** be selected as a standard for
+writing Typescript documentation. Typedoc **MAY** be selected to compile
+documentation as code.
 
 #### Deployments
 
@@ -204,30 +158,6 @@ Data necessary for setting up a service should move uphill from one environment
 to the next through migrations. Software engineers should not require access to
 production to do their job.
 
-#### Domain-Driven Design and Ubiquitous Language
-
-Domain-Driven Design (DDD) principles are integral to our architecture
-guidelines. We emphasize the importance of establishing a Ubiquitous Language
-throughout our development process. This language ensures that domain concepts
-are consistently represented and understood across all stakeholders, from domain
-experts to developers. By aligning our codebase with the language used in the
-domain, we enhance communication, reduce ambiguity, and foster a deeper
-understanding of the problem space. Therefore, all code artifacts **MUST**
-reflect the Ubiquitous Language established for the respective domain,
-facilitating collaboration and maintaining clarity throughout the software
-development lifecycle.
-
-### Conway's Law
-
-In this repository, we embrace Conway's Law as a guiding principle in our
-software development practices. Conway's Law states that the structure of an
-organization will reflect in the design of its systems. By organizing our
-codebase into modules and components that correspond to the various teams and
-departments within our organization, we foster a natural alignment between our
-software architecture and our organizational structure. This approach not only
-enhances communication and collaboration but also promotes autonomy and
-ownership.
-
 <details>
   <summary>Provisioning</summary>
 
@@ -253,7 +183,7 @@ ownership.
    rush cdk:deploy --to tag:deploy-tools
    ```
 
-   </details>
+</details>
 
 ## Documentation
 
