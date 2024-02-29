@@ -1,7 +1,14 @@
 # Services
 
-This directory contains deployable organization services. Here are some
-important guidelines:
+This directory contains deployable organization services.
+
+## NestJS
+
+NestJS **SHOULD** be selected as a framework for building service. It comes with
+dependency injection, swagger integration for generating OpenAPI spec, is
+decorator based, and is sponsored as an open collective project.
+
+Here are some important guidelines for building services:
 
 ## Guidelines
 
