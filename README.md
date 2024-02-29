@@ -49,14 +49,6 @@ The guide below outlines principles and standards applicable to this repository,
 ensuring that each piece contributes harmoniously to the overall cityscape we're
 constructing.
 
-This document adheres to the guidelines outlined in
-[RFC 2119](https://www.ietf.org/rfc/rfc2119.txt), which defines the standard
-interpretations of key words used in IETF documents. These key words include
-"MUST", "MUST NOT", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",
-"MAY", and "OPTIONAL". The usage of these words in this document follows the
-specifications set forth in RFC 2119, ensuring clarity and consistency in the
-requirements and recommendations presented herein.
-
 #### Code Structure
 
 A monorepo is believed to help streamline changes. The project **MUST** be
@@ -143,9 +135,10 @@ artifact **SHOULD** be processed by AWS CodePipeline for CD.
 
 Documentation **SHOULD** be maintained where it will be looked for. A README.md
 file **SHOULD** be added to explain each project and important folder
-structures. Any code that isn't self-documenting **MUST** be accompanied by
-documentation. Tsdoc **MAY** be selected as a standard for writing Typescript
-documentation. Typedoc **MAY** be selected to compile documentation as code.
+structures. README.md files should adhere to RFC 2119[^1]. Any code that isn't
+self-documenting **MUST** be accompanied by documentation. Tsdoc **MAY** be
+selected as a standard for writing Typescript documentation. Typedoc **MAY** be
+selected to compile documentation as code.
 
 > **Note** Use `rush help` for information on builtin commands.
 
@@ -224,3 +217,12 @@ Pull requests and bug reports are welcome on GitHub at
 Packages available on [NPM](https://www.npmjs.com/search?q=%40cats-cradle) are
 MIT licensed. Packages without a specific license have not yet been developed
 with reuse in mind and are primarily maintained for the game.
+
+[^1]:
+    This document adheres to the guidelines outlined in
+    [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt), which defines the standard
+    interpretations of key words used in IETF documents. These key words include
+    "MUST", "MUST NOT", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
+    "RECOMMENDED", "MAY", and "OPTIONAL". The usage of these words in this
+    document follows the specifications set forth in RFC 2119, ensuring clarity
+    and consistency in the requirements and recommendations presented herein.
