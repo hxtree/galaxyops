@@ -11,12 +11,12 @@
 Architecture outlines the stuff that is hard to change. In the realm of
 architecture, it's not merely about constructing individual buildings; it's
 about designing the city. Similarly, our opinionated approach to running
-enterprise architecture on AWS go beyond the confines of a single project; it
+enterprise architecture on AWS goes beyond the confines of a single project; it
 lay the groundwork for the entire landscape.
 
 Explore to jumpstart your enterprise application development. Adopt modern
 DevOps practices on AWS with a monorepo architecture like this one to expedite
-your software pipeline. This repository goes beyond theory—it's a hands-on
+your software pipeline[^1]. This repository goes beyond theory—it's a hands-on
 showcase, containing diverse working placeholder packages actively employed in
 developing a cooperative RPG.
 
@@ -97,8 +97,8 @@ maintained by platform rather than a third party.
 
 #### Deployments
 
-Each app **MUST** be capable of deployment themselves using CDK via
-`rushx cdk:deploy`. `rushx cdk:deploy` **MAY** be used in local development to
+Each app **MUST** be capable of deployment themselves of using CDK via
+`rushx cdk:deploy`. This command **MAY** also be used in local development to
 deploy services.
 
 During CI, an artifact from each project **MUST** be uploaded to S3. This
@@ -219,10 +219,14 @@ MIT licensed. Packages without a specific license have not yet been developed
 with reuse in mind and are primarily maintained for the game.
 
 [^1]:
-    This document adheres to the guidelines outlined in
-    [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt), which defines the standard
-    interpretations of key words used in IETF documents. These key words include
-    "MUST", "MUST NOT", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
-    "RECOMMENDED", "MAY", and "OPTIONAL". The usage of these words in this
-    document follows the specifications set forth in RFC 2119, ensuring clarity
-    and consistency in the requirements and recommendations presented herein.
+
+Accelerate: The Science of Lean Software and DevOps: Building and Scaling High
+Performing Technology Organizations Paperback – Illustrated, March 27, 2018 by
+Nicole Forsgren PhD (Author), Jez Humble (Author), Gene Kim (Author). [^2]: This
+document adheres to the guidelines outlined in
+[RFC 2119](https://www.ietf.org/rfc/rfc2119.txt), which defines the standard
+interpretations of key words used in IETF documents. These key words include
+"MUST", "MUST NOT", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",
+"MAY", and "OPTIONAL". The usage of these words in this document follows the
+specifications set forth in RFC 2119, ensuring clarity and consistency in the
+requirements and recommendations presented herein.
