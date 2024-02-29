@@ -3,6 +3,11 @@
 The AWS Organization is initialized, managed, and synced using
 [org-formation-cli](https://github.com/org-formation/org-formation-cli).
 
+## AWS SSO
+
+AWS SSO **MUST** be selected for authentication over hard coded credentials for
+ease of maintenance and security. Developers can SSO in to sandbox environments.
+
 ## Domain Registration
 
 Register a domain name through Route 53 in AWS master organization. In this

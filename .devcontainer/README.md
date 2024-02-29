@@ -1,5 +1,12 @@
 # .devcontainer
 
+Incorporating dev containers further enhances the efficiency and security of our
+development process. Dev containers encapsulate the development environment,
+including dependencies and tools, within a containerized environment, ensuring
+consistency across different machines and operating systems. This
+standardization **MUST** simplify the onboarding process for new developers and
+reduce the risk of configuration drift or compatibility issues.
+
 The following Getting Started instructions explain how to develop locally using
 a devcontainer.
 

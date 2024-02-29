@@ -3,6 +3,10 @@
 This directory contains frontend client applications. Each client connects to
 backend services, often through a dedicated Backend for Frontend (BFF).
 
+## React
+
+React **SHOULD** be selected as a framework for clients.
+
 ## Guidelines
 
 - **Dependency on Backend Services**: Clients rely on backend services for data
