@@ -1,14 +1,12 @@
 # @cats-cradle
 
-Crafting Out-of-the-Box Enterprise Architecture on AWS for DevOps
+**Crafting Out-of-the-Box Enterprise Architecture on AWS for DevOps**
 
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/cats-cradle)
 [![Docs](https://github.com/hxtree/cats-cradle/actions/workflows/pages/pages-build-deployment/badge.svg)](https://hxtree.github.io/cats-cradle/)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
-
-## Description
 
 Architecture outlines the stuff that is hard to change. In the realm of
 architecture, it's not merely about constructing individual buildings; it's
@@ -45,6 +43,8 @@ the [devcontainer](.devcontainer/README.md).
 
 ### Architecture Guidelines
 
+![Flow Chart](docs/flow-chart.drawio.svg)
+
 The guide below outlines principles and standards applicable to this repository,
 ensuring that each piece contributes harmoniously to the overall cityscape we're
 constructing.
@@ -56,8 +56,6 @@ interpretations of key words used in IETF documents. These key words include
 "MAY", and "OPTIONAL". The usage of these words in this document follows the
 specifications set forth in RFC 2119, ensuring clarity and consistency in the
 requirements and recommendations presented herein.
-
-![Flow Chart](docs/flow-chart.drawio.svg)
 
 #### Code Structure
 
@@ -86,43 +84,23 @@ maintenance and improves the readability of code. As a guideline, Typescript
 **SHOULD** be the default language for the majority of application code, unless
 there's a substantial reason to opt for a different language.
 
-#### Infrastructure
+#### Infrastructure as Code
 
 AWS **MUST** be selected a single Infrastructure as a Service (IaaS) provider.
 This project assumes it will fail before AWS does. Vendor lock-in/buy-in allows
 leveraging numerous undifferentiated services. For this project that outweighs
 being cloud agnostic. The cost it would take to move off AWS was considered.
 
-##### Cloudformation
-
 The entire infrastructure is defined as code, allowing for version control, easy
 replication, and consistent environments across different stages of the
-development lifecycle. All Infrastructure as Code (IaC) **MUST** be defined as
-or compile to CloudFormation templates.
-
-###### AWS CDK
+development lifecycle. All Infrastructure as Code **MUST** be defined as or
+compile to CloudFormation templates.
 
 AWS CDK **MUST** be selected for generating Cloudformation templates. The only
 exception is for platform which **MAY** use AWS Org Formation or other
-Cloudformation abstraction layers.
-
-CDK was selected instead of
-[Serverless Framework](https://github.com/serverless-stack/serverless-stack).
-When it comes down to it, SST is an unnecessary and incomplete abstraction
-layer. SST live lambda development works using serverless website. There does
-not appear to be a need to add a reliance on SST. SST future plans, incentives,
-and kickback are questionable.
-
-#### Documentation
-
-A README.md file **SHOULD** be added to explain each project and important
-folder structures. Any code that isn't self-documenting **MUST** be accompanied
-by documentation.
-
-Documentation **SHOULD** be maintained where it will be looked for.
-Documentation as code is desired. Tsdoc **MAY** be selected as a standard for
-writing Typescript documentation. Typedoc **MAY** be selected to compile
-documentation as code.
+Cloudformation abstraction layers. CDK works well for generating most L1 and L2
+Constructrs. L3 Constructs are created more business specific and should be
+maintained by platform rather than a third party.
 
 #### Deployments
 
@@ -132,31 +110,6 @@ deploy services.
 
 During CI, an artifact from each project **MUST** be uploaded to S3. This
 artifact **SHOULD** be processed by AWS CodePipeline for CD.
-
-#### Empowering Teams
-
-If a team needs to rely on another team to make a change that slows down the
-application development life cycle, this is unacceptable.
-
-This separation of concerns between dev and ops teams is commonly seen in
-enterprises. This introduces numerous problems. Instead Ops in ment to provide a
-platform to enable Dev to focus on writting code that matters.
-
-Dev should not be limited by Ops infulstructure, and be forced to add logic to
-the same ball of mud. The should be empowered to release software. It's better
-for platform to provide a L3 construct than to ship code it doesn't understand.
-
-#### Ephemeral Environments
-
-Furthermore, ephemeral environments **MUST** facilitate parallel development and
-testing, enabling multiple teams to work on different features simultaneously
-without interfering with each other. This parallelization **MUST** accelerate
-development cycles and enhance collaboration, ultimately leading to faster
-time-to-market and improved software quality.
-
-Data necessary for setting up a service should move uphill from one environment
-to the next through migrations. Software engineers should not require access to
-production to do their job.
 
 <details>
   <summary>Provisioning</summary>
@@ -186,6 +139,15 @@ production to do their job.
 </details>
 
 ## Documentation
+
+A README.md file **SHOULD** be added to explain each project and important
+folder structures. Any code that isn't self-documenting **MUST** be accompanied
+by documentation.
+
+Documentation **SHOULD** be maintained where it will be looked for.
+Documentation as code is desired. Tsdoc **MAY** be selected as a standard for
+writing Typescript documentation. Typedoc **MAY** be selected to compile
+documentation as code.
 
 See [Documentation](docs/index.md).
 
