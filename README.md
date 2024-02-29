@@ -98,6 +98,7 @@ compile to CloudFormation templates.
 
 AWS CDK **MUST** be selected for generating Cloudformation templates. The only
 exception is for platform which **MAY** use AWS Org Formation or other
+
 Cloudformation abstraction layers. CDK works well for generating most L1 and L2
 Constructrs. L3 Constructs are created more business specific and should be
 maintained by platform rather than a third party.
