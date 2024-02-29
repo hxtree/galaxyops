@@ -1,6 +1,6 @@
 # @cats-cradle
 
-**Crafting Out-of-the-Box Enterprise Architecture on AWS for DevOps**
+**Crafting Out-of-the-Box Enterprise Architecture on AWS for DevOps Teams**
 
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
@@ -141,16 +141,11 @@ artifact **SHOULD** be processed by AWS CodePipeline for CD.
 
 ## Documentation
 
-A README.md file **SHOULD** be added to explain each project and important
-folder structures. Any code that isn't self-documenting **MUST** be accompanied
-by documentation.
-
-Documentation **SHOULD** be maintained where it will be looked for.
-Documentation as code is desired. Tsdoc **MAY** be selected as a standard for
-writing Typescript documentation. Typedoc **MAY** be selected to compile
-documentation as code.
-
-See [Documentation](docs/index.md).
+Documentation **SHOULD** be maintained where it will be looked for. A README.md
+file **SHOULD** be added to explain each project and important folder
+structures. Any code that isn't self-documenting **MUST** be accompanied by
+documentation. Tsdoc **MAY** be selected as a standard for writing Typescript
+documentation. Typedoc **MAY** be selected to compile documentation as code.
 
 > **Note** Use `rush help` for information on builtin commands.
 
