@@ -1,6 +1,6 @@
 # @cats-cradle
 
-**Crafting Out-of-the-Box Enterprise Architecture on AWS for DevOps Teams**
+**Out-of-the-Box AWS Enterprise Architecture for DevOps Teams**
 
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
@@ -23,6 +23,7 @@ developing a cooperative RPG.
 ### Key Features
 
 - Turn-key development environment with Github Codespaces.
+- Emphemiral environments with TLS certifcates, email, etc.
 - Event-driven microservices architecture with data lake.
 - Infrastructure as Code (IaC) for streamlined DevOps pipeline.
 - Continuous integration and continuous deployment (CI/CD) leveraging AWS.
@@ -32,7 +33,7 @@ developing a cooperative RPG.
 
 ### Installing
 
-Instantly start a turn-key development environment by
+The easiest way to start a develop environment is by
 [forking the repo](https://github.com/hxtree/cats-cradle/fork) and open in
 Github Codespaces.
 
@@ -51,14 +52,14 @@ constructing.
 
 #### Code Structure
 
-A monorepo is believed to help streamline changes. The project **MUST** be
-designed as a monorepo instead of polyrepo. Apps **MUST** be mostly serverless
+A monorepo helps streamline changes. The project **MUST** be designed as a
+monorepo instead of polyrepo. Apps **SHOULD** be mostly serverless
 microservices. Not every bit of code the organization maintains should go into
 the monorepo, but those that change together stay together.
 
 Microsoft backed Rush was selected over Nx, Lerna, Turbo, etc. for monorepo
-management. Nx would probably also be suitable, but rush has worked fine so far.
-A package base approach is preferred as to create a clear separation in layers.
+management. Nx is also suitable, but rush has worked fine so far. A package base
+approach is preferred as to create a clear separation in layers.
 
 The structure of the parent project folder **MUST** follow the pattern
 established by Microsoft Rushstack. When it comes to individual package files,
@@ -135,7 +136,7 @@ artifact **SHOULD** be processed by AWS CodePipeline for CD.
 
 Documentation **SHOULD** be maintained where it will be looked for. A README.md
 file **SHOULD** be added to explain each project and important folder
-structures. README.md files should adhere to RFC 2119[^1]. Any code that isn't
+structures. README.md files should adhere to RFC 2119[^2]. Any code that isn't
 self-documenting **MUST** be accompanied by documentation. Tsdoc **MAY** be
 selected as a standard for writing Typescript documentation. Typedoc **MAY** be
 selected to compile documentation as code.
@@ -219,14 +220,16 @@ MIT licensed. Packages without a specific license have not yet been developed
 with reuse in mind and are primarily maintained for the game.
 
 [^1]:
+    Accelerate: The Science of Lean Software and DevOps: Building and Scaling
+    High Performing Technology Organizations Paperback – Illustrated, March 27,
+    2018 by Nicole Forsgren PhD (Author), Jez Humble (Author), Gene Kim
+    (Author).
 
-Accelerate: The Science of Lean Software and DevOps: Building and Scaling High
-Performing Technology Organizations Paperback – Illustrated, March 27, 2018 by
-Nicole Forsgren PhD (Author), Jez Humble (Author), Gene Kim (Author). [^2]: This
-document adheres to the guidelines outlined in
-[RFC 2119](https://www.ietf.org/rfc/rfc2119.txt), which defines the standard
-interpretations of key words used in IETF documents. These key words include
-"MUST", "MUST NOT", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",
-"MAY", and "OPTIONAL". The usage of these words in this document follows the
-specifications set forth in RFC 2119, ensuring clarity and consistency in the
-requirements and recommendations presented herein.
+[^2]:
+    This document adheres to the guidelines outlined in
+    [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt), which defines the standard
+    interpretations of key words used in IETF documents. These key words include
+    "MUST", "MUST NOT", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
+    "RECOMMENDED", "MAY", and "OPTIONAL". The usage of these words in this
+    document follows the specifications set forth in RFC 2119, ensuring clarity
+    and consistency in the requirements and recommendations presented herein.
