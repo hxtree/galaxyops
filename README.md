@@ -10,9 +10,9 @@
 
 Architecture outlines the stuff that is hard to change. In the realm of
 architecture, it's not merely about constructing individual buildings; it's
-about designing the city. Similarly, our opinionated approach to running
-enterprise software architecture on AWS goes beyond the confines of a single
-project; it lay the groundwork for the entire landscape.
+about designing the city. Our opinionated approach to running enterprise
+software architecture on AWS extends beyond individual projects, laying the
+groundwork for the entire landscape.
 
 Jumpstart your enterprise application development journey. Speed up your
 software pipeline by embracing modern DevOps practices on AWS, utilizing a
