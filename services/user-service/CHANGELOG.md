@@ -1,6 +1,13 @@
-# Change Log - @cats-cradle/authentication-service
+# Change Log - @cats-cradle/user-service
 
-This log was last generated on Sun, 04 Feb 2024 05:29:40 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Mar 2024 05:29:22 GMT and should not be manually modified.
+
+## 1.1.5
+Tue, 05 Mar 2024 05:29:22 GMT
+
+### Patches
+
+- update 
 
 ## 1.1.4
 Sun, 04 Feb 2024 05:29:40 GMT

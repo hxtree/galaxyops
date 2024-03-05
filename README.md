@@ -25,6 +25,8 @@ developing a cooperative RPG.
 - Turn-key development environment with Github Codespaces.
 - Emphemiral environments with TLS certifcates, email, etc.
 - Event-driven microservices architecture with data lake.
+- Interservice schema contracts, offering automatic mocking, faking, and
+  validation pipes for seamless development and data integrity.
 - Infrastructure as Code (IaC) for streamlined DevOps pipeline.
 - Continuous integration and continuous deployment (CI/CD) leveraging AWS.
 - Happy Engineers.
@@ -57,15 +59,16 @@ monorepo instead of polyrepo. Apps **SHOULD** be mostly serverless
 microservices. Not every bit of code the organization maintains should go into
 the monorepo, but those that change together stay together.
 
+A package base approach is preferred as to create a clear separation in layers.
 Microsoft backed Rush was selected over Nx, Lerna, Turbo, etc. for monorepo
-management. Nx is also suitable, but rush has worked fine so far. A package base
-approach is preferred as to create a clear separation in layers.
+management. Nx is also suitable, but rush has worked fine so far.
 
 The structure of the parent project folder **MUST** follow the pattern
-established by Microsoft Rushstack. When it comes to individual package files,
-those that typically change in tandem **SHOULD** be kept together. The
-organization of code **SHOULD** be based on features. The code is divided into
-several categories: libraries, platform, services, middleware, and clients.
+established by Microsoft Rushstack. The code is divided into several categories:
+libraries, platform, services, middleware, and clients. Each is further defined
+in there retrospective folders. When it comes to individual package files, those
+that typically change in tandem **SHOULD** be kept together. The organization of
+code **SHOULD** be based on features.
 
 #### Universal language
 
@@ -91,9 +94,8 @@ compile to CloudFormation templates.
 
 AWS CDK **MUST** be selected for generating Cloudformation templates. The only
 exception is for platform which **MAY** use AWS Org Formation or other
-
 Cloudformation abstraction layers. CDK works well for generating most L1 and L2
-Constructrs. L3 Constructs are created more business specific and should be
+Constructrs. L3 Constructs are created more business specific and **SHOULD** be
 maintained by platform rather than a third party.
 
 #### Deployments
@@ -102,11 +104,11 @@ Each app **MUST** be capable of deployment themselves of using CDK via
 `rushx cdk:deploy`. This command **MAY** also be used in local development to
 deploy services.
 
-During CI, an artifact from each project **MUST** be uploaded to S3. This
-artifact **SHOULD** be processed by AWS CodePipeline for CD.
+During CI, an artifact from each project **MUST** be generated and uploaded to
+S3. This artifact **SHOULD** be processed by AWS CodePipeline for CD.
 
 <details>
-  <summary>Provisioning</summary>
+  <summary>Initial Infrastructure Provisioning</summary>
 
 1. Setup [AWS Org Formation](/platform/aws-org-formation/README.md).
 
@@ -136,10 +138,10 @@ artifact **SHOULD** be processed by AWS CodePipeline for CD.
 
 Documentation **SHOULD** be maintained where it will be looked for. A README.md
 file **SHOULD** be added to explain each project and important folder
-structures. README.md files should adhere to RFC 2119[^2]. Any code that isn't
-self-documenting **MUST** be accompanied by documentation. Tsdoc **MAY** be
-selected as a standard for writing Typescript documentation. Typedoc **MAY** be
-selected to compile documentation as code.
+structures. README.md files instructions should adhere to RFC 2119[^2]. Any code
+that isn't self-documenting **MUST** be accompanied by documentation. Tsdoc
+**MAY** be selected as a standard for writing Typescript documentation. Typedoc
+**MAY** be selected to compile documentation as code.
 
 > **Note** Use `rush help` for information on builtin commands.
 
@@ -158,8 +160,8 @@ selected to compile documentation as code.
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-We welcome contributions to this open-source project. Please follow the
-[code of conduct](docs/CODE_OF_CONDUCT.md) when contributing.
+We welcome contributions of any size to this open-source project. Please follow
+the [code of conduct](docs/CODE_OF_CONDUCT.md) when contributing.
 
 Pull requests and bug reports are welcome on GitHub at
 <https://github.com/hxtree/cats-cradle>.
@@ -217,7 +219,8 @@ Pull requests and bug reports are welcome on GitHub at
 
 Packages available on [NPM](https://www.npmjs.com/search?q=%40cats-cradle) are
 MIT licensed. Packages without a specific license have not yet been developed
-with reuse in mind and are primarily maintained for the game.
+with reuse in mind and are primarily maintained for the game. Simply remove
+these projects when setting up your architecture.
 
 [^1]:
     Accelerate: The Science of Lean Software and DevOps: Building and Scaling

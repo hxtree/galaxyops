@@ -2,6 +2,26 @@
   "name": "@cats-cradle/create-bundle",
   "entries": [
     {
+      "version": "1.0.14",
+      "tag": "@cats-cradle/create-bundle_v1.0.14",
+      "date": "Tue, 05 Mar 2024 05:29:22 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "update deps"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.12`"
+          },
+          {
+            "comment": "Updating dependency \"@cats-cradle/base-nodejs\" to `1.0.12`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.13",
       "tag": "@cats-cradle/create-bundle_v1.0.13",
       "date": "Sun, 04 Feb 2024 05:29:40 GMT",

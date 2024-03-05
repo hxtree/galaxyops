@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/pseudo-random
 
-This log was last generated on Sun, 04 Feb 2024 05:29:40 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Mar 2024 05:29:22 GMT and should not be manually modified.
+
+## 0.0.7
+Tue, 05 Mar 2024 05:29:22 GMT
+
+### Patches
+
+- update deps
 
 ## 0.0.6
 Sun, 04 Feb 2024 05:29:40 GMT

@@ -1,6 +1,13 @@
 # Change Log - @cats-cradle/validation-schemas
 
-This log was last generated on Sun, 04 Feb 2024 05:29:40 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Mar 2024 05:29:22 GMT and should not be manually modified.
+
+## 0.4.8
+Tue, 05 Mar 2024 05:29:22 GMT
+
+### Patches
+
+- update deps
 
 ## 0.4.7
 Sun, 04 Feb 2024 05:29:40 GMT
