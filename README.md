@@ -8,17 +8,17 @@
 [![Docs](https://github.com/hxtree/cats-cradle/actions/workflows/pages/pages-build-deployment/badge.svg)](https://hxtree.github.io/cats-cradle/)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-Architecture outlines the stuff that is hard to change. In the realm of
+Architecture in outlines the stuff that is hard to change. In the realm of
 architecture, it's not merely about constructing individual buildings; it's
 about designing the city. Similarly, our opinionated approach to running
-enterprise architecture on AWS goes beyond the confines of a single project; it
-lay the groundwork for the entire landscape.
+enterprise software architecture on AWS goes beyond the confines of a single
+project; it lay the groundwork for the entire landscape.
 
-Explore to jumpstart your enterprise application development. Adopt modern
-DevOps practices on AWS with a monorepo architecture like this one to expedite
-your software pipeline[^1]. This repository goes beyond theory—it's a hands-on
-showcase, containing diverse working placeholder packages actively employed in
-developing a cooperative RPG.
+Jumpstart your enterprise application development journey. Speed up your
+software pipeline by embracing modern DevOps practices on AWS, utilizing a
+monorepo architecture like this one[^1]. This repository goes beyond theory—it's
+a hands-on showcase, containing diverse working placeholder packages actively
+employed in developing a cooperative RPG.
 
 ### Key Features
 
@@ -27,6 +27,9 @@ developing a cooperative RPG.
 - Event-driven microservices architecture with data lake.
 - Interservice schema contracts, offering automatic mocking, faking, and
   validation pipes for seamless development and data integrity.
+- User registration and authentication functionality.
+- Single-page application (SPA) frontend with backend for frontend (BFF)
+  architecture.
 - Infrastructure as Code (IaC) for streamlined DevOps pipeline.
 - Continuous integration and continuous deployment (CI/CD) leveraging AWS.
 - Happy Engineers.
