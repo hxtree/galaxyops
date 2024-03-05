@@ -3,7 +3,7 @@
   "license": "MIT",
   "bin": "./dist/index.js",
   "main": "index.js",
-  "version": "1.2.10",
+  "version": "1.2.11",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"

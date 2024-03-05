@@ -2,7 +2,7 @@
   "name": "@cats-cradle/user-service",
   "module": "commonjs",
   "description": "user service",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "scripts": {
     "dev": "nest start --debug --watch",
     "build": "tsc",
