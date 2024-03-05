@@ -8,7 +8,7 @@
 [![Docs](https://github.com/hxtree/cats-cradle/actions/workflows/pages/pages-build-deployment/badge.svg)](https://hxtree.github.io/cats-cradle/)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-Architecture in outlines the stuff that is hard to change. In the realm of
+Architecture outlines the stuff that is hard to change. In the realm of
 architecture, it's not merely about constructing individual buildings; it's
 about designing the city. Similarly, our opinionated approach to running
 enterprise software architecture on AWS goes beyond the confines of a single
