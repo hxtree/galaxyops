@@ -5,14 +5,14 @@ import { BreadCrumbs } from '../components/Breadcrumbs';
 export default function DicePage() {
   return (
     <main className="container">
-      {/** TODO move to prop on breadcrumb */}
-      <BreadCrumbs/>
       <Hero pageTier={2} image='/assets/clouds.jpg'
+      breadcrumb={<BreadCrumbs/>}
       heading='Dice Notation Analyzer'
-      lead='Determine the appropriate dice notation for skill set rolls and
-          visualizes the impact of luck. Gain valuable insights into
-          chance&apos;s influence on game play outcomes.'>
+      lead='Determine the appropriate dice notation for skill set rolls.'>
+      <p>Visualizes the impact of luck. Gain valuable insights into
+          chance&apos;s influence on game play outcomes.</p>
       </Hero>
+
 
       <DiceAnalyzer/>
     </main>

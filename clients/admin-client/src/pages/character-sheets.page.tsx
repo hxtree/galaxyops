@@ -1,13 +1,21 @@
-import { Paper } from '@cats-cradle/design-system/dist/main';
+import { Paper, Hero } from '@cats-cradle/design-system/dist/main';
 import { BreadCrumbs } from '../components/Breadcrumbs';
 
 export default function CharacterSheetsPage() {
   return (
-    <main className="container">
-      <BreadCrumbs/>
-      <Paper elevation="1" className='p-5'>
-        <h1>Character Sheets</h1>
-      </Paper>
-    </main>
+    <>
+      <Hero
+        pageTier={2}
+        image='/assets/clouds.jpg'
+        breadcrumb={<BreadCrumbs/>}
+        heading='Character Sheets'
+        lead='Review characters per instance'>
+      </Hero>
+      <main className="container">
+        <Paper elevation="1" className='p-5'>
+          Coming soon.
+        </Paper>
+      </main>
+    </>
   );
 }

@@ -32,7 +32,7 @@ employed in developing a cooperative RPG.
   architecture.
 - Infrastructure as Code (IaC) for streamlined DevOps pipeline.
 - Continuous integration and continuous deployment (CI/CD) leveraging AWS.
-- Happy Engineers.
+- Happy productive engineers.
 
 ## Getting Started
 
