@@ -8,7 +8,6 @@
   background-position: top center;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-
   h1 {
     font-weight: bold;
     background: linear-gradient(to right, $color-primary, darken($color-primary, 5%)) !important;
@@ -16,10 +15,16 @@
     background-clip: text !important;
     color: transparent !important ;
   }
-  p {
+  .lead {
     font-weight: bold;
-    color: white;
+    color: $color-blue;
     font-size: 1.2em;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  p {
+    color: $color-blue;
+  }
+  .toolbar {
+    background-color: $color-blue;
+    color: $color-white;
   }
 }
