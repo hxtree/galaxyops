@@ -1,3 +1,5 @@
+import { Archetype } from './archetype';
+
 export namespace Affiliation {
   export enum Reputation {
     HONORED = 'HONORED',
@@ -19,6 +21,7 @@ export namespace Affiliation {
     history?: string[];
     aliases?: string[];
     parentAffiliation?: Affiliation.Type;
+    // notableMembers?: string[];
     standings?: Standing[];
   };
 
@@ -30,6 +33,12 @@ export namespace Affiliation {
     lore: [
       'The destroyers are said to bring about an end to all time, heart, and law in the world.',
     ],
+    // notableMembers: [
+    //   // Each member has the last name Oni which means demon
+    //   Archetype.VALLON_ONI.name,
+    //   Archetype.MEEKU_ONI.name,
+    //   Archetype.OUERN_ONI.name
+    // ],
     standings: [
       { affiliation: Affiliation.THE_CATS, reputation: Reputation.NEUTRAL },
       { affiliation: Affiliation.DEVILS, reputation: Reputation.HONORED },
@@ -48,11 +57,36 @@ export namespace Affiliation {
       + 'The world is said to be their cradle',
     lore: [],
     history: ['Three beings who maintain the fundamental order in the world. '],
+    // notableMembers: [
+    //   // Each member is named after a type of cat which they are based on
+    //   Archetype.JANUS_PERSIAN.name,
+    //   Archetype.LOOMEE_ANGORA.name,
+    //   Archetype.MISCHIEVOUS_PIEBALD.name
+    // ],
     standings: [
       {
         affiliation: Affiliation.THE_DESTROYERS,
         reputation: Reputation.NEUTRAL,
       },
+    ],
+  };
+
+  export const THE_ANTIFELINES: Type = {
+    name: 'The Antifelines',
+    description:
+      'A group of individuals dedicated to opposing the Cats and protecting others from their influence.',
+    // TODO consider adding a `rank` field
+    // notableMembers: [
+    //   // Each member has been given a name that is toxic or poisonous to cats
+    //   'Lily',
+    //   'Nightshade',
+    //   'Hemlock',
+    //   'Foxglove',
+    //   'Oleander',
+    //   'Yew',
+    // ],
+    standings: [
+      { affiliation: Affiliation.THE_CATS, reputation: Reputation.HATED },
     ],
   };
 
@@ -85,6 +119,16 @@ export namespace Affiliation {
       'One member who break laws and discipline. ', // Vallon
       'One member who wallow in extravagance and pleasures. ', // SUYRI
     ],
+    // notableMembers: [
+    //   Archetype.WISP.name,
+    //   Archetype.DIAG.name,
+    //   Archetype.ASMIN.name,
+    //   Archetype.LAWZON_GREY.name,
+    //   Archetype.VOID.name,
+    //   Archetype.GENKI.name,
+    //   Archetype.VALLON_ONI.name,
+    //   Archetype.SUYRI.name,
+    // ],
     history: [
       `The ${ARCHANGELS.name} consider their power too grand and sealed their bodies away`,
       'Each member embodies one of the seven sins',
@@ -96,7 +140,7 @@ export namespace Affiliation {
     aliases: ['Eight Honors', 'Virtuous'],
     description: 'Each member embodies one of the eight honors',
     history: [
-      'Each member become a party member. ',
+      'Each member can become a party member. ',
       'Each member embodies an honorable trait. ',
       'One member who love the motherland. ', // Gunter
       'One member serve the people. ', // Penny
@@ -107,6 +151,16 @@ export namespace Affiliation {
       'One member abide by law and discipline. ', // Gaali
       'One member uphold plain living and hard struggle. ', // Malace
     ],
+    // notableMembers: [
+    //   Archetype.GUNTER_STONEWELL.name,
+    //   Archetype.PENNY_KIBBUTZ.name,
+    //   Archetype.TRAEZ_UTHSHA.name,
+    //   Archetype.MEEKU_ONI.name,
+    //   Archetype.LOOMEE_ANGORA.name,
+    //   // Archetype.ANIROTH.name,
+    //   Archetype.GAALI_RUNEWIN.name,
+    //   Archetype.MALACE_TSIA.name,
+    // ],
     standings: [
       { affiliation: Affiliation.THE_CATS, reputation: Reputation.HONORED },
     ],
@@ -117,8 +171,17 @@ export namespace Affiliation {
     aliases: ['Seven Devils'],
     description:
       'All members seek an end to all of existence. '
-      + 'They are the reincarnated sprites of the Original Seven. '
+      + `They are the reincarnated sprites of the ${DEVILS.name}. `
       + 'They are lead by Vallon. ',
+    // notableMembers: [
+    //   Archetype.WISP.name,
+    //   Archetype.DIAG.name,
+    //   Archetype.ASMIN.name,
+    //   Archetype.LAWZON_GREY.name,
+    //   Archetype.SUYRI.name,
+    //   Archetype.GENKI.name,
+    //   // TODO add other members
+    // ],
   };
 
   export const BROTHERHOOD: Type = {
@@ -127,12 +190,18 @@ export namespace Affiliation {
 
   export const SOLIDER_FORCES: Type = {
     name: 'Solider Forces',
+    // notableMembers: [
+    //   Archetype.OUERN_ONI.name
+    // ],
     parentAffiliation: Affiliation.OCEANIA,
   };
 
   export const X_SOLIDER_FORCES: Type = {
     name: 'X-Solider Forces',
     description: 'Members are former Soldiers Forces who left on bad terms. ',
+    // notableMembers: [
+    //   Archetype.OUERN_ONI.name
+    // ],
     standings: [
       { affiliation: Affiliation.SOLIDER_FORCES, reputation: Reputation.HATED },
     ],
@@ -146,6 +215,9 @@ export namespace Affiliation {
       + 'The Magi Order members are all divine people. '
       + 'The Magi discipline enables followers to harness the power of the Eight Devils of the old world. '
       + "Faye's gem reacts with Eight Devils in combat to gain new Disciplines",
+    // notableMembers: [
+    //   Archetype.FAYE_IMAGO.name,
+    // ],
     standings: [
       { affiliation: Affiliation.DEVILS, reputation: Reputation.HATED },
     ],
@@ -174,6 +246,10 @@ export namespace Affiliation {
       + 'The Yang being the purified village and the dark inside the yang being the body of the sacrifice. '
       + 'The Yin being the demon world and the light inside the yang being the sacrificed soul'
       + 'It is later inferred the soul of the village has turned dark from performing ritual',
+    // notableMembers:[
+    //   Archetype.MADHI_TSIA.name,
+    //   Archetype.MALACE_TSIA.name,
+    // ]
   };
 
   export const REBEL: Type = {
@@ -181,6 +257,9 @@ export namespace Affiliation {
     description:
       'A group that has been formed of people opposing both sides of the conflict that only want peace. '
       + 'They are focused around destroying the ancient technology discovered to prevent the war from escalation.',
+    // notableMembers: [
+    //   Archetype.TRAEZ_UTHSHA.name,
+    // ]
   };
 
   export const ORIGINALS: Type = {
@@ -193,6 +272,9 @@ export namespace Affiliation {
       'In order to save what they believe in those at the top of the organization have become corrupt. '
       + 'They have started to resurrect ancient technology that can be used to destroy the other side.'
       + 'They are a peaceful nation that is always at war.',
+    // notableMembers: [
+    //   Archetype.FAYE_IMAGO.name
+    // ],
     standings: [
       { affiliation: Affiliation.EURASIA, reputation: Reputation.HATED },
     ],
@@ -214,6 +296,9 @@ export namespace Affiliation {
 
   export const NINJA: Type = {
     name: 'Ninja',
+    // notableMembers: [
+    //   Archetype.PENNY_KIBBUTZ.name,
+    // ]
   };
 
   export const LEGION_SEE: Type = {
@@ -231,6 +316,9 @@ export namespace Affiliation {
       + 'Recruit pals below you, and watch your loot soar as the pyramid flips for fun and profit.'
       + 'No good doers allowed.',
     // this is a pyramid scheme that takes advantage of uninformed bad actors
+    // notableMembers: [
+    //   Archetype.BANDIT.name
+    // ],
     standings: [
       { affiliation: Affiliation.OCEANIA, reputation: Reputation.HATED },
     ],

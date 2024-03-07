@@ -14,5 +14,6 @@ export const Default = args => <Hero {...args}>
 Default.args = {
   image: 'https://picsum.photos/seed/picsum/1024/300',
   heading: 'Twenty Minutes Goes By Faster?',
-  lead: 'Chroma sets the stage contrast creates focal points.'
+  lead: 'Chroma sets the stage contrast creates focal points.',
+  toolbar: 'test'
 };

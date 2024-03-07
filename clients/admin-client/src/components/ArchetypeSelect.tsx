@@ -71,6 +71,7 @@ export default function ArchetypeSelect() {
           id="archetype-id"
           onChange={(event) => handleChange(event)}
           input={<OutlinedInput label="Archetype" />}
+          className='bg-white'
         >
           {archetypes && archetypes.map(archetype => (
             <MenuItem key={archetype} value={archetype}>
