@@ -12,6 +12,10 @@ Here are some important guidelines for building services:
 
 ## Guidelines
 
+- **Serverless**: Services projects **SHOULD** be serverless, unless there is
+  good reason to use alternative. Function as a Service (FaaS) are often by big
+  three cloud providers.
+
 - **Dependency on Platform**: Services rely on platform projects located in the
   `platform/` directory. Make sure to deploy platform projects before deploying
   services.

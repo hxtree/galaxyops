@@ -57,21 +57,22 @@ constructing.
 
 #### Code Structure
 
-A monorepo helps streamline changes. The project **MUST** be designed as a
-monorepo instead of polyrepo. Apps **SHOULD** be mostly serverless
-microservices. Not every bit of code the organization maintains should go into
-the monorepo, but those that change together stay together.
+A monorepo was chosen to simplify development by housing multiple projects in a
+single repository, streamlining code sharing, versioning, and dependency
+management. Monorepos help fosters collaboration, ensures consistency, and
+enables efficient code reuse across projects. That's not to say every bit of
+code the organization maintains should go into a monorepo or the same monorepo.
 
-A package base approach is preferred as to create a clear separation in layers.
-Microsoft backed Rush was selected over Nx, Lerna, Turbo, etc. for monorepo
-management. Nx is also suitable, but rush has worked fine so far.
+A package base monorepo approach is preferred as to create a clear separation in
+layers. Microsoft backed Rush was selected over Nx, Lerna, Turbo, etc. for
+monorepo management. Nx is also suitable, but rush has worked fine so far.
 
-The structure of the parent project folder **MUST** follow the pattern
-established by Microsoft Rushstack. The code is divided into several categories:
-libraries, platform, services, middleware, and clients. Each is further defined
-in there retrospective folders. When it comes to individual package files, those
-that typically change in tandem **SHOULD** be kept together. The organization of
-code **SHOULD** be based on features.
+The code is divided into several categories: libraries, platform, services,
+middleware, and clients. Each is further defined in there retrospective folders.
+When it comes to individual package files, those that typically change in tandem
+**SHOULD** generally be kept together. The organization of code **SHOULD** be
+based on features. All project dependencies **MUST** be unidirectional
+dependencies.
 
 #### Universal language
 
@@ -85,10 +86,13 @@ there's a substantial reason to opt for a different language.
 
 #### Infrastructure as Code
 
-AWS **MUST** be selected a single Infrastructure as a Service (IaaS) provider.
-This project assumes it will fail before AWS does. Vendor lock-in/buy-in allows
-leveraging numerous undifferentiated services. For this project that outweighs
-being cloud agnostic. The cost it would take to move off AWS was considered.
+We selected AWS as our Infrastructure as a Service (IaaS) provider because of
+the advantages of vendor lock-in, allowing us access to a diverse array of
+standardized services. In this project, prioritizing these benefits takes
+precedence over maintaining cloud agnosticism. We anticipate potential project
+failure before AWS, and we've accounted for the potential cost of migrating
+between IaaS providers. Our approach involves intentional structuring of layers
+and relies primarily on features offered by multiple cloud providers.
 
 The entire infrastructure is defined as code, allowing for version control, easy
 replication, and consistent environments across different stages of the
@@ -98,8 +102,9 @@ compile to CloudFormation templates.
 AWS CDK **MUST** be selected for generating Cloudformation templates. The only
 exception is for platform which **MAY** use AWS Org Formation or other
 Cloudformation abstraction layers. CDK works well for generating most L1 and L2
-Constructrs. L3 Constructs are created more business specific and **SHOULD** be
-maintained by platform rather than a third party.
+Constructrs. Althouh other frameworks offer more L3 Constructs, L3 Constructs
+are more business specific and **SHOULD** be maintained by platform instead of a
+third party software vendor.
 
 #### Deployments
 
@@ -108,7 +113,8 @@ Each app **MUST** be capable of deployment themselves of using CDK via
 deploy services.
 
 During CI, an artifact from each project **MUST** be generated and uploaded to
-S3. This artifact **SHOULD** be processed by AWS CodePipeline for CD.
+S3 for auditing and deployment purposes. This artifact **SHOULD** be processed
+by AWS CodePipeline for CD.
 
 <details>
   <summary>Initial Infrastructure Provisioning</summary>
