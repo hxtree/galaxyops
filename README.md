@@ -108,13 +108,14 @@ third party software vendor.
 
 #### Deployments
 
-Each app **MUST** be capable of deployment themselves of using CDK via
-`rushx cdk:deploy`. This command **MAY** also be used in local development to
-deploy services.
-
-During CI, an artifact from each project **MUST** be generated and uploaded to
-S3 for auditing and deployment purposes. This artifact **SHOULD** be processed
-by AWS CodePipeline for CD.
+Every project **MUST** have the capability for independent deployment using the
+standardized command `rushx cdk:deploy`. This deployment command is also
+applicable for deploying services during local development. Any changes to the
+base branch that affect deployable projects **MUST** automatically create and
+upload a self contained artifact for each impacted project to S3. This artifact
+serves both auditing and deployment purposes. It is advisable to use AWS
+CodePipeline for managing this artifact within continuous delivery (CD)
+workflows.
 
 <details>
   <summary>Initial Infrastructure Provisioning</summary>
