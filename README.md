@@ -20,43 +20,57 @@ monorepo architecture like this one[^1]. This repository goes beyond theory—it
 a hands-on showcase, containing diverse working placeholder packages actively
 employed in developing a cooperative RPG.
 
-### Key Features
+### Features
 
-- Turn-key development environment with Github Codespaces.
-- Emphemiral environments with TLS certifcates, email, etc.
-- Event-driven microservices architecture with data lake.
-- Interservice schema contracts, offering automatic mocking, faking, and
-  validation pipes for seamless development and data integrity.
-- User registration and authentication functionality.
-- Single-page application (SPA) frontend with backend for frontend (BFF)
-  architecture.
-- Infrastructure as Code (IaC) for streamlined DevOps pipeline.
-- Continuous integration and continuous deployment (CI/CD) leveraging AWS.
-- Happy productive engineers.
-
-## Getting Started
-
-### Installing
-
-The easiest way to start a develop environment is by
-[forking the repo](https://github.com/hxtree/cats-cradle/fork) and open in
-Github Codespaces.
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
-
-Alternatively, git clone the repo and build, test, and deploy apps locally using
-the [devcontainer](.devcontainer/README.md).
-
-### Architecture Guidelines
-
-![Flow Chart](docs/flow-chart.drawio.svg)
-
-The guide below outlines principles and standards applicable to this repository,
-ensuring that each piece contributes harmoniously to the overall cityscape we're
+The below features outline the principles and standards applicable to this
+repository. Each piece contributes harmoniously to the overall cityscape we're
 constructing.
 
-#### Code Structure
+<details>
+  <summary>Turn-key development environment with Github Codespaces.</summary>
+  Even the development environment is code. Reducing on boarding setup and workstation recovery from days to minutes.
+</details>
 
+<details>
+  <summary>Emphemiral environments with TLS certifcates, email, etc.</summary>
+  AWS Org Formation is used to set that bases for platform. Other services build on top of that.
+</details>
+
+<details>
+  <summary>Event-driven microservices architecture with data lake.</summary>
+  Services use queues communition. They are fault tolerant. Events are automatically archived in a data lake for data anlaytics and business driven insights.
+</details>
+
+<details>
+  <summary>Interservice schema contracts, offering automatic mocking, faking, and
+  validation pipes for seamless development and data integrity.</summary>
+  Libriaries define schema and allow for automated faking of interservice contracts.
+</details>
+
+<details>
+  <summary>User registration and authentication functionality.</summary>
+  Cognito service provides user registration.
+</details>
+
+<details>
+  <summary>Single-page application (SPA) frontend with backend for frontend (BFF)
+  architecture.</summary>
+  Clients are SPA usually S3 backed and deployed to cloudfront. BFF are middleware.
+</details>
+
+<details>
+  <summary>Universal language</summary>
+Javascript is the chosen base language for microservices in this project, due to
+its performance, ubiquity, beginner-friendly nature, extensive adoption, and
+omnipresence. Typescript, backed by Microsoft, is utilized for compiling
+Javascript. Typescript brings the advantage of type hinting, which aids in
+maintenance and improves the readability of code. As a guideline, Typescript
+**SHOULD** be the default language for the majority of application code, unless
+there's a substantial reason to opt for a different language.
+</details>
+
+<details>
+  <summary>Enterprise Architecture</summary>
 A monorepo was chosen to simplify development by housing multiple projects in a
 single repository, streamlining code sharing, versioning, and dependency
 management. Monorepos help fosters collaboration, ensures consistency, and
@@ -74,17 +88,10 @@ When it comes to individual package files, those that typically change in tandem
 based on features. All project dependencies **MUST** be unidirectional
 dependencies.
 
-#### Universal language
+</details>
 
-Javascript is the chosen base language for microservices in this project, due to
-its performance, ubiquity, beginner-friendly nature, extensive adoption, and
-omnipresence. Typescript, backed by Microsoft, is utilized for compiling
-Javascript. Typescript brings the advantage of type hinting, which aids in
-maintenance and improves the readability of code. As a guideline, Typescript
-**SHOULD** be the default language for the majority of application code, unless
-there's a substantial reason to opt for a different language.
-
-#### Infrastructure as Code
+<details>
+  <summary>Infrastructure as Code (IaC) for streamlined DevOps pipeline.</summary>
 
 We selected AWS as our Infrastructure as a Service (IaaS) provider because of
 the advantages of vendor lock-in, allowing us access to a diverse array of
@@ -99,15 +106,20 @@ replication, and consistent environments across different stages of the
 development lifecycle. All Infrastructure as Code **MUST** be defined as or
 compile to CloudFormation templates.
 
-AWS CDK **MUST** be selected for generating Cloudformation templates. The only
+</details>
+
+<details>
+  <summary>Continuous integration and continuous deployment (CI/CD) leveraging AWS.</summary>
+  AWS CDK **MUST** be selected for generating Cloudformation templates. The only
 exception is for platform which **MAY** use AWS Org Formation or other
 Cloudformation abstraction layers. CDK works well for generating most L1 and L2
 Constructrs. Althouh other frameworks offer more L3 Constructs, L3 Constructs
 are more business specific and **SHOULD** be maintained by platform instead of a
 third party software vendor.
+</details>
 
-#### Deployments
-
+<details>
+  <summary>Independent and Auditable Deployments</summary>
 Every project **MUST** have the capability for independent deployment using the
 standardized command `rushx cdk:deploy`. This deployment command is also
 applicable for deploying services during local development. Any changes to the
@@ -116,9 +128,32 @@ upload a self contained artifact for each impacted project to S3. This artifact
 serves both auditing and deployment purposes. It is advisable to use AWS
 CodePipeline for managing this artifact within continuous delivery (CD)
 workflows.
+</details>
 
 <details>
-  <summary>Initial Infrastructure Provisioning</summary>
+  <summary>Happy productive engineers.</summary>
+  From an anthropological standpoint, our selection of languages and tools goes beyond code; it becomes the cultural fabric of our tech ecosystem. Tools were selected not only to serve enablers for engineers but as catalysts for a user-centric experience.
+</details>
+
+## Getting Started
+
+### Setting up Development Environment
+
+The easiest way to start a develop environment is by
+[forking the repo](https://github.com/hxtree/cats-cradle/fork) and open in
+Github Codespaces.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
+
+Alternatively, git clone the repo and build, test, and deploy apps locally using
+the [devcontainer](.devcontainer/README.md).
+
+![Flow Chart](docs/flow-chart.drawio.svg)
+
+### Implementing AWS Multi-Account Architecture
+
+These steps only need to be performed once by the platform team to initalize the
+IaaS.
 
 1. Setup [AWS Org Formation](/platform/aws-org-formation/README.md).
 
@@ -141,8 +176,6 @@ workflows.
    rush cdk:bootstrap
    rush cdk:deploy --to tag:deploy-tools
    ```
-
-</details>
 
 ## Documentation
 
