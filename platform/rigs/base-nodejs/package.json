@@ -16,8 +16,8 @@
   "devDependencies": {
     "@rushstack/heft": "~0.44.0",
     "@rushstack/heft-node-rig": "^1.0.31",
-    "@types/heft-jest": "1.0.2",
-    "@types/node": "20.10.5",
+    "@types/heft-jest": "1.0.6",
+    "@types/node": "20.11.25",
     "typescript": "5.3.3"
   },
   "dependencies": {
