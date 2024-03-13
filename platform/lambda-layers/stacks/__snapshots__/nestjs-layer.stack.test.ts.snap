@@ -29,7 +29,7 @@ exports[`NestJsLambdaLayerStack should match snapshot test 1`] = `
               {
                 Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
               },
-              /792a2eb30aed4f0af63b0234042502126d54a4a6de28cf07b4c385d1a8dff1a7.json,
+              /f401d4f6b05a0f3af0ca435ef33639815692fecd97f69e462b998e68b758ef85.json,
             ],
           ],
         },
