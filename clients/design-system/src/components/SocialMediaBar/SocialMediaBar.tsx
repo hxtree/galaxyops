@@ -27,7 +27,7 @@ export const SocialMediaBar = (props: SocialMediaBarProps) => {
           <div className="social-links col align-middle p-3 text-end">
               {socialMedias &&
               socialMedias.map((socialMedia: SocialMediaBarLink) => (
-                  <IconButton><FontAwesomeIcon icon={socialMedia.icon} color="white" size="xl"/></IconButton>
+                  <IconButton key={socialMedia.icon.iconName}><FontAwesomeIcon icon={socialMedia.icon} color="white" size="xl"/></IconButton>
               ))
               }
           </div>
