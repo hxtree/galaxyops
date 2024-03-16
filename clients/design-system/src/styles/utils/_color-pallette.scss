@@ -15,6 +15,7 @@ $color-blue:  #005580;
 /* common color abstractions */
 $color-primary: $color-blue;
 $color-secondary: $color-murrey;
+$color-tertiary: $color-off-black;
 $color-inherit: $color-gray;
 
 :root {
@@ -27,5 +28,6 @@ $color-inherit: $color-gray;
   --color-black: $color-black;
   --color-primary:  $color-berkeley-blue:
   --color-secondary: $color-murrey;
+  --color-tertiary: $color-off-black;
   --color-gray: $color-gray;
 }

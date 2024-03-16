@@ -1,6 +1,9 @@
 @import '../../styles/utils/color-pallette';
 
-$card-color: $color-murrey;
+$card-color-primary: $color-primary;
+$card-color-secondary: $color-secondary;
+$card-color-tertiary: $color-tertiary;
+
 $card-call-out-offset: 16px;
 .card {
   border-radius: 1rem;
@@ -26,19 +29,15 @@ $card-call-out-offset: 16px;
       }
     }
 
-    .card-call-out {
+    .card-ribbon {
       text-transform: uppercase;
       font-weight: bold;
       top: 25px;
       position: absolute;
       margin-left: -$card-call-out-offset;
-      background-color: $card-color;
       color: $color-white;
       text-align: center;
       line-height: 50px;
-      border-top: 1px solid lighten($card-color, 10%);
-      border-right: 1px solid lighten($card-color, 10%);
-      border-bottom: 1px solid darken($card-color, 10%);
       box-shadow:  0.7rem 0.7rem .75rem rgba(0, 0, 0, 0.2);
       &::after {
         content: '';
@@ -48,7 +47,33 @@ $card-call-out-offset: 16px;
         transform: translateX(-50%);
         border-left: $card-call-out-offset solid transparent;
         border-right: 0px solid transparent;
-        border-top: $card-call-out-offset solid darken($card-color, 10%);
+      }
+      &.card-ribbon-primary {
+        background-color: $card-color-primary;
+        border-top: 1px solid lighten($card-color-primary, 10%);
+        border-right: 1px solid lighten($card-color-primary, 10%);
+        border-bottom: 1px solid darken($card-color-primary, 10%);
+        &::after {
+          border-top: $card-call-out-offset solid darken($card-color-primary, 10%);
+        }
+      }
+      &.card-ribbon-secondary {
+        background-color: $card-color-secondary;
+        border-top: 1px solid lighten($card-color-secondary, 10%);
+        border-right: 1px solid lighten($card-color-secondary, 10%);
+        border-bottom: 1px solid darken($card-color-secondary, 10%);
+        &::after {
+          border-top: $card-call-out-offset solid darken($card-color-secondary, 10%);
+        }
+      }
+      &.card-ribbon-tertiary {
+        background-color: $card-color-tertiary;
+        border-top: 1px solid lighten($card-color-tertiary, 10%);
+        border-right: 1px solid lighten($card-color-tertiary, 10%);
+        border-bottom: 1px solid darken($card-color-tertiary, 10%);
+        &::after {
+          border-top: $card-call-out-offset solid darken($card-color-tertiary, 10%);
+        }
       }
     }
   }
