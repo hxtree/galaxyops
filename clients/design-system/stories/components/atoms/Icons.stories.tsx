@@ -17,7 +17,8 @@ import {
   faRepeat,
   faGithub,
   Paper,
-  Alert
+  Alert,
+  AlertSeverity
 } from '../../../src/main';
 
 export default {
@@ -45,7 +46,7 @@ export const Default = () => {
 
   return (
     <>
-      <Alert severity="info">
+      <Alert severity={AlertSeverity.INFO}>
         Explore a wider range of icons in the <a href="https://fontawesome.com/v6/icons?o=r&m=free" target="_blank" rel="noopener noreferrer">FontAwesome Library</a>,
         offering an extensive collection of fonts that are not yet integrated but can easily be added to the design system.
       </Alert>

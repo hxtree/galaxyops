@@ -8,7 +8,8 @@ import {
   Chart,
   TextField,
   Button,
-  Paper
+  Paper,
+  AlertSeverity
 } from '@cats-cradle/design-system/dist/main';
 import axios from 'axios';
 
@@ -91,7 +92,7 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
   return (
     <>
       {errorMsg && errorMsg?.length > 0 && (
-        <Alert severity="danger">
+        <Alert severity={AlertSeverity.DANGER}>
           {errorMsg}
         </Alert>
       )}
