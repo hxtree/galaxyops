@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon, Hero } from '../../src/main';
+import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon, Hero, AlertSeverity } from '../../src/main';
 
 type NavMenuItem = {
   link: string;
@@ -36,7 +36,7 @@ export const Default = () => (
       <Hero pageTier={2} heading={'Et malesuada fames ac turpis.'} lead={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula metus quis sagittis malesuada. Nulla facilisi. Duis feugiat tellus eu justo hendrerit, nec congue odio congue.'} image={''}>
       </Hero>
       <div className='container'>
-        <Alert severity="info">
+        <Alert severity={AlertSeverity.INFO}>
           Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
         </Alert>
 

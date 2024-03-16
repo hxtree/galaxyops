@@ -1,13 +1,21 @@
 import React from "react";
 import './style.module.scss';
 
+export enum AlertSeverity {
+  INFO = 'info',
+  SUCCESS = 'success',
+  WARNING = 'warning',
+  DANGER = 'danger'
+}
+
 export type AlertProps = {
   children: React.ReactNode;
-  severity: 'info' | 'success' | 'warning' | 'danger';
+  severity: AlertSeverity;
+  testId?: string;
 }
 
 export const Alert = (props: AlertProps) => {
-  const { severity, children } = props;
+  const { severity, children, testId } = props;
 
   let symbol: React.ReactNode;
 
@@ -28,7 +36,7 @@ export const Alert = (props: AlertProps) => {
 
   return (
     <>
-      <div className={`alert alert-${severity} d-flex align-items-center mt-5 mb-5`} role="alert">
+      <div className={`alert alert-${severity} d-flex align-items-center mt-5 mb-5`} role="alert" data-testid={testId ? `${testId}-severity` : null}>
         <svg className="bi flex-shrink-0 me-2" viewBox="0 0 16 16" fill="currentColor" width="24" height="24" role="img">
           { symbol }
         </svg>

@@ -10,6 +10,8 @@ type AnalyticProps = {
 export class Analytics {
   public DATA_ANALYTICS_ATTRIBUTE = 'data-analytics';
   public DEFAULT_DELIMITER = '-';
+  private scope?: string;
+  private delimiter?: string;
 
   /**
    * Creates an instance of the Analytics class.
@@ -18,10 +20,9 @@ export class Analytics {
    * @example
    * const analytics = new Analytics('component', 'child');
    */
-  constructor(
-    private scope?: string,
-    private delimiter?: string,
-  ) {
+  constructor(scope?: string, delimiter?: string) {
+    this.scope = scope;
+    this.delimiter = delimiter;
     if (delimiter === undefined) {
       this.delimiter = this.DEFAULT_DELIMITER;
     }

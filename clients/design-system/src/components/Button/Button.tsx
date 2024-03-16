@@ -65,7 +65,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
       className={classNames.join(' ')}
       onClick={ onClickHandler }
       ref={ref}
-      data-testid={testId}
+      data-testid={testId ? `${testId}-button`: null}
     >
       {loading && <Spinner color="light" size="small"/>}
       {children}

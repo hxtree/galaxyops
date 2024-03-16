@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon, Blurb } from '../../src/main';
+import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon, Blurb, AlertSeverity } from '../../src/main';
 import { Badge } from '@mui/material';
 // IconButton, FontAwesomeIcon, faBars, faGithub,
 
@@ -36,7 +36,7 @@ export const Default = () => (
         </ul>
       </AppBar>
       <div className='container'>
-        <Alert severity="info">
+        <Alert severity={AlertSeverity.INFO}>
           Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
         </Alert>
 
