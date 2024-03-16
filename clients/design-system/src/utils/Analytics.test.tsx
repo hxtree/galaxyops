@@ -13,9 +13,9 @@ describe('Analytics', () => {
 
     return (
       <>
-        <Button testId="submit-button" ref={ref => analytics.set(ref, 'SubmitButton')}
+        <Button testId="submit" ref={ref => analytics.set(ref, 'SubmitButton')}
         >Submit</Button>
-        <input data-testid="checkbox" type="checkbox" {...analytics.props('CounterCheckbox')}/>
+        <input data-testid="counter-checkbox" type="checkbox" {...analytics.props('CounterCheckbox')}/>
         <button data-testid="stop-button" {...analytics.props('StopButton')}>
           Stop
         </button>
@@ -28,7 +28,7 @@ describe('Analytics', () => {
 
   it('should create data-analytics tag without scope', async () => {
     render(<TestComponent/>);
-    const checkbox = await screen.findByTestId('checkbox');
+    const checkbox = await screen.findByTestId('counter-checkbox');
     const stopButton = await screen.findByTestId('stop-button');
     const startButton = await screen.findByTestId('start-button');
     const submitButton = await screen.findByTestId('submit-button');
@@ -41,7 +41,7 @@ describe('Analytics', () => {
 
   it('should create data-analytics tag with scope', async () => {
     render(<TestComponent analyticsScope='test-component'/>);
-    const checkbox = await screen.findByTestId('checkbox');
+    const checkbox = await screen.findByTestId('counter-checkbox');
     const stopButton = await screen.findByTestId('stop-button');
     const startButton = await screen.findByTestId('start-button');
     const submitButton = await screen.findByTestId('submit-button');

@@ -8,7 +8,7 @@ export type CheckboxProps = {
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props: CheckboxProps, ref) => {
   const { checked, testId } = props;
 
-  return <input type="checkbox" data-testid={testId} ref={ref} checked={checked}/>;
+  return <input type="checkbox" data-testid={testId? `${testId}-checkbox` : null} ref={ref} checked={checked}/>;
 });
 
 export default Checkbox;

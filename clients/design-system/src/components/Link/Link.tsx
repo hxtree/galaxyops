@@ -10,7 +10,7 @@ export type LinkProps = {
 export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props: LinkProps, ref) => {
   const { href, children, testId } = props;
 
-  return <a href={href} data-testid={testId} ref={ref}>{children}</a>;
+  return <a href={href} data-testid={testId ? `${testId}-link` : null} ref={ref}>{children}</a>;
 });
 
 export default Link;
