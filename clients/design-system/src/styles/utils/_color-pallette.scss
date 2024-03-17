@@ -10,12 +10,15 @@ $color-gray: #939699;
 $color-off-black: #1e1e1f;
 // $color-off-white: #f1f4f9;
 $color-off-white: #f4fafd;
-$color-blue:  #005580;
+$color-blue:  #0090BA;
+$color-orange: #fdb913;
+$color-light-green: #00eb80;
+$color-dark-purple: #8050ed;
 
 /* common color abstractions */
 $color-primary: $color-blue;
 $color-secondary: $color-murrey;
-$color-tertiary: $color-off-black;
+$color-tertiary: $color-gold;
 $color-inherit: $color-gray;
 
 :root {
@@ -26,8 +29,8 @@ $color-inherit: $color-gray;
   --color-murrey: $color-murrey;
   --color-white: $color-white;
   --color-black: $color-black;
-  --color-primary:  $color-berkeley-blue:
-  --color-secondary: $color-murrey;
-  --color-tertiary: $color-off-black;
+  --color-primary:  $color-primary:
+  --color-secondary: $color-secondary;
+  --color-tertiary: $color-tertiary;
   --color-gray: $color-gray;
 }

@@ -2,7 +2,7 @@
 
 .hero {
   min-height: 50vh;
-  background-color: $color-blue;
+  background-color: $color-gray;
   background-color: linear-gradient(to right, lighten($color-gray, 10%), darken($color-gray, 10%)) !important; /* Adjust colors as needed */
   background-size: cover;
   background-position: top center;
@@ -16,7 +16,6 @@
     color: transparent !important ;
   }
   .lead {
-    font-weight: bold;
     color: $color-blue;
     font-size: 1.2em;
   }

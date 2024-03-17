@@ -84,16 +84,17 @@ $success: #7952b3;
 
 @import './components/Alert/style.module.scss';
 @import './components/Typography/style.module.scss';
-@import './components/AppBar/style.scss';
+@import './components/AppBar/style.module.scss';
 @import './components/Button/style.module.scss';
 @import './components/SocialMediaBar/style.module.scss';
 @import './components/PageFooter/style.module.scss';
 @import './components/Paper/style.module.scss';
 @import './components/Hero/style.module.scss';
 @import './components/Card/style.module.scss';
-@import './components/Blurb/style.module.scss';
+@import './components/BlurbPair/style.module.scss';
 
 body {
+  font-family: $font-family-sans-serif;
   background-color: $color-off-white;
   color: $color-off-black;
 }

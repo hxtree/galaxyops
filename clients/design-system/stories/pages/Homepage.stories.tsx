@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon, Blurb, AlertSeverity } from '../../src/main';
+import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon, BlurbPair, AlertSeverity } from '../../src/main';
 import { Badge } from '@mui/material';
 // IconButton, FontAwesomeIcon, faBars, faGithub,
 
@@ -40,7 +40,12 @@ export const Default = () => (
           Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
         </Alert>
 
-        <Blurb iconRight={faArrowRight} textRight="This is a blurb about stuff and things." iconLeft={faArrowRight} textLeft="This is a blurb about stuff and things."/>
+        <BlurbPair
+          iconRight={faArrowRight}
+          textRight="<h2>Right Side</h2><p>This is a blurb about stuff and things.</p>"
+          iconLeft={faArrowRight}
+          textLeft="<h2>Left Side</h2><p>This is a blurb about stuff and things.</p>"
+        />
         <Paper elevation='2' className='p-5'>
           <Typography variant="h1">Et malesuada fames ac turpis.</Typography>
           <Typography variant="intro">

@@ -1,17 +1,17 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Blurb, BlurbProps, faGithub,  faAddressCard } from '../../../src/main';
+import { BlurbPair, BlurbPairProps, faGithub,  faAddressCard } from '../../../src/main';
 
 export default {
-  title: 'Molecules/Blurb',
-  component: Blurb,
-} as Meta<typeof Blurb>;
+  title: 'Molecules/BlurbPair',
+  component: BlurbPair,
+} as Meta<typeof BlurbPair>;
 
-export const Default = args => <Blurb {...args}/>;
+export const Default = args => <BlurbPair {...args}/>;
 
 Default.args = {
   iconRight: faGithub,
   textRight: 'This is a blurb about stuff and things.',
   iconLeft: faAddressCard,
   textLeft: 'This is a blurb about stuff and things.',
-} as BlurbProps;
+} as BlurbPairProps;

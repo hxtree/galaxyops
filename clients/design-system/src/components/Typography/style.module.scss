@@ -1,4 +1,5 @@
 @import '../../styles/utils/color-pallette';
+@import '../../styles/fonts';
 
 :global {
   .center {
@@ -6,7 +7,7 @@
   };
 
   h1 {
-    font-family: "Eczar", serif;
+    font-family: $font-family-serif;
     font-weight: 800;
     font-size: 2rem;
     color: $color-primary;
@@ -42,6 +43,7 @@
   }
 
   h2 {
+    font-family: $font-family-serif;
     font-size: 1.8rem;
     color: $color-primary;
     font-weight: bold;
@@ -79,38 +81,38 @@
   };
 
   h3 {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: $font-family-serif;
     font-weight: 400;
     font-size:  1.7rem;
   };
 
   h4 {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: $font-family-serif;
     font-weight: 400;
     font-size:  1.6rem;
   };
 
   h5 {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: $font-family-serif;
     font-weight: 400;
     font-size:  1.4rem;
   };
 
   h6 {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: $font-family-serif;
     font-weight: 400;
     font-size:  1.2rem;
   }
 
   p.body1 {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: $font-family-sans-serif;
     font-weight: 400;
     font-size:  1rem;
     line-height: 1.8rem;
   }
 
   p.intro {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: $font-family-sans-serif;
     font-weight: 400;
     font-size:  1.5rem;
     line-height: 2rem;

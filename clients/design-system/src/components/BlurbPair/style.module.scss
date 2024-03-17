@@ -1,0 +1,16 @@
+@import '../../styles/utils/color-pallette';
+
+.blurb {
+  .blurb-pair-left {
+    .icon {
+      color: $color-light-green !important;
+      opacity: 0.618;
+    }
+  }
+  .blurb-pair-right {
+    .icon {
+      color: $color-dark-purple !important;
+      opacity: 0.618;
+    }
+  }
+}
