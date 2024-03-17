@@ -1,4 +1,4 @@
-import './style.scss';
+import './style.module.scss';
 import React, { ReactNode } from 'react';
 
 export type NavMenuItem = {
@@ -27,7 +27,7 @@ export const AppBar = (props: AppBarProps) => {
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a className="navbar-brand" href="/">{siteTitle || 'Your Brand'}</a>
+          <a className="navbar-brand font-serif" href="/">{siteTitle || 'Your Brand'}</a>
           <div className="d-none d-sm-block">
           {topRightSlot}
           </div>

@@ -2,12 +2,13 @@
 
 :global {
 .page-footer {
-  background-color: $color-off-white;
-  color: $color-primary;
+  background-color: $color-black;
+  color: $color-gray;
   margin: 0;
   padding: 3rem;
   a {
     opacity: 0.9;
+    text-transform: uppercase;
     text-decoration: none;
     color: $color-primary;
     &:hover {
