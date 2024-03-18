@@ -1,7 +1,8 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { screen, render } from '@testing-library/react';
-import { BasicCard, CardRibbonColor } from './BasicCard';
+import { BasicCard } from './BasicCard';
+import { CardRibbonColor } from './CardRibbonColor.type';
 
 describe('BasicCard', () => {
 
