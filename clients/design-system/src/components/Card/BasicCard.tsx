@@ -2,13 +2,7 @@ import React from 'react';
 import './style.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { green } from '@mui/material/colors';
-
-export enum CardRibbonColor {
-  PRIMARY='primary',
-  SECONDARY='secondary',
-  TERIARY='tertiary',
-}
+import { CardRibbonColor } from './CardRibbonColor.type';
 
 export type BasicCardProps = {
   title?: string;
