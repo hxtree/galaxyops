@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { CardRibbonColor } from './CardRibbonColor.type';
 
 export type BasicCardProps = {
@@ -18,6 +18,15 @@ export type BasicCardProps = {
 // TODO finish fleshing in basic card props
 export const BasicCard = (props: BasicCardProps): JSX.Element => {
   const { ribbonText, ribbonColor, title, imageSrc, testId, url, cta, children } = props;
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   const ribbonClasses = [
     'card-ribbon',
@@ -30,7 +39,11 @@ export const BasicCard = (props: BasicCardProps): JSX.Element => {
   }
 
   return (
-    <div className="card h-100 border-radius-4">
+    <div
+      className="card h-100 border-radius-4"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className='card-thumbnail'>
         <div className="card-img-top-wrapper">
           <div className="card-img-top" style={{background: `url(${imageSrc})`}}/>
@@ -52,7 +65,7 @@ export const BasicCard = (props: BasicCardProps): JSX.Element => {
           {cta}
         </span>
         <span className="icon text-end flex-fill">
-            <FontAwesomeIcon icon={faArrowRight}/>
+            <FontAwesomeIcon icon={isHovered ? faArrowRight: faChevronRight} />
         </span>
       </div>
       <a href={url} className="stretched-link"></a>
