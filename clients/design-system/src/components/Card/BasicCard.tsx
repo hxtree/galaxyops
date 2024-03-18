@@ -1,5 +1,8 @@
 import React from 'react';
 import './style.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { green } from '@mui/material/colors';
 
 export enum CardRibbonColor {
   PRIMARY='primary',
@@ -9,8 +12,8 @@ export enum CardRibbonColor {
 
 export type BasicCardProps = {
   title?: string;
-  body?: string;
   url?: string;
+  cta?: string;
   imageSrc?: string;
   ribbonText?: string;
   ribbonColor?: CardRibbonColor;
@@ -20,7 +23,7 @@ export type BasicCardProps = {
 
 // TODO finish fleshing in basic card props
 export const BasicCard = (props: BasicCardProps): JSX.Element => {
-  const { ribbonText, ribbonColor, body, title, imageSrc, testId, children } = props;
+  const { ribbonText, ribbonColor, title, imageSrc, testId, url, cta, children } = props;
 
   const ribbonClasses = [
     'card-ribbon',
@@ -44,15 +47,21 @@ export const BasicCard = (props: BasicCardProps): JSX.Element => {
           </div>
         }
       </div>
-      <div className="card-body p-4">
+      <div className="card-body px-4 py-3">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">
-          {body}
-        </p>
-        <p>
           {children}
         </p>
       </div>
+      <div className="card-footer d-flex px-4 py-3">
+        <span className="card-link flex-fill">
+          {cta}
+        </span>
+        <span className="icon text-end flex-fill">
+            <FontAwesomeIcon icon={faArrowRight}/>
+        </span>
+      </div>
+      <a href={url} className="stretched-link"></a>
     </div>
   )
 }

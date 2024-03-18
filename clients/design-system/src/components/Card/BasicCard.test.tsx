@@ -11,13 +11,14 @@ describe('BasicCard', () => {
     render(
       <BasicCard
         title='This is a card title'
-        body='This is a card body'
         url='https://example.com'
         imageSrc="example.jpg"
         ribbonText= 'Free'
         ribbonColor={CardRibbonColor.PRIMARY}
         testId={'sut'}
-      ></BasicCard>
+      >
+        This is a card body
+      </BasicCard>
     )
 
     const ele = screen.getByTestId(`sut-${testIdSuffix}`);
@@ -28,12 +29,13 @@ describe('BasicCard', () => {
     const { container } = render(
       <BasicCard
       title='This is a card title'
-      body='This is a card body'
       url='https://example.com'
       imageSrc="example.jpg"
       ribbonText='Free'
       ribbonColor={CardRibbonColor.PRIMARY}
-    ></BasicCard>
+    >
+      This is a card body
+    </BasicCard>
     );
     const traverseDOM = (node: Node) => {
       if (node.nodeType === Node.ELEMENT_NODE) {
@@ -52,13 +54,14 @@ describe('BasicCard', () => {
     render(
       <BasicCard
       title='This is a card title'
-      body='This is a card body'
       url='https://example.com'
       imageSrc="example.jpg"
       ribbonText='Free'
       ribbonColor={ribbonColor}
       testId={'sut'}
-    ></BasicCard>
+    >
+      This is a card body
+    </BasicCard>
     );
 
     const ele = screen.getByTestId('sut-card-ribbon');

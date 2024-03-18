@@ -20,7 +20,7 @@ export const Default = (args: BasicCardProps) =>
       </BasicCard>
     </div>
     <div className="col mb-3">
-      <BasicCard {...args} title="Turn-key Property Management" ribbonText='Learn More'>
+      <BasicCard {...args} title="Turn-key Property Management" ribbonText='50% Off' cta='Learn More' url="https://example.com">
         How goes property management?
       </BasicCard>
     </div>

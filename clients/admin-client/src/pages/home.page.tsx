@@ -24,26 +24,40 @@ export default function HomePage() {
           <h2>Latest</h2>
           <div className="row row-cols-1 row-cols-md-3">
           <div className="col mb-3">
-      <BasicCard title="Archetypes" imageSrc="/assets/clouds.jpg" ribbonText='New Archetypes'>
-      <p>
+      <BasicCard
+        title="Archetypes"
+        imageSrc="/assets/clouds.jpg"
+        ribbonText='New Archetypes'
+        url="/archetypes"
+        cta='Try It'
+      >
+        <p>
           Dive into the world of character archetypes with ease.
           Uncover diverse options, check out base stats, and seamlessly explore backstories—all in one place.
           No-frills, just a straightforward way to look at the data.
           </p>
-          <Button href="/archetypes" color="secondary">Try It <FontAwesomeIcon icon={faArrowRight}/></Button>
       </BasicCard>
     </div>
       <div className="col mb-3">
-      <BasicCard title="Game Portal" imageSrc="/assets/clouds.jpg">
-        NekosGate admin portal is a powerful tool that allows you to manage your game with ease.
+      <BasicCard
+        title="Dice Notation Analyzer"
+        imageSrc="/assets/clouds.jpg"
+        url="/dice-analyzer"
+        cta='Roll The Dice'
+      >
+        NekosGate Dice Notation Analyzer allows engineers to decide approperiate values for skills.
       </BasicCard>
     </div>
     <div className="col mb-3">
-      <BasicCard title="Open Source Software" imageSrc="/assets/clouds.jpg">
+      <BasicCard
+        title="Open Source Software"
+        imageSrc="/assets/clouds.jpg"
+        url="https://github.com/hxtree/cats-cradle/pulls"
+        cta='Open A Pull Request'
+        >
         Shape the future of development with us!
         Contribute your expertise to help.
         Join our community today!
-        Raise a <Link href='https://github.com/hxtree/cats-cradle/pulls'>pull request</Link> to suggest changes.
       </BasicCard>
     </div>
   </div>
