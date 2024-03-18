@@ -9,34 +9,46 @@ $card-call-out-offset: 16px;
 
 .card {
   border-radius: 1rem;
+  transition: box-shadow 0.5s ease;
   .card-title {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
     color: $color-primary;
-    font-family: $font-family-serif;
+    font-family: $font-family-sans-serif;
     font-weight: bold;
   }
   &:hover {
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    .card-img-top {
-      transform: scale(1.02);
-      transition: transform .2s;
+    .card-img-top-wrapper {
+      .card-img-top {
+        transform: scale(1.05);
+      }
+    }
+    .card-footer {
+      .card-link {
+        color: $color-primary;
+      }
+      .icon svg {
+        color: $color-primary !important;
+      }
     }
   }
   .card-thumbnail {
     margin:0;
     position: relative;
     .card-img-top-wrapper {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
       overflow: hidden;
       height: 180px;
       .card-img-top {
+        transition: transform 1s ease, box-shadow 1s ease;
         height: 180px;
         background-color: $color-gray !important;
         background-size: 100% 100% !important;
         background-position: center center;
       }
     }
-
     .card-ribbon {
       text-transform: uppercase;
       font-weight: bold;
@@ -83,6 +95,18 @@ $card-call-out-offset: 16px;
           border-top: $card-call-out-offset solid darken($card-color-tertiary, 10%);
         }
       }
+    }
+  }
+  .card-footer {
+    background-color: transparent;
+    border-top: none;
+    .card-link {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $color-gray;
+    }
+    .icon svg {
+      color: $color-gray !important;
     }
   }
 }
