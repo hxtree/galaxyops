@@ -1,7 +1,8 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { screen, render } from '@testing-library/react';
-import { Alert, AlertSeverity } from './Alert';
+import { Alert } from './Alert';
+import { AlertSeverity } from './AlertSeverity.type';
 
 describe('Alert', () => {
 

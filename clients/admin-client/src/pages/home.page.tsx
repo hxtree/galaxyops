@@ -1,4 +1,4 @@
-import { Hero, Paper, Button, Link, FontAwesomeIcon, faArrowRight, BasicCard, BlurbPair, faCheck, faGithub } from '@cats-cradle/design-system/dist/main';
+import { Hero, Paper, BasicCard, BlurbPair, faCheck, faGithub } from '@cats-cradle/design-system/dist/main';
 
 export default function HomePage() {
   return (

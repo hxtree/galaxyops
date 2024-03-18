@@ -1,12 +1,6 @@
 import React from "react";
 import './style.module.scss';
-
-export enum AlertSeverity {
-  INFO = 'info',
-  SUCCESS = 'success',
-  WARNING = 'warning',
-  DANGER = 'danger'
-}
+import { AlertSeverity } from "./AlertSeverity.type";
 
 export type AlertProps = {
   children: React.ReactNode;
