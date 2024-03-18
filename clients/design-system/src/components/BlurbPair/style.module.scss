@@ -1,15 +1,22 @@
 @import '../../styles/utils/color-pallette';
+// @import "bootstrap/scss/variables";
+// @import "bootstrap/scss/mixins/_breakpoints.scss";
+
+
+@import "bootstrap/scss/bootstrap";
 
 .blurb {
-  .blurb-pair-left {
-    .icon {
-      color: $color-light-green !important;
-      opacity: 0.618;
+  @include media-breakpoint-down(md) {
+    .blurb-pair-left, .blurb-pair-right {
+      &.border-end, &.border-start {
+        border: none !important;
+      }
     }
   }
+  .blurb-pair-left,
   .blurb-pair-right {
     .icon {
-      color: $color-dark-purple !important;
+      color: $color-light-green !important;
       opacity: 0.618;
     }
   }

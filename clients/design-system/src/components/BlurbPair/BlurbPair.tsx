@@ -17,11 +17,11 @@ export const BlurbPair = (props: BlurbPairProps) => {
   return (
     <div className={`blurb container`}>
       <div className={`row gx-5`}>
-        <div className="blurb-pair-left col border-end border-1 p-5 text-left">
+        <div className="blurb-pair-left col-12 col-md-6 border-end border-1 p-5 text-left">
           <FontAwesomeIcon icon={iconLeft} size={'6x'} className="icon"/>
           <p className="lead mt-4" dangerouslySetInnerHTML={{ __html: xss(textLeft) }} />
         </div>
-        <div className="blurb-pair-right col border-start border-1 p-5 text-left">
+        <div className="blurb-pair-right col-12 col-md-6 border-start border-1 p-5 text-left">
           <FontAwesomeIcon icon={iconRight} size={'6x'} className="icon"/>
           <p className="lead mt-4" dangerouslySetInnerHTML={{ __html: xss(textRight) }} />
         </div>
