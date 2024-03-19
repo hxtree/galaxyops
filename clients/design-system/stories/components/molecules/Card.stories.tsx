@@ -8,7 +8,7 @@ export default {
 } as Meta<typeof BasicCard>;
 
 export const Default = (args: BasicCardProps) =>
-  <div className="row row-cols-1 row-cols-md-3 row-cols-md-4">
+  <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
     <div className="col mb-3">
       <BasicCard {...args}>
         Welcome to Day
@@ -28,4 +28,5 @@ export const Default = (args: BasicCardProps) =>
 
 Default.args = {
   title: 'Welcome To Day',
+  imageSrc: 'https://placehold.co/600x400'
 } as BasicCardProps;

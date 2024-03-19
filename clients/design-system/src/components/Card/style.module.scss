@@ -7,32 +7,19 @@ $card-color-tertiary: $color-tertiary;
 
 $card-call-out-offset: 16px;
 
+@keyframes shimmer {
+  0% {
+    background-position: -1000px;
+  }
+  100% {
+    background-position: 1000px;
+  }
+}
+
+
 .card {
-  border-radius: 1rem;
+  border-radius: 1rem !important;
   transition: box-shadow 0.5s ease;
-  .card-title {
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    color: $color-primary;
-    font-family: $font-family-sans-serif;
-    font-weight: bold;
-  }
-  &:hover {
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-    .card-img-top-wrapper {
-      .card-img-top {
-        transform: scale(1.05);
-      }
-    }
-    .card-footer {
-      .card-link {
-        color: $color-primary;
-      }
-      .icon svg {
-        color: $color-primary !important;
-      }
-    }
-  }
   .card-thumbnail {
     margin:0;
     position: relative;
@@ -45,8 +32,9 @@ $card-call-out-offset: 16px;
         transition: transform 1s ease, box-shadow 1s ease;
         height: 180px;
         background-color: $color-gray !important;
-        background-size: 100% 100% !important;
-        background-position: center center;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
       }
     }
     .card-ribbon {
@@ -97,9 +85,25 @@ $card-call-out-offset: 16px;
       }
     }
   }
+  .card-title {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: $color-primary;
+    font-family: $font-family-sans-serif;
+    font-weight: bold;
+  }
+  .card-body {
+    .card-text {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+    }
+  }
   .card-footer {
     background-color: transparent;
     border-top: none;
+    font-size: 1rem;
     .card-link {
       text-transform: uppercase;
       text-decoration: none;
@@ -107,6 +111,30 @@ $card-call-out-offset: 16px;
     }
     .icon svg {
       color: $color-gray !important;
+    }
+  }
+  &:hover {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    .card-ribbon-text {
+      background: linear-gradient(90deg, #eee, #ddd, #fff);
+      background-size: 1000px 100%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: shimmer 10s linear;
+    }
+    .card-img-top-wrapper {
+      .card-img-top {
+        transform: scale(1.05);
+      }
+    }
+    .card-footer {
+      .card-link {
+        color: $color-primary;
+      }
+      .icon svg {
+        color: $color-primary !important;
+      }
     }
   }
 }

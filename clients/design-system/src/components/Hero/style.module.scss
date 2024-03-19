@@ -2,27 +2,34 @@
 
 .hero {
   min-height: 50vh;
-  background-color: $color-gray;
-  background-color: linear-gradient(to right, lighten($color-gray, 10%), darken($color-gray, 10%)) !important; /* Adjust colors as needed */
+  background-color: $color-blue;
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  h1 {
-    font-weight: bold;
-    background: linear-gradient(to right, $color-primary, darken($color-primary, 5%)) !important;
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    color: transparent !important ;
-  }
-  .lead {
-    color: $color-blue;
-    font-size: 1.2em;
-  }
-  p {
-    color: $color-blue;
+  border: 0;
+  .hero-text-wrapper {
+    background-color: rgba(255, 255, 255, 0.4);
+    h1 {
+      font-weight: bold;
+      background: linear-gradient(to right, $color-gray, darken($color-gray, 10%)) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      color: transparent !important ;
+    }
+    .lead {
+      color: $color-off-black;
+      font-size: 1.2em;
+    }
+    p {
+      color: $color-off-black;
+    }
   }
   .toolbar {
+    margin:0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
     min-height: 8rem;
     background-color: $color-blue;
     color: $color-white;
