@@ -15,7 +15,6 @@ export type BasicCardProps = {
   children?: React.ReactNode;
 };
 
-// TODO finish fleshing in basic card props
 export const BasicCard = (props: BasicCardProps): JSX.Element => {
   const { ribbonText, ribbonColor, title, imageSrc, testId, url, cta, children } = props;
   const [isHovered, setIsHovered] = useState(false);
@@ -40,7 +39,7 @@ export const BasicCard = (props: BasicCardProps): JSX.Element => {
 
   return (
     <div
-      className="card h-100 border-radius-4"
+      className="card h-100"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -50,7 +49,7 @@ export const BasicCard = (props: BasicCardProps): JSX.Element => {
         </div>
         {ribbonText &&
           <div className={ribbonClasses.join(' ')} data-testid={testId ? `${testId}-card-ribbon` : null}>
-          {ribbonText}
+            <div className="card-ribbon-text">{ribbonText}</div>
           </div>
         }
       </div>

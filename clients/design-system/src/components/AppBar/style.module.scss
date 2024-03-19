@@ -14,13 +14,23 @@
 
 .app-bar{
   background-color: $color-white;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 30px 0px;
+  .navbar-menu {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 30px 0px
+  }
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 2rem !important;
+    color: $color-gray !important;
+    letter-spacing: 0.1rem;
+  }
 }
+
 
 .app-bar-light {
   padding: 0;
   background-color: rgb(255, 253, 251);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 2px 0px, rgba(0, 0, 0, 0.14) 0px 1.008px 2px 0px;
+
   ul {
     padding: 0;
     margin: 0;
@@ -47,7 +57,6 @@
     }
   }
 }
-
 .app-bar-dark {
   background-color: $color-gray !important;
 }

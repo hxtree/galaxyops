@@ -97,6 +97,9 @@ body {
   font-family: $font-family-sans-serif;
   background-color: $color-off-white;
   color: $color-off-black;
+  background: linear-gradient(to bottom, #fff 0%, #fff 300px, #fff 301px, $color-off-white 400px);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 a {

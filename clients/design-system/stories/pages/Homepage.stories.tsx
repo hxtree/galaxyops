@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon, BlurbPair, AlertSeverity } from '../../src/main';
+import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon, BlurbPair, AlertSeverity, Hero } from '../../src/main';
 import { Badge } from '@mui/material';
 // IconButton, FontAwesomeIcon, faBars, faGithub,
 
@@ -36,6 +36,14 @@ export const Default = () => (
         </ul>
       </AppBar>
       <div className='container'>
+        <Hero pageTier={1}
+          heading={'Et malesuada fames ac turpis.'}
+          lead={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula metus quis sagittis malesuada. Nulla facilisi. Duis feugiat tellus eu justo hendrerit, nec congue odio congue.'}
+          image={'https://placehold.co/600x400'}
+          imageRight={'/hxtree.png'}
+          toolbar={<>Hello World</>}
+        />
+
         <Alert severity={AlertSeverity.INFO}>
           Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
         </Alert>
