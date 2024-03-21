@@ -26,3 +26,5 @@ export * from './Paper/Paper';
 export * from './Hero/Hero';
 export * from './Images/Images';
 export * from './BlurbPair/BlurbPair';
+export * from './Tabs/Tabs';
+export * from './Tabs/Tabs.type';
