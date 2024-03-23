@@ -8,17 +8,22 @@
 [![Docs](https://github.com/hxtree/cats-cradle/actions/workflows/pages/pages-build-deployment/badge.svg)](https://hxtree.github.io/cats-cradle/)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
 
-Architecture outlines the stuff that is hard to change. In the realm of
-architecture, it's not merely about constructing individual buildings; it's
-about designing the city. Our opinionated approach to running enterprise
-software architecture on AWS extends beyond individual projects, laying the
-groundwork for the entire landscape.
+## The problem
 
-Jumpstart your enterprise application development journey. Speed up your
-software pipeline by embracing modern DevOps practices on AWS, utilizing a
-monorepo architecture like this one[^1]. This repository goes beyond theory—it's
-a hands-on showcase, containing diverse working placeholder packages actively
-employed in developing a cooperative RPG.
+Running multiple applications in the cloud without a solid architectural
+framework is akin to constructing a house without blueprints - it invites chaos.
+While many resources focus solely on single-application setups, cloud
+architecture encompasses an entire city, not just one building. Without a
+coherent plan in place, any attempt to make changes becomes a daunting task.
+
+## This solution
+
+Looking to kickstart your enterprise cloud architecture? Take a deep dive into
+the realm of modern DevOps practices on AWS with a monorepo setup like the one
+provided here [^1]. This isn't mere conjecture - it's a practical demonstration
+featuring tangible code, driving a cooperative RPG. Our approach transcends
+individual projects; we're laying the groundwork for the entire landscape of
+enterprise software on AWS.
 
 ### Features
 
