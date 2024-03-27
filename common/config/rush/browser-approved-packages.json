@@ -107,6 +107,10 @@
       "allowedCategories": [ "apis", "rigs" ]
     },
     {
+      "name": "@cats-cradle/promare-gradients",
+      "allowedCategories": [ "clients" ]
+    },
+    {
       "name": "@cats-cradle/validation-decorators",
       "allowedCategories": [ "apis" ]
     },
