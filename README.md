@@ -1,7 +1,5 @@
 # @cats-cradle
 
-**Enterprise Architecture for DevOps Teams running on AWS**
-
 [![CI](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/cats-cradle/actions/workflows/on-merge.yml)
 [![Code Quality](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://www.codacy.com/gh/hxtree/cats-cradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=hxtree/cats-cradle&utm_campaign=Badge_Grade)
 [![Codacy Coverage](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/cats-cradle)
@@ -32,13 +30,13 @@ repository. Each piece contributes harmoniously to the overall cityscape we're
 constructing.
 
 <details>
-  <summary>Turn-key development environment with Github Codespaces.</summary>
-  Even the development environment is code. Reducing on boarding setup and workstation recovery from days to minutes.
+  <summary>Emphemiral environments with TLS certifcates, email, etc.</summary>
+  AWS Org Formation is used to set that bases for platform. Other services build on top of that.
 </details>
 
 <details>
-  <summary>Emphemiral environments with TLS certifcates, email, etc.</summary>
-  AWS Org Formation is used to set that bases for platform. Other services build on top of that.
+  <summary>Turn-key development environment with VSCode Dev Containers or Github Codespaces.</summary>
+  Even the development environment is code. Reducing on boarding setup and workstation recovery from days to minutes.
 </details>
 
 <details>
@@ -75,7 +73,7 @@ there's a substantial reason to opt for a different language.
 </details>
 
 <details>
-  <summary>Enterprise Architecture</summary>
+  <summary>Enterprise Architectured Monorepo</summary>
 A monorepo was chosen to simplify development by housing multiple projects in a
 single repository, streamlining code sharing, versioning, and dependency
 management. Monorepos help fosters collaboration, ensures consistency, and
@@ -144,14 +142,15 @@ workflows.
 
 ### Setting up Development Environment
 
-The easiest way to start a develop environment is by
-[forking the repo](https://github.com/hxtree/cats-cradle/fork) and open in
-Github Codespaces.
+The quickest way to start a develop environment is by clicking open in Github
+Codespaces. To actually save and commit changes back it is recommended to
+[forking the repo](https://github.com/hxtree/cats-cradle/fork) .
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=438855397)
 
-Alternatively, git clone the repo and build, test, and deploy apps locally using
-the [devcontainer](.devcontainer/README.md).
+Alternatively, git clone and install locally using a
+[devcontainer](.devcontainer/README.md). It's possible to install without a
+container using the Dockerfile as guidance on package to install.
 
 ![Flow Chart](docs/flow-chart.drawio.svg)
 
