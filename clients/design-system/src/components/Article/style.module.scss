@@ -1,0 +1,37 @@
+@import '../../styles/utils/color-pallette';
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/bootstrap";
+
+// Get the value of $spacer variable (default Bootstrap spacing unit)
+$spacer: spacer();
+$nugde-out-width: 3.0625rem;
+
+.article {
+  background-color: $color-cta-white;
+  overflow-x: hidden;
+  width: 100%;
+  & .container {
+    position:relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -1px;
+      height: 100%;
+      width: 1px;
+      background-color: $color-light-gray;
+    }
+    h2 {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: $nugde-out-width;
+        left: -(map-get($spacers, 4)) - ($nugde-out-width);
+        height: 100%;
+        background-color: $color-blue;
+      }
+    }
+  }
+}

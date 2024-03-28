@@ -1,4 +1,4 @@
-import { Hero, Paper } from '@cats-cradle/design-system/dist/main';
+import { HeroBanner, Paper } from '@cats-cradle/design-system/dist/main';
 import ArchetypeSelect from '../components/ArchetypeSelect';
 import { BreadCrumbs } from '../components/Breadcrumbs';
 
@@ -6,7 +6,8 @@ import { BreadCrumbs } from '../components/Breadcrumbs';
 export default function ArchetypePage() {
   return (
     <>
-    <Hero pageTier={2} image='/assets/clouds.jpg'
+    <HeroBanner
+    image='/assets/clouds.jpg'
     breadcrumb={<BreadCrumbs/>}
     heading='Archetypes'
     lead="Archetypes serve as the fundamental blueprint for character sheets."
@@ -16,7 +17,7 @@ export default function ArchetypePage() {
       shaping their possibilities and outlining the skills they can or cannot acquire.
       While an archetype does not detail everything, it plays a vital role in guiding
       both player and non-player character creation.</p>
-    </Hero>
+    </HeroBanner>
     <main className="container">
       <Paper elevation="1" className='p-5'>
         <ArchetypeSelect/>

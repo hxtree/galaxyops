@@ -2,6 +2,10 @@
 @import '../../styles/fonts';
 
 :global {
+  .reversed {
+    color: $color-white;
+  }
+
   .center {
     text-align: center;
   };

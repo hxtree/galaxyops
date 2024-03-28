@@ -1,4 +1,4 @@
-import { Hero, Paper, BasicCard, BlurbPair, faCheck, faGithub } from '@cats-cradle/design-system/dist/main';
+import { Gradient, GradientVariant, Hero, Paper, BasicCard, BlurbPair, faCheck, faGithub } from '@cats-cradle/design-system/dist/main';
 
 export default function HomePage() {
   return (
@@ -10,13 +10,12 @@ export default function HomePage() {
       >
       </Hero>
       <div className='m-5'>
-      <BlurbPair
-        iconLeft={faCheck}
-        textLeft="<h2>New Features</h2><p>We have a lot of new features that you can improve.</p>."
-        iconRight={faGithub}
-        textRight="<h2>PR Welcome</h2><p>The code is open source, please feel free to suggest improvements.</p>."
-      />
-
+        <BlurbPair
+          iconLeft={faCheck}
+          textLeft="<h2>New Features</h2><p>We have a lot of new features that you can improve.</p>."
+          iconRight={faGithub}
+          textRight="<h2>PR Welcome</h2><p>The code is open source, please feel free to suggest improvements.</p>."
+        />
       </div>
       <main className="container-fluid mt-5">
         <Paper elevation="1" className='p-5'>
