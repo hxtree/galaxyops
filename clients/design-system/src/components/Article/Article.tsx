@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './style.module.scss';
+import './style.module.scss';
 
 export type ArticleProps = {
   style?: React.CSSProperties; // Adding style prop
