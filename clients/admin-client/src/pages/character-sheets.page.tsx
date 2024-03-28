@@ -1,16 +1,15 @@
-import { Paper, Hero } from '@cats-cradle/design-system/dist/main';
+import { Paper, HeroBanner } from '@cats-cradle/design-system/dist/main';
 import { BreadCrumbs } from '../components/Breadcrumbs';
 
 export default function CharacterSheetsPage() {
   return (
     <>
-      <Hero
-        pageTier={2}
+      <HeroBanner
         image='/assets/clouds.jpg'
         breadcrumb={<BreadCrumbs/>}
         heading='Character Sheets'
         lead='Review characters per instance'>
-      </Hero>
+      </HeroBanner>
       <main className="container">
         <Paper elevation="1" className='p-5'>
           Coming soon.

@@ -1,6 +1,18 @@
 @import '../../styles/utils/color-pallette';
 
 :global {
+  .reversed {
+    & .button {
+      &.button-primary {
+        background-color: $color-white;
+        color: $color-black;
+        border: 3px solid $color-white;
+        &:hover {
+          background-color: lighten($color-primary, 10%);
+        }
+      }
+    }
+  }
   .button {
     cursor: pointer;
     background-color: $color-inherit;

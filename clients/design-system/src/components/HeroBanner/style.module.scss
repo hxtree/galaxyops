@@ -1,0 +1,26 @@
+@import '../../styles/utils/color-pallette';
+
+$hero-banner-height: 300px;
+
+.hero-banner {
+    position: relative;
+    width: 100%;
+
+    .hero-facet {
+      z-index: -1;
+      position: absolute;
+      background-color: $color-gray;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0% 50%);
+    }
+
+    .hero-text-wrapper {
+      background-color: $color-dark-blue;
+      .lead {
+        color: $color-gray;
+      }
+    }
+}
