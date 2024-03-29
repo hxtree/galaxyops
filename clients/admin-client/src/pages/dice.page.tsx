@@ -6,7 +6,8 @@ export default function DicePage() {
   return (
     <>
     <HeroBanner
-    image='/assets/clouds.jpg'
+    image='/assets/dice.jpg'
+    background='/assets/background/gray.jpg'
     breadcrumb={<BreadCrumbs/>}
     heading='Dice Notation Analyzer'
     lead='Determine the appropriate dice notation for skill set rolls.'

@@ -12,8 +12,9 @@ export const Default = args => <HeroBanner {...args}>
 </HeroBanner>;
 
 Default.args = {
-  image: 'https://picsum.photos/seed/picsum/1024/300',
   heading: 'Twenty Minutes Goes By Faster?',
   lead: 'Chroma sets the stage contrast creates focal points.',
+  image: 'https://placehold.co/600x400',
+  background: 'https://picsum.photos/seed/picsum/1024/300',
   toolbar: 'test'
 };

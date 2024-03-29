@@ -5,7 +5,8 @@ export default function CharacterSheetsPage() {
   return (
     <>
       <HeroBanner
-        image='/assets/clouds.jpg'
+          image='/assets/data-center.jpg'
+          background='/assets/clouds.jpg'
         breadcrumb={<BreadCrumbs/>}
         heading='Character Sheets'
         lead='Review characters per instance'>

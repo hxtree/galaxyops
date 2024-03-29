@@ -6,28 +6,41 @@ export interface HeroBannerProps {
   breadcrumb?: React.ReactNode;
   heading: string;
   lead: string;
-  image: string; // TODO change to background image
+  image?: string;
+  background?: string;
   children?: React.ReactNode;
 }
 
 export const HeroBanner = (props: HeroBannerProps) => {
-  const { breadcrumb, image, heading, lead, children } = props;
+  const { breadcrumb, image, background, heading, lead, children } = props;
 
   const classNames = ['hero-banner', 'p-0'];
 
   return (
       <div className={classNames.join(' ')}>
-        <div className="hero-facet" style={{backgroundImage: `url(${image})`}}></div>
-        <div className="container pt-sm-1 pt-md-3 pt-lg-5 pb-0">
-            <div className="row">
+        {background &&
+          <>
+            <div className="hero-facet d-none d-md-block" style={{backgroundImage: `url(${background})`}}></div>
+            <div className="hero-gradient-overlay d-none d-md-block"></div>
+          </>
+        }
+        <div className="container py-sm-1 py-md-3 py-lg-5">
+            <div className="row g-0">
               {breadcrumb}
-              <div className='col-lg-7 col-sm-12'>
-                <div className='hero-text-wrapper reversed mb-md-5 p-5'>
+
+              <div className='d-flex flex-column col-lg-7 col-sm-12'>
+                <div className='hero-text-wrapper flex-fill reversed p-5'>
                   <h1 className='display-3' dangerouslySetInnerHTML={{ __html: xss(heading) }}></h1>
                   <p className="lead" dangerouslySetInnerHTML={{ __html: xss(lead) }}></p>
                   {children}
                 </div>
               </div>
+
+              {image &&
+              <div className='d-flex flex-column col-lg-5 col-sm-12'>
+                <div className='flex-fill hero-image' style={{backgroundImage: `url(${image})`}}>
+                </div>
+              </div>}
           </div>
         </div>
       </div>
