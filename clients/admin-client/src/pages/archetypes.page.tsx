@@ -7,7 +7,8 @@ export default function ArchetypePage() {
   return (
     <>
     <HeroBanner
-    image='/assets/clouds.jpg'
+    image='/assets/archetype.jpg'
+    background='/assets/clouds.jpg'
     breadcrumb={<BreadCrumbs/>}
     heading='Archetypes'
     lead="Archetypes serve as the fundamental blueprint for character sheets."
