@@ -1,4 +1,4 @@
-import { Gradient, GradientVariant, Hero, Paper, BasicCard, BlurbPair, faCheck, faGithub } from '@cats-cradle/design-system/dist/main';
+import { Hero, Paper, BasicCard, BlurbPair, faCheck, faGithub } from '@cats-cradle/design-system/dist/main';
 
 export default function HomePage() {
   return (
@@ -12,9 +12,15 @@ export default function HomePage() {
       <div className='m-5'>
         <BlurbPair
           iconLeft={faCheck}
-          textLeft="<h2>New Features</h2><p>We have a lot of new features that you can improve.</p>."
+          iconColorLeft='green'
+          textLeft="Our team enthusiastically invites contributors to join us in enhancing our project. We value collaboration and welcome pull requests from developers of all backgrounds. Together, we can build something remarkable."
+          linkLeft="https://github.com/hxtree/cats-cradle"
+          ctaLeft="Open A PR"
           iconRight={faGithub}
-          textRight="<h2>PR Welcome</h2><p>The code is open source, please feel free to suggest improvements.</p>."
+          iconColorRight='purple'
+          textRight='We have a lot of new features underway.'
+          linkRight="https://github.com/hxtree/cats-cradle/issues"
+          ctaRight="Learn More"
         />
       </div>
       <main className="container-fluid mt-5">
@@ -34,7 +40,7 @@ export default function HomePage() {
           Dive into the world of character archetypes with ease.
           Uncover diverse options, check out base stats, and seamlessly explore backstories—all in one place.
           No-frills, just a straightforward way to look at the data.
-          </p>
+        </p>
       </BasicCard>
     </div>
       <div className="col mb-3">
