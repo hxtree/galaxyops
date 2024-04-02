@@ -1,8 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Paper, AppBar, Button, Typography, Alert, PageFooter, Link, faArrowRight, FontAwesomeIcon, BlurbPair, AlertSeverity, Hero } from '../../src/main';
-import { Badge } from '@mui/material';
-// IconButton, FontAwesomeIcon, faBars, faGithub,
+import {BlurbIconColors, Paper, AppBar, faArrowRight, Button, Typography, Alert, PageFooter, Link, faAddressCard, faGithub, FontAwesomeIcon, BlurbPair, AlertSeverity, Hero } from '../../src/main';
 
 type NavMenuItem = {
   link: string;
@@ -49,10 +47,16 @@ export const Default = () => (
         </Alert>
 
         <BlurbPair
-          iconRight={faArrowRight}
-          textRight="<h2>Right Side</h2><p>This is a blurb about stuff and things.</p>"
-          iconLeft={faArrowRight}
-          textLeft="<h2>Left Side</h2><p>This is a blurb about stuff and things.</p>"
+          iconLeft={faAddressCard}
+          iconColorLeft={BlurbIconColors.ORANGE}
+          textLeft='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus sit amet est placerat in. At tempor commodo ullamcorper a lacus vestibulum.'
+          linkLeft='https://www.google.com'
+          ctaLeft='Learn More'
+          iconRight={faGithub}
+          iconColorRight={BlurbIconColors.BLUE}
+          textRight='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vehicula ipsum a arcu cursus vitae congue mauris.'
+          linkRight='https://www.google.com'
+          ctaRight='Get There Sooner'
         />
         <Paper elevation='2' className='p-5'>
           <Typography variant="h1">Et malesuada fames ac turpis.</Typography>

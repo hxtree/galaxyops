@@ -2,25 +2,25 @@
 
 :global {
   .button {
-    cursor: pointer;
-    background-color: $color-inherit;
-    color: $color-black;
-    font-size: 1rem;
-    font-family: Helvetica, arial, sans-serif;
-    font-weight: bold;
-    border-radius: 50px;
-    height: 40px;
-    line-height: 1rem;
-    border: none;
-    margin: 8px;
-    box-shadow: none;
-    transition: background-color 0.3s ease;
     justify-content: center;
     box-sizing: border-box;
+    height: 40px;
+    margin: 8px;
+    border: none;
+    border-radius: 50px;
+    background-color: $color-inherit;
+    color: $color-black;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-family: Helvetica, arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: none;
 
     &.button-disabled {
-      opacity: 0.5;
       cursor: not-allowed;
+      opacity: 0.5;
     }
 
     &.button-loading {
@@ -107,9 +107,9 @@
     }
 
     &:focus, &.button-selected {
+      outline-width: 3px;
       outline-style: solid;
       outline-offset: 3px;
-      outline-width: 3px;
     }
 
     &.button-contained {
@@ -118,27 +118,27 @@
     }
 
     &.button-small {
-      font-size: 0.8rem;
       padding: 5px 20px;
+      font-size: 0.8rem;
     }
 
     &.button-normal, &.button-medium {
-      font-size: 1rem;
       padding: 10px 24px;
+      font-size: 1rem;
     }
 
     &.button-large {
-      font-size: 1.4rem;
       padding: 14px 30px;
+      font-size: 1.4rem;
     }
   }
 
   .reversed {
     & .button {
       &.button-primary {
+        border: 3px solid $color-white;
         background-color: $color-white;
         color: $color-black;
-        border: 3px solid $color-white;
 
         &:hover {
           background-color: lighten($color-primary, 10%);

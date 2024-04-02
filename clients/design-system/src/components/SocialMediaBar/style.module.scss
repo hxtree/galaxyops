@@ -3,19 +3,19 @@
 // @import '../../../public/hxtree.png';
 :global {
   .social-media-bar {
-    background-color: $color-primary;
     margin: 0;
     margin-top: 4rem;
+    background-color: $color-primary;
 
     .logo {
-      background-image: url('/hxtree.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
       width: 72px;
       height: 72px;
       margin-top: 0.6rem;
       margin-bottom: 0.6rem;
+      background-image: url('/hxtree.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
 
     .social-links {
@@ -27,17 +27,16 @@
           background-color:red;
 
           a {
+            color: $color-white;
             text-align: right;
             text-decoration: none;
-            color: $color-white;
 
             &:hover {
               color: $color-white;
-              opacity: 1;
               font-weight: bold;
+              opacity: 1;
             }
           }
-
         }
       }
     }

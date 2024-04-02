@@ -819,6 +819,10 @@
       "allowedCategories": [ "clients" ]
     },
     {
+      "name": "stylelint-order",
+      "allowedCategories": [ "clients" ]
+    },
+    {
       "name": "supertest",
       "allowedCategories": [ "apis" ]
     },

@@ -7,9 +7,9 @@ $spacer: spacer();
 $nugde-out-width: 3.0625rem;
 
 .article {
-  background-color: $color-cta-white;
   overflow-x: hidden;
   width: 100%;
+  background-color: $color-cta-white;
 
   & .container {
     position:relative;
@@ -19,8 +19,8 @@ $nugde-out-width: 3.0625rem;
       position: absolute;
       top: 0;
       left: -1px;
-      height: 100%;
       width: 1px;
+      height: 100%;
       background-color: $color-light-gray;
     }
 
@@ -31,8 +31,8 @@ $nugde-out-width: 3.0625rem;
         content: "";
         position: absolute;
         top: 0;
-        width: $nugde-out-width;
         left: -(map-get($spacers, 4)) - ($nugde-out-width);
+        width: $nugde-out-width;
         height: 100%;
         background-color: $color-blue;
       }

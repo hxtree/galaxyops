@@ -22,34 +22,34 @@ $card-call-out-offset: 16px;
   transition: box-shadow 0.5s ease;
 
   .card-thumbnail {
-    margin:0;
     position: relative;
+    margin:0;
 
     .card-img-top-wrapper {
-      border-top-left-radius: 1rem;
-      border-top-right-radius: 1rem;
       overflow: hidden;
       height: 180px;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
 
       .card-img-top {
-        transition: transform 1s ease, box-shadow 1s ease;
         height: 180px;
         background-color: $color-gray !important;
-        background-size: cover !important;
-        background-position: center !important;
         background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: cover !important;
+        transition: transform 1s ease, box-shadow 1s ease;
       }
     }
 
     .card-ribbon {
-      text-transform: uppercase;
-      font-weight: bold;
-      top: 25px;
       position: absolute;
+      top: 25px;
       margin-left: -$card-call-out-offset;
       color: $color-white;
-      text-align: center;
+      font-weight: bold;
       line-height: 36px;
+      text-align: center;
+      text-transform: uppercase;
       box-shadow:  0.7rem 0.7rem .75rem rgb(0 0 0 / 0.2);
 
       &::after {
@@ -57,16 +57,16 @@ $card-call-out-offset: 16px;
         position: absolute;
         top: 100%;
         left: calc($card-call-out-offset / 2);
-        transform: translateX(-50%);
-        border-left: $card-call-out-offset solid transparent;
         border-right: 0 solid transparent;
+        border-left: $card-call-out-offset solid transparent;
+        transform: translateX(-50%);
       }
 
       &.card-ribbon-primary {
-        background-color: $card-color-primary;
         border-top: 1px solid lighten($card-color-primary, 10%);
         border-right: 1px solid lighten($card-color-primary, 10%);
         border-bottom: 1px solid darken($card-color-primary, 10%);
+        background-color: $card-color-primary;
 
         &::after {
           border-top: $card-call-out-offset solid darken($card-color-primary, 10%);
@@ -74,10 +74,10 @@ $card-call-out-offset: 16px;
       }
 
       &.card-ribbon-secondary {
-        background-color: $card-color-secondary;
         border-top: 1px solid lighten($card-color-secondary, 10%);
         border-right: 1px solid lighten($card-color-secondary, 10%);
         border-bottom: 1px solid darken($card-color-secondary, 10%);
+        background-color: $card-color-secondary;
 
         &::after {
           border-top: $card-call-out-offset solid darken($card-color-secondary, 10%);
@@ -85,10 +85,10 @@ $card-call-out-offset: 16px;
       }
 
       &.card-ribbon-tertiary {
-        background-color: $card-color-tertiary;
         border-top: 1px solid lighten($card-color-tertiary, 10%);
         border-right: 1px solid lighten($card-color-tertiary, 10%);
         border-bottom: 1px solid darken($card-color-tertiary, 10%);
+        background-color: $card-color-tertiary;
 
         &::after {
           border-top: $card-call-out-offset solid darken($card-color-tertiary, 10%);
@@ -98,31 +98,31 @@ $card-call-out-offset: 16px;
   }
 
   .card-title {
-    font-size: 1.3rem;
-    text-transform: uppercase;
     color: $color-primary;
-    font-family: $font-family-sans-serif;
     font-weight: bold;
+    font-size: 1.3rem;
+    font-family: $font-family-sans-serif;
+    text-transform: uppercase;
   }
 
   .card-body {
     .card-text {
-      display: -webkit-box;
       -webkit-box-orient: vertical;
-      overflow: hidden;
+      display: -webkit-box;
       -webkit-line-clamp: 3;
+      overflow: hidden;
     }
   }
 
   .card-footer {
-    background-color: transparent;
     border-top: none;
+    background-color: transparent;
     font-size: 1rem;
 
     .card-link {
-      text-transform: uppercase;
-      text-decoration: none;
       color: $color-gray;
+      text-decoration: none;
+      text-transform: uppercase;
     }
 
     .icon svg {
@@ -136,8 +136,8 @@ $card-call-out-offset: 16px;
     .card-ribbon-text {
       background: linear-gradient(90deg, #eee, #ddd, #fff);
       background-size: 1000px 100%;
-      color: transparent;
       background-clip: text;
+      color: transparent;
       animation: shimmer 10s linear;
     }
 

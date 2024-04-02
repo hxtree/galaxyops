@@ -2,14 +2,6 @@
 @import "bootstrap/scss/bootstrap";
 
 .blurb {
-  @include media-breakpoint-down(md) {
-    .blurb-pair-left, .blurb-pair-right {
-      &.border-end, &.border-start {
-        border: none !important;
-      }
-    }
-  }
-
   .blurb-pair-left,
   .blurb-pair-right {
     .icon {
@@ -27,6 +19,14 @@
 
       &.icon-color-purple {
         color: $color-dark-purple !important;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .blurb-pair-left, .blurb-pair-right {
+      &.border-end, &.border-start {
+        border: none !important;
       }
     }
   }
