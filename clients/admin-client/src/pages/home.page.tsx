@@ -1,4 +1,4 @@
-import { Hero, Paper, BasicCard, BlurbPair, faCheck, faGithub } from '@cats-cradle/design-system/dist/main';
+import { Hero, Paper, BasicCard, BlurbPair, faCheck, faGithub, BlurbIconColors } from '@cats-cradle/design-system/dist/main';
 
 export default function HomePage() {
   return (
@@ -12,12 +12,12 @@ export default function HomePage() {
       <div className='m-5'>
         <BlurbPair
           iconLeft={faCheck}
-          iconColorLeft='green'
+          iconColorLeft={BlurbIconColors.GREEN}
           textLeft="Our team enthusiastically invites contributors to join us in enhancing our project. We value collaboration and welcome pull requests from developers of all backgrounds. Together, we can build something remarkable."
           linkLeft="https://github.com/hxtree/cats-cradle"
           ctaLeft="Open A PR"
           iconRight={faGithub}
-          iconColorRight='purple'
+          iconColorRight={BlurbIconColors.PURPLE}
           textRight='We have a lot of new features underway.'
           linkRight="https://github.com/hxtree/cats-cradle/issues"
           ctaRight="Learn More"
