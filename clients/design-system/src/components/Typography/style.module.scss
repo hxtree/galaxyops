@@ -16,22 +16,26 @@
     font-size: 2rem;
     color: $color-primary;
     padding: 12px 0;
+
     &.fill {
       border-radius: 5px;
       padding: 13px;
       background-color: $color-primary;
       color: $color-white;
     };
+
     &.border {
       font-size: 4rem;
       width: 100%;
       position: relative;
+
       // padding: { xs 5px 0; sm 10px 0 };
       padding-left: 15px;
       font-weight: 600;
       vertical-align: center;
       border-bottom: none;
-      &:before {
+
+      &::before {
         content: "";
         position: absolute;
         width: 2px;
@@ -52,16 +56,19 @@
     color: $color-primary;
     font-weight: bold;
     padding: 12px 0;
+
     &.border {
       font-size:  2rem;
       width: 100%;
       position: relative;
+
       // padding: { xs 5px 0; sm 10px 0 };
       padding-left: 15px;
       font-weight: 600;
       vertical-align: center;
       border-bottom: none;
-      &:before {
+
+      &::before {
         content: "";
         position: absolute;
         width: 2px;
@@ -74,6 +81,7 @@
         border-radius: 3px;
       };
     };
+
     &.fill {
       border-radius: 5px;
       padding: 20px 13px;

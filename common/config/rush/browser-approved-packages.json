@@ -811,6 +811,14 @@
       "allowedCategories": [ "apis", "rigs" ]
     },
     {
+      "name": "stylelint",
+      "allowedCategories": [ "clients" ]
+    },
+    {
+      "name": "stylelint-config-standard-scss",
+      "allowedCategories": [ "clients" ]
+    },
+    {
       "name": "supertest",
       "allowedCategories": [ "apis" ]
     },

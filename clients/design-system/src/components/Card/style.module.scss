@@ -4,13 +4,13 @@
 $card-color-primary: $color-primary;
 $card-color-secondary: $color-secondary;
 $card-color-tertiary: $color-tertiary;
-
 $card-call-out-offset: 16px;
 
 @keyframes shimmer {
   0% {
     background-position: -1000px;
   }
+
   100% {
     background-position: 1000px;
   }
@@ -20,14 +20,17 @@ $card-call-out-offset: 16px;
 .card {
   border-radius: 1rem !important;
   transition: box-shadow 0.5s ease;
+
   .card-thumbnail {
     margin:0;
     position: relative;
+
     .card-img-top-wrapper {
       border-top-left-radius: 1rem;
       border-top-right-radius: 1rem;
       overflow: hidden;
       height: 180px;
+
       .card-img-top {
         transition: transform 1s ease, box-shadow 1s ease;
         height: 180px;
@@ -37,6 +40,7 @@ $card-call-out-offset: 16px;
         background-repeat: no-repeat !important;
       }
     }
+
     .card-ribbon {
       text-transform: uppercase;
       font-weight: bold;
@@ -45,46 +49,54 @@ $card-call-out-offset: 16px;
       margin-left: -$card-call-out-offset;
       color: $color-white;
       text-align: center;
-      line-height: 50px;
-      box-shadow:  0.7rem 0.7rem .75rem rgba(0, 0, 0, 0.2);
+      line-height: 36px;
+      box-shadow:  0.7rem 0.7rem .75rem rgb(0 0 0 / 0.2);
+
       &::after {
         content: '';
         position: absolute;
         top: 100%;
-        left: calc($card-call-out-offset/2);
+        left: calc($card-call-out-offset / 2);
         transform: translateX(-50%);
         border-left: $card-call-out-offset solid transparent;
-        border-right: 0px solid transparent;
+        border-right: 0 solid transparent;
       }
+
       &.card-ribbon-primary {
         background-color: $card-color-primary;
         border-top: 1px solid lighten($card-color-primary, 10%);
         border-right: 1px solid lighten($card-color-primary, 10%);
         border-bottom: 1px solid darken($card-color-primary, 10%);
+
         &::after {
           border-top: $card-call-out-offset solid darken($card-color-primary, 10%);
         }
       }
+
       &.card-ribbon-secondary {
         background-color: $card-color-secondary;
         border-top: 1px solid lighten($card-color-secondary, 10%);
         border-right: 1px solid lighten($card-color-secondary, 10%);
         border-bottom: 1px solid darken($card-color-secondary, 10%);
+
         &::after {
           border-top: $card-call-out-offset solid darken($card-color-secondary, 10%);
         }
       }
+
       &.card-ribbon-tertiary {
         background-color: $card-color-tertiary;
         border-top: 1px solid lighten($card-color-tertiary, 10%);
         border-right: 1px solid lighten($card-color-tertiary, 10%);
         border-bottom: 1px solid darken($card-color-tertiary, 10%);
+
         &::after {
           border-top: $card-call-out-offset solid darken($card-color-tertiary, 10%);
         }
       }
     }
   }
+
   .card-title {
     font-size: 1.3rem;
     text-transform: uppercase;
@@ -92,6 +104,7 @@ $card-call-out-offset: 16px;
     font-family: $font-family-sans-serif;
     font-weight: bold;
   }
+
   .card-body {
     .card-text {
       display: -webkit-box;
@@ -100,38 +113,45 @@ $card-call-out-offset: 16px;
       -webkit-line-clamp: 3;
     }
   }
+
   .card-footer {
     background-color: transparent;
     border-top: none;
     font-size: 1rem;
+
     .card-link {
       text-transform: uppercase;
       text-decoration: none;
       color: $color-gray;
     }
+
     .icon svg {
       color: $color-gray !important;
     }
   }
+
   &:hover {
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 1rem rgb(0 0 0 / 0.3);
+
     .card-ribbon-text {
       background: linear-gradient(90deg, #eee, #ddd, #fff);
       background-size: 1000px 100%;
       color: transparent;
-      -webkit-background-clip: text;
       background-clip: text;
       animation: shimmer 10s linear;
     }
+
     .card-img-top-wrapper {
       .card-img-top {
         transform: scale(1.05);
       }
     }
+
     .card-footer {
       .card-link {
         color: $color-primary;
       }
+
       .icon svg {
         color: $color-primary !important;
       }

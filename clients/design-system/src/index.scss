@@ -1,11 +1,8 @@
 // Bring in Bootstrap
-//
 // Override Bootstrap's Sass default variables
-//
 // Nearly all variables in Bootstrap are written with the `!default` flag.
 // This allows you to override the default values of those variables before
 // you import Bootstrap's source Sass files.
-//
 // Overriding the default variable values is the best way to customize your
 // CSS without writing _new_ styles. For example, you can either change
 // `$body-color` or write more CSS that override's Bootstrap's CSS like so:
@@ -16,8 +13,7 @@
 // Toggle global options
 $enable-gradients: true;
 $enable-shadows: true;
-
-$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+$offcanvas-box-shadow: 0 1rem 3rem rgb(0 0 0 / .175);
 
 // Include functions first
 @import "bootstrap/scss/functions";
@@ -39,9 +35,11 @@ $success: #7952b3;
 
 // Bootstrap optional
 @import "bootstrap/scss/type";
+
 // @import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
+
 // @import "bootstrap/scss/tables";
 @import "bootstrap/scss/forms";
 @import "bootstrap/scss/buttons";
@@ -56,6 +54,7 @@ $success: #7952b3;
 @import "bootstrap/scss/pagination";
 @import "bootstrap/scss/badge";
 @import "bootstrap/scss/alert";
+
 // @import "bootstrap/scss/progress";
 @import "bootstrap/scss/list-group";
 @import "bootstrap/scss/close";
@@ -63,6 +62,7 @@ $success: #7952b3;
 @import "bootstrap/scss/modal"; // Requires transitions
 // @import "bootstrap/scss/tooltip";
 @import "bootstrap/scss/popover";
+
 // @import "bootstrap/scss/carousel";
 @import "bootstrap/scss/spinners";
 @import "bootstrap/scss/offcanvas"; // Requires transitions
@@ -74,34 +74,28 @@ $success: #7952b3;
 // Utilities
 @import "bootstrap/scss/utilities/api";
 
-
-//
 // Custom styles
-//
-
 @import './styles/utils/color-pallette';
 @import './styles/utils/bg-color';
-
-@import './components/Alert/style.module.scss';
-@import './components/Typography/style.module.scss';
-@import './components/AppBar/style.module.scss';
-@import './components/Button/style.module.scss';
-@import './components/SocialMediaBar/style.module.scss';
-@import './components/PageFooter/style.module.scss';
-@import './components/Paper/style.module.scss';
-@import './components/Hero/style.module.scss';
-@import './components/HeroBanner/style.module.scss';
-@import './components/Card/style.module.scss';
-@import './components/BlurbPair/style.module.scss';
-@import './components/Tabs/style.module.scss';
-@import './components/Article/style.module.scss';
-@import './components/Breadcrumb/style.module.scss';
+@import './components/Alert/style.module';
+@import './components/Typography/style.module';
+@import './components/AppBar/style.module';
+@import './components/Button/style.module';
+@import './components/SocialMediaBar/style.module';
+@import './components/PageFooter/style.module';
+@import './components/Paper/style.module';
+@import './components/Hero/style.module';
+@import './components/HeroBanner/style.module';
+@import './components/Card/style.module';
+@import './components/BlurbPair/style.module';
+@import './components/Tabs/style.module';
+@import './components/Article/style.module';
+@import './components/Breadcrumb/style.module';
 
 body {
   font-family: $font-family-sans-serif;
-  background-color: $color-off-white;
   color: $color-off-black;
-  background: linear-gradient(to bottom, #fff 0%, #fff 300px, #fff 301px, $color-off-white 400px);
+  background-image: linear-gradient(to bottom, #fff 0%, #fff 300px, #fff 301px, $color-off-white 400px);
   background-attachment: fixed;
   background-repeat: no-repeat;
 }

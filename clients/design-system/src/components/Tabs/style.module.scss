@@ -4,11 +4,13 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
     scrollbar-width: none;
     -ms-overflow-style: none;
     max-width: 100%;
     overflow-x: scroll;
     white-space: nowrap;
+
     --webkit-overflow-scrolling: touch;
   }
 }

@@ -1,12 +1,12 @@
 @import '../../styles/utils/color-pallette';
+
 // @import '../../../public/hxtree.png';
 :global {
   .social-media-bar {
     background-color: $color-primary;
-    box-shadow: inset 0px 0px 30px 10px rgba(0, 0,0, 0.14);
     margin: 0;
     margin-top: 4rem;
-    // padding: 0.2rem 3rem;
+
     .logo {
       background-image: url('/hxtree.png');
       background-repeat: no-repeat;
@@ -17,16 +17,20 @@
       margin-top: 0.6rem;
       margin-bottom: 0.6rem;
     }
+
     .social-links {
       ul {
         margin: 0;
         padding: 0;
+
         li {
           background-color:red;
+
           a {
             text-align: right;
             text-decoration: none;
             color: $color-white;
+
             &:hover {
               color: $color-white;
               opacity: 1;
