@@ -12,8 +12,18 @@
   .blurb-pair-left,
   .blurb-pair-right {
     .icon {
-      color: $color-light-green !important;
-      opacity: 0.618;
+      &.icon-color-blue {
+        color: $color-blue !important;
+      }
+      &.icon-color-orange {
+        color: $color-orange !important;
+      }
+      &.icon-color-green {
+        color: $color-light-green !important;
+      }
+      &.icon-color-purple {
+        color: $color-dark-purple !important;
+      }
     }
   }
 }
