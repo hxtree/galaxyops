@@ -1,16 +1,16 @@
 
 .tabs {
   .scrollable {
+    --webkit-overflow-scrolling: touch;
+
+    overflow-x: scroll;
+    max-width: 100%;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
     &::-webkit-scrollbar {
       display: none;
     }
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    max-width: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
-
-    --webkit-overflow-scrolling: touch;
   }
 }

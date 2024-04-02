@@ -93,11 +93,11 @@ $success: #7952b3;
 @import './components/Breadcrumb/style.module';
 
 body {
-  font-family: $font-family-sans-serif;
-  color: $color-off-black;
   background-image: linear-gradient(to bottom, #fff 0%, #fff 300px, #fff 301px, $color-off-white 400px);
-  background-attachment: fixed;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: $color-off-black;
+  font-family: $font-family-sans-serif;
 }
 
 a {

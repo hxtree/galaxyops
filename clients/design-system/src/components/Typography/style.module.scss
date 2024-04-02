@@ -11,122 +11,122 @@
   };
 
   h1 {
-    font-family: $font-family-serif;
+    padding: 12px 0;
+    color: $color-primary;
     font-weight: 800;
     font-size: 2rem;
-    color: $color-primary;
-    padding: 12px 0;
+    font-family: $font-family-serif;
 
     &.fill {
-      border-radius: 5px;
       padding: 13px;
+      border-radius: 5px;
       background-color: $color-primary;
       color: $color-white;
     };
 
     &.border {
-      font-size: 4rem;
-      width: 100%;
       position: relative;
+      width: 100%;
 
       // padding: { xs 5px 0; sm 10px 0 };
       padding-left: 15px;
-      font-weight: 600;
-      vertical-align: center;
       border-bottom: none;
+      font-weight: 600;
+      font-size: 4rem;
+      vertical-align: center;
 
       &::before {
         content: "";
         position: absolute;
-        width: 2px;
-        height: 100%;
         top: 0;
         bottom: 0;
         left: 0;
+        width: 2px;
+        height: 100%;
         margin: auto;
-        background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
         border-radius: 3px;
+        background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
       }
     }
   }
 
   h2 {
-    font-family: $font-family-serif;
-    font-size: 1.8rem;
+    padding: 12px 0;
     color: $color-primary;
     font-weight: bold;
-    padding: 12px 0;
+    font-size: 1.8rem;
+    font-family: $font-family-serif;
 
     &.border {
-      font-size:  2rem;
-      width: 100%;
       position: relative;
+      width: 100%;
 
       // padding: { xs 5px 0; sm 10px 0 };
       padding-left: 15px;
-      font-weight: 600;
-      vertical-align: center;
       border-bottom: none;
+      font-weight: 600;
+      font-size:  2rem;
+      vertical-align: center;
 
       &::before {
         content: "";
         position: absolute;
-        width: 2px;
-        height: 100%;
         top: 0;
         bottom: 0;
         left: 0;
+        width: 2px;
+        height: 100%;
         margin: auto;
-        background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
         border-radius: 3px;
+        background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
       };
     };
 
     &.fill {
-      border-radius: 5px;
       padding: 20px 13px;
+      border-bottom: none;
+      border-radius: 5px;
       background-color: $color-primary;
       color: $color-white;
       font-weight: bold;
-      border-bottom: none;
     };
   };
 
   h3 {
-    font-family: $font-family-serif;
     font-weight: 400;
     font-size:  1.7rem;
+    font-family: $font-family-serif;
   };
 
   h4 {
-    font-family: $font-family-serif;
     font-weight: 400;
     font-size:  1.6rem;
+    font-family: $font-family-serif;
   };
 
   h5 {
-    font-family: $font-family-serif;
     font-weight: 400;
     font-size:  1.4rem;
+    font-family: $font-family-serif;
   };
 
   h6 {
-    font-family: $font-family-serif;
     font-weight: 400;
     font-size:  1.2rem;
+    font-family: $font-family-serif;
   }
 
   p.body1 {
-    font-family: $font-family-sans-serif;
     font-weight: 400;
     font-size:  1rem;
     line-height: 1.8rem;
+    font-family: $font-family-sans-serif;
   }
 
   p.intro {
-    font-family: $font-family-sans-serif;
     font-weight: 400;
     font-size:  1.5rem;
     line-height: 2rem;
+    font-family: $font-family-sans-serif;
   }
 }

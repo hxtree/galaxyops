@@ -2,22 +2,22 @@
 
 .hero {
   min-height: 50vh;
-  background-color: $color-blue;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
   border: 0;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  background-color: $color-blue;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 
   .hero-text-wrapper {
     background-color: rgb(255 255 255 / 0.4);
 
     h1 {
-      font-weight: bold;
       background: linear-gradient(to right, $color-gray, darken($color-gray, 10%)) !important;
       background-clip: text !important;
       color: transparent !important ;
+      font-weight: bold;
     }
 
     .lead {
@@ -31,10 +31,10 @@
   }
 
   .toolbar {
-    margin:0;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
     min-height: 8rem;
+    margin:0;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
     background-color: $color-blue;
     color: $color-white;
   }

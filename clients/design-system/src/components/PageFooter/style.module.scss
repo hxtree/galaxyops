@@ -2,16 +2,16 @@
 
 :global {
   .page-footer {
-    background-color: $color-black;
-    color: $color-gray;
     margin: 0;
     padding: 3rem;
+    background-color: $color-black;
+    color: $color-gray;
 
     a {
       padding: 0.2rem;
-      text-transform: uppercase;
-      text-decoration: none;
       color: $color-primary;
+      text-decoration: none;
+      text-transform: uppercase;
 
       &:hover {
         color: $color-primary;
@@ -22,8 +22,8 @@
     hr {
       margin-top: 3rem;
       margin-bottom: 3rem;
-      opacity: 0.3;
       border: 3px solid $color-sky-blue;
+      opacity: 0.3;
     }
 
   }
