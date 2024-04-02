@@ -3,13 +3,7 @@ import './style.module.scss';
 import {IconDefinition} from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from "../Button/Button";
-
-export enum BlurbIconColors {
-  BLUE = 'blue',
-  ORANGE = 'orange',
-  GREEN = 'green',
-  PURPLE = 'purple',
-}
+import { BlurbIconColors } from "./BlurbIconColors.enum";
 
 export type BlurbPairProps = {
   iconRight: IconDefinition;

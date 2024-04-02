@@ -9,23 +9,27 @@
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   border: 0;
+
   .hero-text-wrapper {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgb(255 255 255 / 0.4);
+
     h1 {
       font-weight: bold;
       background: linear-gradient(to right, $color-gray, darken($color-gray, 10%)) !important;
-      -webkit-background-clip: text !important;
       background-clip: text !important;
       color: transparent !important ;
     }
+
     .lead {
       color: $color-off-black;
       font-size: 1.2em;
     }
+
     p {
       color: $color-off-black;
     }
   }
+
   .toolbar {
     margin:0;
     border-bottom-left-radius: 50px;

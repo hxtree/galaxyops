@@ -1,41 +1,30 @@
 @import '../../styles/utils/color-pallette';
 
 :global {
-.page-footer {
-  background-color: $color-black;
-  color: $color-gray;
-  margin: 0;
-  padding: 3rem;
-  a {
-    opacity: 0.9;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: $color-primary;
-    &:hover {
-      color: $color-primary;
-      opacity: 1;
-      font-weight: bold;
-    }
-  }
-  hr {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    opacity: 0.3;
-    border: 3px solid $color-sky-blue;
-  }
-  ul {
-    display: block;
+  .page-footer {
+    background-color: $color-black;
+    color: $color-gray;
     margin: 0;
-    padding: 0;
-    li {
-      width: 33%;
-      margin: 0.2rem;
-      display: inline-block;
-      a {
-        padding: 0.2rem;
-        display: block;
+    padding: 3rem;
+
+    a {
+      padding: 0.2rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $color-primary;
+
+      &:hover {
+        color: $color-primary;
+        font-weight: bold;
       }
     }
+
+    hr {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      opacity: 0.3;
+      border: 3px solid $color-sky-blue;
+    }
+
   }
-}
 }

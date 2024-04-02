@@ -10,8 +10,10 @@ $nugde-out-width: 3.0625rem;
   background-color: $color-cta-white;
   overflow-x: hidden;
   width: 100%;
+
   & .container {
     position:relative;
+
     &::before {
       content: "";
       position: absolute;
@@ -21,8 +23,10 @@ $nugde-out-width: 3.0625rem;
       width: 1px;
       background-color: $color-light-gray;
     }
+
     h2 {
       position: relative;
+
       &::before {
         content: "";
         position: absolute;

@@ -27,6 +27,7 @@ export * from './Hero/Hero';
 export * from './HeroBanner/HeroBanner';
 export * from './Images/Images';
 export * from './BlurbPair/BlurbPair';
+export * from './BlurbPair/BlurbIconColors.enum';
 export * from './Tabs/Tabs';
 export * from './Tabs/Tabs.type';
 export * from './Gradient/Gradient';

@@ -1,18 +1,6 @@
 @import '../../styles/utils/color-pallette';
 
 :global {
-  .reversed {
-    & .button {
-      &.button-primary {
-        background-color: $color-white;
-        color: $color-black;
-        border: 3px solid $color-white;
-        &:hover {
-          background-color: lighten($color-primary, 10%);
-        }
-      }
-    }
-  }
   .button {
     cursor: pointer;
     background-color: $color-inherit;
@@ -29,95 +17,134 @@
     transition: background-color 0.3s ease;
     justify-content: center;
     box-sizing: border-box;
+
     &.button-disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }
-    &.button-primary {
-      border: 3px solid $color-primary;
-      background-color: $color-primary;
-      color: $color-white;
-      &:focus, &.button-selected {
-        outline-color: $color-primary;
-      }
-      &.button-loading {
-        color: transparent;
-        > .spinner-border {
-          color: $color-white;
-        }
-      }
-      > svg {
-        margin-left: 0.3rem;
-        color: lighten($color-primary, 15%);
-      }
-      &:hover {
-        border-color:  lighten($color-primary, 10%);
-        background-color: lighten($color-primary, 10%);
-        > svg {
-          color: $color-primary;
-        }
-      }
-    }
-    &.button-secondary {
-      border: 3px solid $color-primary;
-      background-color: transparent;
-      color: $color-primary;
-      &:focus, &.button-selected {
-        outline-color: $color-primary;
-      }
-      &.button-loading {
-        color: transparent !important;
-        > .spinner-border {
-          color: $color-primary !important;
-        }
-      }
-      &:hover {
-        border-color:  lighten($color-primary, 10%);
-        color: $color-black;
-      }
-    }
-    &.button-inherit {
-      border: 3px solid $color-primary;
-      background-color: transparent;
-      color: $color-primary;
-      &:focus, &.button-selected {
-        outline-color: $color-primary;
-      }
-      &.button-loading {
-        color: transparent;
-        > .spinner-border {
-          color: $color-primary;
-        }
-      }
-    }
+
     &.button-loading {
       position: relative;
+
       > .spinner-border {
         position: absolute;
         top: calc(50% - 0.5rem);
         left: calc(50% - 0.5rem);
       }
     }
+
+    &.button-primary {
+      border: 3px solid $color-primary;
+      background-color: $color-primary;
+      color: $color-white;
+
+      &:focus, &.button-selected {
+        outline-color: $color-primary;
+      }
+
+      &.button-loading {
+        color: transparent;
+
+        > .spinner-border {
+          color: $color-white;
+        }
+      }
+
+      > svg {
+        margin-left: 0.3rem;
+        color: lighten($color-primary, 15%);
+      }
+
+      &:hover {
+        border-color:  lighten($color-primary, 10%);
+        background-color: lighten($color-primary, 10%);
+
+        > svg {
+          color: $color-primary;
+        }
+      }
+    }
+
+    &.button-secondary {
+      border: 3px solid $color-primary;
+      background-color: transparent;
+      color: $color-primary;
+
+      &:focus, &.button-selected {
+        outline-color: $color-primary;
+      }
+
+      &.button-loading {
+        color: transparent !important;
+
+        > .spinner-border {
+          color: $color-primary !important;
+        }
+      }
+
+      &:hover {
+        border-color:  lighten($color-primary, 10%);
+        color: $color-black;
+      }
+    }
+
+    &.button-inherit {
+      border: 3px solid $color-primary;
+      background-color: transparent;
+      color: $color-primary;
+
+      &:focus, &.button-selected {
+        outline-color: $color-primary;
+      }
+
+      &.button-loading {
+        color: transparent;
+
+        > .spinner-border {
+          color: $color-primary;
+        }
+      }
+    }
+
     &:focus, &.button-selected {
       outline-style: solid;
       outline-offset: 3px;
       outline-width: 3px;
     }
+
     &.button-contained {
       width: 100%;
       text-align: center;
     }
+
     &.button-small {
       font-size: 0.8rem;
-      padding: 5px 20px 5px 20px;
+      padding: 5px 20px;
     }
+
     &.button-normal, &.button-medium {
       font-size: 1rem;
       padding: 10px 24px;
     }
+
     &.button-large {
       font-size: 1.4rem;
       padding: 14px 30px;
     }
   }
+
+  .reversed {
+    & .button {
+      &.button-primary {
+        background-color: $color-white;
+        color: $color-black;
+        border: 3px solid $color-white;
+
+        &:hover {
+          background-color: lighten($color-primary, 10%);
+        }
+      }
+    }
+  }
+
 }
