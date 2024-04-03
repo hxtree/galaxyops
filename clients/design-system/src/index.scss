@@ -13,7 +13,7 @@
 // Toggle global options
 $enable-gradients: true;
 $enable-shadows: true;
-$offcanvas-box-shadow: 0 1rem 3rem rgb(0 0 0 / .175);
+$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 
 // Include functions first
 @import "bootstrap/scss/functions";

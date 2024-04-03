@@ -24,7 +24,7 @@
     "test:cov": "jest --coverage --runInBand",
     "watch": "tsc -w",
     "lint": "eslint --format visualstudio \"./src/**/*.tsx\" --fix && stylelint \"./src/**/*.scss\" --fix",
-    "lint:ci": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix-dry-run",
+    "lint:ci": "eslint --format visualstudio \"./src/**/*.tsx\" --fix-dry-run && stylelint \"./src/**/*.scss\" ",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "cdk:bootstrap": "cdk bootstrap",

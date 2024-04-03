@@ -2,6 +2,17 @@
   "extends": "stylelint-config-standard-scss",
   "plugins": ["stylelint-order"],
   "rules": {
+    "color-function-notation": [
+      "legacy",
+      {
+        "ignore": ["with-var-inside"]
+      }
+    ],
+    "no-irregular-whitespace": true,
+    "color-no-invalid-hex": true,
+    "block-no-empty": true,
+    "unit-allowed-list": ["%", "deg", "px", "rem", "s", "ms", "vh", "vw"],
+    "number-max-precision": 3,
     "alpha-value-notation": "number",
     "order/order": [
       "custom-properties",
@@ -10,7 +21,6 @@
       "rules",
       "at-rules"
     ],
-    "order/properties-alphabetical-order": true,
     "order/properties-order": [
       "content",
       "position",

@@ -50,7 +50,7 @@ $card-call-out-offset: 16px;
       line-height: 36px;
       text-align: center;
       text-transform: uppercase;
-      box-shadow:  0.7rem 0.7rem .75rem rgb(0 0 0 / 0.2);
+      box-shadow:  0.7rem 0.7rem .75rem rgb(0, 0, 0, 0.2);
 
       &::after {
         content: '';
@@ -131,7 +131,7 @@ $card-call-out-offset: 16px;
   }
 
   &:hover {
-    box-shadow: 0 0 1rem rgb(0 0 0 / 0.3);
+    box-shadow: 0 0 1rem rgb(0, 0, 0, 0.3);
 
     .card-ribbon-text {
       background: linear-gradient(90deg, #eee, #ddd, #fff);

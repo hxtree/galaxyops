@@ -11,7 +11,7 @@
   background-size: cover;
 
   .hero-text-wrapper {
-    background-color: rgb(255 255 255 / 0.4);
+    background-color: rgb(255, 255, 255, 0.4);
 
     h1 {
       background: linear-gradient(to right, $color-gray, darken($color-gray, 10%)) !important;
@@ -22,7 +22,7 @@
 
     .lead {
       color: $color-off-black;
-      font-size: 1.2em;
+      font-size: 1.2rem;
     }
 
     p {
