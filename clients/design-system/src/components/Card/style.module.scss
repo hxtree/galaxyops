@@ -16,14 +16,13 @@ $card-call-out-offset: 16px;
   }
 }
 
-
 .card {
   border-radius: 1rem !important;
   transition: box-shadow 0.5s ease;
 
   .card-thumbnail {
     position: relative;
-    margin:0;
+    margin: 0;
 
     .card-img-top-wrapper {
       overflow: hidden;
@@ -37,7 +36,9 @@ $card-call-out-offset: 16px;
         background-repeat: no-repeat !important;
         background-position: center !important;
         background-size: cover !important;
-        transition: transform 1s ease, box-shadow 1s ease;
+        transition:
+          transform 1s ease,
+          box-shadow 1s ease;
       }
     }
 
@@ -50,7 +51,7 @@ $card-call-out-offset: 16px;
       line-height: 36px;
       text-align: center;
       text-transform: uppercase;
-      box-shadow:  0.7rem 0.7rem .75rem rgb(0 0 0 / 0.2);
+      box-shadow: 0.7rem 0.7rem 0.75rem rgb(0, 0, 0, 0.2);
 
       &::after {
         content: '';
@@ -69,7 +70,8 @@ $card-call-out-offset: 16px;
         background-color: $card-color-primary;
 
         &::after {
-          border-top: $card-call-out-offset solid darken($card-color-primary, 10%);
+          border-top: $card-call-out-offset solid
+            darken($card-color-primary, 10%);
         }
       }
 
@@ -80,7 +82,8 @@ $card-call-out-offset: 16px;
         background-color: $card-color-secondary;
 
         &::after {
-          border-top: $card-call-out-offset solid darken($card-color-secondary, 10%);
+          border-top: $card-call-out-offset solid
+            darken($card-color-secondary, 10%);
         }
       }
 
@@ -91,7 +94,8 @@ $card-call-out-offset: 16px;
         background-color: $card-color-tertiary;
 
         &::after {
-          border-top: $card-call-out-offset solid darken($card-color-tertiary, 10%);
+          border-top: $card-call-out-offset solid
+            darken($card-color-tertiary, 10%);
         }
       }
     }
@@ -131,7 +135,7 @@ $card-call-out-offset: 16px;
   }
 
   &:hover {
-    box-shadow: 0 0 1rem rgb(0 0 0 / 0.3);
+    box-shadow: 0 0 1rem rgb(0, 0, 0, 0.3);
 
     .card-ribbon-text {
       background: linear-gradient(90deg, #eee, #ddd, #fff);

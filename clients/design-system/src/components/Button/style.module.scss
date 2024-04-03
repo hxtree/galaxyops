@@ -38,7 +38,8 @@
       background-color: $color-primary;
       color: $color-white;
 
-      &:focus, &.button-selected {
+      &:focus,
+      &.button-selected {
         outline-color: $color-primary;
       }
 
@@ -56,7 +57,7 @@
       }
 
       &:hover {
-        border-color:  lighten($color-primary, 10%);
+        border-color: lighten($color-primary, 10%);
         background-color: lighten($color-primary, 10%);
 
         > svg {
@@ -70,7 +71,8 @@
       background-color: transparent;
       color: $color-primary;
 
-      &:focus, &.button-selected {
+      &:focus,
+      &.button-selected {
         outline-color: $color-primary;
       }
 
@@ -83,7 +85,7 @@
       }
 
       &:hover {
-        border-color:  lighten($color-primary, 10%);
+        border-color: lighten($color-primary, 10%);
         color: $color-black;
       }
     }
@@ -93,7 +95,8 @@
       background-color: transparent;
       color: $color-primary;
 
-      &:focus, &.button-selected {
+      &:focus,
+      &.button-selected {
         outline-color: $color-primary;
       }
 
@@ -106,7 +109,8 @@
       }
     }
 
-    &:focus, &.button-selected {
+    &:focus,
+    &.button-selected {
       outline-width: 3px;
       outline-style: solid;
       outline-offset: 3px;
@@ -122,7 +126,8 @@
       font-size: 0.8rem;
     }
 
-    &.button-normal, &.button-medium {
+    &.button-normal,
+    &.button-medium {
       padding: 10px 24px;
       font-size: 1rem;
     }
@@ -146,5 +151,4 @@
       }
     }
   }
-
 }

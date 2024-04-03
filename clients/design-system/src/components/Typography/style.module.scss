@@ -8,7 +8,7 @@
 
   .center {
     text-align: center;
-  };
+  }
 
   h1 {
     padding: 12px 0;
@@ -22,7 +22,7 @@
       border-radius: 5px;
       background-color: $color-primary;
       color: $color-white;
-    };
+    }
 
     &.border {
       position: relative;
@@ -36,7 +36,7 @@
       vertical-align: center;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         bottom: 0;
@@ -45,7 +45,7 @@
         height: 100%;
         margin: auto;
         border-radius: 3px;
-        background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
+        background: linear-gradient(180deg, #31aaff 0%, #2cd0ff 100%);
       }
     }
   }
@@ -65,11 +65,11 @@
       padding-left: 15px;
       border-bottom: none;
       font-weight: 600;
-      font-size:  2rem;
+      font-size: 2rem;
       vertical-align: center;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         bottom: 0;
@@ -78,9 +78,9 @@
         height: 100%;
         margin: auto;
         border-radius: 3px;
-        background: linear-gradient(180deg, #31aaff  0%, #2cd0ff 100%);
-      };
-    };
+        background: linear-gradient(180deg, #31aaff 0%, #2cd0ff 100%);
+      }
+    }
 
     &.fill {
       padding: 20px 13px;
@@ -89,43 +89,43 @@
       background-color: $color-primary;
       color: $color-white;
       font-weight: bold;
-    };
-  };
+    }
+  }
 
   h3 {
     font-weight: 400;
-    font-size:  1.7rem;
+    font-size: 1.7rem;
     font-family: $font-family-serif;
-  };
+  }
 
   h4 {
     font-weight: 400;
-    font-size:  1.6rem;
+    font-size: 1.6rem;
     font-family: $font-family-serif;
-  };
+  }
 
   h5 {
     font-weight: 400;
-    font-size:  1.4rem;
+    font-size: 1.4rem;
     font-family: $font-family-serif;
-  };
+  }
 
   h6 {
     font-weight: 400;
-    font-size:  1.2rem;
+    font-size: 1.2rem;
     font-family: $font-family-serif;
   }
 
   p.body1 {
     font-weight: 400;
-    font-size:  1rem;
+    font-size: 1rem;
     line-height: 1.8rem;
     font-family: $font-family-sans-serif;
   }
 
   p.intro {
     font-weight: 400;
-    font-size:  1.5rem;
+    font-size: 1.5rem;
     line-height: 2rem;
     font-family: $font-family-sans-serif;
   }
