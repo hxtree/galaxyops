@@ -49,9 +49,13 @@ $base-colors: (
 $phi: (square-root(5) + 1)/2;
 
 // shades
-$shade: '0' percentage(1 - 1/ ($phi * 3)), '25' percentage(1 / $phi);
+$shade:
+  '0' percentage(1 - 1/ ($phi * 3)),
+  '25' percentage(1 / $phi);
 // tints
-$tints: '75' percentage(1 / $phi), '100' percentage(1 - 1/ ($phi * 3));
+$tints:
+  '75' percentage(1 / $phi),
+  '100' percentage(1 - 1/ ($phi * 3));
 
 // degrees make use of compass ratios using golden ratio / phi
 $degrees: (

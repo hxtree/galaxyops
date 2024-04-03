@@ -14,7 +14,11 @@
     background-color: rgb(255, 255, 255, 0.4);
 
     h1 {
-      background: linear-gradient(to right, $color-gray, darken($color-gray, 10%)) !important;
+      background: linear-gradient(
+        to right,
+        $color-gray,
+        darken($color-gray, 10%)
+      ) !important;
       background-clip: text !important;
       color: transparent !important ;
       font-weight: bold;
@@ -32,7 +36,7 @@
 
   .toolbar {
     min-height: 8rem;
-    margin:0;
+    margin: 0;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
     background-color: $color-blue;

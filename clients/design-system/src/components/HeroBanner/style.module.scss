@@ -3,51 +3,56 @@
 $hero-banner-height: 300px;
 
 .hero-banner {
-    position: relative;
+  position: relative;
+  width: 100%;
+
+  .hero-facet {
+    position: absolute;
+    z-index: -2;
     width: 100%;
+    height: 100%;
+    background-color: $color-gray;
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0% 50%);
+  }
 
-    .hero-facet {
-      position: absolute;
-      z-index: -2;
-      width: 100%;
-      height: 100%;
-      background-color: $color-gray;
-      background-position: center;
-      background-size: cover;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0% 50%);
+  .hero-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgb(128, 80, 237, 0.9) 0%,
+      rgb(128, 80, 237, 0.9) 28%,
+      rgb(0, 141, 184, 0.5) 100%
+    );
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0% 50%);
+  }
+
+  .hero-text-wrapper {
+    background-color: $color-dark-blue;
+
+    h1 {
+      font-weight: bold;
     }
 
-    .hero-gradient-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, rgb(128, 80, 237, 0.9) 0%, rgb(128, 80, 237, 0.9) 28%, rgb(0, 141, 184, 0.5) 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0% 50%);
+    .lead {
+      color: $color-gray;
     }
 
-    .hero-text-wrapper {
-      background-color: $color-dark-blue;
-
-      h1 {
-        font-weight: bold;
-      }
-
-      .lead {
-        color: $color-gray;
-      }
-
-      p {
-        color: $color-gray;
-      }
+    p {
+      color: $color-gray;
     }
+  }
 
-    .hero-image {
-      background-color: $color-dark-blue;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-    }
+  .hero-image {
+    background-color: $color-dark-blue;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
 }

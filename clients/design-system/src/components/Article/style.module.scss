@@ -1,6 +1,6 @@
 @import '../../styles/utils/color-pallette';
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/bootstrap';
 
 // Get the value of $spacer variable (default Bootstrap spacing unit)
 $spacer: spacer();
@@ -12,10 +12,10 @@ $nugde-out-width: 3.063rem;
   background-color: $color-cta-white;
 
   & .container {
-    position:relative;
+    position: relative;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: -1px;
@@ -28,7 +28,7 @@ $nugde-out-width: 3.063rem;
       position: relative;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: -(map-get($spacers, 4)) - ($nugde-out-width);
