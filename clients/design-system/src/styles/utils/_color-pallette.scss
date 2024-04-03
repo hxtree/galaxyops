@@ -24,13 +24,15 @@ $color-tertiary: $color-gold;
 $color-inherit: $color-gray;
 
 :root {
-  --color-berkeley-blue: $color-berkeley-blue: --color-gold: $color-gold;
+  --color-berkeley-blue: $color-berkeley-blue;
+  --color-gold: $color-gold;
   --color-sky-blue: $color-sky-blue;
   --color-sgbus-green: $color-sgbus-green;
   --color-murrey: $color-murrey;
   --color-white: $color-white;
   --color-black: $color-black;
-  --color-primary: $color-primary: --color-secondary: $color-secondary;
+  --color-primary: $color-primary;
+  --color-secondary: $color-secondary;
   --color-tertiary: $color-tertiary;
   --color-gray: $color-gray;
 }
