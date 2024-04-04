@@ -5,6 +5,7 @@ $card-color-primary: $color-primary;
 $card-color-secondary: $color-secondary;
 $card-color-tertiary: $color-tertiary;
 $card-call-out-offset: 16px;
+$card-radius: 2.25rem;
 
 @keyframes shimmer {
   0% {
@@ -17,7 +18,7 @@ $card-call-out-offset: 16px;
 }
 
 .card {
-  border-radius: 1rem !important;
+  border-radius: $card-radius !important;
   transition: box-shadow 0.5s ease;
 
   .card-thumbnail {
@@ -27,8 +28,8 @@ $card-call-out-offset: 16px;
     .card-img-top-wrapper {
       overflow: hidden;
       height: 180px;
-      border-top-left-radius: 1rem;
-      border-top-right-radius: 1rem;
+      border-top-left-radius: $card-radius;
+      border-top-right-radius: $card-radius;
 
       .card-img-top {
         height: 180px;
