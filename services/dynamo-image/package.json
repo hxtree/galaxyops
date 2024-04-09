@@ -1,0 +1,16 @@
+{
+  "name": "@cats-cradle/dynamo-image",
+  "module": "commonjs",
+  "version": "0.0.1",
+  "scripts": {
+    "lint": "eslint --format visualstudio \"./{stacks,src}/**/*.ts\" --fix",
+    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run"
+  },
+  "dependencies": {
+    "@cats-cradle/base-nodejs": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "@cats-cradle/eslint-config": "1.0.11"
+  }
+}

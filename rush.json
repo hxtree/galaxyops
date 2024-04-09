@@ -328,6 +328,19 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@cats-cradle/dynamo-image",
+      "projectFolder": "services/dynamo-image",
+      "reviewCategory": "apis",
+      "decoupledLocalDependencies": [
+        "@cats-cradle/eslint-config",
+        "@cats-cradle/nestjs-modules",
+        "@cats-cradle/create-artifact",
+        "@cats-cradle/create-bundle"
+      ],
+      "tags": ["services", "mongoshelf"],
+      "shouldPublish": true
+    },
+    {
       "packageName": "@cats-cradle/email-service",
       "projectFolder": "services/email-service",
       "reviewCategory": "apis",
