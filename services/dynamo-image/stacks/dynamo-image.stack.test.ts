@@ -1,11 +1,11 @@
 import * as cdk from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { CharacterSheetStack } from './character-sheet.stack';
+import { DynamoImageStack } from './dynamo-image.stack';
 
-describe('CharacterSheetStack', () => {
+describe('DynamoImageStack', () => {
   it('should match snapshot test', () => {
     const app = new cdk.App();
-    const stack = new CharacterSheetStack(app, 'MyTestStack');
+    const stack = new DynamoImageStack(app, 'MyTestStack');
     const template = Template.fromStack(stack);
 
     // TODO consider reworking to use DNS instead of incrementing and deploying each time

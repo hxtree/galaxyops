@@ -1,20 +1,20 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import { ItemModule } from './item.module';
-import { ItemService } from './item.service';
+import { ImageModule } from './image.module';
+import { ImageService } from './image.service';
 
-describe('/items', () => {
+describe('/images', () => {
   let app: INestApplication;
-  let itemService: ItemService;
+  let imageService: ImageService;
 
   beforeEach(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
-      imports: [ItemModule],
+      imports: [ImageModule],
     }).compile();
 
     app = moduleRef.createNestApplication();
-    itemService = moduleRef.get<ItemService>(ItemService);
+    imageService = moduleRef.get<ImageService>(ImageService);
     await app.init();
   });
 
@@ -22,17 +22,17 @@ describe('/items', () => {
     app.close();
   });
 
-  it('GET /items', async () => {
+  it('GET /images', async () => {
     await supertest(app.getHttpServer())
-      .get('/items')
+      .get('/images')
       .expect(200)
-      .expect(await itemService.list());
+      .expect(await imageService.list());
   });
 
-  it('GET /items/:id', async () => {
+  it('GET /images/:id', async () => {
     await supertest(app.getHttpServer())
-      .get('/items/RICE_BALL')
+      .get('/images/RICE_BALL')
       .expect(200)
-      .expect(await itemService.find('RICE_BALL'));
+      .expect(await imageService.find('RICE_BALL'));
   });
 });
