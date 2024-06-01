@@ -20,7 +20,7 @@ function App() {
           {url: `https://api.${parentDomainName}`, label: 'Developer API'},
           {url: 'https://nekosgate.awsapps.com/mail', label: 'WorkMail'}
       ]}/>
-    </AppProvider>
+      </AppProvider>
   );
 }
 
