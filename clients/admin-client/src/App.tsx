@@ -1,4 +1,5 @@
 import '@cats-cradle/design-system/dist/assets/style.css';
+import { AppProvider } from './context/AppProvider';
 import { PageFooter, faGithub } from '@cats-cradle/design-system/dist/main';
 import { Router } from './routing/Router';
 
@@ -6,7 +7,7 @@ function App() {
   const parentDomainName = import.meta.env.VITE_PARENT_DOMAIN_NAME ?? 'sandbox.nekosgate.com';
 
   return (
-    <>
+    <AppProvider>
       <Router/>
       <PageFooter
         socialMedias={[
@@ -17,9 +18,9 @@ function App() {
           {url: `https://jukebox.${parentDomainName}`, label: 'Jukebox'},
           {url: `https://design.${parentDomainName}`, label: 'Design System'},
           {url: `https://api.${parentDomainName}`, label: 'Developer API'},
-          {url: 'https://nekosgate.awsapps.com/mail', 'label': 'WorkMail'}
+          {url: 'https://nekosgate.awsapps.com/mail', label: 'WorkMail'}
       ]}/>
-    </>
+    </AppProvider>
   );
 }
 
