@@ -11,6 +11,7 @@ export { IsFilename, IsFilenameValidator } from './custom/is-filename';
 // supported class-validator export
 export {
   validateSync,
+  ValidateIf,
   ValidationError,
   ValidateNested,
   IsBoolean,

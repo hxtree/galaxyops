@@ -106,9 +106,9 @@
     }
   },
   "info": {
-    "title": "@cats-cradles/audio-service",
+    "title": "@cats-cradle/jukebox",
     "description": "An API for the audio service",
-    "version": "1.0",
+    "version": "0.0.2",
     "contact": {}
   },
   "tags": [],

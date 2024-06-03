@@ -4,7 +4,7 @@
   "type": "commonjs",
   "version": "0.3.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc --build ./tsconfig-build.json && vite build",
     "build:all": "rush build -t .",
     "artifact": "create-artifact @cats-cradle/admin-client",
