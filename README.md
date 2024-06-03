@@ -16,12 +16,12 @@ coherent plan in place, any attempt to make changes becomes a daunting task.
 
 ## This solution
 
-Looking to kickstart your enterprise cloud architecture? Take a deep dive into
-the realm of modern DevOps practices on AWS with a monorepo setup like the one
-provided here [^1]. This isn't mere conjecture - it's a practical demonstration
-featuring tangible code, driving a cooperative RPG. Our approach transcends
-individual projects; we're laying the groundwork for the entire landscape of
-enterprise software on AWS.
+This cloud architecture focuses on modern DevOps practices on AWS[^1]. This
+approach transcends individual projects; we're laying the groundwork for the
+entire landscape of enterprise software on AWS.
+
+It's a practical demonstration featuring tangible code, driving a cooperative
+RPG.
 
 ### Features
 
