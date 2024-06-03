@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext, ReactNode } from 'react';
+import React, { createContext, useReducer, useContext } from 'react';
 
 enum Actions {
   PAGE_LOADING = 'PAGE_LOADING',
@@ -34,14 +34,6 @@ const AppContext = createContext<{
   dispatch: React.Dispatch<Action>;
 } | undefined>(undefined);
 
-export const useAppContext = () => {
-  const context = useContext(AppContext);
-  if (!context) {
-    throw new Error('useAppContext must be used within an AppProvider');
-  }
-  return context;
-};
-
 export const AppProvider: React.FC<{ children: React.ReactNode }> = (props) => {
   const { children } = props;
   const [state, dispatch] = useReducer(reducer, { user: null });
@@ -51,4 +43,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = (props) => {
       {children}
     </AppContext.Provider>
   );
+};
+
+export const useAppContext = () => {
+  const context = useContext(AppContext);
+  if (!context) {
+    throw new Error('useAppContext must be used within an AppProvider');
+  }
+  return context;
 };
