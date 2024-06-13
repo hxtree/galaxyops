@@ -1,8 +1,8 @@
 import { MenuSlot } from '../menu-slot';
 
 /**
- * InteractionSkills are actions that can only be used when a compatible object is present
- * InteractionSkill Actions are a type of Command Menu actions,
+ * Interaction skills are actions that can only be used when a compatible object is present.
+ * They are a type of Command Menu action.
  */
 export namespace Interaction {
   export type Type = {
@@ -20,42 +20,50 @@ export namespace Interaction {
 
   export const GRAB: Type = {
     name: 'Grab',
-    description: 'Grab object',
+    description: 'Grab an object.',
     target: ObjectCategory.MOVEABLE,
     menuSlot: MenuSlot.INTERACTION,
   };
 
   export const PUSH: Type = {
     name: 'Push',
-    description: 'Push object',
+    description: 'Push an object.',
     target: ObjectCategory.MOVEABLE,
     menuSlot: MenuSlot.INTERACTION,
   };
 
   export const PULL: Type = {
     name: 'Pull',
-    description: 'Pull object',
+    description: 'Pull an object.',
     target: ObjectCategory.MOVEABLE,
     menuSlot: MenuSlot.INTERACTION,
   };
 
   export const LIFT: Type = {
     name: 'Lift',
-    description: 'Lift object',
+    description: 'Lift an object.',
     target: ObjectCategory.MOVEABLE,
     menuSlot: MenuSlot.INTERACTION,
   };
 
   export const THROW: Type = {
     name: 'Throw',
-    description: 'Throw object',
+    description: 'Throw an object.',
     target: ObjectCategory.MOVEABLE,
     menuSlot: MenuSlot.INTERACTION,
   };
 
   export const PICK_LOCK: Type = {
     name: 'Pick Lock',
-    description: 'Pick a lock',
+    description: 'Attempt to pick a lock.',
+    target: ObjectCategory.LOCKED,
+    menuSlot: MenuSlot.INTERACTION,
+  };
+
+  export const UNLOCK: Type = {
+    name: 'Unlock',
+    description: 'Open a lock using a key.',
+    // consumes a key
     target: ObjectCategory.LOCKED,
     menuSlot: MenuSlot.INTERACTION,
   };

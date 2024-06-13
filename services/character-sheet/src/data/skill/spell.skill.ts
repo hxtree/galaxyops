@@ -237,7 +237,7 @@ export namespace Spell {
 
   export const CURE: Type = {
     name: 'Cure',
-    description: 'Cures StatusEffects',
+    description: 'Cures status effects',
     targets: 1,
     effect: [
       { remove: 'COLD', chance: 1 },
@@ -434,7 +434,7 @@ export namespace Spell {
   };
 
   export const ABSORB: Type = {
-    name: 'Frost',
+    name: 'Absorb',
     description: '',
     targets: 1,
     menuSlot: MenuSlot.SECOND,
@@ -451,6 +451,7 @@ export namespace Spell {
     name: 'Drain',
     description: '',
     targets: 1,
+    effect: [],
     menuSlot: MenuSlot.SECOND,
   };
 }

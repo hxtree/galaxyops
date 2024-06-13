@@ -1,17 +1,12 @@
-import { EffectTable } from '../table.effect';
+import { EffectRecord, EffectTable } from '../table.effect';
 import { Attribute } from '../attribute';
 import { MenuSlot } from '../menu-slot';
 
-// todo really what makes something a class skill is whether it can be earned via class? decouple
-
 /**
- * Class Skills are motor programs that a character learns to preform.
- * Each skill can be acquired via items, etc. but often
- * progression is determined by class.
+ * Active Skills are motor programs that a character learns to perform.
+ * Each skill can be acquired via items, etc., but often progression is determined by class.
  */
 export namespace Basic {
-  // fuel?
-  // Whether when performing move if character can hold action to put more effort into action
   export enum Focusable {
     STAMINA = 'Stamina',
     TRUE = 'True',
@@ -36,13 +31,22 @@ export namespace Basic {
      * For every 6 seconds, character gains a plus 1 for example.
      */
     booster?: Attribute;
+
+    /**
+     * Cost is the resource expenditure that must be given up by the actor to
+     * perform the action. By holding button longer additional cost can be
+     * consumed for some skills.
+     */
+    cost?: EffectRecord[];
+
     menuSlot: MenuSlot;
   };
 
   export const BOAST: Type = {
     name: 'Boast',
-    description: 'increase party’s moral',
+    description: 'Increase party morale.',
     effect: [],
+    cost: [{ remove: Attribute.SPIRIT, quantity: '1d6+10' }],
     menuSlot: MenuSlot.FIRST,
   };
 
@@ -50,7 +54,6 @@ export namespace Basic {
     name: 'Disguise',
     description: 'Changes appearance and disables command menu until canceled.',
     effect: [],
-    // stamina,
     menuSlot: MenuSlot.FIRST,
   };
 
@@ -63,8 +66,9 @@ export namespace Basic {
 
   export const FOCUS: Type = {
     name: 'Focus',
-    description: 'raise attack and attack percent for following move.',
+    description: 'Raise attack and attack percent for following move.',
     effect: [],
+    cost: [{ remove: Attribute.SPIRIT, quantity: '1d6+10' }],
     menuSlot: MenuSlot.FIRST,
   };
 
@@ -72,14 +76,14 @@ export namespace Basic {
     name: 'Grapple',
     description: 'Lowers character and opponents life.',
     effect: [],
+    cost: [{ remove: Attribute.SPIRIT, quantity: '1d6+10' }],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const HIDE: Type = {
     name: 'Hide',
-    description: 'Enemy cannot see you',
+    description: 'Become invisible to enemies.',
     effect: [],
-    // [stamina]
     menuSlot: MenuSlot.FIRST,
   };
 
@@ -92,126 +96,122 @@ export namespace Basic {
 
   export const CHEER: Type = {
     name: 'Cheer',
-    description: 'Targets Spirit increases by 10% for a duration',
+    description: 'Boost targets Spirit by 10% for a duration.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const SUPPORT: Type = {
     name: 'Support',
-    description: 'Read enemies stats.',
+    description: 'Provide support to allies.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const HOPE: Type = {
     name: 'Hope',
-    description: 'The most powerful status bonus',
+    description: 'Bestow the most powerful status bonus.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const INSPIRE: Type = {
     name: 'Inspire',
-    description: 'Increases target Drive gauge',
+    description: "Increase target's Drive gauge.",
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const SCOUT: Type = {
     name: 'Scout',
-    description: 'Move ahead of party.',
+    description: 'Move ahead of the party to gather information.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
-    // constantly consumes stamina
   };
 
   export const MIMIC: Type = {
     name: 'Mimic',
-    description: 'Use the same move that was used on you on the enemy.',
+    description: 'Use the last move performed on you against the enemy.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const PICKPOCKET: Type = {
     name: 'Pickpocket',
-    description: 'Steal from enemy.',
+    description: 'Steal items from enemies.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
-    // cost [stamina]
   };
 
   export const SEAL: Type = {
     name: 'Seal',
-    description: 'Keep enemies from getting close.', // hold an enemy off
-    //  (Good for when party is powering up)
+    description: 'Prevent enemies from approaching.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const LULLABY: Type = {
     name: 'Lullaby',
-    description: 'Send enemies moves back at them',
+    description: 'Reflect enemy moves back at them.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const WARD: Type = {
     name: 'Ward',
-    description: '"Keep enemies from getting close.',
-    //  (Good for when party is powering up)
+    description: 'Keep enemies at bay with spiritual energy.',
     effect: [],
+    cost: [{ remove: Attribute.SPIRIT, quantity: '1d20+10' }],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const SACRIFICE: Type = {
     name: 'Sacrifice',
-    description: '',
+    description: 'Sacrifice something precious for a powerful effect.',
     effect: [],
+    cost: [{ remove: Attribute.LIFE, quantity: '1d20+10' }],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const PROTECT: Type = {
     name: 'Protect',
-    description: 'guard party members behind you.',
-    // [stamina]
+    description: 'Guard party members behind you.',
     effect: [],
+    cost: [{ remove: Attribute.SPIRIT, quantity: '1d20+10' }],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const MOCK: Type = {
     name: 'Mock',
-    description: 'make a mocking action to cause Berserk on the opponent',
-    // stamina]
+    description: 'Taunt the enemy, potentially causing them to go berserk.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const SEARCH: Type = {
     name: 'Search',
-    description: 'scan nearby area for goods.',
+    description: 'Scan the nearby area for valuable items.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const STEAL: Type = {
     name: 'Steal',
-    description: 'Take item from opponent',
-    // [stamina]
+    description: 'Take items from opponents.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const REFLECT: Type = {
     name: 'Reflect',
-    description: 'Send enemies moves back at them.',
+    description: 'Send enemy moves back at them.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const PROTECTION: Type = {
     name: 'Protection',
-    description: 'Create a barrier around a ally',
+    description: 'Create a protective barrier around an ally.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
@@ -219,17 +219,15 @@ export namespace Basic {
   export const LIGHT: Type = {
     name: 'Light',
     description:
-      'Keep enemies from moving for a duration of time. Chance Puts enemy to sleep. Stops rage',
+      'Bind enemies, potentially putting them to sleep and stopping their rage.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const RAGE: Type = {
     name: 'Rage',
-    description: 'Increase power decrease wisdom',
+    description: 'Increase power at the cost of wisdom.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
-
-  // "12","Boast/Rally/Inspire","Increase allies determination","10",,"10"
 }

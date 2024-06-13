@@ -6,12 +6,15 @@ import { MenuSlot } from '../menu-slot';
 /**
  * Weapon Skill
  *
- * Weapon skills are granted based on the equipped item and characters ability to use weapon.
- * Each directly related to simple use of the players equipped weapon.
- * Each are a type of Command Menu Action which means they can be used in game.
- * They are always located in the first slot of the Basic Command Menu Actions.
+ * Weapon skills are granted based on the equipped item and the character's ability to use weapons.
+ * Each skill is directly related to the simple use of the player's equipped weapon.
+ * They are categorized as Command Menu Actions and can be used in-game.
+ * These skills are always located in the first slot of the Basic Command Menu Actions.
+ *
+ * Each weapon skill has a level
+ *
+ * e.g. Block lv1
  */
-
 export namespace Weapon {
   export type Type = {
     name: string;
@@ -21,15 +24,15 @@ export namespace Weapon {
   };
 
   export const BLOCK: Type = {
-    name: 'BLOCK',
-    description: 'Stop incoming attack.',
+    name: 'Block',
+    description: 'Stop incoming attacks.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
 
   export const PARRY: Type = {
     name: 'Parry',
-    description: 'Ward off incoming attack with a countermove.',
+    description: 'Ward off incoming attacks with a countermove.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
   };
@@ -49,7 +52,7 @@ export namespace Weapon {
 
   export const STRIKE: Type = {
     name: 'Strike',
-    description: 'Attack with a sudden effect with a blade.',
+    description: 'Execute a sudden attack with a blade.',
     effect: [
       {
         remove: Attribute.LIFE,
@@ -62,7 +65,7 @@ export namespace Weapon {
 
   export const STAB: Type = {
     name: 'Stab',
-    description: 'Attach with a forward striking motion with a blade.',
+    description: 'Perform a forward striking motion with a blade.',
     effect: [
       {
         remove: Attribute.LIFE,
@@ -75,7 +78,7 @@ export namespace Weapon {
 
   export const CHOP: Type = {
     name: 'Chop',
-    description: 'Attack with a downward motion with a blade.',
+    description: 'Execute a downward motion with a blade.',
     effect: [
       {
         remove: Attribute.LIFE,
@@ -88,7 +91,7 @@ export namespace Weapon {
 
   export const CLEAVE: Type = {
     name: 'Cleave',
-    description: 'A slash technique.',
+    description: 'Perform a slashing technique.',
     effect: [
       {
         remove: Attribute.LIFE,

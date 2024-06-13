@@ -118,8 +118,9 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     progression: [
       { level: 1, skill: Skill.BOAST },
-      { level: 10, skill: Skill.FORMATIONS },
-      { level: 50, skill: Skill.ORDER },
+      { level: 10, skill: Skill.LAST_STAND },
+      { level: 50, skill: Skill.BLITZ_STRIKE },
+      { level: 80, skill: Skill.FLANK },
     ],
   };
 
