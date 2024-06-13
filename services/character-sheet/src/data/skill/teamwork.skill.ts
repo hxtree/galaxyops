@@ -1,33 +1,33 @@
-/**
- * Teamwork Skill
- * Actions that involve multiple Player characters interacting to perform an action.
- */
-
 import { MenuSlot } from '../menu-slot';
 
-// category: SkillCategory.PARTY;
+/**
+ * Teamwork Skill
+ * Actions that involve multiple Player characters working together to achieve a common goal.
+ */
 export namespace Teamwork {
   export type Type = {
     name: string;
     description: string;
     menuSlot: MenuSlot;
+    // category: SkillCategory.PARTY;
   };
 
-  export const COMMAND: Type = {
-    name: 'Command',
-    description: 'Tell other party members what actions to use.',
+  export const LAST_STAND: Type = {
+    name: 'Last Stand',
+    description:
+      'All party members quickly assume defensive positions to withstand a sudden onslaught of attacks.',
     menuSlot: MenuSlot.FOURTH,
   };
 
-  export const FORMATIONS: Type = {
-    name: 'Formations',
-    description: 'Get part to move to certain areas.',
+  export const BLITZ_STRIKE: Type = {
+    name: 'Blitz Strike',
+    description: 'Launch a coordinated attack on a single target.',
     menuSlot: MenuSlot.FOURTH,
   };
 
-  export const ORDER: Type = {
-    name: 'Order',
-    description: 'Tell any what to do.',
+  export const FLANK: Type = {
+    name: 'Flank',
+    description: 'Execute a pincer movement to surround and attack the enemy.',
     menuSlot: MenuSlot.FOURTH,
   };
 }

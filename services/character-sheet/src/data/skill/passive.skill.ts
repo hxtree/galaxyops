@@ -1,8 +1,13 @@
 import { MenuSlot } from '../menu-slot';
 
 /**
- * Passive are abilities that are not actions
- * They are kind of like natural actions as they do not need to be called to be used.
+ * Passive skills are innate abilities or enhancements possessed by characters
+ * that do not require conscious activation. Instead, they operate automatically
+ * or passively, often enhancing the character's attributes or providing
+ * continuous benefits without the need for direct input. These skills are akin
+ * to natural instincts or abilities that are constantly active in the
+ * background, contributing to the character's overall capabilities without the
+ * need for deliberate action.
  */
 export namespace Passive {
   export type Type = {
@@ -49,45 +54,44 @@ export namespace Passive {
     // if someone is trying to bluff party
     menuSlot: MenuSlot.NONE,
   };
-
   export const GREEDY_INTENT: Type = {
     name: 'Greedy Intent',
-    description: 'Gain 5% more experience than party',
-    // earned from defeating Greed
+    description: 'Gain 5% more experience than the party.',
+    // Acquired by defeating Greed.
     menuSlot: MenuSlot.NONE,
   };
 
   export const SLOTH_COMPOSURE: Type = {
     name: 'Sloth Composure',
-    description: 'Blows taken when not doing action are halved',
-    // earned from defeating Lawzon
+    description: 'Halves damage taken when not actively engaged in actions.',
+    // Acquired by defeating Lawzon.
     menuSlot: MenuSlot.NONE,
   };
 
   export const BLOOD_LUST: Type = {
     name: 'Blood Lust',
-    description: 'Speed in battle increased',
-    // earned from defeating Lust
+    description: 'Increases speed during battles.',
+    // Acquired by defeating Lust.
     menuSlot: MenuSlot.NONE,
   };
 
   export const ENVIOUS_OF_COMBAT: Type = {
     name: 'Envious of Combat',
-    description: 'Gain rage from watching combat',
-    // earned from defeating Envy
+    description: 'Gains rage passively from observing combat.',
+    // Acquired by defeating Envy.
     menuSlot: MenuSlot.NONE,
   };
 
   export const GLUTTONOUS_DESIRE: Type = {
     name: 'Gluttonous Desire',
-    description: 'Consumer food items twice as fast',
-    // earned from defeating Gluttony
+    description: 'Consumes food items twice as fast.',
+    // Acquired by defeating Gluttony.
     menuSlot: MenuSlot.NONE,
   };
 
   export const CATCHER: Type = {
     name: 'Catcher',
-    description: 'Receive bonus when catching items',
+    description: 'Receives bonuses when catching items.',
     menuSlot: MenuSlot.NONE,
   };
 }

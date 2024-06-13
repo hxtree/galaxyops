@@ -87,13 +87,6 @@ export namespace Summon {
     menuSlot: MenuSlot.SECOND,
   };
 
-  export const OUROBOROS: Type = {
-    name: 'Ouroboros',
-    description: 'A demon that consumes itself',
-    backstory: '',
-    menuSlot: MenuSlot.SECOND,
-  };
-
   export const MISCHIEVOUS: Type = {
     name: 'Mischievous',
     description: 'A black and white cat',
@@ -108,6 +101,61 @@ export namespace Summon {
     menuSlot: MenuSlot.SECOND,
   };
 
-  // todo flesh out how these work with individual summons, seems like they'ed be individually based
-  // Malace's tattoos reference lesser key of solomon?
+  /**
+   * Summonable Demons primarily inspired by the Lesser Key of Solomon.
+   * These are Malace's tattoos.
+   */
+
+  export const OUROBOROS: Type = {
+    name: 'Ouroboros',
+    description: 'A demon that consumes itself.',
+    backstory: '',
+    menuSlot: MenuSlot.SECOND,
+    commands: ['Consume', 'Regenerate', 'Ensnare'],
+  };
+
+  export const ORIAS: Type = {
+    name: 'Orias',
+    description:
+      'A Great Marquis of Hell, who rules over 30 legions of demons.',
+    backstory:
+      "He appears in the form of a lion with a serpent's tail, sitting upon a mighty horse.",
+    menuSlot: MenuSlot.SECOND,
+    commands: ['Roar', 'Summon Legions', 'Prowl'],
+  };
+
+  export const ASMODAY: Type = {
+    name: 'Asmoday',
+    description: 'A King of Hell with 72 legions of demons under his command.',
+    backstory:
+      'He appears with three heads: one like a bull, the second like a man, and the third like a ram.',
+    menuSlot: MenuSlot.SECOND,
+    commands: ['Triple Strike', 'Command Legions', 'Infernal Gaze'],
+  };
+
+  export const BELPHEGOR: Type = {
+    name: 'Belphegor',
+    description: 'A demon associated with discoveries and inventions.',
+    backstory:
+      'He tempts people by suggesting to them ingenious inventions that will make them rich.',
+    menuSlot: MenuSlot.SECOND,
+    commands: ['Inspire Invention', 'Wealth Temptation', 'Creative Insight'],
+  };
+
+  export const AMON: Type = {
+    name: 'Amon',
+    description: 'A Marquis of Hell who governs 40 legions of demons.',
+    backstory: "He appears as a wolf with a serpent's tail, vomiting flames.",
+    menuSlot: MenuSlot.SECOND,
+    commands: ['Fiery Roar', 'Summon Legions', 'Inferno Breath'],
+  };
+
+  export const BARBATOS: Type = {
+    name: 'Barbatos',
+    description: 'A Duke of Hell who has power over 30 legions of demons.',
+    backstory:
+      'He appears as a great lion that has the wings of a gryphon, and he speaks hoarsely.',
+    menuSlot: MenuSlot.SECOND,
+    commands: ["Lion's Roar", 'Wings of Protection', "Gryphon's Call"],
+  };
 }
