@@ -130,6 +130,12 @@ export namespace StatusEffect {
     category: StatusEffectCategory.AFFLICTION,
   };
 
+  export const POISON: BaseType = {
+    name: 'Posion',
+    description: 'Damage is received each turn until healed.',
+    category: StatusEffectCategory.AFFLICTION,
+  };
+
   export const METAMORPHIC: BaseType = {
     name: 'Metamorphic',
     description: 'You are inflicted with random status affect each turn.',
@@ -203,8 +209,8 @@ export namespace StatusEffect {
     category: StatusEffectCategory.BUFF,
   };
 
-  export const OMNI: BaseType = {
-    name: 'Omni',
+  export const ONI: BaseType = {
+    name: 'Oni',
     description: 'enters a berserk like mode and attacks uncontrollable.',
     category: StatusEffectCategory.BUFF,
   };
