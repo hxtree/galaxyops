@@ -1,6 +1,8 @@
 // category: SkillCategory.DRIVE;
 
+import { Duration } from 'luxon';
 import { MenuSlot } from '../menu-slot';
+import { ActionEffects } from '../table.effect';
 
 /**
  * Drive Actions are special actions that consume drive gauge
@@ -11,18 +13,39 @@ export namespace Drive {
     description: string;
     conditions?: string;
     menuSlot: MenuSlot;
+    actionEffects?: ActionEffects;
   };
 
   export const BERSERK: Type = {
     name: 'Berserk',
     description: 'Become completely focused on winning',
     menuSlot: MenuSlot.THIRD,
+    actionEffects: {
+      CASTER: [
+        {
+          add: 'BERSERK',
+          chance: 1.0,
+          duration: Duration.fromObject({ minutes: 5 }),
+          tags: [],
+        },
+      ],
+    },
   };
 
   export const TOXIC_THRUST: Type = {
     name: 'Toxic Thrust',
     description: '',
     menuSlot: MenuSlot.THIRD,
+    actionEffects: {
+      OPPONENT: [
+        {
+          add: 'POISON',
+          chance: 1.0,
+          duration: Duration.fromObject({ minutes: 20 }),
+          tags: [],
+        },
+      ],
+    },
   };
 
   export const AERIAL_ASSUALT: Type = {
@@ -35,6 +58,16 @@ export namespace Drive {
     name: 'Oni',
     description: `Become engulfed in a blood thirsty rage that multiplies your power but drains spirit.
       If character stays in Oni too long they will go Berserk`,
+    actionEffects: {
+      CASTER: [
+        {
+          add: 'ONI',
+          chance: 1.0,
+          duration: Duration.fromObject({ minutes: 3 }),
+          tags: [],
+        },
+      ],
+    },
     menuSlot: MenuSlot.THIRD,
   };
 

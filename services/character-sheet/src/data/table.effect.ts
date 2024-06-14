@@ -1,7 +1,9 @@
+import { Duration } from 'luxon';
 import { SkillType } from './skill';
 import { EffectTag } from './tag.effect';
 import { StatusEffectId } from './status-effect';
 import { Attribute } from './attribute';
+import { Target } from './target.effect';
 
 export enum Modifier {
   ADD = 'ADD',
@@ -22,6 +24,7 @@ export interface AttributeAddEffectRecord {
   add: Attribute;
   quantity: string;
   chance?: number;
+  duration?: Duration;
   tags?: Array<EffectTag>;
 }
 
@@ -32,6 +35,7 @@ export interface AttributeRemoveEffectRecord {
   tags?: Array<EffectTag>;
 }
 
+// TODO should this have an add and remove and duration?
 export interface SkillEffectRecord {
   skill: SkillType;
   modifier: SkillEffectModifier;
@@ -41,6 +45,7 @@ export interface SkillEffectRecord {
 export interface StatusEffectAddRecord {
   add: StatusEffectId;
   chance?: number;
+  duration?: Duration;
   tags?: Array<EffectTag>;
 }
 
@@ -63,3 +68,11 @@ export type EffectRecord =
  * A representation of the effect of an action
  */
 export type EffectTable = EffectRecord[];
+
+/**
+ * Represents the effects of an action on different targets.
+ * Each target is mapped to an array of EffectRecords capturing the effects.
+ */
+export type ActionEffects = {
+  [key in Target]?: EffectRecord[];
+};

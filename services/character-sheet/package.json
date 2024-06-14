@@ -46,7 +46,8 @@
     "reflect-metadata": "0.1.13",
     "rxjs": "7.8.1",
     "source-map-support": "~0.5.21",
-    "uuid": "~9.0.1"
+    "uuid": "~9.0.1",
+    "luxon": "~3.3.0"
   },
   "devDependencies": {
     "@cats-cradle/create-artifact": "2.0.7",
@@ -74,6 +75,7 @@
     "@cats-cradle/create-bundle": "1.0.12",
     "@shelf/jest-mongodb": "~4.2.0",
     "mongodb-memory-server-global": "8.13.0",
-    "mongoose": "6.11.3"
+    "mongoose": "6.11.3",
+    "@types/luxon": "~3.2.0"
   }
 }

@@ -1,4 +1,6 @@
+import { Attribute } from '../attribute';
 import { MenuSlot } from '../menu-slot';
+import { EffectTable } from '../table.effect';
 
 /**
  * Passive skills are innate abilities or enhancements possessed by characters
@@ -14,6 +16,8 @@ export namespace Passive {
     name: string;
     description: string;
     menuSlot: MenuSlot;
+    effect?: EffectTable;
+    cost?: null;
   };
 
   export const DUAL_WELD: Type = {
@@ -64,20 +68,35 @@ export namespace Passive {
   export const SLOTH_COMPOSURE: Type = {
     name: 'Sloth Composure',
     description: 'Halves damage taken when not actively engaged in actions.',
+    // halfs damage and decreases DRIVE gauge
     // Acquired by defeating Lawzon.
     menuSlot: MenuSlot.NONE,
   };
 
   export const BLOOD_LUST: Type = {
     name: 'Blood Lust',
-    description: 'Increases speed during battles.',
+    description: 'Increases speed.',
+    effect: [
+      {
+        add: Attribute.SPEED,
+        quantity: '10',
+        chance: 1.0,
+      },
+    ],
     // Acquired by defeating Lust.
     menuSlot: MenuSlot.NONE,
   };
 
   export const ENVIOUS_OF_COMBAT: Type = {
     name: 'Envious of Combat',
-    description: 'Gains rage passively from observing combat.',
+    description: 'Gains increased power.',
+    effect: [
+      {
+        add: Attribute.POWER,
+        quantity: '10',
+        chance: 1.0,
+      },
+    ],
     // Acquired by defeating Envy.
     menuSlot: MenuSlot.NONE,
   };
@@ -85,6 +104,14 @@ export namespace Passive {
   export const GLUTTONOUS_DESIRE: Type = {
     name: 'Gluttonous Desire',
     description: 'Consumes food items twice as fast.',
+    effect: [
+      {
+        add: Attribute.LIFE,
+        quantity: '10',
+        chance: 1.0,
+      },
+      // TODO add effect for consuming food
+    ],
     // Acquired by defeating Gluttony.
     menuSlot: MenuSlot.NONE,
   };
@@ -92,6 +119,12 @@ export namespace Passive {
   export const CATCHER: Type = {
     name: 'Catcher',
     description: 'Receives bonuses when catching items.',
+    menuSlot: MenuSlot.NONE,
+  };
+
+  export const LIMITLESS: Type = {
+    name: 'Limitless',
+    description: 'Higher level cap.',
     menuSlot: MenuSlot.NONE,
   };
 }
