@@ -3,7 +3,7 @@ import { SkillType } from './skill';
 import { EffectTag } from './tag.effect';
 import { StatusEffectId } from './status-effect';
 import { Attribute } from './attribute';
-import { Target } from './target.effect';
+import { ActionTarget } from './action-target';
 
 export enum Modifier {
   ADD = 'ADD',
@@ -74,5 +74,5 @@ export type EffectTable = EffectRecord[];
  * Each target is mapped to an array of EffectRecords capturing the effects.
  */
 export type ActionEffects = {
-  [key in Target]?: EffectRecord[];
+  [key in ActionTarget]?: EffectRecord[];
 };

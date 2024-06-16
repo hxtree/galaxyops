@@ -3,6 +3,8 @@
 import { Duration } from 'luxon';
 import { MenuSlot } from '../menu-slot';
 import { ActionEffects } from '../table.effect';
+import { Attribute } from '../attribute';
+import { AreaOfEffect } from '../area-of-effect';
 
 /**
  * Drive Actions are special actions that consume drive gauge
@@ -13,6 +15,7 @@ export namespace Drive {
     description: string;
     conditions?: string;
     menuSlot: MenuSlot;
+    areaOfEffect?: AreaOfEffect.Type;
     actionEffects?: ActionEffects;
   };
 
@@ -21,7 +24,7 @@ export namespace Drive {
     description: 'Become completely focused on winning',
     menuSlot: MenuSlot.THIRD,
     actionEffects: {
-      CASTER: [
+      PERFORMER: [
         {
           add: 'BERSERK',
           chance: 1.0,
@@ -34,8 +37,9 @@ export namespace Drive {
 
   export const TOXIC_THRUST: Type = {
     name: 'Toxic Thrust',
-    description: '',
+    description: 'Thrusts forward using posion',
     menuSlot: MenuSlot.THIRD,
+    areaOfEffect: AreaOfEffect.LINE_10FT,
     actionEffects: {
       OPPONENT: [
         {
@@ -52,6 +56,23 @@ export namespace Drive {
     name: 'Aerial Assault',
     description: 'Jump into air and throws boomerang (jump attack)',
     menuSlot: MenuSlot.THIRD,
+    areaOfEffect: AreaOfEffect.LINE_10FT,
+    actionEffects: {
+      OPPONENT: [
+        {
+          remove: Attribute.LIFE,
+          quantity: '1d6',
+          chance: 0.3,
+          tags: [],
+        },
+        {
+          add: 'STUNNED',
+          chance: 0.3,
+          duration: Duration.fromObject({ seconds: 20 }),
+          tags: [],
+        },
+      ],
+    },
   };
 
   export const ONI: Type = {
@@ -59,7 +80,7 @@ export namespace Drive {
     description: `Become engulfed in a blood thirsty rage that multiplies your power but drains spirit.
       If character stays in Oni too long they will go Berserk`,
     actionEffects: {
-      CASTER: [
+      PERFORMER: [
         {
           add: 'ONI',
           chance: 1.0,

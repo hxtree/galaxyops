@@ -1,5 +1,5 @@
 // TODO some shapes do not tranlate well to 45 degree angles
-export namespace AoeMap {
+export namespace AreaOfEffect {
   /**
    * [z axis][y axis][x axis]
    * 7 = hit, caster facing left
