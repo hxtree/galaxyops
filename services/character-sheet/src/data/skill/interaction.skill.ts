@@ -1,4 +1,5 @@
 import { MenuSlot } from '../menu-slot';
+import { ActionEffects } from '../table.effect';
 
 /**
  * Interaction skills are actions that can only be used when a compatible object is present.
@@ -10,6 +11,7 @@ export namespace Interaction {
     description: string;
     target: ObjectCategory;
     menuSlot: MenuSlot;
+    actionEffects?: ActionEffects;
   };
 
   export enum ObjectCategory {
@@ -23,6 +25,15 @@ export namespace Interaction {
     description: 'Grab an object.',
     target: ObjectCategory.MOVEABLE,
     menuSlot: MenuSlot.INTERACTION,
+    actionEffects: {
+      INTERACTION_OBJECT: [
+        {
+          add: 'BERSERK', // TODO figure out how to handle this
+          chance: 1.0,
+          tags: [],
+        },
+      ],
+    },
   };
 
   export const PUSH: Type = {
@@ -58,16 +69,46 @@ export namespace Interaction {
     description: 'Attempt to pick a lock.',
     target: ObjectCategory.LOCKED,
     menuSlot: MenuSlot.INTERACTION,
+    actionEffects: {
+      INVENTORY: [
+        {
+          add: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
+          chance: 0.7,
+          tags: [],
+        },
+      ],
+      INTERACTION_OBJECT: [
+        {
+          add: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
+          chance: 0.7,
+          tags: [],
+        },
+      ],
+    },
   };
 
   export const UNLOCK: Type = {
     name: 'Unlock',
     description: 'Open a lock using a key.',
-    // consumes a key
     target: ObjectCategory.LOCKED,
     menuSlot: MenuSlot.INTERACTION,
+    actionEffects: {
+      INVENTORY: [
+        {
+          remove: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
+          chance: 0.7,
+          tags: [],
+        },
+      ],
+      INTERACTION_OBJECT: [
+        {
+          add: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
+          chance: 0.7,
+          tags: [],
+        },
+      ],
+    },
   };
-
   // which essentially means that they take up a slot on the players Command
   // Menu. InteractionSkill Actions take up the InteractionSkill Slot on the
   //  Command Menu. What distinguishes InteractionSkill Actions from the rest
