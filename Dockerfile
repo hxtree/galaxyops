@@ -4,7 +4,9 @@
 ################################################################################
 # https://hub.docker.com/_/node
 # https://github.com/nodejs/release#nodejs-release-working-group
-FROM node:hydrogen-bookworm as base
+
+# For Mac Silicon Support
+FROM --platform=linux/amd64 node:hydrogen-bookworm as base
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
