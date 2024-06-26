@@ -89,7 +89,7 @@ exports[`MainStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: 4e26bf2d0a26f2097fb2b261f22bb51e3f6b4b52635777b1e54edbd8e2d58c35.zip,
+          S3Key: VARIABLE_HASH.zip,
         },
         Handler: index.handler,
         Role: {
@@ -627,7 +627,7 @@ exports[`MainStack should match snapshot test 1`] = `
           S3Bucket: {
             Fn::Sub: cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region},
           },
-          S3Key: b8ba19c32be3f3a103e1b09b48ddc7264973a45b1bd00c108f1abb1a314e78cb.zip,
+          S3Key: VARIABLE_HASH.zip,
         },
         Environment: {
           Variables: {

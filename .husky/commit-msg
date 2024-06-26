@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+COMMIT_MESSAGE="$1"
+
+if [ $(cat $COMMIT_MESSAGE | wc -w) -lt 3 ]; then
+  echo ""
+  echo "Invalid commit message: The message must contain at least 3 words."
+  exit 1
+fi
+
+pnpm commitlint --edit $1
+
+if [ $? -ne 0 ]; then
+  echo "commitlint failed. Exiting..."
+  exit 1
+else
+  echo "commitlint passed."
+fi

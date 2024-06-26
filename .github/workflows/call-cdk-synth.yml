@@ -8,57 +8,50 @@ on:
 
 jobs:
   cdk-synth:
-    name: rush cdk:synth
+    name: cdk:synth
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code base
+      - name: check out code base
         if: github.event_name == 'push'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Check out code base
+      - name: check out code base
         if: github.event_name == 'pull_request'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ secrets.IMPACTED_BY_SHA }}
 
-      - name: setup Node
-        uses: actions/setup-node@v3
+      - name: install pnpm
+        uses: pnpm/action-setup@v4
         with:
-          node-version: '18.12.0'
+          version: '8.13.1'
 
-      - name: cache rush
+      - name: setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.18.0'
+          cache: 'pnpm'
+
+      - name: cache nx
         id: cache
         uses: actions/cache@v3.2.2
         with:
           path: common/temp
-          key: ${{ runner.os }}-build-branch-${{ hashFiles('common/config/rush/repo-state.json') }}
+          key: ${{ runner.os }}-build-branch-${{ hashFiles('.nx/lockfile.hash') }}
           restore-keys: |
             ${{ runner.os }}-build-pr-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: install pnpm needed for cdk NodeJsFunction esbuild
-        run: npm install --global pnpm@8.13.1
-
-      - name: rush install
+      - name: pnpm install
         # if: steps.cache.outputs.cache-hit != 'true'
-        run: node common/scripts/install-run-rush.js install
+        run: pnpm install
 
-      - name: rush build
-        run: node common/scripts/install-run-rush.js build
-        env:
-          PROJECT_ROOT: ${{ github.workspace }}
+      - name: projects build
+        run: pnpm nx run-many -t build --all
 
-      - name: install cdk
-        run: npm install --global aws-cdk@2.129.0
-        env:
-          PROJECT_ROOT: ${{ github.workspace }}
-
-      - name: rush synth
-        run: node common/scripts/install-run-rush.js cdk:synth --impacted-by git:${{ secrets.IMPACTED_BY_SHA }}
-        env:
-          PROJECT_ROOT: ${{ github.workspace }}
+      - name: cdk:synth
+        run: pnpm nx run-many -t cdk:synth --all

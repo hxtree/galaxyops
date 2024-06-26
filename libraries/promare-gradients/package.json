@@ -22,10 +22,7 @@
     "build": "npm-run-all css-compile css-minify",
     "build:all": "rush build -t .",
     "css-compile": "node-sass --precision 1 --output dist/css src/scss/promare-gradients.scss --output-style nested",
-    "css-minify": "cleancss -o dist/css/promare-gradients.min.css dist/css/promare-gradients.css",
-    "test": "",
-    "lint": "",
-    "lint:ci": ""
+    "css-minify": "cleancss -o dist/css/promare-gradients.min.css dist/css/promare-gradients.css"
   },
   "dependencies": {
     "clean-css-cli": "^5.5.0",

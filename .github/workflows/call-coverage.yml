@@ -7,74 +7,100 @@ on:
         required: true
       IMPACTED_BY_SHA:
         required: true
-
 jobs:
-  rush-coverage:
-    name: rush test:cov
-    timeout-minutes: 25
+  test-cov:
+    name: test:cov
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      # pipeline get changed projects requires deep clone
-      - name: Check out code base
-        uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: check out code base
+        if: github.event_name == 'push'
+        uses: actions/checkout@v4
         with:
-          node-version: '18.12.0'
+          fetch-depth: 0
+      - name: check out code base
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ secrets.IMPACTED_BY_SHA }}
 
-      - name: Cache rush
+      - name: install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '8.13.1'
+
+      - name: setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.18.0'
+          cache: 'pnpm'
+
+      - name: cache nx
         id: cache
         uses: actions/cache@v3.2.2
         with:
           path: common/temp
-          key: ${{ runner.os }}-build-branch-${{ hashFiles('common/config/rush/repo-state.json') }}
+          key: ${{ runner.os }}-build-branch-${{ hashFiles('.nx/lockfile.hash') }}
           restore-keys: |
             ${{ runner.os }}-build-pr-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Install PNPM
-        run: npm install --global pnpm@8.13.1
+      - name: pnpm install
+        # if: steps.cache.outputs.cache-hit != 'true'
+        run: pnpm install
 
-      - name: rush install
-        run: node common/scripts/install-run-rush.js install -p
+      - name: projects build
+        run: pnpm nx run-many -t build --all
 
-      - name: rush build
-        run: node common/scripts/install-run-rush.js build
-
-      - name: rush test:cov platform-package
+      - name: test:cov scope:platform
         uses: neofinancial/mongo-memory-server-action@v1.0.2
         with:
           db-connection-env-var: MONGO_DATABASE_URI
-          run-command: node common/scripts/install-run-rush.js test:cov --to tag:platform-package
+          run-command: pnpm nx run-many -t test:cov --projects=tag:scope:platform
           binary-version: 4.2.8
           instance-port: 27017
           instance-storageEngine: "ephemeralForTest"
 
-      - name: rush test:cov library-package
+      - name: test:cov scope:libraries
         uses: neofinancial/mongo-memory-server-action@v1.0.2
         with:
           db-connection-env-var: MONGO_DATABASE_URI
-          run-command: node common/scripts/install-run-rush.js test:cov --to tag:library-package
+          run-command: pnpm nx run-many -t test:cov --projects=tag:scope:libraries
           binary-version: 4.2.8
           instance-port: 27017
           instance-storageEngine: "ephemeralForTest"
 
-      - name: rush test:cov service-package mongo old
+      - name: test:cov scope:services
         uses: neofinancial/mongo-memory-server-action@v1.0.2
         with:
           db-connection-env-var: MONGO_DATABASE_URI
-          run-command: node common/scripts/install-run-rush.js test:cov --to tag:cimongo
+          run-command: pnpm nx run-many -t test:cov --projects=tag:cimongo
           binary-version: 4.2.8
           instance-port: 27017
           instance-storageEngine: "ephemeralForTest"
 
-      - name: rush test:cov service-package mongo-new
-        run: node common/scripts/install-run-rush.js test:cov --to tag:mongoshelf
+      - name: test:cov scope:services
+        uses: neofinancial/mongo-memory-server-action@v1.0.2
+        with:
+          db-connection-env-var: MONGO_DATABASE_URI
+          run-command: pnpm nx run-many -t test:cov --projects=tag:mongoshelf
+          binary-version: 4.2.8
+          instance-port: 27017
+          instance-storageEngine: "ephemeralForTest"
+
+      - name: test:cov scope:clients
+        uses: neofinancial/mongo-memory-server-action@v1.0.2
+        with:
+          db-connection-env-var: MONGO_DATABASE_URI
+          run-command: pnpm nx run-many -t test:cov --projects=tag:scope:clients
+          binary-version: 4.2.8
+          instance-port: 27017
+          instance-storageEngine: "ephemeralForTest"
 
       - name: Merge coverage reports
-        run: npx @cats-cradle/rush-coverage@1.2.0
+        run: pnpm nx run coverage-fusion:start
 
       - name: Submit merged coverage report
         uses: codacy/codacy-coverage-reporter-action@v1.3.0

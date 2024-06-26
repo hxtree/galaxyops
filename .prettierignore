@@ -6,22 +6,10 @@
 Docker
 docker-compose.override.yml
 
-# ssh
-.devcontainer/.ssh/**
-!.devcontainer/.ssh/config
-
-# AWS CLI
-.devcontainer/.aws/**
-!.devcontainer/.aws/*.dist
-
-# AWS CDK
-**/cdk.out/*
-cdk.out/
-*.yml
-clients/base-game-engine/*
-
 # Packages
-node_modules/*#-------------------------------------------------------------------------------------------------------------------
+node_modules
+
+#-------------------------------------------------------------------------------------------------------------------
 # Keep this section in sync with .gitignore
 #-------------------------------------------------------------------------------------------------------------------
 
@@ -31,35 +19,17 @@ node_modules/*#-----------------------------------------------------------------
 # Prettier-specific overrides
 #-------------------------------------------------------------------------------------------------------------------
 
-# Rush files
-common/changes/
-common/scripts/
-common/config/
-CHANGELOG.*
+# Nx files
+.nx
 
 # Package manager files
-pnpm-lock.yaml
 yarn.lock
 package-lock.json
-shrinkwrap.json
-
-# Build outputs
-dist
-lib
 
 # Prettier reformats code blocks inside Markdown, which affects rendered output
 **/node_modules/*
 
-# Logs
 *.log
-
-.pnpm-store/
-common/temp/
-**/.rush/temp/
-
-**/docs/.nojekyll
-**/docs/*.html
-
 .env
 
 # Dist
@@ -69,22 +39,4 @@ common/temp/
 
 .DS_Store
 
-#-------------------------------------------------------------------------------------------------------------------
-# Prettier-specific overrides
-#-------------------------------------------------------------------------------------------------------------------
-
-# Rush files
-common/changes/
-common/scripts/
-common/config/
-CHANGELOG.*
-
-# Package manager files
-pnpm-lock.yaml
-yarn.lock
-package-lock.json
-shrinkwrap.json
-
-# Build outputs
-dist
-lib
+/.nx/cache

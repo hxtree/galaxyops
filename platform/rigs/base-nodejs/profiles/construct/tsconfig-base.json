@@ -6,6 +6,8 @@
     "target": "es2021",
     "module": "commonjs",
     "lib": ["es2021"],
+    "types": ["jest", "node"],
+
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",

@@ -18,7 +18,7 @@ jobs:
       - name: setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18.12.0'
+          node-version: '18.18.0'
 
       - name: Check out code base
         uses: actions/checkout@v3
