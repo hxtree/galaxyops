@@ -1,9 +1,9 @@
 #!/usr/bin/env node
+import path from 'path';
+import { Command } from 'commander';
 import { getCoverageReports } from './get-coverage-reports';
 import { mergeCoverageReports } from './merge-coverage-reports';
 import { makeCoverageReports } from './make-coverage-reports';
-import path from 'path';
-import { Command } from 'commander';
 
 function main() {
   const program = new Command();
@@ -42,7 +42,7 @@ function main() {
           'html',
         ]);
 
-        console.log(`Successfully made consolidated coverage report`);
+        console.log('Successfully made consolidated coverage report');
       } catch (err) {
         const error = err as Error;
         console.error('An error occurred:', error.message);

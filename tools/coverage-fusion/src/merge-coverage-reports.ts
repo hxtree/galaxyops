@@ -11,9 +11,9 @@ export function mergeCoverageReports(coverageReports: CoverageReports) {
     // eslint-disable-next-line import/no-dynamic-require, @typescript-eslint/no-var-requires
     const coverage = require(coverageReport);
 
-    Object.keys(coverage).forEach((filename: string) =>
-      mergedMap.addFileCoverage(coverage[filename]),
-    );
+    Object.keys(coverage).forEach((filename: string) => {
+      mergedMap.addFileCoverage(coverage[filename]);
+    });
   });
 
   return mergedMap;

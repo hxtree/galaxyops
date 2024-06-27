@@ -53,7 +53,7 @@ export const BasicCard = (props: BasicCardProps): JSX.Element => {
           </div>
         }
       </div>
-      <div className="card-body px-4 py-3">
+      <div className="card-body px-4 py-5">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">
           {children}
