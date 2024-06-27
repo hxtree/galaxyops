@@ -29,7 +29,7 @@
     "@aws-sdk/client-cognito-identity-provider": "3.10.0",
     "@aws-sdk/client-ssm": "3.10.0",
     "@aws-sdk/types": "3.10.0",
-    "@cats-cradle/base-nodejs": "3.0.0",
+    "@cats-cradle/base-nodejs": "1.0.11",
     "@cats-cradle/constructs": "2.1.0",
     "@cats-cradle/nestjs-modules": "2.1.0",
     "@cats-cradle/validation-schemas": "2.1.0",
@@ -61,7 +61,7 @@
   "devDependencies": {
     "@cats-cradle/create-artifact": "2.0.7",
     "@cats-cradle/create-bundle": "1.0.12",
-    "@cats-cradle/eslint-config": "3.0.0",
+    "@cats-cradle/eslint-config": "1.0.11",
     "@cats-cradle/faker-factory": "3.1.0",
     "@microsoft/tsdoc": "~0.13.2",
     "@nestjs/cli": "^10.3.2",

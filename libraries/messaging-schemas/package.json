@@ -23,7 +23,7 @@
     "uuid": "~9.0.1",
     "lodash": "~4.17.21",
     "@types/lodash": "~4.14.202",
-    "@cats-cradle/base-nodejs": "3.0.0",
+    "@cats-cradle/base-nodejs": "1.0.11",
     "@types/validator": "~13.7.10",
     "@cats-cradle/faker-factory": "3.1.0",
     "@cats-cradle/validation-schemas": "2.1.0",
@@ -39,7 +39,7 @@
     "esbuild": "~0.20.1",
     "@types/uuid": "~9.0.7",
     "eslint": "8.57.0",
-    "@cats-cradle/eslint-config": "3.0.0",
+    "@cats-cradle/eslint-config": "1.0.11",
     "@types/json-schema": "~7.0.11"
   }
 }

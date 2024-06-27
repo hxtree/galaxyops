@@ -24,7 +24,7 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@cats-cradle/base-nodejs": "3.0.0",
+    "@cats-cradle/base-nodejs": "1.0.11",
     "@cats-cradle/constructs": "2.1.0",
     "@cats-cradle/create-bundle": "1.0.12",
     "@cats-cradle/nestjs-modules": "2.1.0",
@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@cats-cradle/create-bundle": "1.0.12",
-    "@cats-cradle/eslint-config": "3.0.0",
+    "@cats-cradle/eslint-config": "1.0.11",
     "@cats-cradle/faker-factory": "3.1.0",
     "@fastify/static": "~6.9.0",
     "@nestjs/cli": "^10.3.2",

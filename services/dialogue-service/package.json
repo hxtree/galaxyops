@@ -7,10 +7,10 @@
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run"
   },
   "dependencies": {
-    "@cats-cradle/base-nodejs": "3.0.0"
+    "@cats-cradle/base-nodejs": "1.0.11"
   },
   "devDependencies": {
     "eslint": "8.57.0",
-    "@cats-cradle/eslint-config": "3.0.0"
+    "@cats-cradle/eslint-config": "1.0.11"
   }
 }

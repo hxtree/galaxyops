@@ -23,7 +23,7 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@cats-cradle/base-nodejs": "3.0.0",
+    "@cats-cradle/base-nodejs": "1.0.11",
     "@cats-cradle/constructs": "2.1.0",
     "@microsoft/rush-lib": "5.109.2",
     "@rushstack/node-core-library": "~3.55.2",
@@ -31,7 +31,7 @@
     "eslint": "8.57.0"
   },
   "devDependencies": {
-    "@cats-cradle/eslint-config": "3.0.0",
+    "@cats-cradle/eslint-config": "1.0.11",
     "@types/aws-lambda": "~8.10.130",
     "@types/jest": "29.5.12",
     "@types/lodash": "~4.14.202",
