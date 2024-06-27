@@ -18,14 +18,14 @@ the project as a ZIP file.
 
 ## Usage
 
-### Example in RushJS
+### Example
 
 For each project that needs an artifact, add create-artifact as a dev
 dependency:
 
 ```bash
-# example of how to add dev dependency in RushJS
-rush add --package @cats-cradle/create-artifact --dev
+# example of how to add dev dependency
+pnpm add @cats-cradle/create-artifact --dev
 ```
 
 Add a script command to bundle your package to the project's package.json. Make
@@ -43,19 +43,19 @@ sure to replace `my-package-name` with the name of your package.
 Run the script to bundle the project.
 
 ```bash
-rushx artifact
+pnpm artifact
 ```
 
 ## Opinions
 
-Originally, our RushJS monorepo CI/CD process started in Github CI and next went
+Originally, our monorepo CI/CD process started in Github CI and next went
 to AWS CodePipeline, Although it was quicker to get a mirror of the repository
 in AWS CodeCommit and trigger a CodePipeline build from pushes to main, that
 approach had several costly drawbacks:
 
 - In order for a pipeline to build from that source it must clone the entire
   monorepo within CodePipeline.
-- RushJS diffs to determine which projects changed are based on git histories.
+- Monorepo diffs to determine which projects changed are based on git histories.
   This meant the clone had to be a deep fetch (had to download all git
   histories) to work, which is an even larger file.
 - A step that built all applicable projects and download the dependencies was
@@ -79,4 +79,3 @@ ship code faster.
 
 - [PNPM Bundle Workspace](https://github.com/elyse0/pnpm-bundle-workspace-package)
 - [PNPM Isolate Workspace](https://github.com/Madvinking/pnpm-isolate-workspace)
-- [Rush Deploy](https://rushstack.zulipchat.com/#narrow/stream/262513-general/topic/rush.20deploy.20for.20docker.20images.3F)

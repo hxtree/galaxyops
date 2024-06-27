@@ -73,15 +73,14 @@ jobs:
           instance-port: 27017
           instance-storageEngine: "ephemeralForTest"
 
-
-      # - name: test:cov scope:services
-      #   uses: neofinancial/mongo-memory-server-action@v1.0.2
-      #   with:
-      #     db-connection-env-var: MONGO_DATABASE_URI
-      #     run-command: pnpm nx run-many -t test:cov --projects=tag:cimongo
-      #     binary-version: 4.2.8
-      #     instance-port: 27017
-      #     instance-storageEngine: "ephemeralForTest"
+      - name: test:cov scope:services
+        uses: neofinancial/mongo-memory-server-action@v1.0.2
+        with:
+          db-connection-env-var: MONGO_DATABASE_URI
+          run-command: pnpm nx run-many -t test:cov --projects=tag:cimongo
+          binary-version: 4.2.8
+          instance-port: 27017
+          instance-storageEngine: "ephemeralForTest"
 
       - name: test:cov scope:services
         run: pnpm nx run-many -t test:cov --projects=tag:mongoshelf
