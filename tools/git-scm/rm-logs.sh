@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-find services/ -maxdepth 2 -type f -name "*.log"
+find services/ -maxdepth 2 -type f -name "*.log" -exec rm -rf {} +
