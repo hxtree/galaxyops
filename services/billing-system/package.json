@@ -10,7 +10,6 @@
     "artifact": "create-artifact @cats-cradle/billing-system",
     "build": "tsc",
     "build:all": "rush build -t .",
-    "test:cov": "",
     "lint": "eslint --format visualstudio \"./stacks/**/*.ts\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./stacks/**/*.ts\"  --fix-dry-run",
     "cdk": "cdk",

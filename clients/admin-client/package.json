@@ -11,7 +11,6 @@
     "lint": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix-dry-run",
     "preview": "vite preview",
-    "test:cov": "",
     "cdk:bootstrap": "cdk bootstrap",
     "cdk:diff": "cdk diff",
     "cdk:synth": "cdk synth",
