@@ -43,7 +43,7 @@ importers:
   clients/admin-client:
     dependencies:
       '@cats-cradle/design-system':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../design-system
       axios:
         specifier: ^1.6.7
@@ -59,7 +59,7 @@ importers:
         version: 6.22.1(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/create-artifact':
         specifier: 2.0.7
@@ -128,10 +128,10 @@ importers:
   clients/design-system:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/promare-gradients':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../libraries/promare-gradients
       '@fortawesome/fontawesome-svg-core':
         specifier: ^6.5.1
@@ -174,7 +174,7 @@ importers:
         specifier: 2.0.7
         version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@emotion/react':
         specifier: ~11.11.1
@@ -375,16 +375,16 @@ importers:
   clients/jukebox:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -448,10 +448,10 @@ importers:
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../libraries/faker-factory
       '@fastify/static':
         specifier: ~6.9.0
@@ -523,10 +523,10 @@ importers:
   libraries/faker-factory:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../validation-schemas
       '@faker-js/faker':
         specifier: ~7.6.0
@@ -569,7 +569,7 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -605,13 +605,13 @@ importers:
   libraries/messaging-schemas:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../faker-factory
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../validation-schemas
       '@types/lodash':
         specifier: ~4.14.202
@@ -630,7 +630,7 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -675,13 +675,13 @@ importers:
         specifier: 3.433.0
         version: 3.433.0
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/messaging-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../messaging-schemas
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -745,10 +745,10 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../faker-factory
       '@nestjs/schematics':
         specifier: ^9.0.0
@@ -799,7 +799,7 @@ importers:
   libraries/promare-gradients:
     dependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       clean-css-cli:
         specifier: ^5.5.0
@@ -821,11 +821,11 @@ importers:
   libraries/pseudo-random:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -855,7 +855,7 @@ importers:
   libraries/validation-schemas:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@types/lodash':
         specifier: ~4.14.202
@@ -886,7 +886,7 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -922,16 +922,16 @@ importers:
   middleware/api:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -995,7 +995,7 @@ importers:
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@nestjs/testing':
         specifier: 9.2.1
@@ -1058,13 +1058,13 @@ importers:
   middleware/graphql:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
@@ -1125,7 +1125,7 @@ importers:
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1245,10 +1245,10 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../rigs/base-nodejs
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1351,10 +1351,10 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../rigs/base-nodejs
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1414,7 +1414,7 @@ importers:
         specifier: ~1.182.0
         version: 1.182.0(@aws-cdk/cloud-assembly-schema@1.182.0)(@aws-cdk/cx-api@1.182.0)(@aws-cdk/region-info@1.182.0)(constructs@10.3.0)
       '@cats-cradle/messaging-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/messaging-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -1478,16 +1478,16 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../constructs
       '@cats-cradle/create-artifact':
         specifier: 2.0.7
         version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1535,10 +1535,10 @@ importers:
   platform/pipeline:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../constructs
       '@microsoft/rush-lib':
         specifier: 5.109.2
@@ -1554,7 +1554,7 @@ importers:
         version: 8.57.0
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1663,13 +1663,13 @@ importers:
   services/billing-system:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
@@ -1730,7 +1730,7 @@ importers:
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1790,16 +1790,16 @@ importers:
   services/character-sheet:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -1863,10 +1863,10 @@ importers:
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../libraries/faker-factory
       '@microsoft/tsdoc':
         specifier: ~0.13.2
@@ -1947,11 +1947,11 @@ importers:
   services/dialogue-service:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       eslint:
         specifier: 8.57.0
@@ -1960,16 +1960,16 @@ importers:
   services/dynamo-image:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -2030,10 +2030,10 @@ importers:
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../libraries/faker-factory
       '@nestjs/cli':
         specifier: ^10.3.2
@@ -2111,19 +2111,19 @@ importers:
         specifier: ~3.279.0
         version: 3.279.0
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/messaging-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/messaging-schemas
       '@cats-cradle/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -2199,10 +2199,10 @@ importers:
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../libraries/faker-factory
       '@microsoft/tsdoc':
         specifier: ~0.13.2
@@ -2283,19 +2283,19 @@ importers:
   services/html-to-pdf:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../libraries/faker-factory
       '@cats-cradle/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
@@ -2380,7 +2380,7 @@ importers:
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@nestjs/cli':
         specifier: ^10.3.2
@@ -2446,19 +2446,19 @@ importers:
   services/instances:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -2519,10 +2519,10 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../libraries/faker-factory
       '@fastify/static':
         specifier: ~6.9.0
@@ -2594,13 +2594,13 @@ importers:
   services/luck-by-dice:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
@@ -2664,7 +2664,7 @@ importers:
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@nestjs/cli':
         specifier: ^10.3.2
@@ -2727,19 +2727,19 @@ importers:
   services/player-achievements:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -2812,10 +2812,10 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../libraries/faker-factory
       '@fastify/static':
         specifier: ~6.9.0
@@ -2896,16 +2896,16 @@ importers:
         specifier: 3.10.0
         version: 3.10.0
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -2987,10 +2987,10 @@ importers:
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../libraries/faker-factory
       '@microsoft/tsdoc':
         specifier: ~0.13.2
@@ -3065,19 +3065,19 @@ importers:
   services/weather-control:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/constructs':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../platform/constructs
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
       '@cats-cradle/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/nestjs-modules
       '@cats-cradle/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.0.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -3135,10 +3135,10 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@cats-cradle/faker-factory':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../libraries/faker-factory
       '@fastify/static':
         specifier: ~6.9.0
@@ -3210,7 +3210,7 @@ importers:
   tools/aws-sso:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       commander:
         specifier: ~10.0.1
@@ -3223,7 +3223,7 @@ importers:
         version: 10.4.2
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -3253,7 +3253,7 @@ importers:
   tools/coverage-fusion:
     dependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@types/istanbul-reports':
         specifier: ~3.0.1
@@ -3269,7 +3269,7 @@ importers:
         version: 3.1.7
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -3315,10 +3315,10 @@ importers:
         version: 17.7.2
     devDependencies:
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@pnpm/types':
         specifier: ^8.5.0
@@ -3357,7 +3357,7 @@ importers:
         specifier: ~0.2.19
         version: 0.2.19(esbuild@0.20.2)
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       chokidar:
         specifier: ~3.5.3
@@ -3370,7 +3370,7 @@ importers:
         version: 0.20.2
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -3400,7 +3400,7 @@ importers:
         specifier: ~0.2.19
         version: 0.2.19(esbuild@0.20.2)
       '@cats-cradle/base-nodejs':
-        specifier: workspace:*
+        specifier: 3.0.0
         version: link:../../platform/rigs/base-nodejs
       chokidar:
         specifier: ~3.5.3
@@ -3416,7 +3416,7 @@ importers:
         version: 10.4.2
     devDependencies:
       '@cats-cradle/eslint-config':
-        specifier: 1.0.11
+        specifier: 3.0.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
