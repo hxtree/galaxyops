@@ -1,4 +1,4 @@
-# Change Log - @milk-way/eslint-config
+# Change Log - @galaxyops/eslint-config
 
 This log was last generated on Thu, 28 Dec 2023 16:54:41 GMT and should not be
 manually modified.

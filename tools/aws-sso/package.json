@@ -1,5 +1,5 @@
 {
-  "name": "@milky-way/aws-sso",
+  "name": "@galaxyops/aws-sso",
   "private": true,
   "bin": {
     "create-bundle": "bin/create-bundle"

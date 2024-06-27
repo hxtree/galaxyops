@@ -1,12 +1,12 @@
 {
-  "name": "@milk-way/aws-org-formation",
+  "name": "@galaxyops/aws-org-formation",
   "version": "2.1.0",
   "description": "multiple aws account provisioning",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hxtree/milk-way.git"
+    "url": "git+https://github.com/hxtree/galaxyops.git"
   },
   "keywords": [
     "org-formation"
@@ -14,7 +14,7 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hxtree/milk-way/issues"
+    "url": "https://github.com/hxtree/galaxyops/issues"
   },
-  "homepage": "https://github.com/hxtree/milk-way#readme"
+  "homepage": "https://github.com/hxtree/galaxyops#readme"
 }

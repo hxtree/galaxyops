@@ -1,6 +1,6 @@
-# @milky-way :milky_way:
+# @galaxyops :milky_way:
 
-The @milky-way offers a robust architecture for efficient project management and
+The @galaxyops offers a robust architecture for efficient project management and
 deployment on AWS. It empowers your domain-driven DevOps teams, guiding them
 through AWS with clarity and purpose, fostering a seamless journey toward
 operational excellence.
@@ -12,7 +12,7 @@ operational excellence.
 ## Overview
 
 Running multiple cloud applications without a robust architectural framework
-leads to chaos. The @milky-way provides a comprehensive cloud architecture
+leads to chaos. The @galaxyops provides a comprehensive cloud architecture
 solution, emphasizing modern DevOps practices on AWS. This repository lays the
 groundwork for enterprise software landscapes, ensuring scalability and
 maintainability across projects.

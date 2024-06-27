@@ -1,10 +1,10 @@
 {
-  "name": "@milk-way/base-nodejs",
-  "version": "3.1.0",
+  "name": "@galaxyops/base-nodejs",
+  "version": "0.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hxtree/milk-way.git"
+    "url": "git+https://github.com/hxtree/galaxyops.git"
   },
   "description": "Heft rig package",
   "scripts": {},

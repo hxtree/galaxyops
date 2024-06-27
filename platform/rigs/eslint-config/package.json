@@ -1,11 +1,11 @@
 {
-  "name": "@milk-way/eslint-config",
+  "name": "@galaxyops/eslint-config",
   "version": "3.1.0",
   "description": "Eslint rules by profile",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hxtree/milk-way.git"
+    "url": "git+https://github.com/hxtree/galaxyops.git"
   },
   "scripts": {},
   "dependencies": {

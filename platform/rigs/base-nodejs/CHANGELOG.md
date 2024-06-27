@@ -1,4 +1,4 @@
-# Change Log - @milk-way/base-nodejs
+# Change Log - @galaxyops/base-nodejs
 
 This log was last generated on Tue, 05 Mar 2024 05:29:22 GMT and should not be
 manually modified.
