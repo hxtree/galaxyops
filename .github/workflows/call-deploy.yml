@@ -71,7 +71,7 @@ jobs:
         shell: bash
 
       - name: Publish to npmjs
-        run: pnpm publish --provenance --access public
+        run: pnpm publish --provenance --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
