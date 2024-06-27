@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/design-system",
   "private": false,
-  "version": "2.0.0",
+  "version": "2.1.0",
   "module": "commonjs",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@cats-cradle/base-nodejs": "3.0.0",
-    "@cats-cradle/promare-gradients": "3.0.0",
+    "@cats-cradle/promare-gradients": "3.1.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "~6.4.2",
     "@fortawesome/free-solid-svg-icons": "~6.4.2",

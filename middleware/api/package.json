@@ -2,7 +2,7 @@
   "name": "@cats-cradle/api",
   "module": "commonjs",
   "description": "routes request to other endpoints",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "bin": {
     "app": "bin/app.js"
   },
@@ -28,9 +28,9 @@
   },
   "dependencies": {
     "@cats-cradle/base-nodejs": "3.0.0",
-    "@cats-cradle/constructs": "2.0.0",
-    "@cats-cradle/nestjs-modules": "2.0.0",
-    "@cats-cradle/validation-schemas": "2.0.0",
+    "@cats-cradle/constructs": "2.1.0",
+    "@cats-cradle/nestjs-modules": "2.1.0",
+    "@cats-cradle/validation-schemas": "2.1.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",

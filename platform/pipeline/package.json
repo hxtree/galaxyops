@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/pipeline",
   "module": "commonjs",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "An API for simulating dice rolls and luck from dice notation",
   "bin": {
     "app": "bin/app.js"
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@cats-cradle/base-nodejs": "3.0.0",
-    "@cats-cradle/constructs": "2.0.0",
+    "@cats-cradle/constructs": "2.1.0",
     "@microsoft/rush-lib": "5.109.2",
     "@rushstack/node-core-library": "~3.55.2",
     "aws-lambda": "1.0.7",

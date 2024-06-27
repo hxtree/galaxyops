@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/luck-by-dice",
   "module": "commonjs",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "An API Simulating dice rolls that can be effected by luck from dice notation",
   "bin": {
     "app": "bin/app.js"
@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "@cats-cradle/base-nodejs": "3.0.0",
-    "@cats-cradle/constructs": "2.0.0",
-    "@cats-cradle/validation-schemas": "2.0.0",
+    "@cats-cradle/constructs": "2.1.0",
+    "@cats-cradle/validation-schemas": "2.1.0",
     "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.2.1",

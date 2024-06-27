@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/message-bus",
   "module": "commonjs",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "bin": {
     "app": "bin/app.js"
   },
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@aws-cdk/core": "~1.182.0",
-    "@cats-cradle/messaging-schemas": "2.0.0",
+    "@cats-cradle/messaging-schemas": "2.1.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.2.1",
     "@nestjs/platform-express": "9.3.9",
@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@cats-cradle/base-nodejs": "3.0.0",
-    "@cats-cradle/constructs": "2.0.0",
+    "@cats-cradle/constructs": "2.1.0",
     "@cats-cradle/create-artifact": "2.0.7",
     "@cats-cradle/eslint-config": "3.0.0",
     "@types/aws-lambda": "~8.10.130",

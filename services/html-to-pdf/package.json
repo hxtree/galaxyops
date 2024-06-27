@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/html-to-pdf",
   "module": "commonjs",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "license": "MIT",
   "description": "Your Go-To Solution for PDF Generation from HTML.",
   "bugs": {
@@ -37,10 +37,10 @@
   },
   "dependencies": {
     "@cats-cradle/base-nodejs": "3.0.0",
-    "@cats-cradle/constructs": "2.0.0",
-    "@cats-cradle/faker-factory": "3.0.0",
-    "@cats-cradle/nestjs-modules": "2.0.0",
-    "@cats-cradle/validation-schemas": "2.0.0",
+    "@cats-cradle/constructs": "2.1.0",
+    "@cats-cradle/faker-factory": "3.1.0",
+    "@cats-cradle/nestjs-modules": "2.1.0",
+    "@cats-cradle/validation-schemas": "2.1.0",
     "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",

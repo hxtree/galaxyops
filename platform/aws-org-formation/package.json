@@ -1,6 +1,6 @@
 {
   "name": "@milk-way/aws-org-formation",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "multiple aws account provisioning",
   "main": "index.js",
   "scripts": {},

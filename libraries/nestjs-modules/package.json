@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/nestjs-modules",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
@@ -49,11 +49,11 @@
     "@aws-sdk/client-s3": "3.433.0",
     "@aws-sdk/client-sns": "3.433.0",
     "@aws-sdk/types": "3.433.0",
-    "@cats-cradle/messaging-schemas": "2.0.0",
+    "@cats-cradle/messaging-schemas": "2.1.0",
     "@types/uuid": "~9.0.7",
     "luxon": "~3.3.0",
     "mongodb-memory-server-global": "8.13.0",
-    "@cats-cradle/validation-schemas": "2.0.0",
+    "@cats-cradle/validation-schemas": "2.1.0",
     "bson": "~6.2.0"
   },
   "devDependencies": {
@@ -70,7 +70,7 @@
     "@nestjs/testing": "9.2.1",
     "@types/mongoose": "~5.11.97",
     "aws-sdk-client-mock": "3.0.0",
-    "@cats-cradle/faker-factory": "3.0.0",
+    "@cats-cradle/faker-factory": "3.1.0",
     "@types/luxon": "~3.2.0",
     "@shelf/jest-mongodb": "~4.2.0",
     "mongodb": "6.0.0"
