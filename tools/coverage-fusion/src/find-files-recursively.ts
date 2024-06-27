@@ -13,6 +13,10 @@ export function findFilesRecursively(
     const filePath = path.join(directory, file);
     const fileStat = fs.statSync(filePath);
 
+    if (filePath.includes('node_modules/')) {
+      return;
+    }
+
     if (fileStat.isDirectory()) {
       results = results.concat(findFilesRecursively(filePath, fileName));
     } else if (file === fileName) {

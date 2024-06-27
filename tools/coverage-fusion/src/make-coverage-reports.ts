@@ -6,10 +6,13 @@ const istanbulReports = require('istanbul-reports');
  * the outputDir is the cwd to avoid coverage files being relative to npx path
  * e.g. /home/runner/.npm/_npx/0cb0be537d78c849/node_modules/coverage
  */
-const outputDir = process.cwd();
-const reportDir = `${outputDir}/coverage`;
 
-export function makeCoverageReports(coverageMap: any, formats: string[]) {
+export function makeCoverageReports(
+  outputDir: string,
+  coverageMap: any,
+  formats: string[],
+) {
+  const reportDir = `${outputDir}/coverage`;
   const reportGenerationContext = istanbulReport.createContext({
     dir: reportDir,
     defaultSummarizer: 'nested',

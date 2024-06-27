@@ -70,7 +70,7 @@ jobs:
         run: pnpm nx run-many -t test:cov --projects=tag:scope:clients
 
       - name: Merge coverage reports
-        run: pnpm nx run coverage-fusion:start
+        run: pnpm nx run coverage-fusion:start ../../..
 
       - name: Submit merged coverage report
         uses: codacy/codacy-coverage-reporter-action@v1.3.0

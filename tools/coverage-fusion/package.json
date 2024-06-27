@@ -31,6 +31,7 @@
   "dependencies": {
     "@galaxyops/base-nodejs": "0.1.0",
     "@types/istanbul-reports": "~3.0.1",
+    "commander": "^12.1.0",
     "istanbul-lib-coverage": "~3.2.0",
     "istanbul-lib-report": "~3.0.0",
     "istanbul-reports": "~3.1.5"
