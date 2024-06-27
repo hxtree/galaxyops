@@ -55,44 +55,18 @@ jobs:
       - name: projects build
         run: pnpm nx run-many -t build --all
 
-      - name: test:cov scope:platform
-        uses: neofinancial/mongo-memory-server-action@v1.0.2
-        with:
-          db-connection-env-var: MONGO_DATABASE_URI
-          run-command: pnpm nx run-many -t test --projects=tag:scope:platform
-          binary-version: 4.2.8
-          instance-port: 27017
-          instance-storageEngine: "ephemeralForTest"
+      - name: testscope:platform
+        run: pnpm nx run-many -t test --projects=tag:scope:platform
 
-      - name: test:cov scope:libraries
-        uses: neofinancial/mongo-memory-server-action@v1.0.2
-        with:
-          db-connection-env-var: MONGO_DATABASE_URI
-          run-command: pnpm nx run-many -t test --projects=tag:scope:libraries
-          binary-version: 4.2.8
-          instance-port: 27017
-          instance-storageEngine: "ephemeralForTest"
+      - name: testscope:libraries
+        run: pnpm nx run-many -t test --projects=tag:scope:libraries
 
-      - name: test:cov scope:services
-        uses: neofinancial/mongo-memory-server-action@v1.0.2
-        with:
-          db-connection-env-var: MONGO_DATABASE_URI
-          run-command: pnpm nx run-many -t test:cov --projects=tag:cimongo
-          binary-version: 4.2.8
-          instance-port: 27017
-          instance-storageEngine: "ephemeralForTest"
+      - name: testscope:cimongo (services)
+        run: pnpm nx run-many -t test--projects=tag:cimongo
 
-      - name: test:cov scope:services
-        run: pnpm nx run-many -t test:cov --projects=tag:mongoshelf
-        env:
-          MONGOMS_DOWNLOAD_URL: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1804-4.2.8.tgz
-          MONGOMS_VERSION: 4.2.8
+      - name: testscope:mongoshelf (services)
+        run: pnpm nx run-many -t test--projects=tag:mongoshelf
 
-      - name: test:cov scope:clients
-        uses: neofinancial/mongo-memory-server-action@v1.0.2
-        with:
-          db-connection-env-var: MONGO_DATABASE_URI
-          run-command: pnpm nx run-many -t test --projects=tag:scope:clients
-          binary-version: 4.2.8
-          instance-port: 27017
-          instance-storageEngine: "ephemeralForTest"
+      - name: testscope:clients
+        run: pnpm nx run-many -t test --projects=tag:scope:clients
+

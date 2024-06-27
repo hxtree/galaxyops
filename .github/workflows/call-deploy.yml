@@ -18,8 +18,8 @@ on:
         required: true
 
 jobs:
-  nx-deploy:
-    name: nx deploy
+  deploy:
+    name: deploy
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
