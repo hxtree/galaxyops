@@ -23,7 +23,7 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@cats-cradle/base-nodejs": "1.0.11",
+    "@galaxyops/base-nodejs": "0.1.0",
     "@cats-cradle/constructs": "2.1.0",
     "@microsoft/rush-lib": "5.109.2",
     "@rushstack/node-core-library": "~3.55.2",

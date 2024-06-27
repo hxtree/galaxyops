@@ -20,7 +20,7 @@ describe('WorkspaceDecouple', () => {
         expect.objectContaining({
           name: '@cats-cradle/create-artifact',
           devDependencies: expect.objectContaining({
-            '@cats-cradle/eslint-config':
+            '@galaxyops/eslint-config':
               expect.not.stringContaining('workspace:*'),
           }),
         }),
@@ -34,7 +34,7 @@ describe('WorkspaceDecouple', () => {
         name: 'test-package',
         version: '1.0.2',
         devDependencies: {
-          '@cats-cradle/eslint-config': 'workspace:*',
+          '@galaxyops/eslint-config': 'workspace:*',
         },
       };
       const workspaceDecouple = new WorkspaceDecouple();
@@ -42,7 +42,7 @@ describe('WorkspaceDecouple', () => {
       expect(result).toEqual(
         expect.objectContaining({
           devDependencies: {
-            '@cats-cradle/eslint-config':
+            '@galaxyops/eslint-config':
               expect.not.stringContaining('workspace:*'),
           },
           name: 'test-package',

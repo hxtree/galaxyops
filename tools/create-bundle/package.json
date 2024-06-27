@@ -31,7 +31,7 @@
     "esbuild"
   ],
   "dependencies": {
-    "@cats-cradle/base-nodejs": "1.0.11",
+    "@galaxyops/base-nodejs": "0.1.0",
     "@anatine/esbuild-decorators": "~0.2.19",
     "commander": "~10.0.0",
     "esbuild": "~0.20.1",
@@ -46,6 +46,6 @@
     "ts-node": "10.9.2",
     "eslint": "8.57.0",
     "@cats-cradle/eslint-config": "1.0.11",
-    "@cats-cradle/base-nodejs": "workspace:*"
+    "@galaxyops/base-nodejs": "0.1.0"
   }
 }

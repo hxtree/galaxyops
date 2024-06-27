@@ -10,9 +10,12 @@
     "yzhang.markdown-all-in-one",
     "foxundermoon.shell-format",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
     "ms-vsliveshare.vsliveshare",
     "rangav.vscode-thunder-client"
   ],
-  "unwantedRecommendations": ["ms-azuretools.vscode-docker", "GitHub.copilot"]
+  "unwantedRecommendations": [
+    "esbenp.prettier-vscode",
+    "ms-azuretools.vscode-docker",
+    "GitHub.copilot"
+  ]
 }

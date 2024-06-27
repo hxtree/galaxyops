@@ -29,7 +29,7 @@
     "rush"
   ],
   "dependencies": {
-    "@cats-cradle/base-nodejs": "1.0.11",
+    "@galaxyops/base-nodejs": "0.1.0",
     "@types/istanbul-reports": "~3.0.1",
     "istanbul-lib-coverage": "~3.2.0",
     "istanbul-lib-report": "~3.0.0",

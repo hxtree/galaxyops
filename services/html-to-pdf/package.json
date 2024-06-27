@@ -36,7 +36,7 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@cats-cradle/base-nodejs": "1.0.11",
+    "@galaxyops/base-nodejs": "0.1.0",
     "@cats-cradle/constructs": "2.1.0",
     "@cats-cradle/faker-factory": "3.1.0",
     "@cats-cradle/nestjs-modules": "2.1.0",
