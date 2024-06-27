@@ -2,7 +2,7 @@
   "name": "@cats-cradle/jukebox",
   "description": "An API for the audio service",
   "module": "commonjs",
-  "version": "0.0.2",
+  "version": "2.0.0",
   "scripts": {
     "dev": "nest start --debug --watch",
     "build": "tsc",
@@ -24,10 +24,10 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@cats-cradle/base-nodejs": "workspace:*",
-    "@cats-cradle/constructs": "workspace:*",
-    "@cats-cradle/nestjs-modules": "workspace:*",
-    "@cats-cradle/validation-schemas": "workspace:*",
+    "@cats-cradle/base-nodejs": "3.0.0",
+    "@cats-cradle/constructs": "2.0.0",
+    "@cats-cradle/nestjs-modules": "2.0.0",
+    "@cats-cradle/validation-schemas": "2.0.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",
@@ -50,8 +50,8 @@
   "devDependencies": {
     "@cats-cradle/create-artifact": "2.0.7",
     "@cats-cradle/create-bundle": "1.0.12",
-    "@cats-cradle/eslint-config": "1.0.11",
-    "@cats-cradle/faker-factory": "workspace:*",
+    "@cats-cradle/eslint-config": "3.0.0",
+    "@cats-cradle/faker-factory": "3.0.0",
     "@fastify/static": "~6.9.0",
     "@microsoft/tsdoc": "~0.13.2",
     "@nestjs/cli": "^10.3.2",

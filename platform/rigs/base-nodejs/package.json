@@ -1,14 +1,13 @@
 {
   "name": "@cats-cradle/base-nodejs",
-  "version": "1.0.12",
+  "version": "3.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"
   },
   "description": "Heft rig package",
-  "scripts": {
-  },
+  "scripts": {},
   "devDependencies": {
     "@types/node": "20.11.25",
     "typescript": "5.3.3"

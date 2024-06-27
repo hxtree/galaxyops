@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/promare-gradients",
-  "version": "1.0.3",
+  "version": "3.0.0",
   "description": "Neon background gradients",
   "license": "MIT",
   "repository": {
@@ -28,7 +28,7 @@
     "clean-css-cli": "^5.5.0",
     "express": "4.19.2",
     "sass": "^1.47.0",
-    "@cats-cradle/eslint-config": "1.0.11",
+    "@cats-cradle/eslint-config": "3.0.0",
     "node-sass": "~8.0.0"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/design-system",
   "private": false,
-  "version": "0.5.4",
+  "version": "2.0.0",
   "module": "commonjs",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -42,8 +42,8 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@cats-cradle/base-nodejs": "workspace:*",
-    "@cats-cradle/promare-gradients": "workspace:*",
+    "@cats-cradle/base-nodejs": "3.0.0",
+    "@cats-cradle/promare-gradients": "3.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "~6.4.2",
     "@fortawesome/free-solid-svg-icons": "~6.4.2",
@@ -59,7 +59,7 @@
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
     "@cats-cradle/create-artifact": "2.0.7",
-    "@cats-cradle/eslint-config": "1.0.11",
+    "@cats-cradle/eslint-config": "3.0.0",
     "@emotion/react": "~11.11.1",
     "@emotion/styled": "11.11.0",
     "@fortawesome/react-fontawesome": "~0.2.0",

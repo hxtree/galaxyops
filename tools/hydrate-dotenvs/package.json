@@ -5,7 +5,7 @@
     "create-bundle": "bin/create-bundle"
   },
   "main": "./dist/index.js",
-  "version": "1.0.14",
+  "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/cats-cradle.git"
@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "@anatine/esbuild-decorators": "~0.2.19",
-    "@cats-cradle/base-nodejs": "workspace:*",
+    "@cats-cradle/base-nodejs": "3.0.0",
     "chokidar": "~3.5.3",
     "commander": "~10.0.0",
     "esbuild": "~0.20.1",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@cats-cradle/base-nodejs": "workspace:*",
-    "@cats-cradle/eslint-config": "1.0.11",
+    "@cats-cradle/eslint-config": "3.0.0",
     "@types/jest": "29.5.12",
     "@types/node": "20.11.25",
     "depcheck": "^1.4.7",

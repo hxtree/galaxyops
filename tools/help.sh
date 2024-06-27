@@ -12,6 +12,7 @@ pnpm update                          | update workspace files.
 pnpm add @a/b                        | add a new package to app.
 pnpm up -r --workspace --interactive | make package versions consistent across.
 
+pnpm nx release
 pnpm nx run-many [command] --all     | run a command in bulk or globally.
 pnpm nx run package:[command]        | run a command relative to the current working directory.
 pnpm nx run package:build            | build projects.

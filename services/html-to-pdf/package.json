@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/html-to-pdf",
   "module": "commonjs",
-  "version": "1.0.22",
+  "version": "3.0.0",
   "license": "MIT",
   "description": "Your Go-To Solution for PDF Generation from HTML.",
   "bugs": {
@@ -36,11 +36,11 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@cats-cradle/base-nodejs": "workspace:*",
-    "@cats-cradle/constructs": "workspace:*",
-    "@cats-cradle/faker-factory": "workspace:*",
-    "@cats-cradle/nestjs-modules": "workspace:*",
-    "@cats-cradle/validation-schemas": "workspace:*",
+    "@cats-cradle/base-nodejs": "3.0.0",
+    "@cats-cradle/constructs": "2.0.0",
+    "@cats-cradle/faker-factory": "3.0.0",
+    "@cats-cradle/nestjs-modules": "2.0.0",
+    "@cats-cradle/validation-schemas": "2.0.0",
     "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
@@ -70,7 +70,7 @@
     "@aws-sdk/client-s3": "3.433.0",
     "@cats-cradle/create-artifact": "2.0.7",
     "@cats-cradle/create-bundle": "1.0.12",
-    "@cats-cradle/eslint-config": "1.0.11",
+    "@cats-cradle/eslint-config": "3.0.0",
     "@nestjs/cli": "^10.3.2",
     "@types/aws-lambda": "~8.10.130",
     "@types/express": "~4.17.21",

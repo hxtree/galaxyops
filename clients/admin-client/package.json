@@ -2,7 +2,7 @@
   "name": "@cats-cradle/admin-client",
   "private": true,
   "type": "commonjs",
-  "version": "0.3.0",
+  "version": "2.0.0",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc --build ./tsconfig-build.json && vite build",
@@ -22,14 +22,14 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@cats-cradle/design-system": "workspace:*",
+    "@cats-cradle/design-system": "2.0.0",
     "axios": "^1.6.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.22.1"
   },
   "devDependencies": {
-    "@cats-cradle/base-nodejs": "workspace:*",
+    "@cats-cradle/base-nodejs": "3.0.0",
     "@cats-cradle/create-artifact": "2.0.7",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",

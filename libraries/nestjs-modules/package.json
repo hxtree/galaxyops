@@ -1,6 +1,6 @@
 {
   "name": "@cats-cradle/nestjs-modules",
-  "version": "0.2.19",
+  "version": "2.0.0",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
   "dependencies": {
     "class-transformer": "0.5.1",
     "class-validator": "0.13.2",
-    "@cats-cradle/base-nodejs": "workspace:*",
+    "@cats-cradle/base-nodejs": "3.0.0",
     "reflect-metadata": "0.1.13",
     "@types/validator": "~13.7.10",
     "@nestjs/common": "9.4.0",
@@ -49,11 +49,11 @@
     "@aws-sdk/client-s3": "3.433.0",
     "@aws-sdk/client-sns": "3.433.0",
     "@aws-sdk/types": "3.433.0",
-    "@cats-cradle/messaging-schemas": "workspace:*",
+    "@cats-cradle/messaging-schemas": "2.0.0",
     "@types/uuid": "~9.0.7",
     "luxon": "~3.3.0",
     "mongodb-memory-server-global": "8.13.0",
-    "@cats-cradle/validation-schemas": "workspace:*",
+    "@cats-cradle/validation-schemas": "2.0.0",
     "bson": "~6.2.0"
   },
   "devDependencies": {
@@ -65,12 +65,12 @@
     "ts-node": "10.9.2",
     "esbuild": "~0.20.1",
     "eslint": "8.57.0",
-    "@cats-cradle/eslint-config": "1.0.11",
+    "@cats-cradle/eslint-config": "3.0.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "9.2.1",
     "@types/mongoose": "~5.11.97",
     "aws-sdk-client-mock": "3.0.0",
-    "@cats-cradle/faker-factory": "workspace:*",
+    "@cats-cradle/faker-factory": "3.0.0",
     "@types/luxon": "~3.2.0",
     "@shelf/jest-mongodb": "~4.2.0",
     "mongodb": "6.0.0"

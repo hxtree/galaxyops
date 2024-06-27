@@ -1,7 +1,7 @@
 {
   "name": "@cats-cradle/graphql",
   "module": "commonjs",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "A graphql backend for front end for cats cradle",
   "bin": {
     "app": "bin/app.js"
@@ -24,9 +24,9 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@cats-cradle/base-nodejs": "workspace:*",
-    "@cats-cradle/constructs": "workspace:*",
-    "@cats-cradle/validation-schemas": "workspace:*",
+    "@cats-cradle/base-nodejs": "3.0.0",
+    "@cats-cradle/constructs": "2.0.0",
+    "@cats-cradle/validation-schemas": "2.0.0",
     "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.2.1",
@@ -48,7 +48,7 @@
   "devDependencies": {
     "@cats-cradle/create-artifact": "2.0.7",
     "@cats-cradle/create-bundle": "1.0.12",
-    "@cats-cradle/eslint-config": "1.0.11",
+    "@cats-cradle/eslint-config": "3.0.0",
     "@types/aws-lambda": "~8.10.130",
     "@types/express": "~4.17.21",
     "@types/jest": "29.5.12",

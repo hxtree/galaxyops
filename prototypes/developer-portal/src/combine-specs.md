@@ -16,8 +16,8 @@ Spec", version: "1.0.0" }, paths: {} };
 
 }
 
-const filePaths: string[] = ["openapispec1.json", "openapispec2.json",
-"openapispec3.json"]; const combinedSpec: OpenAPISpec =
+const filePaths: string[] = ["openapispec1.json",
+"openapispec2.json", "openapispec3.json"]; const combinedSpec: OpenAPISpec =
 combineOpenAPISpecs(filePaths);
 
 fs.writeFileSync('combined_openapispec.json', JSON.stringify(combinedSpec, null,
