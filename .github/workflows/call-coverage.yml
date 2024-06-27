@@ -55,49 +55,19 @@ jobs:
         run: pnpm nx run-many -t build --all
 
       - name: test:cov scope:platform
-        uses: neofinancial/mongo-memory-server-action@v1.0.2
-        with:
-          db-connection-env-var: MONGO_DATABASE_URI
-          run-command: pnpm nx run-many -t test:cov --projects=tag:scope:platform
-          binary-version: 4.2.8
-          instance-port: 27017
-          instance-storageEngine: "ephemeralForTest"
+        run: pnpm nx run-many -t test:cov --projects=tag:scope:platform
 
       - name: test:cov scope:libraries
-        uses: neofinancial/mongo-memory-server-action@v1.0.2
-        with:
-          db-connection-env-var: MONGO_DATABASE_URI
-          run-command: pnpm nx run-many -t test:cov --projects=tag:scope:libraries
-          binary-version: 4.2.8
-          instance-port: 27017
-          instance-storageEngine: "ephemeralForTest"
+        run: pnpm nx run-many -t test:cov --projects=tag:scope:libraries
 
-      - name: test:cov scope:services
-        uses: neofinancial/mongo-memory-server-action@v1.0.2
-        with:
-          db-connection-env-var: MONGO_DATABASE_URI
-          run-command: pnpm nx run-many -t test:cov --projects=tag:cimongo
-          binary-version: 4.2.8
-          instance-port: 27017
-          instance-storageEngine: "ephemeralForTest"
+      - name: test:cov scope:cimongo (services)
+        run: pnpm nx run-many -t test:cov --projects=tag:cimongo
 
-      - name: test:cov scope:services
-        uses: neofinancial/mongo-memory-server-action@v1.0.2
-        with:
-          db-connection-env-var: MONGO_DATABASE_URI
-          run-command: pnpm nx run-many -t test:cov --projects=tag:mongoshelf
-          binary-version: 4.2.8
-          instance-port: 27017
-          instance-storageEngine: "ephemeralForTest"
+      - name: test:cov scope:mongoshelf (services)
+        run: pnpm nx run-many -t test:cov --projects=tag:mongoshelf
 
       - name: test:cov scope:clients
-        uses: neofinancial/mongo-memory-server-action@v1.0.2
-        with:
-          db-connection-env-var: MONGO_DATABASE_URI
-          run-command: pnpm nx run-many -t test:cov --projects=tag:scope:clients
-          binary-version: 4.2.8
-          instance-port: 27017
-          instance-storageEngine: "ephemeralForTest"
+        run: pnpm nx run-many -t test:cov --projects=tag:scope:clients
 
       - name: Merge coverage reports
         run: pnpm nx run coverage-fusion:start
