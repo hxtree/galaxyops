@@ -1,4 +1,4 @@
-# @cats-cradle/base-nodejs
+# @milk-way/base-nodejs
 
 BaseNodeJs contains simple common rigs to setup other packages.
 

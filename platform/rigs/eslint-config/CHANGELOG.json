@@ -1,9 +1,9 @@
 {
-  "name": "@cats-cradle/eslint-config",
+  "name": "@milk-way/eslint-config",
   "entries": [
     {
       "version": "1.0.11",
-      "tag": "@cats-cradle/eslint-config_v1.0.11",
+      "tag": "@milk-way/eslint-config_v1.0.11",
       "date": "Thu, 28 Dec 2023 16:54:41 GMT",
       "comments": {
         "patch": [
@@ -15,7 +15,7 @@
     },
     {
       "version": "1.0.10",
-      "tag": "@cats-cradle/eslint-config_v1.0.10",
+      "tag": "@milk-way/eslint-config_v1.0.10",
       "date": "Tue, 12 Dec 2023 03:15:41 GMT",
       "comments": {
         "patch": [
@@ -27,7 +27,7 @@
     },
     {
       "version": "1.0.9",
-      "tag": "@cats-cradle/eslint-config_v1.0.9",
+      "tag": "@milk-way/eslint-config_v1.0.9",
       "date": "Tue, 05 Dec 2023 05:58:32 GMT",
       "comments": {
         "patch": [
@@ -39,7 +39,7 @@
     },
     {
       "version": "1.0.7",
-      "tag": "@cats-cradle/eslint-config_v1.0.7",
+      "tag": "@milk-way/eslint-config_v1.0.7",
       "date": "Mon, 13 Nov 2023 02:11:53 GMT",
       "comments": {
         "patch": [
@@ -51,7 +51,7 @@
     },
     {
       "version": "1.0.6",
-      "tag": "@cats-cradle/eslint-config_v1.0.6",
+      "tag": "@milk-way/eslint-config_v1.0.6",
       "date": "Mon, 24 Apr 2023 04:46:40 GMT",
       "comments": {
         "patch": [
@@ -63,7 +63,7 @@
     },
     {
       "version": "1.0.5",
-      "tag": "@cats-cradle/eslint-config_v1.0.5",
+      "tag": "@milk-way/eslint-config_v1.0.5",
       "date": "Thu, 13 Apr 2023 01:49:51 GMT",
       "comments": {
         "patch": [
@@ -75,7 +75,7 @@
     },
     {
       "version": "1.0.3",
-      "tag": "@cats-cradle/eslint-config_v1.0.3",
+      "tag": "@milk-way/eslint-config_v1.0.3",
       "date": "Fri, 17 Feb 2023 14:05:59 GMT",
       "comments": {
         "patch": [
@@ -87,7 +87,7 @@
     },
     {
       "version": "1.0.2",
-      "tag": "@cats-cradle/eslint-config_v1.0.2",
+      "tag": "@milk-way/eslint-config_v1.0.2",
       "date": "Fri, 10 Feb 2023 06:12:26 GMT",
       "comments": {
         "patch": [
@@ -99,7 +99,7 @@
     },
     {
       "version": "1.0.1",
-      "tag": "@cats-cradle/eslint-config_v1.0.1",
+      "tag": "@milk-way/eslint-config_v1.0.1",
       "date": "Thu, 09 Feb 2023 04:49:11 GMT",
       "comments": {
         "patch": [

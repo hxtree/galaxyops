@@ -1,12 +1,12 @@
 {
-  "name": "@cats-cradle/aws-org-formation",
+  "name": "@milk-way/aws-org-formation",
   "version": "2.0.0",
   "description": "multiple aws account provisioning",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hxtree/cats-cradle.git"
+    "url": "git+https://github.com/hxtree/milk-way.git"
   },
   "keywords": [
     "org-formation"
@@ -14,7 +14,7 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hxtree/cats-cradle/issues"
+    "url": "https://github.com/hxtree/milk-way/issues"
   },
-  "homepage": "https://github.com/hxtree/cats-cradle#readme"
+  "homepage": "https://github.com/hxtree/milk-way#readme"
 }

@@ -1,11 +1,11 @@
 {
-  "name": "@cats-cradle/eslint-config",
+  "name": "@milk-way/eslint-config",
   "version": "3.0.0",
   "description": "Eslint rules by profile",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hxtree/cats-cradle.git"
+    "url": "git+https://github.com/hxtree/milk-way.git"
   },
   "scripts": {},
   "dependencies": {

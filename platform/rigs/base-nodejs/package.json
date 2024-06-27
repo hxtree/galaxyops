@@ -1,10 +1,10 @@
 {
-  "name": "@cats-cradle/base-nodejs",
+  "name": "@milk-way/base-nodejs",
   "version": "3.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hxtree/cats-cradle.git"
+    "url": "git+https://github.com/hxtree/milk-way.git"
   },
   "description": "Heft rig package",
   "scripts": {},

@@ -1,9 +1,9 @@
 {
-  "name": "@cats-cradle/base-nodejs",
+  "name": "@milk-way/base-nodejs",
   "entries": [
     {
       "version": "1.0.12",
-      "tag": "@cats-cradle/base-nodejs_v1.0.12",
+      "tag": "@milk-way/base-nodejs_v1.0.12",
       "date": "Tue, 05 Mar 2024 05:29:22 GMT",
       "comments": {
         "patch": [
@@ -15,7 +15,7 @@
     },
     {
       "version": "1.0.11",
-      "tag": "@cats-cradle/base-nodejs_v1.0.11",
+      "tag": "@milk-way/base-nodejs_v1.0.11",
       "date": "Sun, 04 Feb 2024 05:29:40 GMT",
       "comments": {
         "patch": [
@@ -27,7 +27,7 @@
     },
     {
       "version": "1.0.10",
-      "tag": "@cats-cradle/base-nodejs_v1.0.10",
+      "tag": "@milk-way/base-nodejs_v1.0.10",
       "date": "Thu, 28 Dec 2023 16:54:41 GMT",
       "comments": {
         "patch": [
@@ -39,7 +39,7 @@
     },
     {
       "version": "1.0.9",
-      "tag": "@cats-cradle/base-nodejs_v1.0.9",
+      "tag": "@milk-way/base-nodejs_v1.0.9",
       "date": "Tue, 12 Dec 2023 03:15:41 GMT",
       "comments": {
         "patch": [
@@ -51,7 +51,7 @@
     },
     {
       "version": "1.0.8",
-      "tag": "@cats-cradle/base-nodejs_v1.0.8",
+      "tag": "@milk-way/base-nodejs_v1.0.8",
       "date": "Sun, 05 Nov 2023 18:41:09 GMT",
       "comments": {
         "patch": [
@@ -63,7 +63,7 @@
     },
     {
       "version": "1.0.7",
-      "tag": "@cats-cradle/base-nodejs_v1.0.7",
+      "tag": "@milk-way/base-nodejs_v1.0.7",
       "date": "Sat, 04 Nov 2023 19:40:56 GMT",
       "comments": {
         "patch": [
@@ -75,7 +75,7 @@
     },
     {
       "version": "1.0.5",
-      "tag": "@cats-cradle/base-nodejs_v1.0.5",
+      "tag": "@milk-way/base-nodejs_v1.0.5",
       "date": "Fri, 03 Nov 2023 04:39:27 GMT",
       "comments": {
         "patch": [
@@ -87,7 +87,7 @@
     },
     {
       "version": "1.0.4",
-      "tag": "@cats-cradle/base-nodejs_v1.0.4",
+      "tag": "@milk-way/base-nodejs_v1.0.4",
       "date": "Wed, 04 Oct 2023 03:44:49 GMT",
       "comments": {
         "patch": [
@@ -99,7 +99,7 @@
     },
     {
       "version": "1.0.3",
-      "tag": "@cats-cradle/base-nodejs_v1.0.3",
+      "tag": "@milk-way/base-nodejs_v1.0.3",
       "date": "Mon, 24 Apr 2023 06:43:20 GMT",
       "comments": {
         "patch": [
@@ -111,7 +111,7 @@
     },
     {
       "version": "1.0.2",
-      "tag": "@cats-cradle/base-nodejs_v1.0.2",
+      "tag": "@milk-way/base-nodejs_v1.0.2",
       "date": "Wed, 22 Feb 2023 14:29:10 GMT",
       "comments": {
         "patch": [
@@ -123,7 +123,7 @@
     },
     {
       "version": "1.0.1",
-      "tag": "@cats-cradle/base-nodejs_v1.0.1",
+      "tag": "@milk-way/base-nodejs_v1.0.1",
       "date": "Thu, 09 Feb 2023 04:49:11 GMT",
       "comments": {
         "patch": [
