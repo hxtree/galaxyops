@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@galaxyops/base-nodejs": "0.1.0",
-    "@cats-cradle/eslint-config": "1.0.11",
+    "@galaxyops/eslint-config": "3.1.1",
     "@types/jest": "29.5.12",
     "@types/node": "20.11.25",
     "depcheck": "^1.4.7",

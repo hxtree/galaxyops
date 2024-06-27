@@ -28,7 +28,7 @@
     "clean-css-cli": "^5.5.0",
     "express": "4.19.2",
     "sass": "^1.47.0",
-    "@cats-cradle/eslint-config": "1.0.11",
+    "@galaxyops/eslint-config": "3.1.1",
     "node-sass": "~8.0.0"
   },
   "devDependencies": {

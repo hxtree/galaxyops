@@ -357,7 +357,7 @@
             "comment": "Updating dependency \"@cats-cradle/validation-schemas\" to `0.2.1`"
           },
           {
-            "comment": "Updating dependency \"@cats-cradle/eslint-config\" to `1.0.3`"
+            "comment": "Updating dependency \"@galaxyops/eslint-config\" to `1.0.3`"
           }
         ]
       }

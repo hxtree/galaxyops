@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@cats-cradle/eslint-config/profile/base'],
+  extends: ['@galaxyops/eslint-config/profile/base'],
   parserOptions: {
     tsconfigRootDir: __dirname,
   },

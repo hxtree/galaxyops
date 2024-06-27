@@ -39,7 +39,7 @@
     "esbuild": "~0.20.1",
     "@types/uuid": "~9.0.7",
     "eslint": "8.57.0",
-    "@cats-cradle/eslint-config": "1.0.11",
+    "@galaxyops/eslint-config": "3.1.1",
     "@types/json-schema": "~7.0.11"
   }
 }

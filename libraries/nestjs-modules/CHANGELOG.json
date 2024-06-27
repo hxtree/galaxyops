@@ -322,7 +322,7 @@
       "comments": {
         "dependency": [
           {
-            "comment": "Updating dependency \"@cats-cradle/eslint-config\" to `1.0.3`"
+            "comment": "Updating dependency \"@galaxyops/eslint-config\" to `1.0.3`"
           }
         ]
       }

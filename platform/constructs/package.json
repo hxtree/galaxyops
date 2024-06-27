@@ -50,7 +50,7 @@
     "@types/express": "~4.17.21",
     "@types/uuid": "~9.0.7",
     "eslint": "8.57.0",
-    "@cats-cradle/eslint-config": "1.0.11",
+    "@galaxyops/eslint-config": "3.1.1",
     "@galaxyops/base-nodejs": "0.1.0"
   },
   "exports": {
