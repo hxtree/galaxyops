@@ -1,0 +1,5 @@
+{
+  "name": "hydrate-dotenvs",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "tags": ["scope:tools"]
+}

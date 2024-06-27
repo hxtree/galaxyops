@@ -14,8 +14,6 @@
     "test:cov": "jest --coverage --runInBand",
     "cdk": "cdk",
     "hotswap": "cdk deploy --hotswap",
-    "lint": "",
-    "lint:ci": "",
     "docs": "typedoc --entryPointStrategy expand ./src",
     "cdk:deploy": "cdk deploy",
     "cdk:destroy": "cdk destroy",
@@ -25,26 +23,28 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@cats-cradle/constructs": "workspace:*",
-    "aws-lambda": "1.0.7",
-    "eslint": "8.57.0",
     "@cats-cradle/base-nodejs": "workspace:*",
+    "@cats-cradle/constructs": "workspace:*",
     "@microsoft/rush-lib": "5.109.2",
-    "@rushstack/node-core-library": "~3.55.2"
+    "@rushstack/node-core-library": "~3.55.2",
+    "aws-lambda": "1.0.7",
+    "eslint": "8.57.0"
   },
   "devDependencies": {
     "@cats-cradle/eslint-config": "1.0.11",
+    "@types/aws-lambda": "~8.10.130",
+    "@types/jest": "29.5.12",
+    "@types/lodash": "~4.14.202",
+    "@types/node": "20.11.25",
+    "aws-cdk": "2.129.0",
     "aws-cdk-lib": "2.129.0",
     "constructs": "^10.2.70",
-    "@types/jest": "29.5.12",
-    "@types/node": "20.11.25",
-    "@types/aws-lambda": "~8.10.130",
-    "jest": "29.7.0",
-    "typescript": "5.3.3",
-    "ts-node": "10.9.2",
     "fs": "~0.0.2",
-    "path": "~0.12.7",
+    "jest": "29.7.0",
     "lodash": "~4.17.21",
-    "@types/lodash": "~4.14.202"
+    "path": "~0.12.7",
+    "ts-jest": "29.1.2",
+    "ts-node": "10.9.2",
+    "typescript": "5.3.3"
   }
 }

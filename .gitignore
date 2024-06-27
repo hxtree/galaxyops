@@ -1,3 +1,8 @@
+# nx
+/.nx
+.nx/cache
+.nx/workspace-data
+
 # rush deploy
 common/deploy/**
 common/deploy-ci/**
@@ -17,17 +22,6 @@ out/
 clover.xml
 **/coverage/**
 
-# Docker
-docker-compose.override.yml
-
-# ssh
-.devcontainer/.ssh/**
-!.devcontainer/.ssh/config
-
-# AWS CLI
-.devcontainer/.aws/**
-!.devcontainer/.aws/config
-
 # AWS CDK
 **/cdk.out/*
 
@@ -40,10 +34,6 @@ node_modules/*
 
 .pnpm-store/
 common/temp/
-**/.rush/temp/
-
-**/docs/.nojekyll
-**/docs/*.html
 
 .env
 !.env.dist

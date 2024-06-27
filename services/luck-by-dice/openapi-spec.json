@@ -128,26 +128,18 @@
   "info": {
     "title": "@cats-cradle/luck-by-dice",
     "description": "An API Simulating dice rolls that can be effected by luck from dice notation",
-    "version": "2.0.13",
+    "version": "2.0.16",
     "contact": {}
   },
   "tags": [],
   "servers": [
     { "url": "http://localhost:3000", "description": "Local" },
     {
-      "url": "https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/luck-by-dice/",
+      "url": "https://html-to-pdf.sandbox.nekosgate.com/",
       "description": "Sandbox"
     }
   ],
   "components": {
-    "securitySchemes": {
-      "lambda": {
-        "type": "apiKey",
-        "in": "header",
-        "name": "x-lambda-token",
-        "description": "The API key for lambda request."
-      }
-    },
     "schemas": {
       "QueryRollDto": {
         "type": "object",

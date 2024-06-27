@@ -12,11 +12,5 @@ module.exports = {
       files: '**/*.md',
       options: { parser: 'markdown' },
     },
-    {
-      files: ['**/*.scss'],
-      options: {
-        singleQuote: true,
-      },
-    },
   ],
 };

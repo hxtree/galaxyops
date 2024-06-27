@@ -6,11 +6,11 @@
   "search.exclude": {
     "**/node_modules": true,
     "**/.nyc_output": true,
-    "**/.rush": true
+    "**/.nx": true
   },
   "files.exclude": {
     "**/.nyc_output": true,
-    "**/.rush": true,
+    "**/.nx": true,
     "**/*.build.log": true,
     "**/*.build.error.log": true,
     "**/generated-docs": true,
@@ -29,27 +29,6 @@
       "color": "#ff0000"
     }
   ],
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ],
-  "eslint.nodePath": "common/temp/node_modules",
-  "eslint.trace.server": "verbose",
-  "eslint.options": {
-    "resolvePluginsRelativeTo": "./node_modules/@cats-cradle/eslint-config",
-    "rules": {
-      "max-len": [2, { "code": 100, "ignoreComments": false }]
-    }
-  },
-  "eslint.format.enable": true,
-  "eslint.lintTask.enable": true,
   "editor.codeActionsOnSave": {
     "editor.action.fixAll": "explicit",
     "source.fixAll.eslint": "explicit",
@@ -68,8 +47,6 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "files.associations": { "*.json": "jsonc" },
-  "versionlens.suggestions.showOnStartup": true,
-  "jest.jestCommandLine": "rush test",
   "cSpell.words": [
     "Aniroth",
     "Asmin",

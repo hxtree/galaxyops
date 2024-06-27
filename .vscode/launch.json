@@ -9,11 +9,12 @@
       "type": "node",
       "request": "launch",
       "cwd": "${fileDirname}",
-      "runtimeArgs": ["test"],
+      "runtimeArgs": ["run"],
       "console": "integratedTerminal",
-      "runtimeExecutable": "rushx",
+      "runtimeExecutable": "pnpm",
       "internalConsoleOptions": "neverOpen",
       "args": [
+        "test",
         "${fileBasenameNoExtension}",
         "--watchAll",
         "--no-cache",
@@ -26,11 +27,12 @@
       "type": "node",
       "request": "launch",
       "cwd": "${fileDirname}",
-      "runtimeArgs": ["test"],
+      "runtimeArgs": ["run"],
       "console": "integratedTerminal",
-      "runtimeExecutable": "rushx",
+      "runtimeExecutable": "pnpm",
       "internalConsoleOptions": "neverOpen",
       "args": [
+        "test",
         "${fileBasenameNoExtension}",
         "--no-cache",
         "--runInBand",
@@ -42,20 +44,20 @@
       "type": "node",
       "request": "launch",
       "cwd": "${fileDirname}",
-      "runtimeExecutable": "rushx",
-      "runtimeArgs": ["test"],
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run"],
       "console": "integratedTerminal",
-      "args": ["--watchAll", "--no-cache", "--runInBand", "--verbose"]
+      "args": ["test", "--watchAll", "--no-cache", "--runInBand", "--verbose"]
     },
     {
       "name": "Test Package",
       "type": "node",
       "request": "launch",
       "cwd": "${fileDirname}",
-      "runtimeExecutable": "rushx",
-      "runtimeArgs": ["test"],
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run"],
       "console": "integratedTerminal",
-      "args": ["--no-cache", "--runInBand", "--verbose"]
+      "args": ["test", "--no-cache", "--runInBand", "--verbose"]
     }
   ]
 }

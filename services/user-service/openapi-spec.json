@@ -195,9 +195,9 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/authentication-service",
-    "description": "authentication service",
-    "version": "1.1.4",
+    "title": "@cats-cradle/user-service",
+    "description": "user service",
+    "version": "1.1.5",
     "contact": {}
   },
   "tags": [],

@@ -1,11 +1,8 @@
-# PNPM was chosen as the Javascript package manager over Yarn and NPM.
-# Yarn workspaces were not supported in Rush. Microsoft purchased NPM, but it
-# remains infamous. PNPM uses symlinks which helps minimize dependency storage.
-
 packages:
-  - 'platform/**'
-  - 'rigs/**'
-  - 'libraries/**'
-  - 'packages/**'
-  - 'tests/**'
-  - '**'
+  - 'tools/*'
+  - 'libraries/*'
+  - 'platform/*'
+  - 'platform/rigs/*'
+  - 'services/*'
+  - 'middleware/*'
+  - 'clients/*'

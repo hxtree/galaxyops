@@ -11,7 +11,14 @@ describe('MainStack', () => {
     // TODO consider reworking to use DNS instead of incrementing and deploying each time
     const customSnapshotSerializer = {
       test: (val: any) => typeof val === 'string',
-      print: (val: any) => val.replace(/deployment\d{8}T\d{9}Z[^:]+/, 'deployment_UNIQUE_HASH'),
+      print: (val: any) => {
+        let transformedVal = val.replace(/.*?\.zip/g, 'VARIABLE_HASH.zip');
+        transformedVal = transformedVal.replace(
+          /deployment\d{8}T\d{9}Z[^:]+/g,
+          'deployment_UNIQUE_HASH',
+        );
+        return transformedVal;
+      },
     };
     expect.addSnapshotSerializer(customSnapshotSerializer);
 
