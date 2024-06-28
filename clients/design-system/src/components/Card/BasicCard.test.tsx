@@ -50,7 +50,7 @@ describe('BasicCard', () => {
   it.each([
     CardRibbonColor.PRIMARY,
     CardRibbonColor.SECONDARY,
-    CardRibbonColor.TERIARY
+    CardRibbonColor.TERTIARY
   ])('renders with correct ribbon color %s', (ribbonColor: CardRibbonColor) => {
     render(
       <BasicCard

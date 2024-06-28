@@ -20,6 +20,7 @@ $card-radius: 2.25rem;
 .card {
   border-radius: $card-radius !important;
   transition: box-shadow 0.5s ease;
+  box-shadow: rgba($color-off-black, 0.12) 0px 0px 0px 1px, rgba($color-off-black, 0.42) 1px 1px 3px 0px !important;
 
   .card-thumbnail {
     position: relative;
@@ -52,7 +53,7 @@ $card-radius: 2.25rem;
       line-height: 36px;
       text-align: center;
       text-transform: uppercase;
-      box-shadow: 0.7rem 0.7rem 0.75rem rgb(0, 0, 0, 0.2);
+      box-shadow: 0.7rem 0.7rem 0.75rem rgb(0, 0, 0, 0.2) !important;
 
       &::after {
         content: '';
@@ -103,7 +104,7 @@ $card-radius: 2.25rem;
   }
 
   .card-title {
-    color: $color-primary;
+    color: $color-off-black;
     font-weight: bold;
     font-size: 1.3rem;
     font-family: $font-family-sans-serif;
@@ -136,7 +137,7 @@ $card-radius: 2.25rem;
   }
 
   &:hover {
-    box-shadow: 0 0 1rem rgb(0, 0, 0, 0.3);
+    box-shadow: 0 0 1rem rgb(0, 0, 0, 0.3) !important;
 
     .card-ribbon-text {
       background: linear-gradient(90deg, #eee, #ddd, #fff);

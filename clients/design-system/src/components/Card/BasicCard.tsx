@@ -34,7 +34,7 @@ export const BasicCard = (props: BasicCardProps): JSX.Element => {
   if(ribbonColor) {
     ribbonClasses.push(`card-ribbon-${ribbonColor}`);
   } else {
-    ribbonClasses.push(`card-ribbon-${CardRibbonColor.TERIARY}`);
+    ribbonClasses.push(`card-ribbon-${CardRibbonColor.TERTIARY}`);
   }
 
   return (
