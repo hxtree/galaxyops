@@ -4,7 +4,7 @@ import * as path from 'path';
 export function copyRecursiveSync(source: string, target: string) {
   const files = fs.readdirSync(source);
 
-  files.forEach(file => {
+  files.forEach((file) => {
     const currentSource = path.join(source, file);
     const currentTarget = path.join(target, file);
 

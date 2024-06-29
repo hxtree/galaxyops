@@ -40,7 +40,7 @@ export function processDotEnvFile(
 ): void {
   const envFile: string = file.replace('.env.dist', '.env');
   fs.copyFileSync(file, envFile);
-  let content: string = fs.readFileSync(envFile, 'utf8');
+  const content: string = fs.readFileSync(envFile, 'utf8');
   const findAndReplace = createFindReplaceMappings(envConfig);
   const newContent = replaceLinesInFile(content, findAndReplace);
   fs.writeFileSync(envFile, newContent);
@@ -58,5 +58,5 @@ export function processDotEnvFiles(
   envFiles: string[],
   envConfig: EnvironmentConfig,
 ): void {
-  envFiles.forEach(file => processDotEnvFile(file, envConfig));
+  envFiles.forEach((file) => processDotEnvFile(file, envConfig));
 }

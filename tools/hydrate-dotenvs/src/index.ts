@@ -1,7 +1,7 @@
 import { Command } from 'commander';
+import path from 'path';
 import { findFiles, processDotEnvFiles } from './hydrate-bin';
 import { envConfig } from './env-config';
-import path from 'path';
 
 const program = new Command();
 

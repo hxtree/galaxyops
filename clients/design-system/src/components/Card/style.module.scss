@@ -20,7 +20,7 @@ $card-radius: 2.25rem;
 .card {
   border-radius: $card-radius !important;
   transition: box-shadow 0.5s ease;
-  box-shadow: rgba($color-off-black, 0.12) 0px 0px 0px 1px, rgba($color-off-black, 0.42) 1px 1px 3px 0px !important;
+  box-shadow: rgba($color-off-black, 0.12) 0 0 0 1px, rgba($color-off-black, 0.42) 1px 1px 3px 0 !important;
 
   .card-thumbnail {
     position: relative;

@@ -9,7 +9,7 @@ export function findFilesRecursively(
 
   const files = fs.readdirSync(directory);
 
-  files.forEach(file => {
+  files.forEach((file) => {
     const filePath = path.join(directory, file);
     const fileStat = fs.statSync(filePath);
 

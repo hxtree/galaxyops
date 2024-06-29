@@ -42,7 +42,7 @@ function main() {
         // Find latest cache file
         const cacheFiles = fs
           .readdirSync(cliCacheDir)
-          .filter(file => file.startsWith('sso-'));
+          .filter((file) => file.startsWith('sso-'));
 
         if (cacheFiles.length === 0) {
           console.error('No AWS CLI cache files found.');
