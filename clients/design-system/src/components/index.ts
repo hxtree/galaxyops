@@ -33,3 +33,4 @@ export * from './Tabs/Tabs.type';
 export * from './Gradient/Gradient';
 export * from './Gradient/GradientVariant.enum';
 export * from './Article/Article';
+export * from './Spacer/Spacer';

@@ -18,5 +18,6 @@
     }
   },
   "defaultBase": "main",
+  "defaultProject": "admin-client",
   "plugins": ["nx/plugins/package-json"]
 }
