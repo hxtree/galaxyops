@@ -16,7 +16,7 @@ export default function HomePage() {
       <Hero
         image="/assets/clouds.jpg"
         heading="Explore the new<br/> GM tools"
-        lead="We've made new toys for us."
+        lead="We've got new dev toys."
         imageRight="/assets/shield-sword.png"
         toolbar={<Login />}
       ></Hero>
