@@ -1,3 +1,4 @@
+import { CardRibbonColor } from '@cats-cradle/design-system';
 import {
   Login,
   Hero,
@@ -57,7 +58,7 @@ export default function HomePage() {
                 <BasicCard
                   title="Dice Notation Analyzer"
                   ribbonText="Roll with it!"
-                  ribbonColor="primary"
+                  ribbonColor={CardRibbonColor.PRIMARY}
                   imageSrc="/assets/cards/meeku-oni.png"
                   url="/dice-analyzer"
                   cta="Roll The Dice"
