@@ -1,5 +1,5 @@
-import { CardRibbonColor } from '@cats-cradle/design-system';
 import {
+  CardRibbonColor,
   Login,
   Hero,
   Paper,
