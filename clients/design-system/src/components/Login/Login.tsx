@@ -1,9 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button';
-
-export enum LoginVariant {
-  'DEFAULT' = 'DEFAULT',
-}
+import { LoginVariant } from './LoginVariant.type';
 
 export type LoginProps = {
   variant?: LoginVariant;

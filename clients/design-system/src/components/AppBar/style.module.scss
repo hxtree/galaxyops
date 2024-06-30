@@ -15,10 +15,12 @@
 }
 
 .app-bar {
-  background-color: $color-dark-blue;
   padding: 0;
+  background-color: $color-dark-blue;
+
   & .navbar {
     background-image: none !important;
+
     & .navbar-brand {
       color: $color-off-white !important;
       font-weight: bold;
@@ -67,10 +69,6 @@
       }
     }
   }
-}
-
-.app-bar-dark {
-  background-color: $color-gray !important;
 }
 
 }

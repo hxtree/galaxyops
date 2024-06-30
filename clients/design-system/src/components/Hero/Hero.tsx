@@ -37,7 +37,7 @@ export const Hero = (props: HeroProps) => {
       <div className={containerClasses}>
         <div className={classNames.join(' ')}>
           <div
-            className="backgroundFacet"
+            className="background-facet"
             style={{ backgroundImage: `url(${image})` }}
           ></div>
           <div className="px-sm-1 px-md-3 px-lg-5 pt-sm-1 pt-md-3 pt-lg-5 pb-0">
