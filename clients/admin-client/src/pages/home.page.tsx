@@ -1,4 +1,4 @@
-import { Hero, Paper, BasicCard, BlurbPair, faCheck, faGithub, BlurbIconColors } from '@cats-cradle/design-system/dist/main';
+import { Login, Hero, Paper, BasicCard, BlurbPair, faCheck, faGithub, BlurbIconColors } from '@cats-cradle/design-system/dist/main';
 
 export default function HomePage() {
   return (
@@ -7,17 +7,19 @@ export default function HomePage() {
         image="/assets/clouds.jpg"
         heading="Attention,<br/> Game Masters!"
         lead="Introducing our latest tool designed exclusively for you."
+        imageRight='/assets/shield-sword.png'
+        toolbar={<Login/>}
       >
       </Hero>
       <div className='m-5'>
         <BlurbPair
           iconLeft={faCheck}
-          iconColorLeft={BlurbIconColors.GREEN}
+          iconColorLeft={BlurbIconColors.ORANGE}
           textLeft="Our team enthusiastically invites contributors to join us in enhancing our project. We value collaboration and welcome pull requests from developers of all backgrounds. Together, we can build something remarkable."
           linkLeft="https://github.com/hxtree/cats-cradle"
           ctaLeft="Open A PR"
           iconRight={faGithub}
-          iconColorRight={BlurbIconColors.PURPLE}
+          iconColorRight={BlurbIconColors.ORANGE}
           textRight='We have a lot of new features underway.'
           linkRight="https://github.com/hxtree/cats-cradle/issues"
           ctaRight="Learn More"
@@ -50,7 +52,7 @@ export default function HomePage() {
         url="/dice-analyzer"
         cta='Roll The Dice'
       >
-        NekosGate Dice Notation Analyzer allows engineers to decide approperiate values for skills.
+        NekosGate Dice Notation Analyzer allows engineers to decide appropriate values for skills.
       </BasicCard>
     </div>
     <div className="col mb-3">

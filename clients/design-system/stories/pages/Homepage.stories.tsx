@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import {BlurbIconColors, Paper, AppBar, faArrowRight, Button, Typography, Alert, PageFooter, Link, faAddressCard, faGithub, FontAwesomeIcon, BlurbPair, AlertSeverity, Hero } from '../../src/main';
+import {Login, BlurbIconColors, Paper, AppBar, faArrowRight, Button, Typography, Alert, PageFooter, Link, faAddressCard, faGithub, FontAwesomeIcon, BlurbPair, AlertSeverity, Hero } from '../../src/main';
 
 type NavMenuItem = {
   link: string;
@@ -33,19 +33,20 @@ export const Default = () => (
           ))}
         </ul>
       </AppBar>
+
+
+      <Alert severity={AlertSeverity.INFO}>
+          Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
+        </Alert>
+
       <div className='container'>
         <Hero pageTier={1}
           heading={'Et malesuada fames ac turpis.'}
           lead={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula metus quis sagittis malesuada. Nulla facilisi. Duis feugiat tellus eu justo hendrerit, nec congue odio congue.'}
-          image={'https://placehold.co/600x400'}
+          image={'/bg-pale-orange.jpg'}
           imageRight={'/hxtree.png'}
-          toolbar={<>Hello World</>}
+          toolbar={<Login/>}
         />
-
-        <Alert severity={AlertSeverity.INFO}>
-          Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
-        </Alert>
-
         <BlurbPair
           iconLeft={faAddressCard}
           iconColorLeft={BlurbIconColors.ORANGE}
@@ -53,7 +54,7 @@ export const Default = () => (
           linkLeft='https://www.google.com'
           ctaLeft='Learn More'
           iconRight={faGithub}
-          iconColorRight={BlurbIconColors.BLUE}
+          iconColorRight={BlurbIconColors.ORANGE}
           textRight='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vehicula ipsum a arcu cursus vitae congue mauris.'
           linkRight='https://www.google.com'
           ctaRight='Get There Sooner'
@@ -71,11 +72,11 @@ export const Default = () => (
           <Typography variant="body">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat est velit egestas dui id ornare arcu. Leo vel orci porta non pulvinar neque laoreet suspendisse interdum. Consectetur libero id faucibus nisl. Metus aliquam eleifend mi in nulla. Sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis. In hac habitasse platea dictumst quisque sagittis purus. Dictumst quisque sagittis purus sit amet. Amet dictum sit amet justo donec enim diam vulputate ut. Commodo ullamcorper a lacus vestibulum sed. At varius vel pharetra vel turpis. Cras ornare arcu dui vivamus arcu felis bibendum. Vitae proin sagittis nisl rhoncus mattis. Condimentum id venenatis a condimentum <Link href="/">vitae sapien</Link>. Integer vitae justo eget magna fermentum.
           </Typography>
-          <Button href="/example" color="secondary">
-            Congue nisi
-          </Button>
           <Button href="/example" color="primary">
             Tincidunt arcu <FontAwesomeIcon icon={faArrowRight}/>
+          </Button>
+          <Button href="/example" color="secondary">
+            Congue nisi
           </Button>
         </Paper>
       </div>

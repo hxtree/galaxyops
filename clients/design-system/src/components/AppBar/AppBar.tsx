@@ -15,11 +15,13 @@ export type AppBarProps = {
 }
 
 export const AppBar = (props: AppBarProps) => {
-  const { topRightSlot, children, siteTitle } = props;
+  const { topRightSlot, children, siteTitle, theme } = props;
+
+  const themeSelected = theme || 'dark';
 
   return (
     <div className="app-bar">
-      <nav className={`navbar navbar-expand-lg navbar-light`}>
+      <nav className={`navbar navbar-expand-lg navbar-${themeSelected}`}>
         <div className="container">
 
          <button className="navbar-toggler" type="button"
@@ -27,7 +29,7 @@ export const AppBar = (props: AppBarProps) => {
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a className="navbar-brand font-serif" href="/">{siteTitle || 'Your Brand'}</a>
+          <a className="navbar-brand font-game" href="/">{siteTitle || 'Your Brand'}</a>
           <div className="d-none d-sm-block">
           {topRightSlot}
           </div>

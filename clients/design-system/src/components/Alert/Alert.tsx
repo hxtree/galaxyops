@@ -30,7 +30,7 @@ export const Alert = (props: AlertProps) => {
 
   return (
     <>
-      <div className={`alert alert-${severity} d-flex align-items-center mt-5 mb-5`} role="alert" data-testid={testId ? `${testId}-severity` : null}>
+      <div className={`alert alert-${severity} d-flex align-items-center`} role="alert" data-testid={testId ? `${testId}-severity` : null}>
         <svg className="bi flex-shrink-0 me-2" viewBox="0 0 16 16" fill="currentColor" width="24" height="24" role="img">
           { symbol }
         </svg>

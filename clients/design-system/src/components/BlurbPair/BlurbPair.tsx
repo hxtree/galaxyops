@@ -35,18 +35,26 @@ export const BlurbPair = (props: BlurbPairProps) => {
     <div className={`blurb container`}>
       <div className={`row gx-5`}>
         <div className="blurb-pair-left col-12 col-md-6 border-end border-1 p-5 text-left">
-          <FontAwesomeIcon icon={iconLeft} size={'6x'} className={iconLeftColorClass}/>
+          <div className="text-center">
+            <FontAwesomeIcon icon={iconLeft} size={'6x'} className={iconLeftColorClass}/>
+          </div>
           <p className="lead mt-4">
             {textLeft}
           </p>
+          <div className="text-center">
           {linkLeft && ctaLeft && <Button color="secondary" href={linkLeft}>{ctaLeft}</Button>}
+          </div>
         </div>
         <div className="blurb-pair-right col-12 col-md-6 border-start border-1 p-5 text-left">
-          <FontAwesomeIcon icon={iconRight} size={'6x'} className={iconRightColorClass}/>
+          <div className="text-center">
+            <FontAwesomeIcon icon={iconRight} size={'6x'} className={iconRightColorClass}/>
+          </div>
           <p className="lead mt-4">
             {textRight}
           </p>
+          <div className="text-center">
           {linkRight && ctaRight && <Button color="secondary" href={linkRight}>{ctaRight}</Button>}
+          </div>
         </div>
       </div>
     </div>

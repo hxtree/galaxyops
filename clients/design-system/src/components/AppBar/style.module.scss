@@ -10,31 +10,33 @@
   }
 
   100% {
-    box-shadow: inset 0 -3px 0 $color-blue;
+    box-shadow: inset 0 -3px 0 $color-yellow;
   }
 }
 
 .app-bar {
-  background-color: $color-white;
-
-  .navbar-menu {
-    box-shadow: rgb(0, 0, 0, 0.12) 0 4px 30px 0;
+  background-color: $color-dark-blue;
+  padding: 0;
+  & .navbar {
+    background-image: none !important;
+    & .navbar-brand {
+      color: $color-orange !important;
+      font-weight: bold;
+      font-size: 3rem !important;
+      letter-spacing: 0.2rem;
+    }
   }
 
-  .navbar-brand {
-    color: $color-gray !important;
-    font-weight: bold;
-    font-size: 2rem !important;
-    letter-spacing: 0.1rem;
-  }
+.app-bar-dark {
+  background-color: $color-medium-blue; // rgb(255, 253, 251);
 }
 
 .app-bar-light {
-  padding: 0;
-  background-color: rgb(255, 253, 251);
-  box-shadow:
-    rgb(0, 0, 0, 0.12) 0 0 2px 0,
-    rgb(0, 0, 0, 0.14) 0 1.008px 2px 0;
+  background-color: $color-medium-blue; // rgb(255, 253, 251);
+  // background-color: $color-off-white; // rgb(255, 253, 251);
+  // box-shadow:
+  //   rgb(0, 0, 0, 0.12) 0 0 2px 0,
+  //   rgb(0, 0, 0, 0.14) 0 1.008px 2px 0;
 
   ul {
     margin: 0;
@@ -48,19 +50,19 @@
         display: inline-block;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        color: $color-blue;
+        color: $color-off-white;
         text-decoration: none;
 
         &:hover {
-          color: $color-blue;
+          color: $color-yellow;
           transition: border-color 0.5s ease;
           animation: pulsate 0.5s ease-in-out forwards;
-          box-shadow: inset 0 -4px 0 rgb(0, 123, 255, 0.5);
+          box-shadow: inset 0 -4px 0 $color-yellow;
         }
 
         &.active {
-          box-shadow: inset 0 -4px 0 rgb(0, 123, 255, 0.5);
-          color: $color-blue;
+          box-shadow: inset 0 -4px 0 $color-yellow;
+          color: $color-yellow;
         }
       }
     }
@@ -69,4 +71,6 @@
 
 .app-bar-dark {
   background-color: $color-gray !important;
+}
+
 }

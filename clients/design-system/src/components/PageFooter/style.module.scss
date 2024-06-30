@@ -4,8 +4,8 @@
   .page-footer {
     margin: 0;
     padding: 3rem;
-    background-color: $color-black;
-    color: $color-gray;
+    background-color: $color-dark-blue;
+    color: $color-off-white;
 
     a {
       padding: 0.2rem;
@@ -22,7 +22,7 @@
     hr {
       margin-top: 3rem;
       margin-bottom: 3rem;
-      border: 3px solid $color-sky-blue;
+      border: 3px solid $color-gray;
       opacity: 0.3;
     }
   }

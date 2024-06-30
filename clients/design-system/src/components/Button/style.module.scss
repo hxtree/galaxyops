@@ -34,9 +34,9 @@
     }
 
     &.button-primary {
-      border: 3px solid $color-primary;
-      background-color: $color-primary;
-      color: $color-white;
+      border: 3px solid darken($color-yellow, 10%);
+      background-color: $color-yellow;
+      color: $color-off-black;
 
       &:focus,
       &.button-selected {
@@ -53,23 +53,23 @@
 
       > svg {
         margin-left: 0.3rem;
-        color: lighten($color-primary, 15%);
+        color: lighten($color-off-black, 15%);
       }
 
       &:hover {
-        border-color: lighten($color-primary, 10%);
-        background-color: lighten($color-primary, 10%);
+        border-color: darken($color-yellow-active, 10%);
+        background-color: $color-yellow-active;
 
         > svg {
-          color: $color-primary;
+          color: $color-off-black;
         }
       }
     }
 
     &.button-secondary {
-      border: 3px solid $color-primary;
-      background-color: transparent;
-      color: $color-primary;
+      border: 3px solid $color-off-black;
+      background-color: $color-white; //transparent;
+      color: $color-off-black;
 
       &:focus,
       &.button-selected {
