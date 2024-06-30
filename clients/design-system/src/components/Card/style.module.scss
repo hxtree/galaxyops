@@ -36,7 +36,8 @@ $card-radius: 2.25rem;
         height: 180px;
         background-color: $color-gray !important;
         background-repeat: no-repeat !important;
-        background-position: center !important;
+        background-position-y: top !important;
+        background-position-x: center !important;
         background-size: cover !important;
         transition:
           transform 1s ease,

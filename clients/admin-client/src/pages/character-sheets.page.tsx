@@ -5,14 +5,14 @@ export default function CharacterSheetsPage() {
   return (
     <>
       <HeroBanner
-          image='/assets/data-center.jpg'
-          background='/assets/clouds.jpg'
-        breadcrumb={<BreadCrumbs/>}
-        heading='Character Sheets'
-        lead='Review characters per instance'>
-      </HeroBanner>
+        image="/assets/data-center.jpg"
+        background="/assets/topic-hero/malace-tsia.jpg"
+        breadcrumb={<BreadCrumbs />}
+        heading="Character Sheets"
+        lead="Review characters per instance"
+      ></HeroBanner>
       <main className="container">
-        <Paper elevation="1" className='p-5'>
+        <Paper elevation="1" className="p-5">
           Coming soon.
         </Paper>
       </main>

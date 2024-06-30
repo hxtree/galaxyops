@@ -26,15 +26,15 @@ $hero-banner-height: 300px;
     height: 100%;
     background: linear-gradient(
       90deg,
-      rgb(128, 80, 237, 0.9) 0%,
-      rgb(128, 80, 237, 0.9) 28%,
-      rgb(0, 141, 184, 0.5) 100%
+      rgba($color-off-white, 0.9) 0%,
+      rgba($color-off-white, 0.9) 28%,
+      rgba($color-gray, 0.5) 100%
     );
     clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0% 50%);
   }
 
   .hero-text-wrapper {
-    background-color: $color-dark-blue;
+    background-color: $color-medium-blue;
 
     h1 {
       font-weight: bold;

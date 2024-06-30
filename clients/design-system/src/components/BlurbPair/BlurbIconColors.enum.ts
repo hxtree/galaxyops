@@ -3,4 +3,5 @@ export enum BlurbIconColors {
   ORANGE = 'orange',
   GREEN = 'green',
   PURPLE = 'purple',
+  GRAY = 'gray',
 }
