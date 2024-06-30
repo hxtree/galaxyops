@@ -81,6 +81,8 @@ the IaaS.
    clients in that order.
 
    ```bash
+    aws configure sso
+    export AWS_PROFILE=DeveloperSandbox
     pnpm nx run aws-sso:start DeveloperSandbox
     pnpm nx run-many -t cdk:bootstrap --all
     pnpm nx run-many -t cdk:deploy --projects=tag:scope:platform
