@@ -27,7 +27,7 @@ export default function ArchetypePage() {
         </p>
       </HeroBanner>
       <main className="container">
-        <Spacer bottom="5">
+        <Spacer bottom={5}>
           <Paper elevation="1" className="p-5">
             <ArchetypeSelect />
           </Paper>
