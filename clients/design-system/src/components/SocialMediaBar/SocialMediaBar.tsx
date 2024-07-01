@@ -1,3 +1,4 @@
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { Spacer } from '../Spacer/Spacer';
@@ -14,14 +15,18 @@ export type SocialMediaBarLink = {
 export type SocialMediaBarProps = {
   socialMedias?: SocialMediaBarLink[];
   spacing?: SpacerProps;
+  testId?: string | null;
 };
 
 export const SocialMediaBar = (props: SocialMediaBarProps) => {
-  const { socialMedias, spacing } = props;
+  const { socialMedias, spacing, testId } = props;
 
   return (
-    <Spacer {...spacing}>
-      <div className="social-media-bar">
+    <Spacer {...spacing} testId={testId ? `${testId}-spacer` : null}>
+      <div
+        className="social-media-bar"
+        data-testid={testId ? `${testId}-wrapper` : null}
+      >
         <div className="container">
           <div className="row">
             <div className="col">
@@ -29,14 +34,19 @@ export const SocialMediaBar = (props: SocialMediaBarProps) => {
             </div>
             <div className="social-links col align-middle p-3 text-end">
               {socialMedias &&
-                socialMedias.map((socialMedia: SocialMediaBarLink) => (
-                  <IconButton key={socialMedia.icon.iconName}>
-                    <FontAwesomeIcon
-                      icon={socialMedia.icon}
-                      color="white"
-                      size="xl"
-                    />
-                  </IconButton>
+                socialMedias.map((socialMedia: SocialMediaBarLink, index) => (
+                  <div
+                    key={index}
+                    data-testid={testId ? `${testId}-icon-${index}` : null}
+                  >
+                    <IconButton href={socialMedia.url}>
+                      <FontAwesomeIcon
+                        icon={socialMedia.icon}
+                        color="white"
+                        size="xl"
+                      />
+                    </IconButton>
+                  </div>
                 ))}
             </div>
           </div>

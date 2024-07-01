@@ -9,6 +9,7 @@ export const Spacer: React.FC<SpacerProps> = props => {
     left = 0,
     children,
     className,
+    testId,
   } = props;
 
   // Ensure values are within the range of 0 to 5
@@ -38,5 +39,9 @@ export const Spacer: React.FC<SpacerProps> = props => {
     spacerClasses.push(className);
   }
 
-  return <div className={spacerClasses.join(' ')}>{children}</div>;
+  return (
+    <div className={spacerClasses.join(' ')} data-testid={testId}>
+      {children}
+    </div>
+  );
 };

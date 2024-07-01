@@ -5,4 +5,5 @@ export type SpacerProps = {
   left?: 0 | 1 | 2 | 3 | 4 | 5;
   className?: string;
   children?: React.ReactNode;
+  testId?: string | null;
 };
