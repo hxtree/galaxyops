@@ -1,20 +1,22 @@
 import React from 'react';
-import Spacer from '../Spacer/Spacer';
+import { Spacer } from '../Spacer/Spacer';
 import { DataHighlightsProps } from './DataHighlightsProps';
+import './style.module.scss';
 
 export const DataHighlights: React.FC<DataHighlightsProps> = props => {
   const { data, spacing } = props;
-  const colorClass = 'primary';
 
   return (
-    <Spacer {...spacing}>
-      <div className="container mt-4">
-        <div className="row">
+    <Spacer {...spacing} className="d-none d-md-block">
+      <div className="data-highlights container mt-4">
+        <div className="row gx-5">
           {data.map((item, index) => (
             <div className="col" key={index}>
               <div className="text-center">
-                <h2 className={`text-${colorClass}`}>{item.number}</h2>
-                <p className="text-muted">{item.description}</p>
+                <div className={`data-highlights-quantity`}>{item.number}</div>
+                <div className="data-highlights-description text-muted">
+                  {item.description}
+                </div>
               </div>
             </div>
           ))}

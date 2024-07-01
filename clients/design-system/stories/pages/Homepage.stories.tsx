@@ -18,6 +18,7 @@ import {
   AlertSeverity,
   Hero,
   DataHighlights,
+  Disclaimer,
 } from '../../src/main';
 
 type NavMenuItem = {
@@ -72,6 +73,7 @@ export const Default = () => (
         image={'/bg-pale-orange.jpg'}
         imageRight={'/hxtree.png'}
         toolbar={<Login />}
+        spacing={{ bottom: 4 }}
       />
       <DataHighlights
         data={[
@@ -79,21 +81,9 @@ export const Default = () => (
           { number: '25', description: 'Microservices' },
           { number: '1M', description: 'SLOC' },
         ]}
-        spacing={{ top: 1 }}
+        spacing={{ top: 1, bottom: 4 }}
       />
 
-      <BlurbPair
-        iconLeft={faAddressCard}
-        iconColorLeft={BlurbIconColors.ORANGE}
-        textLeft="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus sit amet est placerat in. At tempor commodo ullamcorper a lacus vestibulum."
-        linkLeft="https://www.google.com"
-        ctaLeft="Learn More"
-        iconRight={faGithub}
-        iconColorRight={BlurbIconColors.ORANGE}
-        textRight="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vehicula ipsum a arcu cursus vitae congue mauris."
-        linkRight="https://www.google.com"
-        ctaRight="Get There Sooner"
-      />
       <Paper elevation="2" className="p-5">
         <Typography variant="h1">Et malesuada fames ac turpis.</Typography>
         <Typography variant="intro">
@@ -136,8 +126,63 @@ export const Default = () => (
           Congue nisi
         </Button>
       </Paper>
+
+      <BlurbPair
+        iconLeft={faAddressCard}
+        iconColorLeft={BlurbIconColors.GRAY}
+        textLeft="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus sit amet est placerat in. At tempor commodo ullamcorper a lacus vestibulum."
+        linkLeft="https://www.google.com"
+        ctaLeft="Learn More"
+        iconRight={faGithub}
+        iconColorRight={BlurbIconColors.GRAY}
+        textRight="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vehicula ipsum a arcu cursus vitae congue mauris."
+        linkRight="https://www.google.com"
+        ctaRight="Get There Sooner"
+        spacing={{ top: 5 }}
+      />
     </div>
 
+    <Disclaimer spacing={{ top: 5 }}>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit
+        quis justo consectetur vehicula. Nullam vel lacus ut magna tincidunt
+        dapibus. Phasellus convallis ligula eu eros consequat, quis malesuada
+        dolor posuere. Vestibulum ante ipsum primis in faucibus orci luctus et
+        ultrices posuere cubilia Curae; Ut a leo ultrices, maximus elit id,
+        vehicula mauris. Vivamus at elit et libero aliquet euismod. Quisque
+        vestibulum tempor ligula, ac pellentesque arcu eleifend non. Cras quis
+        orci et ligula commodo hendrerit. Fusce quis neque quam.
+      </p>
+      <p>
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Morbi eget massa nec velit vestibulum
+        scelerisque vel a velit. Duis nec turpis ut orci fringilla tincidunt.
+        Donec tincidunt purus vel interdum cursus. Ut vel ligula in mi fermentum
+        fringilla ac sit amet justo. Nam tristique erat eget eros maximus, at
+        sagittis libero ullamcorper. Duis non odio mi. Nulla facilisi.
+        Suspendisse lacinia ullamcorper sodales. Fusce eget turpis nisi. Nulla
+        euismod accumsan nisi, vel finibus augue.
+      </p>
+      <p>
+        Aenean eleifend ligula nec quam iaculis, sed ultrices ligula fringilla.
+        Etiam non ligula sit amet neque dapibus lobortis. Sed lobortis ipsum nec
+        justo sollicitudin laoreet. Integer id mauris sit amet eros fringilla
+        iaculis. Nam eu justo nisi. Duis vehicula turpis at erat congue, vel
+        sollicitudin orci sodales. Curabitur a augue sit amet lorem eleifend
+        aliquam sit amet sit amet elit. Phasellus efficitur, lorem vel volutpat
+        ultricies, lacus felis bibendum eros, in laoreet sapien nisl sed tortor.
+      </p>
+      <p>
+        Suspendisse potenti. Proin fringilla tortor a hendrerit facilisis.
+        Nullam ultrices mauris vel nisl egestas lacinia. Sed viverra auctor
+        quam, id cursus nunc pellentesque sed. Proin non turpis at lacus tempor
+        dignissim in sed leo. Nullam efficitur orci dui, eu scelerisque lorem
+        tempus sed. Nullam congue velit auctor, faucibus nulla at, pellentesque
+        risus. Integer posuere ut nisi eu tincidunt. Sed nec sapien quis sem
+        rutrum lobortis. Nullam dignissim ante non tortor feugiat feugiat. Duis
+        vel leo vel orci accumsan suscipit in non quam.
+      </p>
+    </Disclaimer>
     <PageFooter
       siteOwner="Cats Cradle"
       links={[

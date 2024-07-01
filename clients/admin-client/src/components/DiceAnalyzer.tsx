@@ -9,7 +9,7 @@ import {
   TextField,
   Button,
   Paper,
-  AlertSeverity
+  AlertSeverity,
 } from '@cats-cradle/design-system/dist/main';
 import axios from 'axios';
 
@@ -31,7 +31,8 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
 
   const analytics = new Analytics('DiceAnalyzer');
 
-  const parentDomainName = import.meta.env.VITE_PARENT_DOMAIN_NAME ?? 'sandbox.nekosgate.com';
+  const parentDomainName =
+    import.meta.env.VITE_PARENT_DOMAIN_NAME ?? 'sandbox.nekosgate.com';
 
   const clear = async () => {
     setData([]);
@@ -92,67 +93,72 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
   return (
     <>
       {errorMsg && errorMsg?.length > 0 && (
-        <Alert severity={AlertSeverity.DANGER}>
-          {errorMsg}
-        </Alert>
+        <Alert severity={AlertSeverity.DANGER}>{errorMsg}</Alert>
       )}
 
-      <div className='row'>
-        <div className='col-lg-3 col-sm-12'>
-          <Paper elevation="1" className='p-4'>
-          <Grid container spacing={2}>
-            <Grid item>
-              <Stack>
-                <Box component="form">
-                  <TextField
-                    label="Dice Notation"
-                    value={notation}
-                    onChange={(e: any) => setNotation(e.target.value)}
-                    helpBlock="Example 1d6*2+2"
-                    variant="standard"
-                  />
-                  <TextField
-                    label="Iterations"
-                    value={iterations}
-                    onChange={(e: any) => setIterations(Number(e.target.value))}
-                    variant="standard"
-                  />
-                  <TextField
-                    label="Luck"
-                    value={luck}
-                    onChange={(e: any) => setLuck(e.target.value)}
-                    variant="standard"
-                  />
-                </Box>
-              </Stack>
+      <div className="row">
+        <div className="col-lg-3 col-sm-12">
+          <Paper elevation="1" className="p-4">
+            <Grid container spacing={2}>
+              <Grid item>
+                <Stack>
+                  <Box component="form">
+                    <TextField
+                      label="Dice Notation"
+                      value={notation}
+                      onChange={(e: any) => setNotation(e.target.value)}
+                      helpBlock="Example 1d6*2+2"
+                      variant="standard"
+                    />
+                    <TextField
+                      label="Iterations"
+                      value={iterations}
+                      onChange={(e: any) =>
+                        setIterations(Number(e.target.value))
+                      }
+                      variant="standard"
+                    />
+                    <TextField
+                      label="Luck"
+                      value={luck}
+                      onChange={(e: any) => setLuck(e.target.value)}
+                      variant="standard"
+                    />
+                  </Box>
+                </Stack>
+              </Grid>
             </Grid>
-          </Grid>
-          <Button
-            color="primary"
-            loading={isLoading}
-            onClick={() => callApi()}
-            testId={`dice-analyzer-roll`}
-            ref={(ref: any) => analytics.set(ref, 'Roll')}>
-            Roll
-          </Button>
-          <Button
-            color="secondary"
-            onClick={() => clear()}
-            disabled={data.length < 1}
-            testId={`dice-analyzer-clear`}
-            ref={(ref: any) => analytics.set(ref, 'Clear')}>
-            Clear
-          </Button>
-        </Paper>
+            <Button
+              color="primary"
+              loading={isLoading}
+              onClick={() => callApi()}
+              testId={`dice-analyzer-roll`}
+              ref={(ref: any) => analytics.set(ref, 'Roll')}
+            >
+              Roll
+            </Button>
+            <Button
+              color="secondary"
+              onClick={() => clear()}
+              disabled={data.length < 1}
+              testId={`dice-analyzer-clear`}
+              ref={(ref: any) => analytics.set(ref, 'Clear')}
+            >
+              Clear
+            </Button>
+          </Paper>
         </div>
-        <div className='col-lg-9 col-md-12 col-sm-12'>
-            {data.length > 0 && (
+        <div className="col-lg-9 col-md-12 col-sm-12">
+          {data.length > 0 && (
             <div role="figure" aria-labelledby="caption">
               <Chart
                 chartType="LineChart"
                 height="500px"
                 width="100%"
-                data={[['Roll', 'Min', 'Max', 'Total', 'Luck', 'Bonus'], ...data]}
+                data={[
+                  ['Roll', 'Min', 'Max', 'Total', 'Luck', 'Bonus'],
+                  ...data,
+                ]}
                 options={{
                   title: `Average ${average}`,
                   curveType: 'function',

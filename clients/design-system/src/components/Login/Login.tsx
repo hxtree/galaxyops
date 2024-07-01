@@ -40,7 +40,7 @@ export const Login = (props: LoginProps): JSX.Element => {
         />
       </div>
       <div className="col-auto">
-        <Button color="secondary">Login</Button>
+        <Button color="primary">Login</Button>
       </div>
     </form>
   );

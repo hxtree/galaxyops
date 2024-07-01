@@ -11,6 +11,8 @@ interface AppState {
   isLoading?: boolean;
 }
 
+// TODO add footnotes
+
 type Action =
   | { type: Actions.SET_USER; payload: string }
   | { type: Actions.LOGOUT }
@@ -29,12 +31,15 @@ const reducer = (state: AppState, action: Action): AppState => {
   }
 };
 
-const AppContext = createContext<{
-  state: AppState;
-  dispatch: React.Dispatch<Action>;
-} | undefined>(undefined);
+const AppContext = createContext<
+  | {
+      state: AppState;
+      dispatch: React.Dispatch<Action>;
+    }
+  | undefined
+>(undefined);
 
-export const AppProvider: React.FC<{ children: React.ReactNode }> = (props) => {
+export const AppProvider: React.FC<{ children: React.ReactNode }> = props => {
   const { children } = props;
   const [state, dispatch] = useReducer(reducer, { user: null });
 

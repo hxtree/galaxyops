@@ -1,5 +1,6 @@
 $font-family-sans-serif: 'Roboto', sans-serif;
 $font-family-serif: 'Playfair Display', serif;
+$font-family-game: "Jersey 10", sans-serif;
 
 .font-serif {
   font-family: $font-family-serif;
@@ -12,5 +13,5 @@ $font-family-serif: 'Playfair Display', serif;
 .font-game {
   font-style: normal;
   font-weight: 400;
-  font-family: "Jersey 10", sans-serif;
+  font-family: $font-family-game;
 }

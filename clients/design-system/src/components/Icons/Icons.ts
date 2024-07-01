@@ -6,7 +6,6 @@ export {
   faCog,
   faDice,
   faBook,
-  faAddressCard,
   faChevronCircleLeft,
   faChevronCircleRight,
   faBars,
@@ -17,5 +16,7 @@ export {
   faPause,
   faRepeat,
 } from '@fortawesome/free-solid-svg-icons';
+
+export { faAddressCard } from '@fortawesome/free-regular-svg-icons';
 
 export { faGithub } from '@fortawesome/free-brands-svg-icons';

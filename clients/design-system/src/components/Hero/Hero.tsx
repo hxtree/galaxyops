@@ -1,17 +1,8 @@
 import React from 'react';
-import './style.module.scss';
 import xss from 'xss';
-
-export interface HeroProps {
-  breadcrumb?: React.ReactNode;
-  heading: string;
-  lead: string;
-  image: string; // TODO change to background image
-  imageRight?: string;
-  children?: React.ReactNode;
-  pageTier?: number;
-  toolbar?: React.ReactNode;
-}
+import { Spacer } from '../Spacer/Spacer';
+import { HeroProps } from './HeroProps';
+import './style.module.scss';
 
 export const Hero = (props: HeroProps) => {
   const {
@@ -23,6 +14,7 @@ export const Hero = (props: HeroProps) => {
     lead,
     children,
     pageTier,
+    spacing,
   } = props;
 
   const classNames = ['hero', 'position-relative', 'p-0'];
@@ -33,7 +25,7 @@ export const Hero = (props: HeroProps) => {
   }
 
   return (
-    <>
+    <Spacer {...spacing}>
       <div className={containerClasses}>
         <div className={classNames.join(' ')}>
           <div
@@ -74,6 +66,6 @@ export const Hero = (props: HeroProps) => {
           </div>
         )}
       </div>
-    </>
+    </Spacer>
   );
 };

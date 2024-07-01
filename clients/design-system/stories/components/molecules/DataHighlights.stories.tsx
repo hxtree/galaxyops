@@ -11,9 +11,9 @@ export const Default = args => <DataHighlights {...args} />;
 
 Default.args = {
   data: [
-    { number: '1K', description: 'Commits' },
-    { number: '25', description: 'Microservices' },
-    { number: '1M', description: 'SLOC' },
+    { number: '1K+', description: 'Commits' },
+    { number: '25+', description: 'Microservices' },
+    { number: '1M+', description: 'SLOC' },
   ],
   spacing: { top: 1 },
 } as DataHighlightsProps;

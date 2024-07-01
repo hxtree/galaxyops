@@ -37,3 +37,5 @@ export * from './Spacer/Spacer';
 export * from './Login/Login';
 export * from './DataHighlights/DataHighlights';
 export * from './DataHighlights/DataHighlightsProps';
+export * from './Disclaimer/Disclaimer';
+export * from './Disclaimer/DisclaimerProps';
