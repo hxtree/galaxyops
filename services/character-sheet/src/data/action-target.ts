@@ -1,6 +1,6 @@
 /**
  * Enum representing possible targets for actions.
- * These area related to costs to peform an action but the impacts of the action
+ * These area related to costs to perform an action but the impacts of the action
  */
 export enum ActionTarget {
   // An ally of the player

@@ -3,16 +3,20 @@ import './style.module.scss';
 import { AlertSeverity } from './AlertSeverity.type';
 import { Spacer } from '../Spacer/Spacer';
 import { SpacerProps } from '../Spacer/SpacerProps.type';
+import { Analytics } from '../../utils';
 
 export type AlertProps = {
   children: React.ReactNode;
   severity: AlertSeverity;
-  testId?: string;
+  analyticId?: string;
   spacing?: SpacerProps;
+  testId?: string;
 };
 
 export const Alert = (props: AlertProps) => {
-  const { severity, children, spacing, testId } = props;
+  const { severity, children, spacing, analyticId, testId } = props;
+
+  const analytics = new Analytics(analyticId);
 
   let symbol: React.ReactNode;
 
@@ -44,6 +48,7 @@ export const Alert = (props: AlertProps) => {
       <div
         className={`alert alert-${severity} d-flex align-items-center`}
         role="alert"
+        {...analytics.props('Alert')}
         data-testid={testId ? `${testId}-severity` : null}
       >
         <svg

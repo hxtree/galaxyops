@@ -73,7 +73,7 @@ export namespace Item {
 
   export const RICE_BALL: BaseType = {
     name: 'Rice Ball',
-    description: 'Made of condensed rice',
+    description: 'Onigiri made from condensed rice',
     capacity: 99,
     craftingMaterials: [
       { item: 'RICE', quantity: 1 },

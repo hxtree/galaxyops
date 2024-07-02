@@ -39,3 +39,4 @@ export * from './DataHighlights/DataHighlights';
 export * from './DataHighlights/DataHighlightsProps';
 export * from './Disclaimer/Disclaimer';
 export * from './Disclaimer/DisclaimerProps';
+export * from './ActionMenu/ActionMenu';

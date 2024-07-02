@@ -5,7 +5,7 @@ import { EffectTag } from './tag.effect';
 import { Attribute } from './attribute';
 
 /**
- * What must be paid ahead of time to peform the action
+ * What must be paid ahead of time to perform the action
  */
 export enum ActionCostTarget {
   // The cost of the action is paid by the performer
@@ -20,7 +20,7 @@ export enum ActionCostTarget {
 
 export type ActionCostInventory = {
   remove: ItemId; // TODO what about stealable items?
-  quanity: number;
+  quantity: number;
 };
 
 export type ActionCostStatusEffect = {
