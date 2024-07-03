@@ -40,6 +40,7 @@ export namespace Basic {
     cost?: EffectRecord[];
 
     menuSlot: MenuSlot;
+    menuName: string;
   };
 
   export const BOAST: Type = {
@@ -48,6 +49,7 @@ export namespace Basic {
     effect: [],
     cost: [{ remove: Attribute.SPIRIT, quantity: '1d6+10' }],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const DISGUISE: Type = {
@@ -55,6 +57,7 @@ export namespace Basic {
     description: 'Changes appearance and disables command menu until canceled.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const DISMISS: Type = {
@@ -62,6 +65,7 @@ export namespace Basic {
     description: 'Release a summon.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const FOCUS: Type = {
@@ -70,6 +74,7 @@ export namespace Basic {
     effect: [],
     cost: [{ remove: Attribute.SPIRIT, quantity: '1d6+10' }],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const GRAPPLE: Type = {
@@ -78,6 +83,7 @@ export namespace Basic {
     effect: [],
     cost: [{ remove: Attribute.SPIRIT, quantity: '1d6+10' }],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const HIDE: Type = {
@@ -85,6 +91,7 @@ export namespace Basic {
     description: 'Become invisible to enemies.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const SCAN: Type = {
@@ -92,6 +99,7 @@ export namespace Basic {
     description: 'Read enemies stats.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const CHEER: Type = {
@@ -99,6 +107,7 @@ export namespace Basic {
     description: 'Boost targets Spirit by 10% for a duration.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const SUPPORT: Type = {
@@ -106,6 +115,7 @@ export namespace Basic {
     description: 'Provide support to allies.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const HOPE: Type = {
@@ -113,6 +123,7 @@ export namespace Basic {
     description: 'Bestow the most powerful status bonus.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const INSPIRE: Type = {
@@ -120,6 +131,7 @@ export namespace Basic {
     description: "Increase target's Drive gauge.",
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const SCOUT: Type = {
@@ -127,6 +139,7 @@ export namespace Basic {
     description: 'Move ahead of the party to gather information.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const MIMIC: Type = {
@@ -134,6 +147,7 @@ export namespace Basic {
     description: 'Use the last move performed on you against the enemy.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const PICKPOCKET: Type = {
@@ -141,6 +155,7 @@ export namespace Basic {
     description: 'Steal items from enemies.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const SEAL: Type = {
@@ -148,6 +163,7 @@ export namespace Basic {
     description: 'Prevent enemies from approaching.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const LULLABY: Type = {
@@ -155,6 +171,7 @@ export namespace Basic {
     description: 'Reflect enemy moves back at them.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const WARD: Type = {
@@ -163,6 +180,7 @@ export namespace Basic {
     effect: [],
     cost: [{ remove: Attribute.SPIRIT, quantity: '1d20+10' }],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const SACRIFICE: Type = {
@@ -171,6 +189,7 @@ export namespace Basic {
     effect: [],
     cost: [{ remove: Attribute.LIFE, quantity: '1d20+10' }],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const PROTECT: Type = {
@@ -179,6 +198,7 @@ export namespace Basic {
     effect: [],
     cost: [{ remove: Attribute.SPIRIT, quantity: '1d20+10' }],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const MOCK: Type = {
@@ -186,6 +206,7 @@ export namespace Basic {
     description: 'Taunt the enemy, potentially causing them to go berserk.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const SEARCH: Type = {
@@ -193,6 +214,7 @@ export namespace Basic {
     description: 'Scan the nearby area for valuable items.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const STEAL: Type = {
@@ -200,6 +222,7 @@ export namespace Basic {
     description: 'Take items from opponents.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const REFLECT: Type = {
@@ -207,6 +230,7 @@ export namespace Basic {
     description: 'Send enemy moves back at them.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const PROTECTION: Type = {
@@ -214,6 +238,7 @@ export namespace Basic {
     description: 'Create a protective barrier around an ally.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const LIGHT: Type = {
@@ -222,6 +247,7 @@ export namespace Basic {
       'Bind enemies, potentially putting them to sleep and stopping their rage.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 
   export const RAGE: Type = {
@@ -229,5 +255,6 @@ export namespace Basic {
     description: 'Increase power at the cost of wisdom.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Abilities',
   };
 }

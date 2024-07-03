@@ -15,6 +15,7 @@ export namespace Drive {
     description: string;
     conditions?: string;
     menuSlot: MenuSlot;
+    menuName?: string;
     areaOfEffect?: AreaOfEffect.Type;
     actionEffects?: ActionEffects;
   };
@@ -22,7 +23,6 @@ export namespace Drive {
   export const BERSERK: Type = {
     name: 'Berserk',
     description: 'Become completely focused on winning',
-    menuSlot: MenuSlot.THIRD,
     actionEffects: {
       PERFORMER: [
         {
@@ -33,12 +33,13 @@ export namespace Drive {
         },
       ],
     },
+    menuSlot: MenuSlot.THIRD,
+    menuName: 'Drive',
   };
 
   export const TOXIC_THRUST: Type = {
     name: 'Toxic Thrust',
     description: 'Thrusts forward using posion',
-    menuSlot: MenuSlot.THIRD,
     areaOfEffect: AreaOfEffect.LINE_10FT,
     actionEffects: {
       OPPONENT: [
@@ -50,12 +51,13 @@ export namespace Drive {
         },
       ],
     },
+    menuSlot: MenuSlot.THIRD,
+    menuName: 'Drive',
   };
 
   export const AERIAL_ASSUALT: Type = {
     name: 'Aerial Assault',
     description: 'Jump into air and throws boomerang (jump attack)',
-    menuSlot: MenuSlot.THIRD,
     areaOfEffect: AreaOfEffect.LINE_10FT,
     actionEffects: {
       OPPONENT: [
@@ -73,6 +75,8 @@ export namespace Drive {
         },
       ],
     },
+    menuSlot: MenuSlot.THIRD,
+    menuName: 'Drive',
   };
 
   export const ONI: Type = {
@@ -90,6 +94,7 @@ export namespace Drive {
       ],
     },
     menuSlot: MenuSlot.THIRD,
+    menuName: 'Drive',
   };
 
   export const TRUE_ONI: Type = {
@@ -99,5 +104,6 @@ export namespace Drive {
     conditions:
       'Player must have very little life left and max DriveAction in order to perform.',
     menuSlot: MenuSlot.THIRD,
+    menuName: 'Drive',
   };
 }

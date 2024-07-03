@@ -15,6 +15,7 @@ export namespace Summon {
     backstory?: string;
     commands?: string[]; // must be invoked by summoner through Command
     menuSlot: MenuSlot;
+    menuName?: string;
   };
 
   export const VACHEL: Type = {
@@ -28,6 +29,7 @@ export namespace Summon {
       // Can be used with Overdrive combinations
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
   };
 
   export const FELIX: Type = {
@@ -36,6 +38,7 @@ export namespace Summon {
     backstory:
       'Felix is a pet that Loomee adopts. He does not listen well. He likes to nibble on grass slowly.',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
   };
 
   export const HERALDIC_LION: Type = {
@@ -49,6 +52,7 @@ export namespace Summon {
       'Guardant Stance', // guard
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
   };
 
   export const SUMMON: Type = {
@@ -56,6 +60,7 @@ export namespace Summon {
     description: '',
     backstory: '',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
   };
 
   export const DISMISS: Type = {
@@ -63,6 +68,7 @@ export namespace Summon {
     description: '',
     backstory: '',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
   };
 
   export const COMMAND: Type = {
@@ -70,6 +76,7 @@ export namespace Summon {
     description: '',
     backstory: '',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
   };
 
   export const LYRE: Type = {
@@ -78,6 +85,7 @@ export namespace Summon {
       'A giant half Luna moth and lyrebird that Faye can summon at will',
     backstory: '',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
   };
 
   export const SANDY: Type = {
@@ -85,6 +93,7 @@ export namespace Summon {
     description: 'A box turtle',
     backstory: '',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
   };
 
   export const MISCHIEVOUS: Type = {
@@ -92,6 +101,7 @@ export namespace Summon {
     description: 'A black and white cat',
     backstory: 'The Keeper of Law',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
   };
 
   export const SCRIBBLES: Type = {
@@ -99,10 +109,11 @@ export namespace Summon {
     description: 'A flying squirrel',
     backstory: '',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
   };
 
   /**
-   * Summonable Demons primarily inspired by the Lesser Key of Solomon.
+   * Demon Summons primarily inspired by the Lesser Key of Solomon.
    * These are Malace's tattoos.
    */
 
@@ -112,6 +123,7 @@ export namespace Summon {
     backstory: '',
     menuSlot: MenuSlot.SECOND,
     commands: ['Consume', 'Regenerate', 'Ensnare'],
+    menuName: 'Summon',
   };
 
   export const ORIAS: Type = {
@@ -121,6 +133,7 @@ export namespace Summon {
     backstory:
       "He appears in the form of a lion with a serpent's tail, sitting upon a mighty horse.",
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
     commands: ['Roar', 'Summon Legions', 'Prowl'],
   };
 
@@ -130,6 +143,7 @@ export namespace Summon {
     backstory:
       'He appears with three heads: one like a bull, the second like a man, and the third like a ram.',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
     commands: ['Triple Strike', 'Command Legions', 'Infernal Gaze'],
   };
 
@@ -139,6 +153,7 @@ export namespace Summon {
     backstory:
       'He tempts people by suggesting to them ingenious inventions that will make them rich.',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
     commands: ['Inspire Invention', 'Wealth Temptation', 'Creative Insight'],
   };
 
@@ -147,6 +162,7 @@ export namespace Summon {
     description: 'A Marquis of Hell who governs 40 legions of demons.',
     backstory: "He appears as a wolf with a serpent's tail, vomiting flames.",
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
     commands: ['Fiery Roar', 'Summon Legions', 'Inferno Breath'],
   };
 
@@ -156,6 +172,7 @@ export namespace Summon {
     backstory:
       'He appears as a great lion that has the wings of a gryphon, and he speaks hoarsely.',
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Summon',
     commands: ["Lion's Roar", 'Wings of Protection', "Gryphon's Call"],
   };
 }

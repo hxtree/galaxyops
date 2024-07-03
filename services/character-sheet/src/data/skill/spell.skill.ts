@@ -27,6 +27,7 @@ export namespace Spell {
     targets?: number;
     effect?: EffectRecord[];
     menuSlot: MenuSlot;
+    menuName: string;
   };
 
   export const GRAVITY: Type = {
@@ -42,6 +43,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const SHOCK: Type = {
@@ -53,6 +55,7 @@ export namespace Spell {
       { add: 'STUNNED', chance: 0.2, tags: [EffectTag.ELECTRIC] },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const QUAKE: Type = {
@@ -68,6 +71,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const LANDSLIDE: Type = {
@@ -80,6 +84,7 @@ export namespace Spell {
       { add: 'EXILED', chance: 0.3, tags: [EffectTag.EARTH] },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const BLIZZARD: Type = {
@@ -104,6 +109,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const FIREBALL: Type = {
@@ -115,6 +121,7 @@ export namespace Spell {
       { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const INFERNO: Type = {
@@ -126,6 +133,7 @@ export namespace Spell {
       { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const TWISTER: Type = {
@@ -141,6 +149,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const GUST: Type = {
@@ -156,6 +165,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const GALE: Type = {
@@ -171,6 +181,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const CYCLONE: Type = {
@@ -186,6 +197,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const TSUNAMI: Type = {
@@ -201,6 +213,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const AQUA: Type = {
@@ -216,6 +229,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const HEAL: Type = {
@@ -226,13 +240,16 @@ export namespace Spell {
       { add: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
+
   export const REVIVE: Type = {
     name: 'Revive',
     description: 'Restore life to target',
     targets: 1,
     effect: [{ remove: 'LIFELESS', chance: 0.9, tags: [] }],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const CURE: Type = {
@@ -246,6 +263,7 @@ export namespace Spell {
       { remove: 'SILENCE', chance: 1 },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const BARRIER: Type = {
@@ -254,6 +272,7 @@ export namespace Spell {
     targets: 1,
     effect: [{ add: 'BARRIER', chance: 1, tags: [EffectTag.AIR] }],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const BOOM: Type = {
@@ -268,6 +287,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const REFLECT: Type = {
@@ -276,6 +296,7 @@ export namespace Spell {
     targets: 1,
     effect: [{ add: 'REFLECT', chance: 1 }],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const FLARE: Type = {
@@ -295,6 +316,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const METEOR: Type = {
@@ -314,6 +336,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const TELEPATHY: Type = {
@@ -328,6 +351,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const LIGHT: Type = {
@@ -342,6 +366,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const DESOLATE: Type = {
@@ -357,6 +382,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const DARKNESS: Type = {
@@ -371,6 +397,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const STOP: Type = {
@@ -384,6 +411,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const SLOW: Type = {
@@ -397,6 +425,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const HASTE: Type = {
@@ -410,6 +439,7 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const CHILL: Type = {
@@ -417,6 +447,7 @@ export namespace Spell {
     description: '',
     targets: 1,
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const CHARM: Type = {
@@ -424,6 +455,7 @@ export namespace Spell {
     description: '',
     targets: 1,
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const FROST: Type = {
@@ -431,6 +463,7 @@ export namespace Spell {
     description: '',
     targets: 1,
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const ABSORB: Type = {
@@ -438,6 +471,7 @@ export namespace Spell {
     description: '',
     targets: 1,
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const LEECH: Type = {
@@ -445,6 +479,7 @@ export namespace Spell {
     description: '',
     targets: 1,
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 
   export const DRAIN: Type = {
@@ -453,5 +488,6 @@ export namespace Spell {
     targets: 1,
     effect: [],
     menuSlot: MenuSlot.SECOND,
+    menuName: 'Magic',
   };
 }

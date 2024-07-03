@@ -21,6 +21,7 @@ export namespace Weapon {
     description: string;
     effect: EffectTable;
     menuSlot: MenuSlot;
+    menuName: string;
   };
 
   export const BLOCK: Type = {
@@ -28,6 +29,7 @@ export namespace Weapon {
     description: 'Stop incoming attacks.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Attack',
   };
 
   export const PARRY: Type = {
@@ -35,6 +37,7 @@ export namespace Weapon {
     description: 'Ward off incoming attacks with a countermove.',
     effect: [],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Attack',
   };
 
   export const SLASH: Type = {
@@ -48,6 +51,7 @@ export namespace Weapon {
       },
     ],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Attack',
   };
 
   export const STRIKE: Type = {
@@ -61,6 +65,7 @@ export namespace Weapon {
       },
     ],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Attack',
   };
 
   export const STAB: Type = {
@@ -74,6 +79,7 @@ export namespace Weapon {
       },
     ],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Attack',
   };
 
   export const CHOP: Type = {
@@ -87,6 +93,7 @@ export namespace Weapon {
       },
     ],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Attack',
   };
 
   export const CLEAVE: Type = {
@@ -100,6 +107,7 @@ export namespace Weapon {
       },
     ],
     menuSlot: MenuSlot.FIRST,
+    menuName: 'Attack',
   };
 
   // "15","Cleave lv2",,"13",,"13"
