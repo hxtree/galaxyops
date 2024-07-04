@@ -24,7 +24,7 @@ import { GaugeEmbeddable } from './gauge-embeddable.schema';
 import { Archetype, ArchetypeId, ArchetypeIds } from '../data/archetype';
 import { Discipline, DisciplineId } from '../data/discipline';
 import { Equipment, EquipmentType } from '../data/gear';
-import { MenuSlot } from '../data/menu-slot';
+import { MenuSlot, MenuSlotOrder } from '../data/menu-slot';
 import { SkillType } from '../data/skill';
 
 /**
@@ -180,10 +180,18 @@ CharacterSheetSchema.virtual('menu').get(function () {
   });
 
   return {
-    1: skills.filter((skill: SkillType) => skill.menuSlot === MenuSlot.FIRST),
-    2: skills.filter((skill: SkillType) => skill.menuSlot === MenuSlot.SECOND),
-    3: skills.filter((skill: SkillType) => skill.menuSlot === MenuSlot.THIRD),
-    4: skills.filter((skill: SkillType) => skill.menuSlot === MenuSlot.FOURTH),
+    1: skills.filter(
+      (skill: SkillType) => skill.menuSlot.order === MenuSlotOrder.FIRST,
+    ),
+    2: skills.filter(
+      (skill: SkillType) => skill.menuSlot.order === MenuSlotOrder.SECOND,
+    ),
+    3: skills.filter(
+      (skill: SkillType) => skill.menuSlot.order === MenuSlotOrder.THIRD,
+    ),
+    4: skills.filter(
+      (skill: SkillType) => skill.menuSlot.order === MenuSlotOrder.FOURTH,
+    ),
   };
 });
 

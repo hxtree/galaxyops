@@ -6,7 +6,7 @@
  * The more a Player uses them the more powerful they grow.
  */
 
-import { MenuSlot } from '../menu-slot';
+import { MenuSlot, MenuSlotType } from '../menu-slot';
 
 export namespace Summon {
   export type Type = {
@@ -14,8 +14,7 @@ export namespace Summon {
     description: string;
     backstory?: string;
     commands?: string[]; // must be invoked by summoner through Command
-    menuSlot: MenuSlot;
-    menuName?: string;
+    menuSlot: MenuSlotType;
   };
 
   export const VACHEL: Type = {
@@ -28,8 +27,7 @@ export namespace Summon {
       'Pull Cart', // *Can be upgraded with CART to accommodate large Party.
       // Can be used with Overdrive combinations
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const FELIX: Type = {
@@ -37,8 +35,7 @@ export namespace Summon {
     description: 'A white lop-eared dwarf rabbit',
     backstory:
       'Felix is a pet that Loomee adopts. He does not listen well. He likes to nibble on grass slowly.',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const HERALDIC_LION: Type = {
@@ -51,32 +48,28 @@ export namespace Summon {
       'Issuant Stance', // focus
       'Guardant Stance', // guard
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const SUMMON: Type = {
     name: '???',
     description: '',
     backstory: '',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const DISMISS: Type = {
     name: '???',
     description: '',
     backstory: '',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const COMMAND: Type = {
     name: '???',
     description: '',
     backstory: '',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const LYRE: Type = {
@@ -84,32 +77,28 @@ export namespace Summon {
     description:
       'A giant half Luna moth and lyrebird that Faye can summon at will',
     backstory: '',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const SANDY: Type = {
     name: 'Sandy',
     description: 'A box turtle',
     backstory: '',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const MISCHIEVOUS: Type = {
     name: 'Mischievous',
     description: 'A black and white cat',
     backstory: 'The Keeper of Law',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const SCRIBBLES: Type = {
     name: 'Scribble',
     description: 'A flying squirrel',
     backstory: '',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   /**
@@ -121,9 +110,8 @@ export namespace Summon {
     name: 'Ouroboros',
     description: 'A demon that consumes itself.',
     backstory: '',
-    menuSlot: MenuSlot.SECOND,
     commands: ['Consume', 'Regenerate', 'Ensnare'],
-    menuName: 'Summon',
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const ORIAS: Type = {
@@ -132,9 +120,8 @@ export namespace Summon {
       'A Great Marquis of Hell, who rules over 30 legions of demons.',
     backstory:
       "He appears in the form of a lion with a serpent's tail, sitting upon a mighty horse.",
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
     commands: ['Roar', 'Summon Legions', 'Prowl'],
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const ASMODAY: Type = {
@@ -142,9 +129,8 @@ export namespace Summon {
     description: 'A King of Hell with 72 legions of demons under his command.',
     backstory:
       'He appears with three heads: one like a bull, the second like a man, and the third like a ram.',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
     commands: ['Triple Strike', 'Command Legions', 'Infernal Gaze'],
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const BELPHEGOR: Type = {
@@ -152,18 +138,16 @@ export namespace Summon {
     description: 'A demon associated with discoveries and inventions.',
     backstory:
       'He tempts people by suggesting to them ingenious inventions that will make them rich.',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
     commands: ['Inspire Invention', 'Wealth Temptation', 'Creative Insight'],
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const AMON: Type = {
     name: 'Amon',
     description: 'A Marquis of Hell who governs 40 legions of demons.',
     backstory: "He appears as a wolf with a serpent's tail, vomiting flames.",
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
     commands: ['Fiery Roar', 'Summon Legions', 'Inferno Breath'],
+    menuSlot: MenuSlot.SUMMON,
   };
 
   export const BARBATOS: Type = {
@@ -171,8 +155,7 @@ export namespace Summon {
     description: 'A Duke of Hell who has power over 30 legions of demons.',
     backstory:
       'He appears as a great lion that has the wings of a gryphon, and he speaks hoarsely.',
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Summon',
     commands: ["Lion's Roar", 'Wings of Protection', "Gryphon's Call"],
+    menuSlot: MenuSlot.SUMMON,
   };
 }

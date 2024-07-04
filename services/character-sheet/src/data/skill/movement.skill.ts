@@ -1,7 +1,7 @@
 import { Attribute } from '../attribute';
 import { Button, ButtonCombo } from '../buttons';
 import { GameContext } from '../game-context';
-import { MenuSlot } from '../menu-slot';
+import { MenuSlot, MenuSlotType } from '../menu-slot';
 
 /**
  * actions that are exclusively movements
@@ -12,7 +12,7 @@ export namespace Movement {
     description: string;
     consumes?: Attribute; // TODO UOM present but missing quantity and time
     buttonCombos?: ButtonCombo[];
-    menuSlot: MenuSlot;
+    menuSlot: MenuSlotType;
   };
 
   export const WALK: Type = {

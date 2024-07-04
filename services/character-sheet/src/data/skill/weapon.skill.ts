@@ -1,7 +1,7 @@
 import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
 import { EffectTable } from '../table.effect';
-import { MenuSlot } from '../menu-slot';
+import { MenuSlot, MenuSlotType } from '../menu-slot';
 
 /**
  * Weapon Skill
@@ -20,24 +20,21 @@ export namespace Weapon {
     name: string;
     description: string;
     effect: EffectTable;
-    menuSlot: MenuSlot;
-    menuName: string;
+    menuSlot: MenuSlotType;
   };
 
   export const BLOCK: Type = {
     name: 'Block',
     description: 'Stop incoming attacks.',
     effect: [],
-    menuSlot: MenuSlot.FIRST,
-    menuName: 'Attack',
+    menuSlot: MenuSlot.ATTACK,
   };
 
   export const PARRY: Type = {
     name: 'Parry',
     description: 'Ward off incoming attacks with a countermove.',
     effect: [],
-    menuSlot: MenuSlot.FIRST,
-    menuName: 'Attack',
+    menuSlot: MenuSlot.ATTACK,
   };
 
   export const SLASH: Type = {
@@ -50,8 +47,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
-    menuSlot: MenuSlot.FIRST,
-    menuName: 'Attack',
+    menuSlot: MenuSlot.ATTACK,
   };
 
   export const STRIKE: Type = {
@@ -64,8 +60,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
-    menuSlot: MenuSlot.FIRST,
-    menuName: 'Attack',
+    menuSlot: MenuSlot.ATTACK,
   };
 
   export const STAB: Type = {
@@ -78,8 +73,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
-    menuSlot: MenuSlot.FIRST,
-    menuName: 'Attack',
+    menuSlot: MenuSlot.ATTACK,
   };
 
   export const CHOP: Type = {
@@ -92,8 +86,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
-    menuSlot: MenuSlot.FIRST,
-    menuName: 'Attack',
+    menuSlot: MenuSlot.ATTACK,
   };
 
   export const CLEAVE: Type = {
@@ -106,8 +99,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
-    menuSlot: MenuSlot.FIRST,
-    menuName: 'Attack',
+    menuSlot: MenuSlot.ATTACK,
   };
 
   // "15","Cleave lv2",,"13",,"13"

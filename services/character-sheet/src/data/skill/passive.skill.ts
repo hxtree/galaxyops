@@ -1,5 +1,5 @@
 import { Attribute } from '../attribute';
-import { MenuSlot } from '../menu-slot';
+import { MenuSlot, MenuSlotType } from '../menu-slot';
 import { EffectTable } from '../table.effect';
 
 /**
@@ -15,7 +15,7 @@ export namespace Passive {
   export type Type = {
     name: string;
     description: string;
-    menuSlot: MenuSlot;
+    menuSlot: MenuSlotType;
     effect?: EffectTable;
     cost?: null;
   };
@@ -68,7 +68,7 @@ export namespace Passive {
   export const SLOTH_COMPOSURE: Type = {
     name: 'Sloth Composure',
     description: 'Halves damage taken when not actively engaged in actions.',
-    // halfs damage and decreases DRIVE gauge
+    // half damage and decreases DRIVE gauge
     // Acquired by defeating Lawzon.
     menuSlot: MenuSlot.NONE,
   };

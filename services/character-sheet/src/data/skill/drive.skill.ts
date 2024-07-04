@@ -1,7 +1,7 @@
 // category: SkillCategory.DRIVE;
 
 import { Duration } from 'luxon';
-import { MenuSlot } from '../menu-slot';
+import { MenuSlot, MenuSlotType } from '../menu-slot';
 import { ActionEffects } from '../table.effect';
 import { Attribute } from '../attribute';
 import { AreaOfEffect } from '../area-of-effect';
@@ -14,7 +14,7 @@ export namespace Drive {
     name: string;
     description: string;
     conditions?: string;
-    menuSlot: MenuSlot;
+    menuSlot: MenuSlotType;
     menuName?: string;
     areaOfEffect?: AreaOfEffect.Type;
     actionEffects?: ActionEffects;
@@ -33,8 +33,7 @@ export namespace Drive {
         },
       ],
     },
-    menuSlot: MenuSlot.THIRD,
-    menuName: 'Drive',
+    menuSlot: MenuSlot.DRIVE,
   };
 
   export const TOXIC_THRUST: Type = {
@@ -51,11 +50,10 @@ export namespace Drive {
         },
       ],
     },
-    menuSlot: MenuSlot.THIRD,
-    menuName: 'Drive',
+    menuSlot: MenuSlot.DRIVE,
   };
 
-  export const AERIAL_ASSUALT: Type = {
+  export const AERIAL_ASSAULT: Type = {
     name: 'Aerial Assault',
     description: 'Jump into air and throws boomerang (jump attack)',
     areaOfEffect: AreaOfEffect.LINE_10FT,
@@ -75,8 +73,7 @@ export namespace Drive {
         },
       ],
     },
-    menuSlot: MenuSlot.THIRD,
-    menuName: 'Drive',
+    menuSlot: MenuSlot.DRIVE,
   };
 
   export const ONI: Type = {
@@ -93,8 +90,7 @@ export namespace Drive {
         },
       ],
     },
-    menuSlot: MenuSlot.THIRD,
-    menuName: 'Drive',
+    menuSlot: MenuSlot.DRIVE,
   };
 
   export const TRUE_ONI: Type = {
@@ -103,7 +99,6 @@ export namespace Drive {
       If character stays in Oni too long they will go Berserk.`,
     conditions:
       'Player must have very little life left and max DriveAction in order to perform.',
-    menuSlot: MenuSlot.THIRD,
-    menuName: 'Drive',
+    menuSlot: MenuSlot.DRIVE,
   };
 }

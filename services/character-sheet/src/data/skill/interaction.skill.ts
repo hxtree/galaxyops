@@ -1,5 +1,5 @@
-import { MenuSlot } from '../menu-slot';
 import { ActionEffects } from '../table.effect';
+import { MenuSlot, MenuSlotType } from '../menu-slot';
 
 /**
  * Interaction skills are actions that can only be used when a compatible object is present.
@@ -10,7 +10,7 @@ export namespace Interaction {
     name: string;
     description: string;
     target: ObjectCategory;
-    menuSlot: MenuSlot;
+    menuSlot: MenuSlotType;
     actionEffects?: ActionEffects;
   };
 

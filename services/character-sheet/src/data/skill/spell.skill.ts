@@ -1,7 +1,7 @@
 import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
 import { EffectRecord } from '../table.effect';
-import { MenuSlot } from '../menu-slot';
+import { MenuSlot, MenuSlotType } from '../menu-slot';
 
 /**
  * Spells are actions that are casted by magic users.
@@ -26,8 +26,7 @@ export namespace Spell {
     description: string;
     targets?: number;
     effect?: EffectRecord[];
-    menuSlot: MenuSlot;
-    menuName: string;
+    menuSlot: MenuSlotType;
   };
 
   export const GRAVITY: Type = {
@@ -42,8 +41,7 @@ export namespace Spell {
         tags: [EffectTag.PHYSICAL, EffectTag.AERIAL],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const SHOCK: Type = {
@@ -54,8 +52,7 @@ export namespace Spell {
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.ELECTRIC] },
       { add: 'STUNNED', chance: 0.2, tags: [EffectTag.ELECTRIC] },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const QUAKE: Type = {
@@ -70,8 +67,7 @@ export namespace Spell {
         tags: [EffectTag.EARTH, EffectTag.GROUND_LEVEL],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const LANDSLIDE: Type = {
@@ -83,8 +79,7 @@ export namespace Spell {
       { add: 'DOWN', chance: 0.2, tags: [EffectTag.EARTH] },
       { add: 'EXILED', chance: 0.3, tags: [EffectTag.EARTH] },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const BLIZZARD: Type = {
@@ -108,8 +103,7 @@ export namespace Spell {
         tags: [EffectTag.WATER, EffectTag.AIR],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const FIREBALL: Type = {
@@ -120,8 +114,7 @@ export namespace Spell {
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE] },
       { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const INFERNO: Type = {
@@ -132,8 +125,7 @@ export namespace Spell {
       { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE] },
       { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const TWISTER: Type = {
@@ -148,8 +140,7 @@ export namespace Spell {
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const GUST: Type = {
@@ -164,8 +155,7 @@ export namespace Spell {
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const GALE: Type = {
@@ -180,8 +170,7 @@ export namespace Spell {
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const CYCLONE: Type = {
@@ -196,8 +185,7 @@ export namespace Spell {
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const TSUNAMI: Type = {
@@ -212,8 +200,7 @@ export namespace Spell {
         tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const AQUA: Type = {
@@ -228,8 +215,7 @@ export namespace Spell {
         tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const HEAL: Type = {
@@ -239,8 +225,7 @@ export namespace Spell {
     effect: [
       { add: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const REVIVE: Type = {
@@ -248,8 +233,7 @@ export namespace Spell {
     description: 'Restore life to target',
     targets: 1,
     effect: [{ remove: 'LIFELESS', chance: 0.9, tags: [] }],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const CURE: Type = {
@@ -262,8 +246,7 @@ export namespace Spell {
       { remove: 'INFECTION', chance: 1 },
       { remove: 'SILENCE', chance: 1 },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const BARRIER: Type = {
@@ -271,8 +254,7 @@ export namespace Spell {
     description: 'Barrier StatusEffects',
     targets: 1,
     effect: [{ add: 'BARRIER', chance: 1, tags: [EffectTag.AIR] }],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const BOOM: Type = {
@@ -286,8 +268,7 @@ export namespace Spell {
         tags: [EffectTag.FIRE],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const REFLECT: Type = {
@@ -295,8 +276,7 @@ export namespace Spell {
     description: 'Cast Reflect on target',
     targets: 1,
     effect: [{ add: 'REFLECT', chance: 1 }],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const FLARE: Type = {
@@ -315,8 +295,7 @@ export namespace Spell {
         tags: [EffectTag.LIGHT],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const METEOR: Type = {
@@ -335,8 +314,7 @@ export namespace Spell {
         tags: [EffectTag.EARTH],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const TELEPATHY: Type = {
@@ -350,8 +328,7 @@ export namespace Spell {
         tags: [EffectTag.PSYCHIC],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const LIGHT: Type = {
@@ -365,8 +342,7 @@ export namespace Spell {
         tags: [EffectTag.LIGHT],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const DESOLATE: Type = {
@@ -381,8 +357,7 @@ export namespace Spell {
         tags: [EffectTag.DARKNESS],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const DARKNESS: Type = {
@@ -396,8 +371,7 @@ export namespace Spell {
         tags: [EffectTag.DARKNESS],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const STOP: Type = {
@@ -410,8 +384,7 @@ export namespace Spell {
         tags: [EffectTag.TIME],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const SLOW: Type = {
@@ -424,8 +397,7 @@ export namespace Spell {
         tags: [EffectTag.TIME],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const HASTE: Type = {
@@ -438,48 +410,42 @@ export namespace Spell {
         tags: [EffectTag.TIME],
       },
     ],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const CHILL: Type = {
     name: 'Chill',
     description: '',
     targets: 1,
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const CHARM: Type = {
     name: 'Charm',
     description: '',
     targets: 1,
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const FROST: Type = {
     name: 'Frost',
     description: '',
     targets: 1,
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const ABSORB: Type = {
     name: 'Absorb',
     description: '',
     targets: 1,
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const LEECH: Type = {
     name: 'Leech',
     description: '',
     targets: 1,
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 
   export const DRAIN: Type = {
@@ -487,7 +453,6 @@ export namespace Spell {
     description: '',
     targets: 1,
     effect: [],
-    menuSlot: MenuSlot.SECOND,
-    menuName: 'Magic',
+    menuSlot: MenuSlot.MAGIC,
   };
 }
