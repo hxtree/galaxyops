@@ -1,3 +1,6 @@
+import { MenuSlot } from '../menu-slot';
+import { SkillType } from '.';
+
 /**
  * Summons are companions that may be called into play in varying ways to aid party.
  * Summons can only be used with the Command action or through the Interaction Command.
@@ -5,19 +8,8 @@
  * Summons have different levels and stats just like characters.
  * The more a Player uses them the more powerful they grow.
  */
-
-import { MenuSlot, MenuSlotType } from '../menu-slot';
-
 export namespace Summon {
-  export type Type = {
-    name: string;
-    description: string;
-    backstory?: string;
-    commands?: string[]; // must be invoked by summoner through Command
-    menuSlot: MenuSlotType;
-  };
-
-  export const VACHEL: Type = {
+  export const VACHEL: SkillType = {
     name: 'Vachel',
     description: 'A silver bull',
     backstory: 'A bull that Meeku raised as a child',
@@ -30,7 +22,7 @@ export namespace Summon {
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const FELIX: Type = {
+  export const FELIX: SkillType = {
     name: 'Felix',
     description: 'A white lop-eared dwarf rabbit',
     backstory:
@@ -38,7 +30,7 @@ export namespace Summon {
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const HERALDIC_LION: Type = {
+  export const HERALDIC_LION: SkillType = {
     name: 'Heraldic Lion',
     description: 'A regal lion with an impeccable stance',
     commands: [
@@ -51,28 +43,28 @@ export namespace Summon {
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const SUMMON: Type = {
+  export const SUMMON: SkillType = {
     name: '???',
     description: '',
     backstory: '',
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const DISMISS: Type = {
+  export const DISMISS: SkillType = {
     name: '???',
     description: '',
     backstory: '',
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const COMMAND: Type = {
+  export const COMMAND: SkillType = {
     name: '???',
     description: '',
     backstory: '',
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const LYRE: Type = {
+  export const LYRE: SkillType = {
     name: 'Lyre',
     description:
       'A giant half Luna moth and lyrebird that Faye can summon at will',
@@ -80,21 +72,21 @@ export namespace Summon {
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const SANDY: Type = {
+  export const SANDY: SkillType = {
     name: 'Sandy',
     description: 'A box turtle',
     backstory: '',
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const MISCHIEVOUS: Type = {
+  export const MISCHIEVOUS: SkillType = {
     name: 'Mischievous',
     description: 'A black and white cat',
     backstory: 'The Keeper of Law',
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const SCRIBBLES: Type = {
+  export const SCRIBBLES: SkillType = {
     name: 'Scribble',
     description: 'A flying squirrel',
     backstory: '',
@@ -106,7 +98,7 @@ export namespace Summon {
    * These are Malace's tattoos.
    */
 
-  export const OUROBOROS: Type = {
+  export const OUROBOROS: SkillType = {
     name: 'Ouroboros',
     description: 'A demon that consumes itself.',
     backstory: '',
@@ -114,7 +106,7 @@ export namespace Summon {
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const ORIAS: Type = {
+  export const ORIAS: SkillType = {
     name: 'Orias',
     description:
       'A Great Marquis of Hell, who rules over 30 legions of demons.',
@@ -124,7 +116,7 @@ export namespace Summon {
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const ASMODAY: Type = {
+  export const ASMODAY: SkillType = {
     name: 'Asmoday',
     description: 'A King of Hell with 72 legions of demons under his command.',
     backstory:
@@ -133,7 +125,7 @@ export namespace Summon {
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const BELPHEGOR: Type = {
+  export const BELPHEGOR: SkillType = {
     name: 'Belphegor',
     description: 'A demon associated with discoveries and inventions.',
     backstory:
@@ -142,7 +134,7 @@ export namespace Summon {
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const AMON: Type = {
+  export const AMON: SkillType = {
     name: 'Amon',
     description: 'A Marquis of Hell who governs 40 legions of demons.',
     backstory: "He appears as a wolf with a serpent's tail, vomiting flames.",
@@ -150,7 +142,7 @@ export namespace Summon {
     menuSlot: MenuSlot.SUMMON,
   };
 
-  export const BARBATOS: Type = {
+  export const BARBATOS: SkillType = {
     name: 'Barbatos',
     description: 'A Duke of Hell who has power over 30 legions of demons.',
     backstory:

@@ -1,7 +1,8 @@
 import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
 import { EffectRecord } from '../table.effect';
-import { MenuSlot, MenuSlotType } from '../menu-slot';
+import { MenuSlot } from '../menu-slot';
+import { SkillType } from '.';
 
 /**
  * Spells are actions that are casted by magic users.
@@ -21,15 +22,7 @@ import { MenuSlot, MenuSlotType } from '../menu-slot';
 // category: SkillCategory.CLASS,
 
 export namespace Spell {
-  export type Type = {
-    name: string;
-    description: string;
-    targets?: number;
-    effect?: EffectRecord[];
-    menuSlot: MenuSlotType;
-  };
-
-  export const GRAVITY: Type = {
+  export const GRAVITY: SkillType = {
     name: 'Gravity',
     description:
       'Coalesce gravity around target. Causes flying targets to hit ground',
@@ -44,7 +37,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const SHOCK: Type = {
+  export const SHOCK: SkillType = {
     name: 'Shock',
     description: 'Electrocutes target',
     targets: 1,
@@ -55,7 +48,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const QUAKE: Type = {
+  export const QUAKE: SkillType = {
     name: 'Quake',
     description: 'Shakes earth surrounding target',
     targets: 1, // AOE?
@@ -70,7 +63,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const LANDSLIDE: Type = {
+  export const LANDSLIDE: SkillType = {
     name: 'Landslide',
     description: 'Creates a landslide',
     targets: 1,
@@ -82,7 +75,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const BLIZZARD: Type = {
+  export const BLIZZARD: SkillType = {
     name: 'Blizzard',
     description: 'Creates a Blizzard',
     targets: 1,
@@ -106,7 +99,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const FIREBALL: Type = {
+  export const FIREBALL: SkillType = {
     name: 'Fireball',
     description: 'Shoot a fireball at target',
     targets: 1,
@@ -117,7 +110,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const INFERNO: Type = {
+  export const INFERNO: SkillType = {
     name: 'Inferno',
     description: 'Creates a Inferno',
     targets: 1,
@@ -128,7 +121,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const TWISTER: Type = {
+  export const TWISTER: SkillType = {
     name: 'Twister',
     description: 'Creates a Twister',
     targets: 1,
@@ -143,7 +136,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const GUST: Type = {
+  export const GUST: SkillType = {
     name: 'Gust',
     description: 'Creates a Gust',
     targets: 1,
@@ -158,7 +151,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const GALE: Type = {
+  export const GALE: SkillType = {
     name: 'Gale',
     description: 'Creates Gale',
     targets: 1,
@@ -173,7 +166,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const CYCLONE: Type = {
+  export const CYCLONE: SkillType = {
     name: 'Cyclone',
     description: 'Creates Cyclone',
     targets: 1,
@@ -188,7 +181,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const TSUNAMI: Type = {
+  export const TSUNAMI: SkillType = {
     name: 'Tsunami',
     description: 'A water-based attack that creates Tsunami',
     targets: 1,
@@ -203,7 +196,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const AQUA: Type = {
+  export const AQUA: SkillType = {
     name: 'Aqua',
     description: 'Creates Aqua',
     targets: 1,
@@ -218,7 +211,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const HEAL: Type = {
+  export const HEAL: SkillType = {
     name: 'Heal',
     description: 'Heal target',
     targets: 1,
@@ -228,7 +221,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const REVIVE: Type = {
+  export const REVIVE: SkillType = {
     name: 'Revive',
     description: 'Restore life to target',
     targets: 1,
@@ -236,7 +229,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const CURE: Type = {
+  export const CURE: SkillType = {
     name: 'Cure',
     description: 'Cures status effects',
     targets: 1,
@@ -249,7 +242,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const BARRIER: Type = {
+  export const BARRIER: SkillType = {
     name: 'Barrier',
     description: 'Barrier StatusEffects',
     targets: 1,
@@ -257,7 +250,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const BOOM: Type = {
+  export const BOOM: SkillType = {
     name: 'Boom',
     description: 'Cast Boom on target',
     targets: 1,
@@ -271,7 +264,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const REFLECT: Type = {
+  export const REFLECT: SkillType = {
     name: 'Reflect',
     description: 'Cast Reflect on target',
     targets: 1,
@@ -279,7 +272,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const FLARE: Type = {
+  export const FLARE: SkillType = {
     name: 'Flare',
     description: 'Cast Flare on target',
     targets: 1,
@@ -298,7 +291,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const METEOR: Type = {
+  export const METEOR: SkillType = {
     name: 'Meteor',
     description: 'Cast Meteor on target',
     targets: 1,
@@ -317,7 +310,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const TELEPATHY: Type = {
+  export const TELEPATHY: SkillType = {
     name: 'Telepathy',
     description: 'Cast Telepathy on target',
     targets: 1,
@@ -331,7 +324,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const LIGHT: Type = {
+  export const LIGHT: SkillType = {
     name: 'Light',
     description: 'Cast light on target',
     targets: 1,
@@ -345,7 +338,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const DESOLATE: Type = {
+  export const DESOLATE: SkillType = {
     name: 'Desolate',
     description: 'To make an area empty or bare.',
     targets: 1,
@@ -360,7 +353,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const DARKNESS: Type = {
+  export const DARKNESS: SkillType = {
     name: 'Darkness',
     description: 'Decrease the area that your opponent can see',
     targets: 1,
@@ -374,7 +367,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const STOP: Type = {
+  export const STOP: SkillType = {
     name: 'Stop',
     description: 'Freezes a character in time',
     targets: 1,
@@ -387,7 +380,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const SLOW: Type = {
+  export const SLOW: SkillType = {
     name: 'Slow',
     description: 'Slow down an opponent',
     targets: 1,
@@ -400,7 +393,7 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const HASTE: Type = {
+  export const HASTE: SkillType = {
     name: 'Haste',
     description: 'Speed up a character',
     targets: 1, // self
@@ -413,42 +406,42 @@ export namespace Spell {
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const CHILL: Type = {
+  export const CHILL: SkillType = {
     name: 'Chill',
     description: '',
     targets: 1,
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const CHARM: Type = {
+  export const CHARM: SkillType = {
     name: 'Charm',
     description: '',
     targets: 1,
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const FROST: Type = {
+  export const FROST: SkillType = {
     name: 'Frost',
     description: '',
     targets: 1,
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const ABSORB: Type = {
+  export const ABSORB: SkillType = {
     name: 'Absorb',
     description: '',
     targets: 1,
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const LEECH: Type = {
+  export const LEECH: SkillType = {
     name: 'Leech',
     description: '',
     targets: 1,
     menuSlot: MenuSlot.MAGIC,
   };
 
-  export const DRAIN: Type = {
+  export const DRAIN: SkillType = {
     name: 'Drain',
     description: '',
     targets: 1,

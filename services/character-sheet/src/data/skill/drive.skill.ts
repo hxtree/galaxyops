@@ -5,22 +5,13 @@ import { MenuSlot, MenuSlotType } from '../menu-slot';
 import { ActionEffects } from '../table.effect';
 import { Attribute } from '../attribute';
 import { AreaOfEffect } from '../area-of-effect';
+import { SkillType } from '.';
 
 /**
  * Drive Actions are special actions that consume drive gauge
  */
 export namespace Drive {
-  export type Type = {
-    name: string;
-    description: string;
-    conditions?: string;
-    menuSlot: MenuSlotType;
-    menuName?: string;
-    areaOfEffect?: AreaOfEffect.Type;
-    actionEffects?: ActionEffects;
-  };
-
-  export const BERSERK: Type = {
+  export const BERSERK: SkillType = {
     name: 'Berserk',
     description: 'Become completely focused on winning',
     actionEffects: {
@@ -36,7 +27,7 @@ export namespace Drive {
     menuSlot: MenuSlot.DRIVE,
   };
 
-  export const TOXIC_THRUST: Type = {
+  export const TOXIC_THRUST: SkillType = {
     name: 'Toxic Thrust',
     description: 'Thrusts forward using posion',
     areaOfEffect: AreaOfEffect.LINE_10FT,
@@ -53,7 +44,7 @@ export namespace Drive {
     menuSlot: MenuSlot.DRIVE,
   };
 
-  export const AERIAL_ASSAULT: Type = {
+  export const AERIAL_ASSAULT: SkillType = {
     name: 'Aerial Assault',
     description: 'Jump into air and throws boomerang (jump attack)',
     areaOfEffect: AreaOfEffect.LINE_10FT,
@@ -76,7 +67,7 @@ export namespace Drive {
     menuSlot: MenuSlot.DRIVE,
   };
 
-  export const ONI: Type = {
+  export const ONI: SkillType = {
     name: 'Oni',
     description: `Become engulfed in a blood thirsty rage that multiplies your power but drains spirit.
       If character stays in Oni too long they will go Berserk`,
@@ -93,7 +84,7 @@ export namespace Drive {
     menuSlot: MenuSlot.DRIVE,
   };
 
-  export const TRUE_ONI: Type = {
+  export const TRUE_ONI: SkillType = {
     name: 'True Oni',
     description: `Become engulfed in a more powerful blood thirsty rage that multiplies power but drains spirit.
       If character stays in Oni too long they will go Berserk.`,

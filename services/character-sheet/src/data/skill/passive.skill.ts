@@ -1,6 +1,7 @@
 import { Attribute } from '../attribute';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
 import { EffectTable } from '../table.effect';
+import { SkillType } from '.';
 
 /**
  * Passive skills are innate abilities or enhancements possessed by characters
@@ -12,60 +13,52 @@ import { EffectTable } from '../table.effect';
  * need for deliberate action.
  */
 export namespace Passive {
-  export type Type = {
-    name: string;
-    description: string;
-    menuSlot: MenuSlotType;
-    effect?: EffectTable;
-    cost?: null;
-  };
-
-  export const DUAL_WELD: Type = {
+  export const DUAL_WELD: SkillType = {
     name: 'Dual Weld',
     description: 'Can use two one handed weapons at once.',
     // " Both malace and penny can learn this.
     menuSlot: MenuSlot.NONE,
   };
 
-  export const ESCAPE_ARTIST: Type = {
+  export const ESCAPE_ARTIST: SkillType = {
     name: 'Escape Artist',
     description: 'Makes it easier to run away from aggressive targets',
     menuSlot: MenuSlot.NONE,
   };
 
-  export const INTIMIDATE: Type = {
+  export const INTIMIDATE: SkillType = {
     name: 'Intimidate',
     description: 'Causes fear in enemy',
     menuSlot: MenuSlot.NONE,
   };
 
-  export const CONCENTRATION: Type = {
+  export const CONCENTRATION: SkillType = {
     name: 'Concentration',
     description: 'Stay focused',
     menuSlot: MenuSlot.NONE,
   };
 
-  export const BLUFF: Type = {
+  export const BLUFF: SkillType = {
     name: 'Bluff',
     description: 'Tell a lie without being caught',
     menuSlot: MenuSlot.NONE,
   };
 
-  export const SENSE_BLUFF: Type = {
+  export const SENSE_BLUFF: SkillType = {
     name: 'Sense Bluff',
     description: 'Detect if a lie is being told',
     // if character beats bluff check, a little icon on the screen will tell
     // if someone is trying to bluff party
     menuSlot: MenuSlot.NONE,
   };
-  export const GREEDY_INTENT: Type = {
+  export const GREEDY_INTENT: SkillType = {
     name: 'Greedy Intent',
     description: 'Gain 5% more experience than the party.',
     // Acquired by defeating Greed.
     menuSlot: MenuSlot.NONE,
   };
 
-  export const SLOTH_COMPOSURE: Type = {
+  export const SLOTH_COMPOSURE: SkillType = {
     name: 'Sloth Composure',
     description: 'Halves damage taken when not actively engaged in actions.',
     // half damage and decreases DRIVE gauge
@@ -73,7 +66,7 @@ export namespace Passive {
     menuSlot: MenuSlot.NONE,
   };
 
-  export const BLOOD_LUST: Type = {
+  export const BLOOD_LUST: SkillType = {
     name: 'Blood Lust',
     description: 'Increases speed.',
     effect: [
@@ -87,7 +80,7 @@ export namespace Passive {
     menuSlot: MenuSlot.NONE,
   };
 
-  export const ENVIOUS_OF_COMBAT: Type = {
+  export const ENVIOUS_OF_COMBAT: SkillType = {
     name: 'Envious of Combat',
     description: 'Gains increased power.',
     effect: [
@@ -101,7 +94,7 @@ export namespace Passive {
     menuSlot: MenuSlot.NONE,
   };
 
-  export const GLUTTONOUS_DESIRE: Type = {
+  export const GLUTTONOUS_DESIRE: SkillType = {
     name: 'Gluttonous Desire',
     description: 'Consumes food items twice as fast.',
     effect: [
@@ -116,13 +109,13 @@ export namespace Passive {
     menuSlot: MenuSlot.NONE,
   };
 
-  export const CATCHER: Type = {
+  export const CATCHER: SkillType = {
     name: 'Catcher',
     description: 'Receives bonuses when catching items.',
     menuSlot: MenuSlot.NONE,
   };
 
-  export const LIMITLESS: Type = {
+  export const LIMITLESS: SkillType = {
     name: 'Limitless',
     description: 'Higher level cap.',
     menuSlot: MenuSlot.NONE,

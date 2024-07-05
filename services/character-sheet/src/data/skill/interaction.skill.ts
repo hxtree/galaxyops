@@ -1,26 +1,13 @@
 import { ActionEffects } from '../table.effect';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
+import { SkillType, ObjectCategory } from './skill.type';
 
 /**
  * Interaction skills are actions that can only be used when a compatible object is present.
  * They are a type of Command Menu action.
  */
 export namespace Interaction {
-  export type Type = {
-    name: string;
-    description: string;
-    target: ObjectCategory;
-    menuSlot: MenuSlotType;
-    actionEffects?: ActionEffects;
-  };
-
-  export enum ObjectCategory {
-    MOVEABLE = 'Moveable',
-    IMPENDING = 'Impending',
-    LOCKED = 'Locked',
-  }
-
-  export const GRAB: Type = {
+  export const GRAB: SkillType = {
     name: 'Grab',
     description: 'Grab an object.',
     target: ObjectCategory.MOVEABLE,
@@ -36,35 +23,35 @@ export namespace Interaction {
     },
   };
 
-  export const PUSH: Type = {
+  export const PUSH: SkillType = {
     name: 'Push',
     description: 'Push an object.',
     target: ObjectCategory.MOVEABLE,
     menuSlot: MenuSlot.INTERACTION,
   };
 
-  export const PULL: Type = {
+  export const PULL: SkillType = {
     name: 'Pull',
     description: 'Pull an object.',
     target: ObjectCategory.MOVEABLE,
     menuSlot: MenuSlot.INTERACTION,
   };
 
-  export const LIFT: Type = {
+  export const LIFT: SkillType = {
     name: 'Lift',
     description: 'Lift an object.',
     target: ObjectCategory.MOVEABLE,
     menuSlot: MenuSlot.INTERACTION,
   };
 
-  export const THROW: Type = {
+  export const THROW: SkillType = {
     name: 'Throw',
     description: 'Throw an object.',
     target: ObjectCategory.MOVEABLE,
     menuSlot: MenuSlot.INTERACTION,
   };
 
-  export const PICK_LOCK: Type = {
+  export const PICK_LOCK: SkillType = {
     name: 'Pick Lock',
     description: 'Attempt to pick a lock.',
     target: ObjectCategory.LOCKED,
@@ -87,7 +74,7 @@ export namespace Interaction {
     },
   };
 
-  export const UNLOCK: Type = {
+  export const UNLOCK: SkillType = {
     name: 'Unlock',
     description: 'Open a lock using a key.',
     target: ObjectCategory.LOCKED,

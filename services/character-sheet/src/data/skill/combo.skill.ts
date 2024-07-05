@@ -1,6 +1,7 @@
 import { Button, ButtonCombo } from '../buttons';
 import { GameContext } from '../game-context';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
+import { SkillType } from '.';
 
 /**
  * Combo Skills can only be used when a character action history matches exactly
@@ -12,26 +13,16 @@ import { MenuSlot, MenuSlotType } from '../menu-slot';
  * combo in order for quicker action selection.
  */
 export namespace Combo {
-  export type BaseType = {
-    name: string;
-    description: string;
-    menuSlot: MenuSlotType;
-    buttonCombo: ButtonCombo;
-  };
-
-  export const BLITZ: BaseType = {
+  export const BLITZ: SkillType = {
     name: 'Blitz',
     description: '',
     menuSlot: MenuSlot.TOOLS,
-    buttonCombo: {
-      simultaneous: [
-        Button.ATTACK,
-        Button.ATTACK,
-        Button.ATTACK,
-        Button.ACTION,
-      ],
-      timingWindowMs: 300,
-      context: GameContext.TERRAIN,
-    },
+    buttonCombos: [
+      {
+        simultaneous: [Button.ATTACK, Button.ATTACK, Button.ACTION],
+        timingWindowMs: 300,
+        context: GameContext.TERRAIN,
+      },
+    ],
   };
 }

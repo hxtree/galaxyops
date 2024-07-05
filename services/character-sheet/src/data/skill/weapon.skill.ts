@@ -1,7 +1,7 @@
 import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
-import { EffectTable } from '../table.effect';
-import { MenuSlot, MenuSlotType } from '../menu-slot';
+import { MenuSlot } from '../menu-slot';
+import { SkillType } from '.';
 
 /**
  * Weapon Skill
@@ -16,28 +16,21 @@ import { MenuSlot, MenuSlotType } from '../menu-slot';
  * e.g. Block lv1
  */
 export namespace Weapon {
-  export type Type = {
-    name: string;
-    description: string;
-    effect: EffectTable;
-    menuSlot: MenuSlotType;
-  };
-
-  export const BLOCK: Type = {
+  export const BLOCK: SkillType = {
     name: 'Block',
     description: 'Stop incoming attacks.',
     effect: [],
     menuSlot: MenuSlot.ATTACK,
   };
 
-  export const PARRY: Type = {
+  export const PARRY: SkillType = {
     name: 'Parry',
     description: 'Ward off incoming attacks with a countermove.',
     effect: [],
     menuSlot: MenuSlot.ATTACK,
   };
 
-  export const SLASH: Type = {
+  export const SLASH: SkillType = {
     name: 'Slash',
     description: 'Attack with a blade.',
     effect: [
@@ -50,7 +43,7 @@ export namespace Weapon {
     menuSlot: MenuSlot.ATTACK,
   };
 
-  export const STRIKE: Type = {
+  export const STRIKE: SkillType = {
     name: 'Strike',
     description: 'Execute a sudden attack with a blade.',
     effect: [
@@ -63,7 +56,7 @@ export namespace Weapon {
     menuSlot: MenuSlot.ATTACK,
   };
 
-  export const STAB: Type = {
+  export const STAB: SkillType = {
     name: 'Stab',
     description: 'Perform a forward striking motion with a blade.',
     effect: [
@@ -76,7 +69,7 @@ export namespace Weapon {
     menuSlot: MenuSlot.ATTACK,
   };
 
-  export const CHOP: Type = {
+  export const CHOP: SkillType = {
     name: 'Chop',
     description: 'Execute a downward motion with a blade.',
     effect: [
@@ -89,7 +82,7 @@ export namespace Weapon {
     menuSlot: MenuSlot.ATTACK,
   };
 
-  export const CLEAVE: Type = {
+  export const CLEAVE: SkillType = {
     name: 'Cleave',
     description: 'Perform a slashing technique.',
     effect: [

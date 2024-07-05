@@ -11,6 +11,8 @@ import { Trap } from './trap.skill';
 import { Basic } from './basic.skill';
 import { Interaction } from './interaction.skill';
 
+export * from './skill.type';
+
 /**
  * Skills are decoupled from the actor and target.
  * Skills refer to abilities that assigned to characters.
@@ -32,19 +34,6 @@ export const Skill = {
   ...Basic,
   ...Interaction,
 };
-
-export type SkillType =
-  | Basic.Type
-  | Drive.Type
-  | Item.Type
-  | Tool.Type
-  | Movement.Type
-  | Passive.Type
-  | Spell.Type
-  | Weapon.Type
-  | Summon.Type
-  | Teamwork.Type
-  | Trap.Type;
 
 export enum SkillCategory {
   MOVEMENT = 'Movement', // changes position

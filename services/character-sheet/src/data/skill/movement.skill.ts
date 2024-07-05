@@ -1,21 +1,14 @@
-import { Attribute } from '../attribute';
-import { Button, ButtonCombo } from '../buttons';
+import { MenuSlot } from '../menu-slot';
+import { SkillType } from '.';
 import { GameContext } from '../game-context';
-import { MenuSlot, MenuSlotType } from '../menu-slot';
+import { Button } from '../buttons';
+import { Attribute } from '../attribute';
 
 /**
  * actions that are exclusively movements
  */
 export namespace Movement {
-  export type Type = {
-    name: string;
-    description: string;
-    consumes?: Attribute; // TODO UOM present but missing quantity and time
-    buttonCombos?: ButtonCombo[];
-    menuSlot: MenuSlotType;
-  };
-
-  export const WALK: Type = {
+  export const WALK: SkillType = {
     name: 'Walk',
     description: 'Move slowly forward or backward side to side',
     buttonCombos: [
@@ -43,7 +36,7 @@ export namespace Movement {
     menuSlot: MenuSlot.MOVEMENT,
   };
 
-  export const RUN: Type = {
+  export const RUN: SkillType = {
     name: 'Run',
     description: 'Move quickly using stamina',
     consumes: Attribute.SPIRIT,
@@ -73,7 +66,7 @@ export namespace Movement {
   };
 
   // party members should have to learn
-  export const SWIM: Type = {
+  export const SWIM: SkillType = {
     name: 'Swim',
     description: 'Move in deep water',
     consumes: Attribute.SPIRIT,
@@ -102,7 +95,7 @@ export namespace Movement {
     menuSlot: MenuSlot.MOVEMENT,
   };
 
-  export const SWIM_FAST: Type = {
+  export const SWIM_FAST: SkillType = {
     name: 'Swim Fast',
     description: 'Move fast in deep water',
     consumes: Attribute.SPIRIT,
@@ -131,7 +124,7 @@ export namespace Movement {
     menuSlot: MenuSlot.MOVEMENT,
   };
 
-  export const BACK_FLIP: Type = {
+  export const BACK_FLIP: SkillType = {
     name: 'Back Flip',
     description: 'Quickly move backwards',
     consumes: Attribute.SPIRIT,
@@ -160,7 +153,7 @@ export namespace Movement {
     ],
   };
 
-  export const DOUBLE_BACK_FLIP: Type = {
+  export const DOUBLE_BACK_FLIP: SkillType = {
     name: 'Double Back Flip',
     description: 'Quickly move backwards twice',
     consumes: Attribute.SPIRIT,
@@ -189,7 +182,7 @@ export namespace Movement {
     ],
   };
 
-  export const JUMP: Type = {
+  export const JUMP: SkillType = {
     name: 'Jump',
     description:
       'Use stamina to move vertically and reach otherwise unreachable places',
@@ -223,7 +216,7 @@ export namespace Movement {
   // "87","Long Jump","Jump a long way (different than running?)","86",,"86"
   // "88","Running Jump","Running while jumping","87",,"87"
 
-  export const HIGH_JUMP: Type = {
+  export const HIGH_JUMP: SkillType = {
     name: 'High Jump',
     description: 'Charged vertical jump', // jump straight up in the air using a stamina boost.
     consumes: Attribute.SPIRIT,
@@ -252,13 +245,13 @@ export namespace Movement {
     menuSlot: MenuSlot.MOVEMENT,
   };
 
-  export const CLIMB: Type = {
+  export const CLIMB: SkillType = {
     name: 'Climb',
     description: 'Scale a wall',
     menuSlot: MenuSlot.MOVEMENT,
   };
 
-  export const TREK: Type = {
+  export const TREK: SkillType = {
     name: 'Trek',
     description:
       'Walk up steep hill without falling down. '

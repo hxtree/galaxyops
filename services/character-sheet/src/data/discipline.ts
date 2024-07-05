@@ -1,4 +1,4 @@
-import { Skill, SkillType } from './skill';
+import { SkillType, Skill } from './skill';
 
 /**
  * Experience records a character experience for a specific discipline.

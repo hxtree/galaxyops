@@ -1,4 +1,5 @@
 import { MenuSlot, MenuSlotType } from '../menu-slot';
+import { SkillType } from '.';
 
 /**
  * Item
@@ -6,31 +7,25 @@ import { MenuSlot, MenuSlotType } from '../menu-slot';
  * Are only accessible by a Player through the Menu screen
  */
 export namespace Item {
-  export type Type = {
-    name: string;
-    description: string;
-    menuSlot: MenuSlotType;
-  };
-
-  export const APPRAISE: Type = {
+  export const APPRAISE: SkillType = {
     name: 'Appraise',
     description: 'Determine the market value of an item',
     menuSlot: MenuSlot.ITEM,
   };
 
-  export const COMBINE: Type = {
+  export const COMBINE: SkillType = {
     name: 'Combine',
     description: 'Turn two or more items into one item if compatible',
     menuSlot: MenuSlot.ITEM,
   };
 
-  export const THROW: Type = {
+  export const THROW: SkillType = {
     name: 'Throw',
     description: 'Toss an item from stock away or to injure enemy.',
     menuSlot: MenuSlot.ITEM,
   };
 
-  export const PREPARE_FOOD: Type = {
+  export const PREPARE_FOOD: SkillType = {
     name: 'Prepare Food',
     description: 'Make a meal',
     menuSlot: MenuSlot.ITEM,

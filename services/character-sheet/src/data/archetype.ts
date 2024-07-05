@@ -15,6 +15,7 @@ import {
 } from './gear/slot';
 import { Weapon } from './gear/weapon.gear';
 import { Affiliation } from './affiliations';
+import { SkillType } from './skill';
 
 /**
  * Base character information that does not change as the game progress
@@ -67,7 +68,7 @@ export namespace Archetype {
 
     potentialDisciplines?: Discipline.Type[];
     potentialOutfits?: Outfit.Type[];
-    summonCompatibility?: Summon.Type[];
+    summonCompatibility?: SkillType[];
     weaponCompatibility?: Weapon.Category[];
 
     // compatibility [
