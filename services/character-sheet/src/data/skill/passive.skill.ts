@@ -16,6 +16,7 @@ import { ActionTarget } from '../action-target';
 export namespace Passive {
   export const DUAL_WELD: SkillType = {
     name: 'Dual Weld',
+    target: ActionTarget.SELF,
     description: 'Can use two one handed weapons at once.',
     // " Both malace and penny can learn this.
     menuSlot: MenuSlot.NONE,
@@ -23,6 +24,7 @@ export namespace Passive {
 
   export const ESCAPE_ARTIST: SkillType = {
     name: 'Escape Artist',
+    target: ActionTarget.SELF,
     description: 'Makes it easier to run away from aggressive targets',
     menuSlot: MenuSlot.NONE,
   };
@@ -43,6 +45,7 @@ export namespace Passive {
 
   export const BLUFF: SkillType = {
     name: 'Bluff',
+    target: ActionTarget.SELF,
     description: 'Tell a lie without being caught',
     menuSlot: MenuSlot.NONE,
   };

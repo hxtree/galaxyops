@@ -11,18 +11,17 @@ import { ActionTarget } from '../action-target';
  */
 export namespace Basic {
   export const BOAST_LV1: SkillType = {
-    name: 'Boast Lv.1',
+    name: 'Boast',
+    level: SkillLevel.LV1,
     description: 'Increase party morale.',
     target: ActionTarget.ALLY,
     cost: [{ remove: Attribute.SPIRIT, quantity: '1d6+10' }],
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
-    level: SkillLevel.LV1,
   };
 
   export const BOAST_LV2: SkillType = {
     ...BOAST_LV1,
-    name: 'Boast Lv.2',
     level: SkillLevel.LV2,
     cost: [{ remove: Attribute.SPIRIT, quantity: '2d6+10' }],
   };

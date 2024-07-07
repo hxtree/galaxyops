@@ -1,8 +1,9 @@
+import { Duration } from 'luxon';
 import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
 import { EffectRecord } from '../table.effect';
 import { MenuSlot } from '../menu-slot';
-import { SkillType } from '.';
+import { SkillLevel, SkillType } from '.';
 import { ActionTarget } from '../action-target';
 
 /**
@@ -23,7 +24,7 @@ import { ActionTarget } from '../action-target';
 // category: SkillCategory.CLASS,
 
 export namespace Spell {
-  export const GRAVITY: SkillType = {
+  export const GRAVITY_LV1: SkillType = {
     name: 'Gravity',
     description:
       'Coalesce gravity around target. Causes flying targets to hit ground',
@@ -35,7 +36,28 @@ export namespace Spell {
         tags: [EffectTag.PHYSICAL, EffectTag.AERIAL],
       },
     ],
+    prepareTime: Duration.fromObject({ seconds: 3 }),
+    executionTime: Duration.fromObject({ seconds: 1 }),
+    recoveryTime: Duration.fromObject({ seconds: 3 }),
+    coolDownTime: Duration.fromObject({ seconds: 60 }),
     menuSlot: MenuSlot.MAGIC,
+    level: SkillLevel.LV1,
+  };
+
+  export const GRAVITY_LV2: SkillType = {
+    ...GRAVITY_LV1,
+    effect: [
+      {
+        remove: Attribute.LIFE,
+        quantity: '2d6+10',
+        tags: [EffectTag.PHYSICAL, EffectTag.AERIAL],
+      },
+    ],
+    prepareTime: Duration.fromObject({ seconds: 2 }),
+    executionTime: Duration.fromObject({ seconds: 1 }),
+    recoveryTime: Duration.fromObject({ seconds: 2 }),
+    coolDownTime: Duration.fromObject({ seconds: 15 }),
+    level: SkillLevel.LV2,
   };
 
   export const SHOCK: SkillType = {

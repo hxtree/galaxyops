@@ -3,4 +3,15 @@ module.exports = {
   parserOptions: {
     tsconfigRootDir: __dirname,
   },
-};
+  rules: {
+    '@typescript-eslint/member-ordering': [
+      'error',
+      {
+        default: {
+          memberTypes: 'never',
+          order: 'alphabetically',
+        },
+      },
+    ],
+  },
+}
