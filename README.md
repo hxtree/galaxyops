@@ -1,9 +1,8 @@
 # @galaxyops :milky_way:
 
-@galaxyops is architecture whose goal is efficient project management and
-deployment on AWS. It empowers our domain-driven DevOps team, guiding them
-through AWS with clarity and purpose, fostering a seamless journey toward
-operational excellence.
+@galaxyops is an architecture designed to support efficient project management
+and deployment on AWS. It aims to empower our domain-driven DevOps team by
+providing clear guidance through AWS, which may benefit your team as well.
 
 [![CI](https://github.com/hxtree/galaxyops/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/galaxyops/actions/workflows/on-merge.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/galaxyops/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
