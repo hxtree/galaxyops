@@ -6,6 +6,7 @@ import { ActionEffects } from '../table.effect';
 import { Attribute } from '../attribute';
 import { AreaOfEffect } from '../area-of-effect';
 import { SkillType } from '.';
+import { ActionTarget } from '../action-target';
 
 /**
  * Drive Actions are special actions that consume drive gauge
@@ -29,7 +30,8 @@ export namespace Drive {
 
   export const TOXIC_THRUST: SkillType = {
     name: 'Toxic Thrust',
-    description: 'Thrusts forward using posion',
+    target: ActionTarget.OPPONENT,
+    description: 'Thrusts forward using poison',
     areaOfEffect: AreaOfEffect.LINE_10FT,
     actionEffects: {
       OPPONENT: [
@@ -46,6 +48,7 @@ export namespace Drive {
 
   export const AERIAL_ASSAULT: SkillType = {
     name: 'Aerial Assault',
+    target: ActionTarget.OPPONENT,
     description: 'Jump into air and throws boomerang (jump attack)',
     areaOfEffect: AreaOfEffect.LINE_10FT,
     actionEffects: {
@@ -69,6 +72,7 @@ export namespace Drive {
 
   export const ONI: SkillType = {
     name: 'Oni',
+    target: ActionTarget.SELF,
     description: `Become engulfed in a blood thirsty rage that multiplies your power but drains spirit.
       If character stays in Oni too long they will go Berserk`,
     actionEffects: {
@@ -86,6 +90,7 @@ export namespace Drive {
 
   export const TRUE_ONI: SkillType = {
     name: 'True Oni',
+    target: ActionTarget.SELF,
     description: `Become engulfed in a more powerful blood thirsty rage that multiplies power but drains spirit.
       If character stays in Oni too long they will go Berserk.`,
     conditions:

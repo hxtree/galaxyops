@@ -1,7 +1,8 @@
 import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
 import { MenuSlot } from '../menu-slot';
-import { SkillType } from '.';
+import { SkillType } from './skill.type';
+import { ActionTarget } from '../action-target';
 
 /**
  * Weapon Skill
@@ -18,6 +19,7 @@ import { SkillType } from '.';
 export namespace Weapon {
   export const BLOCK: SkillType = {
     name: 'Block',
+    target: ActionTarget.SELF,
     description: 'Stop incoming attacks.',
     effect: [],
     menuSlot: MenuSlot.ATTACK,
@@ -25,6 +27,7 @@ export namespace Weapon {
 
   export const PARRY: SkillType = {
     name: 'Parry',
+    target: ActionTarget.SELF,
     description: 'Ward off incoming attacks with a countermove.',
     effect: [],
     menuSlot: MenuSlot.ATTACK,
@@ -32,6 +35,7 @@ export namespace Weapon {
 
   export const SLASH: SkillType = {
     name: 'Slash',
+    target: ActionTarget.OPPONENT,
     description: 'Attack with a blade.',
     effect: [
       {
@@ -45,6 +49,7 @@ export namespace Weapon {
 
   export const STRIKE: SkillType = {
     name: 'Strike',
+    target: ActionTarget.OPPONENT,
     description: 'Execute a sudden attack with a blade.',
     effect: [
       {
@@ -58,6 +63,7 @@ export namespace Weapon {
 
   export const STAB: SkillType = {
     name: 'Stab',
+    target: ActionTarget.OPPONENT,
     description: 'Perform a forward striking motion with a blade.',
     effect: [
       {
@@ -71,6 +77,7 @@ export namespace Weapon {
 
   export const CHOP: SkillType = {
     name: 'Chop',
+    target: ActionTarget.OPPONENT,
     description: 'Execute a downward motion with a blade.',
     effect: [
       {
@@ -84,6 +91,7 @@ export namespace Weapon {
 
   export const CLEAVE: SkillType = {
     name: 'Cleave',
+    target: ActionTarget.OPPONENT,
     description: 'Perform a slashing technique.',
     effect: [
       {

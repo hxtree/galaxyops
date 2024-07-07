@@ -1,6 +1,7 @@
 import { ActionEffects } from '../table.effect';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
 import { SkillType, ObjectCategory } from './skill.type';
+import { ActionTarget } from '../action-target';
 
 /**
  * Interaction skills are actions that can only be used when a compatible object is present.
@@ -10,7 +11,7 @@ export namespace Interaction {
   export const GRAB: SkillType = {
     name: 'Grab',
     description: 'Grab an object.',
-    target: ObjectCategory.MOVEABLE,
+    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
     actionEffects: {
       INTERACTION_OBJECT: [
@@ -26,35 +27,35 @@ export namespace Interaction {
   export const PUSH: SkillType = {
     name: 'Push',
     description: 'Push an object.',
-    target: ObjectCategory.MOVEABLE,
+    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
   };
 
   export const PULL: SkillType = {
     name: 'Pull',
     description: 'Pull an object.',
-    target: ObjectCategory.MOVEABLE,
+    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
   };
 
   export const LIFT: SkillType = {
     name: 'Lift',
     description: 'Lift an object.',
-    target: ObjectCategory.MOVEABLE,
+    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
   };
 
   export const THROW: SkillType = {
     name: 'Throw',
     description: 'Throw an object.',
-    target: ObjectCategory.MOVEABLE,
+    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
   };
 
   export const PICK_LOCK: SkillType = {
     name: 'Pick Lock',
     description: 'Attempt to pick a lock.',
-    target: ObjectCategory.LOCKED,
+    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
     actionEffects: {
       INVENTORY: [
@@ -77,7 +78,7 @@ export namespace Interaction {
   export const UNLOCK: SkillType = {
     name: 'Unlock',
     description: 'Open a lock using a key.',
-    target: ObjectCategory.LOCKED,
+    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
     actionEffects: {
       INVENTORY: [

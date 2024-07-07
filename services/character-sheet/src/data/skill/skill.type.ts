@@ -1,8 +1,10 @@
+import { Duration } from 'luxon';
 import { MenuSlotType } from '../menu-slot';
 import { ActionEffects, EffectRecord, EffectTable } from '../table.effect';
 import { Button, ButtonCombo } from '../buttons';
 import { Attribute } from '../attribute';
 import { AreaOfEffect } from '../area-of-effect';
+import { ActionTarget } from '../action-target';
 
 /**
  * Represents proficiency levels for active and passive skills, determining their effectiveness.
@@ -20,47 +22,113 @@ export enum SkillLevel {
   MAX = 'MAX',
 }
 
+export enum Focusable {
+  STAMINA = 'Stamina',
+  TRUE = 'True',
+  FALSE = 'False',
+}
+
 export enum ObjectCategory {
   MOVEABLE = 'Moveable',
   IMPENDING = 'Impending',
   LOCKED = 'Locked',
 }
 
-// TODO : format skills as "Slash Lv.1" on frontend
 export type SkillType = {
+  /**
+   * The name of the skill, e.g., formatted as "Slash Lv.1" for display on the frontend.
+   */
   name: string;
+
+  /**
+   * A brief description of the skill, used in menus.
+   */
   description: string;
-  targets?: number;
+
+  /**
+   * Category of object this skill targets.
+   */
+  target?: ActionTarget;
+
+  /**
+   * Type of area this skill affects, if applicable.
+   */
+  areaOfEffect?: AreaOfEffect.Type;
+
+  /**
+   * Effect of the skill, defined as an EffectTable.
+   */
   effect?: EffectTable;
+
+  /**
+   * Backstory or lore related to the skill (optional).
+   */
   backstory?: string;
-  commands?: string[]; // must be invoked by summoner through Command
-  consumes?: Attribute; // TODO UOM present but missing quantity and time
+
+  /**
+   * List of commands that must be invoked by the summoner through Command.
+   */
+  commands?: string[];
+
+  /**
+   * Conditions that need to be met for the skill to be used (TODO: flesh out).
+   */
+  conditions?: string;
+
+  /**
+   * Cost is the resource expenditure required by the actor to perform the action.
+   * Additional cost can be consumed by holding the button longer for some skills.
+   */
+  cost?: EffectRecord[];
+
+  /**
+   * Button combinations required to execute the skill.
+   */
   buttonCombos?: ButtonCombo[];
-  target?: ObjectCategory;
+
+  /**
+   * Effects triggered by the action of using this skill.
+   */
   actionEffects?: ActionEffects;
+
+  /**
+   * The type of menu slot this skill occupies.
+   */
   menuSlot: MenuSlotType;
 
   /**
-   * Whether the skill must be canceled or automatically stop being performed
+   * Whether the skill can be interrupted or if it automatically stops.
    */
-  fixed?: boolean;
+  interruptible?: boolean;
 
   /**
-   * Stamina Boost Enabled Action
-   * By holding down the button used to make that move
-   * a player may place more stamina into the move
-   * making it a more powerful action.
-   * For every 6 seconds, character gains a plus 1 for example.
+   * Attributes that are boosted when the button used for this move is held down.
+   * For example, stamina may increase every 6 seconds the button is held.
    */
   booster?: Attribute;
 
   /**
-   * Cost is the resource expenditure that must be given up by the actor to
-   * perform the action. By holding button longer additional cost can be
-   * consumed for some skills.
+   * Time required to prepare and execute the skill.
    */
-  cost?: EffectRecord[];
+  prepareTime?: Duration;
 
-  conditions?: string;
-  areaOfEffect?: AreaOfEffect.Type;
+  /**
+   * Time required to execute the skill after preparation.
+   */
+  executionTime?: Duration;
+
+  /**
+   * Time required for recovery after executing the skill.
+   */
+  recoveryTime?: Duration;
+
+  /**
+   * Time before the skill can be used again.
+   */
+  coolDownTime?: Duration;
+
+  /**
+   * Level of the skill (e.g., beginner, intermediate, advanced).
+   */
+  level?: SkillLevel;
 };

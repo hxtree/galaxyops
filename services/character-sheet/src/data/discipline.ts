@@ -117,7 +117,7 @@ export namespace Discipline {
     description: 'Specialize in giving orders to others.',
     category: Category.ARCHETYPE,
     progression: [
-      { level: 1, skill: Skill.BOAST },
+      { level: 1, skill: Skill.BOAST_LV1 },
       { level: 10, skill: Skill.LAST_STAND },
       { level: 50, skill: Skill.BLITZ_STRIKE },
       { level: 80, skill: Skill.FLANK },
@@ -373,7 +373,7 @@ export namespace Discipline {
     name: 'Rune King',
     description: '',
     category: Category.ARCHETYPE,
-    progression: [{ level: 10, skill: Skill.BOAST }],
+    progression: [{ level: 10, skill: Skill.BOAST_LV1 }],
   };
 
   export const MAIDEN: Type = {

@@ -2,6 +2,7 @@ import { Button, ButtonCombo } from '../buttons';
 import { GameContext } from '../game-context';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
 import { SkillType } from '.';
+import { ActionTarget } from '../action-target';
 
 /**
  * Combo Skills can only be used when a character action history matches exactly
@@ -15,6 +16,7 @@ import { SkillType } from '.';
 export namespace Combo {
   export const BLITZ: SkillType = {
     name: 'Blitz',
+    target: ActionTarget.OPPONENT,
     description: '',
     menuSlot: MenuSlot.TOOLS,
     buttonCombos: [

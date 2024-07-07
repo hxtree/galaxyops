@@ -3,6 +3,7 @@ import { SkillType } from '.';
 import { GameContext } from '../game-context';
 import { Button } from '../buttons';
 import { Attribute } from '../attribute';
+import { ActionTarget } from '../action-target';
 
 /**
  * actions that are exclusively movements
@@ -10,6 +11,7 @@ import { Attribute } from '../attribute';
 export namespace Movement {
   export const WALK: SkillType = {
     name: 'Walk',
+    target: ActionTarget.SELF,
     description: 'Move slowly forward or backward side to side',
     buttonCombos: [
       {
@@ -38,8 +40,15 @@ export namespace Movement {
 
   export const RUN: SkillType = {
     name: 'Run',
+    target: ActionTarget.SELF,
     description: 'Move quickly using stamina',
-    consumes: Attribute.SPIRIT,
+    cost: [
+      {
+        remove: Attribute.SPIRIT,
+        quantity: '1',
+        chance: 1,
+      },
+    ],
     buttonCombos: [
       {
         simultaneous: [Button.UP, Button.ACTION],
@@ -68,8 +77,15 @@ export namespace Movement {
   // party members should have to learn
   export const SWIM: SkillType = {
     name: 'Swim',
+    target: ActionTarget.SELF,
     description: 'Move in deep water',
-    consumes: Attribute.SPIRIT,
+    cost: [
+      {
+        remove: Attribute.SPIRIT,
+        quantity: '3',
+        chance: 1,
+      },
+    ],
     buttonCombos: [
       {
         simultaneous: [Button.UP],
@@ -97,8 +113,15 @@ export namespace Movement {
 
   export const SWIM_FAST: SkillType = {
     name: 'Swim Fast',
+    target: ActionTarget.SELF,
     description: 'Move fast in deep water',
-    consumes: Attribute.SPIRIT,
+    cost: [
+      {
+        remove: Attribute.SPIRIT,
+        quantity: '3',
+        chance: 1,
+      },
+    ],
     buttonCombos: [
       {
         simultaneous: [Button.UP, Button.ACTION],
@@ -126,8 +149,15 @@ export namespace Movement {
 
   export const BACK_FLIP: SkillType = {
     name: 'Back Flip',
+    target: ActionTarget.SELF,
     description: 'Quickly move backwards',
-    consumes: Attribute.SPIRIT,
+    cost: [
+      {
+        remove: Attribute.SPIRIT,
+        quantity: '5',
+        chance: 1,
+      },
+    ],
     menuSlot: MenuSlot.MOVEMENT,
     buttonCombos: [
       {
@@ -155,8 +185,15 @@ export namespace Movement {
 
   export const DOUBLE_BACK_FLIP: SkillType = {
     name: 'Double Back Flip',
+    target: ActionTarget.SELF,
     description: 'Quickly move backwards twice',
-    consumes: Attribute.SPIRIT,
+    cost: [
+      {
+        remove: Attribute.SPIRIT,
+        quantity: '5',
+        chance: 1,
+      },
+    ],
     menuSlot: MenuSlot.MOVEMENT,
     buttonCombos: [
       {
@@ -184,9 +221,16 @@ export namespace Movement {
 
   export const JUMP: SkillType = {
     name: 'Jump',
+    target: ActionTarget.SELF,
     description:
       'Use stamina to move vertically and reach otherwise unreachable places',
-    consumes: Attribute.SPIRIT,
+    cost: [
+      {
+        remove: Attribute.SPIRIT,
+        quantity: '1',
+        chance: 1,
+      },
+    ],
     buttonCombos: [
       {
         inOrder: [Button.JUMP],
@@ -218,8 +262,15 @@ export namespace Movement {
 
   export const HIGH_JUMP: SkillType = {
     name: 'High Jump',
+    target: ActionTarget.SELF,
     description: 'Charged vertical jump', // jump straight up in the air using a stamina boost.
-    consumes: Attribute.SPIRIT,
+    cost: [
+      {
+        remove: Attribute.SPIRIT,
+        quantity: '4',
+        chance: 1,
+      },
+    ],
     buttonCombos: [
       {
         inOrder: [Button.JUMP, Button.JUMP],
@@ -247,12 +298,14 @@ export namespace Movement {
 
   export const CLIMB: SkillType = {
     name: 'Climb',
+    target: ActionTarget.SELF,
     description: 'Scale a wall',
     menuSlot: MenuSlot.MOVEMENT,
   };
 
   export const TREK: SkillType = {
     name: 'Trek',
+    target: ActionTarget.SELF,
     description:
       'Walk up steep hill without falling down. '
       + 'Used to determine how steep an angled tile you can stand on. '

@@ -2,6 +2,7 @@ import { Attribute } from '../attribute';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
 import { EffectTable } from '../table.effect';
 import { SkillType } from '.';
+import { ActionTarget } from '../action-target';
 
 /**
  * Passive skills are innate abilities or enhancements possessed by characters
@@ -28,12 +29,14 @@ export namespace Passive {
 
   export const INTIMIDATE: SkillType = {
     name: 'Intimidate',
+    target: ActionTarget.OPPONENT,
     description: 'Causes fear in enemy',
     menuSlot: MenuSlot.NONE,
   };
 
   export const CONCENTRATION: SkillType = {
     name: 'Concentration',
+    target: ActionTarget.SELF,
     description: 'Stay focused',
     menuSlot: MenuSlot.NONE,
   };
@@ -46,6 +49,7 @@ export namespace Passive {
 
   export const SENSE_BLUFF: SkillType = {
     name: 'Sense Bluff',
+    target: ActionTarget.SELF,
     description: 'Detect if a lie is being told',
     // if character beats bluff check, a little icon on the screen will tell
     // if someone is trying to bluff party
@@ -53,6 +57,7 @@ export namespace Passive {
   };
   export const GREEDY_INTENT: SkillType = {
     name: 'Greedy Intent',
+    target: ActionTarget.SELF,
     description: 'Gain 5% more experience than the party.',
     // Acquired by defeating Greed.
     menuSlot: MenuSlot.NONE,
@@ -60,6 +65,7 @@ export namespace Passive {
 
   export const SLOTH_COMPOSURE: SkillType = {
     name: 'Sloth Composure',
+    target: ActionTarget.SELF,
     description: 'Halves damage taken when not actively engaged in actions.',
     // half damage and decreases DRIVE gauge
     // Acquired by defeating Lawzon.
@@ -68,6 +74,7 @@ export namespace Passive {
 
   export const BLOOD_LUST: SkillType = {
     name: 'Blood Lust',
+    target: ActionTarget.SELF,
     description: 'Increases speed.',
     effect: [
       {
@@ -82,6 +89,7 @@ export namespace Passive {
 
   export const ENVIOUS_OF_COMBAT: SkillType = {
     name: 'Envious of Combat',
+    target: ActionTarget.SELF,
     description: 'Gains increased power.',
     effect: [
       {
@@ -96,6 +104,7 @@ export namespace Passive {
 
   export const GLUTTONOUS_DESIRE: SkillType = {
     name: 'Gluttonous Desire',
+    target: ActionTarget.SELF,
     description: 'Consumes food items twice as fast.',
     effect: [
       {
@@ -111,12 +120,14 @@ export namespace Passive {
 
   export const CATCHER: SkillType = {
     name: 'Catcher',
+    target: ActionTarget.SELF,
     description: 'Receives bonuses when catching items.',
     menuSlot: MenuSlot.NONE,
   };
 
   export const LIMITLESS: SkillType = {
     name: 'Limitless',
+    target: ActionTarget.SELF,
     description: 'Higher level cap.',
     menuSlot: MenuSlot.NONE,
   };

@@ -1,25 +1,30 @@
 import { EffectRecord, EffectTable } from '../table.effect';
 import { Attribute } from '../attribute';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
-import { SkillType } from '.';
+import { SkillType, Focusable, SkillLevel } from './skill.type';
+import { ActionTarget } from '../action-target';
 
 /**
  * Active Skills are motor programs that a character learns to perform.
- * Each skill can be acquired via items, etc., but often progression is determined by class.
+ * Each skill can be acquired via items, etc., but often progression is
+ * determined by class.
  */
 export namespace Basic {
-  export enum Focusable {
-    STAMINA = 'Stamina',
-    TRUE = 'True',
-    FALSE = 'False',
-  }
-
-  export const BOAST: SkillType = {
-    name: 'Boast',
+  export const BOAST_LV1: SkillType = {
+    name: 'Boast Lv.1',
     description: 'Increase party morale.',
-    effect: [],
+    target: ActionTarget.ALLY,
     cost: [{ remove: Attribute.SPIRIT, quantity: '1d6+10' }],
+    effect: [],
     menuSlot: MenuSlot.ABILITIES,
+    level: SkillLevel.LV1,
+  };
+
+  export const BOAST_LV2: SkillType = {
+    ...BOAST_LV1,
+    name: 'Boast Lv.2',
+    level: SkillLevel.LV2,
+    cost: [{ remove: Attribute.SPIRIT, quantity: '2d6+10' }],
   };
 
   export const DISGUISE: SkillType = {
