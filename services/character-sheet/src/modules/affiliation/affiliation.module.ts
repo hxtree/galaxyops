@@ -8,12 +8,12 @@ import { CharacterSheetSchema } from '../../models/character-sheet.schema';
 
 @Module({
   controllers: [AffiliationController],
-  providers: [AffiliationService, CharacterSheetRepository],
   imports: [
     databaseModule(),
     MongooseModule.forFeature([
       { name: 'CharacterSheet', schema: CharacterSheetSchema },
     ]),
   ],
+  providers: [AffiliationService, CharacterSheetRepository],
 })
 export class AffiliationModule {}

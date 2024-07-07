@@ -10,8 +10,6 @@ import { SkillType } from '.';
  */
 export namespace Summon {
   export const VACHEL: SkillType = {
-    name: 'Vachel',
-    description: 'A silver bull',
     backstory: 'A bull that Meeku raised as a child',
     commands: [
       'Charge',
@@ -19,20 +17,20 @@ export namespace Summon {
       'Pull Cart', // *Can be upgraded with CART to accommodate large Party.
       // Can be used with Overdrive combinations
     ],
+    description: 'A silver bull',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Vachel',
   };
 
   export const FELIX: SkillType = {
-    name: 'Felix',
-    description: 'A white lop-eared dwarf rabbit',
     backstory:
       'Felix is a pet that Loomee adopts. He does not listen well. He likes to nibble on grass slowly.',
+    description: 'A white lop-eared dwarf rabbit',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Felix',
   };
 
   export const HERALDIC_LION: SkillType = {
-    name: 'Heraldic Lion',
-    description: 'A regal lion with an impeccable stance',
     commands: [
       // https://familyhistoryfoundation.com/2020/07/17/heraldic-lion-positions/
       'Passant Stance', // claw
@@ -40,57 +38,59 @@ export namespace Summon {
       'Issuant Stance', // focus
       'Guardant Stance', // guard
     ],
+    description: 'A regal lion with an impeccable stance',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Heraldic Lion',
   };
 
   export const SUMMON: SkillType = {
-    name: '???',
-    description: '',
     backstory: '',
+    description: '',
     menuSlot: MenuSlot.SUMMON,
+    name: '???',
   };
 
   export const DISMISS: SkillType = {
-    name: '???',
-    description: '',
     backstory: '',
+    description: '',
     menuSlot: MenuSlot.SUMMON,
+    name: '???',
   };
 
   export const COMMAND: SkillType = {
-    name: '???',
-    description: '',
     backstory: '',
+    description: '',
     menuSlot: MenuSlot.SUMMON,
+    name: '???',
   };
 
   export const LYRE: SkillType = {
-    name: 'Lyre',
+    backstory: '',
     description:
       'A giant half Luna moth and lyrebird that Faye can summon at will',
-    backstory: '',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Lyre',
   };
 
   export const SANDY: SkillType = {
-    name: 'Sandy',
-    description: 'A box turtle',
     backstory: '',
+    description: 'A box turtle',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Sandy',
   };
 
   export const MISCHIEVOUS: SkillType = {
-    name: 'Mischievous',
-    description: 'A black and white cat',
     backstory: 'The Keeper of Law',
+    description: 'A black and white cat',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Mischievous',
   };
 
   export const SCRIBBLES: SkillType = {
-    name: 'Scribble',
-    description: 'A flying squirrel',
     backstory: '',
+    description: 'A flying squirrel',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Scribble',
   };
 
   /**
@@ -99,55 +99,55 @@ export namespace Summon {
    */
 
   export const OUROBOROS: SkillType = {
-    name: 'Ouroboros',
-    description: 'A demon that consumes itself.',
     backstory: '',
     commands: ['Consume', 'Regenerate', 'Ensnare'],
+    description: 'A demon that consumes itself.',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Ouroboros',
   };
 
   export const ORIAS: SkillType = {
-    name: 'Orias',
-    description:
-      'A Great Marquis of Hell, who rules over 30 legions of demons.',
     backstory:
       "He appears in the form of a lion with a serpent's tail, sitting upon a mighty horse.",
     commands: ['Roar', 'Summon Legions', 'Prowl'],
+    description:
+      'A Great Marquis of Hell, who rules over 30 legions of demons.',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Orias',
   };
 
   export const ASMODAY: SkillType = {
-    name: 'Asmoday',
-    description: 'A King of Hell with 72 legions of demons under his command.',
     backstory:
       'He appears with three heads: one like a bull, the second like a man, and the third like a ram.',
     commands: ['Triple Strike', 'Command Legions', 'Infernal Gaze'],
+    description: 'A King of Hell with 72 legions of demons under his command.',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Asmoday',
   };
 
   export const BELPHEGOR: SkillType = {
-    name: 'Belphegor',
-    description: 'A demon associated with discoveries and inventions.',
     backstory:
       'He tempts people by suggesting to them ingenious inventions that will make them rich.',
     commands: ['Inspire Invention', 'Wealth Temptation', 'Creative Insight'],
+    description: 'A demon associated with discoveries and inventions.',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Belphegor',
   };
 
   export const AMON: SkillType = {
-    name: 'Amon',
-    description: 'A Marquis of Hell who governs 40 legions of demons.',
     backstory: "He appears as a wolf with a serpent's tail, vomiting flames.",
     commands: ['Fiery Roar', 'Summon Legions', 'Inferno Breath'],
+    description: 'A Marquis of Hell who governs 40 legions of demons.',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Amon',
   };
 
   export const BARBATOS: SkillType = {
-    name: 'Barbatos',
-    description: 'A Duke of Hell who has power over 30 legions of demons.',
     backstory:
       'He appears as a great lion that has the wings of a gryphon, and he speaks hoarsely.',
     commands: ["Lion's Roar", 'Wings of Protection', "Gryphon's Call"],
+    description: 'A Duke of Hell who has power over 30 legions of demons.',
     menuSlot: MenuSlot.SUMMON,
+    name: 'Barbatos',
   };
 }

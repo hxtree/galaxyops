@@ -12,9 +12,9 @@ import { EquipmentId, EquipmentIds } from '../data/gear/equipment.gear';
 export class EquipmentEmbeddable {
   @IsEnum(EquipmentIds)
   @Prop({
-    type: String,
-    required: true,
     enum: EquipmentIds,
+    required: true,
+    type: String,
   })
   public equipmentId!: EquipmentId;
 

@@ -15,9 +15,9 @@ export class CharacterSheetStack extends cdk.Stack {
     });
 
     const apiEndpoint = new LambdaDomainName(this, `${id}-api-endpoint`, {
+      proxyLambda: microservice.getNodeJsFunction(),
       stageName,
       subdomainName: 'character-sheets',
-      proxyLambda: microservice.getNodeJsFunction(),
     });
 
     new cdk.CfnOutput(this, 'health check endpoint', {

@@ -15,123 +15,137 @@ import { ActionTarget } from '../action-target';
  */
 export namespace Passive {
   export const DUAL_WELD: SkillType = {
-    name: 'Dual Weld',
-    target: ActionTarget.SELF,
     description: 'Can use two one handed weapons at once.',
     // " Both malace and penny can learn this.
     menuSlot: MenuSlot.NONE,
+
+    name: 'Dual Weld',
+
+    target: ActionTarget.SELF,
   };
 
   export const ESCAPE_ARTIST: SkillType = {
-    name: 'Escape Artist',
-    target: ActionTarget.SELF,
     description: 'Makes it easier to run away from aggressive targets',
     menuSlot: MenuSlot.NONE,
+    name: 'Escape Artist',
+    target: ActionTarget.SELF,
   };
 
   export const INTIMIDATE: SkillType = {
-    name: 'Intimidate',
-    target: ActionTarget.OPPONENT,
     description: 'Causes fear in enemy',
     menuSlot: MenuSlot.NONE,
+    name: 'Intimidate',
+    target: ActionTarget.OPPONENT,
   };
 
   export const CONCENTRATION: SkillType = {
-    name: 'Concentration',
-    target: ActionTarget.SELF,
     description: 'Stay focused',
     menuSlot: MenuSlot.NONE,
+    name: 'Concentration',
+    target: ActionTarget.SELF,
   };
 
   export const BLUFF: SkillType = {
-    name: 'Bluff',
-    target: ActionTarget.SELF,
     description: 'Tell a lie without being caught',
     menuSlot: MenuSlot.NONE,
+    name: 'Bluff',
+    target: ActionTarget.SELF,
   };
 
   export const SENSE_BLUFF: SkillType = {
-    name: 'Sense Bluff',
-    target: ActionTarget.SELF,
     description: 'Detect if a lie is being told',
     // if character beats bluff check, a little icon on the screen will tell
     // if someone is trying to bluff party
     menuSlot: MenuSlot.NONE,
+
+    name: 'Sense Bluff',
+
+    target: ActionTarget.SELF,
   };
   export const GREEDY_INTENT: SkillType = {
-    name: 'Greedy Intent',
-    target: ActionTarget.SELF,
     description: 'Gain 5% more experience than the party.',
     // Acquired by defeating Greed.
     menuSlot: MenuSlot.NONE,
+
+    name: 'Greedy Intent',
+
+    target: ActionTarget.SELF,
   };
 
   export const SLOTH_COMPOSURE: SkillType = {
-    name: 'Sloth Composure',
-    target: ActionTarget.SELF,
     description: 'Halves damage taken when not actively engaged in actions.',
     // half damage and decreases DRIVE gauge
     // Acquired by defeating Lawzon.
     menuSlot: MenuSlot.NONE,
+
+    name: 'Sloth Composure',
+
+    target: ActionTarget.SELF,
   };
 
   export const BLOOD_LUST: SkillType = {
-    name: 'Blood Lust',
-    target: ActionTarget.SELF,
     description: 'Increases speed.',
     effect: [
       {
         add: Attribute.SPEED,
-        quantity: '10',
         chance: 1.0,
+        quantity: '10',
       },
     ],
     // Acquired by defeating Lust.
     menuSlot: MenuSlot.NONE,
+
+    name: 'Blood Lust',
+
+    target: ActionTarget.SELF,
   };
 
   export const ENVIOUS_OF_COMBAT: SkillType = {
-    name: 'Envious of Combat',
-    target: ActionTarget.SELF,
     description: 'Gains increased power.',
     effect: [
       {
         add: Attribute.POWER,
-        quantity: '10',
         chance: 1.0,
+        quantity: '10',
       },
     ],
     // Acquired by defeating Envy.
     menuSlot: MenuSlot.NONE,
+
+    name: 'Envious of Combat',
+
+    target: ActionTarget.SELF,
   };
 
   export const GLUTTONOUS_DESIRE: SkillType = {
-    name: 'Gluttonous Desire',
-    target: ActionTarget.SELF,
     description: 'Consumes food items twice as fast.',
     effect: [
       {
         add: Attribute.LIFE,
-        quantity: '10',
         chance: 1.0,
+        quantity: '10',
       },
       // TODO add effect for consuming food
     ],
     // Acquired by defeating Gluttony.
     menuSlot: MenuSlot.NONE,
+
+    name: 'Gluttonous Desire',
+
+    target: ActionTarget.SELF,
   };
 
   export const CATCHER: SkillType = {
-    name: 'Catcher',
-    target: ActionTarget.SELF,
     description: 'Receives bonuses when catching items.',
     menuSlot: MenuSlot.NONE,
+    name: 'Catcher',
+    target: ActionTarget.SELF,
   };
 
   export const LIMITLESS: SkillType = {
-    name: 'Limitless',
-    target: ActionTarget.SELF,
     description: 'Higher level cap.',
     menuSlot: MenuSlot.NONE,
+    name: 'Limitless',
+    target: ActionTarget.SELF,
   };
 }

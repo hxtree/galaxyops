@@ -33,216 +33,216 @@ export namespace StatusEffect {
 
   // TODO automatically apply when life is less than 0
   export const LIFELESS: BaseType = {
-    name: 'Lifeless',
-    description: 'Afflicted when Life is less than 0',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'Afflicted when Life is less than 0',
     effects: [],
+    name: 'Lifeless',
   };
 
   // TODO automatically set when Stamina is less than 0.
   export const KNOCKED_OUT: BaseType = {
-    name: 'Knocked Out',
-    description: 'is unable to move.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'is unable to move.',
+    name: 'Knocked Out',
   };
 
   export const CONFUSED: BaseType = {
-    name: 'Confused',
-    description: '',
     category: StatusEffectCategory.AFFLICTION,
+    description: '',
+    name: 'Confused',
   };
 
   export const DRUNK: BaseType = {
-    name: 'Drunk',
-    description: 'accuracy decreases',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'accuracy decreases',
+    name: 'Drunk',
   };
 
   export const DOOMED: BaseType = {
-    name: 'Doomed',
-    description: 'heal before timer runs out or KOs',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'heal before timer runs out or KOs',
+    name: 'Doomed',
   };
 
   export const MORTALLY_WOUNDED: BaseType = {
-    name: 'Mortally Wounded',
-    description: '',
     category: StatusEffectCategory.AFFLICTION,
+    description: '',
+    name: 'Mortally Wounded',
   };
 
   export const FROZEN: BaseType = {
-    name: 'Frozen',
-    description: '',
     category: StatusEffectCategory.AFFLICTION,
+    description: '',
+    name: 'Frozen',
   };
 
   export const COLD: BaseType = {
-    name: 'Cold',
-    description: 'Speed reduced',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'Speed reduced',
+    name: 'Cold',
   };
 
   export const BURNED: BaseType = {
-    name: 'Burned',
-    description: '',
     category: StatusEffectCategory.AFFLICTION,
+    description: '',
+    name: 'Burned',
   };
 
   export const BOUND: BaseType = {
-    name: 'Bound',
-    description: 'Cannot do anything but Break Free or use Tool  (interaction)',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'Cannot do anything but Break Free or use Tool  (interaction)',
+    name: 'Bound',
   };
 
   export const SLEEPY: BaseType = {
-    name: 'Sleepy',
-    description: '',
     category: StatusEffectCategory.AFFLICTION,
+    description: '',
+    name: 'Sleepy',
   };
 
   export const STUNNED: BaseType = {
-    name: 'Stunned',
-    description: '',
     category: StatusEffectCategory.AFFLICTION,
+    description: '',
+    name: 'Stunned',
   };
 
   export const DOWN: BaseType = {
-    name: 'Down',
-    description: 'is disabled and has fallen down',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'is disabled and has fallen down',
+    name: 'Down',
   };
 
   export const DISARMED: BaseType = {
-    name: 'Disarmed',
-    description: 'must get weapon and arm self again in order to attack.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'must get weapon and arm self again in order to attack.',
+    name: 'Disarmed',
   };
 
   export const EXILED: BaseType = {
-    name: 'Exiled',
-    description: 'Kick out of battle cannot return until battle is over',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'Kick out of battle cannot return until battle is over',
+    name: 'Exiled',
   };
 
   export const INFECTION: BaseType = {
-    name: 'Infection',
-    description: 'Damage is received each turn until infliction is healed.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'Damage is received each turn until infliction is healed.',
+    name: 'Infection',
   };
 
   export const POISON: BaseType = {
-    name: 'Posion',
-    description: 'Damage is received each turn until healed.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'Damage is received each turn until healed.',
+    name: 'Posion',
   };
 
   export const METAMORPHIC: BaseType = {
-    name: 'Metamorphic',
-    description: 'You are inflicted with random status affect each turn.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'You are inflicted with random status affect each turn.',
+    name: 'Metamorphic',
   };
 
   export const IGNORANT: BaseType = {
-    name: 'Ignorant',
-    description: 'unable to use Learn',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'unable to use Learn',
+    name: 'Ignorant',
   };
 
   export const ZIPPED: BaseType = {
-    name: 'Zipped',
-    description: 'cannot use Gear.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'cannot use Gear.',
+    name: 'Zipped',
   };
 
   export const SILENCE: BaseType = {
-    name: 'Silence',
-    description: 'cannot use Spells.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'cannot use Spells.',
+    name: 'Silence',
   };
 
   export const FATHOM: BaseType = {
-    name: 'Fathom',
-    description: 'cannot use Drive.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'cannot use Drive.',
+    name: 'Fathom',
   };
 
   export const DROWNED: BaseType = {
-    name: 'Drowned',
-    description: '',
     category: StatusEffectCategory.AFFLICTION,
+    description: '',
+    name: 'Drowned',
   };
 
   export const FEAR: BaseType = {
-    name: 'Fear',
-    description: 'cannot move.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'cannot move.',
+    name: 'Fear',
   };
 
   export const STOP: BaseType = {
-    name: 'Stop',
-    description: 'frozen in time.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'frozen in time.',
+    name: 'Stop',
   };
 
   export const SLOW: BaseType = {
-    name: 'Slow',
-    description: 'speed reduced.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'speed reduced.',
     effects: [
       {
-        remove: Attribute.SPEED,
         quantity: '2d6',
+        remove: Attribute.SPEED,
       },
     ],
+    name: 'Slow',
   };
 
   export const BERSERK: BaseType = {
-    name: 'Berserk',
-    description: 'can only attack. Power increased by Drive.',
     category: StatusEffectCategory.AFFLICTION,
+    description: 'can only attack. Power increased by Drive.',
+    name: 'Berserk',
   };
 
   export const BLITZ: BaseType = {
-    name: 'Blitz',
+    category: StatusEffectCategory.BUFF,
     description:
       'Strength and are speed modified for only duration of battle (-5x through +5x)',
-    category: StatusEffectCategory.BUFF,
+    name: 'Blitz',
   };
 
   export const ONI: BaseType = {
-    name: 'Oni',
-    description: 'enters a berserk like mode and attacks uncontrollable.',
     category: StatusEffectCategory.BUFF,
+    description: 'enters a berserk like mode and attacks uncontrollable.',
+    name: 'Oni',
   };
 
   export const BARRIER: BaseType = {
-    name: 'Barrier',
-    description: 'damage taken decreases',
     category: StatusEffectCategory.BUFF,
+    description: 'damage taken decreases',
     effects: [
       {
         add: Attribute.DEFENSE,
         quantity: '2d6',
       },
     ],
+    name: 'Barrier',
   };
 
   export const REFLECT: BaseType = {
-    name: 'Reflect',
-    description: 'damage is reflected back',
     category: StatusEffectCategory.BUFF,
+    description: 'damage is reflected back',
+    name: 'Reflect',
   };
 
   export const HASTE: BaseType = {
-    name: 'Haste',
-    description: 'Speed increased',
     category: StatusEffectCategory.BUFF,
+    description: 'Speed increased',
     effects: [
       {
         add: Attribute.SPEED,
         quantity: '2d6',
       },
     ],
+    name: 'Haste',
   };
 }
 

@@ -12,9 +12,9 @@ export class CreateSpawnDto {
 
   @IsEnum(PlaceIds)
   @ApiProperty({
-    enum: PlaceIds,
     description:
       'Generate a spawn for a designated area. Requestor is responsible for only making request for areas where party is presence to avoid computing irrelevant spawns.',
+    enum: PlaceIds,
   })
   public place: PlaceId;
 

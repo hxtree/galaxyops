@@ -9,12 +9,12 @@ import { SpawnService } from './spawn.service';
 
 @Module({
   controllers: [NpcController],
-  providers: [PlaceService, CharacterSheetRepository, SpawnService],
   imports: [
     databaseModule(),
     MongooseModule.forFeature([
       { name: 'CharacterSheet', schema: CharacterSheetSchema },
     ]),
   ],
+  providers: [PlaceService, CharacterSheetRepository, SpawnService],
 })
 export class NpcModule {}

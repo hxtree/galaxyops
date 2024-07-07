@@ -10,6 +10,7 @@ import { ItemModule } from './modules/item/item.module';
 import { AffiliationModule } from './modules/affiliation/affiliation.module';
 
 @Module({
+  exports: [],
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     HealthModule,
@@ -22,6 +23,5 @@ import { AffiliationModule } from './modules/affiliation/affiliation.module';
     AffiliationModule,
   ],
   providers: [],
-  exports: [],
 })
 export class AppModule {}

@@ -38,9 +38,9 @@ export class CharacterSheet extends BaseEntity {
 
   @IsEnum(ArchetypeIds)
   @Prop({
-    type: String,
-    required: true,
     enum: ArchetypeIds,
+    required: true,
+    type: String,
   })
   public archetypeId!: ArchetypeId;
 
@@ -117,19 +117,19 @@ export type TCharacterSheetDocument = CharacterSheet & Document;
 
 export const CharacterSheetSchema = SchemaFactory.createForClass(CharacterSheet)
   .set('toJSON', {
-    virtuals: true,
-    versionKey: false,
     transform(doc, ret) {
       delete ret._id;
     },
+    versionKey: false,
+    virtuals: true,
   })
   .set('toObject', {
-    virtuals: true,
-    versionKey: false,
     transform(doc, ret) {
       ret._id = ret.id;
       delete ret.id;
     },
+    versionKey: false,
+    virtuals: true,
   });
 
 CharacterSheetSchema.virtual('fullName').get(function () {

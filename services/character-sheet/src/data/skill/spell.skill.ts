@@ -19,93 +19,89 @@ import { ActionTarget } from '../action-target';
  * |  9  |  12 | Tera   | Tera Fireball  |
  * | 12  |  15 | Omega  | Omega Fireball |
  */
-
-// menuSlot: MenuSlot.First,
-// category: SkillCategory.CLASS,
-
 export namespace Spell {
   export const GRAVITY_LV1: SkillType = {
-    name: 'Gravity',
+    coolDownTime: Duration.fromObject({ seconds: 60 }),
     description:
       'Coalesce gravity around target. Causes flying targets to hit ground',
-    target: ActionTarget.OPPONENT,
     effect: [
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+2',
+        remove: Attribute.LIFE,
         tags: [EffectTag.PHYSICAL, EffectTag.AERIAL],
       },
     ],
-    prepareTime: Duration.fromObject({ seconds: 3 }),
     executionTime: Duration.fromObject({ seconds: 1 }),
-    recoveryTime: Duration.fromObject({ seconds: 3 }),
-    coolDownTime: Duration.fromObject({ seconds: 60 }),
-    menuSlot: MenuSlot.MAGIC,
     level: SkillLevel.LV1,
+    menuSlot: MenuSlot.MAGIC,
+    name: 'Gravity',
+    prepareTime: Duration.fromObject({ seconds: 3 }),
+    recoveryTime: Duration.fromObject({ seconds: 3 }),
+    target: ActionTarget.OPPONENT,
   };
 
   export const GRAVITY_LV2: SkillType = {
     ...GRAVITY_LV1,
+    coolDownTime: Duration.fromObject({ seconds: 15 }),
     effect: [
       {
-        remove: Attribute.LIFE,
         quantity: '2d6+10',
+        remove: Attribute.LIFE,
         tags: [EffectTag.PHYSICAL, EffectTag.AERIAL],
       },
     ],
-    prepareTime: Duration.fromObject({ seconds: 2 }),
     executionTime: Duration.fromObject({ seconds: 1 }),
-    recoveryTime: Duration.fromObject({ seconds: 2 }),
-    coolDownTime: Duration.fromObject({ seconds: 15 }),
     level: SkillLevel.LV2,
+    prepareTime: Duration.fromObject({ seconds: 2 }),
+    recoveryTime: Duration.fromObject({ seconds: 2 }),
   };
 
   export const SHOCK: SkillType = {
-    name: 'Shock',
     description: 'Electrocutes target',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.ELECTRIC] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.ELECTRIC] },
       { add: 'STUNNED', chance: 0.2, tags: [EffectTag.ELECTRIC] },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Shock',
+    target: ActionTarget.OPPONENT,
   };
 
   export const QUAKE: SkillType = {
-    name: 'Quake',
     description: 'Shakes earth surrounding target',
-    target: ActionTarget.OPPONENT, // AOE?
+    // AOE?
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.EARTH] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.EARTH] },
       {
         add: 'DOWN',
         chance: 0.2,
         tags: [EffectTag.EARTH, EffectTag.GROUND_LEVEL],
       },
     ],
+
     menuSlot: MenuSlot.MAGIC,
+    name: 'Quake',
+    target: ActionTarget.OPPONENT,
   };
 
   export const LANDSLIDE: SkillType = {
-    name: 'Landslide',
     description: 'Creates a landslide',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.EARTH] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.EARTH] },
       { add: 'DOWN', chance: 0.2, tags: [EffectTag.EARTH] },
       { add: 'EXILED', chance: 0.3, tags: [EffectTag.EARTH] },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Landslide',
+    target: ActionTarget.OPPONENT,
   };
 
   export const BLIZZARD: SkillType = {
-    name: 'Blizzard',
     description: 'Creates a Blizzard',
-    target: ActionTarget.OPPONENT,
     effect: [
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+2',
+        remove: Attribute.LIFE,
         tags: [EffectTag.WATER, EffectTag.AIR],
       },
       {
@@ -120,36 +116,36 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Blizzard',
+    target: ActionTarget.OPPONENT,
   };
 
   export const FIREBALL: SkillType = {
-    name: 'Fireball',
     description: 'Shoot a fireball at target',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.FIRE] },
       { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Fireball',
+    target: ActionTarget.OPPONENT,
   };
 
   export const INFERNO: SkillType = {
-    name: 'Inferno',
     description: 'Creates a Inferno',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.FIRE] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.FIRE] },
       { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Inferno',
+    target: ActionTarget.OPPONENT,
   };
 
   export const TWISTER: SkillType = {
-    name: 'Twister',
     description: 'Creates a Twister',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
       {
         add: 'BURNED',
         chance: 0.2,
@@ -157,14 +153,14 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Twister',
+    target: ActionTarget.OPPONENT,
   };
 
   export const GUST: SkillType = {
-    name: 'Gust',
     description: 'Creates a Gust',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
       {
         add: 'EXILED',
         chance: 0.2,
@@ -172,14 +168,14 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Gust',
+    target: ActionTarget.OPPONENT,
   };
 
   export const GALE: SkillType = {
-    name: 'Gale',
     description: 'Creates Gale',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
       {
         add: 'EXILED',
         chance: 0.2,
@@ -187,14 +183,14 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Gale',
+    target: ActionTarget.OPPONENT,
   };
 
   export const CYCLONE: SkillType = {
-    name: 'Cyclone',
     description: 'Creates Cyclone',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.AIR] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
       {
         add: 'EXILED',
         chance: 0.2,
@@ -202,14 +198,14 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Cyclone',
+    target: ActionTarget.OPPONENT,
   };
 
   export const TSUNAMI: SkillType = {
-    name: 'Tsunami',
     description: 'A water-based attack that creates Tsunami',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.WATER] },
       {
         add: 'EXILED',
         chance: 0.2,
@@ -217,14 +213,14 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Tsunami',
+    target: ActionTarget.OPPONENT,
   };
 
   export const AQUA: SkillType = {
-    name: 'Aqua',
     description: 'Creates Aqua',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
+      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.WATER] },
       {
         add: 'EXILED',
         chance: 0.2,
@@ -232,168 +228,168 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Aqua',
+    target: ActionTarget.OPPONENT,
   };
 
   export const HEAL: SkillType = {
-    name: 'Heal',
     description: 'Heal target',
-    target: ActionTarget.ALLY,
     effect: [
       { add: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Heal',
+    target: ActionTarget.ALLY,
   };
 
   export const REVIVE: SkillType = {
-    name: 'Revive',
     description: 'Restore life to target',
-    target: ActionTarget.ALLY,
-    effect: [{ remove: 'LIFELESS', chance: 0.9, tags: [] }],
+    effect: [{ chance: 0.9, remove: 'LIFELESS', tags: [] }],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Revive',
+    target: ActionTarget.ALLY,
   };
 
   export const CURE: SkillType = {
-    name: 'Cure',
     description: 'Cures status effects',
-    target: ActionTarget.ALLY,
     effect: [
-      { remove: 'COLD', chance: 1 },
-      { remove: 'DOOMED', chance: 1 },
-      { remove: 'INFECTION', chance: 1 },
-      { remove: 'SILENCE', chance: 1 },
+      { chance: 1, remove: 'COLD' },
+      { chance: 1, remove: 'DOOMED' },
+      { chance: 1, remove: 'INFECTION' },
+      { chance: 1, remove: 'SILENCE' },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Cure',
+    target: ActionTarget.ALLY,
   };
 
   export const BARRIER: SkillType = {
-    name: 'Barrier',
     description: 'Barrier StatusEffects',
-    target: ActionTarget.ALLY,
     effect: [{ add: 'BARRIER', chance: 1, tags: [EffectTag.AIR] }],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Barrier',
+    target: ActionTarget.ALLY,
   };
 
   export const BOOM: SkillType = {
-    name: 'Boom',
     description: 'Cast Boom on target',
-    target: ActionTarget.OPPONENT,
     effect: [
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+4',
+        remove: Attribute.LIFE,
         tags: [EffectTag.FIRE],
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Boom',
+    target: ActionTarget.OPPONENT,
   };
 
   export const REFLECT: SkillType = {
-    name: 'Reflect',
     description: 'Cast Reflect on target',
-    target: ActionTarget.OPPONENT,
     effect: [{ add: 'REFLECT', chance: 1 }],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Reflect',
+    target: ActionTarget.OPPONENT,
   };
 
   export const FLARE: SkillType = {
-    name: 'Flare',
     description: 'Cast Flare on target',
-    target: ActionTarget.OPPONENT,
     effect: [
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+4',
+        remove: Attribute.LIFE,
         tags: [EffectTag.FIRE],
       },
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+4',
+        remove: Attribute.LIFE,
         tags: [EffectTag.LIGHT],
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Flare',
+    target: ActionTarget.OPPONENT,
   };
 
   export const METEOR: SkillType = {
-    name: 'Meteor',
     description: 'Cast Meteor on target',
-    target: ActionTarget.OPPONENT,
     effect: [
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+4',
+        remove: Attribute.LIFE,
         tags: [EffectTag.FIRE],
       },
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+4',
+        remove: Attribute.LIFE,
         tags: [EffectTag.EARTH],
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Meteor',
+    target: ActionTarget.OPPONENT,
   };
 
   export const TELEPATHY: SkillType = {
-    name: 'Telepathy',
     description: 'Cast Telepathy on target',
-    target: ActionTarget.OPPONENT,
     effect: [
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+4',
+        remove: Attribute.LIFE,
         tags: [EffectTag.PSYCHIC],
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Telepathy',
+    target: ActionTarget.OPPONENT,
   };
 
   export const LIGHT: SkillType = {
-    name: 'Light',
     description: 'Cast light on target',
-    target: ActionTarget.OPPONENT,
     effect: [
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+4',
+        remove: Attribute.LIFE,
         tags: [EffectTag.LIGHT],
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Light',
+    target: ActionTarget.OPPONENT,
   };
 
   export const DESOLATE: SkillType = {
-    name: 'Desolate',
     description: 'To make an area empty or bare.',
-    target: ActionTarget.OPPONENT,
     effect: [
-      { remove: Attribute.LIFE, quantity: '1d6+4', tags: [EffectTag.DARKNESS] },
+      { quantity: '1d6+4', remove: Attribute.LIFE, tags: [EffectTag.DARKNESS] },
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+4',
+        remove: Attribute.LIFE,
         tags: [EffectTag.DARKNESS],
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Desolate',
+    target: ActionTarget.OPPONENT,
   };
 
   export const DARKNESS: SkillType = {
-    name: 'Darkness',
     description: 'Decrease the area that your opponent can see',
-    target: ActionTarget.OPPONENT,
     effect: [
       {
-        remove: Attribute.LIFE,
         quantity: '1d6+4',
+        remove: Attribute.LIFE,
         tags: [EffectTag.DARKNESS],
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Darkness',
+    target: ActionTarget.OPPONENT,
   };
 
   export const STOP: SkillType = {
-    name: 'Stop',
     description: 'Freezes a character in time',
-    target: ActionTarget.OPPONENT,
     effect: [
       {
         add: 'STOP',
@@ -401,12 +397,12 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Stop',
+    target: ActionTarget.OPPONENT,
   };
 
   export const SLOW: SkillType = {
-    name: 'Slow',
     description: 'Slow down an opponent',
-    target: ActionTarget.OPPONENT,
     effect: [
       {
         add: 'SLOW',
@@ -414,61 +410,65 @@ export namespace Spell {
       },
     ],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Slow',
+    target: ActionTarget.OPPONENT,
   };
 
   export const HASTE: SkillType = {
-    name: 'Haste',
     description: 'Speed up a character',
-    target: ActionTarget.OPPONENT, // self
+    // self
     effect: [
       {
         add: 'HASTE',
         tags: [EffectTag.TIME],
       },
     ],
+
     menuSlot: MenuSlot.MAGIC,
+    name: 'Haste',
+    target: ActionTarget.OPPONENT,
   };
 
   export const CHILL: SkillType = {
-    name: 'Chill',
     description: '',
-    target: ActionTarget.OPPONENT,
     menuSlot: MenuSlot.MAGIC,
+    name: 'Chill',
+    target: ActionTarget.OPPONENT,
   };
 
   export const CHARM: SkillType = {
-    name: 'Charm',
     description: '',
-    target: ActionTarget.OPPONENT,
     menuSlot: MenuSlot.MAGIC,
+    name: 'Charm',
+    target: ActionTarget.OPPONENT,
   };
 
   export const FROST: SkillType = {
-    name: 'Frost',
     description: '',
-    target: ActionTarget.OPPONENT,
     menuSlot: MenuSlot.MAGIC,
+    name: 'Frost',
+    target: ActionTarget.OPPONENT,
   };
 
   export const ABSORB: SkillType = {
-    name: 'Absorb',
     description: '',
-    target: ActionTarget.OPPONENT,
     menuSlot: MenuSlot.MAGIC,
+    name: 'Absorb',
+    target: ActionTarget.OPPONENT,
   };
 
   export const LEECH: SkillType = {
-    name: 'Leech',
     description: '',
-    target: ActionTarget.OPPONENT,
     menuSlot: MenuSlot.MAGIC,
+    name: 'Leech',
+    target: ActionTarget.OPPONENT,
   };
 
   export const DRAIN: SkillType = {
-    name: 'Drain',
     description: '',
-    target: ActionTarget.OPPONENT,
     effect: [],
     menuSlot: MenuSlot.MAGIC,
+    name: 'Drain',
+    target: ActionTarget.OPPONENT,
   };
 }

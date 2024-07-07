@@ -15,16 +15,16 @@ import { ActionTarget } from '../action-target';
  */
 export namespace Combo {
   export const BLITZ: SkillType = {
-    name: 'Blitz',
-    target: ActionTarget.OPPONENT,
-    description: '',
-    menuSlot: MenuSlot.TOOLS,
     buttonCombos: [
       {
+        context: GameContext.TERRAIN,
         simultaneous: [Button.ATTACK, Button.ATTACK, Button.ACTION],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
     ],
+    description: '',
+    menuSlot: MenuSlot.TOOLS,
+    name: 'Blitz',
+    target: ActionTarget.OPPONENT,
   };
 }

@@ -10,250 +10,250 @@ import { ActionTarget } from '../action-target';
  */
 export namespace Movement {
   export const WALK: SkillType = {
-    name: 'Walk',
-    target: ActionTarget.SELF,
-    description: 'Move slowly forward or backward side to side',
     buttonCombos: [
       {
+        context: GameContext.TERRAIN,
         simultaneous: [Button.UP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         simultaneous: [Button.RIGHT],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         simultaneous: [Button.DOWN],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         simultaneous: [Button.LEFT],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
     ],
+    description: 'Move slowly forward or backward side to side',
     menuSlot: MenuSlot.MOVEMENT,
+    name: 'Walk',
+    target: ActionTarget.SELF,
   };
 
   export const RUN: SkillType = {
-    name: 'Run',
-    target: ActionTarget.SELF,
-    description: 'Move quickly using stamina',
-    cost: [
-      {
-        remove: Attribute.SPIRIT,
-        quantity: '1',
-        chance: 1,
-      },
-    ],
     buttonCombos: [
       {
+        context: GameContext.TERRAIN,
         simultaneous: [Button.UP, Button.ACTION],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         simultaneous: [Button.RIGHT, Button.ACTION],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         simultaneous: [Button.DOWN, Button.ACTION],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         simultaneous: [Button.LEFT, Button.ACTION],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
     ],
+    cost: [
+      {
+        chance: 1,
+        quantity: '1',
+        remove: Attribute.SPIRIT,
+      },
+    ],
+    description: 'Move quickly using stamina',
     menuSlot: MenuSlot.MOVEMENT,
+    name: 'Run',
+    target: ActionTarget.SELF,
   };
 
   // party members should have to learn
   export const SWIM: SkillType = {
-    name: 'Swim',
-    target: ActionTarget.SELF,
-    description: 'Move in deep water',
-    cost: [
-      {
-        remove: Attribute.SPIRIT,
-        quantity: '3',
-        chance: 1,
-      },
-    ],
     buttonCombos: [
       {
+        context: GameContext.WATER,
         simultaneous: [Button.UP],
         timingWindowMs: 300,
-        context: GameContext.WATER,
       },
       {
+        context: GameContext.WATER,
         simultaneous: [Button.RIGHT],
         timingWindowMs: 300,
-        context: GameContext.WATER,
       },
       {
+        context: GameContext.WATER,
         simultaneous: [Button.DOWN],
         timingWindowMs: 300,
-        context: GameContext.WATER,
       },
       {
+        context: GameContext.WATER,
         simultaneous: [Button.LEFT],
         timingWindowMs: 300,
-        context: GameContext.WATER,
       },
     ],
+    cost: [
+      {
+        chance: 1,
+        quantity: '3',
+        remove: Attribute.SPIRIT,
+      },
+    ],
+    description: 'Move in deep water',
     menuSlot: MenuSlot.MOVEMENT,
+    name: 'Swim',
+    target: ActionTarget.SELF,
   };
 
   export const SWIM_FAST: SkillType = {
-    name: 'Swim Fast',
-    target: ActionTarget.SELF,
-    description: 'Move fast in deep water',
-    cost: [
-      {
-        remove: Attribute.SPIRIT,
-        quantity: '3',
-        chance: 1,
-      },
-    ],
     buttonCombos: [
       {
+        context: GameContext.WATER,
         simultaneous: [Button.UP, Button.ACTION],
         timingWindowMs: 300,
-        context: GameContext.WATER,
       },
       {
+        context: GameContext.WATER,
         simultaneous: [Button.RIGHT, Button.ACTION],
         timingWindowMs: 300,
-        context: GameContext.WATER,
       },
       {
+        context: GameContext.WATER,
         simultaneous: [Button.DOWN, Button.ACTION],
         timingWindowMs: 300,
-        context: GameContext.WATER,
       },
       {
+        context: GameContext.WATER,
         simultaneous: [Button.LEFT, Button.ACTION],
         timingWindowMs: 300,
-        context: GameContext.WATER,
       },
     ],
+    cost: [
+      {
+        chance: 1,
+        quantity: '3',
+        remove: Attribute.SPIRIT,
+      },
+    ],
+    description: 'Move fast in deep water',
     menuSlot: MenuSlot.MOVEMENT,
+    name: 'Swim Fast',
+    target: ActionTarget.SELF,
   };
 
   export const BACK_FLIP: SkillType = {
-    name: 'Back Flip',
-    target: ActionTarget.SELF,
-    description: 'Quickly move backwards',
-    cost: [
-      {
-        remove: Attribute.SPIRIT,
-        quantity: '5',
-        chance: 1,
-      },
-    ],
-    menuSlot: MenuSlot.MOVEMENT,
     buttonCombos: [
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.UP, Button.DOWN, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.RIGHT, Button.LEFT, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.DOWN, Button.UP, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.LEFT, Button.RIGHT, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
     ],
+    cost: [
+      {
+        chance: 1,
+        quantity: '5',
+        remove: Attribute.SPIRIT,
+      },
+    ],
+    description: 'Quickly move backwards',
+    menuSlot: MenuSlot.MOVEMENT,
+    name: 'Back Flip',
+    target: ActionTarget.SELF,
   };
 
   export const DOUBLE_BACK_FLIP: SkillType = {
-    name: 'Double Back Flip',
-    target: ActionTarget.SELF,
-    description: 'Quickly move backwards twice',
-    cost: [
-      {
-        remove: Attribute.SPIRIT,
-        quantity: '5',
-        chance: 1,
-      },
-    ],
-    menuSlot: MenuSlot.MOVEMENT,
     buttonCombos: [
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.UP, Button.DOWN, Button.JUMP, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.RIGHT, Button.LEFT, Button.JUMP, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.DOWN, Button.UP, Button.JUMP, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.LEFT, Button.RIGHT, Button.JUMP, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
     ],
+    cost: [
+      {
+        chance: 1,
+        quantity: '5',
+        remove: Attribute.SPIRIT,
+      },
+    ],
+    description: 'Quickly move backwards twice',
+    menuSlot: MenuSlot.MOVEMENT,
+    name: 'Double Back Flip',
+    target: ActionTarget.SELF,
   };
 
   export const JUMP: SkillType = {
-    name: 'Jump',
-    target: ActionTarget.SELF,
-    description:
-      'Use stamina to move vertically and reach otherwise unreachable places',
-    cost: [
-      {
-        remove: Attribute.SPIRIT,
-        quantity: '1',
-        chance: 1,
-      },
-    ],
     buttonCombos: [
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
     ],
+    cost: [
+      {
+        chance: 1,
+        quantity: '1',
+        remove: Attribute.SPIRIT,
+      },
+    ],
+    description:
+      'Use stamina to move vertically and reach otherwise unreachable places',
     menuSlot: MenuSlot.MOVEMENT,
+    name: 'Jump',
+    target: ActionTarget.SELF,
   };
 
   // Long – (Directional Pad + Press Square) jump a long way.
@@ -261,56 +261,60 @@ export namespace Movement {
   // "88","Running Jump","Running while jumping","87",,"87"
 
   export const HIGH_JUMP: SkillType = {
-    name: 'High Jump',
-    target: ActionTarget.SELF,
-    description: 'Charged vertical jump', // jump straight up in the air using a stamina boost.
-    cost: [
-      {
-        remove: Attribute.SPIRIT,
-        quantity: '4',
-        chance: 1,
-      },
-    ],
     buttonCombos: [
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.JUMP, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.JUMP, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.JUMP, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
       {
+        context: GameContext.TERRAIN,
         inOrder: [Button.JUMP, Button.JUMP],
         timingWindowMs: 300,
-        context: GameContext.TERRAIN,
       },
     ],
+    // jump straight up in the air using a stamina boost.
+    cost: [
+      {
+        chance: 1,
+        quantity: '4',
+        remove: Attribute.SPIRIT,
+      },
+    ],
+
+    description: 'Charged vertical jump',
+
     menuSlot: MenuSlot.MOVEMENT,
+
+    name: 'High Jump',
+    target: ActionTarget.SELF,
   };
 
   export const CLIMB: SkillType = {
-    name: 'Climb',
-    target: ActionTarget.SELF,
     description: 'Scale a wall',
     menuSlot: MenuSlot.MOVEMENT,
+    name: 'Climb',
+    target: ActionTarget.SELF,
   };
 
   export const TREK: SkillType = {
-    name: 'Trek',
-    target: ActionTarget.SELF,
     description:
       'Walk up steep hill without falling down. '
       + 'Used to determine how steep an angled tile you can stand on. '
       + 'If your character fails to trek the tile then they will fall from it and will be to step onto it. ',
     menuSlot: MenuSlot.MOVEMENT,
+    name: 'Trek',
+    target: ActionTarget.SELF,
   };
 
   // Duck – (Hold Square + Backwards?) used to evaded attacks works best if preformed during attack.

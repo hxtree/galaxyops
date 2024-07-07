@@ -8,37 +8,37 @@ import { ActionTarget } from '../action-target';
  */
 export namespace Trap {
   export const POISON_TRAP: SkillType = {
-    name: 'Poison Trap',
-    target: ActionTarget.INTERACTION_OBJECT,
     description: 'Sets a poison trap.',
     menuSlot: MenuSlot.TRAPS,
+    name: 'Poison Trap',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const EXPLOSIVE_TRAP: SkillType = {
-    name: 'Explosive Trap',
-    target: ActionTarget.INTERACTION_OBJECT,
     description: 'Sets an explosive trap.',
     menuSlot: MenuSlot.TRAPS,
+    name: 'Explosive Trap',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const TIME_BOMB_TRAP: SkillType = {
-    name: 'Time Bomb Trap',
-    target: ActionTarget.INTERACTION_OBJECT,
     description: 'Sets a time-based trap.',
     menuSlot: MenuSlot.TRAPS,
+    name: 'Time Bomb Trap',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const CALTROPS_TRAP: SkillType = {
-    name: 'Caltrops Trap',
-    target: ActionTarget.INTERACTION_OBJECT,
     description: 'Sets a trap of spiked caltrops.',
     menuSlot: MenuSlot.TRAPS,
+    name: 'Caltrops Trap',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const DISABLE_TRAP: SkillType = {
-    name: 'Disable Trap',
-    target: ActionTarget.INTERACTION_OBJECT,
     description: 'Disables a set trap.',
     menuSlot: MenuSlot.TRAPS,
+    name: 'Disable Trap',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 }

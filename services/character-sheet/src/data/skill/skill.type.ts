@@ -34,9 +34,17 @@ export enum ObjectCategory {
   LOCKED = 'Locked',
 }
 
+/**
+ * Skills are independent of specific actors and targets.
+ * They represent abilities assigned to characters often via discipline.
+ * Each action is expected to adjust its computation based on the stats of the
+ * actors and targets involved. The outcome of the same action can vary
+ * significantly when performed by actors with vastly different skills.
+ */
 export type SkillType = {
   /**
-   * The name of the skill, e.g., formatted as "Slash Lv.1" for display on the frontend.
+   * The name of the skill, e.g., formatted as "Slash Lv.1" for display on the
+   * frontend.
    */
   name: string;
 

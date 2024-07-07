@@ -8,9 +8,9 @@ import { DisciplineId, DisciplineIds } from '../data/discipline';
 export class DisciplineEmbeddable {
   @IsEnum(DisciplineIds)
   @Prop({
-    type: String,
-    required: true,
     enum: DisciplineIds,
+    required: true,
+    type: String,
   })
   public disciplineId!: DisciplineId;
 

@@ -41,16 +41,16 @@ export type MenuSlotTypes = {
 };
 
 export const MenuSlot: MenuSlotTypes = {
-  NONE: { order: MenuSlotOrder.NONE, name: 'None' },
-  INTERACTION: { order: MenuSlotOrder.INTERACTION, name: 'Interaction' },
-  ATTACK: { order: MenuSlotOrder.SECOND, name: 'Attack' },
-  MAGIC: { order: MenuSlotOrder.THIRD, name: 'Magic' },
-  ABILITIES: { order: MenuSlotOrder.FOURTH, name: 'Abilities' },
-  TRAPS: { order: MenuSlotOrder.FIFTH, name: 'Traps' },
-  TOOLS: { order: MenuSlotOrder.FIFTH, name: 'Tools' },
-  SUMMON: { order: MenuSlotOrder.FIFTH, name: 'Summon' },
-  ITEM: { order: MenuSlotOrder.ITEM, name: 'Item' },
-  MOVEMENT: { order: MenuSlotOrder.MOVEMENT, name: 'Movement' },
-  DRIVE: { order: MenuSlotOrder.FIFTH, name: 'Drive' },
-  TEAMWORK: { order: MenuSlotOrder.FIFTH, name: 'Teamwork' },
+  ABILITIES: { name: 'Abilities', order: MenuSlotOrder.FOURTH },
+  ATTACK: { name: 'Attack', order: MenuSlotOrder.SECOND },
+  DRIVE: { name: 'Drive', order: MenuSlotOrder.FIFTH },
+  INTERACTION: { name: 'Interaction', order: MenuSlotOrder.INTERACTION },
+  ITEM: { name: 'Item', order: MenuSlotOrder.ITEM },
+  MAGIC: { name: 'Magic', order: MenuSlotOrder.THIRD },
+  MOVEMENT: { name: 'Movement', order: MenuSlotOrder.MOVEMENT },
+  NONE: { name: 'None', order: MenuSlotOrder.NONE },
+  SUMMON: { name: 'Summon', order: MenuSlotOrder.FIFTH },
+  TEAMWORK: { name: 'Teamwork', order: MenuSlotOrder.FIFTH },
+  TOOLS: { name: 'Tools', order: MenuSlotOrder.FIFTH },
+  TRAPS: { name: 'Traps', order: MenuSlotOrder.FIFTH },
 };

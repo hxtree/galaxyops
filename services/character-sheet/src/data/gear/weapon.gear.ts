@@ -71,44 +71,44 @@ export namespace Weapon {
    * Gear Slots – Right Hand AND Left Hand
    */
   export const ASMINS_AXE: Type = {
-    name: "Asmin's Aze",
+    actions: [Skill.SLASH],
+    area: 1,
     category: Category.TWO_HANDED_AXE,
+    name: "Asmin's Aze",
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.SLASH],
   };
 
   export const GREAT_WAIL: Type = {
-    name: 'Great Wail',
+    actions: [Skill.SLASH],
+    area: 1,
     category: Category.TWO_HANDED_AXE,
     description:
       'A large axe that can break through bone and makes a loud sound when swung',
+    name: 'Great Wail',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.SLASH],
   };
 
   export const JUSTICE: Type = {
-    name: 'Justice',
+    actions: [Skill.SLASH],
+    area: 1,
     category: Category.TWO_HANDED_AXE,
     history: "Gunter's trademark axe",
+    name: 'Justice',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.SLASH],
   };
 
   export const KEYSTONE: Type = {
-    name: 'Keystone',
+    actions: [Skill.SLASH],
+    area: 1,
     category: Category.TWO_HANDED_AXE,
     description:
       'A giant axe made of from a giant keystone with an iron bar stuck through it.',
+    name: 'Keystone',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.SLASH],
   };
 
   /**
@@ -122,22 +122,22 @@ export namespace Weapon {
    */
 
   export const ASSAULTER: Type = {
-    name: 'Assaulter',
+    actions: [Skill.STRIKE],
+    area: 1,
     category: Category.BOOMERANG,
+    name: 'Assaulter',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STRIKE],
   };
 
   export const STRIKER: Type = {
-    name: 'Striker',
+    actions: [Skill.STRIKE],
+    area: 1,
     category: Category.BOOMERANG,
     description: ' An extremely fast and deadly boomerang.',
+    name: 'Striker',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STRIKE],
   };
 
   /**
@@ -147,28 +147,28 @@ export namespace Weapon {
    * Gear Slots – Right Hand AND Left Hand
    */
   export const ENERGY_BREAKER: Type = {
-    name: 'EnergyBreaker',
+    actions: [Skill.BLOCK, Skill.STRIKE],
+    area: 1,
     category: Category.SHIELD_SWORD,
     description:
       'An extremely large and heavy weapon that absorbs and releases energy.',
+    name: 'EnergyBreaker',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.BLOCK, Skill.STRIKE],
     // SPEED_DECREASE 1d5
     // FIRE 2d5
   };
 
   export const STONE_BREAKER: Type = {
-    name: 'Stone Breaker',
+    actions: [Skill.BLOCK, Skill.STRIKE],
+    area: 1,
     category: Category.SHIELD_SWORD,
     description:
       'An extremely large and heavy weapon with a special guilloche handle for grip.',
     history: 'It was reportedly used by Galax to bring peace.',
+    name: 'Stone Breaker',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.BLOCK, Skill.STRIKE],
     // Increases wait time
     // Increases recovery time
     // Increases damage
@@ -176,15 +176,15 @@ export namespace Weapon {
   };
 
   export const THE_MAN_SLAYER: Type = {
-    name: 'The Man Slayer',
+    actions: [Skill.BLOCK, Skill.STRIKE],
+    area: 1,
     category: Category.SHIELD_SWORD,
     description:
       'A giant ancient hellish looking blade. Its handle bares a dogtooth design.',
     history: 'It was reportedly used by Galax to bring peace.',
+    name: 'The Man Slayer',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.BLOCK, Skill.STRIKE],
   };
 
   /**
@@ -195,24 +195,24 @@ export namespace Weapon {
    * Gear Slots – Right Hand AND Left Hand
    */
   export const HEROS_BLADE: Type = {
-    name: "Hero's Blade",
+    actions: [Skill.STRIKE],
+    area: 1,
     category: Category.BROAD_SWORD,
     description:
       'A mystical blade that is destine to fall into the hands of the next true hero.',
+    name: "Hero's Blade",
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STRIKE],
   };
 
   export const SWORD_OF_LAWZON: Type = {
-    name: 'Sword of Lawzon',
+    actions: [Skill.STRIKE],
+    area: 1,
     category: Category.BROAD_SWORD,
     description: 'A dirty simple solid blade forged of harden steel.',
+    name: 'Sword of Lawzon',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STRIKE],
   };
 
   /**
@@ -222,36 +222,36 @@ export namespace Weapon {
    * They can also be used to deal melee damage.
    */
   export const TINY_TIMBER: Type = {
-    name: 'Tiny Timber',
+    actions: [Skill.STRIKE],
+    area: 1,
     category: Category.STAFF,
     description: 'A basic staff given to Magi in training',
+    name: 'Tiny Timber',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STRIKE],
   };
 
   export const CADUCEUS: Type = {
-    name: 'Caduceus',
+    actions: [Skill.STRIKE],
+    area: 1,
     category: Category.STAFF,
     description:
       'A staff with two serpents wrapped around it base and two wings that expand from its top.',
     history: 'An ancient wand said to be carried by the messenger of God.',
+    name: 'Caduceus',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STRIKE],
   };
 
   export const ANTEDILUVIAN: Type = {
-    name: 'Antediluvian',
+    actions: [Skill.STRIKE],
+    area: 1,
     category: Category.STAFF,
     description: 'An ancient wooden staff',
     history: 'An ancient weapon used to slay devils of the old world',
+    name: 'Antediluvian',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STRIKE],
   };
 
   /**
@@ -261,45 +261,45 @@ export namespace Weapon {
    */
 
   export const ETERNAL_FOLD: Type = {
-    name: 'Eternal Fold',
+    actions: [Skill.STAB],
+    area: 1,
     category: Category.RAPIER,
     history:
       'A sword that has been folded by generations of blacksmiths to create a flawless steel sword',
+    name: 'Eternal Fold',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STAB],
   };
 
   export const GOLD_RUSH: Type = {
-    name: 'Gold Rush',
+    actions: [Skill.STAB],
+    area: 1,
     category: Category.RAPIER,
     description:
       'A golden color sword that looks more fitting on a wall then a battlefield.',
+    name: 'Gold Rush',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STAB],
   };
 
   export const KINGS_BLADE: Type = {
-    name: "King's Blade",
+    actions: [Skill.STAB],
+    area: 1,
     category: Category.RAPIER,
     description: 'Whomever posses this blade is King of Rudner.',
+    name: "King's Blade",
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STAB],
   };
 
   export const RUSTY_RAPIER: Type = {
-    name: 'Rusty Rapier',
+    actions: [Skill.STAB],
+    area: 1,
     category: Category.RAPIER,
     description: 'A rusty sword. Chance of poisoning target.',
+    name: 'Rusty Rapier',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STAB],
   };
 
   /**
@@ -311,30 +311,30 @@ export namespace Weapon {
    */
 
   export const MYSTERIOUS_PENDANT: Type = {
-    name: 'Mysterious Pendant',
+    actions: [Skill.WARD, Skill.CURE],
+    area: 1,
     category: Category.PENDANT,
+    name: 'Mysterious Pendant',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.WARD, Skill.CURE],
   };
 
   export const PEACEKEEPER: Type = {
-    name: 'Peace Keeper',
+    actions: [Skill.LULLABY, Skill.PROTECT],
+    area: 1,
     category: Category.PENDANT,
+    name: 'Peace Keeper',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.LULLABY, Skill.PROTECT],
   };
 
   export const TROUBLE_MAKER: Type = {
-    name: 'Trouble Maker',
+    actions: [Skill.BLOOD_LUST, Skill.DARKNESS],
+    area: 1,
     category: Category.PENDANT,
+    name: 'Trouble Maker',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.BLOOD_LUST, Skill.DARKNESS],
   };
 
   /**
@@ -343,13 +343,13 @@ export namespace Weapon {
    */
 
   export const STANDARD_ISSUE: Type = {
-    name: 'Standard Issue',
+    actions: [Skill.STRIKE],
+    area: 1,
     category: Category.DUAL_KYOKETSU_SHOGE,
     description: 'The common Dual Kyoketsu Shoge given to fascist.',
+    name: 'Standard Issue',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.STRIKE],
   };
 
   /**
@@ -361,81 +361,85 @@ export namespace Weapon {
   // which one is Wisp’s Knife?
 
   export const GREED: Type = {
-    name: 'Greed',
+    actions: [Skill.SLASH, Skill.ABSORB],
+    area: 1,
     category: Category.KNIFE,
     description:
       'A intricate, powerful weapon that is capable of stealing the life from its target.',
     history: 'This weapon belonged to Wisp',
+    name: 'Greed',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.SLASH, Skill.ABSORB],
   };
 
   export const LIBERTY: Type = {
-    name: 'Liberty',
+    actions: [Skill.SLASH, Skill.CLEAVE],
+    area: 1,
     category: Category.KNIFE,
+    name: 'Liberty',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.SLASH, Skill.CLEAVE],
   };
 
   export const MONARCH: Type = {
-    name: 'Monarch',
+    actions: [Skill.SLASH],
+    area: 1,
     category: Category.KNIFE,
     description:
       'A brilliantly designed insect looking blade with a sharp and deadly tip that is dripping with poison.',
+    name: 'Monarch',
     power: 100,
-    speed: 30,
-    area: 1,
-    actions: [Skill.SLASH], // TODO may be poison slash or somehow add change of poison to action?
+    speed: 30, // TODO may be poison slash or somehow add change of poison to action?
   };
 
   export const REGRET: Type = {
-    name: 'Regret',
+    actions: [Skill.SLASH],
+    area: 1,
     category: Category.KNIFE,
+    name: 'Regret',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.SLASH],
   };
 
   export const VICEROY: Type = {
-    name: 'Viceroy',
+    actions: [Skill.SLASH],
+    area: 1,
     category: Category.KNIFE,
+
     description:
       'A brilliantly designed insect looking blade with a sharp and deadly tip.',
+
+    name: 'Viceroy',
     // The viceroy looks almost identical to the monarch',
     // Chance of causing Fear on contact when used with Monarch
     // Chance of poisoning enemy on contact
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.SLASH],
   };
 
   export const VIOLATED: Type = {
-    name: 'Violated',
+    actions: [Skill.SLASH],
+    area: 1,
+
     category: Category.KNIFE,
+
+    name: 'Violated',
     // Weapon Absorbs the previous monsters type and uses it for the next attack.
     // This weapon must be used to slay the most poisonous monster
     // to get a poisonous tipped dagger and slay another monster
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.SLASH],
   };
 
   /**
    * Shields
    */
   export const BUCKLER: Type = {
-    name: 'Buckler',
+    actions: [Skill.BLOCK, Skill.PARRY],
+    area: 1,
     category: Category.SHIELD,
+    name: 'Buckler',
     power: 100,
     speed: 30,
-    area: 1,
-    actions: [Skill.BLOCK, Skill.PARRY],
   };
 }

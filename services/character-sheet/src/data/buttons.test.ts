@@ -10,9 +10,9 @@ describe('checkButtonCombos', () => {
       { button: Button.JUMP, timestamp: 200 },
     ];
     const comboWithTiming: ButtonCombo = {
+      context: GameContext.TERRAIN,
       simultaneous: [Button.ACTION, Button.JUMP],
       timingWindowMs: 300,
-      context: GameContext.TERRAIN,
     };
     const currentGameContext = GameContext.TERRAIN;
     const combos: ButtonCombo[] = [comboWithTiming];

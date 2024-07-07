@@ -9,10 +9,6 @@ import { ActionTarget } from '../action-target';
  */
 export namespace Interaction {
   export const GRAB: SkillType = {
-    name: 'Grab',
-    description: 'Grab an object.',
-    target: ActionTarget.INTERACTION_OBJECT,
-    menuSlot: MenuSlot.INTERACTION,
     actionEffects: {
       INTERACTION_OBJECT: [
         {
@@ -22,49 +18,42 @@ export namespace Interaction {
         },
       ],
     },
+    description: 'Grab an object.',
+    menuSlot: MenuSlot.INTERACTION,
+    name: 'Grab',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const PUSH: SkillType = {
-    name: 'Push',
     description: 'Push an object.',
-    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
+    name: 'Push',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const PULL: SkillType = {
-    name: 'Pull',
     description: 'Pull an object.',
-    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
+    name: 'Pull',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const LIFT: SkillType = {
-    name: 'Lift',
     description: 'Lift an object.',
-    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
+    name: 'Lift',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const THROW: SkillType = {
-    name: 'Throw',
     description: 'Throw an object.',
-    target: ActionTarget.INTERACTION_OBJECT,
     menuSlot: MenuSlot.INTERACTION,
+    name: 'Throw',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const PICK_LOCK: SkillType = {
-    name: 'Pick Lock',
-    description: 'Attempt to pick a lock.',
-    target: ActionTarget.INTERACTION_OBJECT,
-    menuSlot: MenuSlot.INTERACTION,
     actionEffects: {
-      INVENTORY: [
-        {
-          add: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
-          chance: 0.7,
-          tags: [],
-        },
-      ],
       INTERACTION_OBJECT: [
         {
           add: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
@@ -72,22 +61,22 @@ export namespace Interaction {
           tags: [],
         },
       ],
+      INVENTORY: [
+        {
+          add: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
+          chance: 0.7,
+          tags: [],
+        },
+      ],
     },
+    description: 'Attempt to pick a lock.',
+    menuSlot: MenuSlot.INTERACTION,
+    name: 'Pick Lock',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const UNLOCK: SkillType = {
-    name: 'Unlock',
-    description: 'Open a lock using a key.',
-    target: ActionTarget.INTERACTION_OBJECT,
-    menuSlot: MenuSlot.INTERACTION,
     actionEffects: {
-      INVENTORY: [
-        {
-          remove: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
-          chance: 0.7,
-          tags: [],
-        },
-      ],
       INTERACTION_OBJECT: [
         {
           add: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
@@ -95,29 +84,18 @@ export namespace Interaction {
           tags: [],
         },
       ],
+      INVENTORY: [
+        {
+          // TODO figure out how to handle this, e.g. state UNLOCKED
+          chance: 0.7,
+          remove: 'BERSERK',
+          tags: [],
+        },
+      ],
     },
+    description: 'Open a lock using a key.',
+    menuSlot: MenuSlot.INTERACTION,
+    name: 'Unlock',
+    target: ActionTarget.INTERACTION_OBJECT,
   };
-  // which essentially means that they take up a slot on the players Command
-  // Menu. InteractionSkill Actions take up the InteractionSkill Slot on the
-  //  Command Menu. What distinguishes InteractionSkill Actions from the rest
-  // is that all interaction actions relate to interacting with other objects.
-  // Counter – make a maneuver in reaction to an enemy’s.
-  // Disobey – do not follow orders given.
-  // Parry – use your weapon to block / deflect the enemies attack.
-  // Standard Object – Take no action points
-  // Pick Up / Take
-  // Open
-  // Open Lock
-  // Pull – (Example “Pull Lever”)
-
-  // Impending Object
-  // Catch – Catch an item or weapon that has been thrown in your path of travel.
-  // Reflect
-  // Throw
-  // Ward – (spirit) a action that keeps enemies away
-  // Guard – (stamina) protect from oncoming attacks.
-  // Charge – Hold attack button down. This uses up Stamina and raise Power of attack.
-  // Charge – Hold attack button down. This uses up Spirit and raise Power of attack.
-  // Class Actions (Slot 2)
-  // Learn
 }

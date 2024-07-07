@@ -31,6 +31,7 @@ describe('/affiliations', () => {
     const uri = mongod.getUri();
 
     const moduleRef: TestingModule = await Test.createTestingModule({
+      controllers: [AffiliationController],
       imports: [
         MongooseModule.forRootAsync({
           useFactory: async () => ({
@@ -39,14 +40,13 @@ describe('/affiliations', () => {
         }),
         MongooseModule.forFeature([
           {
+            collection: `test-${v4()}`,
             name: 'CharacterSheet',
             schema: CharacterSheetSchema,
-            collection: `test-${v4()}`,
           },
         ]),
       ],
       providers: [CharacterSheetRepository, AffiliationService],
-      controllers: [AffiliationController],
     }).compile();
 
     const app: INestApplication = moduleRef.createNestApplication();
@@ -84,18 +84,18 @@ describe('/affiliations', () => {
 
     const characterSheet = await characterSheetRepository.create(
       await FakerFactory.create<CharacterSheet>(CharacterSheet, {
-        archetypeId: 'MEEKU_ONI',
         affiliation: [{ affiliationId: 'THE_CATS', amount: 10 }],
+        archetypeId: 'MEEKU_ONI',
       }),
     );
 
     const body = await FakerFactory.create<UpdateAffiliationDto>(
       UpdateAffiliationDto,
       {
-        characterSheetId: characterSheet!.id,
         affiliationId: 'THE_CATS',
-        value: 10,
+        characterSheetId: characterSheet!.id,
         operation: Operation.ADD,
+        value: 10,
       },
     );
 

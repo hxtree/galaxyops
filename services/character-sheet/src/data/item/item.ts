@@ -24,9 +24,9 @@ export namespace Item {
   };
 
   export const COMPASS: BaseType = {
-    name: 'Compass',
-    description: 'Shows direction',
     capacity: ItemCapacity.UNIQUE,
+    description: 'Shows direction',
+    name: 'Compass',
     // enables player map
   };
 
@@ -36,62 +36,60 @@ export namespace Item {
    * It is used to buy/sell items.
    */
   export const GC: BaseType = {
-    name: 'GC',
-    description: 'Currency',
     capacity: ItemCapacity.GC,
+    description: 'Currency',
+    name: 'GC',
   };
 
   export const FLOUR: BaseType = {
-    name: 'Flour',
-    description: 'Powder made from crushed grains',
     capacity: ItemCapacity.MEDIUM,
+    description: 'Powder made from crushed grains',
+    name: 'Flour',
   };
 
   export const CHICKEN_EGG: BaseType = {
-    name: 'Chicken Egg',
-    description: 'Egg from a chicken',
     capacity: ItemCapacity.LOW,
+    description: 'Egg from a chicken',
+    name: 'Chicken Egg',
   };
 
   export const WATER: BaseType = {
-    name: 'Water',
-    description: 'Water',
     capacity: ItemCapacity.MEDIUM,
+    description: 'Water',
+    name: 'Water',
   };
 
   export const RICE: BaseType = {
-    name: 'Rice',
-    description: 'Rice grains',
     capacity: ItemCapacity.VERY_HIGH,
+    description: 'Rice grains',
+    name: 'Rice',
   };
 
   export const PORK: BaseType = {
-    name: 'Pork',
-    description: 'Meat form a pig',
     capacity: ItemCapacity.LOW,
+    description: 'Meat form a pig',
+    name: 'Pork',
   };
 
   export const RICE_BALL: BaseType = {
-    name: 'Rice Ball',
-    description: 'Onigiri made from condensed rice',
     capacity: 99,
     craftingMaterials: [
       { item: 'RICE', quantity: 1 },
       { item: 'WATER', quantity: 2 },
     ],
+    description: 'Onigiri made from condensed rice',
+    name: 'Rice Ball',
     // heals
   };
 
   export const DANGO: BaseType = {
-    name: 'Dango',
-    description: 'Mochi-like sweet made from crushed rice ',
     capacity: ItemCapacity.MEDIUM,
+    description: 'Mochi-like sweet made from crushed rice ',
+    name: 'Dango',
     // heals
   };
 
   export const RAMEN: BaseType = {
-    name: 'Ramen',
-    description: 'Noodles, tare, broth, topping and aroma oil',
     capacity: ItemCapacity.LOW,
     craftingMaterials: [
       { item: 'FLOUR', quantity: 1 },
@@ -99,12 +97,12 @@ export namespace Item {
       { item: 'PORK', quantity: 1 },
       { item: 'WATER', quantity: 1 },
     ],
+    description: 'Noodles, tare, broth, topping and aroma oil',
+    name: 'Ramen',
     // heals
   };
 
   export const PELMENI: BaseType = {
-    name: 'Pelmeni',
-    description: 'Dumplings in broth',
     capacity: ItemCapacity.MEDIUM,
     craftingMaterials: [
       { item: 'FLOUR', quantity: 1 },
@@ -112,6 +110,8 @@ export namespace Item {
       { item: 'PORK', quantity: 1 },
       { item: 'WATER', quantity: 1 },
     ],
+    description: 'Dumplings in broth',
+    name: 'Pelmeni',
   };
 }
 

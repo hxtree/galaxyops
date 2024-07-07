@@ -15,7 +15,7 @@ export class CreateCharacterSheetDto {
   @IsUuidV4()
   public instanceId!: string;
 
-  @ApiProperty({ enum: ArchetypeIds, default: 'DARUMA_NAKAMURA' })
+  @ApiProperty({ default: 'DARUMA_NAKAMURA', enum: ArchetypeIds })
   @IsEnum(ArchetypeIds)
   public archetypeId!: ArchetypeId;
 

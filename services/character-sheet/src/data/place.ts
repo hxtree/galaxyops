@@ -17,7 +17,6 @@ export namespace Place {
   };
 
   export const HOSTIA: Type = {
-    name: 'Hostia',
     description: '',
     facts: [
       "This is the town where both Malace and Madhi's originate. ",
@@ -28,12 +27,13 @@ export namespace Place {
       'The priest lure demons plaguing the town into the skins on innocent as to protect the village and then banish the individual. ',
       'The Catchers village uses the yin yang symbol. ',
     ],
+    name: 'Hostia',
     spawnGuidelines: [
       {
         archetype: 'SENSITIVE_PLANT',
         level: 2,
-        probability: 0.2,
         limit: 20,
+        probability: 0.2,
       },
     ],
   };
@@ -44,8 +44,8 @@ export namespace Place {
       {
         archetype: 'SENSITIVE_PLANT',
         level: 2,
-        probability: 0.2,
         limit: 20,
+        probability: 0.2,
       },
     ],
   };
@@ -56,25 +56,25 @@ export namespace Place {
       {
         archetype: 'SENSITIVE_PLANT',
         level: 2,
-        probability: 0.2,
         limit: 20,
+        probability: 0.2,
       },
     ],
   };
 
   export const FLOATING_ISLAND: Type = {
-    name: 'Floating Island',
     facts: [
       `This was home to the ${Affiliation.ARCHANGELS.name}`,
       'Ouren Oni is sealed away within the center of the island',
       'The island fell into the sea',
     ],
+    name: 'Floating Island',
     spawnGuidelines: [
       {
         archetype: 'SEA_HORSE',
         level: 20,
-        probability: 0.2,
         limit: 20,
+        probability: 0.2,
       },
     ],
   };
@@ -85,8 +85,8 @@ export namespace Place {
       {
         archetype: 'DEEP_THINKER',
         level: 10,
-        probability: 0.002,
         limit: 20,
+        probability: 0.002,
       },
     ],
   };
@@ -97,8 +97,8 @@ export namespace Place {
       {
         archetype: 'SENSITIVE_PLANT',
         level: 2,
-        probability: 0.2,
         limit: 20,
+        probability: 0.2,
       },
     ],
   };
@@ -109,8 +109,8 @@ export namespace Place {
       {
         archetype: 'BANDIT',
         level: 2,
-        probability: 0.2,
         limit: 20,
+        probability: 0.2,
       },
     ],
   };

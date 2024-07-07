@@ -62,26 +62,26 @@ export class CharacterSheetController {
     @Body() createCharacterSheetDto: CreateCharacterSheetDto,
   ): Promise<any> {
     const characterSheet = new CharacterSheet({
-      instanceId: createCharacterSheetDto.instanceId,
-      name: createCharacterSheetDto.name,
-      surname: createCharacterSheetDto.surname,
+      affiliation: [],
       archetypeId: createCharacterSheetDto.archetypeId,
-      life: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
-      drive: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
-      spirit: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
       disciplines: [],
+      drive: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),
+      equipment: [],
+      instanceId: createCharacterSheetDto.instanceId,
+      life: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),
+      name: createCharacterSheetDto.name,
+      spirit: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),
       stats: {
-        power: 10,
-        wisdom: 10,
         accuracy: 10,
-        luck: 10,
         defense: 10,
         evasion: 10,
         intelligence: 10,
+        luck: 10,
+        power: 10,
         speed: 10,
+        wisdom: 10,
       },
-      equipment: [],
-      affiliation: [],
+      surname: createCharacterSheetDto.surname,
     });
 
     const character = await this._characterSheetRepository.create(characterSheet);

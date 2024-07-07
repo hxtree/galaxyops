@@ -8,12 +8,12 @@ import { PlaceService } from '../place/place.service';
 
 @Module({
   controllers: [CharacterSheetController],
-  providers: [PlaceService, CharacterSheetRepository],
   imports: [
     databaseModule(),
     MongooseModule.forFeature([
       { name: 'CharacterSheet', schema: CharacterSheetSchema },
     ]),
   ],
+  providers: [PlaceService, CharacterSheetRepository],
 })
 export class CharacterSheetModule {}

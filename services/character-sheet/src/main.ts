@@ -10,9 +10,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableVersioning({
-    type: VersioningType.HEADER,
-    header: 'Accept-Version',
     defaultVersion: '1',
+    header: 'Accept-Version',
+    type: VersioningType.HEADER,
   });
 
   const config = new DocumentBuilder()

@@ -36,24 +36,24 @@ export class NpcController {
     );
 
     const characterSheet = new CharacterSheet({
-      instanceId: createSpawnDto.instanceId,
+      affiliation: [],
       archetypeId: createCharacterSheet.archetypeId,
-      life: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
-      drive: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
-      spirit: new GaugeEmbeddable({ min: 0, max: 10, current: 10 }),
       disciplines: [],
+      drive: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),
+      equipment: [],
+      instanceId: createSpawnDto.instanceId,
+      life: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),
+      spirit: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),
       stats: {
-        power: 10,
-        wisdom: 10,
         accuracy: 10,
-        luck: 10,
         defense: 10,
         evasion: 10,
         intelligence: 10,
+        luck: 10,
+        power: 10,
         speed: 10,
+        wisdom: 10,
       },
-      equipment: [],
-      affiliation: [],
     });
 
     const character = await this._characterSheetRepository.create(characterSheet);

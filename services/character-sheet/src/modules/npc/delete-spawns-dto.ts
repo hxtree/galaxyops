@@ -6,8 +6,8 @@ export class DeleteSpawnsDto {
   public instanceId?: string;
 
   @ApiProperty({
-    enum: Object.keys(Place),
     description: 'Delete all spawns in a designated area.',
+    enum: Object.keys(Place),
   })
   public place: Place.Type;
 }

@@ -8,9 +8,9 @@ import { AffiliationId, AffiliationIds } from '../data/affiliations';
 export class AffiliationEmbeddable {
   @IsEnum(AffiliationIds)
   @Prop({
-    type: String,
-    required: true,
     enum: AffiliationIds,
+    required: true,
+    type: String,
   })
   public affiliationId!: AffiliationId;
 

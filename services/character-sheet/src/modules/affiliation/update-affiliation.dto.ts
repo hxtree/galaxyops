@@ -14,7 +14,7 @@ export class UpdateAffiliationDto {
   })
     characterSheetId: string;
 
-  @ApiProperty({ enum: AffiliationIds, default: 'THE_CATS' })
+  @ApiProperty({ default: 'THE_CATS', enum: AffiliationIds })
   @IsEnum(AffiliationIds)
     affiliationId: AffiliationId;
 
@@ -23,7 +23,7 @@ export class UpdateAffiliationDto {
   @IsPositive()
     value: number;
 
-  @ApiProperty({ enum: Operation, default: Operation.ADD })
+  @ApiProperty({ default: Operation.ADD, enum: Operation })
   @IsEnum(Operation)
     operation: Operation;
 }

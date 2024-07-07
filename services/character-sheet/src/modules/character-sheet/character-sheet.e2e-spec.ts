@@ -17,6 +17,7 @@ import { Archetype } from '../../data/archetype';
 describe('/character-sheets', () => {
   async function createTestingModule() {
     const moduleRef: TestingModule = await Test.createTestingModule({
+      controllers: [CharacterSheetController],
       imports: [
         MongooseModule.forRootAsync({
           useFactory: async () => ({
@@ -25,14 +26,13 @@ describe('/character-sheets', () => {
         }),
         MongooseModule.forFeature([
           {
+            collection: `test-${v4()}`,
             name: 'CharacterSheet',
             schema: CharacterSheetSchema,
-            collection: `test-${v4()}`,
           },
         ]),
       ],
       providers: [PlaceService, CharacterSheetRepository],
-      controllers: [CharacterSheetController],
     }).compile();
 
     const app: INestApplication = moduleRef.createNestApplication();
@@ -125,9 +125,9 @@ describe('/character-sheets', () => {
 
       expect(result.body[0]).toMatchObject(
         expect.objectContaining({
+          archetypeId: characterSheet!.archetypeId,
           id: characterSheet!.id,
           instanceId: characterSheet!.instanceId,
-          archetypeId: characterSheet!.archetypeId,
           name: characterSheet!.name,
           surname: characterSheet!.surname,
         }),

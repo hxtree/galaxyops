@@ -16,28 +16,28 @@ export namespace Outfit {
   };
 
   export const TSHIRT_AND_JEANS: Type = {
-    name: 'T-Shirt and Jeans',
     description: 'White t-Shirt and denim jeans',
     gearSlots: [Slot.OUTFIT],
+    name: 'T-Shirt and Jeans',
   };
 
   export const SWIMSUIT: Type = {
-    name: 'Swimsuit',
     description: 'Designed for swimming',
     gearSlots: [Slot.OUTFIT],
+    name: 'Swimsuit',
     // bonus to swimming?
   };
 
   export const OFFICERS_UNIFORM: Type = {
-    name: "Officer's Uniform",
     description: 'Black Embellished Tarry Coat',
     gearSlots: [Slot.OUTFIT],
+    name: "Officer's Uniform",
   };
 
   export const KIMONO: Type = {
-    name: 'Kimono',
     description:
       'A wrapped-front garment with square sleeves and a rectangular body.',
     gearSlots: [Slot.OUTFIT],
+    name: 'Kimono',
   };
 }

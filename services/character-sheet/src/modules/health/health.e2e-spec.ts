@@ -8,9 +8,9 @@ describe('/health', () => {
 
   beforeEach(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
+      controllers: [],
       imports: [HealthModule],
       providers: [],
-      controllers: [],
     }).compile();
 
     app = moduleRef.createNestApplication();

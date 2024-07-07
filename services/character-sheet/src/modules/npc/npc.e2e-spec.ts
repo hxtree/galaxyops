@@ -14,6 +14,7 @@ import { SpawnService } from './spawn.service';
 describe('/spawns', () => {
   async function createTestingModule() {
     const moduleRef: TestingModule = await Test.createTestingModule({
+      controllers: [NpcController],
       imports: [
         MongooseModule.forRootAsync({
           useFactory: async () => ({
@@ -22,14 +23,13 @@ describe('/spawns', () => {
         }),
         MongooseModule.forFeature([
           {
+            collection: `test-${v4()}`,
             name: 'CharacterSheet',
             schema: CharacterSheetSchema,
-            collection: `test-${v4()}`,
           },
         ]),
       ],
       providers: [PlaceService, CharacterSheetRepository, SpawnService],
-      controllers: [NpcController],
     }).compile();
 
     const app: INestApplication = moduleRef.createNestApplication();
