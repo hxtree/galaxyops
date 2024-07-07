@@ -5,6 +5,7 @@ import { EffectRecord } from '../table.effect';
 import { MenuSlot } from '../menu-slot';
 import { SkillLevel, SkillType } from './skill.type';
 import { ActionTarget } from '../action-target';
+import { AreaOfEffect } from '../area-of-effect';
 
 /**
  * Spells are actions that are casted by magic users.
@@ -21,6 +22,7 @@ import { ActionTarget } from '../action-target';
  */
 export namespace Spell {
   export const GRAVITY_LV1: SkillType = {
+    areaOfEffect: AreaOfEffect.CONE_15FT,
     coolDownTime: Duration.fromObject({ seconds: 60 }),
     description:
       'Coalesce gravity around target. Causes flying targets to hit ground',
@@ -42,6 +44,7 @@ export namespace Spell {
 
   export const GRAVITY_LV2: SkillType = {
     ...GRAVITY_LV1,
+    areaOfEffect: AreaOfEffect.CONE_20FT,
     coolDownTime: Duration.fromObject({ seconds: 15 }),
     effect: [
       {
@@ -68,8 +71,8 @@ export namespace Spell {
   };
 
   export const QUAKE: SkillType = {
+    areaOfEffect: AreaOfEffect.RADIUS_15FT,
     description: 'Shakes earth surrounding target',
-    // AOE?
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.EARTH] },
       {
@@ -78,7 +81,6 @@ export namespace Spell {
         tags: [EffectTag.EARTH, EffectTag.GROUND_LEVEL],
       },
     ],
-
     menuSlot: MenuSlot.MAGIC,
     name: 'Quake',
     target: ActionTarget.OPPONENT,

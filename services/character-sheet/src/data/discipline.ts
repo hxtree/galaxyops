@@ -118,6 +118,7 @@ export namespace Discipline {
     name: 'Commander',
     progression: [
       { level: 1, skill: Skill.BOAST_LV1 },
+      { level: 12, skill: Skill.BOAST_LV2 },
       { level: 10, skill: Skill.LAST_STAND },
       { level: 50, skill: Skill.BLITZ_STRIKE },
       { level: 80, skill: Skill.FLANK },

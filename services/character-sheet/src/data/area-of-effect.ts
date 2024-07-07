@@ -1,4 +1,4 @@
-// TODO some shapes do not tranlate well to 45 degree angles
+// TODO some shapes do not translate well to 45 degree angles
 export namespace AreaOfEffect {
   /**
    * [z axis][y axis][x axis]
@@ -11,7 +11,6 @@ export namespace AreaOfEffect {
    */
   export type Type = number[][][];
 
-  // Cone with a 15 ft range
   export const CONE_15FT: Type = [
     [
       [0, 0, 0], // 10ft - 15ft
@@ -27,6 +26,26 @@ export namespace AreaOfEffect {
       [0, 0, 0], // 10ft - 15ft
       [1, 1, 0], //  0ft - 5ft
       [0, 0, 0], // 10ft - 15ft
+    ],
+  ];
+
+  export const CONE_20FT: Type = [
+    [
+      [1, 0, 0, 0], // 10ft - 15ft
+      [1, 1, 1, 0], //  0ft - 5ft
+      [1, 0, 0, 0], // 10ft - 15ft
+    ],
+    [
+      [1, 0, 0, 0], // 15ft - 20ft
+      [1, 1, 0, 0], // 10ft - 15ft
+      [1, 1, 1, 7], //  0ft - 5ft
+      [1, 1, 0, 0], // 10ft - 15ft
+      [1, 0, 0, 0], // 15ft - 20ft
+    ],
+    [
+      [0, 0, 0, 0], // 10ft - 15ft
+      [1, 1, 1, 0], //  0ft - 5ft
+      [0, 0, 0, 0], // 10ft - 15ft
     ],
   ];
 
