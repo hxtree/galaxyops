@@ -1,7 +1,7 @@
 # @galaxyops :milky_way:
 
-The @galaxyops offers a robust architecture for efficient project management and
-deployment on AWS. It empowers your domain-driven DevOps teams, guiding them
+@galaxyops is architecture whose goal is efficient project management and
+deployment on AWS. It empowers our domain-driven DevOps team, guiding them
 through AWS with clarity and purpose, fostering a seamless journey toward
 operational excellence.
 
@@ -11,11 +11,11 @@ operational excellence.
 
 ## Overview
 
-Running multiple cloud applications without a robust architectural framework
-leads to chaos. The @galaxyops provides a comprehensive cloud architecture
-solution, emphasizing modern DevOps practices on AWS. This repository lays the
-groundwork for enterprise software landscapes, ensuring scalability and
-maintainability across projects.
+Running multiple applications on AWS without a robust architectural framework
+may lead to chaos. @galaxyops is a comprehensive cloud architecture solution,
+emphasizing modern DevOps practices on AWS. This repository lays the groundwork
+for enterprise software landscapes, ensuring scalability and maintainability
+across projects.
 
 ## Features
 
