@@ -31,8 +31,8 @@
     "source-map-support": "~0.5.21",
     "@nestjs/swagger": "~7.1.17",
     "uuid": "~9.0.1",
-    "lodash": "~4.17.21",
-    "@types/lodash": "~4.14.202"
+    "lodash": "4.17.21",
+    "@types/lodash": "4.17.6"
   },
   "devDependencies": {
     "aws-cdk-lib": "2.129.0",

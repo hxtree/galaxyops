@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "uuid": "~9.0.1",
-    "lodash": "~4.17.21",
-    "@types/lodash": "~4.14.202",
+    "lodash": "4.17.21",
+    "@types/lodash": "4.17.6",
     "@galaxyops/base-nodejs": "0.1.0",
     "@types/validator": "~13.7.10",
     "@cats-cradle/faker-factory": "3.1.0",

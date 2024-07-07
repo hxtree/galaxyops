@@ -155,7 +155,7 @@ importers:
         specifier: ~23.0.1
         version: 23.0.1
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       xss:
         specifier: ~1.0.14
@@ -249,8 +249,8 @@ importers:
         specifier: 29.5.12
         version: 29.5.12
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/node':
         specifier: 20.11.25
         version: 20.11.25
@@ -535,8 +535,8 @@ importers:
         specifier: 0.1.0
         version: link:../../platform/rigs/base-nodejs
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/validator':
         specifier: ~13.7.10
         version: 13.7.17
@@ -559,7 +559,7 @@ importers:
         specifier: ~0.5.0-rcv.46
         version: 0.5.6
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       openapi3-ts:
         specifier: ~3.1.2
@@ -617,8 +617,8 @@ importers:
         specifier: 0.1.0
         version: link:../../platform/rigs/base-nodejs
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/validator':
         specifier: ~13.7.10
         version: 13.7.17
@@ -626,7 +626,7 @@ importers:
         specifier: 0.5.1
         version: 0.5.1
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       uuid:
         specifier: ~9.0.1
@@ -861,8 +861,8 @@ importers:
         specifier: 0.1.0
         version: link:../../platform/rigs/base-nodejs
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/validator':
         specifier: ~13.7.10
         version: 13.7.17
@@ -876,7 +876,7 @@ importers:
         specifier: ~2.0.4
         version: 2.0.4
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       openapi3-ts:
         specifier: ~3.1.2
@@ -1140,8 +1140,8 @@ importers:
         specifier: 29.5.12
         version: 29.5.12
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/node':
         specifier: 20.11.25
         version: 20.11.25
@@ -1170,7 +1170,7 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.11.25)(ts-node@10.9.2)
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       path:
         specifier: ~0.12.7
@@ -1205,8 +1205,8 @@ importers:
         specifier: 9.1.1
         version: 9.1.1(@nestjs/common@9.4.0)(@nestjs/core@9.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@vendia/serverless-express':
         specifier: 4.12.6
         version: 4.12.6
@@ -1226,7 +1226,7 @@ importers:
         specifier: 4.19.2
         version: 4.19.2
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       mongoose:
         specifier: 6.11.3
@@ -1566,8 +1566,8 @@ importers:
         specifier: 29.5.12
         version: 29.5.12
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/node':
         specifier: 20.11.25
         version: 20.11.25
@@ -1587,7 +1587,7 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.11.25)(ts-node@10.9.2)
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       path:
         specifier: ~0.12.7
@@ -1745,8 +1745,8 @@ importers:
         specifier: 29.5.12
         version: 29.5.12
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/node':
         specifier: 20.11.25
         version: 20.11.25
@@ -1775,7 +1775,7 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.11.25)(ts-node@10.9.2)
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       path:
         specifier: ~0.12.7
@@ -2174,7 +2174,7 @@ importers:
         specifier: ~9.0.4
         version: 9.0.5
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       mongoose:
         specifier: 6.11.3
@@ -2232,8 +2232,8 @@ importers:
         specifier: 29.5.12
         version: 29.5.12
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/node':
         specifier: 20.11.25
         version: 20.11.25
@@ -2398,8 +2398,8 @@ importers:
         specifier: 29.5.12
         version: 29.5.12
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/node':
         specifier: 20.11.25
         version: 20.11.25
@@ -2431,7 +2431,7 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.11.25)(ts-node@10.9.2)
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       path:
         specifier: ~0.12.7
@@ -2682,8 +2682,8 @@ importers:
         specifier: 29.5.12
         version: 29.5.12
       '@types/lodash':
-        specifier: ~4.14.202
-        version: 4.14.202
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/node':
         specifier: 20.11.25
         version: 20.11.25
@@ -2712,7 +2712,7 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.11.25)(ts-node@10.9.2)
       lodash:
-        specifier: ~4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       path:
         specifier: ~0.12.7
@@ -14985,7 +14985,7 @@ packages:
       '@storybook/preview-api': 7.6.3
       '@storybook/theming': 7.6.3(react-dom@18.2.0)(react@18.2.0)
       '@storybook/types': 7.6.3
-      '@types/lodash': 4.14.202
+      '@types/lodash': 4.17.6
       color-convert: 2.0.1
       dequal: 2.0.3
       lodash: 4.17.21
@@ -16074,8 +16074,8 @@ packages:
     dependencies:
       '@types/node': 20.11.25
 
-  /@types/lodash@4.14.202:
-    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
+  /@types/lodash@4.17.6:
+    resolution: {integrity: sha512-OpXEVoCKSS3lQqjx9GGGOapBeuW5eUboYHRlHP9urXPX25IKZ6AnP5ZRxtVf63iieUbsHxLn8NQ5Nlftc6yzAA==}
 
   /@types/luxon@3.2.2:
     resolution: {integrity: sha512-CuF9hIlsxGpJO4EztrW23/q1L9ctQfb5JM9mnLCJhhA8z81K2b4LTVjQYySXWhFV5SMyUsPYH/IcvvXDCKwa2g==}
@@ -18288,7 +18288,7 @@ packages:
     resolution: {integrity: sha512-OqeheDucGKifjQRx524URgV4z4NaKjocGhygTptDea+DLROre4ZEecA4KXDq+P7qlGCohYVNOh3qr+y5XH5Ftg==}
     dependencies:
       '@devexpress/error-stack-parser': 2.0.6
-      '@types/lodash': 4.14.202
+      '@types/lodash': 4.17.6
       callsite: 1.0.0
       chalk: 2.4.2
       highlight-es: 1.0.3
