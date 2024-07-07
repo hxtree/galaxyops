@@ -3,7 +3,7 @@ import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
 import { EffectRecord } from '../table.effect';
 import { MenuSlot } from '../menu-slot';
-import { SkillLevel, SkillType } from '.';
+import { SkillLevel, SkillType } from './skill.type';
 import { ActionTarget } from '../action-target';
 
 /**
