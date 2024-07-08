@@ -6,7 +6,7 @@ import { SkillType, Skill } from './skill';
  * A character can have multiple disciplines and therefore multiple experience records.
  * Progression in one discipline may unlock other disciplines, actions, and attributes bonuses.
  */
-export enum Category {
+export enum DisciplineCategory {
   // Specialty Classes
   PROFESSION = 'Profession',
   // Combat Classes
@@ -42,7 +42,7 @@ export namespace Discipline {
   export type Type = {
     name: string;
     description: string;
-    category: Category;
+    category: DisciplineCategory;
     history?: string;
     prerequisites?: DisciplineId[]; // After level etc?
     // could also be event like defeated Lawzon, but may be that's too
@@ -51,11 +51,14 @@ export namespace Discipline {
   };
 
   export const GYMNAST: Type = {
-    category: Category.PROFESSION,
+    category: DisciplineCategory.PROFESSION,
     description: 'Trains in gymnastics.',
     name: 'Gymnast',
     progression: [
+      { level: 1, skill: Skill.JUMP_LV1 },
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.BACK_FLIP_LV1 },
+      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
       { level: 25, skill: Skill.DOUBLE_BACK_FLIP_LV1 },
       { level: 50, skill: Skill.HIGH_JUMP_LV1 },
       { level: 70, skill: Skill.CONCENTRATION_LV1 },
@@ -63,7 +66,7 @@ export namespace Discipline {
   };
 
   export const WIZARD: Type = {
-    category: Category.PROFESSION,
+    category: DisciplineCategory.PROFESSION,
     description: 'Studies mysterious forces.',
     name: 'Wizard',
     progression: [
@@ -71,11 +74,12 @@ export namespace Discipline {
       { level: 25, skill: Skill.FLARE_LV1 },
       { level: 50, skill: Skill.HEAL_LV1 },
       { level: 70, skill: Skill.LIGHT_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const HISTORIAN: Type = {
-    category: Category.PROFESSION,
+    category: DisciplineCategory.PROFESSION,
     description: 'Studies the world as it was.',
     name: 'Historian',
     progression: [
@@ -85,15 +89,18 @@ export namespace Discipline {
     ],
   };
   export const BODY_BUILDER: Type = {
-    category: Category.PROFESSION,
+    category: DisciplineCategory.PROFESSION,
     description: 'Do you even lift?',
     name: 'Body Builder',
-    progression: [{ level: 50, skill: Skill.SCRIBBLES_LV1 }],
+    progression: [
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
+      { level: 50, skill: Skill.SCRIBBLES_LV1 },
+    ],
   };
 
   // may be anyone can become a cook?>
   export const COOK: Type = {
-    category: Category.PROFESSION,
+    category: DisciplineCategory.PROFESSION,
     description: 'Prepares and cooks food',
     name: 'Cook',
     progression: [{ level: 10, skill: Skill.PREPARE_FOOD_LV1 }],
@@ -101,19 +108,20 @@ export namespace Discipline {
   };
 
   export const CHEERLEADER: Type = {
-    category: Category.PROFESSION,
+    category: DisciplineCategory.PROFESSION,
     description: 'Cheers their team as a form of encouragement.',
     name: 'Cheerleader',
     progression: [
       { level: 1, skill: Skill.CHEER_LV1 },
       { level: 10, skill: Skill.SUPPORT_LV1 },
       { level: 40, skill: Skill.INSPIRE_LV1 },
+      { level: 25, skill: Skill.SPIRITUAL_GROWTH_LV1 },
       { level: 50, skill: Skill.HOPE_LV1 },
     ],
   };
 
   export const COMMANDER: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in giving orders to others.',
     name: 'Commander',
     progression: [
@@ -126,15 +134,15 @@ export namespace Discipline {
   };
 
   export const MAGI: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Has a basic understanding of Magic',
     name: 'Magi',
     prerequisites: [],
-    progression: [],
+    progression: [{ level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 }],
   };
 
   export const MAGI_BLACK: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize destruction Magic',
     history: 'Harnessed from the power of Ouren',
     name: 'MagiBlack',
@@ -146,7 +154,7 @@ export namespace Discipline {
   };
 
   export const MAGI_BLUE: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize water Magic',
     history: 'Harnessed from the power of Genki',
     name: 'Magi Blue',
@@ -159,7 +167,7 @@ export namespace Discipline {
   };
 
   export const MAGI_BROWN: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize rock Magic',
     history: 'Harnessed from the power of Asmin',
     name: 'Magi Brown',
@@ -171,7 +179,7 @@ export namespace Discipline {
   };
 
   export const MAGI_GREEN: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize time Magic',
     history: 'Harnessed from the power of Void',
     name: 'Magi Green',
@@ -184,7 +192,7 @@ export namespace Discipline {
   };
 
   export const MAGI_PINK: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize charm Magic',
     history: 'Harnessed from the power of Suyri',
     name: 'Magi Pink',
@@ -196,7 +204,7 @@ export namespace Discipline {
   };
 
   export const MAGI_PURPLE: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize ??? Magic',
     history: 'Harnessed from the power of Diag',
     name: 'Magi Purple',
@@ -206,12 +214,13 @@ export namespace Discipline {
   };
 
   export const MAGI_WHITE: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize snow Magic',
     history: 'Harnessed from the power of Lawzon',
     name: 'Magi White',
     prerequisites: ['MAGI'],
     progression: [
+      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
       { level: 10, skill: Skill.BLIZZARD_LV1 },
       { level: 10, skill: Skill.FROST_LV1 },
       { level: 10, skill: Skill.CHILL_LV1 },
@@ -219,12 +228,13 @@ export namespace Discipline {
   };
 
   export const MAGI_YELLOW: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize absorption Magic',
     history: 'Harnessed from the power of Wisp',
     name: 'Magi Yellow',
     prerequisites: ['MAGI'],
     progression: [
+      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
       { level: 10, skill: Skill.DRAIN_LV1 },
       { level: 25, skill: Skill.LEECH_LV1 },
       { level: 50, skill: Skill.DRAIN_LV1 },
@@ -232,28 +242,28 @@ export namespace Discipline {
   };
 
   export const GUARD: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in protection.',
     name: 'Guard',
     progression: [{ level: 10, skill: Skill.BLOCK_LV1 }],
   };
 
   export const GUARDIAN: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in protection.',
     name: 'Guardian',
-    progression: [],
+    progression: [{ level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 }],
   };
 
   export const HERO: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in saving others.',
     name: 'Hero',
     progression: [],
   };
 
   export const KNIGHT: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'A honored fighter who protects the kingdom.',
     name: 'Knight',
     progression: [
@@ -261,18 +271,23 @@ export namespace Discipline {
       { level: 10, skill: Skill.STRIKE_LV1 },
       { level: 10, skill: Skill.BLOCK_LV1 },
       { level: 10, skill: Skill.CONCENTRATION_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const MECHANIC: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specializes in electromechanical engineering',
     name: 'Mechanic',
-    progression: [{ level: 10, skill: Skill.SCAN_LV1 }], // Actions: Tools
+    progression: [
+      { level: 10, skill: Skill.SCAN_LV1 },
+
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+    ], // Actions: Tools
   };
 
   export const ROUGE: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specializes sneak attacks and picking locks',
     name: 'Rouge',
     progression: [
@@ -282,43 +297,55 @@ export namespace Discipline {
   };
 
   export const ROYALTY: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specializes in ruling others',
     name: 'Royalty',
     progression: [
       { level: 10, skill: Skill.COMMAND_LV1 },
       { level: 10, skill: Skill.BOAST_LV1 },
+      { level: 40, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const REBEL: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Rebel',
     name: 'Rebel',
-    progression: [{ level: 10, skill: Skill.STRIKE_LV1 }],
+    progression: [
+      { level: 10, skill: Skill.STRIKE_LV1 },
+
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+    ],
   };
 
   export const SCOUT: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description:
       'Specialize in moving ahead of the party to gathering information and reconnaissance.',
     name: 'Scout',
-    progression: [{ level: 10, skill: Skill.SCOUT_LV1 }],
+    progression: [
+      { level: 10, skill: Skill.SCOUT_LV1 },
+
+      { level: 16, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+    ],
   };
 
   export const SOLIDER: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description:
       'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.',
     name: 'Solider',
     progression: [
       { level: 1, skill: Skill.BLOCK_LV1 },
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.CLEAVE_LV1 },
+      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 18, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const SUMMONER: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Summons and commands magical beings.',
     name: 'Summoner',
     progression: [
@@ -329,48 +356,59 @@ export namespace Discipline {
   };
 
   export const THIEF: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Proficient at stealing and picking locks.',
     name: 'Thief',
     progression: [
       { level: 10, skill: Skill.PICKPOCKET_LV1 },
       { level: 10, skill: Skill.PICK_LOCK_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const WARRIOR: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specializes in combat on the battlefield.',
     name: 'Warrior',
     progression: [
-      { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 2, skill: Skill.STRIKE_LV1 },
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.RAGE_LV1 },
+      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
       { level: 10, skill: Skill.BLOCK_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const XSOLIDER: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description:
       'Soldiers that have gone against their teachings to gain new skills.',
     name: 'XSolider',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
+      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+    ],
   };
 
   export const ASSASSIN: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specializes in sneak attacks and picking locks.',
     name: 'Assassin',
     progression: [
       { level: 3, skill: Skill.DUAL_WELD_LV1 },
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 12, skill: Skill.PICKPOCKET_LV1 },
+      { level: 15, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
       { level: 18, skill: Skill.PICK_LOCK_LV1 },
       { level: 20, skill: Skill.BACK_FLIP_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const HEALER: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in healing.',
     name: 'Healer',
     progression: [
@@ -380,7 +418,7 @@ export namespace Discipline {
   };
 
   export const BARD: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Bard',
     progression: [
@@ -390,126 +428,158 @@ export namespace Discipline {
   };
 
   export const DUELIST: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Duelist',
-    progression: [{ level: 10, skill: Skill.PARRY_LV1 }],
+    progression: [
+      { level: 10, skill: Skill.PARRY_LV1 },
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+    ],
   };
 
   export const RUNE_KING: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Rune King',
-    progression: [{ level: 10, skill: Skill.BOAST_LV1 }],
+    progression: [
+      { level: 10, skill: Skill.BOAST_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+    ],
   };
 
   export const MAIDEN: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Maiden',
-    progression: [],
+    progression: [{ level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 }],
   };
 
   export const Keeper: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Keeper',
     progression: [
       { level: 10, skill: Skill.HEAL_LV1 },
+      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
       { level: 10, skill: Skill.CURE_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const SAGE: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Sage',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.SCAN_LV1 },
+      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
+      { level: 10, skill: Skill.CONCENTRATION_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+    ],
   };
 
   export const POSSESSED: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Possessed',
-    progression: [],
+    progression: [{ level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 }],
   };
 
   export const NINJA: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Ninja',
     progression: [
-      { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 1, skill: Skill.STRIKE_LV1 },
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.PARRY_LV1 },
+      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const AMBER_ASSASSIN: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Amber Assassin',
     progression: [
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
       { level: 10, skill: Skill.PARRY_LV1 },
+      { level: 10, skill: Skill.FIREBALL_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const ELITE_ASSASSIN: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Elite Assassin',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
+      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+    ],
   };
 
   export const ENGINEER: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Engineer',
     progression: [
       { level: 10, skill: Skill.SCAN_LV1 },
       { level: 10, skill: Skill.CONCENTRATION_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const BERSERKER: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Berserker',
     progression: [
       { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.RAGE_LV1 },
     ],
   };
 
   export const ONI: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Oni',
     progression: [
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.ONI_LV1 },
+      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
       { level: 10, skill: Skill.ONI_LV2 },
     ],
   };
 
   export const KEEPER: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Keeper',
-    progression: [],
+    progression: [{ level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 }],
   };
 
   export const LIGHTENING_WARRIOR: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Lightening Warrior',
     progression: [
       { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 15, skill: Skill.SHOCK_LV1 },
+      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
   export const OUROBOROS: Type = {
-    category: Category.ARCHETYPE,
+    category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Ouroboros',
     progression: [],

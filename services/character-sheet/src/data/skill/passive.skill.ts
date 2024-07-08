@@ -14,6 +14,104 @@ import { ActionTarget } from '../action-target';
  * need for deliberate action.
  */
 export namespace Passive {
+  export const PHYSICAL_CONDITIONING_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.POWER,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.DEFENSE,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.SPEED,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.SPIRIT,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.LIFE,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
+    description: 'Increases all attributes.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Physical Conditioning',
+    target: ActionTarget.SELF,
+  };
+
+  export const SPIRITUAL_GROWTH_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.SPIRIT,
+          chance: 1.0,
+          quantity: '20',
+        },
+      ],
+    },
+    description: 'Increases spirit',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Spiritual Growth',
+    target: ActionTarget.SELF,
+  };
+
+  export const MENTAL_DISCIPLINE_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.INTELLIGENCE,
+          chance: 1.0,
+          quantity: '20',
+        },
+        {
+          add: Attribute.DRIVE,
+          chance: 1.0,
+          quantity: '20',
+        },
+      ],
+    },
+    description: 'Mental Discipline',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Mental Discipline',
+    target: ActionTarget.SELF,
+  };
+
+  export const PRECISION_AND_TECHNIQUE_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.POWER,
+          chance: 1.0,
+          quantity: '20',
+        },
+        {
+          add: Attribute.SPEED,
+          chance: 1.0,
+          quantity: '20',
+        },
+      ],
+    },
+    description: 'Align body correctly to generate more power and speed.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Precision and Technique',
+    target: ActionTarget.SELF,
+  };
+
   export const DUAL_WELD_LV1: SkillType = {
     description: 'Can use two one handed weapons at once.',
     level: SkillLevel.LV1,
