@@ -256,7 +256,12 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: 'A honored fighter who protects the kingdom.',
     name: 'Knight',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.BLOCK_LV1 },
+      { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 10, skill: Skill.BLOCK_LV1 },
+      { level: 10, skill: Skill.CONCENTRATION_LV1 },
+    ],
   };
 
   export const MECHANIC: Type = {
@@ -280,7 +285,10 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: 'Specializes in ruling others',
     name: 'Royalty',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.COMMAND_LV1 },
+      { level: 10, skill: Skill.BOAST_LV1 },
+    ],
   };
 
   export const REBEL: Type = {
@@ -303,7 +311,10 @@ export namespace Discipline {
     description:
       'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.',
     name: 'Solider',
-    progression: [{ level: 10, skill: Skill.CLEAVE_LV1 }],
+    progression: [
+      { level: 1, skill: Skill.BLOCK_LV1 },
+      { level: 10, skill: Skill.CLEAVE_LV1 },
+    ],
   };
 
   export const SUMMONER: Type = {
@@ -331,7 +342,11 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: 'Specializes in combat on the battlefield.',
     name: 'Warrior',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 10, skill: Skill.RAGE_LV1 },
+      { level: 10, skill: Skill.BLOCK_LV1 },
+    ],
   };
 
   export const XSOLIDER: Type = {
@@ -358,14 +373,20 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: 'Specialize in healing.',
     name: 'Healer',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.HEAL_LV1 },
+      { level: 10, skill: Skill.CURE_LV1 },
+    ],
   };
 
   export const BARD: Type = {
     category: Category.ARCHETYPE,
     description: '',
     name: 'Bard',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.LULLABY_LV1 },
+      { level: 10, skill: Skill.INSPIRE_LV1 },
+    ],
   };
 
   export const DUELIST: Type = {
@@ -393,7 +414,10 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: '',
     name: 'Keeper',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.HEAL_LV1 },
+      { level: 10, skill: Skill.CURE_LV1 },
+    ],
   };
 
   export const SAGE: Type = {
@@ -414,14 +438,20 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: '',
     name: 'Ninja',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 10, skill: Skill.PARRY_LV1 },
+    ],
   };
 
   export const AMBER_ASSASSIN: Type = {
     category: Category.ARCHETYPE,
     description: '',
     name: 'Amber Assassin',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 10, skill: Skill.PARRY_LV1 },
+    ],
   };
 
   export const ELITE_ASSASSIN: Type = {
@@ -435,21 +465,30 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: '',
     name: 'Engineer',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.SCAN_LV1 },
+      { level: 10, skill: Skill.CONCENTRATION_LV1 },
+    ],
   };
 
   export const BERSERKER: Type = {
     category: Category.ARCHETYPE,
     description: '',
     name: 'Berserker',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 10, skill: Skill.RAGE_LV1 },
+    ],
   };
 
   export const ONI: Type = {
     category: Category.ARCHETYPE,
     description: '',
     name: 'Oni',
-    progression: [],
+    progression: [
+      { level: 10, skill: Skill.ONI_LV1 },
+      { level: 10, skill: Skill.ONI_LV2 },
+    ],
   };
 
   export const KEEPER: Type = {
