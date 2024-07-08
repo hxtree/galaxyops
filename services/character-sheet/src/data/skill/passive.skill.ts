@@ -14,6 +14,43 @@ import { ActionTarget } from '../action-target';
  * need for deliberate action.
  */
 export namespace Passive {
+  export const THE_ONE_MAX: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.POWER,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.DEFENSE,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.SPEED,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.SPIRIT,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.LIFE,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
+    description: 'Hidden.',
+    level: SkillLevel.MAX,
+    menuSlot: MenuSlot.NONE,
+    name: '(Unknown)',
+    target: ActionTarget.SELF,
+  };
+
   export const PHYSICAL_CONDITIONING_LV1: SkillType = {
     actionEffects: {
       SELF: [
