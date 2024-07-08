@@ -14,14 +14,14 @@ import { ActionTarget } from '../action-target';
  * need for deliberate action.
  */
 export namespace Passive {
-  export const DUAL_WELD: SkillType = {
+  export const DUAL_WELD_LV1: SkillType = {
     description: 'Can use two one handed weapons at once.',
     menuSlot: MenuSlot.NONE,
     name: 'Dual Weld',
     target: ActionTarget.SELF,
   };
 
-  export const ESCAPE_ARTIST: SkillType = {
+  export const ESCAPE_ARTIST_LV1: SkillType = {
     description: 'Makes it easier to run away from aggressive targets',
     effect: [
       {
@@ -35,14 +35,14 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const INTIMIDATE: SkillType = {
+  export const INTIMIDATE_LV1: SkillType = {
     description: 'Causes fear in enemy',
     menuSlot: MenuSlot.NONE,
     name: 'Intimidate',
     target: ActionTarget.OPPONENT,
   };
 
-  export const CONCENTRATION: SkillType = {
+  export const CONCENTRATION_LV1: SkillType = {
     description: 'Maintain focused for longer periods of time',
     effect: [
       {
@@ -56,7 +56,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const BLUFF: SkillType = {
+  export const BLUFF_LV1: SkillType = {
     description: 'Tell a lie without being caught',
     effect: [
       {
@@ -70,7 +70,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const SENSE_BLUFF: SkillType = {
+  export const SENSE_BLUFF_LV1: SkillType = {
     description: 'Detect if a lie is being told',
     // if character beats bluff check, a little icon on the screen will tell
     // if someone is trying to bluff party
@@ -80,7 +80,7 @@ export namespace Passive {
 
     target: ActionTarget.SELF,
   };
-  export const GREEDY_INTENT: SkillType = {
+  export const GREEDY_INTENT_LV1: SkillType = {
     description: 'Gain more experience than the party.',
     effect: [
       {
@@ -94,7 +94,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const SLOTH_COMPOSURE: SkillType = {
+  export const SLOTH_COMPOSURE_LV1: SkillType = {
     description: 'Decreases damage taken',
     effect: [
       {
@@ -108,7 +108,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const BLOOD_LUST: SkillType = {
+  export const BLOOD_LUST_LV1: SkillType = {
     description: 'Increases speed.', // Acquired by defeating Lust.
     effect: [
       {
@@ -122,7 +122,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const ENVIOUS_OF_COMBAT: SkillType = {
+  export const ENVIOUS_OF_COMBAT_LV1: SkillType = {
     description: 'Gains increased power.', // Acquired by defeating Envy.
     effect: [
       {
@@ -136,7 +136,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const GLUTTONOUS_DESIRE: SkillType = {
+  export const GLUTTONOUS_DESIRE_LV1: SkillType = {
     description: 'Consumes food items twice as fast.',
     effect: [
       {
@@ -152,7 +152,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const CATCHER: SkillType = {
+  export const CATCHER_LV1: SkillType = {
     description: 'Receives bonuses when catching items.',
     effect: [
       {
@@ -166,7 +166,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const LIMITLESS: SkillType = {
+  export const LIMITLESS_LV1: SkillType = {
     description: 'Higher level cap.',
     menuSlot: MenuSlot.NONE,
     name: 'Limitless',

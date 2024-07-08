@@ -14,7 +14,7 @@ import { ActionTarget } from '../action-target';
  * combo in order for quicker action selection.
  */
 export namespace Combo {
-  export const BLITZ: SkillType = {
+  export const BLITZ_LV1: SkillType = {
     buttonCombos: [
       {
         context: GameContext.TERRAIN,

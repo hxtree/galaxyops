@@ -8,7 +8,7 @@ import { ActionTarget } from '../action-target';
  * They are a type of Command Menu action.
  */
 export namespace Interaction {
-  export const GRAB: SkillType = {
+  export const GRAB_LV1: SkillType = {
     actionEffects: {
       INTERACTION_OBJECT: [
         {
@@ -24,35 +24,35 @@ export namespace Interaction {
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const PUSH: SkillType = {
+  export const PUSH_LV1: SkillType = {
     description: 'Push an object.',
     menuSlot: MenuSlot.INTERACTION,
     name: 'Push',
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const PULL: SkillType = {
+  export const PULL_LV1: SkillType = {
     description: 'Pull an object.',
     menuSlot: MenuSlot.INTERACTION,
     name: 'Pull',
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const LIFT: SkillType = {
+  export const LIFT_LV1: SkillType = {
     description: 'Lift an object.',
     menuSlot: MenuSlot.INTERACTION,
     name: 'Lift',
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const THROW: SkillType = {
+  export const THROW_LV1: SkillType = {
     description: 'Throw an object.',
     menuSlot: MenuSlot.INTERACTION,
     name: 'Throw',
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const PICK_LOCK: SkillType = {
+  export const PICK_LOCK_LV1: SkillType = {
     actionEffects: {
       INTERACTION_OBJECT: [
         {
@@ -75,7 +75,7 @@ export namespace Interaction {
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const UNLOCK: SkillType = {
+  export const UNLOCK_LV1: SkillType = {
     actionEffects: {
       INTERACTION_OBJECT: [
         {

@@ -9,7 +9,7 @@ import { SkillType } from '.';
  * The more a Player uses them the more powerful they grow.
  */
 export namespace Summon {
-  export const VACHEL: SkillType = {
+  export const VACHEL_LV1: SkillType = {
     backstory: 'A bull that Meeku raised as a child',
     commands: [
       'Charge',
@@ -22,7 +22,7 @@ export namespace Summon {
     name: 'Vachel',
   };
 
-  export const FELIX: SkillType = {
+  export const FELIX_LV1: SkillType = {
     backstory:
       'Felix is a pet that Loomee adopts. He does not listen well. He likes to nibble on grass slowly.',
     description: 'A white lop-eared dwarf rabbit',
@@ -30,7 +30,7 @@ export namespace Summon {
     name: 'Felix',
   };
 
-  export const HERALDIC_LION: SkillType = {
+  export const HERALDIC_LION_LV1: SkillType = {
     commands: [
       // https://familyhistoryfoundation.com/2020/07/17/heraldic-lion-positions/
       'Passant Stance', // claw
@@ -43,28 +43,28 @@ export namespace Summon {
     name: 'Heraldic Lion',
   };
 
-  export const SUMMON: SkillType = {
+  export const SUMMON_LV1: SkillType = {
     backstory: '',
     description: '',
     menuSlot: MenuSlot.SUMMON,
     name: '???',
   };
 
-  export const DISMISS: SkillType = {
+  export const DISMISS_LV1: SkillType = {
     backstory: '',
     description: '',
     menuSlot: MenuSlot.SUMMON,
     name: '???',
   };
 
-  export const COMMAND: SkillType = {
+  export const COMMAND_LV1: SkillType = {
     backstory: '',
     description: '',
     menuSlot: MenuSlot.SUMMON,
     name: '???',
   };
 
-  export const LYRE: SkillType = {
+  export const LYRE_LV1: SkillType = {
     backstory: '',
     description:
       'A giant half Luna moth and lyrebird that Faye can summon at will',
@@ -72,21 +72,21 @@ export namespace Summon {
     name: 'Lyre',
   };
 
-  export const SANDY: SkillType = {
+  export const SANDY_LV1: SkillType = {
     backstory: '',
     description: 'A box turtle',
     menuSlot: MenuSlot.SUMMON,
     name: 'Sandy',
   };
 
-  export const MISCHIEVOUS: SkillType = {
+  export const MISCHIEVOUS_LV1: SkillType = {
     backstory: 'The Keeper of Law',
     description: 'A black and white cat',
     menuSlot: MenuSlot.SUMMON,
     name: 'Mischievous',
   };
 
-  export const SCRIBBLES: SkillType = {
+  export const SCRIBBLES_LV1: SkillType = {
     backstory: '',
     description: 'A flying squirrel',
     menuSlot: MenuSlot.SUMMON,
@@ -98,7 +98,7 @@ export namespace Summon {
    * These are Malace's tattoos.
    */
 
-  export const OUROBOROS: SkillType = {
+  export const OUROBOROS_LV1: SkillType = {
     backstory: '',
     commands: ['Consume', 'Regenerate', 'Ensnare'],
     description: 'A demon that consumes itself.',
@@ -106,7 +106,7 @@ export namespace Summon {
     name: 'Ouroboros',
   };
 
-  export const ORIAS: SkillType = {
+  export const ORIAS_LV1: SkillType = {
     backstory:
       "He appears in the form of a lion with a serpent's tail, sitting upon a mighty horse.",
     commands: ['Roar', 'Summon Legions', 'Prowl'],
@@ -116,7 +116,7 @@ export namespace Summon {
     name: 'Orias',
   };
 
-  export const ASMODAY: SkillType = {
+  export const ASMODAY_LV1: SkillType = {
     backstory:
       'He appears with three heads: one like a bull, the second like a man, and the third like a ram.',
     commands: ['Triple Strike', 'Command Legions', 'Infernal Gaze'],
@@ -125,7 +125,7 @@ export namespace Summon {
     name: 'Asmoday',
   };
 
-  export const BELPHEGOR: SkillType = {
+  export const BELPHEGOR_LV1: SkillType = {
     backstory:
       'He tempts people by suggesting to them ingenious inventions that will make them rich.',
     commands: ['Inspire Invention', 'Wealth Temptation', 'Creative Insight'],
@@ -134,7 +134,7 @@ export namespace Summon {
     name: 'Belphegor',
   };
 
-  export const AMON: SkillType = {
+  export const AMON_LV1: SkillType = {
     backstory: "He appears as a wolf with a serpent's tail, vomiting flames.",
     commands: ['Fiery Roar', 'Summon Legions', 'Inferno Breath'],
     description: 'A Marquis of Hell who governs 40 legions of demons.',
@@ -142,7 +142,7 @@ export namespace Summon {
     name: 'Amon',
   };
 
-  export const BARBATOS: SkillType = {
+  export const BARBATOS_LV1: SkillType = {
     backstory:
       'He appears as a great lion that has the wings of a gryphon, and he speaks hoarsely.',
     commands: ["Lion's Roar", 'Wings of Protection', "Gryphon's Call"],

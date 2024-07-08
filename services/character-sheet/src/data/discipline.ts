@@ -55,10 +55,10 @@ export namespace Discipline {
     description: 'Trains in gymnastics.',
     name: 'Gymnast',
     progression: [
-      { level: 10, skill: Skill.BACK_FLIP },
-      { level: 25, skill: Skill.DOUBLE_BACK_FLIP },
-      { level: 50, skill: Skill.HIGH_JUMP },
-      { level: 70, skill: Skill.CONCENTRATION },
+      { level: 10, skill: Skill.BACK_FLIP_LV1 },
+      { level: 25, skill: Skill.DOUBLE_BACK_FLIP_LV1 },
+      { level: 50, skill: Skill.HIGH_JUMP_LV1 },
+      { level: 70, skill: Skill.CONCENTRATION_LV1 },
     ],
   };
 
@@ -67,10 +67,10 @@ export namespace Discipline {
     description: 'Studies mysterious forces.',
     name: 'Wizard',
     progression: [
-      { level: 10, skill: Skill.GUST },
-      { level: 25, skill: Skill.FLARE },
-      { level: 50, skill: Skill.HEAL },
-      { level: 70, skill: Skill.LIGHT },
+      { level: 10, skill: Skill.GUST_LV1 },
+      { level: 25, skill: Skill.FLARE_LV1 },
+      { level: 50, skill: Skill.HEAL_LV1 },
+      { level: 70, skill: Skill.LIGHT_LV1 },
     ],
   };
 
@@ -79,16 +79,16 @@ export namespace Discipline {
     description: 'Studies the world as it was.',
     name: 'Historian',
     progression: [
-      { level: 10, skill: Skill.APPRAISE },
-      { level: 25, skill: Skill.SCAN },
-      { level: 50, skill: Skill.HERALDIC_LION },
+      { level: 10, skill: Skill.APPRAISE_LV1 },
+      { level: 25, skill: Skill.SCAN_LV1 },
+      { level: 50, skill: Skill.HERALDIC_LION_LV1 },
     ],
   };
   export const BODY_BUILDER: Type = {
     category: Category.PROFESSION,
     description: 'Do you even lift?',
     name: 'Body Builder',
-    progression: [{ level: 50, skill: Skill.SCRIBBLES }],
+    progression: [{ level: 50, skill: Skill.SCRIBBLES_LV1 }],
   };
 
   // may be anyone can become a cook?>
@@ -96,7 +96,7 @@ export namespace Discipline {
     category: Category.PROFESSION,
     description: 'Prepares and cooks food',
     name: 'Cook',
-    progression: [{ level: 10, skill: Skill.PREPARE_FOOD }],
+    progression: [{ level: 10, skill: Skill.PREPARE_FOOD_LV1 }],
     // todo prepare different food items
   };
 
@@ -105,10 +105,10 @@ export namespace Discipline {
     description: 'Cheers their team as a form of encouragement.',
     name: 'Cheerleader',
     progression: [
-      { level: 1, skill: Skill.CHEER },
-      { level: 10, skill: Skill.SUPPORT },
-      { level: 40, skill: Skill.INSPIRE },
-      { level: 50, skill: Skill.HOPE },
+      { level: 1, skill: Skill.CHEER_LV1 },
+      { level: 10, skill: Skill.SUPPORT_LV1 },
+      { level: 40, skill: Skill.INSPIRE_LV1 },
+      { level: 50, skill: Skill.HOPE_LV1 },
     ],
   };
 
@@ -119,9 +119,9 @@ export namespace Discipline {
     progression: [
       { level: 1, skill: Skill.BOAST_LV1 },
       { level: 12, skill: Skill.BOAST_LV2 },
-      { level: 10, skill: Skill.LAST_STAND },
-      { level: 50, skill: Skill.BLITZ_STRIKE },
-      { level: 80, skill: Skill.FLANK },
+      { level: 10, skill: Skill.LAST_STAND_LV1 },
+      { level: 50, skill: Skill.BLITZ_STRIKE_LV1 },
+      { level: 80, skill: Skill.FLANK_LV1 },
     ],
   };
 
@@ -140,8 +140,8 @@ export namespace Discipline {
     name: 'MagiBlack',
     prerequisites: ['MAGI'],
     progression: [
-      { level: 10, skill: Skill.DARKNESS },
-      { level: 25, skill: Skill.DESOLATE },
+      { level: 10, skill: Skill.DARKNESS_LV1 },
+      { level: 25, skill: Skill.DESOLATE_LV1 },
     ],
   };
 
@@ -152,9 +152,9 @@ export namespace Discipline {
     name: 'Magi Blue',
     prerequisites: ['MAGI'],
     progression: [
-      { level: 10, skill: Skill.RAGE },
-      { level: 15, skill: Skill.AQUA },
-      { level: 25, skill: Skill.TSUNAMI },
+      { level: 10, skill: Skill.RAGE_LV1 },
+      { level: 15, skill: Skill.AQUA_LV1 },
+      { level: 25, skill: Skill.TSUNAMI_LV1 },
     ],
   };
 
@@ -165,8 +165,8 @@ export namespace Discipline {
     name: 'Magi Brown',
     prerequisites: ['MAGI'],
     progression: [
-      { level: 10, skill: Skill.QUAKE },
-      { level: 15, skill: Skill.LANDSLIDE },
+      { level: 10, skill: Skill.QUAKE_LV1 },
+      { level: 15, skill: Skill.LANDSLIDE_LV1 },
     ],
   };
 
@@ -177,9 +177,9 @@ export namespace Discipline {
     name: 'Magi Green',
     prerequisites: ['MAGI'],
     progression: [
-      { level: 10, skill: Skill.STOP },
-      { level: 15, skill: Skill.SLOW },
-      { level: 15, skill: Skill.HASTE },
+      { level: 10, skill: Skill.STOP_LV1 },
+      { level: 15, skill: Skill.SLOW_LV1 },
+      { level: 15, skill: Skill.HASTE_LV1 },
     ],
   };
 
@@ -190,8 +190,8 @@ export namespace Discipline {
     name: 'Magi Pink',
     prerequisites: ['MAGI'],
     progression: [
-      { level: 10, skill: Skill.CHARM },
-      { level: 15, skill: Skill.CHILL },
+      { level: 10, skill: Skill.CHARM_LV1 },
+      { level: 15, skill: Skill.CHILL_LV1 },
     ],
   };
 
@@ -201,7 +201,7 @@ export namespace Discipline {
     history: 'Harnessed from the power of Diag',
     name: 'Magi Purple',
     prerequisites: ['MAGI'],
-    progression: [{ level: 10, skill: Skill.QUAKE }],
+    progression: [{ level: 10, skill: Skill.QUAKE_LV1 }],
     // TODO CHANGE may be instead of quake do tainted
   };
 
@@ -212,9 +212,9 @@ export namespace Discipline {
     name: 'Magi White',
     prerequisites: ['MAGI'],
     progression: [
-      { level: 10, skill: Skill.BLIZZARD },
-      { level: 10, skill: Skill.FROST },
-      { level: 10, skill: Skill.CHILL },
+      { level: 10, skill: Skill.BLIZZARD_LV1 },
+      { level: 10, skill: Skill.FROST_LV1 },
+      { level: 10, skill: Skill.CHILL_LV1 },
     ],
   };
 
@@ -225,9 +225,9 @@ export namespace Discipline {
     name: 'Magi Yellow',
     prerequisites: ['MAGI'],
     progression: [
-      { level: 10, skill: Skill.DRAIN },
-      { level: 25, skill: Skill.LEECH },
-      { level: 50, skill: Skill.DRAIN },
+      { level: 10, skill: Skill.DRAIN_LV1 },
+      { level: 25, skill: Skill.LEECH_LV1 },
+      { level: 50, skill: Skill.DRAIN_LV1 },
     ],
   };
 
@@ -235,7 +235,7 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: 'Specialize in protection.',
     name: 'Guard',
-    progression: [{ level: 10, skill: Skill.BLOCK }],
+    progression: [{ level: 10, skill: Skill.BLOCK_LV1 }],
   };
 
   export const GUARDIAN: Type = {
@@ -263,7 +263,7 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: 'Specializes in electromechanical engineering',
     name: 'Mechanic',
-    progression: [{ level: 10, skill: Skill.SCAN }], // Actions: Tools
+    progression: [{ level: 10, skill: Skill.SCAN_LV1 }], // Actions: Tools
   };
 
   export const ROUGE: Type = {
@@ -271,8 +271,8 @@ export namespace Discipline {
     description: 'Specializes sneak attacks and picking locks',
     name: 'Rouge',
     progression: [
-      { level: 10, skill: Skill.DUAL_WELD },
-      { level: 10, skill: Skill.PICKPOCKET },
+      { level: 10, skill: Skill.DUAL_WELD_LV1 },
+      { level: 10, skill: Skill.PICKPOCKET_LV1 },
     ],
   };
 
@@ -287,7 +287,7 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: 'Rebel',
     name: 'Rebel',
-    progression: [{ level: 10, skill: Skill.STRIKE }],
+    progression: [{ level: 10, skill: Skill.STRIKE_LV1 }],
   };
 
   export const SCOUT: Type = {
@@ -295,7 +295,7 @@ export namespace Discipline {
     description:
       'Specialize in moving ahead of the party to gathering information and reconnaissance.',
     name: 'Scout',
-    progression: [{ level: 10, skill: Skill.SCOUT }],
+    progression: [{ level: 10, skill: Skill.SCOUT_LV1 }],
   };
 
   export const SOLIDER: Type = {
@@ -303,7 +303,7 @@ export namespace Discipline {
     description:
       'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.',
     name: 'Solider',
-    progression: [{ level: 10, skill: Skill.CLEAVE }],
+    progression: [{ level: 10, skill: Skill.CLEAVE_LV1 }],
   };
 
   export const SUMMONER: Type = {
@@ -311,9 +311,9 @@ export namespace Discipline {
     description: 'Summons and commands magical beings.',
     name: 'Summoner',
     progression: [
-      { level: 10, skill: Skill.SUMMON },
-      { level: 10, skill: Skill.DISMISS },
-      { level: 10, skill: Skill.COMMAND },
+      { level: 10, skill: Skill.SUMMON_LV1 },
+      { level: 10, skill: Skill.DISMISS_LV1 },
+      { level: 10, skill: Skill.COMMAND_LV1 },
     ],
   };
 
@@ -322,8 +322,8 @@ export namespace Discipline {
     description: 'Proficient at stealing and picking locks.',
     name: 'Thief',
     progression: [
-      { level: 10, skill: Skill.PICKPOCKET },
-      { level: 10, skill: Skill.PICK_LOCK },
+      { level: 10, skill: Skill.PICKPOCKET_LV1 },
+      { level: 10, skill: Skill.PICK_LOCK_LV1 },
     ],
   };
 
@@ -347,10 +347,10 @@ export namespace Discipline {
     description: 'Specializes in sneak attacks and picking locks.',
     name: 'Assassin',
     progression: [
-      { level: 3, skill: Skill.DUAL_WELD },
-      { level: 12, skill: Skill.PICKPOCKET },
-      { level: 18, skill: Skill.PICK_LOCK },
-      { level: 20, skill: Skill.BACK_FLIP },
+      { level: 3, skill: Skill.DUAL_WELD_LV1 },
+      { level: 12, skill: Skill.PICKPOCKET_LV1 },
+      { level: 18, skill: Skill.PICK_LOCK_LV1 },
+      { level: 20, skill: Skill.BACK_FLIP_LV1 },
     ],
   };
 
@@ -372,7 +372,7 @@ export namespace Discipline {
     category: Category.ARCHETYPE,
     description: '',
     name: 'Duelist',
-    progression: [{ level: 10, skill: Skill.PARRY }],
+    progression: [{ level: 10, skill: Skill.PARRY_LV1 }],
   };
 
   export const RUNE_KING: Type = {
@@ -464,8 +464,8 @@ export namespace Discipline {
     description: '',
     name: 'Lightening Warrior',
     progression: [
-      { level: 10, skill: Skill.STRIKE },
-      { level: 15, skill: Skill.SHOCK },
+      { level: 10, skill: Skill.STRIKE_LV1 },
+      { level: 15, skill: Skill.SHOCK_LV1 },
     ],
   };
 

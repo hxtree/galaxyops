@@ -155,7 +155,7 @@ export namespace Accessory {
     effects: [
       {
         modifier: SkillEffectModifier.ADD,
-        skill: Skill.CATCHER,
+        skill: Skill.CATCHER_LV1,
         tags: [EffectTag.METAL],
       },
     ],
@@ -169,7 +169,7 @@ export namespace Accessory {
     effects: [
       {
         modifier: SkillEffectModifier.ADD,
-        skill: Skill.CATCHER,
+        skill: Skill.CATCHER_LV1,
         tags: [EffectTag.PHYSICAL],
       },
     ],

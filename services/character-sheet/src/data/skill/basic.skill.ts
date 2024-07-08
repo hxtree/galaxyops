@@ -28,21 +28,21 @@ export namespace Basic {
     level: SkillLevel.LV2,
   };
 
-  export const DISGUISE: SkillType = {
+  export const DISGUISE_LV1: SkillType = {
     description: 'Changes appearance and disables command menu until canceled.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Disguise',
   };
 
-  export const DISMISS: SkillType = {
+  export const DISMISS_LV1: SkillType = {
     description: 'Release a summon.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Dismiss',
   };
 
-  export const FOCUS: SkillType = {
+  export const FOCUS_LV1: SkillType = {
     cost: [{ quantity: '1d6+10', remove: Attribute.SPIRIT }],
     description: 'Raise power, spirit, and speed for a duration.',
     effect: [
@@ -67,7 +67,7 @@ export namespace Basic {
     target: ActionTarget.SELF,
   };
 
-  export const GRAPPLE: SkillType = {
+  export const GRAPPLE_LV1: SkillType = {
     cost: [{ quantity: '1d6+10', remove: Attribute.SPIRIT }],
     description: 'Lowers character and opponents life.',
     effect: [
@@ -83,7 +83,7 @@ export namespace Basic {
     target: ActionTarget.OPPONENT,
   };
 
-  export const HIDE: SkillType = {
+  export const HIDE_LV1: SkillType = {
     description: 'Become invisible to enemies.',
     effect: [
       // TODO: Add effect, possibly increase speed
@@ -92,14 +92,14 @@ export namespace Basic {
     name: 'Hide',
   };
 
-  export const SCAN: SkillType = {
+  export const SCAN_LV1: SkillType = {
     description: 'Read enemies stats.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Scan',
   };
 
-  export const CHEER: SkillType = {
+  export const CHEER_LV1: SkillType = {
     areaOfEffect: AreaOfEffect.RADIUS_15FT,
     description: 'Boost nearby allies spirit.',
     effect: [
@@ -114,14 +114,14 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const SUPPORT: SkillType = {
+  export const SUPPORT_LV1: SkillType = {
     description: 'Provide support to allies.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Support',
   };
 
-  export const HOPE: SkillType = {
+  export const HOPE_LV1: SkillType = {
     areaOfEffect: AreaOfEffect.RADIUS_15FT,
     description: 'Bestow the most powerful status bonus.',
     effect: [
@@ -146,7 +146,7 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const INSPIRE: SkillType = {
+  export const INSPIRE_LV1: SkillType = {
     description: "Increase target's Drive gauge.",
     effect: [
       {
@@ -160,35 +160,35 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const SCOUT: SkillType = {
+  export const SCOUT_LV1: SkillType = {
     description: 'Move ahead of the party to gather information.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Scout',
   };
 
-  export const MIMIC: SkillType = {
+  export const MIMIC_LV1: SkillType = {
     description: 'Use the last move performed on you against the enemy.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Mimic',
   };
 
-  export const PICKPOCKET: SkillType = {
+  export const PICKPOCKET_LV1: SkillType = {
     description: 'Steal items from enemies.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Pickpocket',
   };
 
-  export const SEAL: SkillType = {
+  export const SEAL_LV1: SkillType = {
     description: 'Prevent enemies from approaching.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Seal',
   };
 
-  export const LULLABY: SkillType = {
+  export const LULLABY_LV1: SkillType = {
     description: 'Sing a song that dulls the senses of the enemy',
     effect: [
       {
@@ -212,7 +212,7 @@ export namespace Basic {
     target: ActionTarget.OPPONENT,
   };
 
-  export const WARD: SkillType = {
+  export const WARD_LV1: SkillType = {
     cost: [{ quantity: '1d20+10', remove: Attribute.SPIRIT }],
     description: 'Keep enemies at bay with spiritual energy.',
     effect: [],
@@ -220,7 +220,7 @@ export namespace Basic {
     name: 'Ward',
   };
 
-  export const SACRIFICE: SkillType = {
+  export const SACRIFICE_LV1: SkillType = {
     cost: [{ quantity: '1d20+10', remove: Attribute.LIFE }],
     description: 'Sacrifice something precious for a powerful effect.',
     effect: [{ quantity: '1d20+10', remove: Attribute.LIFE }],
@@ -228,7 +228,7 @@ export namespace Basic {
     name: 'Sacrifice',
   };
 
-  export const PROTECT: SkillType = {
+  export const PROTECT_LV1: SkillType = {
     areaOfEffect: AreaOfEffect.CONE_REAR_15FT,
     coolDownTime: Duration.fromObject({ seconds: 15 }),
     cost: [{ quantity: '1d20+10', remove: Attribute.SPIRIT }],
@@ -248,35 +248,35 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const MOCK: SkillType = {
+  export const MOCK_LV1: SkillType = {
     description: 'Taunt the enemy, potentially causing them to go berserk.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Mock',
   };
 
-  export const SEARCH: SkillType = {
+  export const SEARCH_LV1: SkillType = {
     description: 'Scan the nearby area for valuable items.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Search',
   };
 
-  export const STEAL: SkillType = {
+  export const STEAL_LV1: SkillType = {
     description: 'Take items from opponents.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Steal',
   };
 
-  export const REFLECT: SkillType = {
+  export const REFLECT_LV1: SkillType = {
     description: 'Send enemy moves back at them.',
     effect: [],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Reflect',
   };
 
-  export const PROTECTION: SkillType = {
+  export const PROTECTION_LV1: SkillType = {
     coolDownTime: Duration.fromObject({ seconds: 15 }),
     description: 'Create a protective barrier around an ally.',
     effect: [
@@ -294,7 +294,7 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const LIGHT: SkillType = {
+  export const LIGHT_LV1: SkillType = {
     description:
       'Bind enemies, potentially putting them to sleep and stopping their rage.',
     effect: [],
@@ -302,7 +302,7 @@ export namespace Basic {
     name: 'Light',
   };
 
-  export const RAGE: SkillType = {
+  export const RAGE_LV1: SkillType = {
     description: 'Increase power at the cost of wisdom.',
     effect: [
       {

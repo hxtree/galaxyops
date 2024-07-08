@@ -7,26 +7,26 @@ import { SkillType } from '.';
  * Are only accessible by a Player through the Menu screen
  */
 export namespace Item {
-  export const APPRAISE: SkillType = {
+  export const APPRAISE_LV1: SkillType = {
     description: 'Determine the market value of an item',
     menuSlot: MenuSlot.ITEM,
     name: 'Appraise',
   };
 
-  export const COMBINE: SkillType = {
+  export const COMBINE_LV1: SkillType = {
     // CRAFT
     description: 'Turn two or more items into one item if compatible',
     menuSlot: MenuSlot.ITEM,
     name: 'Combine',
   };
 
-  export const THROW: SkillType = {
+  export const THROW_LV1: SkillType = {
     description: 'Toss an item from stock away or to injure enemy.',
     menuSlot: MenuSlot.ITEM,
     name: 'Throw',
   };
 
-  export const PREPARE_FOOD: SkillType = {
+  export const PREPARE_FOOD_LV1: SkillType = {
     description: 'Make a meal',
     menuSlot: MenuSlot.ITEM,
     name: 'Prepare Food',

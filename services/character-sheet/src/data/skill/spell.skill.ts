@@ -59,7 +59,7 @@ export namespace Spell {
     recoveryTime: Duration.fromObject({ seconds: 2 }),
   };
 
-  export const SHOCK: SkillType = {
+  export const SHOCK_LV1: SkillType = {
     description: 'Electrocutes target',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.ELECTRIC] },
@@ -70,7 +70,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const QUAKE: SkillType = {
+  export const QUAKE_LV1: SkillType = {
     areaOfEffect: AreaOfEffect.RADIUS_15FT,
     description: 'Shakes earth surrounding target',
     effect: [
@@ -86,7 +86,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const LANDSLIDE: SkillType = {
+  export const LANDSLIDE_LV1: SkillType = {
     description: 'Creates a landslide',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.EARTH] },
@@ -98,7 +98,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const BLIZZARD: SkillType = {
+  export const BLIZZARD_LV1: SkillType = {
     description: 'Creates a Blizzard',
     effect: [
       {
@@ -122,7 +122,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const FIREBALL: SkillType = {
+  export const FIREBALL_LV1: SkillType = {
     description: 'Shoot a fireball at target',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.FIRE] },
@@ -133,7 +133,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const INFERNO: SkillType = {
+  export const INFERNO_LV1: SkillType = {
     description: 'Creates a Inferno',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.FIRE] },
@@ -144,7 +144,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const TWISTER: SkillType = {
+  export const TWISTER_LV1: SkillType = {
     description: 'Creates a Twister',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
@@ -159,7 +159,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const GUST: SkillType = {
+  export const GUST_LV1: SkillType = {
     description: 'Creates a Gust',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
@@ -174,7 +174,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const GALE: SkillType = {
+  export const GALE_LV1: SkillType = {
     description: 'Creates Gale',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
@@ -189,7 +189,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const CYCLONE: SkillType = {
+  export const CYCLONE_LV1: SkillType = {
     description: 'Creates Cyclone',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
@@ -204,7 +204,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const TSUNAMI: SkillType = {
+  export const TSUNAMI_LV1: SkillType = {
     description: 'A water-based attack that creates Tsunami',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.WATER] },
@@ -219,7 +219,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const AQUA: SkillType = {
+  export const AQUA_LV1: SkillType = {
     description: 'Creates Aqua',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.WATER] },
@@ -234,7 +234,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const HEAL: SkillType = {
+  export const HEAL_LV1: SkillType = {
     description: 'Heal target',
     effect: [
       { add: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
@@ -244,7 +244,7 @@ export namespace Spell {
     target: ActionTarget.ALLY,
   };
 
-  export const REVIVE: SkillType = {
+  export const REVIVE_LV1: SkillType = {
     description: 'Restore life to target',
     effect: [{ chance: 0.9, remove: 'LIFELESS', tags: [] }],
     menuSlot: MenuSlot.MAGIC,
@@ -252,7 +252,7 @@ export namespace Spell {
     target: ActionTarget.ALLY,
   };
 
-  export const CURE: SkillType = {
+  export const CURE_LV1: SkillType = {
     description: 'Cures status effects',
     effect: [
       { chance: 1, remove: 'COLD' },
@@ -265,7 +265,7 @@ export namespace Spell {
     target: ActionTarget.ALLY,
   };
 
-  export const BARRIER: SkillType = {
+  export const BARRIER_LV1: SkillType = {
     description: 'Barrier StatusEffects',
     effect: [{ add: 'BARRIER', chance: 1, tags: [EffectTag.AIR] }],
     menuSlot: MenuSlot.MAGIC,
@@ -273,7 +273,7 @@ export namespace Spell {
     target: ActionTarget.ALLY,
   };
 
-  export const BOOM: SkillType = {
+  export const BOOM_LV1: SkillType = {
     description: 'Cast Boom on target',
     effect: [
       {
@@ -287,7 +287,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const REFLECT: SkillType = {
+  export const REFLECT_LV1: SkillType = {
     description: 'Cast Reflect on target',
     effect: [{ add: 'REFLECT', chance: 1 }],
     menuSlot: MenuSlot.MAGIC,
@@ -295,7 +295,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const FLARE: SkillType = {
+  export const FLARE_LV1: SkillType = {
     description: 'Cast Flare on target',
     effect: [
       {
@@ -314,7 +314,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const METEOR: SkillType = {
+  export const METEOR_LV1: SkillType = {
     description: 'Cast Meteor on target',
     effect: [
       {
@@ -333,7 +333,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const TELEPATHY: SkillType = {
+  export const TELEPATHY_LV1: SkillType = {
     description: 'Cast Telepathy on target',
     effect: [
       {
@@ -347,7 +347,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const LIGHT: SkillType = {
+  export const LIGHT_LV1: SkillType = {
     description: 'Cast light on target',
     effect: [
       {
@@ -361,7 +361,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const DESOLATE: SkillType = {
+  export const DESOLATE_LV1: SkillType = {
     description: 'To make an area empty or bare.',
     effect: [
       { quantity: '1d6+4', remove: Attribute.LIFE, tags: [EffectTag.DARKNESS] },
@@ -376,7 +376,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const DARKNESS: SkillType = {
+  export const DARKNESS_LV1: SkillType = {
     description: 'Decrease the area that your opponent can see',
     effect: [
       {
@@ -390,7 +390,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const STOP: SkillType = {
+  export const STOP_LV1: SkillType = {
     description: 'Freezes a character in time',
     effect: [
       {
@@ -403,7 +403,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const SLOW: SkillType = {
+  export const SLOW_LV1: SkillType = {
     description: 'Slow down an opponent',
     effect: [
       {
@@ -416,7 +416,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const HASTE: SkillType = {
+  export const HASTE_LV1: SkillType = {
     description: 'Speed up a character',
     // self
     effect: [
@@ -431,42 +431,42 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const CHILL: SkillType = {
+  export const CHILL_LV1: SkillType = {
     description: '',
     menuSlot: MenuSlot.MAGIC,
     name: 'Chill',
     target: ActionTarget.OPPONENT,
   };
 
-  export const CHARM: SkillType = {
+  export const CHARM_LV1: SkillType = {
     description: '',
     menuSlot: MenuSlot.MAGIC,
     name: 'Charm',
     target: ActionTarget.OPPONENT,
   };
 
-  export const FROST: SkillType = {
+  export const FROST_LV1: SkillType = {
     description: '',
     menuSlot: MenuSlot.MAGIC,
     name: 'Frost',
     target: ActionTarget.OPPONENT,
   };
 
-  export const ABSORB: SkillType = {
+  export const ABSORB_LV1: SkillType = {
     description: '',
     menuSlot: MenuSlot.MAGIC,
     name: 'Absorb',
     target: ActionTarget.OPPONENT,
   };
 
-  export const LEECH: SkillType = {
+  export const LEECH_LV1: SkillType = {
     description: '',
     menuSlot: MenuSlot.MAGIC,
     name: 'Leech',
     target: ActionTarget.OPPONENT,
   };
 
-  export const DRAIN: SkillType = {
+  export const DRAIN_LV1: SkillType = {
     description: '',
     effect: [],
     menuSlot: MenuSlot.MAGIC,

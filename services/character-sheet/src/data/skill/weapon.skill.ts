@@ -18,7 +18,7 @@ import { ActionTarget } from '../action-target';
  * e.g. Block lv1
  */
 export namespace Weapon {
-  export const BLOCK: SkillType = {
+  export const BLOCK_LV1: SkillType = {
     description: 'Stop incoming attacks.',
     effect: [
       {
@@ -33,7 +33,7 @@ export namespace Weapon {
     target: ActionTarget.SELF,
   };
 
-  export const PARRY: SkillType = {
+  export const PARRY_LV1: SkillType = {
     description: 'Ward off incoming attacks with a countermove.',
     effect: [
       {
@@ -48,7 +48,7 @@ export namespace Weapon {
     target: ActionTarget.SELF,
   };
 
-  export const SLASH: SkillType = {
+  export const SLASH_LV1: SkillType = {
     description: 'Attack with a blade.',
     effect: [
       {
@@ -62,7 +62,7 @@ export namespace Weapon {
     target: ActionTarget.OPPONENT,
   };
 
-  export const STRIKE: SkillType = {
+  export const STRIKE_LV1: SkillType = {
     description: 'Execute a sudden attack with a blade.',
     effect: [
       {
@@ -76,7 +76,7 @@ export namespace Weapon {
     target: ActionTarget.OPPONENT,
   };
 
-  export const STAB: SkillType = {
+  export const STAB_LV1: SkillType = {
     description: 'Perform a forward striking motion with a blade.',
     effect: [
       {
@@ -90,7 +90,7 @@ export namespace Weapon {
     target: ActionTarget.OPPONENT,
   };
 
-  export const CHOP: SkillType = {
+  export const CHOP_LV1: SkillType = {
     description: 'Execute a downward motion with a blade.',
     effect: [
       {
@@ -104,7 +104,7 @@ export namespace Weapon {
     target: ActionTarget.OPPONENT,
   };
 
-  export const CLEAVE: SkillType = {
+  export const CLEAVE_LV1: SkillType = {
     description: 'Perform a slashing technique.',
     effect: [
       {

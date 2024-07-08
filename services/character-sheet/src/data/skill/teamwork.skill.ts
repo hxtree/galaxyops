@@ -7,7 +7,7 @@ import { ActionTarget } from '../action-target';
  * Actions that involve multiple Player characters working together to achieve a common goal.
  */
 export namespace Teamwork {
-  export const LAST_STAND: SkillType = {
+  export const LAST_STAND_LV1: SkillType = {
     description:
       'All party members quickly assume defensive positions to withstand a sudden onslaught of attacks.',
     menuSlot: MenuSlot.TEAMWORK,
@@ -15,14 +15,14 @@ export namespace Teamwork {
     target: ActionTarget.ALLY,
   };
 
-  export const BLITZ_STRIKE: SkillType = {
+  export const BLITZ_STRIKE_LV1: SkillType = {
     description: 'Launch a coordinated attack on a single target.',
     menuSlot: MenuSlot.TEAMWORK,
     name: 'Blitz Strike',
     target: ActionTarget.ALLY,
   };
 
-  export const FLANK: SkillType = {
+  export const FLANK_LV1: SkillType = {
     description: 'Execute a pincer movement to surround and attack the enemy.',
     menuSlot: MenuSlot.TEAMWORK,
     name: 'Flank',

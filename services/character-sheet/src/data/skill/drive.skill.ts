@@ -3,14 +3,14 @@ import { MenuSlot, MenuSlotType } from '../menu-slot';
 import { ActionEffects } from '../table.effect';
 import { Attribute } from '../attribute';
 import { AreaOfEffect } from '../area-of-effect';
-import { SkillType } from '.';
+import { SkillLevel, SkillType } from './skill.type';
 import { ActionTarget } from '../action-target';
 
 /**
  * Drive Actions are special actions that consume drive gauge
  */
 export namespace Drive {
-  export const BERSERK: SkillType = {
+  export const BERSERK_LV1: SkillType = {
     actionEffects: {
       PERFORMER: [
         {
@@ -26,7 +26,7 @@ export namespace Drive {
     name: 'Berserk',
   };
 
-  export const TOXIC_THRUST: SkillType = {
+  export const TOXIC_THRUST_LV1: SkillType = {
     actionEffects: {
       OPPONENT: [
         {
@@ -44,7 +44,7 @@ export namespace Drive {
     target: ActionTarget.OPPONENT,
   };
 
-  export const AERIAL_ASSAULT: SkillType = {
+  export const AERIAL_ASSAULT_LV1: SkillType = {
     actionEffects: {
       OPPONENT: [
         {
@@ -68,7 +68,7 @@ export namespace Drive {
     target: ActionTarget.OPPONENT,
   };
 
-  export const ONI: SkillType = {
+  export const ONI_LV1: SkillType = {
     actionEffects: {
       PERFORMER: [
         {
@@ -86,13 +86,11 @@ export namespace Drive {
     target: ActionTarget.SELF,
   };
 
-  export const TRUE_ONI: SkillType = {
+  export const ONI_LV2: SkillType = {
+    ...ONI_LV1,
     conditions:
       'Player must have very little life left and max DriveAction in order to perform.',
-    description: `Become engulfed in a more powerful blood thirsty rage that multiplies power but drains spirit.
-      If character stays in Oni too long they will go Berserk.`,
-    menuSlot: MenuSlot.DRIVE,
+    level: SkillLevel.LV2,
     name: 'True Oni',
-    target: ActionTarget.SELF,
   };
 }

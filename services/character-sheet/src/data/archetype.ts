@@ -164,7 +164,7 @@ export namespace Archetype {
       Discipline.SAGE,
       Discipline.GUARDIAN,
     ],
-    summonCompatibility: [Summon.FELIX],
+    summonCompatibility: [Summon.FELIX_LV1],
     surname: 'Angora',
 
     symbolizes: ['Chastity'],
@@ -246,15 +246,13 @@ export namespace Archetype {
       Discipline.HERO,
     ],
     potentialOutfits: [Outfit.TSHIRT_AND_JEANS],
-    summonCompatibility: [Summon.VACHEL],
+    summonCompatibility: [Summon.VACHEL_LV1],
     surname: 'Oni',
     symbolizes: ['The One', 'Destroyer of Law'],
     traits: [
       {
         modifier: Effect.WEAK,
-
         operator: Operator.MULTIPLY,
-
         quantity: 1.2,
         // learns quickly
         tag: EffectTag.EXPERIENCE,
@@ -302,7 +300,7 @@ export namespace Archetype {
       Discipline.MAGI_WHITE,
       Discipline.MAGI_YELLOW,
     ],
-    summonCompatibility: [Summon.LYRE],
+    summonCompatibility: [Summon.LYRE_LV1],
     surname: 'Imago',
     symbolizes: ['Charity'],
     weaponCompatibility: [Weapon.Category.STAFF],
@@ -356,7 +354,7 @@ export namespace Archetype {
       Discipline.BODY_BUILDER,
       Discipline.COMMANDER,
     ],
-    summonCompatibility: [Summon.SCRIBBLES],
+    summonCompatibility: [Summon.SCRIBBLES_LV1],
     surname: 'Stonewell',
     symbolizes: ['Humility'],
     weaponCompatibility: [Weapon.Category.TWO_HANDED_AXE],
@@ -386,7 +384,7 @@ export namespace Archetype {
       Discipline.ROUGE,
     ],
     potentialOutfits: [Outfit.OFFICERS_UNIFORM],
-    summonCompatibility: [Summon.OUROBOROS, Summon.MISCHIEVOUS],
+    summonCompatibility: [Summon.OUROBOROS_LV1, Summon.MISCHIEVOUS_LV1],
     surname: 'Tsia',
     symbolizes: ['Despair'],
     traits: [
@@ -424,7 +422,7 @@ export namespace Archetype {
       Discipline.ELITE_ASSASSIN,
       Discipline.THIEF,
     ],
-    summonCompatibility: [Summon.HERALDIC_LION],
+    summonCompatibility: [Summon.HERALDIC_LION_LV1],
     surname: 'Kibbutz',
     symbolizes: ['Kindness', 'Independence'],
     traits: [
@@ -451,7 +449,7 @@ export namespace Archetype {
       Discipline.LIGHTENING_WARRIOR,
       Discipline.REBEL,
     ],
-    summonCompatibility: [Summon.SANDY],
+    summonCompatibility: [Summon.SANDY_LV1],
     surname: 'Uthsha',
     symbolizes: ['Diligence'],
     weaponCompatibility: [Weapon.Category.BOOMERANG],
