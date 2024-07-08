@@ -222,6 +222,7 @@ export namespace Spell {
         tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Tsunami',
     target: ActionTarget.OPPONENT,

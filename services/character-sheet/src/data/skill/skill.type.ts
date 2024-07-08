@@ -138,5 +138,5 @@ export type SkillType = {
   /**
    * Level of the skill (e.g., beginner, intermediate, advanced).
    */
-  level?: SkillLevel;
+  level: SkillLevel;
 };

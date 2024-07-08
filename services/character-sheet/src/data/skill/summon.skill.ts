@@ -1,5 +1,5 @@
 import { MenuSlot } from '../menu-slot';
-import { SkillType } from '.';
+import { SkillType, SkillLevel } from './skill.type';
 
 /**
  * Summons are companions that may be called into play in varying ways to aid party.
@@ -18,6 +18,7 @@ export namespace Summon {
       // Can be used with Overdrive combinations
     ],
     description: 'A silver bull',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Vachel',
   };
@@ -26,6 +27,7 @@ export namespace Summon {
     backstory:
       'Felix is a pet that Loomee adopts. He does not listen well. He likes to nibble on grass slowly.',
     description: 'A white lop-eared dwarf rabbit',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Felix',
   };
@@ -39,6 +41,7 @@ export namespace Summon {
       'Guardant Stance', // guard
     ],
     description: 'A regal lion with an impeccable stance',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Heraldic Lion',
   };
@@ -46,6 +49,7 @@ export namespace Summon {
   export const SUMMON_LV1: SkillType = {
     backstory: '',
     description: '',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: '???',
   };
@@ -53,6 +57,7 @@ export namespace Summon {
   export const DISMISS_LV1: SkillType = {
     backstory: '',
     description: '',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: '???',
   };
@@ -60,6 +65,7 @@ export namespace Summon {
   export const COMMAND_LV1: SkillType = {
     backstory: '',
     description: '',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: '???',
   };
@@ -68,6 +74,7 @@ export namespace Summon {
     backstory: '',
     description:
       'A giant half Luna moth and lyrebird that Faye can summon at will',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Lyre',
   };
@@ -75,6 +82,7 @@ export namespace Summon {
   export const SANDY_LV1: SkillType = {
     backstory: '',
     description: 'A box turtle',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Sandy',
   };
@@ -82,6 +90,7 @@ export namespace Summon {
   export const MISCHIEVOUS_LV1: SkillType = {
     backstory: 'The Keeper of Law',
     description: 'A black and white cat',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Mischievous',
   };
@@ -89,6 +98,7 @@ export namespace Summon {
   export const SCRIBBLES_LV1: SkillType = {
     backstory: '',
     description: 'A flying squirrel',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Scribble',
   };
@@ -102,6 +112,7 @@ export namespace Summon {
     backstory: '',
     commands: ['Consume', 'Regenerate', 'Ensnare'],
     description: 'A demon that consumes itself.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Ouroboros',
   };
@@ -112,6 +123,7 @@ export namespace Summon {
     commands: ['Roar', 'Summon Legions', 'Prowl'],
     description:
       'A Great Marquis of Hell, who rules over 30 legions of demons.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Orias',
   };
@@ -121,6 +133,7 @@ export namespace Summon {
       'He appears with three heads: one like a bull, the second like a man, and the third like a ram.',
     commands: ['Triple Strike', 'Command Legions', 'Infernal Gaze'],
     description: 'A King of Hell with 72 legions of demons under his command.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Asmoday',
   };
@@ -130,6 +143,7 @@ export namespace Summon {
       'He tempts people by suggesting to them ingenious inventions that will make them rich.',
     commands: ['Inspire Invention', 'Wealth Temptation', 'Creative Insight'],
     description: 'A demon associated with discoveries and inventions.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Belphegor',
   };
@@ -138,6 +152,7 @@ export namespace Summon {
     backstory: "He appears as a wolf with a serpent's tail, vomiting flames.",
     commands: ['Fiery Roar', 'Summon Legions', 'Inferno Breath'],
     description: 'A Marquis of Hell who governs 40 legions of demons.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Amon',
   };
@@ -145,8 +160,10 @@ export namespace Summon {
   export const BARBATOS_LV1: SkillType = {
     backstory:
       'He appears as a great lion that has the wings of a gryphon, and he speaks hoarsely.',
+
     commands: ["Lion's Roar", 'Wings of Protection', "Gryphon's Call"],
     description: 'A Duke of Hell who has power over 30 legions of demons.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Barbatos',
   };

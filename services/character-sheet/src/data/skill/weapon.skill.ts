@@ -2,7 +2,7 @@ import { Duration } from 'luxon';
 import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
 import { MenuSlot } from '../menu-slot';
-import { SkillType } from './skill.type';
+import { SkillType, SkillLevel } from './skill.type';
 import { ActionTarget } from '../action-target';
 
 /**
@@ -28,6 +28,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Block',
     target: ActionTarget.SELF,
@@ -43,6 +44,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Parry',
     target: ActionTarget.SELF,
@@ -57,6 +59,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Slash',
     target: ActionTarget.OPPONENT,
@@ -71,6 +74,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Strike',
     target: ActionTarget.OPPONENT,
@@ -85,6 +89,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Stab',
     target: ActionTarget.OPPONENT,
@@ -99,6 +104,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Chop',
     target: ActionTarget.OPPONENT,
@@ -113,6 +119,7 @@ export namespace Weapon {
         tags: [EffectTag.PHYSICAL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Cleave',
     target: ActionTarget.OPPONENT,

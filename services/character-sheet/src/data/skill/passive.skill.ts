@@ -93,6 +93,7 @@ export namespace Passive {
         quantity: '5',
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Greedy Intent',
     target: ActionTarget.SELF,
