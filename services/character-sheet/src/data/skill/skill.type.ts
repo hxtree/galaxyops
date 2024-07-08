@@ -64,9 +64,9 @@ export type SkillType = {
   areaOfEffect?: AreaOfEffect.Type;
 
   /**
-   * Effect of the skill, defined as an EffectTable.
+   * Effects triggered by the action of using this skill.
    */
-  effect?: EffectTable;
+  actionEffects?: ActionEffects;
 
   /**
    * Backstory or lore related to the skill (optional).
@@ -93,11 +93,6 @@ export type SkillType = {
    * Button combinations required to execute the skill.
    */
   buttonCombos?: ButtonCombo[];
-
-  /**
-   * Effects triggered by the action of using this skill.
-   */
-  actionEffects?: ActionEffects;
 
   /**
    * The type of menu slot this skill occupies.

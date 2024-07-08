@@ -10,7 +10,6 @@ export namespace Trap {
   export const POISON_TRAP_LV1: SkillType = {
     description: 'Sets a poison trap.',
     level: SkillLevel.LV1,
-
     menuSlot: MenuSlot.TRAPS,
     name: 'Poison Trap',
     target: ActionTarget.INTERACTION_OBJECT,

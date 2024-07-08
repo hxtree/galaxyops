@@ -23,14 +23,16 @@ export namespace Passive {
   };
 
   export const ESCAPE_ARTIST_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.SPEED,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
     description: 'Makes it easier to run away from aggressive targets',
-    effect: [
-      {
-        add: Attribute.SPEED,
-        chance: 1.0,
-        quantity: '10',
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Escape Artist',
@@ -46,14 +48,16 @@ export namespace Passive {
   };
 
   export const CONCENTRATION_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.SPIRIT,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
     description: 'Maintain focused for longer periods of time',
-    effect: [
-      {
-        add: Attribute.SPIRIT,
-        chance: 1.0,
-        quantity: '10',
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Concentration',
@@ -61,14 +65,16 @@ export namespace Passive {
   };
 
   export const BLUFF_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.SPIRIT,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
     description: 'Tell a lie without being caught',
-    effect: [
-      {
-        add: Attribute.SPIRIT,
-        chance: 1.0,
-        quantity: '10',
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Bluff',
@@ -85,14 +91,16 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
   export const GREEDY_INTENT_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.EXPERIENCE,
+          chance: 1.0,
+          quantity: '5',
+        },
+      ],
+    },
     description: 'Gain more experience than the party.',
-    effect: [
-      {
-        add: Attribute.EXPERIENCE,
-        chance: 1.0,
-        quantity: '5',
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Greedy Intent',
@@ -100,14 +108,16 @@ export namespace Passive {
   };
 
   export const SLOTH_COMPOSURE_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.DEFENSE,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
     description: 'Decreases damage taken',
-    effect: [
-      {
-        add: Attribute.DEFENSE,
-        chance: 1.0,
-        quantity: '10',
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Sloth Composure',
@@ -115,15 +125,18 @@ export namespace Passive {
   };
 
   export const BLOOD_LUST_LV1: SkillType = {
-    description: 'Increases speed.',
     // Acquired by defeating Lust.
-    effect: [
-      {
-        add: Attribute.SPEED,
-        chance: 1.0,
-        quantity: '10',
-      },
-    ],
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.SPEED,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
+
+    description: 'Increases speed.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Blood Lust',
@@ -131,15 +144,18 @@ export namespace Passive {
   };
 
   export const ENVIOUS_OF_COMBAT_LV1: SkillType = {
-    description: 'Gains increased power.',
     // Acquired by defeating Envy.
-    effect: [
-      {
-        add: Attribute.POWER,
-        chance: 1.0,
-        quantity: '10',
-      },
-    ],
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.POWER,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
+
+    description: 'Gains increased power.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Envious of Combat',
@@ -147,15 +163,17 @@ export namespace Passive {
   };
 
   export const GLUTTONOUS_DESIRE_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.LIFE,
+          chance: 1.0,
+          quantity: '10',
+        },
+        // TODO add effect for consuming food
+      ],
+    },
     description: 'Consumes food items twice as fast.',
-    effect: [
-      {
-        add: Attribute.LIFE,
-        chance: 1.0,
-        quantity: '10',
-      },
-      // TODO add effect for consuming food
-    ],
     level: SkillLevel.LV1,
     // Acquired by defeating Gluttony.
     menuSlot: MenuSlot.NONE,
@@ -164,14 +182,16 @@ export namespace Passive {
   };
 
   export const CATCHER_LV1: SkillType = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.SPEED,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
     description: 'Receives bonuses when catching items.',
-    effect: [
-      {
-        add: Attribute.SPEED,
-        chance: 1.0,
-        quantity: '10',
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Catcher',

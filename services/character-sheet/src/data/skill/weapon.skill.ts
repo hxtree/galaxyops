@@ -19,15 +19,17 @@ import { ActionTarget } from '../action-target';
  */
 export namespace Weapon {
   export const BLOCK_LV1: SkillType = {
+    actionEffects: {
+      OPPONENT: [
+        {
+          add: Attribute.DEFENSE,
+          duration: Duration.fromObject({ seconds: 2 }),
+          quantity: '1d6+2',
+          tags: [EffectTag.PHYSICAL],
+        },
+      ],
+    },
     description: 'Stop incoming attacks.',
-    effect: [
-      {
-        add: Attribute.DEFENSE,
-        duration: Duration.fromObject({ seconds: 2 }),
-        quantity: '1d6+2',
-        tags: [EffectTag.PHYSICAL],
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Block',
@@ -35,15 +37,17 @@ export namespace Weapon {
   };
 
   export const PARRY_LV1: SkillType = {
+    actionEffects: {
+      OPPONENT: [
+        {
+          add: Attribute.DEFENSE,
+          duration: Duration.fromObject({ seconds: 6 }),
+          quantity: '1d6+2',
+          tags: [EffectTag.PHYSICAL],
+        },
+      ],
+    },
     description: 'Ward off incoming attacks with a countermove.',
-    effect: [
-      {
-        add: Attribute.DEFENSE,
-        duration: Duration.fromObject({ seconds: 6 }),
-        quantity: '1d6+2',
-        tags: [EffectTag.PHYSICAL],
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Parry',
@@ -51,14 +55,16 @@ export namespace Weapon {
   };
 
   export const SLASH_LV1: SkillType = {
+    actionEffects: {
+      OPPONENT: [
+        {
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL],
+        },
+      ],
+    },
     description: 'Attack with a blade.',
-    effect: [
-      {
-        quantity: '1d6+2',
-        remove: Attribute.LIFE,
-        tags: [EffectTag.PHYSICAL],
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Slash',
@@ -66,14 +72,16 @@ export namespace Weapon {
   };
 
   export const STRIKE_LV1: SkillType = {
+    actionEffects: {
+      OPPONENT: [
+        {
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL],
+        },
+      ],
+    },
     description: 'Execute a sudden attack with a blade.',
-    effect: [
-      {
-        quantity: '1d6+2',
-        remove: Attribute.LIFE,
-        tags: [EffectTag.PHYSICAL],
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Strike',
@@ -81,14 +89,16 @@ export namespace Weapon {
   };
 
   export const STAB_LV1: SkillType = {
+    actionEffects: {
+      OPPONENT: [
+        {
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL],
+        },
+      ],
+    },
     description: 'Perform a forward striking motion with a blade.',
-    effect: [
-      {
-        quantity: '1d6+2',
-        remove: Attribute.LIFE,
-        tags: [EffectTag.PHYSICAL],
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Stab',
@@ -96,14 +106,16 @@ export namespace Weapon {
   };
 
   export const CHOP_LV1: SkillType = {
+    actionEffects: {
+      OPPONENT: [
+        {
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL],
+        },
+      ],
+    },
     description: 'Execute a downward motion with a blade.',
-    effect: [
-      {
-        quantity: '1d6+2',
-        remove: Attribute.LIFE,
-        tags: [EffectTag.PHYSICAL],
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Chop',
@@ -111,14 +123,16 @@ export namespace Weapon {
   };
 
   export const CLEAVE_LV1: SkillType = {
+    actionEffects: {
+      OPPONENT: [
+        {
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL],
+        },
+      ],
+    },
     description: 'Perform a slashing technique.',
-    effect: [
-      {
-        quantity: '1d6+2',
-        remove: Attribute.LIFE,
-        tags: [EffectTag.PHYSICAL],
-      },
-    ],
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Cleave',
