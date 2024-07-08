@@ -16,16 +16,20 @@ import { ActionTarget } from '../action-target';
 export namespace Passive {
   export const DUAL_WELD: SkillType = {
     description: 'Can use two one handed weapons at once.',
-    // " Both malace and penny can learn this.
     menuSlot: MenuSlot.NONE,
-
     name: 'Dual Weld',
-
     target: ActionTarget.SELF,
   };
 
   export const ESCAPE_ARTIST: SkillType = {
     description: 'Makes it easier to run away from aggressive targets',
+    effect: [
+      {
+        add: Attribute.SPEED,
+        chance: 1.0,
+        quantity: '10',
+      },
+    ],
     menuSlot: MenuSlot.NONE,
     name: 'Escape Artist',
     target: ActionTarget.SELF,
@@ -39,7 +43,14 @@ export namespace Passive {
   };
 
   export const CONCENTRATION: SkillType = {
-    description: 'Stay focused',
+    description: 'Maintain focused for longer periods of time',
+    effect: [
+      {
+        add: Attribute.SPIRIT,
+        chance: 1.0,
+        quantity: '10',
+      },
+    ],
     menuSlot: MenuSlot.NONE,
     name: 'Concentration',
     target: ActionTarget.SELF,
@@ -47,6 +58,13 @@ export namespace Passive {
 
   export const BLUFF: SkillType = {
     description: 'Tell a lie without being caught',
+    effect: [
+      {
+        add: Attribute.SPIRIT,
+        chance: 1.0,
+        quantity: '10',
+      },
+    ],
     menuSlot: MenuSlot.NONE,
     name: 'Bluff',
     target: ActionTarget.SELF,
@@ -63,28 +81,35 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
   export const GREEDY_INTENT: SkillType = {
-    description: 'Gain 5% more experience than the party.',
-    // Acquired by defeating Greed.
+    description: 'Gain more experience than the party.',
+    effect: [
+      {
+        add: Attribute.EXPERIENCE,
+        chance: 1.0,
+        quantity: '5',
+      },
+    ],
     menuSlot: MenuSlot.NONE,
-
     name: 'Greedy Intent',
-
     target: ActionTarget.SELF,
   };
 
   export const SLOTH_COMPOSURE: SkillType = {
-    description: 'Halves damage taken when not actively engaged in actions.',
-    // half damage and decreases DRIVE gauge
-    // Acquired by defeating Lawzon.
+    description: 'Decreases damage taken',
+    effect: [
+      {
+        add: Attribute.DEFENSE,
+        chance: 1.0,
+        quantity: '10',
+      },
+    ],
     menuSlot: MenuSlot.NONE,
-
     name: 'Sloth Composure',
-
     target: ActionTarget.SELF,
   };
 
   export const BLOOD_LUST: SkillType = {
-    description: 'Increases speed.',
+    description: 'Increases speed.', // Acquired by defeating Lust.
     effect: [
       {
         add: Attribute.SPEED,
@@ -92,16 +117,13 @@ export namespace Passive {
         quantity: '10',
       },
     ],
-    // Acquired by defeating Lust.
     menuSlot: MenuSlot.NONE,
-
     name: 'Blood Lust',
-
     target: ActionTarget.SELF,
   };
 
   export const ENVIOUS_OF_COMBAT: SkillType = {
-    description: 'Gains increased power.',
+    description: 'Gains increased power.', // Acquired by defeating Envy.
     effect: [
       {
         add: Attribute.POWER,
@@ -109,11 +131,8 @@ export namespace Passive {
         quantity: '10',
       },
     ],
-    // Acquired by defeating Envy.
     menuSlot: MenuSlot.NONE,
-
     name: 'Envious of Combat',
-
     target: ActionTarget.SELF,
   };
 
@@ -129,14 +148,19 @@ export namespace Passive {
     ],
     // Acquired by defeating Gluttony.
     menuSlot: MenuSlot.NONE,
-
     name: 'Gluttonous Desire',
-
     target: ActionTarget.SELF,
   };
 
   export const CATCHER: SkillType = {
     description: 'Receives bonuses when catching items.',
+    effect: [
+      {
+        add: Attribute.SPEED,
+        chance: 1.0,
+        quantity: '10',
+      },
+    ],
     menuSlot: MenuSlot.NONE,
     name: 'Catcher',
     target: ActionTarget.SELF,

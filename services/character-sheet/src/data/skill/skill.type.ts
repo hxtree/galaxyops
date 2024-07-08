@@ -19,7 +19,7 @@ export enum SkillLevel {
   LV7 = 'LV7',
   LV8 = 'LV8',
   LV9 = 'LV9',
-  MAX = 'MAX',
+  MAX = 'MAX', // The maximum level of proficiency for a skill may vary
 }
 
 export enum Focusable {

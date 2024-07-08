@@ -11,6 +11,14 @@ export namespace AreaOfEffect {
    */
   export type Type = number[][][];
 
+  export const CONE_REAR_15FT: Type = [
+    [
+      [0, 0, 1], // 10ft - 15ft
+      [7, 1, 1], //  0ft - 5ft
+      [0, 0, 1], // 10ft - 15ft
+    ],
+  ];
+
   export const CONE_15FT: Type = [
     [
       [0, 0, 0], // 10ft - 15ft

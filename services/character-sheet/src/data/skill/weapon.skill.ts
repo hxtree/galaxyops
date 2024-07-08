@@ -1,3 +1,4 @@
+import { Duration } from 'luxon';
 import { Attribute } from '../attribute';
 import { EffectTag } from '../tag.effect';
 import { MenuSlot } from '../menu-slot';
@@ -19,7 +20,14 @@ import { ActionTarget } from '../action-target';
 export namespace Weapon {
   export const BLOCK: SkillType = {
     description: 'Stop incoming attacks.',
-    effect: [],
+    effect: [
+      {
+        add: Attribute.DEFENSE,
+        duration: Duration.fromObject({ seconds: 2 }),
+        quantity: '1d6+2',
+        tags: [EffectTag.PHYSICAL],
+      },
+    ],
     menuSlot: MenuSlot.ATTACK,
     name: 'Block',
     target: ActionTarget.SELF,
@@ -27,7 +35,14 @@ export namespace Weapon {
 
   export const PARRY: SkillType = {
     description: 'Ward off incoming attacks with a countermove.',
-    effect: [],
+    effect: [
+      {
+        add: Attribute.DEFENSE,
+        duration: Duration.fromObject({ seconds: 6 }),
+        quantity: '1d6+2',
+        tags: [EffectTag.PHYSICAL],
+      },
+    ],
     menuSlot: MenuSlot.ATTACK,
     name: 'Parry',
     target: ActionTarget.SELF,

@@ -1,8 +1,10 @@
+import { Duration } from 'luxon';
 import { EffectRecord, EffectTable } from '../table.effect';
 import { Attribute } from '../attribute';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
 import { SkillType, Focusable, SkillLevel } from './skill.type';
 import { ActionTarget } from '../action-target';
+import { AreaOfEffect } from '../area-of-effect';
 
 /**
  * Active Skills are motor programs that a character learns to perform.
@@ -42,23 +44,50 @@ export namespace Basic {
 
   export const FOCUS: SkillType = {
     cost: [{ quantity: '1d6+10', remove: Attribute.SPIRIT }],
-    description: 'Raise attack and attack percent for following move.',
-    effect: [],
+    description: 'Raise power, spirit, and speed for a duration.',
+    effect: [
+      {
+        add: Attribute.POWER,
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+      },
+      {
+        add: Attribute.SPIRIT,
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+      },
+      {
+        add: Attribute.SPEED,
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+      },
+    ],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Focus',
+    target: ActionTarget.SELF,
   };
 
   export const GRAPPLE: SkillType = {
     cost: [{ quantity: '1d6+10', remove: Attribute.SPIRIT }],
     description: 'Lowers character and opponents life.',
-    effect: [],
+    effect: [
+      { quantity: '1d6+2', remove: Attribute.LIFE },
+      {
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+        remove: Attribute.DEFENSE,
+      },
+    ],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Grapple',
+    target: ActionTarget.OPPONENT,
   };
 
   export const HIDE: SkillType = {
     description: 'Become invisible to enemies.',
-    effect: [],
+    effect: [
+      // TODO: Add effect, possibly increase speed
+    ],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Hide',
   };
@@ -71,10 +100,18 @@ export namespace Basic {
   };
 
   export const CHEER: SkillType = {
-    description: 'Boost targets Spirit by 10% for a duration.',
-    effect: [],
+    areaOfEffect: AreaOfEffect.RADIUS_15FT,
+    description: 'Boost nearby allies spirit.',
+    effect: [
+      {
+        add: Attribute.SPIRIT,
+        duration: Duration.fromObject({ seconds: 30 }),
+        quantity: '10',
+      },
+    ],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Cheer',
+    target: ActionTarget.ALLY,
   };
 
   export const SUPPORT: SkillType = {
@@ -85,17 +122,42 @@ export namespace Basic {
   };
 
   export const HOPE: SkillType = {
+    areaOfEffect: AreaOfEffect.RADIUS_15FT,
     description: 'Bestow the most powerful status bonus.',
-    effect: [],
+    effect: [
+      {
+        add: Attribute.POWER,
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+      },
+      {
+        add: Attribute.SPIRIT,
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+      },
+      {
+        add: Attribute.SPEED,
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+      },
+    ],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Hope',
+    target: ActionTarget.ALLY,
   };
 
   export const INSPIRE: SkillType = {
     description: "Increase target's Drive gauge.",
-    effect: [],
+    effect: [
+      {
+        add: Attribute.DRIVE,
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+      },
+    ],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Inspire',
+    target: ActionTarget.ALLY,
   };
 
   export const SCOUT: SkillType = {
@@ -127,10 +189,27 @@ export namespace Basic {
   };
 
   export const LULLABY: SkillType = {
-    description: 'Reflect enemy moves back at them.',
-    effect: [],
+    description: 'Sing a song that dulls the senses of the enemy',
+    effect: [
+      {
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '10d6+2',
+        remove: Attribute.SPIRIT,
+      },
+      {
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '10d6+2',
+        remove: Attribute.WISDOM,
+      },
+      {
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '10d6+2',
+        remove: Attribute.DEFENSE,
+      },
+    ],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Lullaby',
+    target: ActionTarget.OPPONENT,
   };
 
   export const WARD: SkillType = {
@@ -144,17 +223,29 @@ export namespace Basic {
   export const SACRIFICE: SkillType = {
     cost: [{ quantity: '1d20+10', remove: Attribute.LIFE }],
     description: 'Sacrifice something precious for a powerful effect.',
-    effect: [],
+    effect: [{ quantity: '1d20+10', remove: Attribute.LIFE }],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Sacrifice',
   };
 
   export const PROTECT: SkillType = {
+    areaOfEffect: AreaOfEffect.CONE_REAR_15FT,
+    coolDownTime: Duration.fromObject({ seconds: 15 }),
     cost: [{ quantity: '1d20+10', remove: Attribute.SPIRIT }],
     description: 'Guard party members behind you.',
-    effect: [],
+    effect: [
+      {
+        add: Attribute.DEFENSE,
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+      },
+    ],
+    executionTime: Duration.fromObject({ seconds: 15 }),
     menuSlot: MenuSlot.ABILITIES,
     name: 'Protect',
+    prepareTime: Duration.fromObject({ seconds: 0.1 }),
+    recoveryTime: Duration.fromObject({ seconds: 0.1 }),
+    target: ActionTarget.ALLY,
   };
 
   export const MOCK: SkillType = {
@@ -186,10 +277,21 @@ export namespace Basic {
   };
 
   export const PROTECTION: SkillType = {
+    coolDownTime: Duration.fromObject({ seconds: 15 }),
     description: 'Create a protective barrier around an ally.',
-    effect: [],
+    effect: [
+      {
+        add: Attribute.DEFENSE,
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+      },
+    ],
+    executionTime: Duration.fromObject({ seconds: 15 }),
     menuSlot: MenuSlot.ABILITIES,
     name: 'Protection',
+    prepareTime: Duration.fromObject({ seconds: 0.1 }),
+    recoveryTime: Duration.fromObject({ seconds: 0.1 }),
+    target: ActionTarget.ALLY,
   };
 
   export const LIGHT: SkillType = {
@@ -202,8 +304,20 @@ export namespace Basic {
 
   export const RAGE: SkillType = {
     description: 'Increase power at the cost of wisdom.',
-    effect: [],
+    effect: [
+      {
+        add: Attribute.POWER,
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+      },
+      {
+        duration: Duration.fromObject({ seconds: 15 }),
+        quantity: '1d6+2',
+        remove: Attribute.WISDOM,
+      },
+    ],
     menuSlot: MenuSlot.ABILITIES,
     name: 'Rage',
+    target: ActionTarget.SELF,
   };
 }

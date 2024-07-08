@@ -32,6 +32,7 @@ export interface AttributeRemoveEffectRecord {
   remove: Attribute;
   quantity: string;
   chance?: number;
+  duration?: Duration;
   tags?: Array<EffectTag>;
 }
 

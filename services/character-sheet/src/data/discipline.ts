@@ -344,9 +344,14 @@ export namespace Discipline {
 
   export const ASSASSIN: Type = {
     category: Category.ARCHETYPE,
-    description: '',
+    description: 'Specializes in sneak attacks and picking locks.',
     name: 'Assassin',
-    progression: [{ level: 10, skill: Skill.DUAL_WELD }],
+    progression: [
+      { level: 3, skill: Skill.DUAL_WELD },
+      { level: 12, skill: Skill.PICKPOCKET },
+      { level: 18, skill: Skill.PICK_LOCK },
+      { level: 20, skill: Skill.BACK_FLIP },
+    ],
   };
 
   export const HEALER: Type = {
