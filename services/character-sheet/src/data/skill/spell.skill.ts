@@ -65,6 +65,7 @@ export namespace Spell {
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.ELECTRIC] },
       { add: 'STUNNED', chance: 0.2, tags: [EffectTag.ELECTRIC] },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Shock',
     target: ActionTarget.OPPONENT,
@@ -81,6 +82,7 @@ export namespace Spell {
         tags: [EffectTag.EARTH, EffectTag.GROUND_LEVEL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Quake',
     target: ActionTarget.OPPONENT,
@@ -93,6 +95,7 @@ export namespace Spell {
       { add: 'DOWN', chance: 0.2, tags: [EffectTag.EARTH] },
       { add: 'EXILED', chance: 0.3, tags: [EffectTag.EARTH] },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Landslide',
     target: ActionTarget.OPPONENT,
@@ -117,6 +120,7 @@ export namespace Spell {
         tags: [EffectTag.WATER, EffectTag.AIR],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Blizzard',
     target: ActionTarget.OPPONENT,
@@ -128,6 +132,7 @@ export namespace Spell {
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.FIRE] },
       { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Fireball',
     target: ActionTarget.OPPONENT,
@@ -139,6 +144,7 @@ export namespace Spell {
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.FIRE] },
       { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Inferno',
     target: ActionTarget.OPPONENT,
@@ -154,39 +160,40 @@ export namespace Spell {
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Twister',
     target: ActionTarget.OPPONENT,
   };
 
   export const GUST_LV1: SkillType = {
-    description: 'Creates a Gust',
+    description: 'Creates a strong current of air',
     effect: [
       { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
       {
         add: 'EXILED',
-        chance: 0.2,
+        chance: 0.05,
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Gust',
     target: ActionTarget.OPPONENT,
   };
 
-  export const GALE_LV1: SkillType = {
-    description: 'Creates Gale',
+  export const GUST_LV2: SkillType = {
+    ...GUST_LV1,
     effect: [
-      { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
+      { quantity: '2d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
       {
         add: 'EXILED',
-        chance: 0.2,
+        chance: 0.3,
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
-    menuSlot: MenuSlot.MAGIC,
+    level: SkillLevel.LV2,
     name: 'Gale',
-    target: ActionTarget.OPPONENT,
   };
 
   export const CYCLONE_LV1: SkillType = {
@@ -199,6 +206,7 @@ export namespace Spell {
         tags: [EffectTag.AIR, EffectTag.AERIAL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Cyclone',
     target: ActionTarget.OPPONENT,
@@ -229,6 +237,7 @@ export namespace Spell {
         tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Aqua',
     target: ActionTarget.OPPONENT,
@@ -239,6 +248,7 @@ export namespace Spell {
     effect: [
       { add: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Heal',
     target: ActionTarget.ALLY,
@@ -247,6 +257,7 @@ export namespace Spell {
   export const REVIVE_LV1: SkillType = {
     description: 'Restore life to target',
     effect: [{ chance: 0.9, remove: 'LIFELESS', tags: [] }],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Revive',
     target: ActionTarget.ALLY,
@@ -260,6 +271,7 @@ export namespace Spell {
       { chance: 1, remove: 'INFECTION' },
       { chance: 1, remove: 'SILENCE' },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Cure',
     target: ActionTarget.ALLY,
@@ -268,6 +280,7 @@ export namespace Spell {
   export const BARRIER_LV1: SkillType = {
     description: 'Barrier StatusEffects',
     effect: [{ add: 'BARRIER', chance: 1, tags: [EffectTag.AIR] }],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Barrier',
     target: ActionTarget.ALLY,
@@ -282,6 +295,7 @@ export namespace Spell {
         tags: [EffectTag.FIRE],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Boom',
     target: ActionTarget.OPPONENT,
@@ -290,6 +304,7 @@ export namespace Spell {
   export const REFLECT_LV1: SkillType = {
     description: 'Cast Reflect on target',
     effect: [{ add: 'REFLECT', chance: 1 }],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Reflect',
     target: ActionTarget.OPPONENT,
@@ -309,6 +324,7 @@ export namespace Spell {
         tags: [EffectTag.LIGHT],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Flare',
     target: ActionTarget.OPPONENT,
@@ -328,6 +344,7 @@ export namespace Spell {
         tags: [EffectTag.EARTH],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Meteor',
     target: ActionTarget.OPPONENT,
@@ -342,6 +359,7 @@ export namespace Spell {
         tags: [EffectTag.PSYCHIC],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Telepathy',
     target: ActionTarget.OPPONENT,
@@ -356,6 +374,7 @@ export namespace Spell {
         tags: [EffectTag.LIGHT],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Light',
     target: ActionTarget.OPPONENT,
@@ -371,6 +390,7 @@ export namespace Spell {
         tags: [EffectTag.DARKNESS],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Desolate',
     target: ActionTarget.OPPONENT,
@@ -385,6 +405,7 @@ export namespace Spell {
         tags: [EffectTag.DARKNESS],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Darkness',
     target: ActionTarget.OPPONENT,
@@ -395,9 +416,11 @@ export namespace Spell {
     effect: [
       {
         add: 'STOP',
+        duration: Duration.fromObject({ seconds: 10 }),
         tags: [EffectTag.TIME],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Stop',
     target: ActionTarget.OPPONENT,
@@ -408,31 +431,34 @@ export namespace Spell {
     effect: [
       {
         add: 'SLOW',
+        duration: Duration.fromObject({ seconds: 20 }),
         tags: [EffectTag.TIME],
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Slow',
     target: ActionTarget.OPPONENT,
   };
 
   export const HASTE_LV1: SkillType = {
+    areaOfEffect: AreaOfEffect.RADIUS_15FT,
     description: 'Speed up a character',
-    // self
     effect: [
       {
         add: 'HASTE',
         tags: [EffectTag.TIME],
       },
     ],
-
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Haste',
-    target: ActionTarget.OPPONENT,
+    target: ActionTarget.ALLY,
   };
 
   export const CHILL_LV1: SkillType = {
     description: '',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Chill',
     target: ActionTarget.OPPONENT,
@@ -440,6 +466,7 @@ export namespace Spell {
 
   export const CHARM_LV1: SkillType = {
     description: '',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Charm',
     target: ActionTarget.OPPONENT,
@@ -447,6 +474,14 @@ export namespace Spell {
 
   export const FROST_LV1: SkillType = {
     description: '',
+    effect: [
+      {
+        quantity: '1d6+2',
+        remove: Attribute.LIFE,
+        tags: [EffectTag.COLD],
+      },
+    ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Frost',
     target: ActionTarget.OPPONENT,
@@ -454,6 +489,7 @@ export namespace Spell {
 
   export const ABSORB_LV1: SkillType = {
     description: '',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Absorb',
     target: ActionTarget.OPPONENT,
@@ -461,6 +497,7 @@ export namespace Spell {
 
   export const LEECH_LV1: SkillType = {
     description: '',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Leech',
     target: ActionTarget.OPPONENT,
@@ -469,6 +506,7 @@ export namespace Spell {
   export const DRAIN_LV1: SkillType = {
     description: '',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
     name: 'Drain',
     target: ActionTarget.OPPONENT,

@@ -1,5 +1,5 @@
 import { MenuSlot } from '../menu-slot';
-import { SkillType } from '.';
+import { SkillType, SkillLevel } from './skill.type';
 import { GameContext } from '../game-context';
 import { Button } from '../buttons';
 import { Attribute } from '../attribute';
@@ -33,6 +33,7 @@ export namespace Movement {
       },
     ],
     description: 'Move slowly forward or backward side to side',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
     name: 'Walk',
     target: ActionTarget.SELF,
@@ -69,6 +70,7 @@ export namespace Movement {
       },
     ],
     description: 'Move quickly using stamina',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
     name: 'Run',
     target: ActionTarget.SELF,
@@ -106,6 +108,7 @@ export namespace Movement {
       },
     ],
     description: 'Move in deep water',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
     name: 'Swim',
     target: ActionTarget.SELF,
@@ -142,6 +145,7 @@ export namespace Movement {
       },
     ],
     description: 'Move fast in deep water',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
     name: 'Swim Fast',
     target: ActionTarget.SELF,
@@ -178,6 +182,7 @@ export namespace Movement {
       },
     ],
     description: 'Quickly move backwards',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
     name: 'Back Flip',
     target: ActionTarget.SELF,
@@ -214,6 +219,7 @@ export namespace Movement {
       },
     ],
     description: 'Quickly move backwards twice',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
     name: 'Double Back Flip',
     target: ActionTarget.SELF,
@@ -251,6 +257,7 @@ export namespace Movement {
     ],
     description:
       'Use stamina to move vertically and reach otherwise unreachable places',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
     name: 'Jump',
     target: ActionTarget.SELF,
@@ -294,14 +301,15 @@ export namespace Movement {
 
     description: 'Charged vertical jump',
 
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
-
     name: 'High Jump',
     target: ActionTarget.SELF,
   };
 
   export const CLIMB_LV1: SkillType = {
     description: 'Scale a wall',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
     name: 'Climb',
     target: ActionTarget.SELF,
@@ -312,6 +320,7 @@ export namespace Movement {
       'Walk up steep hill without falling down. '
       + 'Used to determine how steep an angled tile you can stand on. '
       + 'If your character fails to trek the tile then they will fall from it and will be to step onto it. ',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
     name: 'Trek',
     target: ActionTarget.SELF,

@@ -1,6 +1,6 @@
 import { ActionEffects } from '../table.effect';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
-import { SkillType, ObjectCategory } from './skill.type';
+import { SkillType, SkillLevel } from './skill.type';
 import { ActionTarget } from '../action-target';
 
 /**
@@ -19,6 +19,7 @@ export namespace Interaction {
       ],
     },
     description: 'Grab an object.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
     name: 'Grab',
     target: ActionTarget.INTERACTION_OBJECT,
@@ -26,6 +27,7 @@ export namespace Interaction {
 
   export const PUSH_LV1: SkillType = {
     description: 'Push an object.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
     name: 'Push',
     target: ActionTarget.INTERACTION_OBJECT,
@@ -33,6 +35,7 @@ export namespace Interaction {
 
   export const PULL_LV1: SkillType = {
     description: 'Pull an object.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
     name: 'Pull',
     target: ActionTarget.INTERACTION_OBJECT,
@@ -40,6 +43,7 @@ export namespace Interaction {
 
   export const LIFT_LV1: SkillType = {
     description: 'Lift an object.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
     name: 'Lift',
     target: ActionTarget.INTERACTION_OBJECT,
@@ -47,6 +51,7 @@ export namespace Interaction {
 
   export const THROW_LV1: SkillType = {
     description: 'Throw an object.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
     name: 'Throw',
     target: ActionTarget.INTERACTION_OBJECT,
@@ -70,6 +75,7 @@ export namespace Interaction {
       ],
     },
     description: 'Attempt to pick a lock.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
     name: 'Pick Lock',
     target: ActionTarget.INTERACTION_OBJECT,
@@ -94,6 +100,7 @@ export namespace Interaction {
       ],
     },
     description: 'Open a lock using a key.',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
     name: 'Unlock',
     target: ActionTarget.INTERACTION_OBJECT,

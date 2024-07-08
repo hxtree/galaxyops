@@ -1,7 +1,7 @@
 import { Button, ButtonCombo } from '../buttons';
 import { GameContext } from '../game-context';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
-import { SkillType } from '.';
+import { SkillLevel, SkillType } from './skill.type';
 import { ActionTarget } from '../action-target';
 
 /**
@@ -23,6 +23,7 @@ export namespace Combo {
       },
     ],
     description: '',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.TOOLS,
     name: 'Blitz',
     target: ActionTarget.OPPONENT,

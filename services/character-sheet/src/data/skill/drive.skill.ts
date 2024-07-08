@@ -22,6 +22,7 @@ export namespace Drive {
       ],
     },
     description: 'Become completely focused on winning',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.DRIVE,
     name: 'Berserk',
   };
@@ -39,6 +40,7 @@ export namespace Drive {
     },
     areaOfEffect: AreaOfEffect.LINE_10FT,
     description: 'Thrusts forward using poison',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.DRIVE,
     name: 'Toxic Thrust',
     target: ActionTarget.OPPONENT,
@@ -63,6 +65,7 @@ export namespace Drive {
     },
     areaOfEffect: AreaOfEffect.LINE_10FT,
     description: 'Jump into air and throws boomerang (jump attack)',
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.DRIVE,
     name: 'Aerial Assault',
     target: ActionTarget.OPPONENT,
@@ -81,6 +84,7 @@ export namespace Drive {
     },
     description: `Become engulfed in a blood thirsty rage that multiplies your power but drains spirit.
       If character stays in Oni too long they will go Berserk`,
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.DRIVE,
     name: 'Oni',
     target: ActionTarget.SELF,

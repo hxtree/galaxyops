@@ -31,6 +31,7 @@ export namespace Basic {
   export const DISGUISE_LV1: SkillType = {
     description: 'Changes appearance and disables command menu until canceled.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Disguise',
   };
@@ -38,6 +39,7 @@ export namespace Basic {
   export const DISMISS_LV1: SkillType = {
     description: 'Release a summon.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Dismiss',
   };
@@ -62,6 +64,7 @@ export namespace Basic {
         quantity: '1d6+2',
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Focus',
     target: ActionTarget.SELF,
@@ -78,6 +81,7 @@ export namespace Basic {
         remove: Attribute.DEFENSE,
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Grapple',
     target: ActionTarget.OPPONENT,
@@ -88,6 +92,7 @@ export namespace Basic {
     effect: [
       // TODO: Add effect, possibly increase speed
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Hide',
   };
@@ -95,6 +100,7 @@ export namespace Basic {
   export const SCAN_LV1: SkillType = {
     description: 'Read enemies stats.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Scan',
   };
@@ -109,6 +115,7 @@ export namespace Basic {
         quantity: '10',
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Cheer',
     target: ActionTarget.ALLY,
@@ -117,6 +124,7 @@ export namespace Basic {
   export const SUPPORT_LV1: SkillType = {
     description: 'Provide support to allies.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Support',
   };
@@ -141,6 +149,7 @@ export namespace Basic {
         quantity: '1d6+2',
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Hope',
     target: ActionTarget.ALLY,
@@ -155,6 +164,7 @@ export namespace Basic {
         quantity: '1d6+2',
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Inspire',
     target: ActionTarget.ALLY,
@@ -163,6 +173,7 @@ export namespace Basic {
   export const SCOUT_LV1: SkillType = {
     description: 'Move ahead of the party to gather information.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Scout',
   };
@@ -170,6 +181,7 @@ export namespace Basic {
   export const MIMIC_LV1: SkillType = {
     description: 'Use the last move performed on you against the enemy.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Mimic',
   };
@@ -177,6 +189,7 @@ export namespace Basic {
   export const PICKPOCKET_LV1: SkillType = {
     description: 'Steal items from enemies.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Pickpocket',
   };
@@ -184,6 +197,7 @@ export namespace Basic {
   export const SEAL_LV1: SkillType = {
     description: 'Prevent enemies from approaching.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Seal',
   };
@@ -207,6 +221,7 @@ export namespace Basic {
         remove: Attribute.DEFENSE,
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Lullaby',
     target: ActionTarget.OPPONENT,
@@ -216,6 +231,7 @@ export namespace Basic {
     cost: [{ quantity: '1d20+10', remove: Attribute.SPIRIT }],
     description: 'Keep enemies at bay with spiritual energy.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Ward',
   };
@@ -224,6 +240,7 @@ export namespace Basic {
     cost: [{ quantity: '1d20+10', remove: Attribute.LIFE }],
     description: 'Sacrifice something precious for a powerful effect.',
     effect: [{ quantity: '1d20+10', remove: Attribute.LIFE }],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Sacrifice',
   };
@@ -241,6 +258,7 @@ export namespace Basic {
       },
     ],
     executionTime: Duration.fromObject({ seconds: 15 }),
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Protect',
     prepareTime: Duration.fromObject({ seconds: 0.1 }),
@@ -251,6 +269,7 @@ export namespace Basic {
   export const MOCK_LV1: SkillType = {
     description: 'Taunt the enemy, potentially causing them to go berserk.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Mock',
   };
@@ -258,6 +277,7 @@ export namespace Basic {
   export const SEARCH_LV1: SkillType = {
     description: 'Scan the nearby area for valuable items.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Search',
   };
@@ -265,6 +285,7 @@ export namespace Basic {
   export const STEAL_LV1: SkillType = {
     description: 'Take items from opponents.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Steal',
   };
@@ -272,6 +293,7 @@ export namespace Basic {
   export const REFLECT_LV1: SkillType = {
     description: 'Send enemy moves back at them.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Reflect',
   };
@@ -287,6 +309,7 @@ export namespace Basic {
       },
     ],
     executionTime: Duration.fromObject({ seconds: 15 }),
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Protection',
     prepareTime: Duration.fromObject({ seconds: 0.1 }),
@@ -298,6 +321,7 @@ export namespace Basic {
     description:
       'Bind enemies, potentially putting them to sleep and stopping their rage.',
     effect: [],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Light',
   };
@@ -316,6 +340,7 @@ export namespace Basic {
         remove: Attribute.WISDOM,
       },
     ],
+    level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Rage',
     target: ActionTarget.SELF,
