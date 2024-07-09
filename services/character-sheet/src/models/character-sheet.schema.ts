@@ -22,7 +22,11 @@ import { StatsEmbeddable } from './stats-embeddable.schema';
 import { EquipmentEmbeddable } from './equipment-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
 import { Archetype, ArchetypeId, ArchetypeIds } from '../data/archetype';
-import { Discipline, DisciplineId } from '../data/discipline';
+import {
+  Discipline,
+  DisciplineId,
+  DisciplineProgression,
+} from '../data/discipline';
 import { Equipment, EquipmentType } from '../data/gear';
 import { MenuSlot, MenuSlotOrder } from '../data/menu-slot';
 import { SkillType } from '../data/skill';
@@ -151,20 +155,19 @@ CharacterSheetSchema.virtual('menu').get(function () {
       return;
     }
 
-    discipline.progression.forEach(
-      (progression: Discipline.ProgressionType) => {
-        const disciplineLevel = Math.floor(
-          Math.sqrt(disciplineEmbeddable.experience / 100),
-        );
+    discipline.progression.forEach((progression: DisciplineProgression) => {
+      const disciplineLevel = Math.floor(
+        Math.sqrt(disciplineEmbeddable.experience / 100),
+      );
 
-        if (
-          progression.level >= disciplineLevel
-          && skills.indexOf(progression.skill) === -1
-        ) {
-          skills.push(progression.skill);
-        }
-      },
-    );
+      if (
+        'skill' in progression
+        && progression.level >= disciplineLevel
+        && skills.indexOf(progression.skill) === -1
+      ) {
+        skills.push(progression.skill);
+      }
+    });
   });
 
   this.equipment.forEach((equipmentEmbeddable: EquipmentEmbeddable) => {
@@ -205,20 +208,19 @@ CharacterSheetSchema.virtual('skills').get(function () {
       return;
     }
 
-    discipline.progression.forEach(
-      (progression: Discipline.ProgressionType) => {
-        const disciplineLevel = Math.floor(
-          Math.sqrt(disciplineEmbeddable.experience / 100),
-        );
+    discipline.progression.forEach((progression: DisciplineProgression) => {
+      const disciplineLevel = Math.floor(
+        Math.sqrt(disciplineEmbeddable.experience / 100),
+      );
 
-        if (
-          progression.level >= disciplineLevel
-          && skills.indexOf(progression.skill) === -1
-        ) {
-          skills.push(progression.skill);
-        }
-      },
-    );
+      if (
+        'skill' in progression
+        && progression.level >= disciplineLevel
+        && skills.indexOf(progression.skill) === -1
+      ) {
+        skills.push(progression.skill);
+      }
+    });
   });
 
   this.equipment.forEach((equipmentEmbeddable: EquipmentEmbeddable) => {

@@ -1,6 +1,5 @@
 import { Attribute } from '../attribute';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
-import { EffectTable } from '../table.effect';
 import { SkillLevel, SkillType } from './skill.type';
 import { ActionTarget } from '../action-target';
 

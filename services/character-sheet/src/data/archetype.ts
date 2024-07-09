@@ -467,7 +467,10 @@ export namespace Archetype {
       + 'His place is taken by Mahdi.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Void',
-    potentialDisciplines: [Discipline.MAGI_BLACK],
+    potentialDisciplines: [
+      Discipline.MAGI_BLACK,
+      Discipline.LEGENDARY_INSTINCT,
+    ],
   };
 
   export const GENKI: Type = {
@@ -583,6 +586,10 @@ export namespace Archetype {
     description: 'A spider',
     gearSlots: [],
     name: 'Spider',
+    potentialDisciplines: [
+      Discipline.BASIC_INSTINCT,
+      Discipline.ELITE_INSTINCT,
+    ],
     weaponCompatibility: [],
   };
 
@@ -591,6 +598,10 @@ export namespace Archetype {
     description: 'A spider',
     gearSlots: [],
     name: 'Sea Horse',
+    potentialDisciplines: [
+      Discipline.BASIC_INSTINCT,
+      Discipline.ELITE_INSTINCT,
+    ],
     weaponCompatibility: [],
   };
 
@@ -599,6 +610,7 @@ export namespace Archetype {
     description: 'A plant that drops when touched',
     gearSlots: [],
     name: 'Sensitive Plant',
+    potentialDisciplines: [Discipline.DETRIMENTAL_INSTINCT],
     weaponCompatibility: [],
   };
 
@@ -607,6 +619,7 @@ export namespace Archetype {
     description: 'A humanoid, fish, monster',
     gearSlots: [],
     name: 'Deep Thinker',
+    potentialDisciplines: [Discipline.ELITE_INSTINCT],
   };
 
   export const GEL: Type = {
@@ -614,12 +627,17 @@ export namespace Archetype {
     description: 'A gel based creature',
     gearSlots: AmorphousCreatureGearSlots,
     name: 'Gel',
+    potentialDisciplines: [
+      Discipline.BASIC_INSTINCT,
+      Discipline.ELITE_INSTINCT,
+    ],
   };
 
   export const PHOENIX: Type = {
     description: 'A bird of fire.',
     gearSlots: AvianCreatureGearSlots,
     name: 'Phoenix',
+    potentialDisciplines: [Discipline.LEGENDARY_INSTINCT],
     weaponCompatibility: [],
   };
 
@@ -627,28 +645,33 @@ export namespace Archetype {
     description: 'A creature that lives far to the north.',
     // can be seen near Lawzon
     gearSlots: QuadrupedalCreatureGearSlots,
-
     name: 'Snow Leopard',
+    potentialDisciplines: [Discipline.ELITE_INSTINCT],
   };
 
   export const CHIMERA: Type = {
     description: 'A combination of two or more animals.',
     gearSlots: QuadrupedalCreatureGearSlots,
     name: 'Chimera',
+    potentialDisciplines: [
+      Discipline.DETRIMENTAL_INSTINCT,
+      Discipline.ELITE_INSTINCT,
+    ],
   };
 
   export const SLOW_MOVER: Type = {
     description: 'A type of sloth like creature.',
     // that lives around the maiden of the mist
     gearSlots: [],
-
     name: 'Slow Mover',
+    potentialDisciplines: [Discipline.DETRIMENTAL_INSTINCT],
   };
 
   export const SNAKE_OF_THE_WATER: Type = {
     description: 'A type of dragon.',
     gearSlots: SerpentineCreatureGearSlots,
     name: 'Snake of the Water',
+    potentialDisciplines: [Discipline.ELITE_INSTINCT],
   };
 
   export const BANDIT: Type = {
@@ -656,6 +679,7 @@ export namespace Archetype {
     description: 'Bandit.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Bandit',
+    potentialDisciplines: [Discipline.BASIC_INSTINCT],
   };
 
   export const ROWAN: Type = {
@@ -668,6 +692,7 @@ export namespace Archetype {
       + "Rowan's love for a well-brewed cup of tea is as legendary as his escapades.",
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Rowan',
+    potentialDisciplines: [Discipline.ELITE_INSTINCT],
   };
 
   export const CHUBBS: Type = {
@@ -680,6 +705,7 @@ export namespace Archetype {
       + 'a thank-you note after their heists. Chubbs firmly believes that a well-baked pie can solve any problem.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Chubbs',
+    potentialDisciplines: [Discipline.BASIC_INSTINCT],
   };
 }
 

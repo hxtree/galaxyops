@@ -33,12 +33,41 @@ export type GainAttributeType = {
   luck?: number;
 };
 
-export namespace Discipline {
-  export interface ProgressionType {
-    level: number;
-    skill: SkillType;
+export type AbilityPointProgression = {
+  level: number;
+  abilityPoints: number;
+};
+
+export type SkillProgression = {
+  level: number;
+  skill: SkillType;
+};
+
+export type DisciplineProgression = AbilityPointProgression | SkillProgression;
+
+export function awardAbilityPointEachLevel(
+  abilityPoints: number,
+  levelInterval: number,
+  maxLevel = 100,
+): DisciplineProgression[] {
+  const progression: DisciplineProgression[] = [];
+
+  let previousInterval = 0;
+
+  for (let level = 1; level <= maxLevel; level++) {
+    if (level % levelInterval === 0) {
+      progression.push({ abilityPoints, level });
+      previousInterval = level;
+    } else if (previousInterval + levelInterval <= level) {
+      progression.push({ abilityPoints, level });
+      previousInterval = level;
+    }
   }
 
+  return progression;
+}
+
+export namespace Discipline {
   export type Type = {
     name: string;
     description: string;
@@ -47,7 +76,7 @@ export namespace Discipline {
     prerequisites?: DisciplineId[]; // After level etc?
     // could also be event like defeated Lawzon, but may be that's too
     // character specific?
-    progression?: ProgressionType[];
+    progression?: DisciplineProgression[];
   };
 
   export const GYMNAST: Type = {
@@ -55,6 +84,7 @@ export namespace Discipline {
     description: 'Trains in gymnastics.',
     name: 'Gymnast',
     progression: [
+      ...awardAbilityPointEachLevel(1, 3),
       { level: 1, skill: Skill.JUMP_LV1 },
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.BACK_FLIP_LV1 },
@@ -70,6 +100,7 @@ export namespace Discipline {
     description: 'Studies mysterious forces.',
     name: 'Wizard',
     progression: [
+      ...awardAbilityPointEachLevel(1, 3),
       { level: 10, skill: Skill.GUST_LV1 },
       { level: 25, skill: Skill.FLARE_LV1 },
       { level: 50, skill: Skill.HEAL_LV1 },
@@ -83,6 +114,7 @@ export namespace Discipline {
     description: 'Studies the world as it was.',
     name: 'Historian',
     progression: [
+      ...awardAbilityPointEachLevel(1, 3),
       { level: 10, skill: Skill.APPRAISE_LV1 },
       { level: 25, skill: Skill.SCAN_LV1 },
       { level: 50, skill: Skill.HERALDIC_LION_LV1 },
@@ -93,6 +125,7 @@ export namespace Discipline {
     description: 'Do you even lift?',
     name: 'Body Builder',
     progression: [
+      ...awardAbilityPointEachLevel(1, 3),
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 50, skill: Skill.SCRIBBLES_LV1 },
     ],
@@ -103,7 +136,10 @@ export namespace Discipline {
     category: DisciplineCategory.PROFESSION,
     description: 'Prepares and cooks food',
     name: 'Cook',
-    progression: [{ level: 10, skill: Skill.PREPARE_FOOD_LV1 }],
+    progression: [
+      ...awardAbilityPointEachLevel(1, 3),
+      { level: 10, skill: Skill.PREPARE_FOOD_LV1 },
+    ],
     // todo prepare different food items
   };
 
@@ -112,6 +148,7 @@ export namespace Discipline {
     description: 'Cheers their team as a form of encouragement.',
     name: 'Cheerleader',
     progression: [
+      ...awardAbilityPointEachLevel(1, 3),
       { level: 1, skill: Skill.CHEER_LV1 },
       { level: 10, skill: Skill.SUPPORT_LV1 },
       { level: 40, skill: Skill.INSPIRE_LV1 },
@@ -125,6 +162,7 @@ export namespace Discipline {
     description: 'Specialize in giving orders to others.',
     name: 'Commander',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 1, skill: Skill.BOAST_LV1 },
       { level: 12, skill: Skill.BOAST_LV2 },
       { level: 10, skill: Skill.LAST_STAND_LV1 },
@@ -138,7 +176,10 @@ export namespace Discipline {
     description: 'Has a basic understanding of Magic',
     name: 'Magi',
     prerequisites: [],
-    progression: [{ level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 }],
+    progression: [
+      ...awardAbilityPointEachLevel(1, 2),
+      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
+    ],
   };
 
   export const MAGI_BLACK: Type = {
@@ -148,6 +189,7 @@ export namespace Discipline {
     name: 'MagiBlack',
     prerequisites: ['MAGI'],
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.DARKNESS_LV1 },
       { level: 25, skill: Skill.DESOLATE_LV1 },
     ],
@@ -160,6 +202,7 @@ export namespace Discipline {
     name: 'Magi Blue',
     prerequisites: ['MAGI'],
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.RAGE_LV1 },
       { level: 15, skill: Skill.AQUA_LV1 },
       { level: 25, skill: Skill.TSUNAMI_LV1 },
@@ -173,6 +216,7 @@ export namespace Discipline {
     name: 'Magi Brown',
     prerequisites: ['MAGI'],
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.QUAKE_LV1 },
       { level: 15, skill: Skill.LANDSLIDE_LV1 },
     ],
@@ -185,6 +229,7 @@ export namespace Discipline {
     name: 'Magi Green',
     prerequisites: ['MAGI'],
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.STOP_LV1 },
       { level: 15, skill: Skill.SLOW_LV1 },
       { level: 15, skill: Skill.HASTE_LV1 },
@@ -198,6 +243,7 @@ export namespace Discipline {
     name: 'Magi Pink',
     prerequisites: ['MAGI'],
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.CHARM_LV1 },
       { level: 15, skill: Skill.CHILL_LV1 },
     ],
@@ -209,7 +255,10 @@ export namespace Discipline {
     history: 'Harnessed from the power of Diag',
     name: 'Magi Purple',
     prerequisites: ['MAGI'],
-    progression: [{ level: 10, skill: Skill.QUAKE_LV1 }],
+    progression: [
+      ...awardAbilityPointEachLevel(1, 2),
+      { level: 10, skill: Skill.QUAKE_LV1 },
+    ],
     // TODO CHANGE may be instead of quake do tainted
   };
 
@@ -220,6 +269,7 @@ export namespace Discipline {
     name: 'Magi White',
     prerequisites: ['MAGI'],
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
       { level: 10, skill: Skill.BLIZZARD_LV1 },
       { level: 10, skill: Skill.FROST_LV1 },
@@ -234,6 +284,7 @@ export namespace Discipline {
     name: 'Magi Yellow',
     prerequisites: ['MAGI'],
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
       { level: 10, skill: Skill.DRAIN_LV1 },
       { level: 25, skill: Skill.LEECH_LV1 },
@@ -245,21 +296,27 @@ export namespace Discipline {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in protection.',
     name: 'Guard',
-    progression: [{ level: 10, skill: Skill.BLOCK_LV1 }],
+    progression: [
+      ...awardAbilityPointEachLevel(1, 2),
+      { level: 10, skill: Skill.BLOCK_LV1 },
+    ],
   };
 
   export const GUARDIAN: Type = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in protection.',
     name: 'Guardian',
-    progression: [{ level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 }],
+    progression: [
+      ...awardAbilityPointEachLevel(1, 2),
+      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
+    ],
   };
 
   export const HERO: Type = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in saving others.',
     name: 'Hero',
-    progression: [],
+    progression: [...awardAbilityPointEachLevel(1, 2)],
   };
 
   export const KNIGHT: Type = {
@@ -267,6 +324,7 @@ export namespace Discipline {
     description: 'A honored fighter who protects the kingdom.',
     name: 'Knight',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.BLOCK_LV1 },
       { level: 10, skill: Skill.STRIKE_LV1 },
       { level: 10, skill: Skill.BLOCK_LV1 },
@@ -280,8 +338,8 @@ export namespace Discipline {
     description: 'Specializes in electromechanical engineering',
     name: 'Mechanic',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.SCAN_LV1 },
-
       { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ], // Actions: Tools
   };
@@ -291,6 +349,7 @@ export namespace Discipline {
     description: 'Specializes sneak attacks and picking locks',
     name: 'Rouge',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.DUAL_WELD_LV1 },
       { level: 10, skill: Skill.PICKPOCKET_LV1 },
     ],
@@ -301,6 +360,7 @@ export namespace Discipline {
     description: 'Specializes in ruling others',
     name: 'Royalty',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.COMMAND_LV1 },
       { level: 10, skill: Skill.BOAST_LV1 },
       { level: 40, skill: Skill.MENTAL_DISCIPLINE_LV1 },
@@ -312,8 +372,8 @@ export namespace Discipline {
     description: 'Rebel',
     name: 'Rebel',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.STRIKE_LV1 },
-
       { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
@@ -324,8 +384,8 @@ export namespace Discipline {
       'Specialize in moving ahead of the party to gathering information and reconnaissance.',
     name: 'Scout',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.SCOUT_LV1 },
-
       { level: 16, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
   };
@@ -336,6 +396,7 @@ export namespace Discipline {
       'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.',
     name: 'Solider',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 1, skill: Skill.BLOCK_LV1 },
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.CLEAVE_LV1 },
@@ -349,6 +410,7 @@ export namespace Discipline {
     description: 'Summons and commands magical beings.',
     name: 'Summoner',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.SUMMON_LV1 },
       { level: 10, skill: Skill.DISMISS_LV1 },
       { level: 10, skill: Skill.COMMAND_LV1 },
@@ -360,6 +422,7 @@ export namespace Discipline {
     description: 'Proficient at stealing and picking locks.',
     name: 'Thief',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.PICKPOCKET_LV1 },
       { level: 10, skill: Skill.PICK_LOCK_LV1 },
       { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
@@ -371,6 +434,7 @@ export namespace Discipline {
     description: 'Specializes in combat on the battlefield.',
     name: 'Warrior',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 2, skill: Skill.STRIKE_LV1 },
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.RAGE_LV1 },
@@ -386,6 +450,7 @@ export namespace Discipline {
       'Soldiers that have gone against their teachings to gain new skills.',
     name: 'XSolider',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
       { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
@@ -397,6 +462,7 @@ export namespace Discipline {
     description: 'Specializes in sneak attacks and picking locks.',
     name: 'Assassin',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 3, skill: Skill.DUAL_WELD_LV1 },
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 12, skill: Skill.PICKPOCKET_LV1 },
@@ -412,6 +478,7 @@ export namespace Discipline {
     description: 'Specialize in healing.',
     name: 'Healer',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.HEAL_LV1 },
       { level: 10, skill: Skill.CURE_LV1 },
     ],
@@ -422,6 +489,7 @@ export namespace Discipline {
     description: '',
     name: 'Bard',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.LULLABY_LV1 },
       { level: 10, skill: Skill.INSPIRE_LV1 },
     ],
@@ -432,6 +500,7 @@ export namespace Discipline {
     description: '',
     name: 'Duelist',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.PARRY_LV1 },
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
@@ -443,6 +512,7 @@ export namespace Discipline {
     description: '',
     name: 'Rune King',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.BOAST_LV1 },
       { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
     ],
@@ -452,7 +522,10 @@ export namespace Discipline {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Maiden',
-    progression: [{ level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 }],
+    progression: [
+      ...awardAbilityPointEachLevel(1, 2),
+      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
+    ],
   };
 
   export const Keeper: Type = {
@@ -460,6 +533,7 @@ export namespace Discipline {
     description: '',
     name: 'Keeper',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.HEAL_LV1 },
       { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
       { level: 10, skill: Skill.CURE_LV1 },
@@ -472,6 +546,7 @@ export namespace Discipline {
     description: '',
     name: 'Sage',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.SCAN_LV1 },
       { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
       { level: 10, skill: Skill.CONCENTRATION_LV1 },
@@ -483,7 +558,10 @@ export namespace Discipline {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Possessed',
-    progression: [{ level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 }],
+    progression: [
+      ...awardAbilityPointEachLevel(1, 2),
+      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
+    ],
   };
 
   export const NINJA: Type = {
@@ -491,6 +569,7 @@ export namespace Discipline {
     description: '',
     name: 'Ninja',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 1, skill: Skill.STRIKE_LV1 },
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.PARRY_LV1 },
@@ -504,6 +583,7 @@ export namespace Discipline {
     description: '',
     name: 'Amber Assassin',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.STRIKE_LV1 },
       { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
@@ -518,6 +598,7 @@ export namespace Discipline {
     description: '',
     name: 'Elite Assassin',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
       { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
@@ -529,6 +610,7 @@ export namespace Discipline {
     description: '',
     name: 'Engineer',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.SCAN_LV1 },
       { level: 10, skill: Skill.CONCENTRATION_LV1 },
       { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
@@ -540,6 +622,7 @@ export namespace Discipline {
     description: '',
     name: 'Berserker',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.STRIKE_LV1 },
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.RAGE_LV1 },
@@ -547,10 +630,11 @@ export namespace Discipline {
   };
 
   export const ONI: Type = {
-    category: DisciplineCategory.ARCHETYPE,
+    category: DisciplineCategory.OMEGA,
     description: '',
     name: 'Oni',
     progression: [
+      ...awardAbilityPointEachLevel(1, 1),
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skill.ONI_LV1 },
       { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
@@ -559,10 +643,13 @@ export namespace Discipline {
   };
 
   export const KEEPER: Type = {
-    category: DisciplineCategory.ARCHETYPE,
+    category: DisciplineCategory.OMEGA,
     description: '',
     name: 'Keeper',
-    progression: [{ level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 }],
+    progression: [
+      ...awardAbilityPointEachLevel(1, 1),
+      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+    ],
   };
 
   export const LIGHTENING_WARRIOR: Type = {
@@ -570,6 +657,7 @@ export namespace Discipline {
     description: '',
     name: 'Lightening Warrior',
     progression: [
+      ...awardAbilityPointEachLevel(1, 2),
       { level: 10, skill: Skill.STRIKE_LV1 },
       { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
       { level: 15, skill: Skill.SHOCK_LV1 },
@@ -582,7 +670,46 @@ export namespace Discipline {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     name: 'Ouroboros',
-    progression: [],
+    progression: [...awardAbilityPointEachLevel(1, 2)],
+  };
+
+  /**
+   * Instinct Disciplines
+   * Represents a hierarchy of instinct disciplines, ranging from detrimental
+   * beginnings to legendary mastery. These disciplines are inherent to
+   * non-player archetypes by virtue of their existence.
+   * */
+
+  export const DETRIMENTAL_INSTINCT: Type = {
+    category: DisciplineCategory.ARCHETYPE,
+    description:
+      'Instincts that are counterproductive to survival and advancement.',
+    name: 'Detrimental Instinct',
+    progression: [...awardAbilityPointEachLevel(1, 3)],
+  };
+
+  export const BASIC_INSTINCT: Type = {
+    category: DisciplineCategory.ARCHETYPE,
+    description:
+      'Foundational instincts necessary for survival and basic functioning.',
+    name: 'Basic Instinct',
+    progression: [...awardAbilityPointEachLevel(1, 2)],
+  };
+
+  export const ELITE_INSTINCT: Type = {
+    category: DisciplineCategory.ARCHETYPE,
+    description:
+      'Advanced instincts that provide a competitive edge or superior capabilities.',
+    name: 'Elite Instinct',
+    progression: [...awardAbilityPointEachLevel(1, 1)],
+  };
+
+  export const LEGENDARY_INSTINCT: Type = {
+    category: DisciplineCategory.ARCHETYPE,
+    description:
+      'Instincts that are exceptionally rare, powerful, or revered, representing the pinnacle of evolutionary development.',
+    name: 'Legendary Instinct',
+    progression: [...awardAbilityPointEachLevel(2, 1)],
   };
 }
 
