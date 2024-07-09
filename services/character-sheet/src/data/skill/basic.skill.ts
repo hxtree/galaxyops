@@ -1,10 +1,10 @@
 import { Duration } from 'luxon';
-import { EffectRecord, EffectTable } from '../table.effect';
 import { Attribute } from '../attribute';
 import { MenuSlot, MenuSlotType } from '../menu-slot';
 import { SkillType, Focusable, SkillLevel } from './skill.type';
 import { ActionTarget } from '../action-target';
 import { AreaOfEffect } from '../area-of-effect';
+import { EffectTag } from '../tag.effect';
 
 /**
  * Active Skills are motor programs that a character learns to perform.
@@ -12,6 +12,24 @@ import { AreaOfEffect } from '../area-of-effect';
  * determined by class.
  */
 export namespace Basic {
+  export const CLAW_LV1: SkillType = {
+    actionEffects: {
+      OPPONENT: [
+        {
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL, EffectTag.CLAW],
+        },
+      ],
+    },
+    description:
+      'Initiate an aggressive strike with claws, aiming to inflict damage.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.ATTACK,
+    name: 'Claw',
+    target: ActionTarget.OPPONENT,
+  };
+
   export const BOAST_LV1: SkillType = {
     actionEffects: {
       ALLY: [

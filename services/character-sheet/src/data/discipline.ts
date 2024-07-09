@@ -446,9 +446,9 @@ export namespace Discipline {
     name: 'Summoner',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.SUMMON_LV1 },
+      { level: 2, skill: Skill.SUMMON_LV1 },
       { level: 10, skill: Skill.DISMISS_LV1 },
-      { level: 10, skill: Skill.COMMAND_LV1 },
+      { level: 14, skill: Skill.COMMAND_LV1 },
     ],
   };
 
@@ -757,6 +757,7 @@ export namespace Discipline {
     name: 'Basic Instinct',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
+      { level: 2, skill: Skill.CLAW_LV1 },
     ],
   };
 

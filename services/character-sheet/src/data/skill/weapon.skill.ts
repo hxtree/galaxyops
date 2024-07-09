@@ -29,7 +29,7 @@ export namespace Weapon {
         },
       ],
     },
-    description: 'Stop incoming attacks.',
+    description: 'Prevents or obstructs incoming opponent actions.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Block',
@@ -40,6 +40,14 @@ export namespace Weapon {
     actionEffects: {
       OPPONENT: [
         {
+          chance: 0.2,
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL, EffectTag.BLADE],
+        },
+      ],
+      SELF: [
+        {
           add: Attribute.DEFENSE,
           duration: Duration.fromObject({ seconds: 6 }),
           quantity: '1d6+2',
@@ -47,7 +55,8 @@ export namespace Weapon {
         },
       ],
     },
-    description: 'Ward off incoming attacks with a countermove.',
+    description:
+      'Deflect or counter incoming attacks with a strategic maneuver.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Parry',
@@ -60,7 +69,7 @@ export namespace Weapon {
         {
           quantity: '1d6+2',
           remove: Attribute.LIFE,
-          tags: [EffectTag.PHYSICAL],
+          tags: [EffectTag.PHYSICAL, EffectTag.BLADE],
         },
       ],
     },
