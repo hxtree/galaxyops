@@ -1,7 +1,11 @@
 {
   "id": "MALACE_TSIA",
-  "name": "Malace",
-  "surname": "Tsia",
+  "affiliation": [
+    {
+      "description": "The Catchers wear mask when they fight to become warriors. When they return home they can remove their masks to become civilians again. Those who kill when not wearing a mask are said to always be warriors and cannot return home. The Catchers specialize in summoning spirits. A Catcher can often be identified by their tattoos. The Catchers village uses the yin yang symbol. The Yang being the purified village and the dark inside the yang being the body of the sacrifice. The Yin being the demon world and the light inside the yang being the sacrificed soulIt is later inferred the soul of the village has turned dark from performing ritual",
+      "name": "Catchers"
+    }
+  ],
   "alias": [
     "Black",
     "Sacrifice",
@@ -9,239 +13,7 @@
     "The Bringer of Death",
     "Dragon"
   ],
-  "symbolizes": ["Despair"],
   "backstory": "As a child, his people sacrificed him to save themselves. They sewed the demons plaguing the village into his skin. The demons were drawn to his purity. ",
-  "affiliation": [
-    {
-      "name": "Catchers",
-      "description": "The Catchers wear mask when they fight to become warriors. When they return home they can remove their masks to become civilians again. Those who kill when not wearing a mask are said to always be warriors and cannot return home. The Catchers specialize in summoning spirits. A Catcher can often be identified by their tattoos. The Catchers village uses the yin yang symbol. The Yang being the purified village and the dark inside the yang being the body of the sacrifice. The Yin being the demon world and the light inside the yang being the sacrificed soulIt is later inferred the soul of the village has turned dark from performing ritual"
-    }
-  ],
-  "potentialDisciplines": [
-    {
-      "name": "Gymnast",
-      "description": "Trains in gymnastics.",
-      "category": "Profession",
-      "progression": [
-        {
-          "level": 10,
-          "skill": {
-            "name": "Back Flip",
-            "description": "Quickly move backwards",
-            "consumes": "Spirit",
-            "menuSlot": 8,
-            "buttonCombos": [
-              {
-                "inOrder": ["UP", "DOWN", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              },
-              {
-                "inOrder": ["RIGHT", "LEFT", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              },
-              {
-                "inOrder": ["DOWN", "UP", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              },
-              {
-                "inOrder": ["LEFT", "RIGHT", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              }
-            ]
-          }
-        },
-        {
-          "level": 25,
-          "skill": {
-            "name": "Double Back Flip",
-            "description": "Quickly move backwards twice",
-            "consumes": "Spirit",
-            "menuSlot": 8,
-            "buttonCombos": [
-              {
-                "inOrder": ["UP", "DOWN", "JUMP", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              },
-              {
-                "inOrder": ["RIGHT", "LEFT", "JUMP", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              },
-              {
-                "inOrder": ["DOWN", "UP", "JUMP", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              },
-              {
-                "inOrder": ["LEFT", "RIGHT", "JUMP", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              }
-            ]
-          }
-        },
-        {
-          "level": 50,
-          "skill": {
-            "name": "High Jump",
-            "description": "Charged vertical jump",
-            "consumes": "Spirit",
-            "buttonCombos": [
-              {
-                "inOrder": ["JUMP", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              },
-              {
-                "inOrder": ["JUMP", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              },
-              {
-                "inOrder": ["JUMP", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              },
-              {
-                "inOrder": ["JUMP", "JUMP"],
-                "timingWindowMs": 300,
-                "context": "TERRAIN"
-              }
-            ],
-            "menuSlot": 8
-          }
-        },
-        {
-          "level": 70,
-          "skill": {
-            "name": "Concentration",
-            "description": "Stay focused",
-            "menuSlot": 0
-          }
-        }
-      ]
-    },
-    {
-      "name": "Possessed",
-      "description": "",
-      "category": "Archetype",
-      "progression": []
-    },
-    {
-      "name": "Scout",
-      "description": "Specialize in moving ahead of the party to gathering information and reconnaissance.",
-      "category": "Archetype",
-      "progression": [
-        {
-          "level": 10,
-          "skill": {
-            "name": "Scout",
-            "description": "Move ahead of party.",
-            "effect": [],
-            "menuSlot": 1
-          }
-        }
-      ]
-    },
-    {
-      "name": "Ouroboros",
-      "description": "",
-      "category": "Archetype",
-      "progression": []
-    },
-    {
-      "name": "Summoner",
-      "description": "Summons and commands magical beings.",
-      "category": "Archetype",
-      "progression": [
-        {
-          "level": 10,
-          "skill": {
-            "name": "???",
-            "description": "",
-            "backstory": "",
-            "menuSlot": 2
-          }
-        },
-        {
-          "level": 10,
-          "skill": {
-            "name": "Dismiss",
-            "description": "Release a summon.",
-            "effect": [],
-            "menuSlot": 1
-          }
-        },
-        {
-          "level": 10,
-          "skill": {
-            "name": "???",
-            "description": "",
-            "backstory": "",
-            "menuSlot": 2
-          }
-        }
-      ]
-    },
-    {
-      "name": "Rouge",
-      "description": "Specializes sneak attacks and picking locks",
-      "category": "Archetype",
-      "progression": [
-        {
-          "level": 10,
-          "skill": {
-            "name": "Dual Weld",
-            "description": "Can use two one handed weapons at once.",
-            "menuSlot": 0
-          }
-        },
-        {
-          "level": 10,
-          "skill": {
-            "name": "Pickpocket",
-            "description": "Steal from enemy.",
-            "effect": [],
-            "menuSlot": 1
-          }
-        }
-      ]
-    }
-  ],
-  "traits": [
-    {
-      "tag": "Darkness",
-      "modifier": "Heal",
-      "percent": 80
-    }
-  ],
-  "potentialOutfits": [
-    {
-      "name": "Officer's Uniform",
-      "description": "Black Embellished Tarry Coat",
-      "gearSlots": ["Outfit"]
-    }
-  ],
-  "summonCompatibility": [
-    {
-      "name": "Ouroboros",
-      "description": "A demon that consumes itself",
-      "backstory": "",
-      "menuSlot": 2
-    },
-    {
-      "name": "Mischievous",
-      "description": "A black and white cat",
-      "backstory": "The Keeper of Law",
-      "menuSlot": 2
-    }
-  ],
-  "weaponCompatibility": ["Knife", "Dagger"],
   "gearSlots": [
     "Head",
     "Neck",
@@ -255,5 +27,675 @@
     "Legs",
     "Feet",
     "Outfit"
-  ]
+  ],
+  "name": "Malace",
+  "potentialDisciplines": [
+    {
+      "category": "Profession",
+      "description": "Trains in gymnastics.",
+      "maxLevel": 20,
+      "name": "Gymnast",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 3
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 9
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 15
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "level": 1,
+          "skill": {
+            "buttonCombos": [
+              {
+                "context": "TERRAIN",
+                "inOrder": ["JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["JUMP"],
+                "timingWindowMs": 300
+              }
+            ],
+            "cost": [
+              {
+                "chance": 1,
+                "quantity": "1",
+                "remove": "Spirit"
+              }
+            ],
+            "description": "Use stamina to move vertically and reach otherwise unreachable places",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Movement",
+              "order": 8
+            },
+            "name": "Jump",
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 8,
+          "skill": {
+            "actionEffects": {
+              "SELF": [
+                {
+                  "add": "Power",
+                  "chance": 1,
+                  "quantity": "10"
+                },
+                {
+                  "add": "Defense",
+                  "chance": 1,
+                  "quantity": "10"
+                },
+                {
+                  "add": "Speed",
+                  "chance": 1,
+                  "quantity": "10"
+                },
+                {
+                  "add": "Spirit",
+                  "chance": 1,
+                  "quantity": "10"
+                },
+                {
+                  "add": "Life",
+                  "chance": 1,
+                  "quantity": "10"
+                }
+              ]
+            },
+            "description": "Increases all attributes.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Physical Conditioning",
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 10,
+          "skill": {
+            "buttonCombos": [
+              {
+                "context": "TERRAIN",
+                "inOrder": ["UP", "DOWN", "JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["RIGHT", "LEFT", "JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["DOWN", "UP", "JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["LEFT", "RIGHT", "JUMP"],
+                "timingWindowMs": 300
+              }
+            ],
+            "cost": [
+              {
+                "chance": 1,
+                "quantity": "5",
+                "remove": "Spirit"
+              }
+            ],
+            "description": "Quickly move backwards",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Movement",
+              "order": 8
+            },
+            "name": "Back Flip",
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 15,
+          "skill": {
+            "actionEffects": {
+              "SELF": [
+                {
+                  "add": "Power",
+                  "chance": 1,
+                  "quantity": "20"
+                },
+                {
+                  "add": "Speed",
+                  "chance": 1,
+                  "quantity": "20"
+                }
+              ]
+            },
+            "description": "Align body correctly to generate more power and speed.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Precision and Technique",
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 17,
+          "skill": {
+            "buttonCombos": [
+              {
+                "context": "TERRAIN",
+                "inOrder": ["UP", "DOWN", "JUMP", "JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["RIGHT", "LEFT", "JUMP", "JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["DOWN", "UP", "JUMP", "JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["LEFT", "RIGHT", "JUMP", "JUMP"],
+                "timingWindowMs": 300
+              }
+            ],
+            "cost": [
+              {
+                "chance": 1,
+                "quantity": "5",
+                "remove": "Spirit"
+              }
+            ],
+            "description": "Quickly move backwards twice",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Movement",
+              "order": 8
+            },
+            "name": "Double Back Flip",
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 18,
+          "skill": {
+            "buttonCombos": [
+              {
+                "context": "TERRAIN",
+                "inOrder": ["JUMP", "JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["JUMP", "JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["JUMP", "JUMP"],
+                "timingWindowMs": 300
+              },
+              {
+                "context": "TERRAIN",
+                "inOrder": ["JUMP", "JUMP"],
+                "timingWindowMs": 300
+              }
+            ],
+            "cost": [
+              {
+                "chance": 1,
+                "quantity": "4",
+                "remove": "Spirit"
+              }
+            ],
+            "description": "Charged vertical jump",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Movement",
+              "order": 8
+            },
+            "name": "High Jump",
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 20,
+          "skill": {
+            "actionEffects": {
+              "SELF": [
+                {
+                  "add": "Spirit",
+                  "chance": 1,
+                  "quantity": "10"
+                }
+              ]
+            },
+            "description": "Maintain focused for longer periods of time",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Concentration",
+            "target": "SELF"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Archetype",
+      "description": "",
+      "maxLevel": 20,
+      "name": "Possessed",
+      "progression": [
+        {
+          "abilityPoints": 6,
+          "level": 12
+        },
+        {
+          "level": 20,
+          "skill": {
+            "actionEffects": {
+              "SELF": [
+                {
+                  "add": "Power",
+                  "chance": 1,
+                  "quantity": "20"
+                },
+                {
+                  "add": "Speed",
+                  "chance": 1,
+                  "quantity": "20"
+                }
+              ]
+            },
+            "description": "Align body correctly to generate more power and speed.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Precision and Technique",
+            "target": "SELF"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Archetype",
+      "description": "Specialize in moving ahead of the party to gathering information and reconnaissance.",
+      "maxLevel": 20,
+      "name": "Scout",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 2
+        },
+        {
+          "abilityPoints": 1,
+          "level": 4
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 8
+        },
+        {
+          "abilityPoints": 1,
+          "level": 10
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 14
+        },
+        {
+          "abilityPoints": 1,
+          "level": 16
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "abilityPoints": 1,
+          "level": 20
+        },
+        {
+          "level": 10,
+          "skill": {
+            "actionEffects": {},
+            "description": "Move ahead of the party to gather information.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Scout"
+          }
+        },
+        {
+          "level": 16,
+          "skill": {
+            "actionEffects": {
+              "SELF": [
+                {
+                  "add": "Intelligence",
+                  "chance": 1,
+                  "quantity": "20"
+                },
+                {
+                  "add": "Drive",
+                  "chance": 1,
+                  "quantity": "20"
+                }
+              ]
+            },
+            "description": "Mental Discipline",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Mental Discipline",
+            "target": "SELF"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Archetype",
+      "description": "",
+      "maxLevel": 20,
+      "name": "Ouroboros",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 2
+        },
+        {
+          "abilityPoints": 1,
+          "level": 4
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 8
+        },
+        {
+          "abilityPoints": 1,
+          "level": 10
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 14
+        },
+        {
+          "abilityPoints": 1,
+          "level": 16
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "abilityPoints": 1,
+          "level": 20
+        }
+      ]
+    },
+    {
+      "category": "Archetype",
+      "description": "Summons and commands magical beings.",
+      "maxLevel": 20,
+      "name": "Summoner",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 2
+        },
+        {
+          "abilityPoints": 1,
+          "level": 4
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 8
+        },
+        {
+          "abilityPoints": 1,
+          "level": 10
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 14
+        },
+        {
+          "abilityPoints": 1,
+          "level": 16
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "abilityPoints": 1,
+          "level": 20
+        },
+        {
+          "level": 10,
+          "skill": {
+            "backstory": "",
+            "description": "",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Summon",
+              "order": 5
+            },
+            "name": "???"
+          }
+        },
+        {
+          "level": 10,
+          "skill": {
+            "actionEffects": {},
+            "description": "Release a summon.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Dismiss"
+          }
+        },
+        {
+          "level": 10,
+          "skill": {
+            "backstory": "",
+            "description": "",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Summon",
+              "order": 5
+            },
+            "name": "???"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Archetype",
+      "description": "Specializes sneak attacks and picking locks",
+      "maxLevel": 20,
+      "name": "Rouge",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 2
+        },
+        {
+          "abilityPoints": 1,
+          "level": 4
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 8
+        },
+        {
+          "abilityPoints": 1,
+          "level": 10
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 14
+        },
+        {
+          "abilityPoints": 1,
+          "level": 16
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "abilityPoints": 1,
+          "level": 20
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Can use two one handed weapons at once.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Dual Weld",
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 10,
+          "skill": {
+            "actionEffects": {},
+            "description": "Steal items from enemies.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Pickpocket"
+          }
+        }
+      ]
+    }
+  ],
+  "potentialOutfits": [
+    {
+      "description": "Black Embellished Tarry Coat",
+      "gearSlots": ["Outfit"],
+      "name": "Officer's Uniform"
+    }
+  ],
+  "summonCompatibility": [
+    {
+      "backstory": "",
+      "commands": ["Consume", "Regenerate", "Ensnare"],
+      "description": "A demon that consumes itself.",
+      "level": "LV1",
+      "menuSlot": {
+        "name": "Summon",
+        "order": 5
+      },
+      "name": "Ouroboros"
+    },
+    {
+      "backstory": "The Keeper of Law",
+      "description": "A black and white cat",
+      "level": "LV1",
+      "menuSlot": {
+        "name": "Summon",
+        "order": 5
+      },
+      "name": "Mischievous"
+    }
+  ],
+  "surname": "Tsia",
+  "symbolizes": ["Despair"],
+  "traits": [
+    {
+      "modifier": "Heal",
+      "percent": 80,
+      "tag": "Darkness"
+    }
+  ],
+  "weaponCompatibility": ["Knife", "Dagger"]
 }

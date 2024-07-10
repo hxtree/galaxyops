@@ -16,212 +16,46 @@ export const ActionMenu = (props: ActionMenuProps) => {
   const { spacing, testId } = props;
 
   const [pointer, setPointer] = useState<number[]>([]);
-  const [skills, setSkills] = useState<
-    (
-      | {
-          name: string;
-          description: string;
-          consumes: string;
-          menuSlot: number;
-          buttonCombos: {
-            inOrder: string[];
-            timingWindowMs: number;
-            context: string;
-          }[];
-        }
-      | {
-          name: string;
-          description: string;
-          menuSlot: number;
-          consumes?: undefined;
-          buttonCombos?: undefined;
-        }
-      | {
-          name: string;
-          description: string;
-          backstory: string;
-          menuSlot: number;
-          effect?: undefined;
-        }
-      | {
-          name: string;
-          description: string;
-          effect: never[];
-          menuSlot: number;
-          backstory?: undefined;
-        }
-      | {
-          name: string;
-          description: string;
-          menuSlot: number;
-          effect?: undefined;
-        }
-      | { name: string; description: string; effect: never[]; menuSlot: number }
-    )[]
-  >([]);
-  const [actions, setActions] = useState<
-    (
-      | {
-          name: string;
-          description: string;
-          consumes: string;
-          menuSlot: number;
-          buttonCombos: {
-            inOrder: string[];
-            timingWindowMs: number;
-            context: string;
-          }[];
-        }
-      | {
-          name: string;
-          description: string;
-          menuSlot: number;
-          consumes?: undefined;
-          buttonCombos?: undefined;
-        }
-      | {
-          name: string;
-          description: string;
-          backstory: string;
-          menuSlot: number;
-          effect?: undefined;
-        }
-      | {
-          name: string;
-          description: string;
-          effect: never[];
-          menuSlot: number;
-          backstory?: undefined;
-        }
-      | {
-          name: string;
-          description: string;
-          menuSlot: number;
-          effect?: undefined;
-        }
-      | { name: string; description: string; effect: never[]; menuSlot: number }
-    )[][]
-  >([]);
+  const [skills, setSkills] = useState<any[]>([]);
+  const [actions, setActions] = useState<any[]>([]);
 
   useEffect(() => {
-    // Step 2: Use useEffect to call getSkills on mount
-    const skills: React.SetStateAction<
-      (
-        | {
-            name: string;
-            description: string;
-            consumes: string;
-            menuSlot: number;
-            buttonCombos: {
-              inOrder: string[];
-              timingWindowMs: number;
-              context: string;
-            }[];
-          }
-        | {
-            name: string;
-            description: string;
-            menuSlot: number;
-            consumes?: undefined;
-            buttonCombos?: undefined;
-          }
-        | {
-            name: string;
-            description: string;
-            backstory: string;
-            menuSlot: number;
-            effect?: undefined;
-          }
-        | {
-            name: string;
-            description: string;
-            effect: never[];
-            menuSlot: number;
-            backstory?: undefined;
-          }
-        | {
-            name: string;
-            description: string;
-            menuSlot: number;
-            effect?: undefined;
-          }
-        | {
-            name: string;
-            description: string;
-            effect: never[];
-            menuSlot: number;
-          }
-      )[]
-    > = [];
-
+    const newSkills: any = [];
     data.potentialDisciplines.forEach(discipline => {
       discipline.progression.forEach(progression => {
-        skills.push(progression.skill);
+        if (!progression.skill) {
+          return;
+        }
+        newSkills.push(progression.skill);
       });
     });
 
-    setSkills(skills);
+    setSkills(newSkills);
 
-    const actionMenus = () => {
-      const menu: (
-        | {
-            name: string;
-            description: string;
-            consumes: string;
-            menuSlot: number;
-            buttonCombos: {
-              inOrder: string[];
-              timingWindowMs: number;
-              context: string;
-            }[];
-          }
-        | {
-            name: string;
-            description: string;
-            menuSlot: number;
-            consumes?: undefined;
-            buttonCombos?: undefined;
-          }
-        | {
-            name: string;
-            description: string;
-            backstory: string;
-            menuSlot: number;
-            effect?: undefined;
-          }
-        | {
-            name: string;
-            description: string;
-            effect: never[];
-            menuSlot: number;
-            backstory?: undefined;
-          }
-        | {
-            name: string;
-            description: string;
-            menuSlot: number;
-            effect?: undefined;
-          }
-        | {
-            name: string;
-            description: string;
-            effect: never[];
-            menuSlot: number;
-          }
-      )[][] = [];
+    const newActions: any = [];
+    newActions['NONE'] = [];
+    newActions['MAGIC'] = [];
+    newActions['ABILITIES'] = [];
+    newActions['TRAPS'] = [];
+    newActions['TOOLS'] = [];
+    newActions['SUMMON'] = [];
+    newActions['ITEM'] = [];
+    newActions['INTERACTION'] = [];
+    newActions['ATTACK'] = [];
+    newActions['MOVEMENT'] = [];
+    newActions['DRIVE'] = [];
+    newActions['TEAMWORK'] = [];
 
-      skills.forEach((skill: any) => {
-        if (!menu[skill.menuSlot]) {
-          menu[skill.menuSlot] = [];
-        }
-        menu[skill.menuSlot].push(skill);
-      });
+    newSkills.forEach((skill: any) => {
+      if (!skill.menuSlot) {
+        return;
+      }
+      const menuSlotUppercase = skill.menuSlot.name.toUpperCase();
+      newActions[menuSlotUppercase].push(skill);
+    });
 
-      return menu;
-    };
-
-    setActions(actionMenus);
-  }, []); // Empty dependency array means this effect runs once on mount
+    setActions(newActions);
+  }, [data]); // Empty dependency array means this effect runs once on mount
 
   function addPointer(id: number) {
     setPointer((pointer: number[]) => [...pointer, id]);
@@ -242,7 +76,7 @@ export const ActionMenu = (props: ActionMenuProps) => {
       >
         <ul>
           {actions &&
-            actions[1].map((action: any, index) => {
+            actions['SUMMON'].map((action: any, index: number) => {
               return <li key={index}>{action.name}</li>;
             })}
         </ul>
@@ -250,8 +84,8 @@ export const ActionMenu = (props: ActionMenuProps) => {
       <button onClick={() => addPointer(1)}>Add</button>
       <button onClick={() => removePointer()}>Remove</button>
       <button onClick={() => console.log(pointer)}>Log</button>
-      <button onClick={() => console.log(skills)}>Log2</button>
-      <button onClick={() => console.log(actions)}>Log2</button>
+      <button onClick={() => console.log(skills)}>Log Skills</button>
+      <button onClick={() => console.log(actions)}>Actions</button>
     </Spacer>
   );
 };
