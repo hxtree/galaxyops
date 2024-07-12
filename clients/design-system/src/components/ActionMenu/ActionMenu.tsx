@@ -12,12 +12,28 @@ export type ActionMenuProps = {
   testId?: string;
 };
 
+interface Action {
+  name: string;
+  level: string;
+  // Adjust properties as per your actual data structure
+  // Add more properties as needed
+}
+
+export type MenuTreeNode = {
+  name: string;
+  children: MenuTreeNode[];
+  action?: Action;
+};
+export type MenuTree = MenuTreeNode[];
+
+// TODO
+// In character sheet skills should have a parent child relationship instead of a flat array
+
 export const ActionMenu = (props: ActionMenuProps) => {
   const { spacing, testId } = props;
-
-  const [pointer, setPointer] = useState<number[]>([]);
-  const [skills, setSkills] = useState<any[]>([]);
-  const [actions, setActions] = useState<any[]>([]);
+  const [pointers, setPointers] = useState<number[]>([0]);
+  const [menuTree, setMenuTree] = useState<MenuTree>([]);
+  const [menuFlat, setMenuFlat] = useState<string[]>([]);
 
   useEffect(() => {
     const newSkills: any = [];
@@ -30,43 +46,142 @@ export const ActionMenu = (props: ActionMenuProps) => {
       });
     });
 
-    setSkills(newSkills);
-
-    const newActions: any = [];
-    newActions['NONE'] = [];
-    newActions['MAGIC'] = [];
-    newActions['ABILITIES'] = [];
-    newActions['TRAPS'] = [];
-    newActions['TOOLS'] = [];
-    newActions['SUMMON'] = [];
-    newActions['ITEM'] = [];
-    newActions['INTERACTION'] = [];
-    newActions['ATTACK'] = [];
-    newActions['MOVEMENT'] = [];
-    newActions['DRIVE'] = [];
-    newActions['TEAMWORK'] = [];
+    const newMenuTree: MenuTreeNode[] = [];
 
     newSkills.forEach((skill: any) => {
       if (!skill.menuSlot) {
         return;
       }
-      const menuSlotUppercase = skill.menuSlot.name.toUpperCase();
-      newActions[menuSlotUppercase].push(skill);
+      const name = skill.name;
+      const parentName = skill.menuSlot.name;
+
+      const parent = newMenuTree.find(node => node.name === parentName);
+      if (parent) {
+        parent.children.push({
+          name,
+          children: [],
+          action: skill,
+        });
+        return;
+      }
+
+      newMenuTree.push({
+        name: parentName,
+        children: [
+          {
+            name,
+            children: [],
+            action: skill,
+          },
+        ],
+      });
     });
+    setMenuTree(newMenuTree);
+    setPointers([0]);
+  }, []);
 
-    setActions(newActions);
-  }, [data]); // Empty dependency array means this effect runs once on mount
-
-  function addPointer(id: number) {
-    setPointer((pointer: number[]) => [...pointer, id]);
-  }
-
-  function removePointer() {
-    if (pointer.length === 0) {
+  useEffect(() => {
+    const displayItems: string[] = [];
+    if (pointers.length === 1) {
+      menuTree.forEach((menuItem: MenuTreeNode) => {
+        displayItems.push(menuItem.name);
+      });
+      setMenuFlat(displayItems);
       return;
     }
-    setPointer(pointer => pointer.slice(0, -1));
+
+    const menuItems: MenuTreeNode = getElementByPointer(
+      menuTree,
+      pointers.slice(0, -1),
+    );
+    if (!menuItems || !menuItems.children) {
+      // TODO: action item was selected resetting pointer
+      setPointers(pointers.slice(0, -1));
+      return;
+    }
+
+    menuItems.children.forEach((menuItem: MenuTreeNode) => {
+      displayItems.push(`${menuItem.name} ${menuItem.action?.level}`);
+    });
+    setMenuFlat(displayItems);
+  }, [pointers]);
+
+  useEffect(() => {
+    const handleWindowKeyUp = (event: KeyboardEvent) => handleKeyUp(event);
+
+    document.addEventListener('keyup', handleWindowKeyUp);
+    return () => {
+      document.removeEventListener('keyup', handleWindowKeyUp);
+    };
+  }, [pointers, menuTree, menuFlat]);
+
+  function getElementByPointer(
+    array: MenuTreeNode[],
+    pointer: number[],
+  ): MenuTreeNode[] | MenuTreeNode {
+    if (pointer.length === 0) {
+      return array; // Base case: return the array itself if pointer is empty
+    }
+
+    const index = pointer[0];
+    const rest = pointer.slice(1);
+
+    // Check if the index is within bounds
+    if (index < 0 || index >= array.length) {
+      throw new Error('Index out of bounds');
+    }
+
+    // Recursively access the nested array
+    return getElementByPointer(array[index], rest);
   }
+
+  const movePointers = (direction: string) => {
+    if (direction === 'up') {
+      const lastItem = pointers[pointers.length - 1];
+      if (lastItem === 0) {
+        return;
+      }
+      setPointers([...pointers.slice(0, -1), lastItem - 1]);
+    } else if (direction === 'down') {
+      if (pointers.length === 0) {
+        setPointers([1]);
+        return;
+      }
+      const lastItem = pointers[pointers.length - 1];
+      if (lastItem === menuFlat.length - 1) {
+        return;
+      }
+      setPointers([...pointers.slice(0, -1), lastItem + 1]);
+    } else if (direction === 'back') {
+      if (pointers.length === 1) {
+        return;
+      }
+      setPointers([...pointers.slice(0, -1)]);
+      return;
+    } else if (direction === 'select') {
+      setPointers([...pointers, 0]);
+    }
+  };
+
+  const handleKeyUp = (event: KeyboardEvent) => {
+    event.preventDefault();
+    switch (event.key) {
+      case 'w':
+        movePointers('up');
+        break;
+      case 's':
+        movePointers('down');
+        break;
+      case 'a':
+        movePointers('back');
+        break;
+      case 'd':
+        movePointers('select');
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <Spacer {...spacing}>
@@ -75,17 +190,16 @@ export const ActionMenu = (props: ActionMenuProps) => {
         data-testid={testId ? `${testId}-root` : null}
       >
         <ul>
-          {actions &&
-            actions['SUMMON'].map((action: any, index: number) => {
-              return <li key={index}>{action.name}</li>;
-            })}
+          {menuFlat.map((menuItem: string, index: number) => {
+            return (
+              <li key={index}>
+                {menuItem}
+                {index == pointers[pointers.length - 1] ? ' <- ' : '  '}
+              </li>
+            );
+          })}
         </ul>
       </div>
-      <button onClick={() => addPointer(1)}>Add</button>
-      <button onClick={() => removePointer()}>Remove</button>
-      <button onClick={() => console.log(pointer)}>Log</button>
-      <button onClick={() => console.log(skills)}>Log Skills</button>
-      <button onClick={() => console.log(actions)}>Actions</button>
     </Spacer>
   );
 };

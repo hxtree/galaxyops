@@ -3,4 +3,11 @@
 .action-menu {
   background-color: $color-blue;
   color: $color-off-white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  ul {
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+  }
 }
