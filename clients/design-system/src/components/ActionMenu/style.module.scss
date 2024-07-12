@@ -10,4 +10,13 @@
     padding: 0;
     list-style-type: none;
   }
+  .link-active {
+    position: relative;
+    font-weight: bold;
+    &::before {
+      content: '>';
+      position: absolute;
+      left: -15px;
+    }
+  }
 }

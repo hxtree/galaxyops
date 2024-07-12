@@ -191,10 +191,10 @@ export const ActionMenu = (props: ActionMenuProps) => {
       >
         <ul>
           {menuFlat.map((menuItem: string, index: number) => {
+            const isActive = index == pointers[pointers.length - 1];
             return (
-              <li key={index}>
+              <li key={index} className={`link ${isActive && 'link-active'}`}>
                 {menuItem}
-                {index == pointers[pointers.length - 1] ? ' <- ' : '  '}
               </li>
             );
           })}
