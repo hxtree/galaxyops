@@ -189,16 +189,27 @@ export const ActionMenu = (props: ActionMenuProps) => {
         className={`action-menu`}
         data-testid={testId ? `${testId}-root` : null}
       >
-        <ul>
-          {menuFlat.map((menuItem: string, index: number) => {
-            const isActive = index == pointers[pointers.length - 1];
-            return (
-              <li key={index} className={`link ${isActive && 'link-active'}`}>
-                {menuItem}
-              </li>
-            );
-          })}
-        </ul>
+        <div className={`action-menu-outer-border`}>
+          <div className={`action-menu-inner-border`}>Open Chest</div>
+        </div>
+
+        <div className={`action-menu-outer-border mt--3`}>
+          <div className={`action-menu-inner-border`}>
+            <ul>
+              {menuFlat.map((menuItem: string, index: number) => {
+                const isActive = index == pointers[pointers.length - 1];
+                return (
+                  <li
+                    key={index}
+                    className={`link ${isActive && 'link-active'}`}
+                  >
+                    {menuItem}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
     </Spacer>
   );
