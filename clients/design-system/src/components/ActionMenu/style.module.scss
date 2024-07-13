@@ -1,4 +1,5 @@
 @import './../../styles/utils/color-pallette';
+@import '../../styles/fonts';
 
 .action-menu {
   .action-menu-outer-border {
@@ -8,45 +9,55 @@
     border-radius: 0.7rem !important;
     padding: 4px;
     box-shadow: rgba($color-off-black, 0.12) 0 0 0 1px, rgba($color-off-black, 0.42) 1px 1px 3px 0 !important;
-  }
 
-  .action-menu-inner-border {
-    color: $color-off-white;
-    border: 1px solid $color-black;
-    border-radius: 0.7rem !important;
-    background-color: $color-blue;
-    padding: 13px 13px;
-    position: relative;
-    ::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0px;
-      width: 10px;
-      height: 100%;
-      background-color: darken($color-blue, 20%);
-      border-top-right-radius: 0.7rem !important;
-      border-bottom-right-radius: 0.7rem !important;
-      z-index: 1;
-    }
-  }
-
-  ul {
-    margin:0;
-    padding: 0;
-    list-style-type: none;
-  li {
-    color: $color-off-white;
-    .link-active {
+    .action-menu-inner-border {
+      color: $color-off-white;
+      border: 1px solid $color-black;
+      border-radius: 0.7rem !important;
+      background-color: $color-blue;
+      padding: 13px 13px;
       position: relative;
-      font-weight: bold;
-      &::before {
-        content: '>';
-        position: absolute;
-        left: -15px;
+
+      font-family: $font-family-game;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      line-height: 1;
+      color: $color-off-white;
+      text-shadow:
+        -1px -1px 0 $color-off-black,
+        1px -1px 0 $color-off-black,
+        -1px 1px 0 $color-off-black,
+        1px 1px 0 $color-off-black;
+      ul {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0px;
+          width: 10px;
+          height: 100%;
+          background-color: darken($color-blue, 20%);
+          border-top-right-radius: 0.7rem !important;
+          border-bottom-right-radius: 0.7rem !important;
+          z-index: 1;
+        }
+
+        margin:0;
+        padding: 0;
+        list-style-type: none;
+        li {
+          &.link-active {
+            position: relative;
+            font-weight: bold;
+            &::before {
+              content: '>';
+              position: absolute;
+              left: -15px;
+            }
+          }
+        }
       }
     }
-
-  }
   }
 }
+
