@@ -1,29 +1,14 @@
-export enum ItemCapacity {
-  UNIQUE = 1,
-  LOW = 10,
-  MEDIUM = 25,
-  HIGH = 50,
-  VERY_HIGH = 75,
-  MAXIMUM = 99,
-  GC = 9999,
-}
+import { ItemCapacity, Item } from '@galaxyops/character-sheet-contracts';
 
 /**
- * Items might include non-equipable objects like crafting materials,
+ * Items crafting materials,
  * consumables, and more within the game world that can be collected by a
- * player or non-player character.
+ * player or non-player character. Items cannot be equipped.
  * An item is not an instance of a individual item.
  * {@link https://en.wikipedia.org/wiki/Item_(game_terminology)}
  */
-export namespace Item {
-  export type BaseType = {
-    name: string;
-    description: string;
-    capacity: ItemCapacity;
-    craftingMaterials?: RecipeIngredient[];
-  };
-
-  export const COMPASS: BaseType = {
+export namespace Items {
+  export const COMPASS: Item = {
     capacity: ItemCapacity.UNIQUE,
     description: 'Shows direction',
     name: 'Compass',
@@ -35,43 +20,43 @@ export namespace Item {
    * It can be found or gained by defeating an opponent.
    * It is used to buy/sell items.
    */
-  export const GC: BaseType = {
+  export const GC: Item = {
     capacity: ItemCapacity.GC,
     description: 'Currency',
     name: 'GC',
   };
 
-  export const FLOUR: BaseType = {
+  export const FLOUR: Item = {
     capacity: ItemCapacity.MEDIUM,
     description: 'Powder made from crushed grains',
     name: 'Flour',
   };
 
-  export const CHICKEN_EGG: BaseType = {
+  export const CHICKEN_EGG: Item = {
     capacity: ItemCapacity.LOW,
     description: 'Egg from a chicken',
     name: 'Chicken Egg',
   };
 
-  export const WATER: BaseType = {
+  export const WATER: Item = {
     capacity: ItemCapacity.MEDIUM,
     description: 'Water',
     name: 'Water',
   };
 
-  export const RICE: BaseType = {
+  export const RICE: Item = {
     capacity: ItemCapacity.VERY_HIGH,
     description: 'Rice grains',
     name: 'Rice',
   };
 
-  export const PORK: BaseType = {
+  export const PORK: Item = {
     capacity: ItemCapacity.LOW,
     description: 'Meat form a pig',
     name: 'Pork',
   };
 
-  export const RICE_BALL: BaseType = {
+  export const RICE_BALL: Item = {
     capacity: 99,
     craftingMaterials: [
       { item: 'RICE', quantity: 1 },
@@ -82,14 +67,14 @@ export namespace Item {
     // heals
   };
 
-  export const DANGO: BaseType = {
+  export const DANGO: Item = {
     capacity: ItemCapacity.MEDIUM,
     description: 'Mochi-like sweet made from crushed rice ',
     name: 'Dango',
     // heals
   };
 
-  export const RAMEN: BaseType = {
+  export const RAMEN: Item = {
     capacity: ItemCapacity.LOW,
     craftingMaterials: [
       { item: 'FLOUR', quantity: 1 },
@@ -102,7 +87,7 @@ export namespace Item {
     // heals
   };
 
-  export const PELMENI: BaseType = {
+  export const PELMENI: Item = {
     capacity: ItemCapacity.MEDIUM,
     craftingMaterials: [
       { item: 'FLOUR', quantity: 1 },
@@ -120,8 +105,3 @@ export type ItemId = keyof typeof Item;
 export const ItemIds = <ItemId[]>Object.keys(Item);
 
 export type ItemType = Item.BaseType & { id: ItemId };
-
-export type RecipeIngredient = {
-  item: ItemId;
-  quantity: number;
-};
