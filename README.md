@@ -118,13 +118,13 @@ files following RFC 2119 standards.
 ## Contributing
 
 Pull requests and bug reports are welcome on GitHub at
-<https://github.com/hxtree/cats-cradle>. Please follow the
+<https://github.com/hxtree/galaxyops>. Please follow the
 [code of conduct](docs/CODE_OF_CONDUCT.md) when contributing.
 
 ### Acknowledgements
 
-<a href="https://github.com/hxtree/cats-cradle/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=hxtree/cats-cradle" />
+<a href="https://github.com/hxtree/galaxyops/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=hxtree/galaxyops" />
 </a>
 
 ## License

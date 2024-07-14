@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/@cats-cradle%2Fcreate-artifact.svg)](https://badge.fury.io/js/@cats-cradle%2Fcreate-artifact)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 
 create-artifact is a tool for bundling a single package into an artifact. It was
 designed to help create small fast deployable projects.
@@ -48,10 +48,10 @@ pnpm artifact
 
 ## Opinions
 
-Originally, our monorepo CI/CD process started in Github CI and next went
-to AWS CodePipeline, Although it was quicker to get a mirror of the repository
-in AWS CodeCommit and trigger a CodePipeline build from pushes to main, that
-approach had several costly drawbacks:
+Originally, our monorepo CI/CD process started in Github CI and next went to AWS
+CodePipeline, Although it was quicker to get a mirror of the repository in AWS
+CodeCommit and trigger a CodePipeline build from pushes to main, that approach
+had several costly drawbacks:
 
 - In order for a pipeline to build from that source it must clone the entire
   monorepo within CodePipeline.

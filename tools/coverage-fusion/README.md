@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/@cats-cradle%2Frush-coverage.svg)](https://badge.fury.io/js/@cats-cradle%2Frush-coverage)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 
 coverage-fusion is a code coverage consolidation tool for PNPM based monorepos.
 

@@ -15,7 +15,7 @@ function App() {
           {
             icon: faGithub,
             label: 'Github',
-            url: 'https://github.com/hxtree/cats-cradle',
+            url: 'https://github.com/hxtree/galaxyops',
           },
         ]}
         siteOwner="Nekos Gate"

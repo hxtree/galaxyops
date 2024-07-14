@@ -99,8 +99,7 @@ Here are some important guidelines for building services:
 
 ## Release
 
-Services are released on
-[Github](https://github.com/hxtree/cats-cradle/releases).
+Services are released on [Github](https://github.com/hxtree/galaxyops/releases).
 
 ## References
 

@@ -1,6 +1,6 @@
 # cats-cradle/weather-control
 
-[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 
 This service dictates for the majority of the game the weather at any place and
 time.

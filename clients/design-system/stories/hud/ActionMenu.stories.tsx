@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 import { ActionMenu } from '../../src/main';
+import mockData from './mockData.json';
 
 export default {
   title: 'HUD/ActionMenu',
@@ -10,5 +11,5 @@ export default {
 export const Default = args => <ActionMenu {...args} />;
 
 Default.args = {
-  color: 'red',
+  data: mockData,
 };

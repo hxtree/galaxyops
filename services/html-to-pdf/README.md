@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/@cats-cradle%2Fhtml-to-pdf.svg)](https://badge.fury.io/js/@cats-cradle%2Fhtml-to-pdf)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 
 **Your Go-To Solution for PDF Generation from HTML.**
 
@@ -32,7 +32,7 @@ curl -X POST https://nx7uv2rfy4.execute-api.us-east-2.amazonaws.com/default/v1/h
 
 Output:
 
-![Example Image](https://github.com/hxtree/cats-cradle/raw/main/services/html-to-pdf/example.png)
+![Example Image](https://github.com/hxtree/galaxyops/raw/main/services/html-to-pdf/example.png)
 
 ## How it Works
 

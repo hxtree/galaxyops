@@ -28,6 +28,7 @@
     "react-router-dom": "6.22.1"
   },
   "devDependencies": {
+    "@galaxyops/character-sheet-contracts": "*",
     "@galaxyops/base-nodejs": "0.1.0",
     "@cats-cradle/create-artifact": "2.0.7",
     "@testing-library/jest-dom": "^5.16.5",

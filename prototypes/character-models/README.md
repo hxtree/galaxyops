@@ -7,7 +7,7 @@ WIP
 The following private repo contains work related to the game. Established
 contributors should ask for access.
 
-- [Concept Art](github.com/hxtree/cats-cradle-concept-art)
+- [Concept Art](github.com/hxtree/galaxyops-concept-art)
 
 ## Notes
 

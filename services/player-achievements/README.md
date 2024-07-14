@@ -1,6 +1,6 @@
 # cats-cradle/player-achievements
 
-[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 
 A player achievement is a meta-goal defined outside a game's parameters. It is a
 digital reward that signifies a player's mastery of a specific task or challenge

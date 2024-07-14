@@ -66,7 +66,7 @@ export default function HomePage() {
               <BasicCard
                 title="Open Source Software"
                 imageSrc="/assets/cards/stand-still.png"
-                url="https://github.com/hxtree/cats-cradle/pulls"
+                url="https://github.com/hxtree/galaxyops/pulls"
                 cta="Open A Pull Request"
               >
                 Shape the future of development with us! Contribute your
@@ -79,12 +79,12 @@ export default function HomePage() {
           iconLeft={faCheck}
           iconColorLeft={BlurbIconColors.GRAY}
           textLeft="Join us in enhancing our project! We value collaboration and welcome contributions from developers of all backgrounds. Together, let's build something remarkable!"
-          linkLeft="https://github.com/hxtree/cats-cradle"
+          linkLeft="https://github.com/hxtree/galaxyops"
           ctaLeft="Open A PR"
           iconRight={faGithub}
           iconColorRight={BlurbIconColors.GRAY}
           textRight="We're excited to announce several innovative new features coming soon, promising significant enhancements and exciting opportunities for our community."
-          linkRight="https://github.com/hxtree/cats-cradle/issues"
+          linkRight="https://github.com/hxtree/galaxyops/issues"
           ctaRight="Learn More"
           spacing={{ top: 5 }}
         />

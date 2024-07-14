@@ -8,28 +8,33 @@ import {
   Select,
   SelectChangeEvent,
   CodeSnippet,
-  CodeSnippetLanguages
+  CodeSnippetLanguages,
+  ActionMenu,
 } from '@cats-cradle/design-system/dist/main';
+import { Archetype } from '@galaxyops/character-sheet-contracts';
 
 export default function ArchetypeSelect() {
   const [archetypes, setArchetypes] = useState<string[]>([]);
-  const [archetypeId, setArchetypeId] = useState<string>("");
-  const [archetypeData, setArchetypeData] = useState<object>({});
+  const [archetypeId, setArchetypeId] = useState<string>('');
+  const [archetypeData, setArchetypeData] = useState<Archetype>();
   const [isLoading, setLoading] = useState<boolean>(true);
 
-  const parentDomainName = import.meta.env.VITE_PARENT_DOMAIN_NAME ?? 'sandbox.nekosgate.com';
+  const parentDomainName =
+    import.meta.env.VITE_PARENT_DOMAIN_NAME ?? 'sandbox.nekosgate.com';
 
   useEffect(() => {
     const archetypesFetch = async () => {
       setLoading(true);
 
       try {
-        const res = await axios.get(`https://api.${parentDomainName}/character-sheets/archetypes`);
+        const res = await axios.get(
+          `https://api.${parentDomainName}/character-sheets/archetypes`,
+        );
 
         setArchetypes(res.data);
       } catch (err) {
         const error = err as unknown as Error;
-        console.error("Error fetching archetypes:", error.message);
+        console.error('Error fetching archetypes:', error.message);
       } finally {
         setLoading(false);
       }
@@ -48,7 +53,7 @@ export default function ArchetypeSelect() {
       setArchetypeData(res.data);
     } catch (err) {
       const error = err as unknown as Error;
-      console.error("Error fetching archetype data:", error.message);
+      console.error('Error fetching archetype data:', error.message);
     } finally {
       setLoading(false);
     }
@@ -69,20 +74,22 @@ export default function ArchetypeSelect() {
         <Select
           labelId="archetype-id-label"
           id="archetype-id"
-          onChange={(event) => handleChange(event)}
+          onChange={event => handleChange(event)}
           input={<OutlinedInput label="Archetype" />}
-          className='bg-white'
+          className="bg-white"
         >
-          {archetypes && archetypes.map(archetype => (
-            <MenuItem key={archetype} value={archetype}>
-              {archetype}
-            </MenuItem>
-          ))}
+          {archetypes &&
+            archetypes.map(archetype => (
+              <MenuItem key={archetype} value={archetype}>
+                {archetype}
+              </MenuItem>
+            ))}
         </Select>
       </FormControl>
       {archetypeData && Object.keys(archetypeData).length > 0 && (
         <>
           <h2>{archetypeId}</h2>
+          <ActionMenu data={archetypeData} />
           <CodeSnippet
             data={JSON.stringify(archetypeData, null, 2)}
             language={CodeSnippetLanguages.JSON}
@@ -93,4 +100,3 @@ export default function ArchetypeSelect() {
     </>
   );
 }
-

@@ -1,0 +1,62 @@
+{
+  "name": "@galaxyops/character-sheet-contracts",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxtree/galaxyops.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hxtree/galaxyops/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "faker-factory",
+    "faker",
+    "json-schema",
+    "class-validator",
+    "mocks",
+    "testing"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:all": "rush build -t .",
+    "watch": "tsc -w",
+    "test": "jest --runInBand",
+    "test:cov": "jest --coverage --runInBand",
+    "lint": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix",
+    "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\"  --fix-dry-run",
+    "depcheck": "npx depcheck"
+  },
+  "dependencies": {
+    "class-transformer": "0.5.1",
+    "class-validator": "0.13.2",
+    "uuid": "~9.0.1",
+    "lodash": "4.17.21",
+    "@types/lodash": "4.17.6",
+    "@galaxyops/base-nodejs": "0.1.0",
+    "@faker-js/faker": "~7.6.0",
+    "reflect-metadata": "0.1.13",
+    "@types/validator": "~13.7.10",
+    "currency.js": "~2.0.4",
+    "class-validator-jsonschema": "3.1.1",
+    "json-schema-faker": "~0.5.0-rcv.46",
+    "json-schema": "~0.4.0",
+    "@cats-cradle/validation-schemas": "2.1.0",
+    "luxon": "~3.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.12",
+    "@types/node": "20.11.25",
+    "jest": "29.7.0",
+    "ts-jest": "29.1.2",
+    "typescript": "5.3.3",
+    "ts-node": "10.9.2",
+    "esbuild": "~0.20.1",
+    "@types/uuid": "~9.0.7",
+    "eslint": "8.57.0",
+    "@galaxyops/eslint-config": "3.1.1",
+    "@types/json-schema": "~7.0.11",
+    "@types/luxon": "~3.2.0"
+  }
+}

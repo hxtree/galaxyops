@@ -4,25 +4,24 @@ import './style.module.scss';
 import { Spacer } from '../Spacer/Spacer';
 import { SpacerProps } from '../Spacer/SpacerProps.type';
 import './style.module.scss';
-import data from './mockData.json';
+import {
+  Skill,
+  Archetype,
+  DisciplineProgression,
+  Discipline,
+  SkillProgression,
+} from '@galaxyops/character-sheet-contracts';
 
 export type ActionMenuProps = {
-  actions: string[];
+  data: Archetype;
   spacing?: SpacerProps;
   testId?: string;
 };
 
-interface Action {
-  name: string;
-  level: string;
-  // Adjust properties as per your actual data structure
-  // Add more properties as needed
-}
-
 export type MenuTreeNode = {
   name: string;
   children: MenuTreeNode[];
-  action?: Action;
+  action?: Skill;
 };
 export type MenuTree = MenuTreeNode[];
 
@@ -35,19 +34,27 @@ export type DisplayItem = {
 // In character sheet skills should have a parent child relationship instead of a flat array
 
 export const ActionMenu = (props: ActionMenuProps) => {
-  const { spacing, testId } = props;
+  const { data, spacing, testId } = props;
   const [pointers, setPointers] = useState<number[]>([0]);
   const [menuTree, setMenuTree] = useState<MenuTree>([]);
   const [menuFlat, setMenuFlat] = useState<DisplayItem[]>([]);
 
   useEffect(() => {
     const newSkills: any = [];
-    data.potentialDisciplines.forEach(discipline => {
-      discipline.progression.forEach(progression => {
-        if (!progression.skill) {
+    if (!data.potentialDisciplines) {
+      return;
+    }
+    data.potentialDisciplines.forEach((discipline: Discipline) => {
+      if (!discipline.progression) {
+        return;
+      }
+      discipline.progression.forEach((progression: DisciplineProgression) => {
+        const skillProgression = progression as SkillProgression;
+
+        if (!skillProgression.skill) {
           return;
         }
-        newSkills.push(progression.skill);
+        newSkills.push(skillProgression.skill);
       });
     });
 

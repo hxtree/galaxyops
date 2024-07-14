@@ -4,10 +4,10 @@
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hxtree/cats-cradle.git"
+    "url": "git+https://github.com/hxtree/galaxyops.git"
   },
   "bugs": {
-    "url": "https://github.com/hxtree/cats-cradle/issues"
+    "url": "https://github.com/hxtree/galaxyops/issues"
   },
   "license": "MIT",
   "keywords": [

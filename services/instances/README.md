@@ -1,6 +1,6 @@
 # cats-cradle/instances
 
-[![GitHub Stars](https://img.shields.io/github/stars/hxtree/cats-cradle?style=social)](https://github.com/hxtree/cats-cradle/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 
 This service tracks instances. A instance is a unique Id used to define
 boundaries of other systems. Other than when it was created and whether it

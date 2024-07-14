@@ -17,7 +17,7 @@ Dialogue files can be viewed and edited using
 The following private repo contains rough ideas for the game. Established
 contributors can request for access.
 
-- [Rough Ideas](https://github.com/hxtree/cats-cradle-ideas)
+- [Rough Ideas](https://github.com/hxtree/galaxyops-ideas)
 
 ## Resources Structure
 
