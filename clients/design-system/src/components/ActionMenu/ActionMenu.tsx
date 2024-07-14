@@ -90,7 +90,7 @@ export const ActionMenu = (props: ActionMenuProps) => {
     });
     setMenuTree(newMenuTree);
     setPointers([0]);
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     function getElementByPointer(

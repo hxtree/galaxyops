@@ -11,8 +11,8 @@
     box-shadow: rgba($color-off-black, 0.12) 0 0 0 1px, rgba($color-off-black, 0.42) 1px 1px 3px 0 !important;
 
     .action-menu-inner-border {
-      padding-right: 10px;
       position: relative;
+      padding-right: 10px;
       border: 1px solid $color-black;
       border-radius: 0.7rem !important;
       background-color: $color-blue;
@@ -56,15 +56,16 @@
           border-bottom: 2px solid lighten($color-blue, 3%);
 
           &:first-child {
-            border-top-left-radius: 0.7rem !important;
             padding-top: 0.5rem;
+            border-top-left-radius: 0.7rem !important;
+
             // border-top: 2px solid lighten($color-blue, 3%);
           }
 
           &:last-child {
-            border-bottom-left-radius: 0.7rem !important;
             padding-bottom: 0.5rem;
             border-bottom: 0;
+            border-bottom-left-radius: 0.7rem !important;
           }
 
           .level {
@@ -76,17 +77,16 @@
           }
 
           &.link-active {
-            color: $color-white;
             position: relative;
-            font-weight: bold;
             background-color: darken($color-blue, 4%);
-            box-shadow: inset 0 0 10px rgba(1,1,1,0.1);
-
+            color: $color-white;
+            font-weight: bold;
       text-shadow:
         -1px -1px 0 $color-black,
         1px -1px 0 $color-black,
         -1px 1px 0 $color-black,
         1px 1px 0 $color-black;
+            box-shadow: inset 0 0 10px rgba(1,1,1,0.1);
 
             &::before {
               content: '>';
@@ -102,8 +102,8 @@
               z-index: 2;
               width: 7px;
               height: 40%;
-              background-color: $color-white;
               border: 1px solid $color-black;
+              background-color: $color-white;
               opacity: 0.5;
             }
           }
