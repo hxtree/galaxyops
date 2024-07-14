@@ -1,9 +1,13 @@
-import { Accessory } from './accessory.gear';
-import { Outfit } from './outfit.gear';
-import { Weapon } from './weapon.gear';
+import {
+  Accessory,
+  Weapon,
+  Outfit,
+} from '@galaxyops/character-sheet-contracts';
+import { Accessories } from './accessory.gear';
+import { Outfits } from './outfit.gear';
+import { Weapons } from './weapon.gear';
 import { Equipment } from './equipment.gear';
 
-export { Token } from './token.gear';
 export { Equipment } from './equipment.gear';
 
 /**
@@ -11,10 +15,10 @@ export { Equipment } from './equipment.gear';
  * Archetypes can only equip compatible gear.
  */
 export const Gear = {
-  ...Accessory,
-  ...Outfit,
-  ...Weapon,
+  ...Accessories,
+  ...Outfits,
+  ...Weapons,
 };
 
-export type GearType = Accessory.Type | Outfit.Type | Weapon.Type;
+export type GearType = Accessory | Outfit | Weapon;
 export type EquipmentType = typeof Equipment;

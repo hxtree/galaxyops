@@ -15,10 +15,11 @@ import {
   AvianCreatureGearSlots,
   SerpentineCreatureGearSlots,
   AmorphousCreatureGearSlots,
+  Outfit,
 } from '@galaxyops/character-sheet-contracts';
 import { Discipline } from './discipline';
 import { Summon } from './skills/summon.skill';
-import { Outfit } from './gear/outfit.gear';
+import { Outfits } from './gear/outfit.gear';
 import { Affiliations } from './affiliations';
 
 /**
@@ -70,7 +71,7 @@ export namespace Archetype {
     gearSlots?: Slot[];
 
     potentialDisciplines?: Discipline.Type[];
-    potentialOutfits?: Outfit.Type[];
+    potentialOutfits?: Outfit[];
     summonCompatibility?: Skill[];
     weaponCompatibility?: WeaponCategory[];
 
@@ -248,7 +249,7 @@ export namespace Archetype {
       Discipline.ONI,
       Discipline.HERO,
     ],
-    potentialOutfits: [Outfit.TSHIRT_AND_JEANS],
+    potentialOutfits: [Outfits.TSHIRT_AND_JEANS],
     summonCompatibility: [Summon.VACHEL_LV1],
     surname: 'Oni',
     symbolizes: ['The One', 'Destroyer of Law'],
@@ -386,7 +387,7 @@ export namespace Archetype {
       Discipline.SUMMONER,
       Discipline.ROUGE,
     ],
-    potentialOutfits: [Outfit.OFFICERS_UNIFORM],
+    potentialOutfits: [Outfits.OFFICERS_UNIFORM],
     summonCompatibility: [Summon.OUROBOROS_LV1, Summon.MISCHIEVOUS_LV1],
     surname: 'Tsia',
     symbolizes: ['Despair'],

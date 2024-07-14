@@ -4,6 +4,7 @@ import {
   EffectTable,
   Attribute,
   EffectTag,
+  Accessory,
 } from '@galaxyops/character-sheet-contracts';
 import { Skills } from '../skills';
 
@@ -11,17 +12,7 @@ import { Skills } from '../skills';
  * Accessory is an object or device that is not essential in itself
  * but adds to the beauty, convenience, or effects.
  */
-export namespace Accessory {
-  export type Type = {
-    name: string;
-    description: string;
-    history?: string; // the history of an item must be discovered
-    purpose?: string;
-    gearSlots: Slot[];
-    effects?: EffectTable;
-    removable?: boolean; // whether player can remove via menus
-  };
-
+export namespace Accessories {
   /**
    * Represents the concept of the "seven selves" in Kahlil Gibran's "The Madman."
    * These selves symbolize facets of human experience and consciousness:
@@ -34,7 +25,7 @@ export namespace Accessory {
    * - Integrated: Balanced, holistic alignment.
    */
 
-  export const MASK_OF_POWER: Type = {
+  export const MASK_OF_POWER: Accessory = {
     description:
       'This mask reflects a desire for control, dominance, and authority in interactions.',
     gearSlots: [Slot.HEAD],
@@ -43,7 +34,7 @@ export namespace Accessory {
     removable: true,
   };
 
-  export const MASK_OF_SUBMISSION: Type = {
+  export const MASK_OF_SUBMISSION: Accessory = {
     description:
       'This mask reflects a tendency to comply with the expectations and demands of others, often sacrificing personal desires.',
     gearSlots: [Slot.HEAD],
@@ -52,7 +43,7 @@ export namespace Accessory {
     removable: true,
   };
 
-  export const MASK_OF_WISDOM: Type = {
+  export const MASK_OF_WISDOM: Accessory = {
     description:
       'This mask embodies knowledge, insight, and intellect, sometimes leading to pretense or arrogance.',
     gearSlots: [Slot.HEAD],
@@ -61,7 +52,7 @@ export namespace Accessory {
     removable: true,
   };
 
-  export const MASK_OF_PLEASURE: Type = {
+  export const MASK_OF_PLEASURE: Accessory = {
     description:
       'This mask reflects a pursuit of hedonistic pleasures and indulgence in sensory experiences.',
     gearSlots: [Slot.HEAD],
@@ -70,7 +61,7 @@ export namespace Accessory {
     removable: true,
   };
 
-  export const MASK_OF_SINCERITY: Type = {
+  export const MASK_OF_SINCERITY: Accessory = {
     description:
       'This mask represents genuineness and honesty, even if it means concealing certain truths or feelings.',
     gearSlots: [Slot.HEAD],
@@ -79,7 +70,7 @@ export namespace Accessory {
     removable: true,
   };
 
-  export const MASK_OF_LOVE: Type = {
+  export const MASK_OF_LOVE: Accessory = {
     description:
       'This mask embodies affection, compassion, and empathy towards others.',
     gearSlots: [Slot.HEAD],
@@ -88,7 +79,7 @@ export namespace Accessory {
     removable: true,
   };
 
-  export const MASK_OF_MISERY: Type = {
+  export const MASK_OF_MISERY: Accessory = {
     description:
       'This mask reflects a dwelling in negativity, suffering, and despair.',
     gearSlots: [Slot.HEAD],
@@ -99,7 +90,7 @@ export namespace Accessory {
 
   // Misc
 
-  export const GOLD_BRACELETS: Type = {
+  export const GOLD_BRACELETS: Accessory = {
     description: 'Weighted gold bracelets that occupy both wrists meant',
     effects: [
       {
@@ -119,7 +110,7 @@ export namespace Accessory {
     removable: false,
   };
 
-  export const RED_SCRAF: Type = {
+  export const RED_SCRAF: Accessory = {
     description: 'A red scarf knitted.',
     gearSlots: [Slot.NECK],
     history: 'Knitted by Mother to keep Meeku warm',
@@ -127,7 +118,7 @@ export namespace Accessory {
     removable: false,
   };
 
-  export const COWHIDE_VEST: Type = {
+  export const COWHIDE_VEST: Accessory = {
     description: 'A brown full-grain leather vest.',
     effects: [
       {
@@ -140,20 +131,20 @@ export namespace Accessory {
     name: 'Cowhide Vest',
   };
 
-  export const FUNERAL_JAR: Type = {
+  export const FUNERAL_JAR: Accessory = {
     description: 'A home-made funeral urn.',
     gearSlots: [Slot.WAIST],
     name: 'Funeral Jar',
     removable: false,
   };
 
-  export const SWORD_SHEATH: Type = {
+  export const SWORD_SHEATH: Accessory = {
     description: 'A sheath designed to hold a broad sword.',
     gearSlots: [Slot.BACK],
     name: 'Sword Sheath',
   };
 
-  export const MAGNETIC_GLOVES: Type = {
+  export const MAGNETIC_GLOVES: Accessory = {
     description: 'Helps catch metal objects.',
     effects: [
       {
@@ -167,7 +158,7 @@ export namespace Accessory {
     purpose: "Particularly useful with regards to Traez's boomerang",
   };
 
-  export const CATCHERS_MITT: Type = {
+  export const CATCHERS_MITT: Accessory = {
     description: 'Helps catch physical objects.',
     effects: [
       {
@@ -180,7 +171,7 @@ export namespace Accessory {
     name: 'Catchers Mitt',
   };
 
-  export const TURBAN: Type = {
+  export const TURBAN: Accessory = {
     description: 'A cream colored silk turban',
     effects: [
       {

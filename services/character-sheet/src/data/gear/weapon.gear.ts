@@ -1,4 +1,4 @@
-import { Skill, WeaponCategory } from '@galaxyops/character-sheet-contracts';
+import { Weapon, WeaponCategory } from '@galaxyops/character-sheet-contracts';
 import { Skills } from '../skills';
 
 /**
@@ -8,36 +8,14 @@ import { Skills } from '../skills';
  * For example, a character may be immune to unarmed attacks therefore boxing
  * gloves would deal no damage.
  */
-export namespace Weapon {
-  export type Type = {
-    name: string;
-    category: WeaponCategory;
-    // the immediately evident appearance of the weapon
-    description?: string;
-    // the history of the weapon, can be revealed by a special ability.
-    history?: string | null;
-    // used to determine damage per swing / etc
-    power: number;
-    // used to determine rate of use/fire
-    speed: number;
-
-    // dps could be calculated but would require character
-    // but pendents don't do damage
-
-    // the range of the attack
-    // todo UOM? feet, yards, meters?
-    // TODO should area be based on skill or weapon?
-    area: number;
-    actions: Skill[];
-  };
-
+export namespace Weapons {
   /**
    * Axes
    * Axes are an extremely powerful branch of weapons that take
    * a fierce amount of strength to wield but the damage provided by them is usually worth it.
    * Gear Slots – Right Hand AND Left Hand
    */
-  export const ASMINS_AXE: Type = {
+  export const ASMINS_AXE: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
     category: WeaponCategory.TWO_HANDED_AXE,
@@ -46,7 +24,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const GREAT_WAIL: Type = {
+  export const GREAT_WAIL: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
     category: WeaponCategory.TWO_HANDED_AXE,
@@ -57,7 +35,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const JUSTICE: Type = {
+  export const JUSTICE: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
     category: WeaponCategory.TWO_HANDED_AXE,
@@ -67,7 +45,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const KEYSTONE: Type = {
+  export const KEYSTONE: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
     category: WeaponCategory.TWO_HANDED_AXE,
@@ -88,7 +66,7 @@ export namespace Weapon {
    * Gear Slots – Right Hand AND Left Hand
    */
 
-  export const ASSAULTER: Type = {
+  export const ASSAULTER: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.BOOMERANG,
@@ -97,7 +75,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const STRIKER: Type = {
+  export const STRIKER: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.BOOMERANG,
@@ -113,7 +91,7 @@ export namespace Weapon {
    *
    * Gear Slots – Right Hand AND Left Hand
    */
-  export const ENERGY_BREAKER: Type = {
+  export const ENERGY_BREAKER: Weapon = {
     actions: [Skills.BLOCK_LV1, Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.SHIELD_SWORD,
@@ -126,7 +104,7 @@ export namespace Weapon {
     // FIRE 2d5
   };
 
-  export const STONE_BREAKER: Type = {
+  export const STONE_BREAKER: Weapon = {
     actions: [Skills.BLOCK_LV1, Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.SHIELD_SWORD,
@@ -142,7 +120,7 @@ export namespace Weapon {
     // Increases experience earned.
   };
 
-  export const THE_MAN_SLAYER: Type = {
+  export const THE_MAN_SLAYER: Weapon = {
     actions: [Skills.BLOCK_LV1, Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.SHIELD_SWORD,
@@ -161,7 +139,7 @@ export namespace Weapon {
    *
    * Gear Slots – Right Hand AND Left Hand
    */
-  export const HEROS_BLADE: Type = {
+  export const HEROS_BLADE: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.BROAD_SWORD,
@@ -172,7 +150,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const SWORD_OF_LAWZON: Type = {
+  export const SWORD_OF_LAWZON: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.BROAD_SWORD,
@@ -188,7 +166,7 @@ export namespace Weapon {
    * amplify and release their spells.
    * They can also be used to deal melee damage.
    */
-  export const TINY_TIMBER: Type = {
+  export const TINY_TIMBER: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.STAFF,
@@ -198,7 +176,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const CADUCEUS: Type = {
+  export const CADUCEUS: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.STAFF,
@@ -210,7 +188,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const ANTEDILUVIAN: Type = {
+  export const ANTEDILUVIAN: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.STAFF,
@@ -227,7 +205,7 @@ export namespace Weapon {
    * Gear Slots – Right Hand OR Left Hand (only equipped one at a time)
    */
 
-  export const ETERNAL_FOLD: Type = {
+  export const ETERNAL_FOLD: Weapon = {
     actions: [Skills.STAB_LV1],
     area: 1,
     category: WeaponCategory.RAPIER,
@@ -238,7 +216,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const GOLD_RUSH: Type = {
+  export const GOLD_RUSH: Weapon = {
     actions: [Skills.STAB_LV1],
     area: 1,
     category: WeaponCategory.RAPIER,
@@ -249,7 +227,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const KINGS_BLADE: Type = {
+  export const KINGS_BLADE: Weapon = {
     actions: [Skills.STAB_LV1],
     area: 1,
     category: WeaponCategory.RAPIER,
@@ -259,7 +237,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const RUSTY_RAPIER: Type = {
+  export const RUSTY_RAPIER: Weapon = {
     actions: [Skills.STAB_LV1],
     area: 1,
     category: WeaponCategory.RAPIER,
@@ -277,7 +255,7 @@ export namespace Weapon {
    * Gear Slots – Necklace AND DISABLED (Right Hand AND Left Hand)
    */
 
-  export const MYSTERIOUS_PENDANT: Type = {
+  export const MYSTERIOUS_PENDANT: Weapon = {
     actions: [Skills.WARD_LV1, Skills.CURE_LV1],
     area: 1,
     category: WeaponCategory.PENDANT,
@@ -286,7 +264,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const PEACEKEEPER: Type = {
+  export const PEACEKEEPER: Weapon = {
     actions: [Skills.LULLABY_LV1, Skills.PROTECT_LV1],
     area: 1,
     category: WeaponCategory.PENDANT,
@@ -295,7 +273,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const TROUBLE_MAKER: Type = {
+  export const TROUBLE_MAKER: Weapon = {
     actions: [Skills.BLOOD_LUST_LV1, Skills.DARKNESS_LV1],
     area: 1,
     category: WeaponCategory.PENDANT,
@@ -309,7 +287,7 @@ export namespace Weapon {
    * A weapon that can reach ranged targets.
    */
 
-  export const STANDARD_ISSUE: Type = {
+  export const STANDARD_ISSUE: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
     category: WeaponCategory.DUAL_KYOKETSU_SHOGE,
@@ -327,7 +305,7 @@ export namespace Weapon {
 
   // which one is Wisp’s Knife?
 
-  export const GREED: Type = {
+  export const GREED: Weapon = {
     actions: [Skills.SLASH_LV1, Skills.ABSORB_LV1],
     area: 1,
     category: WeaponCategory.KNIFE,
@@ -339,7 +317,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const LIBERTY: Type = {
+  export const LIBERTY: Weapon = {
     actions: [Skills.SLASH_LV1, Skills.CLEAVE_LV1],
     area: 1,
     category: WeaponCategory.KNIFE,
@@ -348,7 +326,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const MONARCH: Type = {
+  export const MONARCH: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
     category: WeaponCategory.KNIFE,
@@ -359,7 +337,7 @@ export namespace Weapon {
     speed: 30, // TODO may be poison slash or somehow add change of poison to action?
   };
 
-  export const REGRET: Type = {
+  export const REGRET: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
     category: WeaponCategory.KNIFE,
@@ -368,7 +346,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const VICEROY: Type = {
+  export const VICEROY: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
     category: WeaponCategory.KNIFE,
@@ -382,7 +360,7 @@ export namespace Weapon {
     speed: 30,
   };
 
-  export const VIOLATED: Type = {
+  export const VIOLATED: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
 
@@ -399,7 +377,7 @@ export namespace Weapon {
   /**
    * Shields
    */
-  export const BUCKLER: Type = {
+  export const BUCKLER: Weapon = {
     actions: [Skills.BLOCK_LV1, Skills.PARRY_LV1],
     area: 1,
     category: WeaponCategory.SHIELD,

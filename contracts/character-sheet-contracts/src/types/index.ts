@@ -16,3 +16,4 @@ export * from './table.effect';
 export * from './tag.effect';
 export * from './trait';
 export * from './weapon';
+export * from './accessory';

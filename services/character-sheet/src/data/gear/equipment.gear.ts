@@ -1,11 +1,11 @@
-import { Accessory } from './accessory.gear';
-import { Outfit } from './outfit.gear';
-import { Weapon } from './weapon.gear';
+import { Accessories } from './accessory.gear';
+import { Outfits } from './outfit.gear';
+import { Weapons } from './weapon.gear';
 
 export const Equipment = {
-  ...Accessory,
-  ...Outfit,
-  ...Weapon,
+  ...Accessories,
+  ...Outfits,
+  ...Weapons,
 };
 
 /**
