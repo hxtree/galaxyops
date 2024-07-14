@@ -1,7 +1,10 @@
-import { Attribute } from '../attribute';
-import { MenuSlot, MenuSlotType } from '../menu-slot';
-import { SkillLevel, SkillType } from './skill.type';
-import { ActionTarget } from '../action-target';
+import {
+  Attribute,
+  ActionTarget,
+  MenuSlot,
+  Skill,
+  SkillLevel,
+} from '@galaxyops/character-sheet-contracts';
 
 /**
  * Passive skills are innate abilities or enhancements possessed by characters
@@ -13,7 +16,7 @@ import { ActionTarget } from '../action-target';
  * need for deliberate action.
  */
 export namespace Passive {
-  export const THE_ONE_MAX: SkillType = {
+  export const THE_ONE_MAX: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -50,7 +53,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const PHYSICAL_CONDITIONING_LV1: SkillType = {
+  export const PHYSICAL_CONDITIONING_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -87,7 +90,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const SPIRITUAL_GROWTH_LV1: SkillType = {
+  export const SPIRITUAL_GROWTH_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -104,7 +107,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const MENTAL_DISCIPLINE_LV1: SkillType = {
+  export const MENTAL_DISCIPLINE_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -126,7 +129,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const PRECISION_AND_TECHNIQUE_LV1: SkillType = {
+  export const PRECISION_AND_TECHNIQUE_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -148,7 +151,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const DUAL_WELD_LV1: SkillType = {
+  export const DUAL_WELD_LV1: Skill = {
     description: 'Can use two one handed weapons at once.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
@@ -156,7 +159,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const ESCAPE_ARTIST_LV1: SkillType = {
+  export const ESCAPE_ARTIST_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -173,7 +176,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const INTIMIDATE_LV1: SkillType = {
+  export const INTIMIDATE_LV1: Skill = {
     description: 'Causes fear in enemy',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
@@ -181,7 +184,7 @@ export namespace Passive {
     target: ActionTarget.OPPONENT,
   };
 
-  export const CONCENTRATION_LV1: SkillType = {
+  export const CONCENTRATION_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -198,7 +201,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const BLUFF_LV1: SkillType = {
+  export const BLUFF_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -215,7 +218,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const SENSE_BLUFF_LV1: SkillType = {
+  export const SENSE_BLUFF_LV1: Skill = {
     description: 'Detect if a lie is being told',
     level: SkillLevel.LV1,
     // if character beats bluff check, a little icon on the screen will tell
@@ -224,7 +227,7 @@ export namespace Passive {
     name: 'Sense Bluff',
     target: ActionTarget.SELF,
   };
-  export const GREEDY_INTENT_LV1: SkillType = {
+  export const GREEDY_INTENT_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -241,7 +244,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const SLOTH_COMPOSURE_LV1: SkillType = {
+  export const SLOTH_COMPOSURE_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -258,7 +261,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const BLOOD_LUST_LV1: SkillType = {
+  export const BLOOD_LUST_LV1: Skill = {
     // Acquired by defeating Lust.
     actionEffects: {
       SELF: [
@@ -277,7 +280,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const ENVIOUS_OF_COMBAT_LV1: SkillType = {
+  export const ENVIOUS_OF_COMBAT_LV1: Skill = {
     // Acquired by defeating Envy.
     actionEffects: {
       SELF: [
@@ -296,7 +299,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const GLUTTONOUS_DESIRE_LV1: SkillType = {
+  export const GLUTTONOUS_DESIRE_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -315,7 +318,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const CATCHER_LV1: SkillType = {
+  export const CATCHER_LV1: Skill = {
     actionEffects: {
       SELF: [
         {
@@ -332,7 +335,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const LIMITLESS_LV1: SkillType = {
+  export const LIMITLESS_LV1: Skill = {
     description: 'Higher level cap.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,

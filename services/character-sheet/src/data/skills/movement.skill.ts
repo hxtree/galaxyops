@@ -1,15 +1,18 @@
-import { MenuSlot } from '../menu-slot';
-import { SkillType, SkillLevel } from './skill.type';
-import { GameContext } from '../game-context';
-import { Button } from '../buttons';
-import { Attribute } from '../attribute';
-import { ActionTarget } from '../action-target';
+import {
+  GameContext,
+  Button,
+  Attribute,
+  ActionTarget,
+  MenuSlot,
+  Skill,
+  SkillLevel,
+} from '@galaxyops/character-sheet-contracts';
 
 /**
  * actions that are exclusively movements
  */
 export namespace Movement {
-  export const WALK_LV1: SkillType = {
+  export const WALK_LV1: Skill = {
     buttonCombos: [
       {
         context: GameContext.TERRAIN,
@@ -39,7 +42,7 @@ export namespace Movement {
     target: ActionTarget.SELF,
   };
 
-  export const RUN_LV1: SkillType = {
+  export const RUN_LV1: Skill = {
     buttonCombos: [
       {
         context: GameContext.TERRAIN,
@@ -77,7 +80,7 @@ export namespace Movement {
   };
 
   // party members should have to learn
-  export const SWIM_LV1: SkillType = {
+  export const SWIM_LV1: Skill = {
     buttonCombos: [
       {
         context: GameContext.WATER,
@@ -114,7 +117,7 @@ export namespace Movement {
     target: ActionTarget.SELF,
   };
 
-  export const SWIM_FAST_LV1: SkillType = {
+  export const SWIM_FAST_LV1: Skill = {
     buttonCombos: [
       {
         context: GameContext.WATER,
@@ -151,7 +154,7 @@ export namespace Movement {
     target: ActionTarget.SELF,
   };
 
-  export const BACK_FLIP_LV1: SkillType = {
+  export const BACK_FLIP_LV1: Skill = {
     buttonCombos: [
       {
         context: GameContext.TERRAIN,
@@ -188,7 +191,7 @@ export namespace Movement {
     target: ActionTarget.SELF,
   };
 
-  export const DOUBLE_BACK_FLIP_LV1: SkillType = {
+  export const DOUBLE_BACK_FLIP_LV1: Skill = {
     buttonCombos: [
       {
         context: GameContext.TERRAIN,
@@ -225,7 +228,7 @@ export namespace Movement {
     target: ActionTarget.SELF,
   };
 
-  export const JUMP_LV1: SkillType = {
+  export const JUMP_LV1: Skill = {
     buttonCombos: [
       {
         context: GameContext.TERRAIN,
@@ -267,7 +270,7 @@ export namespace Movement {
   // "87","Long Jump","Jump a long way (different than running?)","86",,"86"
   // "88","Running Jump","Running while jumping","87",,"87"
 
-  export const HIGH_JUMP_LV1: SkillType = {
+  export const HIGH_JUMP_LV1: Skill = {
     buttonCombos: [
       {
         context: GameContext.TERRAIN,
@@ -307,7 +310,7 @@ export namespace Movement {
     target: ActionTarget.SELF,
   };
 
-  export const CLIMB_LV1: SkillType = {
+  export const CLIMB_LV1: Skill = {
     description: 'Scale a wall',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.MOVEMENT,
@@ -315,7 +318,7 @@ export namespace Movement {
     target: ActionTarget.SELF,
   };
 
-  export const TREK_LV1: SkillType = {
+  export const TREK_LV1: Skill = {
     description:
       'Walk up steep hill without falling down. '
       + 'Used to determine how steep an angled tile you can stand on. '

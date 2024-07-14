@@ -1,4 +1,5 @@
-import { Skill, SkillType } from '../skill';
+import { Skill, WeaponCategory } from '@galaxyops/character-sheet-contracts';
+import { Skills } from '../skills';
 
 /**
  * Weapon is a tag applied to a weapon export const and is used to determine
@@ -10,7 +11,7 @@ import { Skill, SkillType } from '../skill';
 export namespace Weapon {
   export type Type = {
     name: string;
-    category: Category;
+    category: WeaponCategory;
     // the immediately evident appearance of the weapon
     description?: string;
     // the history of the weapon, can be revealed by a special ability.
@@ -27,42 +28,8 @@ export namespace Weapon {
     // todo UOM? feet, yards, meters?
     // TODO should area be based on skill or weapon?
     area: number;
-    actions: SkillType[];
+    actions: Skill[];
   };
-
-  // the category of the weapon, used to determine equability, weakness and resistance.
-  export enum Category {
-    ARROW = 'Arrow',
-    BOW = 'Bow',
-    BLADE = 'Blade',
-    BOOMERANG = 'Boomerang',
-    BROAD_SWORD = 'Broadsword',
-    BLUNT = 'Blunt',
-    CLAW = 'Claw',
-    CROSSBOW = 'Crossbow',
-    DAGGER = 'Dagger',
-    DART = 'Dart',
-    FLAIL = 'Flail',
-    HAMMER = 'Hammer',
-    HAND_AXE = 'Hand Axe',
-    HAND_SWORD = 'Hand Sword',
-    HATCHET = 'Hatchet',
-    KNIFE = 'Knife',
-    MACE = 'Mace',
-    POLEARM = 'Polearm',
-    SHIELD = 'Shield',
-    STAFF = 'Staff',
-    SWORD = 'Sword',
-    SHIELD_SWORD = 'Shield Sword',
-    RAPIER = 'Rapiers',
-    TOME = 'Tome',
-    TWO_HANDED_AXE = 'Two-handed Axe', // todo should this be based on weight and dependent on character
-    WAND = 'Wand',
-    UNARMED = 'Unarmed',
-    UNKNOWN = 'Unknown',
-    PENDANT = 'Pendant',
-    DUAL_KYOKETSU_SHOGE = 'Dual Kyoketsu Shoge',
-  }
 
   /**
    * Axes
@@ -71,18 +38,18 @@ export namespace Weapon {
    * Gear Slots – Right Hand AND Left Hand
    */
   export const ASMINS_AXE: Type = {
-    actions: [Skill.SLASH_LV1],
+    actions: [Skills.SLASH_LV1],
     area: 1,
-    category: Category.TWO_HANDED_AXE,
+    category: WeaponCategory.TWO_HANDED_AXE,
     name: "Asmin's Aze",
     power: 100,
     speed: 30,
   };
 
   export const GREAT_WAIL: Type = {
-    actions: [Skill.SLASH_LV1],
+    actions: [Skills.SLASH_LV1],
     area: 1,
-    category: Category.TWO_HANDED_AXE,
+    category: WeaponCategory.TWO_HANDED_AXE,
     description:
       'A large axe that can break through bone and makes a loud sound when swung',
     name: 'Great Wail',
@@ -91,9 +58,9 @@ export namespace Weapon {
   };
 
   export const JUSTICE: Type = {
-    actions: [Skill.SLASH_LV1],
+    actions: [Skills.SLASH_LV1],
     area: 1,
-    category: Category.TWO_HANDED_AXE,
+    category: WeaponCategory.TWO_HANDED_AXE,
     history: "Gunter's trademark axe",
     name: 'Justice',
     power: 100,
@@ -101,9 +68,9 @@ export namespace Weapon {
   };
 
   export const KEYSTONE: Type = {
-    actions: [Skill.SLASH_LV1],
+    actions: [Skills.SLASH_LV1],
     area: 1,
-    category: Category.TWO_HANDED_AXE,
+    category: WeaponCategory.TWO_HANDED_AXE,
     description:
       'A giant axe made of from a giant keystone with an iron bar stuck through it.',
     name: 'Keystone',
@@ -122,18 +89,18 @@ export namespace Weapon {
    */
 
   export const ASSAULTER: Type = {
-    actions: [Skill.STRIKE_LV1],
+    actions: [Skills.STRIKE_LV1],
     area: 1,
-    category: Category.BOOMERANG,
+    category: WeaponCategory.BOOMERANG,
     name: 'Assaulter',
     power: 100,
     speed: 30,
   };
 
   export const STRIKER: Type = {
-    actions: [Skill.STRIKE_LV1],
+    actions: [Skills.STRIKE_LV1],
     area: 1,
-    category: Category.BOOMERANG,
+    category: WeaponCategory.BOOMERANG,
     description: ' An extremely fast and deadly boomerang.',
     name: 'Striker',
     power: 100,
@@ -147,9 +114,9 @@ export namespace Weapon {
    * Gear Slots – Right Hand AND Left Hand
    */
   export const ENERGY_BREAKER: Type = {
-    actions: [Skill.BLOCK_LV1, Skill.STRIKE_LV1],
+    actions: [Skills.BLOCK_LV1, Skills.STRIKE_LV1],
     area: 1,
-    category: Category.SHIELD_SWORD,
+    category: WeaponCategory.SHIELD_SWORD,
     description:
       'An extremely large and heavy weapon that absorbs and releases energy.',
     name: 'EnergyBreaker',
@@ -160,9 +127,9 @@ export namespace Weapon {
   };
 
   export const STONE_BREAKER: Type = {
-    actions: [Skill.BLOCK_LV1, Skill.STRIKE_LV1],
+    actions: [Skills.BLOCK_LV1, Skills.STRIKE_LV1],
     area: 1,
-    category: Category.SHIELD_SWORD,
+    category: WeaponCategory.SHIELD_SWORD,
     description:
       'An extremely large and heavy weapon with a special guilloche handle for grip.',
     history: 'It was reportedly used by Galax to bring peace.',
@@ -176,9 +143,9 @@ export namespace Weapon {
   };
 
   export const THE_MAN_SLAYER: Type = {
-    actions: [Skill.BLOCK_LV1, Skill.STRIKE_LV1],
+    actions: [Skills.BLOCK_LV1, Skills.STRIKE_LV1],
     area: 1,
-    category: Category.SHIELD_SWORD,
+    category: WeaponCategory.SHIELD_SWORD,
     description:
       'A giant ancient hellish looking blade. Its handle bares a dogtooth design.',
     history: 'It was reportedly used by Galax to bring peace.',
@@ -195,9 +162,9 @@ export namespace Weapon {
    * Gear Slots – Right Hand AND Left Hand
    */
   export const HEROS_BLADE: Type = {
-    actions: [Skill.STRIKE_LV1],
+    actions: [Skills.STRIKE_LV1],
     area: 1,
-    category: Category.BROAD_SWORD,
+    category: WeaponCategory.BROAD_SWORD,
     description:
       'A mystical blade that is destine to fall into the hands of the next true hero.',
     name: "Hero's Blade",
@@ -206,9 +173,9 @@ export namespace Weapon {
   };
 
   export const SWORD_OF_LAWZON: Type = {
-    actions: [Skill.STRIKE_LV1],
+    actions: [Skills.STRIKE_LV1],
     area: 1,
-    category: Category.BROAD_SWORD,
+    category: WeaponCategory.BROAD_SWORD,
     description: 'A dirty simple solid blade forged of harden steel.',
     name: 'Sword of Lawzon',
     power: 100,
@@ -222,9 +189,9 @@ export namespace Weapon {
    * They can also be used to deal melee damage.
    */
   export const TINY_TIMBER: Type = {
-    actions: [Skill.STRIKE_LV1],
+    actions: [Skills.STRIKE_LV1],
     area: 1,
-    category: Category.STAFF,
+    category: WeaponCategory.STAFF,
     description: 'A basic staff given to Magi in training',
     name: 'Tiny Timber',
     power: 100,
@@ -232,9 +199,9 @@ export namespace Weapon {
   };
 
   export const CADUCEUS: Type = {
-    actions: [Skill.STRIKE_LV1],
+    actions: [Skills.STRIKE_LV1],
     area: 1,
-    category: Category.STAFF,
+    category: WeaponCategory.STAFF,
     description:
       'A staff with two serpents wrapped around it base and two wings that expand from its top.',
     history: 'An ancient wand said to be carried by the messenger of God.',
@@ -244,9 +211,9 @@ export namespace Weapon {
   };
 
   export const ANTEDILUVIAN: Type = {
-    actions: [Skill.STRIKE_LV1],
+    actions: [Skills.STRIKE_LV1],
     area: 1,
-    category: Category.STAFF,
+    category: WeaponCategory.STAFF,
     description: 'An ancient wooden staff',
     history: 'An ancient weapon used to slay devils of the old world',
     name: 'Antediluvian',
@@ -261,9 +228,9 @@ export namespace Weapon {
    */
 
   export const ETERNAL_FOLD: Type = {
-    actions: [Skill.STAB_LV1],
+    actions: [Skills.STAB_LV1],
     area: 1,
-    category: Category.RAPIER,
+    category: WeaponCategory.RAPIER,
     history:
       'A sword that has been folded by generations of blacksmiths to create a flawless steel sword',
     name: 'Eternal Fold',
@@ -272,9 +239,9 @@ export namespace Weapon {
   };
 
   export const GOLD_RUSH: Type = {
-    actions: [Skill.STAB_LV1],
+    actions: [Skills.STAB_LV1],
     area: 1,
-    category: Category.RAPIER,
+    category: WeaponCategory.RAPIER,
     description:
       'A golden color sword that looks more fitting on a wall then a battlefield.',
     name: 'Gold Rush',
@@ -283,9 +250,9 @@ export namespace Weapon {
   };
 
   export const KINGS_BLADE: Type = {
-    actions: [Skill.STAB_LV1],
+    actions: [Skills.STAB_LV1],
     area: 1,
-    category: Category.RAPIER,
+    category: WeaponCategory.RAPIER,
     description: 'Whomever posses this blade is King of Rudner.',
     name: "King's Blade",
     power: 100,
@@ -293,9 +260,9 @@ export namespace Weapon {
   };
 
   export const RUSTY_RAPIER: Type = {
-    actions: [Skill.STAB_LV1],
+    actions: [Skills.STAB_LV1],
     area: 1,
-    category: Category.RAPIER,
+    category: WeaponCategory.RAPIER,
     description: 'A rusty sword. Chance of poisoning target.',
     name: 'Rusty Rapier',
     power: 100,
@@ -311,27 +278,27 @@ export namespace Weapon {
    */
 
   export const MYSTERIOUS_PENDANT: Type = {
-    actions: [Skill.WARD_LV1, Skill.CURE_LV1],
+    actions: [Skills.WARD_LV1, Skills.CURE_LV1],
     area: 1,
-    category: Category.PENDANT,
+    category: WeaponCategory.PENDANT,
     name: 'Mysterious Pendant',
     power: 100,
     speed: 30,
   };
 
   export const PEACEKEEPER: Type = {
-    actions: [Skill.LULLABY_LV1, Skill.PROTECT_LV1],
+    actions: [Skills.LULLABY_LV1, Skills.PROTECT_LV1],
     area: 1,
-    category: Category.PENDANT,
+    category: WeaponCategory.PENDANT,
     name: 'Peace Keeper',
     power: 100,
     speed: 30,
   };
 
   export const TROUBLE_MAKER: Type = {
-    actions: [Skill.BLOOD_LUST_LV1, Skill.DARKNESS_LV1],
+    actions: [Skills.BLOOD_LUST_LV1, Skills.DARKNESS_LV1],
     area: 1,
-    category: Category.PENDANT,
+    category: WeaponCategory.PENDANT,
     name: 'Trouble Maker',
     power: 100,
     speed: 30,
@@ -343,9 +310,9 @@ export namespace Weapon {
    */
 
   export const STANDARD_ISSUE: Type = {
-    actions: [Skill.STRIKE_LV1],
+    actions: [Skills.STRIKE_LV1],
     area: 1,
-    category: Category.DUAL_KYOKETSU_SHOGE,
+    category: WeaponCategory.DUAL_KYOKETSU_SHOGE,
     description: 'The common Dual Kyoketsu Shoge given to fascist.',
     name: 'Standard Issue',
     power: 100,
@@ -361,9 +328,9 @@ export namespace Weapon {
   // which one is Wisp’s Knife?
 
   export const GREED: Type = {
-    actions: [Skill.SLASH_LV1, Skill.ABSORB_LV1],
+    actions: [Skills.SLASH_LV1, Skills.ABSORB_LV1],
     area: 1,
-    category: Category.KNIFE,
+    category: WeaponCategory.KNIFE,
     description:
       'A intricate, powerful weapon that is capable of stealing the life from its target.',
     history: 'This weapon belonged to Wisp',
@@ -373,18 +340,18 @@ export namespace Weapon {
   };
 
   export const LIBERTY: Type = {
-    actions: [Skill.SLASH_LV1, Skill.CLEAVE_LV1],
+    actions: [Skills.SLASH_LV1, Skills.CLEAVE_LV1],
     area: 1,
-    category: Category.KNIFE,
+    category: WeaponCategory.KNIFE,
     name: 'Liberty',
     power: 100,
     speed: 30,
   };
 
   export const MONARCH: Type = {
-    actions: [Skill.SLASH_LV1],
+    actions: [Skills.SLASH_LV1],
     area: 1,
-    category: Category.KNIFE,
+    category: WeaponCategory.KNIFE,
     description:
       'A brilliantly designed insect looking blade with a sharp and deadly tip that is dripping with poison.',
     name: 'Monarch',
@@ -393,18 +360,18 @@ export namespace Weapon {
   };
 
   export const REGRET: Type = {
-    actions: [Skill.SLASH_LV1],
+    actions: [Skills.SLASH_LV1],
     area: 1,
-    category: Category.KNIFE,
+    category: WeaponCategory.KNIFE,
     name: 'Regret',
     power: 100,
     speed: 30,
   };
 
   export const VICEROY: Type = {
-    actions: [Skill.SLASH_LV1],
+    actions: [Skills.SLASH_LV1],
     area: 1,
-    category: Category.KNIFE,
+    category: WeaponCategory.KNIFE,
     description:
       'A brilliantly designed insect looking blade with a sharp and deadly tip.',
     name: 'Viceroy',
@@ -416,10 +383,10 @@ export namespace Weapon {
   };
 
   export const VIOLATED: Type = {
-    actions: [Skill.SLASH_LV1],
+    actions: [Skills.SLASH_LV1],
     area: 1,
 
-    category: Category.KNIFE,
+    category: WeaponCategory.KNIFE,
 
     name: 'Violated',
     // Weapon Absorbs the previous monsters type and uses it for the next attack.
@@ -433,9 +400,9 @@ export namespace Weapon {
    * Shields
    */
   export const BUCKLER: Type = {
-    actions: [Skill.BLOCK_LV1, Skill.PARRY_LV1],
+    actions: [Skills.BLOCK_LV1, Skills.PARRY_LV1],
     area: 1,
-    category: Category.SHIELD,
+    category: WeaponCategory.SHIELD,
     name: 'Buckler',
     power: 100,
     speed: 30,

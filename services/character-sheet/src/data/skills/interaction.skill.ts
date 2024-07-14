@@ -1,14 +1,16 @@
-import { ActionEffects } from '../table.effect';
-import { MenuSlot, MenuSlotType } from '../menu-slot';
-import { SkillType, SkillLevel } from './skill.type';
-import { ActionTarget } from '../action-target';
+import {
+  MenuSlot,
+  Skill,
+  SkillLevel,
+  ActionTarget,
+} from '@galaxyops/character-sheet-contracts';
 
 /**
  * Interaction skills are actions that can only be used when a compatible object is present.
  * They are a type of Command Menu action.
  */
 export namespace Interaction {
-  export const GRAB_LV1: SkillType = {
+  export const GRAB_LV1: Skill = {
     actionEffects: {
       INTERACTION_OBJECT: [
         {
@@ -25,7 +27,7 @@ export namespace Interaction {
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const PUSH_LV1: SkillType = {
+  export const PUSH_LV1: Skill = {
     description: 'Push an object.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
@@ -33,7 +35,7 @@ export namespace Interaction {
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const PULL_LV1: SkillType = {
+  export const PULL_LV1: Skill = {
     description: 'Pull an object.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
@@ -41,7 +43,7 @@ export namespace Interaction {
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const LIFT_LV1: SkillType = {
+  export const LIFT_LV1: Skill = {
     description: 'Lift an object.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
@@ -49,7 +51,7 @@ export namespace Interaction {
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const THROW_LV1: SkillType = {
+  export const THROW_LV1: Skill = {
     description: 'Throw an object.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.INTERACTION,
@@ -57,7 +59,7 @@ export namespace Interaction {
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const PICK_LOCK_LV1: SkillType = {
+  export const PICK_LOCK_LV1: Skill = {
     actionEffects: {
       INTERACTION_OBJECT: [
         {
@@ -81,7 +83,7 @@ export namespace Interaction {
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
-  export const UNLOCK_LV1: SkillType = {
+  export const UNLOCK_LV1: Skill = {
     actionEffects: {
       INTERACTION_OBJECT: [
         {

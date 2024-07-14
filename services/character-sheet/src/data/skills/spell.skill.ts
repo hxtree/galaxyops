@@ -1,11 +1,13 @@
 import { Duration } from 'luxon';
-import { Attribute } from '../attribute';
-import { EffectTag } from '../tag.effect';
-import { EffectRecord } from '../table.effect';
-import { MenuSlot } from '../menu-slot';
-import { SkillLevel, SkillType } from './skill.type';
-import { ActionTarget } from '../action-target';
-import { AreaOfEffect } from '../area-of-effect';
+import {
+  EffectTag,
+  AreaOfEffect,
+  Attribute,
+  ActionTarget,
+  MenuSlot,
+  Skill,
+  SkillLevel,
+} from '@galaxyops/character-sheet-contracts';
 
 /**
  * Spells are actions that are casted by magic users.
@@ -21,7 +23,7 @@ import { AreaOfEffect } from '../area-of-effect';
  * | 12  |  15 | Omega  | Omega Fireball |
  */
 export namespace Spell {
-  export const GRAVITY_LV1: SkillType = {
+  export const GRAVITY_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -44,7 +46,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const GRAVITY_LV2: SkillType = {
+  export const GRAVITY_LV2: Skill = {
     ...GRAVITY_LV1,
     actionEffects: {
       OPPONENT: [
@@ -63,7 +65,7 @@ export namespace Spell {
     recoveryTime: Duration.fromObject({ seconds: 2 }),
   };
 
-  export const SHOCK_LV1: SkillType = {
+  export const SHOCK_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -81,7 +83,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const QUAKE_LV1: SkillType = {
+  export const QUAKE_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.EARTH] },
@@ -100,7 +102,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const LANDSLIDE_LV1: SkillType = {
+  export const LANDSLIDE_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.EARTH] },
@@ -115,7 +117,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const BLIZZARD_LV1: SkillType = {
+  export const BLIZZARD_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -142,7 +144,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const FIREBALL_LV1: SkillType = {
+  export const FIREBALL_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.FIRE] },
@@ -156,7 +158,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const INFERNO_LV1: SkillType = {
+  export const INFERNO_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.FIRE] },
@@ -170,7 +172,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const TWISTER_LV1: SkillType = {
+  export const TWISTER_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
@@ -188,7 +190,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const GUST_LV1: SkillType = {
+  export const GUST_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
@@ -206,7 +208,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const GUST_LV2: SkillType = {
+  export const GUST_LV2: Skill = {
     ...GUST_LV1,
     actionEffects: {
       OPPONENT: [
@@ -222,7 +224,7 @@ export namespace Spell {
     name: 'Gale',
   };
 
-  export const CYCLONE_LV1: SkillType = {
+  export const CYCLONE_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.AIR] },
@@ -240,7 +242,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const TSUNAMI_LV1: SkillType = {
+  export const TSUNAMI_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.WATER] },
@@ -258,7 +260,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const AQUA_LV1: SkillType = {
+  export const AQUA_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.WATER] },
@@ -276,7 +278,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const HEAL_LV1: SkillType = {
+  export const HEAL_LV1: Skill = {
     actionEffects: {
       ALLY: [
         { add: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
@@ -289,7 +291,7 @@ export namespace Spell {
     target: ActionTarget.ALLY,
   };
 
-  export const REVIVE_LV1: SkillType = {
+  export const REVIVE_LV1: Skill = {
     actionEffects: { ALLY: [{ chance: 0.9, remove: 'LIFELESS', tags: [] }] },
     description: 'Restore life to target',
     level: SkillLevel.LV1,
@@ -298,7 +300,7 @@ export namespace Spell {
     target: ActionTarget.ALLY,
   };
 
-  export const CURE_LV1: SkillType = {
+  export const CURE_LV1: Skill = {
     actionEffects: {
       ALLY: [
         { chance: 1, remove: 'COLD' },
@@ -314,7 +316,7 @@ export namespace Spell {
     target: ActionTarget.ALLY,
   };
 
-  export const BARRIER_LV1: SkillType = {
+  export const BARRIER_LV1: Skill = {
     actionEffects: {
       ALLY: [{ add: 'BARRIER', chance: 1, tags: [EffectTag.AIR] }],
     },
@@ -325,7 +327,7 @@ export namespace Spell {
     target: ActionTarget.ALLY,
   };
 
-  export const BOOM_LV1: SkillType = {
+  export const BOOM_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -342,7 +344,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const REFLECT_LV1: SkillType = {
+  export const REFLECT_LV1: Skill = {
     actionEffects: { OPPONENT: [{ add: 'REFLECT', chance: 1 }] },
     description: 'Cast Reflect on target',
     level: SkillLevel.LV1,
@@ -351,7 +353,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const FLARE_LV1: SkillType = {
+  export const FLARE_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -373,7 +375,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const METEOR_LV1: SkillType = {
+  export const METEOR_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -395,7 +397,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const TELEPATHY_LV1: SkillType = {
+  export const TELEPATHY_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -412,7 +414,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const LIGHT_LV1: SkillType = {
+  export const LIGHT_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -429,7 +431,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const DESOLATE_LV1: SkillType = {
+  export const DESOLATE_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -451,7 +453,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const DARKNESS_LV1: SkillType = {
+  export const DARKNESS_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -468,7 +470,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const STOP_LV1: SkillType = {
+  export const STOP_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -485,7 +487,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const SLOW_LV1: SkillType = {
+  export const SLOW_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -502,7 +504,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const HASTE_LV1: SkillType = {
+  export const HASTE_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -519,7 +521,7 @@ export namespace Spell {
     target: ActionTarget.ALLY,
   };
 
-  export const CHILL_LV1: SkillType = {
+  export const CHILL_LV1: Skill = {
     description: '',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
@@ -527,7 +529,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const CHARM_LV1: SkillType = {
+  export const CHARM_LV1: Skill = {
     description: '',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
@@ -535,7 +537,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const FROST_LV1: SkillType = {
+  export const FROST_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -552,7 +554,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const ABSORB_LV1: SkillType = {
+  export const ABSORB_LV1: Skill = {
     description: '',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
@@ -560,7 +562,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const LEECH_LV1: SkillType = {
+  export const LEECH_LV1: Skill = {
     description: '',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.MAGIC,
@@ -568,7 +570,7 @@ export namespace Spell {
     target: ActionTarget.OPPONENT,
   };
 
-  export const DRAIN_LV1: SkillType = {
+  export const DRAIN_LV1: Skill = {
     actionEffects: {},
     description: '',
     level: SkillLevel.LV1,

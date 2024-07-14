@@ -1,9 +1,12 @@
 import { Duration } from 'luxon';
-import { Attribute } from '../attribute';
-import { EffectTag } from '../tag.effect';
-import { MenuSlot } from '../menu-slot';
-import { SkillType, SkillLevel } from './skill.type';
-import { ActionTarget } from '../action-target';
+import {
+  Attribute,
+  EffectTag,
+  ActionTarget,
+  MenuSlot,
+  Skill,
+  SkillLevel,
+} from '@galaxyops/character-sheet-contracts';
 
 /**
  * Weapon Skill
@@ -18,7 +21,7 @@ import { ActionTarget } from '../action-target';
  * e.g. Block lv1
  */
 export namespace Weapon {
-  export const BLOCK_LV1: SkillType = {
+  export const BLOCK_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -36,7 +39,7 @@ export namespace Weapon {
     target: ActionTarget.SELF,
   };
 
-  export const PARRY_LV1: SkillType = {
+  export const PARRY_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -63,7 +66,7 @@ export namespace Weapon {
     target: ActionTarget.SELF,
   };
 
-  export const SLASH_LV1: SkillType = {
+  export const SLASH_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -80,7 +83,7 @@ export namespace Weapon {
     target: ActionTarget.OPPONENT,
   };
 
-  export const STRIKE_LV1: SkillType = {
+  export const STRIKE_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -97,7 +100,7 @@ export namespace Weapon {
     target: ActionTarget.OPPONENT,
   };
 
-  export const STAB_LV1: SkillType = {
+  export const STAB_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -114,7 +117,7 @@ export namespace Weapon {
     target: ActionTarget.OPPONENT,
   };
 
-  export const CHOP_LV1: SkillType = {
+  export const CHOP_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -131,7 +134,7 @@ export namespace Weapon {
     target: ActionTarget.OPPONENT,
   };
 
-  export const CLEAVE_LV1: SkillType = {
+  export const CLEAVE_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {

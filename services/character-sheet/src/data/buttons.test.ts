@@ -1,7 +1,10 @@
 import {
-  checkButtonCombos, PlayerInput, Button, ButtonCombo,
-} from './buttons';
-import { GameContext } from './game-context';
+  PlayerInput,
+  Button,
+  ButtonCombo,
+  GameContext,
+} from '@galaxyops/character-sheet-contracts';
+import { checkButtonCombos } from './buttons';
 
 describe('checkButtonCombos', () => {
   it('should correctly match a valid combo within the timing window and context', () => {

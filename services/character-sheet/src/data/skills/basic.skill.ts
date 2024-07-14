@@ -1,10 +1,13 @@
 import { Duration } from 'luxon';
-import { Attribute } from '../attribute';
-import { MenuSlot, MenuSlotType } from '../menu-slot';
-import { SkillType, Focusable, SkillLevel } from './skill.type';
-import { ActionTarget } from '../action-target';
-import { AreaOfEffect } from '../area-of-effect';
-import { EffectTag } from '../tag.effect';
+import {
+  Attribute,
+  MenuSlot,
+  Skill,
+  SkillLevel,
+  ActionTarget,
+  AreaOfEffect,
+  EffectTag,
+} from '@galaxyops/character-sheet-contracts';
 
 /**
  * Active Skills are motor programs that a character learns to perform.
@@ -12,7 +15,7 @@ import { EffectTag } from '../tag.effect';
  * determined by class.
  */
 export namespace Basic {
-  export const CLAW_LV1: SkillType = {
+  export const CLAW_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -30,7 +33,7 @@ export namespace Basic {
     target: ActionTarget.OPPONENT,
   };
 
-  export const BOAST_LV1: SkillType = {
+  export const BOAST_LV1: Skill = {
     actionEffects: {
       ALLY: [
         {
@@ -48,7 +51,7 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const BOAST_LV2: SkillType = {
+  export const BOAST_LV2: Skill = {
     ...BOAST_LV1,
     actionEffects: {
       ALLY: [
@@ -63,7 +66,7 @@ export namespace Basic {
     level: SkillLevel.LV2,
   };
 
-  export const DISGUISE_LV1: SkillType = {
+  export const DISGUISE_LV1: Skill = {
     actionEffects: {},
     description: 'Changes appearance and disables command menu until canceled.',
     level: SkillLevel.LV1,
@@ -71,7 +74,7 @@ export namespace Basic {
     name: 'Disguise',
   };
 
-  export const DISMISS_LV1: SkillType = {
+  export const DISMISS_LV1: Skill = {
     actionEffects: {},
     description: 'Release a summon.',
     level: SkillLevel.LV1,
@@ -79,7 +82,7 @@ export namespace Basic {
     name: 'Dismiss',
   };
 
-  export const FOCUS_LV1: SkillType = {
+  export const FOCUS_LV1: Skill = {
     actionEffects: {
       ALLY: [
         {
@@ -107,7 +110,7 @@ export namespace Basic {
     target: ActionTarget.SELF,
   };
 
-  export const GRAPPLE_LV1: SkillType = {
+  export const GRAPPLE_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         { quantity: '1d6+2', remove: Attribute.LIFE },
@@ -126,7 +129,7 @@ export namespace Basic {
     target: ActionTarget.OPPONENT,
   };
 
-  export const HIDE_LV1: SkillType = {
+  export const HIDE_LV1: Skill = {
     actionEffects: {},
     description: 'Become invisible to enemies.',
     // TODO: Add effect, possibly increase speed
@@ -135,7 +138,7 @@ export namespace Basic {
     name: 'Hide',
   };
 
-  export const SCAN_LV1: SkillType = {
+  export const SCAN_LV1: Skill = {
     actionEffects: {},
     description: 'Read enemies stats.',
     level: SkillLevel.LV1,
@@ -143,7 +146,7 @@ export namespace Basic {
     name: 'Scan',
   };
 
-  export const CHEER_LV1: SkillType = {
+  export const CHEER_LV1: Skill = {
     actionEffects: {
       ALLY: [
         {
@@ -161,7 +164,7 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const SUPPORT_LV1: SkillType = {
+  export const SUPPORT_LV1: Skill = {
     actionEffects: {},
     description: 'Provide support to allies.',
     level: SkillLevel.LV1,
@@ -169,7 +172,7 @@ export namespace Basic {
     name: 'Support',
   };
 
-  export const HOPE_LV1: SkillType = {
+  export const HOPE_LV1: Skill = {
     actionEffects: {
       ALLY: [
         {
@@ -197,7 +200,7 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const INSPIRE_LV1: SkillType = {
+  export const INSPIRE_LV1: Skill = {
     actionEffects: {
       ALLY: [
         {
@@ -214,7 +217,7 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const SCOUT_LV1: SkillType = {
+  export const SCOUT_LV1: Skill = {
     actionEffects: {},
     description: 'Move ahead of the party to gather information.',
     level: SkillLevel.LV1,
@@ -222,7 +225,7 @@ export namespace Basic {
     name: 'Scout',
   };
 
-  export const MIMIC_LV1: SkillType = {
+  export const MIMIC_LV1: Skill = {
     actionEffects: {},
     description: 'Use the last move performed on you against the enemy.',
     level: SkillLevel.LV1,
@@ -230,7 +233,7 @@ export namespace Basic {
     name: 'Mimic',
   };
 
-  export const PICKPOCKET_LV1: SkillType = {
+  export const PICKPOCKET_LV1: Skill = {
     actionEffects: {},
     description: 'Steal items from enemies.',
     level: SkillLevel.LV1,
@@ -238,7 +241,7 @@ export namespace Basic {
     name: 'Pickpocket',
   };
 
-  export const SEAL_LV1: SkillType = {
+  export const SEAL_LV1: Skill = {
     actionEffects: {},
     description: 'Prevent enemies from approaching.',
     level: SkillLevel.LV1,
@@ -246,7 +249,7 @@ export namespace Basic {
     name: 'Seal',
   };
 
-  export const LULLABY_LV1: SkillType = {
+  export const LULLABY_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -273,7 +276,7 @@ export namespace Basic {
     target: ActionTarget.OPPONENT,
   };
 
-  export const WARD_LV1: SkillType = {
+  export const WARD_LV1: Skill = {
     actionEffects: {},
     cost: [{ quantity: '1d20+10', remove: Attribute.SPIRIT }],
     description: 'Keep enemies at bay with spiritual energy.',
@@ -282,7 +285,7 @@ export namespace Basic {
     name: 'Ward',
   };
 
-  export const SACRIFICE_LV1: SkillType = {
+  export const SACRIFICE_LV1: Skill = {
     actionEffects: {
       OPPONENT: [{ quantity: '1d20+10', remove: Attribute.LIFE }],
     },
@@ -293,7 +296,7 @@ export namespace Basic {
     name: 'Sacrifice',
   };
 
-  export const PROTECT_LV1: SkillType = {
+  export const PROTECT_LV1: Skill = {
     actionEffects: {
       ALLY: [
         {
@@ -316,7 +319,7 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const MOCK_LV1: SkillType = {
+  export const MOCK_LV1: Skill = {
     actionEffects: {},
     description: 'Taunt the enemy, potentially causing them to go berserk.',
     level: SkillLevel.LV1,
@@ -324,7 +327,7 @@ export namespace Basic {
     name: 'Mock',
   };
 
-  export const SEARCH_LV1: SkillType = {
+  export const SEARCH_LV1: Skill = {
     actionEffects: {},
     description: 'Scan the nearby area for valuable items.',
     level: SkillLevel.LV1,
@@ -332,7 +335,7 @@ export namespace Basic {
     name: 'Search',
   };
 
-  export const STEAL_LV1: SkillType = {
+  export const STEAL_LV1: Skill = {
     actionEffects: {},
     description: 'Take items from opponents.',
     level: SkillLevel.LV1,
@@ -340,7 +343,7 @@ export namespace Basic {
     name: 'Steal',
   };
 
-  export const REFLECT_LV1: SkillType = {
+  export const REFLECT_LV1: Skill = {
     actionEffects: {},
     description: 'Send enemy moves back at them.',
     level: SkillLevel.LV1,
@@ -348,7 +351,7 @@ export namespace Basic {
     name: 'Reflect',
   };
 
-  export const PROTECTION_LV1: SkillType = {
+  export const PROTECTION_LV1: Skill = {
     actionEffects: {
       ALLY: [
         {
@@ -369,7 +372,7 @@ export namespace Basic {
     target: ActionTarget.ALLY,
   };
 
-  export const LIGHT_LV1: SkillType = {
+  export const LIGHT_LV1: Skill = {
     actionEffects: {},
     description:
       'Bind enemies, potentially putting them to sleep and stopping their rage.',
@@ -378,7 +381,7 @@ export namespace Basic {
     name: 'Light',
   };
 
-  export const RAGE_LV1: SkillType = {
+  export const RAGE_LV1: Skill = {
     actionEffects: {
       ALLY: [
         {

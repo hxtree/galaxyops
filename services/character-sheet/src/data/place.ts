@@ -1,4 +1,4 @@
-import { Affiliation } from './affiliations';
+import { Affiliations } from './affiliations';
 import { ArchetypeId } from './archetype';
 
 export type SpawnGuideline = {
@@ -20,7 +20,7 @@ export namespace Place {
     description: '',
     facts: [
       "This is the town where both Malace and Madhi's originate. ",
-      `It is home to the ${Affiliation.CATCHERS.name}. `,
+      `It is home to the ${Affiliations.CATCHERS.name}. `,
       'It is home to many master tattoo artist. ',
       'The people of the town wear ninja masks often. ',
       'The village contains a gate to the demon realm. ',
@@ -64,7 +64,7 @@ export namespace Place {
 
   export const FLOATING_ISLAND: Type = {
     facts: [
-      `This was home to the ${Affiliation.ARCHANGELS.name}`,
+      `This was home to the ${Affiliations.ARCHANGELS.name}`,
       'Ouren Oni is sealed away within the center of the island',
       'The island fell into the sea',
     ],

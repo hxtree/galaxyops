@@ -1,5 +1,8 @@
-import { MenuSlot, MenuSlotType } from '../menu-slot';
-import { SkillType, SkillLevel } from './skill.type';
+import {
+  MenuSlot,
+  Skill,
+  SkillLevel,
+} from '@galaxyops/character-sheet-contracts';
 
 /**
  * Item
@@ -7,14 +10,14 @@ import { SkillType, SkillLevel } from './skill.type';
  * Are only accessible by a Player through the Menu screen
  */
 export namespace Item {
-  export const APPRAISE_LV1: SkillType = {
+  export const APPRAISE_LV1: Skill = {
     description: 'Determine the market value of an item',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ITEM,
     name: 'Appraise',
   };
 
-  export const COMBINE_LV1: SkillType = {
+  export const COMBINE_LV1: Skill = {
     description: 'Turn two or more items into one item if compatible',
     // CRAFT
     level: SkillLevel.LV1,
@@ -22,14 +25,14 @@ export namespace Item {
     name: 'Combine',
   };
 
-  export const THROW_LV1: SkillType = {
+  export const THROW_LV1: Skill = {
     description: 'Toss an item from stock away or to injure enemy.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ITEM,
     name: 'Throw',
   };
 
-  export const PREPARE_FOOD_LV1: SkillType = {
+  export const PREPARE_FOOD_LV1: Skill = {
     description: 'Make a meal',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ITEM,

@@ -1,4 +1,5 @@
-import { SkillType, Skill } from './skill';
+import { Skill } from '@galaxyops/character-sheet-contracts';
+import { Skills } from './skills';
 
 /**
  * Experience records a character experience for a specific discipline.
@@ -18,7 +19,7 @@ export enum DisciplineCategory {
 
 export type GainSkillType = {
   level: number;
-  skill: SkillType;
+  skill: Skill;
 };
 
 export type GainAttributeType = {
@@ -40,7 +41,7 @@ export type AbilityPointProgression = {
 
 export type SkillProgression = {
   level: number;
-  skill: SkillType;
+  skill: Skill;
 };
 
 export type DisciplineProgression = AbilityPointProgression | SkillProgression;
@@ -89,13 +90,13 @@ export namespace Discipline {
     name: 'Gymnast',
     progression: [
       ...awardAbilityPointEachLevel(1, 3, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 1, skill: Skill.JUMP_LV1 },
-      { level: 8, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 10, skill: Skill.BACK_FLIP_LV1 },
-      { level: 15, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
-      { level: 17, skill: Skill.DOUBLE_BACK_FLIP_LV1 },
-      { level: 18, skill: Skill.HIGH_JUMP_LV1 },
-      { level: 20, skill: Skill.CONCENTRATION_LV1 },
+      { level: 1, skill: Skills.JUMP_LV1 },
+      { level: 8, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 10, skill: Skills.BACK_FLIP_LV1 },
+      { level: 15, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 17, skill: Skills.DOUBLE_BACK_FLIP_LV1 },
+      { level: 18, skill: Skills.HIGH_JUMP_LV1 },
+      { level: 20, skill: Skills.CONCENTRATION_LV1 },
     ],
   };
 
@@ -106,11 +107,11 @@ export namespace Discipline {
     name: 'Wizard',
     progression: [
       ...awardAbilityPointEachLevel(1, 3, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.GUST_LV1 },
-      { level: 25, skill: Skill.FLARE_LV1 },
-      { level: 50, skill: Skill.HEAL_LV1 },
-      { level: 70, skill: Skill.LIGHT_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.GUST_LV1 },
+      { level: 25, skill: Skills.FLARE_LV1 },
+      { level: 50, skill: Skills.HEAL_LV1 },
+      { level: 70, skill: Skills.LIGHT_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -121,9 +122,9 @@ export namespace Discipline {
     name: 'Historian',
     progression: [
       ...awardAbilityPointEachLevel(3, 9, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.APPRAISE_LV1 },
-      { level: 13, skill: Skill.SCAN_LV1 },
-      { level: 20, skill: Skill.HERALDIC_LION_LV1 },
+      { level: 10, skill: Skills.APPRAISE_LV1 },
+      { level: 13, skill: Skills.SCAN_LV1 },
+      { level: 20, skill: Skills.HERALDIC_LION_LV1 },
     ],
   };
 
@@ -134,8 +135,8 @@ export namespace Discipline {
     name: 'Body Builder',
     progression: [
       ...awardAbilityPointEachLevel(3, 9, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 20, skill: Skill.SCRIBBLES_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 20, skill: Skills.SCRIBBLES_LV1 },
     ],
   };
 
@@ -147,7 +148,7 @@ export namespace Discipline {
     name: 'Cook',
     progression: [
       ...awardAbilityPointEachLevel(3, 9, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.PREPARE_FOOD_LV1 },
+      { level: 10, skill: Skills.PREPARE_FOOD_LV1 },
       // todo prepare different food items
     ],
   };
@@ -159,11 +160,11 @@ export namespace Discipline {
     name: 'Cheerleader',
     progression: [
       ...awardAbilityPointEachLevel(3, 9, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 1, skill: Skill.CHEER_LV1 },
-      { level: 10, skill: Skill.SUPPORT_LV1 },
-      { level: 12, skill: Skill.INSPIRE_LV1 },
-      { level: 18, skill: Skill.SPIRITUAL_GROWTH_LV1 },
-      { level: 20, skill: Skill.HOPE_LV1 },
+      { level: 1, skill: Skills.CHEER_LV1 },
+      { level: 10, skill: Skills.SUPPORT_LV1 },
+      { level: 12, skill: Skills.INSPIRE_LV1 },
+      { level: 18, skill: Skills.SPIRITUAL_GROWTH_LV1 },
+      { level: 20, skill: Skills.HOPE_LV1 },
     ],
   };
 
@@ -174,11 +175,11 @@ export namespace Discipline {
     name: 'Commander',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 1, skill: Skill.BOAST_LV1 },
-      { level: 10, skill: Skill.LAST_STAND_LV1 },
-      { level: 12, skill: Skill.BOAST_LV2 },
-      { level: 15, skill: Skill.BLITZ_STRIKE_LV1 },
-      { level: 20, skill: Skill.FLANK_LV1 },
+      { level: 1, skill: Skills.BOAST_LV1 },
+      { level: 10, skill: Skills.LAST_STAND_LV1 },
+      { level: 12, skill: Skills.BOAST_LV2 },
+      { level: 15, skill: Skills.BLITZ_STRIKE_LV1 },
+      { level: 20, skill: Skills.FLANK_LV1 },
     ],
   };
 
@@ -190,7 +191,7 @@ export namespace Discipline {
     prerequisites: [],
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
+      { level: 10, skill: Skills.SPIRITUAL_GROWTH_LV1 },
     ],
   };
 
@@ -203,8 +204,8 @@ export namespace Discipline {
     prerequisites: ['MAGI'],
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.DARKNESS_LV1 },
-      { level: 25, skill: Skill.DESOLATE_LV1 },
+      { level: 10, skill: Skills.DARKNESS_LV1 },
+      { level: 25, skill: Skills.DESOLATE_LV1 },
     ],
   };
 
@@ -217,9 +218,9 @@ export namespace Discipline {
     prerequisites: ['MAGI'],
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.RAGE_LV1 },
-      { level: 15, skill: Skill.AQUA_LV1 },
-      { level: 20, skill: Skill.TSUNAMI_LV1 },
+      { level: 10, skill: Skills.RAGE_LV1 },
+      { level: 15, skill: Skills.AQUA_LV1 },
+      { level: 20, skill: Skills.TSUNAMI_LV1 },
     ],
   };
 
@@ -232,8 +233,8 @@ export namespace Discipline {
     prerequisites: ['MAGI'],
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.QUAKE_LV1 },
-      { level: 15, skill: Skill.LANDSLIDE_LV1 },
+      { level: 10, skill: Skills.QUAKE_LV1 },
+      { level: 15, skill: Skills.LANDSLIDE_LV1 },
     ],
   };
 
@@ -246,9 +247,9 @@ export namespace Discipline {
     prerequisites: ['MAGI'],
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.STOP_LV1 },
-      { level: 15, skill: Skill.SLOW_LV1 },
-      { level: 15, skill: Skill.HASTE_LV1 },
+      { level: 10, skill: Skills.STOP_LV1 },
+      { level: 15, skill: Skills.SLOW_LV1 },
+      { level: 15, skill: Skills.HASTE_LV1 },
     ],
   };
 
@@ -261,8 +262,8 @@ export namespace Discipline {
     prerequisites: ['MAGI'],
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.CHARM_LV1 },
-      { level: 15, skill: Skill.CHILL_LV1 },
+      { level: 10, skill: Skills.CHARM_LV1 },
+      { level: 15, skill: Skills.CHILL_LV1 },
     ],
   };
 
@@ -276,7 +277,7 @@ export namespace Discipline {
     prerequisites: ['MAGI'],
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.QUAKE_LV1 },
+      { level: 10, skill: Skills.QUAKE_LV1 },
     ],
   };
 
@@ -289,10 +290,10 @@ export namespace Discipline {
     prerequisites: ['MAGI'],
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
-      { level: 10, skill: Skill.BLIZZARD_LV1 },
-      { level: 10, skill: Skill.FROST_LV1 },
-      { level: 10, skill: Skill.CHILL_LV1 },
+      { level: 10, skill: Skills.SPIRITUAL_GROWTH_LV1 },
+      { level: 10, skill: Skills.BLIZZARD_LV1 },
+      { level: 10, skill: Skills.FROST_LV1 },
+      { level: 10, skill: Skills.CHILL_LV1 },
     ],
   };
 
@@ -305,10 +306,10 @@ export namespace Discipline {
     prerequisites: ['MAGI'],
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
-      { level: 10, skill: Skill.DRAIN_LV1 },
-      { level: 25, skill: Skill.LEECH_LV1 },
-      { level: 50, skill: Skill.DRAIN_LV1 },
+      { level: 10, skill: Skills.SPIRITUAL_GROWTH_LV1 },
+      { level: 10, skill: Skills.DRAIN_LV1 },
+      { level: 25, skill: Skills.LEECH_LV1 },
+      { level: 50, skill: Skills.DRAIN_LV1 },
     ],
   };
 
@@ -319,7 +320,7 @@ export namespace Discipline {
     name: 'Guard',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.BLOCK_LV1 },
+      { level: 10, skill: Skills.BLOCK_LV1 },
     ],
   };
 
@@ -330,7 +331,7 @@ export namespace Discipline {
     name: 'Guardian',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
+      { level: 10, skill: Skills.SPIRITUAL_GROWTH_LV1 },
     ],
   };
 
@@ -351,11 +352,11 @@ export namespace Discipline {
     name: 'Knight',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.BLOCK_LV1 },
-      { level: 10, skill: Skill.STRIKE_LV1 },
-      { level: 10, skill: Skill.BLOCK_LV1 },
-      { level: 10, skill: Skill.CONCENTRATION_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.BLOCK_LV1 },
+      { level: 10, skill: Skills.STRIKE_LV1 },
+      { level: 10, skill: Skills.BLOCK_LV1 },
+      { level: 10, skill: Skills.CONCENTRATION_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -368,8 +369,8 @@ export namespace Discipline {
     name: 'Mechanic',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.SCAN_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.SCAN_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -380,8 +381,8 @@ export namespace Discipline {
     name: 'Rouge',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.DUAL_WELD_LV1 },
-      { level: 10, skill: Skill.PICKPOCKET_LV1 },
+      { level: 10, skill: Skills.DUAL_WELD_LV1 },
+      { level: 10, skill: Skills.PICKPOCKET_LV1 },
     ],
   };
 
@@ -392,9 +393,9 @@ export namespace Discipline {
     name: 'Royalty',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.COMMAND_LV1 },
-      { level: 10, skill: Skill.BOAST_LV1 },
-      { level: 40, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.COMMAND_LV1 },
+      { level: 10, skill: Skills.BOAST_LV1 },
+      { level: 40, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -405,8 +406,8 @@ export namespace Discipline {
     name: 'Rebel',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.STRIKE_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.STRIKE_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -418,8 +419,8 @@ export namespace Discipline {
     name: 'Scout',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.SCOUT_LV1 },
-      { level: 16, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.SCOUT_LV1 },
+      { level: 16, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -431,11 +432,11 @@ export namespace Discipline {
     name: 'Solider',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 1, skill: Skill.BLOCK_LV1 },
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 10, skill: Skill.CLEAVE_LV1 },
-      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
-      { level: 18, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 1, skill: Skills.BLOCK_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 10, skill: Skills.CLEAVE_LV1 },
+      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 18, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -446,9 +447,9 @@ export namespace Discipline {
     name: 'Summoner',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 2, skill: Skill.SUMMON_LV1 },
-      { level: 10, skill: Skill.DISMISS_LV1 },
-      { level: 14, skill: Skill.COMMAND_LV1 },
+      { level: 2, skill: Skills.SUMMON_LV1 },
+      { level: 10, skill: Skills.DISMISS_LV1 },
+      { level: 14, skill: Skills.COMMAND_LV1 },
     ],
   };
 
@@ -459,9 +460,9 @@ export namespace Discipline {
     name: 'Thief',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.PICKPOCKET_LV1 },
-      { level: 10, skill: Skill.PICK_LOCK_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.PICKPOCKET_LV1 },
+      { level: 10, skill: Skills.PICK_LOCK_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -472,12 +473,12 @@ export namespace Discipline {
     name: 'Warrior',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 2, skill: Skill.STRIKE_LV1 },
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 10, skill: Skill.RAGE_LV1 },
-      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
-      { level: 10, skill: Skill.BLOCK_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 2, skill: Skills.STRIKE_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 10, skill: Skills.RAGE_LV1 },
+      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 10, skill: Skills.BLOCK_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -489,9 +490,9 @@ export namespace Discipline {
     name: 'XSolider',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -502,13 +503,13 @@ export namespace Discipline {
     name: 'Assassin',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 3, skill: Skill.DUAL_WELD_LV1 },
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 12, skill: Skill.PICKPOCKET_LV1 },
-      { level: 15, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
-      { level: 18, skill: Skill.PICK_LOCK_LV1 },
-      { level: 20, skill: Skill.BACK_FLIP_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 3, skill: Skills.DUAL_WELD_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 12, skill: Skills.PICKPOCKET_LV1 },
+      { level: 15, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 18, skill: Skills.PICK_LOCK_LV1 },
+      { level: 20, skill: Skills.BACK_FLIP_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -519,8 +520,8 @@ export namespace Discipline {
     name: 'Healer',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.HEAL_LV1 },
-      { level: 10, skill: Skill.CURE_LV1 },
+      { level: 10, skill: Skills.HEAL_LV1 },
+      { level: 10, skill: Skills.CURE_LV1 },
     ],
   };
 
@@ -531,8 +532,8 @@ export namespace Discipline {
     name: 'Bard',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.LULLABY_LV1 },
-      { level: 10, skill: Skill.INSPIRE_LV1 },
+      { level: 10, skill: Skills.LULLABY_LV1 },
+      { level: 10, skill: Skills.INSPIRE_LV1 },
     ],
   };
 
@@ -543,9 +544,9 @@ export namespace Discipline {
     name: 'Duelist',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.PARRY_LV1 },
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.PARRY_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -556,8 +557,8 @@ export namespace Discipline {
     name: 'Rune King',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.BOAST_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.BOAST_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -568,7 +569,7 @@ export namespace Discipline {
     name: 'Maiden',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
+      { level: 10, skill: Skills.SPIRITUAL_GROWTH_LV1 },
     ],
   };
 
@@ -579,10 +580,10 @@ export namespace Discipline {
     name: 'Keeper',
     progression: [
       ...awardAbilityPointEachLevel(8, 16, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.HEAL_LV1 },
-      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
-      { level: 10, skill: Skill.CURE_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.HEAL_LV1 },
+      { level: 10, skill: Skills.SPIRITUAL_GROWTH_LV1 },
+      { level: 10, skill: Skills.CURE_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -593,10 +594,10 @@ export namespace Discipline {
     name: 'Sage',
     progression: [
       ...awardAbilityPointEachLevel(2, 4, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.SCAN_LV1 },
-      { level: 10, skill: Skill.SPIRITUAL_GROWTH_LV1 },
-      { level: 10, skill: Skill.CONCENTRATION_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.SCAN_LV1 },
+      { level: 10, skill: Skills.SPIRITUAL_GROWTH_LV1 },
+      { level: 10, skill: Skills.CONCENTRATION_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -607,7 +608,7 @@ export namespace Discipline {
     name: 'Possessed',
     progression: [
       ...awardAbilityPointEachLevel(6, 12, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
     ],
   };
 
@@ -618,11 +619,11 @@ export namespace Discipline {
     name: 'Ninja',
     progression: [
       ...awardAbilityPointEachLevel(3, 6, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 1, skill: Skill.STRIKE_LV1 },
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 10, skill: Skill.PARRY_LV1 },
-      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 1, skill: Skills.STRIKE_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 10, skill: Skills.PARRY_LV1 },
+      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -633,12 +634,12 @@ export namespace Discipline {
     name: 'Amber Assassin',
     progression: [
       ...awardAbilityPointEachLevel(3, 6, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 10, skill: Skill.STRIKE_LV1 },
-      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
-      { level: 10, skill: Skill.PARRY_LV1 },
-      { level: 10, skill: Skill.FIREBALL_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 10, skill: Skills.STRIKE_LV1 },
+      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 10, skill: Skills.PARRY_LV1 },
+      { level: 10, skill: Skills.FIREBALL_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -649,9 +650,9 @@ export namespace Discipline {
     name: 'Elite Assassin',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -662,9 +663,9 @@ export namespace Discipline {
     name: 'Engineer',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.SCAN_LV1 },
-      { level: 10, skill: Skill.CONCENTRATION_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.SCAN_LV1 },
+      { level: 10, skill: Skills.CONCENTRATION_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -675,9 +676,9 @@ export namespace Discipline {
     name: 'Berserker',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.STRIKE_LV1 },
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 10, skill: Skill.RAGE_LV1 },
+      { level: 10, skill: Skills.STRIKE_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 10, skill: Skills.RAGE_LV1 },
     ],
   };
 
@@ -688,10 +689,10 @@ export namespace Discipline {
     name: 'Oni',
     progression: [
       ...awardAbilityPointEachLevel(1, 1, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 10, skill: Skill.ONI_LV1 },
-      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
-      { level: 10, skill: Skill.ONI_LV2 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 10, skill: Skills.ONI_LV1 },
+      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 10, skill: Skills.ONI_LV2 },
     ],
   };
 
@@ -702,7 +703,7 @@ export namespace Discipline {
     name: 'Keeper',
     progression: [
       ...awardAbilityPointEachLevel(1, 1, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -713,11 +714,11 @@ export namespace Discipline {
     name: 'Lightening Warrior',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skill.STRIKE_LV1 },
-      { level: 10, skill: Skill.PHYSICAL_CONDITIONING_LV1 },
-      { level: 15, skill: Skill.SHOCK_LV1 },
-      { level: 20, skill: Skill.PRECISION_AND_TECHNIQUE_LV1 },
-      { level: 25, skill: Skill.MENTAL_DISCIPLINE_LV1 },
+      { level: 10, skill: Skills.STRIKE_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 15, skill: Skills.SHOCK_LV1 },
+      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
 
@@ -757,7 +758,7 @@ export namespace Discipline {
     name: 'Basic Instinct',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 2, skill: Skill.CLAW_LV1 },
+      { level: 2, skill: Skills.CLAW_LV1 },
     ],
   };
 

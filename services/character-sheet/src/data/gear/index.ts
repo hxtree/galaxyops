@@ -5,7 +5,6 @@ import { Equipment } from './equipment.gear';
 
 export { Token } from './token.gear';
 export { Equipment } from './equipment.gear';
-export { Slot } from './slot';
 
 /**
  * Objects termed as "Gear" are those that can be equipped.

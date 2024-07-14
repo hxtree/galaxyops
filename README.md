@@ -53,6 +53,7 @@ To install and build all packages, follow these steps:
 corepack enable pnpm
 pnpm install
 pnpm nx run-many -t build --all
+pnpm nx run hydrate-dotenvs:start hydrate ../../..
 ```
 
 Scripts from any project can be ran:

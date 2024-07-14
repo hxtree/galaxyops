@@ -1,8 +1,11 @@
-import { Attribute } from '../attribute';
-import { EffectTable, SkillEffectModifier } from '../table.effect';
-import { EffectTag } from '../tag.effect';
-import { Skill } from '../skill';
-import { Slot } from './slot';
+import {
+  Slot,
+  SkillEffectModifier,
+  EffectTable,
+  Attribute,
+  EffectTag,
+} from '@galaxyops/character-sheet-contracts';
+import { Skills } from '../skills';
 
 /**
  * Accessory is an object or device that is not essential in itself
@@ -155,7 +158,7 @@ export namespace Accessory {
     effects: [
       {
         modifier: SkillEffectModifier.ADD,
-        skill: Skill.CATCHER_LV1,
+        skill: Skills.CATCHER_LV1,
         tags: [EffectTag.METAL],
       },
     ],
@@ -169,7 +172,7 @@ export namespace Accessory {
     effects: [
       {
         modifier: SkillEffectModifier.ADD,
-        skill: Skill.CATCHER_LV1,
+        skill: Skills.CATCHER_LV1,
         tags: [EffectTag.PHYSICAL],
       },
     ],

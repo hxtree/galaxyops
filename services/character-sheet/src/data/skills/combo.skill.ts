@@ -1,9 +1,13 @@
-import { Button, ButtonCombo } from '../buttons';
-import { GameContext } from '../game-context';
-import { MenuSlot, MenuSlotType } from '../menu-slot';
-import { SkillLevel, SkillType } from './skill.type';
-import { ActionTarget } from '../action-target';
-import { Attribute } from '../attribute';
+import {
+  MenuSlot,
+  SkillLevel,
+  Attribute,
+  GameContext,
+  ActionTarget,
+  Button,
+  ButtonCombo,
+  Skill,
+} from '@galaxyops/character-sheet-contracts';
 
 /**
  * Combo Skills can only be used when a character action history matches exactly
@@ -15,7 +19,7 @@ import { Attribute } from '../attribute';
  * combo in order for quicker action selection.
  */
 export namespace Combo {
-  export const BLITZ_LV1: SkillType = {
+  export const BLITZ_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {

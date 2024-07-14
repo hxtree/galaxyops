@@ -1,31 +1,7 @@
-import { Archetype } from './archetype';
+import { Affiliation, Reputation } from '@galaxyops/character-sheet-contracts';
 
-export namespace Affiliation {
-  export enum Reputation {
-    HONORED = 'HONORED',
-    FRIENDLY = 'FRIENDLY',
-    NEUTRAL = 'NEUTRAL',
-    HATED = 'HATED',
-  }
-
-  // The affiliation relationship tendency towards another
-  export type Standing = {
-    affiliation: Affiliation.Type;
-    reputation: Reputation;
-  };
-
-  export type Type = {
-    name: string;
-    description?: string;
-    lore?: string[];
-    history?: string[];
-    aliases?: string[];
-    parentAffiliation?: Affiliation.Type;
-    // notableMembers?: string[];
-    standings?: Standing[];
-  };
-
-  export const THE_DESTROYERS: Type = {
+export namespace Affiliations {
+  export const THE_DESTROYERS: Affiliation = {
     aliases: ['Trinity of Destruction', 'The Boundless'],
     description:
       'Three beings whose abilities and existences defies the fundamentals of the natural world',
@@ -40,16 +16,16 @@ export namespace Affiliation {
     //   Archetype.OUERN_ONI.name
     // ],
     standings: [
-      { affiliation: Affiliation.THE_CATS, reputation: Reputation.NEUTRAL },
-      { affiliation: Affiliation.DEVILS, reputation: Reputation.HONORED },
+      { affiliation: Affiliations.THE_CATS, reputation: Reputation.NEUTRAL },
+      { affiliation: Affiliations.DEVILS, reputation: Reputation.HONORED },
       {
-        affiliation: Affiliation.VALLONS_SEVEN,
+        affiliation: Affiliations.VALLONS_SEVEN,
         reputation: Reputation.HONORED,
       },
     ],
   };
 
-  export const THE_CATS: Type = {
+  export const THE_CATS: Affiliation = {
     description:
       'Each member usually takes form of a household cat. '
       + 'They can take human form, but it drastically lowers their power due to the limits of the normal human potential. '
@@ -65,13 +41,13 @@ export namespace Affiliation {
     // ],
     standings: [
       {
-        affiliation: Affiliation.THE_DESTROYERS,
+        affiliation: Affiliations.THE_DESTROYERS,
         reputation: Reputation.NEUTRAL,
       },
     ],
   };
 
-  export const THE_ANTIFELINES: Type = {
+  export const THE_ANTIFELINES: Affiliation = {
     description:
       'A group of individuals dedicated to opposing the Cats and protecting others from their influence.',
     name: 'The Antifelines',
@@ -86,11 +62,11 @@ export namespace Affiliation {
     //   'Yew',
     // ],
     standings: [
-      { affiliation: Affiliation.THE_CATS, reputation: Reputation.HATED },
+      { affiliation: Affiliations.THE_CATS, reputation: Reputation.HATED },
     ],
   };
 
-  export const ARCHANGELS: Type = {
+  export const ARCHANGELS: Affiliation = {
     aliases: ['Those Who Live In The Clouds'],
     description: 'They lived among the clouds, had wings, and used magic. ',
     history: [
@@ -102,7 +78,7 @@ export namespace Affiliation {
     name: 'Archangels',
   };
 
-  export const DEVILS: Type = {
+  export const DEVILS: Affiliation = {
     aliases: ['Eight Shames', 'Sinners'],
     description: 'Eight powerful beings',
     // notableMembers: [
@@ -137,7 +113,7 @@ export namespace Affiliation {
     name: 'Devils',
   };
 
-  export const GUARDIANS: Type = {
+  export const GUARDIANS: Affiliation = {
     aliases: ['Eight Honors', 'Virtuous'],
     description: 'Each member embodies one of the eight honors',
     history: [
@@ -164,11 +140,11 @@ export namespace Affiliation {
     //   Archetype.MALACE_TSIA.name,
     // ],
     standings: [
-      { affiliation: Affiliation.THE_CATS, reputation: Reputation.HONORED },
+      { affiliation: Affiliations.THE_CATS, reputation: Reputation.HONORED },
     ],
   };
 
-  export const VALLONS_SEVEN: Type = {
+  export const VALLONS_SEVEN: Affiliation = {
     aliases: ['Seven Devils'],
     description:
       'All members seek an end to all of existence. '
@@ -186,30 +162,33 @@ export namespace Affiliation {
     // ],
   };
 
-  export const BROTHERHOOD: Type = {
+  export const BROTHERHOOD: Affiliation = {
     name: 'Brotherhood',
   };
 
-  export const SOLIDER_FORCES: Type = {
+  export const SOLIDER_FORCES: Affiliation = {
     name: 'Solider Forces',
     // notableMembers: [
     //   Archetype.OUERN_ONI.name
     // ],
-    parentAffiliation: Affiliation.OCEANIA,
+    parentAffiliation: Affiliations.OCEANIA,
   };
 
-  export const X_SOLIDER_FORCES: Type = {
+  export const X_SOLIDER_FORCES: Affiliation = {
     description: 'Members are former Soldiers Forces who left on bad terms. ',
     name: 'X-Solider Forces',
     // notableMembers: [
     //   Archetype.OUERN_ONI.name
     // ],
     standings: [
-      { affiliation: Affiliation.SOLIDER_FORCES, reputation: Reputation.HATED },
+      {
+        affiliation: Affiliations.SOLIDER_FORCES,
+        reputation: Reputation.HATED,
+      },
     ],
   };
 
-  export const MAGI_ORDER: Type = {
+  export const MAGI_ORDER: Affiliation = {
     description:
       'They were formed to keep the greater evils of the world at bay. '
       + 'The Magi category of disciplines can only be learned by the Divine Race. '
@@ -221,22 +200,22 @@ export namespace Affiliation {
     //   Archetype.FAYE_IMAGO.name,
     // ],
     standings: [
-      { affiliation: Affiliation.DEVILS, reputation: Reputation.HATED },
+      { affiliation: Affiliations.DEVILS, reputation: Reputation.HATED },
     ],
   };
 
-  export const MAGI_ORDER_ELDERS: Type = {
+  export const MAGI_ORDER_ELDERS: Affiliation = {
     description:
       'These are the Elders who run the Magi Order. '
       + 'The Magi Order Elders keep secret that the Magi power comes from the Eight Devils. ',
     name: 'Magi Order Elders',
     parentAffiliation: MAGI_ORDER,
     standings: [
-      { affiliation: Affiliation.DEVILS, reputation: Reputation.HATED },
+      { affiliation: Affiliations.DEVILS, reputation: Reputation.HATED },
     ],
   };
 
-  export const CATCHERS: Type = {
+  export const CATCHERS: Affiliation = {
     description:
       'The Catchers wear mask when they fight to become warriors. '
       + 'When they return home they can remove their masks to become civilians again. '
@@ -254,7 +233,7 @@ export namespace Affiliation {
     // ]
   };
 
-  export const REBEL: Type = {
+  export const REBEL: Affiliation = {
     description:
       'A group that has been formed of people opposing both sides of the conflict that only want peace. '
       + 'They are focused around destroying the ancient technology discovered to prevent the war from escalation.',
@@ -264,11 +243,11 @@ export namespace Affiliation {
     // ]
   };
 
-  export const ORIGINALS: Type = {
+  export const ORIGINALS: Affiliation = {
     name: 'Originals',
   };
 
-  export const OCEANIA: Type = {
+  export const OCEANIA: Affiliation = {
     description:
       'In order to save what they believe in those at the top of the organization have become corrupt. '
       + 'They have started to resurrect ancient technology that can be used to destroy the other side.'
@@ -278,40 +257,40 @@ export namespace Affiliation {
     //   Archetype.FAYE_IMAGO.name
     // ],
     standings: [
-      { affiliation: Affiliation.EURASIA, reputation: Reputation.HATED },
+      { affiliation: Affiliations.EURASIA, reputation: Reputation.HATED },
     ],
   };
 
-  export const EURASIA: Type = {
+  export const EURASIA: Affiliation = {
     name: 'Eurasia',
     standings: [
-      { affiliation: Affiliation.OCEANIA, reputation: Reputation.HATED },
+      { affiliation: Affiliations.OCEANIA, reputation: Reputation.HATED },
     ],
   };
 
-  export const BARBARIANS: Type = {
+  export const BARBARIANS: Affiliation = {
     description:
       'They are a nearly extinct people as solider forces take over their land.'
       + 'They are a primitive but are by no means barbarians.',
     name: 'Barbarians',
   };
 
-  export const NINJA: Type = {
+  export const NINJA: Affiliation = {
     name: 'Ninja',
     // notableMembers: [
     //   Archetype.PENNY_KIBBUTZ.name,
     // ]
   };
 
-  export const LEGION_SEE: Type = {
+  export const LEGION_SEE: Affiliation = {
     description: 'Essentially a grouping of lesser bosses',
     name: 'Legion See',
     standings: [
-      { affiliation: Affiliation.DEVILS, reputation: Reputation.FRIENDLY },
+      { affiliation: Affiliations.DEVILS, reputation: Reputation.FRIENDLY },
     ],
   };
 
-  export const FLIPPING_PROFITEERS: Type = {
+  export const FLIPPING_PROFITEERS: Affiliation = {
     description:
       'A quirky guild where success starts at the bottom!'
       + 'Recruit pals below you, and watch your loot soar as the pyramid flips for fun and profit.'
@@ -322,11 +301,11 @@ export namespace Affiliation {
     //   Archetype.BANDIT.name
     // ],
     standings: [
-      { affiliation: Affiliation.OCEANIA, reputation: Reputation.HATED },
+      { affiliation: Affiliations.OCEANIA, reputation: Reputation.HATED },
     ],
   };
 }
 
-export const AffiliationIds = Object.keys(Affiliation);
+export const AffiliationIds = Object.keys(Affiliations);
 
-export type AffiliationId = keyof typeof Affiliation;
+export type AffiliationId = keyof typeof Affiliations;

@@ -117,7 +117,7 @@ importers:
         version: 29.6.4
       ts-jest:
         specifier: 29.1.2
-        version: 29.1.2(@babel/core@7.23.5)(esbuild@0.20.2)(jest@29.7.0)(typescript@5.3.3)
+        version: 29.1.2(@babel/core@7.23.5)(esbuild@0.18.20)(jest@29.7.0)(typescript@5.3.3)
       ts-node:
         specifier: 10.9.2
         version: 10.9.2(@types/node@20.11.25)(typescript@5.3.3)
@@ -1685,7 +1685,7 @@ importers:
         version: 0.12.7
       ts-jest:
         specifier: 29.1.2
-        version: 29.1.2(@babel/core@7.23.5)(esbuild@0.20.2)(jest@29.7.0)(typescript@5.3.3)
+        version: 29.1.2(@babel/core@7.23.5)(esbuild@0.18.20)(jest@29.7.0)(typescript@5.3.3)
       ts-node:
         specifier: 10.9.2
         version: 10.9.2(@types/node@20.11.25)(typescript@5.3.3)
@@ -1703,7 +1703,7 @@ importers:
         version: 29.7.0(@types/node@20.11.25)(ts-node@10.9.1)
       ts-jest:
         specifier: 29.1.2
-        version: 29.1.2(@babel/core@7.23.5)(esbuild@0.20.2)(jest@29.7.0)(typescript@5.3.3)
+        version: 29.1.2(@babel/core@7.23.5)(esbuild@0.18.20)(jest@29.7.0)(typescript@5.3.3)
     devDependencies:
       '@types/node':
         specifier: 20.11.25
@@ -1895,6 +1895,9 @@ importers:
       '@galaxyops/base-nodejs':
         specifier: 0.1.0
         version: link:../../platform/rigs/base-nodejs
+      '@galaxyops/character-sheet-contracts':
+        specifier: workspace:*
+        version: link:../../contracts/character-sheet-contracts
       '@nestjs/common':
         specifier: 9.4.0
         version: 9.4.0(class-transformer@0.5.1)(class-validator@0.13.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -3385,7 +3388,7 @@ importers:
         version: 29.7.0(@types/node@20.11.25)(ts-node@10.9.2)
       ts-jest:
         specifier: 29.1.2
-        version: 29.1.2(@babel/core@7.23.5)(esbuild@0.20.2)(jest@29.7.0)(typescript@5.3.3)
+        version: 29.1.2(@babel/core@7.23.5)(esbuild@0.18.20)(jest@29.7.0)(typescript@5.3.3)
       ts-node:
         specifier: 10.9.2
         version: 10.9.2(@types/node@20.11.25)(typescript@5.3.3)
@@ -9261,7 +9264,6 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/android-arm64@0.20.2:
@@ -9286,7 +9288,6 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/android-arm@0.20.2:
@@ -9311,7 +9312,6 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/android-x64@0.20.2:
@@ -9336,7 +9336,6 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/darwin-arm64@0.20.2:
@@ -9361,7 +9360,6 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/darwin-x64@0.20.2:
@@ -9386,7 +9384,6 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/freebsd-arm64@0.20.2:
@@ -9411,7 +9408,6 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/freebsd-x64@0.20.2:
@@ -9436,7 +9432,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-arm64@0.20.2:
@@ -9461,7 +9456,6 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-arm@0.20.2:
@@ -9486,7 +9480,6 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-ia32@0.20.2:
@@ -9511,7 +9504,6 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-loong64@0.20.2:
@@ -9536,7 +9528,6 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-mips64el@0.20.2:
@@ -9561,7 +9552,6 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-ppc64@0.20.2:
@@ -9586,7 +9576,6 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-riscv64@0.20.2:
@@ -9611,7 +9600,6 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-s390x@0.20.2:
@@ -9636,7 +9624,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-x64@0.20.2:
@@ -9661,7 +9648,6 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/netbsd-x64@0.20.2:
@@ -9686,7 +9672,6 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/openbsd-x64@0.20.2:
@@ -9711,7 +9696,6 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/sunos-x64@0.20.2:
@@ -9736,7 +9720,6 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/win32-arm64@0.20.2:
@@ -9761,7 +9744,6 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/win32-ia32@0.20.2:
@@ -9786,7 +9768,6 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/win32-x64@0.20.2:
@@ -20200,7 +20181,6 @@ packages:
       '@esbuild/win32-arm64': 0.18.20
       '@esbuild/win32-ia32': 0.18.20
       '@esbuild/win32-x64': 0.18.20
-    dev: true
 
   /esbuild@0.20.2:
     resolution: {integrity: sha512-WdOOppmUNU+IbZ0PaDiTst80zjnrOkyJNHoKupIcVyU8Lvla3Ugx94VzkQ32Ijqd7UhHJy75gNWDMUekcrSJ6g==}
@@ -28986,7 +28966,6 @@ packages:
       semver: 7.6.2
       typescript: 5.3.3
       yargs-parser: 21.1.1
-    dev: true
 
   /ts-jest@29.1.2(@babel/core@7.23.5)(esbuild@0.20.2)(jest@29.7.0)(typescript@5.3.3):
     resolution: {integrity: sha512-br6GJoH/WUX4pu7FbZXuWGKGNDuU7b8Uj77g/Sp7puZV6EXzuByl6JrECvm0MzVzSTkSHWTihsXt+5XYER5b+g==}
@@ -29021,6 +29000,7 @@ packages:
       semver: 7.6.2
       typescript: 5.3.3
       yargs-parser: 21.1.1
+    dev: true
 
   /ts-node@10.9.1(@types/node@20.11.25)(typescript@5.3.3):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}

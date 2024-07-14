@@ -11,9 +11,7 @@ import { Trap } from './trap.skill';
 import { Basic } from './basic.skill';
 import { Interaction } from './interaction.skill';
 
-export * from './skill.type';
-
-export const Skill = {
+export const Skills = {
   ...Drive,
   ...Item,
   ...Spell,

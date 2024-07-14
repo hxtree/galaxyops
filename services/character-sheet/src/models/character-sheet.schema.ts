@@ -16,6 +16,7 @@ import {
 } from '@cats-cradle/validation-schemas';
 import { v4 as uuidv4 } from 'uuid';
 import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
+import { MenuSlotOrder, Skill } from '@galaxyops/character-sheet-contracts';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { AffiliationEmbeddable } from './affiliation-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
@@ -28,8 +29,6 @@ import {
   DisciplineProgression,
 } from '../data/discipline';
 import { Equipment, EquipmentType } from '../data/gear';
-import { MenuSlot, MenuSlotOrder } from '../data/menu-slot';
-import { SkillType } from '../data/skill';
 
 /**
  * A CharacterSheet (or Character for short) is a single instantiation of an Archetype.
@@ -184,16 +183,16 @@ CharacterSheetSchema.virtual('menu').get(function () {
 
   return {
     1: skills.filter(
-      (skill: SkillType) => skill.menuSlot.order === MenuSlotOrder.FIRST,
+      (skill: Skill) => skill.menuSlot.order === MenuSlotOrder.FIRST,
     ),
     2: skills.filter(
-      (skill: SkillType) => skill.menuSlot.order === MenuSlotOrder.SECOND,
+      (skill: Skill) => skill.menuSlot.order === MenuSlotOrder.SECOND,
     ),
     3: skills.filter(
-      (skill: SkillType) => skill.menuSlot.order === MenuSlotOrder.THIRD,
+      (skill: Skill) => skill.menuSlot.order === MenuSlotOrder.THIRD,
     ),
     4: skills.filter(
-      (skill: SkillType) => skill.menuSlot.order === MenuSlotOrder.FOURTH,
+      (skill: Skill) => skill.menuSlot.order === MenuSlotOrder.FOURTH,
     ),
   };
 });

@@ -1,4 +1,4 @@
-import { Slot } from './slot';
+import { Slot } from '@galaxyops/character-sheet-contracts';
 
 /**
  * Outfit

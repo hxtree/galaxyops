@@ -1,16 +1,18 @@
 import { Duration } from 'luxon';
-import { MenuSlot, MenuSlotType } from '../menu-slot';
-import { ActionEffects } from '../table.effect';
-import { Attribute } from '../attribute';
-import { AreaOfEffect } from '../area-of-effect';
-import { SkillLevel, SkillType } from './skill.type';
-import { ActionTarget } from '../action-target';
+import {
+  Attribute,
+  MenuSlot,
+  Skill,
+  SkillLevel,
+  ActionTarget,
+  AreaOfEffect,
+} from '@galaxyops/character-sheet-contracts';
 
 /**
  * Drive Actions are special actions that consume drive gauge
  */
 export namespace Drive {
-  export const BERSERK_LV1: SkillType = {
+  export const BERSERK_LV1: Skill = {
     actionEffects: {
       PERFORMER: [
         {
@@ -27,7 +29,7 @@ export namespace Drive {
     name: 'Berserk',
   };
 
-  export const TOXIC_THRUST_LV1: SkillType = {
+  export const TOXIC_THRUST_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -46,7 +48,7 @@ export namespace Drive {
     target: ActionTarget.OPPONENT,
   };
 
-  export const AERIAL_ASSAULT_LV1: SkillType = {
+  export const AERIAL_ASSAULT_LV1: Skill = {
     actionEffects: {
       OPPONENT: [
         {
@@ -71,7 +73,7 @@ export namespace Drive {
     target: ActionTarget.OPPONENT,
   };
 
-  export const ONI_LV1: SkillType = {
+  export const ONI_LV1: Skill = {
     actionEffects: {
       PERFORMER: [
         {
@@ -90,7 +92,7 @@ export namespace Drive {
     target: ActionTarget.SELF,
   };
 
-  export const ONI_LV2: SkillType = {
+  export const ONI_LV2: Skill = {
     ...ONI_LV1,
     conditions:
       'Player must have very little life left and max DriveAction in order to perform.',

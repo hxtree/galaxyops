@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Skill } from '../../data/skill';
+import { Skills } from '../../data/skills';
 
 export class QuerySkillDto {
-  @ApiProperty({ enum: Object.keys(Skill) })
+  @ApiProperty({ enum: Object.keys(Skills) })
     id: string;
 }
