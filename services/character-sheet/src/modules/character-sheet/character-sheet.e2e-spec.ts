@@ -12,7 +12,6 @@ import { CreateCharacterSheetDto } from './create-character-sheet-dto';
 import { CharacterSheetRepository } from '../../models/character-sheet.repository';
 import { CharacterSheetController } from './character-sheet.controller';
 import { PlaceService } from '../place/place.service';
-import { Archetype } from '../../data/archetype';
 
 describe('/character-sheets', () => {
   async function createTestingModule() {

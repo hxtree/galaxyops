@@ -16,18 +16,20 @@ import {
 } from '@cats-cradle/validation-schemas';
 import { v4 as uuidv4 } from 'uuid';
 import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
-import { MenuSlotOrder, Skill } from '@galaxyops/character-sheet-contracts';
+import {
+  MenuSlotOrder,
+  Skill,
+  Archetype,
+  DisciplineProgression,
+  Discipline,
+} from '@galaxyops/character-sheet-contracts';
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { AffiliationEmbeddable } from './affiliation-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
 import { EquipmentEmbeddable } from './equipment-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
-import { Archetype, ArchetypeId, ArchetypeIds } from '../data/archetype';
-import {
-  Discipline,
-  DisciplineId,
-  DisciplineProgression,
-} from '../data/discipline';
+import { Archetypes, ArchetypeId, ArchetypeIds } from '../data/archetype';
+import { Disciplines } from '../data/discipline';
 import { Equipment, EquipmentType } from '../data/gear';
 
 /**
@@ -140,7 +142,7 @@ CharacterSheetSchema.virtual('fullName').get(function () {
 });
 
 CharacterSheetSchema.virtual('traits').get(function () {
-  const archetype: Archetype.Type = Archetype[this.archetypeId];
+  const archetype: Archetype = Archetypes[this.archetypeId];
   return archetype.traits ?? [];
 });
 
@@ -148,7 +150,7 @@ CharacterSheetSchema.virtual('menu').get(function () {
   const skills: any = [];
 
   this.disciplines.forEach((disciplineEmbeddable: DisciplineEmbeddable) => {
-    const discipline: Discipline.Type = Discipline[disciplineEmbeddable.disciplineId];
+    const discipline: Discipline = Disciplines[disciplineEmbeddable.disciplineId];
 
     if (discipline.progression === undefined) {
       return;
@@ -201,7 +203,7 @@ CharacterSheetSchema.virtual('skills').get(function () {
   const skills: any = [];
 
   this.disciplines.forEach((disciplineEmbeddable: DisciplineEmbeddable) => {
-    const discipline: Discipline.Type = Discipline[disciplineEmbeddable.disciplineId];
+    const discipline: Discipline = Disciplines[disciplineEmbeddable.disciplineId];
 
     if (discipline.progression === undefined) {
       return;

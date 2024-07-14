@@ -1,4 +1,9 @@
-import { Skill } from '@galaxyops/character-sheet-contracts';
+import {
+  DisciplineCategory,
+  Discipline,
+  DisciplineProgression,
+  DISCIPLINE_DEFAULT_MAX_LEVEL,
+} from '@galaxyops/character-sheet-contracts';
 import { Skills } from './skills';
 
 /**
@@ -7,47 +12,6 @@ import { Skills } from './skills';
  * A character can have multiple disciplines and therefore multiple experience records.
  * Progression in one discipline may unlock other disciplines, actions, and attributes bonuses.
  */
-export enum DisciplineCategory {
-  // Specialty Classes
-  PROFESSION = 'Profession',
-  // Combat Classes
-  ARCHETYPE = 'Archetype',
-  // Spirit Class
-  // Drive Classes
-  OMEGA = 'Omega',
-}
-
-export type GainSkillType = {
-  level: number;
-  skill: Skill;
-};
-
-export type GainAttributeType = {
-  level: number;
-  power?: number;
-  speed?: number;
-  wisdom?: number;
-  intelligence?: number;
-  defense?: number;
-  accuracy?: number;
-  evasion?: number;
-  luck?: number;
-};
-
-export type AbilityPointProgression = {
-  level: number;
-  abilityPoints: number;
-};
-
-export type SkillProgression = {
-  level: number;
-  skill: Skill;
-};
-
-export type DisciplineProgression = AbilityPointProgression | SkillProgression;
-
-export const DISCIPLINE_DEFAULT_MAX_LEVEL = 20;
-
 export function awardAbilityPointEachLevel(
   abilityPoints: number,
   levelInterval: number,
@@ -70,20 +34,8 @@ export function awardAbilityPointEachLevel(
   return progression;
 }
 
-export namespace Discipline {
-  export type Type = {
-    name: string;
-    description: string;
-    category: DisciplineCategory;
-    history?: string;
-    prerequisites?: DisciplineId[]; // After level etc?
-    // could also be event like defeated Lawzon, but may be that's too
-    // character specific?
-    progression?: DisciplineProgression[];
-    maxLevel: number;
-  };
-
-  export const GYMNAST: Type = {
+export namespace Disciplines {
+  export const GYMNAST: Discipline = {
     category: DisciplineCategory.PROFESSION,
     description: 'Trains in gymnastics.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -100,7 +52,7 @@ export namespace Discipline {
     ],
   };
 
-  export const WIZARD: Type = {
+  export const WIZARD: Discipline = {
     category: DisciplineCategory.PROFESSION,
     description: 'Studies mysterious forces.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -115,7 +67,7 @@ export namespace Discipline {
     ],
   };
 
-  export const HISTORIAN: Type = {
+  export const HISTORIAN: Discipline = {
     category: DisciplineCategory.PROFESSION,
     description: 'Studies the world as it was.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -128,7 +80,7 @@ export namespace Discipline {
     ],
   };
 
-  export const BODY_BUILDER: Type = {
+  export const BODY_BUILDER: Discipline = {
     category: DisciplineCategory.PROFESSION,
     description: 'Do you even lift?',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -141,7 +93,7 @@ export namespace Discipline {
   };
 
   // may be anyone can become a cook?>
-  export const COOK: Type = {
+  export const COOK: Discipline = {
     category: DisciplineCategory.PROFESSION,
     description: 'Prepares and cooks food',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -153,7 +105,7 @@ export namespace Discipline {
     ],
   };
 
-  export const CHEERLEADER: Type = {
+  export const CHEERLEADER: Discipline = {
     category: DisciplineCategory.PROFESSION,
     description: 'Cheers their team as a form of encouragement.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -168,7 +120,7 @@ export namespace Discipline {
     ],
   };
 
-  export const COMMANDER: Type = {
+  export const COMMANDER: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in giving orders to others.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -183,7 +135,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MAGI: Type = {
+  export const MAGI: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Has a basic understanding of Magic',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -195,7 +147,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MAGI_BLACK: Type = {
+  export const MAGI_BLACK: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize destruction Magic',
     history: 'Harnessed from the power of Ouren',
@@ -209,7 +161,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MAGI_BLUE: Type = {
+  export const MAGI_BLUE: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize water Magic',
     history: 'Harnessed from the power of Genki',
@@ -224,7 +176,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MAGI_BROWN: Type = {
+  export const MAGI_BROWN: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize rock Magic',
     history: 'Harnessed from the power of Asmin',
@@ -238,7 +190,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MAGI_GREEN: Type = {
+  export const MAGI_GREEN: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize time Magic',
     history: 'Harnessed from the power of Void',
@@ -253,7 +205,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MAGI_PINK: Type = {
+  export const MAGI_PINK: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize charm Magic',
     history: 'Harnessed from the power of Suyri',
@@ -267,7 +219,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MAGI_PURPLE: Type = {
+  export const MAGI_PURPLE: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize ??? Magic',
     history: 'Harnessed from the power of Diag',
@@ -281,7 +233,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MAGI_WHITE: Type = {
+  export const MAGI_WHITE: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize snow Magic',
     history: 'Harnessed from the power of Lawzon',
@@ -297,7 +249,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MAGI_YELLOW: Type = {
+  export const MAGI_YELLOW: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize absorption Magic',
     history: 'Harnessed from the power of Wisp',
@@ -313,7 +265,7 @@ export namespace Discipline {
     ],
   };
 
-  export const GUARD: Type = {
+  export const GUARD: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in protection.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -324,7 +276,7 @@ export namespace Discipline {
     ],
   };
 
-  export const GUARDIAN: Type = {
+  export const GUARDIAN: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in protection.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -335,7 +287,7 @@ export namespace Discipline {
     ],
   };
 
-  export const HERO: Type = {
+  export const HERO: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in saving others.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -345,7 +297,7 @@ export namespace Discipline {
     ],
   };
 
-  export const KNIGHT: Type = {
+  export const KNIGHT: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'A honored fighter who protects the kingdom.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -360,7 +312,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MECHANIC: Type = {
+  export const MECHANIC: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specializes in electromechanical engineering',
     // Actions: Tools
@@ -374,7 +326,7 @@ export namespace Discipline {
     ],
   };
 
-  export const ROUGE: Type = {
+  export const ROUGE: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specializes sneak attacks and picking locks',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -386,7 +338,7 @@ export namespace Discipline {
     ],
   };
 
-  export const ROYALTY: Type = {
+  export const ROYALTY: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specializes in ruling others',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -399,7 +351,7 @@ export namespace Discipline {
     ],
   };
 
-  export const REBEL: Type = {
+  export const REBEL: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Rebel',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -411,7 +363,7 @@ export namespace Discipline {
     ],
   };
 
-  export const SCOUT: Type = {
+  export const SCOUT: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description:
       'Specialize in moving ahead of the party to gathering information and reconnaissance.',
@@ -424,7 +376,7 @@ export namespace Discipline {
     ],
   };
 
-  export const SOLIDER: Type = {
+  export const SOLIDER: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description:
       'A solider is a follower of the United Forces. They specialize in performing strict maneuvers.',
@@ -440,7 +392,7 @@ export namespace Discipline {
     ],
   };
 
-  export const SUMMONER: Type = {
+  export const SUMMONER: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Summons and commands magical beings.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -453,7 +405,7 @@ export namespace Discipline {
     ],
   };
 
-  export const THIEF: Type = {
+  export const THIEF: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Proficient at stealing and picking locks.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -466,7 +418,7 @@ export namespace Discipline {
     ],
   };
 
-  export const WARRIOR: Type = {
+  export const WARRIOR: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specializes in combat on the battlefield.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -482,7 +434,7 @@ export namespace Discipline {
     ],
   };
 
-  export const XSOLIDER: Type = {
+  export const XSOLIDER: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description:
       'Soldiers that have gone against their teachings to gain new skills.',
@@ -496,7 +448,7 @@ export namespace Discipline {
     ],
   };
 
-  export const ASSASSIN: Type = {
+  export const ASSASSIN: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specializes in sneak attacks and picking locks.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -513,7 +465,7 @@ export namespace Discipline {
     ],
   };
 
-  export const HEALER: Type = {
+  export const HEALER: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: 'Specialize in healing.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -525,7 +477,7 @@ export namespace Discipline {
     ],
   };
 
-  export const BARD: Type = {
+  export const BARD: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -537,7 +489,7 @@ export namespace Discipline {
     ],
   };
 
-  export const DUELIST: Type = {
+  export const DUELIST: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -550,7 +502,7 @@ export namespace Discipline {
     ],
   };
 
-  export const RUNE_KING: Type = {
+  export const RUNE_KING: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -562,7 +514,7 @@ export namespace Discipline {
     ],
   };
 
-  export const MAIDEN: Type = {
+  export const MAIDEN: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -573,7 +525,7 @@ export namespace Discipline {
     ],
   };
 
-  export const Keeper: Type = {
+  export const Keeper: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -587,7 +539,7 @@ export namespace Discipline {
     ],
   };
 
-  export const SAGE: Type = {
+  export const SAGE: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -601,7 +553,7 @@ export namespace Discipline {
     ],
   };
 
-  export const POSSESSED: Type = {
+  export const POSSESSED: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -612,7 +564,7 @@ export namespace Discipline {
     ],
   };
 
-  export const NINJA: Type = {
+  export const NINJA: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -627,7 +579,7 @@ export namespace Discipline {
     ],
   };
 
-  export const AMBER_ASSASSIN: Type = {
+  export const AMBER_ASSASSIN: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -643,7 +595,7 @@ export namespace Discipline {
     ],
   };
 
-  export const ELITE_ASSASSIN: Type = {
+  export const ELITE_ASSASSIN: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -656,7 +608,7 @@ export namespace Discipline {
     ],
   };
 
-  export const ENGINEER: Type = {
+  export const ENGINEER: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -669,7 +621,7 @@ export namespace Discipline {
     ],
   };
 
-  export const BERSERKER: Type = {
+  export const BERSERKER: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -682,7 +634,7 @@ export namespace Discipline {
     ],
   };
 
-  export const ONI: Type = {
+  export const ONI: Discipline = {
     category: DisciplineCategory.OMEGA,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -696,7 +648,7 @@ export namespace Discipline {
     ],
   };
 
-  export const KEEPER: Type = {
+  export const KEEPER: Discipline = {
     category: DisciplineCategory.OMEGA,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -707,7 +659,7 @@ export namespace Discipline {
     ],
   };
 
-  export const LIGHTENING_WARRIOR: Type = {
+  export const LIGHTENING_WARRIOR: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -722,7 +674,7 @@ export namespace Discipline {
     ],
   };
 
-  export const OUROBOROS: Type = {
+  export const OUROBOROS: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description: '',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
@@ -739,7 +691,7 @@ export namespace Discipline {
    * non-player archetypes by virtue of their existence.
    * */
 
-  export const DETRIMENTAL_INSTINCT: Type = {
+  export const DETRIMENTAL_INSTINCT: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description:
       'Instincts that are counterproductive to survival and advancement.',
@@ -750,7 +702,7 @@ export namespace Discipline {
     ],
   };
 
-  export const BASIC_INSTINCT: Type = {
+  export const BASIC_INSTINCT: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description:
       'Foundational instincts necessary for survival and basic functioning.',
@@ -762,7 +714,7 @@ export namespace Discipline {
     ],
   };
 
-  export const ELITE_INSTINCT: Type = {
+  export const ELITE_INSTINCT: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description:
       'Advanced instincts that provide a competitive edge or superior capabilities.',
@@ -773,7 +725,7 @@ export namespace Discipline {
     ],
   };
 
-  export const LEGENDARY_INSTINCT: Type = {
+  export const LEGENDARY_INSTINCT: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description:
       'Instincts that are exceptionally rare, powerful, or revered, representing the pinnacle of evolutionary development.',
@@ -785,19 +737,19 @@ export namespace Discipline {
   };
 }
 
-export const DisciplineIds = Object.keys(Discipline);
+export const DisciplineIds = Object.keys(Disciplines);
 
-export type DisciplineId = keyof typeof Discipline;
+export type DisciplineId = keyof typeof Disciplines;
 
 export function canLearn(
   disciplineId: DisciplineId,
   currentDisciplines: DisciplineId[],
 ): boolean {
-  const prerequisites = Discipline[disciplineId].prerequisites ?? [];
+  const prerequisites = Disciplines[disciplineId].prerequisites ?? [];
   const currentDisciplinesSet = new Set(currentDisciplines);
 
   for (const discipline of prerequisites) {
-    if (!currentDisciplinesSet.has(discipline)) {
+    if (!currentDisciplinesSet.has(discipline as DisciplineId)) {
       return false;
     }
   }

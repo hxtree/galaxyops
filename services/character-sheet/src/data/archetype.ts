@@ -16,8 +16,9 @@ import {
   SerpentineCreatureGearSlots,
   AmorphousCreatureGearSlots,
   Outfit,
+  Archetype,
 } from '@galaxyops/character-sheet-contracts';
-import { Discipline } from './discipline';
+import { Disciplines } from './discipline';
 import { Summon } from './skills/summon.skill';
 import { Outfits } from './gear/outfit.gear';
 import { Affiliations } from './affiliations';
@@ -29,69 +30,14 @@ import { Affiliations } from './affiliations';
  *
  * only contains archetypes that can become character sheets; would not include a tree, etc.
  */
-export namespace Archetype {
-  export type Type = {
-    id?: string;
-    name: string;
-    surname?: string;
-    age?: number;
-    height?: string;
-    weight?: number;
-    gender?: string;
-    element?: string;
-    occupation?: string;
-    characteristics?: string;
-    description?: string;
-    history?: string;
-    backstory?: string;
-    experience?: number;
-    alias?: string[];
-    symbolizes?: string[];
-
-    biological?: {
-      race?: string;
-      gender?: string;
-      age?: string;
-      height?: string;
-      weight?: string;
-      hairColor: string;
-      eyeColor: string;
-    };
-
-    relationships?: string[];
-    affiliation?: Affiliation[];
-
-    // these seem more like they loaded or determined for player characters
-    life?: Life;
-    drive?: Drive;
-    spirit?: Spirit;
-
-    traits?: Trait[];
-
-    gearSlots?: Slot[];
-
-    potentialDisciplines?: Discipline.Type[];
-    potentialOutfits?: Outfit[];
-    summonCompatibility?: Skill[];
-    weaponCompatibility?: WeaponCategory[];
-
-    // compatibility [
-    // disciplines?: Discipline[];
-    // outfits?: Outfit[];
-    // gearSlots?: GearSlot[];
-    // summon?: Summon[];
-    // ]
-
-    // loot?: Gear.Item[];
-  };
-
-  export const DARUMA_NAKAMURA: Type = {
+export namespace Archetypes {
+  export const DARUMA_NAKAMURA: Archetype = {
     alias: ['Unknown', 'Wooden Doll'],
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Daruma',
   };
 
-  export const MOTHER: Type = {
+  export const MOTHER: Archetype = {
     alias: ['Lady of the Vase', 'Ashes', 'Dust'],
     backstory:
       'She is known only as Mother. '
@@ -108,7 +54,7 @@ export namespace Archetype {
   /**
    * Three Cats
    */
-  export const MISCHIEVOUS_PIEBALD: Type = {
+  export const MISCHIEVOUS_PIEBALD: Archetype = {
     affiliation: [Affiliations.THE_CATS],
     alias: ['Keeper of Law', 'Mischief', 'Tux', "Schrodinger's cat"],
     backstory:
@@ -128,14 +74,14 @@ export namespace Archetype {
     gearSlots: QuadrupedalCreatureGearSlots,
     name: 'Mischievous',
     // a red colored thread can be used to control him
-    potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
+    potentialDisciplines: [Disciplines.SAGE, Disciplines.GUARDIAN],
 
     surname: 'Piebald',
 
     symbolizes: ['Law', 'Causality', 'Absolute'],
   };
 
-  export const JANUS_PERSIAN: Type = {
+  export const JANUS_PERSIAN: Archetype = {
     affiliation: [Affiliations.THE_CATS],
     alias: ['Keeper of Time', 'Wise-Kitty', 'Old Coat'],
     backstory:
@@ -144,12 +90,12 @@ export namespace Archetype {
     description: 'An orange old persian cat',
     gearSlots: QuadrupedalCreatureGearSlots,
     name: 'Janus',
-    potentialDisciplines: [Discipline.SAGE, Discipline.GUARDIAN],
+    potentialDisciplines: [Disciplines.SAGE, Disciplines.GUARDIAN],
     surname: 'Persian',
     symbolizes: ['Time'],
   };
 
-  export const LOOMEE_ANGORA: Type = {
+  export const LOOMEE_ANGORA: Archetype = {
     affiliation: [Affiliations.THE_CATS],
     alias: ['Keeper of Heart', 'Kind-Kitty', 'Song Maiden', 'Mom'],
     backstory:
@@ -160,13 +106,13 @@ export namespace Archetype {
       + 'In human form a light blonde girl wearing white linen',
     name: 'Loomee',
     potentialDisciplines: [
-      Discipline.CHEERLEADER,
-      Discipline.MAIDEN,
-      Discipline.KEEPER,
-      Discipline.COOK,
-      Discipline.HEALER,
-      Discipline.SAGE,
-      Discipline.GUARDIAN,
+      Disciplines.CHEERLEADER,
+      Disciplines.MAIDEN,
+      Disciplines.KEEPER,
+      Disciplines.COOK,
+      Disciplines.HEALER,
+      Disciplines.SAGE,
+      Disciplines.GUARDIAN,
     ],
     summonCompatibility: [Summon.FELIX_LV1],
     surname: 'Angora',
@@ -179,7 +125,7 @@ export namespace Archetype {
    * Three Destroyer
    */
 
-  export const OUERN_ONI: Type = {
+  export const OUERN_ONI: Archetype = {
     affiliation: [Affiliations.THE_DESTROYERS, Affiliations.SOLIDER_FORCES],
     alias: ['The Black Plague', 'Skyfall', 'Timestopper', 'Standstill'],
     backstory:
@@ -194,12 +140,12 @@ export namespace Archetype {
       + 'He possess sight beyond sight; is able to preserve the world from afar'
       + 'He is responsible for battle his son win where time seems to stand still. ',
     name: 'Ouren',
-    potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
+    potentialDisciplines: [Disciplines.SOLIDER, Disciplines.XSOLIDER],
     surname: 'Oni',
     symbolizes: ['Dad', 'Father', 'Destroyer of Time'],
   };
 
-  export const VALLON_ONI: Type = {
+  export const VALLON_ONI: Archetype = {
     affiliation: [
       Affiliations.THE_DESTROYERS,
       Affiliations.VALLONS_SEVEN,
@@ -224,14 +170,14 @@ export namespace Archetype {
 
     name: 'Vallon',
 
-    potentialDisciplines: [Discipline.SOLIDER, Discipline.XSOLIDER],
+    potentialDisciplines: [Disciplines.SOLIDER, Disciplines.XSOLIDER],
 
     surname: 'Oni',
     symbolizes: ['Destroyer of Heart', 'Loveless Lover', 'Heart Wrench'],
     weaponCompatibility: [WeaponCategory.SWORD],
   };
 
-  export const MEEKU_ONI: Type = {
+  export const MEEKU_ONI: Archetype = {
     affiliation: [Affiliations.THE_DESTROYERS, Affiliations.SOLIDER_FORCES],
     alias: ['Kid', 'Brother'],
     backstory: 'A boy who has lost his past',
@@ -243,11 +189,11 @@ export namespace Archetype {
       + 'As a Berserker he uses a mask to break the veil and tap into his limitless ability',
     name: 'Meeku',
     potentialDisciplines: [
-      Discipline.SOLIDER,
-      Discipline.XSOLIDER,
-      Discipline.BERSERKER,
-      Discipline.ONI,
-      Discipline.HERO,
+      Disciplines.SOLIDER,
+      Disciplines.XSOLIDER,
+      Disciplines.BERSERKER,
+      Disciplines.ONI,
+      Disciplines.HERO,
     ],
     potentialOutfits: [Outfits.TSHIRT_AND_JEANS],
     summonCompatibility: [Summon.VACHEL_LV1],
@@ -272,7 +218,7 @@ export namespace Archetype {
   /**
    * Seven Virtues
    */
-  export const ARINOTH_DIYATH: Type = {
+  export const ARINOTH_DIYATH: Archetype = {
     affiliation: [],
     alias: ['Tree'],
     backstory: '',
@@ -284,7 +230,7 @@ export namespace Archetype {
     weaponCompatibility: [WeaponCategory.STAFF],
   };
 
-  export const FAYE_IMAGO: Type = {
+  export const FAYE_IMAGO: Archetype = {
     affiliation: [Affiliations.MAGI_ORDER],
     alias: ['Bookworm'],
     backstory:
@@ -292,17 +238,17 @@ export namespace Archetype {
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Faye',
     potentialDisciplines: [
-      Discipline.WIZARD,
-      Discipline.HISTORIAN,
-      Discipline.MAGI,
-      Discipline.MAGI_BLACK,
-      Discipline.MAGI_BLUE,
-      Discipline.MAGI_BROWN,
-      Discipline.MAGI_GREEN,
-      Discipline.MAGI_PINK,
-      Discipline.MAGI_PURPLE,
-      Discipline.MAGI_WHITE,
-      Discipline.MAGI_YELLOW,
+      Disciplines.WIZARD,
+      Disciplines.HISTORIAN,
+      Disciplines.MAGI,
+      Disciplines.MAGI_BLACK,
+      Disciplines.MAGI_BLUE,
+      Disciplines.MAGI_BROWN,
+      Disciplines.MAGI_GREEN,
+      Disciplines.MAGI_PINK,
+      Disciplines.MAGI_PURPLE,
+      Disciplines.MAGI_WHITE,
+      Disciplines.MAGI_YELLOW,
     ],
     summonCompatibility: [Summon.LYRE_LV1],
     surname: 'Imago',
@@ -310,7 +256,7 @@ export namespace Archetype {
     weaponCompatibility: [WeaponCategory.STAFF],
   };
 
-  export const GAALI_RUNEWIN: Type = {
+  export const GAALI_RUNEWIN: Archetype = {
     affiliation: [],
     backstory:
       'A prince with little interest in becoming king. Instead, he lives for testing his sword in raw danger.',
@@ -318,16 +264,16 @@ export namespace Archetype {
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Gaali',
     potentialDisciplines: [
-      Discipline.BARD,
-      Discipline.DUELIST,
-      Discipline.KNIGHT,
-      Discipline.RUNE_KING,
-      Discipline.ROYALTY,
+      Disciplines.BARD,
+      Disciplines.DUELIST,
+      Disciplines.KNIGHT,
+      Disciplines.RUNE_KING,
+      Disciplines.ROYALTY,
       // - Nobel
       // - Duke
       // - King
-      Discipline.HERO,
-      Discipline.WARRIOR,
+      Disciplines.HERO,
+      Disciplines.WARRIOR,
     ],
     surname: 'Runewin',
     symbolizes: ['Temperance'],
@@ -345,7 +291,7 @@ export namespace Archetype {
     weaponCompatibility: [WeaponCategory.RAPIER],
   };
 
-  export const GUNTER_STONEWELL: Type = {
+  export const GUNTER_STONEWELL: Archetype = {
     affiliation: [Affiliations.SOLIDER_FORCES],
     backstory: 'A solider for life',
     description:
@@ -354,9 +300,9 @@ export namespace Archetype {
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Gunter',
     potentialDisciplines: [
-      Discipline.GUARD,
-      Discipline.BODY_BUILDER,
-      Discipline.COMMANDER,
+      Disciplines.GUARD,
+      Disciplines.BODY_BUILDER,
+      Disciplines.COMMANDER,
     ],
     summonCompatibility: [Summon.SCRIBBLES_LV1],
     surname: 'Stonewell',
@@ -364,7 +310,7 @@ export namespace Archetype {
     weaponCompatibility: [WeaponCategory.TWO_HANDED_AXE],
   };
 
-  export const MALACE_TSIA: Type = {
+  export const MALACE_TSIA: Archetype = {
     affiliation: [Affiliations.CATCHERS],
     alias: [
       'Black',
@@ -380,12 +326,12 @@ export namespace Archetype {
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Malace',
     potentialDisciplines: [
-      Discipline.GYMNAST,
-      Discipline.POSSESSED,
-      Discipline.SCOUT,
-      Discipline.OUROBOROS,
-      Discipline.SUMMONER,
-      Discipline.ROUGE,
+      Disciplines.GYMNAST,
+      Disciplines.POSSESSED,
+      Disciplines.SCOUT,
+      Disciplines.OUROBOROS,
+      Disciplines.SUMMONER,
+      Disciplines.ROUGE,
     ],
     potentialOutfits: [Outfits.OFFICERS_UNIFORM],
     summonCompatibility: [Summon.OUROBOROS_LV1, Summon.MISCHIEVOUS_LV1],
@@ -404,7 +350,7 @@ export namespace Archetype {
     weaponCompatibility: [WeaponCategory.KNIFE, WeaponCategory.DAGGER],
   };
 
-  export const PENNY_KIBBUTZ: Type = {
+  export const PENNY_KIBBUTZ: Archetype = {
     affiliation: [Affiliations.NINJA],
     age: 22,
     alias: ['Pen', 'Crazy Chick'],
@@ -420,11 +366,11 @@ export namespace Archetype {
     name: 'Penny',
     occupation: 'Mercenary',
     potentialDisciplines: [
-      Discipline.NINJA,
-      Discipline.ASSASSIN,
-      Discipline.AMBER_ASSASSIN,
-      Discipline.ELITE_ASSASSIN,
-      Discipline.THIEF,
+      Disciplines.NINJA,
+      Disciplines.ASSASSIN,
+      Disciplines.AMBER_ASSASSIN,
+      Disciplines.ELITE_ASSASSIN,
+      Disciplines.THIEF,
     ],
     summonCompatibility: [Summon.HERALDIC_LION_LV1],
     surname: 'Kibbutz',
@@ -442,16 +388,16 @@ export namespace Archetype {
     weight: 120,
   };
 
-  export const TRAEZ_UTHSHA: Type = {
+  export const TRAEZ_UTHSHA: Archetype = {
     affiliation: [Affiliations.REBEL],
     backstory: '',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Traez',
     potentialDisciplines: [
-      Discipline.ENGINEER,
-      Discipline.MECHANIC,
-      Discipline.LIGHTENING_WARRIOR,
-      Discipline.REBEL,
+      Disciplines.ENGINEER,
+      Disciplines.MECHANIC,
+      Disciplines.LIGHTENING_WARRIOR,
+      Disciplines.REBEL,
     ],
     summonCompatibility: [Summon.SANDY_LV1],
     surname: 'Uthsha',
@@ -462,7 +408,7 @@ export namespace Archetype {
   /**
    * Seven Sins
    */
-  export const VOID: Type = {
+  export const VOID: Archetype = {
     affiliation: [Affiliations.DEVILS],
     alias: ['Empty'],
     backstory:
@@ -472,21 +418,21 @@ export namespace Archetype {
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Void',
     potentialDisciplines: [
-      Discipline.MAGI_BLACK,
-      Discipline.LEGENDARY_INSTINCT,
+      Disciplines.MAGI_BLACK,
+      Disciplines.LEGENDARY_INSTINCT,
     ],
   };
 
-  export const GENKI: Type = {
+  export const GENKI: Archetype = {
     affiliation: [Affiliations.VALLONS_SEVEN],
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Genki',
-    potentialDisciplines: [Discipline.MAGI_BLUE],
+    potentialDisciplines: [Disciplines.MAGI_BLUE],
     symbolizes: ['Wrath', 'Fish'],
     weaponCompatibility: [WeaponCategory.HAND_SWORD],
   };
 
-  export const LAWZON_GREY: Type = {
+  export const LAWZON_GREY: Archetype = {
     affiliation: [Affiliations.VALLONS_SEVEN],
     description:
       'Wears wolfs head, with horns, and a sleep mask. '
@@ -499,194 +445,194 @@ export namespace Archetype {
       + 'He now wanders seemingly lifelessly in search of an end. '
       + 'He is by far the most strongest of the seven but has no will to fight.',
     name: 'Lawzon',
-    potentialDisciplines: [Discipline.MAGI_WHITE],
+    potentialDisciplines: [Disciplines.MAGI_WHITE],
     surname: 'Grey',
     symbolizes: ['Sloth', 'Wolf'],
     weaponCompatibility: [WeaponCategory.BROAD_SWORD],
   };
 
-  export const MADHI_TSIA: Type = {
+  export const MADHI_TSIA: Archetype = {
     affiliation: [Affiliations.VALLONS_SEVEN, Affiliations.CATCHERS],
     alias: ['Brother'],
     backstory: 'When the world is about to end he is its savor',
     description: "Malace's brother",
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Mahdi',
-    potentialDisciplines: [Discipline.POSSESSED, Discipline.MAGI_BLACK],
+    potentialDisciplines: [Disciplines.POSSESSED, Disciplines.MAGI_BLACK],
     surname: 'Tsia',
     symbolizes: ['Mahdi', 'German Shepherd'],
     weaponCompatibility: [WeaponCategory.KNIFE],
   };
 
-  export const SUYRI: Type = {
+  export const SUYRI: Archetype = {
     affiliation: [Affiliations.VALLONS_SEVEN],
     description:
       'Has and uses strong magical powers. '
       + 'A female with pink colored hair. ',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Suyri',
-    potentialDisciplines: [Discipline.WIZARD, Discipline.MAGI_PINK],
+    potentialDisciplines: [Disciplines.WIZARD, Disciplines.MAGI_PINK],
     symbolizes: ['Luxury (later lust)', 'Fox'],
   };
 
-  export const WISP: Type = {
+  export const WISP: Archetype = {
     affiliation: [Affiliations.VALLONS_SEVEN],
     alias: ['Crackles'],
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Wisp',
-    potentialDisciplines: [Discipline.MAGI_YELLOW],
+    potentialDisciplines: [Disciplines.MAGI_YELLOW],
     symbolizes: ['Gluttony', 'Hyena'],
   };
 
-  export const ASMIN: Type = {
+  export const ASMIN: Archetype = {
     affiliation: [Affiliations.VALLONS_SEVEN],
     alias: ['Big Guy'],
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Asmin',
-    potentialDisciplines: [Discipline.MAGI_BROWN],
+    potentialDisciplines: [Disciplines.MAGI_BROWN],
     symbolizes: ['Pride', 'Ox'],
     weaponCompatibility: [WeaponCategory.TWO_HANDED_AXE],
   };
 
-  export const DIAG: Type = {
+  export const DIAG: Archetype = {
     affiliation: [Affiliations.VALLONS_SEVEN],
     alias: ['Poisonous Snake'],
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Diag',
-    potentialDisciplines: [Discipline.MAGI_PURPLE],
+    potentialDisciplines: [Disciplines.MAGI_PURPLE],
     symbolizes: ['Envy', 'Snake'],
   };
 
   /**
    * Notable Bad Guys
    */
-  export const MONARCH: Type = {
+  export const MONARCH: Archetype = {
     alias: ['The Deadly One'],
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Monarch',
     weaponCompatibility: [WeaponCategory.DAGGER],
   };
 
-  export const VICEROY: Type = {
+  export const VICEROY: Archetype = {
     backstory: 'mimic monarch',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Viceroy',
     weaponCompatibility: [WeaponCategory.DAGGER],
   };
 
-  export const WARLING: Type = {
+  export const WARLING: Archetype = {
     alias: ['Wind Bag'],
     description: 'The embodiment of a traveling cyclone',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Warling',
-    potentialDisciplines: [Discipline.WIZARD, Discipline.HISTORIAN],
+    potentialDisciplines: [Disciplines.WIZARD, Disciplines.HISTORIAN],
   };
 
   /**
    * Battlers
    */
-  export const SPIDER: Type = {
+  export const SPIDER: Archetype = {
     alias: ['Creepy Crawlers'],
     description: 'A spider',
     gearSlots: [],
     name: 'Spider',
     potentialDisciplines: [
-      Discipline.BASIC_INSTINCT,
-      Discipline.ELITE_INSTINCT,
+      Disciplines.BASIC_INSTINCT,
+      Disciplines.ELITE_INSTINCT,
     ],
     weaponCompatibility: [],
   };
 
-  export const SEA_HORSE: Type = {
+  export const SEA_HORSE: Archetype = {
     alias: ['Legless Horse'],
     description: 'A spider',
     gearSlots: [],
     name: 'Sea Horse',
     potentialDisciplines: [
-      Discipline.BASIC_INSTINCT,
-      Discipline.ELITE_INSTINCT,
+      Disciplines.BASIC_INSTINCT,
+      Disciplines.ELITE_INSTINCT,
     ],
     weaponCompatibility: [],
   };
 
-  export const SENSITIVE_PLANT: Type = {
+  export const SENSITIVE_PLANT: Archetype = {
     alias: ['Weepers'],
     description: 'A plant that drops when touched',
     gearSlots: [],
     name: 'Sensitive Plant',
-    potentialDisciplines: [Discipline.DETRIMENTAL_INSTINCT],
+    potentialDisciplines: [Disciplines.DETRIMENTAL_INSTINCT],
     weaponCompatibility: [],
   };
 
-  export const DEEP_THINKER: Type = {
+  export const DEEP_THINKER: Archetype = {
     alias: ['Fish Brains'],
     description: 'A humanoid, fish, monster',
     gearSlots: [],
     name: 'Deep Thinker',
-    potentialDisciplines: [Discipline.ELITE_INSTINCT],
+    potentialDisciplines: [Disciplines.ELITE_INSTINCT],
   };
 
-  export const GEL: Type = {
+  export const GEL: Archetype = {
     alias: ['Blob', 'Jello', 'Squishy'],
     description: 'A gel based creature',
     gearSlots: AmorphousCreatureGearSlots,
     name: 'Gel',
     potentialDisciplines: [
-      Discipline.BASIC_INSTINCT,
-      Discipline.ELITE_INSTINCT,
+      Disciplines.BASIC_INSTINCT,
+      Disciplines.ELITE_INSTINCT,
     ],
   };
 
-  export const PHOENIX: Type = {
+  export const PHOENIX: Archetype = {
     description: 'A bird of fire.',
     gearSlots: AvianCreatureGearSlots,
     name: 'Phoenix',
-    potentialDisciplines: [Discipline.LEGENDARY_INSTINCT],
+    potentialDisciplines: [Disciplines.LEGENDARY_INSTINCT],
     weaponCompatibility: [],
   };
 
-  export const SNOW_LEOPARD: Type = {
+  export const SNOW_LEOPARD: Archetype = {
     description: 'A creature that lives far to the north.',
     // can be seen near Lawzon
     gearSlots: QuadrupedalCreatureGearSlots,
     name: 'Snow Leopard',
-    potentialDisciplines: [Discipline.ELITE_INSTINCT],
+    potentialDisciplines: [Disciplines.ELITE_INSTINCT],
   };
 
-  export const CHIMERA: Type = {
+  export const CHIMERA: Archetype = {
     description: 'A combination of two or more animals.',
     gearSlots: QuadrupedalCreatureGearSlots,
     name: 'Chimera',
     potentialDisciplines: [
-      Discipline.DETRIMENTAL_INSTINCT,
-      Discipline.ELITE_INSTINCT,
+      Disciplines.DETRIMENTAL_INSTINCT,
+      Disciplines.ELITE_INSTINCT,
     ],
   };
 
-  export const SLOW_MOVER: Type = {
+  export const SLOW_MOVER: Archetype = {
     description: 'A type of sloth like creature.',
     // that lives around the maiden of the mist
     gearSlots: [],
     name: 'Slow Mover',
-    potentialDisciplines: [Discipline.DETRIMENTAL_INSTINCT],
+    potentialDisciplines: [Disciplines.DETRIMENTAL_INSTINCT],
   };
 
-  export const SNAKE_OF_THE_WATER: Type = {
+  export const SNAKE_OF_THE_WATER: Archetype = {
     description: 'A type of dragon.',
     gearSlots: SerpentineCreatureGearSlots,
     name: 'Snake of the Water',
-    potentialDisciplines: [Discipline.ELITE_INSTINCT],
+    potentialDisciplines: [Disciplines.ELITE_INSTINCT],
   };
 
-  export const BANDIT: Type = {
+  export const BANDIT: Archetype = {
     affiliation: [Affiliations.FLIPPING_PROFITEERS],
     description: 'Bandit.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Bandit',
-    potentialDisciplines: [Discipline.BASIC_INSTINCT],
+    potentialDisciplines: [Disciplines.BASIC_INSTINCT],
   };
 
-  export const ROWAN: Type = {
+  export const ROWAN: Archetype = {
     affiliation: [Affiliations.FLIPPING_PROFITEERS],
     alias: ['The Flame-Maned Bandit', 'Red-Haired Rogue'],
     backstory:
@@ -696,10 +642,10 @@ export namespace Archetype {
       + "Rowan's love for a well-brewed cup of tea is as legendary as his escapades.",
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Rowan',
-    potentialDisciplines: [Discipline.ELITE_INSTINCT],
+    potentialDisciplines: [Disciplines.ELITE_INSTINCT],
   };
 
-  export const CHUBBS: Type = {
+  export const CHUBBS: Archetype = {
     affiliation: [Affiliations.FLIPPING_PROFITEERS],
     alias: ['The Rotund Rascal', 'Pint-Sized Pilferer'],
     backstory:
@@ -709,16 +655,16 @@ export namespace Archetype {
       + 'a thank-you note after their heists. Chubbs firmly believes that a well-baked pie can solve any problem.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Chubbs',
-    potentialDisciplines: [Discipline.BASIC_INSTINCT],
+    potentialDisciplines: [Disciplines.BASIC_INSTINCT],
   };
 }
 
 /**
  * contains list of all supported ArchetypeIds
  */
-export const ArchetypeIds = Object.keys(Archetype);
+export const ArchetypeIds = Object.keys(Archetypes);
 
 /**
  * type for each supported ArchetypeId
  */
-export type ArchetypeId = keyof typeof Archetype;
+export type ArchetypeId = keyof typeof Archetypes;

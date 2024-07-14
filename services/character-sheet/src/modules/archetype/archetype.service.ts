@@ -1,13 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { Archetype, ArchetypeIds, ArchetypeId } from '../../data/archetype';
+import { Archetype } from '@galaxyops/character-sheet-contracts';
+import { Archetypes, ArchetypeIds, ArchetypeId } from '../../data/archetype';
 
 @Injectable()
 export class ArchetypeService {
-  async find(archetypeId: ArchetypeId): Promise<Archetype.Type> {
+  async find(archetypeId: ArchetypeId): Promise<Archetype> {
     try {
       return await Promise.resolve({
         id: archetypeId,
-        ...Archetype[archetypeId],
+        ...Archetypes[archetypeId],
       });
     } catch (err) {
       return Promise.reject(new Error('Failed to get Archetype'));
@@ -16,7 +17,7 @@ export class ArchetypeService {
 
   async findAll(): Promise<any> {
     try {
-      const archetypes = Object.keys(Archetype);
+      const archetypes = Object.keys(Archetypes);
       return await Promise.resolve(archetypes);
     } catch (err) {
       return Promise.reject(new Error('Failed to list ArchetypeIds'));

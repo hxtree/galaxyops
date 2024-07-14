@@ -342,4 +342,69 @@ export namespace Passive {
     name: 'Limitless',
     target: ActionTarget.SELF,
   };
+
+  /** Seven Sins */
+
+  export const WRATH_INCARNATE: Skill = {
+    description: 'Manifestation of wrath.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Wrath Incarnate',
+    target: ActionTarget.SELF,
+  };
+
+  export const SLOTH_INCARNATE: Skill = {
+    description: 'Manifestation of sloth.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Sloth Incarnate',
+    target: ActionTarget.SELF,
+  };
+
+  export const LUST_INCARNATE: Skill = {
+    description: 'Manifestation of lust.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Lust Incarnate',
+    target: ActionTarget.SELF,
+  };
+
+  export const GLUTTONY_INCARNATE: Skill = {
+    description: 'Manifestation of gluttony.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Gluttony Incarnate',
+    target: ActionTarget.SELF,
+  };
+
+  export const PRIDE_INCARNATE: Skill = {
+    description: 'Manifestation of pride.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Pride Incarnate',
+    target: ActionTarget.SELF,
+  };
+
+  export const ENVY_INCARNATE: Skill = {
+    description: 'Manifestation of envy.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Envy Incarnate',
+    target: ActionTarget.SELF,
+  };
+
+  export const GREED_INCARNATE: Skill = {
+    description: 'Manifestation of greed.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Greed Incarnate',
+    target: ActionTarget.SELF,
+  };
+
+  // TODO add more passive skills for the following:
+  // FISH
+  // FOX
+  // HYENA_
+  // OX_KING
+  // SERPANT_GOD
 }

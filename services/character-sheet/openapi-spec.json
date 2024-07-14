@@ -340,6 +340,13 @@
                 "GLUTTONOUS_DESIRE_LV1",
                 "CATCHER_LV1",
                 "LIMITLESS_LV1",
+                "WRATH_INCARNATE",
+                "SLOTH_INCARNATE",
+                "LUST_INCARNATE",
+                "GLUTTONY_INCARNATE",
+                "PRIDE_INCARNATE",
+                "ENVY_INCARNATE",
+                "GREED_INCARNATE",
                 "LAST_STAND_LV1",
                 "BLITZ_STRIKE_LV1",
                 "FLANK_LV1",
@@ -569,7 +576,7 @@
             "required": true,
             "in": "path",
             "schema": {
-              "default": "e94c647e-4d1e-4871-a60f-0a61f60e6237",
+              "default": "6162e914-33ac-4d7f-89b5-a05b1d93dd76",
               "type": "string"
             }
           }
@@ -608,7 +615,7 @@
         "properties": {
           "instanceId": {
             "type": "string",
-            "default": "e16096da-7ed7-4a16-8b1b-123987751991"
+            "default": "7b7bde99-de96-45fa-8b4d-05e171af3100"
           },
           "archetypeId": {
             "type": "string",
@@ -665,7 +672,7 @@
         "properties": {
           "instanceId": {
             "type": "string",
-            "default": "becd5613-aafa-4082-b070-a164ff4369f1"
+            "default": "ac548402-a20d-42d7-9a60-c6fb9cceb70c"
           },
           "place": {
             "type": "string",
@@ -688,7 +695,7 @@
         "properties": {
           "characterSheetId": {
             "type": "string",
-            "default": "8a722ab3-8f86-4cb5-a457-53fa3aa27672"
+            "default": "0261eb67-ae3f-40bd-9c52-f19c9a8a1d97"
           },
           "affiliationId": {
             "type": "string",

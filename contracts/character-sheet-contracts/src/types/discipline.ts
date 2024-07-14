@@ -46,7 +46,7 @@ export type Discipline = {
   description: string;
   category: DisciplineCategory;
   history?: string;
-  prerequisites?: string; // DisciplineId[]; // After level etc?
+  prerequisites?: string[]; // DisciplineId[]; // After level etc?
   // could also be event like defeated Lawzon, but may be that's too
   // character specific?
   progression?: DisciplineProgression[];
