@@ -539,6 +539,18 @@ export namespace Archetypes {
     potentialDisciplines: [
       Disciplines.BASIC_INSTINCT,
       Disciplines.ELITE_INSTINCT,
+      Disciplines.SPIDER_MASTERY,
+    ],
+    weaponCompatibility: [],
+  };
+
+  export const INFERNO_ARACHNID = {
+    description: 'A fire spider',
+    gearSlots: [],
+    name: 'Inferno Arachnid',
+    potentialDisciplines: [
+      Disciplines.ELITE_INSTINCT,
+      Disciplines.SPIDER_MASTERY,
     ],
     weaponCompatibility: [],
   };

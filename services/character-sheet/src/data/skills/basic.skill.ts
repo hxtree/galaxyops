@@ -33,6 +33,63 @@ export namespace Basic {
     target: ActionTarget.OPPONENT,
   };
 
+  export const BITE_LV1: Skill = {
+    actionEffects: {
+      OPPONENT: [
+        {
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL, EffectTag.CLAW],
+        },
+      ],
+    },
+    description: 'Bite aiming to inflict damage.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.ATTACK,
+    name: 'Bite',
+    target: ActionTarget.OPPONENT,
+  };
+
+  export const BITE_LV2: Skill = {
+    ...BITE_LV1,
+    actionEffects: {
+      OPPONENT: [
+        {
+          quantity: '2d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL],
+        },
+        {
+          duration: Duration.fromObject({ seconds: 15 }),
+          quantity: '1d4',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.POISON],
+        },
+      ],
+    },
+    level: SkillLevel.LV2,
+  };
+
+  export const BITE_LV3: Skill = {
+    ...BITE_LV1,
+    actionEffects: {
+      OPPONENT: [
+        {
+          quantity: '3d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL],
+        },
+        {
+          duration: Duration.fromObject({ seconds: 60 }),
+          quantity: '4d4',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.POISON],
+        },
+      ],
+    },
+    level: SkillLevel.LV3,
+  };
+
   export const BOAST_LV1: Skill = {
     actionEffects: {
       ALLY: [
