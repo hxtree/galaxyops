@@ -1,24 +1,41 @@
 import { Skill } from './skill';
-
+/**
+ * Represents a weapon.
+ */
 export type Weapon = {
+  /**
+   * The name of the weapon.
+   */
   name: string;
+  /**
+   * The category of the weapon, used to determine equability, weakness and resistance.
+   */
   category: WeaponCategory;
-  // the immediately evident appearance of the weapon
+  /**
+   * The immediately evident appearance of the weapon.
+   */
   description?: string;
-  // the history of the weapon, can be revealed by a special ability.
+  /**
+   * The history of the weapon, can be revealed by a special ability.
+   */
   history?: string | null;
-  // used to determine damage per swing / etc
+  /**
+   * Used to determine damage per swing / etc.
+   */
   power: number;
-  // used to determine rate of use/fire
+  /**
+   * Used to determine rate of use/fire.
+   */
   speed: number;
-
-  // dps could be calculated but would require character
-  // but pendents don't do damage
-
-  // the range of the attack
-  // todo UOM? feet, yards, meters?
-  // TODO should area be based on skill or weapon?
+  /**
+   * The range of the attack.
+   * @todo UOM? feet, yards, meters?
+   * @todo Should area be based on skill or weapon?
+   */
   area: number;
+  /**
+   * The skills associated with the weapon.
+   */
   actions: Skill[];
 };
 

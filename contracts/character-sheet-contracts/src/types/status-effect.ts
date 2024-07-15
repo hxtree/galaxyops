@@ -1,4 +1,3 @@
-import { Attribute } from './attribute';
 import { EffectTable } from './table.effect';
 
 export enum StatusEffectCategory {
