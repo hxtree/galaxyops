@@ -346,14 +346,38 @@ export namespace Passive {
   /** Seven Sins */
 
   export const WRATH_INCARNATE: Skill = {
+    actionEffects: {
+      SELF: [
+        {
+          add: Attribute.POWER,
+          chance: 1.0,
+          quantity: '150',
+        },
+      ],
+    },
     description: 'Manifestation of wrath.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
+
     name: 'Wrath Incarnate',
     target: ActionTarget.SELF,
   };
 
   export const SLOTH_INCARNATE: Skill = {
+    actionEffects: {
+      SELF: [
+        {
+          chance: 1.0,
+          quantity: '50',
+          remove: Attribute.SPEED,
+        },
+        {
+          add: Attribute.POWER,
+          chance: 1.0,
+          quantity: '300',
+        },
+      ],
+    },
     description: 'Manifestation of sloth.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
