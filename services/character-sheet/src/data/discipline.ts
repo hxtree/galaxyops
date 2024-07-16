@@ -746,9 +746,9 @@ export namespace Disciplines {
   export const SPIDER_MASTERY: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description:
-      'Instincts that are exceptionally rare, powerful, or revered, representing the pinnacle of evolutionary development.',
+      'Harness the ancient art of spider mastery, weaving deadly webs and delivering venomous strikes with unparalleled agility.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
-    name: 'Legendary Instinct',
+    name: 'Spider Mastery',
     progression: [
       ...awardAbilityPointEachLevel(2, 1, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 1, skill: Skills.BITE_LV1 },
@@ -757,6 +757,20 @@ export namespace Disciplines {
       { level: 10, skill: Skills.BITE_LV3 },
       { level: 12, skill: Skills.POISON_TRAP_LV1 },
       // { level: 15, skill: Skills.ARACHNOMANCY_LV1 },
+    ],
+  };
+
+  export const SERPENT_MASTERY: Discipline = {
+    category: DisciplineCategory.ARCHETYPE,
+    description:
+      'Embrace the ancient serpent mastery, striking with venomous fangs and mastering stealth to dominate your foes.',
+    maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
+    name: 'Serpent Mastery',
+    progression: [
+      ...awardAbilityPointEachLevel(2, 1, DISCIPLINE_DEFAULT_MAX_LEVEL),
+      { level: 1, skill: Skills.BITE_LV1 },
+      { level: 5, skill: Skills.BITE_LV2 },
+      { level: 10, skill: Skills.BITE_LV3 },
     ],
   };
 }

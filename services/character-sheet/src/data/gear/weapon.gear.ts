@@ -305,6 +305,15 @@ export namespace Weapons {
 
   // which one is Wisp’s Knife?
 
+  export const FOLDING_KNIFE: Weapon = {
+    actions: [Skills.SLASH_LV1],
+    area: 1,
+    category: WeaponCategory.KNIFE,
+    name: 'Folding Knife',
+    power: 10,
+    speed: 18,
+  };
+
   export const GREED: Weapon = {
     actions: [Skills.SLASH_LV1, Skills.ABSORB_LV1],
     area: 1,
