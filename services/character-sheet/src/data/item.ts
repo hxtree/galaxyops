@@ -1,4 +1,8 @@
-import { ItemCapacity, Item } from '@galaxyops/character-sheet-contracts';
+import {
+  Attribute,
+  ItemCapacity,
+  Item,
+} from '@galaxyops/character-sheet-contracts';
 
 /**
  * Items crafting materials,
@@ -57,6 +61,15 @@ export namespace Items {
   };
 
   export const RICE_BALL: Item = {
+    actionEffects: {
+      SELF: [
+        {
+          chance: 1.0,
+          quantity: '3d10',
+          remove: Attribute.LIFE,
+        },
+      ],
+    },
     capacity: 99,
     craftingMaterials: [
       { item: 'RICE', quantity: 1 },
@@ -64,17 +77,33 @@ export namespace Items {
     ],
     description: 'Onigiri made from condensed rice',
     name: 'Rice Ball',
-    // heals
   };
 
   export const DANGO: Item = {
+    actionEffects: {
+      SELF: [
+        {
+          chance: 1.0,
+          quantity: '4d10',
+          remove: Attribute.LIFE,
+        },
+      ],
+    },
     capacity: ItemCapacity.MEDIUM,
     description: 'Mochi-like sweet made from crushed rice ',
     name: 'Dango',
-    // heals
   };
 
   export const RAMEN: Item = {
+    actionEffects: {
+      SELF: [
+        {
+          chance: 1.0,
+          quantity: '5d10',
+          remove: Attribute.LIFE,
+        },
+      ],
+    },
     capacity: ItemCapacity.LOW,
     craftingMaterials: [
       { item: 'FLOUR', quantity: 1 },
@@ -84,10 +113,18 @@ export namespace Items {
     ],
     description: 'Noodles, tare, broth, topping and aroma oil',
     name: 'Ramen',
-    // heals
   };
 
   export const PELMENI: Item = {
+    actionEffects: {
+      SELF: [
+        {
+          chance: 1.0,
+          quantity: '5d10',
+          remove: Attribute.LIFE,
+        },
+      ],
+    },
     capacity: ItemCapacity.MEDIUM,
     craftingMaterials: [
       { item: 'FLOUR', quantity: 1 },
