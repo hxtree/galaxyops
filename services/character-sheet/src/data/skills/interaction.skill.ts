@@ -11,7 +11,11 @@ import {
  */
 export namespace Interaction {
   export const GRAB_LV1: Skill = {
-    actionEffects: {
+    description: 'Grab an object.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.INTERACTION,
+    name: 'Grab',
+    outcome: {
       INTERACTION_OBJECT: [
         {
           add: 'BERSERK', // TODO figure out how to handle this
@@ -20,10 +24,6 @@ export namespace Interaction {
         },
       ],
     },
-    description: 'Grab an object.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.INTERACTION,
-    name: 'Grab',
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
@@ -60,7 +60,11 @@ export namespace Interaction {
   };
 
   export const PICK_LOCK_LV1: Skill = {
-    actionEffects: {
+    description: 'Attempt to pick a lock.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.INTERACTION,
+    name: 'Pick Lock',
+    outcome: {
       INTERACTION_OBJECT: [
         {
           add: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
@@ -76,15 +80,15 @@ export namespace Interaction {
         },
       ],
     },
-    description: 'Attempt to pick a lock.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.INTERACTION,
-    name: 'Pick Lock',
     target: ActionTarget.INTERACTION_OBJECT,
   };
 
   export const UNLOCK_LV1: Skill = {
-    actionEffects: {
+    description: 'Open a lock using a key.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.INTERACTION,
+    name: 'Unlock',
+    outcome: {
       INTERACTION_OBJECT: [
         {
           add: 'BERSERK', // TODO figure out how to handle this, e.g. state UNLOCKED
@@ -101,10 +105,6 @@ export namespace Interaction {
         },
       ],
     },
-    description: 'Open a lock using a key.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.INTERACTION,
-    name: 'Unlock',
     target: ActionTarget.INTERACTION_OBJECT,
   };
 }

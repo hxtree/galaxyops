@@ -1,4 +1,4 @@
-import { ActionEffects } from './table.effect';
+import { Outcome } from './table.effect';
 
 export enum ItemCapacity {
   UNIQUE = 1,
@@ -20,5 +20,5 @@ export type Item = {
   description: string;
   capacity: ItemCapacity;
   craftingMaterials?: RecipeIngredient[];
-  actionEffects?: ActionEffects;
+  outcome?: Outcome;
 };

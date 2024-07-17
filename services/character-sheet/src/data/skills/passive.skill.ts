@@ -17,44 +17,11 @@ import {
  */
 export namespace Passive {
   export const THE_ONE_MAX: Skill = {
-    actionEffects: {
-      SELF: [
-        {
-          add: Attribute.POWER,
-          chance: 1.0,
-          quantity: '10',
-        },
-        {
-          add: Attribute.DEFENSE,
-          chance: 1.0,
-          quantity: '10',
-        },
-        {
-          add: Attribute.SPEED,
-          chance: 1.0,
-          quantity: '10',
-        },
-        {
-          add: Attribute.SPIRIT,
-          chance: 1.0,
-          quantity: '10',
-        },
-        {
-          add: Attribute.LIFE,
-          chance: 1.0,
-          quantity: '10',
-        },
-      ],
-    },
     description: 'Hidden.',
     level: SkillLevel.MAX,
     menuSlot: MenuSlot.NONE,
     name: '(Unknown)',
-    target: ActionTarget.SELF,
-  };
-
-  export const PHYSICAL_CONDITIONING_LV1: Skill = {
-    actionEffects: {
+    outcome: {
       SELF: [
         {
           add: Attribute.POWER,
@@ -83,15 +50,52 @@ export namespace Passive {
         },
       ],
     },
+    target: ActionTarget.SELF,
+  };
+
+  export const PHYSICAL_CONDITIONING_LV1: Skill = {
     description: 'Increases all attributes.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Physical Conditioning',
+    outcome: {
+      SELF: [
+        {
+          add: Attribute.POWER,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.DEFENSE,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.SPEED,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.SPIRIT,
+          chance: 1.0,
+          quantity: '10',
+        },
+        {
+          add: Attribute.LIFE,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
     target: ActionTarget.SELF,
   };
 
   export const SPIRITUAL_GROWTH_LV1: Skill = {
-    actionEffects: {
+    description: 'Increases spirit',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Spiritual Growth',
+    outcome: {
       SELF: [
         {
           add: Attribute.SPIRIT,
@@ -100,15 +104,15 @@ export namespace Passive {
         },
       ],
     },
-    description: 'Increases spirit',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-    name: 'Spiritual Growth',
     target: ActionTarget.SELF,
   };
 
   export const MENTAL_DISCIPLINE_LV1: Skill = {
-    actionEffects: {
+    description: 'Mental Discipline',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Mental Discipline',
+    outcome: {
       SELF: [
         {
           add: Attribute.INTELLIGENCE,
@@ -122,15 +126,15 @@ export namespace Passive {
         },
       ],
     },
-    description: 'Mental Discipline',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-    name: 'Mental Discipline',
     target: ActionTarget.SELF,
   };
 
   export const PRECISION_AND_TECHNIQUE_LV1: Skill = {
-    actionEffects: {
+    description: 'Align body correctly to generate more power and speed.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Precision and Technique',
+    outcome: {
       SELF: [
         {
           add: Attribute.POWER,
@@ -144,10 +148,6 @@ export namespace Passive {
         },
       ],
     },
-    description: 'Align body correctly to generate more power and speed.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-    name: 'Precision and Technique',
     target: ActionTarget.SELF,
   };
 
@@ -160,7 +160,11 @@ export namespace Passive {
   };
 
   export const ESCAPE_ARTIST_LV1: Skill = {
-    actionEffects: {
+    description: 'Makes it easier to run away from aggressive targets',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Escape Artist',
+    outcome: {
       SELF: [
         {
           add: Attribute.SPEED,
@@ -169,10 +173,6 @@ export namespace Passive {
         },
       ],
     },
-    description: 'Makes it easier to run away from aggressive targets',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-    name: 'Escape Artist',
     target: ActionTarget.SELF,
   };
 
@@ -185,24 +185,11 @@ export namespace Passive {
   };
 
   export const CONCENTRATION_LV1: Skill = {
-    actionEffects: {
-      SELF: [
-        {
-          add: Attribute.SPIRIT,
-          chance: 1.0,
-          quantity: '10',
-        },
-      ],
-    },
     description: 'Maintain focused for longer periods of time',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Concentration',
-    target: ActionTarget.SELF,
-  };
-
-  export const BLUFF_LV1: Skill = {
-    actionEffects: {
+    outcome: {
       SELF: [
         {
           add: Attribute.SPIRIT,
@@ -211,10 +198,23 @@ export namespace Passive {
         },
       ],
     },
+    target: ActionTarget.SELF,
+  };
+
+  export const BLUFF_LV1: Skill = {
     description: 'Tell a lie without being caught',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
     name: 'Bluff',
+    outcome: {
+      SELF: [
+        {
+          add: Attribute.SPIRIT,
+          chance: 1.0,
+          quantity: '10',
+        },
+      ],
+    },
     target: ActionTarget.SELF,
   };
 
@@ -228,7 +228,11 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
   export const GREEDY_INTENT_LV1: Skill = {
-    actionEffects: {
+    description: 'Gain more experience than the party.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Greedy Intent',
+    outcome: {
       SELF: [
         {
           add: Attribute.EXPERIENCE,
@@ -237,15 +241,15 @@ export namespace Passive {
         },
       ],
     },
-    description: 'Gain more experience than the party.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-    name: 'Greedy Intent',
     target: ActionTarget.SELF,
   };
 
   export const SLOTH_COMPOSURE_LV1: Skill = {
-    actionEffects: {
+    description: 'Decreases damage taken',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Sloth Composure',
+    outcome: {
       SELF: [
         {
           add: Attribute.DEFENSE,
@@ -254,16 +258,20 @@ export namespace Passive {
         },
       ],
     },
-    description: 'Decreases damage taken',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-    name: 'Sloth Composure',
     target: ActionTarget.SELF,
   };
 
   export const BLOOD_LUST_LV1: Skill = {
+
+    description: 'Increases speed.',
+
+    level: SkillLevel.LV1,
+
+    menuSlot: MenuSlot.NONE,
+
+    name: 'Blood Lust',
     // Acquired by defeating Lust.
-    actionEffects: {
+    outcome: {
       SELF: [
         {
           add: Attribute.SPEED,
@@ -272,17 +280,20 @@ export namespace Passive {
         },
       ],
     },
-
-    description: 'Increases speed.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-    name: 'Blood Lust',
     target: ActionTarget.SELF,
   };
 
   export const ENVIOUS_OF_COMBAT_LV1: Skill = {
+
+    description: 'Gains increased power.',
+
+    level: SkillLevel.LV1,
+
+    menuSlot: MenuSlot.NONE,
+
+    name: 'Envious of Combat',
     // Acquired by defeating Envy.
-    actionEffects: {
+    outcome: {
       SELF: [
         {
           add: Attribute.POWER,
@@ -291,16 +302,17 @@ export namespace Passive {
         },
       ],
     },
-
-    description: 'Gains increased power.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-    name: 'Envious of Combat',
     target: ActionTarget.SELF,
   };
 
   export const GLUTTONOUS_DESIRE_LV1: Skill = {
-    actionEffects: {
+    description: 'Consumes food items twice as fast.',
+    level: SkillLevel.LV1,
+    // Acquired by defeating Gluttony.
+    menuSlot: MenuSlot.NONE,
+
+    name: 'Gluttonous Desire',
+    outcome: {
       SELF: [
         {
           add: Attribute.LIFE,
@@ -310,16 +322,15 @@ export namespace Passive {
         // TODO add effect for consuming food
       ],
     },
-    description: 'Consumes food items twice as fast.',
-    level: SkillLevel.LV1,
-    // Acquired by defeating Gluttony.
-    menuSlot: MenuSlot.NONE,
-    name: 'Gluttonous Desire',
     target: ActionTarget.SELF,
   };
 
   export const CATCHER_LV1: Skill = {
-    actionEffects: {
+    description: 'Receives bonuses when catching items.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Catcher',
+    outcome: {
       SELF: [
         {
           add: Attribute.SPEED,
@@ -328,10 +339,6 @@ export namespace Passive {
         },
       ],
     },
-    description: 'Receives bonuses when catching items.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-    name: 'Catcher',
     target: ActionTarget.SELF,
   };
 
@@ -346,7 +353,12 @@ export namespace Passive {
   /** Seven Sins */
 
   export const WRATH_INCARNATE: Skill = {
-    actionEffects: {
+    description: 'Manifestation of wrath.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Wrath Incarnate',
+
+    outcome: {
       SELF: [
         {
           add: Attribute.POWER,
@@ -355,16 +367,15 @@ export namespace Passive {
         },
       ],
     },
-    description: 'Manifestation of wrath.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-
-    name: 'Wrath Incarnate',
     target: ActionTarget.SELF,
   };
 
   export const SLOTH_INCARNATE: Skill = {
-    actionEffects: {
+    description: 'Manifestation of sloth.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.NONE,
+    name: 'Sloth Incarnate',
+    outcome: {
       SELF: [
         {
           chance: 1.0,
@@ -378,10 +389,6 @@ export namespace Passive {
         },
       ],
     },
-    description: 'Manifestation of sloth.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.NONE,
-    name: 'Sloth Incarnate',
     target: ActionTarget.SELF,
   };
 

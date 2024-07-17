@@ -74,6 +74,6 @@ export type EffectTable = EffectRecord[];
  * Represents the effects of an action on different targets.
  * Each target is mapped to an array of EffectRecords capturing the effects.
  */
-export type ActionEffects = {
+export type Outcome = {
   [key in ActionTarget]?: EffectRecord[];
 };

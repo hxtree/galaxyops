@@ -20,14 +20,6 @@ import {
  */
 export namespace Combo {
   export const BLITZ_LV1: Skill = {
-    actionEffects: {
-      OPPONENT: [
-        {
-          quantity: '1d6',
-          remove: Attribute.LIFE,
-        },
-      ],
-    },
     buttonCombos: [
       {
         context: GameContext.TERRAIN,
@@ -39,6 +31,14 @@ export namespace Combo {
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.TOOLS,
     name: 'Blitz',
+    outcome: {
+      OPPONENT: [
+        {
+          quantity: '1d6',
+          remove: Attribute.LIFE,
+        },
+      ],
+    },
     target: ActionTarget.OPPONENT,
   };
 }

@@ -1,6 +1,6 @@
 import { Duration } from 'luxon';
 import { MenuSlotType } from './menu-slot';
-import { ActionEffects, EffectRecord, EffectTable } from './table.effect';
+import { Outcome, EffectRecord, EffectTable } from './table.effect';
 import { Button, ButtonCombo } from './button';
 import { Attribute } from './attribute';
 import { AreaOfEffect } from './area-of-effect';
@@ -66,7 +66,7 @@ export type Skill = {
   /**
    * Effects triggered by the action of using this skill.
    */
-  actionEffects?: ActionEffects;
+  outcome?: Outcome;
 
   /**
    * Backstory or lore related to the skill (optional).

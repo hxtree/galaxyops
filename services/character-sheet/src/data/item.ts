@@ -61,7 +61,14 @@ export namespace Items {
   };
 
   export const RICE_BALL: Item = {
-    actionEffects: {
+    capacity: 99,
+    craftingMaterials: [
+      { item: 'RICE', quantity: 1 },
+      { item: 'WATER', quantity: 2 },
+    ],
+    description: 'Onigiri made from condensed rice',
+    name: 'Rice Ball',
+    outcome: {
       SELF: [
         {
           chance: 1.0,
@@ -70,17 +77,13 @@ export namespace Items {
         },
       ],
     },
-    capacity: 99,
-    craftingMaterials: [
-      { item: 'RICE', quantity: 1 },
-      { item: 'WATER', quantity: 2 },
-    ],
-    description: 'Onigiri made from condensed rice',
-    name: 'Rice Ball',
   };
 
   export const DANGO: Item = {
-    actionEffects: {
+    capacity: ItemCapacity.MEDIUM,
+    description: 'Mochi-like sweet made from crushed rice ',
+    name: 'Dango',
+    outcome: {
       SELF: [
         {
           chance: 1.0,
@@ -89,21 +92,9 @@ export namespace Items {
         },
       ],
     },
-    capacity: ItemCapacity.MEDIUM,
-    description: 'Mochi-like sweet made from crushed rice ',
-    name: 'Dango',
   };
 
   export const RAMEN: Item = {
-    actionEffects: {
-      SELF: [
-        {
-          chance: 1.0,
-          quantity: '5d10',
-          remove: Attribute.LIFE,
-        },
-      ],
-    },
     capacity: ItemCapacity.LOW,
     craftingMaterials: [
       { item: 'FLOUR', quantity: 1 },
@@ -113,10 +104,7 @@ export namespace Items {
     ],
     description: 'Noodles, tare, broth, topping and aroma oil',
     name: 'Ramen',
-  };
-
-  export const PELMENI: Item = {
-    actionEffects: {
+    outcome: {
       SELF: [
         {
           chance: 1.0,
@@ -125,6 +113,9 @@ export namespace Items {
         },
       ],
     },
+  };
+
+  export const PELMENI: Item = {
     capacity: ItemCapacity.MEDIUM,
     craftingMaterials: [
       { item: 'FLOUR', quantity: 1 },
@@ -134,6 +125,15 @@ export namespace Items {
     ],
     description: 'Dumplings in broth',
     name: 'Pelmeni',
+    outcome: {
+      SELF: [
+        {
+          chance: 1.0,
+          quantity: '5d10',
+          remove: Attribute.LIFE,
+        },
+      ],
+    },
   };
 }
 

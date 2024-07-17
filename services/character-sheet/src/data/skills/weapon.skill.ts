@@ -22,7 +22,11 @@ import {
  */
 export namespace Weapon {
   export const BLOCK_LV1: Skill = {
-    actionEffects: {
+    description: 'Prevents or obstructs incoming opponent actions.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.ATTACK,
+    name: 'Block',
+    outcome: {
       OPPONENT: [
         {
           add: Attribute.DEFENSE,
@@ -32,15 +36,16 @@ export namespace Weapon {
         },
       ],
     },
-    description: 'Prevents or obstructs incoming opponent actions.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.ATTACK,
-    name: 'Block',
     target: ActionTarget.SELF,
   };
 
   export const PARRY_LV1: Skill = {
-    actionEffects: {
+    description:
+      'Deflect or counter incoming attacks with a strategic maneuver.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.ATTACK,
+    name: 'Parry',
+    outcome: {
       OPPONENT: [
         {
           chance: 0.2,
@@ -58,16 +63,15 @@ export namespace Weapon {
         },
       ],
     },
-    description:
-      'Deflect or counter incoming attacks with a strategic maneuver.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.ATTACK,
-    name: 'Parry',
     target: ActionTarget.SELF,
   };
 
   export const SLASH_LV1: Skill = {
-    actionEffects: {
+    description: 'Attack with a blade.',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.ATTACK,
+    name: 'Slash',
+    outcome: {
       OPPONENT: [
         {
           quantity: '1d6+2',
@@ -76,66 +80,49 @@ export namespace Weapon {
         },
       ],
     },
-    description: 'Attack with a blade.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.ATTACK,
-    name: 'Slash',
     target: ActionTarget.OPPONENT,
   };
 
   export const STRIKE_LV1: Skill = {
-    actionEffects: {
-      OPPONENT: [
-        {
-          quantity: '1d6+2',
-          remove: Attribute.LIFE,
-          tags: [EffectTag.PHYSICAL],
-        },
-      ],
-    },
     description: 'Execute a sudden attack with a blade.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Strike',
+    outcome: {
+      OPPONENT: [
+        {
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL],
+        },
+      ],
+    },
     target: ActionTarget.OPPONENT,
   };
 
   export const STAB_LV1: Skill = {
-    actionEffects: {
-      OPPONENT: [
-        {
-          quantity: '1d6+2',
-          remove: Attribute.LIFE,
-          tags: [EffectTag.PHYSICAL],
-        },
-      ],
-    },
     description: 'Perform a forward striking motion with a blade.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Stab',
+    outcome: {
+      OPPONENT: [
+        {
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL],
+        },
+      ],
+    },
     target: ActionTarget.OPPONENT,
   };
 
   export const CHOP_LV1: Skill = {
-    actionEffects: {
-      OPPONENT: [
-        {
-          quantity: '1d6+2',
-          remove: Attribute.LIFE,
-          tags: [EffectTag.PHYSICAL],
-        },
-      ],
-    },
     description: 'Execute a downward motion with a blade.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Chop',
-    target: ActionTarget.OPPONENT,
-  };
-
-  export const CLEAVE_LV1: Skill = {
-    actionEffects: {
+    outcome: {
       OPPONENT: [
         {
           quantity: '1d6+2',
@@ -144,10 +131,23 @@ export namespace Weapon {
         },
       ],
     },
+    target: ActionTarget.OPPONENT,
+  };
+
+  export const CLEAVE_LV1: Skill = {
     description: 'Perform a slashing technique.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ATTACK,
     name: 'Cleave',
+    outcome: {
+      OPPONENT: [
+        {
+          quantity: '1d6+2',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL],
+        },
+      ],
+    },
     target: ActionTarget.OPPONENT,
   };
 }

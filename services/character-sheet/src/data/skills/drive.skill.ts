@@ -13,7 +13,11 @@ import {
  */
 export namespace Drive {
   export const BERSERK_LV1: Skill = {
-    actionEffects: {
+    description: 'Become completely focused on winning',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.DRIVE,
+    name: 'Berserk',
+    outcome: {
       PERFORMER: [
         {
           add: 'BERSERK',
@@ -23,14 +27,15 @@ export namespace Drive {
         },
       ],
     },
-    description: 'Become completely focused on winning',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.DRIVE,
-    name: 'Berserk',
   };
 
   export const TOXIC_THRUST_LV1: Skill = {
-    actionEffects: {
+    areaOfEffect: AreaOfEffect.LINE_10FT,
+    description: 'Thrusts forward using poison',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.DRIVE,
+    name: 'Toxic Thrust',
+    outcome: {
       OPPONENT: [
         {
           add: 'POISON',
@@ -40,16 +45,16 @@ export namespace Drive {
         },
       ],
     },
-    areaOfEffect: AreaOfEffect.LINE_10FT,
-    description: 'Thrusts forward using poison',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.DRIVE,
-    name: 'Toxic Thrust',
     target: ActionTarget.OPPONENT,
   };
 
   export const AERIAL_ASSAULT_LV1: Skill = {
-    actionEffects: {
+    areaOfEffect: AreaOfEffect.LINE_10FT,
+    description: 'Jump into air and throws boomerang (jump attack)',
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.DRIVE,
+    name: 'Aerial Assault',
+    outcome: {
       OPPONENT: [
         {
           chance: 0.3,
@@ -65,16 +70,16 @@ export namespace Drive {
         },
       ],
     },
-    areaOfEffect: AreaOfEffect.LINE_10FT,
-    description: 'Jump into air and throws boomerang (jump attack)',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.DRIVE,
-    name: 'Aerial Assault',
     target: ActionTarget.OPPONENT,
   };
 
   export const ONI_LV1: Skill = {
-    actionEffects: {
+    description: `Become engulfed in a blood thirsty rage that multiplies your power but drains spirit.
+      If character stays in Oni too long they will go Berserk`,
+    level: SkillLevel.LV1,
+    menuSlot: MenuSlot.DRIVE,
+    name: 'Oni',
+    outcome: {
       PERFORMER: [
         {
           add: 'ONI',
@@ -84,11 +89,6 @@ export namespace Drive {
         },
       ],
     },
-    description: `Become engulfed in a blood thirsty rage that multiplies your power but drains spirit.
-      If character stays in Oni too long they will go Berserk`,
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.DRIVE,
-    name: 'Oni',
     target: ActionTarget.SELF,
   };
 
