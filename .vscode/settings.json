@@ -81,5 +81,8 @@
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "livePreview.defaultPreviewPath": "/services/design-system/storybook-static/index.html"
+  "livePreview.defaultPreviewPath": "/services/design-system/storybook-static/index.html",
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  }
 }

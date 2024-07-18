@@ -7,12 +7,11 @@
     border: 1px solid $color-black;
     border-radius: 0.7rem !important;
     background-color: $color-white;
-    box-shadow: inset 0 0 10px rgba(1,1,1,0.2);
+    box-shadow: inset 0 0 10px rgba(1, 1, 1, 0.2);
     box-shadow: rgba($color-off-black, 0.12) 0 0 0 1px, rgba($color-off-black, 0.42) 1px 1px 3px 0 !important;
 
     .action-menu-inner-border {
       position: relative;
-      padding-right: 10px;
       border: 1px solid $color-black;
       border-radius: 0.7rem !important;
       background-color: $color-blue;
@@ -29,77 +28,31 @@
 
 
       ul {
-        margin:0;
+        margin: 0;
         padding: 0;
         list-style-type: none;
 
-        &.menu-multiple {
-        &::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          right: 0;
-          z-index: 1;
-          width: 10px;
-          height: 100%;
-          border-top-right-radius: 0.7rem !important;
-          border-bottom-right-radius: 0.7rem !important;
-          background-color: darken($color-blue, 9%);
-          box-shadow: inset 0 0 10px rgba(1,1,1,0.1);
-        }
-      }
-
-        li {
-          padding: 13px;
-          padding-top: 0.5rem;
-          padding-bottom: 0.5rem;
-          border-bottom: 2px solid lighten($color-blue, 3%);
-          cursor: pointer;
-
-          &:first-child {
-            padding-top: 0.5rem;
-            border-top-left-radius: 0.7rem !important;
-
-            // border-top: 2px solid lighten($color-blue, 3%);
+        &.menu-scrollbar {
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            width: 10px;
+            height: 100%;
+            border-top-right-radius: 0.7rem !important;
+            border-bottom-right-radius: 0.7rem !important;
+            background-color: darken($color-blue, 9%);
+            box-shadow: inset 0 0 10px rgba(1, 1, 1, 0.1);
           }
 
-          &:last-child {
-            padding-bottom: 0.5rem;
-            border-bottom: 0;
-            border-bottom-left-radius: 0.7rem !important;
-          }
-
-          .level {
-            float: right;
-            padding: 0 10px;
-
-            // font-size: 1rem;
-            opacity: 0.7;
-          }
-
-          &.link-active {
-            position: relative;
-            background-color: darken($color-blue, 4%);
-            color: $color-white;
-            font-weight: bold;
-      text-shadow:
-        -1px -1px 0 $color-black,
-        1px -1px 0 $color-black,
-        -1px 1px 0 $color-black,
-        1px 1px 0 $color-black;
-            box-shadow: inset 0 0 10px rgba(1,1,1,0.1);
-
-            &::before {
-              content: '>';
-              position: absolute;
-              left: -2px;
-            }
-
+          & .link-active {
             &::after {
               content: '';
               position: absolute;
               top: 30%;
-              right: -9px;
+              right: 1px;
               z-index: 2;
               width: 7px;
               height: 40%;
@@ -109,8 +62,54 @@
             }
           }
         }
+
+        li {
+          padding: 13px;
+          padding-right: 10px;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 2px solid lighten($color-blue, 3%);
+          cursor: pointer;
+
+          &:first-child {
+            border-top-left-radius: 0.7rem;
+            border-top-right-radius: 0.7rem;
+            padding-top: 0.5rem;
+          }
+
+          &:last-child {
+            border-bottom-left-radius: 0.7rem;
+            border-bottom-right-radius: 0.7rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 0;
+          }
+
+          .level {
+            float: right;
+            padding: 0 10px;
+            opacity: 0.7;
+          }
+
+          &.link-active {
+            position: relative;
+            background-color: darken($color-blue, 4%);
+            color: $color-white;
+            font-weight: bold;
+            box-shadow: inset 0 0 10px rgba(1, 1, 1, 0.1);
+            text-shadow:
+              -1px -1px 0 $color-black,
+              1px -1px 0 $color-black,
+              -1px 1px 0 $color-black,
+              1px 1px 0 $color-black;
+
+            &::before {
+              content: '>';
+              position: absolute;
+              left: -2px;
+            }
+          }
+        }
       }
     }
   }
 }
-

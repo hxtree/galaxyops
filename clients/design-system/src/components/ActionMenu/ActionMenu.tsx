@@ -225,12 +225,16 @@ export const ActionMenu = (props: ActionMenuProps) => {
   };
 
   const handleOnClick = (index: number) => {
+    setPointers([...pointers.slice(0, -1), index, 0]);
+  };
+
+  const handleOnMouseOver = (index: number) => {
     const currentPointer = pointers[pointers.length - 1];
     if (currentPointer === index) {
       return;
     }
 
-    setPointers([...pointers.slice(0, -1), index, 0]);
+    setPointers([...pointers.slice(0, -1), index]);
   };
 
   return (
@@ -249,7 +253,7 @@ export const ActionMenu = (props: ActionMenuProps) => {
 
         <div className={`action-menu-outer-border mt--3`}>
           <div className={`action-menu-inner-border`}>
-            <ul className={`menu-multiple`}>
+            <ul className={`menu${menuFlat.length > 4 && ` menu-scrollbar`}`}>
               {menuFlat.map((menuItem: DisplayItem, index: number) => {
                 const isActive = index == pointers[pointers.length - 1];
                 return (
@@ -257,6 +261,7 @@ export const ActionMenu = (props: ActionMenuProps) => {
                     key={index}
                     className={`link ${isActive && 'link-active'}`}
                     onClick={() => handleOnClick(index)}
+                    onMouseOver={() => handleOnMouseOver(index)}
                   >
                     {menuItem.name}
                     <span className={`level`}>
