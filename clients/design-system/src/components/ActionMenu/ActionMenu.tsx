@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './style.module.scss';
 import { Spacer } from '../Spacer/Spacer';
 import { SpacerProps } from '../Spacer/SpacerProps.type';
@@ -11,6 +11,7 @@ import {
   Discipline,
   SkillProgression,
 } from '@galaxyops/character-sheet-contracts';
+import { useClickOutside } from './useClickOutside.hook';
 
 export type ActionMenuProps = {
   data: Archetype;
@@ -35,6 +36,7 @@ export type DisplayItem = {
 
 export const ActionMenu = (props: ActionMenuProps) => {
   const { data, spacing, testId } = props;
+  const componentRef = useRef<HTMLDivElement>(null);
   const [pointers, setPointers] = useState<number[]>([0]);
   const [menuTree, setMenuTree] = useState<MenuTree>([]);
   const [menuFlat, setMenuFlat] = useState<DisplayItem[]>([]);
@@ -61,7 +63,7 @@ export const ActionMenu = (props: ActionMenuProps) => {
     interface MenuTreeNode {
       name: string;
       children: MenuTreeNode[];
-      action?: any; // Adjust the type of 'action' as per your actual structure
+      action?: any;
     }
 
     const newMenuTree: MenuTreeNode[] = [];
@@ -237,11 +239,16 @@ export const ActionMenu = (props: ActionMenuProps) => {
     setPointers([...pointers.slice(0, -1), index]);
   };
 
+  useClickOutside(componentRef, () => {
+    setPointers([0]);
+  });
+
   return (
     <Spacer {...spacing}>
       <div
         className={`action-menu`}
         data-testid={testId ? `${testId}-root` : null}
+        ref={componentRef}
       >
         <div className={`action-menu-outer-border`}>
           <div className={`action-menu-inner-border`}>
