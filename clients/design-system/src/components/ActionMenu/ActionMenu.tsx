@@ -58,6 +58,12 @@ export const ActionMenu = (props: ActionMenuProps) => {
       });
     });
 
+    interface MenuTreeNode {
+      name: string;
+      children: MenuTreeNode[];
+      action?: any; // Adjust the type of 'action' as per your actual structure
+    }
+
     const newMenuTree: MenuTreeNode[] = [];
 
     newSkills.forEach((skill: any) => {
@@ -66,28 +72,41 @@ export const ActionMenu = (props: ActionMenuProps) => {
       }
       const name = skill.name;
       const parentName = skill.menuSlot.name;
+      const level = skill.level;
 
-      const parent = newMenuTree.find(node => node.name === parentName);
-      if (parent) {
-        parent.children.push({
-          name,
+      let parent = newMenuTree.find(node => node.name === parentName);
+      if (!parent) {
+        parent = {
+          name: parentName,
           children: [],
-          action: skill,
-        });
+        };
+        newMenuTree.push(parent);
+      }
+
+      const existingChildIndex = parent.children.findIndex(
+        child => child.name === name,
+      );
+
+      if (existingChildIndex !== -1) {
+        const existingChild = parent.children[existingChildIndex];
+        if (
+          existingChild.action &&
+          existingChild.action.level &&
+          existingChild.action.level < level
+        ) {
+          existingChild.action = skill;
+          return;
+        }
         return;
       }
 
-      newMenuTree.push({
-        name: parentName,
-        children: [
-          {
-            name,
-            children: [],
-            action: skill,
-          },
-        ],
+      parent.children.push({
+        name,
+        children: [],
+        action: skill,
       });
     });
+
     setMenuTree(newMenuTree);
     setPointers([0]);
   }, [data]);

@@ -349,7 +349,7 @@
               ]
             },
             "description": "Align body correctly to generate more power and speed.",
-            "level": "LV1",
+            "level": "MAX",
             "menuSlot": {
               "name": "None",
               "order": 0
@@ -648,6 +648,32 @@
             "outcome": {},
             "description": "Steal items from enemies.",
             "level": "LV1",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Pickpocket"
+          }
+        },
+        {
+          "level": 15,
+          "skill": {
+            "outcome": {},
+            "description": "Steal items from enemies.",
+            "level": "LV3",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Pickpocket"
+          }
+        },
+        {
+          "level": 12,
+          "skill": {
+            "outcome": {},
+            "description": "Steal items from enemies.",
+            "level": "LV2",
             "menuSlot": {
               "name": "Abilities",
               "order": 4
