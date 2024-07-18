@@ -385,10 +385,12 @@ export namespace Disciplines {
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 1, skill: Skills.BLOCK_LV1 },
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 4, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skills.CLEAVE_LV1 },
-      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
       { level: 18, skill: Skills.MENTAL_DISCIPLINE_LV1 },
+      { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
     ],
   };
 
@@ -426,10 +428,12 @@ export namespace Disciplines {
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 2, skill: Skills.STRIKE_LV1 },
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 7, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skills.RAGE_LV1 },
+      { level: 11, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
       { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
       { level: 10, skill: Skills.BLOCK_LV1 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
       { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
@@ -442,8 +446,10 @@ export namespace Disciplines {
     name: 'XSolider',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 9, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
       { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 11, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
       { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
@@ -456,11 +462,13 @@ export namespace Disciplines {
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 3, skill: Skills.DUAL_WELD_LV1 },
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 8, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
       { level: 12, skill: Skills.PICKPOCKET_LV1 },
       { level: 15, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 13, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
       { level: 18, skill: Skills.PICK_LOCK_LV1 },
       { level: 20, skill: Skills.BACK_FLIP_LV1 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
       { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
@@ -497,8 +505,10 @@ export namespace Disciplines {
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 10, skill: Skills.PARRY_LV1 },
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 8, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 12, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
       { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
     ],
   };
 
@@ -572,9 +582,11 @@ export namespace Disciplines {
     progression: [
       ...awardAbilityPointEachLevel(3, 6, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 1, skill: Skills.STRIKE_LV1 },
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 8, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skills.PARRY_LV1 },
+      { level: 11, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
       { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
       { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
@@ -586,10 +598,12 @@ export namespace Disciplines {
     name: 'Amber Assassin',
     progression: [
       ...awardAbilityPointEachLevel(3, 6, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 7, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skills.STRIKE_LV1 },
       { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 13, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
       { level: 10, skill: Skills.PARRY_LV1 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
       { level: 10, skill: Skills.FIREBALL_LV1 },
       { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
@@ -602,8 +616,10 @@ export namespace Disciplines {
     name: 'Elite Assassin',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 7, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 11, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
       { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
       { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],
   };
@@ -629,8 +645,10 @@ export namespace Disciplines {
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 10, skill: Skills.STRIKE_LV1 },
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 8, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skills.RAGE_LV1 },
+      { level: 12, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
     ],
   };
 
@@ -641,10 +659,12 @@ export namespace Disciplines {
     name: 'Oni',
     progression: [
       ...awardAbilityPointEachLevel(1, 1, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 8, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
       { level: 10, skill: Skills.ONI_LV1 },
       { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
+      { level: 13, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
       { level: 10, skill: Skills.ONI_LV2 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
     ],
   };
 
@@ -667,10 +687,12 @@ export namespace Disciplines {
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 10, skill: Skills.STRIKE_LV1 },
-      { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 8, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
       { level: 15, skill: Skills.SHOCK_LV1 },
       { level: 20, skill: Skills.PRECISION_AND_TECHNIQUE_LV1 },
       { level: 25, skill: Skills.MENTAL_DISCIPLINE_LV1 },
+      { level: 11, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
     ],
   };
 
@@ -756,6 +778,9 @@ export namespace Disciplines {
       { level: 7, skill: Skills.CLAW_LV1 },
       { level: 10, skill: Skills.BITE_LV3 },
       { level: 12, skill: Skills.POISON_TRAP_LV1 },
+      { level: 8, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 12, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
       // { level: 15, skill: Skills.ARACHNOMANCY_LV1 },
     ],
   };
@@ -771,6 +796,9 @@ export namespace Disciplines {
       { level: 1, skill: Skills.BITE_LV1 },
       { level: 5, skill: Skills.BITE_LV2 },
       { level: 10, skill: Skills.BITE_LV3 },
+      { level: 8, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
+      { level: 12, skill: Skills.PHYSICAL_CONDITIONING_LV2 },
+      { level: 18, skill: Skills.PHYSICAL_CONDITIONING_LV3 },
     ],
   };
 }

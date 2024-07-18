@@ -90,6 +90,74 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
+  export const PHYSICAL_CONDITIONING_LV2: Skill = {
+    ...PHYSICAL_CONDITIONING_LV1,
+    level: SkillLevel.LV2,
+    outcome: {
+      SELF: [
+        {
+          add: Attribute.POWER,
+          chance: 1.0,
+          quantity: '20',
+        },
+        {
+          add: Attribute.DEFENSE,
+          chance: 1.0,
+          quantity: '20',
+        },
+        {
+          add: Attribute.SPEED,
+          chance: 1.0,
+          quantity: '20',
+        },
+        {
+          add: Attribute.SPIRIT,
+          chance: 1.0,
+          quantity: '20',
+        },
+        {
+          add: Attribute.LIFE,
+          chance: 1.0,
+          quantity: '20',
+        },
+      ],
+    },
+  };
+
+  export const PHYSICAL_CONDITIONING_LV3: Skill = {
+    ...PHYSICAL_CONDITIONING_LV1,
+    level: SkillLevel.LV3,
+    outcome: {
+      SELF: [
+        {
+          add: Attribute.POWER,
+          chance: 1.0,
+          quantity: '30',
+        },
+        {
+          add: Attribute.DEFENSE,
+          chance: 1.0,
+          quantity: '30',
+        },
+        {
+          add: Attribute.SPEED,
+          chance: 1.0,
+          quantity: '30',
+        },
+        {
+          add: Attribute.SPIRIT,
+          chance: 1.0,
+          quantity: '30',
+        },
+        {
+          add: Attribute.LIFE,
+          chance: 1.0,
+          quantity: '30',
+        },
+      ],
+    },
+  };
+
   export const SPIRITUAL_GROWTH_LV1: Skill = {
     description: 'Increases spirit',
     level: SkillLevel.LV1,
@@ -201,6 +269,20 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
+  export const CONCENTRATION_LV2: Skill = {
+    ...CONCENTRATION_LV1,
+    level: SkillLevel.LV2,
+    outcome: {
+      SELF: [
+        {
+          add: Attribute.SPIRIT,
+          chance: 1.0,
+          quantity: '20',
+        },
+      ],
+    },
+  };
+
   export const BLUFF_LV1: Skill = {
     description: 'Tell a lie without being caught',
     level: SkillLevel.LV1,
@@ -262,7 +344,6 @@ export namespace Passive {
   };
 
   export const BLOOD_LUST_LV1: Skill = {
-
     description: 'Increases speed.',
 
     level: SkillLevel.LV1,
@@ -284,7 +365,6 @@ export namespace Passive {
   };
 
   export const ENVIOUS_OF_COMBAT_LV1: Skill = {
-
     description: 'Gains increased power.',
 
     level: SkillLevel.LV1,
