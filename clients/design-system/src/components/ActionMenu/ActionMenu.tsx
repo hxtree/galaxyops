@@ -224,6 +224,15 @@ export const ActionMenu = (props: ActionMenuProps) => {
     return level.replace('LV', 'Lv.');
   };
 
+  const handleOnClick = (index: number) => {
+    const currentPointer = pointers[pointers.length - 1];
+    if (currentPointer === index) {
+      return;
+    }
+
+    setPointers([...pointers.slice(0, -1), index, 0]);
+  };
+
   return (
     <Spacer {...spacing}>
       <div
@@ -247,6 +256,7 @@ export const ActionMenu = (props: ActionMenuProps) => {
                   <li
                     key={index}
                     className={`link ${isActive && 'link-active'}`}
+                    onClick={() => handleOnClick(index)}
                   >
                     {menuItem.name}
                     <span className={`level`}>
