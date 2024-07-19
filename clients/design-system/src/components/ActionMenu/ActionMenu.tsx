@@ -133,9 +133,14 @@ export const ActionMenu = (props: ActionMenuProps) => {
       );
     }
 
+    const hiddenMenuItems: string[] = ['None', 'Movement'];
+
     const displayItems: DisplayItem[] = [];
     if (pointers.length === 1) {
       menuTree.forEach((menuItem: MenuTreeNode) => {
+        if (hiddenMenuItems.includes(menuItem.name)) {
+          return;
+        }
         displayItems.push({
           name: menuItem.name,
           level: menuItem.action?.level,
