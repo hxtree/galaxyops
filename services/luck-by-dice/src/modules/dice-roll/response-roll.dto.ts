@@ -10,6 +10,7 @@ export type RollDto = {
   total: number;
   luck: number;
   min: number;
+  average: number;
   max: number;
   bonus: number;
 };

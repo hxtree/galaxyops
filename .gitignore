@@ -18,9 +18,10 @@ out/
 **/storybook-static/**
 !**/storybook-static/.gitkeep
 
-# coverage
+# unit test and coverage
 clover.xml
 **/coverage/**
+globalConfig.json
 
 # AWS CDK
 **/cdk.out/*

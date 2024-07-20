@@ -19,6 +19,7 @@ export class DiceRollService {
           total: turn.roll(),
           luck: turn.luck.value,
           min: turn.minPotential(),
+          average: turn.averageOutcome,
           max: turn.maxPotential(),
           bonus: turn.extraBonus,
         });

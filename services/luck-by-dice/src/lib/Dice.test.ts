@@ -41,4 +41,13 @@ describe('Dice', () => {
     const dice = new Dice(1000000);
     expect(dice.roll()).toBeLessThan(1000000);
   });
+
+  test.each([
+    [[1, 2, 3, 4, 5, 6], 3.5],
+    [[1, 2, 3, 4, 5], 3],
+    [[], 0],
+  ])('Calculates average outcome correctly', (faces, expectedAverage) => {
+    const dice = new Dice(faces);
+    expect(dice.averageOutcome).toBe(expectedAverage);
+  });
 });

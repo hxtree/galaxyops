@@ -12,6 +12,7 @@ export interface IDice {
   roll(): number;
   allocateBonuses(amount: number): number;
   get total(): number;
+  get averageOutcome(): number;
 }
 
 /**
@@ -158,5 +159,19 @@ export class Dice implements IDice {
     }
 
     return this._value + this._bonus;
+  }
+
+  /**
+   * Get the average value of the dice
+   */
+  public get averageOutcome(): number {
+    if (this._faces.length === 0) {
+      return 0;
+    }
+
+    const arraySum: number = this._faces.reduce((acc, val) => acc + val, 0);
+    const average: number = arraySum / this._faces.length;
+
+    return average;
   }
 }

@@ -24,4 +24,12 @@ describe('Cup', () => {
     cup.roll();
     expect(cup.outcomePercent).toBeLessThanOrEqual(1);
   });
+
+  test('get averageOutcome() correctly', () => {
+    const cup = new Cup();
+    cup.push(new Collection(1, 6));
+    cup.push(new Collection(1, 6, 10));
+    cup.roll();
+    expect(cup.averageOutcome).toEqual(17);
+  });
 });

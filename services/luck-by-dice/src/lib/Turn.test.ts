@@ -72,4 +72,15 @@ describe('Turn', () => {
     const outcome = turn.roll();
     expect(outcome).toBeLessThan(6000000);
   });
+
+  test.each([
+    ['1d6', 3.5],
+    ['2d6', 7],
+    ['1d10', 5.5],
+    ['3d4', 7.5],
+  ])('Calculates average outcome for %s', (diceNotation, expectedOutcome) => {
+    const turn = new Turn(diceNotation, 0);
+    const outcome = turn.averageOutcome;
+    expect(outcome).toBe(expectedOutcome);
+  });
 });

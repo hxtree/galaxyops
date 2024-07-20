@@ -14,6 +14,7 @@ export interface ITurn {
   maxPotential(): number;
   get total(): number;
   get extraBonus(): number;
+  get averageOutcome(): number;
   roll(): number;
 }
 
@@ -29,7 +30,7 @@ export class Turn implements ITurn {
   /**
    * Constructor
    * @param notation - dice notation to be used for turn
-   * @param luck - inital value of luck
+   * @param luck - initial value of luck
    */
   public constructor(notation: string | undefined, luck: number | undefined) {
     this._notationCodec = new NotationCodec();
@@ -101,6 +102,14 @@ export class Turn implements ITurn {
     let total = 0;
     this._cup.forEach((collection: ICollection) => {
       total += collection.total;
+    });
+    return total;
+  }
+
+  public get averageOutcome(): number {
+    let total = 0;
+    this._cup.forEach((collection: ICollection) => {
+      total += collection.averageOutcome;
     });
     return total;
   }

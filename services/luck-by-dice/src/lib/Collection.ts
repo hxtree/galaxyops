@@ -24,6 +24,7 @@ export interface ICollection {
   count(): number;
   roll(): number;
   allocateBonuses(amount: number): number;
+  get averageOutcome(): number;
 }
 
 /**
@@ -225,5 +226,13 @@ export class Collection implements ICollection {
     }
 
     return array;
+  }
+
+  public get averageOutcome(): number {
+    let diceAverage = 0;
+    this._dice.forEach((part: Dice, index: number, dice: Array<Dice>) => {
+      diceAverage += dice[index].averageOutcome;
+    });
+    return diceAverage ? (diceAverage + this.modifier) * this.multiplier : 0;
   }
 }

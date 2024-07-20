@@ -69,6 +69,7 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
         newData.push([
           newData.length + 1,
           value.min,
+          value.average,
           value.max,
           value.total,
           value.luck,
@@ -156,12 +157,12 @@ export const DiceAnalyzer = (props: DiceAnalyzerProps) => {
                 height="500px"
                 width="100%"
                 data={[
-                  ['Roll', 'Min', 'Max', 'Total', 'Luck', 'Bonus'],
+                  ['Roll', 'Min', 'Average', 'Max', 'Total', 'Luck', 'Bonus'],
                   ...data,
                 ]}
                 options={{
                   title: `Average ${average}`,
-                  curveType: 'function',
+                  curveType: 'function', // 'none',
                   legend: { position: 'bottom' },
                   responsive: true,
                   scales: {

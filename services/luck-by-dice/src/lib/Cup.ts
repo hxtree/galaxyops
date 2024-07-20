@@ -4,6 +4,7 @@ export interface ICup extends Array<ICollection> {
   roll(): number;
   allocateBonuses(amount: number): number;
   get outcomePercent(): number;
+  get averageOutcome(): number;
 }
 
 /**
@@ -33,18 +34,20 @@ export class Cup extends Array implements ICup {
   }
 
   public get outcomePercent(): number {
-    const values: Array<number> = [];
+    let total = 0;
     this.forEach((collection: ICollection) => {
-      values.push(collection.outcomePercent);
+      total += collection.outcomePercent;
     });
-    return this._getAverage(values);
+
+    return total / this.length;
   }
 
-  private _getAverage(array: Array<number>): number {
+  public get averageOutcome(): number {
     let total = 0;
-    for (let i = 0; i < array.length; i++) {
-      total += array[i];
-    }
-    return total / array.length;
+    this.forEach((collection: ICollection) => {
+      total += collection.averageOutcome;
+    });
+
+    return total;
   }
 }

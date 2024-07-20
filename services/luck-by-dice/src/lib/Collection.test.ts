@@ -11,7 +11,7 @@ describe('Collection', () => {
     expect(collection.notation).toBe('10d%+10');
   });
 
-  test('Notation returns correct values with modifier and multipler', () => {
+  test('Notation returns correct values with modifier and multiplier', () => {
     const collection = new Collection(100, 4, 2, 4);
     expect(collection.notation).toBe('100d4+2*4');
   });
@@ -56,5 +56,15 @@ describe('Collection', () => {
     // 1 out of a million chance of failing
     const collection = new Collection(1000000, 6);
     expect(collection.roll()).toBeLessThan(6000000);
+  });
+
+  test.each([
+    [new Collection(1, 6, 0, 10), 35],
+    [new Collection(1, 6, 10), 13.5],
+    [new Collection(1, 100), 50.5],
+    [new Collection(1, 6), 3.5],
+    [new Collection(1, 2), 1.5],
+  ])('Calculates average outcome correctly', (collection, expectedAverage) => {
+    expect(collection.averageOutcome).toBe(expectedAverage);
   });
 });
