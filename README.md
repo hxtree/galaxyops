@@ -77,12 +77,18 @@ the IaaS.
 
 1. Setup [AWS Org Formation](/platform/aws-org-formation/README.md).
 
-2. Login via SSO and bootstrap deployments. Deploy platform, services, and then
+2. Set an environmental variable in the shell configuration file to establish a
+   default AWS CLI profile for seamless authentication and resource access.
+
+```bash
+echo 'export AWS_PROFILE=DeveloperSandbox' >> ~/.zshrc
+```
+
+3. Login via SSO and bootstrap deployments. Deploy platform, services, and then
    clients in that order.
 
    ```bash
     aws configure sso
-    export AWS_PROFILE=DeveloperSandbox
     pnpm nx run aws-sso:start DeveloperSandbox
     pnpm nx run-many -t cdk:bootstrap --all
     pnpm nx run-many -t cdk:deploy --projects=tag:scope:platform
@@ -91,7 +97,7 @@ the IaaS.
     pnpm nx run-many -t cdk:deploy --projects=tag:scope:clients
    ```
 
-3. Login via SSO to tools account and then deploy tools.
+4. Login via SSO to tools account and then deploy tools.
 
    ```bash
    pnpm nx run aws-sso:start tools
