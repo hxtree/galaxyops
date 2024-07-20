@@ -80,9 +80,9 @@ the IaaS.
 2. Set an environmental variable in the shell configuration file to establish a
    default AWS CLI profile for seamless authentication and resource access.
 
-```bash
-echo 'export AWS_PROFILE=DeveloperSandbox' >> ~/.zshrc
-```
+   ```bash
+   echo 'export AWS_PROFILE=DeveloperSandbox' >> ~/.zshrc
+   ```
 
 3. Login via SSO and bootstrap deployments. Deploy platform, services, and then
    clients in that order.
