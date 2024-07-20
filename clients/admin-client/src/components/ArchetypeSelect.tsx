@@ -10,6 +10,7 @@ import {
   CodeSnippet,
   CodeSnippetLanguages,
   ActionMenu,
+  SkillList,
 } from '@cats-cradle/design-system/dist/main';
 import { Archetype } from '@galaxyops/character-sheet-contracts';
 
@@ -89,7 +90,11 @@ export default function ArchetypeSelect() {
       {archetypeData && Object.keys(archetypeData).length > 0 && (
         <>
           <h2>{archetypeId}</h2>
+          <h3>Action Menu</h3>
           <ActionMenu data={archetypeData} />
+          <h3>Skill List</h3>
+          <SkillList data={archetypeData} spacing={{ top: 1 }} />
+          <h3>Data</h3>
           <CodeSnippet
             data={JSON.stringify(archetypeData, null, 2)}
             language={CodeSnippetLanguages.JSON}

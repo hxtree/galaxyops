@@ -43,7 +43,11 @@ export const ActionMenu = (props: ActionMenuProps) => {
 
   useEffect(() => {
     const newSkills: any = [];
+    const newMenuTree: MenuTreeNode[] = [];
+
     if (!data.potentialDisciplines) {
+      setMenuTree(newMenuTree);
+      setPointers([0]);
       return;
     }
     data.potentialDisciplines.forEach((discipline: Discipline) => {
@@ -59,14 +63,6 @@ export const ActionMenu = (props: ActionMenuProps) => {
         newSkills.push(skillProgression.skill);
       });
     });
-
-    interface MenuTreeNode {
-      name: string;
-      children: MenuTreeNode[];
-      action?: any;
-    }
-
-    const newMenuTree: MenuTreeNode[] = [];
 
     newSkills.forEach((skill: any) => {
       if (!skill.menuSlot) {
