@@ -22,12 +22,12 @@ jobs:
         with:
           node-version: '18.18.0'
 
-      - name: cache rush
+      - name: cache nx
         id: cache
         uses: actions/cache@v3.2.2
         with:
           path: common/temp
-          key: ${{ runner.os }}-build-branch-${{ hashFiles('common/config/rush/repo-state.json') }}
+          key: ${{ runner.os }}-build-branch-${{ hashFiles('.nx/lockfile.hash') }}
           restore-keys: |
             ${{ runner.os }}-build-pr-
             ${{ runner.os }}-build-
@@ -38,35 +38,35 @@ jobs:
             git config user.name github-actions
             git config user.email github-actions@github.com
 
-      - name: install pnpm needed for cdk NodeJsFunction esbuild
+      - name: install pnpm
         run: npm install --global pnpm@8.13.1
 
-      - name: rush install
-        run: node common/scripts/install-run-rush.js install -p
+      - name: package install
+        run: pnpm install
 
-      - name: rush build
-        run: node common/scripts/install-run-rush.js build
+      - name: nx build
+        run: pnpm nx run-many -t build --all --output-style=static
 
-      - name: rush artifact
-        run: node common/scripts/install-run-rush.js artifact
+      - name: nx artifact
+        run: pnpm nx run-many -t artifact --all
 
       - name: Upload items to Github Release
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ github.ref_name }}
           body: |
-            # New Release: [cats-cradle ${{ github.ref_name }}](https://www.npmjs.com/search?q=%40cats-cradle),
+            # New Release: [galaxyops ${{ github.ref_name }}](https://www.npmjs.com/search?q=%40galaxyops),
 
-            We're pleased to share our latest release of service packages. This release is comprised of multiple zip files. Each zip file housing a distinct, deploy-ready project from cats-cradle including source code and the Infrastructure as Code.
+            We're pleased to share our latest release of service packages. This release is comprised of multiple zip files. Each zip file housing a distinct, deploy-ready project from @galaxyops including source code and the Infrastructure as Code.
 
             We warmly invite you to delve into the contents of this release, offer your valuable feedback, and actively engage in our project on GitHub. Your contributions and active participation are fundamental to our ongoing efforts to enhance and refine our offerings.
 
-            > **Note**: We frequently release library and platform packages independently on [NPM](https://www.npmjs.com/search?q=%40cats-cradle) when any changes are made.
+            > **Note**: We frequently release library and platform packages independently on [NPM](https://www.npmjs.com/search?q=%40galaxyops) when any changes are made.
 
-          artifacts: 'common/temp/dist/*.zip'
+          artifacts: 'dist/*.zip'
           prerelease: false
           draft: true
           generateReleaseNotes: true
           token: ${{ github.token }}
           owner: hxtree
-          repo: cats-cradle
+          repo: galaxyops
