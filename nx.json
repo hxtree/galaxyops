@@ -19,5 +19,10 @@
   },
   "defaultBase": "main",
   "defaultProject": "admin-client",
-  "plugins": ["nx/plugins/package-json"]
+  "plugins": ["nx/plugins/package-json"],
+  "pluginsConfig": {
+    "@nx/js": {
+      "analyzeSourceFiles": false
+    }
+  }
 }

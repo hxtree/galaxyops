@@ -1,5 +1,6 @@
+import { Duration } from 'luxon';
 import { SkillLevel } from './skill';
-import { Outcome } from './table.effect';
+import { EffectRecord } from './table.effect';
 
 export enum StatusEffectCategory {
   /**
@@ -17,20 +18,24 @@ export enum StatusEffectCategory {
 }
 
 /**
- * Status effects are abnormal states that may have positive or negative effects
- * they can be gained from actions or items and can be healed by resting, certain
- * abilities, or after some time.
+ * Status effects are abnormal states that may have positive or negative effects.
+ * they are set by skill or item that applies it.
+ * They can be removed by resting, certain abilities, or after some time.
  *
- * Status Effects are visible to the player.
- * All status effects are temporary in nature, the duration of status effect
- * is set by skill or item that applies it
+ * Status Effects are visible to the player when applied.
  */
 export type StatusEffect = {
   name: string;
   description: string;
   category: StatusEffectCategory;
-  outcome?: Outcome;
-  // level: SkillLevel;
+  effects?: EffectRecord[];
+  level: SkillLevel;
+
+  /**
+   * All status effects are temporary in nature the duration of status effect
+   * often increases with the level at which it is applied.
+   */
+  duration: Duration;
 };
 
 export type StatusEffectId = string;
