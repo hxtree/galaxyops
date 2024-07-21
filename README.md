@@ -91,10 +91,10 @@ the IaaS.
     aws configure sso
     pnpm nx run aws-sso:start DeveloperSandbox
     pnpm nx run-many -t cdk:bootstrap --all
-    pnpm nx run-many -t cdk:deploy --projects=tag:scope:platform
-    pnpm nx run-many -t cdk:deploy --projects=tag:scope:services
-    pnpm nx run-many -t cdk:deploy --projects=tag:scope:middleware
-    pnpm nx run-many -t cdk:deploy --projects=tag:scope:clients
+    pnpm nx run-many -t cdk:deploy --projects=tag:scope:platform --parallel=false
+    pnpm nx run-many -t cdk:deploy --projects=tag:scope:services --parallel=false
+    pnpm nx run-many -t cdk:deploy --projects=tag:scope:middleware --parallel=false
+    pnpm nx run-many -t cdk:deploy --projects=tag:scope:clients --parallel=false
    ```
 
 4. Login via SSO to tools account and then deploy tools.
@@ -102,7 +102,7 @@ the IaaS.
    ```bash
    pnpm nx run aws-sso:start tools
    pnpm nx run-many -t cdk:bootstrap --all
-   pnpm nx run-many -t cdk:deploy --projects=tag:scope:aws-tools-account
+   pnpm nx run-many -t cdk:deploy --projects=tag:scope:aws-tools-account --parallel=false
    ```
 
 ## Documentation

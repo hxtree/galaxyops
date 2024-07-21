@@ -1,4 +1,5 @@
-import { EffectTable } from './table.effect';
+import { SkillLevel } from './skill';
+import { Outcome } from './table.effect';
 
 export enum StatusEffectCategory {
   /**
@@ -20,13 +21,16 @@ export enum StatusEffectCategory {
  * they can be gained from actions or items and can be healed by resting, certain
  * abilities, or after some time.
  *
- * Status Effects are visible to the player
+ * Status Effects are visible to the player.
+ * All status effects are temporary in nature, the duration of status effect
+ * is set by skill or item that applies it
  */
 export type StatusEffect = {
   name: string;
   description: string;
   category: StatusEffectCategory;
-  effects?: EffectTable;
+  outcome?: Outcome;
+  // level: SkillLevel;
 };
 
 export type StatusEffectId = string;

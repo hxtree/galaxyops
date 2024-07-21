@@ -59,11 +59,11 @@ jobs:
       - name: install pnpm needed for cdk NodeJsFunction esbuild
         run: npm install --global pnpm@8.13.1
 
-      - name: nx install
+      - name: package install
         run: pnpm install
 
       - name: nx build
-        run: pnpm nx run-many -t build --all
+        run: pnpm nx run-many -t build --all --output-style=static
 
       # publish dependencies prior to deploying to ensure that latest are avaliable
       - name: print environment Info
