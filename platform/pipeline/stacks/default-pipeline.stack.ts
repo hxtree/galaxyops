@@ -120,7 +120,7 @@ export class DefaultPipelineStack extends cdk.NestedStack {
           'npm install --global typescript',
           'ls $CODEBUILD_SRC_DIR',
           'npm install',
-          'npm cdk:synth',
+          'npm run cdk:synth',
         ],
       }),
     });
