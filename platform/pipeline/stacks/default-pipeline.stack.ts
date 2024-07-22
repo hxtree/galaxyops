@@ -17,12 +17,18 @@ export type DefaultPipelineStackProps = cdk.StackProps & {
   deployBucket: Bucket;
   bucketKey: string;
   pipelineName: string;
+  deployToAccountId: string;
+  deployToRegion: string;
   // crossAccountKeys: boolean;
 };
 
 export class DefaultPipelineStack extends cdk.NestedStack {
+  crossRegionRoleArn: string;
+
   constructor(scope: Construct, id: string, props: DefaultPipelineStackProps) {
     super(scope, id, props);
+
+    this.crossRegionRoleArn = 'arn:aws:iam::760440398296:role/cdk-hnb659fds-deploy-role-760440398296-us-east-2';
 
     // create a new CodePipeline object
     const pipeline = new codepipeline.Pipeline(this, 'Pipeline', {
@@ -60,7 +66,7 @@ export class DefaultPipelineStack extends cdk.NestedStack {
         resources: [
           props.deployBucket.bucketArn,
           `${props.deployBucket.bucketArn}/*`,
-          `arn:aws:cloudformation:${awsAccounts.tools.region}:${awsAccounts.tools.accountId}:stack/*`,
+          `arn:aws:cloudformation:${props.deployToAccountId}:${props.deployToAccountId}:stack/*`,
           'arn:aws:iam::760440398296:role/cdk-hnb659fds-deploy-role-760440398296-us-east-2',
         ],
       }),
@@ -103,14 +109,14 @@ export class DefaultPipelineStack extends cdk.NestedStack {
             commands: [
               'ls $CODEBUILD_SRC_DIR',
               'npm install',
-              `npm run cdk:bootstrap aws://${awsAccounts.dev.accountId}/${awsAccounts.dev.region}`,
-              'npm run cdk:deploy --require-approval=never',
+              `npm run cdk:bootstrap aws://${props.deployToAccountId}/${props.deployToRegion} --role-arn ${this.crossRegionRoleArn}`,
+              `npm run cdk:deploy --require-approval=never --role-arn ${this.crossRegionRoleArn}`,
             ],
           },
         },
         environmentVariables: {
-          account: awsAccounts.dev.accountId,
-          region: awsAccounts.dev.region,
+          account: props.deployToAccountId,
+          region: props.deployToRegion,
         },
         artifacts: {
           files: [

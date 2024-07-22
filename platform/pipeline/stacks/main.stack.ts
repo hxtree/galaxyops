@@ -1,5 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
+import { awsAccounts } from '@galaxyops/constructs';
 import { GithubUploadStack } from './github-upload.stack';
 import { DefaultPipelineStack } from './default-pipeline.stack';
 
@@ -23,15 +24,20 @@ export class MainStack extends cdk.Stack {
       },
     });
 
+    // DEV
     new DefaultPipelineStack(this, 'LuckByDicePipelineStack', {
       bucketKey: 'luck-by-dice.zip',
       pipelineName: `LuckByDiceServiceDeployPipeline-${stageName}`,
       deployBucket: githubUploadStack.deployBucket,
-      env: {
-        account: props.env.account,
-        region: props.env.region,
-      },
+      deployToAccountId: awsAccounts.dev.accountId,
+      deployToRegion: awsAccounts.dev.region,
     });
+
+    // QA
+    // TODO: Add QA pipeline
+
+    // PROD
+    // TODO: Add prod pipeline
 
     /**
      * Use the aws cli to test these credentials and then store in github secret
