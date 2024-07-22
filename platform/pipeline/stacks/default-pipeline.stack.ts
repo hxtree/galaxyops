@@ -103,7 +103,7 @@ export class DefaultPipelineStack extends cdk.NestedStack {
             commands: [
               'ls $CODEBUILD_SRC_DIR',
               'npm install',
-              `npm cdk:bootstrap aws://${awsAccounts.dev.accountId}/${awsAccounts.dev.region}`,
+              `npm run cdk:bootstrap aws://${awsAccounts.dev.accountId}/${awsAccounts.dev.region}`,
               'npm run cdk:deploy --require-approval=never',
             ],
           },
