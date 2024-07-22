@@ -1,4 +1,4 @@
-import { Paper } from '@cats-cradle/design-system/dist/main';
+import { Paper } from '@galaxyops/design-system/dist/main';
 import { SignupForm } from '../components/SignupForm';
 
 export default function SignupPage() {

@@ -1,4 +1,4 @@
-# @cats-cradle/graphql
+# @galaxyops/graphql
 
 This is a GraphQL service used to query other microservices. Rather than each
 service having its own GraphQL service, this is a single abstract, which is more

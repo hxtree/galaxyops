@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { S3ClientService, S3Service } from '@cats-cradle/nestjs-modules';
+import { S3ClientService, S3Service } from '@galaxyops/nestjs-modules';
 import { PdfController } from './pdf.controller';
 import { PdfService } from './pdf.service';
 

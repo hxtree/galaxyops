@@ -126,7 +126,7 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/luck-by-dice",
+    "title": "@galaxyops/luck-by-dice",
     "description": "An API Simulating dice rolls that can be effected by luck from dice notation",
     "version": "4.1.0",
     "contact": {}

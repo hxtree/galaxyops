@@ -1,6 +1,6 @@
 import React from 'react';
 import { GradientVariant } from './GradientVariant.enum';
-import '@cats-cradle/promare-gradients/dist/css/promare-gradients.css';
+import '@galaxyops/promare-gradients/dist/css/promare-gradients.css';
 
 export interface GradientProps {
   variant: GradientVariant;

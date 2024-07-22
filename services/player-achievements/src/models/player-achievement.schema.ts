@@ -1,8 +1,8 @@
 /* eslint-disable func-names */
-import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
+import { BaseEntity, BaseEntityProps } from '@galaxyops/nestjs-modules';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Schema as MongooseSchema } from 'mongoose';
-import { IsNumber, IsUuidV4 } from '@cats-cradle/validation-schemas';
+import { IsNumber, IsUuidV4 } from '@galaxyops/validation-schemas';
 import { v4 } from 'uuid';
 import { Achievement } from './achievement.schema';
 

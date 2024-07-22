@@ -9,7 +9,7 @@ import {
   BlurbIconColors,
   DataHighlights,
   Disclaimer,
-} from '@cats-cradle/design-system/dist/main';
+} from '@galaxyops/design-system/dist/main';
 
 export default function HomePage() {
   return (

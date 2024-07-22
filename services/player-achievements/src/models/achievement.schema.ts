@@ -11,9 +11,9 @@ import {
   IsString,
   Type,
   ValidateNested,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { v4 } from 'uuid';
-import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
+import { BaseEntity, BaseEntityProps } from '@galaxyops/nestjs-modules';
 import { TrophyCriteriaEmbeddable } from './trophy-criteria-embeddable.schema';
 
 @Schema({ collection: 'achievements' })

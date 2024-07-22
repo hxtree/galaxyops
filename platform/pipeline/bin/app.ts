@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { awsAccounts } from '@cats-cradle/constructs';
+import { awsAccounts } from '@galaxyops/constructs';
 import { MainStack } from '../stacks/main.stack';
 
 // TODO only deploy if in tools account

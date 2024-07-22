@@ -2,7 +2,7 @@ import {
   Paper,
   HeroBanner,
   Spacer,
-} from '@cats-cradle/design-system/dist/main';
+} from '@galaxyops/design-system/dist/main';
 import { BreadCrumbs } from '../components/Breadcrumbs';
 
 export default function CharacterSheetsPage() {

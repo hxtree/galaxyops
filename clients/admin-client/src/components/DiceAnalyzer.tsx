@@ -10,7 +10,7 @@ import {
   Button,
   Paper,
   AlertSeverity,
-} from '@cats-cradle/design-system/dist/main';
+} from '@galaxyops/design-system/dist/main';
 import axios from 'axios';
 
 export type DiceAnalyzerProps = {

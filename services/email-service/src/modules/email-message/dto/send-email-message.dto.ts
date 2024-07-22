@@ -2,7 +2,7 @@ import {
   IsEnum,
   IsDateString,
   IsString,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { ApiProperty } from '@nestjs/swagger';
 import { StatusType } from '../../../models/email-message/status.type';
 

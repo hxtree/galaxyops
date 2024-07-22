@@ -1,10 +1,10 @@
-# @cats-cradle/message-bus
+# @galaxyops/message-bus
 
 ![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 ![Lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen)
 
 This service deploys a SNS topic for every registered
-`@cats-cradle/message-schema`. Other services can then subscribe to these
+`@galaxyops/message-schema`. Other services can then subscribe to these
 topics.
 
 ## Command Query Responsibility Segregation (CQRS)

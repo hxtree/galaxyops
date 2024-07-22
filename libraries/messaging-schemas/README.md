@@ -1,4 +1,4 @@
-# @cats-cradle/messaging-schemas
+# @galaxyops/messaging-schemas
 
 This contains Pub/Sub message schemas. These help provide loose coupling during
 async communication between microservices.

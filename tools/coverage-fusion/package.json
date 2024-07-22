@@ -29,7 +29,7 @@
     "rush"
   ],
   "dependencies": {
-    "@galaxyops/base-nodejs": "0.1.0",
+    "@galaxyops/base-nodejs": "workspace:*",
     "@types/istanbul-reports": "~3.0.1",
     "commander": "^12.1.0",
     "istanbul-lib-coverage": "~3.2.0",
@@ -37,7 +37,7 @@
     "istanbul-reports": "~3.1.5"
   },
   "devDependencies": {
-    "@galaxyops/eslint-config": "3.1.1",
+    "@galaxyops/eslint-config": "workspace:*",
     "@types/jest": "29.5.12",
     "@types/node": "20.11.25",
     "eslint": "8.57.0",

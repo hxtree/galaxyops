@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/admin-client",
+  "name": "@galaxyops/admin-client",
   "private": true,
   "type": "commonjs",
   "version": "2.1.0",
@@ -7,7 +7,7 @@
     "dev": "vite --host",
     "build": "tsc --build ./tsconfig-build.json && vite build",
     "build:all": "rush build -t .",
-    "artifact": "create-artifact @cats-cradle/admin-client",
+    "artifact": "create-artifact @galaxyops/admin-client",
     "lint": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix-dry-run",
     "preview": "vite preview",
@@ -21,7 +21,7 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@cats-cradle/design-system": "workspace:*",
+    "@galaxyops/design-system": "workspace:*",
     "axios": "^1.6.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -29,8 +29,8 @@
   },
   "devDependencies": {
     "@galaxyops/character-sheet-contracts": "*",
-    "@galaxyops/base-nodejs": "0.1.0",
-    "@galaxyops/create-artifact": "4.2.0",
+    "@galaxyops/base-nodejs": "workspace:*",
+    "@galaxyops/create-artifact": "workspace:*",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "29.5.12",

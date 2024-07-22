@@ -1,4 +1,4 @@
-# @cats-cradle/developer-portal
+# @galaxyops/developer-portal
 
 The Developer Portal service makes it easy to test multiple deployed service
 endpoints. The service is not designed to work against local service endpoints

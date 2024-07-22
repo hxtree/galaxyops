@@ -1,4 +1,4 @@
-# @cats-cradle/character-sheet
+# @galaxyops/character-sheet
 
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 

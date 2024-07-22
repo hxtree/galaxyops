@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/character-sheet",
+  "name": "@galaxyops/character-sheet",
   "description": "A service for maintaining character sheets",
   "module": "commonjs",
   "version": "3.1.0",
@@ -7,7 +7,7 @@
     "dev": "nest start --debug --watch",
     "build": "tsc",
     "build:all": "rush build -t .",
-    "artifact": "create-artifact @cats-cradle/character-sheet",
+    "artifact": "create-artifact @galaxyops/character-sheet",
     "watch": "tsc -w",
     "test": "jest --runInBand",
     "test:cov": "jest --coverage --runInBand",
@@ -26,10 +26,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@cats-cradle/constructs": "2.1.0",
-    "@cats-cradle/nestjs-modules": "2.1.0",
-    "@cats-cradle/validation-schemas": "2.1.0",
-    "@galaxyops/base-nodejs": "0.1.0",
+    "@galaxyops/constructs": "workspace:*",
+    "@galaxyops/nestjs-modules": "workspace:*",
+    "@galaxyops/validation-schemas": "workspace:*",
+    "@galaxyops/base-nodejs": "workspace:*",
     "@galaxyops/character-sheet-contracts": "workspace:*",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
@@ -51,10 +51,10 @@
     "uuid": "~9.0.1"
   },
   "devDependencies": {
-    "@galaxyops/create-artifact": "4.2.0",
-    "@cats-cradle/create-bundle": "1.0.12",
-    "@cats-cradle/faker-factory": "3.1.0",
-    "@galaxyops/eslint-config": "3.1.1",
+    "@galaxyops/create-artifact": "workspace:*",
+    "@galaxyops/create-bundle": "workspace:*",
+    "@galaxyops/faker-factory": "workspace:*",
+    "@galaxyops/eslint-config": "workspace:*",
     "@microsoft/tsdoc": "~0.13.2",
     "@nestjs/cli": "^10.3.2",
     "@nestjs/testing": "9.2.1",

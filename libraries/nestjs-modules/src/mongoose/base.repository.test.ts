@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MongooseModule } from '@nestjs/mongoose';
 import { INestApplication } from '@nestjs/common';
-import { IsUuidV4Validator } from '@cats-cradle/validation-schemas';
+import { IsUuidV4Validator } from '@galaxyops/validation-schemas';
 import {
   closeInMongodConnection,
   rootMongooseTestModule,

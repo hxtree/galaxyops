@@ -1,4 +1,4 @@
-import { IsDateString, IsString } from '@cats-cradle/validation-schemas';
+import { IsDateString, IsString } from '@galaxyops/validation-schemas';
 import { BaseCommandDto } from './base-command.dto';
 
 export class EmailSendCommand extends BaseCommandDto {

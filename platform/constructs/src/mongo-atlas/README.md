@@ -1,4 +1,4 @@
-# @cats-cradle/mongo-atlas
+# @galaxyops/mongo-atlas
 
 WIP Unstable
 

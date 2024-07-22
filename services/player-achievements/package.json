@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/player-achievements",
+  "name": "@galaxyops/player-achievements",
   "description": "Service for maintaining player achievements",
   "module": "commonjs",
   "version": "2.1.0",
@@ -28,11 +28,11 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "0.1.0",
-    "@cats-cradle/constructs": "2.1.0",
-    "@cats-cradle/create-bundle": "1.0.12",
-    "@cats-cradle/nestjs-modules": "2.1.0",
-    "@cats-cradle/validation-schemas": "2.1.0",
+    "@galaxyops/base-nodejs": "workspace:*",
+    "@galaxyops/constructs": "workspace:*",
+    "@galaxyops/create-bundle": "workspace:*",
+    "@galaxyops/nestjs-modules": "workspace:*",
+    "@galaxyops/validation-schemas": "workspace:*",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",
@@ -58,9 +58,9 @@
     "uuid": "~9.0.1"
   },
   "devDependencies": {
-    "@cats-cradle/create-bundle": "1.0.12",
-    "@galaxyops/eslint-config": "3.1.1",
-    "@cats-cradle/faker-factory": "3.1.0",
+    "@galaxyops/create-bundle": "workspace:*",
+    "@galaxyops/eslint-config": "workspace:*",
+    "@galaxyops/faker-factory": "workspace:*",
     "@fastify/static": "~6.9.0",
     "@nestjs/cli": "^10.3.2",
     "@nestjs/testing": "9.2.1",

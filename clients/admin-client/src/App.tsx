@@ -1,6 +1,6 @@
-import '@cats-cradle/design-system/dist/assets/style.css';
+import '@galaxyops/design-system/dist/assets/style.css';
 import { AppProvider } from './context/AppProvider';
-import { PageFooter, faGithub } from '@cats-cradle/design-system/dist/main';
+import { PageFooter, faGithub } from '@galaxyops/design-system/dist/main';
 import { Router } from './routing/Router';
 
 function App() {

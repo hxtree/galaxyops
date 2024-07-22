@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/validation-schemas",
+  "name": "@galaxyops/validation-schemas",
   "version": "2.1.0",
   "main": "./dist/index.js",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "uuid": "~9.0.1",
     "lodash": "4.17.21",
     "@types/lodash": "4.17.6",
-    "@galaxyops/base-nodejs": "0.1.0",
+    "@galaxyops/base-nodejs": "workspace:*",
     "reflect-metadata": "0.1.13",
     "@types/validator": "~13.7.10",
     "currency.js": "~2.0.4",
@@ -39,7 +39,7 @@
     "esbuild": "~0.20.1",
     "@types/uuid": "~9.0.7",
     "eslint": "8.57.0",
-    "@galaxyops/eslint-config": "3.1.1",
+    "@galaxyops/eslint-config": "workspace:*",
     "@types/json-schema": "~7.0.11"
   }
 }

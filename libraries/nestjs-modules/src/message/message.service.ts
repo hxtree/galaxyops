@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { v4 } from 'uuid';
 import { DateTime } from 'luxon';
-import { BaseMessageDto } from '@cats-cradle/messaging-schemas';
+import { BaseMessageDto } from '@galaxyops/messaging-schemas';
 import { SnsService } from '../sns';
 
 @Injectable()

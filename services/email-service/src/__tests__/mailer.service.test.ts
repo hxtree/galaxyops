@@ -1,4 +1,4 @@
-import { FakerFactory } from '@cats-cradle/faker-factory';
+import { FakerFactory } from '@galaxyops/faker-factory';
 import { SendEmailCommand } from '@aws-sdk/client-ses';
 import { MailerService } from '../modules/email-message/mailer.service';
 import { SendEmailCommandDto } from '../modules/email-message/dto/send-email-command.dto';

@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/dialogue-service",
+  "name": "@galaxyops/dialogue-service",
   "module": "commonjs",
   "version": "2.1.0",
   "scripts": {
@@ -7,10 +7,10 @@
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "0.1.0"
+    "@galaxyops/base-nodejs": "workspace:*"
   },
   "devDependencies": {
     "eslint": "8.57.0",
-    "@galaxyops/eslint-config": "3.1.1"
+    "@galaxyops/eslint-config": "workspace:*"
   }
 }

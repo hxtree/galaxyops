@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/pipeline",
+  "name": "@galaxyops/pipeline",
   "module": "commonjs",
   "version": "3.1.0",
   "description": "An API for simulating dice rolls and luck from dice notation",
@@ -23,13 +23,13 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "0.1.0",
-    "@cats-cradle/constructs": "2.1.0",
+    "@galaxyops/base-nodejs": "workspace:*",
+    "@galaxyops/constructs": "2.1.0",
     "aws-lambda": "1.0.7",
     "eslint": "8.57.0"
   },
   "devDependencies": {
-    "@galaxyops/eslint-config": "3.1.1",
+    "@galaxyops/eslint-config": "workspace:*",
     "@types/aws-lambda": "~8.10.130",
     "@types/jest": "29.5.12",
     "@types/lodash": "4.17.6",

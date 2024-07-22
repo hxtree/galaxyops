@@ -1,4 +1,4 @@
-import { messageRegistry } from '@cats-cradle/messaging-schemas';
+import { messageRegistry } from '@galaxyops/messaging-schemas';
 import { Construct } from 'constructs';
 import { StackProps, RemovalPolicy } from 'aws-cdk-lib';
 import * as s3 from 'aws-cdk-lib/aws-s3';

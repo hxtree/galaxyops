@@ -4,7 +4,7 @@ import {
   IsOptional,
   IsString,
   IsUuidV4,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { v4 } from 'uuid';
 import { ArchetypeId, ArchetypeIds } from '../../data/archetype';
 

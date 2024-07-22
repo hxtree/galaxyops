@@ -2,7 +2,7 @@ import {
   IsEnum,
   IsDateString,
   IsString,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { StatusType } from '../../../models/email-message/status.type';
 
 export class QueueEmailMessageDto {

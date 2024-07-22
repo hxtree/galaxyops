@@ -1,4 +1,4 @@
-# @cats-cradle/feature-flag
+# @galaxyops/feature-flag
 
 TODO add a feature flagging system to safely deploy services that are
 independently deploy

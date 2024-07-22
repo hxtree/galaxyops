@@ -1,4 +1,4 @@
-# @cats-cradle/pseudo-random
+# @galaxyops/pseudo-random
 
 This Pseudo-Random Number Generator Library is a TypeScript library that
 provides a collection of pseudo-random number generators useful for various
@@ -22,7 +22,7 @@ any situation where order randomness is desired.
 Install the library using npm:
 
 ```bash
-npm install @cats-cradle/pseudo-random
+npm install @galaxyops/pseudo-random
 ```
 
 ## Usage

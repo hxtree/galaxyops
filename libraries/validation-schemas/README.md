@@ -1,4 +1,4 @@
-# @cats-cradle/validation-schemas
+# @galaxyops/validation-schemas
 
 Contains standard class-validator decorators and custom decorators for use
 primarily in defining and validating data used in game design.
@@ -8,7 +8,7 @@ import {
   validateSync,
   ValidationError,
   IsDiceNotation,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 
 class Turn {
   @IsDiceNotation()
@@ -25,7 +25,7 @@ console.log(errors.length);
 ```
 
 All validation decorators should be supported by
-[@cats-cradle/faker-factory](https://www.npmjs.com/package/@cats-cradle/faker-factory)
+[@galaxyops/faker-factory](https://www.npmjs.com/package/@galaxyops/faker-factory)
 enabling automatic generation of fakes.
 
 ## References

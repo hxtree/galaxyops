@@ -1,5 +1,5 @@
 import { Prop, Schema } from '@nestjs/mongoose';
-import { IsInt, Min, Max } from '@cats-cradle/validation-schemas';
+import { IsInt, Min, Max } from '@galaxyops/validation-schemas';
 
 @Schema({ _id: false })
 export class GaugeEmbeddable {

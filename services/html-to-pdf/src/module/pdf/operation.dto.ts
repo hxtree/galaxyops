@@ -4,7 +4,7 @@ import {
   IsString,
   IsOptional,
   IsFilename,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { ApiProperty } from '@nestjs/swagger';
 import { v4 } from 'uuid';
 

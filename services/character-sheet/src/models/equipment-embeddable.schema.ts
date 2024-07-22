@@ -4,7 +4,7 @@ import {
   ArrayUnique,
   ArrayMinSize,
   ArrayMaxSize,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { Slot } from '@galaxyops/character-sheet-contracts';
 import { EquipmentId, EquipmentIds } from '../data/gear/equipment.gear';
 

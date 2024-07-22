@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/graphql",
+  "name": "@galaxyops/graphql",
   "module": "commonjs",
   "version": "2.1.0",
   "private": true,
@@ -8,7 +8,7 @@
     "app": "bin/app.js"
   },
   "scripts": {
-    "artifact": "create-artifact @cats-cradle/luck-by-dice",
+    "artifact": "create-artifact @galaxyops/luck-by-dice",
     "build": "tsc",
     "build:all": "rush build -t .",
     "lint": "eslint --format visualstudio \"./stacks/**/*.ts\"  --fix",
@@ -24,9 +24,9 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "0.1.0",
-    "@cats-cradle/constructs": "2.1.0",
-    "@cats-cradle/validation-schemas": "2.1.0",
+    "@galaxyops/base-nodejs": "workspace:*",
+    "@galaxyops/constructs": "workspace:*",
+    "@galaxyops/validation-schemas": "workspace:*",
     "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.2.1",
@@ -46,9 +46,9 @@
     "source-map-support": "~0.5.21"
   },
   "devDependencies": {
-    "@galaxyops/create-artifact": "4.2.0",
-    "@cats-cradle/create-bundle": "1.0.12",
-    "@galaxyops/eslint-config": "3.1.1",
+    "@galaxyops/create-artifact": "workspace:*",
+    "@galaxyops/create-bundle": "workspace:*",
+    "@galaxyops/eslint-config": "workspace:*",
     "@types/aws-lambda": "~8.10.130",
     "@types/express": "~4.17.21",
     "@types/jest": "29.5.12",

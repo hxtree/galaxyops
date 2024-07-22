@@ -1,5 +1,5 @@
 import { Prop, Schema } from '@nestjs/mongoose';
-import { IsEnum, IsNumber } from '@cats-cradle/validation-schemas';
+import { IsEnum, IsNumber } from '@galaxyops/validation-schemas';
 import { Trophy } from './trophy.enum';
 
 @Schema({ _id: false })

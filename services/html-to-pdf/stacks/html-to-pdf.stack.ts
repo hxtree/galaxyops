@@ -1,4 +1,4 @@
-import { Microservice, LambdaDomainName } from '@cats-cradle/constructs';
+import { Microservice, LambdaDomainName } from '@galaxyops/constructs';
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import * as s3 from 'aws-cdk-lib/aws-s3';

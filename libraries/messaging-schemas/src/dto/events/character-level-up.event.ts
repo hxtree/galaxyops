@@ -1,4 +1,4 @@
-import { Min, IsInt, IsUuidV4 } from '@cats-cradle/validation-schemas';
+import { Min, IsInt, IsUuidV4 } from '@galaxyops/validation-schemas';
 import { BaseEventDto } from './base-event.dto';
 
 export class CharacterLevelUpEvent extends BaseEventDto {

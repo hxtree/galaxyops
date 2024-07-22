@@ -1,4 +1,4 @@
-# @cats-cradle/admin-client
+# @galaxyops/admin-client
 
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 

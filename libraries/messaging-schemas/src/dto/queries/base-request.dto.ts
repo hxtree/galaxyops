@@ -1,4 +1,4 @@
-import { IsString } from '@cats-cradle/validation-schemas';
+import { IsString } from '@galaxyops/validation-schemas';
 import { BaseMessageDto } from '../messages/base-message.dto';
 
 /**

@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@cats-cradle/nestjs-modules';
+import { MongooseModule } from '@galaxyops/nestjs-modules';
 import { TemplateService } from './template.service';
 import {
   EmailMessageSchema,

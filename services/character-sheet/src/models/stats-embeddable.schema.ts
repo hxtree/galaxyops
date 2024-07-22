@@ -1,5 +1,5 @@
 import { Prop, Schema } from '@nestjs/mongoose';
-import { IsInt, Min, Max } from '@cats-cradle/validation-schemas';
+import { IsInt, Min, Max } from '@galaxyops/validation-schemas';
 
 /**
  * characters actual stats vary based on disciplines, afflictions, and equipment

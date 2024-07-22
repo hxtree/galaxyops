@@ -1,6 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { LambdaDomainName } from '@cats-cradle/constructs';
+import { LambdaDomainName } from '@galaxyops/constructs';
 import { EmailVerificationStack } from './email-verification.stack';
 import { EmailServiceStack } from './email-service.stack';
 

@@ -2,7 +2,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import {
   IsEnum, IsInt, Min, Max,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { ImageVariant } from './image-variant.enum';
 
 @Schema()

@@ -1,8 +1,8 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import { FakerFactory } from '@cats-cradle/faker-factory';
-import { MongooseModule } from '@cats-cradle/nestjs-modules';
+import { FakerFactory } from '@galaxyops/faker-factory';
+import { MongooseModule } from '@galaxyops/nestjs-modules';
 import { v4 } from 'uuid';
 import { MongoMemoryServer } from 'mongodb-memory-server-global';
 import mongoose from 'mongoose';

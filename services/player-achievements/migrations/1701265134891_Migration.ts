@@ -1,6 +1,6 @@
 import { Db } from 'mongodb';
 import { MigrationInterface } from 'mongo-migrate-ts';
-import { asyncForEach } from '@cats-cradle/nestjs-modules';
+import { asyncForEach } from '@galaxyops/nestjs-modules';
 import { ObjectId, UUID } from 'bson';
 import { v4 } from 'uuid';
 import { Achievements } from './1701265134891_SeedData';

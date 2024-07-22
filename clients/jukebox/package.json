@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/jukebox",
+  "name": "@galaxyops/jukebox",
   "description": "An API for the audio service",
   "module": "commonjs",
   "version": "2.1.0",
@@ -7,7 +7,7 @@
     "dev": "nest start --debug --watch",
     "build": "tsc",
     "build:all": "rush build -t .",
-    "artifact": "create-artifact @cats-cradle/jukebox",
+    "artifact": "create-artifact @galaxyops/jukebox",
     "watch": "tsc -w",
     "test": "jest --runInBand",
     "test:cov": "jest --coverage --runInBand",
@@ -24,10 +24,10 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "0.1.0",
-    "@cats-cradle/constructs": "2.1.0",
-    "@cats-cradle/nestjs-modules": "2.1.0",
-    "@cats-cradle/validation-schemas": "2.1.0",
+    "@galaxyops/base-nodejs": "workspace:*",
+    "@galaxyops/constructs": "workspace:*",
+    "@galaxyops/nestjs-modules": "workspace:*",
+    "@galaxyops/validation-schemas": "workspace:*",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",
@@ -48,10 +48,10 @@
     "uuid": "~9.0.1"
   },
   "devDependencies": {
-    "@galaxyops/create-artifact": "4.2.0",
-    "@cats-cradle/create-bundle": "1.0.12",
-    "@galaxyops/eslint-config": "3.1.1",
-    "@cats-cradle/faker-factory": "3.1.0",
+    "@galaxyops/create-artifact": "workspace:*",
+    "@galaxyops/create-bundle": "workspace:*",
+    "@galaxyops/eslint-config": "workspace:*",
+    "@galaxyops/faker-factory": "workspace:*",
     "@fastify/static": "~6.9.0",
     "@microsoft/tsdoc": "~0.13.2",
     "@nestjs/cli": "^10.3.2",

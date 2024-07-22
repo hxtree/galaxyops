@@ -1,6 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { awsAccounts } from '@cats-cradle/constructs';
+import { awsAccounts } from '@galaxyops/constructs';
 import { MainStack } from './main.stack';
 
 describe('MainStack', () => {

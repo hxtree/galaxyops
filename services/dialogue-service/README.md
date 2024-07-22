@@ -1,4 +1,4 @@
-# @cats-cradle/dialogue-service
+# @galaxyops/dialogue-service
 
 This services manages the dialogue for the game. Dialogue files are stored in
 Ink format. The Ink format allows for conditional choices between messages and

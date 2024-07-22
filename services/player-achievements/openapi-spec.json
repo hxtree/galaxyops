@@ -146,7 +146,7 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/player-achievements",
+    "title": "@galaxyops/player-achievements",
     "description": "Service for maintaining player achievements",
     "version": "0.0.1",
     "contact": {}

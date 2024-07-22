@@ -1,7 +1,7 @@
 /* eslint-disable func-names */
 import { Prop } from '@nestjs/mongoose';
 import { Schema } from 'mongoose';
-import { IsDateString, IsUuidV4 } from '@cats-cradle/validation-schemas';
+import { IsDateString, IsUuidV4 } from '@galaxyops/validation-schemas';
 import { UUID } from 'bson';
 
 export type BaseEntityProps = '_id' | 'updatedAt' | 'createdAt';

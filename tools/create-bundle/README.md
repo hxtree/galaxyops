@@ -1,6 +1,6 @@
-# @cats-cradle/create-bundle
+# @galaxyops/create-bundle
 
-[![npm version](https://badge.fury.io/js/@cats-cradle%2Fcreate-bundle.svg)](https://badge.fury.io/js/@cats-cradle%2Fcreate-bundle)
+[![npm version](https://badge.fury.io/js/@galaxyops%2Fcreate-bundle.svg)](https://badge.fury.io/js/@galaxyops%2Fcreate-bundle)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 
@@ -12,7 +12,7 @@ projects source code to make it ready for distribution.
 Install bundler as devDependency:
 
 ```bash
-npm install @cats-cradle/create-bundle --dev
+npm install @galaxyops/create-bundle --dev
 ```
 
 Call the binary from within your package.json

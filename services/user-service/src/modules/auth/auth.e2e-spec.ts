@@ -1,4 +1,4 @@
-import { FakerFactory } from '@cats-cradle/faker-factory';
+import { FakerFactory } from '@galaxyops/faker-factory';
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';

@@ -26,7 +26,7 @@ export const main = async () => {
 
   const config: Config = {
     outDir: `${workspaceRootDir}dist/${targetPackageNameOrPath.replace(
-      '@cats-cradle/',
+      '@galaxyops/',
       '',
     )}`,
     overwrite: true,

@@ -1,4 +1,4 @@
-# @cats-cradle/pipeline
+# @galaxyops/pipeline
 
 Unstable WIP
 

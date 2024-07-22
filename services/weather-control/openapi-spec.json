@@ -136,7 +136,7 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/weather-control",
+    "title": "@galaxyops/weather-control",
     "description": "A service for managing the weather",
     "version": "0.0.2",
     "contact": {}

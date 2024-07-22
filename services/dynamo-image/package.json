@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/dynamo-image",
+  "name": "@galaxyops/dynamo-image",
   "description": "A service for managing dynamic image sizes",
   "module": "commonjs",
   "version": "3.1.0",
@@ -7,7 +7,7 @@
     "dev": "nest start --debug --watch",
     "build": "tsc",
     "build:all": "rush build -t .",
-    "artifact": "create-artifact @cats-cradle/dynamo-image",
+    "artifact": "create-artifact @galaxyops/dynamo-image",
     "watch": "tsc -w",
     "test": "jest",
     "test:cov": "jest --coverage",
@@ -26,10 +26,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "0.1.0",
-    "@cats-cradle/constructs": "2.1.0",
-    "@cats-cradle/nestjs-modules": "2.1.0",
-    "@cats-cradle/validation-schemas": "2.1.0",
+    "@galaxyops/base-nodejs": "workspace:*",
+    "@galaxyops/constructs": "workspace:*",
+    "@galaxyops/nestjs-modules": "workspace:*",
+    "@galaxyops/validation-schemas": "workspace:*",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",
@@ -49,10 +49,10 @@
     "uuid": "~9.0.1"
   },
   "devDependencies": {
-    "@galaxyops/create-artifact": "4.2.0",
-    "@cats-cradle/create-bundle": "1.0.12",
-    "@galaxyops/eslint-config": "3.1.1",
-    "@cats-cradle/faker-factory": "3.1.0",
+    "@galaxyops/create-artifact": "workspace:*",
+    "@galaxyops/create-bundle": "workspace:*",
+    "@galaxyops/eslint-config": "workspace:*",
+    "@galaxyops/faker-factory": "workspace:*",
     "@nestjs/cli": "^10.3.2",
     "@nestjs/testing": "9.2.1",
     "@shelf/jest-mongodb": "~4.2.0",

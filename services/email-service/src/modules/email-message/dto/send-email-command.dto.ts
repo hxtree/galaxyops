@@ -1,4 +1,4 @@
-import { IsString, IsOptional } from '@cats-cradle/validation-schemas';
+import { IsString, IsOptional } from '@galaxyops/validation-schemas';
 
 export class SendEmailCommandDto {
   @IsString({ each: true })

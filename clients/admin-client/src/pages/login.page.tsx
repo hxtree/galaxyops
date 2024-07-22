@@ -1,4 +1,4 @@
-import { Paper, Link, Button, TextField, faArrowRight, FontAwesomeIcon } from '@cats-cradle/design-system/dist/main';
+import { Paper, Link, Button, TextField, faArrowRight, FontAwesomeIcon } from '@galaxyops/design-system/dist/main';
 import React from 'react';
 
 export default function LoginPage() {

@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsUuidV4, IsEnum } from '@cats-cradle/validation-schemas';
+import { IsUuidV4, IsEnum } from '@galaxyops/validation-schemas';
 import { v4 } from 'uuid';
 import { PlaceIds, PlaceId } from '../../data/place';
 

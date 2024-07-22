@@ -1,6 +1,6 @@
 /* eslint-disable func-names */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { BaseEntity } from '@cats-cradle/nestjs-modules';
+import { BaseEntity } from '@galaxyops/nestjs-modules';
 import { Document } from 'mongoose';
 import {
   Type,
@@ -15,7 +15,7 @@ import {
   ArrayMinSize,
   ArrayMaxSize,
   IsArray,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 
 // instance_id, used in other services to ensure
 // one player can only make calls to a single instance.

@@ -1,6 +1,6 @@
-# @cats-cradle/create-artifact
+# @galaxyops/create-artifact
 
-[![npm version](https://badge.fury.io/js/@cats-cradle%2Fcreate-artifact.svg)](https://badge.fury.io/js/@cats-cradle%2Fcreate-artifact)
+[![npm version](https://badge.fury.io/js/@galaxyops%2Fcreate-artifact.svg)](https://badge.fury.io/js/@galaxyops%2Fcreate-artifact)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 
@@ -25,7 +25,7 @@ dependency:
 
 ```bash
 # example of how to add dev dependency
-pnpm add @cats-cradle/create-artifact --dev
+pnpm add @galaxyops/create-artifact --dev
 ```
 
 Add a script command to bundle your package to the project's package.json. Make

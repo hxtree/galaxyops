@@ -4,7 +4,7 @@ import * as codepipeline from 'aws-cdk-lib/aws-codepipeline';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
-import { awsAccounts } from '@cats-cradle/constructs';
+import { awsAccounts } from '@galaxyops/constructs';
 import {
   CodePipeline,
   CodePipelineSource,

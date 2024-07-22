@@ -21,7 +21,7 @@ import {
   IsDiceNotation,
   IsLatitude,
   IsUuidV4,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 
 export enum SampleEnum {
   RED = 'red',

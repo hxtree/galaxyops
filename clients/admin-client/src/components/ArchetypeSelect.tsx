@@ -11,7 +11,7 @@ import {
   CodeSnippetLanguages,
   ActionMenu,
   SkillList,
-} from '@cats-cradle/design-system/dist/main';
+} from '@galaxyops/design-system/dist/main';
 import { Archetype } from '@galaxyops/character-sheet-contracts';
 
 export default function ArchetypeSelect() {

@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { v4 } from 'uuid';
-import { IsEnum, IsInt, IsPositive } from '@cats-cradle/validation-schemas';
+import { IsEnum, IsInt, IsPositive } from '@galaxyops/validation-schemas';
 import { AffiliationId, AffiliationIds } from '../../data/affiliations';
 
 export enum Operation {

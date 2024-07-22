@@ -2,7 +2,7 @@ import {
   IsLongitude,
   IsLatitude,
   IsEnum,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { ApiProperty } from '@nestjs/swagger';
 import { HappinessType } from './happiness.type';
 

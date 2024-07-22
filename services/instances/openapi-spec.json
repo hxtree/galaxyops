@@ -172,7 +172,7 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/instances",
+    "title": "@galaxyops/instances",
     "description": "An API for maintaining game instances",
     "version": "0.0.1",
     "contact": {}

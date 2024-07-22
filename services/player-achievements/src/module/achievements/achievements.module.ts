@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@cats-cradle/nestjs-modules';
+import { MongooseModule } from '@galaxyops/nestjs-modules';
 import { AchievementController } from './achievements.controller';
 import { databaseModule } from '../../database.module';
 import { AchievementSchema } from '../../models/achievement.schema';

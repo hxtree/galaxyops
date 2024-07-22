@@ -3,7 +3,7 @@ import {
   IsUuidV4,
   IsDateString,
   IsBoolean,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { pascalCase } from './pascalCase';
 
 export abstract class BaseMessageDto {

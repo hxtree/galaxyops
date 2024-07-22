@@ -5,9 +5,9 @@ import {
   IsDateString,
   IsNumber,
   IsUuidV4,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { v4 } from 'uuid';
-import { BaseEntity } from '@cats-cradle/nestjs-modules';
+import { BaseEntity } from '@galaxyops/nestjs-modules';
 import { getHadeanTime } from './get-hadean-time';
 
 @Schema({ collection: 'instance' })

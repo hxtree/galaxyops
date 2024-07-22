@@ -1,7 +1,7 @@
 import { Prop, Schema } from '@nestjs/mongoose';
 import {
   IsInt, Min, Max, IsEnum,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { AffiliationId, AffiliationIds } from '../data/affiliations';
 
 @Schema({ _id: false })

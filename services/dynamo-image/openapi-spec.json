@@ -133,7 +133,7 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/dynamo-image",
+    "title": "@galaxyops/dynamo-image",
     "description": "A service for managing dynamic image sizes",
     "version": "1.0.2",
     "contact": {}

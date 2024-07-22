@@ -2,7 +2,7 @@ import {
   HeroBanner,
   Paper,
   Spacer,
-} from '@cats-cradle/design-system/dist/main';
+} from '@galaxyops/design-system/dist/main';
 import ArchetypeSelect from '../components/ArchetypeSelect';
 import { BreadCrumbs } from '../components/Breadcrumbs';
 

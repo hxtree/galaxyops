@@ -13,9 +13,9 @@ import {
   ArrayMinSize,
   ArrayMaxSize,
   IsArray,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { v4 as uuidv4 } from 'uuid';
-import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
+import { BaseEntity, BaseEntityProps } from '@galaxyops/nestjs-modules';
 import {
   MenuSlotOrder,
   Skill,

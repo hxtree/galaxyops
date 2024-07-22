@@ -5,8 +5,8 @@ import {
   MongooseModule,
   closeInMongodConnection,
   asyncForEach,
-} from '@cats-cradle/nestjs-modules';
-import { FakerFactory, toPojo } from '@cats-cradle/faker-factory';
+} from '@galaxyops/nestjs-modules';
+import { FakerFactory, toPojo } from '@galaxyops/faker-factory';
 import { v4 } from 'uuid';
 import { InstanceSchema, Instance } from '../../models/instance.schema';
 import { InstanceRepository } from '../../models/instance.repository';

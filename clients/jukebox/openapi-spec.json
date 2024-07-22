@@ -106,7 +106,7 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/jukebox",
+    "title": "@galaxyops/jukebox",
     "description": "An API for the audio service",
     "version": "0.0.2",
     "contact": {}

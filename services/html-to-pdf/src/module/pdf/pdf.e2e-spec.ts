@@ -2,7 +2,7 @@ import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, Injectable } from '@nestjs/common';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
-import { S3ClientService, S3Service } from '@cats-cradle/nestjs-modules';
+import { S3ClientService, S3Service } from '@galaxyops/nestjs-modules';
 import { mockClient } from 'aws-sdk-client-mock';
 import { OperationInput, OperationOutput } from './operation.dto';
 import { PdfService } from './pdf.service';

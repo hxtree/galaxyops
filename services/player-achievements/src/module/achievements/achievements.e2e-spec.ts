@@ -1,8 +1,8 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
-import { MongooseModule, asyncForEach } from '@cats-cradle/nestjs-modules';
-import { FakerFactory, toPojo } from '@cats-cradle/faker-factory';
+import { MongooseModule, asyncForEach } from '@galaxyops/nestjs-modules';
+import { FakerFactory, toPojo } from '@galaxyops/faker-factory';
 import { v4 } from 'uuid';
 import {
   AchievementSchema,

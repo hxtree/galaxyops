@@ -3,7 +3,7 @@ import {
   Type,
   IsString,
   ValidateNested,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { getJsonSchemas } from './get-json-schemas';
 
 describe('getJsonSchemas', () => {

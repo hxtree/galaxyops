@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/promare-gradients",
+  "name": "@galaxyops/promare-gradients",
   "version": "3.1.0",
   "description": "Neon background gradients",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "clean-css-cli": "^5.5.0",
     "express": "4.19.2",
     "sass": "^1.47.0",
-    "@galaxyops/eslint-config": "3.1.1",
+    "@galaxyops/eslint-config": "workspace:*",
     "node-sass": "~8.0.0"
   },
   "devDependencies": {

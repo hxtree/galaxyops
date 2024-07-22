@@ -1,6 +1,6 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
 import { Injectable } from '@nestjs/common';
-import { S3Service } from '@cats-cradle/nestjs-modules';
+import { S3Service } from '@galaxyops/nestjs-modules';
 import { Readable } from 'stream';
 import puppeteer, { PDFOptions } from 'puppeteer-core';
 

@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { IsString, IsEnum } from '@cats-cradle/validation-schemas';
-import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
+import { IsString, IsEnum } from '@galaxyops/validation-schemas';
+import { BaseEntity, BaseEntityProps } from '@galaxyops/nestjs-modules';
 import { StatusType } from './status.type';
 
 @Schema({ collection: 'email-messages' })

@@ -1,7 +1,7 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
-import { FakerFactory } from '@cats-cradle/faker-factory';
+import { FakerFactory } from '@galaxyops/faker-factory';
 import { WeatherService } from './weather.service';
 import { WeatherController } from './weather.controller';
 import { ClimateType } from './climates.type';

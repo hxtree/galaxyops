@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/pseudo-random",
+  "name": "@galaxyops/pseudo-random",
   "version": "2.1.0",
   "main": "./dist/index.js",
   "repository": {
@@ -30,7 +30,7 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "0.1.0"
+    "@galaxyops/base-nodejs": "workspace:*"
   },
   "devDependencies": {
     "@types/jest": "29.5.12",
@@ -41,6 +41,6 @@
     "ts-node": "10.9.2",
     "esbuild": "~0.20.1",
     "eslint": "8.57.0",
-    "@galaxyops/eslint-config": "3.1.1"
+    "@galaxyops/eslint-config": "workspace:*"
   }
 }

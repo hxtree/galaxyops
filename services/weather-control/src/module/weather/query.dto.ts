@@ -2,7 +2,7 @@ import {
   IsLongitude,
   IsLatitude,
   IsDateString,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class QueryDto {

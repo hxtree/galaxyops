@@ -1,4 +1,4 @@
-# @cats-cradle/authentication-service
+# @galaxyops/authentication-service
 
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 

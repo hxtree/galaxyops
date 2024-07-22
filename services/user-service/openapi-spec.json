@@ -195,7 +195,7 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/user-service",
+    "title": "@galaxyops/user-service",
     "description": "user service",
     "version": "1.1.5",
     "contact": {}

@@ -1,4 +1,4 @@
-# @cats-cradle/billing-system
+# @galaxyops/billing-system
 
 Sets up a production-ready Kill Bill installation in a multi-tier scenario with
 Kaui, an administrative user interface for Customer Support agents and Finance

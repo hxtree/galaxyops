@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable operator-linebreak */
 /* eslint-disable-next-line max-classes-per-file */
-import { FakerFactory } from '@cats-cradle/faker-factory';
-import { IsMoney } from '@cats-cradle/validation-schemas';
+import { FakerFactory } from '@galaxyops/faker-factory';
+import { IsMoney } from '@galaxyops/validation-schemas';
 import { BaseMessageDto } from './base-message.dto';
 import { BaseEventDto } from '../events/base-event.dto';
 

@@ -177,7 +177,7 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/email-service",
+    "title": "@galaxyops/email-service",
     "description": "A service for sending emails",
     "version": "0.0.20",
     "contact": {}

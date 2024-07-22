@@ -1,8 +1,8 @@
 import supertest from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
-import { MongooseModule } from '@cats-cradle/nestjs-modules';
-import { FakerFactory } from '@cats-cradle/faker-factory';
+import { MongooseModule } from '@galaxyops/nestjs-modules';
+import { FakerFactory } from '@galaxyops/faker-factory';
 import { v4 } from 'uuid';
 import {
   CharacterSheetSchema,

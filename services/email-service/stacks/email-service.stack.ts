@@ -1,10 +1,10 @@
-import { Microservice } from '@cats-cradle/constructs';
+import { Microservice } from '@galaxyops/constructs';
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as sns from 'aws-cdk-lib/aws-sns';
 import * as subscriptions from 'aws-cdk-lib/aws-sns-subscriptions';
-import { EmailSendCommand } from '@cats-cradle/messaging-schemas';
+import { EmailSendCommand } from '@galaxyops/messaging-schemas';
 import * as path from 'path';
 
 export class EmailServiceStack extends cdk.NestedStack {

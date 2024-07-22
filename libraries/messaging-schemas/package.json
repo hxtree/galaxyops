@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/messaging-schemas",
+  "name": "@galaxyops/messaging-schemas",
   "version": "2.1.0",
   "main": "./dist/index.js",
   "repository": {
@@ -23,10 +23,10 @@
     "uuid": "~9.0.1",
     "lodash": "4.17.21",
     "@types/lodash": "4.17.6",
-    "@galaxyops/base-nodejs": "0.1.0",
+    "@galaxyops/base-nodejs": "workspace:*",
     "@types/validator": "~13.7.10",
-    "@cats-cradle/faker-factory": "3.1.0",
-    "@cats-cradle/validation-schemas": "2.1.0",
+    "@galaxyops/faker-factory": "workspace:*",
+    "@galaxyops/validation-schemas": "2.1.0",
     "class-transformer": "0.5.1"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "esbuild": "~0.20.1",
     "@types/uuid": "~9.0.7",
     "eslint": "8.57.0",
-    "@galaxyops/eslint-config": "3.1.1",
+    "@galaxyops/eslint-config": "workspace:*",
     "@types/json-schema": "~7.0.11"
   }
 }

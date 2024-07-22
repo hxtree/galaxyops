@@ -1,5 +1,5 @@
 {
-  "name": "@cats-cradle/api",
+  "name": "@galaxyops/api",
   "module": "commonjs",
   "description": "routes request to other endpoints",
   "version": "2.1.0",
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "nest start --debug --watch",
-    "artifact": "create-artifact @cats-cradle/api",
+    "artifact": "create-artifact @galaxyops/api",
     "build": "tsc",
     "build:all": "nx run-many --target=build --all --with-deps --tag=.",
     "watch": "tsc -w",
@@ -27,10 +27,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "0.1.0",
-    "@cats-cradle/constructs": "2.1.0",
-    "@cats-cradle/nestjs-modules": "2.1.0",
-    "@cats-cradle/validation-schemas": "2.1.0",
+    "@galaxyops/base-nodejs": "workspace:*",
+    "@galaxyops/constructs": "workspace:*",
+    "@galaxyops/nestjs-modules": "workspace:*",
+    "@galaxyops/validation-schemas": "workspace:*",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",
@@ -51,11 +51,11 @@
     "uuid": "~9.0.1"
   },
   "devDependencies": {
-    "@galaxyops/base-nodejs": "0.1.0",
-    "@cats-cradle/constructs": "workspace:*",
-    "@galaxyops/create-artifact": "4.2.0",
-    "@cats-cradle/create-bundle": "1.0.12",
-    "@galaxyops/eslint-config": "3.1.1",
+    "@galaxyops/base-nodejs": "workspace:*",
+    "@galaxyops/constructs": "workspace:*",
+    "@galaxyops/create-artifact": "workspace:*",
+    "@galaxyops/create-bundle": "workspace:*",
+    "@galaxyops/eslint-config": "workspace:*",
     "@nestjs/swagger": "~7.1.17",
     "@nestjs/testing": "9.2.1",
     "@types/aws-lambda": "~8.10.130",

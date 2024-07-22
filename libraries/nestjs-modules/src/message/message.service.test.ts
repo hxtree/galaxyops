@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { FakerFactory } from '@cats-cradle/faker-factory';
+import { FakerFactory } from '@galaxyops/faker-factory';
 import { ConfigService } from '@nestjs/config';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import { SNSClient, PublishCommand } from '@aws-sdk/client-sns';
 import { mockClient } from 'aws-sdk-client-mock';
-import { CharacterLevelUpEvent } from '@cats-cradle/messaging-schemas';
+import { CharacterLevelUpEvent } from '@galaxyops/messaging-schemas';
 import { SnsService, SnsClientService } from '../sns';
 import { S3Service, S3ClientService } from '../s3';
 import { MessageService } from './message.service';

@@ -147,7 +147,7 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/api",
+    "title": "@galaxyops/api",
     "description": "routes request to other endpoints",
     "version": "0.1.2",
     "contact": {}

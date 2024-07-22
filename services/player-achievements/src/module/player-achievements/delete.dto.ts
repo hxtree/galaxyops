@@ -1,4 +1,4 @@
-import { IsOptional, IsUuidV4 } from '@cats-cradle/validation-schemas';
+import { IsOptional, IsUuidV4 } from '@galaxyops/validation-schemas';
 import { ApiProperty } from '@nestjs/swagger';
 import { v4 } from 'uuid';
 

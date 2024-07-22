@@ -2,7 +2,7 @@
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
-import { LambdaDomainName, Microservice } from '@cats-cradle/constructs';
+import { LambdaDomainName, Microservice } from '@galaxyops/constructs';
 import path from 'path';
 
 interface Secret {

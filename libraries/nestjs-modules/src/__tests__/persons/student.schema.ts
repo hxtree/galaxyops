@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Schema as MongooseSchema } from 'mongoose';
-import { IsString, IsUuidV4 } from '@cats-cradle/validation-schemas';
+import { IsString, IsUuidV4 } from '@galaxyops/validation-schemas';
 import { BaseEntity, BaseEntityProps } from '../../mongoose';
 import { Person } from './person.schema';
 

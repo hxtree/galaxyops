@@ -1,6 +1,6 @@
-// import { Button } from '@cats-cradle/design-system';
+// import { Button } from '@galaxyops/design-system';
 // import { SetStateAction, useState } from 'react';
-import { AppBar, Button } from '@cats-cradle/design-system/dist/main';
+import { AppBar, Button } from '@galaxyops/design-system/dist/main';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {

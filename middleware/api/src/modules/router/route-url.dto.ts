@@ -1,4 +1,4 @@
-import { IsString, IsUrl } from '@cats-cradle/validation-schemas';
+import { IsString, IsUrl } from '@galaxyops/validation-schemas';
 
 export class RouteUrlsDto {
   @IsString()

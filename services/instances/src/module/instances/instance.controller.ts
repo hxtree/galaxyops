@@ -8,7 +8,7 @@ import {
   VERSION_NEUTRAL,
   Delete,
 } from '@nestjs/common';
-import { IsUuidV4Validator } from '@cats-cradle/validation-schemas';
+import { IsUuidV4Validator } from '@galaxyops/validation-schemas';
 import { CreateDto } from './create.dto';
 import { InstanceRepository } from '../../models/instance.repository';
 import { Instance } from '../../models/instance.schema';

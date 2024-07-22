@@ -1,4 +1,4 @@
-# @cats-cradle/nestjs-modules
+# @galaxyops/nestjs-modules
 
 NestJsModules contains select reusable injectable NestJs modules for use in
 other packages, mainly pertaining to AWS workflows.

@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@cats-cradle/nestjs-modules';
+import { MongooseModule } from '@galaxyops/nestjs-modules';
 import { InstanceController } from './instance.controller';
 import { InstanceRepository } from '../../models/instance.repository';
 import { databaseModule } from '../../database.module';

@@ -1,4 +1,4 @@
-import '@cats-cradle/design-system/dist/assets/style.css';
+import '@galaxyops/design-system/dist/assets/style.css';
 import { Link, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import DicePage from "../pages/dice.page";
 import ArchetypesPage from "../pages/archetypes.page";

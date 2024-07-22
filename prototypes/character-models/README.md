@@ -1,4 +1,4 @@
-# @cats-cradle/character-models
+# @galaxyops/character-models
 
 WIP
 

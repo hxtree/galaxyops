@@ -1,4 +1,4 @@
-# @cats-cradle/dynamo-image
+# @galaxyops/dynamo-image
 
 ![Lifecycle](https://img.shields.io/badge/lifecycle-unstable-red)
 

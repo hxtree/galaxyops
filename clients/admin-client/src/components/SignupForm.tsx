@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { FontAwesomeIcon, faArrowRight, TextField, Button } from '@cats-cradle/design-system/dist/main';
+import { FontAwesomeIcon, faArrowRight, TextField, Button } from '@galaxyops/design-system/dist/main';
 import React from 'react';
 import axios from 'axios';
 

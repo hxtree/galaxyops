@@ -2,7 +2,7 @@ import {
   IsString,
   IsUuidV4,
   ValidateIf,
-} from '@cats-cradle/validation-schemas';
+} from '@galaxyops/validation-schemas';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class QueryImageDto {

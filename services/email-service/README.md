@@ -1,4 +1,4 @@
-# @cats-cradle/email-service
+# @galaxyops/email-service
 
 A centralized email service for sending emails using template.
 

@@ -140,7 +140,7 @@
     }
   },
   "info": {
-    "title": "@cats-cradle/html-to-pdf",
+    "title": "@galaxyops/html-to-pdf",
     "description": "Your Go-To Solution for PDF Generation from HTML.",
     "version": "1.0.19",
     "contact": {}

@@ -9,8 +9,8 @@ import {
   ArrayUnique,
   ArrayMinSize,
   ArrayMaxSize,
-} from '@cats-cradle/validation-schemas';
-import { BaseEntity, BaseEntityProps } from '@cats-cradle/nestjs-modules';
+} from '@galaxyops/validation-schemas';
+import { BaseEntity, BaseEntityProps } from '@galaxyops/nestjs-modules';
 import { ImageVariantEmbeddable } from './image-variant-embeddable.schema';
 
 @Schema({ collection: 'image-set' })
