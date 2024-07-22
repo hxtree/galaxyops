@@ -30,7 +30,7 @@
   "devDependencies": {
     "@galaxyops/character-sheet-contracts": "*",
     "@galaxyops/base-nodejs": "0.1.0",
-    "@cats-cradle/create-artifact": "2.0.7",
+    "@cats-cradle/create-artifact": "4.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "29.5.12",

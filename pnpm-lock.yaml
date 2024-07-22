@@ -59,8 +59,8 @@ importers:
         version: 6.22.1(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@galaxyops/base-nodejs':
         specifier: 0.1.0
         version: link:../../platform/rigs/base-nodejs
@@ -177,8 +177,8 @@ importers:
         specifier: 7.23.3
         version: 7.23.3(@babel/core@7.23.5)
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@emotion/react':
         specifier: ~11.11.1
         version: 11.11.4(@types/react@18.2.59)(react@18.2.0)
@@ -451,8 +451,8 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
@@ -1083,8 +1083,8 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
@@ -1213,8 +1213,8 @@ importers:
         version: 0.5.21
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
@@ -1575,8 +1575,8 @@ importers:
         specifier: 2.1.0
         version: link:../constructs
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@galaxyops/base-nodejs':
         specifier: 0.1.0
         version: link:../rigs/base-nodejs
@@ -1812,8 +1812,8 @@ importers:
         version: 0.5.21
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
@@ -1948,8 +1948,8 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
@@ -2118,8 +2118,8 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
@@ -2287,8 +2287,8 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
@@ -2468,8 +2468,8 @@ importers:
         specifier: 3.433.0
         version: 3.433.0
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
@@ -2752,8 +2752,8 @@ importers:
         version: 0.5.21
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
@@ -3075,8 +3075,8 @@ importers:
         version: 9.0.1
     devDependencies:
       '@cats-cradle/create-artifact':
-        specifier: 2.0.7
-        version: 2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0)
+        specifier: 4.1.0
+        version: 4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0)
       '@cats-cradle/create-bundle':
         specifier: 1.0.12
         version: 1.0.12(@babel/core@7.23.5)(@types/node@20.11.25)(ts-node@10.9.2)(typescript@5.3.3)
@@ -8642,8 +8642,8 @@ packages:
       - ts-node
       - typescript
 
-  /@cats-cradle/create-artifact@2.0.7(@yarnpkg/core@4.1.1)(typanion@3.14.0):
-    resolution: {integrity: sha512-mJ1GffuuYDHwEecxMG2v6oIz8sr9eyH3ZaZinvqJPOIZGf6p+pNytPqUvk471H+P7EOtVq9JZFJRbqjo4zkOiQ==}
+  /@cats-cradle/create-artifact@4.1.0(@yarnpkg/core@4.1.1)(typanion@3.14.0):
+    resolution: {integrity: sha512-YeP696B9+i57M4gMGoslP/tB9SC3kIHYij4S/3vP32LbELgZZUK8d61GwfdJA562KQZFPk1Re0q9Z1aVZYulTw==}
     hasBin: true
     dependencies:
       '@pnpm/find-workspace-dir': 6.0.3

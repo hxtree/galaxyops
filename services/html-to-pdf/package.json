@@ -68,7 +68,7 @@
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "3.433.0",
-    "@cats-cradle/create-artifact": "2.0.7",
+    "@cats-cradle/create-artifact": "4.1.0",
     "@cats-cradle/create-bundle": "1.0.12",
     "@galaxyops/eslint-config": "3.1.1",
     "@nestjs/cli": "^10.3.2",

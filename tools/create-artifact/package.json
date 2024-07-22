@@ -1,6 +1,6 @@
 {
-  "name": "@cats-cradle/create-artifact",
-  "version": "4.1.0",
+  "name": "@galaxyops/create-artifact",
+  "version": "4.2.0",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
