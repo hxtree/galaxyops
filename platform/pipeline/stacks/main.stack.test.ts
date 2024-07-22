@@ -15,6 +15,16 @@ describe('MainStack', () => {
     });
     const template = Template.fromStack(stack);
 
-    expect(template).toMatchSnapshot();
+    // TODO consider reworking to use DNS instead of incrementing and deploying each time
+    const customSnapshotSerializer = {
+      print: (val: any) => val
+        .replace(/deployment\d{8}T\d{9}Z[^:]+/, 'deployment_UNIQUE_HASH')
+        .replace(/[a-fA-F0-9]+\.zip/, 'UNIQUE_HASH.zip')
+        .replace(/[^/]+\.json/, '/UNIQUE_HASH.json'),
+      test: (val: any) => typeof val === 'string',
+    };
+    expect.addSnapshotSerializer(customSnapshotSerializer);
+
+    expect(template.toJSON()).toMatchSnapshot();
   });
 });
