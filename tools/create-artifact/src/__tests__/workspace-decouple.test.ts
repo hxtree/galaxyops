@@ -18,7 +18,7 @@ describe('WorkspaceDecouple', () => {
 
       expect(resultJson).toEqual(
         expect.objectContaining({
-          name: '@cats-cradle/create-artifact',
+          name: '@galaxyops/create-artifact',
           devDependencies: expect.objectContaining({
             '@galaxyops/eslint-config':
               expect.not.stringContaining('workspace:*'),
@@ -28,7 +28,7 @@ describe('WorkspaceDecouple', () => {
     });
   });
 
-  describe('convertjson', () => {
+  describe('convertJson', () => {
     it('should replace workspace with version', async () => {
       const packageJson = {
         name: 'test-package',
