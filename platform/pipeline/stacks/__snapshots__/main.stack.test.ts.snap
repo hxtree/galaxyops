@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainStack should match snapshot test 1`] = `
+{
+  "Outputs": {
+    "AWSACCESSKEY": {
+      "Value": {
+        "Fn::GetAtt": [
+          "GithubUploadStackNestedStackGithubUploadStackNestedStackResourceE585A496",
+          "Outputs.MainStackGithubUploadStackGithubUploadStackgithubciaccesskey13F50D46Ref",
+        ],
+      },
+    },
+    "AWSBUCKET": {
+      "Value": {
+        "Fn::GetAtt": [
+          "GithubUploadStackNestedStackGithubUploadStackNestedStackResourceE585A496",
+          "Outputs.MainStackGithubUploadStackGithubUploadStackrushdeploybucket9E28709DRef",
+        ],
+      },
+    },
+    "AWSREGION": {
+      "Value": "us-east-2",
+    },
+    "AWSSECRETACCESSKEY": {
+      "Value": {
+        "Fn::GetAtt": [
+          "GithubUploadStackNestedStackGithubUploadStackNestedStackResourceE585A496",
+          "Outputs.MainStackGithubUploadStackGithubUploadStackgithubciaccesskey13F50D46SecretAccessKey",
+        ],
+      },
+    },
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
+    },
+  },
+  "Resources": {
+    "GithubUploadStackNestedStackGithubUploadStackNestedStackResourceE585A496": {
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "TemplateURL": {
+          "Fn::Join": [
+            "",
+            [
+              "https://s3.us-east-2.",
+              {
+                "Ref": "AWS::URLSuffix",
+              },
+              "/cdk-hnb659fds-assets-760440398296-us-east-2/a70ffce7800b738ca6ad97b052845db25a54448d3678ab89ca8434bbb218db2f.json",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::CloudFormation::Stack",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "LuckByDicePipelineStackNestedStackLuckByDicePipelineStackNestedStackResourceEBE4B2DD": {
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "Parameters": {
+          "referencetoMainStackGithubUploadStackNestedStackGithubUploadStackNestedStackResource93F31631OutputsMainStackGithubUploadStackGithubUploadStackrushdeploybucket9E28709DArn": {
+            "Fn::GetAtt": [
+              "GithubUploadStackNestedStackGithubUploadStackNestedStackResourceE585A496",
+              "Outputs.MainStackGithubUploadStackGithubUploadStackrushdeploybucket9E28709DArn",
+            ],
+          },
+          "referencetoMainStackGithubUploadStackNestedStackGithubUploadStackNestedStackResource93F31631OutputsMainStackGithubUploadStackGithubUploadStackrushdeploybucket9E28709DRef": {
+            "Fn::GetAtt": [
+              "GithubUploadStackNestedStackGithubUploadStackNestedStackResourceE585A496",
+              "Outputs.MainStackGithubUploadStackGithubUploadStackrushdeploybucket9E28709DRef",
+            ],
+          },
+        },
+        "TemplateURL": {
+          "Fn::Join": [
+            "",
+            [
+              "https://s3.us-east-2.",
+              {
+                "Ref": "AWS::URLSuffix",
+              },
+              "/cdk-hnb659fds-assets-760440398296-us-east-2/f5ea1b9424811e68e4119da217da6bc07b865eba84b2083133f7474b5720c03a.json",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::CloudFormation::Stack",
+      "UpdateReplacePolicy": "Delete",
+    },
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
+    },
+  },
+}
+`;

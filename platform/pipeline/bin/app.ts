@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { DefaultPipelineStack } from '../stacks/default-pipeline.stack';
 import { awsAccounts } from '@cats-cradle/constructs';
+import { MainStack } from '../stacks/main.stack';
 
 // TODO only deploy if in tools account
 const TOOLS_DEPLOY = true;
 
 if (TOOLS_DEPLOY) {
   const app = new cdk.App();
-  new DefaultPipelineStack(app, 'DefaultPipelineStack', {
+  new MainStack(app, 'MainStack', {
     env: {
       account: awsAccounts.tools.accountId,
       region: awsAccounts.tools.region,
