@@ -25,8 +25,6 @@
   "dependencies": {
     "@galaxyops/base-nodejs": "0.1.0",
     "@cats-cradle/constructs": "2.1.0",
-    "@microsoft/rush-lib": "5.109.2",
-    "@rushstack/node-core-library": "~3.55.2",
     "aws-lambda": "1.0.7",
     "eslint": "8.57.0"
   },
