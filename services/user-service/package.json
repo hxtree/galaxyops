@@ -59,7 +59,7 @@
     "uuid": "~9.0.1"
   },
   "devDependencies": {
-    "@cats-cradle/create-artifact": "4.1.0",
+    "@galaxyops/create-artifact": "4.2.0",
     "@cats-cradle/create-bundle": "1.0.12",
     "@galaxyops/eslint-config": "3.1.1",
     "@cats-cradle/faker-factory": "3.1.0",

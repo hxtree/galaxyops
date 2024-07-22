@@ -60,7 +60,7 @@
     "@babel/preset-env": "7.23.5",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
-    "@cats-cradle/create-artifact": "4.1.0",
+    "@galaxyops/create-artifact": "4.2.0",
     "@galaxyops/eslint-config": "3.1.1",
     "@emotion/react": "~11.11.1",
     "@emotion/styled": "11.11.0",
