@@ -1,5 +1,10 @@
 import * as ssm from 'aws-cdk-lib/aws-ssm';
-import { Bucket, BucketEncryption } from 'aws-cdk-lib/aws-s3';
+import {
+  BlockPublicAccess,
+  Bucket,
+  BucketEncryption,
+  ObjectOwnership,
+} from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
@@ -23,6 +28,13 @@ export class GithubUploadStack extends cdk.NestedStack {
       versioned: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
+      blockPublicAccess: new BlockPublicAccess({
+        blockPublicAcls: false,
+        blockPublicPolicy: false,
+        ignorePublicAcls: false,
+        restrictPublicBuckets: false,
+      }),
+      objectOwnership: ObjectOwnership.OBJECT_WRITER,
     });
 
     // setup a GithubUser with permission to put files in deployment-bucket
