@@ -50,23 +50,20 @@ export class DefaultPipelineStack extends cdk.NestedStack {
         phases: {
           install: {
             commands: [
+              `export AWS_ACCOUNT_ID=${props.deployToAccountId}`,
+              `export AWS_REGION=${props.deployToRegion}`,
               'npm install --global ts-node',
-              'npm install --global aws-cdk@2.63.1',
               'npm install --global npm@9.2.0',
               'npm install --global typescript',
+              'npm install',
             ],
           },
           build: {
             commands: [
               'ls $CODEBUILD_SRC_DIR',
-              'npm install',
-              'cdk deploy --require-approval never',
+              `npm run cdk:deploy -- --require-approval never --role-arn=${this.crossRegionRoleArn}`,
             ],
           },
-        },
-        environmentVariables: {
-          AWS_ACCOUNT_ID: props.deployToAccountId,
-          AWS_REGION: props.deployToRegion,
         },
         artifacts: {
           // specify the files to include in the build output artifact
@@ -78,8 +75,14 @@ export class DefaultPipelineStack extends cdk.NestedStack {
     // Grant necessary permissions to assume role in the target account
     buildProject.addToRolePolicy(
       new iam.PolicyStatement({
-        actions: ['sts:AssumeRole'],
-        resources: [this.crossRegionRoleArn],
+        actions: ['sts:AssumeRole', 'iam:PassRole'],
+        resources: [
+          this.crossRegionRoleArn,
+          `arn:aws:cloudformation:${props.deployToAccountId}:${props.deployToAccountId}:stack/*`,
+          'arn:aws:iam::760440398296:role/cdk-hnb659fds-deploy-role-760440398296-us-east-2',
+          'arn:aws:iam::760440398296:role/cdk-hnb659fds-file-publishing-role-760440398296-us-east-2',
+          `${this.crossRegionRoleArn}`,
+        ],
       }),
     );
 
@@ -132,6 +135,7 @@ export class DefaultPipelineStack extends cdk.NestedStack {
     // create a new CodePipeline object
     const pipeline = new codepipeline.Pipeline(this, 'Pipeline', {
       pipelineName: props.pipelineName,
+      role: pipelineRole,
       // crossAccountKeys: props.crossAccountKeys,
       // restartExecutionOnUpdate: true,
     });
