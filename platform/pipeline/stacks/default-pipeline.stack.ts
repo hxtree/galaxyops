@@ -4,7 +4,6 @@ import * as codepipeline from 'aws-cdk-lib/aws-codepipeline';
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
-import { awsAccounts } from '@galaxyops/constructs';
 import {
   CodePipeline,
   CodePipelineSource,
@@ -30,61 +29,66 @@ export class DefaultPipelineStack extends cdk.NestedStack {
 
     this.crossRegionRoleArn = 'arn:aws:iam::760440398296:role/cdk-hnb659fds-deploy-role-760440398296-us-east-2';
 
-    // // add a source stage to the pipeline
-    // const sourceOutput = new codepipeline.Artifact();
-    // const sourceAction = new codepipelineActions.S3SourceAction({
-    //   actionName: 'Source',
-    //   bucket: props.deployBucket,
-    //   bucketKey: props.bucketKey,
-    //   output: sourceOutput,
-    // });
+    // add a source stage to the pipeline
+    const sourceOutput = new codepipeline.Artifact();
+    const sourceAction = new codepipelineActions.S3SourceAction({
+      actionName: 'Source',
+      bucket: props.deployBucket,
+      bucketKey: props.bucketKey,
+      output: sourceOutput,
+    });
 
-    // // add a build stage to the pipeline
-    // const buildOutput = new codepipeline.Artifact();
-    // const buildProject = new codebuild.Project(this, 'microservice-build', {
-    //   environment: {
-    //     buildImage: codebuild.LinuxBuildImage.STANDARD_7_0,
-    //   },
-    //   // set up the project configuration
-    //   buildSpec: codebuild.BuildSpec.fromObject({
-    //     // set up the buildspec.yml file with necessary commands
-    //     version: '0.2',
-    //     phases: {
-    //       install: {
-    //         commands: [
-    //           'npm install --global ts-node',
-    //           'npm install --global aws-cdk@2.63.1',
-    //           'npm install --global npm@9.2.0',
-    //           'npm install --global typescript',
-    //         ],
-    //       },
-    //       build: {
-    //         // the code was automatically uncompressed
-    //         commands: [
-    //           'ls $CODEBUILD_SRC_DIR',
-    //           'npm install',
-    //           'npm cdk:synth',
-    //         ],
-    //       },
-    //     },
-    //     environmentVariables: {
-    //       account: props.deployToAccountId,
-    //       region: props.deployToRegion,
-    //     },
-    //     artifacts: {
-    //       files: [
-    //         // specify the files to include in the build output artifact
-    //         '**/*',
-    //       ],
-    //     },
-    //   }),
-    // });
-    // const buildAction = new codepipelineActions.CodeBuildAction({
-    //   actionName: 'BuildAction',
-    //   input: sourceOutput,
-    //   outputs: [buildOutput],
-    //   project: buildProject,
-    // });
+    // add a build stage to the pipeline
+    const buildOutput = new codepipeline.Artifact();
+    const buildProject = new codebuild.Project(this, 'microservice-build', {
+      environment: {
+        buildImage: codebuild.LinuxBuildImage.STANDARD_7_0,
+      },
+      // set up the project configuration
+      buildSpec: codebuild.BuildSpec.fromObject({
+        version: '0.2',
+        phases: {
+          install: {
+            commands: [
+              'npm install --global ts-node',
+              'npm install --global aws-cdk@2.63.1',
+              'npm install --global npm@9.2.0',
+              'npm install --global typescript',
+            ],
+          },
+          build: {
+            commands: [
+              'ls $CODEBUILD_SRC_DIR',
+              'npm install',
+              'cdk deploy --require-approval never',
+            ],
+          },
+        },
+        environmentVariables: {
+          AWS_ACCOUNT_ID: props.deployToAccountId,
+          AWS_REGION: props.deployToRegion,
+        },
+        artifacts: {
+          // specify the files to include in the build output artifact
+          files: ['**/*'],
+        },
+      }),
+    });
+
+    // Grant necessary permissions to assume role in the target account
+    buildProject.addToRolePolicy(
+      new iam.PolicyStatement({
+        actions: ['sts:AssumeRole'],
+        resources: [this.crossRegionRoleArn],
+      }),
+    );
+
+    const buildAction = new codepipelineActions.CodeBuildAction({
+      actionName: 'BuildAction',
+      input: sourceOutput,
+      outputs: [buildOutput],
+      project: buildProject,
+    });
 
     // create a new IAM role object for the pipeline
     const pipelineRole = new iam.Role(this, 'MyPipelineRole', {
@@ -108,29 +112,29 @@ export class DefaultPipelineStack extends cdk.NestedStack {
     //   }),
     // });
 
-    const source = CodePipelineSource.s3(props.deployBucket, props.bucketKey);
-    const pipeline = new CodePipeline(this, 'Pipeline', {
-      pipelineName: props.pipelineName,
-      synth: new ShellStep('Synth', {
-        input: source,
-        commands: [
-          'npm install --global ts-node',
-          'npm install --global aws-cdk@2.63.1',
-          'npm install --global npm@9.2.0',
-          'npm install --global typescript',
-          'ls $CODEBUILD_SRC_DIR',
-          'npm install',
-          'npm run cdk:synth',
-        ],
-      }),
-    });
+    // const source = CodePipelineSource.s3(props.deployBucket, props.bucketKey);
+    // const pipeline = new CodePipeline(this, 'Pipeline', {
+    //   pipelineName: props.pipelineName,
+    //   synth: new ShellStep('Synth', {
+    //     input: source,
+    //     commands: [
+    //       'npm install --global ts-node',
+    //       'npm install --global aws-cdk@2.63.1',
+    //       'npm install --global npm@9.2.0',
+    //       'npm install --global typescript',
+    //       'ls $CODEBUILD_SRC_DIR',
+    //       'npm install',
+    //       'npm run cdk:synth',
+    //     ],
+    //   }),
+    // });
 
     // create a new CodePipeline object
-    // const pipeline = new codepipeline.Pipeline(this, 'Pipeline', {
-    //   pipelineName: props.pipelineName,
-    //   // crossAccountKeys: props.crossAccountKeys,
-    //   // restartExecutionOnUpdate: true,
-    // });
+    const pipeline = new codepipeline.Pipeline(this, 'Pipeline', {
+      pipelineName: props.pipelineName,
+      // crossAccountKeys: props.crossAccountKeys,
+      // restartExecutionOnUpdate: true,
+    });
     pipelineRole.addToPolicy(pipelineServiceRolePolicy);
 
     // attach the necessary policies to the pipeline role
@@ -153,22 +157,22 @@ export class DefaultPipelineStack extends cdk.NestedStack {
       }),
     );
 
-    // pipelineRole.addToPolicy(
-    //   new iam.PolicyStatement({
-    //     actions: ['codebuild:StartBuild'],
-    //     resources: [buildProject.projectArn],
-    //   }),
-    // );
+    pipelineRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: ['codebuild:StartBuild'],
+        resources: [buildProject.projectArn],
+      }),
+    );
 
-    // pipeline.addStage({
-    //   stageName: 'Source',
-    //   actions: [sourceAction],
-    // });
+    pipeline.addStage({
+      stageName: 'Source',
+      actions: [sourceAction],
+    });
 
-    // pipeline.addStage({
-    //   stageName: 'Build',
-    //   actions: [buildAction],
-    // });
+    pipeline.addStage({
+      stageName: 'Build',
+      actions: [buildAction],
+    });
 
     // const buildAction = new codepipelineActions({
     //   actionName: 'BuildAction',
