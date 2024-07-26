@@ -48,6 +48,18 @@ export namespace StatusEffects {
     name: 'Drunk',
   };
 
+  export const DRUNK_LV2: StatusEffect = {
+    ...DRUNK_LV1,
+    duration: Duration.fromObject({ minutes: 10 }),
+    level: SkillLevel.LV3,
+  };
+
+  export const DRUNK_LV3: StatusEffect = {
+    ...DRUNK_LV1,
+    duration: Duration.fromObject({ minutes: 30 }),
+    level: SkillLevel.LV3,
+  };
+
   export const DOOMED_LV1: StatusEffect = {
     category: StatusEffectCategory.AFFLICTION,
     description: 'remove status before timer runs out or KOs',
@@ -226,6 +238,18 @@ export namespace StatusEffects {
     name: 'Slow',
   };
 
+  export const SLOW_LV2: StatusEffect = {
+    ...SLOW_LV1,
+    duration: Duration.fromObject({ seconds: 60 }),
+    effects: [
+      {
+        quantity: '6d6',
+        remove: Attribute.SPEED,
+      },
+    ],
+    level: SkillLevel.LV2,
+  };
+
   export const BERSERK_LV1: StatusEffect = {
     category: StatusEffectCategory.AFFLICTION,
     description: 'can only attack. Power increased by Drive.',
@@ -263,6 +287,18 @@ export namespace StatusEffects {
     ],
     level: SkillLevel.LV1,
     name: 'Barrier',
+  };
+
+  export const BARRIER_LV2: StatusEffect = {
+    ...BARRIER_LV1,
+    duration: Duration.fromObject({ seconds: 60 }),
+    effects: [
+      {
+        add: Attribute.DEFENSE,
+        quantity: '6d6',
+      },
+    ],
+    level: SkillLevel.LV2,
   };
 
   export const REFLECT_LV1: StatusEffect = {
