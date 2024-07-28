@@ -1,0 +1,327 @@
+{
+  "id": "GUNTER_STONEWELL",
+  "affiliation": [
+    {
+      "name": "Solider Forces"
+    }
+  ],
+  "backstory": "A solider for life",
+  "description": "A large old man with grey hair. Looks like they spend their entire life in battle. ",
+  "gearSlots": [
+    "Head",
+    "Neck",
+    "Back",
+    "Torso",
+    "Right Wrist",
+    "Left Wrist",
+    "Right Hand",
+    "Left Hand",
+    "Waist",
+    "Legs",
+    "Feet",
+    "Outfit"
+  ],
+  "name": "Gunter",
+  "potentialDisciplines": [
+    {
+      "category": "Archetype",
+      "description": "Specialize in protection.",
+      "maxLevel": 20,
+      "name": "Guard",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 2
+        },
+        {
+          "abilityPoints": 1,
+          "level": 4
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 8
+        },
+        {
+          "abilityPoints": 1,
+          "level": 10
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 14
+        },
+        {
+          "abilityPoints": 1,
+          "level": 16
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "abilityPoints": 1,
+          "level": 20
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Prevents or obstructs incoming opponent actions.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Attack",
+              "order": 2
+            },
+            "name": "Block",
+            "outcome": {
+              "OPPONENT": [
+                {
+                  "add": "Defense",
+                  "duration": "PT2S",
+                  "quantity": "1d6+2",
+                  "tags": ["Physical"]
+                }
+              ]
+            },
+            "target": "SELF"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Profession",
+      "description": "Do you even lift?",
+      "maxLevel": 20,
+      "name": "Body Builder",
+      "progression": [
+        {
+          "abilityPoints": 3,
+          "level": 9
+        },
+        {
+          "abilityPoints": 3,
+          "level": 18
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Increases all attributes.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Physical Conditioning",
+            "outcome": {
+              "SELF": [
+                {
+                  "add": "Power",
+                  "chance": 1,
+                  "quantity": "10"
+                },
+                {
+                  "add": "Defense",
+                  "chance": 1,
+                  "quantity": "10"
+                },
+                {
+                  "add": "Speed",
+                  "chance": 1,
+                  "quantity": "10"
+                },
+                {
+                  "add": "Spirit",
+                  "chance": 1,
+                  "quantity": "10"
+                },
+                {
+                  "add": "Life",
+                  "chance": 1,
+                  "quantity": "10"
+                }
+              ]
+            },
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 20,
+          "skill": {
+            "backstory": "",
+            "description": "A flying squirrel",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Summon",
+              "order": 5
+            },
+            "name": "Scribble"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Archetype",
+      "description": "Specialize in giving orders to others.",
+      "maxLevel": 20,
+      "name": "Commander",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 2
+        },
+        {
+          "abilityPoints": 1,
+          "level": 4
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 8
+        },
+        {
+          "abilityPoints": 1,
+          "level": 10
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 14
+        },
+        {
+          "abilityPoints": 1,
+          "level": 16
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "abilityPoints": 1,
+          "level": 20
+        },
+        {
+          "level": 1,
+          "skill": {
+            "cost": [
+              {
+                "quantity": "1d6+10",
+                "remove": "Spirit"
+              }
+            ],
+            "description": "Increase party morale.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Boast",
+            "outcome": {
+              "ALLY": [
+                {
+                  "add": "Spirit",
+                  "duration": "PT15S",
+                  "quantity": "1d6+2"
+                }
+              ]
+            },
+            "target": "ALLY"
+          }
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "All party members quickly assume defensive positions to withstand a sudden onslaught of attacks.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Teamwork",
+              "order": 5
+            },
+            "name": "Last Stand",
+            "target": "ALLY"
+          }
+        },
+        {
+          "level": 12,
+          "skill": {
+            "cost": [
+              {
+                "quantity": "2d6+10",
+                "remove": "Spirit"
+              }
+            ],
+            "description": "Increase party morale.",
+            "level": "LV2",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Boast",
+            "outcome": {
+              "ALLY": [
+                {
+                  "add": "Spirit",
+                  "duration": "PT40S",
+                  "quantity": "3d6+2"
+                }
+              ]
+            },
+            "target": "ALLY"
+          }
+        },
+        {
+          "level": 15,
+          "skill": {
+            "description": "Launch a coordinated attack on a single target.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Teamwork",
+              "order": 5
+            },
+            "name": "Blitz Strike",
+            "target": "ALLY"
+          }
+        },
+        {
+          "level": 20,
+          "skill": {
+            "description": "Execute a pincer movement to surround and attack the enemy.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Teamwork",
+              "order": 5
+            },
+            "name": "Flank",
+            "target": "ALLY"
+          }
+        }
+      ]
+    }
+  ],
+  "summonCompatibility": [
+    {
+      "backstory": "",
+      "description": "A flying squirrel",
+      "level": "LV1",
+      "menuSlot": {
+        "name": "Summon",
+        "order": 5
+      },
+      "name": "Scribble"
+    }
+  ],
+  "surname": "Stonewell",
+  "symbolizes": ["Humility"],
+  "weaponCompatibility": ["Two-handed Axe"]
+}

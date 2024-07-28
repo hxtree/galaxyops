@@ -77,6 +77,8 @@ $success: #7952b3;
 // Custom styles
 @import './styles/utils/color-pallette';
 @import './styles/utils/bg-color';
+
+// Components
 @import './components/Alert/style.module';
 @import './components/Typography/style.module';
 @import './components/AppBar/style.module';
@@ -93,16 +95,17 @@ $success: #7952b3;
 @import './components/Breadcrumb/style.module';
 @import './components/DataHighlights/style.module';
 @import './components/Disclaimer/style.module';
-@import './components/ActionMenu/style.module';
+
+// HUD Components
+@import './game-assets/ActionMenu/style.module';
+@import './game-assets/SkillList/style.module';
 
 body {
-  background-image: linear-gradient(
-    to bottom,
-    #fff 0%,
-    #fff 300px,
-    #fff 301px,
-    $color-off-white 400px
-  );
+  background-image: linear-gradient(to bottom,
+      #fff 0%,
+      #fff 300px,
+      #fff 301px,
+      $color-off-white 400px);
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: $color-off-black;
