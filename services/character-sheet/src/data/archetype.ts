@@ -18,7 +18,7 @@ import {
   Outfit,
   Archetype,
 } from '@galaxyops/character-sheet-contracts';
-import { Disciplines } from './discipline';
+import { Disciplines } from './disciplines';
 import { Summon } from './skills/summon.skill';
 import { Outfits } from './gear/outfit.gear';
 import { Affiliations } from './affiliations';
@@ -74,7 +74,11 @@ export namespace Archetypes {
     gearSlots: QuadrupedalCreatureGearSlots,
     name: 'Mischievous',
     // a red colored thread can be used to control him
-    potentialDisciplines: [Disciplines.SAGE, Disciplines.GUARDIAN],
+    potentialDisciplines: [
+      Disciplines.KEEPER_OF_LAW,
+      Disciplines.SAGE,
+      Disciplines.GUARDIAN,
+    ],
 
     surname: 'Piebald',
 
@@ -90,7 +94,11 @@ export namespace Archetypes {
     description: 'An orange old persian cat',
     gearSlots: QuadrupedalCreatureGearSlots,
     name: 'Janus',
-    potentialDisciplines: [Disciplines.SAGE, Disciplines.GUARDIAN],
+    potentialDisciplines: [
+      Disciplines.KEEPER_OF_TIME,
+      Disciplines.SAGE,
+      Disciplines.GUARDIAN,
+    ],
     surname: 'Persian',
     symbolizes: ['Time'],
   };
@@ -108,7 +116,7 @@ export namespace Archetypes {
     potentialDisciplines: [
       Disciplines.CHEERLEADER,
       Disciplines.MAIDEN,
-      Disciplines.KEEPER,
+      Disciplines.KEEPER_OF_HEART,
       Disciplines.COOK,
       Disciplines.HEALER,
       Disciplines.SAGE,
@@ -140,7 +148,11 @@ export namespace Archetypes {
       + 'He possess sight beyond sight; is able to preserve the world from afar'
       + 'He is responsible for battle his son win where time seems to stand still. ',
     name: 'Ouren',
-    potentialDisciplines: [Disciplines.SOLIDER, Disciplines.XSOLIDER],
+    potentialDisciplines: [
+      Disciplines.DESTROYER_OF_TIME,
+      Disciplines.SOLIDER,
+      Disciplines.XSOLIDER,
+    ],
     surname: 'Oni',
     symbolizes: ['Dad', 'Father', 'Destroyer of Time'],
   };
@@ -170,7 +182,11 @@ export namespace Archetypes {
 
     name: 'Vallon',
 
-    potentialDisciplines: [Disciplines.SOLIDER, Disciplines.XSOLIDER],
+    potentialDisciplines: [
+      Disciplines.DESTROYER_OF_HEART,
+      Disciplines.SOLIDER,
+      Disciplines.XSOLIDER,
+    ],
 
     surname: 'Oni',
     symbolizes: ['Destroyer of Heart', 'Loveless Lover', 'Heart Wrench'],
@@ -189,6 +205,7 @@ export namespace Archetypes {
       + 'As a Berserker he uses a mask to break the veil and tap into his limitless ability',
     name: 'Meeku',
     potentialDisciplines: [
+      Disciplines.DESTROYER_OF_LAW,
       Disciplines.SOLIDER,
       Disciplines.XSOLIDER,
       Disciplines.BERSERKER,

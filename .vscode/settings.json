@@ -29,6 +29,7 @@
       "color": "#ff0000"
     }
   ],
+  "editor.wordWrap": "on",
   "editor.codeActionsOnSave": {
     "editor.action.fixAll": "explicit",
     "source.fixAll.eslint": "explicit",

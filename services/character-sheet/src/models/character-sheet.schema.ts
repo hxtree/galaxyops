@@ -29,7 +29,7 @@ import { StatsEmbeddable } from './stats-embeddable.schema';
 import { EquipmentEmbeddable } from './equipment-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
 import { Archetypes, ArchetypeId, ArchetypeIds } from '../data/archetype';
-import { Disciplines } from '../data/discipline';
+import { Disciplines } from '../data/disciplines';
 import { Equipment, EquipmentType } from '../data/gear';
 
 /**

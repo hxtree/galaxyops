@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import {
   IsEnum, IsInt, Min, Max,
 } from '@galaxyops/validation-schemas';
-import { DisciplineId, DisciplineIds } from '../data/discipline';
+import { DisciplineId, DisciplineIds } from '../data/disciplines';
 
 @Schema()
 export class DisciplineEmbeddable {
