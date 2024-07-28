@@ -42,8 +42,8 @@ The `Turn` class supports standard dice notation. For example:
 - `d6` for a six-sided die
 - `d10` for a ten-sided die
 - `d20` for a twenty-sided die
-- `10d%` for a one-hundred die
-- `3d4+2` for a three four-sided die plus two
+- `10d%` for ten one-hundred-sided die
+- `3d4+2` for three four-sided die plus two
 - `1d2+10*4` for a coin toss plus ten times four
 
 Turn has a second optional parameter called luck to be passed which influences
