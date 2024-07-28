@@ -31,6 +31,7 @@
   "dependencies": {
     "@galaxyops/base-nodejs": "workspace:*",
     "@galaxyops/constructs": "workspace:*",
+    "@galaxyops/dice-simulator": "workspace:*",
     "@galaxyops/validation-schemas": "workspace:*",
     "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "9.4.0",

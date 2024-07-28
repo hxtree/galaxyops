@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Turn } from '../../lib/Turn';
+import { Turn } from '@galaxyops/dice-simulator';
 
 @Injectable()
 export class DiceRollService {

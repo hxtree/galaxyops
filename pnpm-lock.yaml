@@ -614,6 +614,40 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
 
+  libraries/dice-simulator:
+    dependencies:
+      '@galaxyops/base-nodejs':
+        specifier: workspace:*
+        version: link:../../platform/rigs/base-nodejs
+    devDependencies:
+      '@galaxyops/eslint-config':
+        specifier: workspace:*
+        version: link:../../platform/rigs/eslint-config
+      '@types/jest':
+        specifier: 29.5.12
+        version: 29.5.12
+      '@types/node':
+        specifier: 20.11.25
+        version: 20.11.25
+      esbuild:
+        specifier: ~0.20.1
+        version: 0.20.2
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
+      jest:
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.11.25)(ts-node@10.9.2)
+      ts-jest:
+        specifier: 29.1.2
+        version: 29.1.2(@babel/core@7.23.5)(esbuild@0.20.2)(jest@29.7.0)(typescript@5.3.3)
+      ts-node:
+        specifier: 10.9.2
+        version: 10.9.2(@types/node@20.11.25)(typescript@5.3.3)
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+
   libraries/faker-factory:
     dependencies:
       '@faker-js/faker':
@@ -2693,6 +2727,9 @@ importers:
       '@galaxyops/constructs':
         specifier: workspace:*
         version: link:../../platform/constructs
+      '@galaxyops/dice-simulator':
+        specifier: workspace:*
+        version: link:../../libraries/dice-simulator
       '@galaxyops/validation-schemas':
         specifier: workspace:*
         version: link:../../libraries/validation-schemas
