@@ -12,13 +12,11 @@ import { Outfits } from '../gear/outfit.gear';
 import { Affiliations } from '../affiliations';
 
 export namespace SevenVirtuesArchetypes {
-  /**
-   * Seven Virtues
-   */
   export const ARINOTH_DIYATH: Archetype = {
     affiliation: [],
     alias: ['Tree'],
-    backstory: '',
+    backstory:
+      'A man who sat under a tree for so long that his past became a mystery.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Arinoth',
     potentialDisciplines: [],
@@ -56,7 +54,7 @@ export namespace SevenVirtuesArchetypes {
   export const GAALI_RUNEWIN: Archetype = {
     affiliation: [],
     backstory:
-      'A prince with little interest in becoming king. Instead, he lives for testing his sword in raw danger.',
+      'A prince who shuns the throne in favor of seeking thrill and danger through swordplay.',
     description: 'A white haired thin teenager',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Gaali',
@@ -77,9 +75,7 @@ export namespace SevenVirtuesArchetypes {
     traits: [
       {
         modifier: Effect.RESIST,
-
         operator: Operator.DIVIDE,
-
         quantity: 0.5,
         // innate proficiency with sword
         tag: EffectTag.SWORD,
@@ -90,7 +86,8 @@ export namespace SevenVirtuesArchetypes {
 
   export const GUNTER_STONEWELL: Archetype = {
     affiliation: [Affiliations.SOLIDER_FORCES],
-    backstory: 'A solider for life',
+    backstory:
+      'A soldier whose unwavering loyalty and dedication define him, with combat being all he knows.',
     description:
       'A large old man with grey hair. '
       + 'Looks like they spend their entire life in battle. ',
@@ -117,9 +114,7 @@ export namespace SevenVirtuesArchetypes {
       'Dragon',
     ],
     backstory:
-      'As a child, his people sacrificed him to save themselves. '
-      + 'They sewed the demons plaguing the village into his skin. '
-      + 'The demons were drawn to his purity. ',
+      'As a child, his people sacrificed him to save themselves, sewing demons into his skin. Drawn to his purity, the demons became part of him.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Malace',
     potentialDisciplines: [
@@ -151,7 +146,8 @@ export namespace SevenVirtuesArchetypes {
     affiliation: [Affiliations.NINJA],
     age: 22,
     alias: ['Pen', 'Crazy Chick'],
-    backstory: '',
+    backstory:
+      'A fiery and independent ninja assassin with a hot temper and a secret side of kindness. Her life is characterized by natural beauty and intense passion.',
     characteristics:
       'Strong, defiant, kills without question. '
       + 'Motivated primarily by money. ',
@@ -187,7 +183,8 @@ export namespace SevenVirtuesArchetypes {
 
   export const TRAEZ_UTHSHA: Archetype = {
     affiliation: [Affiliations.REBEL],
-    backstory: '',
+    backstory:
+      'A young, scrappy engineer in the desert, known for his rebellious spirit and relentless passion for building mechs. Always busy creating and innovating.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Traez',
     potentialDisciplines: [
