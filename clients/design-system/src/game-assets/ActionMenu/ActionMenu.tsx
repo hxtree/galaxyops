@@ -9,17 +9,16 @@ import { useClickOutside } from './useClickOutside.hook';
 import { useMenuTree } from './useMenuTree.hook';
 import { MenuTreeNode } from './MenuTreeNode.type';
 import { useFlatMenu } from './useFlatMenu.hook';
+import { MenuItem } from './MenuItem.type';
 
 export type ActionMenuProps = {
   data: Archetype;
+  size: number;
   spacing?: SpacerProps;
   testId?: string;
 };
 
-export type DisplayItem = {
-  name: string;
-  level?: string;
-};
+type Direction = 'highest' | 'lowest';
 
 // TODO
 // In character sheet skills should have a parent child relationship instead of a flat array
@@ -29,11 +28,50 @@ export const ActionMenu = (props: ActionMenuProps) => {
   const componentRef = useRef<HTMLDivElement>(null);
   const [pointers, setPointers] = useState<number[]>([0]);
   const [menuTree, setMenuTree] = useState<MenuTreeNode[]>([]);
-  const [menuFlat, setMenuFlat] = useState<DisplayItem[]>([]);
+  const [menuFlat, setMenuFlat] = useState<MenuItem[]>([]);
   const hiddenMenuItems: string[] = ['None', 'Movement'];
+  const [setMenuFlatPosition] = useState<number>(0);
 
   useMenuTree({ data, setMenuTree, setPointers });
-  useFlatMenu({ pointers, menuTree, setMenuFlat, setPointers });
+  useFlatMenu({
+    pointers,
+    menuTree,
+    setMenuFlat,
+    setPointers,
+    hiddenMenuItems,
+  });
+
+  function getNextNid(
+    menuItems: MenuItem[],
+    currentNid: number,
+    direction: Direction,
+  ): number {
+    // Filter the array based on the direction
+    let filteredItems: MenuItem[];
+
+    if (direction === 'highest') {
+      filteredItems = menuItems.filter(item => item.nid > currentNid);
+    } else if (direction === 'lowest') {
+      filteredItems = menuItems.filter(item => item.nid < currentNid);
+    } else {
+      throw new Error(
+        "Invalid direction specified. Use 'highest' or 'lowest'.",
+      );
+    }
+
+    // If no items are found, return the currentNid
+    if (filteredItems.length === 0) {
+      return currentNid;
+    }
+
+    // Sort the filtered items by nid based on the direction
+    filteredItems.sort((a, b) =>
+      direction === 'highest' ? a.nid - b.nid : b.nid - a.nid,
+    );
+
+    // Return the nid of the first item in the sorted list
+    return filteredItems[0].nid;
+  }
 
   useEffect(() => {
     const movePointers = (direction: string) => {
@@ -42,7 +80,8 @@ export const ActionMenu = (props: ActionMenuProps) => {
         if (lastItem === 0) {
           return;
         }
-        setPointers([...pointers.slice(0, -1), lastItem - 1]);
+        const prevNid = getNextNid(menuFlat, lastItem, 'lowest');
+        setPointers([...pointers.slice(0, -1), prevNid]);
       } else if (direction === 'down') {
         if (pointers.length === 0) {
           setPointers([1]);
@@ -52,11 +91,13 @@ export const ActionMenu = (props: ActionMenuProps) => {
         if (lastItem === menuFlat.length - 1) {
           return;
         }
-        setPointers([...pointers.slice(0, -1), lastItem + 1]);
+        const nextNid = getNextNid(menuFlat, lastItem, 'lowest');
+        setPointers([...pointers.slice(0, -1), nextNid]);
       } else if (direction === 'back') {
         if (pointers.length === 1) {
           return;
         }
+        setMenuFlatPosition(pointers[pointers.length - 1]);
         setPointers([...pointers.slice(0, -1)]);
         return;
       } else if (direction === 'select') {
@@ -125,11 +166,14 @@ export const ActionMenu = (props: ActionMenuProps) => {
         <div className={`action-menu-outer-border mt--3`}>
           <div className={`action-menu-inner-border`}>
             <ul className={`menu${menuFlat.length > 4 && ` menu-scrollbar`}`}>
-              {menuFlat.map((menuItem: DisplayItem, index: number) => {
+              {menuFlat.map((menuItem: MenuItem, index: number) => {
                 if (hiddenMenuItems.includes(menuItem.name)) {
                   return null;
                 }
 
+                // if(index < pointers[pointers.length - 1]){
+                //   return null;
+                // }
                 const isActive = index == pointers[pointers.length - 1];
                 return (
                   <li
@@ -138,7 +182,7 @@ export const ActionMenu = (props: ActionMenuProps) => {
                     onClick={() => handleOnClick(index)}
                     onMouseOver={() => handleOnMouseOver(index)}
                   >
-                    {menuItem.name}
+                    {menuItem.name} {menuItem.nid}
                     <span className={`level`}>
                       {levelFormat(menuItem.level)}
                     </span>

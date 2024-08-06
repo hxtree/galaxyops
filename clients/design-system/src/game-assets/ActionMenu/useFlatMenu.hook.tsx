@@ -7,6 +7,7 @@ export type UseMenuDisplayProps = {
   menuTree: MenuTreeNode[];
   setMenuFlat: (items: MenuItem[]) => void;
   setPointers: (pointers: number[]) => void;
+  hiddenMenuItems: string[];
 };
 
 /**
@@ -18,6 +19,7 @@ export const useFlatMenu = ({
   menuTree,
   setMenuFlat,
   setPointers,
+  hiddenMenuItems,
 }: UseMenuDisplayProps) => {
   useEffect(() => {
     function getElementByPointer(
@@ -41,8 +43,12 @@ export const useFlatMenu = ({
 
     const displayItems: MenuItem[] = [];
     if (pointers.length === 1) {
-      menuTree.forEach((menuItem: MenuTreeNode) => {
+      menuTree.forEach((menuItem: MenuTreeNode, index: number) => {
+        if (hiddenMenuItems.includes(menuItem.name)) {
+          return;
+        }
         displayItems.push({
+          nid: index,
           name: menuItem.name,
           level: menuItem.action?.level,
         });
@@ -62,8 +68,12 @@ export const useFlatMenu = ({
       return;
     }
 
-    menuItems.children.forEach((menuItem: MenuTreeNode) => {
-      displayItems.push({ name: menuItem.name, level: menuItem.action?.level });
+    menuItems.children.forEach((menuItem: MenuTreeNode, index: number) => {
+      displayItems.push({
+        nid: index,
+        name: menuItem.name,
+        level: menuItem.action?.level,
+      });
     });
 
     setMenuFlat(displayItems);
