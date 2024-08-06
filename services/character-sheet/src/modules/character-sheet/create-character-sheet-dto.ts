@@ -6,7 +6,7 @@ import {
   IsUuidV4,
 } from '@galaxyops/validation-schemas';
 import { v4 } from 'uuid';
-import { ArchetypeId, ArchetypeIds } from '../../data/archetype';
+import { ArchetypeId, ArchetypeIds } from '../../data/archetypes';
 
 export class CreateCharacterSheetDto {
   @ApiProperty({

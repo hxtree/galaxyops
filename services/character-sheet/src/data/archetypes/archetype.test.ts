@@ -1,4 +1,4 @@
-import { Archetypes, ArchetypeId } from './archetype';
+import { Archetypes, ArchetypeId } from './index';
 
 describe('NPCList', () => {
   test('able to get character', () => {

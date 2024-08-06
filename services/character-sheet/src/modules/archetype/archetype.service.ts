@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Archetype } from '@galaxyops/character-sheet-contracts';
-import { Archetypes, ArchetypeIds, ArchetypeId } from '../../data/archetype';
+import { Archetypes, ArchetypeIds, ArchetypeId } from '../../data/archetypes';
 
 @Injectable()
 export class ArchetypeService {

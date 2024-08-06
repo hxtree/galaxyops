@@ -102,7 +102,7 @@ export namespace ProfessionDisciplines {
     name: 'Royalty',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 10, skill: Skills.COMMAND_LV1 },
+      { level: 10, skill: Skills.FLANK_LV1 },
       { level: 10, skill: Skills.BOAST_LV1 },
       { level: 40, skill: Skills.MENTAL_DISCIPLINE_LV1 },
     ],

@@ -75,6 +75,7 @@ export type Skill = {
 
   /**
    * List of commands that must be invoked by the summoner through Command.
+   * @deprecated Use `children` instead.
    */
   commands?: string[];
 
@@ -96,6 +97,7 @@ export type Skill = {
 
   /**
    * The type of menu slot this skill occupies.
+   * @deprecated Use `children` instead.
    */
   menuSlot: MenuSlotType;
 
@@ -134,4 +136,10 @@ export type Skill = {
    * Level of the skill (e.g., beginner, intermediate, advanced).
    */
   level: SkillLevel;
+
+  /**
+   * Skills that can be used in succession after this skill.
+   * For example, "Summon" > "Vachel" > "Stampede"
+   */
+  children?: { [key: string]: Skill };
 };

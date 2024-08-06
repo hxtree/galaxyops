@@ -15,9 +15,9 @@ export namespace MagiDisciplines {
     name: 'Summoner',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
-      { level: 2, skill: Skills.SUMMON_LV1 },
-      { level: 10, skill: Skills.DISMISS_LV1 },
-      { level: 14, skill: Skills.COMMAND_LV1 },
+      // { level: 2, skill: Skills.SUMMON_LV1 },
+      // { level: 10, skill: Skills.DISMISS_LV1 },
+      // { level: 14, skill: Skills.COMMAND_LV1 },
     ],
   };
 

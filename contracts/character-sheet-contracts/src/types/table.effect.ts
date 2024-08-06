@@ -4,6 +4,8 @@ import { EffectTag } from './tag.effect';
 import { StatusEffectId } from './status-effect';
 import { Attribute } from './attribute';
 import { ActionTarget } from './action-target';
+import { PartyMemberToken } from './party-member-token';
+import { Item } from './item';
 
 export enum Modifier {
   ADD = 'ADD',
@@ -20,7 +22,7 @@ export enum SkillEffectModifier {
   REMOVE = 'REMOVE',
 }
 
-export interface AttributeAddEffectRecord {
+export interface AttributeEffectAddRecord {
   add: Attribute;
   quantity: string;
   chance?: number;
@@ -28,7 +30,7 @@ export interface AttributeAddEffectRecord {
   tags?: Array<EffectTag>;
 }
 
-export interface AttributeRemoveEffectRecord {
+export interface AttributeEffectRemoveRecord {
   remove: Attribute;
   quantity: string;
   chance?: number;
@@ -56,13 +58,36 @@ export interface StatusEffectRemoveRecord {
   tags?: Array<EffectTag>;
 }
 
+export interface PartyEffectAddRecord {
+  archetype: string;
+  token: PartyMemberToken;
+}
+
+export interface PartyEffectRemoveRecord {
+  archetype: string;
+}
+
+export interface InventoryEffectAddRecord {
+  item: Item;
+  quantity: number;
+}
+
+export interface InventoryEffectRemoveRecord {
+  item: Item;
+  quantity: number;
+}
+
 // EffectRecords do not specify a target
 export type EffectRecord =
   | SkillEffectRecord
   | StatusEffectAddRecord
   | StatusEffectRemoveRecord
-  | AttributeAddEffectRecord
-  | AttributeRemoveEffectRecord;
+  | AttributeEffectAddRecord
+  | AttributeEffectRemoveRecord
+  | PartyEffectAddRecord
+  | PartyEffectRemoveRecord
+  | InventoryEffectAddRecord
+  | InventoryEffectRemoveRecord;
 
 /**
  * EffectTable

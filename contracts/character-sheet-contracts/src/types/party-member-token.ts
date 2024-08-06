@@ -1,11 +1,11 @@
 /**
- * Tokens are coin shaped objects that a Player receives
+ * PartyMemberToken are coin shaped objects that a Player receives
  * that represent characters currently in party.
  * Each coin has six sides and an engraving of an Archetype's symbol.
  * How a player arranges tokens reflects how party will be arranged and visa versa.
  * Different types of tokens represents a player's ability to control that character.
  */
-export enum Token {
+export enum PartyMemberToken {
   /**
    * A Gold token means:
    * player can controller character.

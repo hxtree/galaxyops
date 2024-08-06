@@ -40,4 +40,9 @@ export enum ActionTarget {
    * The action targets an opponent of the player.
    */
   OPPONENT = 'OPPONENT',
+
+  /**
+   * The action targets the party of the player.
+   */
+  PARTY = 'PARTY',
 }

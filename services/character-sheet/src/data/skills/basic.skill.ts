@@ -131,14 +131,6 @@ export namespace Basic {
     outcome: {},
   };
 
-  export const DISMISS_LV1: Skill = {
-    description: 'Release a summon.',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.ABILITIES,
-    name: 'Dismiss',
-    outcome: {},
-  };
-
   export const FOCUS_LV1: Skill = {
     cost: [{ quantity: '1d6+10', remove: Attribute.SPIRIT }],
     description: 'Raise power, spirit, and speed for a duration.',

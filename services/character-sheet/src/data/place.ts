@@ -1,5 +1,5 @@
 import { Affiliations } from './affiliations';
-import { ArchetypeId } from './archetype';
+import { ArchetypeId } from './archetypes';
 
 export type SpawnGuideline = {
   archetype: ArchetypeId;

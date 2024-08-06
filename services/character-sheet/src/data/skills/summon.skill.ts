@@ -2,7 +2,10 @@ import {
   MenuSlot,
   Skill,
   SkillLevel,
+  PartyMemberToken,
 } from '@galaxyops/character-sheet-contracts';
+import { SummonActions } from './summon-actions.skill';
+import { ArchetypeIds } from '../archetypes';
 
 /**
  * Summons are companions that may be called into play in varying ways to aid party.
@@ -13,97 +16,108 @@ import {
  */
 export namespace Summon {
   export const VACHEL_LV1: Skill = {
-    backstory: 'A bull that Meeku raised as a child',
-    commands: [
-      'Charge',
-      'Graze', // eat grass
-      'Pull Cart', // *Can be upgraded with CART to accommodate large Party.
-      // Can be used with Overdrive combinations
-    ],
-    description: 'A silver bull',
+    description: 'Summon a silver bull',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Vachel',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'VACHEL',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const FELIX_LV1: Skill = {
-    backstory:
-      'Felix is a pet that Loomee adopts. He does not listen well. He likes to nibble on grass slowly.',
-    description: 'A white lop-eared dwarf rabbit',
+    description: 'Summon a white lop-eared dwarf rabbit',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Felix',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'FELIX',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const HERALDIC_LION_LV1: Skill = {
-    commands: [
-      // https://familyhistoryfoundation.com/2020/07/17/heraldic-lion-positions/
-      'Passant Stance', // claw
-      'Rampant Stance', // multiple hasty attacks that reduce defense
-      'Issuant Stance', // focus
-      'Guardant Stance', // guard
-    ],
-    description: 'A regal lion with an impeccable stance',
+    description: 'Summon a regal lion with an impeccable stance',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Heraldic Lion',
-  };
-
-  export const SUMMON_LV1: Skill = {
-    backstory: '',
-    description: '',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.SUMMON,
-    name: '???',
-  };
-
-  export const DISMISS_LV1: Skill = {
-    backstory: '',
-    description: '',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.SUMMON,
-    name: '???',
-  };
-
-  export const COMMAND_LV1: Skill = {
-    backstory: '',
-    description: '',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.SUMMON,
-    name: '???',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'HERALDIC_LION',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const LYRE_LV1: Skill = {
-    backstory: '',
-    description:
-      'A giant half Luna moth and lyrebird that Faye can summon at will',
+    description: 'Summon a giant half Luna moth and lyrebird',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Lyre',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'LYRE',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const SANDY_LV1: Skill = {
-    backstory: '',
-    description: 'A box turtle',
+    description: 'Summon a box turtle',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Sandy',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'SANDY',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const MISCHIEVOUS_LV1: Skill = {
-    backstory: 'The Keeper of Law',
-    description: 'A black and white cat',
+    description: 'Summon a mischievous black and white cat',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Mischievous',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'MISCHIEVOUS',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const SCRIBBLES_LV1: Skill = {
-    backstory: '',
-    description: 'A flying squirrel',
+    description: 'Summon a flying squirrel',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Scribble',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'SCRIBBLES',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   /**
@@ -112,62 +126,95 @@ export namespace Summon {
    */
 
   export const OUROBOROS_LV1: Skill = {
-    backstory: '',
-    commands: ['Consume', 'Regenerate', 'Ensnare'],
-    description: 'A demon that consumes itself.',
+    description: 'Summon a demon that consumes itself.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Ouroboros',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'OUROBOROS',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const ORIAS_LV1: Skill = {
-    backstory:
-      "He appears in the form of a lion with a serpent's tail, sitting upon a mighty horse.",
-    commands: ['Roar', 'Summon Legions', 'Prowl'],
     description:
-      'A Great Marquis of Hell, who rules over 30 legions of demons.',
+      'Summon a Great Marquis of Hell, who rules over 30 legions of demons.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Orias',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'ORIAS',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const ASMODAY_LV1: Skill = {
-    backstory:
-      'He appears with three heads: one like a bull, the second like a man, and the third like a ram.',
-    commands: ['Triple Strike', 'Command Legions', 'Infernal Gaze'],
-    description: 'A King of Hell with 72 legions of demons under his command.',
+    description:
+      'Summon a King of Hell with 72 legions of demons under his command.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Asmoday',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'ASMODAY',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const BELPHEGOR_LV1: Skill = {
-    backstory:
-      'He tempts people by suggesting to them ingenious inventions that will make them rich.',
-    commands: ['Inspire Invention', 'Wealth Temptation', 'Creative Insight'],
-    description: 'A demon associated with discoveries and inventions.',
+    description: 'Summon a demon associated with discoveries and inventions.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Belphegor',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'BELPHEGOR',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const AMON_LV1: Skill = {
-    backstory: "He appears as a wolf with a serpent's tail, vomiting flames.",
-    commands: ['Fiery Roar', 'Summon Legions', 'Inferno Breath'],
-    description: 'A Marquis of Hell who governs 40 legions of demons.',
+    description: 'Summon a Marquis of Hell who governs 40 legions of demons.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Amon',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'AMON',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 
   export const BARBATOS_LV1: Skill = {
-    backstory:
-      'He appears as a great lion that has the wings of a gryphon, and he speaks hoarsely.',
-
-    commands: ["Lion's Roar", 'Wings of Protection', "Gryphon's Call"],
-    description: 'A Duke of Hell who has power over 30 legions of demons.',
+    description:
+      'Summon a Duke of Hell who has power over 30 legions of demons.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
     name: 'Barbatos',
+    outcome: {
+      PARTY: [
+        {
+          archetype: 'BARBATOS',
+          token: PartyMemberToken.COPPER,
+        },
+      ],
+    },
   };
 }

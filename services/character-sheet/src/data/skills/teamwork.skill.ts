@@ -29,7 +29,6 @@ export namespace Teamwork {
 
   export const FLANK_LV1: Skill = {
     description: 'Execute a pincer movement to surround and attack the enemy.',
-
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.TEAMWORK,
     name: 'Flank',

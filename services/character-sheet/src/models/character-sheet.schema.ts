@@ -28,7 +28,7 @@ import { AffiliationEmbeddable } from './affiliation-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
 import { EquipmentEmbeddable } from './equipment-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
-import { Archetypes, ArchetypeId, ArchetypeIds } from '../data/archetype';
+import { Archetypes, ArchetypeId, ArchetypeIds } from '../data/archetypes';
 import { Disciplines } from '../data/disciplines';
 import { Equipment, EquipmentType } from '../data/gear';
 
