@@ -11,23 +11,22 @@ import {
   Archetype,
 } from '@galaxyops/character-sheet-contracts';
 import { Disciplines } from '../disciplines';
-import { Summon } from '../skills/summon.skill';
-import { Outfits } from '../gear/outfit.gear';
 import { Affiliations } from '../affiliations';
 
-/**
- * Notable Bad Guys
- */
 export namespace NotableBadGuysArchetypes {
   export const MONARCH: Archetype = {
     alias: ['The Deadly One'],
+    backstory:
+      'The Monarch was once an elite assassin, known for their unmatched skill and ruthless efficiency. Clad in vibrant attire that mirrors the colors of the butterflies they once observed in the gardens of their covert sanctuary, they wield their dagger with deadly precision. Their reputation for swift, fatal strikes and their commitment to a strict code of honor make them a living nightmare for their targets.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Monarch',
     weaponCompatibility: [WeaponCategory.DAGGER],
   };
 
   export const VICEROY: Archetype = {
-    backstory: 'mimic monarch',
+    alias: ['The Deceptive Shadow'],
+    backstory:
+      'The Viceroy is a master of deception who emulates the feared Monarch to unsettle and mislead their prey. As a rival assassin who uses the Monarch’s striking appearance to provoke fear, the Viceroy relies on psychological manipulation rather than true combat prowess. Though they wield no real power, their mimicry serves to confuse and terrorize, making them a dangerous presence in the shadowy world of high-stakes assassination.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Viceroy',
     weaponCompatibility: [WeaponCategory.DAGGER],
