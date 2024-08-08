@@ -1,8 +1,4 @@
 import {
-  Effect,
-  Operator,
-  WeaponCategory,
-  EffectTag,
   QuadrupedalCreatureGearSlots,
   HumanoidCreatureGearSlots,
   AvianCreatureGearSlots,
@@ -11,13 +7,9 @@ import {
   Archetype,
 } from '@galaxyops/character-sheet-contracts';
 import { Disciplines } from '../disciplines';
-import { Summon } from '../skills/summon.skill';
-import { Outfits } from '../gear/outfit.gear';
 import { Affiliations } from '../affiliations';
+import { Skills } from '../skills';
 
-/**
- * Battlers
- */
 export namespace BattlerArchetypes {
   export const SPIDER: Archetype = {
     alias: ['Creepy Crawlers'],
@@ -28,6 +20,12 @@ export namespace BattlerArchetypes {
       Disciplines.BASIC_INSTINCT,
       Disciplines.ELITE_INSTINCT,
       Disciplines.SPIDER_MASTERY,
+    ],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.INTIMIDATE_LV1,
+      },
     ],
     weaponCompatibility: [],
   };
@@ -52,6 +50,12 @@ export namespace BattlerArchetypes {
       Disciplines.BASIC_INSTINCT,
       Disciplines.ELITE_INSTINCT,
     ],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.AQUA_LV1,
+      },
+    ],
     weaponCompatibility: [],
   };
 
@@ -61,6 +65,12 @@ export namespace BattlerArchetypes {
     gearSlots: [],
     name: 'Sensitive Plant',
     potentialDisciplines: [Disciplines.DETRIMENTAL_INSTINCT],
+    traits: [
+      {
+        level: 20,
+        skill: Skills.SLASH_LV1,
+      },
+    ],
     weaponCompatibility: [],
   };
 
@@ -70,6 +80,12 @@ export namespace BattlerArchetypes {
     gearSlots: [],
     name: 'Deep Thinker',
     potentialDisciplines: [Disciplines.ELITE_INSTINCT],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.TELEPATHY_LV1,
+      },
+    ],
   };
 
   export const GEL: Archetype = {
@@ -81,6 +97,12 @@ export namespace BattlerArchetypes {
       Disciplines.BASIC_INSTINCT,
       Disciplines.ELITE_INSTINCT,
     ],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.STEAL_LV1,
+      },
+    ],
   };
 
   export const PHOENIX: Archetype = {
@@ -88,6 +110,12 @@ export namespace BattlerArchetypes {
     gearSlots: AvianCreatureGearSlots,
     name: 'Phoenix',
     potentialDisciplines: [Disciplines.LEGENDARY_INSTINCT],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.FIREBALL_LV1,
+      },
+    ],
     weaponCompatibility: [],
   };
 
@@ -97,6 +125,16 @@ export namespace BattlerArchetypes {
     gearSlots: QuadrupedalCreatureGearSlots,
     name: 'Snow Leopard',
     potentialDisciplines: [Disciplines.ELITE_INSTINCT],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.FROST_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.CLAW_LV1,
+      },
+    ],
   };
 
   export const CHIMERA: Archetype = {
@@ -106,6 +144,12 @@ export namespace BattlerArchetypes {
     potentialDisciplines: [
       Disciplines.DETRIMENTAL_INSTINCT,
       Disciplines.ELITE_INSTINCT,
+    ],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.BITE_LV2,
+      },
     ],
   };
 
@@ -122,6 +166,20 @@ export namespace BattlerArchetypes {
     gearSlots: SerpentineCreatureGearSlots,
     name: 'Snake of the Water',
     potentialDisciplines: [Disciplines.ELITE_INSTINCT],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.AQUA_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.STRIKE_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.BITE_LV1,
+      },
+    ],
   };
 
   export const BANDIT: Archetype = {
@@ -130,5 +188,19 @@ export namespace BattlerArchetypes {
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Bandit',
     potentialDisciplines: [Disciplines.BASIC_INSTINCT],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.STEAL_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.GRAPPLE_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.STRIKE_LV1,
+      },
+    ],
   };
 }

@@ -1,4 +1,5 @@
 import { EffectTag } from './tag.effect';
+import { Skill } from './skill';
 
 export enum Effect {
   WEAK = 'Weak',
@@ -95,10 +96,29 @@ export type HealTrait = {
   percent: number;
 };
 
+export type AbilityPointProgressionTrait = {
+  level: number;
+  abilityPoints: number;
+};
+
+export type SkillProgressionTrait = {
+  level: number;
+  skill: Skill;
+};
+
+/**
+ * A trait is a characteristic or effect that modifies a character's attributes,
+ * abilities, or interactions within the game. Traits can be inherent
+ * (e.g., natural resistances or weaknesses) and are not acquired through
+ * association with a discipline. They influence how characters perform,
+ * react to different situations, and evolve over time.
+ */
 export type Trait =
   | WeaknessTrait
   | ResistanceTrait
   | BonusTrait
   | AbsorbTrait
   | ImmuneTrait
-  | HealTrait;
+  | HealTrait
+  | AbilityPointProgressionTrait
+  | SkillProgressionTrait;

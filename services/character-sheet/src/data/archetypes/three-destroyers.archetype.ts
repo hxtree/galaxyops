@@ -10,10 +10,8 @@ import { Disciplines } from '../disciplines';
 import { Summon } from '../skills/summon.skill';
 import { Outfits } from '../gear/outfit.gear';
 import { Affiliations } from '../affiliations';
+import { Skills } from '../skills';
 
-/**
- * Three Destroyers
- */
 export namespace ThreeDestroyersArchetypes {
   export const OUERN_ONI: Archetype = {
     affiliation: [Affiliations.THE_DESTROYERS, Affiliations.SOLIDER_FORCES],
@@ -37,6 +35,12 @@ export namespace ThreeDestroyersArchetypes {
     ],
     surname: 'Oni',
     symbolizes: ['Dad', 'Father', 'Destroyer of Time'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.LIMITLESS_LV1,
+      },
+    ],
   };
 
   export const VALLON_ONI: Archetype = {
@@ -61,17 +65,24 @@ export namespace ThreeDestroyersArchetypes {
       + 'Vallon is not interested in love and those who love him have their heart painfully broken.'
       + "It's not his fault; it's an effect he has on others. "
       + 'The Devils love him because of the heartache he causes them. ',
-
     name: 'Vallon',
-
     potentialDisciplines: [
       Disciplines.DESTROYER_OF_HEART,
       Disciplines.SOLIDER,
       Disciplines.XSOLIDER,
     ],
-
     surname: 'Oni',
     symbolizes: ['Destroyer of Heart', 'Loveless Lover', 'Heart Wrench'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.LIMITLESS_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.INSPIRE_LV1,
+      },
+    ],
     weaponCompatibility: [WeaponCategory.SWORD],
   };
 
@@ -105,6 +116,10 @@ export namespace ThreeDestroyersArchetypes {
         quantity: 1.2,
         // learns quickly
         tag: EffectTag.EXPERIENCE,
+      },
+      {
+        level: 1,
+        skill: Skills.LIMITLESS_LV1,
       },
     ],
     weaponCompatibility: [

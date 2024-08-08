@@ -14,9 +14,14 @@ import { Disciplines } from '../disciplines';
 import { Summon } from '../skills/summon.skill';
 import { Outfits } from '../gear/outfit.gear';
 import { Affiliations } from '../affiliations';
+import { Skills } from '../skills';
 
 /**
  * Seven Sins
+ * They are psychological "false keepers" focused on maintaining harmful or
+ * detrimental emotional and mental states. They reflect a range of
+ * psychological states that can be debilitating and hinder personal growth
+ * and well-being.
  */
 export namespace SevenSinsArchetypes {
   export const VOID: Archetype = {
@@ -31,6 +36,12 @@ export namespace SevenSinsArchetypes {
     potentialDisciplines: [
       Disciplines.MAGI_BLACK,
       Disciplines.LEGENDARY_INSTINCT,
+    ],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.GRAVITY_LV1,
+      },
     ],
   };
 

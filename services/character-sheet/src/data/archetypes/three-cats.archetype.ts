@@ -6,10 +6,8 @@ import {
 import { Disciplines } from '../disciplines';
 import { Summon } from '../skills/summon.skill';
 import { Affiliations } from '../affiliations';
+import { Skills } from '../skills';
 
-/**
- * Three Cats
- */
 export namespace ThreeCatsArchetypes {
   export const MISCHIEVOUS_PIEBALD: Archetype = {
     affiliation: [Affiliations.THE_CATS],
@@ -40,6 +38,12 @@ export namespace ThreeCatsArchetypes {
     surname: 'Piebald',
 
     symbolizes: ['Law', 'Causality', 'Absolute'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.BITE_LV1,
+      },
+    ],
   };
 
   export const JANUS_PERSIAN: Archetype = {
@@ -58,6 +62,12 @@ export namespace ThreeCatsArchetypes {
     ],
     surname: 'Persian',
     symbolizes: ['Time'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.BITE_LV1,
+      },
+    ],
   };
 
   export const LOOMEE_ANGORA: Archetype = {
@@ -83,6 +93,12 @@ export namespace ThreeCatsArchetypes {
     surname: 'Angora',
 
     symbolizes: ['Chastity'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.BITE_LV1,
+      },
+    ],
     weaponCompatibility: [WeaponCategory.PENDANT],
   };
 }
