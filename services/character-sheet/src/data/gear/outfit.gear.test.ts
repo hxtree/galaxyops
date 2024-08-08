@@ -5,7 +5,7 @@ describe('Outfits', () => {
     type OutfitKey = typeof Outfits;
     type OutfitType = keyof OutfitKey;
 
-    const archetypeId: OutfitType = 'TSHIRT_AND_JEANS' as OutfitType;
+    const archetypeId: OutfitType = 'T_SHIRT_AND_JEANS' as OutfitType;
     const archetype = Outfits[archetypeId];
     expect(archetype.name).toBe('T-Shirt and Jeans');
   });

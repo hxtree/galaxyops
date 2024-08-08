@@ -31,7 +31,7 @@ export namespace ThreeDestroyersArchetypes {
     potentialDisciplines: [
       Disciplines.DESTROYER_OF_TIME,
       Disciplines.SOLIDER,
-      Disciplines.XSOLIDER,
+      Disciplines.X_SOLIDER,
     ],
     surname: 'Oni',
     symbolizes: ['Dad', 'Father', 'Destroyer of Time'],
@@ -69,7 +69,7 @@ export namespace ThreeDestroyersArchetypes {
     potentialDisciplines: [
       Disciplines.DESTROYER_OF_HEART,
       Disciplines.SOLIDER,
-      Disciplines.XSOLIDER,
+      Disciplines.X_SOLIDER,
     ],
     surname: 'Oni',
     symbolizes: ['Destroyer of Heart', 'Loveless Lover', 'Heart Wrench'],
@@ -100,12 +100,12 @@ export namespace ThreeDestroyersArchetypes {
     potentialDisciplines: [
       Disciplines.DESTROYER_OF_LAW,
       Disciplines.SOLIDER,
-      Disciplines.XSOLIDER,
+      Disciplines.X_SOLIDER,
       Disciplines.BERSERKER,
       Disciplines.ONI,
       Disciplines.HERO,
     ],
-    potentialOutfits: [Outfits.TSHIRT_AND_JEANS],
+    potentialOutfits: [Outfits.T_SHIRT_AND_JEANS],
     summonCompatibility: [Summon.VACHEL_LV1],
     surname: 'Oni',
     symbolizes: ['The One', 'Destroyer of Law'],

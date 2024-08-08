@@ -19,12 +19,12 @@ export namespace RebelForcesDisciplines {
     ],
   };
 
-  export const XSOLIDER: Discipline = {
+  export const X_SOLIDER: Discipline = {
     category: DisciplineCategory.ARCHETYPE,
     description:
       'Soldiers that have gone against their teachings to gain new skills.',
     maxLevel: DISCIPLINE_DEFAULT_MAX_LEVEL,
-    name: 'XSolider',
+    name: 'X_SOLIDER',
     progression: [
       ...awardAbilityPointEachLevel(1, 2, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 9, skill: Skills.PHYSICAL_CONDITIONING_LV1 },

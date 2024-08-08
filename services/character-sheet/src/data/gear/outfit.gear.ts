@@ -9,7 +9,7 @@ import { Slot, Outfit } from '@galaxyops/character-sheet-contracts';
  * Characters cannot change out bottom and tops individually.
  */
 export namespace Outfits {
-  export const TSHIRT_AND_JEANS: Outfit = {
+  export const T_SHIRT_AND_JEANS: Outfit = {
     description: 'White t-Shirt and denim jeans',
     gearSlots: [Slot.OUTFIT],
     name: 'T-Shirt and Jeans',
