@@ -162,7 +162,7 @@ export namespace ProfessionDisciplines {
       ...awardAbilityPointEachLevel(3, 9, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 10, skill: Skills.APPRAISE_LV1 },
       { level: 13, skill: Skills.SCAN_LV1 },
-      { level: 20, skill: Skills.HERALDIC_LION_LV1 },
+      { level: 20, skill: Skills.SUMMON_HERALDIC_LION_LV1 },
     ],
   };
 
@@ -174,7 +174,7 @@ export namespace ProfessionDisciplines {
     progression: [
       ...awardAbilityPointEachLevel(3, 9, DISCIPLINE_DEFAULT_MAX_LEVEL),
       { level: 10, skill: Skills.PHYSICAL_CONDITIONING_LV1 },
-      { level: 20, skill: Skills.SCRIBBLES_LV1 },
+      { level: 20, skill: Skills.SUMMON_SCRIBBLES_LV1 },
     ],
   };
 

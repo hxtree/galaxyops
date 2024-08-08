@@ -88,6 +88,31 @@ export namespace BattlerArchetypes {
     ],
   };
 
+  export const SLIME: Archetype = {
+    alias: ['Goop', 'Sludge'],
+    description: 'A ball of slime',
+    gearSlots: AmorphousCreatureGearSlots,
+    name: 'Slime',
+    potentialDisciplines: [
+      Disciplines.BASIC_INSTINCT,
+      Disciplines.ELITE_INSTINCT,
+    ],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.ABSORB_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.DRAIN_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.STRIKE_LV1,
+      },
+    ],
+  };
+
   export const GEL: Archetype = {
     alias: ['Blob', 'Jello', 'Squishy'],
     description: 'A gel based creature',
@@ -98,6 +123,10 @@ export namespace BattlerArchetypes {
       Disciplines.ELITE_INSTINCT,
     ],
     traits: [
+      {
+        level: 1,
+        skill: Skills.ABSORB_LV1,
+      },
       {
         level: 1,
         skill: Skills.STEAL_LV1,

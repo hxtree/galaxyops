@@ -106,7 +106,7 @@ export namespace ThreeDestroyersArchetypes {
       Disciplines.HERO,
     ],
     potentialOutfits: [Outfits.T_SHIRT_AND_JEANS],
-    summonCompatibility: [Summon.VACHEL_LV1],
+    summonCompatibility: [Summon.SUMMON_VACHEL_LV1],
     surname: 'Oni',
     symbolizes: ['The One', 'Destroyer of Law'],
     traits: [

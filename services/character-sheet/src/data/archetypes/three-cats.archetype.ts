@@ -89,9 +89,8 @@ export namespace ThreeCatsArchetypes {
       Disciplines.SAGE,
       Disciplines.GUARDIAN,
     ],
-    summonCompatibility: [Summon.FELIX_LV1],
+    summonCompatibility: [Summon.SUMMON_FELIX_LV1],
     surname: 'Angora',
-
     symbolizes: ['Chastity'],
     traits: [
       {

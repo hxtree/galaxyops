@@ -15,7 +15,7 @@ import { ArchetypeIds } from '../archetypes';
  * The more a Player uses them the more powerful they grow.
  */
 export namespace Summon {
-  export const VACHEL_LV1: Skill = {
+  export const SUMMON_VACHEL_LV1: Skill = {
     description: 'Summon a silver bull',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
@@ -30,7 +30,7 @@ export namespace Summon {
     },
   };
 
-  export const FELIX_LV1: Skill = {
+  export const SUMMON_FELIX_LV1: Skill = {
     description: 'Summon a white lop-eared dwarf rabbit',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
@@ -45,7 +45,7 @@ export namespace Summon {
     },
   };
 
-  export const HERALDIC_LION_LV1: Skill = {
+  export const SUMMON_HERALDIC_LION_LV1: Skill = {
     description: 'Summon a regal lion with an impeccable stance',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
@@ -60,7 +60,7 @@ export namespace Summon {
     },
   };
 
-  export const LYRE_LV1: Skill = {
+  export const SUMMON_LYRE_LV1: Skill = {
     description: 'Summon a giant half Luna moth and lyrebird',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
@@ -75,7 +75,7 @@ export namespace Summon {
     },
   };
 
-  export const SANDY_LV1: Skill = {
+  export const SUMMON_SANDY_LV1: Skill = {
     description: 'Summon a box turtle',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
@@ -90,7 +90,7 @@ export namespace Summon {
     },
   };
 
-  export const MISCHIEVOUS_LV1: Skill = {
+  export const SUMMON_MISCHIEVOUS_LV1: Skill = {
     description: 'Summon a mischievous black and white cat',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
@@ -105,7 +105,7 @@ export namespace Summon {
     },
   };
 
-  export const SCRIBBLES_LV1: Skill = {
+  export const SUMMON_SCRIBBLES_LV1: Skill = {
     description: 'Summon a flying squirrel',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
@@ -125,7 +125,7 @@ export namespace Summon {
    * These are Malace's tattoos.
    */
 
-  export const OUROBOROS_LV1: Skill = {
+  export const SUMMON_OUROBOROS_LV1: Skill = {
     description: 'Summon a demon that consumes itself.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
@@ -140,7 +140,7 @@ export namespace Summon {
     },
   };
 
-  export const ORIAS_LV1: Skill = {
+  export const SUMMON_ORIAS_LV1: Skill = {
     description:
       'Summon a Great Marquis of Hell, who rules over 30 legions of demons.',
     level: SkillLevel.LV1,
@@ -156,7 +156,7 @@ export namespace Summon {
     },
   };
 
-  export const ASMODAY_LV1: Skill = {
+  export const SUMMON_ASMODAY_LV1: Skill = {
     description:
       'Summon a King of Hell with 72 legions of demons under his command.',
     level: SkillLevel.LV1,
@@ -172,7 +172,7 @@ export namespace Summon {
     },
   };
 
-  export const BELPHEGOR_LV1: Skill = {
+  export const SUMMON_BELPHEGOR_LV1: Skill = {
     description: 'Summon a demon associated with discoveries and inventions.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
@@ -187,7 +187,7 @@ export namespace Summon {
     },
   };
 
-  export const AMON_LV1: Skill = {
+  export const SUMMON_AMON_LV1: Skill = {
     description: 'Summon a Marquis of Hell who governs 40 legions of demons.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.SUMMON,
@@ -202,7 +202,7 @@ export namespace Summon {
     },
   };
 
-  export const BARBATOS_LV1: Skill = {
+  export const SUMMON_BARBATOS_LV1: Skill = {
     description:
       'Summon a Duke of Hell who has power over 30 legions of demons.',
     level: SkillLevel.LV1,
