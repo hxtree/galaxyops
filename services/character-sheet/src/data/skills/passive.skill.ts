@@ -432,7 +432,7 @@ export namespace Passive {
 
   /** Seven Sins */
 
-  export const WRATH_INCARNATE: Skill = {
+  export const WRATH_INCARNATE_MAX: Skill = {
     description: 'Manifestation of wrath.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
@@ -450,7 +450,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const SLOTH_INCARNATE: Skill = {
+  export const SLOTH_INCARNATE_MAX: Skill = {
     description: 'Manifestation of sloth.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
@@ -472,7 +472,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const LUST_INCARNATE: Skill = {
+  export const LUST_INCARNATE_MAX: Skill = {
     description: 'Manifestation of lust.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
@@ -480,7 +480,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const GLUTTONY_INCARNATE: Skill = {
+  export const GLUTTONY_INCARNATE_MAX: Skill = {
     description: 'Manifestation of gluttony.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
@@ -488,7 +488,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const PRIDE_INCARNATE: Skill = {
+  export const PRIDE_INCARNATE_MAX: Skill = {
     description: 'Manifestation of pride.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
@@ -496,7 +496,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const ENVY_INCARNATE: Skill = {
+  export const ENVY_INCARNATE_MAX: Skill = {
     description: 'Manifestation of envy.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,
@@ -504,7 +504,7 @@ export namespace Passive {
     target: ActionTarget.SELF,
   };
 
-  export const GREED_INCARNATE: Skill = {
+  export const GREED_INCARNATE_MAX: Skill = {
     description: 'Manifestation of greed.',
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.NONE,

@@ -1,27 +1,18 @@
 import {
-  Effect,
-  Operator,
   WeaponCategory,
-  EffectTag,
-  QuadrupedalCreatureGearSlots,
   HumanoidCreatureGearSlots,
-  AvianCreatureGearSlots,
-  SerpentineCreatureGearSlots,
-  AmorphousCreatureGearSlots,
   Archetype,
 } from '@galaxyops/character-sheet-contracts';
 import { Disciplines } from '../disciplines';
-import { Summon } from '../skills/summon.skill';
-import { Outfits } from '../gear/outfit.gear';
 import { Affiliations } from '../affiliations';
 import { Skills } from '../skills';
 
 /**
  * Seven Sins
- * They are psychological "false keepers" focused on maintaining harmful or
- * detrimental emotional and mental states. They reflect a range of
- * psychological states that can be debilitating and hinder personal growth
- * and well-being.
+ * Psychological states representing detrimental traits:
+ * Pride is arrogance, Envy is resentment, Wrath is destructive anger,
+ * Sloth is avoidance of effort, Greed is excessive desire, Lust is
+ * compulsive craving, and Gluttony is overindulgence.
  */
 export namespace SevenSinsArchetypes {
   export const VOID: Archetype = {
@@ -40,6 +31,10 @@ export namespace SevenSinsArchetypes {
     traits: [
       {
         level: 1,
+        skill: Skills.GREED_INCARNATE_MAX,
+      },
+      {
+        level: 1,
         skill: Skills.GRAVITY_LV1,
       },
     ],
@@ -51,6 +46,12 @@ export namespace SevenSinsArchetypes {
     name: 'Genki',
     potentialDisciplines: [Disciplines.MAGI_BLUE],
     symbolizes: ['Wrath', 'Fish'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.WRATH_INCARNATE_MAX,
+      },
+    ],
     weaponCompatibility: [WeaponCategory.HAND_SWORD],
   };
 
@@ -70,6 +71,12 @@ export namespace SevenSinsArchetypes {
     potentialDisciplines: [Disciplines.MAGI_WHITE],
     surname: 'Grey',
     symbolizes: ['Sloth', 'Wolf'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.SLOTH_INCARNATE_MAX,
+      },
+    ],
     weaponCompatibility: [WeaponCategory.BROAD_SWORD],
   };
 
@@ -82,7 +89,17 @@ export namespace SevenSinsArchetypes {
     name: 'Mahdi',
     potentialDisciplines: [Disciplines.POSSESSED, Disciplines.MAGI_BLACK],
     surname: 'Tsia',
-    symbolizes: ['Mahdi', 'German Shepherd'],
+    symbolizes: ['Greed', 'Mahdi', 'German Shepherd'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.DUAL_WELD_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.GREED_INCARNATE_MAX,
+      },
+    ],
     weaponCompatibility: [WeaponCategory.KNIFE],
   };
 
@@ -95,6 +112,12 @@ export namespace SevenSinsArchetypes {
     name: 'Suyri',
     potentialDisciplines: [Disciplines.WIZARD, Disciplines.MAGI_PINK],
     symbolizes: ['Luxury (later lust)', 'Fox'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.LUST_INCARNATE_MAX,
+      },
+    ],
   };
 
   export const WISP: Archetype = {
@@ -104,6 +127,12 @@ export namespace SevenSinsArchetypes {
     name: 'Wisp',
     potentialDisciplines: [Disciplines.MAGI_YELLOW],
     symbolizes: ['Gluttony', 'Hyena'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.GLUTTONY_INCARNATE_MAX,
+      },
+    ],
   };
 
   export const ASMIN: Archetype = {
@@ -113,6 +142,12 @@ export namespace SevenSinsArchetypes {
     name: 'Asmin',
     potentialDisciplines: [Disciplines.MAGI_BROWN],
     symbolizes: ['Pride', 'Ox'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.PRIDE_INCARNATE_MAX,
+      },
+    ],
     weaponCompatibility: [WeaponCategory.TWO_HANDED_AXE],
   };
 
@@ -123,5 +158,11 @@ export namespace SevenSinsArchetypes {
     name: 'Diag',
     potentialDisciplines: [Disciplines.MAGI_PURPLE],
     symbolizes: ['Envy', 'Snake'],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.ENVY_INCARNATE_MAX,
+      },
+    ],
   };
 }
