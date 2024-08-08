@@ -32,14 +32,6 @@ export namespace NotableBadGuysArchetypes {
     weaponCompatibility: [WeaponCategory.DAGGER],
   };
 
-  export const WARLING: Archetype = {
-    alias: ['Wind Bag'],
-    description: 'The embodiment of a traveling cyclone',
-    gearSlots: HumanoidCreatureGearSlots,
-    name: 'Warling',
-    potentialDisciplines: [Disciplines.WIZARD, Disciplines.HISTORIAN],
-  };
-
   export const ROWAN: Archetype = {
     affiliation: [Affiliations.FLIPPING_PROFITEERS],
     alias: ['The Flame-Maned Bandit', 'Red-Haired Rogue'],

@@ -4,10 +4,9 @@ import {
   WeaponCategory,
 } from '@galaxyops/character-sheet-contracts';
 import { Disciplines } from '../disciplines';
-import { Affiliations } from '../affiliations';
 import { Skills } from '../skills';
 
-export namespace BattlerArchetypes {
+export namespace SecretBossesArchetypes {
   export const GRIM_REAPER: Archetype = {
     alias: ['Death'],
     description: 'Skull face with dark robe and a scythe',
@@ -24,5 +23,19 @@ export namespace BattlerArchetypes {
       },
     ],
     weaponCompatibility: [WeaponCategory.SYTHE],
+  };
+
+  export const WARLING: Archetype = {
+    alias: ['Wind Bag'],
+    description: 'The embodiment of a traveling cyclone',
+    gearSlots: HumanoidCreatureGearSlots,
+    name: 'Warling',
+    potentialDisciplines: [Disciplines.WIZARD, Disciplines.HISTORIAN],
+    traits: [
+      {
+        level: 1,
+        skill: Skills.CYCLONE_LV1,
+      },
+    ],
   };
 }
