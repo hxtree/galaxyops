@@ -2,6 +2,7 @@ import {
   QuadrupedalCreatureGearSlots,
   Archetype,
 } from '@galaxyops/character-sheet-contracts';
+import { Skills } from '../skills';
 
 export namespace SummonArchetypes {
   export const VACHEL: Archetype = {
@@ -35,6 +36,12 @@ export namespace SummonArchetypes {
     // ],
     description: 'A regal lion with an impeccable stance',
     name: 'Heraldic Lion',
+    traits: [
+      {
+        level: 1,
+        skill: Skills.CLAW_LV1,
+      },
+    ],
   };
 
   export const LYRE: Archetype = {
@@ -42,6 +49,16 @@ export namespace SummonArchetypes {
     description:
       'A giant half Luna moth and lyrebird that Faye can summon at will',
     name: 'Lyre',
+    traits: [
+      {
+        level: 1,
+        skill: Skills.GUST_LV1,
+      },
+      {
+        level: 5,
+        skill: Skills.GUST_LV2,
+      },
+    ],
   };
 
   export const SANDY: Archetype = {
@@ -49,6 +66,12 @@ export namespace SummonArchetypes {
       "Adores the cozy warmth of a freshly warmed, damp towel—possibly it's hard to tell.",
     description: 'A box turtle',
     name: 'Sandy',
+    traits: [
+      {
+        level: 1,
+        skill: Skills.CHARM_LV1,
+      },
+    ],
   };
 
   export const MISCHIEVOUS: Archetype = {
@@ -61,6 +84,12 @@ export namespace SummonArchetypes {
     backstory: '',
     description: 'A flying squirrel',
     name: 'Scribble',
+    traits: [
+      {
+        level: 1,
+        skill: Skills.STEAL_LV1,
+      },
+    ],
   };
 
   /**
@@ -73,6 +102,12 @@ export namespace SummonArchetypes {
     // commands: ['Consume', 'Regenerate', 'Ensnare'],
     description: 'A demon that consumes itself.',
     name: 'Ouroboros',
+    traits: [
+      {
+        level: 1,
+        skill: Skills.DESOLATE_LV1,
+      },
+    ],
   };
 
   export const ORIAS: Archetype = {
@@ -82,6 +117,12 @@ export namespace SummonArchetypes {
     description:
       'A Great Marquis of Hell, who rules over 30 legions of demons.',
     name: 'Orias',
+    traits: [
+      {
+        level: 1,
+        skill: Skills.CLAW_LV1,
+      },
+    ],
   };
 
   export const ASMODAY: Archetype = {
@@ -90,6 +131,12 @@ export namespace SummonArchetypes {
     // commands: ['Triple Strike', 'Command Legions', 'Infernal Gaze'],
     description: 'A King of Hell with 72 legions of demons under his command.',
     name: 'Asmoday',
+    traits: [
+      {
+        level: 1,
+        skill: Skills.CLAW_LV1,
+      },
+    ],
   };
 
   export const BELPHEGOR: Archetype = {
@@ -101,6 +148,12 @@ export namespace SummonArchetypes {
     // children: {
     //   DISMISS_LV1: SummonActions.DISMISS_LV1,
     // }
+    traits: [
+      {
+        level: 1,
+        skill: Skills.CLAW_LV1,
+      },
+    ],
   };
 
   export const AMON: Archetype = {
@@ -111,6 +164,12 @@ export namespace SummonArchetypes {
     // children: {
     //   DISMISS_LV1: SummonActions.DISMISS_LV1,
     // }
+    traits: [
+      {
+        level: 1,
+        skill: Skills.CLAW_LV1,
+      },
+    ],
   };
 
   export const BARBATOS: Archetype = {
@@ -119,5 +178,11 @@ export namespace SummonArchetypes {
     // commands: ["Lion's Roar", 'Wings of Protection', "Gryphon's Call"],
     description: 'A Duke of Hell who has power over 30 legions of demons.',
     name: 'Barbatos',
+    traits: [
+      {
+        level: 1,
+        skill: Skills.CLAW_LV1,
+      },
+    ],
   };
 }
