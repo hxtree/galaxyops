@@ -55,12 +55,13 @@ export namespace NotableBadGuysArchetypes {
 
   export const CHUBBS: Archetype = {
     affiliation: [Affiliations.FLIPPING_PROFITEERS],
-    alias: ['The Rotund Rascal', 'Pint-Sized Pilferer'],
+    alias: ['The Rotund Rascal', 'Pint-Sized Pilferer', 'Chubby Bandit'],
     backstory:
       'Chubbs is a short and plump bandit with a knack for squeezing into unexpected places. '
       + 'Known for their affinity for baked goods and ingenious contraptions, Chubbs is the comic relief '
       + 'and has a good heart in the wrong place. Despite their penchant for thievery, they always leave '
-      + 'a thank-you note after their heists. Chubbs firmly believes that a well-baked pie can solve any problem.',
+      + 'a thank-you note after their heists. Chubbs firmly believes that a well-baked pie can solve any problem.'
+      + 'Shirtless wearing a orange bandana with a white skull on it and brown shorts.',
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Chubbs',
     potentialDisciplines: [Disciplines.BASIC_INSTINCT],

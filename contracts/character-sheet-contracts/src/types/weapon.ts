@@ -62,6 +62,7 @@ export enum WeaponCategory {
   SHIELD = 'Shield',
   STAFF = 'Staff',
   SWORD = 'Sword',
+  SYTHE = 'Scythe',
   SHIELD_SWORD = 'Shield Sword',
   RAPIER = 'Rapiers',
   TOME = 'Tome',
