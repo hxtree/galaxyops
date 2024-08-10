@@ -151,7 +151,7 @@ export namespace Weapons {
   };
 
   export const SWORD_OF_LAWZON: Weapon = {
-    actions: [Skills.STRIKE_LV1],
+    actions: [Skills.STRIKE_LV1, Skills.SLASH_LV3],
     area: 1,
     category: WeaponCategory.BROAD_SWORD,
     description: 'A dirty simple solid blade forged of harden steel.',
@@ -315,7 +315,7 @@ export namespace Weapons {
   };
 
   export const GREED: Weapon = {
-    actions: [Skills.SLASH_LV1, Skills.ABSORB_LV1],
+    actions: [Skills.SLASH_LV3, Skills.ABSORB_LV1],
     area: 1,
     category: WeaponCategory.KNIFE,
     description:

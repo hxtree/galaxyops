@@ -83,6 +83,34 @@ export namespace Weapon {
     target: ActionTarget.OPPONENT,
   };
 
+  export const SLASH_LV2: Skill = {
+    ...SLASH_LV1,
+    level: SkillLevel.LV2,
+    outcome: {
+      OPPONENT: [
+        {
+          quantity: '2d6+4',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL, EffectTag.BLADE],
+        },
+      ],
+    },
+  };
+
+  export const SLASH_LV3: Skill = {
+    ...SLASH_LV1,
+    level: SkillLevel.LV3,
+    outcome: {
+      OPPONENT: [
+        {
+          quantity: '3d6+4',
+          remove: Attribute.LIFE,
+          tags: [EffectTag.PHYSICAL, EffectTag.BLADE],
+        },
+      ],
+    },
+  };
+
   export const STRIKE_LV1: Skill = {
     description: 'Execute a sudden attack with a blade.',
     level: SkillLevel.LV1,
