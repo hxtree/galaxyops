@@ -29,8 +29,8 @@ Time Format:
 -00E-053-0125HT
 
 Game time is always be going. There should be no downtime while accessing menus.
-When a player select a character and goes into their equipment menu they adjust
-it live with while the majority of the screen is visible.
+When a player select a character and goes into their gear menu they adjust it
+live with while the majority of the screen is visible.
 
 A pause feature may be used but would freeze all players menu in a game
 instance.

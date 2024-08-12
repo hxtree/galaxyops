@@ -2,7 +2,7 @@ import { Prop, Schema } from '@nestjs/mongoose';
 import { IsInt, Min, Max } from '@galaxyops/validation-schemas';
 
 /**
- * characters actual stats vary based on disciplines, afflictions, and equipment
+ * characters actual stats vary based on disciplines, afflictions, and gear
  * the values actually stored in the database are the raw stats
  */
 @Schema({ _id: false })

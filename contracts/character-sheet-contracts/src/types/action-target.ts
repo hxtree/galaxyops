@@ -27,7 +27,7 @@ export enum ActionTarget {
   INTERACTION_OBJECT = 'INTERACTION_OBJECT',
 
   /**
-   * The action targets the performer's inventory or equipment.
+   * The action targets the performer's inventory or gear.
    */
   INVENTORY = 'INVENTORY',
 

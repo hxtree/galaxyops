@@ -3,7 +3,7 @@ import { Skill } from '@galaxyops/character-sheet-contracts';
 import { Skills } from '../../data/skills';
 
 /**
- * skills are determined based on disciplines, afflictions, and equipment
+ * skills are determined based on disciplines, afflictions, and gear
  * they are not correlated to character
  */
 @Injectable()

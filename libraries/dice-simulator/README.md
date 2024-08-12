@@ -47,7 +47,7 @@ The `Turn` class supports standard dice notation. For example:
 - `1d2+10*4` for a coin toss plus ten times four
 
 Turn has a second optional parameter called luck to be passed which influences
-roll outcome over time. This allows a character to equipment to grant them luck
+roll outcome over time. This allows a character to gear to grant them luck
 overall, or for a affliction to decrease luck overall in a game engine.
 
 ## License

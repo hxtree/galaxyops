@@ -6,17 +6,17 @@ import {
   ArrayMaxSize,
 } from '@galaxyops/validation-schemas';
 import { Slot } from '@galaxyops/character-sheet-contracts';
-import { EquipmentId, EquipmentIds } from '../data/gear/equipment.gear';
+import { GearId, GearIds } from '../data/gear';
 
 @Schema({ _id: false })
-export class EquipmentEmbeddable {
-  @IsEnum(EquipmentIds)
+export class GearEmbeddable {
+  @IsEnum(GearIds)
   @Prop({
-    enum: EquipmentIds,
+    enum: GearIds,
     required: true,
     type: String,
   })
-  public equipmentId!: EquipmentId;
+  public gearId!: GearId;
 
   @ArrayUnique()
   @ArrayMinSize(1)

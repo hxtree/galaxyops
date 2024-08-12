@@ -66,7 +66,7 @@ export class CharacterSheetController {
       archetypeId: createCharacterSheetDto.archetypeId,
       disciplines: [],
       drive: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),
-      equipment: [],
+      gear: [],
       instanceId: createCharacterSheetDto.instanceId,
       life: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),
       name: createCharacterSheetDto.name,

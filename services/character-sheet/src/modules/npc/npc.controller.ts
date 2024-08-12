@@ -40,7 +40,7 @@ export class NpcController {
       archetypeId: createCharacterSheet.archetypeId,
       disciplines: [],
       drive: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),
-      equipment: [],
+      gear: [],
       instanceId: createSpawnDto.instanceId,
       life: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),
       spirit: new GaugeEmbeddable({ current: 10, max: 10, min: 0 }),

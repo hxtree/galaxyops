@@ -1,24 +1,27 @@
-import {
-  Accessory,
-  Weapon,
-  Outfit,
-} from '@galaxyops/character-sheet-contracts';
-import { Accessories } from './accessory.gear';
+import { Accessories } from './accessories.gear';
 import { Outfits } from './outfit.gear';
 import { Weapons } from './weapon.gear';
-import { Equipment } from './equipment.gear';
-
-export { Equipment } from './equipment.gear';
+import { MaskGear } from './masks.gear';
+import { ArmorGear } from './armor.gear';
 
 /**
  * Objects termed as "Gear" are those that can be equipped.
  * Archetypes can only equip compatible gear.
  */
 export const Gear = {
+  ...MaskGear,
   ...Accessories,
+  ...ArmorGear,
   ...Outfits,
   ...Weapons,
 };
 
-export type GearType = Accessory | Outfit | Weapon;
-export type EquipmentType = typeof Equipment;
+/**
+ * contains list of all supported GearIds
+ */
+export const GearIds = Object.keys(Gear);
+
+/**
+ * type for each supported GearId
+ */
+export type GearId = keyof typeof Gear;

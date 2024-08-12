@@ -26,11 +26,11 @@ import {
 import { DisciplineEmbeddable } from './discipline-embeddable.schema';
 import { AffiliationEmbeddable } from './affiliation-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
-import { EquipmentEmbeddable } from './equipment-embeddable.schema';
+import { GearEmbeddable } from './gear-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
 import { Archetypes, ArchetypeId, ArchetypeIds } from '../data/archetypes';
 import { Disciplines } from '../data/disciplines';
-import { Equipment, EquipmentType } from '../data/gear';
+import { Gear } from '../data/gear';
 
 /**
  * A CharacterSheet (or Character for short) is a single instantiation of an Archetype.
@@ -97,13 +97,13 @@ export class CharacterSheet extends BaseEntity {
   public disciplines: DisciplineEmbeddable[];
 
   @ValidateNested({ each: true })
-  @Type(() => EquipmentEmbeddable)
+  @Type(() => GearEmbeddable)
   @IsArray()
   @ArrayUnique()
   @ArrayMinSize(0)
   @ArrayMaxSize(12)
   @Prop([])
-  public equipment: EquipmentEmbeddable[];
+  public gear: GearEmbeddable[];
 
   @ValidateNested({ each: true })
   @Type(() => AffiliationEmbeddable)
@@ -171,12 +171,12 @@ CharacterSheetSchema.virtual('menu').get(function () {
     });
   });
 
-  this.equipment.forEach((equipmentEmbeddable: EquipmentEmbeddable) => {
-    const equipment: any = Equipment[equipmentEmbeddable.equipmentId];
-    if (equipment.actions === undefined) {
+  this.gear.forEach((gearEmbeddable: GearEmbeddable) => {
+    const gear: any = Gear[gearEmbeddable.gearId];
+    if (gear.actions === undefined) {
       return;
     }
-    equipment.actions.forEach((action: any) => {
+    gear.actions.forEach((action: any) => {
       if (skills.indexOf(action) === -1) {
         skills.push(action);
       }
@@ -224,12 +224,12 @@ CharacterSheetSchema.virtual('skills').get(function () {
     });
   });
 
-  this.equipment.forEach((equipmentEmbeddable: EquipmentEmbeddable) => {
-    const equipment: any = Equipment[equipmentEmbeddable.equipmentId];
-    if (equipment.actions === undefined) {
+  this.gear.forEach((gearEmbeddable: GearEmbeddable) => {
+    const gear: any = Gear[gearEmbeddable.gearId];
+    if (gear.actions === undefined) {
       return;
     }
-    equipment.actions.forEach((action: any) => {
+    gear.actions.forEach((action: any) => {
       if (skills.indexOf(action) === -1) {
         skills.push(action);
       }

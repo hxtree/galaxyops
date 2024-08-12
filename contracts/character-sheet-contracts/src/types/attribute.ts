@@ -4,7 +4,7 @@
  * The maximum value may be exceeded, but the current value cannot be negative.
  * The current value is variable, and may be modified by actions.
  * The maximum value is fixed, and cannot be modified by actions. Instead it is computed from the
- * character's discipline, the character's level, and the character's equipment.
+ * character's discipline, the character's level, and the character's gear.
  * https://en.wikipedia.org/wiki/Attribute_(role-playing_games)
  */
 export enum GaugeAttribute {
