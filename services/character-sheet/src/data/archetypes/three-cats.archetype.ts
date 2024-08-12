@@ -34,9 +34,7 @@ export namespace ThreeCatsArchetypes {
       Disciplines.SAGE,
       Disciplines.GUARDIAN,
     ],
-
     surname: 'Piebald',
-
     symbolizes: ['Law', 'Causality', 'Absolute'],
     traits: [
       {

@@ -9,12 +9,6 @@ export namespace Affiliations {
       'The destroyers are said to bring about an end to all time, heart, and law in the world.',
     ],
     name: 'The Destroyers',
-    // notableMembers: [
-    //   // Each member has the last name Oni which means demon
-    //   Archetype.VALLON_ONI.name,
-    //   Archetype.MEEKU_ONI.name,
-    //   Archetype.OUERN_ONI.name
-    // ],
     standings: [
       { affiliation: Affiliations.THE_CATS, reputation: Reputation.NEUTRAL },
       { affiliation: Affiliations.DEVILS, reputation: Reputation.HONORED },

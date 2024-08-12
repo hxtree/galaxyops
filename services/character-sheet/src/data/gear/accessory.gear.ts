@@ -110,7 +110,7 @@ export namespace Accessories {
     removable: false,
   };
 
-  export const RED_SCRAF: Accessory = {
+  export const RED_SCARF: Accessory = {
     description: 'A red scarf knitted.',
     gearSlots: [Slot.NECK],
     history: 'Knitted by Mother to keep Meeku warm',
