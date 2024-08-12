@@ -1,5 +1,10 @@
-import { Slot, Outfit } from '@galaxyops/character-sheet-contracts';
-
+import {
+  Slot,
+  Outfit,
+  SkillEffectModifier,
+  Attribute,
+} from '@galaxyops/character-sheet-contracts';
+import { Skills } from '../skills';
 /**
  * Outfit
  *
@@ -17,13 +22,24 @@ export namespace Outfits {
 
   export const SWIMSUIT: Outfit = {
     description: 'Designed for swimming',
+    effect: [
+      {
+        modifier: SkillEffectModifier.ADD,
+        skill: Skills.SWIM_FAST_LV1,
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: 'Swimsuit',
-    // bonus to swimming?
   };
 
   export const OFFICERS_UNIFORM: Outfit = {
     description: 'Black Embellished Tarry Coat',
+    effect: [
+      {
+        add: Attribute.DEFENSE,
+        quantity: '5',
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: "Officer's Uniform",
   };
@@ -37,6 +53,12 @@ export namespace Outfits {
 
   export const SERENITY_GOWN: Outfit = {
     description: 'An gown exuding tranquility, in a serene white tone.',
+    effect: [
+      {
+        add: Attribute.SPIRIT,
+        quantity: '5',
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: 'Serenity Gown',
   };
@@ -44,6 +66,12 @@ export namespace Outfits {
   export const BUCKLED_SCRIBE_COAT: Outfit = {
     description:
       "A long coat with numerous decorative buckles, resembling a scribe's attire. It is dark blue and adorned with an intricate shoulder medal in yellow and red.",
+    effect: [
+      {
+        add: Attribute.DEFENSE,
+        quantity: '10',
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: 'Buckled Scribe Coat',
   };
@@ -51,6 +79,12 @@ export namespace Outfits {
   export const REBEL_MECHANIC_UNIFORM: Outfit = {
     description:
       'A patchwork rebel outfit worn by mechanical engineers, made of linen and stitched together from various materials.',
+    effect: [
+      {
+        add: Attribute.INTELLIGENCE,
+        quantity: '10',
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: 'Rebel Mechanic Uniform',
   };
@@ -58,6 +92,12 @@ export namespace Outfits {
   export const SHINOBI_GARB: Outfit = {
     description:
       'Traditional shinobi garb, designed for stealth and agility. Made from lightweight, dark-colored linen with minimal adornments for maximum mobility and camouflage.',
+    effect: [
+      {
+        add: Attribute.SPEED,
+        quantity: '10',
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: 'Shinobi Garb',
   };
@@ -65,6 +105,12 @@ export namespace Outfits {
   export const CEREMONIAL_ROBES: Outfit = {
     description:
       'Flowing, ornate robes worn during ceremonies and rituals. Made from luxurious fabrics and adorned with intricate embroidery and gold thread.',
+    effect: [
+      {
+        add: Attribute.SPIRIT,
+        quantity: '10',
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: 'Ceremonial Robes',
   };
@@ -79,6 +125,12 @@ export namespace Outfits {
   export const BATTLE_ARMOR: Outfit = {
     description:
       'Heavy armor designed for battle, made from reinforced steel plates and chainmail. Provides excellent protection but limits mobility.',
+    effect: [
+      {
+        add: Attribute.DEFENSE,
+        quantity: '30',
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: 'Battle Armor',
   };
@@ -86,6 +138,16 @@ export namespace Outfits {
   export const RANGER_GARB: Outfit = {
     description:
       'Lightweight, durable clothing designed for rangers and scouts. Made from weather-resistant materials and earth tones for camouflage.',
+    effect: [
+      {
+        add: Attribute.DEFENSE,
+        quantity: '5',
+      },
+      {
+        add: Attribute.SPEED,
+        quantity: '5',
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: 'Ranger Garb',
   };
@@ -93,12 +155,24 @@ export namespace Outfits {
   export const WIZARD_ROBES: Outfit = {
     description:
       'Flowing, mystical robes worn by wizards and sorcerers. Made from shimmering silk and adorned with arcane symbols and gemstones.',
+    effect: [
+      {
+        add: Attribute.INTELLIGENCE,
+        quantity: '5',
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: 'Wizard Robes',
   };
 
   export const BATTLE_DRESS: Outfit = {
     description: 'A combat-ready dress made from durable, flexible materials.',
+    effect: [
+      {
+        add: Attribute.DEFENSE,
+        quantity: '10',
+      },
+    ],
     gearSlots: [Slot.OUTFIT],
     name: 'Battle Dress',
   };

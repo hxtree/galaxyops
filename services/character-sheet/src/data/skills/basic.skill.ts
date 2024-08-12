@@ -428,7 +428,25 @@ export namespace Basic {
     level: SkillLevel.LV1,
     menuSlot: MenuSlot.ABILITIES,
     name: 'Light',
-    outcome: {},
+    outcome: {
+      OPPONENT: [
+        {
+          duration: Duration.fromObject({ seconds: 15 }),
+          quantity: '1d6+2',
+          remove: Attribute.SPEED,
+        },
+        {
+          duration: Duration.fromObject({ seconds: 15 }),
+          quantity: '1d6+2',
+          remove: Attribute.EVASION,
+        },
+        {
+          duration: Duration.fromObject({ seconds: 15 }),
+          quantity: '1d6+2',
+          remove: Attribute.EVASION,
+        },
+      ],
+    },
   };
 
   export const RAGE_LV1: Skill = {
