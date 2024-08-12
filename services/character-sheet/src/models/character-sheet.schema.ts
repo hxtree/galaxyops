@@ -14,7 +14,6 @@ import {
   ArrayMaxSize,
   IsArray,
 } from '@galaxyops/validation-schemas';
-import { v4 as uuidv4 } from 'uuid';
 import { BaseEntity, BaseEntityProps } from '@galaxyops/nestjs-modules';
 import {
   MenuSlotOrder,
@@ -28,9 +27,13 @@ import { AffiliationEmbeddable } from './affiliation-embeddable.schema';
 import { StatsEmbeddable } from './stats-embeddable.schema';
 import { GearEmbeddable } from './gear-embeddable.schema';
 import { GaugeEmbeddable } from './gauge-embeddable.schema';
-import { Archetypes, ArchetypeId, ArchetypeIds } from '../data/archetypes';
-import { Disciplines } from '../data/disciplines';
-import { Gear } from '../data/gear';
+import {
+  Archetypes,
+  ArchetypeId,
+  ArchetypeIds,
+  Disciplines,
+  Gear,
+} from '../data';
 
 /**
  * A CharacterSheet (or Character for short) is a single instantiation of an Archetype.

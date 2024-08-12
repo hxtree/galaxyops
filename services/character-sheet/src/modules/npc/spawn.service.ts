@@ -1,6 +1,5 @@
 import { BadRequestException } from '@nestjs/common';
-import { SpawnGuideline } from '../../data/place';
-import { ArchetypeId } from '../../data/archetypes';
+import { SpawnGuideline, ArchetypeId } from '../../data';
 import { CreateCharacterSheetDto } from '../character-sheet/create-character-sheet-dto';
 
 export class SpawnService {

@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ItemId, ItemIds } from '../../data/item';
+import { ItemId, ItemIds } from '../../data';
 
 export class QueryItemDto {
   @ApiProperty({ enum: ItemIds })

@@ -1,4 +1,4 @@
-import { Place, PlaceId } from '../../data/place';
+import { Place, PlaceId } from '../../data';
 
 export class PlaceService {
   async find(placeId: PlaceId): Promise<Place.Type> {

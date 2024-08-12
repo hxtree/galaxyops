@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsUuidV4, IsEnum } from '@galaxyops/validation-schemas';
 import { v4 } from 'uuid';
-import { PlaceIds, PlaceId } from '../../data/place';
+import { PlaceIds, PlaceId } from '../../data';
 
 export class CreateSpawnDto {
   @IsUuidV4()

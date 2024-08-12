@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { v4 } from 'uuid';
 import { IsEnum, IsInt, IsPositive } from '@galaxyops/validation-schemas';
-import { AffiliationId, AffiliationIds } from '../../data/affiliations';
+import { AffiliationId, AffiliationIds } from '../../data';
 
 export enum Operation {
   ADD = 'ADD',

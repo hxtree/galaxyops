@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {
   Items, ItemIds, ItemType, ItemId,
-} from '../../data/item';
+} from '../../data';
 
 @Injectable()
 export class ItemService {
@@ -17,7 +17,7 @@ export class ItemService {
     try {
       const items: ItemId[] = [];
 
-      items.push(...ItemIds);
+      items.push(...(ItemIds as ItemId[]));
       items.sort();
 
       return await Promise.resolve(items);

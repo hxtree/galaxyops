@@ -114,8 +114,22 @@
             "in": "path",
             "schema": {
               "enum": [
+                "VACHEL",
+                "FELIX",
+                "HERALDIC_LION",
+                "LYRE",
+                "SANDY",
+                "MISCHIEVOUS",
+                "SCRIBBLES",
+                "OUROBOROS",
+                "ORIAS",
+                "ASMODAY",
+                "BELPHEGOR",
+                "AMON",
+                "BARBATOS",
                 "DARUMA_NAKAMURA",
                 "MOTHER",
+                "LADY_OF_THE_FOREST",
                 "MISCHIEVOUS_PIEBALD",
                 "JANUS_PERSIAN",
                 "LOOMEE_ANGORA",
@@ -139,12 +153,14 @@
                 "DIAG",
                 "MONARCH",
                 "VICEROY",
-                "WARLING",
+                "ROWAN",
+                "CHUBBS",
                 "SPIDER",
                 "INFERNO_ARACHNID",
                 "SEA_HORSE",
                 "SENSITIVE_PLANT",
                 "DEEP_THINKER",
+                "SLIME",
                 "GEL",
                 "PHOENIX",
                 "SNOW_LEOPARD",
@@ -152,8 +168,8 @@
                 "SLOW_MOVER",
                 "SNAKE_OF_THE_WATER",
                 "BANDIT",
-                "ROWAN",
-                "CHUBBS"
+                "GRIM_REAPER",
+                "WARLING"
               ],
               "type": "string"
             }
@@ -193,14 +209,16 @@
                 "MASK_OF_SINCERITY",
                 "MASK_OF_LOVE",
                 "MASK_OF_MISERY",
-                "GOLD_BRACELETS",
-                "RED_SCRAF",
+                "RED_SCARF",
                 "COWHIDE_VEST",
                 "FUNERAL_JAR",
                 "SWORD_SHEATH",
                 "MAGNETIC_GLOVES",
                 "CATCHERS_MITT",
                 "TURBAN",
+                "STONEHEART_CHESTPLATE",
+                "SUN_AND_MOON_PAULDRONS",
+                "GOLD_BRACELETS",
                 "T_SHIRT_AND_JEANS",
                 "SWIMSUIT",
                 "OFFICERS_UNIFORM",
@@ -325,6 +343,8 @@
                 "BLOCK_LV1",
                 "PARRY_LV1",
                 "SLASH_LV1",
+                "SLASH_LV2",
+                "SLASH_LV3",
                 "STRIKE_LV1",
                 "STAB_LV1",
                 "CHOP_LV1",
@@ -360,32 +380,29 @@
                 "GLUTTONOUS_DESIRE_LV1",
                 "CATCHER_LV1",
                 "LIMITLESS_LV1",
-                "WRATH_INCARNATE",
-                "SLOTH_INCARNATE",
-                "LUST_INCARNATE",
-                "GLUTTONY_INCARNATE",
-                "PRIDE_INCARNATE",
-                "ENVY_INCARNATE",
-                "GREED_INCARNATE",
+                "WRATH_INCARNATE_MAX",
+                "SLOTH_INCARNATE_MAX",
+                "LUST_INCARNATE_MAX",
+                "GLUTTONY_INCARNATE_MAX",
+                "PRIDE_INCARNATE_MAX",
+                "ENVY_INCARNATE_MAX",
+                "GREED_INCARNATE_MAX",
                 "LAST_STAND_LV1",
                 "BLITZ_STRIKE_LV1",
                 "FLANK_LV1",
-                "VACHEL_LV1",
-                "FELIX_LV1",
-                "HERALDIC_LION_LV1",
-                "SUMMON_LV1",
-                "DISMISS_LV1",
-                "COMMAND_LV1",
-                "LYRE_LV1",
-                "SANDY_LV1",
-                "MISCHIEVOUS_LV1",
-                "SCRIBBLES_LV1",
-                "OUROBOROS_LV1",
-                "ORIAS_LV1",
-                "ASMODAY_LV1",
-                "BELPHEGOR_LV1",
-                "AMON_LV1",
-                "BARBATOS_LV1",
+                "SUMMON_VACHEL_LV1",
+                "SUMMON_FELIX_LV1",
+                "SUMMON_HERALDIC_LION_LV1",
+                "SUMMON_LYRE_LV1",
+                "SUMMON_SANDY_LV1",
+                "SUMMON_MISCHIEVOUS_LV1",
+                "SUMMON_SCRIBBLES_LV1",
+                "SUMMON_OUROBOROS_LV1",
+                "SUMMON_ORIAS_LV1",
+                "SUMMON_ASMODAY_LV1",
+                "SUMMON_BELPHEGOR_LV1",
+                "SUMMON_AMON_LV1",
+                "SUMMON_BARBATOS_LV1",
                 "POISON_TRAP_LV1",
                 "EXPLOSIVE_TRAP_LV1",
                 "TIME_BOMB_TRAP_LV1",
@@ -450,8 +467,6 @@
             "in": "path",
             "schema": {
               "enum": [
-                "COMPASS",
-                "GC",
                 "FLOUR",
                 "CHICKEN_EGG",
                 "WATER",
@@ -460,7 +475,9 @@
                 "RICE_BALL",
                 "DANGO",
                 "RAMEN",
-                "PELMENI"
+                "PELMENI",
+                "COMPASS",
+                "GC"
               ],
               "type": "string"
             }
@@ -479,8 +496,6 @@
             "in": "path",
             "schema": {
               "enum": [
-                "COMPASS",
-                "GC",
                 "FLOUR",
                 "CHICKEN_EGG",
                 "WATER",
@@ -489,7 +504,9 @@
                 "RICE_BALL",
                 "DANGO",
                 "RAMEN",
-                "PELMENI"
+                "PELMENI",
+                "COMPASS",
+                "GC"
               ],
               "type": "string"
             }
@@ -508,8 +525,6 @@
             "in": "path",
             "schema": {
               "enum": [
-                "COMPASS",
-                "GC",
                 "FLOUR",
                 "CHICKEN_EGG",
                 "WATER",
@@ -518,7 +533,9 @@
                 "RICE_BALL",
                 "DANGO",
                 "RAMEN",
-                "PELMENI"
+                "PELMENI",
+                "COMPASS",
+                "GC"
               ],
               "type": "string"
             }
@@ -599,7 +616,7 @@
             "required": true,
             "in": "path",
             "schema": {
-              "default": "c4203880-f96b-4c13-830d-1d8249baf109",
+              "default": "8dffcbfc-e777-4cf6-b6d4-488744c36471",
               "type": "string"
             }
           }
@@ -638,14 +655,28 @@
         "properties": {
           "instanceId": {
             "type": "string",
-            "default": "4fae574b-ce79-409e-ad65-ca585c34c37a"
+            "default": "f97f244e-4a8f-4e83-8cf8-713020f9377a"
           },
           "archetypeId": {
             "type": "string",
             "default": "DARUMA_NAKAMURA",
             "enum": [
+              "VACHEL",
+              "FELIX",
+              "HERALDIC_LION",
+              "LYRE",
+              "SANDY",
+              "MISCHIEVOUS",
+              "SCRIBBLES",
+              "OUROBOROS",
+              "ORIAS",
+              "ASMODAY",
+              "BELPHEGOR",
+              "AMON",
+              "BARBATOS",
               "DARUMA_NAKAMURA",
               "MOTHER",
+              "LADY_OF_THE_FOREST",
               "MISCHIEVOUS_PIEBALD",
               "JANUS_PERSIAN",
               "LOOMEE_ANGORA",
@@ -669,12 +700,14 @@
               "DIAG",
               "MONARCH",
               "VICEROY",
-              "WARLING",
+              "ROWAN",
+              "CHUBBS",
               "SPIDER",
               "INFERNO_ARACHNID",
               "SEA_HORSE",
               "SENSITIVE_PLANT",
               "DEEP_THINKER",
+              "SLIME",
               "GEL",
               "PHOENIX",
               "SNOW_LEOPARD",
@@ -682,8 +715,8 @@
               "SLOW_MOVER",
               "SNAKE_OF_THE_WATER",
               "BANDIT",
-              "ROWAN",
-              "CHUBBS"
+              "GRIM_REAPER",
+              "WARLING"
             ]
           },
           "name": { "type": "string", "default": "Daruma" },
@@ -696,7 +729,7 @@
         "properties": {
           "instanceId": {
             "type": "string",
-            "default": "b44ab5e2-37f2-4f31-aa86-b7cda1949bcc"
+            "default": "3a147c23-edd8-4695-aaf6-81f16009b988"
           },
           "place": {
             "type": "string",
@@ -719,7 +752,7 @@
         "properties": {
           "characterSheetId": {
             "type": "string",
-            "default": "2a7f7125-3b8b-4fd3-8d49-c5beeceb03ba"
+            "default": "8d112a90-e43e-45ef-a636-353cff4a6297"
           },
           "affiliationId": {
             "type": "string",

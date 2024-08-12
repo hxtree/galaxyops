@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Place } from '../../data/place';
+import { Place } from '../../data';
 
 export class CreateSpawnsDto {
   @ApiProperty()

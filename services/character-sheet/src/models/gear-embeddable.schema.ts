@@ -6,7 +6,7 @@ import {
   ArrayMaxSize,
 } from '@galaxyops/validation-schemas';
 import { Slot } from '@galaxyops/character-sheet-contracts';
-import { GearId, GearIds } from '../data/gear';
+import { GearId, GearIds } from '../data';
 
 @Schema({ _id: false })
 export class GearEmbeddable {

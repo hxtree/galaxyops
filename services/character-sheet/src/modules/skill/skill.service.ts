@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Skill } from '@galaxyops/character-sheet-contracts';
-import { Skills } from '../../data/skills';
+import { Skills } from '../../data';
 
 /**
  * skills are determined based on disciplines, afflictions, and gear
