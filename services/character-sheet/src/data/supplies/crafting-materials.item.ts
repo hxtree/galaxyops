@@ -1,6 +1,6 @@
 import {
   Attribute,
-  ItemCapacity,
+  SupplyCapacity,
   Item,
 } from '@galaxyops/character-sheet-contracts';
 
@@ -13,31 +13,31 @@ import {
  */
 export namespace CraftingMaterials {
   export const FLOUR: Item = {
-    capacity: ItemCapacity.MEDIUM,
+    capacity: SupplyCapacity.MEDIUM,
     description: 'Powder made from crushed grains',
     name: 'Flour',
   };
 
   export const CHICKEN_EGG: Item = {
-    capacity: ItemCapacity.LOW,
+    capacity: SupplyCapacity.LOW,
     description: 'Egg from a chicken',
     name: 'Chicken Egg',
   };
 
   export const WATER: Item = {
-    capacity: ItemCapacity.MEDIUM,
+    capacity: SupplyCapacity.MEDIUM,
     description: 'Water',
     name: 'Water',
   };
 
   export const RICE: Item = {
-    capacity: ItemCapacity.VERY_HIGH,
+    capacity: SupplyCapacity.VERY_HIGH,
     description: 'Rice grains',
     name: 'Rice',
   };
 
   export const PORK: Item = {
-    capacity: ItemCapacity.LOW,
+    capacity: SupplyCapacity.LOW,
     description: 'Meat form a pig',
     name: 'Pork',
   };

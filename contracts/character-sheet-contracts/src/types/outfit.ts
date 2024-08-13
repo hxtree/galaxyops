@@ -1,9 +1,6 @@
-import { Slot } from './slot';
 import { EffectRecord } from './table.effect';
+import { SupplyItem } from './supply-item';
 
-export type Outfit = {
-  name: string;
-  description: string;
-  gearSlots?: Slot[];
+export type Outfit = SupplyItem & {
   effect?: EffectRecord[];
 };

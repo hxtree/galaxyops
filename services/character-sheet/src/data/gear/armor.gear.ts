@@ -3,10 +3,12 @@ import {
   Attribute,
   EffectTag,
   Accessory,
+  SupplyCapacity,
 } from '@galaxyops/character-sheet-contracts';
 
 export namespace ArmorGear {
   export const STONEHEART_CHESTPLATE: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       "This formidable chestplate is made from a large triangular stone and secured to the left chest with four durable leather buckles. At first glance, it appears as a rugged piece of ordinary armor. However, once activated, the stone begins to pulse with a deep, rhythmic throb, and a triune-shaped engraving starts to glow a brilliant green. This activation triggers the chestplate’s ability to restart the wearer's heart, ensuring automatic revival should they fall in battle.",
     gearSlots: [Slot.TORSO],
@@ -17,6 +19,7 @@ export namespace ArmorGear {
   };
 
   export const SUN_AND_MOON_PAULDRONS: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'These intricately designed pauldrons feature a sun motif on the right shoulder and a moon motif on the left. The sun pauldron is crafted from gleaming gold and adorned with fiery rubies, while the moon pauldron is made of shimmering silver and studded with icy sapphires. The pauldrons are connected by a chain of delicate links, symbolizing the eternal dance between light and darkness.',
     effects: [
@@ -39,6 +42,7 @@ export namespace ArmorGear {
   };
 
   export const GOLD_BRACELETS: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'Weighted gold bracelets that occupy both wrists an act as arm guards',
     effects: [

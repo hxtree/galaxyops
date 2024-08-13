@@ -3,6 +3,7 @@ import {
   Outfit,
   SkillEffectModifier,
   Attribute,
+  SupplyCapacity,
 } from '@galaxyops/character-sheet-contracts';
 import { Skills } from '../skills';
 /**
@@ -15,12 +16,14 @@ import { Skills } from '../skills';
  */
 export namespace Outfits {
   export const T_SHIRT_AND_JEANS: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description: 'White t-Shirt and denim jeans',
     gearSlots: [Slot.OUTFIT],
     name: 'T-Shirt and Jeans',
   };
 
   export const SWIMSUIT: Outfit = {
+    capacity: SupplyCapacity.LOW,
     description: 'Designed for swimming',
     effect: [
       {
@@ -33,6 +36,7 @@ export namespace Outfits {
   };
 
   export const OFFICERS_UNIFORM: Outfit = {
+    capacity: SupplyCapacity.LOW,
     description: 'Black Embellished Tarry Coat',
     effect: [
       {
@@ -45,6 +49,7 @@ export namespace Outfits {
   };
 
   export const KIMONO: Outfit = {
+    capacity: SupplyCapacity.LOW,
     description:
       'A wrapped-front garment with square sleeves and a rectangular body.',
     gearSlots: [Slot.OUTFIT],
@@ -52,6 +57,7 @@ export namespace Outfits {
   };
 
   export const SERENITY_GOWN: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description: 'An gown exuding tranquility, in a serene white tone.',
     effect: [
       {
@@ -64,6 +70,7 @@ export namespace Outfits {
   };
 
   export const BUCKLED_SCRIBE_COAT: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       "A long coat with numerous decorative buckles, resembling a scribe's attire. It is dark blue and adorned with an intricate shoulder medal in yellow and red.",
     effect: [
@@ -77,6 +84,7 @@ export namespace Outfits {
   };
 
   export const REBEL_MECHANIC_UNIFORM: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'A patchwork rebel outfit worn by mechanical engineers, made of linen and stitched together from various materials.',
     effect: [
@@ -90,6 +98,7 @@ export namespace Outfits {
   };
 
   export const SHINOBI_GARB: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'Traditional shinobi garb, designed for stealth and agility. Made from lightweight, dark-colored linen with minimal adornments for maximum mobility and camouflage.',
     effect: [
@@ -103,6 +112,7 @@ export namespace Outfits {
   };
 
   export const CEREMONIAL_ROBES: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'Flowing, ornate robes worn during ceremonies and rituals. Made from luxurious fabrics and adorned with intricate embroidery and gold thread.',
     effect: [
@@ -116,6 +126,7 @@ export namespace Outfits {
   };
 
   export const FORMAL_ATTIRE: Outfit = {
+    capacity: SupplyCapacity.LOW,
     description:
       'A formal suit and tie, perfect for special occasions and events.',
     gearSlots: [Slot.OUTFIT],
@@ -123,6 +134,7 @@ export namespace Outfits {
   };
 
   export const BATTLE_ARMOR: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'Heavy armor designed for battle, made from reinforced steel plates and chainmail. Provides excellent protection but limits mobility.',
     effect: [
@@ -136,6 +148,7 @@ export namespace Outfits {
   };
 
   export const RANGER_GARB: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'Lightweight, durable clothing designed for rangers and scouts. Made from weather-resistant materials and earth tones for camouflage.',
     effect: [
@@ -153,6 +166,7 @@ export namespace Outfits {
   };
 
   export const WIZARD_ROBES: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'Flowing, mystical robes worn by wizards and sorcerers. Made from shimmering silk and adorned with arcane symbols and gemstones.',
     effect: [
@@ -166,6 +180,7 @@ export namespace Outfits {
   };
 
   export const BATTLE_DRESS: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description: 'A combat-ready dress made from durable, flexible materials.',
     effect: [
       {
@@ -178,6 +193,7 @@ export namespace Outfits {
   };
 
   export const GUILD_UNIFORM: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'A uniform worn by members of a guild or organization. Made from high-quality materials and adorned with the guild emblem.',
     gearSlots: [Slot.OUTFIT],
@@ -185,6 +201,7 @@ export namespace Outfits {
   };
 
   export const TRAVELERS_GARB: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'Sturdy, practical clothing designed for long journeys and adventures. Made from durable materials and equipped with plenty of pockets and pouches.',
     gearSlots: [Slot.OUTFIT],
@@ -192,6 +209,7 @@ export namespace Outfits {
   };
 
   export const NOBLE_ATTIRE: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'Elegant, luxurious clothing worn by nobles and aristocrats. Made from fine fabrics and adorned with jewels and precious metals.',
     gearSlots: [Slot.OUTFIT],
@@ -199,6 +217,7 @@ export namespace Outfits {
   };
 
   export const MONK_ROBES: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'Simple, humble robes worn by monks and ascetics. Made from plain, unadorned fabric for meditation and contemplation.',
     gearSlots: [Slot.OUTFIT],
@@ -206,6 +225,7 @@ export namespace Outfits {
   };
 
   export const BANDIT_ATTIRE: Outfit = {
+    capacity: SupplyCapacity.UNIQUE,
     description:
       'Rugged clothing worn by bandits. Made from weathered fabrics and adorned with trinkets and accessories.',
     gearSlots: [Slot.OUTFIT],

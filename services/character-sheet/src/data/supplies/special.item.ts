@@ -1,12 +1,12 @@
 import {
   Attribute,
-  ItemCapacity,
+  SupplyCapacity,
   Item,
 } from '@galaxyops/character-sheet-contracts';
 
 export namespace SpecialItems {
   export const COMPASS: Item = {
-    capacity: ItemCapacity.UNIQUE,
+    capacity: SupplyCapacity.UNIQUE,
     description: 'Shows direction',
     name: 'Compass',
     // enables player map
@@ -18,7 +18,7 @@ export namespace SpecialItems {
    * It is used to buy/sell items.
    */
   export const GC: Item = {
-    capacity: ItemCapacity.GC,
+    capacity: SupplyCapacity.GC,
     description: 'Currency',
     name: 'GC',
   };

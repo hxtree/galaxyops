@@ -1,6 +1,6 @@
 import {
   Attribute,
-  ItemCapacity,
+  SupplyCapacity,
   Item,
 } from '@galaxyops/character-sheet-contracts';
 
@@ -25,7 +25,7 @@ export namespace Food {
   };
 
   export const DANGO: Item = {
-    capacity: ItemCapacity.MEDIUM,
+    capacity: SupplyCapacity.MEDIUM,
     description: 'Mochi-like sweet made from crushed rice ',
     name: 'Dango',
     outcome: {
@@ -40,7 +40,7 @@ export namespace Food {
   };
 
   export const RAMEN: Item = {
-    capacity: ItemCapacity.LOW,
+    capacity: SupplyCapacity.LOW,
     craftingMaterials: [
       { item: 'FLOUR', quantity: 1 },
       { item: 'CHICKEN_EGG', quantity: 2 },
@@ -61,7 +61,7 @@ export namespace Food {
   };
 
   export const PELMENI: Item = {
-    capacity: ItemCapacity.MEDIUM,
+    capacity: SupplyCapacity.MEDIUM,
     craftingMaterials: [
       { item: 'FLOUR', quantity: 1 },
       { item: 'CHICKEN_EGG', quantity: 2 },

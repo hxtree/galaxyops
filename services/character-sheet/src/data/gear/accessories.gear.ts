@@ -1,10 +1,10 @@
 import {
   Slot,
   SkillEffectModifier,
-  EffectTable,
   Attribute,
   EffectTag,
   Accessory,
+  SupplyCapacity,
 } from '@galaxyops/character-sheet-contracts';
 import { Skills } from '../skills';
 
@@ -14,6 +14,7 @@ import { Skills } from '../skills';
  */
 export namespace Accessories {
   export const RED_SCARF: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
     description: 'A red scarf knitted.',
     gearSlots: [Slot.NECK],
     history: 'Knitted by Mother to keep Meeku warm',
@@ -22,6 +23,7 @@ export namespace Accessories {
   };
 
   export const COWHIDE_VEST: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
     description: 'A brown full-grain leather vest.',
     effects: [
       {
@@ -31,10 +33,12 @@ export namespace Accessories {
       },
     ],
     gearSlots: [Slot.TORSO],
+
     name: 'Cowhide Vest',
   };
 
   export const FUNERAL_JAR: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
     description: 'A home-made funeral urn.',
     gearSlots: [Slot.WAIST],
     name: 'Funeral Jar',
@@ -42,12 +46,14 @@ export namespace Accessories {
   };
 
   export const SWORD_SHEATH: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
     description: 'A sheath designed to hold a broad sword.',
     gearSlots: [Slot.BACK],
     name: 'Sword Sheath',
   };
 
   export const MAGNETIC_GLOVES: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
     description: 'Helps catch metal objects.',
     effects: [
       {
@@ -62,6 +68,7 @@ export namespace Accessories {
   };
 
   export const CATCHERS_MITT: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
     description: 'Helps catch physical objects.',
     effects: [
       {
@@ -75,6 +82,7 @@ export namespace Accessories {
   };
 
   export const TURBAN: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
     description: 'A cream colored silk turban',
     effects: [
       {

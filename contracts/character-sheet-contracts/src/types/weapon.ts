@@ -1,20 +1,14 @@
 import { Skill } from './skill';
+import { SupplyItem } from './supply-item';
+
 /**
  * Represents a weapon.
  */
-export type Weapon = {
-  /**
-   * The name of the weapon.
-   */
-  name: string;
+export type Weapon = SupplyItem & {
   /**
    * The category of the weapon, used to determine equability, weakness and resistance.
    */
   category: WeaponCategory;
-  /**
-   * The immediately evident appearance of the weapon.
-   */
-  description?: string;
   /**
    * The history of the weapon, can be revealed by a special ability.
    */

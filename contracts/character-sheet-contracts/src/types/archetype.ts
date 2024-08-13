@@ -7,7 +7,7 @@ import { Skill } from './skill';
 import { WeaponCategory } from './weapon';
 import { Discipline } from './discipline';
 import { Outfit } from './outfit';
-import { Supply } from './supply';
+import { SupplyInventory } from './supply-inventory';
 
 export type Archetype = {
   id?: string;
@@ -47,7 +47,7 @@ export type Archetype = {
   stats?: Stats;
   traits?: Trait[];
   gearSlots?: Slot[];
-  supplies?: Supply[];
+  supplies?: SupplyInventory[];
 
   potentialDisciplines?: Discipline[];
   potentialOutfits?: Outfit[];

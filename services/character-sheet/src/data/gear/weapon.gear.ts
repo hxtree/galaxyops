@@ -1,4 +1,8 @@
-import { Weapon, WeaponCategory } from '@galaxyops/character-sheet-contracts';
+import {
+  SupplyCapacity,
+  Weapon,
+  WeaponCategory,
+} from '@galaxyops/character-sheet-contracts';
 import { Skills } from '../skills';
 
 /**
@@ -18,7 +22,10 @@ export namespace Weapons {
   export const ASMINS_AXE: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.TWO_HANDED_AXE,
+    description:
+      'A large axe that can break through bone and makes a loud sound when swung',
     name: "Asmin's Aze",
     power: 100,
     speed: 30,
@@ -27,6 +34,7 @@ export namespace Weapons {
   export const GREAT_WAIL: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.TWO_HANDED_AXE,
     description:
       'A large axe that can break through bone and makes a loud sound when swung',
@@ -38,7 +46,9 @@ export namespace Weapons {
   export const JUSTICE: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.TWO_HANDED_AXE,
+    description: 'A large axe that is said to bring justice.',
     history: "Gunter's trademark axe",
     name: 'Justice',
     power: 100,
@@ -48,6 +58,7 @@ export namespace Weapons {
   export const KEYSTONE: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
+    capacity: SupplyCapacity.LOW,
     category: WeaponCategory.TWO_HANDED_AXE,
     description:
       'A giant axe made of from a giant keystone with an iron bar stuck through it.',
@@ -69,7 +80,9 @@ export namespace Weapons {
   export const ASSAULTER: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.BOOMERANG,
+    description: 'An extremely fast and deadly boomerang.',
     name: 'Assaulter',
     power: 100,
     speed: 30,
@@ -78,8 +91,9 @@ export namespace Weapons {
   export const STRIKER: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.BOOMERANG,
-    description: ' An extremely fast and deadly boomerang.',
+    description: 'An extremely fast and deadly boomerang.',
     name: 'Striker',
     power: 100,
     speed: 30,
@@ -94,6 +108,7 @@ export namespace Weapons {
   export const ENERGY_BREAKER: Weapon = {
     actions: [Skills.BLOCK_LV1, Skills.STRIKE_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.SHIELD_SWORD,
     description:
       'An extremely large and heavy weapon that absorbs and releases energy.',
@@ -107,6 +122,7 @@ export namespace Weapons {
   export const STONE_BREAKER: Weapon = {
     actions: [Skills.BLOCK_LV1, Skills.STRIKE_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.SHIELD_SWORD,
     description:
       'An extremely large and heavy weapon with a special guilloche handle for grip.',
@@ -123,6 +139,7 @@ export namespace Weapons {
   export const THE_MAN_SLAYER: Weapon = {
     actions: [Skills.BLOCK_LV1, Skills.STRIKE_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.SHIELD_SWORD,
     description:
       'A giant ancient hellish looking blade. Its handle bares a dogtooth design.',
@@ -142,6 +159,7 @@ export namespace Weapons {
   export const HEROS_BLADE: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.BROAD_SWORD,
     description:
       'A mystical blade that is destine to fall into the hands of the next true hero.',
@@ -153,6 +171,7 @@ export namespace Weapons {
   export const SWORD_OF_LAWZON: Weapon = {
     actions: [Skills.STRIKE_LV1, Skills.SLASH_LV3],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.BROAD_SWORD,
     description: 'A dirty simple solid blade forged of harden steel.',
     name: 'Sword of Lawzon',
@@ -169,6 +188,7 @@ export namespace Weapons {
   export const TINY_TIMBER: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
+    capacity: SupplyCapacity.LOW,
     category: WeaponCategory.STAFF,
     description: 'A basic staff given to Magi in training',
     name: 'Tiny Timber',
@@ -179,6 +199,7 @@ export namespace Weapons {
   export const CADUCEUS: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.STAFF,
     description:
       'A staff with two serpents wrapped around it base and two wings that expand from its top.',
@@ -191,6 +212,7 @@ export namespace Weapons {
   export const ANTEDILUVIAN: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.STAFF,
     description: 'An ancient wooden staff',
     history: 'An ancient weapon used to slay devils of the old world',
@@ -208,7 +230,10 @@ export namespace Weapons {
   export const ETERNAL_FOLD: Weapon = {
     actions: [Skills.STAB_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.RAPIER,
+    description:
+      'A sword that has been folded by generations of blacksmiths to create a flawless steel sword',
     history:
       'A sword that has been folded by generations of blacksmiths to create a flawless steel sword',
     name: 'Eternal Fold',
@@ -219,6 +244,7 @@ export namespace Weapons {
   export const GOLD_RUSH: Weapon = {
     actions: [Skills.STAB_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.RAPIER,
     description:
       'A golden color sword that looks more fitting on a wall then a battlefield.',
@@ -230,6 +256,7 @@ export namespace Weapons {
   export const KINGS_BLADE: Weapon = {
     actions: [Skills.STAB_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.RAPIER,
     description: 'Whomever posses this blade is King of Rudner.',
     name: "King's Blade",
@@ -240,6 +267,7 @@ export namespace Weapons {
   export const RUSTY_RAPIER: Weapon = {
     actions: [Skills.STAB_LV1],
     area: 1,
+    capacity: SupplyCapacity.LOW,
     category: WeaponCategory.RAPIER,
     description: 'A rusty sword. Chance of poisoning target.',
     name: 'Rusty Rapier',
@@ -258,7 +286,9 @@ export namespace Weapons {
   export const MYSTERIOUS_PENDANT: Weapon = {
     actions: [Skills.WARD_LV1, Skills.CURE_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.PENDANT,
+    description: 'A pendant that is said to have been created by the gods.',
     name: 'Mysterious Pendant',
     power: 100,
     speed: 30,
@@ -267,7 +297,10 @@ export namespace Weapons {
   export const PEACEKEEPER: Weapon = {
     actions: [Skills.LULLABY_LV1, Skills.PROTECT_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.PENDANT,
+    description:
+      'A pendant that is said to calm the hearts of those around it.',
     name: 'Peace Keeper',
     power: 100,
     speed: 30,
@@ -276,7 +309,9 @@ export namespace Weapons {
   export const TROUBLE_MAKER: Weapon = {
     actions: [Skills.BLOOD_LUST_LV1, Skills.DARKNESS_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.PENDANT,
+    description: 'A pendant that is said to bring chaos to the world.',
     name: 'Trouble Maker',
     power: 100,
     speed: 30,
@@ -290,6 +325,7 @@ export namespace Weapons {
   export const STANDARD_ISSUE: Weapon = {
     actions: [Skills.STRIKE_LV1],
     area: 1,
+    capacity: SupplyCapacity.LOW,
     category: WeaponCategory.DUAL_KYOKETSU_SHOGE,
     description: 'The common Dual Kyoketsu Shoge given to fascist.',
     name: 'Standard Issue',
@@ -308,7 +344,9 @@ export namespace Weapons {
   export const FOLDING_KNIFE: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
+    capacity: SupplyCapacity.LOW,
     category: WeaponCategory.KNIFE,
+    description: 'A small knife that can be folded and stored in a pocket.',
     name: 'Folding Knife',
     power: 10,
     speed: 18,
@@ -317,6 +355,7 @@ export namespace Weapons {
   export const GREED: Weapon = {
     actions: [Skills.SLASH_LV3, Skills.ABSORB_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.KNIFE,
     description:
       'A intricate, powerful weapon that is capable of stealing the life from its target.',
@@ -329,7 +368,9 @@ export namespace Weapons {
   export const LIBERTY: Weapon = {
     actions: [Skills.SLASH_LV1, Skills.CLEAVE_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.KNIFE,
+    description: 'A knife that is said to bring freedom to those who wield it.',
     name: 'Liberty',
     power: 100,
     speed: 30,
@@ -338,18 +379,22 @@ export namespace Weapons {
   export const MONARCH: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.KNIFE,
     description:
       'A brilliantly designed insect looking blade with a sharp and deadly tip that is dripping with poison.',
     name: 'Monarch',
     power: 100,
-    speed: 30, // TODO may be poison slash or somehow add change of poison to action?
+    speed: 30,
+    // TODO may be poison slash or somehow add change of poison to action?
   };
 
   export const REGRET: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.KNIFE,
+    description: 'A knife that is said to bring regret to those who wield it.',
     name: 'Regret',
     power: 100,
     speed: 30,
@@ -358,9 +403,11 @@ export namespace Weapons {
   export const VICEROY: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.KNIFE,
     description:
       'A brilliantly designed insect looking blade with a sharp and deadly tip.',
+
     name: 'Viceroy',
     // The viceroy looks almost identical to the monarch',
     // Chance of causing Fear on contact when used with Monarch
@@ -372,9 +419,9 @@ export namespace Weapons {
   export const VIOLATED: Weapon = {
     actions: [Skills.SLASH_LV1],
     area: 1,
-
+    capacity: SupplyCapacity.UNIQUE,
     category: WeaponCategory.KNIFE,
-
+    description: 'A weapon that absorbs monsters',
     name: 'Violated',
     // Weapon Absorbs the previous monsters type and uses it for the next attack.
     // This weapon must be used to slay the most poisonous monster
@@ -389,7 +436,9 @@ export namespace Weapons {
   export const BUCKLER: Weapon = {
     actions: [Skills.BLOCK_LV1, Skills.PARRY_LV1],
     area: 1,
+    capacity: SupplyCapacity.LOW,
     category: WeaponCategory.SHIELD,
+    description: 'A small shield that is easy to wield.',
     name: 'Buckler',
     power: 100,
     speed: 30,
