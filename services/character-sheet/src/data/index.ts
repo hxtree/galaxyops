@@ -1,4 +1,4 @@
-export * from './items';
+export * from './supplies';
 export * from './skills';
 export * from './archetypes';
 export * from './place';

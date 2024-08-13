@@ -16,7 +16,13 @@ export enum Slot {
   CORE = 'Core',
   WINGS = 'Wings',
   BODY = 'Body',
+  INVENTORY = 'Inventory',
 }
+
+// TODO determine quantity and stack for each slot
+// e.g. bag can hold 10 items in stacks up to 99
+// stacks could be limited by item
+export const InventorySlots = [Slot.INVENTORY];
 
 export const HumanoidCreatureGearSlots = [
   Slot.HEAD,
