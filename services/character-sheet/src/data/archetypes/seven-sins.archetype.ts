@@ -2,10 +2,12 @@ import {
   WeaponCategory,
   HumanoidCreatureGearSlots,
   Archetype,
+  Slot,
 } from '@galaxyops/character-sheet-contracts';
 import { Disciplines } from '../disciplines';
 import { Affiliations } from '../affiliations';
 import { Skills } from '../skills';
+import { Gear, GearIds } from '../gear';
 
 /**
  * Seven Sins
@@ -69,6 +71,15 @@ export namespace SevenSinsArchetypes {
       + 'He is by far the most strongest of the seven but has no will to fight.',
     name: 'Lawzon',
     potentialDisciplines: [Disciplines.MAGI_WHITE],
+    supplies: [
+      {
+        chance: 1,
+        gearSlotId: Slot.LEFT_HAND,
+        quantity: 1,
+        supplyId: 'SWORD_OF_LAWZON',
+        transferable: true,
+      },
+    ],
     surname: 'Grey',
     symbolizes: ['Sloth', 'Wolf'],
     traits: [
@@ -88,6 +99,15 @@ export namespace SevenSinsArchetypes {
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Mahdi',
     potentialDisciplines: [Disciplines.POSSESSED, Disciplines.MAGI_BLACK],
+    supplies: [
+      {
+        chance: 1,
+        gearSlotId: Slot.LEFT_HAND,
+        quantity: 1,
+        supplyId: 'GREED',
+        transferable: true,
+      },
+    ],
     surname: 'Tsia',
     symbolizes: ['Greed', 'Mahdi', 'German Shepherd'],
     traits: [
@@ -141,6 +161,15 @@ export namespace SevenSinsArchetypes {
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Asmin',
     potentialDisciplines: [Disciplines.MAGI_BROWN],
+    supplies: [
+      {
+        chance: 1,
+        gearSlotId: Slot.LEFT_HAND,
+        quantity: 1,
+        supplyId: 'ASMINS_AXE',
+        transferable: true,
+      },
+    ],
     symbolizes: ['Pride', 'Ox'],
     traits: [
       {

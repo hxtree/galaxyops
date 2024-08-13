@@ -2,10 +2,12 @@ import { Item } from '@galaxyops/character-sheet-contracts';
 import { CraftingMaterials } from './crafting-materials.item';
 import { Food } from './food.item';
 import { SpecialItems } from './special.item';
+import { VendorTrash } from './vendor-trash.item';
 
 export const Items = {
   ...CraftingMaterials,
   ...Food,
+  ...VendorTrash,
   ...SpecialItems,
 };
 

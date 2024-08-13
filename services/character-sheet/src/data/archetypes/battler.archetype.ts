@@ -5,6 +5,7 @@ import {
   SerpentineCreatureGearSlots,
   AmorphousCreatureGearSlots,
   Archetype,
+  Slot,
 } from '@galaxyops/character-sheet-contracts';
 import { Disciplines } from '../disciplines';
 import { Affiliations } from '../affiliations';
@@ -20,6 +21,22 @@ export namespace BattlerArchetypes {
       Disciplines.BASIC_INSTINCT,
       Disciplines.ELITE_INSTINCT,
       Disciplines.SPIDER_MASTERY,
+    ],
+    supplies: [
+      {
+        chance: 0.09,
+        gearSlotId: Slot.INVENTORY,
+        quantity: 1,
+        supplyId: 'SPIDER_WEB',
+        transferable: true,
+      },
+      {
+        chance: 0.05,
+        gearSlotId: Slot.INVENTORY,
+        quantity: 1,
+        supplyId: 'FANG',
+        transferable: true,
+      },
     ],
     traits: [
       {
@@ -37,6 +54,20 @@ export namespace BattlerArchetypes {
     potentialDisciplines: [
       Disciplines.ELITE_INSTINCT,
       Disciplines.SPIDER_MASTERY,
+    ],
+    supplies: [
+      {
+        chance: 0.09,
+        gearSlotId: Slot.INVENTORY,
+        quantity: 1,
+        supplyId: 'SPIDER_WEB',
+      },
+      {
+        chance: 0.05,
+        gearSlotId: Slot.INVENTORY,
+        quantity: 1,
+        supplyId: 'FANG',
+      },
     ],
     weaponCompatibility: [],
   };
@@ -174,6 +205,15 @@ export namespace BattlerArchetypes {
       Disciplines.DETRIMENTAL_INSTINCT,
       Disciplines.ELITE_INSTINCT,
     ],
+    supplies: [
+      {
+        chance: 0.05,
+        gearSlotId: Slot.INVENTORY,
+        quantity: 1,
+        supplyId: 'FANG',
+        transferable: true,
+      },
+    ],
     traits: [
       {
         level: 1,
@@ -195,6 +235,15 @@ export namespace BattlerArchetypes {
     gearSlots: SerpentineCreatureGearSlots,
     name: 'Snake of the Water',
     potentialDisciplines: [Disciplines.ELITE_INSTINCT],
+    supplies: [
+      {
+        chance: 0.05,
+        gearSlotId: Slot.INVENTORY,
+        quantity: 1,
+        supplyId: 'FANG',
+        transferable: true,
+      },
+    ],
     traits: [
       {
         level: 1,
@@ -217,6 +266,22 @@ export namespace BattlerArchetypes {
     gearSlots: HumanoidCreatureGearSlots,
     name: 'Bandit',
     potentialDisciplines: [Disciplines.BASIC_INSTINCT],
+    supplies: [
+      {
+        chance: 0.09,
+        gearSlotId: Slot.INVENTORY,
+        quantity: 2,
+        supplyId: 'GC',
+        transferable: true,
+      },
+      {
+        chance: 0.009,
+        gearSlotId: Slot.INVENTORY,
+        quantity: 25,
+        supplyId: 'GC',
+        transferable: true,
+      },
+    ],
     traits: [
       {
         level: 1,
