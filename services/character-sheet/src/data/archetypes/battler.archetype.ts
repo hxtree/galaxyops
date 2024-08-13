@@ -281,6 +281,13 @@ export namespace BattlerArchetypes {
         supplyId: 'GC',
         transferable: true,
       },
+      {
+        chance: 0.002,
+        gearSlotId: Slot.INVENTORY,
+        quantity: 1,
+        supplyId: 'RUBBER_DUCK',
+        transferable: true,
+      },
     ],
     traits: [
       {
