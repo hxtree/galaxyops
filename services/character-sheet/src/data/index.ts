@@ -6,4 +6,3 @@ export * from './affiliations';
 export * from './status-effects';
 export * from './disciplines';
 export * from './buttons';
-export * from './gear';

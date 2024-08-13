@@ -7,7 +7,7 @@ import {
 import { Disciplines } from '../disciplines';
 import { Affiliations } from '../affiliations';
 import { Skills } from '../skills';
-import { Gear, GearIds } from '../gear';
+import { Gear, GearIds } from '../supplies';
 
 /**
  * Seven Sins

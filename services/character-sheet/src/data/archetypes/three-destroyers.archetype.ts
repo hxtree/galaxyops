@@ -8,7 +8,7 @@ import {
 } from '@galaxyops/character-sheet-contracts';
 import { Disciplines } from '../disciplines';
 import { Summon } from '../skills/summon.skill';
-import { Outfits } from '../gear/outfit.gear';
+import { Outfits } from '../supplies/outfit.gear';
 import { Affiliations } from '../affiliations';
 import { Skills } from '../skills';
 
