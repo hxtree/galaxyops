@@ -62,4 +62,21 @@ export namespace ArmorGear {
     purpose: 'Suppress hidden power',
     removable: false,
   };
+
+  export const CHAIN_MAIL: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
+    description:
+      'A flexible armor made of small metal rings linked together in a pattern to form a mesh',
+    effects: [
+      {
+        add: Attribute.DEFENSE,
+        quantity: '20',
+        tags: [EffectTag.PHYSICAL],
+      },
+    ],
+    gearSlots: [Slot.TORSO],
+    name: 'Chain Mail',
+    purpose: 'Physical defense',
+    removable: true,
+  };
 }
