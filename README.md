@@ -107,9 +107,9 @@ the IaaS.
 
 ## Documentation
 
-Comprehensive documentation is essential for understanding and maintaining the
-project. Each project and folder structure should be documented in README.md
-files following RFC 2119 standards.
+Comprehensive documentation is essential for understanding and maintaining this
+project. Each project and folder structure should feature a README.md files
+containing documentation following RFC 2119 standards.
 
 > **Note** Use `./tools/help.sh` for information on builtin commands.
 
