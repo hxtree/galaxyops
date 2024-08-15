@@ -9,99 +9,7 @@ import {
   SkillLevel,
 } from '@galaxyops/character-sheet-contracts';
 
-/**
- * Spells are actions that are casted by magic users.
- * Spells feature a prefix that differs based on skill level.
- * This indicates to astute players the magic rankings of their adversary
- *
- * | min | max | rank   | example        |
- * | --  | --  | --     | --             |
- * |  0  |   3 | Normal | Fireball       |
- * |  3  |   6 | Mega   | Mega Fireball  |
- * |  6  |   9 | Giga   | Giga Fireball  |
- * |  9  |  12 | Tera   | Tera Fireball  |
- * | 12  |  15 | Omega  | Omega Fireball |
- */
-export namespace Spell {
-  export const GRAVITY_LV1: Skill = {
-    areaOfEffect: AreaOfEffect.CONE_15FT,
-    coolDownTime: Duration.fromObject({ seconds: 60 }),
-    description:
-      'Coalesce gravity around target. Causes flying targets to hit ground',
-    executionTime: Duration.fromObject({ seconds: 1 }),
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.MAGIC,
-    name: 'Gravity',
-    outcome: {
-      OPPONENT: [
-        {
-          quantity: '1d6+2',
-          remove: Attribute.LIFE,
-          tags: [EffectTag.PHYSICAL, EffectTag.AERIAL],
-        },
-      ],
-    },
-    prepareTime: Duration.fromObject({ seconds: 3 }),
-    recoveryTime: Duration.fromObject({ seconds: 3 }),
-    target: ActionTarget.OPPONENT,
-  };
-
-  export const GRAVITY_LV2: Skill = {
-    ...GRAVITY_LV1,
-    areaOfEffect: AreaOfEffect.CONE_20FT,
-    coolDownTime: Duration.fromObject({ seconds: 15 }),
-    executionTime: Duration.fromObject({ seconds: 1 }),
-    level: SkillLevel.LV2,
-    outcome: {
-      OPPONENT: [
-        {
-          quantity: '2d6+10',
-          remove: Attribute.LIFE,
-          tags: [EffectTag.PHYSICAL, EffectTag.AERIAL],
-        },
-      ],
-    },
-    prepareTime: Duration.fromObject({ seconds: 2 }),
-    recoveryTime: Duration.fromObject({ seconds: 2 }),
-  };
-
-  export const SHOCK_LV1: Skill = {
-    description: 'Electrocutes target',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.MAGIC,
-    name: 'Shock',
-    outcome: {
-      OPPONENT: [
-        {
-          quantity: '1d6+2',
-          remove: Attribute.LIFE,
-          tags: [EffectTag.ELECTRIC],
-        },
-        { add: 'STUNNED', chance: 0.2, tags: [EffectTag.ELECTRIC] },
-      ],
-    },
-    target: ActionTarget.OPPONENT,
-  };
-
-  export const QUAKE_LV1: Skill = {
-    areaOfEffect: AreaOfEffect.RADIUS_15FT,
-    description: 'Shakes earth surrounding target',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.MAGIC,
-    name: 'Quake',
-    outcome: {
-      OPPONENT: [
-        { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.EARTH] },
-        {
-          add: 'DOWN',
-          chance: 0.2,
-          tags: [EffectTag.EARTH, EffectTag.GROUND_LEVEL],
-        },
-      ],
-    },
-    target: ActionTarget.OPPONENT,
-  };
-
+export namespace OtherSpells {
   export const LANDSLIDE_LV1: Skill = {
     description: 'Creates a landslide',
     level: SkillLevel.LV1,
@@ -143,21 +51,6 @@ export namespace Spell {
     },
     target: ActionTarget.OPPONENT,
   };
-
-  export const FIREBALL_LV1: Skill = {
-    description: 'Shoot a fireball at target',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.MAGIC,
-    name: 'Fireball',
-    outcome: {
-      OPPONENT: [
-        { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.FIRE] },
-        { add: 'BURNED', chance: 0.2, tags: [EffectTag.FIRE] },
-      ],
-    },
-    target: ActionTarget.OPPONENT,
-  };
-
   export const INFERNO_LV1: Skill = {
     description: 'Creates a Inferno',
     level: SkillLevel.LV1,
