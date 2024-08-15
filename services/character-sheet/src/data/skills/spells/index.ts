@@ -9,6 +9,7 @@ import { Inferno } from './inferno';
 import { Twister } from './twister';
 import { Gust } from './gust';
 import { Cyclone } from './cyclone';
+import { Tsunami } from './tsunami';
 
 /**
  * Spells are actions that are casted by magic users.
@@ -24,6 +25,7 @@ import { Cyclone } from './cyclone';
  * | MAX | MAX | Omega  | Omega Fireball |
  */
 export const Spell = {
+  ...Tsunami,
   ...Cyclone,
   ...Gust,
   ...Twister,
