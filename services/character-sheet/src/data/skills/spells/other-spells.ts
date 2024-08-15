@@ -10,47 +10,6 @@ import {
 } from '@galaxyops/character-sheet-contracts';
 
 export namespace OtherSpells {
-  export const LANDSLIDE_LV1: Skill = {
-    description: 'Creates a landslide',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.MAGIC,
-    name: 'Landslide',
-    outcome: {
-      OPPONENT: [
-        { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.EARTH] },
-        { add: 'DOWN', chance: 0.2, tags: [EffectTag.EARTH] },
-        { add: 'EXILED', chance: 0.3, tags: [EffectTag.EARTH] },
-      ],
-    },
-    target: ActionTarget.OPPONENT,
-  };
-
-  export const BLIZZARD_LV1: Skill = {
-    description: 'Creates a Blizzard',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.MAGIC,
-    name: 'Blizzard',
-    outcome: {
-      OPPONENT: [
-        {
-          quantity: '1d6+2',
-          remove: Attribute.LIFE,
-          tags: [EffectTag.WATER, EffectTag.AIR],
-        },
-        {
-          add: 'COLD',
-          chance: 0.2,
-          tags: [EffectTag.WATER, EffectTag.AIR],
-        },
-        {
-          add: 'EXILED',
-          chance: 0.3,
-          tags: [EffectTag.WATER, EffectTag.AIR],
-        },
-      ],
-    },
-    target: ActionTarget.OPPONENT,
-  };
   export const INFERNO_LV1: Skill = {
     description: 'Creates a Inferno',
     level: SkillLevel.LV1,
