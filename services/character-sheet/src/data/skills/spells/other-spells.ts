@@ -10,37 +10,6 @@ import {
 } from '@galaxyops/character-sheet-contracts';
 
 export namespace OtherSpells {
-  export const AQUA_LV1: Skill = {
-    description: 'Creates Aqua',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.MAGIC,
-    name: 'Aqua',
-    outcome: {
-      OPPONENT: [
-        { quantity: '1d6+2', remove: Attribute.LIFE, tags: [EffectTag.WATER] },
-        {
-          add: 'EXILED',
-          chance: 0.2,
-          tags: [EffectTag.WATER, EffectTag.GROUND_LEVEL],
-        },
-      ],
-    },
-    target: ActionTarget.OPPONENT,
-  };
-
-  export const HEAL_LV1: Skill = {
-    description: 'Heal target',
-    level: SkillLevel.LV1,
-    menuSlot: MenuSlot.MAGIC,
-    name: 'Heal',
-    outcome: {
-      ALLY: [
-        { add: Attribute.LIFE, quantity: '1d6+2', tags: [EffectTag.WATER] },
-      ],
-    },
-    target: ActionTarget.ALLY,
-  };
-
   export const REVIVE_LV1: Skill = {
     description: 'Restore life to target',
     level: SkillLevel.LV1,
