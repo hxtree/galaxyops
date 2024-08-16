@@ -1,0 +1,27 @@
+@import 'breakpoints';
+
+@mixin for-breakpoint($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: $breakpoint-xs-min) and (max-width: $breakpoint-xs-max) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md-min) and (max-width: $breakpoint-md-max) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg-min) and (max-width: $breakpoint-lg-max) {
+      @content;
+    }
+  } @else if $breakpoint == xlg {
+    @media (min-width: $breakpoint-xlg-min) and (max-width: $breakpoint-xlg-max) {
+      @content;
+    }
+  } @else if $breakpoint == xxlg {
+    @media (min-width: $breakpoint-xxlg-min) {
+      @content;
+    }
+  } @else {
+    @warn "No valid breakpoint provided.";
+  }
+}

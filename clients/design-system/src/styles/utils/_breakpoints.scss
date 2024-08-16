@@ -1,0 +1,19 @@
+// Base font size
+$base-font-size: 16px;
+
+// Define breakpoints with rem units
+$rem: $base-font-size; // 1rem = 16px
+
+$breakpoint-xs-min: 0; // Extra small screens minimum width
+$breakpoint-xs-max: 47rem; // Extra small screens maximum width (767px / 16px)
+
+$breakpoint-md-min: 48rem; // Medium screens minimum width (768px / 16px)
+$breakpoint-md-max: 62rem; // Medium screens maximum width (991px / 16px)
+
+$breakpoint-lg-min: 62.75rem; // Large screens minimum width (1000px / 16px)
+$breakpoint-lg-max: 74.75rem; // Large screens maximum width (1199px / 16px)
+
+$breakpoint-xlg-min: 75rem; // Extra large screens minimum width (1200px / 16px)
+$breakpoint-xlg-max: 99.75rem; // Extra large screens maximum width (1599px / 16px)
+
+$breakpoint-xxlg-min: 100rem; // Extra extra large screens minimum width (1600px / 16px)

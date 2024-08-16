@@ -32,6 +32,7 @@ export * from './Gradient/GradientVariant.enum';
 export * from './Article/Article';
 export * from './Spacer/Spacer';
 export * from './Login/Login';
+export * from './Login/LoginVariant.type';
 export * from './DataHighlights/DataHighlights';
 export * from './DataHighlights/DataHighlightsProps';
 export * from './Disclaimer/Disclaimer';

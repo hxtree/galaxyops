@@ -62,7 +62,9 @@ export const Hero = (props: HeroProps) => {
         </div>
         {toolbar && (
           <div className="hero-toolbar d-none d-lg-block">
-            <div className="px-4 py-4">{toolbar}</div>
+            <div className="px-sm-1 px-md-3 px-lg-5 pt-sm-1 pt-2 pb-2 pb-0">
+              {toolbar}
+            </div>
           </div>
         )}
       </div>
