@@ -21,6 +21,7 @@ export * from './Card/BasicCard';
 export * from './Card/CardRibbonColor.type';
 export * from './Paper/Paper';
 export * from './Hero/Hero';
+export * from './Hero/HeroProps';
 export * from './HeroBanner/HeroBanner';
 export * from './Images/Images';
 export * from './BlurbPair/BlurbPair';

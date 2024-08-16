@@ -1,13 +1,13 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Button, Hero } from '../../../src/main';
+import { Button, Hero, HeroProps } from '../../../src/main';
 
 export default {
   title: 'Web Assets/Molecules/Hero',
   component: Hero,
 } as Meta<typeof Hero>;
 
-export const Default = args => (
+export const Default = (args: HeroProps) => (
   <Hero {...args}>
     <Button color="primary">Learn More</Button>
   </Hero>
@@ -18,4 +18,4 @@ Default.args = {
   heading: 'Twenty Minutes Goes By Faster?',
   lead: 'Chroma sets the stage contrast creates focal points.',
   imageRight: '/shield-sword.png',
-};
+} as HeroProps;
