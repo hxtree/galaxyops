@@ -1,8 +1,8 @@
 @import 'breakpoints';
 
 @mixin for-breakpoint($breakpoint) {
-  @if $breakpoint == xs {
-    @media (min-width: $breakpoint-xs-min) and (max-width: $breakpoint-xs-max) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm-min) and (max-width: $breakpoint-sm-max) {
       @content;
     }
   } @else if $breakpoint == md {
@@ -10,15 +10,7 @@
       @content;
     }
   } @else if $breakpoint == lg {
-    @media (min-width: $breakpoint-lg-min) and (max-width: $breakpoint-lg-max) {
-      @content;
-    }
-  } @else if $breakpoint == xlg {
-    @media (min-width: $breakpoint-xlg-min) and (max-width: $breakpoint-xlg-max) {
-      @content;
-    }
-  } @else if $breakpoint == xxlg {
-    @media (min-width: $breakpoint-xxlg-min) {
+    @media (min-width: $breakpoint-lg-min) {
       @content;
     }
   } @else {

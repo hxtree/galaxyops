@@ -50,30 +50,37 @@
   }
 
   .hero-text-wrapper {
-    h1 {
-      background: linear-gradient(
-        to right,
-        $color-off-black,
-        darken($color-off-black, 10%)
-      ) !important;
-      background-clip: text !important;
-      color: transparent !important ;
-      font-weight: bold;
-    }
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    height: 400px;
 
-    .lead {
-      color: $color-off-black;
-      font-size: 1.2rem;
-    }
+    .hero-text-body {
+      h1 {
+        background: linear-gradient(
+          to right,
+          $color-off-black,
+          darken($color-off-black, 10%)
+        ) !important;
+        background-clip: text !important;
+        color: transparent !important ;
+        font-weight: bold;
+      }
 
-    p {
-      color: $color-off-black;
+      .lead {
+        color: $color-off-black;
+        font-size: 1.2rem;
+      }
+
+      p {
+        color: $color-off-black;
+      }
     }
   }
 
   .focal-image {
     z-index: -1;
     height: 100%;
+    object-fit: contain;
     max-height: 100% !important;
   }
 

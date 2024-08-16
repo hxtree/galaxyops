@@ -4,7 +4,7 @@
   .button {
     justify-content: center;
     box-sizing: border-box;
-    height: 40px;
+    min-height: 40px;
     margin: 8px;
     border: none;
     border-radius: 50px;
@@ -34,7 +34,7 @@
     }
 
     &.button-primary {
-      border: 3px solid darken($color-yellow, 10%);
+      border: 2px solid darken($color-yellow, 10%);
       background-color: $color-yellow;
       color: $color-off-black;
 
@@ -67,7 +67,7 @@
     }
 
     &.button-secondary {
-      border: 3px solid $color-off-black;
+      border: 2px solid $color-off-black;
       background-color: $color-white;
       color: $color-off-black;
 
@@ -91,7 +91,7 @@
     }
 
     &.button-inherit {
-      border: 3px solid $color-primary;
+      border: 2px solid $color-primary;
       background-color: transparent;
       color: $color-primary;
 
@@ -111,9 +111,9 @@
 
     &:focus,
     &.button-selected {
-      outline-width: 3px;
+      outline-width: 2px;
       outline-style: solid;
-      outline-offset: 3px;
+      outline-offset: 2px;
     }
 
     &.button-contained {
@@ -128,7 +128,7 @@
 
     &.button-normal,
     &.button-medium {
-      padding: 10px 24px;
+      padding: 10px 16px;
       font-size: 1rem;
     }
 
@@ -140,8 +140,18 @@
 
   .reversed {
     & .button {
+      &.button-secondary {
+        border: 2px solid $color-white;
+        background-color: transparent;
+        color: $color-white;
+
+        &:hover {
+          background-color: lighten($color-primary, 10%);
+        }
+      }
+
       &.button-primary {
-        border: 3px solid $color-white;
+        border: 2px solid $color-white;
         background-color: $color-white;
         color: $color-black;
 

@@ -15,7 +15,7 @@ export const Default = (args: HeroProps) => (
 
 Default.args = {
   image: 'https://picsum.photos/seed/picsum/1024/300',
-  heading: 'Twenty Minutes Goes By Faster?',
+  heading: 'Make Twenty Minutes<br/>Go By Faster',
   lead: 'Chroma sets the stage contrast creates focal points.',
   imageRight: '/shield-sword.png',
 } as HeroProps;
