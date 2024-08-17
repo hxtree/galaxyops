@@ -3,8 +3,6 @@
 @galaxyops is an architecture aimed to support efficient project management and
 accelerate domain-driven DevOps teams running workloads on AWS.
 
-[![Version](https://img.shields.io/github/package-json/v/hxtree/galaxyops)](
-[![License](https://img.shields.io/github/license/hxtree/galaxyops)](
 [![CI](https://github.com/hxtree/galaxyops/actions/workflows/on-merge.yml/badge.svg)](https://github.com/hxtree/galaxyops/actions/workflows/on-merge.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/galaxyops/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/8024531285164025aef972fcb059ea74)](https://app.codacy.com/gh/hxtree/galaxyops/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
