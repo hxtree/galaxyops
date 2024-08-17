@@ -1,6 +1,7 @@
 {
   "name": "@galaxyops/character-sheet",
   "description": "A service for maintaining character sheets",
+  "license": "UNLICENSED",
   "module": "commonjs",
   "version": "3.1.0",
   "scripts": {

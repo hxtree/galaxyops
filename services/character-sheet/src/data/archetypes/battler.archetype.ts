@@ -69,6 +69,10 @@ export namespace BattlerArchetypes {
         supplyId: 'FANG',
       },
     ],
+    traits: [
+      { level: 1, skill: Skills.FIREBALL_LV1 },
+      { level: 10, skill: Skills.FIREBALL_LV2 },
+    ],
     weaponCompatibility: [],
   };
 
