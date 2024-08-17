@@ -8,7 +8,7 @@ export const DataHighlights: React.FC<DataHighlightsProps> = props => {
 
   return (
     <Spacer {...spacing} className="d-none d-md-block">
-      <div className="data-highlights container mt-4">
+      <div className="data-highlights">
         <div className="row gx-5">
           {data.map((item, index) => (
             <div className="col" key={index}>

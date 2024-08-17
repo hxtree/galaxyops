@@ -14,65 +14,65 @@ import {
 export default function HomePage() {
   return (
     <>
-      <Hero
-        image="/assets/clouds.jpg"
-        heading="Explore the new<br/> GM tools"
-        lead="We've got new dev toys."
-        imageRight="/assets/shield-sword.png"
-        toolbar={<Login />}
-        spacing={{ bottom: 5 }}
-      />
-      <DataHighlights
-        data={[
-          { number: '40+', description: 'Archetypes' },
-          { number: '1M+', description: 'Dice Rolls' },
-          { number: '1,000+', description: 'Software Deployments' },
-        ]}
-      />
+      <header className="container">
+        <Hero
+          image="/assets/clouds.jpg"
+          heading="Explore the new<br/> GM tools"
+          lead="We've got new dev toys."
+          imageRight="/assets/shield-sword.png"
+          toolbar={<Login />}
+          spacing={{ bottom: 5 }}
+        />
+        <DataHighlights
+          data={[
+            { number: '40+', description: 'Archetypes' },
+            { number: '1M+', description: 'Dice Rolls' },
+            { number: '1,000+', description: 'Software Deployments' },
+          ]}
+        />
+      </header>
 
-      <main className="container-fluid mt-5">
-        <div className="container">
-          <h2>Latest</h2>
-          <div className="row row-cols-1 row-cols-md-3">
-            <div className="col mb-3">
-              <BasicCard
-                title="Archetypes"
-                imageSrc="/assets/cards/deep-thinker.jpg"
-                url="/archetypes"
-                cta="Try It"
-              >
-                <p>
-                  Dive into the world of character archetypes with ease. Uncover
-                  diverse options, check out base stats, and seamlessly explore
-                  backstories—all in one place. No-frills, just a
-                  straightforward way to look at the data.
-                </p>
-              </BasicCard>
-            </div>
-            <div className="col mb-3">
-              <BasicCard
-                title="Dice Notation Analyzer"
-                ribbonText="Roll with it!"
-                ribbonColor={CardRibbonColor.PRIMARY}
-                imageSrc="/assets/cards/meeku-oni.png"
-                url="/dice-analyzer"
-                cta="Roll The Dice"
-              >
-                NekosGate Dice Notation Analyzer allows engineers to decide
-                appropriate values for skills.
-              </BasicCard>
-            </div>
-            <div className="col mb-3">
-              <BasicCard
-                title="Open Source Software"
-                imageSrc="/assets/cards/stand-still.png"
-                url="https://github.com/hxtree/galaxyops/pulls"
-                cta="Open A Pull Request"
-              >
-                Shape the future of development with us! Contribute your
-                expertise to help. Join our community today!
-              </BasicCard>
-            </div>
+      <main className="container mt-5">
+        <h2>Latest</h2>
+        <div className="row row-cols-1 row-cols-md-3">
+          <div className="col mb-3">
+            <BasicCard
+              title="Archetypes"
+              imageSrc="/assets/cards/deep-thinker.jpg"
+              url="/archetypes"
+              cta="Try It"
+            >
+              <p>
+                Dive into the world of character archetypes with ease. Uncover
+                diverse options, check out base stats, and seamlessly explore
+                backstories—all in one place. No-frills, just a straightforward
+                way to look at the data.
+              </p>
+            </BasicCard>
+          </div>
+          <div className="col mb-3">
+            <BasicCard
+              title="Dice Notation Analyzer"
+              ribbonText="Roll with it!"
+              ribbonColor={CardRibbonColor.PRIMARY}
+              imageSrc="/assets/cards/meeku-oni.png"
+              url="/dice-analyzer"
+              cta="Roll The Dice"
+            >
+              NekosGate Dice Notation Analyzer allows engineers to decide
+              appropriate values for skills.
+            </BasicCard>
+          </div>
+          <div className="col mb-3">
+            <BasicCard
+              title="Open Source Software"
+              imageSrc="/assets/cards/stand-still.png"
+              url="https://github.com/hxtree/galaxyops/pulls"
+              cta="Open A Pull Request"
+            >
+              Shape the future of development with us! Contribute your expertise
+              to help. Join our community today!
+            </BasicCard>
           </div>
         </div>
         <BlurbPair
