@@ -4,3 +4,6 @@ export * from './ActionMenu/ActionMenu';
 export * from './SkillList/SkillList';
 export * from './Meter/Meter';
 export * from './Meter/MeterProps';
+export * from './TileMap/TileMap';
+export * from './TileMap/TileMapProps';
+export * from './TileMap/TileMapVariant';
