@@ -1,15 +1,18 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Meter, OrientationType } from '../../src/main';
+import { Meter, MeterProps } from '../../src/main';
 
 export default {
   title: 'Game Assets/HUD/Meter',
   component: Meter,
 } as Meta<typeof Meter>;
 
-export const Default = args => <Meter {...args} />;
+export const Default = (args: MeterProps) => <Meter {...args} />;
 
 Default.args = {
+  percent: 0.5,
+  width: 120,
+  height: 10,
   color: 'red',
-  orientation: OrientationType.RIGHT,
-};
+  strokeWidth: 2,
+} as MeterProps;

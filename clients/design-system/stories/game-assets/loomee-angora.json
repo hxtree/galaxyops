@@ -1,0 +1,732 @@
+{
+  "id": "LOOMEE_ANGORA",
+  "affiliation": [
+    {
+      "description": "Each member usually takes form of a household cat. They can take human form, but it drastically lowers their power due to the limits of the normal human potential. The world is said to be their cradle",
+      "history": [
+        "Three beings who maintain the fundamental order in the world. "
+      ],
+      "lore": [],
+      "name": "The Cats",
+      "standings": [
+        {
+          "affiliation": {
+            "aliases": ["Trinity of Destruction", "The Boundless"],
+            "description": "Three beings whose abilities and existences defies the fundamentals of the natural world",
+            "lore": [
+              "The destroyers are said to bring about an end to all time, heart, and law in the world."
+            ],
+            "name": "The Destroyers",
+            "standings": [
+              {
+                "reputation": "NEUTRAL"
+              },
+              {
+                "reputation": "HONORED"
+              },
+              {
+                "reputation": "HONORED"
+              }
+            ]
+          },
+          "reputation": "NEUTRAL"
+        }
+      ]
+    }
+  ],
+  "alias": ["Keeper of Heart", "Kind-Kitty", "Song Maiden", "Mom"],
+  "backstory": "She governs and protects the ones heart to make sure it is not lost. A girl created when the Song Maiden left her post to become human.",
+  "description": "A white angora cat. In human form a light blonde girl wearing white linen",
+  "name": "Loomee",
+  "potentialDisciplines": [
+    {
+      "category": "Profession",
+      "description": "Cheers their team as a form of encouragement.",
+      "maxLevel": 20,
+      "name": "Cheerleader",
+      "progression": [
+        {
+          "abilityPoints": 3,
+          "level": 9
+        },
+        {
+          "abilityPoints": 3,
+          "level": 18
+        },
+        {
+          "level": 1,
+          "skill": {
+            "areaOfEffect": [
+              [
+                [0, 0, 1, 0, 0],
+                [0, 1, 1, 1, 0],
+                [1, 1, 7, 1, 1],
+                [0, 1, 1, 1, 0],
+                [0, 0, 1, 0, 0]
+              ]
+            ],
+            "description": "Boost nearby allies spirit.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Cheer",
+            "outcome": {
+              "ALLY": [
+                {
+                  "add": "Spirit",
+                  "duration": "PT30S",
+                  "quantity": "10"
+                }
+              ]
+            },
+            "target": "ALLY"
+          }
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Provide support to allies.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Support",
+            "outcome": {}
+          }
+        },
+        {
+          "level": 12,
+          "skill": {
+            "description": "Increase target's Drive gauge.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Inspire",
+            "outcome": {
+              "ALLY": [
+                {
+                  "add": "Drive",
+                  "duration": "PT15S",
+                  "quantity": "1d6+2"
+                }
+              ]
+            },
+            "target": "ALLY"
+          }
+        },
+        {
+          "level": 18,
+          "skill": {
+            "description": "Increases spirit",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Spiritual Growth",
+            "outcome": {
+              "SELF": [
+                {
+                  "add": "Spirit",
+                  "chance": 1,
+                  "quantity": "20"
+                }
+              ]
+            },
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 20,
+          "skill": {
+            "areaOfEffect": [
+              [
+                [0, 0, 1, 0, 0],
+                [0, 1, 1, 1, 0],
+                [1, 1, 7, 1, 1],
+                [0, 1, 1, 1, 0],
+                [0, 0, 1, 0, 0]
+              ]
+            ],
+            "description": "Bestow the most powerful status bonus.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Hope",
+            "outcome": {
+              "ALLY": [
+                {
+                  "add": "Power",
+                  "duration": "PT15S",
+                  "quantity": "1d6+2"
+                },
+                {
+                  "add": "Spirit",
+                  "duration": "PT15S",
+                  "quantity": "1d6+2"
+                },
+                {
+                  "add": "Speed",
+                  "duration": "PT15S",
+                  "quantity": "1d6+2"
+                }
+              ]
+            },
+            "target": "ALLY"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Archetype",
+      "description": "A guardian of spiritual balance and personal growth, the Maiden focuses on developing inner strength and spiritual enlightenment. With abilities that promote self-improvement and inner harmony, the Maiden is adept at fostering personal growth and guiding others on their path to spiritual awakening.",
+      "maxLevel": 20,
+      "name": "Maiden",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 2
+        },
+        {
+          "abilityPoints": 1,
+          "level": 4
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 8
+        },
+        {
+          "abilityPoints": 1,
+          "level": 10
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 14
+        },
+        {
+          "abilityPoints": 1,
+          "level": 16
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "abilityPoints": 1,
+          "level": 20
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Increases spirit",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Spiritual Growth",
+            "outcome": {
+              "SELF": [
+                {
+                  "add": "Spirit",
+                  "chance": 1,
+                  "quantity": "20"
+                }
+              ]
+            },
+            "target": "SELF"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Omega",
+      "description": "A guardian of emotional stability and mental resilience, this discipline empowers its wielder to protect and mend the heart and mind. The Keeper of Heart fosters trust, fortitude, and healing, offering solace and support to those in emotional distress or psychological turmoil.",
+      "maxLevel": 20,
+      "name": "Keeper of Heart",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 1
+        },
+        {
+          "abilityPoints": 1,
+          "level": 2
+        },
+        {
+          "abilityPoints": 1,
+          "level": 3
+        },
+        {
+          "abilityPoints": 1,
+          "level": 4
+        },
+        {
+          "abilityPoints": 1,
+          "level": 5
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 7
+        },
+        {
+          "abilityPoints": 1,
+          "level": 8
+        },
+        {
+          "abilityPoints": 1,
+          "level": 9
+        },
+        {
+          "abilityPoints": 1,
+          "level": 10
+        },
+        {
+          "abilityPoints": 1,
+          "level": 11
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 13
+        },
+        {
+          "abilityPoints": 1,
+          "level": 14
+        },
+        {
+          "abilityPoints": 1,
+          "level": 15
+        },
+        {
+          "abilityPoints": 1,
+          "level": 16
+        },
+        {
+          "abilityPoints": 1,
+          "level": 17
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "abilityPoints": 1,
+          "level": 19
+        },
+        {
+          "abilityPoints": 1,
+          "level": 20
+        },
+        {
+          "level": 25,
+          "skill": {
+            "description": "Mental Discipline",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Mental Discipline",
+            "outcome": {
+              "SELF": [
+                {
+                  "add": "Intelligence",
+                  "chance": 1,
+                  "quantity": "20"
+                },
+                {
+                  "add": "Drive",
+                  "chance": 1,
+                  "quantity": "20"
+                }
+              ]
+            },
+            "target": "SELF"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Profession",
+      "description": "Prepares and cooks food",
+      "maxLevel": 20,
+      "name": "Cook",
+      "progression": [
+        {
+          "abilityPoints": 3,
+          "level": 9
+        },
+        {
+          "abilityPoints": 3,
+          "level": 18
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Make a meal",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Item",
+              "order": 7
+            },
+            "name": "Prepare Food"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Profession",
+      "description": "Specialize in healing.",
+      "maxLevel": 20,
+      "name": "Healer",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 2
+        },
+        {
+          "abilityPoints": 1,
+          "level": 4
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 8
+        },
+        {
+          "abilityPoints": 1,
+          "level": 10
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 14
+        },
+        {
+          "abilityPoints": 1,
+          "level": 16
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "abilityPoints": 1,
+          "level": 20
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Heal target",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Magic",
+              "order": 3
+            },
+            "name": "Heal",
+            "outcome": {
+              "ALLY": [
+                {
+                  "add": "Life",
+                  "quantity": "1d6+2",
+                  "tags": ["Water"]
+                }
+              ]
+            },
+            "target": "ALLY"
+          }
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Cures status effects",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Magic",
+              "order": 3
+            },
+            "name": "Cure",
+            "outcome": {
+              "ALLY": [
+                {
+                  "chance": 1,
+                  "remove": "COLD"
+                },
+                {
+                  "chance": 1,
+                  "remove": "DOOMED"
+                },
+                {
+                  "chance": 1,
+                  "remove": "INFECTION"
+                },
+                {
+                  "chance": 1,
+                  "remove": "SILENCE"
+                }
+              ]
+            },
+            "target": "ALLY"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Profession",
+      "description": "An enlightened scholar with profound wisdom and mental discipline, the Sage is a master of intellectual and spiritual prowess. Sages employ their vast knowledge to scan and analyze their surroundings, cultivate spiritual growth, and enhance their focus and concentration. Their mental discipline enables them to maintain clarity and insight under duress, making them formidable both in thought and action.",
+      "maxLevel": 20,
+      "name": "Sage",
+      "progression": [
+        {
+          "abilityPoints": 2,
+          "level": 4
+        },
+        {
+          "abilityPoints": 2,
+          "level": 8
+        },
+        {
+          "abilityPoints": 2,
+          "level": 12
+        },
+        {
+          "abilityPoints": 2,
+          "level": 16
+        },
+        {
+          "abilityPoints": 2,
+          "level": 20
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Read enemies stats.",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "Abilities",
+              "order": 4
+            },
+            "name": "Scan",
+            "outcome": {}
+          }
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Increases spirit",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Spiritual Growth",
+            "outcome": {
+              "SELF": [
+                {
+                  "add": "Spirit",
+                  "chance": 1,
+                  "quantity": "20"
+                }
+              ]
+            },
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Maintain focused for longer periods of time",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Concentration",
+            "outcome": {
+              "SELF": [
+                {
+                  "add": "Spirit",
+                  "chance": 1,
+                  "quantity": "10"
+                }
+              ]
+            },
+            "target": "SELF"
+          }
+        },
+        {
+          "level": 25,
+          "skill": {
+            "description": "Mental Discipline",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Mental Discipline",
+            "outcome": {
+              "SELF": [
+                {
+                  "add": "Intelligence",
+                  "chance": 1,
+                  "quantity": "20"
+                },
+                {
+                  "add": "Drive",
+                  "chance": 1,
+                  "quantity": "20"
+                }
+              ]
+            },
+            "target": "SELF"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Archetype",
+      "description": "Specialize in protection.",
+      "maxLevel": 20,
+      "name": "Guardian",
+      "progression": [
+        {
+          "abilityPoints": 1,
+          "level": 2
+        },
+        {
+          "abilityPoints": 1,
+          "level": 4
+        },
+        {
+          "abilityPoints": 1,
+          "level": 6
+        },
+        {
+          "abilityPoints": 1,
+          "level": 8
+        },
+        {
+          "abilityPoints": 1,
+          "level": 10
+        },
+        {
+          "abilityPoints": 1,
+          "level": 12
+        },
+        {
+          "abilityPoints": 1,
+          "level": 14
+        },
+        {
+          "abilityPoints": 1,
+          "level": 16
+        },
+        {
+          "abilityPoints": 1,
+          "level": 18
+        },
+        {
+          "abilityPoints": 1,
+          "level": 20
+        },
+        {
+          "level": 10,
+          "skill": {
+            "description": "Increases spirit",
+            "level": "LV1",
+            "menuSlot": {
+              "name": "None",
+              "order": 0
+            },
+            "name": "Spiritual Growth",
+            "outcome": {
+              "SELF": [
+                {
+                  "add": "Spirit",
+                  "chance": 1,
+                  "quantity": "20"
+                }
+              ]
+            },
+            "target": "SELF"
+          }
+        }
+      ]
+    }
+  ],
+  "summonCompatibility": [
+    {
+      "description": "Summon a white lop-eared dwarf rabbit",
+      "level": "LV1",
+      "menuSlot": {
+        "name": "Summon",
+        "order": 5
+      },
+      "name": "Felix",
+      "outcome": {
+        "PARTY": [
+          {
+            "archetype": "FELIX",
+            "token": "Copper"
+          }
+        ]
+      }
+    }
+  ],
+  "surname": "Angora",
+  "symbolizes": ["Chastity"],
+  "traits": [
+    {
+      "level": 1,
+      "skill": {
+        "description": "Bite aiming to inflict damage.",
+        "level": "LV1",
+        "menuSlot": {
+          "name": "Attack",
+          "order": 2
+        },
+        "name": "Bite",
+        "outcome": {
+          "OPPONENT": [
+            {
+              "quantity": "1d6+2",
+              "remove": "Life",
+              "tags": ["Physical", "Claw"]
+            }
+          ]
+        },
+        "target": "OPPONENT"
+      }
+    }
+  ],
+  "weaponCompatibility": ["Pendant"]
+}

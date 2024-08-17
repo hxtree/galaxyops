@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 import { ActionMenu } from '../../src/main';
-import mockData from './gunter.json';
+import mockData from './loomee-angora.json';
 
 export default {
   title: 'Game Assets/HUD/ActionMenu',

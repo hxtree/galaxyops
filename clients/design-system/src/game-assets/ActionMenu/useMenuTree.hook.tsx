@@ -27,24 +27,39 @@ export const useMenuTree = ({
     const newSkills: Skill[] = [];
     const newMenuTree: MenuTreeNode[] = [];
 
-    if (!data.potentialDisciplines) {
+    if (!data.traits && !data.potentialDisciplines) {
       setMenuTree(newMenuTree);
       setPointers([0]);
       return;
     }
-    data.potentialDisciplines.forEach((discipline: Discipline) => {
-      if (!discipline.progression) {
-        return;
-      }
-      discipline.progression.forEach((progression: DisciplineProgression) => {
-        const skillProgression = progression as SkillProgression;
 
-        if (!skillProgression.skill) {
+    if (data.traits) {
+      data.traits.forEach(trait => {
+        if (!trait) {
           return;
         }
-        newSkills.push(skillProgression.skill);
+
+        if ('skill' in trait && trait.skill) {
+          newSkills.push(trait.skill);
+        }
       });
-    });
+    }
+
+    if (data.potentialDisciplines) {
+      data.potentialDisciplines.forEach((discipline: Discipline) => {
+        if (!discipline.progression) {
+          return;
+        }
+        discipline.progression.forEach((progression: DisciplineProgression) => {
+          const skillProgression = progression as SkillProgression;
+
+          if (!skillProgression.skill) {
+            return;
+          }
+          newSkills.push(skillProgression.skill);
+        });
+      });
+    }
 
     newSkills.forEach((skill: Skill) => {
       if (!skill.menuSlot) {

@@ -1,10 +1,4 @@
-export type MeterProps = {
-  percent: number;
-  width: number;
-  height: number;
-  color?: string;
-  strokeWidth?: number;
-};
+import { MeterProps } from './MeterProps';
 
 export const Meter = (props: MeterProps) => {
   const percent = props.percent ?? 0.5;
