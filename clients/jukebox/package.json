@@ -1,6 +1,7 @@
 {
   "name": "@galaxyops/jukebox",
   "description": "An API for the audio service",
+  "license": "UNLICENSED",
   "module": "commonjs",
   "version": "2.1.0",
   "scripts": {
