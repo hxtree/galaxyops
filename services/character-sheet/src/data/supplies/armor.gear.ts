@@ -7,6 +7,26 @@ import {
 } from '@galaxyops/character-sheet-contracts';
 
 export namespace ArmorGear {
+  export const SHADOW_STILETTO: Accessory = {
+    capacity: SupplyCapacity.UNIQUE,
+    description:
+      'A sleek, black stiletto with a blade. The hilt is wrapped in dark leather, and the blade is razor-sharp. The stiletto is lightweight and perfectly balanced, making it ideal for quick, precise strikes.',
+    effects: [
+      {
+        add: Attribute.SPEED,
+        quantity: '10',
+        tags: [EffectTag.PHYSICAL],
+      },
+      {
+        add: Attribute.SPIRIT,
+        quantity: '10',
+        tags: [EffectTag.PHYSICAL],
+      },
+    ],
+    gearSlots: [Slot.FEET],
+    name: 'Shadow Stiletto',
+  };
+
   export const STONEHEART_CHESTPLATE: Accessory = {
     capacity: SupplyCapacity.UNIQUE,
     description:

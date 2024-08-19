@@ -9,8 +9,8 @@ export const Tile: React.FC<TileProps> = ({ tileset, position, tileData }) => {
   // Calculate the source position based on tileIndex
   const sourceX = TILE_WIDTH * tileData.x - TILE_WIDTH;
   const sourceY = TILE_HEIGHT * tileData.y - TILE_HEIGHT;
-  const positionX = (TILE_WIDTH / 2 - 13) * position.x;
-  const positionY = (TILE_HEIGHT / 2 + 2) * position.y;
+  const positionX = (TILE_WIDTH / 2) * (position.x - 1);
+  const positionY = (TILE_HEIGHT / 2) * (position.y - 1);
 
   const style: React.CSSProperties = {
     width: `${TILE_WIDTH}px`,
