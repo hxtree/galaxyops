@@ -15,6 +15,10 @@ export const Tile: React.FC<TileProps> = ({
   columns,
   spriteId,
 }) => {
+  if (spriteId === 0) {
+    return null;
+  }
+
   // Calculate the sprite position on the tileset
   const spriteMapX = ((spriteId - 1) % columns) + 1;
   const spriteMapY = Math.floor((spriteId - 1) / columns) + 1;

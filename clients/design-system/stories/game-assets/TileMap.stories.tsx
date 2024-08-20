@@ -1,3 +1,4 @@
+/* eslint-disable no-sparse-arrays */
 import React from 'react';
 import { Meta } from '@storybook/react';
 import { TileMap, TileMapProps, TileMapVariant } from '../../src/main';
@@ -14,14 +15,15 @@ Default.args = {
   columns: 4,
   map: [
     [
-      [1, 1, 1, 1],
-      [2, 2, 2, 2],
-      [3, 3, 3, 3],
-      [4, 4, 4, 4],
-      [5, 5, 5, 5],
-      [6, 6, 6, 6],
+      [2, 2, 2, 2, 2, 2, 2],
+      [2, 2, 2, 2, 2, 2, 2],
+      [2, 2, 2, 2, 2, 2, 2, 2],
+      [2, 2, 2, 2, 2, 2, 2],
+      [2, 2, 2, 2, 2, 2, 2],
+      [2, 2, 2, 2, 2, 2, 2],
+      [, , , , 2],
     ],
-    [[7, 7, 7, 7]],
+    [[1, 1, 1, 1, 1, 1, 1], [1], [1, 10, 9, 9], [1, 10, 9, 9], [1], [1]],
   ],
   cameraPosition: { x: 0, y: 0, z: 0 },
   variant: TileMapVariant.DEFAULT,
