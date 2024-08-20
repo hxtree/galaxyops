@@ -4,10 +4,10 @@ import { Tile } from '../Tile/Tile';
 export const TileMap = (props: TileMapProps) => {
   return (
     <>
-      {props.map.map((layerArray: (number | null)[][], layerIndex: number) =>
-        layerArray.map((columnArray: (number | null)[], columnIndex: number) =>
-          columnArray.map((spriteId: number | null, rowIndex: number) => {
-            if (spriteId === null) return null;
+      {props.map.map((layerArray: number[][], layerIndex: number) =>
+        layerArray.map((columnArray: number[], columnIndex: number) =>
+          columnArray.map((spriteId: number, rowIndex: number) => {
+            if (spriteId === 0) return null;
             return (
               <Tile
                 tileset={props.tileset}

@@ -1,7 +1,7 @@
 import { TileMapVariant } from './TileMapVariant';
 
 export type TileMapProps = {
-  map: (number | null)[][][];
+  map: number[][][];
   tileset: string;
   columns: number;
   cameraPosition: { x: number; y: number; z: number };
