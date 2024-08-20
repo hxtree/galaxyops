@@ -3,49 +3,21 @@ import { Tile } from '../Tile/Tile';
 
 export const TileMap = (props: TileMapProps) => {
   return (
-    <div>
-      <Tile
-        tileset={props.tileset}
-        tileData={{ x: 1, y: 1 }}
-        position={{ x: 1, y: 1, z: 0 }}
-      />
-      <Tile
-        tileset={props.tileset}
-        tileData={{ x: 1, y: 1 }}
-        position={{ x: 2, y: 1, z: 0 }}
-      />
-      <Tile
-        tileset={props.tileset}
-        tileData={{ x: 1, y: 1 }}
-        position={{ x: 3, y: 1, z: 0 }}
-      />
-      <Tile
-        tileset={props.tileset}
-        tileData={{ x: 1, y: 1 }}
-        position={{ x: 4, y: 1, z: 0 }}
-      />
-
-      <Tile
-        tileset={props.tileset}
-        tileData={{ x: 1, y: 2 }}
-        position={{ x: 1, y: 2, z: 0 }}
-      />
-      <Tile
-        tileset={props.tileset}
-        tileData={{ x: 1, y: 2 }}
-        position={{ x: 2, y: 2, z: 0 }}
-      />
-      <Tile
-        tileset={props.tileset}
-        tileData={{ x: 1, y: 2 }}
-        position={{ x: 3, y: 2, z: 0 }}
-      />
-      <Tile
-        tileset={props.tileset}
-        tileData={{ x: 1, y: 2 }}
-        position={{ x: 4, y: 2, z: 0 }}
-      />
-    </div>
+    <>
+      {props.map.map((layerArray: number[][], layerIndex: number) =>
+        layerArray.map((columnArray: number[], columnIndex: number) =>
+          columnArray.map((spriteId: number, rowIndex: number) => (
+            <Tile
+              tileset={props.tileset}
+              columns={props.columns}
+              key={`${layerIndex}-${columnIndex}-${rowIndex}`}
+              spriteId={spriteId}
+              position={{ x: rowIndex + 1, y: columnIndex + 1, z: layerIndex }}
+            />
+          )),
+        ),
+      )}
+    </>
   );
 };
 
