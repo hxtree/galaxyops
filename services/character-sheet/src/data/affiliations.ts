@@ -298,6 +298,16 @@ export namespace Affiliations {
       { affiliation: Affiliations.OCEANIA, reputation: Reputation.HATED },
     ],
   };
+
+  export const MERCHANTS_GUILD: Affiliation = {
+    description:
+      'A guild that is dedicated to the pursuit of wealth. '
+      + 'They are known for their ability to make money in any situation. ',
+    name: 'Merchants Guild',
+    standings: [
+      { affiliation: Affiliations.OCEANIA, reputation: Reputation.HATED },
+    ],
+  };
 }
 
 export const AffiliationIds = Object.keys(Affiliations);
