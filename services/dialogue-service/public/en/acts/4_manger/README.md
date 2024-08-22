@@ -1,5 +1,13 @@
 # Act 4: Manger
 
+## Preface
+
+Metaphorically, a manger represents humility, sustenance, and the birth of new
+beginnings. It symbolizes a place of modesty and simplicity where something
+precious is nurtured and welcomed into the world. Often associated with the
+nativity scene, it conveys the idea of profound significance emerging from
+humble origins and the nurturing of hope or potential in an unadorned setting.
+
 ## Plot
 
 Outdated coping rough notes to sort out.
@@ -116,5 +124,4 @@ to ask one favor of the king).
 - Vallon kidnaps Loomee
 - Meeku seals the wound with fire
 - The party finds Meeku and takes him back to an in (not shown)
-- Meeku goes and trains
-=======
+- # Meeku goes and trains

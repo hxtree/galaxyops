@@ -1,5 +1,14 @@
 # Act 8: Clock
 
+## Preface
+
+Metaphorically, a clock symbolizes the passage of time, the inevitability of
+change, and the urgency of life’s fleeting moments. It represents the relentless
+forward march of time, the structure it imposes on our lives, and the tension
+between the desire to control or cherish time and its constant, indifferent
+progression. The clock can also signify the cyclical nature of life, deadlines,
+and the balance between past, present, and future.
+
 ## Plot
 
 Outdated -- copying rough notes for 2006.

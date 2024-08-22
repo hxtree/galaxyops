@@ -1,5 +1,12 @@
 # Act 1: Cradle
 
+## Preface
+
+Metaphorically, a cradle often symbolizes a place of beginning, nurturing, or
+potential. It represents the start of life, growth, or a new idea, providing a
+supportive and protective environment where something delicate can develop and
+flourish.
+
 > **WARNING** Spoiler alert.
 
 ## Plot

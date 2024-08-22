@@ -1,5 +1,13 @@
 # Act 3: Candles
 
+## Preface
+
+Metaphorically, candles often symbolize illumination, hope, and the fragility of
+life. They represent the light of knowledge, inspiration, or spirituality that
+can dispel darkness. Additionally, a candle’s flame signifies the ephemeral
+nature of existence, reminding us of the fleeting but beautiful moments that
+shine briefly before fading away.
+
 ## Plot
 
 1. After the Battle, Meeku carries Malace through the desert. He brings him to a

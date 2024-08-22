@@ -1,5 +1,14 @@
 # Act 7: Fish In A Dish
 
+## Preface
+
+Metaphorically, a fish in a dish represents confinement, vulnerability, or being
+out of one’s natural element. It can symbolize a sense of being trapped or
+restricted within a particular situation, contrasting with the freedom and
+natural habitat that the fish would otherwise enjoy. Additionally, it can
+reflect the fragility and impermanence of existence when one is removed from
+their usual context.
+
 ## Plot
 
 Original rough story notes --probably inaccurate-- from 2006, need updating:

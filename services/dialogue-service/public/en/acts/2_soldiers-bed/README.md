@@ -1,5 +1,13 @@
 # Act 2: Soldiers Bed
 
+## Preface
+
+Metaphorically, a soldier's bed often symbolizes sacrifice, duty, and the burden
+of conflict. It represents the temporary rest amid the chaos of battle, the
+solitude of a life dedicated to service, and the heavy cost of protecting and
+defending. It underscores the contrast between moments of peace and the ongoing
+reality of struggle and commitment.
+
 > **WARNING** Spoiler alert.
 
 ## Plot
