@@ -49,7 +49,7 @@ export namespace ThreeDestroyersArchetypes {
       Affiliations.VALLONS_SEVEN,
       Affiliations.SOLIDER_FORCES,
     ],
-    alias: ['Boss', 'Heartache'],
+    alias: ['Brother', 'Boss', 'Heartache'],
     backstory:
       'Grow up with Meeku. '
       + 'Left to become a Solider. '

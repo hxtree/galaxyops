@@ -18,7 +18,7 @@ I got to watch out. You're really strong!. # actorId:MEEKU_ONI
 -> END
 
 == tell_a_story ==
-Vallon told me, there once was this king in far off lands that had a magical sword. # actorId:MEEKU_ONI
+Brother said there was once a king in far off lands that used a magical sword. # actorId:MEEKU_ONI
 -> interact_with_vachel
 
 -> END
