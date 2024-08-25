@@ -1,5 +1,6 @@
 import { TileMapProps } from './TileMapProps';
 import { Tile } from '../Tile/Tile';
+import { toScreenCoordinate } from './isometric-tranformer';
 
 export const TileMap = (props: TileMapProps) => {
   return (
@@ -8,6 +9,13 @@ export const TileMap = (props: TileMapProps) => {
         layerArray.map((columnArray: number[], columnIndex: number) =>
           columnArray.map((spriteId: number, rowIndex: number) => {
             if (spriteId === 0) return null;
+
+            const { x, y } = toScreenCoordinate({
+              x: rowIndex,
+              y: columnIndex,
+              z: layerIndex,
+            });
+
             return (
               <Tile
                 tileset={props.tileset}
@@ -15,9 +23,8 @@ export const TileMap = (props: TileMapProps) => {
                 key={`${layerIndex}-${columnIndex}-${rowIndex}`}
                 spriteId={spriteId}
                 position={{
-                  x: rowIndex + 1,
-                  y: columnIndex + 1,
-                  z: layerIndex,
+                  x: x,
+                  y: y,
                 }}
               />
             );
