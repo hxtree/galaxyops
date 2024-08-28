@@ -2,6 +2,8 @@ import { TileMapProps } from './TileMapProps';
 import { Tile } from '../Tile/Tile';
 import { toScreenCoordinate } from './isometric-tranformer';
 
+// TODO render canvas instead of divs
+
 export const TileMap = (props: TileMapProps) => {
   return (
     <>
