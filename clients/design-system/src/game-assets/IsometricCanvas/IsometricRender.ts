@@ -15,7 +15,7 @@ interface Axis {
   };
 }
 
-export class IsometricGrid {
+export class IsometricRender {
   private tilesRendered: number = 0;
   private axis: Axis = {
     x: { x: 1, y: 0.5 },

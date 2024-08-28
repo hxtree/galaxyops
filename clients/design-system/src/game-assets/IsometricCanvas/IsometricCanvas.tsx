@@ -1,4 +1,4 @@
-import { IsometricGrid } from './IsometricGrid';
+import { IsometricRender } from './IsometricRender';
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import './IsometricCanvas.scss';
 import { IsometricCanvasProps } from './IsometricCanvasProps';
@@ -8,7 +8,7 @@ import { Coordinate2D, Coordinate3D } from './Coordinates.type';
 import { useResize } from './useResize';
 
 const cameraPosition: Coordinate3D = { x: 0, y: 0, z: 0 };
-const isometricRender = new IsometricGrid({
+const isometricRender = new IsometricRender({
   cameraPosition: cameraPosition,
   drawCoordinates: true,
 });
