@@ -17,9 +17,10 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
   const { grid, spriteMapSrc, spriteMapColumns } = props;
   const canvasRef = useRef(null);
   const { width, height } = useResize(300); // Debounce resize events by 300ms
-  const [cursorCoordinate, setCursorCoordinate] = useState<Coordinate2D | null>(
-    null,
-  );
+  const [cursorCanvasCoordinate, setCursorCanvasCoordinate] =
+    useState<Coordinate2D | null>(null);
+  const [cursorGridCoordinate, setCursorGridCoordinate] =
+    useState<Coordinate2D | null>(null);
 
   const spriteMap = useMemo(
     () =>
@@ -65,7 +66,8 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
       x: cursorX,
       y: cursorY,
     });
-    setCursorCoordinate(coordinates);
+    setCursorGridCoordinate(coordinates);
+    setCursorCanvasCoordinate({ x: cursorX, y: cursorY });
   };
 
   return (
@@ -76,9 +78,11 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
         className="isometric-canvas"
       />
 
-      <div id="screenCoordinates">0, 0</div>
-      <div id="cursorCoordinates">
-        {cursorCoordinate?.x}, {cursorCoordinate?.y}
+      <div id="cursorCanvasCoordinates">
+        {cursorCanvasCoordinate?.x}, {cursorCanvasCoordinate?.y}
+      </div>
+      <div id="cursorGridCoordinates">
+        {cursorGridCoordinate?.x}, {cursorGridCoordinate?.y}
       </div>
     </div>
   );
