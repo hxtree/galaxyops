@@ -32,6 +32,13 @@ export class IsometricRender {
 
   _width: number;
   _height: number;
+  _cursorCoordinate: Coordinate2D;
+
+  // Transformation matrix components for isometric projection
+  ISO_VECTOR_I_X = 1;
+  ISO_VECTOR_I_Y = 0.5;
+  ISO_VECTOR_J_X = -1;
+  ISO_VECTOR_J_Y = 0.5;
 
   drawCoordinates: boolean = false;
 
@@ -53,6 +60,10 @@ export class IsometricRender {
 
   set height(height: number) {
     this._height = Math.floor(height);
+  }
+
+  set cursorCoordinate(coordinate: Coordinate2D) {
+    this._cursorCoordinate = coordinate;
   }
 
   render(ctx: CanvasRenderingContext2D) {
@@ -141,7 +152,7 @@ export class IsometricRender {
   private renderTile(
     ctx: CanvasRenderingContext2D,
     spriteId: number,
-    grid: { x: number; y: number; z: number },
+    grid: Coordinate3D,
   ) {
     const vectors = this.gridToScreenCoordinate({
       x: grid.x,
@@ -154,11 +165,20 @@ export class IsometricRender {
       spriteId: spriteId,
     });
 
+    let fillText = `${grid.x},${grid.y}`;
+
+    if (
+      grid.x == this._cursorCoordinate?.x &&
+      grid.y == this._cursorCoordinate?.y
+    ) {
+      fillText = 'active';
+    }
+
     if (this.drawCoordinates) {
       ctx.font = '8px Courier';
       ctx.textAlign = 'center';
       ctx.fillText(
-        `${grid.x},${grid.y}`,
+        fillText,
         vectors.left.x + (vectors.right.x - vectors.left.x) / 2,
         vectors.left.y + (vectors.bottom.y - vectors.top.y) / 2,
         vectors.right.x - vectors.left.x,

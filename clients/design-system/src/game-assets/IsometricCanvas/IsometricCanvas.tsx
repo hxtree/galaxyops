@@ -53,7 +53,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     isometricRender.width = width;
 
     draw(ctx);
-  }, [grid, width, height, spriteMap]);
+  }, [grid, width, height, spriteMap, cursorCanvasCoordinate]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!canvasRef.current) return;
@@ -66,6 +66,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
       x: cursorX,
       y: cursorY,
     });
+    isometricRender.cursorCoordinate = coordinates;
     setCursorGridCoordinate(coordinates);
     setCursorCanvasCoordinate({ x: cursorX, y: cursorY });
   };
