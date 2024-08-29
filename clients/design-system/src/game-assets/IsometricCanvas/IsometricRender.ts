@@ -42,6 +42,9 @@ export class IsometricRender {
 
   drawCoordinates: boolean = false;
 
+  _offScreenCanvas: HTMLCanvasElement;
+  _offScreenContext: CanvasRenderingContext2D | null;
+
   constructor(options: Partial<IsometricGrid> = {}) {
     Object.assign(this, {}, options);
   }
@@ -56,18 +59,42 @@ export class IsometricRender {
 
   set width(width: number) {
     this._width = Math.floor(width);
+    this._offScreenCanvas.width = this._width;
   }
 
   set height(height: number) {
     this._height = Math.floor(height);
+    this._offScreenCanvas.height = this._height;
   }
 
   set cursorCoordinate(coordinate: Coordinate2D) {
     this._cursorCoordinate = coordinate;
   }
 
-  render(ctx: CanvasRenderingContext2D) {
-    this.renderGrid(ctx);
+  init() {
+    this._offScreenCanvas = document.createElement('canvas');
+  }
+
+  render(visibleCtx: CanvasRenderingContext2D) {
+    requestAnimationFrame(() => {
+      const offScreenCtx = this._offScreenCanvas.getContext('2d');
+
+      if (!offScreenCtx) {
+        console.error('Off-screen context not initialized');
+        return;
+      }
+
+      // draws to off-screen canvas
+      this.renderGrid(offScreenCtx);
+
+      // draws off-screen canvas to main canvas
+      // Clear the visible canvas
+
+      visibleCtx.clearRect(0, 0, this._width, this._height);
+
+      // Draw the off-screen canvas to the visible canvas
+      visibleCtx.drawImage(this._offScreenCanvas, 0, 0);
+    });
   }
 
   screenToGridCoordinate(screen: { x: number; y: number }): Coordinate2D {

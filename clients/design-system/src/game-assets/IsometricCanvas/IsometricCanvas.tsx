@@ -12,6 +12,7 @@ const isometricRender = new IsometricRender({
   cameraPosition: cameraPosition,
   drawCoordinates: true,
 });
+isometricRender.init();
 
 export const IsometricCanvas = (props: IsometricCanvasProps) => {
   const { grid, spriteMapSrc, spriteMapColumns } = props;
