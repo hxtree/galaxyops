@@ -19,7 +19,7 @@ export class IsometricRender {
 
   drawCoordinates: boolean = false;
 
-  constructor(options: Partial<IsometricGrid> = {}) {
+  constructor(options: Partial<IsometricRender> = {}) {
     Object.assign(this, {}, options);
   }
 
