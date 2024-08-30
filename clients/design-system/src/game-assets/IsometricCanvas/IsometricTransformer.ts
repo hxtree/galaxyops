@@ -1,5 +1,6 @@
 import { Coordinate3D, Coordinate2D } from './Coordinates.type';
 import { SPRITE_WIDTH, SPRITE_HEIGHT, SPRITE_DEPTH } from './SpriteDimensions';
+import { TILE_WIDTH } from './TileDimensions';
 
 // Transformation matrix components for isometric projection
 const ISO_VECTOR_I_X = 1;
@@ -10,21 +11,37 @@ const ISO_VECTOR_J_Y = 0.5;
 /**
  * Converts tile coordinates to screen coordinates using isometric projection.
  */
-export function toScreenCoordinate(
-  cameraPosition: Coordinate3D,
-  tile: Coordinate3D,
-): Coordinate2D {
-  const scaledX =
-    tile.x * ISO_VECTOR_I_X * 0.5 * SPRITE_WIDTH +
-    tile.y * ISO_VECTOR_J_X * 0.5 * SPRITE_WIDTH;
-  const scaledY =
-    tile.x * ISO_VECTOR_I_Y * 0.5 * SPRITE_HEIGHT +
-    tile.y * ISO_VECTOR_J_Y * 0.5 * SPRITE_HEIGHT -
-    SPRITE_DEPTH * (tile.z - 1)!;
+export function gridToCanvasCoordinate(
+  coordinate: Coordinate3D,
+  cameraOffset: Coordinate2D,
+) {
+  const w = TILE_WIDTH;
+  const h = TILE_WIDTH * 0.5;
+  const d = SPRITE_DEPTH;
+
+  const screenCoordinate2D = {
+    x:
+      (coordinate.x + 0) * ISO_VECTOR_I_X * 0.5 * SPRITE_WIDTH +
+      (coordinate.y + 0) * ISO_VECTOR_J_X * 0.5 * SPRITE_WIDTH +
+      cameraOffset.x,
+    y:
+      (coordinate.x + 0) * ISO_VECTOR_I_Y * 0.5 * SPRITE_HEIGHT +
+      (coordinate.y + 0) * ISO_VECTOR_J_Y * 0.5 * SPRITE_HEIGHT -
+      d * (coordinate.z - 1) +
+      cameraOffset.y,
+  };
 
   return {
-    x: scaledX + cameraPosition.x, // CAMERA_OFFSET_X,
-    y: scaledY + cameraPosition.y, // CAMERA_OFFSET_Y,
+    top: { x: screenCoordinate2D.x, y: screenCoordinate2D.y },
+    right: {
+      x: screenCoordinate2D.x + w / 2,
+      y: screenCoordinate2D.y + h / 2,
+    },
+    bottom: { x: screenCoordinate2D.x, y: screenCoordinate2D.y + h },
+    left: {
+      x: screenCoordinate2D.x - w / 2,
+      y: screenCoordinate2D.y + h / 2,
+    },
   };
 }
 
@@ -50,7 +67,10 @@ export function invertMatrix(
 /**
  * Converts screen coordinates back to grid coordinates using the inverse of the isometric transformation.
  */
-export function toGridCoordinate(screen: Coordinate2D): Coordinate2D {
+export function canvasToGridCoordinate(
+  screen: Coordinate2D,
+  cameraOffset: Coordinate2D,
+): Coordinate2D {
   const matrixA = ISO_VECTOR_I_X * 0.5 * SPRITE_WIDTH;
   const matrixB = ISO_VECTOR_J_X * 0.5 * SPRITE_WIDTH;
   const matrixC = ISO_VECTOR_I_Y * 0.5 * SPRITE_HEIGHT;
@@ -58,8 +78,9 @@ export function toGridCoordinate(screen: Coordinate2D): Coordinate2D {
 
   const inverseMatrix = invertMatrix(matrixA, matrixB, matrixC, matrixD);
 
+  // TODO cameraOffset properly implemented
   return {
-    x: screen.x * inverseMatrix.a + screen.y * inverseMatrix.b,
-    y: screen.x * inverseMatrix.c + screen.y * inverseMatrix.d,
+    x: screen.x * inverseMatrix.a + screen.y * inverseMatrix.b - cameraOffset.x,
+    y: screen.x * inverseMatrix.c + screen.y * inverseMatrix.d - cameraOffset.y,
   };
 }
