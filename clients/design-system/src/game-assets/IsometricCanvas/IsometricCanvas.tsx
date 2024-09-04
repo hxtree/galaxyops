@@ -36,7 +36,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
       }
     };
     load();
-  }, [isometricRender, isLoaded, setIsLoaded]);
+  }, [spriteMapSrc, spriteMapColumns, isometricRender, isLoaded, setIsLoaded]);
 
   useEffect(() => {
     const draw = async (
