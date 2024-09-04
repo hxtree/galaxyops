@@ -15,7 +15,7 @@ class SpriteMap {
   private tileWidth: number;
   private tileHeight: number;
 
-  constructor({
+  load({
     imageSrc,
     columns,
     tileWidth,
@@ -25,20 +25,21 @@ class SpriteMap {
     columns: number;
     tileWidth: number;
     tileHeight: number;
-  }) {
+  }): Promise<HTMLImageElement> {
     this.columns = columns;
     this.tileWidth = tileWidth;
     this.tileHeight = tileHeight;
     this.imageSrc = imageSrc;
-  }
-
-  load(): Promise<void> {
-    this.image = new Image();
-    this.image.src = this.imageSrc;
 
     return new Promise((resolve, reject) => {
-      this.image.onload = () => resolve();
-      this.image.onerror = () => reject(new Error('Image failed to load'));
+      this.image = new Image();
+      this.image.onload = () => {
+        resolve(this.image);
+      };
+      this.image.onerror = () => {
+        reject(new Error('Image failed to load'));
+      };
+      this.image.src = this.imageSrc;
     });
   }
 

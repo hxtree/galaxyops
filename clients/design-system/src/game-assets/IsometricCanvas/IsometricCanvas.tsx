@@ -1,9 +1,7 @@
 import { IsometricRender } from './IsometricRender';
-import React, { useRef, useEffect, useState, useMemo } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './IsometricCanvas.scss';
 import { IsometricCanvasProps } from './IsometricCanvasProps';
-import SpriteMap from './SpriteMap';
-import { TILE_HEIGHT, TILE_WIDTH } from './TileDimensions';
 import { Coordinate2D } from './Coordinates.type';
 import { useResize } from './useResize';
 import { canvasToGridCoordinate } from './IsometricTransformer';
@@ -22,32 +20,29 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     y: 0,
     z: 0,
   });
+  const [isLoaded, setIsLoaded] = useState(false);
   const [cursorCanvasCoordinate, setCursorCanvasCoordinate] =
     useState<Coordinate2D | null>(null);
   const [cursorGridCoordinate, setCursorGridCoordinate] =
     useState<Coordinate2D | null>(null);
 
-  const spriteMap = useMemo(
-    () =>
-      new SpriteMap({
-        imageSrc: spriteMapSrc,
-        columns: spriteMapColumns,
-        tileWidth: TILE_WIDTH,
-        tileHeight: TILE_HEIGHT,
-      }),
-    [spriteMapSrc, spriteMapColumns],
-  );
-
-  isometricRender.spriteMap = spriteMap;
   isometricRender.grid = grid;
+
+  useEffect(() => {
+    const load = async () => {
+      if (!isLoaded) {
+        await isometricRender.spriteMap(spriteMapSrc, spriteMapColumns);
+        setIsLoaded(true);
+      }
+    };
+    load();
+  }, [isometricRender, isLoaded, setIsLoaded]);
 
   useEffect(() => {
     const draw = async (
       offScreenCanvas: HTMLCanvasElement,
       ctx: CanvasRenderingContext2D,
     ) => {
-      await spriteMap.load();
-
       isometricRender.render(offScreenCanvas, ctx);
     };
 
@@ -61,7 +56,6 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     const offScreenCtx: CanvasRenderingContext2D =
       offScreenCanvas.getContext('2d')!;
 
-    setCameraCoordinates({ x: 0, y: 0, z: 0 });
     isometricRender.cameraCoordinates = cameraCoordinates;
 
     ctx.canvas.width = width;
@@ -74,14 +68,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     isometricRender.width = width;
 
     draw(offScreenCanvas, ctx);
-  }, [
-    grid,
-    width,
-    height,
-    spriteMap,
-    cursorCanvasCoordinate,
-    cameraCoordinates,
-  ]);
+  }, [grid, width, height, cursorCanvasCoordinate, cameraCoordinates]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!canvasRef.current) return;
@@ -102,8 +89,40 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     setCursorCanvasCoordinate({ x: cursorX, y: cursorY });
   };
 
+  const moveCamera = (direction: string) => {
+    setCameraCoordinates(prevPosition => {
+      const step = 10; // Define how much movement per step
+      switch (direction) {
+        case 'up':
+          return { ...prevPosition, y: prevPosition.y + step };
+        case 'down':
+          return { ...prevPosition, y: prevPosition.y - step };
+        case 'left':
+          return { ...prevPosition, x: prevPosition.x - step };
+        case 'right':
+          return { ...prevPosition, x: prevPosition.x + step };
+        case 'higher':
+          return { ...prevPosition, z: prevPosition.z + step };
+        case 'lower':
+          return { ...prevPosition, z: prevPosition.z - step };
+        default:
+          return prevPosition;
+      }
+    });
+  };
+
   return (
     <div>
+      Camera:
+      <button onClick={() => setCameraCoordinates({ x: 0, y: 0, z: 0 })}>
+        reset
+      </button>
+      <button onClick={() => moveCamera('up')}>Move Up</button>
+      <button onClick={() => moveCamera('down')}>Move Down</button>
+      <button onClick={() => moveCamera('left')}>Move Left</button>
+      <button onClick={() => moveCamera('right')}>Move Right</button>
+      <button onClick={() => moveCamera('higher')}>Move Higher</button>
+      <button onClick={() => moveCamera('lower')}>Move Lower</button>
       <div id="cameraCoordinates">
         Camera Coordinates: {cameraCoordinates.x}, {cameraCoordinates.y},{' '}
         {cameraCoordinates.z}
@@ -116,13 +135,11 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
         Cursor Grid Coordinates: {cursorGridCoordinate?.x},{' '}
         {cursorGridCoordinate?.y}
       </div>
-
       <canvas
         ref={canvasRef}
         onMouseMove={handleMouseMove}
         className="isometric-canvas"
       />
-
       <canvas ref={offScreenCanvasRef} className="isometric-canvas" />
     </div>
   );
