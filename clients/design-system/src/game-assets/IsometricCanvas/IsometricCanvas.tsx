@@ -25,24 +25,22 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     useState<Coordinate2D | null>(null);
   const [cursorGridCoordinate, setCursorGridCoordinate] =
     useState<Coordinate2D | null>(null);
+  const [showDebug, setShowDebug] = useState(false);
 
   isometricRender.grid = grid;
-
-  useEffect(() => {
-    const load = async () => {
-      if (!isLoaded) {
-        await isometricRender.spriteMap(spriteMapSrc, spriteMapColumns);
-        setIsLoaded(true);
-      }
-    };
-    load();
-  }, [spriteMapSrc, spriteMapColumns, isLoaded, setIsLoaded]);
 
   useEffect(() => {
     const draw = async (
       offScreenCanvas: HTMLCanvasElement,
       ctx: CanvasRenderingContext2D,
     ) => {
+      if (!isLoaded) {
+        await isometricRender.spriteMap(spriteMapSrc, spriteMapColumns);
+        setIsLoaded(true);
+      }
+
+      isometricRender.drawCoordinates = showDebug;
+
       isometricRender.render(offScreenCanvas, ctx);
     };
 
@@ -68,7 +66,18 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     isometricRender.width = width;
 
     draw(offScreenCanvas, ctx);
-  }, [grid, width, height, cursorCanvasCoordinate, cameraCoordinates]);
+  }, [
+    showDebug,
+    grid,
+    width,
+    height,
+    cursorCanvasCoordinate,
+    cameraCoordinates,
+    spriteMapSrc,
+    spriteMapColumns,
+    isLoaded,
+    setIsLoaded,
+  ]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!canvasRef.current) return;
@@ -113,6 +122,10 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
 
   return (
     <div>
+      <button onClick={() => setShowDebug(!showDebug)}>
+        {showDebug ? 'Hide' : 'Show'} Debug
+      </button>
+      <br />
       Camera:
       <button onClick={() => setCameraCoordinates({ x: 0, y: 0, z: 0 })}>
         reset
@@ -140,7 +153,10 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
         onMouseMove={handleMouseMove}
         className="isometric-canvas"
       />
-      <canvas ref={offScreenCanvasRef} className="isometric-canvas" />
+      <canvas
+        ref={offScreenCanvasRef}
+        className="isometric-canvas isometric-canvas-off-screen"
+      />
     </div>
   );
 };

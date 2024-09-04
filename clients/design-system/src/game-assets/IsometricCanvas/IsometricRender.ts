@@ -17,7 +17,7 @@ export class IsometricRender {
   private _cursorCoordinate: Coordinate2D;
   private _cameraCoordinates: Coordinate3D;
 
-  drawCoordinates: boolean = false;
+  private _drawCoordinates: boolean = false;
 
   constructor(options: Partial<IsometricRender> = {}) {
     Object.assign(this, {}, options);
@@ -32,6 +32,10 @@ export class IsometricRender {
       tileWidth: TILE_WIDTH,
       tileHeight: TILE_HEIGHT,
     });
+  }
+
+  set drawCoordinates(drawCoordinates: boolean) {
+    this._drawCoordinates = drawCoordinates;
   }
 
   set grid(grid: number[][][]) {
@@ -94,21 +98,15 @@ export class IsometricRender {
   }
 
   get cameraOffset(): Coordinate2D {
-    // return {
-    //   x: 0,
-    //   y: 0,
-    // };
-
     const center = {
       x: this._width / 2,
       y: this._height / 3,
     };
 
-    const offset = {
+    return {
       x: center.x + this._cameraCoordinates.x,
       y: center.y + this._cameraCoordinates.y,
     };
-    return offset;
   }
 
   private renderTile(
@@ -130,24 +128,23 @@ export class IsometricRender {
       spriteId: spriteId,
     });
 
-    let fillText = `${grid.x},${grid.y}`;
+    if (this._drawCoordinates) {
+      drawDiamond(
+        ctx,
+        vectors.left.x,
+        vectors.top.y,
+        TILE_WIDTH,
+        TILE_WIDTH * 0.5,
+      );
 
-    drawDiamond(
-      ctx,
-      vectors.left.x,
-      vectors.top.y,
-      TILE_WIDTH,
-      TILE_WIDTH * 0.5,
-    );
+      let fillText = `${grid.x},${grid.y}`;
+      if (
+        grid.x == this._cursorCoordinate?.x &&
+        grid.y == this._cursorCoordinate?.y
+      ) {
+        fillText = 'active';
+      }
 
-    if (
-      grid.x == this._cursorCoordinate?.x &&
-      grid.y == this._cursorCoordinate?.y
-    ) {
-      fillText = 'active';
-    }
-
-    if (this.drawCoordinates) {
       ctx.font = '8px Courier';
       ctx.textAlign = 'center';
       ctx.fillText(

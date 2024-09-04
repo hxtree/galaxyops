@@ -10,4 +10,8 @@
     rgba(0, 212, 255, 1) 100%
   );
   background-color: 090979;
+
+  &.isometric-canvas-off-screen {
+    display: none;
+  }
 }
