@@ -15,6 +15,24 @@ class SpriteMap {
   private tileWidth: number;
   private tileHeight: number;
 
+  // TODO: determine columns, tileWidth, and tileHeight from the imageSrc name
+  parseFilename(filename: string): {
+    columns: number;
+    tileWidth: number;
+    tileHeight: number;
+  } {
+    const [columns, tileWidth, tileHeight] = filename
+      .split('_')[1]
+      .split('x')
+      .map(value => parseInt(value, 10));
+
+    return {
+      columns,
+      tileWidth,
+      tileHeight,
+    };
+  }
+
   load({
     imageSrc,
     columns,
@@ -34,8 +52,10 @@ class SpriteMap {
     return new Promise((resolve, reject) => {
       this.image = new Image();
       this.image.onload = () => {
+        // this.columns = this.image.width / this.tileWidth;
         resolve(this.image);
       };
+
       this.image.onerror = () => {
         reject(new Error('Image failed to load'));
       };
