@@ -11,7 +11,7 @@ const isometricRender = new IsometricRender({
 });
 
 export const IsometricCanvas = (props: IsometricCanvasProps) => {
-  const { grid, spriteMapSrc, spriteMapColumns } = props;
+  const { grid, spriteMapSrc } = props;
   const canvasRef = useRef(null);
   const offScreenCanvasRef = useRef(null);
   const { width, height } = useResize(300); // Debounce resize events by 300ms
@@ -35,7 +35,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
       ctx: CanvasRenderingContext2D,
     ) => {
       if (!isLoaded) {
-        await isometricRender.spriteMap(spriteMapSrc, spriteMapColumns);
+        await isometricRender.spriteMap(spriteMapSrc);
         setIsLoaded(true);
       }
 
@@ -74,7 +74,6 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     cursorCanvasCoordinate,
     cameraCoordinates,
     spriteMapSrc,
-    spriteMapColumns,
     isLoaded,
     setIsLoaded,
   ]);

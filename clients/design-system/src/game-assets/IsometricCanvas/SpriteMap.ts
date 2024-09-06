@@ -9,57 +9,55 @@ interface Tile {
 }
 
 class SpriteMap {
-  private image: HTMLImageElement;
-  private imageSrc: string;
+  private filename: string;
   private columns: number;
   private tileWidth: number;
   private tileHeight: number;
+  private image: HTMLImageElement;
 
-  // TODO: determine columns, tileWidth, and tileHeight from the imageSrc name
-  parseFilename(filename: string): {
-    columns: number;
+  // Parse the filename to get tile dimensions
+  private parseFilename(filename: string): {
     tileWidth: number;
     tileHeight: number;
   } {
-    const [columns, tileWidth, tileHeight] = filename
-      .split('_')[1]
-      .split('x')
-      .map(value => parseInt(value, 10));
+    // Extract the base filename from the path
+    const baseFilename = filename.split('/').pop() || '';
 
-    return {
-      columns,
-      tileWidth,
-      tileHeight,
-    };
+    // Regex to parse the tile dimensions
+    const regex =
+      /^(?<name>[a-zA-Z0-9_+-]+)-(?<tileWidth>\d+)x(?<tileHeight>\d+)\.png$/;
+    const match = baseFilename.match(regex);
+
+    if (match && match.groups) {
+      const { tileWidth, tileHeight } = match.groups;
+      return {
+        tileWidth: parseInt(tileWidth, 10),
+        tileHeight: parseInt(tileHeight, 10),
+      };
+    }
+
+    throw new Error('Invalid filename format');
   }
 
-  load({
-    imageSrc,
-    columns,
-    tileWidth,
-    tileHeight,
-  }: {
-    imageSrc: string;
-    columns: number;
-    tileWidth: number;
-    tileHeight: number;
-  }): Promise<HTMLImageElement> {
-    this.columns = columns;
+  load(filename: string): Promise<HTMLImageElement> {
+    const { tileWidth, tileHeight } = this.parseFilename(filename);
     this.tileWidth = tileWidth;
     this.tileHeight = tileHeight;
-    this.imageSrc = imageSrc;
+    this.filename = filename;
 
     return new Promise((resolve, reject) => {
       this.image = new Image();
       this.image.onload = () => {
-        // this.columns = this.image.width / this.tileWidth;
+        // Infer the number of columns based on the image size
+        this.columns = Math.floor(this.image.width / this.tileWidth);
+
         resolve(this.image);
       };
 
       this.image.onerror = () => {
         reject(new Error('Image failed to load'));
       };
-      this.image.src = this.imageSrc;
+      this.image.src = this.filename;
     });
   }
 

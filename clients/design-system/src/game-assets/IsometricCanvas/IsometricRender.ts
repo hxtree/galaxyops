@@ -1,5 +1,5 @@
 import { Coordinate2D, Coordinate3D } from './Coordinates.type';
-import { TILE_WIDTH, TILE_HEIGHT } from './TileDimensions';
+import { TILE_WIDTH } from './TileDimensions';
 import { gridToCanvasCoordinate } from './IsometricTransformer';
 import SpriteMap from './SpriteMap';
 import { drawDiamond } from './DrawDiamond';
@@ -23,15 +23,10 @@ export class IsometricRender {
     Object.assign(this, {}, options);
   }
 
-  spriteMap(src: string, columns: number): Promise<HTMLImageElement> {
+  spriteMap(filename: string): Promise<HTMLImageElement> {
     this._spriteMap = new SpriteMap();
 
-    return this._spriteMap.load({
-      imageSrc: src,
-      columns: columns,
-      tileWidth: TILE_WIDTH,
-      tileHeight: TILE_HEIGHT,
-    });
+    return this._spriteMap.load(filename);
   }
 
   set drawCoordinates(drawCoordinates: boolean) {
