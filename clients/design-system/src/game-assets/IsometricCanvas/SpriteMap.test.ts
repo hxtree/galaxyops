@@ -1,4 +1,4 @@
-import SpriteMap from './SpriteMap'; // Adjust the import path as necessary
+import SpriteMap from './SpriteMap';
 
 describe('SpriteMap', () => {
   let spriteMap: SpriteMap;
@@ -7,12 +7,12 @@ describe('SpriteMap', () => {
     spriteMap = new SpriteMap();
   });
 
-  it('should parse tile dimensions from filename correctly', () => {
+  it('should parse spritemap columns and rows from filename correctly', () => {
     const filename = 'path/to/tileset-46x36.png';
-    const { tileWidth, tileHeight } = spriteMap['parseFilename'](filename);
+    const { columns, rows } = spriteMap['parseFilename'](filename);
 
-    expect(tileWidth).toBe(46);
-    expect(tileHeight).toBe(36);
+    expect(columns).toBe(46);
+    expect(rows).toBe(36);
   });
 
   it('should reject if the image fails to load', async () => {

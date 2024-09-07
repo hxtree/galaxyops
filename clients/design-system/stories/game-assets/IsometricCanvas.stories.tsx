@@ -12,7 +12,7 @@ export const Default = (args: IsometricCanvasProps) => (
 );
 
 Default.args = {
-  spriteMapSrc: '/tileset-46x36.png',
+  spriteMapSrc: '/game-assets/tileset-4x4.png',
   grid: [
     [
       [2, 2, 2, 2, 2, 2, 2],

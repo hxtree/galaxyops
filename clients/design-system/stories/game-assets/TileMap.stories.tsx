@@ -10,7 +10,7 @@ export default {
 export const Default = (args: TileMapProps) => <TileMap {...args} />;
 
 Default.args = {
-  tileset: '/tileset-46x36.png',
+  tileset: '/game-assets/tileset-4x4.png',
   columns: 4,
   map: [
     [
