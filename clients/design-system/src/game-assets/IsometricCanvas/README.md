@@ -1,12 +1,24 @@
 # Isometric Render
 
-collision?
-
 ## Stateless
 
 The isometric render is agnostic of animation and state. It's possible for grass
 to wave, etc. animation - render agnostic of animation, set by other state -
 agnostic of animation set by engine
+
+## Grid
+
+The grid contains the x,y,z location of sprites.
+
+## CollisionTable
+
+The collisionTable determines where a player can move and what sound effects
+play when a character moves there.
+
+## Features
+
+Contain grid and sprite specific logic. For example, if a grid has a trap. Or if
+a sprite represents water and requires the player to swim to navigate it.
 
 ```json
 {
