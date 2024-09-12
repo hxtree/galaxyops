@@ -62,13 +62,13 @@ class SpriteMap {
     });
   }
 
+  // TODO rename draw or drawSprite
   drawTile(ctx: CanvasRenderingContext2D, tile: Tile): void {
     const { spriteId, position } = tile;
 
-    // Return if spriteId is 0
     if (spriteId === 0) return;
 
-    // Calculate the sprite position on the tileset
+    // Calculate the sprite position on the sprintmap
     const spriteMapX = (spriteId - 1) % this.columns;
     const spriteMapY = Math.floor((spriteId - 1) / this.columns);
 
@@ -80,11 +80,11 @@ class SpriteMap {
 
     // Calculate the destination position and size
     const destX = position.x;
-    const destY = position.y;
+    const destY = position.y - this.tileHeight;
     const destWidth = this.tileWidth;
     const destHeight = this.tileHeight;
 
-    // Draw the image on the canvas
+    // Draw desired sprite on the canvas
     ctx.drawImage(
       this.image,
       sourceX,

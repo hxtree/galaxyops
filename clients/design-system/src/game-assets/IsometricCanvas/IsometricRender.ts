@@ -3,14 +3,15 @@ import { TILE_WIDTH } from './TileDimensions';
 import { gridToCanvasCoordinate } from './IsometricTransformer';
 import SpriteMap from './SpriteMap';
 import { drawDiamond } from './DrawDiamond';
+import { SpriteMapRegistry } from './SpriteMapRegistry';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
 
   cameraPosition: Coordinate3D;
 
-  private _grid: number[][][];
-  private _spriteMap: SpriteMap;
+  private _grid: string[][][];
+  private _spriteMaps: { [key: string]: SpriteMap } = {};
 
   private _width: number;
   private _height: number;
@@ -23,17 +24,25 @@ export class IsometricRender {
     Object.assign(this, {}, options);
   }
 
-  spriteMap(filename: string): Promise<HTMLImageElement> {
-    this._spriteMap = new SpriteMap();
+  async loadSpriteMaps(spriteMapRegistry: SpriteMapRegistry) {
+    const loadPromises: Promise<HTMLImageElement>[] = [];
 
-    return this._spriteMap.load(filename);
+    for (const key in spriteMapRegistry) {
+      const filename = spriteMapRegistry[key];
+
+      this._spriteMaps[key] = new SpriteMap();
+      const load = this._spriteMaps[key].load(filename);
+      loadPromises.push(load);
+    }
+
+    await Promise.all(loadPromises);
   }
 
   set drawCoordinates(drawCoordinates: boolean) {
     this._drawCoordinates = drawCoordinates;
   }
 
-  set grid(grid: number[][][]) {
+  set grid(grid: string[][][]) {
     this._grid = grid;
   }
 
@@ -104,9 +113,26 @@ export class IsometricRender {
     };
   }
 
+  splitSpriteId(input: string): {
+    spriteMapId: string;
+    spriteId: number;
+  } | null {
+    const regex = /^([a-zA-Z]+)(\d+)$/;
+    const match = input.match(regex);
+
+    if (!match) {
+      return null;
+    }
+
+    return {
+      spriteMapId: match[1],
+      spriteId: parseInt(match[2], 10),
+    };
+  }
+
   private renderTile(
     ctx: CanvasRenderingContext2D,
-    spriteId: number,
+    value: string,
     grid: Coordinate3D,
   ) {
     const vectors = gridToCanvasCoordinate(
@@ -118,9 +144,17 @@ export class IsometricRender {
       this.cameraOffset,
     );
 
-    this._spriteMap.drawTile(ctx, {
+    const result = this.splitSpriteId(value);
+
+    if (!result || !result.spriteMapId || !result.spriteId) {
+      console.error('Invalid sprite id', value);
+      return;
+    }
+
+    // TODO find correct spriteMap using spriteMap legend
+    this._spriteMaps[result.spriteMapId].drawTile(ctx, {
       position: { x: vectors.left.x, y: vectors.top.y },
-      spriteId: spriteId,
+      spriteId: result.spriteId,
     });
 
     if (this._drawCoordinates) {

@@ -38,7 +38,7 @@ a sprite represents water and requires the player to swim to navigate it.
       ["f3", "b0", "stair1"]
     ]
   ],
-  "spriteLegend": {
+  "spriteMaps": {
     "b": "barrel-4x4.png",
     "f": "forest-40x4.png",
     "stair1": "stair-2x4.png"
