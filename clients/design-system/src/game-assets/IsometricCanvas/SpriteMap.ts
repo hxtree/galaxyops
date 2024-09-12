@@ -3,18 +3,12 @@ interface Position {
   y: number;
 }
 
-interface Tile {
-  spriteId: number;
-  position: Position;
-}
-
 class SpriteMap {
   private filename: string;
   private columns: number;
   private rows: number;
-  // TODO: rename tile to sprite
-  private tileWidth: number;
-  private tileHeight: number;
+  private spriteWidth: number;
+  private spriteHeight: number;
   private image: HTMLImageElement;
 
   // Parse the filename to get tile dimensions
@@ -49,8 +43,8 @@ class SpriteMap {
     return new Promise((resolve, reject) => {
       this.image = new Image();
       this.image.onload = () => {
-        this.tileWidth = Math.floor(this.image.width / this.columns);
-        this.tileHeight = Math.floor(this.image.height / this.rows);
+        this.spriteWidth = Math.floor(this.image.width / this.columns);
+        this.spriteHeight = Math.floor(this.image.height / this.rows);
 
         resolve(this.image);
       };
@@ -62,10 +56,11 @@ class SpriteMap {
     });
   }
 
-  // TODO rename draw or drawSprite
-  drawTile(ctx: CanvasRenderingContext2D, tile: Tile): void {
-    const { spriteId, position } = tile;
-
+  draw(
+    ctx: CanvasRenderingContext2D,
+    spriteId: number,
+    position: Position,
+  ): void {
     if (spriteId === 0) return;
 
     // Calculate the sprite position on the sprintmap
@@ -73,16 +68,16 @@ class SpriteMap {
     const spriteMapY = Math.floor((spriteId - 1) / this.columns);
 
     // Calculate the source position and size
-    const sourceX = this.tileWidth * spriteMapX;
-    const sourceY = this.tileHeight * spriteMapY;
-    const sourceWidth = this.tileWidth;
-    const sourceHeight = this.tileHeight;
+    const sourceX = this.spriteWidth * spriteMapX;
+    const sourceY = this.spriteHeight * spriteMapY;
+    const sourceWidth = this.spriteWidth;
+    const sourceHeight = this.spriteHeight;
 
     // Calculate the destination position and size
-    const destX = position.x - this.tileWidth / 2;
-    const destY = position.y - this.tileHeight;
-    const destWidth = this.tileWidth;
-    const destHeight = this.tileHeight;
+    const destX = position.x - this.spriteWidth / 2;
+    const destY = position.y - this.spriteHeight;
+    const destWidth = this.spriteWidth;
+    const destHeight = this.spriteHeight;
 
     // Draw desired sprite on the canvas
     ctx.drawImage(

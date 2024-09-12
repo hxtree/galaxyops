@@ -162,10 +162,9 @@ export class IsometricRender {
       return;
     }
 
-    // TODO find correct spriteMap using spriteMap legend
-    this._spriteMaps[result.spriteMapId].drawTile(ctx, {
-      position: { x: vectors.left.x, y: vectors.top.y },
-      spriteId: result.spriteId,
+    this._spriteMaps[result.spriteMapId].draw(ctx, result.spriteId, {
+      x: vectors.left.x,
+      y: vectors.top.y,
     });
 
     if (this._drawCoordinates) {
