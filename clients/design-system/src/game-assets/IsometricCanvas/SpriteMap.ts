@@ -79,7 +79,7 @@ class SpriteMap {
     const sourceHeight = this.tileHeight;
 
     // Calculate the destination position and size
-    const destX = position.x;
+    const destX = position.x - this.tileWidth / 2;
     const destY = position.y - this.tileHeight;
     const destWidth = this.tileWidth;
     const destHeight = this.tileHeight;
