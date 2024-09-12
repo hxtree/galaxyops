@@ -85,17 +85,28 @@ export class IsometricRender {
     });
   }
 
-  // TODO draw off canvas and then replace the canvas to reduce flickering
-
   private renderGrid(ctx: CanvasRenderingContext2D) {
     this.tilesRendered = 0;
 
-    for (let z = 0; z < this._grid.length; z++) {
-      for (let y = 0; y < this._grid[z].length; y++) {
-        for (let x = 0; x < this._grid[z][y].length; x++) {
-          const spriteId = this._grid[z][y][x];
-          if (!spriteId) continue;
-          this.renderTile(ctx, spriteId, { x: x, y: y, z: z });
+    // Find the maximum x, y, and z dimensions
+    const maxZ = this._grid.length;
+    const maxY = Math.max(...this._grid.map(level => level.length));
+    const maxX = Math.max(...this._grid.flat().map(row => row.length));
+
+    // Iterate over x, then y, then z
+    for (let x = 0; x < maxX; x++) {
+      for (let y = 0; y < maxY; y++) {
+        for (let z = 0; z < maxZ; z++) {
+          // Check if the current z and y level is valid for the current x
+          if (
+            this._grid[z] &&
+            this._grid[z][y] &&
+            x < this._grid[z][y].length
+          ) {
+            const spriteId = this._grid[z][y][x];
+            if (!spriteId) continue;
+            this.renderTile(ctx, spriteId, { x, y, z });
+          }
         }
       }
     }
