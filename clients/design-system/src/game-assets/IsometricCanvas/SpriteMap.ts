@@ -10,9 +10,18 @@ class SpriteMap {
   private spriteWidth: number;
   private spriteHeight: number;
   private image: HTMLImageElement;
+  private tags: string[];
+
+  parseTags(filename: string): string[] {
+    const tags = [];
+    if (filename.includes('wall')) {
+      tags.push('wall');
+    }
+    return tags;
+  }
 
   // Parse the filename to get tile dimensions
-  private parseFilename(filename: string): {
+  parseFilename(filename: string): {
     rows: number;
     columns: number;
   } {
@@ -22,6 +31,8 @@ class SpriteMap {
     const regex =
       /^(?<name>[a-zA-Z0-9_+-]+)-(?<columns>\d+)x(?<rows>\d+)\.png$/;
     const match = baseFilename.match(regex);
+
+    this.tags = this.parseTags(filename);
 
     if (match && match.groups) {
       const { columns, rows } = match.groups;

@@ -3,7 +3,7 @@
   "license": "MIT",
   "bin": "./dist/index.js",
   "main": "index.js",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hxtree/galaxyops.git"
@@ -14,7 +14,6 @@
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "build": "tsc",
-    "build:all": "rush build -t .",
     "watch": "tsc -w",
     "test": "jest --runInBand",
     "test:cov": "jest --coverage --runInBand",
@@ -23,6 +22,9 @@
     "depcheck": "npx depcheck"
   },
   "keywords": [
+    "code cov",
+    "badge",
+    "coverage report",
     "pnpm",
     "code coverage",
     "monorepo",

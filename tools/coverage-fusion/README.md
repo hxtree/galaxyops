@@ -1,29 +1,28 @@
 # coverage-fusion
 
-[![npm version](https://badge.fury.io/js/@galaxyops%2Frush-coverage.svg)](https://badge.fury.io/js/@galaxyops%2Frush-coverage)
+[![npm version](https://badge.fury.io/js/@galaxyops%2Fcoverage-fusion.svg)](https://badge.fury.io/js/@galaxyops%2Fcoverage-fusion)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 
-coverage-fusion is a code coverage consolidation tool for PNPM based monorepos.
+coverage-fusion consolidates monorepo code coverage report.
 
-It consolidates code coverage reports from multiple projects into one report.
+It merges code coverage reports from multiple projects into a single report.
 This allows for one coverage badge to cover the entire monorepo or one badge to
-coverage each team, etc. as to help promote team ownership of code base.
-
-This can be useful for continuous integration purposes. It can also be useful
-for simultaneously browsing coverage html, et al. reports for the entire repo.
+coverage each team. A coverage report badge can be a helpful KPI.
 
 ## Usage
 
-Beforehand, use Jest (or similar) to generate
+Beforehand, use a test runner (such as Jest or similar) to generate
 `**/**/coverage/coverage-final.json` coverage reports for each project.
 
-Now that it's ready, run the script to merge coverage files from all projects
-into a single report:
+Now that there are multiple coverage report files, simply run the script to
+merge the coverage reports from all projects into a single report:
 
 ```bash
 npx coverage-fusion
 ```
 
 That's it! The consolidated code coverage reports are generated to cwd
-`./coverage`. Reports can reviewed manually or integrated into CI.
+`./coverage`.
+
+Reports can be reviewed manually or integrated into CI.

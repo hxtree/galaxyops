@@ -80,3 +80,27 @@ a sprite represents water and requires the player to swim to navigate it.
   }
 }
 ```
+
+## Tags
+
+Tags are infered based on the spritemap name. The rendering engine will if a
+spritemap contains for example walls based on the filename.
+
+| tag  | purpose                                             |
+| ---- | --------------------------------------------------- |
+| wall | use for autohiding sprites that collide with camera |
+
+## Autohide Obstructive Walls
+
+Auto hide walls based on the direction of the camera. for example, if the camera
+s = show | h = hide | 0 = empty.
+
+```txt
+s s s s s
+s 0 0 h 0
+s h 0 h h
+0 h 0 0 h
+s 0 0 0 h
+s 0 0 0 h
+s h h h h
+```
