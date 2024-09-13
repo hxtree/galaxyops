@@ -1,6 +1,6 @@
 # coverage-fusion
 
-[![npm version](https://badge.fury.io/js/@galaxyops%2Fcoverage-fusion.svg)](https://badge.fury.io/js/@galaxyops%2Fcoverage-fusion)
+[![npm version](https://badge.fury.io/js/coverage-fusion.svg)](https://badge.fury.io/js/coverage-fusion)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/hxtree/galaxyops?style=social)](https://github.com/hxtree/galaxyops/stargazers)
 

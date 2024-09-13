@@ -28,7 +28,8 @@
     "pnpm",
     "code coverage",
     "monorepo",
-    "rush"
+    "rushjs",
+    "nx"
   ],
   "dependencies": {
     "@galaxyops/base-nodejs": "workspace:*",
