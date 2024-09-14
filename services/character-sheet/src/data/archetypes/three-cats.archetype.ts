@@ -18,7 +18,9 @@ export namespace ThreeCatsArchetypes {
       + 'He can choose whether the rain falls downward or upward. '
       + 'His power is based on speech, he must blink speak a rule and blink again in order to invoke it. '
       + 'He can change the rules but is not able to control the runtime of those rules. '
-      + 'He is suspectable to time manipulation as it revert or deteriorate his rule. ',
+      + 'He is suspectable to time manipulation as time changes can revert or deteriorate his rule. '
+      + "The question that is Schrodinger's cat is not whether the cat is alive or dead but whether the cat is a cat or not. "
+      + 'He is the question of the universe, and parsing of that question dictates the logic unfolding in the universe.',
     description:
       'A black and white cat. '
       + 'His face is primarily white with a black noise. '
