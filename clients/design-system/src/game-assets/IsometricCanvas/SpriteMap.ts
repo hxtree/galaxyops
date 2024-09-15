@@ -75,8 +75,11 @@ class SpriteMap {
     ctx: CanvasRenderingContext2D,
     spriteId: number,
     position: Position,
+    opacity: number = 1,
   ): void {
     if (spriteId === 0) return;
+
+    ctx.save();
 
     // Calculate the sprite position on the sprintmap
     const spriteMapX = (spriteId - 1) % this.columns;
@@ -94,6 +97,8 @@ class SpriteMap {
     const destWidth = this.spriteWidth;
     const destHeight = this.spriteHeight;
 
+    ctx.globalAlpha = opacity;
+
     // Draw desired sprite on the canvas
     ctx.drawImage(
       this.image,
@@ -106,6 +111,8 @@ class SpriteMap {
       destWidth,
       destHeight,
     );
+
+    ctx.restore();
   }
 }
 
