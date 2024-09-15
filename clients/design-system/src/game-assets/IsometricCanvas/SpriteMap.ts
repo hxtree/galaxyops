@@ -10,7 +10,11 @@ class SpriteMap {
   private spriteWidth: number;
   private spriteHeight: number;
   private image: HTMLImageElement;
-  private tags: string[];
+  private _tags: string[];
+
+  get tags(): string[] {
+    return this._tags;
+  }
 
   parseTags(filename: string): string[] {
     const tags = [];
@@ -32,7 +36,7 @@ class SpriteMap {
       /^(?<name>[a-zA-Z0-9_+-]+)-(?<columns>\d+)x(?<rows>\d+)\.png$/;
     const match = baseFilename.match(regex);
 
-    this.tags = this.parseTags(filename);
+    this._tags = this.parseTags(filename);
 
     if (match && match.groups) {
       const { columns, rows } = match.groups;

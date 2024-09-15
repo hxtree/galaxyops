@@ -94,8 +94,8 @@ export class IsometricRender {
     const maxX = Math.max(...this._grid.flat().map(row => row.length));
 
     // Iterate over x, then y, then z
-    for (let x = 0; x < maxX; x++) {
-      for (let y = 0; y < maxY; y++) {
+    for (let y = 0; y < maxY; y++) {
+      for (let x = 0; x < maxX; x++) {
         for (let z = 0; z < maxZ; z++) {
           // Check if the current z and y level is valid for the current x
           if (
@@ -103,9 +103,34 @@ export class IsometricRender {
             this._grid[z][y] &&
             x < this._grid[z][y].length
           ) {
-            const spriteId = this._grid[z][y][x];
-            if (!spriteId) continue;
-            this.renderTile(ctx, spriteId, { x, y, z });
+            const value = this._grid[z][y][x];
+
+            if (!value || value === '0') continue;
+
+            const result = this.splitSpriteId(value);
+
+            if (!result || !result.spriteMapId || !result.spriteId) {
+              console.error('Invalid sprite id', value);
+              continue;
+            }
+
+            // TODO improve wall hiding logic
+            // wall hiding logic
+            const valuePrevX = x > 0 ? this._grid[z][y][x - 1] ?? 0 : 0; // const prevX
+            const valuePrevY = y > 0 ? this._grid[z][y - 1][x] ?? 0 : 0; // const prevY
+            if (
+              this._spriteMaps[result.spriteMapId].tags.includes('wall') &&
+              valuePrevY !== 0 &&
+              valuePrevX !== 0
+            ) {
+              continue;
+            }
+
+            this.renderTile(ctx, result.spriteMapId, result.spriteId, {
+              x,
+              y,
+              z,
+            });
           }
         }
       }
@@ -143,7 +168,8 @@ export class IsometricRender {
 
   private renderTile(
     ctx: CanvasRenderingContext2D,
-    value: string,
+    spriteMapId: string,
+    spriteId: number,
     grid: Coordinate3D,
   ) {
     const vectors = gridToCanvasCoordinate(
@@ -155,14 +181,7 @@ export class IsometricRender {
       this.cameraOffset,
     );
 
-    const result = this.splitSpriteId(value);
-
-    if (!result || !result.spriteMapId || !result.spriteId) {
-      console.error('Invalid sprite id', value);
-      return;
-    }
-
-    this._spriteMaps[result.spriteMapId].draw(ctx, result.spriteId, {
+    this._spriteMaps[spriteMapId].draw(ctx, spriteId, {
       x: vectors.left.x,
       y: vectors.top.y,
     });
