@@ -9,6 +9,8 @@ class SpriteMap {
   private rows: number;
   private spriteWidth: number;
   private spriteHeight: number;
+  private _destOffsetX: number;
+  private _destOffsetY: number;
   private image: HTMLImageElement;
   private _tags: string[];
 
@@ -28,6 +30,7 @@ class SpriteMap {
   parseFilename(filename: string): {
     rows: number;
     columns: number;
+    tags: string[];
   } {
     // Extract the base filename from the path
     const baseFilename = filename.split('/').pop() || '';
@@ -36,13 +39,12 @@ class SpriteMap {
       /^(?<name>[a-zA-Z0-9_+-]+)-(?<columns>\d+)x(?<rows>\d+)\.png$/;
     const match = baseFilename.match(regex);
 
-    this._tags = this.parseTags(filename);
-
     if (match && match.groups) {
       const { columns, rows } = match.groups;
       return {
         columns: parseInt(columns, 10),
         rows: parseInt(rows, 10),
+        tags: this.parseTags(filename),
       };
     }
 
@@ -50,9 +52,10 @@ class SpriteMap {
   }
 
   load(filename: string): Promise<HTMLImageElement> {
-    const { rows, columns } = this.parseFilename(filename);
+    const { rows, columns, tags } = this.parseFilename(filename);
     this.rows = rows;
     this.columns = columns;
+    this._tags = tags;
     this.filename = filename;
 
     return new Promise((resolve, reject) => {
@@ -60,6 +63,13 @@ class SpriteMap {
       this.image.onload = () => {
         this.spriteWidth = Math.floor(this.image.width / this.columns);
         this.spriteHeight = Math.floor(this.image.height / this.rows);
+        this._destOffsetX = this.spriteWidth / 2;
+
+        if (this._tags.includes('ground')) {
+          this._destOffsetY = 36;
+        } else {
+          this._destOffsetY = this.spriteHeight;
+        }
 
         resolve(this.image);
       };
@@ -92,8 +102,8 @@ class SpriteMap {
     const sourceHeight = this.spriteHeight;
 
     // Calculate the destination position and size
-    const destX = position.x - this.spriteWidth / 2;
-    const destY = position.y - this.spriteHeight;
+    const destX = position.x - this._destOffsetX;
+    const destY = position.y - this._destOffsetY;
     const destWidth = this.spriteWidth;
     const destHeight = this.spriteHeight;
 
