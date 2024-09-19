@@ -1,6 +1,15 @@
 import { Affiliation, Reputation } from '@galaxyops/character-sheet-contracts';
 
 export namespace Affiliations {
+  export const THE_NO_FLUSHERS: Affiliation = {
+    aliases: ['Stinkies'],
+    description:
+      "A secret organization who doesn't flush. What could their secret agenda be. Why?!",
+    lore: ['This group is shourded in mystery'],
+    name: 'The No Flushers',
+    standings: [],
+  };
+
   export const THE_DESTROYERS: Affiliation = {
     aliases: ['Trinity of Destruction', 'The Boundless'],
     description:
