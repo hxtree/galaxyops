@@ -10,7 +10,7 @@ Domain-Driven DevOps on AWS.
 ## Overview
 
 Running numerous applications on AWS without a clear architectural pattern risks
-inviting chaos and uncertainty into your environment." @galaxyops is a cloud
+inviting chaos and uncertainty into your environment. @galaxyops is a cloud
 architecture emphasizing modern DevOps best practices on AWS. It lays the
 groundwork for the enterprise software landscape, ensuring scalability and
 maintainability across projects.
@@ -18,10 +18,12 @@ maintainability across projects.
 ## Features
 
 - **Universal Language**: Leveraging TypeScript for microservices, enhancing
-  performance, readability, and maintenance.
+  performance, readability, and maintenance. Other languages can be used for
+  specific tasks, such as Python for data science.
 
-- **Simple Setup**: Turn-key deployment on bare metal systems, designed for
-  MacOS silicon environments without Docker dependency.
+- **Simple Setup**: Turn-key deployment on bare metal systems, specially
+  designed for compatibility with MacOS silicon environments and without a
+  Docker dependency.
 
 - **Monorepo Architecture**: Centralizes development, streamlining code sharing,
   versioning, and dependency management with tools like Nx and PNPM.
@@ -41,8 +43,8 @@ maintainability across projects.
 - **User Authentication**: Integration of Cognito for user registration and
   authentication.
 
-- **SPA Frontend with BFF**: Single-page application frontend hosted on S3 and
-  deployed via CloudFront, with middleware for backend operations.
+- **SPA Frontend with BFF**: Single-page application with frontend hosted on S3
+  and deployed via CloudFront, with middleware for backend operations.
 
 ## Getting Started
 
