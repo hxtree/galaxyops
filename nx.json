@@ -17,6 +17,11 @@
       "inputs": ["noMarkdown", "^noMarkdown"]
     }
   },
+  "release": {
+    "version": {
+      "conventionalCommits": true
+    }
+  },
   "defaultBase": "main",
   "defaultProject": "admin-client",
   "plugins": ["nx/plugins/package-json"],

@@ -7,10 +7,18 @@ export function findFilesRecursively(
 ): string[] {
   let results: string[] = [];
 
-  const files = fs.readdirSync(directory);
+  const files = fs.readdirSync(directory, {
+    withFileTypes: true,
+    encoding: 'utf8',
+  });
 
   files.forEach((file) => {
-    const filePath = path.join(directory, file);
+    if (file.isSymbolicLink()) {
+      return;
+    }
+
+    const filePath = path.join(directory, file.name);
+
     const fileStat = fs.statSync(filePath);
 
     if (filePath.includes('node_modules/')) {
@@ -19,7 +27,7 @@ export function findFilesRecursively(
 
     if (fileStat.isDirectory()) {
       results = results.concat(findFilesRecursively(filePath, fileName));
-    } else if (file === fileName) {
+    } else if (file.name === fileName) {
       results.push(filePath);
     }
   });

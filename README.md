@@ -120,6 +120,7 @@ containing documentation following RFC 2119 standards.
 - [AWS CLI](https://docs.aws.amazon.com/cdk/v2/guide/cli.html)
 - [Typescript](https://www.typescriptlang.org/docs/)
 - [Jest](https://jestjs.io/)
+- [Automatically Version with Conventional Commits](https://nx.dev/recipes/nx-release/automatically-version-with-conventional-commits)
 </details>
 
 ## Contributing
