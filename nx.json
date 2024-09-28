@@ -21,7 +21,7 @@
     "version": {
       "conventionalCommits": true,
       "generatorOptions": {
-        "fallbackCurrentVersionResolver": "latest"
+        "fallbackCurrentVersionResolver": "disk"
       }
     }
   },
