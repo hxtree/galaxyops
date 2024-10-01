@@ -48,25 +48,27 @@ maintainability across projects.
 
 ## Getting Started
 
-To install and build all packages, follow these steps:
+Install package manager, jq, build all packages, and hydrate dotenv files:
 
 ```bash
 corepack enable pnpm
+brew install jq # MacOS, used for lambda layer builder
 pnpm install
 pnpm nx run-many -t build --all
 pnpm nx run hydrate-dotenvs:start hydrate ../../..
 ```
 
-Scripts from any project can be ran:
+Run any script using Nx by specifying the package name followed by the script
+name, e.g.
 
-```zshrc
-pnpm nx run package-name:script
+```bash
+pnpm nx run admin-client:dev
 ```
 
-Install the following
+Create a release for all package changes by using Nx release
 
-```zshrc
-brew install jq # MacOS, used for lambda layer builder
+```bash
+pnpm nx release
 ```
 
 ![Flow Chart](docs/flow-chart.drawio.svg)
