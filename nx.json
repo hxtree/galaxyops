@@ -18,10 +18,33 @@
     }
   },
   "release": {
+    "projectsRelationship": "independent",
+    "conventionalCommits": {
+      "feat": true,
+      "fix": {
+        "changelog": {
+          "hidden": true
+        }
+      },
+      "chore": false,
+      "docs": false,
+      "style": false,
+      "refactor": false,
+      "wip": false
+    },
     "version": {
       "conventionalCommits": true,
       "generatorOptions": {
-        "fallbackCurrentVersionResolver": "disk"
+        "fallbackCurrentVersionResolver": "latest"
+      }
+    },
+    "changelog": {
+      "projectChangelogs": {
+        "renderOptions": {
+          "authors": true,
+          "commitReferences": true,
+          "versionTitleDate": true
+        }
       }
     }
   },

@@ -22,7 +22,7 @@
     "@nx/js": "19.3.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.7",
-    "nx": "18.0.1",
+    "nx": "19.3.0",
     "prettier": "^3.3.2"
   },
   "dependencies": {
