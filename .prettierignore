@@ -40,3 +40,5 @@ package-lock.json
 .DS_Store
 
 /.nx/cache
+
+*.json
