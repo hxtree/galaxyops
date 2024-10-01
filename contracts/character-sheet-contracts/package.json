@@ -1,6 +1,6 @@
 {
   "name": "@galaxyops/character-sheet-contracts",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "uuid": "~9.0.1",
     "lodash": "4.17.21",
     "@types/lodash": "4.17.6",
-    "@galaxyops/base-nodejs": "workspace:*",
+    "@galaxyops/base-nodejs": "0.2.0",
     "@faker-js/faker": "~7.6.0",
     "reflect-metadata": "0.1.13",
     "@types/validator": "~13.7.10",
@@ -40,7 +40,7 @@
     "class-validator-jsonschema": "3.1.1",
     "json-schema-faker": "~0.5.0-rcv.46",
     "json-schema": "~0.4.0",
-    "@galaxyops/validation-schemas": "workspace:*",
+    "@galaxyops/validation-schemas": "2.2.0",
     "luxon": "~3.3.0"
   },
   "devDependencies": {
@@ -53,7 +53,7 @@
     "esbuild": "~0.20.1",
     "@types/uuid": "~9.0.7",
     "eslint": "8.57.0",
-    "@galaxyops/eslint-config": "workspace:*",
+    "@galaxyops/eslint-config": "3.2.0",
     "@types/json-schema": "~7.0.11",
     "@types/luxon": "~3.2.0"
   }

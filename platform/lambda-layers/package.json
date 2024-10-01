@@ -1,7 +1,7 @@
 {
   "name": "@galaxyops/lambda-layers",
   "module": "commonjs",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "scripts": {
     "build": "tsc",
     "build:all": "rush build -t .",
@@ -37,8 +37,8 @@
     "uuid": "~9.0.1"
   },
   "devDependencies": {
-    "@galaxyops/base-nodejs": "workspace:*",
-    "@galaxyops/eslint-config": "workspace:*",
+    "@galaxyops/base-nodejs": "0.2.0",
+    "@galaxyops/eslint-config": "3.2.0",
     "@types/aws-lambda": "~8.10.130",
     "@types/express": "~4.17.21",
     "@types/jest": "29.5.12",

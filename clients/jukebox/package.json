@@ -3,7 +3,7 @@
   "description": "An API for the audio service",
   "license": "UNLICENSED",
   "module": "commonjs",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "scripts": {
     "dev": "nest start --debug --watch",
     "build": "tsc",
@@ -25,10 +25,10 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "workspace:*",
-    "@galaxyops/constructs": "workspace:*",
-    "@galaxyops/nestjs-modules": "workspace:*",
-    "@galaxyops/validation-schemas": "workspace:*",
+    "@galaxyops/base-nodejs": "0.2.0",
+    "@galaxyops/constructs": "2.2.0",
+    "@galaxyops/nestjs-modules": "2.2.0",
+    "@galaxyops/validation-schemas": "2.2.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",
@@ -49,10 +49,10 @@
     "uuid": "~9.0.1"
   },
   "devDependencies": {
-    "@galaxyops/create-artifact": "workspace:*",
-    "@galaxyops/create-bundle": "workspace:*",
-    "@galaxyops/eslint-config": "workspace:*",
-    "@galaxyops/faker-factory": "workspace:*",
+    "@galaxyops/create-artifact": "4.3.0",
+    "@galaxyops/create-bundle": "3.2.0",
+    "@galaxyops/eslint-config": "3.2.0",
+    "@galaxyops/faker-factory": "3.3.0",
     "@fastify/static": "~6.9.0",
     "@microsoft/tsdoc": "~0.13.2",
     "@nestjs/cli": "^10.3.2",

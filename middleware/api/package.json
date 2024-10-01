@@ -2,7 +2,7 @@
   "name": "@galaxyops/api",
   "module": "commonjs",
   "description": "routes request to other endpoints",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "bin": {
     "app": "bin/app.js"
   },
@@ -27,10 +27,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "workspace:*",
-    "@galaxyops/constructs": "workspace:*",
-    "@galaxyops/nestjs-modules": "workspace:*",
-    "@galaxyops/validation-schemas": "workspace:*",
+    "@galaxyops/base-nodejs": "0.2.0",
+    "@galaxyops/constructs": "2.2.0",
+    "@galaxyops/nestjs-modules": "2.2.0",
+    "@galaxyops/validation-schemas": "2.2.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",
@@ -53,9 +53,9 @@
   "devDependencies": {
     "@galaxyops/base-nodejs": "workspace:*",
     "@galaxyops/constructs": "workspace:*",
-    "@galaxyops/create-artifact": "workspace:*",
-    "@galaxyops/create-bundle": "workspace:*",
-    "@galaxyops/eslint-config": "workspace:*",
+    "@galaxyops/create-artifact": "4.3.0",
+    "@galaxyops/create-bundle": "3.2.0",
+    "@galaxyops/eslint-config": "3.2.0",
     "@nestjs/swagger": "~7.1.17",
     "@nestjs/testing": "9.2.1",
     "@types/aws-lambda": "~8.10.130",

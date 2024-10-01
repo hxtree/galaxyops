@@ -1,3 +1,36 @@
+## 3.2.0 (2024-10-01)
+
+### 🚀 Features
+
+- add snapshot tests for stacks
+
+- add ignore null assert
+
+- storybook vite
+
+- migrate from rushjs to nx
+
+- implement prototypes folder
+
+- change select packages to milky-way
+
+- bump versions
+
+- change from milky-way to galaxyops
+
+- migrate more packages to using galaxyops
+
+### 🩹 Fixes
+
+- design-system cdk:synth
+
+- remove .rush temp files
+
+### ❤️ Thank You
+
+- hxtree
+- Matthew Heroux
+
 # Change Log - @galaxyops/eslint-config
 
 This log was last generated on Thu, 28 Dec 2023 16:54:41 GMT and should not be

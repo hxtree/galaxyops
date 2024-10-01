@@ -1,7 +1,7 @@
 {
   "name": "@galaxyops/html-to-pdf",
   "module": "commonjs",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "license": "MIT",
   "description": "Your Go-To Solution for PDF Generation from HTML.",
   "bugs": {
@@ -36,11 +36,11 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "workspace:*",
-    "@galaxyops/constructs": "workspace:*",
-    "@galaxyops/faker-factory": "workspace:*",
-    "@galaxyops/nestjs-modules": "workspace:*",
-    "@galaxyops/validation-schemas": "workspace:*",
+    "@galaxyops/base-nodejs": "0.2.0",
+    "@galaxyops/constructs": "2.2.0",
+    "@galaxyops/faker-factory": "3.3.0",
+    "@galaxyops/nestjs-modules": "2.2.0",
+    "@galaxyops/validation-schemas": "2.2.0",
     "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
@@ -68,9 +68,9 @@
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "3.433.0",
-    "@galaxyops/create-artifact": "workspace:*",
-    "@galaxyops/create-bundle": "workspace:*",
-    "@galaxyops/eslint-config": "workspace:*",
+    "@galaxyops/create-artifact": "4.3.0",
+    "@galaxyops/create-bundle": "3.2.0",
+    "@galaxyops/eslint-config": "3.2.0",
     "@nestjs/cli": "^10.3.2",
     "@types/aws-lambda": "~8.10.130",
     "@types/express": "~4.17.21",

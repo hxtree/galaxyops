@@ -1,6 +1,6 @@
 {
   "name": "@galaxyops/promare-gradients",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Neon background gradients",
   "license": "MIT",
   "repository": {
@@ -28,7 +28,7 @@
     "clean-css-cli": "^5.5.0",
     "express": "4.19.2",
     "sass": "^1.47.0",
-    "@galaxyops/eslint-config": "workspace:*",
+    "@galaxyops/eslint-config": "3.2.0",
     "node-sass": "~8.0.0"
   },
   "devDependencies": {

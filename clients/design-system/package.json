@@ -1,7 +1,7 @@
 {
   "name": "@galaxyops/design-system",
   "private": false,
-  "version": "2.1.0",
+  "version": "2.2.0",
   "module": "commonjs",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -42,8 +42,8 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "workspace:*",
-    "@galaxyops/promare-gradients": "workspace:*",
+    "@galaxyops/base-nodejs": "0.2.0",
+    "@galaxyops/promare-gradients": "3.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "~6.4.2",
     "@fortawesome/free-solid-svg-icons": "~6.4.2",
@@ -55,13 +55,13 @@
     "xss": "~1.0.14"
   },
   "devDependencies": {
-    "@galaxyops/character-sheet-contracts": "workspace:*",
+    "@galaxyops/character-sheet-contracts": "0.1.0",
     "@babel/core": "7.23.5",
     "@babel/preset-env": "7.23.5",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
-    "@galaxyops/create-artifact": "workspace:*",
-    "@galaxyops/eslint-config": "workspace:*",
+    "@galaxyops/create-artifact": "4.3.0",
+    "@galaxyops/eslint-config": "3.2.0",
     "@emotion/react": "~11.11.1",
     "@emotion/styled": "11.11.0",
     "@fortawesome/react-fontawesome": "~0.2.0",

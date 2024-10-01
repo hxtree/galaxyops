@@ -143,10 +143,10 @@ importers:
         specifier: ~6.4.2
         version: 6.4.2
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/promare-gradients':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../libraries/promare-gradients
       '@popperjs/core':
         specifier: 2.11.8
@@ -186,13 +186,13 @@ importers:
         specifier: ~0.2.0
         version: 0.2.2(@fortawesome/fontawesome-svg-core@6.5.2)(react@18.2.0)
       '@galaxyops/character-sheet-contracts':
-        specifier: workspace:*
+        specifier: 0.1.0
         version: link:../../contracts/character-sheet-contracts
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@mui/lab':
         specifier: ~5.0.0-alpha.134
@@ -384,16 +384,16 @@ importers:
   clients/jukebox:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/nestjs-modules
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -454,16 +454,16 @@ importers:
         specifier: ~6.9.0
         version: 6.9.0
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../../libraries/faker-factory
       '@microsoft/tsdoc':
         specifier: ~0.13.2
@@ -535,10 +535,10 @@ importers:
         specifier: ~7.6.0
         version: 7.6.0
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@types/lodash':
         specifier: 4.17.6
@@ -578,7 +578,7 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -617,11 +617,11 @@ importers:
   libraries/dice-simulator:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -654,10 +654,10 @@ importers:
         specifier: ~7.6.0
         version: 7.6.0
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/validation-schemas':
-        specifier: 2.1.0
+        specifier: 2.2.0
         version: link:../validation-schemas
       '@types/lodash':
         specifier: 4.17.6
@@ -697,7 +697,7 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -733,13 +733,13 @@ importers:
   libraries/messaging-schemas:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../faker-factory
       '@galaxyops/validation-schemas':
-        specifier: 2.1.0
+        specifier: 2.2.0
         version: link:../validation-schemas
       '@types/lodash':
         specifier: 4.17.6
@@ -758,7 +758,7 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -803,13 +803,13 @@ importers:
         specifier: 3.433.0
         version: 3.433.0
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/messaging-schemas':
-        specifier: 2.1.0
+        specifier: 2.2.0
         version: link:../messaging-schemas
       '@galaxyops/validation-schemas':
-        specifier: 2.1.0
+        specifier: 2.2.0
         version: link:../validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -873,10 +873,10 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../faker-factory
       '@nestjs/schematics':
         specifier: ^9.0.0
@@ -927,7 +927,7 @@ importers:
   libraries/promare-gradients:
     dependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       clean-css-cli:
         specifier: ^5.5.0
@@ -949,11 +949,11 @@ importers:
   libraries/pseudo-random:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -983,7 +983,7 @@ importers:
   libraries/validation-schemas:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@types/lodash':
         specifier: 4.17.6
@@ -1014,7 +1014,7 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -1050,16 +1050,16 @@ importers:
   middleware/api:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/nestjs-modules
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -1117,13 +1117,13 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@nestjs/testing':
         specifier: 9.2.1
@@ -1373,10 +1373,10 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../rigs/base-nodejs
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1479,10 +1479,10 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../rigs/base-nodejs
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1542,7 +1542,7 @@ importers:
         specifier: ~1.182.0
         version: 1.182.0(@aws-cdk/cloud-assembly-schema@1.182.0)(@aws-cdk/cx-api@1.182.0)(@aws-cdk/region-info@1.182.0)(constructs@10.3.0)
       '@galaxyops/messaging-schemas':
-        specifier: 2.1.0
+        specifier: 2.2.0
         version: link:../../libraries/messaging-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -1606,16 +1606,16 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: 2.1.0
+        specifier: 2.2.0
         version: link:../constructs
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1663,10 +1663,10 @@ importers:
   platform/pipeline:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: 2.1.0
+        specifier: 2.2.0
         version: link:../constructs
       aws-lambda:
         specifier: 1.0.7
@@ -1676,7 +1676,7 @@ importers:
         version: 8.57.0
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1785,13 +1785,13 @@ importers:
   services/billing-system:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
@@ -1846,13 +1846,13 @@ importers:
         version: 0.5.21
     devDependencies:
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@types/aws-lambda':
         specifier: ~8.10.130
@@ -1912,19 +1912,19 @@ importers:
   services/character-sheet:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/character-sheet-contracts':
-        specifier: workspace:*
+        specifier: 0.1.0
         version: link:../../contracts/character-sheet-contracts
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/nestjs-modules
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -1982,16 +1982,16 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../../libraries/faker-factory
       '@microsoft/tsdoc':
         specifier: ~0.13.2
@@ -2075,11 +2075,11 @@ importers:
   services/dialogue-service:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       eslint:
         specifier: 8.57.0
@@ -2088,16 +2088,16 @@ importers:
   services/dynamo-image:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/nestjs-modules
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -2152,16 +2152,16 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../../libraries/faker-factory
       '@nestjs/cli':
         specifier: ^10.3.2
@@ -2239,19 +2239,19 @@ importers:
         specifier: ~3.279.0
         version: 3.279.0
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/messaging-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/messaging-schemas
       '@galaxyops/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/nestjs-modules
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -2321,16 +2321,16 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../../libraries/faker-factory
       '@microsoft/tsdoc':
         specifier: ~0.13.2
@@ -2411,19 +2411,19 @@ importers:
   services/html-to-pdf:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../../libraries/faker-factory
       '@galaxyops/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/nestjs-modules
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
@@ -2502,13 +2502,13 @@ importers:
         specifier: 3.433.0
         version: 3.433.0
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@nestjs/cli':
         specifier: ^10.3.2
@@ -2574,19 +2574,19 @@ importers:
   services/instances:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/nestjs-modules
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -2650,10 +2650,10 @@ importers:
         specifier: ~6.9.0
         version: 6.9.0
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../../libraries/faker-factory
       '@nestjs/cli':
         specifier: ^10.3.2
@@ -2722,16 +2722,16 @@ importers:
   services/luck-by-dice:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/dice-simulator':
-        specifier: workspace:*
+        specifier: 0.10.0
         version: link:../../libraries/dice-simulator
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/axios':
         specifier: ~2.0.0
@@ -2789,13 +2789,13 @@ importers:
         version: 0.5.21
     devDependencies:
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@nestjs/cli':
         specifier: ^10.3.2
@@ -2858,19 +2858,19 @@ importers:
   services/player-achievements:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/nestjs-modules
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -2946,10 +2946,10 @@ importers:
         specifier: ~6.9.0
         version: 6.9.0
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../../libraries/faker-factory
       '@nestjs/cli':
         specifier: ^10.3.2
@@ -3027,16 +3027,16 @@ importers:
         specifier: 3.10.0
         version: 3.10.0
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/nestjs-modules
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -3112,16 +3112,16 @@ importers:
         version: 9.0.1
     devDependencies:
       '@galaxyops/create-artifact':
-        specifier: workspace:*
+        specifier: 4.3.0
         version: link:../../tools/create-artifact
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../../libraries/faker-factory
       '@microsoft/tsdoc':
         specifier: ~0.13.2
@@ -3196,19 +3196,19 @@ importers:
   services/weather-control:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/constructs':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../platform/constructs
       '@galaxyops/create-bundle':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../tools/create-bundle
       '@galaxyops/nestjs-modules':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/nestjs-modules
       '@galaxyops/validation-schemas':
-        specifier: workspace:*
+        specifier: 2.2.0
         version: link:../../libraries/validation-schemas
       '@nestjs/common':
         specifier: 9.4.0
@@ -3269,10 +3269,10 @@ importers:
         specifier: ~6.9.0
         version: 6.9.0
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@galaxyops/faker-factory':
-        specifier: workspace:*
+        specifier: 3.3.0
         version: link:../../libraries/faker-factory
       '@microsoft/tsdoc':
         specifier: ~0.13.2
@@ -3384,7 +3384,7 @@ importers:
   tools/coverage-fusion:
     dependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@types/istanbul-reports':
         specifier: ~3.0.1
@@ -3403,7 +3403,7 @@ importers:
         version: 3.1.7
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -3449,10 +3449,10 @@ importers:
         version: 17.7.2
     devDependencies:
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@pnpm/types':
         specifier: ^8.5.0
@@ -3491,7 +3491,7 @@ importers:
         specifier: ~0.2.19
         version: 0.2.19(esbuild@0.20.2)
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       chokidar:
         specifier: ~3.5.3
@@ -3504,7 +3504,7 @@ importers:
         version: 0.20.2
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12
@@ -3534,7 +3534,7 @@ importers:
         specifier: ~0.2.19
         version: 0.2.19(esbuild@0.20.2)
       '@galaxyops/base-nodejs':
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../../platform/rigs/base-nodejs
       chokidar:
         specifier: ~3.5.3
@@ -3550,7 +3550,7 @@ importers:
         version: 10.4.2
     devDependencies:
       '@galaxyops/eslint-config':
-        specifier: workspace:*
+        specifier: 3.2.0
         version: link:../../platform/rigs/eslint-config
       '@types/jest':
         specifier: 29.5.12

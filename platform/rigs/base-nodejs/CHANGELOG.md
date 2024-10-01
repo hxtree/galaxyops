@@ -1,3 +1,84 @@
+## 0.2.0 (2024-10-01)
+
+### 🚀 Features
+
+- coverage threshold
+
+- add code coverage gutter and mock library
+
+- code coverage ci rush cmd
+
+- submit merge coverage
+
+- unify org name
+
+- pub platform base
+
+- bump change log and pub more
+
+- add e2e-spec tests to character sheet
+
+- add request queue
+
+- decrease cov req
+
+- upgrade to typescript 5
+
+- add pdf generation service
+
+- upgrade ts-jest and flesh in weather
+
+- upgrade packages
+
+- add node types to base node rig
+
+- add api client organism
+
+- change coverage collection
+
+- add snapshot tests for stacks
+
+- scope jest ignores
+
+- flesh in message bus and data lake
+
+- update packages
+
+- switch migration tool
+
+- add analytics strawman
+
+- add dns for jukebox
+
+- update deps
+
+- bump versions
+
+- migrate from rushjs to nx
+
+- implement prototypes folder
+
+- change select packages to milky-way
+
+- bump versions
+
+- change from milky-way to galaxyops
+
+- **user:** flesh in authentication service
+
+### 🩹 Fixes
+
+- github action
+
+- design system unit tests
+
+- design-system cdk:synth
+
+### ❤️ Thank You
+
+- hxtree
+- Matthew Heroux
+
 # Change Log - @galaxyops/base-nodejs
 
 This log was last generated on Tue, 05 Mar 2024 05:29:22 GMT and should not be

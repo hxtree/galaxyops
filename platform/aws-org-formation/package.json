@@ -1,6 +1,6 @@
 {
   "name": "@galaxyops/aws-org-formation",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "multiple aws account provisioning",
   "main": "index.js",
   "scripts": {},

@@ -2,7 +2,7 @@
   "name": "@galaxyops/instances",
   "description": "An API for maintaining game instances",
   "module": "commonjs",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "scripts": {
     "dev": "nest start --debug --watch",
     "build": "tsc",
@@ -24,11 +24,11 @@
     "depcheck": "npx depcheck"
   },
   "dependencies": {
-    "@galaxyops/base-nodejs": "workspace:*",
-    "@galaxyops/constructs": "workspace:*",
-    "@galaxyops/create-bundle": "workspace:*",
-    "@galaxyops/nestjs-modules": "workspace:*",
-    "@galaxyops/validation-schemas": "workspace:*",
+    "@galaxyops/base-nodejs": "0.2.0",
+    "@galaxyops/constructs": "2.2.0",
+    "@galaxyops/create-bundle": "3.2.0",
+    "@galaxyops/nestjs-modules": "2.2.0",
+    "@galaxyops/validation-schemas": "2.2.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",
@@ -51,8 +51,8 @@
   },
   "devDependencies": {
     "@galaxyops/create-bundle": "workspace:*",
-    "@galaxyops/eslint-config": "workspace:*",
-    "@galaxyops/faker-factory": "workspace:*",
+    "@galaxyops/eslint-config": "3.2.0",
+    "@galaxyops/faker-factory": "3.3.0",
     "@fastify/static": "~6.9.0",
     "@nestjs/cli": "^10.3.2",
     "@nestjs/testing": "9.2.1",
