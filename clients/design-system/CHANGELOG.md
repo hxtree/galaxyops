@@ -1,3 +1,21 @@
+## 2.3.0 (2024-10-01)
+
+### 🚀 Features
+
+- add train storage car demo
+
+### 🧱 Updated Dependencies
+
+- Updated character-sheet-contracts to null
+- Updated eslint-config to null
+- Updated promare-gradients to null
+- Updated base-nodejs to null
+- Updated create-artifact to null
+
+### ❤️ Thank You
+
+- hxtree
+
 ## 2.2.0 (2024-10-01)
 
 ### 🚀 Features
