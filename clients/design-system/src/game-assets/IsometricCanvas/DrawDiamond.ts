@@ -4,6 +4,9 @@ export function drawDiamond(
   startY: number,
   width: number,
   height: number,
+  fillColor: string = 'transparent',
+  strokeColor: string = 'black',
+  lineWidth: number = 1,
 ) {
   const halfWidth = width / 2;
   const halfHeight = height / 2;
@@ -17,14 +20,17 @@ export function drawDiamond(
   const leftX = startX;
   const leftY = startY + halfHeight;
 
-  ctx.strokeStyle = 'black';
-  ctx.lineWidth = 1;
+  ctx.lineWidth = lineWidth;
+  ctx.strokeStyle = strokeColor;
 
   ctx.beginPath();
-  ctx.moveTo(topX, topY); // Top vertex
-  ctx.lineTo(rightX, rightY); // Right vertex
-  ctx.lineTo(bottomX, bottomY); // Bottom vertex
-  ctx.lineTo(leftX, leftY); // Left vertex
+  ctx.moveTo(topX, topY);
+  ctx.lineTo(rightX, rightY);
+  ctx.lineTo(bottomX, bottomY);
+  ctx.lineTo(leftX, leftY);
   ctx.closePath();
+
+  ctx.fillStyle = fillColor;
+  ctx.fill();
   ctx.stroke();
 }

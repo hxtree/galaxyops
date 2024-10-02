@@ -118,11 +118,30 @@ export class IsometricRender {
             // wall hiding logic
             const valuePrevX = x > 0 ? this._grid[z][y][x - 1] ?? 0 : 0; // const prevX
             const valuePrevY = y > 0 ? this._grid[z][y - 1][x] ?? 0 : 0; // const prevY
+            const vectors = gridToCanvasCoordinate(
+              {
+                x: x,
+                y: y,
+                z: z,
+              },
+              this.cameraOffset,
+            );
+
             if (
               this._spriteMaps[result.spriteMapId].tags.includes('wall') &&
               valuePrevY !== 0 &&
               valuePrevX !== 0
             ) {
+              drawDiamond(
+                ctx,
+                vectors.right.x - TILE_WIDTH * 0.5,
+                vectors.top.y,
+                -TILE_WIDTH,
+                -TILE_WIDTH * 0.5,
+                ' rgba(160, 196, 225, 0.5)',
+                ' rgba(160, 196, 225, 0.5)',
+              );
+
               continue;
             }
 
