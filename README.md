@@ -88,6 +88,7 @@ pnpm nx run package:cdk watch    # Hotswap on changes.
 pnpm nx run package:cdk doctor    # Check CDK project for issues.
 pnpm nx release                   # Create a release for all package changes.
 pnpm nx dep-graph                 # Visualize dependencies.
+```
 
 ### Target Architecture Diagram
 
