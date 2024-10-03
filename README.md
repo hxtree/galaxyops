@@ -107,8 +107,6 @@ These steps are required once by the platform team to initialize the IaaS.
    echo 'export AWS_PROFILE=DeveloperSandbox' >> ~/.zshrc
    ```
 
-````
-
 3. Login via SSO and bootstrap deployments. Deploy platform, services, and then
    clients in that order.
 
@@ -162,4 +160,3 @@ Pull requests and bug reports are welcome on GitHub at
 
 All packages available [NPM](https://www.npmjs.com/search?q=%40cats-cradle) are
 MIT licensed.
-````
