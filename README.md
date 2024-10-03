@@ -51,8 +51,8 @@ maintainability across projects.
 Install package manager, jq, build all packages, and hydrate dotenv files:
 
 ```bash
-corepack enable pnpm
-brew install jq # MacOS, used for lambda layer builder
+corepack enable pnpm # install PNPM
+brew install jq # install jq on MacOS, which is used for lambda layer builder
 pnpm install
 pnpm nx run-many -t build --all
 pnpm nx run hydrate-dotenvs:start hydrate ../../..
@@ -65,11 +65,31 @@ name, e.g.
 pnpm nx run admin-client:dev
 ```
 
-Create a release for all package changes by using Nx release
+### Common Commands
 
-```bash
-pnpm nx release
-```
+````bash
+pnpm update                     # Update workspace files.
+pnpm add @a/b                   # Add a new package to the app.
+pnpm up -r --workspace --interactive # Make package versions consistent.
+pnpm nx run-many -t [command] --all # Run a command in bulk.
+pnpm nx run package:[command]    # Run a command in the current package.
+pnpm nx run package:build        # Build projects.
+pnpm nx run package:watch        # Watch for changes and compile.
+pnpm nx run package:lint         # Perform ESLint static analysis.
+pnpm nx run package:test         # Test a package.
+pnpm nx run package:test:cov     # Run tests with coverage.
+pnpm nx run package:docs         # Generate documentation from code.
+pnpm nx run package:cdk:bootstrap # Bootstrap the CDK project.
+pnpm nx run package:cdk:synth    # Show synthesized CloudFormation template.
+pnpm nx run package:cdk:diff     # Compare deployed stack with current state.
+pnpm nx run package:cdk:deploy   # Deploy apps using AWS CDK.
+pnpm nx run package:cdk deploy --hotswap # Speed up dev deployment.
+pnpm nx run package:cdk watch    # Hotswap on changes.
+pnpm nx run package:cdk doctor    # Check CDK project for issues.
+pnpm nx release                   # Create a release for all package changes.
+pnpm nx dep-graph                 # Visualize dependencies.
+
+### Target Architecture Diagram
 
 ![Flow Chart](docs/flow-chart.drawio.svg)
 
@@ -84,7 +104,7 @@ These steps are required once by the platform team to initialize the IaaS.
 
    ```bash
    echo 'export AWS_PROFILE=DeveloperSandbox' >> ~/.zshrc
-   ```
+````
 
 3. Login via SSO and bootstrap deployments. Deploy platform, services, and then
    clients in that order.
@@ -112,8 +132,6 @@ These steps are required once by the platform team to initialize the IaaS.
 Comprehensive documentation is essential for understanding and maintaining this
 project. Each project and folder structure should feature a README.md files
 containing documentation following RFC 2119 standards.
-
-> **Note** Use `./tools/help.sh` for information on builtin commands.
 
 <details>
   <summary>Third Party Documentation</summary>
