@@ -67,7 +67,7 @@ pnpm nx run admin-client:dev
 
 ### Common Commands
 
-````bash
+```bash
 pnpm update                     # Update workspace files.
 pnpm add @a/b                   # Add a new package to the app.
 pnpm up -r --workspace --interactive # Make package versions consistent.
@@ -105,6 +105,8 @@ These steps are required once by the platform team to initialize the IaaS.
 
    ```bash
    echo 'export AWS_PROFILE=DeveloperSandbox' >> ~/.zshrc
+   ```
+
 ````
 
 3. Login via SSO and bootstrap deployments. Deploy platform, services, and then
@@ -160,3 +162,4 @@ Pull requests and bug reports are welcome on GitHub at
 
 All packages available [NPM](https://www.npmjs.com/search?q=%40cats-cradle) are
 MIT licensed.
+````
