@@ -53,9 +53,8 @@ Install package manager, jq, build all packages, and hydrate dotenv files:
 ```bash
 corepack enable pnpm # install PNPM
 brew install jq # install jq on MacOS, which is used for lambda layer builder
-pnpm install
-pnpm nx run-many -t build --all
-pnpm nx run hydrate-dotenvs:start hydrate ../../..
+pnpm install # install dependencies
+pnpm nx run galaxyops:init # ready for use
 ```
 
 Run any script using Nx by specifying the package name followed by the script
@@ -112,15 +111,13 @@ These steps are required once by the platform team to initialize the IaaS.
 
    ```bash
     aws configure sso
-    pnpm nx run aws-sso:start DeveloperSandbox
-    pnpm nx run galaxyops:cdk:deploy
+    pnpm nx run galaxyops:cdk:deploy:sandbox
    ```
 
 4. Login via SSO to tools account and then deploy tools.
 
    ```bash
-   pnpm nx run aws-sso:start tools
-   pnpm nx run galaxyops:cdk:deploy-tools-account
+   pnpm nx run galaxyops:cdk:deploy:tools-account
    ```
 
 ## Documentation
