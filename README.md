@@ -113,19 +113,14 @@ These steps are required once by the platform team to initialize the IaaS.
    ```bash
     aws configure sso
     pnpm nx run aws-sso:start DeveloperSandbox
-    pnpm nx run-many -t cdk:bootstrap --all
-    pnpm nx run-many -t cdk:deploy --projects=tag:scope:platform --parallel=false
-    pnpm nx run-many -t cdk:deploy --projects=tag:scope:services --parallel=false
-    pnpm nx run-many -t cdk:deploy --projects=tag:scope:middleware --parallel=false
-    pnpm nx run-many -t cdk:deploy --projects=tag:scope:clients --parallel=false
+    pnpm nx run galaxyops:cdk:deploy
    ```
 
 4. Login via SSO to tools account and then deploy tools.
 
    ```bash
    pnpm nx run aws-sso:start tools
-   pnpm nx run-many -t cdk:bootstrap --all
-   pnpm nx run-many -t cdk:deploy --projects=tag:scope:aws-tools-account --parallel=false
+   pnpm nx run galaxyops:cdk:deploy-tools-account
    ```
 
 ## Documentation

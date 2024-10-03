@@ -1,5 +1,5 @@
 {
   "name": "pipeline",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "tags": ["scope:platform", "scope:aws-tools-account"]
+  "tags": ["scope:platform-aws-tools-account"]
 }

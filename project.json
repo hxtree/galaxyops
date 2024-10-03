@@ -1,0 +1,31 @@
+{
+  "name": "galaxyops",
+  "$schema": "./node_modules/nx/schemas/project-schema.json",
+  "tags": ["all"],
+  "targets": {
+    "cdk:deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run-many --target=build --all",
+          "nx run-many --target=cdk:bootstrap --all",
+          "nx run-many --target=cdk:deploy --projects=tag:scope:platform --parallel=false",
+          "nx run-many --target=cdk:deploy --projects=tag:scope:services --parallel=false",
+          "nx run-many --target=cdk:deploy --projects=tag:scope:middleware --parallel=false",
+          "nx run-many --target=cdk:deploy --projects=tag:scope:clients --parallel=false"
+        ]
+      }
+    },
+    "cdk:deploy-tools-account": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run-many --target=build --all",
+          "nx run-many --target=cdk:bootstrap --all",
+          "nx run-many --target=cdk:deploy --scope:platform-aws-tools-account --parallel=false"
+        ]
+      }
+    }
+  }
+}
+

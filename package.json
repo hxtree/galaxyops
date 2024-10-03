@@ -23,7 +23,8 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.2.7",
     "nx": "19.3.0",
-    "prettier": "^3.3.2"
+    "prettier": "^3.3.2",
+    "@nx/workspace": "19.3.0"
   },
   "dependencies": {
     "@types/node": "20.11.25",
