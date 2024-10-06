@@ -1,10 +1,11 @@
 import './style.module.scss';
 import React, { ReactNode } from 'react';
+import { AppBarIcon } from '../AppBarIcon/AppBarIcon';
 
 export type NavMenuItem = {
   link: string;
   title: string;
-}
+};
 
 export type AppBarProps = {
   menuItems?: NavMenuItem[];
@@ -12,10 +13,11 @@ export type AppBarProps = {
   theme?: 'dark' | 'light';
   children?: React.ReactNode;
   topRightSlot: ReactNode;
-}
+};
 
 export const AppBar = (props: AppBarProps) => {
   const { topRightSlot, children, siteTitle, theme } = props;
+  const [collapsed, setCollapsed] = React.useState(true);
 
   const themeSelected = theme || 'dark';
 
@@ -23,16 +25,15 @@ export const AppBar = (props: AppBarProps) => {
     <div className="app-bar">
       <nav className={`navbar navbar-expand-lg navbar-${themeSelected}`}>
         <div className="container">
-
-         <button className="navbar-toggler" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <a className="navbar-brand font-game" href="/">{siteTitle || 'Your Brand'}</a>
-          <div className="d-none d-sm-block">
-          {topRightSlot}
-          </div>
+          <AppBarIcon
+            className={`d-lg-none`}
+            collapsed={collapsed}
+            onClick={() => setCollapsed(!collapsed)}
+          />
+          <a className="navbar-brand font-game" href="/">
+            {siteTitle || 'Your Brand'}
+          </a>
+          <div className="d-none d-sm-block">{topRightSlot}</div>
         </div>
       </nav>
 
