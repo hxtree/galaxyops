@@ -16,8 +16,8 @@
 
 .app-bar {
   padding: 0;
-  background-color: $color-dark-blue;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+  background-color: $color-white;
+  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.3);
 
   & .navbar {
     background-image: none !important;

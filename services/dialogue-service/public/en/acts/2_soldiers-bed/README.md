@@ -36,11 +36,12 @@ reality of struggle and commitment.
    rises and mortally wounds Malace Tsia. Meeku is shocked when Gunter reveals
    that he had brought them to this battle with the intention of letting them
    die. Meeku fights against Gunter and manages to sever a green gem that Gunter
-   had been using as a regeneration shard, ultimately defeating him. On his
-   death bed, Gunter reveals to Meeku that he was just following orders and
-   cries, admitting that all he knows as a soldier is how to follow orders. This
-   is the first time Meeku has seen Gunter cry. Meeku helps Malace Tsia and they
-   set out on their journey to find his brother.
+   had been using as a regeneration shard, slices the right side of his face and
+   chest. Ultimately defeating him. On his death bed, Gunter reveals to Meeku
+   that he was just following orders and cries, admitting that all he knows as a
+   soldier is how to follow orders. This is the first time Meeku has seen Gunter
+   cry. Meeku helps Malace Tsia and they set out on their journey to find his
+   brother.
 
 ## Notes
 

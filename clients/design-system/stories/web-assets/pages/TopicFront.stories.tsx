@@ -33,7 +33,13 @@ export default {
 export const Default = () => (
   <>
     <AppBar
-      siteTitle="NekosGate"
+      siteTitle={
+        <img
+          src="/brand/nekos-gate.png"
+          alt="Logo"
+          style={{ height: '50px' }}
+        />
+      }
       topRightSlot={
         <>
           <Button href="/login" color="secondary" size="small">
