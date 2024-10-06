@@ -32,9 +32,7 @@ export const AppBarIcon: React.FC<AppBarIconProps> = ({
         <span className="toggler-icon middle-bar"></span>
         <span className="toggler-icon bottom-bar"></span>
       </div>
-      <span className="toggler-description">
-        {collapsed ? 'Menu' : 'Close'}
-      </span>
+      <span className="toggler-description">{collapsed ? 'Menu' : ''}</span>
     </button>
   );
 };

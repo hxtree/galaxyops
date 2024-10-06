@@ -26,7 +26,7 @@
     &.button-loading {
       position: relative;
 
-      > .spinner-border {
+      >.spinner-border {
         position: absolute;
         top: calc(50% - 0.5rem);
         left: calc(50% - 0.5rem);
@@ -46,12 +46,12 @@
       &.button-loading {
         color: transparent;
 
-        > .spinner-border {
+        >.spinner-border {
           color: $color-white;
         }
       }
 
-      > svg {
+      >svg {
         margin-left: 0.3rem;
         color: lighten($color-off-black, 15%);
       }
@@ -60,7 +60,7 @@
         border-color: darken($color-yellow-active, 10%);
         background-color: $color-yellow-active;
 
-        > svg {
+        >svg {
           color: $color-off-black;
         }
       }
@@ -79,7 +79,7 @@
       &.button-loading {
         color: transparent !important;
 
-        > .spinner-border {
+        >.spinner-border {
           color: $color-primary !important;
         }
       }
@@ -103,7 +103,7 @@
       &.button-loading {
         color: transparent;
 
-        > .spinner-border {
+        >.spinner-border {
           color: $color-primary;
         }
       }
@@ -122,7 +122,8 @@
     }
 
     &.button-small {
-      padding: 5px 20px;
+      padding: 4px 18px !important;
+      min-height: 32px;
       font-size: 0.8rem;
     }
 
