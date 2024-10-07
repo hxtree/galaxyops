@@ -46,22 +46,26 @@ export const Alert = (props: AlertProps) => {
   return (
     <Spacer {...spacing}>
       <div
-        className={`alert alert-${severity} d-flex align-items-center`}
+        className={`alert alert-${severity}`}
         role="alert"
         {...analytics.props('Alert')}
         data-testid={testId ? `${testId}-severity` : null}
       >
-        <svg
-          className="bi flex-shrink-0 me-2"
-          viewBox="0 0 16 16"
-          fill="currentColor"
-          width="24"
-          height="24"
-          role="img"
-        >
-          {symbol}
-        </svg>
-        <div>{children}</div>
+        <div className="container">
+          <div className=" d-flex align-items-center">
+            <svg
+              className="bi flex-shrink-0 me-2"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              width="24"
+              height="24"
+              role="img"
+            >
+              {symbol}
+            </svg>
+            <div>{children}</div>
+          </div>
+        </div>
       </div>
     </Spacer>
   );

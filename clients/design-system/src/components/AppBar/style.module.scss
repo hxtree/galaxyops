@@ -10,14 +10,13 @@
   }
 
   100% {
-    box-shadow: inset 0 -3px 0 $color-yellow;
+    box-shadow: inset 0 -3px 0 $color-primary-action;
   }
 }
 
 .app-bar {
   padding: 0;
   background-color: $color-white;
-  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.3);
 
   & .navbar {
     background-image: none !important;
@@ -36,11 +35,7 @@
   }
 
   .app-bar-light {
-    background-color: $color-medium-blue; // rgb(255, 253, 251);
-    // background-color: $color-off-white; // rgb(255, 253, 251);
-    // box-shadow:
-    //   rgb(0, 0, 0, 0.12) 0 0 2px 0,
-    //   rgb(0, 0, 0, 0.14) 0 1.008px 2px 0;
+    box-shadow: inset 0 -3px 0 $color-light-gray;
 
     ul {
       margin: 0;
@@ -54,19 +49,19 @@
           display: inline-block;
           padding-top: 1rem;
           padding-bottom: 1rem;
-          color: $color-off-white;
+          color: $color-dark-blue;
           text-decoration: none;
 
           &:hover {
-            color: $color-yellow;
+            color: $color-primary-action;
             transition: border-color 0.5s ease;
             animation: pulsate 0.5s ease-in-out forwards;
-            box-shadow: inset 0 -4px 0 $color-yellow;
+            box-shadow: inset 0 -4px 0 $color-primary-action;
           }
 
           &.active {
-            box-shadow: inset 0 -4px 0 $color-yellow;
-            color: $color-yellow;
+            box-shadow: inset 0 -4px 0 $color-primary-action;
+            color: $color-primary-action;
           }
         }
       }
