@@ -47,6 +47,7 @@ export const Default = () => (
           </Button>
         </>
       }
+      menuMobileItems={menuItems}
     >
       <ul className="navbar-nav me-auto">
         {menuItems &&
