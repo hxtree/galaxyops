@@ -15,9 +15,9 @@
 }
 
 .app-bar {
+  position: relative;
   padding: 0;
   background-color: $color-white;
-  position: relative;
 
   & .navbar {
     height: 80px;
@@ -27,18 +27,18 @@
       color: $color-off-white !important;
       font-weight: bold;
       font-size: 2rem !important;
-      letter-spacing: 0.2rem;
       line-height: 1;
+      letter-spacing: 0.2rem;
     }
   }
 
   .navbar-menu-mobile {
-    background-color: $color-light-gray;
     position: absolute;
     top: 80px;
+    z-index: 1000;
     width: 100vw;
     height: 100vh;
-    z-index: 1000;
+    background-color: $color-light-gray;
 
     ul {
       margin: 0;

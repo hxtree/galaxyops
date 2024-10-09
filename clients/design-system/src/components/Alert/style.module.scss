@@ -1,9 +1,9 @@
 @import '../../styles/utils/color-pallette';
 
 .alert {
+  z-index: -1;
   margin: 0 !important;
   border-radius: 0 !important;
-  z-index: -1;
 
   &.alert-success {
     background-color: #f9fef9 !important;

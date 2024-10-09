@@ -7,13 +7,13 @@
   background-color: transparent;
 
   & .toggler-description {
+    display: block;
+    clear: both;
+    width: 36px;
+    height: 14px;
     margin: 0;
     color: $color-medium-blue;
     font-size: 14px;
-    height: 14px;
-    width: 36px;
-    clear: both;
-    display: block;
   }
 
   & .navbar-toggler {
@@ -23,8 +23,8 @@
     margin-right: auto;
     margin-bottom: -10px;
     margin-left: auto;
-    transition: 0.5s ease-in-out;
     border: 0;
+    transition: 0.5s ease-in-out;
 
     &:focus,
     &:active {
@@ -34,13 +34,13 @@
     }
 
     & .toggler-icon {
-      margin: 0;
-      padding: 0;
       position: absolute;
       left: 0;
       display: block;
       width: 100%;
       height: 2px;
+      margin: 0;
+      padding: 0;
       border-radius: 1px;
       background-color: $color-medium-blue;
       transform: rotate(0deg);
