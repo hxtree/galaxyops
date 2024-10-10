@@ -227,6 +227,9 @@ importers:
       '@storybook/addon-styling':
         specifier: ~1.3.7
         version: 1.3.7(@types/react-dom@18.2.19)(@types/react@18.2.59)(less@4.2.0)(postcss@8.4.38)(react-dom@18.2.0)(react@18.2.0)(sass@1.77.6)(typescript@5.3.3)(webpack@5.92.1)
+      '@storybook/addons':
+        specifier: 7.6.3
+        version: 7.6.3(react-dom@18.2.0)(react@18.2.0)
       '@storybook/builder-vite':
         specifier: 7.6.3
         version: 7.6.3(typescript@5.3.3)(vite@4.5.3)
@@ -242,6 +245,9 @@ importers:
       '@storybook/testing-library':
         specifier: 0.2.2
         version: 0.2.2
+      '@storybook/theming':
+        specifier: 7.6.3
+        version: 7.6.3(react-dom@18.2.0)(react@18.2.0)
       '@testing-library/dom':
         specifier: 9.3.3
         version: 9.3.3
@@ -14265,7 +14271,7 @@ packages:
       '@storybook/manager-api': 7.6.19(react-dom@18.2.0)(react@18.2.0)
       '@storybook/node-logger': 7.6.3
       '@storybook/preview-api': 7.6.19
-      '@storybook/theming': 7.6.19(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/theming': 7.6.3(react-dom@18.2.0)(react@18.2.0)
       '@storybook/types': 7.6.19
       css-loader: 6.11.0(webpack@5.92.1)
       less: 4.2.0
@@ -14300,6 +14306,17 @@ packages:
     resolution: {integrity: sha512-I9FQxHi4W7RUyZut4NziYa+nkBCpD1k2YpEDE5IwSC3lqQpDzFZN89eNWQtZ38tIU4c90jL3L1k69IHvANGHsA==}
     dependencies:
       memoizerific: 1.11.3
+    dev: true
+
+  /@storybook/addons@7.6.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-UuqMOcr+x+4ogtn889wGgVAFxswHjN8ybD6ZTuRatLXA3YC2aywKGL1Xz0bmrTfv5WTlNxOPuwoTIhIH/P073w==}
+    dependencies:
+      '@storybook/manager-api': 7.6.3(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/preview-api': 7.6.3
+      '@storybook/types': 7.6.3
+    transitivePeerDependencies:
+      - react
+      - react-dom
     dev: true
 
   /@storybook/api@7.6.17(react-dom@18.2.0)(react@18.2.0):
