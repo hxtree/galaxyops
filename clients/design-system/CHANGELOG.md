@@ -1,3 +1,39 @@
+## 2.4.0 (2024-10-10)
+
+### 🚀 Features
+
+- separate train walls from flooring
+
+- add transparent walls
+
+- add menu bar icon animation
+
+- add asmin dialogues
+
+- lighten navbar
+
+- add mobile menu
+
+### 🩹 Fixes
+
+- vite deploy issue
+
+- linting issue in app bar
+
+- linting issue
+
+### 🧱 Updated Dependencies
+
+- Updated character-sheet-contracts to null
+- Updated eslint-config to null
+- Updated promare-gradients to null
+- Updated base-nodejs to null
+- Updated create-artifact to null
+
+### ❤️ Thank You
+
+- hxtree
+
 ## 2.3.0 (2024-10-01)
 
 ### 🚀 Features

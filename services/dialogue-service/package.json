@@ -1,7 +1,7 @@
 {
   "name": "@galaxyops/dialogue-service",
   "module": "commonjs",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "scripts": {
     "lint": "eslint --format visualstudio \"./{stacks,src}/**/*.ts\" --fix",
     "lint:ci": "eslint --format visualstudio \"./{stacks,src}/*.ts\" --fix-dry-run"

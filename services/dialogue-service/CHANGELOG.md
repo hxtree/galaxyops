@@ -1,3 +1,18 @@
+## 2.3.0 (2024-10-10)
+
+### 🚀 Features
+
+- add asmin dialogues
+
+### 🧱 Updated Dependencies
+
+- Updated eslint-config to null
+- Updated base-nodejs to null
+
+### ❤️ Thank You
+
+- hxtree
+
 ## 2.2.0 (2024-10-01)
 
 ### 🚀 Features
