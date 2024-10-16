@@ -4,6 +4,7 @@ import { gridToCanvasCoordinate } from './IsometricTransformer';
 import SpriteMap from './SpriteMap';
 import { drawDiamond } from './DrawDiamond';
 import { SpriteMapRegistry } from './SpriteMapRegistry';
+import { drawDialogue } from './DrawDialogue';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -77,12 +78,27 @@ export class IsometricRender {
       // draws to off-screen canvas
       this.renderGrid(offScreenCtx);
 
+      this.renderText(offScreenCtx);
+
       // draws off-screen canvas to main canvas
       visibleCtx.clearRect(0, 0, this._width, this._height);
 
       // Draw the off-screen canvas to the visible canvas
       visibleCtx.drawImage(offScreenCanvas, 0, 0);
     });
+  }
+
+  private renderText(ctx: CanvasRenderingContext2D) {
+    // TODO obtain data from game state
+    // TODO render based on actors position
+    // TODO inky support and options
+    drawDialogue(
+      ctx,
+      10,
+      100,
+      'Actor',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    );
   }
 
   private renderGrid(ctx: CanvasRenderingContext2D) {

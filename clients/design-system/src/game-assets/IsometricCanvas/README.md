@@ -83,7 +83,7 @@ a sprite represents water and requires the player to swim to navigate it.
 
 ## Tags
 
-Tags are infered based on the spritemap name. The rendering engine will if a
+Tags are inferred based on the spritemap name. The rendering engine will if a
 spritemap contains for example walls based on the filename.
 
 | tag  | purpose                                             |
