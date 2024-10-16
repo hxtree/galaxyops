@@ -16,13 +16,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "nx run-many --target=build --all",
-          "nx run aws-sso:start DeveloperSandbox",
-          "nx run-many --target=cdk:bootstrap --all",
-          "nx run-many --target=cdk:deploy --projects=tag:scope:platform --parallel=false --require-approval never",
-          "nx run-many --target=cdk:deploy --projects=tag:scope:services --parallel=false --require-approval never",
-          "nx run-many --target=cdk:deploy --projects=tag:scope:middleware --parallel=false --require-approval never",
-          "nx run-many --target=cdk:deploy --projects=tag:scope:clients --parallel=false --require-approval never"
+          "bash ./tools/scripts/cdk-deploy-sandbox.sh"
         ]
       }
     },
@@ -30,13 +24,9 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "nx run-many --target=build --all",
-          "nx run aws-sso:start tools",
-          "nx run-many --target=cdk:bootstrap --all",
-          "nx run-many --target=cdk:deploy --scope:platform-aws-tools-account --parallel=false"
+          "bash ./tools/scripts/cdk-deploy-tools-account.sh"
         ]
       }
     }
   }
 }
-

@@ -13,6 +13,10 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
+      - name: Install OpenSSL
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libssl1.1
       - name: check out code base
         if: github.event_name == 'push'
         uses: actions/checkout@v4
