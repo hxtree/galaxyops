@@ -41,3 +41,4 @@ The following properties are essential in allowing the component to be reusable:
 - [Material UI](https://mui.com/material-ui/)
 - [Design System For Developers Architecture](https://storybook.js.org/tutorials/design-systems-for-developers/react/en/architecture/)
 - [Create Design System](https://www.youtube.com/watch?v=qSkHRVLcj6U)
+- [CSF](https://storybook.js.org/docs/api/csf)

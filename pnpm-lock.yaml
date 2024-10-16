@@ -215,6 +215,9 @@ importers:
       '@storybook/addon-actions':
         specifier: 7.6.3
         version: 7.6.3
+      '@storybook/addon-docs':
+        specifier: 7.6.3
+        version: 7.6.3(@types/react-dom@18.2.19)(@types/react@18.2.59)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-essentials':
         specifier: 7.6.3
         version: 7.6.3(@types/react-dom@18.2.19)(@types/react@18.2.59)(react-dom@18.2.0)(react@18.2.0)
