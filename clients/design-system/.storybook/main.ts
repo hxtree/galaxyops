@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-styling',
     '@storybook/addon-docs',
+    '@storybook/addon-viewport',
   ],
   typescript: {
     reactDocgen: 'react-docgen-typescript',

@@ -12,6 +12,7 @@ PID=$!
 wait $PID
 
 # Continue with the next commands
+# TODO exclude pipeline projects
 nx run-many --target=cdk:bootstrap --all
 nx run-many --target=cdk:deploy --projects=tag:scope:platform --parallel=false --require-approval never
 nx run-many --target=cdk:deploy --projects=tag:scope:services --parallel=false --require-approval never
