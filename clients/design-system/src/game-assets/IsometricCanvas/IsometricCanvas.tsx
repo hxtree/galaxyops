@@ -11,7 +11,7 @@ const isometricRender = new IsometricRender({
 });
 
 export const IsometricCanvas = (props: IsometricCanvasProps) => {
-  const { grid, spriteMapRegistry } = props;
+  const { grid, spriteMapRegistry, dialogues } = props;
   const canvasRef = useRef(null);
   const offScreenCanvasRef = useRef(null);
   const { width, height } = useResize(300); // Debounce resize events by 300ms
@@ -28,6 +28,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
   const [showDebug, setShowDebug] = useState(false);
 
   isometricRender.grid = grid;
+  isometricRender.dialogues = dialogues;
 
   useEffect(() => {
     const draw = async (
@@ -74,6 +75,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     cursorCanvasCoordinate,
     cameraCoordinates,
     spriteMapRegistry,
+    dialogues,
     isLoaded,
     setIsLoaded,
   ]);

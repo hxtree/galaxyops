@@ -48,7 +48,11 @@ export function drawDialogue(
   const boxHeight = textHeight + 2 * padding + actorFontSize; // Use actor font size for height
 
   // Calculate the final dimensions
-  const width = Math.max(maxWidth, actorWidth) + 2 * padding; // Width based on the longest line or actor's name
+  const textWidth = Math.max(...lines.map(line => ctx.measureText(line).width)); // Width based on the longest line
+  let width = Math.max(actorWidth, textWidth) + 2 * padding; // Width based on actor's name and longest line
+  if (width > maxWidth) {
+    width = maxWidth;
+  }
   const height = boxHeight + tailHeight; // Adjust height to include the tail
 
   // Draw the rounded rectangle for the dialog box

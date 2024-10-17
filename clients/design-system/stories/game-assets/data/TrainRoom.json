@@ -7,6 +7,12 @@
     "w": "/game-assets/trainwall-8x1.png",
     "n": "/game-assets/nightstand-4x3.png"
   },
+  "dialogues": [
+    {
+      "actor": "Meeku Oni",
+      "text": "Look at that! A new game engine!"
+    }
+  ],
   "grid": [
     [
       ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"],

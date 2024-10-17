@@ -10,6 +10,12 @@
     "os": "/game-assets/safe-4x1.png",
     "ol": "/game-assets/switches-4x1.png"
   },
+  "dialogues": [
+    {
+      "actor": "Malace Tsia",
+      "text": "Look over there, it's a mountain"
+    }
+  ],
   "grid": [
     [
       ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"],

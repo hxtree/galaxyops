@@ -5,6 +5,7 @@ import SpriteMap from './SpriteMap';
 import { drawDiamond } from './DrawDiamond';
 import { SpriteMapRegistry } from './SpriteMapRegistry';
 import { drawDialogue } from './DrawDialogue';
+import { Dialogue } from './Dialogue.type';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -13,6 +14,7 @@ export class IsometricRender {
 
   private _grid: string[][][];
   private _spriteMaps: { [key: string]: SpriteMap } = {};
+  private _dialogues: Dialogue[] = [];
 
   private _width: number;
   private _height: number;
@@ -41,6 +43,10 @@ export class IsometricRender {
 
   set drawCoordinates(drawCoordinates: boolean) {
     this._drawCoordinates = drawCoordinates;
+  }
+
+  set dialogues(dialogues: Dialogue[] | undefined) {
+    this._dialogues = dialogues ?? [];
   }
 
   set grid(grid: string[][][]) {
@@ -89,16 +95,12 @@ export class IsometricRender {
   }
 
   private renderText(ctx: CanvasRenderingContext2D) {
-    // TODO obtain data from game state
-    // TODO render based on actors position
     // TODO inky support and options
-    drawDialogue(
-      ctx,
-      10,
-      100,
-      'Actor',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    );
+    this._dialogues.forEach(dialogue => {
+      // TODO find actor position
+      // TODO render based on actors position
+      drawDialogue(ctx, 10, 100, dialogue.actor, dialogue.text);
+    });
   }
 
   private renderGrid(ctx: CanvasRenderingContext2D) {
@@ -132,8 +134,8 @@ export class IsometricRender {
 
             // TODO improve wall hiding logic
             // wall hiding logic
-            const valuePrevX = x > 0 ? this._grid[z][y][x - 1] ?? 0 : 0; // const prevX
-            const valuePrevY = y > 0 ? this._grid[z][y - 1][x] ?? 0 : 0; // const prevY
+            const valuePrevX = x > 0 ? (this._grid[z][y][x - 1] ?? 0) : 0; // const prevX
+            const valuePrevY = y > 0 ? (this._grid[z][y - 1][x] ?? 0) : 0; // const prevY
             const vectors = gridToCanvasCoordinate(
               {
                 x: x,
