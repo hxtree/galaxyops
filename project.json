@@ -3,12 +3,27 @@
   "$schema": "./node_modules/nx/schemas/project-schema.json",
   "tags": ["all"],
   "targets": {
-    "init": {
+    "hydrate": {
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "nx run-many -t build --all",
           "nx run hydrate-dotenvs:start hydrate ../../.."
+        ]
+      }
+    },
+    "cdk:bootstrap:sandbox": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "bash ./tools/scripts/cdk-bootstrap-sandbox.sh"
+        ]
+      }
+    },
+    "cdk:bootstrap:tools-account": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "bash ./tools/scripts/cdk-bootstrap-tools-account.sh"
         ]
       }
     },
