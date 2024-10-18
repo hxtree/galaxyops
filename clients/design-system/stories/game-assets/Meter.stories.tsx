@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import { Meter, MeterProps } from '../../src/main';
 
 export default {
-  title: 'Game Assets/HUD/Meter',
+  title: 'Game Assets/Meter',
   component: Meter,
 } as Meta<typeof Meter>;
 

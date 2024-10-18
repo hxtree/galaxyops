@@ -4,7 +4,7 @@ import { SkillList } from '../../src/main';
 import mockData from './mockData.json';
 
 export default {
-  title: 'Game Assets/HUD/SkillList',
+  title: 'Game Assets/SkillList',
   component: SkillList,
 } as Meta<typeof SkillList>;
 

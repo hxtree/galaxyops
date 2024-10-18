@@ -6,7 +6,7 @@ import * as TrainRoomData from './data/TrainRoom.json';
 import * as TrainStorageCarData from './data/TrainStorageCar.json';
 
 export default {
-  title: 'Game Assets/HUD/IsometricCanvas',
+  title: 'Game Assets/IsometricCanvas',
   component: IsometricCanvas,
 } as Meta<typeof IsometricCanvas>;
 

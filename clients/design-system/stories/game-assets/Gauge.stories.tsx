@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import { Gauge, OrientationType } from '../../src/main';
 
 export default {
-  title: 'Game Assets/HUD/Gauge',
+  title: 'Game Assets/Gauge',
   component: Gauge,
 } as Meta<typeof Gauge>;
 

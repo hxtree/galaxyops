@@ -4,7 +4,7 @@ import { ActionMenu, ActionMenuProps } from '../../src/main';
 import mockData from './loomee-angora.json';
 
 export default {
-  title: 'Game Assets/HUD/ActionMenu',
+  title: 'Game Assets/ActionMenu',
   component: ActionMenu,
 } as Meta<typeof ActionMenu>;
 

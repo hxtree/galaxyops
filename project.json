@@ -11,6 +11,14 @@
         ]
       }
     },
+    "cd": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "bash ./tools/scripts/cdk-deploy-affected-sandbox.sh"
+        ]
+      }
+    },
     "cdk:bootstrap:sandbox": {
       "executor": "nx:run-commands",
       "options": {

@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import { TileMap, TileMapProps, TileMapVariant } from '../../src/main';
 
 export default {
-  title: 'Game Assets/HUD/TileMap',
+  title: 'Game Assets/TileMap',
   component: TileMap,
 } as Meta<typeof TileMap>;
 
