@@ -1,7 +1,5 @@
 #!/bin/bash
 
-nx run-many --target=build --all
-
 # Start the command in the background
 nx run aws-sso:start DeveloperSandbox &
 
@@ -12,4 +10,5 @@ PID=$!
 wait $PID
 
 # Continue with the next commands
+nx run-many --target=build --all
 nx affected --target=cdk:deploy --base=main~1 --head=main --parallel=false --require-approval never
