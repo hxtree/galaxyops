@@ -83,7 +83,7 @@ pnpm nx run package:cdk:synth    # Show synthesized CloudFormation template.
 pnpm nx run package:cdk:diff     # Compare deployed stack with current state.
 pnpm nx run package:cdk:deploy   # Deploy apps using AWS CDK.
 pnpm nx run package:cdk deploy --hotswap # Speed up dev deployment.
-pnpm nx run package:cdk watch    # Hotswap on changes.
+pnpm nx run package:cdk watch    # hot swap on changes.
 pnpm nx run package:cdk doctor    # Check CDK project for issues.
 pnpm nx release                   # Create a release for all package changes.
 pnpm nx dep-graph                 # Visualize dependencies.

@@ -11,10 +11,10 @@ make a change that slows down the application development life cycle, this is
 unacceptable.
 
 This separation of concerns between dev and ops teams is commonly seen in
-enterprises. This introduces numerous problems. Instead Ops in ment to provide a
-platform to enable Dev to focus on writting code that matters.
+enterprises. This introduces numerous problems. Instead Ops provides a platform
+to enable Dev to focus on writing code that matters to the business.
 
-Dev should not be limited by Ops infulstructure, and be forced to add logic to
+Dev should not be limited by Ops infrastructure, and be forced to add logic to
 the same ball of mud. The should be empowered to release software. It's better
 for platform to provide a L3 construct than to ship code it doesn't understand.
 
