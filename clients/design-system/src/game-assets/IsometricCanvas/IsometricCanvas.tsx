@@ -146,8 +146,9 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
         {cursorCanvasCoordinate?.y}
       </div>
       <div id="cursorGridCoordinates">
-        Cursor Grid Coordinates: {cursorGridCoordinate?.x},{' '}
-        {cursorGridCoordinate?.y}
+        Cursor Grid Coordinates:{' '}
+        {Math.round((cursorGridCoordinate?.x || 0) * 1000) / 1000},{' '}
+        {Math.round((cursorGridCoordinate?.y || 0) * 1000) / 1000}
       </div>
       <canvas
         ref={canvasRef}

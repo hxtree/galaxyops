@@ -24,6 +24,7 @@ export function drawCoordinates(
   },
   spriteHeight: number,
   fillText: string,
+  active: boolean,
 ) {
   drawDiamond(
     ctx,
@@ -31,11 +32,13 @@ export function drawCoordinates(
     vectors.top.y - spriteHeight + TILE_WIDTH * 0.5,
     -TILE_WIDTH,
     -(TILE_WIDTH * 0.5),
+    active ? 'pink' : 'transparent',
+    active ? 'black' : 'black',
   );
 
   ctx.font = '8px Courier';
   ctx.textAlign = 'center';
-  ctx.fillStyle = 'black';
+  ctx.fillStyle = active ? 'purple' : 'black';
   ctx.fillText(
     fillText,
     vectors.left.x,

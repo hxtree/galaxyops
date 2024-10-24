@@ -228,18 +228,20 @@ export class IsometricRender {
       this._drawCoordinates &&
       this._spriteMaps[spriteMapId].tags.includes('debug-mark')
     ) {
-      let fillText = `${grid.x},${grid.y}`;
+      const fillText = `${grid.x},${grid.y}`;
+      let active = false;
       if (
-        grid.x == this._cursorCoordinate?.x &&
-        grid.y == this._cursorCoordinate?.y
+        grid.x == Math.floor(this._cursorCoordinate?.x) &&
+        grid.y == Math.floor(this._cursorCoordinate?.y)
       ) {
-        fillText = 'active';
+        active = true;
       }
       drawCoordinates(
         ctx,
         vectors,
         this._spriteMaps[spriteMapId].spriteHeight,
         fillText,
+        active,
       );
     }
     this.tilesRendered++;

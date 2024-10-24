@@ -78,9 +78,12 @@ export function canvasToGridCoordinate(
 
   const inverseMatrix = invertMatrix(matrixA, matrixB, matrixC, matrixD);
 
+  const screenX = screen.x - cameraOffset.x;
+  const screenY = screen.y - cameraOffset.y;
+
   // TODO cameraOffset properly implemented
   return {
-    x: screen.x * inverseMatrix.a + screen.y * inverseMatrix.b - cameraOffset.x,
-    y: screen.x * inverseMatrix.c + screen.y * inverseMatrix.d - cameraOffset.y,
+    x: screenX * inverseMatrix.a + screenY * inverseMatrix.b + 4,
+    y: screenX * inverseMatrix.c + screenY * inverseMatrix.d + 3,
   };
 }
