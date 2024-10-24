@@ -112,6 +112,7 @@ export function drawDialogue(
 
   // Draw actor's name with smaller font size
   ctx.font = `${actorFontSize}px Arial`; // Set font for actor's name
+  ctx.textAlign = 'left';
   ctx.fillText(
     actor.toUpperCase() + ':',
     startX + padding,

@@ -7,8 +7,8 @@ class SpriteMap {
   private filename: string;
   private columns: number;
   private rows: number;
-  private spriteWidth: number;
-  private spriteHeight: number;
+  private _spriteWidth: number;
+  private _spriteHeight: number;
   private _destOffsetX: number;
   private _destOffsetY: number;
   private image: HTMLImageElement;
@@ -18,11 +18,23 @@ class SpriteMap {
     return this._tags;
   }
 
+  get spriteHeight(): number {
+    return this._spriteHeight;
+  }
+
+  get spriteWidth(): number {
+    return this._spriteWidth;
+  }
+
   parseTags(filename: string): string[] {
     const tags = [];
     if (filename.includes('wall')) {
       tags.push('wall');
     }
+    if (['wall', 'tileset'].some(tag => filename.includes(tag))) {
+      tags.push('debug-mark');
+    }
+
     return tags;
   }
 
@@ -61,14 +73,14 @@ class SpriteMap {
     return new Promise((resolve, reject) => {
       this.image = new Image();
       this.image.onload = () => {
-        this.spriteWidth = Math.floor(this.image.width / this.columns);
-        this.spriteHeight = Math.floor(this.image.height / this.rows);
-        this._destOffsetX = this.spriteWidth / 2;
+        this._spriteWidth = Math.floor(this.image.width / this.columns);
+        this._spriteHeight = Math.floor(this.image.height / this.rows);
+        this._destOffsetX = this._spriteWidth / 2;
 
         if (this._tags.includes('ground')) {
           this._destOffsetY = 36;
         } else {
-          this._destOffsetY = this.spriteHeight;
+          this._destOffsetY = this._spriteHeight;
         }
 
         resolve(this.image);
@@ -96,16 +108,16 @@ class SpriteMap {
     const spriteMapY = Math.floor((spriteId - 1) / this.columns);
 
     // Calculate the source position and size
-    const sourceX = this.spriteWidth * spriteMapX;
-    const sourceY = this.spriteHeight * spriteMapY;
-    const sourceWidth = this.spriteWidth;
-    const sourceHeight = this.spriteHeight;
+    const sourceX = this._spriteWidth * spriteMapX;
+    const sourceY = this._spriteHeight * spriteMapY;
+    const sourceWidth = this._spriteWidth;
+    const sourceHeight = this._spriteHeight;
 
     // Calculate the destination position and size
     const destX = position.x - this._destOffsetX;
     const destY = position.y - this._destOffsetY;
-    const destWidth = this.spriteWidth;
-    const destHeight = this.spriteHeight;
+    const destWidth = this._spriteWidth;
+    const destHeight = this._spriteHeight;
 
     ctx.globalAlpha = opacity;
 

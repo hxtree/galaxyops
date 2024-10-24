@@ -6,6 +6,7 @@ import { drawDiamond } from './DrawDiamond';
 import { SpriteMapRegistry } from './SpriteMapRegistry';
 import { drawDialogue } from './DrawDialogue';
 import { Dialogue } from './Dialogue.type';
+import { drawCoordinates } from './DrawCoordinates';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -134,8 +135,8 @@ export class IsometricRender {
 
             // TODO improve wall hiding logic
             // wall hiding logic
-            const valuePrevX = x > 0 ? (this._grid[z][y][x - 1] ?? 0) : 0; // const prevX
-            const valuePrevY = y > 0 ? (this._grid[z][y - 1][x] ?? 0) : 0; // const prevY
+            const valuePrevX = x > 0 ? this._grid[z][y][x - 1] ?? 0 : 0; // const prevX
+            const valuePrevY = y > 0 ? this._grid[z][y - 1][x] ?? 0 : 0; // const prevY
             const vectors = gridToCanvasCoordinate(
               {
                 x: x,
@@ -223,15 +224,10 @@ export class IsometricRender {
       y: vectors.top.y,
     });
 
-    if (this._drawCoordinates) {
-      drawDiamond(
-        ctx,
-        vectors.left.x,
-        vectors.top.y,
-        TILE_WIDTH,
-        TILE_WIDTH * 0.5,
-      );
-
+    if (
+      this._drawCoordinates &&
+      this._spriteMaps[spriteMapId].tags.includes('debug-mark')
+    ) {
       let fillText = `${grid.x},${grid.y}`;
       if (
         grid.x == this._cursorCoordinate?.x &&
@@ -239,17 +235,13 @@ export class IsometricRender {
       ) {
         fillText = 'active';
       }
-
-      ctx.font = '8px Courier';
-      ctx.textAlign = 'center';
-      ctx.fillText(
+      drawCoordinates(
+        ctx,
+        vectors,
+        this._spriteMaps[spriteMapId].spriteHeight,
         fillText,
-        vectors.left.x + (vectors.right.x - vectors.left.x) / 2,
-        vectors.top.y + (vectors.bottom.y - vectors.top.y) / 2,
-        vectors.right.x - vectors.left.x,
       );
     }
-
     this.tilesRendered++;
   }
 }
