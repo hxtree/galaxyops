@@ -98,9 +98,22 @@ export class IsometricRender {
   private renderText(ctx: CanvasRenderingContext2D) {
     // TODO inky support and options
     this._dialogues.forEach(dialogue => {
-      // TODO find actor position
-      // TODO render based on actors position
-      drawDialogue(ctx, 10, 100, dialogue.actor, dialogue.text);
+      // TODO find actor position within the grid
+      const actorPosition = { x: 0, y: 0, z: 0 };
+
+      const coordinates = gridToCanvasCoordinate(
+        actorPosition,
+        this.cameraOffset,
+      );
+
+      // TODO improve dialogue position
+      drawDialogue(
+        ctx,
+        coordinates.bottom.x,
+        coordinates.bottom.y,
+        dialogue.actor,
+        dialogue.text,
+      );
     });
   }
 
