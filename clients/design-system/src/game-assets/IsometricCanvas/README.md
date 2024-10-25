@@ -64,6 +64,9 @@ a sprite represents water and requires the player to swim to navigate it.
       }
     }
   },
+  "dialogues" : {
+    ["actor": "Meeku Oni", "text": "Hello"]
+  },
   "features": {
     "f5": [{ "animate": "swimming" }],
     "0,0,0": [
@@ -86,9 +89,10 @@ a sprite represents water and requires the player to swim to navigate it.
 Tags are inferred based on the spritemap name. The rendering engine will if a
 spritemap contains for example walls based on the filename.
 
-| tag  | purpose                                             |
-| ---- | --------------------------------------------------- |
-| wall | use for autohiding sprites that collide with camera |
+| tag        | purpose                                                      |
+| ---------- | ------------------------------------------------------------ |
+| wall       | use for autohiding sprites that collide with camera          |
+| debug-mark | use to determine whether debug coordinates should be printed |
 
 ## Autohide Obstructive Walls
 

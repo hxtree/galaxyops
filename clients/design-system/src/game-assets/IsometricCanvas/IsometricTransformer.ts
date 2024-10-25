@@ -1,4 +1,4 @@
-import { Coordinate3D, Coordinate2D } from './Coordinates.type';
+import { Coordinate3D, Coordinate2D } from './types/Coordinates.type';
 import { SPRITE_WIDTH, SPRITE_HEIGHT, SPRITE_DEPTH } from './SpriteDimensions';
 import { TILE_WIDTH } from './TileDimensions';
 

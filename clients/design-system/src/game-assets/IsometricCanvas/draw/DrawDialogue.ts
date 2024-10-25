@@ -60,47 +60,62 @@ export function drawDialogue(
   ctx.strokeStyle = strokeColor;
   ctx.fillStyle = fillColor;
 
+  const topLeftX = startX - width / 2; // Center the box horizontally
+  const topLeftY = startY - height; // Adjust the box above the actor
+
   ctx.beginPath();
-  ctx.moveTo(startX + cornerRadius, startY);
-  ctx.lineTo(startX + width - cornerRadius, startY);
+  ctx.moveTo(topLeftX + cornerRadius, topLeftY);
+  ctx.lineTo(topLeftX + width - cornerRadius, topLeftY);
 
   // right top corner
   ctx.arcTo(
-    startX + width,
-    startY,
-    startX + width,
-    startY + height - tailHeight,
+    topLeftX + width,
+    topLeftY,
+    topLeftX + width,
+    topLeftY + height - tailHeight,
     cornerRadius,
   );
 
   // Bottom-right corner
   ctx.arcTo(
-    startX + width,
-    startY + height - tailHeight,
-    startX + width - cornerRadius,
-    startY + height - tailHeight,
+    topLeftX + width,
+    topLeftY + height - tailHeight,
+    topLeftX + width - cornerRadius,
+    topLeftY + height - tailHeight,
     cornerRadius,
   );
 
   // Tail end point
-  ctx.lineTo(startX + width / 2 + tailWidth / 2, startY + height - tailHeight);
+  ctx.lineTo(
+    topLeftX + width / 2 + tailWidth / 2,
+    topLeftY + height - tailHeight,
+  );
   // Tail peak
-  ctx.lineTo(startX + width / 2, startY + height);
+  ctx.lineTo(topLeftX + width / 2, topLeftY + height);
   // Tail starting point
-  ctx.lineTo(startX + width / 2 - tailWidth / 2, startY + height - tailHeight);
+  ctx.lineTo(
+    topLeftX + width / 2 - tailWidth / 2,
+    topLeftY + height - tailHeight,
+  );
 
   // bottom left corner
   ctx.arcTo(
-    startX,
-    startY + height - tailHeight,
-    startX,
-    startY + height - cornerRadius - tailHeight,
+    topLeftX,
+    topLeftY + height - tailHeight,
+    topLeftX,
+    topLeftY + height - cornerRadius - tailHeight,
     cornerRadius,
   );
-  ctx.lineTo(startX, startY + cornerRadius);
+  ctx.lineTo(topLeftX, topLeftY + cornerRadius);
 
   // top left corner
-  ctx.arcTo(startX, startY, startX + cornerRadius, startY, cornerRadius);
+  ctx.arcTo(
+    topLeftX,
+    topLeftY,
+    topLeftX + cornerRadius,
+    topLeftY,
+    cornerRadius,
+  );
 
   ctx.closePath(); // Close the path to connect the tail smoothly
 
@@ -115,15 +130,15 @@ export function drawDialogue(
   ctx.textAlign = 'left';
   ctx.fillText(
     actor.toUpperCase() + ':',
-    startX + padding,
-    startY + padding + actorFontSize,
+    topLeftX + padding,
+    topLeftY + padding + actorFontSize,
   ); // Adjust vertical position
 
   // Draw wrapped text
-  let currentY = startY + padding + actorFontSize + actorPadding; // Start below the actor's name
+  let currentY = topLeftY + padding + actorFontSize + actorPadding; // Start below the actor's name
   ctx.font = '16px Arial'; // Reset font for dialogue
   for (const line of lines) {
-    ctx.fillText(line, startX + padding, currentY);
+    ctx.fillText(line, topLeftX + padding, currentY);
     currentY += 20; // Move down for the next line
   }
 }

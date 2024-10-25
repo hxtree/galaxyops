@@ -2,8 +2,8 @@ import { IsometricRender } from './IsometricRender';
 import React, { useRef, useEffect, useState } from 'react';
 import './IsometricCanvas.scss';
 import { IsometricCanvasProps } from './IsometricCanvasProps';
-import { Coordinate2D } from './Coordinates.type';
-import { useResize } from './useResize';
+import { Coordinate2D } from './types/Coordinates.type';
+import { useResize } from './hooks/useResize';
 import { canvasToGridCoordinate } from './IsometricTransformer';
 
 const isometricRender = new IsometricRender({

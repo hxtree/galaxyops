@@ -1,5 +1,5 @@
 import { drawDiamond } from './DrawDiamond';
-import { TILE_WIDTH } from './TileDimensions';
+import { TILE_WIDTH } from '../TileDimensions';
 
 // TODO take into account the height of the sprite being drawn
 export function drawCoordinates(

@@ -1,12 +1,12 @@
-import { Coordinate2D, Coordinate3D } from './Coordinates.type';
+import { Coordinate2D, Coordinate3D } from './types/Coordinates.type';
 import { TILE_WIDTH } from './TileDimensions';
 import { gridToCanvasCoordinate } from './IsometricTransformer';
-import SpriteMap from './SpriteMap';
-import { drawDiamond } from './DrawDiamond';
-import { SpriteMapRegistry } from './SpriteMapRegistry';
-import { drawDialogue } from './DrawDialogue';
-import { Dialogue } from './Dialogue.type';
-import { drawCoordinates } from './DrawCoordinates';
+import SpriteMap from './draw/SpriteMap';
+import { drawDiamond } from './draw/DrawDiamond';
+import { SpriteMapRegistry } from './types/SpriteMapRegistry.type';
+import { drawDialogue } from './draw/DrawDialogue';
+import { Dialogue } from './types/Dialogue.type';
+import { drawCoordinates } from './draw/DrawCoordinates';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -100,17 +100,19 @@ export class IsometricRender {
     this._dialogues.forEach(dialogue => {
       // TODO find actor position within the grid
       const actorPosition = { x: 0, y: 0, z: 0 };
+      // TODO find actors height
+      const actorsHeight = 80;
 
       const coordinates = gridToCanvasCoordinate(
         actorPosition,
         this.cameraOffset,
       );
 
-      // TODO improve dialogue position
+      // TODO account for printing towards edges
       drawDialogue(
         ctx,
-        coordinates.bottom.x,
-        coordinates.bottom.y,
+        coordinates.right.x - (coordinates.right.x - coordinates.left.x),
+        coordinates.top.y - actorsHeight,
         dialogue.actor,
         dialogue.text,
       );
