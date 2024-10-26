@@ -13,19 +13,8 @@ export const useCanvasClassNames = (properties?: Properties): string[] => {
   useEffect(() => {
     const newClassNames = ['isometric-canvas'];
 
-    switch (properties?.backgroundColor) {
-      case BackgroundColor.BLUE:
-        newClassNames.push('isometric-canvas__blue');
-        break;
-      case BackgroundColor.GREEN:
-        newClassNames.push('isometric-canvas__green');
-        break;
-      case BackgroundColor.RED:
-        newClassNames.push('isometric-canvas__red');
-        break;
-      default:
-        newClassNames.push('isometric-canvas__blue');
-        break;
+    if (properties?.backgroundColor) {
+      newClassNames.push(`isometric-canvas__${properties.backgroundColor}`);
     }
 
     setCanvasClassNames(newClassNames);

@@ -28,6 +28,13 @@
     background-color: #790909;
   }
 
+  &.isometric-canvas__dark {
+    background: linear-gradient(222deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgb(51, 51, 51) 35%, rgba(0, 0, 0, 1) 100%);
+    background-color: #090909;
+  }
+
   &.isometric-canvas-off-screen {
     display: none;
   }
