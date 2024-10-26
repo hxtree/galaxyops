@@ -5,13 +5,14 @@ import { IsometricCanvasProps } from './IsometricCanvasProps';
 import { Coordinate2D } from './types/Coordinates.type';
 import { useResize } from './hooks/useResize';
 import { canvasToGridCoordinate } from './IsometricTransformer';
+import { BackgroundColor } from './types/BackgroundColor.type';
 
 const isometricRender = new IsometricRender({
   drawCoordinates: true,
 });
 
 export const IsometricCanvas = (props: IsometricCanvasProps) => {
-  const { grid, spriteMapRegistry, dialogues } = props;
+  const { grid, spriteMapRegistry, dialogues, properties } = props;
   const canvasRef = useRef(null);
   const offScreenCanvasRef = useRef(null);
   const { width, height } = useResize(300); // Debounce resize events by 300ms
@@ -25,7 +26,9 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     useState<Coordinate2D | null>(null);
   const [cursorGridCoordinate, setCursorGridCoordinate] =
     useState<Coordinate2D | null>(null);
-  const [showDebug, setShowDebug] = useState(false);
+  const [showDebug, setShowDebug] = useState(true);
+
+  const [canvasClassNames, setCanvasClassNames] = useState<string[]>([]);
 
   isometricRender.grid = grid;
   isometricRender.dialogues = dialogues;
@@ -121,6 +124,27 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     });
   };
 
+  useEffect(() => {
+    const newClassNames = ['isometric-canvas'];
+
+    switch (properties?.backgroundColor) {
+      case BackgroundColor.BLUE:
+        newClassNames.push('isometric-canvas__blue');
+        break;
+      case BackgroundColor.GREEN:
+        newClassNames.push('isometric-canvas__green');
+        break;
+      case BackgroundColor.RED:
+        newClassNames.push('isometric-canvas__red');
+        break;
+      default:
+        newClassNames.push('isometric-canvas__blue');
+        break;
+    }
+
+    setCanvasClassNames(newClassNames);
+  }, [properties]);
+
   return (
     <div>
       <button onClick={() => setShowDebug(!showDebug)}>
@@ -153,7 +177,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
       <canvas
         ref={canvasRef}
         onMouseMove={handleMouseMove}
-        className="isometric-canvas"
+        className={`${canvasClassNames.join(' ')}`}
       />
       <canvas
         ref={offScreenCanvasRef}

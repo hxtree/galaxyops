@@ -1,5 +1,5 @@
 import { Coordinate2D, Coordinate3D } from './types/Coordinates.type';
-import { TILE_WIDTH } from './TileDimensions';
+import { GRID_WIDTH } from './GridDimensions';
 import { gridToCanvasCoordinate } from './IsometricTransformer';
 import SpriteMap from './draw/SpriteMap';
 import { drawDiamond } from './draw/DrawDiamond';
@@ -168,10 +168,10 @@ export class IsometricRender {
             ) {
               drawDiamond(
                 ctx,
-                vectors.right.x - TILE_WIDTH * 0.5,
+                vectors.right.x - GRID_WIDTH * 0.5,
                 vectors.top.y,
-                -TILE_WIDTH,
-                -TILE_WIDTH * 0.5,
+                -GRID_WIDTH,
+                -GRID_WIDTH * 0.5,
                 ' rgba(160, 196, 225, 0.5)',
                 ' rgba(160, 196, 225, 0.5)',
               );

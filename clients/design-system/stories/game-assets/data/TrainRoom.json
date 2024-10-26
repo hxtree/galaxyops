@@ -1,4 +1,7 @@
 {
+  "properties": {
+    "backgroundColor": "blue"
+  },
   "spriteMapRegistry": {
     "f": "/game-assets/fadewall-1x1.png",
     "t": "/game-assets/tileset-4x4.png",

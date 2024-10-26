@@ -4,6 +4,7 @@ import { IsometricCanvas, IsometricCanvasProps } from '../../src/main';
 import * as TrainCarData from './data/TrainCar.json';
 import * as TrainRoomData from './data/TrainRoom.json';
 import * as TrainStorageCarData from './data/TrainStorageCar.json';
+import * as FieldData from './data/Field.json';
 
 export default {
   title: 'Game Assets/IsometricCanvas',
@@ -27,3 +28,9 @@ export const TrainStorageCar = (args: IsometricCanvasProps) => (
 );
 
 TrainStorageCar.args = TrainStorageCarData as IsometricCanvasProps;
+
+export const Field = (args: IsometricCanvasProps) => (
+  <IsometricCanvas {...args} />
+);
+
+Field.args = FieldData as IsometricCanvasProps;

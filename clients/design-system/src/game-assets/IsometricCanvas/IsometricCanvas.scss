@@ -3,11 +3,30 @@
   width: 100vw;
   height: 80vh;
   margin: 0;
-  background: linear-gradient(222deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(9, 9, 121, 1) 35%,
-      rgba(0, 212, 255, 1) 100%);
-  background-color: 090979;
+
+  &.isometric-canvas__blue {
+    background: linear-gradient(222deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 35%,
+        rgba(0, 212, 255, 1) 100%);
+    background-color: #090979;
+  }
+
+  &.isometric-canvas__green {
+    background: linear-gradient(222deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgb(9, 121, 58) 35%,
+        rgba(0, 255, 0, 1) 100%);
+    background-color: #097912;
+  }
+
+  &.isometric-canvas__red {
+    background: linear-gradient(222deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgb(121, 9, 116) 35%,
+        rgba(255, 0, 0, 1) 100%);
+    background-color: #790909;
+  }
 
   &.isometric-canvas-off-screen {
     display: none;

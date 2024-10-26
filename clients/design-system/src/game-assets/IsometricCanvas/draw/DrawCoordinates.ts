@@ -1,5 +1,5 @@
 import { drawDiamond } from './DrawDiamond';
-import { TILE_WIDTH } from '../TileDimensions';
+import { GRID_WIDTH, GRID_HEIGHT, GRID_DEPTH } from '../GridDimensions';
 
 // TODO take into account the height of the sprite being drawn
 export function drawCoordinates(
@@ -29,9 +29,9 @@ export function drawCoordinates(
   drawDiamond(
     ctx,
     vectors.top.x,
-    vectors.top.y - spriteHeight + TILE_WIDTH * 0.5,
-    -TILE_WIDTH,
-    -(TILE_WIDTH * 0.5),
+    vectors.top.y - spriteHeight + GRID_WIDTH * 0.5,
+    -GRID_WIDTH,
+    -(GRID_WIDTH * 0.5),
     active ? 'pink' : 'transparent',
     active ? 'black' : 'black',
   );
@@ -45,7 +45,8 @@ export function drawCoordinates(
     vectors.top.y +
       (vectors.top.y - vectors.bottom.y) / 2 -
       spriteHeight +
-      TILE_WIDTH * 0.5,
+      GRID_HEIGHT * 0.5 +
+      GRID_DEPTH,
     vectors.right.x - vectors.left.x,
   );
 }

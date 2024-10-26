@@ -1,6 +1,6 @@
 import { Coordinate3D, Coordinate2D } from './types/Coordinates.type';
-import { SPRITE_WIDTH, SPRITE_HEIGHT, SPRITE_DEPTH } from './SpriteDimensions';
-import { TILE_WIDTH } from './TileDimensions';
+import { SPRITE_WIDTH, SPRITE_HEIGHT } from './SpriteDimensions';
+import { GRID_WIDTH, GRID_HEIGHT, GRID_DEPTH } from './GridDimensions';
 
 // Transformation matrix components for isometric projection
 const ISO_VECTOR_I_X = 1;
@@ -15,9 +15,9 @@ export function gridToCanvasCoordinate(
   coordinate: Coordinate3D,
   cameraOffset: Coordinate2D,
 ) {
-  const w = TILE_WIDTH;
-  const h = TILE_WIDTH * 0.5;
-  const d = SPRITE_DEPTH;
+  const w = GRID_WIDTH;
+  const h = GRID_HEIGHT;
+  const d = GRID_DEPTH;
 
   const screenCoordinate2D = {
     x:
@@ -71,19 +71,19 @@ export function canvasToGridCoordinate(
   screen: Coordinate2D,
   cameraOffset: Coordinate2D,
 ): Coordinate2D {
-  const matrixA = ISO_VECTOR_I_X * 0.5 * SPRITE_WIDTH;
-  const matrixB = ISO_VECTOR_J_X * 0.5 * SPRITE_WIDTH;
-  const matrixC = ISO_VECTOR_I_Y * 0.5 * SPRITE_HEIGHT;
-  const matrixD = ISO_VECTOR_J_Y * 0.5 * SPRITE_HEIGHT;
+  const matrixA = ISO_VECTOR_I_X * 0.5 * GRID_WIDTH;
+  const matrixB = ISO_VECTOR_J_X * 0.5 * GRID_WIDTH;
+  const matrixC = ISO_VECTOR_I_Y * 0.5 * GRID_HEIGHT;
+  const matrixD = ISO_VECTOR_J_Y * 0.5 * GRID_HEIGHT;
 
   const inverseMatrix = invertMatrix(matrixA, matrixB, matrixC, matrixD);
 
-  const screenX = screen.x - cameraOffset.x;
-  const screenY = screen.y - cameraOffset.y;
+  const screenX = -cameraOffset.x + screen.x;
+  const screenY = -cameraOffset.y + screen.y;
 
-  // TODO cameraOffset properly implemented
+  // TODO improve this calculation
   return {
-    x: screenX * inverseMatrix.a + screenY * inverseMatrix.b + 4,
-    y: screenX * inverseMatrix.c + screenY * inverseMatrix.d + 3,
+    x: screenX * inverseMatrix.a + screenY * inverseMatrix.b + 5,
+    y: screenX * inverseMatrix.c + screenY * inverseMatrix.d + 4,
   };
 }
