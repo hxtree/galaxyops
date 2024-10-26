@@ -5,7 +5,8 @@ import { IsometricCanvasProps } from './IsometricCanvasProps';
 import { Coordinate2D } from './types/Coordinates.type';
 import { useResize } from './hooks/useResize';
 import { canvasToGridCoordinate } from './IsometricTransformer';
-import { BackgroundColor } from './types/BackgroundColor.type';
+import useArrowKeyMoveCamera from './hooks/useArrowKeyMoveCamera';
+import { useCanvasClassNames } from './hooks/useCanvasClassNames';
 
 const isometricRender = new IsometricRender({
   drawCoordinates: true,
@@ -16,11 +17,14 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
   const canvasRef = useRef(null);
   const offScreenCanvasRef = useRef(null);
   const { width, height } = useResize(300); // Debounce resize events by 300ms
-  const [cameraCoordinates, setCameraCoordinates] = useState({
-    x: 0,
-    y: 0,
-    z: 0,
-  });
+  const [cameraCoordinates, setCameraCoordinates] = useState<{
+    x: number;
+    y: number;
+    z: number;
+  }>({ x: 0, y: 0, z: 0 });
+
+  useArrowKeyMoveCamera(setCameraCoordinates);
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [cursorCanvasCoordinate, setCursorCanvasCoordinate] =
     useState<Coordinate2D | null>(null);
@@ -28,7 +32,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     useState<Coordinate2D | null>(null);
   const [showDebug, setShowDebug] = useState(true);
 
-  const [canvasClassNames, setCanvasClassNames] = useState<string[]>([]);
+  const canvasClassNames = useCanvasClassNames(properties);
 
   isometricRender.grid = grid;
   isometricRender.dialogues = dialogues;
@@ -102,49 +106,6 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     setCursorCanvasCoordinate({ x: cursorX, y: cursorY });
   };
 
-  const moveCamera = (direction: string) => {
-    setCameraCoordinates(prevPosition => {
-      const step = 10; // Define how much movement per step
-      switch (direction) {
-        case 'up':
-          return { ...prevPosition, y: prevPosition.y + step };
-        case 'down':
-          return { ...prevPosition, y: prevPosition.y - step };
-        case 'left':
-          return { ...prevPosition, x: prevPosition.x - step };
-        case 'right':
-          return { ...prevPosition, x: prevPosition.x + step };
-        case 'higher':
-          return { ...prevPosition, z: prevPosition.z + step };
-        case 'lower':
-          return { ...prevPosition, z: prevPosition.z - step };
-        default:
-          return prevPosition;
-      }
-    });
-  };
-
-  useEffect(() => {
-    const newClassNames = ['isometric-canvas'];
-
-    switch (properties?.backgroundColor) {
-      case BackgroundColor.BLUE:
-        newClassNames.push('isometric-canvas__blue');
-        break;
-      case BackgroundColor.GREEN:
-        newClassNames.push('isometric-canvas__green');
-        break;
-      case BackgroundColor.RED:
-        newClassNames.push('isometric-canvas__red');
-        break;
-      default:
-        newClassNames.push('isometric-canvas__blue');
-        break;
-    }
-
-    setCanvasClassNames(newClassNames);
-  }, [properties]);
-
   return (
     <div>
       <button onClick={() => setShowDebug(!showDebug)}>
@@ -155,12 +116,6 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
       <button onClick={() => setCameraCoordinates({ x: 0, y: 0, z: 0 })}>
         reset
       </button>
-      <button onClick={() => moveCamera('up')}>Move Up</button>
-      <button onClick={() => moveCamera('down')}>Move Down</button>
-      <button onClick={() => moveCamera('left')}>Move Left</button>
-      <button onClick={() => moveCamera('right')}>Move Right</button>
-      <button onClick={() => moveCamera('higher')}>Move Higher</button>
-      <button onClick={() => moveCamera('lower')}>Move Lower</button>
       <div id="cameraCoordinates">
         Camera Coordinates: {cameraCoordinates.x}, {cameraCoordinates.y},{' '}
         {cameraCoordinates.z}
