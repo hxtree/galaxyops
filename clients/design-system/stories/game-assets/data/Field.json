@@ -12,6 +12,12 @@
       }
     }
   ],
+  "dialogues": [
+    {
+      "actorId": "MEEKU_ONI",
+      "text": "Think there be trees or something."
+    }
+  ],
   "spriteMapRegistry": {
     "t": "/game-assets/tileset-4x4.png"
   },

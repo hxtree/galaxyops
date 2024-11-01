@@ -1,7 +1,8 @@
 {
   "properties": {
     "backgroundColor": "dark"
-  },  "actors": [
+  },
+  "actors": [
     {
       "actorId": "MEEKU_ONI",
       "position": {
@@ -9,6 +10,12 @@
         "y": 5,
         "z": 1
       }
+    }
+  ],
+  "dialogues": [
+    {
+      "actorId": "MEEKU_ONI",
+      "text": "It's pretty slippery."
     }
   ],
   "spriteMapRegistry": {

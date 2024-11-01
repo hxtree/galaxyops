@@ -105,9 +105,19 @@ export class IsometricRender {
     // TODO inky support and options
     this._dialogues.forEach(dialogue => {
       // TODO find actor position within the grid
-      const actorPosition = { x: 0, y: 0, z: 0 };
+
+      let actorPosition = { x: 0, y: 0, z: 0 };
+      let actorsHeight = 80;
+
+      this._actors.forEach((actor: Actor) => {
+        if (actor.actorId == dialogue.actorId) {
+          actorPosition = actor.position;
+          if (actor.height) {
+            actorsHeight = actor.height;
+          }
+        }
+      });
       // TODO find actors height
-      const actorsHeight = 80;
 
       const coordinates = gridToCanvasCoordinate(
         actorPosition,
@@ -119,7 +129,7 @@ export class IsometricRender {
         ctx,
         coordinates.right.x - (coordinates.right.x - coordinates.left.x),
         coordinates.top.y - actorsHeight,
-        dialogue.actor,
+        dialogue.actorId,
         dialogue.text,
       );
     });
@@ -216,8 +226,8 @@ export class IsometricRender {
     };
 
     return {
-      x: center.x + this._cameraCoordinates.x,
-      y: center.y + this._cameraCoordinates.y,
+      x: center.x + (this._cameraCoordinates?.x || 0),
+      y: center.y + (this._cameraCoordinates?.y || 0),
     };
   }
 

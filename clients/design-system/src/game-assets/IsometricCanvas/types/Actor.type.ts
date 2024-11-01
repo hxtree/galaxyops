@@ -1,5 +1,6 @@
 export type Actor = {
   actorId: string;
+  height?: number;
   position: {
     x: number;
     y: number;

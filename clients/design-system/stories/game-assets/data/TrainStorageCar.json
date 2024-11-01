@@ -20,6 +20,15 @@
       }
     }
   ],
+  "dialogues": [
+    {
+      "actorId": "MEEKU_ONI",
+      "text": "Okay"
+    },    {
+      "actorId": "CHUBBS",
+      "text": "Stop right there"
+    }
+  ],
   "spriteMapRegistry": {
     "f": "/game-assets/fadewall-1x1.png",
     "t": "/game-assets/tileset-4x4.png",

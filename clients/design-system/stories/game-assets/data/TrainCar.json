@@ -10,7 +10,25 @@
         "y": 3,
         "z": 0
       }
+    },
+    {
+      "actorId": "MALACE_TSIA",
+      "position": {
+        "x": 5,
+        "y": 4,
+        "z": 0
+      }
     }
+  ],
+  "dialogues": [
+    {
+      "actorId": "MEEKU_ONI",
+      "text": "Look over there."
+    }   , {
+      "actorId": "MALACE_TSIA",
+      "text": "Yes, that's a mountain."
+    }
+
   ],
   "spriteMapRegistry": {
     "f": "/game-assets/fadewall-1x1.png",
@@ -23,12 +41,6 @@
     "os": "/game-assets/safe-4x1.png",
     "ol": "/game-assets/switches-4x1.png"
   },
-  "dialogues": [
-    {
-      "actor": "Malace Tsia",
-      "text": "Look over there, it's a mountain"
-    }
-  ],
   "grid": [
     [
       ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"],

@@ -1,4 +1,4 @@
 export type Dialogue = {
-  actor: string;
+  actorId: string;
   text: string;
 };
