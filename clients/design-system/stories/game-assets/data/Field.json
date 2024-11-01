@@ -2,6 +2,16 @@
   "properties": {
     "backgroundColor": "green"
   },
+  "actors": [
+    {
+      "actorId": "MEEKU_ONI",
+      "position": {
+        "x": 3,
+        "y": 3,
+        "z": 0
+      }
+    }
+  ],
   "spriteMapRegistry": {
     "t": "/game-assets/tileset-4x4.png"
   },

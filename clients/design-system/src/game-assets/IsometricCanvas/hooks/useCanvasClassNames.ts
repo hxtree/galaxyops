@@ -14,7 +14,7 @@ export const useCanvasClassNames = (properties?: Properties): string[] => {
     const newClassNames = ['isometric-canvas'];
 
     if (properties?.backgroundColor) {
-      newClassNames.push(`isometric-canvas__${properties.backgroundColor}`);
+      newClassNames.push(`isometric-canvas-${properties.backgroundColor}`);
     }
 
     setCanvasClassNames(newClassNames);

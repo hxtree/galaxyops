@@ -7,6 +7,7 @@ import { SpriteMapRegistry } from './types/SpriteMapRegistry.type';
 import { drawDialogue } from './draw/DrawDialogue';
 import { Dialogue } from './types/Dialogue.type';
 import { drawCoordinates } from './draw/DrawCoordinates';
+import { Actor } from './types/Actor.type';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -14,6 +15,7 @@ export class IsometricRender {
   cameraPosition: Coordinate3D;
 
   private _grid: string[][][];
+  private _actors: Actor[];
   private _spriteMaps: { [key: string]: SpriteMap } = {};
   private _dialogues: Dialogue[] = [];
 
@@ -52,6 +54,10 @@ export class IsometricRender {
 
   set grid(grid: string[][][]) {
     this._grid = grid;
+  }
+
+  set actors(actors: Actor[]) {
+    this._actors = actors;
   }
 
   set width(width: number) {
@@ -184,6 +190,19 @@ export class IsometricRender {
               y,
               z,
             });
+
+            if (this._actors) {
+              this._actors.forEach((actor: Actor) => {
+                if (
+                  actor.position.z !== z ||
+                  actor.position.y !== y ||
+                  actor.position.x !== x
+                ) {
+                  return;
+                }
+                drawCoordinates(ctx, vectors, 36, 'Actor', true);
+              });
+            }
           }
         }
       }
