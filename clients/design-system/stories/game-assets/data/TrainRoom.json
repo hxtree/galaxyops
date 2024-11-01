@@ -2,6 +2,16 @@
   "properties": {
     "backgroundColor": "blue"
   },
+  "actors": [
+    {
+      "actorId": "MEEKU_ONI",
+      "position": {
+        "x": 5,
+        "y": 4,
+        "z": 0
+      }
+    }
+  ],
   "spriteMapRegistry": {
     "f": "/game-assets/fadewall-1x1.png",
     "t": "/game-assets/tileset-4x4.png",

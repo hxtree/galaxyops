@@ -1,7 +1,16 @@
 {
   "properties": {
     "backgroundColor": "dark"
-  },
+  },  "actors": [
+    {
+      "actorId": "MEEKU_ONI",
+      "position": {
+        "x": 1,
+        "y": 5,
+        "z": 1
+      }
+    }
+  ],
   "spriteMapRegistry": {
     "t": "/game-assets/sewer-tileset-4x4.png",
     "w": "/game-assets/sewer-wall-8x1.png",
