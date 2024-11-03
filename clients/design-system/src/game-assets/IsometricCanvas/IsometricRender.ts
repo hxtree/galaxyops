@@ -31,6 +31,11 @@ export class IsometricRender {
   }
 
   async loadSpriteMaps(spriteMapRegistry: SpriteMapRegistry) {
+    // TODO load sprite maps from a registry
+    spriteMapRegistry['shadow'] = './game-assets/sprites/shadow-1x1.png';
+    spriteMapRegistry['meeku-oni-walk'] =
+      './game-assets/sprites/meeku-oni/walk-10x4.png';
+
     const loadPromises: Promise<HTMLImageElement>[] = [];
 
     for (const key in spriteMapRegistry) {
@@ -125,6 +130,7 @@ export class IsometricRender {
       );
 
       // TODO account for printing towards edges
+
       drawDialogue(
         ctx,
         coordinates.right.x - (coordinates.right.x - coordinates.left.x),
@@ -210,7 +216,22 @@ export class IsometricRender {
                 ) {
                   return;
                 }
-                drawCoordinates(ctx, vectors, 36, 'Actor', true);
+
+                this._spriteMaps['shadow'].draw(
+                  ctx,
+                  1,
+                  {
+                    x: vectors.right.x - (vectors.right.x - vectors.left.x),
+                    y: vectors.top.y - 17,
+                  },
+                  0.618,
+                );
+
+                // TODO determine actor sprite based on actor state
+                this._spriteMaps['meeku-oni-walk'].draw(ctx, 1, {
+                  x: vectors.right.x - (vectors.right.x - vectors.left.x),
+                  y: vectors.top.y - 17,
+                });
               });
             }
           }
