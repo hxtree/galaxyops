@@ -5,18 +5,34 @@
   "actors": [
     {
       "actorId": "MEEKU_ONI",
+      "height": 85,
       "position": {
         "x": 2,
         "y": 3,
         "z": 0
+      },
+      "animationState": {
+        "isAnimating": false,
+        "currentAnimation": "idle"
+      },
+      "spriteMapRegistry": {
+        "idle": "/game-assets/sprites/meeku-oni/idle-1x1.png",
+        "walking": "/game-assets/sprites/meeku-oni/walk-10x4.png"
       }
     },
     {
       "actorId": "MALACE_TSIA",
       "position": {
-        "x": 5,
-        "y": 4,
+        "x": 10,
+        "y": 5,
         "z": 0
+      },
+      "animationState": {
+        "isAnimating": false,
+        "currentAnimation": "idle"
+      },
+      "spriteMapRegistry": {
+        "idle": "/game-assets/sprites/malace-tsia/idle-1x1.png"
       }
     }
   ],

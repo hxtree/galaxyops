@@ -5,10 +5,24 @@
   "actors": [
     {
       "actorId": "MEEKU_ONI",
+      "height": 85,
       "position": {
         "x": 2,
         "y": 3,
         "z": 0
+      },
+      "animationState": {
+        "currentFrame": 0,
+        "totalFrames": 4,
+        "animationDuration": 1.0,
+        "frameDuration": 0.1,
+        "isAnimating": false,
+        "startTime": 0,
+        "currentAnimation": "idle"
+      },
+      "spriteMapRegistry": {
+        "idle": "/game-assets/sprites/meeku-oni/idle-1x1.png",
+        "walking": "/game-assets/sprites/meeku-oni/walk-10x4.png"
       }
     },
     {
@@ -17,6 +31,19 @@
         "x": 10,
         "y": 3,
         "z": 0
+      },
+      "animationState": {
+        "currentFrame": 0,
+        "totalFrames": 4,
+        "animationDuration": 1.0,
+        "frameDuration": 0.1,
+        "isAnimating": false,
+        "startTime": 0,
+        "currentAnimation": "idle"
+      },
+      "spriteMapRegistry": {
+        "idle": "/game-assets/sprites/chubbs/idle-1x1.png",
+        "walking": "/game-assets/sprites/meeku-oni/walk-10x4.png"
       }
     }
   ],

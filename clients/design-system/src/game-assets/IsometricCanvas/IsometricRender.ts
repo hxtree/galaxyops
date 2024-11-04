@@ -8,6 +8,7 @@ import { drawDialogue } from './draw/DrawDialogue';
 import { Dialogue } from './types/Dialogue.type';
 import { drawCoordinates } from './draw/DrawCoordinates';
 import { Actor } from './types/Actor.type';
+import { kebabCase } from 'lodash';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -28,14 +29,14 @@ export class IsometricRender {
 
   constructor(options: Partial<IsometricRender> = {}) {
     Object.assign(this, {}, options);
+
+    // load global sprite maps
+    const spriteMapRegistry: SpriteMapRegistry = {};
+    spriteMapRegistry['shadow'] = './game-assets/sprites/shadow-1x1.png';
+    this.loadSpriteMaps(spriteMapRegistry);
   }
 
   async loadSpriteMaps(spriteMapRegistry: SpriteMapRegistry) {
-    // TODO load sprite maps from a registry
-    spriteMapRegistry['shadow'] = './game-assets/sprites/shadow-1x1.png';
-    spriteMapRegistry['meeku-oni-walk'] =
-      './game-assets/sprites/meeku-oni/walk-10x4.png';
-
     const loadPromises: Promise<HTMLImageElement>[] = [];
 
     for (const key in spriteMapRegistry) {
@@ -63,6 +64,28 @@ export class IsometricRender {
 
   set actors(actors: Actor[]) {
     this._actors = actors;
+
+    // load actors sprite maps
+    this._actors.forEach(actor => {
+      if (!actor.spriteMapRegistry) {
+        return;
+      }
+
+      const actorSpriteMapRegistry: SpriteMapRegistry = {};
+
+      for (const key in actor.spriteMapRegistry) {
+        const spriteMapRegistryId = kebabCase(`${actor.actorId}-${key}`);
+        const spriteMapRegistryValue = actor.spriteMapRegistry[key];
+
+        // check if sprite map is already loaded
+        if (this._spriteMaps[spriteMapRegistryId]) {
+          continue;
+        }
+        actorSpriteMapRegistry[spriteMapRegistryId] = spriteMapRegistryValue;
+      }
+
+      this.loadSpriteMaps(actorSpriteMapRegistry);
+    });
   }
 
   set width(width: number) {
@@ -109,8 +132,6 @@ export class IsometricRender {
   private renderText(ctx: CanvasRenderingContext2D) {
     // TODO inky support and options
     this._dialogues.forEach(dialogue => {
-      // TODO find actor position within the grid
-
       let actorPosition = { x: 0, y: 0, z: 0 };
       let actorsHeight = 80;
 
@@ -122,7 +143,6 @@ export class IsometricRender {
           }
         }
       });
-      // TODO find actors height
 
       const coordinates = gridToCanvasCoordinate(
         actorPosition,
@@ -130,7 +150,6 @@ export class IsometricRender {
       );
 
       // TODO account for printing towards edges
-
       drawDialogue(
         ctx,
         coordinates.right.x - (coordinates.right.x - coordinates.left.x),
@@ -227,8 +246,11 @@ export class IsometricRender {
                   0.618,
                 );
 
-                // TODO determine actor sprite based on actor state
-                this._spriteMaps['meeku-oni-walk'].draw(ctx, 1, {
+                const actorSpriteMapId = kebabCase(
+                  `${actor.actorId}-${actor.animationState?.currentAnimation || 'idle'}`,
+                );
+
+                this._spriteMaps[actorSpriteMapId].draw(ctx, 1, {
                   x: vectors.right.x - (vectors.right.x - vectors.left.x),
                   y: vectors.top.y - 17,
                 });
