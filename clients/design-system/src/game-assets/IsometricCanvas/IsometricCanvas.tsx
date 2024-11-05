@@ -1,9 +1,9 @@
-import { IsometricRender } from './IsometricRender';
+import { IsometricRender } from './utils/IsometricRender';
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { IsometricCanvasProps } from './IsometricCanvasProps';
 import { Coordinate2D } from './types/Coordinates.type';
 import { useResize } from './hooks/useResize';
-import { canvasToGridCoordinate } from './IsometricTransformer';
+import { canvasToGridCoordinate } from './utils/IsometricTransformer';
 import { useArrowKeyMoveCamera } from './hooks/useArrowKeyMoveCamera';
 import { useCanvasClassNames } from './hooks/useCanvasClassNames';
 import { useInterval } from './hooks/useInterval';

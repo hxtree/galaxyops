@@ -1,5 +1,5 @@
 import { hideWalls } from './hideWalls';
-import { Direction } from './types/Direction.type';
+import { Direction } from '../types/Direction.type';
 
 // TODO flesh out the test cases
 describe('hideWalls', () => {

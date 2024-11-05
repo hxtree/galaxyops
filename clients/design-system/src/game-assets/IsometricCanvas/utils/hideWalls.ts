@@ -1,4 +1,4 @@
-import { Direction } from './types/Direction.type';
+import { Direction } from '../types/Direction.type';
 
 // TODO sprites are tagged with "wall" allowing rendering engine to automatically
 // determine if it is a wall that needs to be hidden, this method is loosely fleshed

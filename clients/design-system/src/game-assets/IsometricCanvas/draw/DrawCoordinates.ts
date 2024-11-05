@@ -1,5 +1,5 @@
 import { drawDiamond } from './DrawDiamond';
-import { GRID_WIDTH, GRID_HEIGHT, GRID_DEPTH } from '../GridDimensions';
+import { GRID_WIDTH, GRID_HEIGHT, GRID_DEPTH } from '../utils/GridDimensions';
 
 // TODO take into account the height of the sprite being drawn
 export function drawCoordinates(

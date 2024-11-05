@@ -1,13 +1,13 @@
-import { Coordinate2D, Coordinate3D } from './types/Coordinates.type';
+import { Coordinate2D, Coordinate3D } from '../types/Coordinates.type';
 import { GRID_WIDTH } from './GridDimensions';
 import { gridToCanvasCoordinate } from './IsometricTransformer';
-import SpriteMap from './draw/SpriteMap';
-import { drawDiamond } from './draw/DrawDiamond';
-import { SpriteMapRegistry } from './types/SpriteMapRegistry.type';
-import { drawDialogue } from './draw/DrawDialogue';
-import { Dialogue } from './types/Dialogue.type';
-import { drawCoordinates } from './draw/DrawCoordinates';
-import { Actor } from './types/Actor.type';
+import SpriteMap from '../draw/SpriteMap';
+import { drawDiamond } from '../draw/DrawDiamond';
+import { SpriteMapRegistry } from '../types/SpriteMapRegistry.type';
+import { drawDialogue } from '../draw/DrawDialogue';
+import { Dialogue } from '../types/Dialogue.type';
+import { drawCoordinates } from '../draw/DrawCoordinates';
+import { Actor } from '../types/Actor.type';
 import { kebabCase } from 'lodash';
 
 export class IsometricRender {
