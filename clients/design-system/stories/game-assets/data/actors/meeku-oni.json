@@ -1,0 +1,8 @@
+{
+  "actorId": "MEEKU_ONI",
+  "height": 85,
+  "spriteMapRegistry": {
+    "idle": "/game-assets/sprites/meeku-oni/idle-1x1.png",
+    "walking": "/game-assets/sprites/meeku-oni/walk-10x4.png"
+  }
+}

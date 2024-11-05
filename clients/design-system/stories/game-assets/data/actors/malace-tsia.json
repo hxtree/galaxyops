@@ -1,0 +1,7 @@
+{
+  "actorId": "MALACE_TSIA",
+  "height": 85,
+  "spriteMapRegistry": {
+    "idle": "/game-assets/sprites/malace-tsia/idle-1x1.png"
+  }
+}

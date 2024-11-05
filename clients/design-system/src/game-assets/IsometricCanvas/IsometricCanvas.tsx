@@ -1,12 +1,13 @@
 import { IsometricRender } from './IsometricRender';
-import React, { useRef, useEffect, useState } from 'react';
-import './IsometricCanvas.scss';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { IsometricCanvasProps } from './IsometricCanvasProps';
 import { Coordinate2D } from './types/Coordinates.type';
 import { useResize } from './hooks/useResize';
 import { canvasToGridCoordinate } from './IsometricTransformer';
-import useArrowKeyMoveCamera from './hooks/useArrowKeyMoveCamera';
+import { useArrowKeyMoveCamera } from './hooks/useArrowKeyMoveCamera';
 import { useCanvasClassNames } from './hooks/useCanvasClassNames';
+import { useInterval } from './hooks/useInterval';
+import './IsometricCanvas.scss';
 
 const isometricRender = new IsometricRender({
   drawCoordinates: true,
@@ -38,44 +39,55 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
   isometricRender.dialogues = dialogues;
   isometricRender.actors = actors;
 
-  useEffect(() => {
-    const draw = async (
-      offScreenCanvas: HTMLCanvasElement,
-      ctx: CanvasRenderingContext2D,
-    ) => {
-      if (!isLoaded) {
-        await isometricRender.loadSpriteMaps(spriteMapRegistry);
-        setIsLoaded(true);
-      }
-
-      isometricRender.drawCoordinates = showDebug;
-
-      isometricRender.render(offScreenCanvas, ctx);
-    };
-
-    if (!canvasRef.current) return;
-    if (!offScreenCanvasRef.current) return;
+  const drawCanvas = useCallback(async () => {
+    if (!canvasRef.current || !offScreenCanvasRef.current) return;
 
     const canvas: HTMLCanvasElement = canvasRef.current;
     const ctx: CanvasRenderingContext2D = canvas.getContext('2d')!;
-
     const offScreenCanvas: HTMLCanvasElement = offScreenCanvasRef.current;
     const offScreenCtx: CanvasRenderingContext2D =
       offScreenCanvas.getContext('2d')!;
 
+    if (!isLoaded) {
+      await isometricRender.loadSpriteMaps(spriteMapRegistry);
+      setIsLoaded(true);
+    }
+
+    isometricRender.drawCoordinates = showDebug;
     isometricRender.cameraCoordinates = cameraCoordinates;
 
+    // Set canvas sizes
     ctx.canvas.width = width;
     ctx.canvas.height = height;
     offScreenCtx.canvas.width = width;
     offScreenCtx.canvas.height = height;
 
-    isometricRender.cameraCoordinates = cameraCoordinates;
+    // Set isometricRender properties
     isometricRender.height = height;
     isometricRender.width = width;
+    isometricRender.cameraCoordinates = cameraCoordinates;
 
-    draw(offScreenCanvas, ctx);
+    // Call the render method directly
+    isometricRender.render(offScreenCanvas, ctx);
   }, [
+    isLoaded,
+    showDebug,
+    cameraCoordinates,
+    spriteMapRegistry,
+    width,
+    height,
+  ]);
+
+  // draw canvas on interval for animations
+  useInterval(() => {
+    drawCanvas();
+  }, 250);
+
+  // draw canvas on certain dependencies
+  useEffect(() => {
+    drawCanvas();
+  }, [
+    drawCanvas,
     showDebug,
     grid,
     width,
@@ -85,7 +97,6 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     spriteMapRegistry,
     dialogues,
     isLoaded,
-    setIsLoaded,
   ]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
@@ -109,27 +120,6 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
 
   return (
     <div>
-      <button onClick={() => setShowDebug(!showDebug)}>
-        {showDebug ? 'Hide' : 'Show'} Debug
-      </button>
-      <br />
-      Camera:
-      <button onClick={() => setCameraCoordinates({ x: 0, y: 0, z: 0 })}>
-        reset
-      </button>
-      <div id="cameraCoordinates">
-        Camera Coordinates: {cameraCoordinates.x}, {cameraCoordinates.y},{' '}
-        {cameraCoordinates.z}
-      </div>
-      <div id="cursorCanvasCoordinates">
-        Cursor Coordinates: {cursorCanvasCoordinate?.x},{' '}
-        {cursorCanvasCoordinate?.y}
-      </div>
-      <div id="cursorGridCoordinates">
-        Cursor Grid Coordinates:{' '}
-        {Math.round((cursorGridCoordinate?.x || 0) * 1000) / 1000},{' '}
-        {Math.round((cursorGridCoordinate?.y || 0) * 1000) / 1000}
-      </div>
       <canvas
         ref={canvasRef}
         onMouseMove={handleMouseMove}
@@ -139,6 +129,34 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
         ref={offScreenCanvasRef}
         className="isometric-canvas isometric-canvas-off-screen"
       />
+      <div className="row">
+        <div className="col-sm-4">
+          <button onClick={() => setShowDebug(!showDebug)}>
+            {showDebug ? 'Hide' : 'Show'} Debug
+          </button>
+        </div>
+        <div className="col-sm-4">
+          Camera:
+          <button onClick={() => setCameraCoordinates({ x: 0, y: 0, z: 0 })}>
+            reset
+          </button>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-sm-4" id="cameraCoordinates">
+          Camera Coordinates: {cameraCoordinates.x}, {cameraCoordinates.y},{' '}
+          {cameraCoordinates.z}
+        </div>
+        <div className="col-sm-4" id="cursorCanvasCoordinates">
+          Cursor Coordinates: {cursorCanvasCoordinate?.x},{' '}
+          {cursorCanvasCoordinate?.y}
+        </div>
+        <div className="col-sm-4" id="cursorGridCoordinates">
+          Cursor Grid Coordinates:{' '}
+          {Math.round((cursorGridCoordinate?.x || 0) * 1000) / 1000},{' '}
+          {Math.round((cursorGridCoordinate?.y || 0) * 1000) / 1000}
+        </div>
+      </div>
     </div>
   );
 };

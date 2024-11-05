@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'higher' | 'lower';
 
-const useArrowKeyMoveCamera = (
+export const useArrowKeyMoveCamera = (
   setCameraCoordinates: React.Dispatch<
     React.SetStateAction<{ x: number; y: number; z: number }>
   >,
@@ -62,5 +62,3 @@ const useArrowKeyMoveCamera = (
     };
   }, [setCameraCoordinates]);
 };
-
-export default useArrowKeyMoveCamera;

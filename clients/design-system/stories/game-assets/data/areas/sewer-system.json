@@ -1,0 +1,8 @@
+{
+  "areaId": "sewer-system",
+  "spriteMapRegistry": {
+    "t": "/game-assets/sewer-tileset-4x4.png",
+    "w": "/game-assets/sewer-wall-8x1.png",
+    "b": "/game-assets/sewer-barrel-1x1.png"
+  }
+}

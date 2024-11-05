@@ -1,0 +1,11 @@
+{
+  "areaId": "train-station",
+  "spriteMapRegistry": {
+    "f": "/game-assets/fadewall-1x1.png",
+    "t": "/game-assets/tileset-4x4.png",
+    "b": "/game-assets/barrel-1x1.png",
+    "d": "/game-assets/door-1x1.png",
+    "w": "/game-assets/trainwall-8x1.png",
+    "n": "/game-assets/nightstand-4x3.png"
+  }
+}
