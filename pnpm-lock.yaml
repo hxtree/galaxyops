@@ -163,6 +163,9 @@ importers:
       lodash:
         specifier: 4.17.21
         version: 4.17.21
+      luxon:
+        specifier: 3.3.0
+        version: 3.3.0
       xss:
         specifier: ~1.0.14
         version: 1.0.15
@@ -275,6 +278,9 @@ importers:
       '@types/lodash':
         specifier: 4.17.6
         version: 4.17.6
+      '@types/luxon':
+        specifier: ~3.2.0
+        version: 3.2.2
       '@types/node':
         specifier: 20.11.25
         version: 20.11.25

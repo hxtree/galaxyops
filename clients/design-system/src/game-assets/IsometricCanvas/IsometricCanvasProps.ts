@@ -3,6 +3,7 @@ import { SpriteMapRegistry } from './types/SpriteMapRegistry.type';
 import { Dialogue } from './types/Dialogue.type';
 import { BackgroundColor } from './types/BackgroundColor.type';
 import { Actor } from './types/Actor.type';
+import { GridAnimations } from './types/Animation.type';
 
 export type IsometricCanvasProps = {
   actors: Actor[];
@@ -14,4 +15,5 @@ export type IsometricCanvasProps = {
   properties?: {
     backgroundColor?: BackgroundColor;
   };
+  gridAnimations?: GridAnimations;
 };

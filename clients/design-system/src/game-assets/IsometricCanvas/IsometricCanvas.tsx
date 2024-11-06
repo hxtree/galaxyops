@@ -14,7 +14,14 @@ const isometricRender = new IsometricRender({
 });
 
 export const IsometricCanvas = (props: IsometricCanvasProps) => {
-  const { grid, actors, spriteMapRegistry, dialogues, properties } = props;
+  const {
+    grid,
+    actors,
+    spriteMapRegistry,
+    dialogues,
+    properties,
+    gridAnimations,
+  } = props;
   const canvasRef = useRef(null);
   const offScreenCanvasRef = useRef(null);
   const { width, height } = useResize(300); // Debounce resize events by 300ms
@@ -38,6 +45,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
   isometricRender.grid = grid;
   isometricRender.dialogues = dialogues;
   isometricRender.actors = actors;
+  isometricRender.gridAnimations = gridAnimations ?? {};
 
   const drawCanvas = useCallback(async () => {
     if (!canvasRef.current || !offScreenCanvasRef.current) return;
@@ -136,9 +144,8 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
           </button>
         </div>
         <div className="col-sm-4">
-          Camera:
           <button onClick={() => setCameraCoordinates({ x: 0, y: 0, z: 0 })}>
-            reset
+            Camera Reset
           </button>
         </div>
       </div>

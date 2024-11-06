@@ -9,6 +9,8 @@ import { Dialogue } from '../types/Dialogue.type';
 import { drawCoordinates } from '../draw/DrawCoordinates';
 import { Actor } from '../types/Actor.type';
 import { kebabCase } from 'lodash';
+import { GridAnimations } from '../types/Animation.type';
+import { Duration } from 'luxon';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -26,6 +28,7 @@ export class IsometricRender {
   private _cameraCoordinates: Coordinate3D;
 
   private _drawCoordinates: boolean = false;
+  private _gridAnimations: GridAnimations;
 
   constructor(options: Partial<IsometricRender> = {}) {
     Object.assign(this, {}, options);
@@ -48,6 +51,27 @@ export class IsometricRender {
     }
 
     await Promise.all(loadPromises);
+  }
+
+  set gridAnimations(gridAnimations: GridAnimations) {
+    if (!gridAnimations) {
+      this._gridAnimations = {};
+      return;
+    }
+    this._gridAnimations = Object.keys(gridAnimations).reduce(
+      (updatedGridAnimations, key) => {
+        const animation = gridAnimations[key];
+
+        updatedGridAnimations[key] = {
+          ...animation,
+          frameDuration: Duration.fromObject(animation.frameDuration),
+          currentFrame: animation.currentFrame ?? 0,
+        };
+
+        return updatedGridAnimations;
+      },
+      {} as GridAnimations,
+    );
   }
 
   set drawCoordinates(drawCoordinates: boolean) {
@@ -115,6 +139,21 @@ export class IsometricRender {
         console.error('Off-screen context not initialized');
         return;
       }
+
+      const currentTime = performance.now();
+      Object.entries(this._gridAnimations).forEach(([key, animation]) => {
+        if (!animation.isAnimating) {
+          return;
+        }
+
+        // Calculate how many frames have passed based on the elapsed time and frame duration
+        const elapsedTime = Duration.fromMillis(currentTime); // Assuming currentTime is in milliseconds
+        const currentFrame =
+          Math.floor(
+            elapsedTime.as('seconds') / animation.frameDuration.as('seconds'),
+          ) % animation.totalFrames;
+        this._gridAnimations[key].currentFrame = currentFrame;
+      });
 
       // draws to off-screen canvas
       this.renderGrid(offScreenCtx);
@@ -220,7 +259,13 @@ export class IsometricRender {
               continue;
             }
 
-            this.renderTile(ctx, result.spriteMapId, result.spriteId, {
+            // if animated sprite, add current frame
+            let currentSpriteId = result.spriteId;
+            if (this._gridAnimations[value]) {
+              currentSpriteId += this._gridAnimations[value].currentFrame ?? 0;
+            }
+
+            this.renderTile(ctx, result.spriteMapId, currentSpriteId, {
               x,
               y,
               z,

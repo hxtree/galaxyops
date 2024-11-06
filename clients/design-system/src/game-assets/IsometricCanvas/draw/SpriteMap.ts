@@ -103,7 +103,7 @@ class SpriteMap {
 
     ctx.save();
 
-    // Calculate the sprite position on the sprintmap
+    // Calculate the sprite position on the sprite map
     const spriteMapX = (spriteId - 1) % this.columns;
     const spriteMapY = Math.floor((spriteId - 1) / this.columns);
 

@@ -82,6 +82,14 @@
       ["w1","w1","0","0","0","w1","w2","w1","w3","w1","w2","w1"]
     ]
   ],
+  "gridAnimations": {
+    "t5": {
+      "currentFrame": 0,
+      "totalFrames": 2,
+      "frameDuration": { "seconds": 0.25 },
+      "isAnimating": true
+    }
+  },
   "cameraPosition": {
     "x": 0,
     "y": 0,

@@ -8,7 +8,7 @@ agnostic of animation set by engine
 
 ## Grid
 
-The grid contains the x,y,z location of sprites.
+The grid contains the x, y, z location of sprites.
 
 ## CollisionTable
 
@@ -86,13 +86,14 @@ a sprite represents water and requires the player to swim to navigate it.
 
 ## Tags
 
-Tags are inferred based on the spritemap name. The rendering engine will if a
-spritemap contains for example walls based on the filename.
+Tags are inferred based on the sprite map's name. For example, the rendering
+engine will automatically add a tag "wall" if a sprite map contains "wall" in
+its file name.
 
-| tag        | purpose                                                      |
-| ---------- | ------------------------------------------------------------ |
-| wall       | use for autohiding sprites that collide with camera          |
-| debug-mark | use to determine whether debug coordinates should be printed |
+| tag        | purpose                                                       |
+| ---------- | ------------------------------------------------------------- |
+| wall       | use for automatically hiding sprites that collide with camera |
+| debug-mark | use to determine whether debug coordinates should be printed  |
 
 ## Autohide Obstructive Walls
 
