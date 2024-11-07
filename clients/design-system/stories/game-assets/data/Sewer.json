@@ -22,7 +22,7 @@
         "isMoving": false
       },
       "animationState": {
-        "currentFrame": 0,
+        "startingFrame": 0,
         "totalFrames": 4,
         "animationDuration": 1.0,
         "frameDuration": 0.1,
@@ -43,23 +43,25 @@
     }
   ],
   "spriteMapRegistry": {
-    "t": "/game-assets/sewer-tileset-4x4.png",
-    "w": "/game-assets/sewer-wall-8x1.png",
-    "b": "/game-assets/sewer-barrel-1x1.png"
+    "t": "/game-assets/sewer/tileset-4x4.png",
+    "w": "/game-assets/sewer/wall-8x1.png",
+    "b": "/game-assets/sewer/barrel-1x1.png",
+    "r": "/game-assets/sewer/rat-1x1.png",
+    "s": "/game-assets/sewer/spill-1x1.png"
   },
   "grid": [
     [
-      ["0","0","t6","t5","t5","0","0","0","0","0","0","t3"],
-      ["0","0","t5","t6","t5","0","0","0","0","0","0","t1"],
-      ["0","0","t6","t5","t5","0","0","0","0","0","0","t2"],
-      ["0","0","t6","t5","t6","0","0","0","0","0","0","t3"],
-      ["0","0","t5","t6","t5","0","0","0","0","0","0","t1"],
-      ["0","0","t5","t6","t6","0","0","0","0","0","0","t3"],
-      ["0","0","t6","t5","t6","0","0","0","0","0","0","t3"],
-      ["t3","t1","t5","t6","t6","t3","t3","t2","t3","t1","t2","t3"],
-      ["t6","t5","t6","t6","t5","t6","t6","t5","t6","t6","t5","t6"],
-      ["t5","t6","t6","t5","t6","t6","t5","t6","t6","t5","t6","t6"],
-      ["t6","t5","t6","t6","t5","t6","t6","t5","t6","t6","t5","t6"]
+      ["0","0","t5_wave1","t5_wave3","t5_wave2","0","0","0","0","0","0","t3"],
+      ["0","0","t5_wave2","t5_wave1","t5_wave2","0","0","0","0","0","0","t1"],
+      ["0","0","t5_wave1","t5_wave2","t5_wave2","0","0","0","0","0","0","t2"],
+      ["0","0","t5_wave1","t5_wave3","t5_wave1","0","0","0","0","0","0","t3"],
+      ["0","0","t5_wave2","t5_wave1","t5_wave2","0","0","0","0","0","0","t1"],
+      ["0","0","t5_wave3","t5_wave1","t5_wave1","0","0","0","0","0","0","t3"],
+      ["0","0","t5_wave1","t5_wave2","t5_wave1","0","0","0","0","0","0","t3"],
+      ["t3","t1","t5_wave2","t5_wave3","t5_wave1","t3","t3","t2","t3","t1","t2","t3"],
+      ["t5_wave1","t5_wave2","t5_wave1","t5_wave1","t5_wave2","t5_wave1","t5_wave1","t5_wave2","t5_wave1","t5_wave1","t5_wave2","t5_wave3"],
+      ["t5_wave2","t5_wave1","t5_wave1","t5_wave2","t5_wave1","t5_wave1","t5_wave2","t5_wave3","t5_wave1","t5_wave2","t5_wave1","t5_wave1"],
+      ["t5_wave3","t5_wave2","t5_wave1","t5_wave1","t5_wave3","t5_wave1","t5_wave1","t5_wave2","t5_wave1","t5_wave3","t5_wave2","t5_wave2"]
     ],
     [
       ["t2","t1","0","0","0","t1","t3","t3","t3","t3","t3","t2"],
@@ -74,7 +76,7 @@
     [
       ["w1","w1","0","0","0","w1","w2","w1","w3","w1","w2","w1"],
       ["w2","0","0","0","0","b1","0","0","0","0","0","w1"],
-      ["w2","0","0","0","0","b1","0","0","0","0","0","w1"],
+      ["w2","0","0","0","0","b1","s1","0","r1","0","0","w1"],
       ["w2","0","0","0","0","0","0","0","0","0","0","w1"],
       ["w1","0","0","0","0","0","0","0","0","0","0","w1"],
       ["w4","0","0","0","0","0","0","0","0","0","0","w1"],
@@ -83,10 +85,22 @@
     ]
   ],
   "gridAnimations": {
-    "t5": {
-      "currentFrame": 0,
+    "wave1": {
+      "startingFrame": 0,
       "totalFrames": 2,
       "frameDuration": { "seconds": 0.25 },
+      "isAnimating": true
+    },
+    "wave2": {
+      "startingFrame": 1,
+      "totalFrames": 2,
+      "frameDuration": { "seconds": 0.5 },
+      "isAnimating": true
+    },
+    "wave3": {
+      "startingFrame": 0,
+      "totalFrames": 2,
+      "frameDuration": { "seconds": 0.75 },
       "isAnimating": true
     }
   },

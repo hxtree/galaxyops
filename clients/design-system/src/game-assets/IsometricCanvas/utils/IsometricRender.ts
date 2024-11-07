@@ -65,7 +65,7 @@ export class IsometricRender {
         updatedGridAnimations[key] = {
           ...animation,
           frameDuration: Duration.fromObject(animation.frameDuration),
-          currentFrame: animation.currentFrame ?? 0,
+          currentFrame: animation.startingFrame ?? 0,
         };
 
         return updatedGridAnimations;
@@ -261,8 +261,12 @@ export class IsometricRender {
 
             // if animated sprite, add current frame
             let currentSpriteId = result.spriteId;
-            if (this._gridAnimations[value]) {
-              currentSpriteId += this._gridAnimations[value].currentFrame ?? 0;
+            if (
+              result.animationId &&
+              this._gridAnimations[result.animationId]
+            ) {
+              currentSpriteId +=
+                this._gridAnimations[result.animationId].currentFrame ?? 0;
             }
 
             this.renderTile(ctx, result.spriteMapId, currentSpriteId, {
@@ -322,8 +326,9 @@ export class IsometricRender {
   splitSpriteId(input: string): {
     spriteMapId: string;
     spriteId: number;
+    animationId?: string;
   } | null {
-    const regex = /^([a-zA-Z]+)(\d+)$/;
+    const regex = /^([a-zA-Z-]+)(\d+)(?:_([a-zA-Z0-9-]+))?$/;
     const match = input.match(regex);
 
     if (!match) {
@@ -333,6 +338,7 @@ export class IsometricRender {
     return {
       spriteMapId: match[1],
       spriteId: parseInt(match[2], 10),
+      animationId: match[3] || undefined,
     };
   }
 

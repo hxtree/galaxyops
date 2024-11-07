@@ -16,7 +16,7 @@ export type Actor = {
   spriteMapRegistry?: SpriteMapRegistry;
   animationState?: {
     currentAnimation: string;
-    currentFrame?: number;
+    startingFrame?: number;
     animationDuration?: number;
     frameDuration?: number;
     isAnimating?: boolean;

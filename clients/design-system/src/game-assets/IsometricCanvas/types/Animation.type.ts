@@ -2,9 +2,10 @@ import { Duration } from 'luxon';
 
 export type Animation = {
   isAnimating?: boolean;
-  currentFrame?: number;
+  startingFrame?: number;
   totalFrames: number;
   frameDuration: Duration;
+  currentFrame?: number;
 };
 
 export type GridAnimations = {

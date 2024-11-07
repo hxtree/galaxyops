@@ -12,7 +12,7 @@
         "z": 0
       },
       "animationState": {
-        "currentFrame": 0,
+        "startingFrame": 0,
         "totalFrames": 4,
         "animationDuration": 1.0,
         "frameDuration": 0.1,
@@ -33,7 +33,7 @@
         "z": 0
       },
       "animationState": {
-        "currentFrame": 0,
+        "startingFrame": 0,
         "totalFrames": 4,
         "animationDuration": 1.0,
         "frameDuration": 0.1,
