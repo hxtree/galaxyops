@@ -38,7 +38,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     useState<Coordinate2D | null>(null);
   const [cursorGridCoordinate, setCursorGridCoordinate] =
     useState<Coordinate2D | null>(null);
-  const [showDebug, setShowDebug] = useState(true);
+  const [showDebug, setShowDebug] = useState(false);
 
   const canvasClassNames = useCanvasClassNames(properties);
 
