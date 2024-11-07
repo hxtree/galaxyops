@@ -64,14 +64,15 @@
       ["t5_wave3","t5_wave2","t5_wave1","t5_wave1","t5_wave3","t5_wave1","t5_wave1","t5_wave2","t5_wave1","t5_wave3","t5_wave2","t5_wave2"]
     ],
     [
-      ["t2","t1","t1","0","0","t1","t3","t3","t3","t3","t3","t2"],
-      ["t1","t1","t1","0","0","t3","t3","t2","t3","t1","t2","t3"],
-      ["t1","t3","t1","0","0","t1","t1","t1","t2","t3","t3","t2"],
-      ["t1","t2","t1","0","0","t3","t1","t2","t3","t1","t2","t1"],
-      ["t3","t1","t1","0","0","t2","t1","t1","t1","t1","t1","t1"],
+      ["t2","t1","t1","t11","0","t1","t3","t3","t3","t3","t3","t2"],
+      ["t1","t1","t1","t11","0","t3","t3","t2","t3","t1","t2","t3"],
+      ["t1","t3","t1","t11","0","t1","t1","t1","t2","t3","t3","t2"],
+      ["t1","t2","t1","t11","0","t3","t1","t2","t3","t1","t2","t1"],
+      ["t3","t1","t1","t11","0","t2","t1","t1","t1","t1","t1","t1"],
       ["t3","t1","t1","t7","t7","t1","t1","t2","t1","t3","t2","t3"],
       ["t3","t1","t3","t7","t7","t3","t3","t1","t1","t1","t1","t1"],
-      ["t3","t1","t1","0","0","t1","t1","t2","t3","t1","t2","t3"]
+      ["t3","t1","t1","t11","0","t1","t1","t2","t3","t1","t2","t3"],
+      ["t10","t10","t10","0","0","t10","t10","t10","t10","t10","t10","t10"]
     ],
     [
       ["w1","w3","w1","w6","w6","w1","w2","w3","w1","w5","w5","w1"],
@@ -88,19 +89,19 @@
     "wave1": {
       "startingFrame": 0,
       "totalFrames": 2,
-      "frameDuration": { "seconds": 0.25 },
+      "frameDuration": { "seconds": 3.3 },
       "isAnimating": true
     },
     "wave2": {
       "startingFrame": 1,
       "totalFrames": 2,
-      "frameDuration": { "seconds": 0.5 },
+      "frameDuration": { "seconds": 2.7 },
       "isAnimating": true
     },
     "wave3": {
       "startingFrame": 0,
       "totalFrames": 2,
-      "frameDuration": { "seconds": 0.75 },
+      "frameDuration": { "seconds": 4.75 },
       "isAnimating": true
     }
   },
