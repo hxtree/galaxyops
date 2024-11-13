@@ -3,49 +3,72 @@
     "backgroundColor": "red"
   },
   "actors": [
-    {
-      "actorId": "MEEKU_ONI",
-      "height": 85,
-      "position": {
-        "x": 2,
-        "y": 3,
-        "z": 0
+      {
+        "actorId": "MEEKU_ONI",
+        "height": 85,
+        "movement": {
+          "isInMotion": true,
+          "currentPosition": {
+            "x": 2,
+            "y": 3,
+            "z": 0
+          },
+          "targetPosition": {
+            "x": 5,
+            "y": 5,
+            "z": 0
+            },
+          "movementDuration": 2.0,
+          "targetPositionReached": false,
+          "startTimestamp": "2021-07-01T12:00:00.000Z"
+        },
+        "animation": {
+          "startingFrame": 0,
+          "totalFrames": 4,
+          "animationDuration": 1.0,
+          "frameDuration": 0.1,
+          "isAnimating": false,
+          "startTime": 0,
+          "currentAnimation": "idle"
+        },
+        "spriteMapRegistry": {
+          "idle": "/game-assets/sprites/meeku-oni/idle-1x1.png",
+          "walking": "/game-assets/sprites/meeku-oni/walk-10x4.png"
+        }
       },
-      "animationState": {
-        "startingFrame": 0,
-        "totalFrames": 4,
-        "animationDuration": 1.0,
-        "frameDuration": 0.1,
-        "isAnimating": false,
-        "startTime": 0,
-        "currentAnimation": "idle"
-      },
-      "spriteMapRegistry": {
-        "idle": "/game-assets/sprites/meeku-oni/idle-1x1.png",
-        "walking": "/game-assets/sprites/meeku-oni/walk-10x4.png"
+      {
+        "actorId": "CHUBBS",
+        "height": 85,
+        "movement": {
+          "isInMotion": true,
+          "currentPosition": {
+            "x": 4,
+            "y": 5,
+            "z": 0
+            },
+          "targetPosition": {
+            "x": 5,
+            "y": 5,
+            "z": 0
+            },
+          "movementDuration": 2.0,
+          "targetPositionReached": false,
+          "startTimestamp": "2021-07-01T12:00:00.000Z"
+        },
+        "animation": {
+          "startingFrame": 0,
+          "totalFrames": 4,
+          "animationDuration": 1.0,
+          "frameDuration": 0.1,
+          "isAnimating": false,
+          "startTime": 0,
+          "currentAnimation": "idle"
+        },
+        "spriteMapRegistry": {
+          "idle": "/game-assets/sprites/chubbs/idle-1x1.png",
+          "walking": "/game-assets/sprites/meeku-oni/walk-10x4.png"
+          }
       }
-    },
-    {
-      "actorId": "CHUBBS",
-      "position": {
-        "x": 10,
-        "y": 3,
-        "z": 0
-      },
-      "animationState": {
-        "startingFrame": 0,
-        "totalFrames": 4,
-        "animationDuration": 1.0,
-        "frameDuration": 0.1,
-        "isAnimating": false,
-        "startTime": 0,
-        "currentAnimation": "idle"
-      },
-      "spriteMapRegistry": {
-        "idle": "/game-assets/sprites/chubbs/idle-1x1.png",
-        "walking": "/game-assets/sprites/meeku-oni/walk-10x4.png"
-      }
-    }
   ],
   "dialogues": [
     {

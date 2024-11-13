@@ -6,13 +6,29 @@
     {
       "actorId": "MEEKU_ONI",
       "height": 85,
-      "position": {
-        "x": 2,
-        "y": 3,
-        "z": 0
+      "movement": {
+        "isInMotion": true,
+        "currentPosition": {
+          "x": 2,
+          "y": 3,
+          "z": 0
+        },
+        "targetPosition": {
+          "x": 2,
+          "y": 4,
+          "z": 0
+        },
+        "movementDuration": 2.0,
+        "targetPositionReached": false,
+        "startTimestamp": "2021-07-01T12:00:00.000Z"
       },
-      "animationState": {
+      "animation": {
+        "startingFrame": 0,
+        "totalFrames": 4,
+        "animationDuration": 1.0,
+        "frameDuration": 0.1,
         "isAnimating": false,
+        "startTime": 0,
         "currentAnimation": "idle"
       },
       "spriteMapRegistry": {
@@ -22,13 +38,30 @@
     },
     {
       "actorId": "MALACE_TSIA",
-      "position": {
-        "x": 10,
-        "y": 5,
-        "z": 0
+      "height": 85,
+      "movement": {
+        "isInMotion": true,
+        "currentPosition": {
+          "x": 10,
+          "y": 5,
+          "z": 0
+          },
+        "targetPosition": {
+          "x": 10,
+          "y": 6,
+          "z": 0
+          },
+        "movementDuration": 2.0,
+        "targetPositionReached": false,
+        "startTimestamp": "2021-07-01T12:00:00.000Z"
       },
-      "animationState": {
+      "animation": {
+        "startingFrame": 0,
+        "totalFrames": 4,
+        "animationDuration": 1.0,
+        "frameDuration": 0.1,
         "isAnimating": false,
+        "startTime": 0,
         "currentAnimation": "idle"
       },
       "spriteMapRegistry": {

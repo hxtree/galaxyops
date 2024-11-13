@@ -6,13 +6,29 @@
     {
       "actorId": "MEEKU_ONI",
       "height": 85,
-      "position": {
-        "x": 4,
-        "y": 5,
-        "z": 0
+      "movement": {
+        "isInMotion": true,
+        "currentPosition": {
+          "x": 4,
+          "y": 5,
+          "z": 0
+          },
+        "targetPosition": {
+          "x": 5,
+          "y": 5,
+          "z": 0
+          },
+        "movementDuration": 2.0,
+        "targetPositionReached": false,
+        "startTimestamp": "2021-07-01T12:00:00.000Z"
       },
-      "animationState": {
+      "animation": {
+        "startingFrame": 0,
+        "totalFrames": 4,
+        "animationDuration": 1.0,
+        "frameDuration": 0.1,
         "isAnimating": false,
+        "startTime": 0,
         "currentAnimation": "idle"
       },
       "spriteMapRegistry": {

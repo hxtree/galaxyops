@@ -6,22 +6,23 @@
     {
       "actorId": "MEEKU_ONI",
       "height": 85,
-      "position": {
-        "x": 1,
-        "y": 5,
-        "z": 1
-      },
-      "targetPosition": {
-        "x": 4,
-        "y": 5,
-        "z": 1
-      },
       "movement": {
-        "duration": 2.0,
-        "startTime": 0,
-        "isMoving": false
+        "isInMotion": true,
+        "currentPosition": {
+          "x": 1,
+          "y": 5,
+          "z": 1
+        },
+        "targetPosition": {
+          "x": 4,
+          "y": 5,
+          "z": 1
+        },
+        "movementDuration": 2.0,
+        "targetPositionReached": false,
+        "startTimestamp": "2021-07-01T12:00:00.000Z"
       },
-      "animationState": {
+      "animation": {
         "startingFrame": 0,
         "totalFrames": 4,
         "animationDuration": 1.0,
@@ -87,18 +88,21 @@
   ],
   "gridAnimations": {
     "wave1": {
+      "currentAnimation": "water-ripples",
       "startingFrame": 0,
       "totalFrames": 2,
       "frameDuration": { "seconds": 3.3 },
       "isAnimating": true
     },
     "wave2": {
+      "currentAnimation": "water-ripples",
       "startingFrame": 1,
       "totalFrames": 2,
       "frameDuration": { "seconds": 2.7 },
       "isAnimating": true
     },
     "wave3": {
+      "currentAnimation": "water-ripples",
       "startingFrame": 0,
       "totalFrames": 2,
       "frameDuration": { "seconds": 4.75 },

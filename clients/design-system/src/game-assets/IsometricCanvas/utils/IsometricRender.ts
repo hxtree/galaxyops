@@ -176,7 +176,8 @@ export class IsometricRender {
 
       this._actors.forEach((actor: Actor) => {
         if (actor.actorId == dialogue.actorId) {
-          actorPosition = actor.position;
+          actorPosition = actor.movement.currentPosition;
+
           if (actor.height) {
             actorsHeight = actor.height;
           }
@@ -278,9 +279,9 @@ export class IsometricRender {
             if (this._actors) {
               this._actors.forEach((actor: Actor) => {
                 if (
-                  actor.position.z !== z ||
-                  actor.position.y !== y ||
-                  actor.position.x !== x
+                  actor.movement.currentPosition.z !== z ||
+                  actor.movement.currentPosition.y !== y ||
+                  actor.movement.currentPosition.x !== x
                 ) {
                   return;
                 }
@@ -296,7 +297,7 @@ export class IsometricRender {
                 );
 
                 const actorSpriteMapId = kebabCase(
-                  `${actor.actorId}-${actor.animationState?.currentAnimation || 'idle'}`,
+                  `${actor.actorId}-${actor.animation?.currentAnimation || 'idle'}`,
                 );
 
                 this._spriteMaps[actorSpriteMapId].draw(ctx, 1, {
