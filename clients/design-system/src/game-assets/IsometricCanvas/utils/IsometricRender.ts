@@ -11,6 +11,7 @@ import { Actor } from '../types/Actor.type';
 import { kebabCase } from 'lodash';
 import { GridAnimations } from '../types/Animation.type';
 import { Duration } from 'luxon';
+import { ActorModel } from '../models/Actor.model';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -18,7 +19,7 @@ export class IsometricRender {
   cameraPosition: Coordinate3D;
 
   private _grid: string[][][];
-  private _actors: Actor[];
+  private _actors: ActorModel[];
   private _spriteMaps: { [key: string]: SpriteMap } = {};
   private _dialogues: Dialogue[] = [];
 
@@ -87,7 +88,10 @@ export class IsometricRender {
   }
 
   set actors(actors: Actor[]) {
-    this._actors = actors;
+    this._actors = [];
+    actors.forEach(actor => {
+      this._actors.push(ActorModel.fromObject(actor));
+    });
 
     // load actors sprite maps
     this._actors.forEach(actor => {
@@ -168,24 +172,35 @@ export class IsometricRender {
     });
   }
 
+  private findActorById(actorId: string): ActorModel | undefined {
+    return this._actors.find(actor => actor.actorId === actorId);
+  }
+
+  private findActorsByPosition(position: Coordinate3D): ActorModel[] {
+    return this._actors.filter(
+      actor =>
+        actor.position?.x === position.x &&
+        actor.position?.y === position.y &&
+        actor.position?.z === position.z,
+    );
+  }
+
   private renderText(ctx: CanvasRenderingContext2D) {
     // TODO inky support and options
     this._dialogues.forEach(dialogue => {
-      let actorPosition = { x: 0, y: 0, z: 0 };
       let actorsHeight = 80;
 
-      this._actors.forEach((actor: Actor) => {
-        if (actor.actorId == dialogue.actorId) {
-          actorPosition = actor.movement.currentPosition;
+      const actor = this.findActorById(dialogue.actorId);
+      if (!actor) {
+        return;
+      }
 
-          if (actor.height) {
-            actorsHeight = actor.height;
-          }
-        }
-      });
+      if (actor.height) {
+        actorsHeight = actor.height;
+      }
 
       const coordinates = gridToCanvasCoordinate(
-        actorPosition,
+        actor.position ?? { x: 0, y: 0, z: 0 },
         this.cameraOffset,
       );
 
@@ -277,15 +292,9 @@ export class IsometricRender {
             });
 
             if (this._actors) {
-              this._actors.forEach((actor: Actor) => {
-                if (
-                  actor.movement.currentPosition.z !== z ||
-                  actor.movement.currentPosition.y !== y ||
-                  actor.movement.currentPosition.x !== x
-                ) {
-                  return;
-                }
+              const actors = this.findActorsByPosition({ x, y, z });
 
+              actors.forEach((actor: ActorModel) => {
                 this._spriteMaps['shadow'].draw(
                   ctx,
                   1,
