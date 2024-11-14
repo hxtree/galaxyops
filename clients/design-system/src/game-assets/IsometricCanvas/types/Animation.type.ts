@@ -3,7 +3,7 @@ import { Duration, DateTime } from 'luxon';
 // Animation data for tracking current animation state and completion
 export type Animation = {
   isAnimating?: boolean;
-  currentAnimation: string; // Name of the current animation (e.g., "walk", "run")
+  currentAnimation?: string; // Name of the current animation (e.g., "walk", "run")
   startingFrame?: number;
   totalFrames: number;
   frameDuration: Duration;

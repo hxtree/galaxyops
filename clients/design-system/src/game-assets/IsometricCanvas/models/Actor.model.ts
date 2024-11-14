@@ -50,6 +50,9 @@ export class ActorModel {
     this.height = props.height;
     this.spriteMapRegistry = props.spriteMapRegistry ?? {};
     this.currentState = props.currentState ?? ActorState.IDLE;
+    this.animation = props.animation ?? {
+      currentAnimation: 'idle',
+    };
 
     if (props.movement) {
       const startTimestamp = DateTime.fromISO(

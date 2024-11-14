@@ -29,7 +29,7 @@
         "frameDuration": 0.1,
         "isAnimating": false,
         "startTime": 0,
-        "currentAnimation": "idle"
+        "currentAnimation": "walking"
       },
       "spriteMapRegistry": {
         "idle": "/game-assets/sprites/meeku-oni/idle-1x1.png",

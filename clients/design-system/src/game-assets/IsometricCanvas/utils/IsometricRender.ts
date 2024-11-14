@@ -306,7 +306,7 @@ export class IsometricRender {
                 );
 
                 const actorSpriteMapId = kebabCase(
-                  `${actor.actorId}-${actor.animation?.currentAnimation || 'idle'}`,
+                  `${actor.actorId}-${actor.animation?.currentAnimation || 'dle'}`,
                 );
 
                 this._spriteMaps[actorSpriteMapId].draw(ctx, 1, {
