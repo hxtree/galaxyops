@@ -9,17 +9,13 @@ Domain-Driven DevOps on AWS.
 
 ## Overview
 
-Running numerous applications on AWS without a clear architectural pattern risks
-inviting chaos and uncertainty into your environment. @galaxyops is a cloud
-architecture emphasizing modern DevOps best practices on AWS. It lays the
-groundwork for the enterprise software landscape, ensuring scalability and
-maintainability across projects.
+Running multiple applications on AWS without a clear architectural pattern can
+lead to chaos and uncertainty. @galaxyops provides a cloud architecture that
+emphasizes modern DevOps best practices on AWS. It establishes a solid
+foundation for enterprise software, ensuring scalability and maintainability
+across projects.
 
 ## Features
-
-- **Universal Language**: Leveraging TypeScript for microservices, enhancing
-  performance, readability, and maintenance. Other languages can be used for
-  specific tasks, such as Python for data science.
 
 - **Simple Setup**: Turn-key deployment on bare metal systems, specially
   designed for compatibility with MacOS silicon environments and without a
@@ -30,6 +26,10 @@ maintainability across projects.
 
 - **CI/CD Pipeline**: Autonomous pipeline for deploying auditable artifacts to
   AWS using IaC, ensuring consistency and scalability.
+
+- **Universal Language**: Leveraging TypeScript for microservices, enhancing
+  performance, readability, and maintenance. Other languages can be used for
+  specific tasks, such as Python for data science.
 
 - **Event-Driven Microservices**: Fault-tolerant communication via queues, with
   event data archived in a data lake for analytics.
@@ -48,13 +48,20 @@ maintainability across projects.
 
 ## Getting Started
 
-Install package manager, jq, build all packages, and hydrate dotenv files:
+Install the package manager, jq, build all packages, and hydrate dotenv files:
 
 ```bash
-corepack enable pnpm # install PNPM
-brew install jq # install jq for lambda layer builder on MacOS
-pnpm install # install dependencies
-pnpm nx run galaxyops:hydrate # hydrate env files
+# Enable PNPM package manager
+corepack enable pnpm
+
+# Install jq for lambda layer builder on MacOS
+brew install jq
+
+# Install all dependencies
+pnpm install
+
+# Hydrate environment files
+pnpm nx run galaxyops:hydrate
 ```
 
 Run any script using Nx by specifying the package name followed by the script
