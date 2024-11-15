@@ -47,7 +47,7 @@
     "t": "/game-assets/sewer/tileset-4x4.png",
     "w": "/game-assets/sewer/wall-8x1.png",
     "b": "/game-assets/sewer/barrel-1x1.png",
-    "r": "/game-assets/sewer/rat-1x1.png",
+    "r": "/game-assets/sewer/rat-3x1.png",
     "s": "/game-assets/sewer/spill-1x1.png"
   },
   "grid": [
@@ -78,7 +78,7 @@
     [
       ["w1","w3","w1","w6","w6","w1","w2","w3","w1","w5","w5","w1"],
       ["w2","0","0","0","0","b1","b1","0","0","0","0","w1"],
-      ["w2","0","0","0","0","0","0","0","r1","0","0","w1"],
+      ["w2","0","0","0","0","0","0","0","r1_look1","0","0","w1"],
       ["w2","s1","0","0","0","0","0","0","0","0","0","w1"],
       ["w1","0","0","0","0","0","0","0","0","0","0","w1"],
       ["w4","0","0","0","0","0","0","0","0","0","0","w1"],
@@ -87,6 +87,13 @@
     ]
   ],
   "gridAnimations": {
+    "look1": {
+      "currentAnimation": "look1",
+      "startingFrame": 0,
+      "totalFrames": 3,
+      "frameDuration": { "seconds": 0.83 },
+      "isAnimating": true
+    },
     "wave1": {
       "currentAnimation": "water-ripples",
       "startingFrame": 0,
