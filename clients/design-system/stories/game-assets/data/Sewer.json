@@ -91,7 +91,7 @@
       "currentAnimation": "look1",
       "startingFrame": 0,
       "totalFrames": 3,
-      "frameDuration": { "seconds": 0.83 },
+      "frameDuration": { "seconds": 10 },
       "isAnimating": true
     },
     "wave1": {

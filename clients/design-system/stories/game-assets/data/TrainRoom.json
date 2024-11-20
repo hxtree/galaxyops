@@ -38,10 +38,6 @@
     }
   ],
   "dialogues": [
-    {
-      "actorId": "MEEKU_ONI",
-      "text": "Look at that! A new game engine!"
-    }
   ],
   "spriteMapRegistry": {
     "f": "/game-assets/fadewall-1x1.png",

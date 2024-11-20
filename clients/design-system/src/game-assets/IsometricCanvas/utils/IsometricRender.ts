@@ -12,6 +12,7 @@ import { kebabCase } from 'lodash';
 import { GridAnimations } from '../types/Animation.type';
 import { Duration } from 'luxon';
 import { ActorModel } from '../models/Actor.model';
+import { drawMeter } from '../draw/DrawMeter';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -312,6 +313,13 @@ export class IsometricRender {
                 this._spriteMaps[actorSpriteMapId].draw(ctx, 1, {
                   x: vectors.right.x - (vectors.right.x - vectors.left.x),
                   y: vectors.top.y - 17,
+                });
+
+                // TODO determine percent based on actor's health
+                drawMeter(ctx, {
+                  x: vectors.left.x,
+                  y: vectors.top.y - 17 - (actor.height ?? 60),
+                  percent: 50,
                 });
               });
             }
