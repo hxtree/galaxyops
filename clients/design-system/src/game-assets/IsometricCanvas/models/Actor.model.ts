@@ -52,6 +52,9 @@ export class ActorModel {
     this.currentState = props.currentState ?? ActorState.IDLE;
     this.animation = props.animation ?? {
       currentAnimation: 'idle',
+      currentFrame: 1,
+      totalFrames: 1,
+      frameDuration: Duration.fromObject({ minutes: 1 }),
     };
 
     if (props.movement) {
