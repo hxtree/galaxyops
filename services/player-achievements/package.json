@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nest start --debug --watch",
     "build": "tsc",
-    "build:all": "rush build -t .",
+    "build:all": "nx run-many --target=build --all",
     "watch": "tsc -w",
     "test": "jest",
     "test:cov": "jest --coverage",

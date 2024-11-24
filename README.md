@@ -159,5 +159,8 @@ Pull requests and bug reports are welcome on GitHub at
 
 ## License
 
-All packages available [NPM](https://www.npmjs.com/search?q=%40cats-cradle) are
-MIT licensed.
+This project is mostly licensed under the MIT License. Detailed license
+information, including exceptions for packages that are not MIT licensed, can be
+found in the [LICENSE.md](./LICENSE.md) file. All packages published under the
+[@galaxyops](https://www.npmjs.com/search?q=%40galaxyops) namespace on NPM are
+also MIT licensed unless otherwise specified.

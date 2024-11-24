@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "build:all": "rush build -t .",
+    "build:all": "nx run-many --target=build --all",
     "watch": "tsc -w",
     "test": "jest --runInBand",
     "test:cov": "jest --coverage --runInBand",

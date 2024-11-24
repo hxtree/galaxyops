@@ -18,7 +18,7 @@
     "dev": "storybook dev -p 3000 -s public",
     "build": "tsc --build ./tsconfig-build.json && vite build",
     "build:storybook": "tsc --p ./tsconfig-build.json && storybook build",
-    "build:all": "rush build -t .",
+    "build:all": "nx run-many --target=build --all",
     "artifact": "create-artifact @galaxyops/design-system",
     "test": "jest --runInBand",
     "test:cov": "jest --coverage --runInBand",

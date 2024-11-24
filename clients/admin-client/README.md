@@ -4,13 +4,3 @@
 
 The admin client is the front end for game masters portal. It provides insight
 into various game runtime features.
-
-```bash
-rushx build:all &&
-rushx start
-```
-
-## TODO
-
-- add unit tests
-- add cdk deploy to ec2

@@ -10,7 +10,7 @@
   "scripts": {
     "artifact": "create-artifact @galaxyops/luck-by-dice",
     "build": "tsc",
-    "build:all": "rush build -t .",
+    "build:all": "nx run-many --target=build --all",
     "lint": "eslint --format visualstudio \"./stacks/**/*.ts\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./stacks/**/*.ts\"  --fix-dry-run",
     "cdk": "cdk",

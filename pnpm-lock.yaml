@@ -553,6 +553,94 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
 
+  clients/player-client:
+    dependencies:
+      '@galaxyops/design-system':
+        specifier: workspace:*
+        version: link:../design-system
+      axios:
+        specifier: ^1.6.7
+        version: 1.7.7
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-router-dom:
+        specifier: 6.22.1
+        version: 6.22.1(react-dom@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@galaxyops/base-nodejs':
+        specifier: workspace:*
+        version: link:../../platform/rigs/base-nodejs
+      '@galaxyops/character-sheet-contracts':
+        specifier: '*'
+        version: link:../../contracts/character-sheet-contracts
+      '@galaxyops/create-artifact':
+        specifier: workspace:*
+        version: link:../../tools/create-artifact
+      '@testing-library/jest-dom':
+        specifier: ^5.16.5
+        version: 5.17.0
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.3.1(react-dom@18.2.0)(react@18.2.0)
+      '@types/jest':
+        specifier: 29.5.12
+        version: 29.5.12
+      '@types/react':
+        specifier: 18.2.59
+        version: 18.2.59
+      '@types/react-dom':
+        specifier: 18.2.19
+        version: 18.2.19
+      '@typescript-eslint/eslint-plugin':
+        specifier: ~6.16.0
+        version: 6.16.0(@typescript-eslint/parser@6.16.0)(eslint@8.57.0)(typescript@5.3.3)
+      '@typescript-eslint/parser':
+        specifier: ~6.16.0
+        version: 6.16.0(eslint@8.57.0)(typescript@5.3.3)
+      '@vitejs/plugin-react':
+        specifier: ^4.2.1
+        version: 4.3.1(vite@4.5.3)
+      aws-cdk:
+        specifier: 2.129.0
+        version: 2.129.0
+      aws-cdk-lib:
+        specifier: 2.129.0
+        version: 2.129.0(constructs@10.3.0)
+      constructs:
+        specifier: ^10.2.70
+        version: 10.3.0
+      eslint:
+        specifier: 8.57.0
+        version: 8.57.0
+      eslint-plugin-react-hooks:
+        specifier: ~4.6.0
+        version: 4.6.2(eslint@8.57.0)
+      eslint-plugin-react-refresh:
+        specifier: ^0.4.4
+        version: 0.4.7(eslint@8.57.0)
+      jest:
+        specifier: 29.7.0
+        version: 29.7.0(@types/node@20.11.25)(ts-node@10.9.2)
+      jest-environment-jsdom:
+        specifier: ~29.6.1
+        version: 29.6.4
+      ts-jest:
+        specifier: 29.1.2
+        version: 29.1.2(@babel/core@7.23.5)(esbuild@0.20.2)(jest@29.7.0)(typescript@5.3.3)
+      ts-node:
+        specifier: 10.9.2
+        version: 10.9.2(@types/node@20.11.25)(typescript@5.3.3)
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+      vite:
+        specifier: ^4.5.0
+        version: 4.5.3(@types/node@20.11.25)(less@4.2.0)(sass@1.77.6)
+
   contracts/character-sheet-contracts:
     dependencies:
       '@faker-js/faker':

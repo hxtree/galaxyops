@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nest start --debug --watch",
     "build": "tsc",
-    "build:all": "rush build -t .",
+    "build:all": "nx run-many --target=build --all",
     "artifact": "create-artifact @galaxyops/character-sheet",
     "watch": "tsc -w",
     "test": "jest --runInBand",

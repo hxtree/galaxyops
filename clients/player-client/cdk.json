@@ -1,0 +1,17 @@
+{
+  "app": "tsc --build ./tsconfig-build.json && vite build && npx ts-node --prefer-ts-exts bin/app.ts",
+  "watch": {
+    "include": ["src/", "stacks/", "pages/", "components/"],
+    "exclude": ["__tests__", "*.test.ts", "*.e2e-spec.ts"]
+  },
+  "context": {
+    "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": true,
+    "@aws-cdk/core:stackRelativeExports": true,
+    "@aws-cdk/aws-rds:lowercaseDbIdentifier": true,
+    "@aws-cdk/aws-lambda:recognizeVersionProps": true,
+    "@aws-cdk/aws-cloudfront:defaultSecurityPolicyTLSv1.2_2021": true,
+    "@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver": true,
+    "@aws-cdk/aws-ec2:uniqueImdsv2TemplateName": true,
+    "@aws-cdk/core:target-partitions": ["aws", "aws-cn"]
+  }
+}

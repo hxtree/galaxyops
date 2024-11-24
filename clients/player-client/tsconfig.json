@@ -1,0 +1,6 @@
+{
+  "extends": "./node_modules/@galaxyops/base-nodejs/profiles/react-app/tsconfig-base.json",
+  "compilerOptions": {
+    "lib": ["dom"]
+  }
+}

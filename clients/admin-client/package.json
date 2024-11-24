@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc --build ./tsconfig-build.json && vite build",
-    "build:all": "rush build -t .",
+    "build:all": "nx run-many --target=build --all",
     "artifact": "create-artifact @galaxyops/admin-client",
     "lint": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix",
     "lint:ci": "eslint --format visualstudio \"./src/**/*.tsx\"  --fix-dry-run",
