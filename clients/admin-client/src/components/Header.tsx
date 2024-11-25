@@ -24,7 +24,6 @@ const Header = () => {
   return (
     <>
       <AppBar
-        siteTitle="NekosGate"
         topRightSlot={
           <>
             <Button href="/signup" color="secondary" size="small">

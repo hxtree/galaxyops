@@ -34,7 +34,6 @@ export const AppBarLight = (args: AppBarProps) => (
 AppBarLight.args = {
   position: 'fixed',
   theme: 'light',
-  siteTitle: 'NekosGate',
   topRightSlot: (
     <>
       <Button href="/login" color="secondary" size="small">

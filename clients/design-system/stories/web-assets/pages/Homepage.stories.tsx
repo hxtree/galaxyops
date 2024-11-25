@@ -40,7 +40,6 @@ export default {
 export const Default = () => (
   <>
     <AppBar
-      siteTitle="NekosGate"
       topRightSlot={
         <>
           <Button href="/login" color="secondary" size="small">
