@@ -8,7 +8,7 @@ export type Actor = {
   actorId: string;
   height?: number; // Optional height of the actor (for collision, etc.)
   spriteMapRegistry?: SpriteMapRegistry;
-  currentState: ActorState; // Current state of the actor (e.g., idle, moving)
+  currentState?: ActorState; // Current state of the actor (e.g., idle, moving)
   movement: Movement; // Movement data for the actor
   animation: Animation; // Animation data for the actor
   lastUpdated?: DateTime; // Timestamp for when the actor's data was last updated

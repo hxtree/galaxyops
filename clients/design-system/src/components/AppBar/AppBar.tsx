@@ -12,7 +12,6 @@ export type NavMenuItem = {
 export type AppBarProps = {
   menuItems?: NavMenuItem[];
   menuMobileItems?: NavMenuItem[];
-  siteTitle?: string;
   theme?: 'dark' | 'light';
   children?: React.ReactNode;
   topRightSlot: ReactNode;
@@ -21,7 +20,7 @@ export type AppBarProps = {
 const BREAKPOINT_MD_MAX = 991;
 
 export const AppBar = (props: AppBarProps) => {
-  const { topRightSlot, children, siteTitle, theme, menuMobileItems } = props;
+  const { topRightSlot, children, theme, menuMobileItems } = props;
   const [collapsed, setCollapsed] = React.useState(true);
   const menuRef = React.useRef<HTMLDivElement>(null);
   const menuMobileRef = React.useRef<HTMLDivElement>(null);
@@ -85,8 +84,12 @@ export const AppBar = (props: AppBarProps) => {
             onClick={() => (collapsed ? openMobileMenu() : closeMobileMenu())}
             ref={appBarIconRef}
           />
-          <a className="navbar-brand font-game" href="/">
-            {siteTitle || 'Your Brand'}
+          <a className="navbar-brand" href="/">
+            <img
+              src="/assets/brand/nekos-gate.png"
+              alt="Nekos Gate"
+              className="navbar-logo"
+            />
           </a>
           <div className="d-none d-sm-block">{topRightSlot}</div>
         </div>

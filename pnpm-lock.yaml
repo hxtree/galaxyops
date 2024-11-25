@@ -130,6 +130,9 @@ importers:
       vite:
         specifier: ^4.5.0
         version: 4.5.3(@types/node@20.11.25)(less@4.2.0)(sass@1.77.6)
+      vite-plugin-static-copy:
+        specifier: ^2.1.0
+        version: 2.1.0(vite@4.5.3)
 
   clients/design-system:
     dependencies:
@@ -640,6 +643,9 @@ importers:
       vite:
         specifier: ^4.5.0
         version: 4.5.3(@types/node@20.11.25)(less@4.2.0)(sass@1.77.6)
+      vite-plugin-static-copy:
+        specifier: ^2.1.0
+        version: 2.1.0(vite@4.5.3)
 
   contracts/character-sheet-contracts:
     dependencies:
@@ -28560,6 +28566,19 @@ packages:
       vite: '*'
     dependencies:
       magic-string: 0.30.10
+      picocolors: 1.0.1
+      vite: 4.5.3(@types/node@20.11.25)(less@4.2.0)(sass@1.77.6)
+    dev: true
+
+  /vite-plugin-static-copy@2.1.0(vite@4.5.3):
+    resolution: {integrity: sha512-n8lEOIVM00Y/zronm0RG8RdPyFd0SAAFR0sii3NWmgG3PSCyYMsvUNRQTlb3onp1XeMrKIDwCrPGxthKvqX9OQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      vite: ^5.0.0
+    dependencies:
+      chokidar: 3.5.3
+      fast-glob: 3.3.2
+      fs-extra: 11.2.0
       picocolors: 1.0.1
       vite: 4.5.3(@types/node@20.11.25)(less@4.2.0)(sass@1.77.6)
     dev: true

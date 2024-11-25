@@ -27,7 +27,7 @@ export const HeroBanner = (props: HeroBannerProps) => {
           <div className="hero-gradient-overlay d-none d-md-block"></div>
         </>
       )}
-      <div className="container pt-1 pb-sm-1 py-md-3 pb-lg-5">
+      <div className="container pt-0 pb-sm-1 pb-md-3 pb-lg-5">
         <div className="row g-0">
           {breadcrumb}
 

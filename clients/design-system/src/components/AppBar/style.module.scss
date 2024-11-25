@@ -20,15 +20,10 @@
   background-color: $color-white;
 
   & .navbar {
-    height: 80px;
     background-image: none !important;
 
-    & .navbar-brand {
-      color: $color-off-white !important;
-      font-weight: bold;
-      font-size: 2rem !important;
-      line-height: 1;
-      letter-spacing: 0.2rem;
+    & .navbar-logo {
+      height: 60px;
     }
   }
 
