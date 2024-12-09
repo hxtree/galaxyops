@@ -55,5 +55,11 @@ export default defineConfig({
         entryFileNames: '[name].js',
       },
     },
+    cssCodeSplit: false,
+  },
+  css: {
+    modules: {
+      scopeBehaviour: 'global',
+    },
   },
 });

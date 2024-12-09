@@ -1,23 +1,10 @@
-import React, { createContext, useReducer, useContext } from 'react';
-
-enum Actions {
-  PAGE_LOADING = 'PAGE_LOADING',
-  SET_USER = 'SET_USER',
-  LOGOUT = 'LOGOUT',
-}
-
-interface AppState {
-  user: string | null;
-  isLoading?: boolean;
-}
+import React, { useReducer } from 'react';
+import { Action } from './Action.type';
+import { Actions } from './Actions.type';
+import { AppState } from './AppState.type';
+import { AppContext } from './AppContext';
 
 // TODO add footnotes
-
-type Action =
-  | { type: Actions.SET_USER; payload: string }
-  | { type: Actions.LOGOUT }
-  | { type: Actions.PAGE_LOADING; payload: boolean };
-
 const reducer = (state: AppState, action: Action): AppState => {
   switch (action.type) {
     case Actions.PAGE_LOADING:
@@ -31,14 +18,6 @@ const reducer = (state: AppState, action: Action): AppState => {
   }
 };
 
-const AppContext = createContext<
-  | {
-      state: AppState;
-      dispatch: React.Dispatch<Action>;
-    }
-  | undefined
->(undefined);
-
 export const AppProvider: React.FC<{ children: React.ReactNode }> = props => {
   const { children } = props;
   const [state, dispatch] = useReducer(reducer, { user: null });
@@ -48,12 +27,4 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = props => {
       {children}
     </AppContext.Provider>
   );
-};
-
-export const useAppContext = () => {
-  const context = useContext(AppContext);
-  if (!context) {
-    throw new Error('useAppContext must be used within an AppProvider');
-  }
-  return context;
 };
