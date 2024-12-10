@@ -1,5 +1,5 @@
 import '@galaxyops/design-system/dist/assets/style.css';
-import { AppProvider } from './context/AppProvider';
+import { AppProvider } from './context/App/AppProvider';
 import { PageFooter, faGithub } from '@galaxyops/design-system/dist/main';
 import { Router } from './routing/Router';
 

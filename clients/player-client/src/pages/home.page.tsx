@@ -3,16 +3,15 @@ import {
   IsometricCanvasProps,
 } from '@galaxyops/design-system/dist/main';
 import gameState from './game-state.json';
-import useHandleInput from '../core/useHandleInput';
+import { InputProvider } from '../context/Input/InputProvider';
+import { Keyboard } from '../components/Keyboard';
 
 export default function HomePage() {
-  const input = useHandleInput();
-
   return (
-    <>
-      {input && <div>Input: {input?.map(i => i.key).join(', ')}</div>}
+    <InputProvider>
+      <Keyboard />
       {/* @ts-expect-error needed for types temp */}
       <IsometricCanvas {...(gameState as IsometricCanvasProps)} />
-    </>
+    </InputProvider>
   );
 }
