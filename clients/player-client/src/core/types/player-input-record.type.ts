@@ -1,4 +1,6 @@
+import { DateTime } from 'luxon';
+
 export type PlayerInputRecord = {
   key: string;
-  timestamp: string;
+  timestamp: DateTime;
 };

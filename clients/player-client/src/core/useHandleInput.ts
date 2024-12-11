@@ -19,7 +19,7 @@ export default function useHandleInput(): PlayerInputRecord[] | null {
           // Collect key press for the given direction
           newInputRecords.push({
             key: direction,
-            timestamp: DateTime.now().toISO(),
+            timestamp: DateTime.now(),
           });
         }
       });

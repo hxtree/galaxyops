@@ -22,7 +22,7 @@ export const Keyboard: React.FC<KeyboardProps> = () => {
 
   return (
     <div>
-      {inputContext.state.key} {inputContext.state.timestamp}{' '}
+      {inputContext.state.key} {inputContext.state.timestamp?.toISO()}{' '}
       {input && <div>Input: {input?.map(i => i.key).join(', ')}</div>}
     </div>
   );
