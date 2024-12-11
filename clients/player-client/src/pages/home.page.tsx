@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { IsometricCanvas, IsometricCanvasProps } from '../core/IsometricCanvas';
-import gameState from './data/Sewer.json';
+import gameStateRaw from './data/Sewer.json';
 import { InputProvider } from '../context/Input/InputProvider';
 import { Keyboard } from '../core/Keyboard/Keyboard';
 import { GameEngine } from '../core/GameEngine/GameEngine';
+import { plainToClass } from 'class-transformer';
+import { GameState } from '../dtos/GameState.dto';
 
 export default function HomePage() {
-  const [gameData, setGameData] = useState({ input: '', playerPosition: 0 });
+  const [gameData, setGameData] = useState<IsometricCanvasProps>(() => {
+    return plainToClass(GameState, gameStateRaw);
+  });
 
   const updateGameData = (newData: any) => {
     setGameData(newData);
@@ -16,10 +20,7 @@ export default function HomePage() {
     <InputProvider>
       <Keyboard />
       <GameEngine data={gameData} updateData={updateGameData} />
-
-      {/** TODO use gameData={gameData} */}
-      {/* @ts-expect-error needed for types temp */}
-      <IsometricCanvas {...(gameState as IsometricCanvasProps)} />
+      <IsometricCanvas {...gameData} />
     </InputProvider>
   );
 }

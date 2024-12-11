@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite';
+import { defineConfig, PluginOption } from 'vite';
 import react from '@vitejs/plugin-react';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { viteStaticCopy  } from 'vite-plugin-static-copy'; // Add PluginOption import
 
 export default defineConfig({
   plugins: [
-    react(),
+    react() as PluginOption,
     viteStaticCopy({
       targets: [
         {
@@ -12,8 +12,9 @@ export default defineConfig({
           dest: 'assets'
         }
       ]
-    })
+    }) as PluginOption // Add type assertion
   ],
+  esbuild: { target: 'es2022' },
   server: {
     port: 3000,
     host: '127.0.0.1',

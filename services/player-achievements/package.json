@@ -32,7 +32,7 @@
     "@galaxyops/constructs": "2.2.0",
     "@galaxyops/create-bundle": "3.2.0",
     "@galaxyops/nestjs-modules": "2.2.0",
-    "@galaxyops/validation-schemas": "2.2.0",
+    "@galaxyops/validation-schemas": "workspace:*",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
     "@nestjs/core": "9.2.1",

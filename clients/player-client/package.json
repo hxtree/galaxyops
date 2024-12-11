@@ -22,12 +22,17 @@
   },
   "dependencies": {
     "@galaxyops/design-system": "workspace:*",
+    "@galaxyops/faker-factory": "3.3.0",
+    "@galaxyops/validation-schemas": "workspace:*",
     "axios": "^1.6.7",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.13.2",
     "lodash": "4.17.21",
     "luxon": "~3.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router-dom": "6.22.1"
+    "react-router-dom": "6.22.1",
+    "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
     "@galaxyops/base-nodejs": "workspace:*",
@@ -54,7 +59,7 @@
     "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
     "typescript": "5.3.3",
-    "vite": "^4.5.0",
+    "vite": "5.4.11",
     "vite-plugin-static-copy": "^2.1.0"
   }
 }

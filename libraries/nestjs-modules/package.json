@@ -53,7 +53,7 @@
     "@types/uuid": "~9.0.7",
     "luxon": "~3.3.0",
     "mongodb-memory-server-global": "8.13.0",
-    "@galaxyops/validation-schemas": "2.2.0",
+    "@galaxyops/validation-schemas": "workspace:*",
     "bson": "~6.2.0"
   },
   "devDependencies": {

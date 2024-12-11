@@ -25,7 +25,7 @@
   "dependencies": {
     "@galaxyops/base-nodejs": "0.2.0",
     "@galaxyops/constructs": "2.2.0",
-    "@galaxyops/validation-schemas": "2.2.0",
+    "@galaxyops/validation-schemas": "workspace:*",
     "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.2.1",

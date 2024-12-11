@@ -26,7 +26,7 @@
     "@galaxyops/base-nodejs": "0.2.0",
     "@types/validator": "~13.7.10",
     "@galaxyops/faker-factory": "3.3.0",
-    "@galaxyops/validation-schemas": "2.2.0",
+    "@galaxyops/validation-schemas": "workspace:*",
     "class-transformer": "0.5.1"
   },
   "devDependencies": {

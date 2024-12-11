@@ -3,8 +3,9 @@
   "include": ["src", "bin", "stacks"],
   "compilerOptions": {
     "lib": ["dom"],
-
     "module": "es2022",
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
   }
 }

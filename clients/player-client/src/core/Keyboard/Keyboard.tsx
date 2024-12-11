@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import useHandleInput from './useHandleInput';
 import { useInputContext } from '../../context/Input/useInputContext';
 import { InputActionType } from '../../context/Input/InputActionType.type';
+import { InputEventRecordKey } from '../../dtos/Player/InputEventRecordKey.type';
 
 export type KeyboardProps = {
   config?: string;
@@ -26,7 +27,7 @@ export const Keyboard: React.FC<KeyboardProps> = () => {
       payload: { key: input[0]?.key, timestamp: input[0]?.timestamp },
     });
 
-    if (input[0]?.key === 'debug') {
+    if (input[0]?.key === InputEventRecordKey.DEBUG) {
       inputContextRef.current.dispatch({
         type: InputActionType.SET_DEBUG,
         payload: { debug: !inputContextRef.current.state.debug },

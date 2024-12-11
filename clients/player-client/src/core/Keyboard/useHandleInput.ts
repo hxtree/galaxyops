@@ -1,35 +1,38 @@
 import { useState, useEffect } from 'react';
 import { keyboardBindings } from './keyBindings';
 import { DateTime } from 'luxon';
-import { PlayerInputRecord } from '../../core/types';
+import { InputEventRecord } from '../../dtos/Player/InputEventRecord.dto';
+import { InputEventRecordKey } from '../../dtos/Player/InputEventRecordKey.type';
 
-export default function useHandleInput(): PlayerInputRecord[] | null {
-  const [inputState, setInputState] = useState<PlayerInputRecord[] | null>(
-    null,
-  );
+export default function useHandleInput(): InputEventRecord[] | null {
+  const [inputState, setInputState] = useState<InputEventRecord[] | null>(null);
   const pressedKeys = new Set<string>();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === ' ') {
+        event.preventDefault();
+      }
+
+      // TODO ignore select already pressed keys
       if (pressedKeys.has(event.key)) {
-        return; // Ignore if the key is already pressed
+        return;
       }
       pressedKeys.add(event.key);
 
-      const newInputRecords: PlayerInputRecord[] = [];
+      const newInputRecords: InputEventRecord[] = [];
 
       // Handle different key strokes
       Object.entries(keyboardBindings).forEach(([direction, key]) => {
         if (event.key === key) {
-          // Collect key press for the given direction
-          newInputRecords.push({
-            key: direction,
-            timestamp: DateTime.now(),
-          });
+          const inputEventRecord = new InputEventRecord();
+          inputEventRecord.key = direction as InputEventRecordKey;
+          inputEventRecord.timestamp = DateTime.now();
+          newInputRecords.push(inputEventRecord);
         }
       });
 
-      const newState: PlayerInputRecord[] = [];
+      const newState: InputEventRecord[] = [];
       newInputRecords.forEach(record => {
         newState.unshift(record);
       });

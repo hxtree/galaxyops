@@ -29,7 +29,7 @@
   "dependencies": {
     "@galaxyops/constructs": "2.2.0",
     "@galaxyops/nestjs-modules": "2.2.0",
-    "@galaxyops/validation-schemas": "2.2.0",
+    "@galaxyops/validation-schemas": "workspace:*",
     "@galaxyops/base-nodejs": "0.2.0",
     "@galaxyops/character-sheet-contracts": "0.1.0",
     "@nestjs/common": "9.4.0",

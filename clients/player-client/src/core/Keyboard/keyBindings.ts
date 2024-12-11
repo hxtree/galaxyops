@@ -1,16 +1,13 @@
-// keyboard
-export const keyboardBindings = {
-  up: 'w',
-  down: 's',
-  left: 'a',
-  right: 'd',
-  jump: ' ',
-  debug: 'p',
-  select: 'Enter',
-  back: 'u',
-  pause: 'Escape',
-};
+import { InputEventRecordKey } from '../../dtos/Player/InputEventRecordKey.type';
 
-// other inputs will be touch and based
-// may need to display buttons on screen for touch
-// move by clicking a tile..
+export const keyboardBindings = {
+  [InputEventRecordKey.UP]: 'w',
+  [InputEventRecordKey.DOWN]: 's',
+  [InputEventRecordKey.LEFT]: 'a',
+  [InputEventRecordKey.RIGHT]: 'd',
+  [InputEventRecordKey.JUMP]: ' ',
+  [InputEventRecordKey.DEBUG]: 'p',
+  [InputEventRecordKey.SELECT]: 'Enter',
+  [InputEventRecordKey.BACK]: 'u',
+  [InputEventRecordKey.PAUSE]: 'Escape',
+};

@@ -40,7 +40,7 @@
     "@galaxyops/constructs": "2.2.0",
     "@galaxyops/faker-factory": "3.3.0",
     "@galaxyops/nestjs-modules": "2.2.0",
-    "@galaxyops/validation-schemas": "2.2.0",
+    "@galaxyops/validation-schemas": "workspace:*",
     "@nestjs/axios": "~2.0.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.2.0",
