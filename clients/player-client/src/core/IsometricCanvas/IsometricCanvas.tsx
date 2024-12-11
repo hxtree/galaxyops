@@ -39,9 +39,6 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [cursorCanvasCoordinate, setCursorCanvasCoordinate] =
     useState<Coordinate2D | null>(null);
-  const [cursorGridCoordinate, setCursorGridCoordinate] =
-    useState<Coordinate2D | null>(null);
-  const [showDebug, setShowDebug] = useState(false);
 
   const canvasClassNames = useCanvasClassNames(properties);
 
@@ -64,7 +61,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
       setIsLoaded(true);
     }
 
-    isometricRender.drawCoordinates = showDebug;
+    isometricRender.drawCoordinates = inputContext.state.debug ?? false;
     isometricRender.cameraCoordinates = cameraCoordinates;
 
     // Set canvas sizes
@@ -82,7 +79,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     isometricRender.render(offScreenCanvas, ctx);
   }, [
     isLoaded,
-    showDebug,
+    inputContext,
     cameraCoordinates,
     spriteMapRegistry,
     width,
@@ -99,7 +96,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     drawCanvas();
   }, [
     drawCanvas,
-    showDebug,
+    inputContext.state.debug,
     grid,
     width,
     height,
@@ -110,27 +107,43 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     isLoaded,
   ]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const gridCoordinates = (
+    e: React.MouseEvent<HTMLCanvasElement>,
+  ): Coordinate2D | void => {
     if (!canvasRef.current) return;
-
     const canvas: HTMLCanvasElement = canvasRef.current;
     const rect = canvas.getBoundingClientRect();
     const cursorX = e.clientX - rect.left;
     const cursorY = e.clientY - rect.top;
-    const coordinates = canvasToGridCoordinate(
+    setCursorCanvasCoordinate({ x: cursorX, y: cursorY });
+
+    return canvasToGridCoordinate(
       {
         x: cursorX,
         y: cursorY,
       },
       isometricRender.cameraOffset,
     );
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    const coordinates = gridCoordinates(e);
+    if (!coordinates) return;
     isometricRender.cursorCoordinate = coordinates;
     inputContext.dispatch({
-      type: InputActionType.SET_TOUCH_GRID,
-      payload: { x: coordinates.x, y: coordinates.y },
+      type: InputActionType.SET_MOUSE_MOVE,
+      payload: { cursorX: coordinates.x, cursorY: coordinates.y },
     });
-    setCursorGridCoordinate(coordinates);
-    setCursorCanvasCoordinate({ x: cursorX, y: cursorY });
+  };
+
+  const handleMouseClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    const coordinates = gridCoordinates(e);
+    if (!coordinates) return;
+
+    inputContext.dispatch({
+      type: InputActionType.SET_TOUCH_GRID,
+      payload: { x: Math.floor(coordinates.x), y: Math.floor(coordinates.y) },
+    });
   };
 
   return (
@@ -138,6 +151,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
       <canvas
         ref={canvasRef}
         onMouseMove={handleMouseMove}
+        onClick={handleMouseClick}
         className={`${canvasClassNames.join(' ')}`}
       />
       <canvas
@@ -145,11 +159,6 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
         className="isometric-canvas isometric-canvas-off-screen"
       />
       <div className="row">
-        <div className="col-sm-4">
-          <button onClick={() => setShowDebug(!showDebug)}>
-            {showDebug ? 'Hide' : 'Show'} Debug
-          </button>
-        </div>
         <div className="col-sm-4">
           <button onClick={() => setCameraCoordinates({ x: 0, y: 0, z: 0 })}>
             Camera Reset
@@ -164,11 +173,6 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
         <div className="col-sm-4" id="cursorCanvasCoordinates">
           Cursor Coordinates: {cursorCanvasCoordinate?.x},{' '}
           {cursorCanvasCoordinate?.y}
-        </div>
-        <div className="col-sm-4" id="cursorGridCoordinates">
-          Cursor Grid Coordinates:{' '}
-          {Math.round((cursorGridCoordinate?.x || 0) * 1000) / 1000},{' '}
-          {Math.round((cursorGridCoordinate?.y || 0) * 1000) / 1000}
         </div>
       </div>
     </div>
