@@ -1,6 +1,6 @@
-import useHandleInput from '../core/useHandleInput';
-import { useInputContext } from '../context/Input/useInputContext';
-import { InputActionType } from '../context/Input/InputActionType.type';
+import useHandleInput from './useHandleInput';
+import { useInputContext } from '../../context/Input/useInputContext';
+import { InputActionType } from '../../context/Input/InputActionType.type';
 import { useEffect } from 'react';
 
 export type KeyboardProps = {
@@ -23,6 +23,7 @@ export const Keyboard: React.FC<KeyboardProps> = () => {
   return (
     <div>
       {inputContext.state.key} {inputContext.state.timestamp?.toISO()}{' '}
+      {inputContext.state.x} {inputContext.state.y}
       {input && <div>Input: {input?.map(i => i.key).join(', ')}</div>}
     </div>
   );

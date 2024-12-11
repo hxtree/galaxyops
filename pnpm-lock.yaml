@@ -564,6 +564,9 @@ importers:
       axios:
         specifier: ^1.6.7
         version: 1.7.7
+      lodash:
+        specifier: 4.17.21
+        version: 4.17.21
       luxon:
         specifier: ~3.3.0
         version: 3.3.0
@@ -595,6 +598,9 @@ importers:
       '@types/jest':
         specifier: 29.5.12
         version: 29.5.12
+      '@types/lodash':
+        specifier: 4.17.6
+        version: 4.17.6
       '@types/luxon':
         specifier: ~3.2.0
         version: 3.2.2

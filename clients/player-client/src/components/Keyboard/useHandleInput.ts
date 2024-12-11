@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { keyboardBindings } from './config/keyboard-bindings';
+import { keyboardBindings } from './keyboard-bindings';
 import { DateTime } from 'luxon';
-import { PlayerInputRecord } from './types';
+import { PlayerInputRecord } from '../../core/types';
 
 export default function useHandleInput(): PlayerInputRecord[] | null {
   const [inputState, setInputState] = useState<PlayerInputRecord[] | null>(

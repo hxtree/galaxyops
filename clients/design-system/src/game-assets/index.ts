@@ -1,4 +1,3 @@
-export * from './IsometricCanvas';
 export * from './Gauge/Gauge';
 export * from './Gauge/GaugeProps';
 export * from './ActionMenu/ActionMenu';

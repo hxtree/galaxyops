@@ -7,7 +7,9 @@ import { canvasToGridCoordinate } from './utils/IsometricTransformer';
 import { useArrowKeyMoveCamera } from './hooks/useArrowKeyMoveCamera';
 import { useCanvasClassNames } from './hooks/useCanvasClassNames';
 import { useInterval } from './hooks/useInterval';
+import { useInputContext } from '../../context/Input/useInputContext';
 import './IsometricCanvas.scss';
+import { InputActionType } from '../../context/Input/InputActionType.type';
 
 const isometricRender = new IsometricRender({
   drawCoordinates: true,
@@ -30,6 +32,7 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
     y: number;
     z: number;
   }>({ x: 0, y: 0, z: 0 });
+  const inputContext = useInputContext();
 
   useArrowKeyMoveCamera(setCameraCoordinates);
 
@@ -122,6 +125,10 @@ export const IsometricCanvas = (props: IsometricCanvasProps) => {
       isometricRender.cameraOffset,
     );
     isometricRender.cursorCoordinate = coordinates;
+    inputContext.dispatch({
+      type: InputActionType.SET_TOUCH_GRID,
+      payload: { x: coordinates.x, y: coordinates.y },
+    });
     setCursorGridCoordinate(coordinates);
     setCursorCanvasCoordinate({ x: cursorX, y: cursorY });
   };

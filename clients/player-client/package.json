@@ -23,6 +23,7 @@
   "dependencies": {
     "@galaxyops/design-system": "workspace:*",
     "axios": "^1.6.7",
+    "lodash": "4.17.21",
     "luxon": "~3.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -35,6 +36,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "29.5.12",
+    "@types/lodash": "4.17.6",
     "@types/luxon": "~3.2.0",
     "@types/react": "18.2.59",
     "@types/react-dom": "18.2.19",

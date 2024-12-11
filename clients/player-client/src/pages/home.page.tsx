@@ -1,10 +1,7 @@
-import {
-  IsometricCanvas,
-  IsometricCanvasProps,
-} from '@galaxyops/design-system/dist/main';
+import { IsometricCanvas, IsometricCanvasProps } from '../core/IsometricCanvas';
 import gameState from './game-state.json';
 import { InputProvider } from '../context/Input/InputProvider';
-import { Keyboard } from '../components/Keyboard';
+import { Keyboard } from '../components/Keyboard/Keyboard';
 
 export default function HomePage() {
   return (
