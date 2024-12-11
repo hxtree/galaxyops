@@ -1,6 +1,6 @@
 {
   "name": "@galaxyops/create-artifact",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -28,7 +28,7 @@
     "@pnpm/find-workspace-dir": "~6.0.3"
   },
   "devDependencies": {
-    "@galaxyops/eslint-config": "3.1.1",
+    "@galaxyops/eslint-config": "3.2.0",
     "eslint": "8.57.0",
     "@pnpm/types": "^8.5.0",
     "@types/fs-extra": "^9.0.13",
@@ -39,6 +39,6 @@
     "@types/archiver": "~5.3.2",
     "@types/jest": "29.5.12",
     "jest": "29.7.0",
-    "@galaxyops/base-nodejs": "0.1.0"
+    "@galaxyops/base-nodejs": "0.2.0"
   }
 }
