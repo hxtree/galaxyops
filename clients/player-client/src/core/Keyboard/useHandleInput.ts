@@ -36,7 +36,7 @@ export default function useHandleInput(): InputEventRecord[] | null {
       newInputRecords.forEach(record => {
         newState.unshift(record);
       });
-      setInputState(newState);
+      setInputState(newInputRecords);
     };
 
     const handleKeyUp = (event: KeyboardEvent) => {
