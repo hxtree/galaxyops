@@ -31,10 +31,16 @@
         "startTime": 0,
         "currentAnimation": "idle"
       },
-      "spriteMapRegistry": {
-        "idle": "/game-assets/sprites/meeku-oni/idle-1x1.png",
-        "walking": "/game-assets/sprites/meeku-oni/walk-10x4.png"
-      }
+      "spriteMapRegistry": [
+        {
+          "id": "idle",
+          "url": "/game-assets/sprites/meeku-oni/idle-1x1.png"
+        },
+        {
+          "id": "walking",
+          "url": "/game-assets/sprites/meeku-oni/walk-10x4.png"
+        }
+      ]
     },
     {
       "actorId": "MALACE_TSIA",
@@ -64,9 +70,9 @@
         "startTime": 0,
         "currentAnimation": "idle"
       },
-      "spriteMapRegistry": {
-        "idle": "/game-assets/sprites/malace-tsia/idle-1x1.png"
-      }
+      "spriteMapRegistry": [
+        {"id":"idle", "url": "/game-assets/sprites/malace-tsia/idle-1x1.png"}
+      ]
     }
   ],
   "dialogues": [
@@ -79,17 +85,17 @@
     }
 
   ],
-  "spriteMapRegistry": {
-    "f": "/game-assets/fadewall-1x1.png",
-    "t": "/game-assets/tileset-4x4.png",
-    "b": "/game-assets/barrel-1x1.png",
-    "d": "/game-assets/door-1x1.png",
-    "w": "/game-assets/trainwall-8x1.png",
-    "n": "/game-assets/nightstand-4x3.png",
-    "s": "/game-assets/seat-4x1.png",
-    "os": "/game-assets/safe-4x1.png",
-    "ol": "/game-assets/switches-4x1.png"
-  },
+  "spriteMapRegistry": [
+    {"id": "f", "url": "/game-assets/fadewall-1x1.png"},
+    {"id": "t", "url": "/game-assets/tileset-4x4.png"},
+    {"id": "b", "url": "/game-assets/barrel-1x1.png"},
+    {"id": "d", "url": "/game-assets/door-1x1.png"},
+    {"id": "w", "url": "/game-assets/trainwall-8x1.png"},
+    {"id": "n", "url": "/game-assets/nightstand-4x3.png"},
+    {"id": "s", "url": "/game-assets/seat-4x1.png"},
+    {"id": "os", "url": "/game-assets/safe-4x1.png"},
+    {"id": "ol", "url": "/game-assets/switches-4x1.png"}
+  ],
   "grid": [
     [
       ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"],

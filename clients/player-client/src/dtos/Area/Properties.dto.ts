@@ -1,5 +1,5 @@
 import { IsEnum, IsOptional } from 'class-validator';
-import { BackgroundColor } from '../core/IsometricCanvas/types/BackgroundColor.type';
+import { BackgroundColor } from './BackgroundColor.type';
 
 export class Properties {
   @IsOptional()

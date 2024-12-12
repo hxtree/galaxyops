@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BackgroundColor } from '../types/BackgroundColor.type';
+import { BackgroundColor } from '../../../dtos/Area/BackgroundColor.type';
 
 interface Properties {
   backgroundColor?: BackgroundColor;

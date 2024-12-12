@@ -3,15 +3,14 @@ import { GRID_WIDTH } from './GridDimensions';
 import { gridToCanvasCoordinate } from './IsometricTransformer';
 import SpriteMap from '../draw/SpriteMap';
 import { drawDiamond } from '../draw/DrawDiamond';
-import { SpriteMapRegistry } from '../types/SpriteMapRegistry.type';
+import { SpriteMapRecord } from '../../../dtos/SpriteMapRecord.dto';
 import { drawDialogue } from '../draw/DrawDialogue';
-import { Dialogue } from '../types/Dialogue.type';
 import { drawCoordinates } from '../draw/DrawCoordinates';
-import { Actor } from '../types/Actor.type';
 import { kebabCase } from 'lodash';
-import { GridAnimations } from '../types/Animation.type';
+import { Dialogue } from '../../../dtos/Dialogue.dto';
+import { GridAnimations } from '../../../dtos/Grid/GridAnimations.dto';
+import { Actor } from '../../../dtos/Actor/Actor.dto';
 import { Duration } from 'luxon';
-import { ActorModel } from '../models/Actor.model';
 import { drawMeter } from '../draw/DrawMeter';
 
 export class IsometricRender {
@@ -20,7 +19,7 @@ export class IsometricRender {
   cameraPosition: Coordinate3D;
 
   private _grid: string[][][];
-  private _actors: ActorModel[];
+  private _actors: Actor[];
   private _spriteMaps: { [key: string]: SpriteMap } = {};
   private _dialogues: Dialogue[] = [];
 
@@ -36,19 +35,20 @@ export class IsometricRender {
     Object.assign(this, {}, options);
 
     // load global sprite maps
-    const spriteMapRegistry: SpriteMapRegistry = {};
-    spriteMapRegistry['shadow'] = './game-assets/sprites/shadow-1x1.png';
-    this.loadSpriteMaps(spriteMapRegistry);
+    const spriteMapRegistry = new SpriteMapRecord();
+    spriteMapRegistry.id = 'shadow';
+    spriteMapRegistry.url = './game-assets/sprites/shadow-1x1.png';
+    this.loadSpriteMaps([spriteMapRegistry]);
   }
 
-  async loadSpriteMaps(spriteMapRegistry: SpriteMapRegistry) {
+  async loadSpriteMaps(spriteMapRegistry: SpriteMapRecord[]) {
     const loadPromises: Promise<HTMLImageElement>[] = [];
 
-    for (const key in spriteMapRegistry) {
-      const filename = spriteMapRegistry[key];
-
-      this._spriteMaps[key] = new SpriteMap();
-      const load = this._spriteMaps[key].load(filename);
+    for (const spriteMapRecord of spriteMapRegistry) {
+      this._spriteMaps[spriteMapRecord.id] = new SpriteMap();
+      const load = this._spriteMaps[spriteMapRecord.id].load(
+        spriteMapRecord.url,
+      );
       loadPromises.push(load);
     }
 
@@ -89,29 +89,26 @@ export class IsometricRender {
   }
 
   set actors(actors: Actor[]) {
-    this._actors = [];
-    actors.forEach(actor => {
-      this._actors.push(ActorModel.fromObject(actor));
-    });
-
-    // load actors sprite maps
+    this._actors = actors;
     this._actors.forEach(actor => {
       if (!actor.spriteMapRegistry) {
         return;
       }
 
-      const actorSpriteMapRegistry: SpriteMapRegistry = {};
-
-      for (const key in actor.spriteMapRegistry) {
-        const spriteMapRegistryId = kebabCase(`${actor.actorId}-${key}`);
-        const spriteMapRegistryValue = actor.spriteMapRegistry[key];
-
-        // check if sprite map is already loaded
-        if (this._spriteMaps[spriteMapRegistryId]) {
-          continue;
-        }
-        actorSpriteMapRegistry[spriteMapRegistryId] = spriteMapRegistryValue;
-      }
+      const actorSpriteMapRegistry = actor.spriteMapRegistry
+        .map(spriteMapRecord => {
+          const prefixedId = kebabCase(
+            `${actor.actorId}-${spriteMapRecord.id}`,
+          );
+          if (!this._spriteMaps[prefixedId]) {
+            const newRecord = new SpriteMapRecord();
+            newRecord.id = prefixedId;
+            newRecord.url = spriteMapRecord.url;
+            return newRecord;
+          }
+          return null;
+        })
+        .filter(record => record !== null) as SpriteMapRecord[];
 
       this.loadSpriteMaps(actorSpriteMapRegistry);
     });
@@ -173,11 +170,11 @@ export class IsometricRender {
     });
   }
 
-  private findActorById(actorId: string): ActorModel | undefined {
+  private findActorById(actorId: string): Actor | undefined {
     return this._actors.find(actor => actor.actorId === actorId);
   }
 
-  private findActorsByPosition(position: Coordinate3D): ActorModel[] {
+  private findActorsByPosition(position: Coordinate3D): Actor[] {
     return this._actors.filter(
       actor =>
         actor.position?.x === position.x &&
@@ -295,7 +292,7 @@ export class IsometricRender {
             if (this._actors) {
               const actors = this.findActorsByPosition({ x, y, z });
 
-              actors.forEach((actor: ActorModel) => {
+              actors.forEach((actor: Actor) => {
                 this._spriteMaps['shadow'].draw(
                   ctx,
                   1,

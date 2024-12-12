@@ -1,5 +1,4 @@
 import {
-  IsUrl,
   IsEnum,
   IsString,
   IsNumber,
@@ -8,10 +7,11 @@ import {
   IsOptional,
 } from 'class-validator';
 import { ActorAnimation } from './ActorAnimation.dto';
-import { Transform, Type } from 'class-transformer';
+import { Type } from 'class-transformer';
 import { ActorMovement } from './ActorMovement.dto';
-import { ActorState } from '../../core/IsometricCanvas/types/ActorState.type';
+import { ActorState } from './ActorState.type';
 import { DateTime } from 'luxon';
+import { SpriteMapRecord } from '../SpriteMapRecord.dto';
 
 export class Actor {
   @IsString()
@@ -27,24 +27,46 @@ export class Actor {
   movement: ActorMovement;
 
   @IsEnum(ActorState)
-  currentState?: ActorState;
+  currentState: ActorState;
 
   @ValidateNested()
   @Type(() => ActorAnimation)
   animation: ActorAnimation;
 
-  @Transform(({ value }) => {
-    return Object.keys(value).reduce(
-      (acc, key) => {
-        acc[key] = value[key];
-        return acc;
-      },
-      {} as Record<string, string>,
-    );
-  })
-  @IsString({ each: true })
-  @IsUrl({}, { each: true })
-  spriteMapRegistry: Record<string, string>;
+  @ValidateNested({ each: true })
+  @Type(() => SpriteMapRecord)
+  spriteMapRegistry?: SpriteMapRecord[];
 
   lastUpdated?: DateTime; // Timestamp for when the actor's data was last updated
+
+  get position() {
+    const now = DateTime.now();
+    if (this.movement.endTimestamp && now > this.movement.endTimestamp) {
+      return this.movement.targetPosition;
+    }
+    return this.movement.currentPosition;
+  }
+
+  get isInMotion() {
+    const now = DateTime.now();
+    if (this.movement.endTimestamp && now > this.movement.endTimestamp) {
+      return false;
+    }
+    return true;
+  }
+
+  get targetPositionReached() {
+    const now = DateTime.now();
+    if (this.endTimestamp && now > this.endTimestamp) {
+      return true;
+    }
+    return false;
+  }
+
+  get endTimestamp() {
+    if (!this.movement.movementDuration) {
+      return null;
+    }
+    return this.movement.startTimestamp.plus(this.movement.movementDuration);
+  }
 }

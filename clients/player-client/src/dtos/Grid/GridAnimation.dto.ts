@@ -1,7 +1,7 @@
 import { IsBoolean, IsDateString, IsString, IsNumber } from 'class-validator';
 import { DateTime, Duration } from 'luxon';
 
-export class ActorAnimation {
+export class GridAnimation {
   @IsBoolean()
   isAnimating?: false;
 

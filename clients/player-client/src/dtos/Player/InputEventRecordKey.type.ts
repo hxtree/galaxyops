@@ -8,4 +8,5 @@ export enum InputEventRecordKey {
   'SELECT' = 'SELECT',
   'BACK' = 'BACK',
   'PAUSE' = 'PAUSE',
+  'NONE' = 'NONE',
 }

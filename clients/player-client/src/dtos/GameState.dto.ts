@@ -1,9 +1,11 @@
-import { IsString, IsUrl, IsArray, ValidateNested } from 'class-validator';
-import { Transform, Type } from 'class-transformer';
-import { Properties } from './Properties.dto';
+import { IsArray, ValidateNested } from 'class-validator';
+import { Type } from 'class-transformer';
+import { Properties } from './Area/Properties.dto';
 import { Actor } from './Actor/Actor.dto';
 import { Dialogue } from './Dialogue.dto';
 import { Coordinate3d } from './Coordinate3d.dto';
+import { GridAnimations } from './Grid/GridAnimations.dto';
+import { SpriteMapRecord } from './SpriteMapRecord.dto';
 
 export class GameState {
   @ValidateNested()
@@ -20,18 +22,9 @@ export class GameState {
   @Type(() => Dialogue)
   dialogues: Dialogue[];
 
-  @Transform(({ value }) => {
-    return Object.keys(value).reduce(
-      (acc, key) => {
-        acc[key] = value[key];
-        return acc;
-      },
-      {} as Record<string, string>,
-    );
-  })
-  @IsString({ each: true })
-  @IsUrl({}, { each: true })
-  spriteMapRegistry: Record<string, string>;
+  @ValidateNested({ each: true })
+  @Type(() => SpriteMapRecord)
+  spriteMapRegistry: SpriteMapRecord[];
 
   // TODO add type for grid
   grid: string[][][];
@@ -39,4 +32,6 @@ export class GameState {
   @ValidateNested()
   @Type(() => Coordinate3d)
   cameraPosition: Coordinate3d;
+
+  gridAnimations?: GridAnimations;
 }

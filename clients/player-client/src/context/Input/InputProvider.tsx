@@ -2,8 +2,13 @@ import React, { useReducer } from 'react';
 import { InputContext } from './InputContext';
 import { InputReducer } from './InputReducer';
 import { InputState } from './InputState.type';
+import { InputEventRecordKey } from '../../dtos/Player/InputEventRecordKey.type';
 
-const initialState: InputState = { x: undefined, y: undefined, key: '' };
+const initialState: InputState = {
+  x: undefined,
+  y: undefined,
+  key: InputEventRecordKey.NONE,
+};
 
 export const InputProvider: React.FC<{ children: React.ReactNode }> = ({
   children,

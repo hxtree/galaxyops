@@ -31,10 +31,10 @@
         "startTime": 0,
         "currentAnimation": "walking"
       },
-      "spriteMapRegistry": {
-        "idle": "/game-assets/sprites/meeku-oni/idle-1x1.png",
-        "walking": "/game-assets/sprites/meeku-oni/walk-10x4.png"
-      }
+      "spriteMapRegistry": [
+        {"id":"idle", "url": "/game-assets/sprites/meeku-oni/idle-1x1.png"},
+        {"id":"walking", "url": "/game-assets/sprites/meeku-oni/walk-10x4.png"}
+      ]
     }
   ],
   "dialogues": [
@@ -43,13 +43,13 @@
       "text": "It's pretty slippery."
     }
   ],
-  "spriteMapRegistry": {
-    "t": "/game-assets/sewer/tileset-4x4.png",
-    "w": "/game-assets/sewer/wall-8x1.png",
-    "b": "/game-assets/sewer/barrel-1x1.png",
-    "r": "/game-assets/sewer/rat-3x1.png",
-    "s": "/game-assets/sewer/spill-1x1.png"
-  },
+  "spriteMapRegistry": [
+    {"id":"t", "url": "/game-assets/sewer/tileset-4x4.png"},
+    {"id":"w", "url": "/game-assets/sewer/wall-8x1.png"},
+    {"id":"b", "url": "/game-assets/sewer/barrel-1x1.png"},
+    {"id":"r", "url": "/game-assets/sewer/rat-3x1.png"},
+    {"id":"s", "url": "/game-assets/sewer/spill-1x1.png"}
+  ],
   "grid": [
     [
       ["0","0","t5_wave1","t5_wave3","t5_wave2","0","0","0","0","0","0","t3"],

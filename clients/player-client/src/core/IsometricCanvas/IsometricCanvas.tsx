@@ -1,6 +1,5 @@
 import { IsometricRender } from './utils/IsometricRender';
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { IsometricCanvasProps } from './IsometricCanvasProps';
 import { Coordinate2D } from './types/Coordinates.type';
 import { useResize } from './hooks/useResize';
 import { canvasToGridCoordinate } from './utils/IsometricTransformer';
@@ -10,12 +9,13 @@ import { useInterval } from './hooks/useInterval';
 import { useInputContext } from '../../context/Input/useInputContext';
 import './IsometricCanvas.scss';
 import { InputActionType } from '../../context/Input/InputActionType.type';
+import { GameState } from '../../dtos/GameState.dto';
 
 const isometricRender = new IsometricRender({
   drawCoordinates: true,
 });
 
-export const IsometricCanvas = (props: IsometricCanvasProps) => {
+export const IsometricCanvas = (props: GameState) => {
   const {
     grid,
     actors,
