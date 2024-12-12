@@ -1,7 +1,17 @@
-import { IsBoolean, IsDateString, IsString, IsNumber } from 'class-validator';
+import {
+  IsBoolean,
+  IsDateString,
+  IsString,
+  IsNumber,
+  IsEnum,
+} from 'class-validator';
 import { DateTime, Duration } from 'luxon';
+import { ActorOrientation } from './ActorDirection.type';
 
 export class ActorAnimation {
+  @IsEnum(ActorOrientation)
+  orientation: ActorOrientation;
+
   @IsBoolean()
   isAnimating?: false;
 

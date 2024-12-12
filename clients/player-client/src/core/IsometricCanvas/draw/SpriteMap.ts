@@ -1,3 +1,5 @@
+import { ActorOrientation } from '../../../dtos/Actor/ActorDirection.type';
+
 interface Position {
   x: number;
   y: number;
@@ -91,6 +93,34 @@ class SpriteMap {
       };
       this.image.src = this.filename;
     });
+  }
+
+  drawFrame(
+    ctx: CanvasRenderingContext2D,
+    orientation: ActorOrientation,
+    currentFrame: number,
+    position: Position,
+    opacity: number = 1,
+  ): void {
+    let row;
+    switch (orientation) {
+      case ActorOrientation.SOUTHEAST:
+        row = 0;
+        break;
+      case ActorOrientation.SOUTHWEST:
+        row = 1;
+        break;
+      case ActorOrientation.NORTHWEST:
+        row = 2;
+        break;
+      case ActorOrientation.NORTHEAST:
+        row = 3;
+        break;
+    }
+
+    const spriteId = this.columns * row + 1 + currentFrame;
+
+    this.draw(ctx, spriteId, position, opacity);
   }
 
   draw(

@@ -1,0 +1,6 @@
+export enum ActorOrientation {
+  NORTHEAST = 'NORTHEAST',
+  SOUTHEAST = 'SOUTHEAST',
+  SOUTHWEST = 'SOUTHWEST',
+  NORTHWEST = 'NORTHWEST',
+}

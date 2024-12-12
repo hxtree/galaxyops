@@ -304,13 +304,25 @@ export class IsometricRender {
                 );
 
                 const actorSpriteMapId = kebabCase(
-                  `${actor.actorId}-${actor.animation?.currentAnimation || 'dle'}`,
+                  `${actor.actorId}-${actor.animation?.currentAnimation || 'idle'}`,
                 );
 
-                this._spriteMaps[actorSpriteMapId].draw(ctx, 1, {
+                const position = {
                   x: vectors.right.x - (vectors.right.x - vectors.left.x),
                   y: vectors.top.y - 17,
-                });
+                };
+
+                this._spriteMaps[actorSpriteMapId].drawFrame(
+                  ctx,
+                  actor.animation.orientation,
+                  actor.animation.currentFrame ?? 1,
+                  position,
+                );
+
+                // this._spriteMaps[actorSpriteMapId].draw(ctx, 1, {
+                //   x: vectors.right.x - (vectors.right.x - vectors.left.x),
+                //   y: vectors.top.y - 17,
+                // });
 
                 // TODO determine percent based on actor's health
                 drawMeter(ctx, {

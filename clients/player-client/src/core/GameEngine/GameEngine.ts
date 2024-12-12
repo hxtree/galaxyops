@@ -5,6 +5,7 @@ import { GameState } from '../../dtos/GameState.dto';
 import { InputEventRecord } from '../../dtos/Player/InputEventRecord.dto';
 import { DateTime, Duration } from 'luxon';
 import { InputActionType } from '../../context/Input/InputActionType.type';
+import { ActorOrientation } from '../../dtos/Actor/ActorDirection.type';
 
 export type GameEngineProps = {
   data: GameState;
@@ -50,15 +51,23 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
 
     switch (inputContext.state.key) {
       case InputEventRecordKey.LEFT:
+        data.actors[actorIndex].animation.orientation =
+          ActorOrientation.NORTHWEST;
         data.actors[actorIndex].movement.targetPosition.x--;
         break;
       case InputEventRecordKey.RIGHT:
+        data.actors[actorIndex].animation.orientation =
+          ActorOrientation.SOUTHEAST;
         data.actors[actorIndex].movement.targetPosition.x++;
         break;
       case InputEventRecordKey.UP:
+        data.actors[actorIndex].animation.orientation =
+          ActorOrientation.NORTHEAST;
         data.actors[actorIndex].movement.targetPosition.y--;
         break;
       case InputEventRecordKey.DOWN:
+        data.actors[actorIndex].animation.orientation =
+          ActorOrientation.SOUTHWEST;
         data.actors[actorIndex].movement.targetPosition.y++;
         break;
       case InputEventRecordKey.DEBUG:
