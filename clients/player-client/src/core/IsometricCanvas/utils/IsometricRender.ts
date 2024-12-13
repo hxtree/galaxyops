@@ -12,6 +12,8 @@ import { GridAnimations } from '../../../dtos/Grid/GridAnimations.dto';
 import { Actor } from '../../../dtos/Actor/Actor.dto';
 import { Duration } from 'luxon';
 import { drawMeter } from '../draw/DrawMeter';
+import { getPosition } from './getPosition';
+import { getFrame } from './getFrame';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -142,19 +144,12 @@ export class IsometricRender {
         return;
       }
 
-      const currentTime = performance.now();
       Object.entries(this._gridAnimations).forEach(([key, animation]) => {
         if (!animation.isAnimating) {
           return;
         }
 
-        // Calculate how many frames have passed based on the elapsed time and frame duration
-        const elapsedTime = Duration.fromMillis(currentTime); // Assuming currentTime is in milliseconds
-        const currentFrame =
-          Math.floor(
-            elapsedTime.as('seconds') / animation.frameDuration.as('seconds'),
-          ) % animation.totalFrames;
-        this._gridAnimations[key].currentFrame = currentFrame;
+        this._gridAnimations[key].currentFrame = getFrame(animation);
       });
 
       // draws to off-screen canvas
@@ -293,36 +288,22 @@ export class IsometricRender {
               const actors = this.findActorsByPosition({ x, y, z });
 
               actors.forEach((actor: Actor) => {
-                this._spriteMaps['shadow'].draw(
-                  ctx,
-                  1,
-                  {
-                    x: vectors.right.x - (vectors.right.x - vectors.left.x),
-                    y: vectors.top.y - 17,
-                  },
-                  0.618,
-                );
+                const position = getPosition(vectors);
+                const currentFrame = getFrame(actor.animation);
+
+                this._spriteMaps['shadow'].draw(ctx, 1, position, 0.618);
 
                 const actorSpriteMapId = kebabCase(
                   `${actor.actorId}-${actor.animation?.currentAnimation || 'idle'}`,
                 );
 
-                const position = {
-                  x: vectors.right.x - (vectors.right.x - vectors.left.x),
-                  y: vectors.top.y - 17,
-                };
-
                 this._spriteMaps[actorSpriteMapId].drawFrame(
                   ctx,
                   actor.animation.orientation,
-                  actor.animation.currentFrame ?? 1,
+                  currentFrame, //1, //actor.animation.currentFrame ?? 1,
                   position,
+                  1,
                 );
-
-                // this._spriteMaps[actorSpriteMapId].draw(ctx, 1, {
-                //   x: vectors.right.x - (vectors.right.x - vectors.left.x),
-                //   y: vectors.top.y - 17,
-                // });
 
                 // TODO determine percent based on actor's health
                 drawMeter(ctx, {

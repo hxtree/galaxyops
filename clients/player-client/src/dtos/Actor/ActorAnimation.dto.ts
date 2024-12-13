@@ -7,6 +7,7 @@ import {
 } from 'class-validator';
 import { DateTime, Duration } from 'luxon';
 import { ActorOrientation } from './ActorDirection.type';
+import { Transform } from 'class-transformer';
 
 export class ActorAnimation {
   @IsEnum(ActorOrientation)
@@ -24,7 +25,8 @@ export class ActorAnimation {
   @IsNumber()
   totalFrames: number;
 
-  // @IsNumber()
+  @Transform(({ value }) => Duration.fromObject(value), { toClassOnly: true })
+  @Transform(({ value }) => value.toObject(), { toPlainOnly: true })
   frameDuration: Duration;
 
   @IsNumber()

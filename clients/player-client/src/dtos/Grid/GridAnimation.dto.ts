@@ -1,3 +1,4 @@
+import { Transform } from 'class-transformer';
 import { IsBoolean, IsDateString, IsString, IsNumber } from 'class-validator';
 import { DateTime, Duration } from 'luxon';
 
@@ -14,7 +15,8 @@ export class GridAnimation {
   @IsNumber()
   totalFrames: number;
 
-  // @IsNumber()
+  @Transform(({ value }) => Duration.fromObject(value), { toClassOnly: true })
+  @Transform(({ value }) => value.toObject(), { toPlainOnly: true })
   frameDuration: Duration;
 
   @IsNumber()

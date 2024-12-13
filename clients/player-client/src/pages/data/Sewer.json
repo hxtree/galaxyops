@@ -25,9 +25,9 @@
       "animation": {
         "orientation": "SOUTHWEST",
         "startingFrame": 0,
-        "totalFrames": 4,
+        "totalFrames": 10,
         "animationDuration": 1.0,
-        "frameDuration": 0.1,
+        "frameDuration": { "seconds": 0.2   },
         "isAnimating": false,
         "startTime": 0,
         "currentAnimation": "walking"
@@ -39,10 +39,6 @@
     }
   ],
   "dialogues": [
-    {
-      "actorId": "MEEKU_ONI",
-      "text": "It's pretty slippery."
-    }
   ],
   "spriteMapRegistry": [
     {"id":"t", "url": "/game-assets/sewer/tileset-4x4.png"},

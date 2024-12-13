@@ -27,7 +27,7 @@
         "startingFrame": 0,
         "totalFrames": 4,
         "animationDuration": 1.0,
-        "frameDuration": 0.1,
+        "frameDuration": { "seconds": 0.1 },
         "isAnimating": false,
         "startTime": 0,
         "currentAnimation": "idle"
