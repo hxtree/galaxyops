@@ -6,6 +6,7 @@ import { InputEventRecord } from '../../dtos/Player/InputEventRecord.dto';
 import { DateTime, Duration } from 'luxon';
 import { InputActionType } from '../../context/Input/InputActionType.type';
 import { ActorOrientation } from '../../dtos/Actor/ActorDirection.type';
+import { Coordinate3d } from '../../dtos/Coordinate3d.dto';
 
 export type GameEngineProps = {
   data: GameState;
@@ -25,6 +26,37 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
   useEffect(() => {
     inputContextRef.current = inputContext;
   }, [inputContext]);
+
+  const isTraversable = (data: GameState, targetPosition: Coordinate3d) => {
+    const targetSurfaceGrid =
+      data.grid?.[targetPosition.z]?.[targetPosition.y]?.[targetPosition.x] ??
+      null;
+    const targetAreaGrid =
+      data.grid?.[targetPosition.z + 1]?.[targetPosition.y]?.[
+        targetPosition.x
+      ] ?? null;
+    if (!targetSurfaceGrid || !targetSurfaceGrid.spriteId) {
+      return false;
+    }
+    if (!targetSurfaceGrid.collisionId && !targetAreaGrid?.collisionId) {
+      return true;
+    }
+
+    let isTraversable = true;
+    data.collisions?.forEach(collision => {
+      if (collision.defaultCollision === true) {
+        if (
+          collision.id === targetSurfaceGrid.collisionId ||
+          collision.id === targetAreaGrid.collisionId
+        ) {
+          isTraversable = false;
+        }
+      }
+    });
+
+    // TODO add direction support for stairs, etc.
+    return isTraversable;
+  };
 
   useEffect(() => {
     if (
@@ -52,22 +84,54 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
       case InputEventRecordKey.LEFT:
         data.actors[actorIndex].animation.orientation =
           ActorOrientation.NORTHWEST;
-        data.actors[actorIndex].movement.targetPosition.x--;
+        if (
+          isTraversable(data, {
+            z: data.actors[actorIndex].movement.targetPosition.z,
+            y: data.actors[actorIndex].movement.targetPosition.y,
+            x: data.actors[actorIndex].movement.targetPosition.x - 1,
+          })
+        ) {
+          data.actors[actorIndex].movement.targetPosition.x--;
+        }
         break;
       case InputEventRecordKey.RIGHT:
         data.actors[actorIndex].animation.orientation =
           ActorOrientation.SOUTHEAST;
-        data.actors[actorIndex].movement.targetPosition.x++;
+        if (
+          isTraversable(data, {
+            z: data.actors[actorIndex].movement.targetPosition.z,
+            y: data.actors[actorIndex].movement.targetPosition.y,
+            x: data.actors[actorIndex].movement.targetPosition.x + 1,
+          })
+        ) {
+          data.actors[actorIndex].movement.targetPosition.x++;
+        }
         break;
       case InputEventRecordKey.UP:
         data.actors[actorIndex].animation.orientation =
           ActorOrientation.NORTHEAST;
-        data.actors[actorIndex].movement.targetPosition.y--;
+        if (
+          isTraversable(data, {
+            z: data.actors[actorIndex].movement.targetPosition.z,
+            y: data.actors[actorIndex].movement.targetPosition.y - 1,
+            x: data.actors[actorIndex].movement.targetPosition.x,
+          })
+        ) {
+          data.actors[actorIndex].movement.targetPosition.y--;
+        }
         break;
       case InputEventRecordKey.DOWN:
         data.actors[actorIndex].animation.orientation =
           ActorOrientation.SOUTHWEST;
-        data.actors[actorIndex].movement.targetPosition.y++;
+        if (
+          isTraversable(data, {
+            z: data.actors[actorIndex].movement.targetPosition.z,
+            y: data.actors[actorIndex].movement.targetPosition.y + 1,
+            x: data.actors[actorIndex].movement.targetPosition.x,
+          })
+        ) {
+          data.actors[actorIndex].movement.targetPosition.y++;
+        }
         break;
       case InputEventRecordKey.DEBUG:
         inputContext.dispatch({

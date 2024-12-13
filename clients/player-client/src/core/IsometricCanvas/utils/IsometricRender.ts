@@ -12,13 +12,14 @@ import { GridAnimation } from '../../../dtos/Grid/GridAnimation.dto';
 import { Actor } from '../../../dtos/Actor/Actor.dto';
 import { drawMeter } from '../draw/DrawMeter';
 import { getPosition } from './getPosition';
+import { GridField } from '../../../dtos/Grid/GridItem.dto';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
 
   cameraPosition: Coordinate3D;
 
-  private _grid: string[][][];
+  private _grid: GridField[][][];
   private _actors: Actor[];
   private _spriteMaps: { [key: string]: SpriteMap } = {};
   private _dialogues: Dialogue[] = [];
@@ -67,7 +68,7 @@ export class IsometricRender {
     this._dialogues = dialogues ?? [];
   }
 
-  set grid(grid: string[][][]) {
+  set grid(grid: GridField[][][]) {
     this._grid = grid;
   }
 
@@ -201,12 +202,7 @@ export class IsometricRender {
           ) {
             const value = this._grid[z][y][x];
 
-            if (!value || value === '0') continue;
-
-            const result = this.splitSpriteId(value);
-
-            if (!result || !result.spriteMapId || !result.spriteId) {
-              console.error('Invalid sprite id', value);
+            if (!value || !value.spriteMapId || !value.spriteId) {
               continue;
             }
 
@@ -224,7 +220,7 @@ export class IsometricRender {
             );
 
             if (
-              this._spriteMaps[result.spriteMapId].tags.includes('wall') &&
+              this._spriteMaps[value.spriteMapId].tags.includes('wall') &&
               valuePrevY !== 0 &&
               valuePrevX !== 0
             ) {
@@ -242,14 +238,14 @@ export class IsometricRender {
             }
 
             // if animated sprite, add current frame
-            let currentSpriteId = result.spriteId;
+            let currentSpriteId = value.spriteId;
             this._gridAnimations?.forEach(animation => {
-              if (result.animationId === animation.id) {
+              if (value.animationId === animation.id) {
                 currentSpriteId += animation.currentFrame ?? 0;
               }
             });
 
-            this.renderTile(ctx, result.spriteMapId, currentSpriteId, {
+            this.renderTile(ctx, value.spriteMapId, currentSpriteId, {
               x,
               y,
               z,

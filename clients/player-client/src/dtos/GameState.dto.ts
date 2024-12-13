@@ -6,6 +6,8 @@ import { Dialogue } from './Dialogue.dto';
 import { Coordinate3d } from './Coordinate3d.dto';
 import { GridAnimation } from './Grid/GridAnimation.dto';
 import { SpriteMapRecord } from './SpriteMapRecord.dto';
+import { GridField } from './Grid/GridItem.dto';
+import { Collision } from './Collisions/Collision.dto';
 
 export class GameState {
   @ValidateNested()
@@ -22,17 +24,26 @@ export class GameState {
   @Type(() => Dialogue)
   dialogues: Dialogue[];
 
+  @IsArray()
   @ValidateNested({ each: true })
   @Type(() => SpriteMapRecord)
   spriteMapRegistry: SpriteMapRecord[];
 
-  // TODO add type for grid
-  grid: string[][][];
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => GridField)
+  grid: GridField[][][];
 
   @ValidateNested()
   @Type(() => Coordinate3d)
   cameraPosition: Coordinate3d;
 
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => Collision)
+  collisions?: Collision[];
+
+  @IsArray()
   @ValidateNested({ each: true })
   @Type(() => GridAnimation)
   gridAnimations?: GridAnimation[];
