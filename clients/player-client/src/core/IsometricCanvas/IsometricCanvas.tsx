@@ -45,7 +45,7 @@ export const IsometricCanvas = (props: GameState) => {
   isometricRender.grid = grid;
   isometricRender.dialogues = dialogues;
   isometricRender.actors = actors;
-  isometricRender.gridAnimations = gridAnimations ?? {};
+  isometricRender.gridAnimations = gridAnimations;
 
   const drawCanvas = useCallback(async () => {
     if (!canvasRef.current || !offScreenCanvasRef.current) return;

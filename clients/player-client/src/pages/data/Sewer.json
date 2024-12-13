@@ -83,36 +83,40 @@
       ["w1","w1","w1","0","0","w1","w2","w1","w3","w1","w2","w1"]
     ]
   ],
-  "gridAnimations": {
-    "look1": {
+  "gridAnimations": [
+    {
+      "id": "look1",
       "currentAnimation": "look1",
       "startingFrame": 0,
       "totalFrames": 3,
       "frameDuration": { "seconds": 10 },
       "isAnimating": true
     },
-    "wave1": {
+    {
+      "id": "wave1",
       "currentAnimation": "water-ripples",
       "startingFrame": 0,
       "totalFrames": 2,
       "frameDuration": { "seconds": 3.3 },
       "isAnimating": true
     },
-    "wave2": {
+    {
+      "id": "wave2",
       "currentAnimation": "water-ripples",
       "startingFrame": 1,
       "totalFrames": 2,
       "frameDuration": { "seconds": 2.7 },
       "isAnimating": true
     },
-    "wave3": {
+    {
+      "id": "wave3",
       "currentAnimation": "water-ripples",
       "startingFrame": 0,
       "totalFrames": 2,
       "frameDuration": { "seconds": 4.75 },
       "isAnimating": true
     }
-  },
+  ],
   "cameraPosition": {
     "x": 0,
     "y": 0,

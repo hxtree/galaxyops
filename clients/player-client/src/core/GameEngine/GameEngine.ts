@@ -39,7 +39,6 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
     // TODO automate this
     const actorIndex = 0;
 
-    data.actors[actorIndex].animation.currentFrame;
     data.actors[actorIndex].animation.startTimestamp = DateTime.now();
     data.actors[actorIndex].movement.isInMotion = true;
     data.actors[actorIndex].movement.currentPosition =

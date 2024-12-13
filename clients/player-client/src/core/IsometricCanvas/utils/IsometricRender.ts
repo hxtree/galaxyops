@@ -8,12 +8,10 @@ import { drawDialogue } from '../draw/DrawDialogue';
 import { drawCoordinates } from '../draw/DrawCoordinates';
 import { kebabCase } from 'lodash';
 import { Dialogue } from '../../../dtos/Dialogue.dto';
-import { GridAnimations } from '../../../dtos/Grid/GridAnimations.dto';
+import { GridAnimation } from '../../../dtos/Grid/GridAnimation.dto';
 import { Actor } from '../../../dtos/Actor/Actor.dto';
-import { Duration } from 'luxon';
 import { drawMeter } from '../draw/DrawMeter';
 import { getPosition } from './getPosition';
-import { getFrame } from './getFrame';
 
 export class IsometricRender {
   private tilesRendered: number = 0;
@@ -31,7 +29,7 @@ export class IsometricRender {
   private _cameraCoordinates: Coordinate3D;
 
   private _drawCoordinates: boolean = false;
-  private _gridAnimations: GridAnimations;
+  private _gridAnimations: GridAnimation[];
 
   constructor(options: Partial<IsometricRender> = {}) {
     Object.assign(this, {}, options);
@@ -57,25 +55,8 @@ export class IsometricRender {
     await Promise.all(loadPromises);
   }
 
-  set gridAnimations(gridAnimations: GridAnimations) {
-    if (!gridAnimations) {
-      this._gridAnimations = {};
-      return;
-    }
-    this._gridAnimations = Object.keys(gridAnimations).reduce(
-      (updatedGridAnimations, key) => {
-        const animation = gridAnimations[key];
-
-        updatedGridAnimations[key] = {
-          ...animation,
-          frameDuration: Duration.fromObject(animation.frameDuration),
-          currentFrame: animation.startingFrame ?? 0,
-        };
-
-        return updatedGridAnimations;
-      },
-      {} as GridAnimations,
-    );
+  set gridAnimations(gridAnimations: GridAnimation[] | undefined) {
+    this._gridAnimations = gridAnimations ?? [];
   }
 
   set drawCoordinates(drawCoordinates: boolean) {
@@ -143,14 +124,6 @@ export class IsometricRender {
         console.error('Off-screen context not initialized');
         return;
       }
-
-      Object.entries(this._gridAnimations).forEach(([key, animation]) => {
-        if (!animation.isAnimating) {
-          return;
-        }
-
-        this._gridAnimations[key].currentFrame = getFrame(animation);
-      });
 
       // draws to off-screen canvas
       this.renderGrid(offScreenCtx);
@@ -270,13 +243,11 @@ export class IsometricRender {
 
             // if animated sprite, add current frame
             let currentSpriteId = result.spriteId;
-            if (
-              result.animationId &&
-              this._gridAnimations[result.animationId]
-            ) {
-              currentSpriteId +=
-                this._gridAnimations[result.animationId].currentFrame ?? 0;
-            }
+            this._gridAnimations?.forEach(animation => {
+              if (result.animationId === animation.id) {
+                currentSpriteId += animation.currentFrame ?? 0;
+              }
+            });
 
             this.renderTile(ctx, result.spriteMapId, currentSpriteId, {
               x,
@@ -289,7 +260,6 @@ export class IsometricRender {
 
               actors.forEach((actor: Actor) => {
                 const position = getPosition(vectors);
-                const currentFrame = getFrame(actor.animation);
 
                 this._spriteMaps['shadow'].draw(ctx, 1, position, 0.618);
 
@@ -300,7 +270,7 @@ export class IsometricRender {
                 this._spriteMaps[actorSpriteMapId].drawFrame(
                   ctx,
                   actor.animation.orientation,
-                  currentFrame, //1, //actor.animation.currentFrame ?? 1,
+                  actor.animation.currentFrame,
                   position,
                   1,
                 );

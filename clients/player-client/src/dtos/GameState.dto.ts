@@ -4,7 +4,7 @@ import { Properties } from './Area/Properties.dto';
 import { Actor } from './Actor/Actor.dto';
 import { Dialogue } from './Dialogue.dto';
 import { Coordinate3d } from './Coordinate3d.dto';
-import { GridAnimations } from './Grid/GridAnimations.dto';
+import { GridAnimation } from './Grid/GridAnimation.dto';
 import { SpriteMapRecord } from './SpriteMapRecord.dto';
 
 export class GameState {
@@ -33,5 +33,7 @@ export class GameState {
   @Type(() => Coordinate3d)
   cameraPosition: Coordinate3d;
 
-  gridAnimations?: GridAnimations;
+  @ValidateNested({ each: true })
+  @Type(() => GridAnimation)
+  gridAnimations?: GridAnimation[];
 }
