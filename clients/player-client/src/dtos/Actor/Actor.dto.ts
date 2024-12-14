@@ -39,9 +39,19 @@ export class Actor {
 
   lastUpdated?: DateTime; // Timestamp for when the actor's data was last updated
 
+  /**
+   * Returns the current position of the actor where they should be rendered from
+   */
   get position() {
-    const now = DateTime.now();
-    if (this.movement.endTimestamp && now > this.movement.endTimestamp) {
+    // Determine if the target position is closer to the camera than the current position
+    if (
+      this.movement.targetPosition.x > this.movement.currentPosition.x ||
+      this.movement.targetPosition.y > this.movement.currentPosition.y
+    ) {
+      return this.movement.targetPosition;
+    }
+
+    if (this.movement.targetPositionReached) {
       return this.movement.targetPosition;
     }
     return this.movement.currentPosition;
@@ -53,20 +63,5 @@ export class Actor {
       return false;
     }
     return true;
-  }
-
-  get targetPositionReached() {
-    const now = DateTime.now();
-    if (this.endTimestamp && now > this.endTimestamp) {
-      return true;
-    }
-    return false;
-  }
-
-  get endTimestamp() {
-    if (!this.movement.movementDuration) {
-      return null;
-    }
-    return this.movement.startTimestamp.plus(this.movement.movementDuration);
   }
 }

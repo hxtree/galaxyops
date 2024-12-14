@@ -82,7 +82,7 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
     data.actors[actorIndex].movement.isInMotion = true;
     data.actors[actorIndex].movement.currentPosition =
       data.actors[actorIndex].movement.targetPosition;
-    data.actors[actorIndex].movement.targetPositionReached = false;
+    data.actors[actorIndex].movement.startTimestamp = DateTime.now();
     data.actors[actorIndex].movement.movementDuration = Duration.fromObject({
       seconds: 10,
     });

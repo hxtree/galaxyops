@@ -32,8 +32,12 @@ export class ActorAnimation {
   @IsDateString()
   startTimestamp?: DateTime; // Time when the animation started
 
-  @IsDateString()
-  endTimestamp?: DateTime; // Time when the animation should end
+  get endTimestamp(): DateTime | null {
+    if (!this.startTimestamp || !this.duration) {
+      return null;
+    }
+    return this.startTimestamp.plus(this.duration);
+  }
 
   get duration(): Duration {
     return this.frameDuration.mapUnits(unit => unit * this.totalFrames);

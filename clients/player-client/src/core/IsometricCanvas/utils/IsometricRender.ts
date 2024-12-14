@@ -146,9 +146,9 @@ export class IsometricRender {
   private findActorsByPosition(position: Coordinate3D): Actor[] {
     return this._actors.filter(
       actor =>
-        actor.position?.x === position.x &&
-        actor.position?.y === position.y &&
-        actor.position?.z === position.z,
+        actor.movement.renderPosition?.x === position.x &&
+        actor.movement.renderPosition?.y === position.y &&
+        actor.movement.renderPosition?.z === position.z,
     );
   }
 
