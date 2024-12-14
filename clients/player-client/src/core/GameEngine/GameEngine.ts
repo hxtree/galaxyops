@@ -35,22 +35,29 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
       data.grid?.[targetPosition.z + 1]?.[targetPosition.y]?.[
         targetPosition.x
       ] ?? null;
+
     if (!targetSurfaceGrid || !targetSurfaceGrid.spriteId) {
       return false;
     }
+
     if (!targetSurfaceGrid.collisionId && !targetAreaGrid?.collisionId) {
       return true;
     }
 
     let isTraversable = true;
     data.collisions?.forEach(collision => {
-      if (collision.defaultCollision === true) {
-        if (
-          collision.id === targetSurfaceGrid.collisionId ||
-          collision.id === targetAreaGrid.collisionId
-        ) {
-          isTraversable = false;
-        }
+      if (
+        collision.isWalkable === false &&
+        collision.id === targetSurfaceGrid.collisionId
+      ) {
+        isTraversable = false;
+      }
+
+      if (
+        collision.defaultCollision === true &&
+        collision.id === targetAreaGrid.collisionId
+      ) {
+        isTraversable = false;
       }
     });
 

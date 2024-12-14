@@ -49,7 +49,7 @@
   ],
   "collisions": [
     {"id": "wall", "type": "OBSTACLE", "defaultCollision": true },
-    {"id": "water", "type": "OBSTACLE", "defaultCollision": true },
+    {"id": "water", "type": "OBSTACLE", "isWalkable": false },
     {"id": "obstacle", "type": "OBSTACLE", "defaultCollision": true }
   ],
   "grid": [

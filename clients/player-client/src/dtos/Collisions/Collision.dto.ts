@@ -19,6 +19,9 @@ export class Collision {
   @IsBoolean()
   defaultCollision?: boolean;
 
+  @IsBoolean()
+  isWalkable?: boolean;
+
   @Transform(
     ({ value }) => ({
       NE: value.NE ?? true,
