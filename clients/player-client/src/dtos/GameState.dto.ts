@@ -5,7 +5,7 @@ import { Actor } from './Actor/Actor.dto';
 import { Dialogue } from './Dialogue.dto';
 import { Coordinate3d } from './Coordinate3d.dto';
 import { GridAnimation } from './Grid/GridAnimation.dto';
-import { SpriteMapRecord } from './SpriteMapRecord.dto';
+import { SpriteMapRecord } from './SpriteMap/SpriteMapRecord.dto';
 import { GridField } from './Grid/GridItem.dto';
 import { Collision } from './Collisions/Collision.dto';
 

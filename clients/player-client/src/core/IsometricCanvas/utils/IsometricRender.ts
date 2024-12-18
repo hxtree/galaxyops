@@ -3,7 +3,7 @@ import { GRID_WIDTH } from './GridDimensions';
 import { gridToCanvasCoordinate } from './IsometricTransformer';
 import SpriteMap from '../draw/SpriteMap';
 import { drawDiamond } from '../draw/DrawDiamond';
-import { SpriteMapRecord } from '../../../dtos/SpriteMapRecord.dto';
+import { SpriteMapRecord } from '../../../dtos/SpriteMap/SpriteMapRecord.dto';
 import { drawDialogue } from '../draw/DrawDialogue';
 import { drawCoordinates } from '../draw/DrawCoordinates';
 import { kebabCase } from 'lodash';
@@ -11,7 +11,6 @@ import { Dialogue } from '../../../dtos/Dialogue.dto';
 import { GridAnimation } from '../../../dtos/Grid/GridAnimation.dto';
 import { Actor } from '../../../dtos/Actor/Actor.dto';
 import { drawMeter } from '../draw/DrawMeter';
-import { getPosition } from './getPosition';
 import { GridField } from '../../../dtos/Grid/GridItem.dto';
 
 export class IsometricRender {
@@ -144,12 +143,18 @@ export class IsometricRender {
   }
 
   private findActorsByPosition(position: Coordinate3D): Actor[] {
-    return this._actors.filter(
-      actor =>
-        actor.movement.renderPosition?.x === position.x &&
-        actor.movement.renderPosition?.y === position.y &&
-        actor.movement.renderPosition?.z === position.z,
-    );
+    return this._actors.filter(actor => {
+      const actorRenderPosition = actor.gridRenderPosition();
+      if (
+        actorRenderPosition.x === position.x &&
+        actorRenderPosition.y === position.y &&
+        actorRenderPosition.z === position.z
+      ) {
+        actor.processActions();
+        return true;
+      }
+      return false;
+    });
   }
 
   private renderText(ctx: CanvasRenderingContext2D) {
@@ -255,18 +260,14 @@ export class IsometricRender {
               const actors = this.findActorsByPosition({ x, y, z });
 
               actors.forEach((actor: Actor) => {
-                const position = getPosition(vectors);
+                const position = actor.screenPosition(vectors);
 
                 this._spriteMaps['shadow'].draw(ctx, 1, position, 0.618);
 
-                const actorSpriteMapId = kebabCase(
-                  `${actor.actorId}-${actor.animation?.currentAnimation || 'idle'}`,
-                );
-
-                this._spriteMaps[actorSpriteMapId].drawFrame(
+                this._spriteMaps[actor.spriteMapId].drawFrame(
                   ctx,
-                  actor.animation.orientation,
-                  actor.animation.currentFrame,
+                  actor.orientation,
+                  actor.spriteMapCurrentFrame,
                   position,
                   1,
                 );

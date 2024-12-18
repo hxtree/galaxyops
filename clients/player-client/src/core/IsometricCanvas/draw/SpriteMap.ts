@@ -1,4 +1,4 @@
-import { ActorOrientation } from '../../../dtos/Actor/ActorDirection.type';
+import { ActorOrientation } from '../../../dtos/Actor/ActorOrientation.type';
 
 interface Position {
   x: number;

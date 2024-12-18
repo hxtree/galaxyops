@@ -5,8 +5,9 @@ import { GameState } from '../../dtos/GameState.dto';
 import { InputEventRecord } from '../../dtos/Player/InputEventRecord.dto';
 import { DateTime, Duration } from 'luxon';
 import { InputActionType } from '../../context/Input/InputActionType.type';
-import { ActorOrientation } from '../../dtos/Actor/ActorDirection.type';
+import { ActorOrientation } from '../../dtos/Actor/ActorOrientation.type';
 import { Coordinate3d } from '../../dtos/Coordinate3d.dto';
+import { WalkAction } from '../../dtos/Actions/WalkAction';
 
 export type GameEngineProps = {
   data: GameState;
@@ -78,66 +79,81 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
     // TODO automate this
     const actorIndex = 0;
 
-    data.actors[actorIndex].animation.startTimestamp = DateTime.now();
-    data.actors[actorIndex].movement.isInMotion = true;
-    data.actors[actorIndex].movement.currentPosition =
-      data.actors[actorIndex].movement.targetPosition;
-    data.actors[actorIndex].movement.startTimestamp = DateTime.now();
-    data.actors[actorIndex].movement.movementDuration = Duration.fromObject({
-      seconds: 10,
-    });
-
     switch (inputContext.state.key) {
       case InputEventRecordKey.LEFT:
-        data.actors[actorIndex].animation.orientation =
-          ActorOrientation.NORTHWEST;
         if (
           isTraversable(data, {
-            z: data.actors[actorIndex].movement.targetPosition.z,
-            y: data.actors[actorIndex].movement.targetPosition.y,
-            x: data.actors[actorIndex].movement.targetPosition.x - 1,
+            z: data.actors[actorIndex].position.gridZ,
+            y: data.actors[actorIndex].position.gridY,
+            x: data.actors[actorIndex].position.gridX - 1,
           })
         ) {
-          data.actors[actorIndex].movement.targetPosition.x--;
+          data.actors[actorIndex].addAction(
+            new WalkAction({
+              wait: Duration.fromObject({ seconds: 0 }),
+              act: Duration.fromObject({ seconds: 3 }),
+              recovery: Duration.fromObject({ seconds: 0 }),
+              direction: ActorOrientation.NORTHWEST,
+              frames: 10,
+            }),
+          );
         }
         break;
       case InputEventRecordKey.RIGHT:
-        data.actors[actorIndex].animation.orientation =
-          ActorOrientation.SOUTHEAST;
         if (
           isTraversable(data, {
-            z: data.actors[actorIndex].movement.targetPosition.z,
-            y: data.actors[actorIndex].movement.targetPosition.y,
-            x: data.actors[actorIndex].movement.targetPosition.x + 1,
+            z: data.actors[actorIndex].position.gridZ,
+            y: data.actors[actorIndex].position.gridY,
+            x: data.actors[actorIndex].position.gridX + 1,
           })
         ) {
-          data.actors[actorIndex].movement.targetPosition.x++;
+          data.actors[actorIndex].addAction(
+            new WalkAction({
+              wait: Duration.fromObject({ seconds: 0 }),
+              act: Duration.fromObject({ seconds: 1 }),
+              recovery: Duration.fromObject({ seconds: 0 }),
+              direction: ActorOrientation.SOUTHEAST,
+              frames: 10,
+            }),
+          );
         }
         break;
       case InputEventRecordKey.UP:
-        data.actors[actorIndex].animation.orientation =
-          ActorOrientation.NORTHEAST;
         if (
           isTraversable(data, {
-            z: data.actors[actorIndex].movement.targetPosition.z,
-            y: data.actors[actorIndex].movement.targetPosition.y - 1,
-            x: data.actors[actorIndex].movement.targetPosition.x,
+            z: data.actors[actorIndex].position.gridZ,
+            y: data.actors[actorIndex].position.gridY - 1,
+            x: data.actors[actorIndex].position.gridX,
           })
         ) {
-          data.actors[actorIndex].movement.targetPosition.y--;
+          data.actors[actorIndex].addAction(
+            new WalkAction({
+              wait: Duration.fromObject({ seconds: 0 }),
+              act: Duration.fromObject({ seconds: 1 }),
+              recovery: Duration.fromObject({ seconds: 0 }),
+              direction: ActorOrientation.NORTHEAST,
+              frames: 10,
+            }),
+          );
         }
         break;
       case InputEventRecordKey.DOWN:
-        data.actors[actorIndex].animation.orientation =
-          ActorOrientation.SOUTHWEST;
         if (
           isTraversable(data, {
-            z: data.actors[actorIndex].movement.targetPosition.z,
-            y: data.actors[actorIndex].movement.targetPosition.y + 1,
-            x: data.actors[actorIndex].movement.targetPosition.x,
+            z: data.actors[actorIndex].position.gridZ,
+            y: data.actors[actorIndex].position.gridY + 1,
+            x: data.actors[actorIndex].position.gridX,
           })
         ) {
-          data.actors[actorIndex].movement.targetPosition.y++;
+          data.actors[actorIndex].addAction(
+            new WalkAction({
+              wait: Duration.fromObject({ seconds: 0 }),
+              act: Duration.fromObject({ seconds: 1 }),
+              recovery: Duration.fromObject({ seconds: 0 }),
+              direction: ActorOrientation.SOUTHWEST,
+              frames: 10,
+            }),
+          );
         }
         break;
       case InputEventRecordKey.DEBUG:

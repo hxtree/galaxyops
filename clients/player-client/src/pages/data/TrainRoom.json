@@ -7,7 +7,6 @@
       "actorId": "MEEKU_ONI",
       "height": 85,
       "movement": {
-        "isInMotion": true,
         "currentPosition": {
           "x": 4,
           "y": 5,

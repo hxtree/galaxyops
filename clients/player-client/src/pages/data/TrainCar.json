@@ -7,7 +7,6 @@
       "actorId": "MEEKU_ONI",
       "height": 85,
       "movement": {
-        "isInMotion": true,
         "currentPosition": {
           "x": 2,
           "y": 3,
@@ -47,7 +46,6 @@
       "actorId": "MALACE_TSIA",
       "height": 85,
       "movement": {
-        "isInMotion": true,
         "currentPosition": {
           "x": 10,
           "y": 5,
