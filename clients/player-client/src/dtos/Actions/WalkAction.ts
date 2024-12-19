@@ -4,6 +4,7 @@ import { Actor } from '../Actor/Actor.dto';
 import { Action } from './Action';
 import { pause } from './pause';
 import { SpriteMapActionId } from '../SpriteMap/SpriteMapType.type';
+import { Coordinate2d } from '../Coordinate2d.dto';
 
 export class WalkAction extends Action {
   direction: ActorOrientation;
@@ -27,31 +28,30 @@ export class WalkAction extends Action {
     const executeRun = async (
       resolve: (value: boolean | PromiseLike<boolean>) => void,
     ) => {
-      this.progress = 0;
-      let delta: { x?: number; y?: number } = {};
-
+      let delta: Coordinate2d = { x: 0, y: 0 };
       switch (this.direction) {
         case ActorOrientation.NORTHEAST:
-          delta = { y: -0.1 };
+          delta = { x: 0, y: -0.1 };
           break;
         case ActorOrientation.NORTHWEST:
-          delta = { x: -0.1 };
+          delta = { x: -0.1, y: 0 };
           break;
         case ActorOrientation.SOUTHEAST:
-          delta = { x: 0.1 };
+          delta = { x: 0.1, y: 0 };
           break;
         case ActorOrientation.SOUTHWEST:
-          delta = { y: 0.1 };
+          delta = { x: 0, y: 0.1 };
           break;
       }
 
       actor.spriteMapActionId = this.spriteMapId;
       actor.orientation = this.direction;
+      const startCurrentFrame = actor.spriteMapCurrentFrame;
 
-      for (let currentFrame = 0; currentFrame < this.frames; currentFrame++) {
+      for (let i = 0; i < 5; i++) {
         actor.position.move(delta);
-        actor.spriteMapCurrentFrame = currentFrame;
-        this.progress = ((currentFrame + 1) / this.frames) * 100;
+        actor.spriteMapCurrentFrame = (startCurrentFrame + i) % this.frames;
+        this.progress = ((i + 1) / 5) * 100;
         await pause(this.frameDuration());
       }
 

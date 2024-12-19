@@ -91,12 +91,14 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
           data.actors[actorIndex].addAction(
             new WalkAction({
               wait: Duration.fromObject({ seconds: 0 }),
-              act: Duration.fromObject({ seconds: 3 }),
+              act: Duration.fromObject({ seconds: 0.5 }),
               recovery: Duration.fromObject({ seconds: 0 }),
               direction: ActorOrientation.NORTHWEST,
               frames: 10,
             }),
           );
+        } else {
+          data.actors[actorIndex].orientation = ActorOrientation.NORTHWEST;
         }
         break;
       case InputEventRecordKey.RIGHT:
@@ -110,13 +112,16 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
           data.actors[actorIndex].addAction(
             new WalkAction({
               wait: Duration.fromObject({ seconds: 0 }),
-              act: Duration.fromObject({ seconds: 1 }),
+              act: Duration.fromObject({ seconds: 0.5 }),
               recovery: Duration.fromObject({ seconds: 0 }),
               direction: ActorOrientation.SOUTHEAST,
               frames: 10,
             }),
           );
+        } else {
+          data.actors[actorIndex].orientation = ActorOrientation.SOUTHEAST;
         }
+
         break;
       case InputEventRecordKey.UP:
         if (
@@ -129,13 +134,16 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
           data.actors[actorIndex].addAction(
             new WalkAction({
               wait: Duration.fromObject({ seconds: 0 }),
-              act: Duration.fromObject({ seconds: 1 }),
+              act: Duration.fromObject({ seconds: 0.5 }),
               recovery: Duration.fromObject({ seconds: 0 }),
               direction: ActorOrientation.NORTHEAST,
               frames: 10,
             }),
           );
+        } else {
+          data.actors[actorIndex].orientation = ActorOrientation.NORTHEAST;
         }
+
         break;
       case InputEventRecordKey.DOWN:
         if (
@@ -148,12 +156,14 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
           data.actors[actorIndex].addAction(
             new WalkAction({
               wait: Duration.fromObject({ seconds: 0 }),
-              act: Duration.fromObject({ seconds: 1 }),
+              act: Duration.fromObject({ seconds: 0.5 }),
               recovery: Duration.fromObject({ seconds: 0 }),
               direction: ActorOrientation.SOUTHWEST,
               frames: 10,
             }),
           );
+        } else {
+          data.actors[actorIndex].orientation = ActorOrientation.SOUTHWEST;
         }
         break;
       case InputEventRecordKey.DEBUG:

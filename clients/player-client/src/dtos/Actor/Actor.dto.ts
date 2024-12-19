@@ -17,7 +17,7 @@ import { kebabCase } from 'lodash';
 import { Coordinate2d } from '../Coordinate2d.dto';
 import { GridFieldArea } from '../Grid/GridFieldArea.type';
 import {
-  SPRITE_HEIGHT,
+  SPRITE_DEPTH,
   SPRITE_WIDTH,
 } from '../../core/IsometricCanvas/utils/SpriteDimensions';
 import { Coordinate3d } from '../Coordinate3d.dto';
@@ -74,9 +74,9 @@ export class Actor {
       y++;
     }
     return {
-      x: x, //Math.ceil(this.position.x),
-      y: y, //Math.ceil(this.position.y),
-      z: this.position.z,
+      x: Math.floor(x), //Math.ceil(this.position.x),
+      y: Math.floor(y), //Math.ceil(this.position.y),
+      z: Math.floor(this.position.z),
     };
   }
 
@@ -86,16 +86,24 @@ export class Actor {
       y: vectors.top.y - 17,
     };
 
-    // if(this.position.subX < 0.5) {
-    //   baseCoordinate2d.x -= this.position.subX * (SPRITE_WIDTH / 2);
-    // }
-    console.log(this.gridRenderPosition());
-    console.log(this.position);
+    const gridRenderPosition = this.gridRenderPosition();
 
-    if (this.position.subX >= 0.6) {
-      baseCoordinate2d.x += this.position.subX * (SPRITE_WIDTH / 2);
-      baseCoordinate2d.y += this.position.subX * (SPRITE_HEIGHT / 2);
+    if (gridRenderPosition.x > this.position.gridX) {
+      baseCoordinate2d.x -= ((1 - this.position.subX) * SPRITE_WIDTH) / 2;
+      baseCoordinate2d.y -= ((1 - this.position.subX) * SPRITE_DEPTH) / 2;
     }
+
+    if (gridRenderPosition.y > this.position.gridY) {
+      baseCoordinate2d.x += ((1 - this.position.subY) * SPRITE_WIDTH) / 2;
+      baseCoordinate2d.y -= ((1 - this.position.subY) * SPRITE_DEPTH) / 2;
+    }
+
+    console.table({
+      grid: this.position.grid,
+      gridRender: this.gridRenderPosition(),
+      base: baseCoordinate2d,
+      sub: this.position.sub,
+    });
 
     // if(this.position.subX <= 0.4) {
     //   baseCoordinate2d.x -= this.position.subX * (SPRITE_WIDTH / 2);

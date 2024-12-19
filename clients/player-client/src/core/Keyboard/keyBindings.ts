@@ -1,5 +1,6 @@
 import { InputEventRecordKey } from '../../dtos/Player/InputEventRecordKey.type';
 
+// TODO: lowercase the key bindings
 export const keyboardBindings = {
   [InputEventRecordKey.UP]: 'w',
   [InputEventRecordKey.DOWN]: 's',

@@ -1,5 +1,5 @@
 import { IsNumber } from 'class-validator';
-
+import { Coordinate3d } from '../Coordinate3d.dto';
 export class ActorPosition {
   @IsNumber()
   x: number;
@@ -16,6 +16,22 @@ export class ActorPosition {
     this.z = z;
   }
 
+  get grid(): Coordinate3d {
+    return {
+      x: this.gridX,
+      y: this.gridY,
+      z: this.gridZ,
+    };
+  }
+
+  get sub(): Coordinate3d {
+    return {
+      x: this.subX,
+      y: this.subY,
+      z: this.subZ,
+    };
+  }
+
   get gridX(): number {
     return Math.floor(this.x);
   }
@@ -29,17 +45,16 @@ export class ActorPosition {
   }
 
   get subX(): number {
-    return this.x % 1;
+    return Number((this.x % 1).toFixed(1));
   }
 
   get subY(): number {
-    return this.y % 1;
+    return Number((this.y % 1).toFixed(1));
   }
 
   get subZ(): number {
-    return this.z % 1;
+    return Number((this.z % 1).toFixed(1));
   }
-
   move(deltas: { x?: number; y?: number; z?: number }) {
     if (deltas.x !== undefined) {
       this.x += deltas.x;
