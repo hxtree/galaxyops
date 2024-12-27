@@ -1,5 +1,6 @@
 import { IsNumber } from 'class-validator';
 import { Coordinate3d } from '../Coordinate3d.dto';
+import { Coordinate2d } from '../Coordinate2d.dto';
 export class ActorPosition {
   @IsNumber()
   x: number;
@@ -55,6 +56,7 @@ export class ActorPosition {
   get subZ(): number {
     return Number((this.z % 1).toFixed(1));
   }
+
   move(deltas: { x?: number; y?: number; z?: number }) {
     if (deltas.x !== undefined) {
       this.x += deltas.x;
@@ -65,5 +67,15 @@ export class ActorPosition {
     if (deltas.z !== undefined) {
       this.z += deltas.z;
     }
+  }
+
+  getPointOnLine(
+    point1: Coordinate2d,
+    point2: Coordinate2d,
+    percent: number,
+  ): Coordinate2d {
+    const x = point1.x + (point2.x - point1.x) * percent;
+    const y = point1.y + (point2.y - point1.y) * percent;
+    return { x, y };
   }
 }

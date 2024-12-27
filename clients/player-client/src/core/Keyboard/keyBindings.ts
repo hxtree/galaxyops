@@ -12,3 +12,10 @@ export const keyboardBindings = {
   [InputEventRecordKey.BACK]: 'u',
   [InputEventRecordKey.PAUSE]: 'Escape',
 };
+
+export const holdableKeys = [
+  InputEventRecordKey.UP,
+  InputEventRecordKey.DOWN,
+  InputEventRecordKey.LEFT,
+  InputEventRecordKey.RIGHT,
+];

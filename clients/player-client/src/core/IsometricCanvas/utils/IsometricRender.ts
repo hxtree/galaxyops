@@ -144,13 +144,13 @@ export class IsometricRender {
 
   private findActorsByPosition(position: Coordinate3D): Actor[] {
     return this._actors.filter(actor => {
+      actor.processActions();
       const actorRenderPosition = actor.gridRenderPosition();
       if (
         actorRenderPosition.x === position.x &&
         actorRenderPosition.y === position.y &&
         actorRenderPosition.z === position.z
       ) {
-        actor.processActions();
         return true;
       }
       return false;
@@ -274,8 +274,8 @@ export class IsometricRender {
 
                 // TODO determine percent based on actor's health
                 drawMeter(ctx, {
-                  x: vectors.left.x,
-                  y: vectors.top.y - 17 - (actor.height ?? 60),
+                  x: position.x,
+                  y: position.y - (actor.height ?? 60),
                   percent: 50,
                 });
               });

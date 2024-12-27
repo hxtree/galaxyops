@@ -6,12 +6,14 @@
     {
       "actorId": "MEEKU_ONI",
       "height": 85,
+      "spriteMapActionId": "IDLE",
+      "spriteMapCurrentFrame": 0,
+      "orientation": "SOUTHEAST",
       "position": {
-        "x": 1,
-        "y": 5,
-        "z": 1
+        "x": 6.5,
+        "y": 5.5,
+        "z": 1.5
       },
-      "orientation": "SOUTHWEST",
       "spriteMapRegistry": [
         {"id":"idle", "url": "/game-assets/sprites/meeku-oni/idle-1x4.png"},
         {"id":"walk", "url": "/game-assets/sprites/meeku-oni/walk-10x4.png"}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { keyboardBindings } from './keyBindings';
+import { keyboardBindings, holdableKeys } from './keyBindings';
 import { DateTime } from 'luxon';
 import { InputEventRecord } from '../../dtos/Player/InputEventRecord.dto';
 import { InputEventRecordKey } from '../../dtos/Player/InputEventRecordKey.type';
@@ -18,7 +18,6 @@ export default function useHandleInput(): InputEventRecord[] | null {
       if (pressedKeys.has(event.key)) {
         return;
       }
-      pressedKeys.add(event.key);
 
       const newInputRecords: InputEventRecord[] = [];
 
@@ -29,6 +28,10 @@ export default function useHandleInput(): InputEventRecord[] | null {
           inputEventRecord.key = direction as InputEventRecordKey;
           inputEventRecord.timestamp = DateTime.now();
           newInputRecords.push(inputEventRecord);
+
+          if (!holdableKeys.includes(inputEventRecord.key)) {
+            pressedKeys.add(event.key);
+          }
         }
       });
 
@@ -36,6 +39,7 @@ export default function useHandleInput(): InputEventRecord[] | null {
       newInputRecords.forEach(record => {
         newState.unshift(record);
       });
+
       setInputState(newInputRecords);
     };
 

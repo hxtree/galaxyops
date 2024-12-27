@@ -28,7 +28,7 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
     inputContextRef.current = inputContext;
   }, [inputContext]);
 
-  const isTraversable = (data: GameState, targetPosition: Coordinate3d) => {
+  const isGridTraversable = (data: GameState, targetPosition: Coordinate3d) => {
     const targetSurfaceGrid =
       data.grid?.[targetPosition.z]?.[targetPosition.y]?.[targetPosition.x] ??
       null;
@@ -45,25 +45,25 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
       return true;
     }
 
-    let isTraversable = true;
+    let isGridTraversable = true;
     data.collisions?.forEach(collision => {
       if (
         collision.isWalkable === false &&
         collision.id === targetSurfaceGrid.collisionId
       ) {
-        isTraversable = false;
+        isGridTraversable = false;
       }
 
       if (
         collision.defaultCollision === true &&
         collision.id === targetAreaGrid.collisionId
       ) {
-        isTraversable = false;
+        isGridTraversable = false;
       }
     });
 
     // TODO add direction support for stairs, etc.
-    return isTraversable;
+    return isGridTraversable;
   };
 
   useEffect(() => {
@@ -78,11 +78,12 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
 
     // TODO automate this
     const actorIndex = 0;
-
+    const actor = data.actors[actorIndex];
     switch (inputContext.state.key) {
       case InputEventRecordKey.LEFT:
         if (
-          isTraversable(data, {
+          actor.position.subX > 0.5 ||
+          isGridTraversable(data, {
             z: data.actors[actorIndex].position.gridZ,
             y: data.actors[actorIndex].position.gridY,
             x: data.actors[actorIndex].position.gridX - 1,
@@ -103,7 +104,8 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
         break;
       case InputEventRecordKey.RIGHT:
         if (
-          isTraversable(data, {
+          actor.position.subX < 0.5 ||
+          isGridTraversable(data, {
             z: data.actors[actorIndex].position.gridZ,
             y: data.actors[actorIndex].position.gridY,
             x: data.actors[actorIndex].position.gridX + 1,
@@ -125,7 +127,8 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
         break;
       case InputEventRecordKey.UP:
         if (
-          isTraversable(data, {
+          actor.position.subY > 0.5 ||
+          isGridTraversable(data, {
             z: data.actors[actorIndex].position.gridZ,
             y: data.actors[actorIndex].position.gridY - 1,
             x: data.actors[actorIndex].position.gridX,
@@ -147,7 +150,8 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
         break;
       case InputEventRecordKey.DOWN:
         if (
-          isTraversable(data, {
+          actor.position.subY < 0.5 ||
+          isGridTraversable(data, {
             z: data.actors[actorIndex].position.gridZ,
             y: data.actors[actorIndex].position.gridY + 1,
             x: data.actors[actorIndex].position.gridX,
@@ -156,7 +160,7 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
           data.actors[actorIndex].addAction(
             new WalkAction({
               wait: Duration.fromObject({ seconds: 0 }),
-              act: Duration.fromObject({ seconds: 0.5 }),
+              act: Duration.fromObject({ seconds: 0.1 }),
               recovery: Duration.fromObject({ seconds: 0 }),
               direction: ActorOrientation.SOUTHWEST,
               frames: 10,

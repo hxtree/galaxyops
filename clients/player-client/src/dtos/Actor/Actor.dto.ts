@@ -86,30 +86,46 @@ export class Actor {
       y: vectors.top.y - 17,
     };
 
-    const gridRenderPosition = this.gridRenderPosition();
+    const subdivisions = 10;
+    const spriteWidthPerSubdivision = SPRITE_WIDTH / (2 * subdivisions);
+    const spriteDepthPerSubdivision = SPRITE_DEPTH / subdivisions;
+    const hypotenuse = Math.sqrt(
+      Math.pow(spriteWidthPerSubdivision, 2) +
+        Math.pow(spriteDepthPerSubdivision, 2),
+    );
 
-    if (gridRenderPosition.x > this.position.gridX) {
-      baseCoordinate2d.x -= ((1 - this.position.subX) * SPRITE_WIDTH) / 2;
-      baseCoordinate2d.y -= ((1 - this.position.subX) * SPRITE_DEPTH) / 2;
-    }
+    // Adjust subX to compensate for the grid rendering offset
+    const adjustedSubX =
+      this.position.subX > 0.5 ? this.position.subX - 1 : this.position.subX;
+    const angle = Math.atan2(
+      spriteDepthPerSubdivision,
+      spriteWidthPerSubdivision,
+    );
+    const distance = hypotenuse * subdivisions * (0.5 - adjustedSubX);
+    const offsetX = Math.round(distance * Math.cos(angle));
+    const offsetY = distance * Math.sin(angle);
 
-    if (gridRenderPosition.y > this.position.gridY) {
-      baseCoordinate2d.x += ((1 - this.position.subY) * SPRITE_WIDTH) / 2;
-      baseCoordinate2d.y -= ((1 - this.position.subY) * SPRITE_DEPTH) / 2;
-    }
+    baseCoordinate2d.x -= offsetX;
+    baseCoordinate2d.y -= offsetY;
+
+    // Adjust subY to compensate for the grid rendering offset (mirrored)
+    const adjustedSubY =
+      this.position.subY > 0.5 ? this.position.subY - 1 : this.position.subY;
+    const angleY = Math.atan2(
+      spriteWidthPerSubdivision,
+      spriteDepthPerSubdivision,
+    );
+    const distanceY = hypotenuse * subdivisions * (0.5 - adjustedSubY);
+    const offsetYMirrored = Math.round(distanceY * Math.cos(angleY));
+    const offsetXMirrored = distanceY * Math.sin(angleY);
+
+    baseCoordinate2d.x += offsetXMirrored;
+    baseCoordinate2d.y -= offsetYMirrored;
 
     console.table({
-      grid: this.position.grid,
-      gridRender: this.gridRenderPosition(),
-      base: baseCoordinate2d,
       sub: this.position.sub,
+      position: this.position.grid,
     });
-
-    // if(this.position.subX <= 0.4) {
-    //   baseCoordinate2d.x -= this.position.subX * (SPRITE_WIDTH / 2);
-    //   baseCoordinate2d.y -= this.position.subX * (SPRITE_HEIGHT /2);
-    // }
-
     return baseCoordinate2d;
   }
 

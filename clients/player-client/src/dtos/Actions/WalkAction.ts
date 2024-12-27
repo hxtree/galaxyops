@@ -48,15 +48,18 @@ export class WalkAction extends Action {
       actor.orientation = this.direction;
       const startCurrentFrame = actor.spriteMapCurrentFrame;
 
-      for (let i = 0; i < 5; i++) {
-        actor.position.move(delta);
+      actor.position.move(delta);
+      const maxFrames = 3;
+      for (let i = 0; i <= maxFrames; i++) {
         actor.spriteMapCurrentFrame = (startCurrentFrame + i) % this.frames;
-        this.progress = ((i + 1) / 5) * 100;
+        this.progress = (1 / maxFrames) * i;
         await pause(this.frameDuration());
       }
+      this.progress = 1;
 
-      actor.spriteMapCurrentFrame = 0;
-      actor.spriteMapActionId = SpriteMapActionId.IDLE;
+      // TODO figure out idle setter
+      // actor.spriteMapCurrentFrame = 0;
+      // actor.spriteMapActionId = SpriteMapActionId.IDLE;
 
       resolve(true);
     };
