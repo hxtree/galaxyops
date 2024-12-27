@@ -122,10 +122,6 @@ export class Actor {
     baseCoordinate2d.x += offsetXMirrored;
     baseCoordinate2d.y -= offsetYMirrored;
 
-    console.table({
-      sub: this.position.sub,
-      position: this.position.grid,
-    });
     return baseCoordinate2d;
   }
 
@@ -151,44 +147,4 @@ export class Actor {
     this.actions.pop();
     // }
   }
-
-  /**
-   * Returns the current position of the actor where they should be rendered from
-   */
-  // get position() {
-  //   // Determine if the target position is closer to the camera than the current position
-  //   if (
-  //     this.movement.targetPosition.x > this.movement.currentPosition.x ||
-  //     this.movement.targetPosition.y > this.movement.currentPosition.y
-  //   ) {
-  //     return this.movement.targetPosition;
-  //   }
-  //   if (this.movement.targetPositionReached) {
-  //     return this.movement.targetPosition;
-  //   }
-  //   return this.movement.currentPosition;
-  // }
-
-  // get animation(){
-  //   get isInMotion() {
-  //     if (!this.startTimestamp || !this.duration) {
-  //       return false;
-  //     }
-  //     const now = DateTime.now();
-  //     const endTimestamp = this.startTimestamp.plus(this.duration);
-  //     if(now >= endTimestamp) {
-  //       return false;
-  //     }
-  //     return true;
-  //   }
-
-  //   // const actorIndex = 0;
-  //   // console.log(newData.actors[actorIndex]);
-  //   // console.log('ss')
-  //   // if(newData.actors[actorIndex].movement.isInMotion === false){
-  //   //   newData.actors[actorIndex].animation.currentAnimation = 'idle';
-  //   //   newData.actors[actorIndex].animation.totalFrames = 1;
-  //   //   newData.actors[actorIndex].animation.currentPosition = newData.actors[actorIndex].animation.targetPosition;
-  //   // }
-  // }
 }

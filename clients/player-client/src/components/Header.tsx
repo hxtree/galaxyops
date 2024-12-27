@@ -4,12 +4,6 @@ import { AppBar, Button } from '@galaxyops/design-system/dist/main';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-  // const [current, setCurrent] = useState('h');
-  // const onClick = (e: { key: SetStateAction<string>; }) => {
-  //   console.log('click ', e);
-  //   setCurrent(e.key);
-  // };
-
   type NavMenuItem = {
     link: string;
     title: string;
