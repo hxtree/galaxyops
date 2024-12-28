@@ -15,279 +15,1199 @@
         "z": 1.5
       },
       "spriteMapRegistry": [
-        {"id":"idle", "url": "/game-assets/sprites/meeku-oni/idle-1x4.png"},
-        {"id":"walk", "url": "/game-assets/sprites/meeku-oni/walk-10x4.png"}
+        {
+          "id": "idle",
+          "url": "/game-assets/sprites/meeku-oni/idle-1x4.png"
+        },
+        {
+          "id": "walk",
+          "url": "/game-assets/sprites/meeku-oni/walk-10x4.png"
+        }
       ]
     }
   ],
-  "dialogues": [
-  ],
+  "dialogues": [],
   "spriteMapRegistry": [
-    {"id":"t", "url": "/game-assets/sewer/tileset-4x4.png"},
-    {"id":"w", "url": "/game-assets/sewer/wall-8x1.png"},
-    {"id":"b", "url": "/game-assets/sewer/barrel-1x1.png"},
-    {"id":"r", "url": "/game-assets/sewer/rat-3x1.png"},
-    {"id":"s", "url": "/game-assets/sewer/spill-1x1.png"}
+    {
+      "id": "t",
+      "url": "/game-assets/sewer/tileset-4x4.png"
+    },
+    {
+      "id": "w",
+      "url": "/game-assets/sewer/wall-8x1.png"
+    },
+    {
+      "id": "b",
+      "url": "/game-assets/sewer/barrel-1x1.png"
+    },
+    {
+      "id": "r",
+      "url": "/game-assets/sewer/rat-3x1.png"
+    },
+    {
+      "id": "s",
+      "url": "/game-assets/sewer/spill-1x1.png"
+    }
   ],
   "collisions": [
-    {"id": "wall", "type": "OBSTACLE", "defaultCollision": true },
-    {"id": "water", "type": "OBSTACLE", "isWalkable": false },
-    {"id": "obstacle", "type": "OBSTACLE", "defaultCollision": true }
+    {
+      "id": "wall",
+      "type": "OBSTACLE",
+      "defaultCollision": true
+    },
+    {
+      "id": "water",
+      "type": "OBSTACLE",
+      "isWalkable": false
+    },
+    {
+      "id": "obstacle",
+      "type": "OBSTACLE",
+      "defaultCollision": true
+    }
   ],
   "grid": [
     [
-      [{}, {}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave3"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {}, {}, {}, {}, {}, {}, {"spriteMapId": "t", "spriteId": 1}],
-      [{}, {}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {}, {}, {}, {}, {}, {}, {"spriteMapId": "t", "spriteId": 1}],
-      [{}, {}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {}, {}, {}, {}, {}, {}, {"spriteMapId": "t", "spriteId": 1}],
-      [{}, {}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave3"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {}, {}, {}, {}, {}, {}, {"spriteMapId": "t", "spriteId": 1}],
-      [{}, {}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {}, {}, {}, {}, {}, {}, {"spriteMapId": "t", "spriteId": 1}],
-      [{}, {}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave3"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {}, {}, {}, {}, {}, {}, {"spriteMapId": "t", "spriteId": 1}],
-      [{}, {}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {}, {}, {}, {}, {}, {}, {"spriteMapId": "t", "spriteId": 1}],
-      [{"spriteMapId": "t", "spriteId": 1}, {"spriteMapId": "t", "spriteId": 1}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave3"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 1}, {"spriteMapId": "t", "spriteId": 1}, {"spriteMapId": "t", "spriteId": 1}, {"spriteMapId": "t", "spriteId": 1}, {"spriteMapId": "t", "spriteId": 1}, {"spriteMapId": "t", "spriteId": 1}, {"spriteMapId": "t", "spriteId": 1}],
-      [{"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave3"}],
-      [{"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave3"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}],
-      [{"spriteMapId": "t", "spriteId": 5, "animationId": "wave3"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave3"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave1"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave3"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}, {"spriteMapId": "t", "spriteId": 5, "animationId": "wave2"}]
-    ],
-    [
       [
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 11},
-        {},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1}
-      ],
-      [
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 11, "collisionId": "water"},
-        {},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1}
-      ],
-      [
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 11, "collisionId": "water"},
-        {},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1}
-      ],
-      [
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 11, "collisionId": "water"},
-        {},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1}
-      ],
-      [
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 11, "collisionId": "water"},
-        {},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1}
-      ],
-      [
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 7},
-        {"spriteMapId": "t", "spriteId": 7},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1}
-      ],
-      [
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 7},
-        {"spriteMapId": "t", "spriteId": 7},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1}
-      ],
-      [
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 11, "collisionId": "water"},
-        {},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1},
-        {"spriteMapId": "t", "spriteId": 1}
-      ],
-      [
-        {"spriteMapId": "t", "spriteId": 10},
-        {"spriteMapId": "t", "spriteId": 10},
-        {"spriteMapId": "t", "spriteId": 10},
         {},
         {},
-        {"spriteMapId": "t", "spriteId": 10},
-        {"spriteMapId": "t", "spriteId": 10},
-        {"spriteMapId": "t", "spriteId": 10},
-        {"spriteMapId": "t", "spriteId": 10},
-        {"spriteMapId": "t", "spriteId": 10},
-        {"spriteMapId": "t", "spriteId": 10},
-        {"spriteMapId": "t", "spriteId": 10}
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave3"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
+      ],
+      [
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
+      ],
+      [
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
+      ],
+      [
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave3"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
+      ],
+      [
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
+      ],
+      [
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave3"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
+      ],
+      [
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
+      ],
+      [
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave3"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
+      ],
+      [
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave3"
+        }
+      ],
+      [
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave3"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        }
+      ],
+      [
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave3"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave3"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave1"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave3"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 5,
+          "animationId": "wave2"
+        }
       ]
     ],
     [
       [
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 3, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 6, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 6, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 2, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 3, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 5, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 5, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"}
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 11
+        },
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
       ],
       [
-        {"spriteMapId": "w", "spriteId": 2, "collisionId": "wall"},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 11,
+          "collisionId": "water"
+        },
         {},
-        {},
-        {},
-        {},
-        {"spriteMapId": "b", "spriteId": 1, "collisionId": "obstacle"},
-        {"spriteMapId": "b", "spriteId": 1, "collisionId": "obstacle"},
-        {},
-        {},
-        {},
-        {},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"}
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
       ],
       [
-        {"spriteMapId": "w", "spriteId": 2, "collisionId": "wall"},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 11,
+          "collisionId": "water"
+        },
         {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {"spriteMapId": "r", "spriteId": 1, "animationId": "look1" , "collisionId": "obstacle"},
-        {},
-        {},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"}
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
       ],
       [
-        {"spriteMapId": "w", "spriteId": 2, "collisionId": "wall"},
-        {"spriteMapId": "s", "spriteId": 1},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 11,
+          "collisionId": "water"
+        },
         {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"}
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
       ],
       [
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 11,
+          "collisionId": "water"
+        },
         {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"}
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
       ],
       [
-        {"spriteMapId": "w", "spriteId": 4, "collisionId": "wall"},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"}
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 7
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 7
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
       ],
       [
-        {"spriteMapId": "w", "spriteId": 4, "collisionId": "wall"},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"}
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 7
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 7
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
       ],
       [
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 11,
+          "collisionId": "water"
+        },
+        {},
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 1
+        }
+      ],
+      [
+        {
+          "spriteMapId": "t",
+          "spriteId": 10
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 10
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 10
+        },
         {},
         {},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 2, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 2, "collisionId": "wall"},
-        {"spriteMapId": "w", "spriteId": 1, "collisionId": "wall"}
+        {
+          "spriteMapId": "t",
+          "spriteId": 10
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 10
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 10
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 10
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 10
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 10
+        },
+        {
+          "spriteMapId": "t",
+          "spriteId": 10
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 3,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 6,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 6,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 2,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 3,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 5,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 5,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        }
+      ],
+      [
+        {
+          "spriteMapId": "w",
+          "spriteId": 2,
+          "collisionId": "wall"
+        },
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "b",
+          "spriteId": 1,
+          "collisionId": "obstacle"
+        },
+        {
+          "spriteMapId": "b",
+          "spriteId": 1,
+          "collisionId": "obstacle"
+        },
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        }
+      ],
+      [
+        {
+          "spriteMapId": "w",
+          "spriteId": 2,
+          "collisionId": "wall"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "r",
+          "spriteId": 1,
+          "animationId": "look1",
+          "collisionId": "obstacle"
+        },
+        {},
+        {},
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        }
+      ],
+      [
+        {
+          "spriteMapId": "w",
+          "spriteId": 2,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "s",
+          "spriteId": 1
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        }
+      ],
+      [
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        }
+      ],
+      [
+        {
+          "spriteMapId": "w",
+          "spriteId": 4,
+          "collisionId": "wall"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        }
+      ],
+      [
+        {
+          "spriteMapId": "w",
+          "spriteId": 4,
+          "collisionId": "wall"
+        },
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        }
+      ],
+      [
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {},
+        {},
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 2,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 2,
+          "collisionId": "wall"
+        },
+        {
+          "spriteMapId": "w",
+          "spriteId": 1,
+          "collisionId": "wall"
+        }
       ]
     ]
   ],
@@ -297,7 +1217,9 @@
       "currentAnimation": "look1",
       "startingFrame": 0,
       "totalFrames": 3,
-      "frameDuration": { "seconds": 10 },
+      "frameDuration": {
+        "seconds": 10
+      },
       "isAnimating": true
     },
     {
@@ -305,7 +1227,9 @@
       "currentAnimation": "water-ripples",
       "startingFrame": 0,
       "totalFrames": 2,
-      "frameDuration": { "seconds": 3.3 },
+      "frameDuration": {
+        "seconds": 3.3
+      },
       "isAnimating": true
     },
     {
@@ -313,7 +1237,9 @@
       "currentAnimation": "water-ripples",
       "startingFrame": 1,
       "totalFrames": 2,
-      "frameDuration": { "seconds": 2.7 },
+      "frameDuration": {
+        "seconds": 2.7
+      },
       "isAnimating": true
     },
     {
@@ -321,7 +1247,9 @@
       "currentAnimation": "water-ripples",
       "startingFrame": 0,
       "totalFrames": 2,
-      "frameDuration": { "seconds": 4.75 },
+      "frameDuration": {
+        "seconds": 4.75
+      },
       "isAnimating": true
     }
   ],
