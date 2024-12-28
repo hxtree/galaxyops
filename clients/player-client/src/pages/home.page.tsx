@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IsometricCanvas } from '../core/IsometricCanvas';
-import gameStateRaw from './data/Sewer.json';
+// import gameStateRaw from './data/Sewer.json';
+import gameStateRaw from './data/TrainRoom.json';
 import { InputProvider } from '../context/Input/InputProvider';
 import { Keyboard } from '../core/Keyboard/Keyboard';
 import { GameEngine } from '../core/GameEngine/GameEngine';

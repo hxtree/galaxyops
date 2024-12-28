@@ -6,34 +6,17 @@
     {
       "actorId": "MEEKU_ONI",
       "height": 85,
-      "movement": {
-        "currentPosition": {
-          "x": 4,
-          "y": 5,
-          "z": 0
-          },
-        "targetPosition": {
-          "x": 5,
-          "y": 5,
-          "z": 0
-          },
-        "movementDuration": { "seconds": 2 },
-        "targetPositionReached": false,
-        "startTimestamp": "2021-07-01T12:00:00.000Z"
-      },
-      "animation": {
-        "orientation": "SOUTHWEST",
-        "startingFrame": 0,
-        "totalFrames": 4,
-        "animationDuration": 1.0,
-        "frameDuration": {"seconds":0.1},
-        "isAnimating": false,
-        "startTime": 0,
-        "currentAnimation": "idle"
+      "spriteMapActionId": "IDLE",
+      "spriteMapCurrentFrame": 0,
+      "orientation": "SOUTHEAST",
+      "position": {
+        "x": 2.5,
+        "y": 5.5,
+        "z": 0.5
       },
       "spriteMapRegistry": [
-        {"id":"idle", "url": "/game-assets/sprites/meeku-oni/idle-1x1.png"},
-        {"id":"walking", "url": "/game-assets/sprites/meeku-oni/walk-10x4.png"}
+        {"id":"idle", "url": "/game-assets/sprites/meeku-oni/idle-1x4.png"},
+        {"id":"walk", "url": "/game-assets/sprites/meeku-oni/walk-10x4.png"}
       ]
     }
   ],
@@ -47,24 +30,28 @@
     {"id": "w", "url": "/game-assets/trainwall-8x1.png"},
     {"id": "n", "url": "/game-assets/nightstand-4x3.png"}
   ],
+  "collisions": [
+    {"id": "wall", "type": "OBSTACLE", "defaultCollision": true },
+    {"id": "obstacle", "type": "OBSTACLE", "defaultCollision": true }
+  ],
   "grid": [
     [
-      ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"],
-      ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"],
-      ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"],
-      ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"],
-      ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"],
-      ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"],
-      ["t2", "t2", "t2", "t2", "t2", "t2", "t2", "t2"]
+      [{"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}],
+      [{"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}],
+      [{"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}],
+      [{"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}],
+      [{"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}],
+      [{"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}],
+      [{"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}, {"spriteMapId":"t", "spriteId": 2}]
     ],
     [
-      ["w1", "w1", "w1", "w4", "w1", "w2", "w1", "w1"],
-      ["w1", "0", "0", "0", "0", "0", "b1","w1"],
-      ["w1", "t10", "t9", "t9","0","0","0","w1"],
-      ["w1", "t10", "t9", "t9","0","0","0","w1"],
-      ["w1","0","0","0","0","0","0","w1"],
-      ["w1", "n10","0","0","0","0","0","w1"],
-      ["w1", "w1", "w1", "w1", "0", "w1", "w1", "w1"]
+      [{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 4, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 2, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}],
+      [{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {}, {}, {}, {}, {}, {"spriteMapId":"b", "spriteId": 1,"collisionId":"obstacle"},{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}],
+      [{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"t", "spriteId": 10,"collisionId":"obstacle"}, {"spriteMapId":"t", "spriteId": 9,"collisionId":"obstacle"}, {"spriteMapId":"t", "spriteId": 9,"collisionId":"obstacle"},{},{},{},{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}],
+      [{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"t", "spriteId": 10,"collisionId":"obstacle"}, {"spriteMapId":"t", "spriteId": 9,"collisionId":"obstacle"}, {"spriteMapId":"t", "spriteId": 9,"collisionId":"obstacle"},{},{},{},{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}],
+      [{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"},{},{},{},{},{},{},{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}],
+      [{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"n", "spriteId": 10,"collisionId":"obstacle"},{},{},{},{},{},{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}],
+      [{"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}, {"spriteMapId":"w", "spriteId": 1, "collisionId": "wall"}]
     ]
   ],
   "cameraPosition": {
