@@ -66,7 +66,23 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
     return isGridTraversable;
   };
 
+  // run 24 times per second
   useEffect(() => {
+    const interval = setInterval(() => {
+      const actorIndex = 0;
+      const actor = data.actors[actorIndex];
+
+      actor.processActions();
+    }, 10000 / 24);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    // TODO automate this
+    const actorIndex = 0;
+    const actor = data.actors[actorIndex];
+
     if (
       !inputContext.state.key ||
       !inputContext.state.timestamp ||
@@ -76,50 +92,50 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
       return;
     }
 
-    // TODO automate this
-    const actorIndex = 0;
-    const actor = data.actors[actorIndex];
+    if (actor.actions?.length > 0) {
+      return;
+    }
+
+    const walkAction = new WalkAction({
+      wait: Duration.fromObject({ seconds: 0 }),
+      act: Duration.fromObject({ seconds: 0.2 }),
+      recovery: Duration.fromObject({ seconds: 0 }),
+      gridDelta: 0.5,
+      framesPerAction: 5,
+      spriteMapFrames: 10,
+    });
+
     switch (inputContext.state.key) {
       case InputEventRecordKey.LEFT:
         if (
-          actor.position.subX > 0.5 ||
+          actor.position.subX - walkAction.gridDelta >= 0.6 ||
           isGridTraversable(data, {
             z: data.actors[actorIndex].position.gridZ,
             y: data.actors[actorIndex].position.gridY,
-            x: data.actors[actorIndex].position.gridX - 1,
+            x: Math.floor(
+              data.actors[actorIndex].position.x - walkAction.gridDelta,
+            ),
           })
         ) {
-          data.actors[actorIndex].addAction(
-            new WalkAction({
-              wait: Duration.fromObject({ seconds: 0 }),
-              act: Duration.fromObject({ seconds: 0.5 }),
-              recovery: Duration.fromObject({ seconds: 0 }),
-              direction: ActorOrientation.NORTHWEST,
-              frames: 10,
-            }),
-          );
+          walkAction.direction = ActorOrientation.NORTHWEST;
+          data.actors[actorIndex].addAction(walkAction);
         } else {
           data.actors[actorIndex].orientation = ActorOrientation.NORTHWEST;
         }
         break;
       case InputEventRecordKey.RIGHT:
         if (
-          actor.position.subX < 0.5 ||
+          actor.position.subX + walkAction.gridDelta <= 0.6 ||
           isGridTraversable(data, {
             z: data.actors[actorIndex].position.gridZ,
             y: data.actors[actorIndex].position.gridY,
-            x: data.actors[actorIndex].position.gridX + 1,
+            x: Math.round(
+              data.actors[actorIndex].position.x + walkAction.gridDelta,
+            ),
           })
         ) {
-          data.actors[actorIndex].addAction(
-            new WalkAction({
-              wait: Duration.fromObject({ seconds: 0 }),
-              act: Duration.fromObject({ seconds: 0.5 }),
-              recovery: Duration.fromObject({ seconds: 0 }),
-              direction: ActorOrientation.SOUTHEAST,
-              frames: 10,
-            }),
-          );
+          walkAction.direction = ActorOrientation.SOUTHEAST;
+          data.actors[actorIndex].addAction(walkAction);
         } else {
           data.actors[actorIndex].orientation = ActorOrientation.SOUTHEAST;
         }
@@ -127,22 +143,17 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
         break;
       case InputEventRecordKey.UP:
         if (
-          actor.position.subY > 0.5 ||
+          actor.position.subY - walkAction.gridDelta >= 0.6 ||
           isGridTraversable(data, {
             z: data.actors[actorIndex].position.gridZ,
-            y: data.actors[actorIndex].position.gridY - 1,
+            y: Math.floor(
+              data.actors[actorIndex].position.y - walkAction.gridDelta - 0.4,
+            ),
             x: data.actors[actorIndex].position.gridX,
           })
         ) {
-          data.actors[actorIndex].addAction(
-            new WalkAction({
-              wait: Duration.fromObject({ seconds: 0 }),
-              act: Duration.fromObject({ seconds: 0.5 }),
-              recovery: Duration.fromObject({ seconds: 0 }),
-              direction: ActorOrientation.NORTHEAST,
-              frames: 10,
-            }),
-          );
+          walkAction.direction = ActorOrientation.NORTHEAST;
+          data.actors[actorIndex].addAction(walkAction);
         } else {
           data.actors[actorIndex].orientation = ActorOrientation.NORTHEAST;
         }
@@ -150,22 +161,17 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
         break;
       case InputEventRecordKey.DOWN:
         if (
-          actor.position.subY < 0.5 ||
+          actor.position.subY + walkAction.gridDelta <= 0.5 ||
           isGridTraversable(data, {
             z: data.actors[actorIndex].position.gridZ,
-            y: data.actors[actorIndex].position.gridY + 1,
+            y: Math.floor(
+              data.actors[actorIndex].position.y + walkAction.gridDelta + 0.5,
+            ),
             x: data.actors[actorIndex].position.gridX,
           })
         ) {
-          data.actors[actorIndex].addAction(
-            new WalkAction({
-              wait: Duration.fromObject({ seconds: 0 }),
-              act: Duration.fromObject({ seconds: 0.1 }),
-              recovery: Duration.fromObject({ seconds: 0 }),
-              direction: ActorOrientation.SOUTHWEST,
-              frames: 10,
-            }),
-          );
+          walkAction.direction = ActorOrientation.SOUTHWEST;
+          data.actors[actorIndex].addAction(walkAction);
         } else {
           data.actors[actorIndex].orientation = ActorOrientation.SOUTHWEST;
         }

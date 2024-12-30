@@ -144,7 +144,6 @@ export class IsometricRender {
 
   private findActorsByPosition(position: Coordinate3D): Actor[] {
     return this._actors.filter(actor => {
-      actor.processActions();
       const actorRenderPosition = actor.gridRenderPosition();
       if (
         actorRenderPosition.x === position.x &&

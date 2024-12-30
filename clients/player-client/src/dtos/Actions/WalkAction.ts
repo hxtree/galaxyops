@@ -8,59 +8,71 @@ import { Coordinate2d } from '../Coordinate2d.dto';
 
 export class WalkAction extends Action {
   direction: ActorOrientation;
+  gridDelta: number;
 
   constructor(params: {
     wait: Duration;
     act: Duration;
     recovery: Duration;
-    direction: ActorOrientation;
-    frames: number;
+    direction?: ActorOrientation;
+    gridDelta?: number;
+    framesPerAction: number;
+    spriteMapFrames: number;
   }) {
     super(params);
-    this.direction = params.direction;
-    this.frames = params.frames;
+    if (params.direction) {
+      this.direction = params.direction;
+    }
+
+    this.framesPerAction = params.framesPerAction;
+    this.spriteMapFrames = params.spriteMapFrames;
+
+    this.gridDelta = params.gridDelta ?? 0.5;
 
     this.progress = 0;
     this.spriteMapId = SpriteMapActionId.WALK;
+  }
+
+  setDirection(direction: ActorOrientation) {
+    this.direction = direction;
   }
 
   async actionRun(actor: Actor): Promise<boolean> {
     const executeRun = async (
       resolve: (value: boolean | PromiseLike<boolean>) => void,
     ) => {
-      let delta: Coordinate2d = { x: 0, y: 0 };
+      let frameDelta: Coordinate2d = { x: 0, y: 0 };
+      const perFrameDelta = parseFloat(
+        (this.gridDelta / this.framesPerAction).toFixed(2),
+      );
+
       switch (this.direction) {
         case ActorOrientation.NORTHEAST:
-          delta = { x: 0, y: -0.1 };
+          frameDelta = { x: 0, y: -perFrameDelta };
           break;
         case ActorOrientation.NORTHWEST:
-          delta = { x: -0.1, y: 0 };
+          frameDelta = { x: -perFrameDelta, y: 0 };
           break;
         case ActorOrientation.SOUTHEAST:
-          delta = { x: 0.1, y: 0 };
+          frameDelta = { x: perFrameDelta, y: 0 };
           break;
         case ActorOrientation.SOUTHWEST:
-          delta = { x: 0, y: 0.1 };
+          frameDelta = { x: 0, y: perFrameDelta };
           break;
       }
 
-      actor.spriteMapActionId = this.spriteMapId;
       actor.orientation = this.direction;
       const startCurrentFrame = actor.spriteMapCurrentFrame;
-
-      actor.position.move(delta);
-      const maxFrames = 3;
-      for (let i = 0; i <= maxFrames; i++) {
-        actor.spriteMapCurrentFrame = (startCurrentFrame + i) % this.frames;
-        this.progress = (1 / maxFrames) * i;
+      for (let i = 0; i <= this.framesPerAction; i++) {
+        actor.position.move(frameDelta);
+        actor.spriteMapActionId = this.spriteMapId;
+        actor.spriteMapCurrentFrame =
+          (startCurrentFrame + i) % this.spriteMapFrames;
+        this.progress = (1 / this.framesPerAction) * i;
         await pause(this.frameDuration());
       }
-      this.progress = 1;
 
-      // TODO figure out idle setter
-      // actor.spriteMapCurrentFrame = 0;
-      // actor.spriteMapActionId = SpriteMapActionId.IDLE;
-
+      actor.actions.pop();
       resolve(true);
     };
 

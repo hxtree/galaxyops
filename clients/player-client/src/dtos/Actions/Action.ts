@@ -9,7 +9,9 @@ export abstract class Action {
 
   public spriteMapId: SpriteMapActionId;
   public progress: number;
-  public frames: number;
+
+  public framesPerAction: number;
+  public spriteMapFrames: number;
 
   constructor(params: { wait?: Duration; act: Duration; recovery?: Duration }) {
     this.waitDuration = params.wait ?? Duration.fromObject({ seconds: 0 });
@@ -24,7 +26,7 @@ export abstract class Action {
 
   frameDuration(): Duration {
     const duration = this.actDuration;
-    const divisor = this.frames;
+    const divisor = this.framesPerAction;
     const milliseconds = duration.as('milliseconds');
     const dividedMilliseconds = milliseconds / divisor;
     return Duration.fromMillis(dividedMilliseconds);

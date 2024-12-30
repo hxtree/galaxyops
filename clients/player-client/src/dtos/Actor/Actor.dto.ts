@@ -7,7 +7,7 @@ import {
   IsOptional,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { DateTime } from 'luxon';
+import { DateTime, Duration } from 'luxon';
 import { SpriteMapRecord } from '../SpriteMap/SpriteMapRecord.dto';
 import { ActorOrientation } from './ActorOrientation.type';
 import { ActorPosition } from './ActorPosition.dto';
@@ -21,6 +21,7 @@ import {
   SPRITE_WIDTH,
 } from '../../core/IsometricCanvas/utils/SpriteDimensions';
 import { Coordinate3d } from '../Coordinate3d.dto';
+import { IdleAction } from '../Actions/IdleAction';
 
 export class Actor {
   @IsString()
@@ -55,6 +56,15 @@ export class Actor {
   lastUpdated?: DateTime; // Timestamp for when the actor's data was last updated
 
   get currentAction(): Action {
+    if (this.actions.length === 0) {
+      return new IdleAction({
+        wait: Duration.fromObject({ seconds: 0 }),
+        act: Duration.fromObject({ seconds: 0.1 }),
+        recovery: Duration.fromObject({ seconds: 0 }),
+        frames: 1,
+      });
+    }
+
     return this.actions[this.actions.length - 1];
   }
 
@@ -142,9 +152,10 @@ export class Actor {
       return;
     }
 
-    currentAction.actionRun(this);
-    // if (currentAction.isComplete()) {
-    this.actions.pop();
-    // }
+    if (currentAction.isComplete()) {
+      return;
+    }
+
+    await currentAction.actionRun(this);
   }
 }
