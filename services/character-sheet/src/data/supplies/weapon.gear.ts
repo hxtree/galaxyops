@@ -241,6 +241,20 @@ export namespace Weapons {
     speed: 30,
   };
 
+  export const WIND_WALKER: Weapon = {
+    actions: [Skills.STAB_LV1],
+    area: 1,
+    capacity: SupplyCapacity.UNIQUE,
+    category: WeaponCategory.RAPIER,
+    description:
+      'A sword that walks through the wind and cuts through the air.',
+    history:
+      'A sword imbued with the power of the wind. It is said to be able to cut through the air.',
+    name: 'Wind Walker',
+    power: 80,
+    speed: 60,
+  };
+
   export const GOLD_RUSH: Weapon = {
     actions: [Skills.STAB_LV1],
     area: 1,
@@ -282,6 +296,17 @@ export namespace Weapons {
    * It takes two hands to be able to harness the power of the pendant.
    * Gear Slots – Necklace AND DISABLED (Right Hand AND Left Hand)
    */
+
+  export const HEAVENLY_TROVE: Weapon = {
+    actions: [Skills.WARD_LV1, Skills.CURE_LV1],
+    area: 1,
+    capacity: SupplyCapacity.UNIQUE,
+    category: WeaponCategory.PENDANT,
+    description: 'A pendant formed by a pact with the heavens.',
+    name: 'Heavenly Trove',
+    power: 60,
+    speed: 60,
+  };
 
   export const MYSTERIOUS_PENDANT: Weapon = {
     actions: [Skills.WARD_LV1, Skills.CURE_LV1],
