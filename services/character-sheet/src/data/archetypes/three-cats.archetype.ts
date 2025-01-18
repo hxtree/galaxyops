@@ -20,13 +20,13 @@ export namespace ThreeCatsArchetypes {
       + 'He can change the rules but is not able to control the runtime of those rules. '
       + 'He is suspectable to time manipulation as time changes can revert or deteriorate his rule. '
       + "The question that is Schrodinger's cat is not whether the cat is alive or dead but whether the cat is a cat or not. "
-      + 'He is the question of the universe, and parsing of that question dictates the logic unfolding in the universe.',
+      + 'He is the question of the universe, and parsing of that question dictates the logic unfolding in the universe. '
+      + 'Mischievous wields the Odd, which a wave of causality that can be used to manipulate the rules of the universe. '
+      + 'The Odd can make the impossible possible.',
     description:
-      'A black and white cat. '
-      + 'His face is primarily white with a black noise. '
-      + 'He has emerald yellowish greenish eyes. '
+      'A handsome short haired bicolor piebald cat with emerald yellowish greenish eyes. '
+      + 'His face is primarily white with a black noise snip. '
       + 'His ears are black. '
-      + 'His fur is short. '
       + 'His tail is black. ',
     gearSlots: QuadrupedalCreatureGearSlots,
     name: 'Mischievous',
