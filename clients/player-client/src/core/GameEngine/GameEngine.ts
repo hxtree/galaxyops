@@ -8,6 +8,8 @@ import { InputActionType } from '../../context/Input/InputActionType.type';
 import { ActorOrientation } from '../../dtos/Actor/ActorOrientation.type';
 import { Coordinate3d } from '../../dtos/Coordinate3d.dto';
 import { WalkAction } from '../../dtos/Actions/WalkAction';
+import { Actor } from '../../dtos/Actor/Actor.dto';
+import { GridField } from '../../dtos/Grid/GridItem.dto';
 
 export type GameEngineProps = {
   data: GameState;
@@ -28,15 +30,19 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
     inputContextRef.current = inputContext;
   }, [inputContext]);
 
-  const isGridTraversable = (data: GameState, targetPosition: Coordinate3d) => {
+  const isGridTraversable = (
+    grid: GridField[][][],
+    actor: Actor,
+    targetPosition: Coordinate3d,
+  ): boolean => {
     const targetSurfaceGrid =
-      data.grid?.[targetPosition.z]?.[targetPosition.y]?.[targetPosition.x] ??
-      null;
+      grid?.[targetPosition.z]?.[targetPosition.y]?.[targetPosition.x] ?? null;
     const targetAreaGrid =
-      data.grid?.[targetPosition.z + 1]?.[targetPosition.y]?.[
-        targetPosition.x
-      ] ?? null;
+      grid?.[targetPosition.z + 1]?.[targetPosition.y]?.[targetPosition.x] ??
+      null;
 
+    console.log(actor.position.grid);
+    console.log(actor.position.sub);
     if (!targetSurfaceGrid || !targetSurfaceGrid.spriteId) {
       return false;
     }
@@ -45,25 +51,39 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
       return true;
     }
 
-    let isGridTraversable = true;
+    let isGridTraversableResults = true;
+
     data.collisions?.forEach(collision => {
       if (
         collision.isWalkable === false &&
         collision.id === targetSurfaceGrid.collisionId
       ) {
-        isGridTraversable = false;
+        isGridTraversableResults = false;
       }
 
       if (
         collision.defaultCollision === true &&
         collision.id === targetAreaGrid.collisionId
       ) {
-        isGridTraversable = false;
+        isGridTraversableResults = false;
       }
     });
 
+    // TODO add support for sub grid collision checks
+    if (actor.position.subY > 0.5) {
+      // check bottom square too to avoid clipping issues
+      // && !isGridTraversable(data, actor, {
+      //   z: actor.position.gridZ,
+      //   y: actor.position.gridY + 1,
+      //   x: actor.position.gridX,
+      // })){
+      console.log('not traversable');
+      //     isGridTraversableResults = false;
+      // }
+    }
+
     // TODO add direction support for stairs, etc.
-    return isGridTraversable;
+    return isGridTraversableResults;
   };
 
   // run 24 times per second
@@ -109,7 +129,7 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
       case InputEventRecordKey.LEFT:
         if (
           actor.position.subX - walkAction.gridDelta >= 0.6 ||
-          isGridTraversable(data, {
+          isGridTraversable(data.grid, actor, {
             z: data.actors[actorIndex].position.gridZ,
             y: data.actors[actorIndex].position.gridY,
             x: Math.floor(
@@ -126,7 +146,7 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
       case InputEventRecordKey.RIGHT:
         if (
           actor.position.subX + walkAction.gridDelta <= 0.6 ||
-          isGridTraversable(data, {
+          isGridTraversable(data.grid, actor, {
             z: data.actors[actorIndex].position.gridZ,
             y: data.actors[actorIndex].position.gridY,
             x: Math.round(
@@ -144,7 +164,7 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
       case InputEventRecordKey.UP:
         if (
           actor.position.subY - walkAction.gridDelta >= 0.6 ||
-          isGridTraversable(data, {
+          isGridTraversable(data.grid, actor, {
             z: data.actors[actorIndex].position.gridZ,
             y: Math.floor(
               data.actors[actorIndex].position.y - walkAction.gridDelta - 0.4,
@@ -162,7 +182,7 @@ export const GameEngine: React.FC<GameEngineProps> = props => {
       case InputEventRecordKey.DOWN:
         if (
           actor.position.subY + walkAction.gridDelta <= 0.5 ||
-          isGridTraversable(data, {
+          isGridTraversable(data.grid, actor, {
             z: data.actors[actorIndex].position.gridZ,
             y: Math.floor(
               data.actors[actorIndex].position.y + walkAction.gridDelta + 0.5,
