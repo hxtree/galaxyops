@@ -67,6 +67,19 @@ export namespace ThreeCatsArchetypes {
         level: 1,
         skill: Skills.BITE_LV1,
       },
+      // stop, reverse, and speed up time
+      {
+        level: 1,
+        skill: Skills.SLOW_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.HASTE_LV1,
+      },
+      {
+        level: 1,
+        skill: Skills.STOP_LV1,
+      },
     ],
   };
 
