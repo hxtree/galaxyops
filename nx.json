@@ -68,7 +68,7 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
-        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk synth"
+        "command": "cdk synth"
       },
       "dependsOn": [
         "build",
