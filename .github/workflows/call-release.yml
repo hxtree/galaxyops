@@ -24,7 +24,7 @@ jobs:
 
       - name: cache nx
         id: cache
-        uses: actions/cache@v3.2.2
+        uses: actions/cache@v4
         with:
           path: common/temp
           key: ${{ runner.os }}-build-branch-${{ hashFiles('.nx/lockfile.hash') }}
