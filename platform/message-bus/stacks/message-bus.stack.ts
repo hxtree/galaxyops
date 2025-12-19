@@ -23,7 +23,7 @@ export class MessageBusStack extends cdk.Stack {
       encryption: s3.BucketEncryption.S3_MANAGED,
       enforceSSL: true,
       versioned: true,
-      removalPolicy: RemovalPolicy.RETAIN_ON_UPDATE_OR_DELETE,
+      removalPolicy: RemovalPolicy.RETAIN,
     });
 
     // Create a Kinesis Data Firehose delivery stream
