@@ -118,6 +118,7 @@ These steps are required once by the platform team to initialize the IaaS.
 
    ```bash
     aws configure sso
+    aws configure list-profiles
     pnpm nx run galaxyops:cdk:bootstrap:sandbox
     pnpm nx run galaxyops:cdk:deploy:sandbox
    ```
@@ -128,6 +129,14 @@ These steps are required once by the platform team to initialize the IaaS.
    pnpm nx run galaxyops:cdk:bootstrap:tools-account
    pnpm nx run galaxyops:cdk:deploy:tools-account
    ```
+
+### Deploying Individual Services
+
+Deploy a single service to a specific AWS profile:
+
+```bash
+AWS_PROFILE=DeveloperSandbox pnpm nx cdk:deploy luck-by-dice
+```
 
 ## Documentation
 

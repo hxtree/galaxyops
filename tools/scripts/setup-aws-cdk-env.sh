@@ -2,10 +2,17 @@
 # Setup AWS credentials and environment for CDK commands
 # Usage: source setup-aws-cdk-env.sh
 
-set -e  # Exit on error
-
 PROFILE=${AWS_PROFILE:-DeveloperSandbox}
-echo "🔐 Setting up AWS credentials for CDK..."
+
+# Check if already authenticated
+if ! aws sts get-caller-identity --profile "$PROFILE" &>/dev/null; then
+  echo "🔐 Authenticating with AWS SSO..."
+  nx run aws-sso:start "$PROFILE" 2>/dev/null || true
+  echo "🔐 Setting up AWS credentials for CDK..."
+else
+  echo "🔐 Using existing AWS credentials for CDK..."
+fi
+
 echo "   Profile: $PROFILE"
 
 # Export credentials with error checking

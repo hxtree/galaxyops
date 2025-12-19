@@ -26,6 +26,9 @@
       "inputs": [
         "noMarkdown",
         "^noMarkdown"
+      ],
+      "dependsOn": [
+        "^build"
       ]
     },
     "cdk:deploy": {
@@ -33,35 +36,55 @@
       "options": {
         "cwd": "{projectRoot}",
         "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk deploy"
-      }
+      },
+      "dependsOn": [
+        "build",
+        "^build"
+      ]
     },
     "cdk:destroy": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
         "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk destroy"
-      }
+      },
+      "dependsOn": [
+        "build",
+        "^build"
+      ]
     },
     "cdk:diff": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
         "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk diff"
-      }
+      },
+      "dependsOn": [
+        "build",
+        "^build"
+      ]
     },
     "cdk:synth": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
         "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk synth"
-      }
+      },
+      "dependsOn": [
+        "build",
+        "^build"
+      ]
     },
     "cdk:bootstrap": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
         "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk bootstrap aws://$CDK_DEFAULT_ACCOUNT/$CDK_DEFAULT_REGION"
-      }
+      },
+      "dependsOn": [
+        "build",
+        "^build"
+      ]
     }
   },
   "release": {
