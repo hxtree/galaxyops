@@ -4,19 +4,5 @@
   "tags": [
     "scope:services",
     "cimongo"
-  ],
-  "targets": {
-    "cdk:deploy": {
-      "executor": "nx:run-commands"
-    },
-    "cdk:destroy": {
-      "executor": "nx:run-commands"
-    },
-    "cdk:diff": {
-      "executor": "nx:run-commands"
-    },
-    "cdk:synth": {
-      "executor": "nx:run-commands"
-    }
-  }
+  ]
 }
