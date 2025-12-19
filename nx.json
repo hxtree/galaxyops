@@ -2,19 +2,59 @@
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "noMarkdown": ["!{projectRoot}/**/*.md"]
+    "noMarkdown": [
+      "!{projectRoot}/**/*.md"
+    ]
   },
   "targetDefaults": {
     "build": {
-      "inputs": ["noMarkdown", "^noMarkdown"],
-      "dependsOn": ["^build"],
+      "inputs": [
+        "noMarkdown",
+        "^noMarkdown"
+      ],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": true
     },
     "dev": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "test": {
-      "inputs": ["noMarkdown", "^noMarkdown"]
+      "inputs": [
+        "noMarkdown",
+        "^noMarkdown"
+      ]
+    },
+    "cdk:deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "eval \"$(aws configure export-credentials --profile DeveloperSandbox --format env)\" && export CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text) && export CDK_DEFAULT_REGION=$(aws configure get region --profile DeveloperSandbox || echo 'us-east-1') && cdk deploy"
+      }
+    },
+    "cdk:destroy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "eval \"$(aws configure export-credentials --profile DeveloperSandbox --format env)\" && export CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text) && export CDK_DEFAULT_REGION=$(aws configure get region --profile DeveloperSandbox || echo 'us-east-1') && cdk destroy"
+      }
+    },
+    "cdk:diff": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "eval \"$(aws configure export-credentials --profile DeveloperSandbox --format env)\" && export CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text) && export CDK_DEFAULT_REGION=$(aws configure get region --profile DeveloperSandbox || echo 'us-east-1') && cdk diff"
+      }
+    },
+    "cdk:synth": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "eval \"$(aws configure export-credentials --profile DeveloperSandbox --format env)\" && export CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text) && export CDK_DEFAULT_REGION=$(aws configure get region --profile DeveloperSandbox || echo 'us-east-1') && cdk synth"
+      }
     }
   },
   "release": {
@@ -50,7 +90,9 @@
   },
   "defaultBase": "main",
   "defaultProject": "admin-client",
-  "plugins": ["nx/plugins/package-json"],
+  "plugins": [
+    "nx/plugins/package-json"
+  ],
   "pluginsConfig": {
     "@nx/js": {
       "analyzeSourceFiles": false

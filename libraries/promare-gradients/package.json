@@ -21,15 +21,14 @@
     "start": "node server.js",
     "build": "npm-run-all css-compile css-minify",
     "build:all": "nx run-many --target=build --all",
-    "css-compile": "node-sass --precision 1 --output dist/css src/scss/promare-gradients.scss --output-style nested",
+    "css-compile": "sass src/scss/promare-gradients.scss dist/css/promare-gradients.css --style=expanded",
     "css-minify": "cleancss -o dist/css/promare-gradients.min.css dist/css/promare-gradients.css"
   },
   "dependencies": {
     "clean-css-cli": "^5.5.0",
     "express": "4.19.2",
     "sass": "^1.47.0",
-    "@galaxyops/eslint-config": "3.2.0",
-    "node-sass": "~8.0.0"
+    "@galaxyops/eslint-config": "3.2.0"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // mixture of a color with white
 @function tint-color($color, $weight) {
   @return mix(white, $color, $weight);
@@ -10,28 +12,30 @@
 
 // get color palette
 @function get-color-palette() {
-  $list: ();
+  $list: (
+  );
 
-  @each $color-key, $color-value in $base-colors {
-    // shades
-    @each $shade-name, $shade-percent in $shade {
-      $value: shade-color($color-value, $shade-percent);
-      $key: '#{$color-key}-#{$shade-name}';
-      $list: append($list, $key $value);
-    }
+@each $color-key, $color-value in $base-colors {
 
-    // base
-    $list: append($list, $color-key $color-value);
-
-    // tints
-    @each $tint-name, $tint-percent in $tints {
-      $value: tint-color($color-value, $tint-percent);
-      $key: '#{$color-key}-#{$tint-name}';
-      $list: append($list, $key $value);
-    }
+  // shades
+  @each $shade-name, $shade-percent in $shade {
+    $value: shade-color($color-value, $shade-percent);
+    $key: '#{$color-key}-#{$shade-name}';
+    $list: append($list, $key $value);
   }
 
-  @return $list;
+  // base
+  $list: append($list, $color-key $color-value);
+
+  // tints
+  @each $tint-name, $tint-percent in $tints {
+    $value: tint-color($color-value, $tint-percent);
+    $key: '#{$color-key}-#{$tint-name}';
+    $list: append($list, $key $value);
+  }
+}
+
+@return $list;
 }
 
 // square root
@@ -40,7 +44,7 @@
   $guess-1: $guess-0;
 
   @for $i from 1 through 10 {
-    $guess-1: $guess-0 - ($guess-0 * $guess-0 - abs($number)) / (2 * $guess-0);
+    $guess-1: $guess-0 - math.div($guess-0 * $guess-0 - abs($number), 2 * $guess-0);
     $guess-0: $guess-1;
   }
 

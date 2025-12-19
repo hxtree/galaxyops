@@ -1,7 +1,11 @@
 /* eslint no-template-curly-in-string: 0 */
 import { Construct } from 'constructs';
 import {
-  NestedStack, BundlingOutput, RemovalPolicy, Stack, StackProps,
+  NestedStack,
+  BundlingOutput,
+  RemovalPolicy,
+  Stack,
+  StackProps,
 } from 'aws-cdk-lib';
 import * as ssm from 'aws-cdk-lib/aws-ssm';
 import {
@@ -30,7 +34,7 @@ export class NestJsLayerStack extends NestedStack {
       code: Code.fromAsset('.', {
         exclude: ['*', '!package.json'],
         bundling: {
-          image: Runtime.NODEJS_18_X.bundlingImage,
+          image: Runtime.NODEJS_20_X.bundlingImage,
           command: [],
           local: {
             tryBundle(outputDir: string) {

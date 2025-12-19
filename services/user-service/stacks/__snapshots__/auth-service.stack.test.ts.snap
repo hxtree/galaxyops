@@ -109,7 +109,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
             Arn,
           ],
         },
-        Runtime: nodejs18.x,
+        Runtime: nodejs22.x,
         Timeout: 900,
       },
       Type: AWS::Lambda::Function,
@@ -263,6 +263,9 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
         MyTestStackapiendpointMyTestStackapiendpointrestapiproxyANY26E2BF11,
         MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
       ],
+      Metadata: {
+        aws:cdk:do-not-refactor: true,
+      },
       Properties: {
         RestApiId: {
           Ref: MyTestStackapiendpointMyTestStackapiendpointrestapi9524CD35,
@@ -453,6 +456,9 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
         MyTestStackapiendpointMyTestStackapiendpointrestapiproxyF101F298,
         MyTestStackapiendpointMyTestStackapiendpointrestapiANY9ADB99C9,
       ],
+      Metadata: {
+        aws:cdk:do-not-refactor: true,
+      },
       Properties: {
         Description: user Service API Gateway,
         RestApiId: {
@@ -800,7 +806,7 @@ exports[`AuthServiceStack should match snapshot test 1`] = `
             Arn,
           ],
         },
-        Runtime: nodejs18.x,
+        Runtime: nodejs20.x,
         Timeout: 30,
       },
       Type: AWS::Lambda::Function,

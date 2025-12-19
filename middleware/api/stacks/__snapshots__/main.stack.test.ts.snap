@@ -98,7 +98,7 @@ exports[`MainStack should match snapshot test 1`] = `
             Arn,
           ],
         },
-        Runtime: nodejs18.x,
+        Runtime: nodejs22.x,
         Timeout: 900,
       },
       Type: AWS::Lambda::Function,
@@ -263,6 +263,9 @@ exports[`MainStack should match snapshot test 1`] = `
         MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxyANY74B2D563,
         MyTestStackdnsdomainMyTestStackdnsdomainrestapiANY413B061D,
       ],
+      Metadata: {
+        aws:cdk:do-not-refactor: true,
+      },
       Properties: {
         RestApiId: {
           Ref: MyTestStackdnsdomainMyTestStackdnsdomainrestapiF4C3ABA3,
@@ -446,6 +449,9 @@ exports[`MainStack should match snapshot test 1`] = `
         MyTestStackdnsdomainMyTestStackdnsdomainrestapiproxy3260E5C6,
         MyTestStackdnsdomainMyTestStackdnsdomainrestapiANY413B061D,
       ],
+      Metadata: {
+        aws:cdk:do-not-refactor: true,
+      },
       Properties: {
         Description: api Service API Gateway,
         RestApiId: {
@@ -667,7 +673,7 @@ exports[`MainStack should match snapshot test 1`] = `
             Arn,
           ],
         },
-        Runtime: nodejs18.x,
+        Runtime: nodejs20.x,
         Timeout: 30,
       },
       Type: AWS::Lambda::Function,

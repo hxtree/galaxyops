@@ -17,7 +17,7 @@ export class ChromiumLayerStack extends NestedStack {
     this.layerVersion = new LayerVersion(this, 'Chromium', {
       layerVersionName: `arn:aws:lambda:${awsAccountRegion}:${awsAccountId}:layer:Chromium`,
       code: Code.fromAsset(CHROMIUM_ZIP_FILEPATH),
-      compatibleRuntimes: [Runtime.NODEJS_18_X],
+      compatibleRuntimes: [Runtime.NODEJS_20_X],
       description: 'Chromium layer for Lambda',
     });
 

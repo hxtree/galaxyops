@@ -1,11 +1,12 @@
 import { messageRegistry } from '@galaxyops/messaging-schemas';
 import { Construct } from 'constructs';
-import { StackProps, RemovalPolicy } from 'aws-cdk-lib';
+import { StackProps, RemovalPolicy, CustomResource } from 'aws-cdk-lib';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as cdk from 'aws-cdk-lib';
 import * as sns from 'aws-cdk-lib/aws-sns';
 import * as firehose from 'aws-cdk-lib/aws-kinesisfirehose';
 import * as iam from 'aws-cdk-lib/aws-iam';
+import * as cr from 'aws-cdk-lib/custom-resources';
 
 export class MessageBusStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -18,12 +19,12 @@ export class MessageBusStack extends cdk.Stack {
     // provision a S3 bucket to contain a record of every message
     // this will allow for analytics to be performed independent of tier systems
     const dataLakeBucket = new s3.Bucket(this, `${stageName}-data-lake`, {
-      bucketName: `${awsAccountId}-${stageName}-data-lake-bucket`,
+      bucketName: `${awsAccountId}-${stageName}-message-bus-data-lake-bucket`,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
       enforceSSL: true,
       versioned: true,
-      removalPolicy: RemovalPolicy.RETAIN,
+      removalPolicy: RemovalPolicy.RETAIN_ON_UPDATE_OR_DELETE,
     });
 
     // Create a Kinesis Data Firehose delivery stream
