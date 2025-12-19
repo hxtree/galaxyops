@@ -2,19 +2,89 @@
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "noMarkdown": ["!{projectRoot}/**/*.md"]
+    "noMarkdown": [
+      "!{projectRoot}/**/*.md"
+    ]
   },
   "targetDefaults": {
     "build": {
-      "inputs": ["noMarkdown", "^noMarkdown"],
-      "dependsOn": ["^build"],
+      "inputs": [
+        "noMarkdown",
+        "^noMarkdown"
+      ],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": true
     },
     "dev": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "test": {
-      "inputs": ["noMarkdown", "^noMarkdown"]
+      "inputs": [
+        "noMarkdown",
+        "^noMarkdown"
+      ],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "cdk:deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk deploy"
+      },
+      "dependsOn": [
+        "build",
+        "^build"
+      ]
+    },
+    "cdk:destroy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk destroy"
+      },
+      "dependsOn": [
+        "build",
+        "^build"
+      ]
+    },
+    "cdk:diff": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk diff"
+      },
+      "dependsOn": [
+        "build",
+        "^build"
+      ]
+    },
+    "cdk:synth": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "cdk synth"
+      },
+      "dependsOn": [
+        "build",
+        "^build"
+      ]
+    },
+    "cdk:bootstrap": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk bootstrap aws://$CDK_DEFAULT_ACCOUNT/$CDK_DEFAULT_REGION"
+      },
+      "dependsOn": [
+        "build",
+        "^build"
+      ]
     }
   },
   "release": {
@@ -50,7 +120,9 @@
   },
   "defaultBase": "main",
   "defaultProject": "admin-client",
-  "plugins": ["nx/plugins/package-json"],
+  "plugins": [
+    "nx/plugins/package-json"
+  ],
   "pluginsConfig": {
     "@nx/js": {
       "analyzeSourceFiles": false

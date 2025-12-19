@@ -1,5 +1,8 @@
 {
   "name": "dialogue-service",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "tags": ["scope:services", "cimongo"]
+  "tags": [
+    "scope:services",
+    "cimongo"
+  ]
 }

@@ -18,7 +18,7 @@ export class MessageBusStack extends cdk.Stack {
     // provision a S3 bucket to contain a record of every message
     // this will allow for analytics to be performed independent of tier systems
     const dataLakeBucket = new s3.Bucket(this, `${stageName}-data-lake`, {
-      bucketName: `${awsAccountId}-${stageName}-data-lake-bucket`,
+      bucketName: `${awsAccountId}-${stageName}-message-bus-data-lake-bucket`,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
       enforceSSL: true,

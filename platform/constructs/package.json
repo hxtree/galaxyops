@@ -35,7 +35,7 @@
     "@types/lodash": "4.17.6"
   },
   "devDependencies": {
-    "aws-cdk-lib": "2.129.0",
+    "aws-cdk-lib": "2.232.2",
     "constructs": "^10.2.70",
     "@types/jest": "29.5.12",
     "@types/node": "20.11.25",

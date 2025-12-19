@@ -71,7 +71,7 @@ export class NestJs extends Construct {
 
     this.nodeJsFunction = new lambda.Function(this, 'NodeJsLambda', {
       // functionName: `${awsAccountId}-${props.stageName}-${props.functionName}-function`,
-      runtime: lambda.Runtime.NODEJS_18_X,
+      runtime: lambda.Runtime.NODEJS_20_X,
       code: lambda.Code.fromAsset(path.join(props.projectRoot, 'dist')),
       handler: 'index.handler',
       layers: props.layers,

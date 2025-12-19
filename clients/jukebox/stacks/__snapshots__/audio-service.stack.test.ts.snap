@@ -125,6 +125,7 @@ exports[`AudioServiceStack should match snapshot test 1`] = `
         DestinationBucketName: {
           Ref: Bucket83908E77,
         },
+        OutputObjectKeys: true,
         Prune: true,
         ServiceToken: {
           Fn::GetAtt: [
@@ -140,6 +141,7 @@ exports[`AudioServiceStack should match snapshot test 1`] = `
         SourceObjectKeys: [
           UNIQUE_HASH.zip,
         ],
+        WaitForDistributionInvalidation: true,
       },
       Type: Custom::CDKBucketDeployment,
       UpdateReplacePolicy: Delete,
@@ -250,7 +252,7 @@ exports[`AudioServiceStack should match snapshot test 1`] = `
             Arn,
           ],
         },
-        Runtime: python3.9,
+        Runtime: python3.13,
         Timeout: 900,
       },
       Type: AWS::Lambda::Function,

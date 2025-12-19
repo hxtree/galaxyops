@@ -31,12 +31,12 @@ jobs:
       - name: setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18.18.0'
+          node-version: '20.9.0'
           cache: 'pnpm'
 
       - name: cache nx
         id: cache
-        uses: actions/cache@v3.2.2
+        uses: actions/cache@v4
         with:
           path: common/temp
           key: ${{ runner.os }}-build-branch-${{ hashFiles('.nx/lockfile.hash') }}
