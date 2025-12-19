@@ -32,28 +32,35 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
-        "command": "eval \"$(aws configure export-credentials --profile DeveloperSandbox --format env)\" && export CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text) && export CDK_DEFAULT_REGION=$(aws configure get region --profile DeveloperSandbox || echo 'us-east-1') && cdk deploy"
+        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk deploy"
       }
     },
     "cdk:destroy": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
-        "command": "eval \"$(aws configure export-credentials --profile DeveloperSandbox --format env)\" && export CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text) && export CDK_DEFAULT_REGION=$(aws configure get region --profile DeveloperSandbox || echo 'us-east-1') && cdk destroy"
+        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk destroy"
       }
     },
     "cdk:diff": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
-        "command": "eval \"$(aws configure export-credentials --profile DeveloperSandbox --format env)\" && export CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text) && export CDK_DEFAULT_REGION=$(aws configure get region --profile DeveloperSandbox || echo 'us-east-1') && cdk diff"
+        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk diff"
       }
     },
     "cdk:synth": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
-        "command": "eval \"$(aws configure export-credentials --profile DeveloperSandbox --format env)\" && export CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text) && export CDK_DEFAULT_REGION=$(aws configure get region --profile DeveloperSandbox || echo 'us-east-1') && cdk synth"
+        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk synth"
+      }
+    },
+    "cdk:bootstrap": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk bootstrap aws://$CDK_DEFAULT_ACCOUNT/$CDK_DEFAULT_REGION"
       }
     }
   },
