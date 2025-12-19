@@ -47,7 +47,7 @@ $base-colors: (
   ) !default;
 
 // Phi is the key to beauty and appealing design
-$phi: math.div(square-root(5) + 1, 2);
+$phi: math.div(math.sqrt(5) + 1, 2);
 
 // shades
 $shade: (
