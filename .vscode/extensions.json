@@ -1,7 +1,7 @@
 {
   "recommendations": [
     "github.vscode-github-actions",
-    "pflannery.vscode-versionlens",
+    "legalfina.npm-version-lens",
     "folke.vscode-monorepo-workspace",
     "ryanluker.vscode-coverage-gutters",
     "streetsidesoftware.code-spell-checker",
