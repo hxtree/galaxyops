@@ -47,3 +47,6 @@ reality of struggle and commitment.
 
 - After this Act Meeku and Malace are considered XSoldiers and are enemies of
   Soldier.
+- There is a devil that tells Malace he must achieve something or he will lose.
+  It's one of the devils tattoed to his body. And it does mean to take him
+  should he fail. But it gives him a boast in power. his soul.
