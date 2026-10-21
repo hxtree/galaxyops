@@ -14,6 +14,17 @@ flourish.
 1. Meeku and his brother Vallon reside on a secluded farm with their mother in a
    remote village. They work tirelessly to maintain the farm, while also
    training to become skilled fighters like their late father.
+
+   - Meeku tosses a toad in the air to fly. As he thinks it would be fun to fly.
+     He tosses it up, but it always comes back down. He tries to spins the toad
+     around in a circle to give it more air time at to get it to stay like a
+     bird. But again it falls down He says something along the lines of "you
+     will fly". And gives it another go. The toad hovers there in mid air for
+     longer then makes sense. He is in awe. The sun catches him in the eye. The
+     toad falls and hits the ground and dies. It's guts come out its mouth.
+
+   This is a foreshadowing of his destroy of law abilities.
+
 2. One fateful night, Vallon leaves to join the army, leaving Meeku and their
    mother alone on the farm. Meeku vows to protect his mother and continue the
    farm work until Vallon's return. However, their mother falls ill from a

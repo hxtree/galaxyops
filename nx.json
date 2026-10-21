@@ -46,7 +46,7 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}",
-        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk destroy"
+        "command": "source ../../tools/scripts/setup-aws-cdk-env.sh && cdk destroy --force"
       },
       "dependsOn": [
         "build",
